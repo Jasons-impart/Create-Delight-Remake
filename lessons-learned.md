@@ -277,3 +277,17 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: Ratatouille 1.3.8 `SqueezingRecipe#matches` and `#match` call `FluidIngredient#test` without checking `getRequiredAmount`, so recipes like `createdelight:squeezing/raw_sausage` can run with 1 mB of a matching fluid.
 - **Fix/Lesson**: CDC patches both recipe matching entry points to require matching fluid type and amount before the press starts, because `process` drains the configured amount only after the recipe has already passed matching.
 
+## OEV fluid input costs need explicit recipe extra value
+
+**Date**: 2026-06-22
+
+- **Problem**: OneEnoughValue only prices `ItemStack`/`Ingredient` inputs natively, so Create fluid ingredients and hidden machine fluids such as `casualness_delight:deep_frying` oil cost can be ignored and make processed foods price like raw inputs.
+- **Fix/Lesson**: Add fluid costs through OEV recipe extra value using a per-1000 mB fluid value table, and mirror hidden fluid consumption by recipe type so alternate recipes cannot undercut the explicit-fluid path.
+
+## OEV Create processing outputs may be rollable results
+
+**Date**: 2026-06-22
+
+- **Problem**: Create processing recipes such as mixing can expose their outputs through `getRollableResults()` while `getResultItem(registryAccess)` is empty, so OEV may skip recipe-derived values and fall back to food nutrition pricing.
+- **Fix/Lesson**: OEV output getters should fall back to extracted `getRollableResults()` stacks and avoid counting the same item ID twice when value setters also inspect rollable outputs.
+

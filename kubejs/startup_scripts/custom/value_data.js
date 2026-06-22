@@ -366,3 +366,27 @@ let RecipeValueMultiplierDict = {
     "crafting": 1
 }
 global.RecipeValueMultiplierDict = new Map(Object.entries(RecipeValueMultiplierDict));
+
+// Fluid values are counted per 1000 mB. They are used by the OEV recipe handler
+// because OneEnoughValue only prices ItemStack outputs natively.
+let FluidIngredientValueDict = {
+    "minecraft:milk": 8,
+    "create:honey": 8,
+    "createdelight:egg_yolk": 8,
+    "createdelight:artificial_egg_yolk": 8,
+    "createdieselgenerators:plant_oil": 4,
+    "create_bic_bit:frying_oil": 4,
+    "create_bic_bit:mayonnaise": 8,
+    "create_central_kitchen:tomato_sauce": 16,
+}
+global.FluidIngredientValueDict = new Map(Object.entries(FluidIngredientValueDict));
+
+// Some recipe types consume fluid through their machine state instead of putting
+// the fluid in the recipe JSON. Keep these costs aligned with equivalent Create
+// processing recipes so OEV does not prefer the hidden-fluid path.
+let HiddenFluidCostByRecipeType = {
+    "casualness_delight:deep_frying": [
+        { fluid: "createdieselgenerators:plant_oil", amount: 25 }
+    ]
+}
+global.HiddenFluidCostByRecipeType = new Map(Object.entries(HiddenFluidCostByRecipeType));

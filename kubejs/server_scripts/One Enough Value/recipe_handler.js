@@ -94,6 +94,79 @@ function safeExtractItem(item) {
     }
 }
 
+function isValidItemStack(stack) {
+    try {
+        return stack && typeof stack.isEmpty === 'function' && !stack.isEmpty()
+            && typeof stack.getCount === 'function' && stack.getCount() > 0;
+    } catch (e) {
+        logSkippedItem(stack, 'isValidItemStack', e);
+        return false;
+    }
+}
+
+function collectItemIds(items) {
+    let ids = {};
+    toArray(items).forEach(item => {
+        let extracted = safeExtractItem(item);
+        if (!extracted) return;
+
+        try {
+            ids[String(extracted.stack.getItem().getId())] = true;
+        } catch (e) {
+            logSkippedItem(item, 'collectItemIds', e);
+        }
+    });
+
+    return ids;
+}
+
+function getRecipeOutputStacks(recipe, registryAccess) {
+    let outputs = [];
+
+    try {
+        let stack = recipe.getResultItem(registryAccess);
+        if (isValidItemStack(stack)) outputs.push(stack);
+    } catch (e) {
+        logSkippedItem(recipe, 'outputGetter:getResultItem', e);
+    }
+
+    if (outputs.length > 0 || !recipe.getRollableResults) return outputs;
+
+    try {
+        toArray(recipe.getRollableResults()).forEach(result => {
+            let extracted = safeExtractItem(result);
+            if (extracted) outputs.push(extracted.stack);
+        });
+    } catch (e) {
+        logSkippedItem(recipe, 'outputGetter:getRollableResults', e);
+    }
+
+    return outputs;
+}
+
+function getNewRollableResults(recipe, knownItemIds) {
+    let results = [];
+    if (!recipe.getRollableResults) return results;
+
+    try {
+        toArray(recipe.getRollableResults()).forEach(result => {
+            let extracted = safeExtractItem(result);
+            if (!extracted) return;
+
+            try {
+                let itemId = String(extracted.stack.getItem().getId());
+                if (!knownItemIds[itemId]) results.push(result);
+            } catch (e) {
+                logSkippedItem(result, 'getNewRollableResults:itemId', e);
+            }
+        });
+    } catch (e) {
+        logSkippedItem(recipe, 'getNewRollableResults', e);
+    }
+
+    return results;
+}
+
 function logSkippedItem(item, source, error) {
     try {
         let info = (item && item.getClass) ? item.getClass().getName() : typeof item;
@@ -138,6 +211,221 @@ function calculateValueDistribution(items, itemCountMap, totalUnpricedCnt, consu
         totalUnpricedCnt: totalUnpricedCnt,
         consumedValue: consumedValue
     };
+}
+
+function safeCallNoArg(target, methodName, source) {
+    if (!target) return null;
+
+    try {
+        if (typeof target[methodName] === 'function') {
+            return target[methodName]();
+        }
+    } catch (e) {
+        logSkippedItem(target, source + ':' + methodName, e);
+    }
+
+    return null;
+}
+
+function getDefaultRecipeExtraValue(extraValueGetter, recipe) {
+    try {
+        if (!extraValueGetter) return 0;
+        if (typeof extraValueGetter.get === 'function') return Number(extraValueGetter.get(recipe)) || 0;
+        if (typeof extraValueGetter === 'function') return Number(extraValueGetter(recipe)) || 0;
+    } catch (e) {
+        logSkippedItem(recipe, 'extraValueGetter:default', e);
+    }
+
+    return 0;
+}
+
+function getFluidId(fluidStack) {
+    if (!fluidStack) return null;
+
+    try {
+        if (fluidStack.id) return String(fluidStack.id);
+    } catch (e) {
+        logSkippedItem(fluidStack, 'getFluidId:id', e);
+    }
+
+    try {
+        if (typeof fluidStack.getFluidStack === 'function') {
+            let innerStack = fluidStack.getFluidStack();
+            let innerId = getFluidId(innerStack);
+            if (innerId) return innerId;
+        }
+    } catch (e) {
+        logSkippedItem(fluidStack, 'getFluidId:getFluidStack', e);
+    }
+
+    try {
+        if (typeof fluidStack.getFluid === 'function') {
+            let fluid = fluidStack.getFluid();
+            let fluidKey = global.CDLightmansCurrencyApi.ForgeRegistries.FLUIDS.getKey(fluid);
+            if (fluidKey) return String(fluidKey);
+        }
+    } catch (e) {
+        logSkippedItem(fluidStack, 'getFluidId:getFluid', e);
+    }
+
+    try {
+        if (fluidStack.fluid) {
+            let fluidKey = global.CDLightmansCurrencyApi.ForgeRegistries.FLUIDS.getKey(fluidStack.fluid);
+            if (fluidKey) return String(fluidKey);
+        }
+    } catch (e) {
+        logSkippedItem(fluidStack, 'getFluidId:fluid', e);
+    }
+
+    return null;
+}
+
+function getFluidAmount(fluidStack, fallbackAmount) {
+    if (!fluidStack) return fallbackAmount || 1000;
+
+    try {
+        if (typeof fluidStack.getAmount === 'function') return Number(fluidStack.getAmount()) || fallbackAmount || 1000;
+    } catch (e) {
+        logSkippedItem(fluidStack, 'getFluidAmount:getAmount', e);
+    }
+
+    try {
+        if (fluidStack.amount !== undefined) return Number(fluidStack.amount) || fallbackAmount || 1000;
+    } catch (e) {
+        logSkippedItem(fluidStack, 'getFluidAmount:amount', e);
+    }
+
+    return fallbackAmount || 1000;
+}
+
+function getFluidValuePer1000(fluidId) {
+    if (!fluidId || !global.FluidIngredientValueDict) return 0;
+
+    try {
+        let value = global.FluidIngredientValueDict.get(fluidId);
+        if (value !== undefined) return Number(value) || 0;
+    } catch (e) {
+        logSkippedItem(fluidId, 'getFluidValuePer1000', e);
+    }
+
+    return 0;
+}
+
+function calculateFluidStackValue(fluidId, amount) {
+    let valuePer1000 = getFluidValuePer1000(fluidId);
+    if (valuePer1000 <= 0 || amount <= 0) return 0;
+
+    return valuePer1000 * amount / 1000.0;
+}
+
+function extractFluidCandidates(fluidIngredient) {
+    let candidates = [];
+    if (!fluidIngredient) return candidates;
+
+    let fallbackAmount = getFluidAmount(fluidIngredient, 1000);
+
+    try {
+        let matchingStacks = safeCallNoArg(fluidIngredient, 'getMatchingFluidStacks', 'fluidIngredient');
+        toArray(matchingStacks).forEach(stack => {
+            let fluidId = getFluidId(stack);
+            if (!fluidId) return;
+
+            candidates.push({
+                fluid: fluidId,
+                amount: getFluidAmount(stack, fallbackAmount)
+            });
+        });
+    } catch (e) {
+        logSkippedItem(fluidIngredient, 'extractFluidCandidates:matchingStacks', e);
+    }
+
+    if (candidates.length === 0) {
+        let fluidId = getFluidId(fluidIngredient);
+        if (fluidId) {
+            candidates.push({
+                fluid: fluidId,
+                amount: fallbackAmount
+            });
+        }
+    }
+
+    return candidates;
+}
+
+function calculateFluidIngredientValue(fluidIngredient) {
+    let minValue = null;
+
+    extractFluidCandidates(fluidIngredient).forEach(candidate => {
+        let value = calculateFluidStackValue(candidate.fluid, candidate.amount);
+        if (value <= 0) return;
+        if (minValue === null || value < minValue) minValue = value;
+    });
+
+    return minValue || 0;
+}
+
+function getRecipeFluidIngredients(recipe) {
+    let fluidIngredients = [];
+
+    let addFluidIngredientValue = function (value) {
+        if (!value) return;
+
+        let values = toArray(value);
+        if (values.length > 0) {
+            values.forEach(fluidIngredient => fluidIngredients.push(fluidIngredient));
+            return;
+        }
+
+        fluidIngredients.push(value);
+    }
+
+    addFluidIngredientValue(safeCallNoArg(recipe, 'getFluidIngredients', 'recipeFluidInput'));
+
+    if (fluidIngredients.length === 0) {
+        addFluidIngredientValue(safeCallNoArg(recipe, 'getFluidIngredient', 'recipeFluidInput'));
+    }
+
+    try {
+        if (fluidIngredients.length === 0 && recipe.fluidIngredients) {
+            addFluidIngredientValue(recipe.fluidIngredients);
+        }
+    } catch (e) {
+        logSkippedItem(recipe, 'recipeFluidInput:field', e);
+    }
+
+    return fluidIngredients;
+}
+
+function calculateRecipeFluidInputValue(recipe) {
+    let fluidValue = 0.0;
+
+    getRecipeFluidIngredients(recipe).forEach(fluidIngredient => {
+        try {
+            fluidValue += calculateFluidIngredientValue(fluidIngredient);
+        } catch (e) {
+            logSkippedItem(fluidIngredient, 'calculateRecipeFluidInputValue', e);
+        }
+    });
+
+    return fluidValue;
+}
+
+function calculateHiddenFluidRecipeValue(recipeTypeName) {
+    if (!global.HiddenFluidCostByRecipeType) return 0;
+
+    let hiddenFluids = global.HiddenFluidCostByRecipeType.get(recipeTypeName);
+    if (!hiddenFluids) return 0;
+
+    let hiddenValue = 0.0;
+    toArray(hiddenFluids).forEach(fluidCost => {
+        try {
+            hiddenValue += calculateFluidStackValue(String(fluidCost.fluid), Number(fluidCost.amount) || 0);
+        } catch (e) {
+            logSkippedItem(fluidCost, 'calculateHiddenFluidRecipeValue', e);
+        }
+    });
+
+    return hiddenValue;
 }
 
 
@@ -199,15 +487,18 @@ OEVEvents.addRecipeHandler(event => {
             },
             (recipe, registryAccess) => {
                 try {
-                    let stack = recipe.getResultItem(registryAccess);
-                    if (!stack || stack.isEmpty() || stack.getCount() === 0) return [];
-                    return [stack];
+                    return getRecipeOutputStacks(recipe, registryAccess);
                 } catch (e) {
                     logSkippedItem(recipe, 'outputGetter', e);
                     return [];
                 }
             },
-            event.defaultRecipeExtraValueGetter,
+            (recipe) => {
+                let extraValue = getDefaultRecipeExtraValue(event.defaultRecipeExtraValueGetter, recipe);
+                extraValue += calculateRecipeFluidInputValue(recipe);
+                extraValue += calculateHiddenFluidRecipeValue(typeName);
+                return Math.ceil(extraValue);
+            },
             // event.defaultRecipeValueSetter
             (recipe, stacks, totalValue, setter) => {
                 try {
@@ -220,6 +511,7 @@ OEVEvents.addRecipeHandler(event => {
 
                     let stacksArr = toArray(stacks);
                     let rollableResults = null;
+                    let stackItemIds = collectItemIds(stacksArr);
 
                     // 2. 先计算 stacks 中的物品价值分配
                     let stacksResult = calculateValueDistribution(stacksArr, itemCountMap, totalUnpricedCnt, consumedValue);
@@ -230,7 +522,7 @@ OEVEvents.addRecipeHandler(event => {
                     // 3. 如果是机械动力概率产出，补充计算 序列组装的产出物 中的物品价值分配
                     if (recipe.getRollableResults) {
                         try {
-                            rollableResults = recipe.getRollableResults();
+                            rollableResults = getNewRollableResults(recipe, stackItemIds);
                             let rollableResult = calculateValueDistribution(rollableResults, itemCountMap, totalUnpricedCnt, consumedValue);
                             itemCountMap = rollableResult.itemCountMap;
                             totalUnpricedCnt = rollableResult.totalUnpricedCnt;
