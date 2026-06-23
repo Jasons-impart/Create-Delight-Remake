@@ -1,0 +1,16 @@
+{
+  "structures": [
+    {
+      "structure": "iafdragonfix:lightning_dragon_cave",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 10,
+    "separation": 3,
+    "salt": 198273647,
+    "frequency": 0.8333333333333334,
+    "frequency_reduction_method": "default"
+  }
+}

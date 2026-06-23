@@ -1,0 +1,10 @@
+{
+  "replace": true,
+  "values": [
+    "northstar:martian_crimsite_caverns",
+    "northstar:martian_dunes",
+    "northstar:martian_magmatic_caves",
+    "northstar:martian_overgrown_caverns",
+    "#northstar:mercury_biomes"
+  ]
+}
