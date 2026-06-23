@@ -6,7 +6,7 @@
             "honed": 1
         },
         "attributes": {
-            "**tetra:draw_strength": 0.05
+            "**tetra:draw_strength": 0.02
         }
     },
     {
@@ -17,7 +17,7 @@
             "honed": 2
         },
         "attributes": {
-            "**tetra:draw_strength": 0.1
+            "**tetra:draw_strength": 0.04
         }
     },
     {
@@ -28,7 +28,7 @@
             "honed": 3
         },
         "attributes": {
-            "**tetra:draw_strength": 0.15
+            "**tetra:draw_strength": 0.06
         }
     },
     {
@@ -39,7 +39,7 @@
             "honed": 4
         },
         "attributes": {
-            "**tetra:draw_strength": 0.2
+            "**tetra:draw_strength": 0.08
         }
     },
     {
@@ -50,7 +50,7 @@
             "honed": 5
         },
         "attributes": {
-            "**tetra:draw_strength": 0.3
+            "**tetra:draw_strength": 0.1
         }
     }
 ]

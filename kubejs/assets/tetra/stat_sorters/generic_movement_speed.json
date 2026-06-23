@@ -1,0 +1,19 @@
+{
+  "type": "tetra:default",
+  "key": "tetra.stats.generic_movement_speed",
+  "stat": {
+    "type": "tetra:multiply",
+    "factor": 1000,
+    "stats": [
+      {
+        "type": "tetra:attribute",
+        "attribute": "generic.movement_speed",
+        "ignoreBonuses": true
+      }
+    ]
+  },
+  "format": {
+    "type": "tetra:basic",
+    "format": "percentage_decimal"
+  }
+}

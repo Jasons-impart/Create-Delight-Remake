@@ -1,0 +1,47 @@
+{
+  "type": "tetra:default",
+  "key": "tetra.stats.generic_movement_speed",
+  "contexts": [
+    "tetra:workbench",
+    "tetra:holosphere"
+  ],
+  "min": 50,
+  "max": 150,
+  "stat": {
+    "type": "tetra:multiply",
+    "factor": 1000,
+    "stats": [
+      {
+        "type": "tetra:attribute",
+        "attribute": "generic.movement_speed"
+      }
+    ]
+  },
+  "label": {
+    "type": "tetra:basic",
+    "format": "percentage_decimal",
+    "diff_format": "percentage_decimal"
+  },
+  "tooltip": {
+    "type": "tetra:default",
+    "key": "tetra.stats.generic_movement_speed.tooltip",
+    "stats": [
+      {
+        "type": "tetra:multiply",
+        "factor": 1000,
+        "stats": [
+          {
+            "type": "tetra:attribute",
+            "attribute": "generic.movement_speed"
+          }
+        ]
+      }
+    ],
+    "formatters": [
+      {
+        "type": "tetra:basic",
+        "format": "single_decimal"
+      }
+    ]
+  }
+}
