@@ -1,0 +1,16 @@
+{
+  "structures": [
+    {
+      "structure": "iafdragonfix:fire_dragon_roost",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 1,
+    "separation": 0,
+    "salt": 372918564,
+    "frequency": 0.0,
+    "frequency_reduction_method": "default"
+  }
+}

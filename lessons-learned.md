@@ -277,3 +277,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: Ratatouille 1.3.8 `SqueezingRecipe#matches` and `#match` call `FluidIngredient#test` without checking `getRequiredAmount`, so recipes like `createdelight:squeezing/raw_sausage` can run with 1 mB of a matching fluid.
 - **Fix/Lesson**: CDC patches both recipe matching entry points to require matching fluid type and amount before the press starts, because `process` drains the configured amount only after the recipe has already passed matching.
 
+## IAF Dragon Fix overrides Ice and Fire dragon placement
+
+**Date**: 2026-06-23
+
+- **Problem**: `iafdragonfix` disables Ice and Fire dragon cave/roost placed features and re-registers them as structures with its own biome tags, so the pack's Northstar-only dragon placement can be bypassed.
+- **Fix/Lesson**: Override `data/iafdragonfix/tags/worldgen/biome/has_*_dragon_*.json` with `replace: true` and tune `data/iafdragonfix/worldgen/structure_set/*.json`, because Ice and Fire `config/iceandfire/*_dragon*_biomes.json` no longer controls the replacement structures.
+

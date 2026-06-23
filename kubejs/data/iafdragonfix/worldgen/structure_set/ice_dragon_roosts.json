@@ -1,0 +1,16 @@
+{
+  "structures": [
+    {
+      "structure": "iafdragonfix:ice_dragon_roost",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 12,
+    "separation": 4,
+    "salt": 372918565,
+    "frequency": 0.6,
+    "frequency_reduction_method": "default"
+  }
+}
