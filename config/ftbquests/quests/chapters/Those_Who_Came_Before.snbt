@@ -3737,7 +3737,7 @@
 			size: 2.0d
 			tasks: [{
 				id: "172F2C142B0D0166"
-				item: "northstar:martian_steel"
+				item: "northstar:martian_steel_ingot"
 				type: "item"
 			}]
 			title: "新纪元"

@@ -254,7 +254,7 @@
 			subtitle: "使用陨石废液，金属碎片，下界合金制作"
 			tasks: [{
 				id: "2A51FC7AAB387CD5"
-				item: "northstar:martian_steel"
+				item: "northstar:martian_steel_ingot"
 				type: "item"
 			}]
 			x: 6.5d
