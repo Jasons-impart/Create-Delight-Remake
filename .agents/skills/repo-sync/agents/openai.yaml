@@ -1,0 +1,4 @@
+interface:
+  display_name: "Repo Sync"
+  short_description: "Sync packwiz assets after Git updates"
+  default_prompt: "Use $repo-sync to pull or rebase this repository and sync packwiz assets when metadata changes."
