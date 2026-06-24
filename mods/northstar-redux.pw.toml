@@ -1,8 +1,0 @@
-name = "Northstar Redux"
-filename = "Northstar-0.6.0+1.20.1.jar"
-side = "both"
-
-[download]
-url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/Northstar-0.6.0%2B1.20.1.jar"
-hash-format = "sha256"
-hash = "358d94bd0716038c34a6bfc94cbbe9af2e2a49bf3e747e87a4d2e7eef87cad3d"
