@@ -51,7 +51,7 @@ let tech_list = [
     ["6098CD2DFB98E121", "ae2:annihilation_core"],
     ["3042E8CAEFF3F7CE", "ae2:formation_core"],
     ["4FCBBE103FE7E9C7", "northstar:titanium_ingot"],
-    ["057F6F421273C4DC", "northstar:martian_steel"]
+    ["057F6F421273C4DC", "northstar:martian_steel_ingot"]
 ]
 let res_list = [
     ["63356DE1A41FB7E0", ["minecraft:copper_ingot", "minecraft:iron_ingot", "minecraft:coal", "createdelightcore:tin_ingot", "create:zinc_ingot"]],

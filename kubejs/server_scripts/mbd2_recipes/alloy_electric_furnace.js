@@ -67,7 +67,7 @@ ServerEvents.recipes(e => {
     //火星
     e.recipes.createdelight.alloy_electric_furnace()
         .inputItems('#forge:raw_materials/martian_iron_ore', '#forge:ingots/titanium')
-        .outputItems('2x northstar:martian_steel')
+        .outputItems('2x northstar:martian_steel_ingot')
         .inputFE(6000)
         .id("createdelight:alloy_electric_furnace/martian_steel")
     

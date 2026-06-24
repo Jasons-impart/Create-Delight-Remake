@@ -791,7 +791,7 @@ function buildNorthstarSpacePools(tableId) {
             name: "space_martian_tech",
             rolls: [0, 1],
             entries: [
-                ["northstar:martian_steel", 20],
+                ["northstar:martian_steel_ingot", 20],
                 ["northstar:advanced_circuit", 8],
             ],
         })
