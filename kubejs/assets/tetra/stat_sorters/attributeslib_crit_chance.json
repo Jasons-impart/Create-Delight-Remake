@@ -1,0 +1,20 @@
+{
+  "type": "tetra:default",
+  "key": "tetra.stats.attributeslib_crit_chance",
+  "stat": {
+    "type": "tetra:multiply",
+    "factor": 100,
+    "stats": [
+      {
+        "type": "tetra:attribute",
+        "attribute": "attributeslib:crit_chance",
+        "ignoreBase": true,
+        "ignoreBonuses": true
+      }
+    ]
+  },
+  "format": {
+    "type": "tetra:basic",
+    "format": "percentage_decimal"
+  }
+}

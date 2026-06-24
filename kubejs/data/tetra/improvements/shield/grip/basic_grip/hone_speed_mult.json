@@ -1,0 +1,56 @@
+[
+  {
+    "key": "grip_hone/speed_mult",
+    "level": 1,
+    "aspects": {
+      "honed": 1
+    },
+    "attributes": {
+      "**tetra:ability_cooldown": -0.05
+    }
+  },
+  {
+    "key": "grip_hone/speed_mult",
+    "level": 2,
+    "integrity": -1,
+    "aspects": {
+      "honed": 2
+    },
+    "attributes": {
+      "**tetra:ability_cooldown": -0.1
+    }
+  },
+  {
+    "key": "grip_hone/speed_mult",
+    "level": 3,
+    "integrity": -1,
+    "aspects": {
+      "honed": 3
+    },
+    "attributes": {
+      "**tetra:ability_cooldown": -0.15
+    }
+  },
+  {
+    "key": "grip_hone/speed_mult",
+    "level": 4,
+    "integrity": -2,
+    "aspects": {
+      "honed": 4
+    },
+    "attributes": {
+      "**tetra:ability_cooldown": -0.2
+    }
+  },
+  {
+    "key": "grip_hone/speed_mult",
+    "level": 5,
+    "integrity": -2,
+    "aspects": {
+      "honed": 5
+    },
+    "attributes": {
+      "**tetra:ability_cooldown": -0.25
+    }
+  }
+]

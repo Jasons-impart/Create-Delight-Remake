@@ -1,0 +1,8 @@
+name = "[Forge1 20 1]Tetra Clip"
+filename = "[Forge1.20.1]TetraClip-1.0.5.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/%5BForge1.20.1%5DTetraClip-1.0.5.jar"
+hash-format = "sha256"
+hash = "1a6c92e4e9d5969d4fbd1b208f4638c0abc4249b909fce8917354798bbeeaa8a"
