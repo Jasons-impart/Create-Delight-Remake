@@ -25,9 +25,9 @@
 	quests: [
 		{
 			dependencies: ["1EF771A80F0460CF"]
-			description: ["需要注意的是，每个记录之间的距离需要大于30，否则无法组成星图。"]
+			description: ["把星图和天文观测记录放入天文台，可以把记录中的科研点数写入星图。星图内某个星球的科研点数达到要求后，火箭核心会同时显示该星球已注册的轨道和地表目的地。"]
 			id: "5D413834648E277E"
-			subtitle: "使用它合并三张记录。"
+			subtitle: "把观测记录写入星图"
 			tasks: [{
 				id: "43CDABE68393929D"
 				item: "northstar:astronomy_table"
@@ -38,9 +38,9 @@
 		}
 		{
 			dependencies: ["1EF771A80F0460CF"]
-			description: ["左键点击某个望远镜视野内的星球，然后点击左侧的+号就可以制作一张记录。"]
+			description: ["在能看见天空的地方使用望远镜，选中视野里的星球并按住即可打印一张天文观测记录。打印记录需要消耗纸；同一目标星球、同一观测来源、同一天的记录不能重复写入同一本星图。"]
 			id: "49759BA2FFD9ED2D"
-			subtitle: "记录一个星球的坐标"
+			subtitle: "打印一张天文观测记录"
 			tasks: [{
 				id: "361B8B8E75482FFF"
 				item: "northstar:astronomical_reading"
@@ -50,54 +50,27 @@
 			y: -1.0d
 		}
 		{
-			can_repeat: true
 			dependencies: [
 				"49759BA2FFD9ED2D"
 				"5D413834648E277E"
 			]
 			description: [
-				"月球移动速度实在太慢，故开设此选项"
+				"火箭核心只接受星图或返程票。"
 				""
-				"提交一张月球天文观测记录，换取一份月球星图。"
+				"每张天文观测记录默认提供1点科研点数。同一来源的跨天重复记录会按0.9、0.81……递减；从不同星球观测同一目标，则第一张都按完整1点计算。"
+				""
+				"当前数据中：地球需要1点，月球需要2点，火星需要5点，金星和水星各需要6点。星球达标后，该星球的轨道和地表会一起解锁；月球目前只有地表，没有轨道维度。"
 			]
 			hide_dependency_lines: true
-			icon: "northstar:star_map"
+			icon: "northstar:space_atlas"
 			id: "6C6B2505ED53D1F2"
-			rewards: [{
-				id: "7F2F4D3C69B824EF"
-				item: {
-					Count: 1
-					id: "northstar:star_map"
-					tag: {
-						Planet: {
-							name: "moon"
-						}
-						display: {
-							Name: "{\"translate\":\"item.northstar.star_map_moon\",\"color\":\"aqua\",\"italic\":false}"
-						}
-					}
-				}
-				type: "item"
-			}]
-			subtitle: "慢！我看碍谁！"
+			subtitle: "轨道和地表由同一份星图科研点解锁"
 			tasks: [{
-				consume_items: true
 				id: "5D2B2E81F5C3A7D0"
-				item: {
-					Count: 1
-					id: "northstar:astronomical_reading"
-					tag: {
-						Planet: {
-							name: "earth_moon"
-						}
-					}
-				}
-				match_nbt: true
-				title: "月球天文观测记录"
-				type: "item"
-				weak_nbt_match: true
+				title: "阅读星图解锁规则"
+				type: "checkmark"
 			}]
-			title: "月球星图大甩卖"
+			title: "星图解锁规则"
 			x: 3.5d
 			y: -1.0d
 		}
@@ -106,12 +79,12 @@
 				"49759BA2FFD9ED2D"
 				"5D413834648E277E"
 			]
-			description: ["目前为止你只能前往月球，因为没有星际导航仪。"]
+			description: ["制作星图后，用天文台把观测记录写入其中。月球需要2点科研点数；达到后把星图放入火箭核心即可选择月球地表。没有星际导航仪时，火箭只能飞往当前星球或它的卫星。"]
 			id: "1F75964D5DF64594"
-			subtitle: "记录一个星球的坐标"
+			subtitle: "用于记录各星球科研点和火箭目的地"
 			tasks: [{
 				id: "05EEF2BA49205DC1"
-				item: "northstar:star_map"
+				item: "northstar:space_atlas"
 				type: "item"
 			}]
 			x: 3.5d
@@ -148,7 +121,7 @@
 			subtitle: "火箭的必备物"
 			tasks: [{
 				id: "638F884BA21A6BD9"
-				item: "northstar:jet_engine"
+				item: "northstar:rocket_thruster"
 				type: "item"
 			}]
 			x: 5.5d
@@ -159,8 +132,9 @@
 				"119E0BF4CFAA0B5F"
 				"25377BD23842CC96"
 			]
+			description: ["月球需要星图内的月球科研点达到2点。当前版本月球只有地表维度，因此解锁月球后目的地列表里不会出现月球轨道。"]
 			id: "089E81F7DCA47A98"
-			subtitle: "前往月球"
+			subtitle: "前往月球地表"
 			tasks: [{
 				advancement: "northstar:one_small_step"
 				criterion: ""
@@ -251,7 +225,7 @@
 				"0A838A84677688BA"
 			]
 			id: "54954EA4980915B0"
-			subtitle: "拥有星系导航仪后才能跨行星飞行"
+			subtitle: "拥有星际导航仪后才能跨行星飞行"
 			tasks: [{
 				id: "13AFACBA70E3AA15"
 				item: "northstar:interplanetary_navigator"
@@ -262,8 +236,9 @@
 		}
 		{
 			dependencies: ["54954EA4980915B0"]
+			description: ["火星需要星图内的火星科研点达到5点。达标后，火星轨道和火星地表会同时出现在火箭核心的目的地列表中；这个任务检查的是登陆火星地表。"]
 			id: "77DBDCB991847E35"
-			subtitle: "前往火星"
+			subtitle: "前往火星地表"
 			tasks: [{
 				advancement: "northstar:one_giant_leap"
 				criterion: ""
@@ -286,12 +261,12 @@
 		}
 		{
 			dependencies: ["2322C47E80F706AA"]
-			description: ["接下来可以前往金星和水星。前往这两个星球需要火箭具备高额的耐热值，虽然使用低级的金属装饰方块仍然能达到目标，但还是推荐使用高级的金属装饰方块。"]
+			description: ["接下来可以前往金星和水星。它们都需要星图内对应星球的科研点达到6点，并且火箭要有足够的隔热防护。虽然使用低级金属装饰方块仍然能堆到目标，但更推荐使用高级金属装饰方块。"]
 			id: "0A78650F17E1E069"
 			subtitle: "用于制作二级宇航服和更高级的金属装饰方块"
 			tasks: [{
 				id: "74C650668673026E"
-				item: "northstar:martian_steel"
+				item: "northstar:martian_steel_ingot"
 				type: "item"
 			}]
 			x: 19.0d
@@ -478,7 +453,7 @@
 			subtitle: "20点耐热值"
 			tasks: [{
 				elapsedTime: 1L
-				icon: "northstar:martian_steel"
+				icon: "northstar:martian_steel_ingot"
 				id: "628CB1DFBE55A98A"
 				title: "火星钢"
 				type: "questsadditions:time"
@@ -555,17 +530,33 @@
 		}
 		{
 			dependencies: ["3A2218D2A3F89F9E"]
+			description: ["金星需要星图内的金星科研点达到6点。达标后，金星轨道和金星地表会同时可选；这个任务检查的是登陆金星地表。"]
 			id: "0BAC02A069A5B123"
-			subtitle: "金星需要非常高的耐热值，建议使用高级的材料制作火箭的壳体"
+			subtitle: "金星需要非常高的隔热防护，建议使用高级材料制作火箭壳体"
 			tasks: [{
 				dimension: "northstar:venus"
 				icon: "northstar:venus_gravel"
 				id: "1590D41C581B6D75"
-				title: "前往金星"
+				title: "前往金星地表"
 				type: "dimension"
 			}]
 			x: 22.5d
 			y: 0.0d
+		}
+		{
+			dependencies: ["3A2218D2A3F89F9E"]
+			description: ["水星需要星图内的水星科研点达到6点。达标后，水星轨道和水星地表会同时可选；这个任务检查的是登陆水星地表。"]
+			id: "62C9A01A68274195"
+			subtitle: "水星同样需要很高的隔热防护"
+			tasks: [{
+				dimension: "northstar:mercury"
+				icon: "northstar:mercury_stone"
+				id: "4C2E1B3581F0440E"
+				title: "前往水星地表"
+				type: "dimension"
+			}]
+			x: 22.5d
+			y: -1.0d
 		}
 		{
 			dependencies: ["0A78650F17E1E069"]
@@ -619,7 +610,7 @@
 		}
 		{
 			dependencies: ["40BDFCC7A3B77F26"]
-			description: ["在夜晚就可以通过它来看星星。左键点击某个望远镜视野内的星球，然后点击左侧的+号就可以制作一张记录。"]
+			description: ["望远镜可以观测当前星系内可见的星体。选中视野里的星球并按住，即可消耗纸打印天文观测记录；有大气的维度通常需要夜晚才能使用望远镜。"]
 			hide_until_deps_complete: true
 			icon: "northstar:telescope"
 			id: "1EF771A80F0460CF"

@@ -1,13 +1,13 @@
 name = "Northstar Curios Compat"
-filename = "northstar-curios-compat-1.2.4.jar"
+filename = "northstar-curios-compat-1.3.0.jar"
 side = "both"
 
 [download]
 hash-format = "sha1"
-hash = "91dacbb5a1d20ac9141ff15eda86d489b923a3d0"
+hash = "711957d4a3353768143ceaa3c2f12567dd9030d3"
 mode = "metadata:curseforge"
 
 [update]
 [update.curseforge]
-file-id = 8046543
+file-id = 8305108
 project-id = 1472218
