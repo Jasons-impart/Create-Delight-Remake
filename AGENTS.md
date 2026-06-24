@@ -81,7 +81,7 @@ CD-master-dev/
 - To add/update/remove mods/resourcepacks/shaderpacks: use `scripts/update-packwiz-meta.ps1 -Category ...` (NOT manual asset placement)
 - On `main`, remove a mod by deleting `mods/*.pw.toml`, not synced runtime JARs, because JARs are local development payloads.
 - To sync all mod JARs locally for development: use `scripts/sync-packwiz-assets.ps1`
-- After pulling mod metadata or `packwiz-files` changes, run `scripts/sync-packwiz-assets.ps1` before launching because Git hooks are local and runtime JARs are not tracked.
+- After any pull/rebase/merge, compare pre-update target commit..new HEAD; if `mods|resourcepacks|shaderpacks/**/*.pw.toml` or `packwiz-files/**` changed, run `scripts/sync-packwiz-assets.ps1` because runtime JARs are local.
 - `pack.toml`/`index.toml` are generated from `modpack.toml`; don't commit them
 - `CDC-mod-src/` is a git submodule and must stay out of Packwiz artifacts because packages ship pack files, not Java source trees
 - For CDC artifact updates, use matching CF metadata when published; otherwise put the dev JAR in `packwiz-files/mods/`, update `mods/create-delight-core.pw.toml`, and align the `CDC-mod-src/` submodule pointer
