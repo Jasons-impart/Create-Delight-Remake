@@ -1331,7 +1331,6 @@ ServerEvents.tags("minecraft:item", e => {
         "youkaishomecoming:mantou",
         "youkaishomecoming:oyaki",
         "festival_delicacies:mantou",
-        "festival_delicacies:baozi",
         "vintagedelight:oatmeal",
         "vintagedelight:overnight_oats",
         "farmersdelight:stuffed_potato",
@@ -1425,9 +1424,6 @@ ServerEvents.tags("minecraft:item", e => {
         "dumplings_delight:calamari_boiled_dumpling",
         "dumplings_delight:pork_celery_boiled_dumpling",
         "dumplings_delight:tomato_egg_boiled_dumpling",
-        "festival_delicacies:boiled_dumpling",
-        "festival_delicacies:steamed_dumpling",
-        "festival_delicacies:wonton"
     )
     e.add("createdelight:order/monster",
         "dungeonsdelight:ghast_roll",
