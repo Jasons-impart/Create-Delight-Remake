@@ -48,7 +48,9 @@ ServerEvents.recipes(e => {
         "create_bic_bit:filling/mayonnaise_ketchup_frikandel_sandwich",
         "create_bic_bit:filling/wrapped_ketchup_fries",
         "create_bic_bit:filling/wrapped_mayonnaise_ketchup_fries",
-        "create_bic_bit:deep_frying/enderball"
+        "create_bic_bit:deep_frying/enderball",
+        "create_deepfried:compat/farmersdelight/mixing/raw_tempura",
+        "create_deepfried:mixing/raw_tempura"
     ])
     remove_recipes_output(e, [
         'create_bic_bit:cheese_souffle', 

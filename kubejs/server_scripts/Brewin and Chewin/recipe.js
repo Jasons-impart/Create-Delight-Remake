@@ -47,6 +47,7 @@ ServerEvents.recipes(e => {
         "brewinandchewin:fermenting/scarlet_cheese_from_milk",
         "brewinandchewin:fermenting/withering_dross_from_salty_folly",
         "brewinandchewin:emptying/create/potion",
+        "brewinandchewin:cooking/scarlet_pierogi",
         "/brewinandchewin:emptying\/create\/farmersrespite\/.*/"
     ])
     create.filling("brewinandchewin:unripe_flaxen_cheese_wheel", [
@@ -213,6 +214,15 @@ ServerEvents.recipes(e => {
         'brewinandchewin:creamy_onion_soup',
         1, 200, "minecraft:bowl"
     ).id("createdelight:cooking/creamy_onion_soup")
+    wonton(e,
+        [
+            "create:dough",
+            "brewinandchewin:scarlet_cheese_wedge",
+            "minecraft:nether_wart",
+            "#forge:shrimps"
+        ], 
+        'brewinandchewin:scarlet_pierogi', 1.0, 200
+    )
     ratatouille.baking(
         "brewinandchewin:jerky",
         "#forge:meat/cooked"
