@@ -1,8 +1,13 @@
 name = "Northstar Curios Compat"
-filename = "northstar-curios-compat-1.2.5.jar"
+filename = "northstar-curios-compat-1.3.0.jar"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/northstar-curios-compat-1.2.5.jar"
-hash-format = "sha256"
-hash = "47a857f724e8cb26867c634e787a61f15b8abfea3e5d76ae224a877e67967120"
+hash-format = "sha1"
+hash = "711957d4a3353768143ceaa3c2f12567dd9030d3"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8305108
+project-id = 1472218
