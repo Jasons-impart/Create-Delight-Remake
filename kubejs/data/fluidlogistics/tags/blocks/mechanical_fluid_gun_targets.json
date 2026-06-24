@@ -4,6 +4,10 @@
     {
       "id": "cmr:snowman_cooler",
       "required": false
+    },
+    {
+      "id": "vintageimprovements:vacuum_chamber",
+      "required": false
     }
   ]
 }
