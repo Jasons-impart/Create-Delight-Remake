@@ -147,6 +147,18 @@ ServerEvents.tags("item", e => {
     e.add("forge:seeds/corn", [
         "culturaldelights:corn_kernels"
     ])
+    e.add("forge:crops", [
+        "kinetic_pixel:graycotton"
+    ])
+    e.add("forge:crops/graycotton", [
+        "kinetic_pixel:graycotton"
+    ])
+    e.add("forge:seeds", [
+        "createdelight:graycotton_seed"
+    ])
+    e.add("forge:seeds/graycotton", [
+        "createdelight:graycotton_seed"
+    ])
     // 香肠
     e.add("forge:sausage/cooked", [
         "ratatouille:sausage",

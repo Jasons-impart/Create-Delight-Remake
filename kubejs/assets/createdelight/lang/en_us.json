@@ -1,5 +1,7 @@
 {
   "item.createdelight.unbaked_red_velvet_cupcake": "Unbaked Red Velvet Muffin",
+  "block.createdelight.graycotton": "Gray Cotton",
+  "item.createdelight.graycotton_seed": "Gray Cotton Seeds",
   "block.createdelight.greenhouse_builder": "Greenhouse Builder",
   "effect.createdelight.dragon_breath_resistance": "Dragon Breath Resistance",
   "effect.createdelight.dragon_breath_resistance.description": "Reduces ice, fire, and lightning dragon breath damage by 20% per level, up to 60%.",

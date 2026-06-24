@@ -1,6 +1,7 @@
 ServerEvents.tags("minecraft:block", e => {
     e.add("minecraft:dirt", ['createdelightcore:luna_soil', 'createdelightcore:phantom_compost'])
     e.add("minecraft:mushroom_grow_block", ['createdelightcore:luna_soil', 'createdelightcore:phantom_compost'])
+    e.add("minecraft:crops", ['createdelight:graycotton'])
     e.add("createdelightcore:phantom_compost_activators",[
         'createdelightcore:luna_soil',
         'createdelightcore:luna_soil_farmland',

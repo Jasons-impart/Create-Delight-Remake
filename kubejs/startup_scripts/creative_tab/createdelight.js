@@ -130,6 +130,7 @@ StartupEvents.modifyCreativeTab("createdelightcore:misc", e => {
       'createdelight:needle',
       'createdelight:dread_upgrade_smithing_template',
       "createdelight:guncotton",
+      "createdelight:graycotton_seed",
       // 构件
       'createdelight:magnetic_mechanism',
       //外壳
