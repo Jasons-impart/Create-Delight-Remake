@@ -85,7 +85,7 @@ CD-master-dev/
 - After any pull/rebase/merge, compare pre-update target commit..new HEAD; if `mods|resourcepacks|shaderpacks/**/*.pw.toml` or `packwiz-files/**` changed, run `scripts/sync-packwiz-assets.ps1` because runtime JARs are local.
 - `pack.toml`/`index.toml` are generated from `modpack.toml`; don't commit them
 - `CDC-mod-src/` is a git submodule and must stay out of Packwiz artifacts because packages ship pack files, not Java source trees
-- For CDC artifact updates, use matching CF metadata when published; otherwise put the dev JAR in `packwiz-files/mods/` and update `mods/create-delight-core.pw.toml`.
+- For CDC artifact updates, use matching CF metadata when published; otherwise put the dev JAR in `packwiz-files/mods/` and run `scripts/update-packwiz-meta.ps1 -Category mods` so `mods/create-delight-core.pw.toml` hash changes in the same commit.
 - Before summarizing/staging/committing CDC artifact changes (`mods/create-delight-core.pw.toml` or `packwiz-files/mods/Create-Delight-Core-1.20.1-dev.jar`), fetch `CDC-mod-src` `origin/1.20.1`; if it fast-forwards, include the submodule pointer in the same commit so source matches the packaged CDC mod.
 - Unpublished CDC builds must keep the artifact filename `Create-Delight-Core-1.20.1-dev.jar` because versioned dev filenames can leave multiple CDC JARs in synced runtime dirs.
 
