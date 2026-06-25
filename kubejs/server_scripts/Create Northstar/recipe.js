@@ -68,7 +68,8 @@ ServerEvents.recipes(e => {
     }, "create:iron_sheet", "createdelight:steel_sheet")
     e.replaceInput({
         output: [
-            "northstar:rocket_station"
+            "northstar:rocket_station",
+            "northstar:space_atlas"
         ]
     }, "northstar:titanium_ingot", "createmetallurgy:steel_ingot")
     e.replaceInput({ output: "northstar:atmospheric_concentrator" }, "northstar:circuit", "create_sa:heat_engine")
