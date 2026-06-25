@@ -17,12 +17,12 @@ ServerEvents.recipes((e) => {
   ]
   big_anms.forEach(big_anm => {
     cutting(e, `butchercraft:${big_anm}_ribs`, [
-      [`butchercraft:${big_anm}_roast`],
-      ['minecraft:bone', 4]
+      `butchercraft:${big_anm}_roast`,
+      '4x minecraft:bone'
     ])
     cutting(e, `butchercraft:cooked_${big_anm}_ribs`, [
-      [`butchercraft:cooked_${big_anm}_roast`],
-      ['minecraft:bone', 4]
+      `butchercraft:cooked_${big_anm}_roast`,
+      '4x minecraft:bone'
     ])
     farmersdelight.cutting(`butchercraft:cubed_${big_anm}`, 'butchercraft:butcher_knife', [`2x butchercraft:${big_anm}_stewmeat`])
     farmersdelight.cutting(`butchercraft:cooked_cubed_${big_anm}`, 'butchercraft:butcher_knife', [`2x butchercraft:cooked_${big_anm}_stewmeat`])
@@ -168,50 +168,50 @@ ServerEvents.recipes((e) => {
     "butchercraft:cooked_goat_chop"
   ).id("createdelight:milling/cooked_goat_chop")
   // 鸡肉
-  cutting(e, 'butchercraft:chicken_breast', [['butchercraft:cubed_chicken', 2]])
+  cutting(e, 'butchercraft:chicken_breast', [Item.of('butchercraft:cubed_chicken', 2)])
   cutting(e, 'butchercraft:chicken_leg', [
-    ['butchercraft:cubed_chicken'],
-    ['minecraft:bone']
+    Item.of('butchercraft:cubed_chicken'),
+    Item.of('minecraft:bone')
   ])
   cutting(e, 'butchercraft:chicken_thigh', [
-    ['butchercraft:cubed_chicken'],
-    ['minecraft:bone']
+    Item.of('butchercraft:cubed_chicken'),
+    Item.of('minecraft:bone')
   ])
   cutting(e, 'butchercraft:chicken_wing', [
-    ['butchercraft:cubed_chicken'],
-    ['minecraft:bone']
+    Item.of('butchercraft:cubed_chicken'),
+    Item.of('minecraft:bone')
   ])
-  cutting(e, 'butchercraft:cooked_chicken_breast', [['butchercraft:cooked_cubed_chicken', 2]])
+  cutting(e, 'butchercraft:cooked_chicken_breast', [Item.of('butchercraft:cooked_cubed_chicken', 2)])
   cutting(e, 'butchercraft:cooked_chicken_leg', [
-    ['butchercraft:cooked_cubed_chicken'],
-    ['minecraft:bone']
+    Item.of('butchercraft:cooked_cubed_chicken'),
+    Item.of('minecraft:bone')
   ])
   cutting(e, 'butchercraft:cooked_chicken_thigh', [
-    ['butchercraft:cooked_cubed_chicken'],
-    ['minecraft:bone']
+    Item.of('butchercraft:cooked_cubed_chicken'),
+    Item.of('minecraft:bone')
   ])
   cutting(e, 'butchercraft:cooked_chicken_wing', [
-    ['butchercraft:cooked_cubed_chicken'],
-    ['minecraft:bone']
+    Item.of('butchercraft:cooked_cubed_chicken'),
+    Item.of('minecraft:bone')
   ])
   // 兔肉
-  cutting(e, 'butchercraft:rabbit_saddle', [['butchercraft:cubed_rabbit', 2]])
+  cutting(e, 'butchercraft:rabbit_saddle', [Item.of('butchercraft:cubed_rabbit', 2)])
   cutting(e, 'butchercraft:rabbit_leg', [
-    ['butchercraft:cubed_rabbit'],
-    ['minecraft:bone']
+    Item.of('butchercraft:cubed_rabbit'),
+    Item.of('minecraft:bone')
   ])
   cutting(e, 'butchercraft:rabbit_thigh', [
-    ['butchercraft:cubed_rabbit'],
-    ['minecraft:bone']
+    Item.of('butchercraft:cubed_rabbit'),
+    Item.of('minecraft:bone')
   ])
-  cutting(e, 'butchercraft:cooked_rabbit_saddle', [['butchercraft:cooked_cubed_rabbit', 2]])
+  cutting(e, 'butchercraft:cooked_rabbit_saddle', [Item.of('butchercraft:cooked_cubed_rabbit', 2)])
   cutting(e, 'butchercraft:cooked_rabbit_leg', [
-    ['butchercraft:cooked_cubed_rabbit'],
-    ['minecraft:bone']
+    Item.of('butchercraft:cooked_cubed_rabbit'),
+    Item.of('minecraft:bone')
   ])
   cutting(e, 'butchercraft:cooked_rabbit_thigh', [
-    ['butchercraft:cooked_cubed_rabbit'],
-    ['minecraft:bone']
+    Item.of('butchercraft:cooked_cubed_rabbit'),
+    Item.of('minecraft:bone')
   ])
 
   e.recipes.kubejs
@@ -228,10 +228,10 @@ ServerEvents.recipes((e) => {
   .id("createdelight:cutting/sheep_hide_create")
   e.recipes.create.cutting("6x minecraft:leather", "butchercraft:goat_hide")
   .id("createdelight:cutting/goat_hide_create")
-  cutting(e, "butchercraft:cow_hide", [["minecraft:leather", 8]])
-  cutting(e, "butchercraft:pig_hide", [["minecraft:leather", 6]])
-  cutting(e, "butchercraft:sheep_hide", [["minecraft:leather", 6]])
-  cutting(e, "butchercraft:goat_hide", [["minecraft:leather", 6]])
+  cutting(e, "butchercraft:cow_hide", [Item.of("minecraft:leather", 8)])
+  cutting(e, "butchercraft:pig_hide", [Item.of("minecraft:leather", 6)])
+  cutting(e, "butchercraft:sheep_hide", [Item.of("minecraft:leather", 6)])
+  cutting(e, "butchercraft:goat_hide", [Item.of("minecraft:leather", 6)])
   e.recipes.create.crushing(["4x minecraft:bone_meal",
     Item.of("minecraft:bone_meal", 4).withChance(0.25)], 
     [['butchercraft:cow_skull_head_item', 'butchercraft:sheep_skull_head_item', 'butchercraft:pig_skull_head_item', 'butchercraft:goat_skull_head_item']])

@@ -12,10 +12,11 @@ ServerEvents.recipes(e => {
       'bakeries:sliced_toast',
     ]
   ).id("createdelight:cooking/luncheon_meat_sandwich_manual_only")
+  cutting(e, "luncheonmeatsdelight:small_toast", "2x bakeries:sliced_toast")
   create.cutting(
     '2x bakeries:sliced_toast',
     'luncheonmeatsdelight:small_toast'
-  )
+  ).id("createdelight:cutting/sliced_toast")
 
 })
 

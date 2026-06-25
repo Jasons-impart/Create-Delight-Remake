@@ -152,9 +152,12 @@ ServerEvents.recipes(e => {
             Fluid.of("bakeries:salt_water", 10)
         ]
     ).id('createdelight:compacting/tofu')
-    cutting_2(e, "youkaishomecoming:mandrake_root", [["youkaishomecoming:stripped_mandrake_root", 1]])
-    cutting_2(e, "youkaishomecoming:raw_lamprey", [["youkaishomecoming:raw_lamprey_fillet", 1]])
-    cutting_2(e, "youkaishomecoming:red_velvet_cake", [["youkaishomecoming:red_velvet_cake_slice", 7]])
+    cutting(e, "youkaishomecoming:mandrake_root", "youkaishomecoming:stripped_mandrake_root")
+    cutting(e, "youkaishomecoming:raw_lamprey", [
+        "2x youkaishomecoming:raw_lamprey_fillet",
+        "crabbersdelight:fish_bones"
+    ])
+    cutting(e, "youkaishomecoming:red_velvet_cake", "7x youkaishomecoming:red_velvet_cake_slice")
 
     e.custom({
         "type": "youkaishomecoming:simple_fermentation",
@@ -467,18 +470,6 @@ ServerEvents.recipes(e => {
             "minecraft:sugar"
         ]
     ).heated().id("createdelight:compacting/tamagoyaki")
-    farmersdelight.cutting(
-        "youkaishomecoming:salmon_futomaki",
-        "#forge:tools/knives",
-        "3x youkaishomecoming:salmon_futomaki_slice"
-    ).id("createdelight:salmon_futomaki_cutting")
-    farmersdelight.cutting('youkaishomecoming:california_roll', "#forge:tools/knives", "3x youkaishomecoming:california_roll_slice").id("createdelight:california_roll_cutting")
-    farmersdelight.cutting('youkaishomecoming:volcano_roll', "#forge:tools/knives", "3x youkaishomecoming:volcano_roll_slice").id("createdelight:volcano_roll_cutting")
-    farmersdelight.cutting('youkaishomecoming:roe_california_roll', "#forge:tools/knives", "3x youkaishomecoming:roe_california_roll_slice").id("createdelight:roe_california_roll_cutting")
-    farmersdelight.cutting('youkaishomecoming:salmon_lover_roll', "#forge:tools/knives", "3x youkaishomecoming:salmon_lover_roll_slice").id("createdelight:salmon_lover_roll_cutting")
-    farmersdelight.cutting("youkaishomecoming:rainbow_roll", "#forge:tools/knives", "3x youkaishomecoming:rainbow_roll_slice").id("createdelight:rainbow_roll_cutting")
-    farmersdelight.cutting("youkaishomecoming:egg_futomaki", "#forge:tools/knives", "3x youkaishomecoming:egg_futomaki_slice").id("createdelight:egg_futomaki_cutting")
-    farmersdelight.cutting('youkaishomecoming:rainbow_futomaki', "#forge:tools/knives", "3x youkaishomecoming:rainbow_futomaki_slice").id("createdelight:rainbow_futomaki_cutting")
     kubejs.shapeless(
         'youkaishomecoming:shaved_ice_over_rice',
         [

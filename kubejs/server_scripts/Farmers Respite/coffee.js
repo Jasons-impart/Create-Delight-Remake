@@ -47,9 +47,9 @@ ServerEvents.recipes(e => {
         Item.of("createcafe:coffee_beans").withChance(0.25)
     ], 'createcafe:coffee_fruit').id("createdelight:milling/coffee_beans")
     cutting(e, "createcafe:coffee_fruit", [
-        ["createcafe:coffee_beans"],
-        ["createcafe:coffee_beans", 1, 0.5],
-        ["createcafe:coffee_beans", 1, 0.25]
+        "createcafe:coffee_beans",
+        Item.of("createcafe:coffee_beans").withChance(0.5),
+        Item.of("createcafe:coffee_beans").withChance(0.25)
     ])
 })
 

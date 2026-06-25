@@ -74,7 +74,7 @@ ServerEvents.recipes(e => {
     make_cake(e, "collectorsreap:pink_dragon_fruit", "collectorsreap:pink_dragon_fruit_cake")
     make_cake(e, "collectorsreap:lucuma", "collectorsreap:lucuma_cake")
     //虎虾剥壳
-    cutting(e, 'collectorsreap:cooked_tiger_prawn', [['oceanic_delight:shrimp_slices']])
+    cutting(e, 'collectorsreap:cooked_tiger_prawn', 'oceanic_delight:shrimp_slices')
     //大饭团
     kubejs.shapeless(
         'collectorsreap:big_rice_ball',
@@ -86,20 +86,10 @@ ServerEvents.recipes(e => {
         ]
     ).id("createdelight:food/big_rice_ball")
     //蛤蜊肉
-    farmersdelight.cutting(
-        'collectorsreap:clam',
-        "#forge:tools/knives",
-        [
-            'collectorsreap:clam_meat',
-            Item.of("collectorsreap:lunar_pearl").withChance(0.1)
-        ]
-    ).id("createdelight:cutting/clam_1")
-    e.custom({
-        type: "farmersdelight:cutting",
-        ingredients: [{ item: "collectorsreap:clam" }],
-        result: [{ item: "collectorsreap:clam_meat" }, { item: "collectorsreap:lunar_pearl", chance: 0.1 }],
-        tool: { type: "farmersdelight:tool_action", action: "blade_cut" }
-    }).id("createdelight:cutting/clam_2")
+    cutting(e, "collectorsreap:clam", [
+        'collectorsreap:clam_meat',
+        Item.of("collectorsreap:lunar_pearl").withChance(0.1)
+    ])
     //蜜饯
     create.filling(
         'collectorsreap:candied_lime',

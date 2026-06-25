@@ -86,9 +86,14 @@ function blast_and_smelting(event, input, output, xp, time) {
 /**
  * @param { Internal.RecipesEventJS } event 
  * @param { InputItem_ } input 
- * @param { [Internal.ItemStack_, number, number][] } outputs 格式：[[id, count, chance], ...]
+ * @param { OutputItem_|OutputItem_[] } outputs 单个输出或输出数组，支持字符串、Item.of(...)、withChance(...)
  */
 function cutting(event, input, outputs) {
+    event.remove({type: "farmersdelight:cutting", input: input})
+    if (!(outputs instanceof Array)) {
+        outputs = [outputs]
+    }
+
     let recipe = {
         type: "farmersdelight:cutting",
         ingredients: [{ item: input }],
@@ -97,60 +102,43 @@ function cutting(event, input, outputs) {
     }
     let result = []
     outputs.forEach(output => {
-        let id = output[0]
-        let count = output.length > 1 ? output[1] : 1
-        let chance = output.length > 2 ? output[2] : 1
+        let stack = null
+        let chance = 1
+
+        if (typeof output.getStack == "function") {
+            stack = output.getStack()
+        }
+        else if (output.stack) {
+            stack = output.stack
+        }
+        else if (typeof output.getItem == "function") {
+            stack = output
+        }
+        else {
+            stack = Item.of(output)
+        }
+
+        if (typeof output.getChance == "function") {
+            chance = output.getChance()
+        }
+        else if (typeof output.chance == "number") {
+            chance = output.chance
+        }
+
+        let id = String(stack.getItem().getId())
+        let count = stack.getCount()
         recipe.result.push({
             item: id,
             count: count,
             chance: chance
         })
-        result.push(Item.of(`${count}x ${id}`).withChance(chance))
+        result.push(output)
     });
-    event.recipes.farmersdelight.cutting(input, "#forge:tools/knives", result).id(`createdelight:cutting/${input.split(":")[1]}`)
-    event.custom(recipe).id(`tetracelium:cutting/${input.split(":")[1]}`)
-}
-/**
- * @param { Internal.RecipesEventJS } event 
- * @param { InputItem_ } input 
- * @param { any[] } outputs 
- */
-function cutting_1(event, input, outputs) {
-    let result = []
-    outputs.forEach(output => {
-        let id = output[0]
-        let count = output.length > 1 ? output[1] : 1
-        let chance = output.length > 2 ? output[2] : 1
-        result.push(Item.of(`${count}x ${id}`).withChance(chance))
-    });
-    event.recipes.farmersdelight.cutting(input, "#forge:tools/knives", result).id(`${outputs[0][0].split(":")[0]}:food/${outputs[0][0].split(":")[1]}`)
-}
-/**
- * @param { Internal.RecipesEventJS } event 
- * @param { InputItem_ } input 
- * @param { any[] } outputs 
- */
-function cutting_2(event, input, outputs) {
-    let recipe = {
-        type: "farmersdelight:cutting",
-        ingredients: [{ item: input }],
-        result: [],
-        tool: { type: "farmersdelight:tool_action", action: "blade_cut" }
-    }
-    let result = []
-    outputs.forEach(output => {
-        let id = output[0]
-        let count = output.length > 1 ? output[1] : 1
-        let chance = output.length > 2 ? output[2] : 1
-        recipe.result.push({
-            item: id,
-            count: count,
-            chance: chance
-        })
-        result.push(Item.of(`${count}x ${id}`).withChance(chance))
-    });
-    event.recipes.farmersdelight.cutting(input, "#forge:tools/knives", result).id(`${input.split(":")[0]}:${input.split(":")[1]}_cutting`)
-    event.custom(recipe).id(`tetracelium:cutting/${input.split(":")[1]}_from_${input.split(":")[0]}`)
+    let inputId = String(input)
+    let inputNamespace = inputId.split(":")[0]
+    let inputPath = inputId.split(":")[1]
+    event.recipes.farmersdelight.cutting(input, "#forge:tools/knives", result).id(`createdelight:knives_cutting/${inputNamespace}/${inputPath}`)
+    event.custom(recipe).id(`createdelight:knives_cutting/${inputNamespace}/${inputPath}_2`)
 }
 /**
  * 

@@ -6,12 +6,18 @@ ServerEvents.recipes(e => {
         "netherexp:roasted_bone",
         "netherexp:stonecutting/from_pale_soul_slate/indented"
     ])
-    const {create, kubejs, vintageimprovements, farmersdelight} = e.recipes
+    const {create, kubejs, farmersdelight} = e.recipes
     e.replaceInput({not: [{id: "tetracelium:cutting/ham"}, {id: "farmersdelight:cutting/ham"}, {id:"farmersdelight:smoked_ham"}]}, "farmersdelight:ham", "#forge:ham")
     e.replaceInput({not: [{id: "tetracelium:cutting/smoked_ham"}, {id: "farmersdelight:cutting/smoked_ham"}]}, "farmersdelight:smoked_ham", "#forge:cooked_ham")
 
-    cutting(e, "netherexp:hogham", [['mynethersdelight:hoglin_loin', 2], ['minecraft:bone', 1]])
-    cutting(e, "netherexp:cooked_hogham", [['mynethersdelight:cooked_loin', 2], ['minecraft:bone', 1]])
+    cutting(e, "netherexp:hogham", [
+        '2x mynethersdelight:hoglin_loin',
+        'minecraft:bone'
+    ])
+    cutting(e, "netherexp:cooked_hogham", [
+        '2x mynethersdelight:cooked_loin',
+        'minecraft:bone'
+    ])
     create.crushing(["3x netherexp:banshee_powder", Item.of("netherexp:banshee_powder", 3).withChance(0.5)], "netherexp:banshee_rod")
     .id("createdelight:crushing/banshee_rod")
     kubejs.shapeless("netherexp:wither_bone_block", "9x iceandfire:wither_shard")

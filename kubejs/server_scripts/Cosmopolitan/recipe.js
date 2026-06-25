@@ -261,27 +261,21 @@ ServerEvents.recipes(e => {
             Fluid.of("createmetallurgy:molten_gold", 450)
         ]
     ).id("createdelight:filling/golden_arbutus_berries")
-    cutting(e, 'minecraft:fern',
-        [
-            ["minecraft:wheat_seeds"],
-            ['alexscaves:fiddlehead', 1, 0.75],
-            ['alexscaves:fiddlehead', 1, 0.25]
-        ]
-    )
-    cutting(e, 'minecraft:large_fern',
-        [
-            ["minecraft:wheat_seeds"],
-            ['alexscaves:fiddlehead'],
-            ['alexscaves:fiddlehead', 1, 0.25]
-        ]
-    )
-    cutting(e, 'alexscaves:curly_fern',
-        [
-            ["minecraft:wheat_seeds"],
-            ['alexscaves:fiddlehead'],
-            ['alexscaves:fiddlehead', 1, 0.25]
-        ]
-    )
+    cutting(e, 'minecraft:fern',[
+        "minecraft:wheat_seeds",
+        Item.of('alexscaves:fiddlehead').withChance(0.75),
+        Item.of('alexscaves:fiddlehead').withChance(0.25)
+    ])
+    cutting(e, 'minecraft:large_fern', [
+        "minecraft:wheat_seeds",
+        'alexscaves:fiddlehead',
+        Item.of('alexscaves:fiddlehead').withChance(0.25)
+    ])
+    cutting(e, 'alexscaves:curly_fern', [
+        "minecraft:wheat_seeds",
+        'alexscaves:fiddlehead',
+        Item.of('alexscaves:fiddlehead').withChance(0.25)
+    ])
     {
         let iner = "bakeries:cut_cake_base"
         create.sequenced_assembly('cosmopolitan:jelly_roll', iner, [

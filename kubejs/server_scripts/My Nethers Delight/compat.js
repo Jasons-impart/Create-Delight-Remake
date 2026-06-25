@@ -3,14 +3,14 @@ ServerEvents.recipes(e => {
         "mynethersdelight:cutting/ghasmati",
         "mynethersdelight:cutting/minced_strider"
     ])
-    cutting_2(e, "mynethersdelight:ghasta", [
-        ["mynethersdelight:ghasmati"],
-        ["mynethersdelight:ghasmati", 1, 0.05]
+    cutting(e, "mynethersdelight:ghasta", [
+        "mynethersdelight:ghasmati",
+        Item.of("mynethersdelight:ghasmati").withChance(0.05)
     ])
-    cutting_2(e, "mynethersdelight:strider_slice", [
-        ["mynethersdelight:minced_strider", 2],
-        ["minecraft:string"],
-        ["minecraft:string", 2, 0.5]
+    cutting(e, "mynethersdelight:strider_slice", [
+        "2x mynethersdelight:minced_strider",
+        "minecraft:string",
+        Item.of("minecraft:string", 2).withChance(0.5)
     ])
 })
 

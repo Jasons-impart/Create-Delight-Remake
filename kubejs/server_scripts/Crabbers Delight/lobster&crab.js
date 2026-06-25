@@ -59,12 +59,16 @@ ServerEvents.recipes(e => {
     e.replaceInput({ id: "farmersdelight:cooking/stuffed_nautilus_shell" }, "#forge:cooked_fishes", "#alexsmobs:shoebill_foodstuffs")
     e.replaceInput({ id: "farmersdelight:cooking/crab_cakes" }, "crabbersdelight:crab", "#crabbersdelight:crab")
     cutting(e, "crabbersdelight:clawster", [
-        ["alexsmobs:lobster_tail"],
-        ["alexsmobs:lobster_tail", 1, 0.3]
+        "alexsmobs:lobster_tail",
+        Item.of("alexsmobs:lobster_tail").withChance(0.3)
     ])
     cutting(e, 'crabbersdelight:cooked_clawster', [
-        ['alexsmobs:cooked_lobster_tail'],
-        ['alexsmobs:cooked_lobster_tail', 1, 0.3]
+        'alexsmobs:cooked_lobster_tail',
+        Item.of('alexsmobs:cooked_lobster_tail').withChance(0.3)
+    ])
+    cutting(e, "crabbersdelight:clam", [
+        "crabbersdelight:raw_clam_meat",
+        Item.of("crabbersdelight:pearl").withChance(0.5)
     ])
     e.recipes.farmersdelight.cooking(
         [
