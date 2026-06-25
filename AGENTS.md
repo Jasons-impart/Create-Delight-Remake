@@ -63,6 +63,7 @@ CD-master-dev/
 - Commit format: `[类型] 描述 (#PR号)` - types: `fix`, `feat`, `mod`, `dev`, `conf`
 - PR title/body use Chinese by default because reviewers and release notes are Chinese-first.
 - For multiline PR bodies from PowerShell, use a here-string or `--body-file`; `\n` is literal and renders broken Markdown on GitHub.
+- ❌ Never commit directly on `main`; create a feature branch and merge through PR because remote `main` is protected.
 - ❌ Never commit on merged feature branches
 - ❌ Never force push to main
 
@@ -84,7 +85,8 @@ CD-master-dev/
 - After any pull/rebase/merge, compare pre-update target commit..new HEAD; if `mods|resourcepacks|shaderpacks/**/*.pw.toml` or `packwiz-files/**` changed, run `scripts/sync-packwiz-assets.ps1` because runtime JARs are local.
 - `pack.toml`/`index.toml` are generated from `modpack.toml`; don't commit them
 - `CDC-mod-src/` is a git submodule and must stay out of Packwiz artifacts because packages ship pack files, not Java source trees
-- For CDC artifact updates, use matching CF metadata when published; otherwise put the dev JAR in `packwiz-files/mods/`, update `mods/create-delight-core.pw.toml`, and align the `CDC-mod-src/` submodule pointer
+- For CDC artifact updates, use matching CF metadata when published; otherwise put the dev JAR in `packwiz-files/mods/` and update `mods/create-delight-core.pw.toml`.
+- Before summarizing/staging/committing CDC artifact changes (`mods/create-delight-core.pw.toml` or `packwiz-files/mods/Create-Delight-Core-1.20.1-dev.jar`), fetch `CDC-mod-src` `origin/1.20.1`; if it fast-forwards, include the submodule pointer in the same commit so source matches the packaged CDC mod.
 - Unpublished CDC builds must keep the artifact filename `Create-Delight-Core-1.20.1-dev.jar` because versioned dev filenames can leave multiple CDC JARs in synced runtime dirs.
 
 ## ANTI-PATTERNS
