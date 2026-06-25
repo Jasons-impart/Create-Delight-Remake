@@ -50,6 +50,7 @@ ServerEvents.recipes(e => {
         ["#forge:chorus_fruits", "farmersrespite:black_tea", "create_central_kitchen:chorus_fruit_milk_tea"],
         ["#forge:fruits/strawberry", "farmersrespite:black_tea", "createcafe:strawberry_tea"],
         ["#forge:fruits/pomegranate", "farmersrespite:black_tea", "createcafe:pomegranate_tea"],
+        ["#forge:fruits/coconut", "farmersrespite:black_tea", "createcafe:coconut_tea"],
     ]
     milk_teas.forEach(milk_tea => {
         e.recipes.create.mixing(
