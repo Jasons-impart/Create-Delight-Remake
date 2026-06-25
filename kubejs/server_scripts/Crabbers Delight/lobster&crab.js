@@ -45,6 +45,9 @@ ServerEvents.tags("item", e => {
     e.add("forge:crab_meat", "crabbersdelight:crab_legs")
 
     e.add("forge:crab_leg", "crabbersdelight:crab_legs")
+
+    e.remove("forge:milk", 'crabbersdelight:coconut_milk')
+    e.remove("forge:milk/milk_bottle", 'crabbersdelight:coconut_milk')
 })
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
