@@ -9,7 +9,7 @@ ServerEvents.recipes(e => {
     create.filling("dungeonsdelight:soft_serve_sniffer_egg",
          ["trailandtales_delight:cooked_sniffer_egg_block", Fluid.of("cosmopolitan:adzuki_ice_cream", 1000)])
          .id("createdelight:filling/soft_serve_sniffer_egg")
-    cutting_2(e, "dungeonsdelight:ghast_calamari", [["mynethersdelight:ghasta"]])
+    cutting(e, "dungeonsdelight:ghast_calamari", "mynethersdelight:ghasta")
     e.recipes.ratatouille.threshing(
         [
             "dungeonsdelight:wormroot_tendrils",

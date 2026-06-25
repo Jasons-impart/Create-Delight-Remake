@@ -26,34 +26,24 @@ ServerEvents.recipes(e => {
             "#forge:vegetables/onion"
         ]
     ).id("culturaldelights:cooking/empanada")
-    cutting_2(e, 'vintagedelight:cucumber',[
-        ['culturaldelights:cut_cucumber', 2]
+    cutting(e, 'vintagedelight:cucumber', '2x culturaldelights:cut_cucumber')
+    cutting(e, 'culturaldelights:glow_squid', [
+        '2x oceanic_delight:glow_squid_tentacles',
+        Item.of('3x minecraft:glow_ink_sac').withChance(0.5)
     ])
-    cutting_2(e, 'culturaldelights:glow_squid', [
-        ['oceanic_delight:glow_squid_tentacles', 2],
-        ['minecraft:glow_ink_sac', 3, 0.5]
+    cutting(e, 'culturaldelights:squid', [
+        '2x oceanic_delight:squid_tentacles',
+        Item.of('3x minecraft:ink_sac').withChance(0.5),
     ])
-    cutting_2(e, 'culturaldelights:squid', [
-        ['oceanic_delight:squid_tentacles', 2],
-        ['minecraft:ink_sac', 3, 0.5]
-    ])
-    cutting_2(e, 'culturaldelights:cooked_squid', [
-        ['oceanic_delight:grilled_squid_tentacles', 3]
-    ])
-    e.custom({
-        type: "farmersdelight:cutting",
-        ingredients: [{ item: "culturaldelights:wild_cucumbers" }],
-        result: [{item: "vintagedelight:cucumber_seeds"}, {item: "minecraft:green_dye"}],
-        tool: { type: "farmersdelight:tool_action", action: "blade_cut" } 
-    }).id("culturaldelights:cutting/wild_cucumbers")
-    e.recipes.farmersdelight.cutting(
-        "culturaldelights:wild_cucumbers",
-        "#forge:tools/knives",
-        [
+    cutting(e, 'culturaldelights:cooked_squid', '2x oceanic_delight:grilled_squid_tentacles')
+    cutting(e, "vintagedelight:wild_cucumbers", [
             "vintagedelight:cucumber_seeds",
             "minecraft:green_dye"
-        ]
-    ).id("culturaldelights:cutting/wild_cucumbers_2")
+    ])
+    cutting(e, "culturaldelights:wild_cucumbers", [
+            "vintagedelight:cucumber_seeds",
+            "minecraft:green_dye"
+    ])
     //饭团
     e.recipes.kubejs.shapeless(
         "2x culturaldelights:rice_ball",

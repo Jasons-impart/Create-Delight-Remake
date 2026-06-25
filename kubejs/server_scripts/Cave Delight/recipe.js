@@ -22,7 +22,7 @@ ServerEvents.recipes(e => {
     e.replaceInput({id: "luncheonmeatsdelight:cooking/fried_egg_luncheon_meat"}, "luncheonmeatsdelight:luncheon_meat", "cavedelight:cooked_slam_slice")
     e.replaceInput({id: "cavedelight:slam_breakfast"}, "#cavedelight:slam", "cavedelight:cooked_slam_slice")
     e.replaceInput({id: "cavedelight:slam_burger"}, "#cavedelight:slam", "cavedelight:cooked_slam_slice")
-    cutting_2(e, "cavedelight:tectonic_cheesecake", [["cavedelight:slice_of_tectonic_cheesecake", 4]])
+    cutting(e, "cavedelight:tectonic_cheesecake", "4x cavedelight:slice_of_tectonic_cheesecake")
     e.recipes.create.compacting(
         'cavedelight:nutrient_bar',
         [
@@ -33,13 +33,11 @@ ServerEvents.recipes(e => {
     )
         .heated()
         .id("createdelight:mixing/nutrient_bar")
-    e.recipes.farmersdelight.cutting(
-        "cavedelight:tectonic_cheesecake",
-        "#forge:tools/knives",
-        ["4x cavedelight:slice_of_tectonic_cheesecake"]
-    ).id("cavedelight:cutting/tectonic_pie")
-    cutting_2(e, "cavedelight:pinenut_pie", [["cavedelight:slice_of_pinenut_pie", 4]])
-    cutting_2(e, "alexscaves:radgill", [["cavedelight:radgill_slice", 2], ["crabbersdelight:fish_bones", 1]])
+    cutting(e, "cavedelight:pinenut_pie", "4x cavedelight:slice_of_pinenut_pie")
+    cutting(e, "alexscaves:radgill", [
+        "2x cavedelight:radgill_slice",
+        "crabbersdelight:fish_bones"
+    ])
     brewing(e, 'farmersrespite:green_tea', ['alexscaves:fiddlehead', 'alexscaves:fiddlehead'], 'createdelight:fiddlehead_tea', 'cavedelight:fiddlehead_tea')
     e.recipes.create.mixing(
         Fluid.of("createdelight:fiddlehead_tea", 500),

@@ -286,5 +286,8 @@ ServerEvents.recipes(e => {
     )
     .superheated()
     .id("createdelight:pressurizing/uranium_shard")
-    cutting_2(e, "alexscaves:slam", [["cavedelight:slam_slice", 4], ['luncheonmeatsdelight:can_shell_abandon', 1]])
+    cutting(e, "alexscaves:slam", [
+        "4x cavedelight:slam_slice",
+        "luncheonmeatsdelight:can_shell_abandon"
+    ])
 })

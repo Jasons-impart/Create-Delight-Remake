@@ -13,8 +13,8 @@ ServerEvents.recipes(e => {
     ).id("festival_delicacies:fd_cooking/meat_zongzi_fd_cooking")
 
     cutting(e, "festival_delicacies:chinese_cabbage", [
-        ["festival_delicacies:chinese_cabbage_leaf", 2],
-        ["festival_delicacies:chinese_cabbage_leaf", 1, 0.3]
+        "2x festival_delicacies:chinese_cabbage_leaf",
+        Item.of("festival_delicacies:chinese_cabbage_leaf").withChance(0.3)
     ])
     e.recipes.farmersdelight.cooking(
         [

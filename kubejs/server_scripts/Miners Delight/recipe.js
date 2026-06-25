@@ -13,10 +13,14 @@ ServerEvents.recipes(e => {
         "miners_delight:cutting/baked_squid",
         "miners_delight:vegan_hamburger"
     ])
-    farmersdelight.cutting("miners_delight:gossypium", "#forge:shears", [
-        "kinetic_pixel:graycotton", 
-        Item.of("kinetic_pixel:graycotton").withChance(0.25)])
-        .id("createdelight:cutting/graycotton_fd")
+    farmersdelight.cutting(
+        "miners_delight:gossypium",
+        "#forge:shears",
+        [
+            "kinetic_pixel:graycotton",
+            Item.of("kinetic_pixel:graycotton").withChance(0.25)
+        ]
+    ).id("createdelight:cutting/graycotton_fd")
     kubejs.shapeless(
         'miners_delight:vegan_hamburger',
         [

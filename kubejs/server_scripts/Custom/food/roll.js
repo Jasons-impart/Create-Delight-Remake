@@ -7,6 +7,7 @@ ServerEvents.recipes(e => {
     function cutting_roll(input, output) {
         e.recipes.create.cutting(Item.of(output, 3), input)
             .id(`createdelight:cutting/${output.split(":")[1]}_roll`)
+        cutting(e, input, Item.of(output, 3))
     }
     /**
      * 
@@ -93,11 +94,6 @@ ServerEvents.recipes(e => {
         .id("createdelight:cooked_rice_from_empty_riceball")
     e.recipes.minecraft.smoking("createdelight:empty_riceball", "farmersdelight:rice")
         .id("createdelight:empty_riceball_from_rice")
-    e.recipes.farmersdelight.cutting(
-        "alexscaves:deep_sea_sushi_roll",
-        "#forge:tools/knives",
-        "3x createdelight:deep_sea_sushi_roll_slice"
-    ).id("createdelight:cutting/deep_sea_sushi_roll_slice")
 
     cutting_roll("culturaldelights:midori_roll", "culturaldelights:midori_roll_slice")
     cutting_roll("culturaldelights:chicken_roll", "culturaldelights:chicken_roll_slice")
