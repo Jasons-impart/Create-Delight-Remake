@@ -1,13 +1,13 @@
 name = "Create Solar Dimension Efficiency"
-filename = "solardimensionaddon-1.1.0.jar"
+filename = "solardimensionaddon-1.2.0.jar"
 side = "both"
 
 [download]
 hash-format = "sha1"
-hash = "751ce774a2db5db9f9be6d06bcafe61e797964d7"
+hash = "f2f5b64bf16a850ff9140fccf3942c579856eb5d"
 mode = "metadata:curseforge"
 
 [update]
 [update.curseforge]
-file-id = 8194455
+file-id = 8327569
 project-id = 1560744
