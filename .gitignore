@@ -1,5 +1,12 @@
 /*
 !/.gitignore
+!/AGENTS.md
+!/.agents
+/.agents/*
+!/.agents/skills
+!/.agents/skills/**
+!/.codex
+!/.codex/**
 !/.github
 !/config
 !/donate_list.json
@@ -28,6 +35,8 @@
 !/shaderpacks
 !/start.bat
 !/start.sh
+!/scripts
+!/scripts/**
 !/variables.txt
 !/minemenu
 !/schematics
