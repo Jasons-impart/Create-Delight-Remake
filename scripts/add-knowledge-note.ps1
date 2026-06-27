@@ -16,7 +16,7 @@ if ([string]::IsNullOrWhiteSpace($Root)) {
 }
 
 if ([string]::IsNullOrWhiteSpace($NotesPath)) {
-    $NotesPath = Join-Path $Root "tmp-opencode/knowledge-notes.md"
+    $NotesPath = Join-Path $Root "tmp-agent/knowledge-notes.md"
 }
 
 $notesDir = Split-Path -Parent $NotesPath

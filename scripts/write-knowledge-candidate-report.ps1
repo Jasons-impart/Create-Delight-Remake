@@ -14,19 +14,19 @@ if ([string]::IsNullOrWhiteSpace($Root)) {
 }
 
 if ([string]::IsNullOrWhiteSpace($OutputPath)) {
-    $OutputPath = Join-Path $Root "tmp-opencode/knowledge-candidate-report.md"
+    $OutputPath = Join-Path $Root "tmp-agent/knowledge-candidate-report.md"
 }
 
 if ([string]::IsNullOrWhiteSpace($StatePath)) {
-    $StatePath = Join-Path $Root "tmp-opencode/knowledge-candidate-state.json"
+    $StatePath = Join-Path $Root "tmp-agent/knowledge-candidate-state.json"
 }
 
 if ([string]::IsNullOrWhiteSpace($NotesPath)) {
-    $NotesPath = Join-Path $Root "tmp-opencode/knowledge-notes.md"
+    $NotesPath = Join-Path $Root "tmp-agent/knowledge-notes.md"
 }
 
 if ([string]::IsNullOrWhiteSpace($DecisionPath)) {
-    $DecisionPath = Join-Path $Root "tmp-opencode/knowledge-candidate-decision.json"
+    $DecisionPath = Join-Path $Root "tmp-agent/knowledge-candidate-decision.json"
 }
 
 function Invoke-Git([string[]]$GitArgs) {

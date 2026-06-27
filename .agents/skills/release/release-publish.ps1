@@ -229,7 +229,7 @@ if ($stopwatch.Elapsed -ge $timeout) {
 # ============================================================
 Write-Host "📥 Phase C: Downloading artifacts"
 
-$tmpDir = Join-Path $env:TEMP "opencode\$Version"
+$tmpDir = Join-Path $env:TEMP "cdr-agent-release\$Version"
 New-Item -ItemType Directory -Path "$tmpDir\client" -Force | Out-Null
 New-Item -ItemType Directory -Path "$tmpDir\clientpatch" -Force | Out-Null
 New-Item -ItemType Directory -Path "$tmpDir\server" -Force | Out-Null
@@ -329,7 +329,7 @@ function Get-FastestDownloadMode {
     )
     $results = @()
     foreach ($mode in @("proxy", "direct")) {
-        $benchFile = Join-Path $env:TEMP "opencode\$Version\download-benchmark-$ArtifactId-$mode.bin"
+        $benchFile = Join-Path $env:TEMP "cdr-agent-release\$Version\download-benchmark-$ArtifactId-$mode.bin"
         Remove-Item $benchFile -Force -ErrorAction SilentlyContinue
         $args = (Get-CurlProxyArgs -Mode $mode) + @(
             "--config", "-",
@@ -385,7 +385,7 @@ function Download-Artifact {
     }
 
     $artifactId = $found.id
-    $zipFile = Join-Path $env:TEMP "opencode\$Version\artifacts\$Name.zip"
+    $zipFile = Join-Path $env:TEMP "cdr-agent-release\$Version\artifacts\$Name.zip"
     New-Item -ItemType Directory -Path (Split-Path $zipFile) -Force | Out-Null
 
     $downloaded = $false
@@ -405,7 +405,7 @@ function Download-Artifact {
                 "Authorization: Bearer $token",
                 "Accept: application/vnd.github+json"
             )
-            $curlConfigPath = Join-Path $env:TEMP "opencode\$Version\curl-download-$artifactId.conf"
+            $curlConfigPath = Join-Path $env:TEMP "cdr-agent-release\$Version\curl-download-$artifactId.conf"
             [System.IO.File]::WriteAllText($curlConfigPath, $curlConfig, [System.Text.UTF8Encoding]::new($false))
 
             if (-not $script:DownloadProxyMode) {
@@ -448,8 +448,8 @@ function Download-Artifact {
                 Get-ChildItem -LiteralPath $DestDir -Force | Remove-Item -Recurse -Force
             }
 
-            $stdoutFile = Join-Path $env:TEMP "opencode\$Version\gh-download-$artifactId.out"
-            $stderrFile = Join-Path $env:TEMP "opencode\$Version\gh-download-$artifactId.err"
+            $stdoutFile = Join-Path $env:TEMP "cdr-agent-release\$Version\gh-download-$artifactId.out"
+            $stderrFile = Join-Path $env:TEMP "cdr-agent-release\$Version\gh-download-$artifactId.err"
             $ghArgs = @("run", "download", $RunId, "--repo", $repo, "-n", $Name, "-D", $DestDir)
             $proc = Start-Process -FilePath "gh" -ArgumentList $ghArgs -PassThru -WindowStyle Hidden -RedirectStandardOutput $stdoutFile -RedirectStandardError $stderrFile
             if (-not $proc.WaitForExit(900 * 1000)) {
@@ -632,7 +632,7 @@ if ($ReleaseType -eq "正式") {
 [void]$sb.AppendLine("**详细更新**: https://github.com/$repo/compare/$PreviousVersion...$Version")
 
 $ReleaseNotes = $sb.ToString()
-$ReleaseNotesFile = Join-Path $env:TEMP "opencode\release-notes-$Version.md"
+$ReleaseNotesFile = Join-Path $env:TEMP "cdr-agent-release\release-notes-$Version.md"
 New-Item -ItemType Directory -Path (Split-Path $ReleaseNotesFile) -Force | Out-Null
 [System.IO.File]::WriteAllText($ReleaseNotesFile, $ReleaseNotes, [System.Text.UTF8Encoding]::new($false))
 Write-Host "📝 Release notes generated"

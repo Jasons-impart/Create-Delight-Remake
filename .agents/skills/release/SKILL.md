@@ -136,7 +136,7 @@ Copy-Item CDC-mod-src/build/libs/CDC-mod-src-*.jar mods/
 - **Release notes**: Auto-generated from commit messages, appended with `(AI自动生成)`
 - **`[]` in filenames**: Handled by release-publish.ps1 using `-LiteralPath` copy
 - **Proxy**: Pass `-Proxy` parameter if direct GitHub access is slow
-- **Temp directory**: release-publish.ps1 preserves temp dir at `$env:TEMP\opencode\<version>` for debugging
+- **Temp directory**: release-publish.ps1 preserves temp dir at `$env:TEMP\cdr-agent-release\<version>` for debugging
 
 ## PowerShell + gh CLI Pitfalls
 

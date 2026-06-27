@@ -15,11 +15,11 @@ if ([string]::IsNullOrWhiteSpace($Root)) {
 }
 
 if ([string]::IsNullOrWhiteSpace($DecisionPath)) {
-    $DecisionPath = Join-Path $Root "tmp-opencode/knowledge-candidate-decision.json"
+    $DecisionPath = Join-Path $Root "tmp-agent/knowledge-candidate-decision.json"
 }
 
 if ([string]::IsNullOrWhiteSpace($NotesPath)) {
-    $NotesPath = Join-Path $Root "tmp-opencode/knowledge-notes.md"
+    $NotesPath = Join-Path $Root "tmp-agent/knowledge-notes.md"
 }
 
 $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss zzz"

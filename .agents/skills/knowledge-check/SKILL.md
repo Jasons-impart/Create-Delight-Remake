@@ -20,7 +20,7 @@ Do NOT invoke for:
 
 Ask: "Did I learn anything new about THIS PROJECT that future sessions would benefit from?"
 
-If `tmp-opencode/knowledge-candidate-report.md` exists, read it before deciding; process notes require user acceptance unless the current task explicitly asked to maintain the knowledge base.
+If `tmp-agent/knowledge-candidate-report.md` exists, read it before deciding; process notes require user acceptance unless the current task explicitly asked to maintain the knowledge base.
 
 Categories of worth-recording knowledge:
 - **Bug/pitfall discovered** → `docs/lessons-learned.md`
@@ -50,7 +50,7 @@ Categories of worth-recording knowledge:
 **ALLOWED actions** (knowledge update only):
 - ✅ Edit `AGENTS.md` files (root, `kubejs/`)
 - ✅ Edit `docs/lessons-learned.md`
-- ✅ Edit `.agents/skills/`, `.codex/`, `.opencode/skills/`, or knowledge helper scripts
+- ✅ Edit `.agents/skills/`, `.codex/`, or knowledge helper scripts
 
 **NOT ALLOWED** (when invoked as knowledge check):
 - ❌ Modifying code, recipes, configs unrelated to knowledge files

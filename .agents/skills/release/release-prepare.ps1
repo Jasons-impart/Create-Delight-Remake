@@ -186,7 +186,7 @@ Write-Host "✅ Pushed"
 Write-Host "📦 Creating PR"
 $AnnText = $AnnLines -replace '^- ', ''
 $PrBody = "版本号更新: → $Version`n`n**更新内容**:`n- $($AnnText -join "`n- ")"
-$PrBodyFile = Join-Path $env:TEMP "opencode\pr-body-$Version.md"
+$PrBodyFile = Join-Path $env:TEMP "cdr-agent-release\pr-body-$Version.md"
 New-Item -ItemType Directory -Path (Split-Path $PrBodyFile) -Force | Out-Null
 [System.IO.File]::WriteAllText($PrBodyFile, $PrBody, [System.Text.UTF8Encoding]::new($false))
 $PrUrl = gh pr create --base $TargetBranch --head "release/$Version" --title "[feat] $Version 版本更新" --body-file $PrBodyFile 2>$null
