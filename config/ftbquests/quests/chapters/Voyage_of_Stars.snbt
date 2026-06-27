@@ -581,10 +581,7 @@
 			y: -1.0d
 		}
 		{
-			dependencies: [
-				"4A2A62D77A29284F"
-				"7688588BA71116CE"
-			]
+			dependencies: ["7688588BA71116CE"]
 			id: "0B4050EA824CAB43"
 			tasks: [{
 				id: "49908A1EE870CB73"
@@ -611,7 +608,6 @@
 		{
 			dependencies: ["40BDFCC7A3B77F26"]
 			description: ["望远镜可以观测当前星系内可见的星体。选中视野里的星球并按住，即可消耗纸打印天文观测记录；有大气的维度通常需要夜晚才能使用望远镜。"]
-			hide_until_deps_complete: true
 			icon: "northstar:telescope"
 			id: "1EF771A80F0460CF"
 			shape: "hexagon"
