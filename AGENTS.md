@@ -7,7 +7,7 @@ Create-Delight Remake (齿轮盛宴) is a deep-modded Minecraft 1.20.1 Forge mod
 > KubeJS details: `kubejs/AGENTS.md`
 > Historical lessons: `docs/lessons-learned.md`
 > Developer notes: `DevGuide.md`
-> OpenCode skills: `.opencode/skills/release/`, `.opencode/skills/knowledge-check/`
+> Agent skills: `.agents/skills/release/`, `.agents/skills/knowledge-check/`
 
 ## STRUCTURE
 
@@ -17,6 +17,9 @@ CD-master-dev-048x/
 ├── config/           # Runtime mod configs
 ├── defaultconfigs/   # First-run server/client defaults
 ├── docs/             # Project notes, announcements, update summaries, lessons
+├── .agents/          # Shared agent skills for release and knowledge workflows
+├── .codex/           # Codex hooks and local agent configuration
+├── scripts/          # Agent/project automation helpers
 ├── tacz/             # TACZ gunpacks and gun data
 ├── hotai/            # HotAI patch data
 ├── ldlib/            # Multiblocked/LDLib assets and machine definitions
@@ -81,7 +84,7 @@ CD-master-dev-048x/
 .\packwiz.exe refresh
 .\packwiz.exe curseforge export
 
-# OpenCode skills
+# Agent skills
 /knowledge-check
 /release
 
