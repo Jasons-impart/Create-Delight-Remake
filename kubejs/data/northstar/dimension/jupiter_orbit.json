@@ -1,0 +1,11 @@
+{
+  "type": "northstar:orbit",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "northstar:void"
+    },
+    "settings": "northstar:void"
+  }
+}

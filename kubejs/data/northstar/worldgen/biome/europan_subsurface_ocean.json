@@ -1,0 +1,50 @@
+{
+  "carvers": {},
+  "downfall": 0.0,
+  "effects": {
+    "ambient_sound": "minecraft:ambient.underwater.loop",
+    "fog_color": 4282804,
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2.0,
+      "sound": "minecraft:ambient.underwater.loop",
+      "tick_delay": 6000
+    },
+    "sky_color": 6455039,
+    "water_color": 21946,
+    "water_fog_color": 5409
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  "has_precipitation": false,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [],
+    "underground_water_creature": [],
+    "water_ambient": [
+      {
+        "type": "alexscaves:lanternfish",
+        "maxCount": 8,
+        "minCount": 3,
+        "weight": 30
+      }
+    ],
+    "water_creature": []
+  },
+  "temperature": 0.5
+}

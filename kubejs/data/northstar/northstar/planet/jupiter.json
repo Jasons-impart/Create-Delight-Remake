@@ -1,0 +1,17 @@
+{
+  "central_body": "northstar:sol",
+  "class": "gas_giant",
+  "diameter": 139820.0,
+  "orbit": {
+    "type": "northstar:simple",
+    "ascending_node_deg": 100.55615000000002,
+    "duration_days": 4333.0,
+    "inclination_deg": 1.305,
+    "initial_mean_anomaly_deg": 19.65053,
+    "radius": 5.0
+  },
+  "renderer": "northstar:solar_system/jupiter_sky",
+  "required_science": 6.5,
+  "rotation_period_days": 0.41354,
+  "texture": "northstar:solar_system/jupiter_sky"
+}
