@@ -1,13 +1,13 @@
 name = "ZSTDNET"
-filename = "zstdnet-1.20.1-forge-1.4.4.jar"
+filename = "zstdnet-1.20.1-forge-1.4.5.jar"
 side = "both"
 
 [download]
 hash-format = "sha1"
-hash = "71dd2f9c1e3e1e71022c1930e2a4dbeb356b58fc"
+hash = "baf23674bcb75967ac6f141206e3dae77523a3c3"
 mode = "metadata:curseforge"
 
 [update]
 [update.curseforge]
-file-id = 8321571
+file-id = 8327561
 project-id = 1506928
