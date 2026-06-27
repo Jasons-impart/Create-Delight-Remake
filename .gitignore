@@ -1,6 +1,11 @@
 /*
 !/.gitignore
+!/AGENTS.md
 !/.github
+!/.opencode
+/.opencode/*
+!/.opencode/skills
+!/.opencode/skills/**
 !/config
 !/donate_list.json
 !/defaultconfigs
