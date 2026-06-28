@@ -14,15 +14,15 @@ function freezing(event, ingredients, results, time) {
 /**
  * @param { Internal.RecipesEventJS } event 
  * @param { InputItem_ } input 
- * @param { OutputItem_[] } outputs // [output, count] | [output, count, chance]
+ * @param { OutputItem_[] } outputs // [0]主产物，[1]主产物（概率增产）, [2]副产物
  * @param { number } time // defult 200 ticks
  */
 function threshing(event, input, outputs, time) {
-  const [first, second] = outputs
+  time = time || 200
   event.recipes.ratatouille.threshing(outputs, input)
     .id(`createdelight:threshing/${input.split(":")[1]}`).processingTime(time)
-  event.recipes.farmersdelight.cutting(input, "#forge:tools/knives", [first, second])
-    .id(`createdelight:cutting/${input.split(":")[1]}`)
+  let cutting_outputs = [outputs[0], outputs[2]]
+  cutting(event, input, cutting_outputs)
 }
 /**
  * 

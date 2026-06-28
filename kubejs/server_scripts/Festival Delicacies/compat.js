@@ -34,8 +34,9 @@ ServerEvents.recipes(e => {
     ).heated().id("createdelight:mixing/red_bean_paste")
     threshing(e, 'festival_delicacies:mugwort', [
         'createdelight:artemisia_argyi_seed',
-        Item.of('createdelight:artemisia_argyi_seed').withChance(0.5)
-    ], 200)
+        Item.of('createdelight:artemisia_argyi_seed').withChance(0.5),
+        'createaddition:biomass'
+    ])
     e.recipes.farmersdelight.cooking(
         [
             'festival_delicacies:mugwort',

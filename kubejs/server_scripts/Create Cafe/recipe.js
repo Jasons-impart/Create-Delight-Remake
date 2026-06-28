@@ -35,11 +35,10 @@ ServerEvents.recipes(e => {
         "createcafe:crushing/oreo_crushing",
         "createcafe:mixing/raw_boba_to_boba_mixing",
         "createcafe:mixing/coffee/coffee_mixing",
-        "createcafe:filling/coffee/iced_coffee_filling"
+        "createcafe:filling/coffee/iced_coffee_filling",
+        "createdelight:milling/coffee_beans"
     ])
-    create.mixing(Fluid.of("createdelight:base_syrup", 125), "minecraft:sugar")
-    .heated()
-    .id("createdelight:mixing/sugar_melting")
+    create.mixing(Fluid.of("createdelight:base_syrup", 125), "minecraft:sugar").heated().id("createdelight:mixing/sugar_melting")
     vintageimprovements.vacuumizing("minecraft:sugar", Fluid.of("createdelight:base_syrup", 125)).id("createdelight:vacuumizing/melted_sugar_vacuumizing")
     create.compacting("createdelightcore:base_syrup", Fluid.of("createdelight:base_syrup", 1000)).id("createdelight:compacting/base_syrup")
     create.compacting("createdelightcore:strawberry_syrup", Fluid.of("createdelight:strawberry_syrup", 1000)).id("createdelight:compacting/strawberry_syrup")
@@ -181,4 +180,9 @@ ServerEvents.recipes(e => {
         "createcafe:oreo_crushed",
         "createcafe:oreo_half"
     ).id("createdelight:crushing/oreo_half_crushing")
+    threshing(e, "createcafe:coffee_fruit", [
+        '2x createcafe:coffee_beans',
+        Item.of('2x createcafe:coffee_beans').withChance(0.5),
+        "createaddition:biomass"
+    ])
 })

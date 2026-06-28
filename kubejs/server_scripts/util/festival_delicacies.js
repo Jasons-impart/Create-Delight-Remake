@@ -6,8 +6,8 @@
  * @param { number } time 
  */
 function dumpling(e, inputs, output, exp, time) {
-    exp = 1.0 || exp
-    time = 200 || time
+    exp = exp || 1.0
+    time = time || 200
     e.recipes.festival_delicacies.stove(
         [
             "create:dough",

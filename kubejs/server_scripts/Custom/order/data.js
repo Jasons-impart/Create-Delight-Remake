@@ -685,9 +685,7 @@ ServerEvents.tags("minecraft:item", e => {
         "youkaishomecoming:udumbara_seeds",
         "youkaishomecoming:mandrake_flower",
         "corn_delight:corn",
-        "farmersrespite:coffee_berries",
         "vintagedelight:raw_oats",
-
     )
     e.add("createdelight:order/jam",
         "#forge:jams",
