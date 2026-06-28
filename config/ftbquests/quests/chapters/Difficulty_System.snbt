@@ -1845,8 +1845,9 @@
 				type: "custom"
 			}]
 			tasks: [{
-				dimension: "createdelight:abyssal_chasm_dimension"
+				dimension: "northstar:europa"
 				id: "0ABAFDDE3718F8B8"
+				title: "前往木卫二，解锁渊海陷窟"
 				type: "dimension"
 			}]
 			x: 3.5d

@@ -1,7 +1,7 @@
 {
-  "sea_level": -52,
+  "sea_level": 96,
   "disable_mob_generation": false,
-  "aquifers_enabled": false,
+  "aquifers_enabled": true,
   "ore_veins_enabled": false,
   "legacy_random_source": false,
   "default_block": {
@@ -18,8 +18,8 @@
   },
   "noise_router": {
     "barrier": 0,
-    "fluid_level_floodedness": 0,
-    "fluid_level_spread": 0,
+    "fluid_level_floodedness": 1,
+    "fluid_level_spread": 0.25,
     "lava": 0,
     "temperature": {
       "type": "minecraft:shifted_noise",
@@ -135,7 +135,7 @@
           "if_true": {
             "type": "minecraft:y_above",
             "anchor": {
-              "absolute": 56
+              "absolute": 96
             },
             "surface_depth_multiplier": 0,
             "add_stone_depth": false

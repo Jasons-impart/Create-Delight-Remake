@@ -57,11 +57,20 @@ const europanAbyssalEntities = [
     "minecraft:squid"
 ]
 
+const cataclysmDeeplingEntities = [
+    "cataclysm:deepling",
+    "cataclysm:deepling_brute",
+    "cataclysm:deepling_angler",
+    "cataclysm:deepling_priest",
+    "cataclysm:deepling_warlock"
+]
+
 ServerEvents.tags("entity_type", e => {
     e.add("northstar:can_survive_cold",
         "#createdelight:can_survive_northstar"
     )
     e.add("northstar:can_survive_cold", europanAbyssalEntities)
+    e.add("northstar:can_survive_cold", cataclysmDeeplingEntities)
     e.add("northstar:can_survive_heat",
         "#createdelight:can_survive_northstar"
     )
@@ -69,6 +78,7 @@ ServerEvents.tags("entity_type", e => {
         "#createdelight:can_survive_northstar"
     )
     e.add("northstar:doesnt_require_oxygen", europanAbyssalEntities)
+    e.add("northstar:doesnt_require_oxygen", cataclysmDeeplingEntities)
     e.add("createdelight:can_survive_northstar", [
         "iceandfire:mob_skull",
         "iceandfire:cyclops",

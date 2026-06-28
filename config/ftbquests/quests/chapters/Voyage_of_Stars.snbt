@@ -21,6 +21,13 @@
 			x: 10.5d
 			y: -2.5d
 		}
+		{
+			id: "472A56C083FB5D30"
+			linked_quest: "475F0BF3666A12AB"
+			size: 2.0d
+			x: 26.5d
+			y: -2.5d
+		}
 	]
 	quests: [
 		{
@@ -59,7 +66,7 @@
 				""
 				"每张天文观测记录默认提供1点科研点数。同一来源的跨天重复记录会按0.9、0.81……递减；从不同星球观测同一目标，则第一张都按完整1点计算。"
 				""
-				"当前数据中：地球需要1点，月球需要2点，火星需要5点，金星和水星各需要6点。星球达标后，该星球的轨道和地表会一起解锁；月球目前只有地表，没有轨道维度。"
+				"当前数据中：地球需要1点，月球需要2点，火星需要5点，金星和水星各需要6点，木星需要6.5点，木卫二需要1点。星球达标后，该星球的轨道和地表会一起解锁；月球目前只有地表，没有轨道维度。木卫二属于木星系，建议先抵达木星轨道，再从木星系观测并解锁木卫二。"
 			]
 			hide_dependency_lines: true
 			icon: "northstar:space_atlas"
@@ -557,6 +564,41 @@
 			}]
 			x: 22.5d
 			y: -1.0d
+		}
+		{
+			dependencies: [
+				"0BAC02A069A5B123"
+				"62C9A01A68274195"
+			]
+			description: ["木星需要星图内的木星科研点达到6.5点。木星本体是气态巨行星，不能登陆；本包新增的木星轨道是进入木星系的中转站，也是观测木卫二的推荐地点。"]
+			id: "4F2B8C9D7E1A6053"
+			subtitle: "进入木星系，准备观测木卫二"
+			tasks: [{
+				dimension: "northstar:jupiter_orbit"
+				icon: "northstar:space_atlas"
+				id: "6A19D0E4B73C82F5"
+				title: "前往木星轨道"
+				type: "dimension"
+			}]
+			title: "木星轨道"
+			x: 24.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["4F2B8C9D7E1A6053"]
+			description: ["木卫二是木星的冰封卫星，需要星图内的木卫二科研点达到1点。解锁后，火箭核心会显示木卫二轨道和木卫二地表；这个任务检查的是登陆地表。这里极度寒冷、没有可呼吸大气，地表以冰雪为主，地下可能出现冰下海与渊海陷窟。"]
+			id: "75D1E8A0C4B29F63"
+			subtitle: "木星的冰封卫星"
+			tasks: [{
+				dimension: "northstar:europa"
+				icon: "minecraft:blue_ice"
+				id: "2BEF6A9530D14C78"
+				title: "前往木卫二地表"
+				type: "dimension"
+			}]
+			title: "木卫二"
+			x: 26.5d
+			y: -0.5d
 		}
 		{
 			dependencies: ["0A78650F17E1E069"]
