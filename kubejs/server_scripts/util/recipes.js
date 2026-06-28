@@ -166,6 +166,40 @@ function FluidIngredients(fluidTag, amount, tag) {
     return { fluidTag: fluidTag, amount: amount, tag: tag }
 }
 
+let fermenting_recipe_ids = {}
+
+function recipe_id_part(value) {
+    if (value instanceof Array)
+        return value.map(recipe_id_part).join("_and_")
+    let id = ""
+    if (value && value.id)
+        id = String(value.id)
+    else if (value && value.stack)
+        id = recipe_id_part(value.stack)
+    else if (value && typeof value.getStack == "function")
+        id = recipe_id_part(value.getStack())
+    else if (value && typeof value.getItem == "function")
+        id = String(value.getItem().getId())
+    else if (value && value.stacks)
+        id = recipe_id_part(value.stacks[0])
+    else
+        id = String(value)
+    id = id.replace(/^\d+x\s+/, "")
+    if (id.includes(":"))
+        id = id.split(":")[1]
+    return id.replace("#", "tag_")
+        .toLowerCase()
+        .replace(/[^a-z0-9_./-]/g, "_")
+}
+
+function fermenting_recipe_id(results) {
+    let id = recipe_id_part(results)
+    fermenting_recipe_ids[id] = (fermenting_recipe_ids[id] || 0) + 1
+    if (fermenting_recipe_ids[id] == 1)
+        return id
+    return `${id}_${fermenting_recipe_ids[id]}`
+}
+
 /**
  * 
  * @param {Internal.RecipesEventJS} e 
@@ -176,12 +210,13 @@ function FluidIngredients(fluidTag, amount, tag) {
  */
 function fermenting(e, results, inputs, processingTime, heatRequirement){
     processingTime = processingTime || 100
+    let recipeId = fermenting_recipe_id(results)
     let basin_fermenting = e.recipes.createdieselgenerators.basin_fermenting(results, inputs)
         .processingTime(processingTime)
-        // .id(`createdieselgenerators:basin_fermenting/${results[0].split(":")[1]}`)
+        .id(`createdelight:basin_fermenting/${recipeId}`)
     let bulk_fermenting = e.recipes.createdieselgenerators.bulk_fermenting(results, inputs)
         .processingTime(processingTime*0.5)
-        // .id(`createdieselgenerators:bulk_fermenting/${results[0].split(":")[1]}`)
+        .id(`createdelight:bulk_fermenting/${recipeId}`)
     if (heatRequirement) {
         basin_fermenting.heatRequirement(heatRequirement)
         bulk_fermenting.heatRequirement(heatRequirement)
