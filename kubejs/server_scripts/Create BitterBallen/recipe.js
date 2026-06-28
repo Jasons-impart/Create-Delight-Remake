@@ -119,9 +119,10 @@ ServerEvents.recipes(e => {
         Fluid.of("create_bic_bit:curdled_milk", 250)
     ).id("createdelight:compacting/cheese_curds")
     threshing(e, "minecraft:sunflower", [
-        "create_bic_bit:sunflower_seeds",
-        Item.of("2x create_bic_bit:sunflower_seeds").withChance(0.5)
-    ], 200)
+        "2x create_bic_bit:sunflower_seeds",
+        Item.of("2x create_bic_bit:sunflower_seeds").withChance(0.5),
+        'createaddition:biomass'
+    ])
     create.compacting(Fluid.of("createdieselgenerators:plant_oil", 500), "2x create_bic_bit:crushed_sunflower_seeds")
     .id("createdelight:compacting/plant_oil_from_crushed_sunflower_seeds")
     create.mixing(

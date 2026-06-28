@@ -1,7 +1,9 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "create_central_kitchen:emptying/apple_cider",
-        "create_central_kitchen:filling/apple_cider"
+        "create_central_kitchen:filling/apple_cider",
+        "minecraft:red_dye",
+        "farmersrespite:brewing/gamblers_tea_from_water",
     ])
     let tea_recipes = [
         ["farmersrespite:green_tea_leaves", "farmersrespite:green_tea"],
@@ -25,7 +27,7 @@ ServerEvents.recipes(e => {
         [
             Fluid.water(1000),
             "minecraft:glow_berries",
-            "farmersrespite:coffee_berries"
+            "createcafe:coffee_fruit"
         ]
     ).heated().id("createdelight:mixing/gamblers_tea")
     e.recipes.create.mixing(
@@ -37,6 +39,7 @@ ServerEvents.recipes(e => {
         ]
     ).heated().id("createdelight:mixing/purulent_tea")
     brewing(e, "minecraft:water", ["minecraft:dandelion", "minecraft:dandelion"], "farmersrespite:dandelion_tea", 'farmersrespite:dandelion_tea')
+    brewing_2(e, "minecraft:water", ["minecraft:glow_berries", "createcafe:coffee_fruit"], "farmersrespite:gamblers_tea")
     e.recipes.create.mixing(
         Fluid.of("farmersrespite:dandelion_tea", 500),
         [

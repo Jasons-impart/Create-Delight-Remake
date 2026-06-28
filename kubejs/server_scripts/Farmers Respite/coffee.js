@@ -11,7 +11,8 @@ ServerEvents.recipes(e => {
         "farmersrespite:emptying/coffee",
         "farmersrespite:emptying/long_coffee",
         "farmersrespite:emptying/strong_coffee",
-        "farmersrespite:milling/coffee_beans"
+        "farmersrespite:milling/coffee_beans",
+        "farmersrespite:coffee_beans_sack"
     ])
     // 咖啡
     e.recipes.create.mixing(
@@ -41,29 +42,4 @@ ServerEvents.recipes(e => {
         "createcafe:coffee_beans",
         200
     ).id("createdelight:baking/roasted_coffee_beans")
-    e.recipes.create.milling([
-        "createcafe:coffee_beans",
-        Item.of("createcafe:coffee_beans").withChance(0.5),
-        Item.of("createcafe:coffee_beans").withChance(0.25)
-    ], 'createcafe:coffee_fruit').id("createdelight:milling/coffee_beans")
-    cutting(e, "createcafe:coffee_fruit", [
-        "createcafe:coffee_beans",
-        Item.of("createcafe:coffee_beans").withChance(0.5),
-        Item.of("createcafe:coffee_beans").withChance(0.25)
-    ])
-})
-
-BlockEvents.rightClicked( e => {
-    const {player, hand, block} = e
-    if(block.id == "minecraft:basalt" || block.id == "minecraft:polished_basalt" || block.id == "minecraft:smooth_basalt" || block.id == "minecraft:magma_block"){
-        let heldItem = player.getItemInHand(hand)
-        if(heldItem.is("createcafe:roasted_coffee_beans")){
-            block.up.set("farmersrespite:coffee_bush")
-            block.up.up.set("farmersrespite:coffee_bush", {half: "upper"})
-            player.swing(hand)
-            if(!player.isCreative()){
-                player.setItemInHand(hand, heldItem.withCount(heldItem.count - 1))
-            }
-        }
-    }
 })

@@ -4,18 +4,22 @@
  * @param { InputItem_[] } inputs 最多输入为2个
  * @param { Internal.FluidStackJS_ } fluid 
  * @param { OutputItem_ } output 
- * @param {number} [amount]
+ * @param { number } amount default 1000
+ * @param { number } time default 2400
+ * @param { number } exp default 0.35
  */
-function brewing(event, base, inputs, fluid, output, amount) {
+function brewing(event, base, inputs, fluid, output, amount, time, exp) {
     amount = amount || 1000
+    time = time || 2400
+    exp = exp || 0.35
     let brewing_receipe = {
         "type": "farmersrespite:brewing",
         "base": {
             "count": amount,
             "fluid": base
         },
-        "cookingtime": 2400,
-        "experience": 0.35,
+        "cookingtime": time,
+        "experience": exp,
         "ingredients": [],
         "result": {
             "count": amount,
@@ -44,7 +48,7 @@ function brewing(event, base, inputs, fluid, output, amount) {
         "output": {
             "item": output
         }
-    }).id(`createdelight:pouring/${output.split(":")[1]}`)
+    }).id(`createdelight:pouring/${output.split(":")[1]}_from_${base.split(":")[1]}`)
 }
 
 /**
@@ -53,19 +57,22 @@ function brewing(event, base, inputs, fluid, output, amount) {
  * @param { Internal.FluidStackJS_ } base 
  * @param { InputItem_[] } inputs 最多输入为2个
  * @param { Internal.FluidStackJS_ } fluid 
- * @param { OutputItem_ } output 
- * @param {number} [amount]
+ * @param { number } amount default 1000
+ * @param { number } time default 2400
+ * @param { number } exp default 0.35
  */
-function brewing_2(event, base, inputs, fluid, output, amount) {
+function brewing_2(event, base, inputs, fluid, amount, time, exp) {
     amount = amount || 1000
+    time = time || 2400
+    exp = exp || 0.35
     let brewing_receipe = {
         "type": "farmersrespite:brewing",
         "base": {
             "count": amount,
             "fluid": base
         },
-        "cookingtime": 2400,
-        "experience": 0.35,
+        "cookingtime": time,
+        "experience": exp,
         "ingredients": [],
         "result": {
             "count": amount,
@@ -83,8 +90,9 @@ function brewing_2(event, base, inputs, fluid, output, amount) {
             })
         }
     });
-    event.custom(brewing_receipe).id(`createdelight:brewing/${output.split(":")[1]}_from_${base.split(":")[1]}`)
+    event.custom(brewing_receipe).id(`createdelight:brewing/${fluid.split(":")[1]}_from_${base.split(":")[1]}`)
 }
+
 /**
  * 
  * @param {Internal.RecipesEventJS_} event 
