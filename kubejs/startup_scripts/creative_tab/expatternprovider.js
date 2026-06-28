@@ -4,6 +4,7 @@ StartupEvents.modifyCreativeTab("expatternprovider:tab_main", e => {
     "minecraft:lava",
     "alexscaves:acid",
     "alexscaves:purple_soda",
+    "vintageimprovements:sulfuric_acid",
     "ratatouille:cocoa_liquor",
     "createdelight:egg_yolk",
     "create:honey",
