@@ -284,3 +284,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: `iafdragonfix` disables Ice and Fire dragon cave/roost placed features and re-registers them as structures with its own biome tags, so the pack's Northstar-only dragon placement can be bypassed.
 - **Fix/Lesson**: Override `data/iafdragonfix/tags/worldgen/biome/has_*_dragon_*.json` with `replace: true` and tune `data/iafdragonfix/worldgen/structure_set/*.json`, because Ice and Fire `config/iceandfire/*_dragon*_biomes.json` no longer controls the replacement structures.
 
+## Packwiz-files same-name replacements must compare hashes
+
+**Date**: 2026-06-29
+
+- **Problem**: `scripts/update-packwiz-meta.ps1` skipped raw-URL local assets when the referenced filename still existed, so replacing `packwiz-files` payloads with the same filename left stale `.pw.toml` SHA256 hashes.
+- **Fix/Lesson**: Compare existing `.pw.toml` SHA256 values against same-name local files and refresh packwiz-files metadata on mismatch, because filename presence alone does not prove the payload is current.
+
