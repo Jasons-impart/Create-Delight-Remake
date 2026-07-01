@@ -284,6 +284,19 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: `iafdragonfix` disables Ice and Fire dragon cave/roost placed features and re-registers them as structures with its own biome tags, so the pack's Northstar-only dragon placement can be bypassed.
 - **Fix/Lesson**: Override `data/iafdragonfix/tags/worldgen/biome/has_*_dragon_*.json` with `replace: true` and tune `data/iafdragonfix/worldgen/structure_set/*.json`, because Ice and Fire `config/iceandfire/*_dragon*_biomes.json` no longer controls the replacement structures.
 
+## Northstar custom planet biomes need consistent feature order
+
+**Date**: 2026-06-24
+
+- **Problem**: Europa chunk generation crashed with `Feature order cycle found` because `europan_ridge_fields` and `europan_blue_ice_chasms` listed shared placed features in conflicting relative order.
+- **Fix/Lesson**: Keep shared placed features in the same generation step ordered consistently across all custom planet biomes, varying biome decoration by subsets rather than reordered lists.
+
+## Northstar fluid freezing uses planet-dimension temperature
+
+**Date**: 2026-06-24
+
+- **Problem**: Europa subsurface ocean water froze even after raising biome temperature because Northstar `FluidStateMixin` checks `NorthstarTemperature.getTemperatureAt`, which reads `planet_dimension.temperature`, not the biome JSON temperature.
+- **Fix/Lesson**: For cold Northstar dimensions with liquid water, use a `planet_dimension.temperature` LevelFunction such as `northstar:block` to keep default terrain cold while returning above-freezing temperature for `minecraft:water`.
 ## Packwiz-files same-name replacements must compare hashes
 
 **Date**: 2026-06-29

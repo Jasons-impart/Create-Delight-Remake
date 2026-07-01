@@ -168,12 +168,6 @@
     ],
     "underground_water_creature": [
       {
-        "type": "minecraft:glow_squid",
-        "maxCount": 6,
-        "minCount": 4,
-        "weight": 100
-      },
-      {
         "type": "alexscaves:hullbreaker",
         "maxCount": 1,
         "minCount": 1,
