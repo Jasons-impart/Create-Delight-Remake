@@ -19,12 +19,11 @@ ServerEvents.recipes(e => {
         Fluid.of("createdieselgenerators:plant_oil", 500),
         "2x vintagedelight:roasted_peanut"  
     ).id("createdelight:compacting/plant_oil_from_peanut")
-    threshing(e,
-        "frycooks_delight:canola",
-        [
-            "2x frycooks_delight:canola_seeds",
-            Item.of("2x frycooks_delight:canola_seeds").withChance(0.5)
-        ], 200)
+    threshing(e, "frycooks_delight:canola", [
+        "2x frycooks_delight:canola_seeds",
+        Item.of("2x frycooks_delight:canola_seeds").withChance(0.5),
+        'createaddition:biomass'
+    ])
     // 生炸鸡腿，生炸土豆
     e.recipes.create.mixing(
         "createdelightcore:unfried_potato",

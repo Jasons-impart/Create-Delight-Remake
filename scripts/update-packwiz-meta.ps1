@@ -349,6 +349,8 @@ function Parse-PwToml {
     if ($content -match '(?m)^filename\s*=\s*"(.+)"') { $result['Filename'] = $Matches[1] }
     if ($content -match '(?m)^side\s*=\s*"(.+)"')     { $result['Side'] = $Matches[1] }
     if ($content -match '(?m)^url\s*=\s*"(.+)"')      { $result['DownloadUrl'] = $Matches[1] }
+    if ($content -match '(?m)^hash-format\s*=\s*"(.+)"') { $result['HashFormat'] = $Matches[1] }
+    if ($content -match '(?m)^hash\s*=\s*"(.+)"')     { $result['Hash'] = $Matches[1] }
 
     $hasMetadataMode = $content -match 'mode\s*=\s*"metadata:(curseforge|modrinth)"'
     $hasUpdateBlock = $content -match '\[update\.(curseforge|modrinth)\]'
@@ -1074,7 +1076,11 @@ function Add-PackwizFilesMetadata {
     New-Item -ItemType Directory -Force -Path $PackwizFilesCategoryRoot | Out-Null
 
     $packwizFilePath = Join-Path $PackwizFilesCategoryRoot $SourceFilename
-    Copy-Item -LiteralPath $SourcePath -Destination $packwizFilePath -Force
+    $sourceFullPath = [IO.Path]::GetFullPath($SourcePath)
+    $packwizFullPath = [IO.Path]::GetFullPath($packwizFilePath)
+    if (-not [string]::Equals($sourceFullPath, $packwizFullPath, [System.StringComparison]::OrdinalIgnoreCase)) {
+        Copy-Item -LiteralPath $SourcePath -Destination $packwizFilePath -Force
+    }
 
     if (-not $DisplayName) {
         $DisplayName = Get-DisplayNameFromSource -Filename $SourceFilename -JarMetadata $JarMetadata
@@ -1157,6 +1163,59 @@ file-id = $($releaseIdentity.FileId)
 
     Write-Utf8NoBomFile -Path $PwTomlPath -Content $newContent
     return $true
+}
+
+function Get-PackwizFilesReleaseCurseForgeContent {
+    param([string]$PwTomlPath)
+
+    if (-not (Test-Path $PwTomlPath)) { return $null }
+
+    $content = Get-Content -LiteralPath $PwTomlPath -Raw
+    if ($content -match '(?ms)\[release\.curseforge\].*') {
+        return $Matches[0]
+    }
+
+    return $null
+}
+
+function Get-LocalMetadataHashRefresh {
+    param(
+        [pscustomobject]$Entry,
+        [hashtable]$SourceFiles,
+        [hashtable]$PackwizFiles
+    )
+
+    if ($Entry.IsManaged) { return $null }
+
+    $filename = $Entry.Filename
+    if (-not $filename) { return $null }
+
+    $downloadUrl = Get-TomlVal -Data $Entry.Data -Key 'DownloadUrl'
+    if (-not (Test-PackwizFilesRawUrl -Url $downloadUrl)) { return $null }
+
+    $hashFormat = Get-TomlVal -Data $Entry.Data -Key 'HashFormat'
+    if ($hashFormat -and $hashFormat -ne "sha256") { return $null }
+
+    $existingHash = Get-TomlVal -Data $Entry.Data -Key 'Hash'
+    if ([string]::IsNullOrWhiteSpace($existingHash)) { return $null }
+    $existingHash = $existingHash.ToLowerInvariant()
+
+    $candidatePaths = @()
+    if ($SourceFiles.ContainsKey($filename)) {
+        $candidatePaths += $SourceFiles[$filename]
+    }
+    if ($PackwizFiles.ContainsKey($filename)) {
+        $candidatePaths += $PackwizFiles[$filename]
+    }
+
+    foreach ($candidatePath in $candidatePaths) {
+        $actualHash = (Get-FileHash -LiteralPath $candidatePath -Algorithm SHA256).Hash.ToLowerInvariant()
+        if ($actualHash -ne $existingHash) {
+            return $candidatePath
+        }
+    }
+
+    return $null
 }
 
 function Remove-PackwizFilesAssetIfOwned {
@@ -1343,6 +1402,16 @@ try {
     foreach ($entry in $pwEntries) {
         $currentFilename = $entry.Filename
         if (-not $currentFilename) { continue }
+        $hashRefreshSourcePath = Get-LocalMetadataHashRefresh -Entry $entry -SourceFiles $sourceFiles -PackwizFiles $packwizFiles
+        if ($hashRefreshSourcePath) {
+            $localUpdates += [pscustomobject]@{
+                Entry = $entry
+                OldFilename = $currentFilename
+                NewFilename = $currentFilename
+                SourcePath = $hashRefreshSourcePath
+            }
+            continue
+        }
         if ($sourceFiles.ContainsKey($currentFilename)) { continue }
         if ($packwizFiles.ContainsKey($currentFilename)) { continue }
         if ($entry.IsManaged) { continue }
@@ -1372,6 +1441,7 @@ try {
                 Entry = $entry
                 OldFilename = $currentFilename
                 NewFilename = $newFilename
+                SourcePath = $sourceFiles[$newFilename]
             }
         }
     }
@@ -1459,7 +1529,7 @@ try {
 
     foreach ($update in $localUpdates) {
         $entry = $update.Entry
-        $sourcePath = $sourceFiles[$update.NewFilename]
+        $sourcePath = $update.SourcePath
         $jarMetadata = Get-JarMetadata -Path $sourcePath
         $displayName = $entry.Name
         if (-not $displayName) {
@@ -1468,7 +1538,7 @@ try {
 
         $candidates = @(Get-CurseForgeCandidates -Filename $update.NewFilename -JarMetadata $jarMetadata)
         $cfMetadata = $null
-        $releaseCurseForgeContent = $null
+        $releaseCurseForgeContent = Get-PackwizFilesReleaseCurseForgeContent -PwTomlPath $entry.PwTomlPath
         if ($candidates.Count -gt 0) {
             $cfMetadata = Try-ResolveCurseForgeMetadata -SourcePath $sourcePath -SourceFilename $update.NewFilename -Candidates $candidates -Category $Category
         }

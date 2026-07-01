@@ -412,5 +412,5 @@ ServerEvents.recipes(e => {
         '2x minecraft:string',
         Item.of('2x minecraft:string').withChance(0.5),
         'createdelight:graycotton_seed'
-    ], 200)
+    ])
 })

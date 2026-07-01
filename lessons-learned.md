@@ -297,4 +297,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: Europa subsurface ocean water froze even after raising biome temperature because Northstar `FluidStateMixin` checks `NorthstarTemperature.getTemperatureAt`, which reads `planet_dimension.temperature`, not the biome JSON temperature.
 - **Fix/Lesson**: For cold Northstar dimensions with liquid water, use a `planet_dimension.temperature` LevelFunction such as `northstar:block` to keep default terrain cold while returning above-freezing temperature for `minecraft:water`.
+## Packwiz-files same-name replacements must compare hashes
+
+**Date**: 2026-06-29
+
+- **Problem**: `scripts/update-packwiz-meta.ps1` skipped raw-URL local assets when the referenced filename still existed, so replacing `packwiz-files` payloads with the same filename left stale `.pw.toml` SHA256 hashes.
+- **Fix/Lesson**: Compare existing `.pw.toml` SHA256 values against same-name local files and refresh packwiz-files metadata on mismatch, because filename presence alone does not prove the payload is current.
 

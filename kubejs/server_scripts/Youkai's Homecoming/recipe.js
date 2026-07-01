@@ -137,7 +137,11 @@ ServerEvents.recipes(e => {
         .loops(1)
         .transitionalItem("bakeries:red_velvet_cake_base")
         .id("createdelight:sequenced_assembly/red_velvet_cake")
-    threshing(e, 'youkaishomecoming:pods', ['youkaishomecoming:soybean', Item.of('youkaishomecoming:soybean').withChance(0.5)], 200)
+    threshing(e, 'youkaishomecoming:pods', [
+        '2x youkaishomecoming:soybean',
+        Item.of('2x youkaishomecoming:soybean').withChance(0.5),
+        'createaddition:biomass'
+    ])
     farmersdelight.cooking(
         [
             'youkaishomecoming:soybean',
@@ -353,8 +357,7 @@ ServerEvents.recipes(e => {
     brewing(e, "farmersrespite:green_tea", ["#forge:crops/rice", "#forge:crops/rice"], "createdelight:genmai_tea", "youkaishomecoming:genmai_tea")
     brewing(e, "minecraft:water", ["#forge:salad_ingredients/cabbage", "#forge:salad_ingredients/cabbage"], "createdelight:green_water", "youkaishomecoming:green_water")
     brewing(e, "minecraft:water", ["youkaishomecoming:white_tea_leaves", "youkaishomecoming:white_tea_leaves"], "createdelight:white_tea", "youkaishomecoming:white_tea")
-    brewing_2(e, "minecraft:water", ['#forge:cream', "createcafe:coffee_grounds"], "createdelight:macchiato_fluid", "youkaishomecoming:macchiato")
-
+    brewing_2(e, "minecraft:water", ['#forge:cream', "createcafe:coffee_grounds"], "createdelight:macchiato_fluid")
     // pouring(e, "youkaishomecoming:espresso", "createdelight:espresso_fluid")
     // pouring(e, "youkaishomecoming:americano", "createdelight:americano_fluid")
     // pouring(e, "youkaishomecoming:ristretto", "createdelight:ristretto_fluid")
