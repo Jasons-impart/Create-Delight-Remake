@@ -304,3 +304,31 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: `scripts/update-packwiz-meta.ps1` skipped raw-URL local assets when the referenced filename still existed, so replacing `packwiz-files` payloads with the same filename left stale `.pw.toml` SHA256 hashes.
 - **Fix/Lesson**: Compare existing `.pw.toml` SHA256 values against same-name local files and refresh packwiz-files metadata on mismatch, because filename presence alone does not prove the payload is current.
 
+## Order header packages must not count as ingredient packages
+
+**Date**: 2026-07-02
+
+- **Problem**: Requester automation can send the order itself as a Create package, but including that header package in `Order.checkAllPackages()` makes order identity and ingredient settlement share one package pool.
+- **Fix/Lesson**: Let `order_deliverer.js` read orders from naked order items or package contents, but exclude any package containing an order from the ingredient package transfer.
+
+## Order deliverer leading empty table cloths must not become segment starts
+
+**Date**: 2026-07-02
+
+- **Problem**: `order_deliverer.js` kept leading empty table cloths as the segment start, so rewards for a later order could be placed back on the first empty table cloth and look like the later segment was ignored.
+- **Fix/Lesson**: Missing `create:table_cloth` remains the scan boundary, but each order segment should start at the table cloth containing its order.
+
+## Duplicate order categories need per-entry keys
+
+**Date**: 2026-07-02
+
+- **Problem**: Order requester selections and reward scoring used category id as the entry identity, so orders containing repeated categories such as multiple tea entries mixed their counts and estimates.
+- **Fix/Lesson**: Keep ratio rules keyed by category id, but key generated/fixed selections and per-entry scoring by stable occurrence keys such as `tea`, `tea#2`, and `tea#3`.
+
+## CDC generated lang can be shadowed by hand-written lang
+
+**Date**: 2026-07-02
+
+- **Problem**: CDC `processResources` uses `DuplicatesStrategy.EXCLUDE`, so `src/main/resources/assets/createdelightcore/lang/*.json` with the same path as datagen output can make the final jar keep only the smaller hand-written file.
+- **Fix/Lesson**: Put CDC lang additions in `EnglishLangHandler`/`ChineseLangHandler` and regenerate `src/generated/resources`, because `src/generated/resources` is already included as a main resource source set.
+
