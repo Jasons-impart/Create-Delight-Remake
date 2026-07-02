@@ -172,16 +172,21 @@ Order.checkAllPackages = function (orders, items) {
             return;
         }
 
-        let needed = order.entries.map(e => ({
-            id: e.id,
-            count: e.count,
-            minQuality: e.minQuality
-        }));
+        let seenEntryIds = {}
+        let needed = order.entries.map(e => {
+            seenEntryIds[e.id] = (seenEntryIds[e.id] || 0) + 1
+            return {
+                id: e.id,
+                key: seenEntryIds[e.id] == 1 ? e.id : `${e.id}#${seenEntryIds[e.id]}`,
+                count: e.count,
+                minQuality: e.minQuality
+            }
+        });
 
         // 每个条目记录：累计品质、数量、以及“按物品类型计数”的分布
         let entryMap = {};
         needed.forEach(req => {
-            entryMap[req.id] = {
+            entryMap[req.key] = {
                 totalQuality: 0,
                 totalCount: 0,
                 countByType: {}  // { typeKey: count }
@@ -199,7 +204,7 @@ Order.checkAllPackages = function (orders, items) {
                     let take = Math.min(req.count, stack.getCount());
                     if (take > 0) {
 
-                        let entry = entryMap[req.id];
+                        let entry = entryMap[req.key];
                         entry.totalQuality += (foodQuality - req.minQuality + 1) * take;
                         entry.totalCount += take;
 
@@ -282,18 +287,8 @@ Order.getGoodsOrderProperty = function (item, type) {
     let goodsMap = CreateDelight.goodsMap.get(type)
     if (goodsMap != null)
         return goodsMap(item)
-    let qualityLevel = global.CDStartupJavaClasses.$QualityUtils.getQuality(item).level()
-    let complexity = global.CDStartupJavaClasses.$FoodList.getComplexity(new global.CDStartupJavaClasses.$FoodInstance(item.item))
-    if (!item.hasTag("createdelight:order/" + type))
-        return
-    let food = Order.orderProperties[type]
-    let level = 0
-    for (let index = 0; index < food.diversity.length; index++) {
-        if (complexity <= food.diversity[index])
-            break
-        level++
-    }
-    return Math.max(Math.min(3, qualityLevel + level), 1)
+    let quality = global.CDStartupJavaClasses.$OrderGoodsQuality.getQuality(item, type)
+    return quality > 0 ? quality : undefined
 }
 /**
  * @deprecated

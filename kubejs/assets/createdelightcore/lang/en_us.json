@@ -1,7 +1,13 @@
 {
+  "itemGroup.createdelightcore.coin": "Coins & Items",
   "item.createdelightcore.iron_coin": "§7Iron Coin",
+  "item.createdelightcore.iron_coin.plural": "§7Iron Coins",
   "item.createdelightcore.copper_coin": "§eCopper Coin",
+  "item.createdelightcore.copper_coin.plural": "§eCopper Coins",
   "item.createdelightcore.gold_coin": "§6Gold Coin",
+  "item.createdelightcore.gold_coin.plural": "§6Gold Coins",
   "item.createdelightcore.emerald_coin": "§2Emerald Coin",
-  "item.createdelightcore.netherite_coin": "§5Netherite Coin"
+  "item.createdelightcore.emerald_coin.plural": "§2Emerald Coins",
+  "item.createdelightcore.netherite_coin": "§5Netherite Coin",
+  "item.createdelightcore.netherite_coin.plural": "§5Netherite Coins"
 }
