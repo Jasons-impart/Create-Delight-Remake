@@ -6,7 +6,8 @@ ServerEvents.recipes(e => {
         "neapolitan:adzuki/adzuki_crate_uncompress",
         "neapolitan:vanilla/vanilla_fudge",
         "neapolitan:banana/banana_bread",
-        "create_central_kitchen:mixing/vanilla_fudge"
+        "create_central_kitchen:mixing/vanilla_fudge",
+        "cosmopolitan:neapolitan/chocolate_banana_cream_bun"
     ])
     remove_recipes_output(e, [
         "neapolitan:chocolate_strawberries",
@@ -110,4 +111,12 @@ ServerEvents.recipes(e => {
         .transitionalItem(iner)
         .id("createdelight:sequenced_assembly/strawberry_banana_smoothie")
     }
+    kubejs.shapeless(
+        '4x cosmopolitan:chocolate_banana_cream_bun',
+        [
+            "4x cosmopolitan:cream_bun",
+            "#supplementaries:chocolate_bars",
+            "neapolitan:banana"
+        ]
+    ).id("createdelight:shapeless/chocolate_banana_cream_bun")
 })

@@ -90,6 +90,7 @@ StartupEvents.registry("item", e => {
         "sweet_berry",
         "lime",
         "chorus",
+        "herbal",
         "bat",
         "paw"
     ]
