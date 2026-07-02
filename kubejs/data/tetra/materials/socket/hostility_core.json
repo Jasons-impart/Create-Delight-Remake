@@ -1,0 +1,33 @@
+{
+  "replace": true,
+  "key": "hostility_core",
+  "category": "practical_core",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 1000,
+  "integrityCost": -6,
+  "integrityGain": 0,
+  "magicCapacity": 1000,
+  "toolLevel": 0,
+  "toolEfficiency": 3,
+  "attributes": {
+    "**generic.attack_damage": 0.1,
+    "**tetra:draw_damage": 0.1,
+    "**tetra:ability_damage": 0.1
+  },
+  "tints": {
+    "glyph": "331900",
+    "texture": "331900"
+  },
+  "textures": [
+    "perk_glow_0",
+    "perk_sided_0"
+  ],
+  "material": {
+    "items": [
+      "more_mod_tetra:hostility_core"
+    ]
+  }
+}

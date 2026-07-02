@@ -1,0 +1,37 @@
+{
+  "replace": true,
+  "key": "alex_immortal_embryo",
+  "category": "over_core",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 300,
+  "integrityCost": 1,
+  "integrityGain": 0,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 1,
+  "attributes": {
+    "**generic.attack_damage": 0.1,
+    "**tetra:draw_damage": 0.1,
+    "**tetra:ability_damage": 0.1
+  },
+  "effects": {
+    "more_mod_tetra:underocean": 25,
+    "more_mod_tetra:abyssal_ocean_echo": 10
+  },
+  "tints": {
+    "glyph": "68fffc",
+    "texture": "68fffc"
+  },
+  "textures": [
+    "perk_glow_0",
+    "perk_sided_0"
+  ],
+  "material": {
+    "items": [
+      "alexscaves:immortal_embryo"
+    ]
+  }
+}

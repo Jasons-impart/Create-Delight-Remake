@@ -1,0 +1,45 @@
+{
+  "key": "iceandfire_dragonscales_amythest",
+  "category": "dragon_scales",
+  "hidden": true,
+  "hiddenOutcomes": true,
+  "primary": 3,
+  "secondary": 2.5,
+  "tertiary": 6,
+  "durability": 900,
+  "integrityCost": 1,
+  "integrityGain": 6,
+  "magicCapacity": 500,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "attributes": {
+    "**generic.attack_damage": 0.1,
+    "**tetra:draw_damage": 0.1,
+    "**tetra:ability_damage": 0.1
+  },
+  "tints": {
+    "glyph": "470093",
+    "texture": "470093"
+  },
+  "textures": [
+    "default"
+  ],
+  "effects": {
+    "armorPenetration": 10,
+    "more_mod_tetra:lightning_dragon_blood_coating": 10
+  },
+  "requiredTools": {
+    "cut": "minecraft:gold"
+  },
+  "material": {
+    "items": [
+      "iceandfire:dragonscales_amythest"
+    ]
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ]
+}

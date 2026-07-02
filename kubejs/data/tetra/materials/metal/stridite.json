@@ -11,19 +11,28 @@
   "toolLevel": "minecraft:stone",
   "toolEfficiency": 8.0,
   "effects": {
-    "fierySelf": [ 2, 0.1 ]
-  },
-  "aspects": {
-    "blazing": 1
+    "fierySelf": [
+      2,
+      0.1
+    ]
   },
   "tints": {
     "glyph": "766770",
     "texture": "727072"
   },
-  "textures": ["heavy", "metal"],
+  "textures": [
+    "heavy",
+    "metal"
+  ],
   "material": {
-    "items": ["netherexp:stridite"]
+    "items": [
+      "netherexp:stridite"
+    ]
   },
   "requiredTools": {
-    "hammer_dig": 5    }
+    "hammer_dig": 5
+  },
+  "aspects": {
+    "blazing": 1
+  }
 }

@@ -1,0 +1,26 @@
+{
+  "replace": true,
+  "key": "curios_alexsmobs_clinging",
+  "category": "rainbow",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 0,
+  "integrityCost": 1,
+  "integrityGain": 0,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "effects": {
+    "more_mod_tetra:curios_alexsmobs_clinging": 1
+  },
+  "tints": {
+    "glyph": "484949"
+  },
+  "material": {
+    "items": [
+      "alexsmobs:dropbear_claw"
+    ]
+  }
+}

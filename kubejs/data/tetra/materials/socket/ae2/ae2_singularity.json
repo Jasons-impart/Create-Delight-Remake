@@ -1,0 +1,31 @@
+{
+  "replace": true,
+  "key": "ae2_singularity",
+  "category": "socket",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 100,
+  "integrityCost": 1,
+  "integrityGain": 0,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "effects": {
+    "more_mod_tetra:industrial_protection": 3,
+    "more_mod_tetra:the_century_gate": 1
+  },
+  "tints": {
+    "glyph": "3333FF",
+    "texture": "3333FF"
+  },
+  "textures": [
+    "default"
+  ],
+  "material": {
+    "items": [
+      "ae2:singularity"
+    ]
+  }
+}

@@ -10,7 +10,9 @@
       {
         "type": "tetra:material",
         "material": {
-          "items": [ "mynethersdelight:powder_cannon" ]
+          "items": [
+            "mynethersdelight:powder_cannon"
+          ]
         }
       }
     ]
@@ -18,7 +20,9 @@
   "outcomes": [
     {
       "type": "tetra:remove_improvements",
-      "improvements": [ "arrested" ]
+      "improvements": [
+        "arrested"
+      ]
     },
     {
       "type": "tetra:apply_improvements",

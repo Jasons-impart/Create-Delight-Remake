@@ -1,0 +1,36 @@
+{
+  "replace": true,
+  "key": "cataclysm_dying_ember",
+  "category": "fuller_material",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 0,
+  "integrityCost": 0,
+  "integrityGain": 7,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "attributes": {
+    "**generic.attack_damage": 0.05
+  },
+  "effects": {
+    "more_mod_tetra:fire_combo": 12
+  },
+  "tints": {
+    "glyph": "blaze_rod_glyph",
+    "texture": "blaze_rod"
+  },
+  "textures": [
+    "default"
+  ],
+  "material": {
+    "items": [
+      "cataclysm:dying_ember"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": 2
+  }
+}

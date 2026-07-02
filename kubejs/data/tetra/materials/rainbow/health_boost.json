@@ -1,0 +1,26 @@
+{
+  "replace": true,
+  "key": "health_boost",
+  "category": "rainbow",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 0,
+  "integrityCost": 1,
+  "integrityGain": 0,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "attributes": {
+    "generic.max_health": 2.86
+  },
+  "tints": {
+    "glyph": "ffffff"
+  },
+  "material": {
+    "items": [
+      "minecraft:golden_apple"
+    ]
+  }
+}

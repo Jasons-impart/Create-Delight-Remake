@@ -1,8 +1,12 @@
 [
-    {
-        "modules": [ "double/basic_hammer_left" ],
-        "matchSuffixed": true,
-        "improvements": [ "double/utilized" ],
-        "name": "double/quarry_hammer"
-    }
+  {
+    "modules": [
+      "double/basic_hammer_left"
+    ],
+    "matchSuffixed": true,
+    "improvements": [
+      "double/utilized"
+    ],
+    "name": "double/quarry_hammer"
+  }
 ]

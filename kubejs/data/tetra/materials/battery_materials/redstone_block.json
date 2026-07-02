@@ -1,0 +1,29 @@
+{
+  "key": "redstone_block",
+  "category": "battery_materials",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 0,
+  "integrityCost": 0,
+  "integrityGain": 0,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "effects": {
+    "more_mod_tetra:curios_fly": [
+      10,
+      0
+    ]
+  },
+  "tints": {
+    "glyph": "FF0000",
+    "texture": "FF0000"
+  },
+  "material": {
+    "items": [
+      "minecraft:redstone_block"
+    ]
+  }
+}

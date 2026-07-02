@@ -2,7 +2,10 @@
   {
     "key": "pristine_emerald",
     "effects": {
-      "criticalStrike": [15, 1]
+      "criticalStrike": [
+        15,
+        1
+      ]
     }
   }
 ]

@@ -1,0 +1,31 @@
+{
+  "replace": true,
+  "key": "quark_diamond_heart",
+  "category": "socket",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 714,
+  "integrityCost": 1,
+  "integrityGain": 0,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 4,
+  "attributes": {
+    "**generic.attack_damage": 0.25
+  },
+  "tints": {
+    "glyph": "diamond_glyph",
+    "texture": "diamond"
+  },
+  "textures": [
+    "perk_glow_0",
+    "perk_sided_0"
+  ],
+  "material": {
+    "items": [
+      "quark:diamond_heart"
+    ]
+  }
+}

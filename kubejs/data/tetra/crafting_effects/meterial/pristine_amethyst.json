@@ -10,7 +10,9 @@
       {
         "type": "tetra:material",
         "material": {
-          "items": [ "tetra:pristine_amethyst" ]
+          "items": [
+            "tetra:pristine_amethyst"
+          ]
         }
       }
     ]

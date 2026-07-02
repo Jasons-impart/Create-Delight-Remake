@@ -1,0 +1,36 @@
+{
+  "replace": true,
+  "key": "alexscaves_ferrouslime_ball",
+  "category": "fuller_material",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 0,
+  "integrityCost": 0,
+  "integrityGain": 4,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "attributes": {
+    "**generic.attack_damage": 0.025
+  },
+  "effects": {
+    "more_mod_tetra:magnetizing_metal": 10
+  },
+  "tints": {
+    "glyph": "888bab",
+    "texture": "888bab"
+  },
+  "textures": [
+    "default"
+  ],
+  "material": {
+    "items": [
+      "alexscaves:ferrouslime_ball"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": 2
+  }
+}

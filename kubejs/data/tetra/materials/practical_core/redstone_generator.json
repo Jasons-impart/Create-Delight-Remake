@@ -1,0 +1,29 @@
+{
+  "replace": true,
+  "key": "redstone_generator",
+  "category": "practical_core",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 0,
+  "integrityCost": 2,
+  "integrityGain": 0,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "effects": {
+    "more_mod_tetra:unindustrial_protection": 3
+  },
+  "tints": {
+    "glyph": "FFFFFF"
+  },
+  "textures": [
+    "redstone_generator"
+  ],
+  "material": {
+    "items": [
+      "more_mod_tetra:redstone_generator"
+    ]
+  }
+}

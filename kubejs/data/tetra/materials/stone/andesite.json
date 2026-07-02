@@ -1,30 +1,33 @@
 {
-    "key": "andesite",
-    "category": "stone",
-    "hidden": true,
-    "hiddenOutcomes": true,
-    "primary": 4,
-    "secondary": 3.5,
-    "tertiary": 0,
-    "durability": 180,
-    "integrityCost": 1,
-    "integrityGain": 4,
-    "magicCapacity": 90,
-    "toolLevel": "minecraft:stone",
-    "toolEfficiency": 4.5,
-    "tints": {
-        "glyph": "andesite_glyph",
-        "texture": "andesite"
-    },
-    "textures": [
-        "grainy",
-        "crude",
-        "default"
-    ],
-    "material": {
-        "items": [ "minecraft:andesite","minecraft:polished_andesite"]
-    },
-    "requiredTools": {
-        "hammer_dig": "minecraft:wood"
-    }
+  "key": "andesite",
+  "category": "stone",
+  "hidden": true,
+  "hiddenOutcomes": true,
+  "primary": 4,
+  "secondary": 3.5,
+  "tertiary": 0,
+  "durability": 180,
+  "integrityCost": 1,
+  "integrityGain": 4,
+  "magicCapacity": 90,
+  "toolLevel": "minecraft:stone",
+  "toolEfficiency": 4.5,
+  "tints": {
+    "glyph": "andesite_glyph",
+    "texture": "andesite"
+  },
+  "textures": [
+    "grainy",
+    "crude",
+    "default"
+  ],
+  "material": {
+    "items": [
+      "minecraft:andesite",
+      "minecraft:polished_andesite"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": "minecraft:wood"
+  }
 }

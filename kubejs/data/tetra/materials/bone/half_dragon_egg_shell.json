@@ -1,7 +1,7 @@
 {
   "key": "half_dragon_egg_shell",
   "category": "bone",
-  "primary":6.3,
+  "primary": 6.3,
   "secondary": 3.0,
   "tertiary": 4.0,
   "durability": 973,
@@ -14,10 +14,16 @@
     "glyph": "73657d",
     "texture": "4d4354"
   },
-  "textures": ["crude", "bone"],
+  "textures": [
+    "crude",
+    "bone"
+  ],
   "material": {
-    "items": ["ends_delight:half_dragon_egg_shell"]
+    "items": [
+      "ends_delight:half_dragon_egg_shell"
+    ]
   },
   "requiredTools": {
-    "hammer_dig": 4    }
+    "hammer_dig": 4
+  }
 }

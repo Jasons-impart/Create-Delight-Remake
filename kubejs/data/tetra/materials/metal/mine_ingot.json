@@ -1,25 +1,32 @@
-{   
-    "key": "mine_ingot",
-    "category": "metal",
-    "primary": 8,
-    "secondary": 2,
-    "tertiary": 2,
-    "durability": 1000,
-    "integrityCost": 2,
-    "integrityGain": 9,
-    "magicCapacity": 100,
-    "toolLevel": "minecraft:netherite",
-    "toolEfficiency": 8,
-    "improvements":{
-      "vvaddon/charge": 1
-    },
-    "tints": {
-      "glyph": "1AD5DC",
-      "texture": "1AD5DC"
-    },
-    "textures": ["heavy", "metal" ],
-    "material": { "items": [ "vvaddon:mine_ingot" ] },
-    "requiredTools": {
-      "hammer_dig": 8
+{
+  "key": "mine_ingot",
+  "category": "metal",
+  "primary": 8,
+  "secondary": 2,
+  "tertiary": 2,
+  "durability": 1000,
+  "integrityCost": 2,
+  "integrityGain": 9,
+  "magicCapacity": 100,
+  "toolLevel": "minecraft:netherite",
+  "toolEfficiency": 8,
+  "tints": {
+    "glyph": "1AD5DC",
+    "texture": "1AD5DC"
+  },
+  "textures": [
+    "heavy",
+    "metal"
+  ],
+  "material": {
+    "items": [
+      "vvaddon:mine_ingot"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": 8
+  },
+  "improvements": {
+    "vvaddon/charge": 1
   }
-  }
+}

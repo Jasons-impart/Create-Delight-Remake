@@ -1,0 +1,31 @@
+{
+  "replace": true,
+  "key": "immersiveengineering_component_electronic_adv",
+  "category": "socket",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 100,
+  "integrityCost": 1,
+  "integrityGain": 0,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "effects": {
+    "more_mod_tetra:industrial_protection": 3
+  },
+  "tints": {
+    "glyph": "a66f27",
+    "texture": "a66f27"
+  },
+  "textures": [
+    "perk_glow_0",
+    "perk_sided_0"
+  ],
+  "material": {
+    "items": [
+      "immersiveengineering:component_electronic_adv"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "replace": true,
+  "key": "alexscaves_pewen_sap",
+  "category": "fuller_material",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 0,
+  "integrityCost": 0,
+  "integrityGain": 6,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "attributes": {
+    "**generic.attack_damage": 0.01
+  },
+  "tints": {
+    "glyph": "fcaf1e",
+    "texture": "fcaf1e"
+  },
+  "textures": [
+    "default"
+  ],
+  "material": {
+    "items": [
+      "alexscaves:pewen_sap"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": 2
+  }
+}
