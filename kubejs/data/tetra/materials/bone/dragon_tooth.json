@@ -14,10 +14,16 @@
     "glyph": "2d1a5c",
     "texture": "854da2"
   },
-  "textures": ["shiny", "crude"],
+  "textures": [
+    "shiny",
+    "crude"
+  ],
   "material": {
-    "items": ["ends_delight:dragon_tooth"]
+    "items": [
+      "ends_delight:dragon_tooth"
+    ]
   },
   "requiredTools": {
-    "hammer_dig": 5    }
+    "hammer_dig": 5
+  }
 }

@@ -1,6 +1,8 @@
 {
   "replace": true,
-  "slots": [ "sword/blade" ],
+  "slots": [
+    "sword/blade"
+  ],
   "type": "tetra:basic_major_module",
   "improvements": [
     "tetra:sword/short_blade/",
@@ -10,7 +12,12 @@
   ],
   "variants": [
     {
-      "materials": [ "tetra:stone/flint", "tetra:metal/", "tetra:gem/", "tetra:bone/" ],
+      "materials": [
+        "tetra:stone/flint",
+        "tetra:metal/",
+        "tetra:gem/",
+        "tetra:bone/"
+      ],
       "key": "knife/",
       "aspects": {
         "edged_weapon": 2,
@@ -25,21 +32,42 @@
         "blade_cut": 1
       },
       "durability": -20,
-      "tags": [ "forge:tools", "forge:tools/knives", "farmersdelight:straw_harvesters", "farmersdelight:tools/knives" ],
+      "tags": [
+        "forge:tools",
+        "forge:tools/knives",
+        "farmersdelight:straw_harvesters",
+        "farmersdelight:tools/knives"
+      ],
       "extract": {
         "primaryAttributes": {
           "generic.attack_damage": 1
         },
         "tools": {
-          "cut": [ 0.7, 1 ],
-          "blade_cut": [ 1, 1 ]
+          "cut": [
+            0.7,
+            1
+          ],
+          "blade_cut": [
+            1,
+            1
+          ]
         },
         "durability": 0.8,
         "integrity": -1,
         "magicCapacity": 1,
-        "glyph": { "textureLocation": "tetracelium:textures/gui/glyphs.png" },
-        "availableTextures": [ "metal", "shiny", "crude" ],
-        "models": [ { "location": "tetracelium:item/module/sword/blade/knife/" } ]
+        "glyph": {
+          "textureLocation": "tetracelium:textures/gui/glyphs.png"
+        },
+        "availableTextures": [
+          "metal",
+          "shiny",
+          "crude"
+        ],
+        "models": [
+          {
+            "location": "tetracelium:item/module/sword/blade/knife/"
+          }
+        ]
       }
     },
     {
@@ -57,7 +85,12 @@
         "blade_cut": 1
       },
       "durability": 721,
-      "tags": [ "forge:tools", "forge:tools/knives", "farmersdelight:straw_harvesters", "farmersdelight:tools/knives" ],
+      "tags": [
+        "forge:tools",
+        "forge:tools/knives",
+        "farmersdelight:straw_harvesters",
+        "farmersdelight:tools/knives"
+      ],
       "integrity": -2,
       "magicCapacity": 160,
       "glyph": {
@@ -72,4 +105,3 @@
     }
   ]
 }
-

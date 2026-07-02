@@ -25,5 +25,7 @@
   "requiredTools": {
     "hammer_dig": "minecraft:wood"
   },
-  "features": [ "polished" ]
+  "features": [
+    "polished"
+  ]
 }

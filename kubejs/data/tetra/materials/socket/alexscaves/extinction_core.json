@@ -1,0 +1,37 @@
+{
+  "replace": true,
+  "key": "extinction_core",
+  "category": "over_core",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 300,
+  "integrityCost": 1,
+  "integrityGain": 0,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 1,
+  "attributes": {
+    "**generic.attack_damage": 0.1,
+    "**tetra:draw_damage": 0.1,
+    "**tetra:ability_damage": 0.1
+  },
+  "effects": {
+    "more_mod_tetra:extinction": 12,
+    "more_mod_tetra:lava_mob": 21
+  },
+  "tints": {
+    "glyph": "bf0000",
+    "texture": "bf0000"
+  },
+  "textures": [
+    "perk_glow_0",
+    "perk_sided_0"
+  ],
+  "material": {
+    "items": [
+      "more_mod_tetra:extinction_core"
+    ]
+  }
+}

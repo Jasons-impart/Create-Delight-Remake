@@ -1,6 +1,8 @@
 {
   "replace": true,
-  "slots": [ "shield/plate" ],
+  "slots": [
+    "shield/plate"
+  ],
   "materialSlotCount": 1,
   "displayType": "improvement",
   "glyph": {
@@ -13,9 +15,11 @@
   "outcomes": [
     {
       "material": {
-        "items":[ "vinery:vinery_standard" ],
+        "items": [
+          "vinery:vinery_standard"
+        ],
         "count": 1
-      } ,
+      },
       "improvements": {
         "shield/vinery_standard": 1
       }

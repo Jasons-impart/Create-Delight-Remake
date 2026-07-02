@@ -1,0 +1,38 @@
+{
+  "replace": true,
+  "key": "iceandfire_ghost_core",
+  "category": "over_core",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 300,
+  "integrityCost": 1,
+  "integrityGain": 0,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "attributes": {
+    "**generic.attack_damage": 0.1,
+    "**tetra:draw_damage": 0.1,
+    "**tetra:ability_damage": 0.1,
+    "**generic.attack_speed": 0.1
+  },
+  "effects": {
+    "more_mod_tetra:ghost_sword": 50,
+    "more_mod_tetra:unlimited_phantasmal_blade_works": 1
+  },
+  "tints": {
+    "glyph": "8effa8",
+    "texture": "8effa8"
+  },
+  "textures": [
+    "perk_glow_0",
+    "perk_sided_0"
+  ],
+  "material": {
+    "items": [
+      "more_mod_tetra:ghost_core"
+    ]
+  }
+}

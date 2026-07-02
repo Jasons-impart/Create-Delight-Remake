@@ -1,0 +1,82 @@
+{
+  "replace": true,
+  "slots": [
+    "sword/blade"
+  ],
+  "type": "tetra:basic_major_module",
+  "improvements": [
+    "tetra:sword/cooking_knife/",
+    "tetra:sword/short_blade/",
+    "tetra:sword/shared_blade/",
+    "tetra:sword/shared/",
+    "tetra:shared/"
+  ],
+  "variants": [
+    {
+      "materials": [
+        "tetra:wood/",
+        "tetra:stone/",
+        "tetra:metal/",
+        "tetra:gem/",
+        "tetra:bone/"
+      ],
+      "key": "cooking_knife/",
+      "tags": [
+        "farmersdelight:tools/knives",
+        "forge:tools/knives",
+        "c:knives",
+        "bakery:knives",
+        "forge:knives",
+        "butcher:butcher_enchantable",
+        "kaleidoscope_cookery:kitchen_knife",
+        "minecraft:breaks_decorated_pots",
+        "farmersdelight:straw_harvesters",
+        "minecraft:tools",
+        "forge:tools/scavenging",
+        "ends_delight:dragon_loot_tools"
+      ],
+      "attributes": {
+        "generic.attack_speed": -1,
+        "generic.attack_damage": -0.8
+      },
+      "aspects": {
+        "edged_weapon": 2,
+        "breakable": 2
+      },
+      "effects": {
+        "more_mod_tetra:beheading": 10
+      },
+      "durability": -20,
+      "extract": {
+        "primaryAttributes": {
+          "generic.attack_damage": 1
+        },
+        "secondaryAttributes": {
+          "generic.attack_speed": -0.1
+        },
+        "tools": {
+          "cut": [
+            0.7,
+            1
+          ]
+        },
+        "durability": 0.8,
+        "integrity": -1,
+        "magicCapacity": 1,
+        "glyph": {
+          "textureLocation": "tetra:textures/gui/wizard_glyphs.png",
+          "textureX": 64,
+          "textureY": 160
+        },
+        "availableTextures": [
+          ""
+        ],
+        "models": [
+          {
+            "location": "more_mod_tetra:item/module/sword/more_mod_tetra/cooking_knife"
+          }
+        ]
+      }
+    }
+  ]
+}

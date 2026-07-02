@@ -19,7 +19,9 @@
     "default"
   ],
   "material": {
-    "items": [ "northstar:durable_fabric" ]
+    "items": [
+      "northstar:durable_fabric"
+    ]
   },
   "requiredTools": {
     "cut": "minecraft:stone"

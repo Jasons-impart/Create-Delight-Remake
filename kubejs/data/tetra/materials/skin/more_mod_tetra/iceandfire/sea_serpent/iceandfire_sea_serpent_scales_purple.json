@@ -1,0 +1,43 @@
+{
+  "key": "iceandfire_sea_serpent_scales_purple",
+  "category": "sea_serpent_scales",
+  "hidden": true,
+  "hiddenOutcomes": true,
+  "primary": 2,
+  "secondary": 1.5,
+  "tertiary": 4,
+  "durability": 900,
+  "integrityCost": 1,
+  "integrityGain": 6,
+  "magicCapacity": 500,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "attributes": {
+    "**generic.attack_damage": 0.02
+  },
+  "tints": {
+    "glyph": "8d25e8",
+    "texture": "8d25e8"
+  },
+  "textures": [
+    "default"
+  ],
+  "effects": {
+    "crushing": 5,
+    "more_mod_tetra:water_power": 2
+  },
+  "requiredTools": {
+    "cut": "minecraft:gold"
+  },
+  "material": {
+    "items": [
+      "iceandfire:sea_serpent_scales_purple"
+    ]
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ]
+}

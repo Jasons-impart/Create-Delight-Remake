@@ -1,0 +1,37 @@
+{
+  "replace": true,
+  "key": "upgrade_aquatic_elder_eye",
+  "category": "socket",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 135,
+  "integrityCost": 1,
+  "integrityGain": 0,
+  "magicCapacity": 355,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "attributes": {
+    "**generic.attack_damage": 0.15,
+    "**tetra:draw_damage": 0.15,
+    "**tetra:ability_damage": 0.15
+  },
+  "effects": {
+    "more_mod_tetra:reverse_mirror": 5,
+    "more_mod_tetra:flame_killer": 15
+  },
+  "tints": {
+    "glyph": "ff0000",
+    "texture": "ff0000"
+  },
+  "textures": [
+    "perk_glow_0",
+    "perk_sided_0"
+  ],
+  "material": {
+    "items": [
+      "upgrade_aquatic:elder_eye"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "replace": true,
+  "key": "autumnity_sap_bottle",
+  "category": "fuller_material",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 0,
+  "integrityCost": 0,
+  "integrityGain": 4,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "attributes": {
+    "**generic.attack_damage": 0.015
+  },
+  "effects": {
+    "more_mod_tetra:slowness": 1
+  },
+  "tints": {
+    "glyph": "ca6e27",
+    "texture": "ca6e27"
+  },
+  "textures": [
+    "default"
+  ],
+  "material": {
+    "items": [
+      "autumnity:sap_bottle"
+    ]
+  }
+}
