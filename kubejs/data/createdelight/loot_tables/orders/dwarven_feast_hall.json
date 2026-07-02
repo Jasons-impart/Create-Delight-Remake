@@ -1,0 +1,34 @@
+{
+  "pools": [
+    {
+      "rolls": 2,
+      "entries": [
+        { "type": "minecraft:item", "name": "createdelightcore:bronze_ingot", "weight": 14, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 4, "max": 9 } }] },
+        { "type": "minecraft:item", "name": "createdeco:industrial_iron_ingot", "weight": 12, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 4, "max": 8 } }] },
+        { "type": "minecraft:item", "name": "farmersdelight:organic_compost", "weight": 8, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 3, "max": 6 } }] },
+        { "type": "minecraft:item", "name": "butchercraft:soap", "weight": 7, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 4, "max": 8 } }] }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "minecraft:item", "name": "create:brass_ingot", "weight": 10, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 2, "max": 5 } }] },
+        { "type": "minecraft:item", "name": "butchercraft:meat_hook_item", "weight": 7 },
+        { "type": "minecraft:item", "name": "quark:feeding_trough", "weight": 6 },
+        { "type": "minecraft:item", "name": "butchercraft:butcher_block_block_item", "weight": 4 },
+        { "type": "minecraft:item", "name": "create:belt_connector", "weight": 6, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 3, "max": 7 } }] }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "minecraft:item", "name": "create:precision_mechanism", "weight": 3 },
+        { "type": "minecraft:item", "name": "create:brass_casing", "weight": 4 },
+        { "type": "minecraft:item", "name": "create:filter", "weight": 5, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 3 } }] },
+        { "type": "minecraft:item", "name": "farmersdelight:safety_net", "weight": 5 },
+        { "type": "minecraft:loot_table", "name": "createdelight:orders/random_hatbag", "weight": 1 }
+      ]
+    }
+  ],
+  "functions": []
+}

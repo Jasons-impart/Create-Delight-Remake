@@ -219,6 +219,11 @@ ServerEvents.tags("minecraft:item", e => {
         "youkaishomecoming:scarlet_tea",
         "collectorsreap:pomegranate_black_tea",
         "collectorsreap:lime_green_tea",
+        "collectorsreap:vernal_purge",
+        "collectorsreap:strong_vernal_purge",
+        "collectorsreap:sweet_recovery",
+        "collectorsreap:long_sweet_recovery",
+        "collectorsreap:strong_sweet_recovery",
         "bakeries:matcha_latte",
 
 
@@ -283,6 +288,9 @@ ServerEvents.tags("minecraft:item", e => {
         "brewinandchewin:steel_toe_stout",
         "brewinandchewin:strongroot_ale",
         "brewinandchewin:vodka",
+        "cosmopolitan:cosmopolitan_cocktail",
+        "cosmopolitan:enchanted_cosmopolitan_cocktail",
+        "cosmopolitan:steeleaf_nectar",
 
     )
     e.add("createdelight:order/wrap",
@@ -437,6 +445,7 @@ ServerEvents.tags("minecraft:item", e => {
         "culturaldelights:avocado_toast",
         "alexsdelight:gongylidia_bruschetta",
         "collectorsreap:lucuma_bread",
+        "collectorsreap:panettone_slice",
         "neapolitan:banana_bread",
         "luncheonmeatsdelight:sliced_toast",
         "fruitsdelight:jelly_bread",
@@ -581,7 +590,10 @@ ServerEvents.tags("minecraft:item", e => {
         "trailandtales_delight:lantern_fruit",
         "trailandtales_delight:golden_lantern_fruit",
         "createcafe:blood_orange",
-        "createcafe:mana_berries"
+        "createcafe:mana_berries",
+        "collectorsreap:dried_pink_dragon_fruit",
+        "collectorsreap:stygian_pomegranate",
+        "collectorsreap:gilded_lucuma"
 
     )
     e.add("createdelight:order/juice",
@@ -737,9 +749,13 @@ ServerEvents.tags("minecraft:item", e => {
         "bakeries:iced_american",
         "bakeries:iced_latte",
         "bakeries:orange_american",
+        "collectorsreap:limbo_brew",
+        "collectorsreap:long_limbo_brew",
+        "collectorsreap:strong_limbo_brew",
     )
     e.add("createdelight:order/wine",
-        ''
+        "#createdelight:order/western_wine",
+        "#createdelight:order/eastern_wine"
     )
     e.add("createdelight:order/drink",
         "#createdelight:order/western_wine",
@@ -867,6 +883,7 @@ ServerEvents.tags("minecraft:item", e => {
         "collectorsreap:chocolate_cannoli",
         "collectorsreap:coffee_cannoli",
         "collectorsreap:lucuma_pudding",
+        "collectorsreap:heavens_cream",
         "create_confectionery:candy_cane",
         "create_confectionery:dark_chocolate_candy",
         "create_confectionery:dark_chocolate_glazed_berries",
@@ -884,6 +901,7 @@ ServerEvents.tags("minecraft:item", e => {
         "collectorsreap:mint_cannoli",
         "collectorsreap:strawberry_cannoli",
         "collectorsreap:vanilla_cannoli",
+        "collectorsreap:cream_cheese",
         "bakeries:matcha_parfait",
         "festival_delicacies:qingtuan",
         "youkaishomecoming:seven_colored_yokan"
@@ -939,6 +957,7 @@ ServerEvents.tags("minecraft:item", e => {
         "silentsdelight:sculk_sensor_tendril_roll_slice",
         "collectorsreap:uni_roll",
         "collectorsreap:clam_roll",
+        "collectorsreap:prawn_roll",
         "cavedelight:trilocaris_roll",
         "youkaishomecoming:egg_nigiri",
         "youkaishomecoming:tuna_nigiri",
@@ -1100,6 +1119,10 @@ ServerEvents.tags("minecraft:item", e => {
         "collectorsreap:salmon_tartare",
         "collectorsreap:buttered_legs",
         "collectorsreap:chieftain_claw",
+        "collectorsreap:chieftain_crab_meat",
+        "collectorsreap:cooked_platinum_bass",
+        "collectorsreap:cooked_platinum_bass_slice",
+        "collectorsreap:cooked_tiger_prawn",
         "abnormals_delight:dune_platter",
         "abnormals_delight:escargot",
         "abnormals_delight:maple_glazed_bacon",
@@ -1137,6 +1160,7 @@ ServerEvents.tags("minecraft:item", e => {
         "collectorsreap:potato_fritters",
         "collectorsreap:crimson_carrot_roast",
         "collectorsreap:stuffed_portobello_cap",
+        "collectorsreap:baked_portobello_cap",
         "collectorsreap:spicy_grenadine_jelly",
         "collectorsreap:strawberry_jam_bun",
         "collectorsreap:pomegranate_bean_salad",

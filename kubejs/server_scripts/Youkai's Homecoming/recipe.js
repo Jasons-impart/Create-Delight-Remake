@@ -87,7 +87,7 @@ ServerEvents.recipes(e => {
             return
         ratatouille.baking(recipe.getOriginalRecipeResult(), recipe.getOriginalRecipeIngredients())
         .processingTime(200)
-        .id(`createdelight:baking/${recipe.getOriginalRecipeResult().getId().split(":")[1]}`)
+        .id(`createdelight:baking/${recipe.getId().split(":")[1]}`)
     })
 
     //饭团

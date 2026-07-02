@@ -17,6 +17,8 @@ modify_improvement_spacing = 28
 enableStatBarShowControl = false
 #在材料页面显示sorter和filter的数量
 showFilterAndSorterElements = 10
+#在材料页面的材料上显示材料属性的tooltip
+showMaterialDataHolo = true
 
 [Tooltip]
 	#是否启用添加材料Tooltip-修改此配置需重启生效
@@ -53,6 +55,8 @@ showFilterAndSorterElements = 10
 	enableSpecialMaterialTooltip = true
 	#按material的key隐藏tooltip
 	hideMaterialKeys = []
+	#是否常驻显示材料属性tooltip
+	enableAllowsShowTooltip = false
 
 	[Tooltip.ProgressBar]
 		#设置进度条的长度

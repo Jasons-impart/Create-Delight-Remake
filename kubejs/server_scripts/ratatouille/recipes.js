@@ -14,7 +14,7 @@ ServerEvents.recipes(e => {
     "ratatouille:composting/composting",
     "ratatouille:compost_tower",
   ])
-  const { create, createdieselgenerators } = e.recipes
+  const { create, createdieselgenerators } = e.recipes;
   // remove_recipes_input(e, [
   //   'ratatouille:ripen_matter',
   //   'ratatouille:ripen_matter_fold',
@@ -35,23 +35,17 @@ ServerEvents.recipes(e => {
   //   'ratatouille:compost_tea',
   //   'ratatouille:compost_residue_fluid',
   // ])
-  e.forEachRecipe({output: "ratatouille:compost_mass"}, recipe => {
-    let ingredients = []
-    let id_split = recipe.getId().split("/")[1]
-    recipe.getOriginalRecipeIngredients().forEach(ing => {
-      let count = 1
-      if (id_split.endsWith("4to1"))
-        count = 4
-      else if (id_split.endsWith("2to1"))
-        count = 2
-      ingredients.push(Ingredient.of(ing, count))
-    })
-    create.mixing(Item.of("createaddition:biomass", recipe.getOriginalRecipeResult().count), ingredients)
-    .id(`createdelight:mixing/${id_split}`)
+  [
+    ["compost_mass_1to1", "1x createaddition:biomass", [Ingredient.of("#ratatouille:compostable_items_1to1")]],
+    ["compost_mass_1to4", "4x createaddition:biomass", [Ingredient.of("#ratatouille:compostable_items_1to4")]],
+    ["compost_mass_1to9", "9x createaddition:biomass", ["minecraft:melon"]],
+    ["compost_mass_2to1", "createaddition:biomass", [Ingredient.of("#ratatouille:compostable_items_2to1", 2)]],
+    ["compost_mass_4to1", "createaddition:biomass", [Ingredient.of("#ratatouille:compostable_items_4to1", 4)]],
+  ].forEach(recipe => {
+    create.mixing(recipe[1], recipe[2])
+      .id(`createdelight:mixing/${recipe[0]}`)
+    e.remove({ id: `ratatouille:squeezing/${recipe[0]}` })
   })
-  remove_recipes_output(e, [
-    "ratatouille:compost_mass"
-  ])
   e.replaceInput({}, "ratatouille:compost_mass", "createaddition:biomass")
   remove_recipes_type(e, ["ratatouille:composting"])
   {

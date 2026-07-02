@@ -98,6 +98,12 @@
 - 推荐使用 [VSCode](https://code.visualstudio.com/) 或者 [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/?section=windows) 开发。
 - 如果想使用 AI IDE，推荐 [Trae CN](https://www.trae.cn/)。
 
+### HMCL 命令行启动
+- HMCL 可以通过命令行启动：`java -jar HMCL.jar`。
+- 如果需要传入 HMCL 的 JVM 参数，参数必须放在 `-jar HMCL.jar` 之前，例如：`java -Dhmcl.home="<HMCL数据目录>" -jar HMCL.jar`。
+- 常用环境变量包括 `HMCL_JAVA_HOME`（指定启动 HMCL 使用的 Java）和 `HMCL_JAVA_OPTS`（指定启动 HMCL 的默认 JVM 参数）。
+- 参考：<https://docs.hmcl.net/launcher/jvm-options-and-env.html>
+
 ### 杂项笔记
 - KubeJS 的 server/client 脚本更改后可以直接在游戏内热加载 `/kubejs reload server_scripts`，无需重启游戏。
 - 如果是修改了配方、标签、掉落表等，需要再执行 `/reload`。
