@@ -1,0 +1,34 @@
+{
+  "pools": [
+    {
+      "rolls": 2,
+      "entries": [
+        { "type": "minecraft:item", "name": "create:copper_sheet", "weight": 14, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 4, "max": 9 } }] },
+        { "type": "minecraft:item", "name": "create:fluid_pipe", "weight": 14, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 8, "max": 16 } }] },
+        { "type": "minecraft:item", "name": "vinery:wine_bottle", "weight": 10, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 4, "max": 10 } }] },
+        { "type": "minecraft:item", "name": "brewinandchewin:coaster", "weight": 8, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 4, "max": 8 } }] }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "minecraft:item", "name": "create:mechanical_pump", "weight": 9 },
+        { "type": "minecraft:item", "name": "create:item_drain", "weight": 8 },
+        { "type": "minecraft:item", "name": "create:fluid_tank", "weight": 7 },
+        { "type": "minecraft:item", "name": "create:copper_casing", "weight": 6 },
+        { "type": "minecraft:item", "name": "create:spout", "weight": 4 }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "minecraft:item", "name": "brewinandchewin:keg", "weight": 5 },
+        { "type": "minecraft:item", "name": "brewinandchewin:heating_cask", "weight": 3 },
+        { "type": "minecraft:item", "name": "vinery:wine_box", "weight": 2 },
+        { "type": "minecraft:item", "name": "create:brass_ingot", "weight": 4, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 2, "max": 5 } }] },
+        { "type": "minecraft:loot_table", "name": "createdelight:orders/random_hatbag", "weight": 1 }
+      ]
+    }
+  ],
+  "functions": []
+}

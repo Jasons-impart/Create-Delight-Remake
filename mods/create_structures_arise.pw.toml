@@ -1,12 +1,11 @@
 name = "Create: Structures Arise"
-filename = "create_structures_arise-174.47.46 Release-forge-1.20.1.jar"
+filename = "create_structures_arise-176.49.48 Forge 1.20.1.jar"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/create_structures_arise-174.47.46%20Release-forge-1.20.1.jar"
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/create_structures_arise-176.49.48%20Forge%201.20.1.jar"
 hash-format = "sha256"
-hash = "5b1e50e48936c9d2147d917301848ada6d445be1c5ef0e0809913ecdc2949be4"
-
+hash = "e1284d1a57a033abf73f1b00e675c2eb8097f6bfcb9fb268fc852fba49625f34"
 [release.curseforge]
 project-id = 1010066
-file-id = 7772645
+file-id = 8138503

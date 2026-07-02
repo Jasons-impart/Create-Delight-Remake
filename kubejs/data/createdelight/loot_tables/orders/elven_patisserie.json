@@ -1,0 +1,33 @@
+{
+  "pools": [
+    {
+      "rolls": 2,
+      "entries": [
+        { "type": "minecraft:item", "name": "farmersdelight:rich_soil", "weight": 14, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 4, "max": 8 } }] },
+        { "type": "minecraft:item", "name": "farmersdelight:organic_compost", "weight": 12, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 3, "max": 6 } }] },
+        { "type": "minecraft:item", "name": "youkaishomecoming:soybean", "weight": 12, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 8, "max": 18 } }] },
+        { "type": "minecraft:item", "name": "youkaishomecoming:pods", "weight": 9, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 4, "max": 8 } }] }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "minecraft:item", "name": "youkaishomecoming:mochi", "weight": 9, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 4, "max": 8 } }] },
+        { "type": "minecraft:item", "name": "createdelight:dry_yeast", "weight": 8, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 4, "max": 9 } }] },
+        { "type": "minecraft:item", "name": "youkaishomecoming:tofu", "weight": 7, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 3, "max": 7 } }] },
+        { "type": "minecraft:item", "name": "ratatouille:cake_mold", "weight": 5 }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "minecraft:item", "name": "eclipticseasons:growth_detector", "weight": 4 },
+        { "type": "minecraft:item", "name": "eclipticseasons:hygrometer", "weight": 4 },
+        { "type": "minecraft:item", "name": "eclipticseasons:seasonal_prayer_scroll", "weight": 2 },
+        { "type": "minecraft:item", "name": "createdelight:sprinkler", "weight": 2 },
+        { "type": "minecraft:loot_table", "name": "createdelight:orders/random_doll", "weight": 1 }
+      ]
+    }
+  ],
+  "functions": []
+}

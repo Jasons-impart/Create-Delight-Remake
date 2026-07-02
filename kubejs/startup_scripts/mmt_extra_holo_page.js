@@ -9,9 +9,6 @@ if (Platform.isClientEnvironment() && Platform.isLoaded("extraholopage") && Plat
         const $ResourceLocation = ExtraHoloPageClasses.$ResourceLocation
         const ForgeRegistries = global.CDStartupJavaClasses.ForgeRegistries
 
-        $ExtraHoloBuilder.ListX = [0, 1, -1, 2, 2, -2, -2, 3, -3, 4, 4, -4, -4, 5, -5, 6, 6, -6, -6, 7, -7, 8, 8, -8, -8, 9, -9]
-        $ExtraHoloBuilder.ListY = [-1, 0, 0, -1, 1, -1, 1, 0, 0, -1, 1, -1, 1, 0, 0, -1, 1, -1, 1, 0, 0, -1, 1, -1, 1, 0, 0]
-
         const texture = new $ResourceLocation("tetra", "textures/gui/mmt_extra_holo.png")
         const entries = [
             ["modular_mmt_amulet", 0, 0],

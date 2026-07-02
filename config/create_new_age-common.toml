@@ -5,9 +5,6 @@ suToEnergy = 0.078125
 #How many coils can the carbon brushes collect energy from
 #Range: > 0
 maxCoils = 8
-#How many reactor rods can a fuel inserter or a heat vent have in a single direction
-#Range: > 0
-maxRodsInDirection = 32
 #Multiplier of wire conductivity
 #Range: 0.0 ~ 1.7976931348623157E308
 conductivityMultiplier = 1.0
@@ -29,18 +26,18 @@ passivePipeHeatLoss = 1.0
 #Multiplier for how much heat a boiler needs.
 #Range: 0.0 ~ 1.7976931348623157E308
 boilerRequiredHeatMultiplier = 1.0
-#How much heat per tick a nuclear reactor rod generate.
-#Range: 0.0 ~ 1.7976931348623157E308
-ReactorRodHeat = 30.0
-#How much heat per tick a nuclear reactor rod loses above the 16000*overheatingMultiplier.
-#Range: 0.0 ~ 1.7976931348623157E308
-ReactorRodHeatLoss = 25.0
 #Multiplier for how much heat solar panels output.
 #Range: 0.0 ~ 1.7976931348623157E308
 solarPanelHeatMultiplier = 1.0
 #Maximum wire length
 #Range: > 1
 maxWireLength = 16
+#Internal energy capacity of a street light
+#Range: > 0
+streetLightCapacity = 10000
+#How much extracted per tick multiplied by current light level
+#Range: > 0
+streetLightLevelExtraction = 1
 
 [Motors]
 	#Maximum motor SU multiplier
@@ -94,3 +91,25 @@ maxWireLength = 16
 	#Range: > 1
 	advancedMotorExtensionScrollStep = 8
 
+[Reactor]
+	#How many reactor rods can a fuel inserter or a heat vent have in a single direction
+	#Range: > 0
+	maxRodsInDirection = 32
+	#How strong the explosion is on destruction of a charged reactor rod
+	#Range: 0.0 ~ 1.7976931348623157E308
+	radiationDamageExplosionScale = 2.0
+	#Whether the explosion of a charged reactor rod should should cause fire
+	radiationDamageExplosionFire = true
+	#The multiplier of the explosion caused when reactor rods overheat
+	#Range: 0.0 ~ 1.7976931348623157E308
+	reactorOverheatExplosionMultiplier = 0.9
+	#Whether radiation poisoning should play a distinct geiger counter sound
+	geigerCounterSounds = true
+	#Whether radiation poisoning should cause nausea
+	nauseaInducingRadiation = true
+	#How much heat per tick a nuclear reactor rod generate.
+	#Range: 0.0 ~ 1.7976931348623157E308
+	ReactorRodHeat = 30.0
+	#How much heat per tick a nuclear reactor rod loses above the 16000*overheatingMultiplier.
+	#Range: 0.0 ~ 1.7976931348623157E308
+	ReactorRodHeatLoss = 25.0
