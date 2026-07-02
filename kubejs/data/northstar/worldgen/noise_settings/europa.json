@@ -102,6 +102,101 @@
       {
         "type": "minecraft:condition",
         "if_true": {
+          "type": "minecraft:biome",
+          "biome_is": [
+            "alexscaves:abyssal_chasm"
+          ]
+        },
+        "then_run": {
+          "type": "minecraft:sequence",
+          "sequence": [
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:y_above",
+                "anchor": {
+                  "absolute": 96
+                },
+                "surface_depth_multiplier": 0,
+                "add_stone_depth": false
+              },
+              "then_run": {
+                "type": "minecraft:block",
+                "result_state": {
+                  "Name": "minecraft:packed_ice"
+                }
+              }
+            },
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:stone_depth",
+                "offset": 0,
+                "surface_type": "floor",
+                "add_surface_depth": true,
+                "secondary_depth_range": 6
+              },
+              "then_run": {
+                "type": "minecraft:sequence",
+                "sequence": [
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:vertical_gradient",
+                      "random_name": "minecraft:deepslate",
+                      "true_at_and_below": {
+                        "absolute": 0
+                      },
+                      "false_at_and_above": {
+                        "absolute": 8
+                      }
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "minecraft:deepslate",
+                        "Properties": {
+                          "axis": "y"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:stone"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:above_preliminary_surface"
+              },
+              "then_run": {
+                "type": "minecraft:block",
+                "result_state": {
+                  "Name": "minecraft:deepslate",
+                  "Properties": {
+                    "axis": "y"
+                  }
+                }
+              }
+            },
+            {
+              "type": "minecraft:block",
+              "result_state": {
+                "Name": "alexscaves:abyssmarine"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "minecraft:condition",
+        "if_true": {
           "type": "minecraft:above_preliminary_surface"
         },
         "then_run": {
@@ -126,8 +221,7 @@
         "if_true": {
           "type": "minecraft:biome",
           "biome_is": [
-            "northstar:europan_subsurface_ocean",
-            "alexscaves:abyssal_chasm"
+            "northstar:europan_subsurface_ocean"
           ]
         },
         "then_run": {
@@ -144,24 +238,6 @@
             "type": "minecraft:block",
             "result_state": {
               "Name": "minecraft:packed_ice"
-            }
-          }
-        }
-      },
-      {
-        "type": "minecraft:condition",
-        "if_true": {
-          "type": "minecraft:biome",
-          "biome_is": [
-            "alexscaves:abyssal_chasm"
-          ]
-        },
-        "then_run": {
-          "type": "minecraft:block",
-          "result_state": {
-            "Name": "minecraft:water",
-            "Properties": {
-              "level": "0"
             }
           }
         }

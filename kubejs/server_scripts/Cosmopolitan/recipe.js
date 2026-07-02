@@ -30,6 +30,7 @@ ServerEvents.recipes(e => {
     e.replaceOutput({ mod: "cosmopolitan" }, "cosmopolitan:chorus_fruit_popsicle", "ends_delight:chorus_fruit_popsicle")
     e.remove({ type: "create:sequenced_assembly", output: ['cosmopolitan:classic_ice_cream', 'cosmopolitan:seasonal_ice_cream', 'neapolitan:neapolitan_ice_cream'] })
     e.remove({ output: [
+        'cosmopolitan:bagel',
         'createdelightcore:lucuma_ice_cream_cone',
         'createdelightcore:pink_dragon_fruit_ice_cream_cone',
         'createdelightcore:sunny_ice_cream_sandwich',
@@ -120,20 +121,20 @@ ServerEvents.recipes(e => {
         "cosmopolitan:source_berry_pips", "cosmopolitan:kabloom_pips", "youkaishomecoming:matcha")
     make_mixed_ice_cream(e, "cosmopolitan:exquisite_ice_cream", 'cosmopolitan:exquisite_ice_cream_sandwich',
         "#forge:chorus_fruits", "cosmopolitan:aurora_kohakutou", "cosmopolitan:slabfish_jelly_popsicle")
-    create.sequenced_assembly('cosmopolitan:neapolitan_ice_cream_bagel', 'cosmopolitan:bagel', [
-        create.deploying('cosmopolitan:bagel', ['cosmopolitan:bagel', 'alexscaves:vanilla_ice_cream_scoop']),
-        create.deploying('cosmopolitan:bagel', ['cosmopolitan:bagel', 'createdelightcore:strawberry_ice_cream_scoop']),
-        create.deploying('cosmopolitan:bagel', ['cosmopolitan:bagel', 'alexscaves:chocolate_ice_cream_scoop']),
-        create.deploying('cosmopolitan:bagel', ['cosmopolitan:bagel', 'cosmopolitan:bagel'])
+    create.sequenced_assembly('cosmopolitan:neapolitan_ice_cream_bagel', 'bakeries:bagel', [
+        create.deploying('bakeries:bagel', ['bakeries:bagel', 'alexscaves:vanilla_ice_cream_scoop']),
+        create.deploying('bakeries:bagel', ['bakeries:bagel', 'createdelightcore:strawberry_ice_cream_scoop']),
+        create.deploying('bakeries:bagel', ['bakeries:bagel', 'alexscaves:chocolate_ice_cream_scoop']),
+        create.deploying('bakeries:bagel', ['bakeries:bagel', 'bakeries:bagel'])
     ])
         .loops(1)
-        .transitionalItem('cosmopolitan:bagel')
+        .transitionalItem('bakeries:bagel')
         .id('createdelight:create/sequenced_assembly/neapolitan_ice_cream_bagel')
     kubejs.shapeless(
         'cosmopolitan:neapolitan_ice_cream_bagel',
         [
-            'cosmopolitan:bagel',
-            'cosmopolitan:bagel',
+            'bakeries:bagel',
+            'bakeries:bagel',
             'alexscaves:vanilla_ice_cream_scoop',
             'createdelightcore:strawberry_ice_cream_scoop',
             'alexscaves:chocolate_ice_cream_scoop'

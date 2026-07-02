@@ -1,0 +1,20 @@
+{
+  "type": "integrated_api:optional_dependency_structure",
+  "start_pool": "idas:dread_citadel/dread_citadel",
+  "size": 1,
+  "rotation_fixed": true,
+  "required_mods": "iceandfire",
+  "terrain_height_radius_check": 3,
+  "allowed_terrain_height_range": 15,
+  "valid_biome_radius_check": 1,
+  "max_distance_from_center": 128,
+  "cannot_spawn_in_liquid": true,
+  "biomes": "#idas:has_structure/dread_citadel_biomes",
+  "step": "surface_structures",
+  "terrain_adaptation": "beard_thin",
+  "project_start_to_heightmap": "WORLD_SURFACE_WG",
+  "start_height": {
+    "absolute": 0
+  },
+  "spawn_overrides": {}
+}
