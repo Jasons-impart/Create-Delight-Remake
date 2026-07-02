@@ -29,6 +29,21 @@ ServerEvents.recipes(e => {
     e.replaceInput({ mod: "cosmopolitan" }, "#forge:crops/wheat", "#forge:flour")
     e.replaceOutput({ mod: "cosmopolitan" }, "cosmopolitan:chorus_fruit_popsicle", "ends_delight:chorus_fruit_popsicle")
     e.remove({ type: "create:sequenced_assembly", output: ['cosmopolitan:classic_ice_cream', 'cosmopolitan:seasonal_ice_cream', 'neapolitan:neapolitan_ice_cream'] })
+    e.remove({ output: [
+        'createdelightcore:lucuma_ice_cream_cone',
+        'createdelightcore:pink_dragon_fruit_ice_cream_cone',
+        'createdelightcore:sunny_ice_cream_sandwich',
+        'cosmopolitan:collective_ice_cream',
+        'cosmopolitan:collective_ice_cream_sandwich',
+        'cosmopolitan:delightful_ice_cream',
+        'cosmopolitan:delightful_ice_cream_sandwich',
+        'cosmopolitan:exquisite_ice_cream',
+        'cosmopolitan:exquisite_ice_cream_sandwich',
+        'cosmopolitan:lucuma_ice_cream_cone',
+        'cosmopolitan:pink_dragon_fruit_ice_cream_cone',
+        'cosmopolitan:sunny_ice_cream_sandwich',
+        'cosmopolitan:neapolitan_ice_cream_bagel'
+    ] })
     /**
      *
      * @param {Internal.RecipesEventJS} e
@@ -97,8 +112,33 @@ ServerEvents.recipes(e => {
         "alexscaves:sweetberry_ice_cream_scoop", "createdelightcore:pumpkin_ice_cream_scoop", "createdelightcore:beetroot_ice_cream_scoop")
     make_mixed_ice_cream(e, "neapolitan:neapolitan_ice_cream", 'cosmopolitan:neapolitan_ice_cream_sandwich',
         "alexscaves:vanilla_ice_cream_scoop", "createdelightcore:strawberry_ice_cream_scoop", "alexscaves:chocolate_ice_cream_scoop")
-    make_mixed_ice_cream(e, "collectorsreap:sunny_ice_cream", 'createdelightcore:sunny_ice_cream_sandwich',
+    make_mixed_ice_cream(e, "collectorsreap:sunny_ice_cream", 'cosmopolitan:sunny_ice_cream_sandwich',
         "createdelightcore:strawberry_ice_cream_scoop", "alexscaves:vanilla_ice_cream_scoop", "createdelightcore:lucuma_ice_cream_scoop")
+    make_mixed_ice_cream(e, "cosmopolitan:collective_ice_cream", 'cosmopolitan:collective_ice_cream_sandwich',
+        "createdelightcore:lime_ice_cream_scoop", "createdelightcore:pomegranate_ice_cream_scoop", "createdelightcore:pink_dragon_fruit_ice_cream_scoop")
+    make_mixed_ice_cream(e, "cosmopolitan:delightful_ice_cream", 'cosmopolitan:delightful_ice_cream_sandwich',
+        "cosmopolitan:source_berry_pips", "cosmopolitan:kabloom_pips", "youkaishomecoming:matcha")
+    make_mixed_ice_cream(e, "cosmopolitan:exquisite_ice_cream", 'cosmopolitan:exquisite_ice_cream_sandwich',
+        "#forge:chorus_fruits", "cosmopolitan:aurora_kohakutou", "cosmopolitan:slabfish_jelly_popsicle")
+    create.sequenced_assembly('cosmopolitan:neapolitan_ice_cream_bagel', 'cosmopolitan:bagel', [
+        create.deploying('cosmopolitan:bagel', ['cosmopolitan:bagel', 'alexscaves:vanilla_ice_cream_scoop']),
+        create.deploying('cosmopolitan:bagel', ['cosmopolitan:bagel', 'createdelightcore:strawberry_ice_cream_scoop']),
+        create.deploying('cosmopolitan:bagel', ['cosmopolitan:bagel', 'alexscaves:chocolate_ice_cream_scoop']),
+        create.deploying('cosmopolitan:bagel', ['cosmopolitan:bagel', 'cosmopolitan:bagel'])
+    ])
+        .loops(1)
+        .transitionalItem('cosmopolitan:bagel')
+        .id('createdelight:create/sequenced_assembly/neapolitan_ice_cream_bagel')
+    kubejs.shapeless(
+        'cosmopolitan:neapolitan_ice_cream_bagel',
+        [
+            'cosmopolitan:bagel',
+            'cosmopolitan:bagel',
+            'alexscaves:vanilla_ice_cream_scoop',
+            'createdelightcore:strawberry_ice_cream_scoop',
+            'alexscaves:chocolate_ice_cream_scoop'
+        ]
+    ).id('createdelight:shapeless/neapolitan_ice_cream_bagel')
 
     create.filling("cosmopolitan:cream_bun",
         [
