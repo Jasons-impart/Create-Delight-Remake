@@ -729,6 +729,8 @@ StartupEvents.registry("item", e => {
             .translationKey("item.createdelight.order")
     e.create("createdelight:unopened_order")
             .translationKey("item.createdelight.unopened_order")
+    e.create("createdelight:order_seal")
+            .translationKey("item.createdelight.order_seal")
     //悚怖之心
     e.create("createdelight:dread_heart")
         .rarity("epic")
