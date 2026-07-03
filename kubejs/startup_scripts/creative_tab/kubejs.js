@@ -40,6 +40,7 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:honey_cookie_dough',
         'createdelight:sweet_berry_cookie_dough',
         'createdelight:chorus_cookie_dough',
+        'createdelight:herbal_cookie_dough',
         'createdelight:bat_cookie_dough',
         'createdelight:paw_cookie_dough',
         'createdelight:raw_empanada',
