@@ -5,24 +5,6 @@ ServerEvents.recipes(e => {
         "alexscaves:chocolate_ice_cream",
         "alexscaves:sweetberry_ice_cream"
     ])
-    kubejs.shaped(
-        '4x createdelightcore:lucuma_ice_cream_bricks',
-        [
-            "AA",
-            "AA"
-        ], {
-            A: "collectorsreap:lucuma_ice_cream_block"
-        }
-    ).id("createdelight:shaped/lucuma_ice_cream_bricks")
-    kubejs.shaped(
-        '4x createdelightcore:pink_dragon_fruit_ice_cream_bricks',
-        [
-            "AA",
-            "AA"
-        ], {
-            A: "collectorsreap:pink_dragon_fruit_ice_cream_block"
-        }
-    ).id("createdelight:shaped/pink_dragon_fruit_ice_cream_bricks")
     /**
      * 
      * @param {Internal.RecipesEventJS} e 
@@ -215,12 +197,12 @@ ServerEvents.recipes(e => {
     make_ice_cream(e, "collectorsreap:pink_dragon_fruit", "createdelight:pink_dragon_fruit_ice_cream",
         "createdelightcore:pink_dragon_fruit_milkshake", "createdelightcore:pink_dragon_fruit_ice_cream_scoop",
         "collectorsreap:pink_dragon_fruit_ice_cream", "collectorsreap:pink_dragon_fruit_milkshake",
-        'createdelightcore:pink_dragon_fruit_ice_cream_cone', 'collectorsreap:pink_dragon_fruit_ice_cream_block')
+        'cosmopolitan:pink_dragon_fruit_ice_cream_cone', 'collectorsreap:pink_dragon_fruit_ice_cream_block')
 
     make_ice_cream(e, "collectorsreap:lucuma", "createdelight:lucuma_ice_cream",
         "createdelightcore:lucuma_milkshake", "createdelightcore:lucuma_ice_cream_scoop",
         "collectorsreap:lucuma_ice_cream", "collectorsreap:lucuma_milkshake",
-        'createdelightcore:lucuma_ice_cream_cone', 'collectorsreap:lucuma_ice_cream_block')
+        'cosmopolitan:lucuma_ice_cream_cone', 'collectorsreap:lucuma_ice_cream_block')
 
     make_ice_cream(e, '#alexscaves:sweet_berries', "cosmopolitan:sweet_berry_ice_cream",
         "create_central_kitchen:sweet_berry_milkshake", 'alexscaves:sweetberry_ice_cream_scoop',

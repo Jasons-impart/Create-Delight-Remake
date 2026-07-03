@@ -332,3 +332,23 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: CDC `processResources` uses `DuplicatesStrategy.EXCLUDE`, so `src/main/resources/assets/createdelightcore/lang/*.json` with the same path as datagen output can make the final jar keep only the smaller hand-written file.
 - **Fix/Lesson**: Put CDC lang additions in `EnglishLangHandler`/`ChineseLangHandler` and regenerate `src/generated/resources`, because `src/generated/resources` is already included as a main resource source set.
 
+## TerraBlender bypasses Citadel surface rules in custom Alex cave dimensions
+
+**Date**: 2026-07-02
+
+- **Problem**: Youkai's Homecoming embeds TerraBlender, making Citadel skip its direct `NoiseGeneratorSettings` surface-rule merge, so custom fixed/non-TerraBlender Alex cave dimensions can fall back to vanilla dirt/stone/deepslate surfaces.
+- **Fix/Lesson**: Put required Alex's Caves surface rules directly in the custom dimension noise settings, because TerraBlender only applies Citadel's compat rules to initialized TerraBlender region dimensions.
+
+## Northstar Europa bulk ice features can overwrite generated content
+
+**Date**: 2026-07-03
+
+- **Problem**: Europa's `ice_cluster`, `blue_ice_cluster`, `ice_column`, and `icicles` placed features run as biome decoration after structures and earlier features, so surface-height placements can cover or intersect generated content.
+- **Fix/Lesson**: Override the placed features with a `surface_relative_threshold_filter` below `OCEAN_FLOOR_WG`, because their built-in placement ranges sample the full 0-256 height band.
+
+## Integrated API jigsaw structures can reject liquid starts
+
+**Date**: 2026-07-03
+
+- **Problem**: Integrated API jigsaw structures projected with `WORLD_SURFACE_WG` can choose water as the surface and spawn large structures on liquid.
+- **Fix/Lesson**: Add `"cannot_spawn_in_liquid": true` to the structure JSON when using `integrated_api:jigsaw_structure` or `integrated_api:optional_dependency_structure`, because the codec checks the generated surface fluid before accepting the start chunk.

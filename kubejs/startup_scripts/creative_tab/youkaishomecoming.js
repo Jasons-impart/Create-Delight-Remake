@@ -15,5 +15,10 @@ StartupEvents.modifyCreativeTab("youkaishomecoming:youkais_homecoming", e => {
     'youkaishomecoming:black_grape_juice',
     'youkaishomecoming:white_grape_juice',
     'youkaishomecoming:red_grape_juice',
+    'youkaishomecoming:white_wine_bottle',
+    'youkaishomecoming:red_wine_bottle',
+    'youkaishomecoming:van_allen_bottle',
+    'youkaishomecoming:burgundy_bottle',
+    'youkaishomecoming:champagne_bottle',
   ])
 })

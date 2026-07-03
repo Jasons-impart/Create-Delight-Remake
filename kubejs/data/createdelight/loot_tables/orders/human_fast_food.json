@@ -1,0 +1,34 @@
+{
+  "pools": [
+    {
+      "rolls": 2,
+      "entries": [
+        { "type": "minecraft:item", "name": "create:andesite_funnel", "weight": 12, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 3, "max": 6 } }] },
+        { "type": "minecraft:item", "name": "create:chute", "weight": 12, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 6, "max": 14 } }] },
+        { "type": "minecraft:item", "name": "create:filter", "weight": 10, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 2, "max": 5 } }] },
+        { "type": "minecraft:item", "name": "create:package_filter", "weight": 8, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 3 } }] }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "minecraft:item", "name": "create:depot", "weight": 9 },
+        { "type": "minecraft:item", "name": "create:basin", "weight": 8 },
+        { "type": "minecraft:item", "name": "create:packager", "weight": 5 },
+        { "type": "minecraft:item", "name": "create:factory_gauge", "weight": 5 },
+        { "type": "minecraft:item", "name": "create:andesite_casing", "weight": 6, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 3 } }] }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "minecraft:item", "name": "create:repackager", "weight": 4 },
+        { "type": "minecraft:item", "name": "create:stock_link", "weight": 2 },
+        { "type": "minecraft:item", "name": "create:precision_mechanism", "weight": 3 },
+        { "type": "minecraft:item", "name": "create:belt_connector", "weight": 5, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 4, "max": 8 } }] },
+        { "type": "minecraft:loot_table", "name": "createdelight:orders/random_hatbag", "weight": 1 }
+      ]
+    }
+  ],
+  "functions": []
+}

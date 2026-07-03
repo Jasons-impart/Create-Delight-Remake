@@ -513,5 +513,11 @@
             "alexscaves:slam"
         ],
         "resultItems": "luncheonmeatsdelight:luncheon_meat_can"
+    },
+    {
+        "matchItems": [
+            "cosmopolitan:bagel"
+        ],
+        "resultItems": "bakeries:bagel"
     }
 ]

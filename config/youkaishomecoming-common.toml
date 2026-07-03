@@ -20,9 +20,6 @@
 	youkaifiedProlongation = 6000
 
 [food_effect]
-	#Smoothing Healing Factor
-	#Range: 1.0 ~ 100.0
-	smoothingHealingFactor = 1.5
 	#Tea Healing Interval
 	#Range: 0 ~ 10000
 	teaHealingPeriod = 60
@@ -41,6 +38,9 @@
 	#Fairy Healing Factor
 	#Range: 1.0 ~ 100.0
 	fairyHealingFactor = 2.0
+	#Breathing Healing Factor
+	#Range: 1.0 ~ 100.0
+	breathingHealingFactor = 1.5
 
 [suwako_hat]
 	#Number of raiders with different types frogs need to eat in front of villager to drop Suwako hat
