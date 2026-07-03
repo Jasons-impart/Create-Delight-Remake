@@ -54,6 +54,31 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:white_grape_juice",
         "youkaishomecoming:black_grape_juice",
         "youkaishomecoming:red_grape_juice",
+        "youkaishomecoming:white_wine",
+        "youkaishomecoming:red_wine",
+        "youkaishomecoming:van_allen",
+        "youkaishomecoming:burgundy",
+        "youkaishomecoming:champagne",
+        "youkaishomecoming:filling/white_wine",
+        "youkaishomecoming:filling/red_wine",
+        "youkaishomecoming:filling/van_allen",
+        "youkaishomecoming:filling/burgundy",
+        "youkaishomecoming:filling/champagne",
+        "youkaishomecoming:filling/white_wine_bottle",
+        "youkaishomecoming:filling/red_wine_bottle",
+        "youkaishomecoming:filling/van_allen_bottle",
+        "youkaishomecoming:filling/burgundy_bottle",
+        "youkaishomecoming:filling/champagne_bottle",
+        "youkaishomecoming:emptying/white_wine_emptying",
+        "youkaishomecoming:emptying/red_wine_emptying",
+        "youkaishomecoming:emptying/van_allen_emptying",
+        "youkaishomecoming:emptying/burgundy_emptying",
+        "youkaishomecoming:emptying/champagne_emptying",
+        "youkaishomecoming:emptying/white_wine_bottle_emptying",
+        "youkaishomecoming:emptying/red_wine_bottle_emptying",
+        "youkaishomecoming:emptying/van_allen_bottle_emptying",
+        "youkaishomecoming:emptying/burgundy_bottle_emptying",
+        "youkaishomecoming:emptying/champagne_bottle_emptying",
         "youkaishomecoming:pork_rice_ball",
         "youkaishomecoming:shaved_ice_over_rice"
     ])
@@ -87,7 +112,7 @@ ServerEvents.recipes(e => {
             return
         ratatouille.baking(recipe.getOriginalRecipeResult(), recipe.getOriginalRecipeIngredients())
         .processingTime(200)
-        .id(`createdelight:baking/${recipe.getOriginalRecipeResult().getId().split(":")[1]}`)
+        .id(`createdelight:baking/${recipe.getId().split(":")[1]}`)
     })
 
     //饭团

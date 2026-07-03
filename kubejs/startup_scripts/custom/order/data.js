@@ -183,7 +183,7 @@ Order.customerProperties = {// ===================== 矮人组织 ==============
         base_continue_rate: 0.4, //生成一个要求后再次生成的概率
         rarity: "COMMON", //稀有度
         chance: 0.9, //生成概率
-        reward: ["createdelight:orders/random_hatbag", 3], //战利品表，奖励的基础份数
+        reward: ["createdelight:orders/dwarven_bakery", 1], //战利品表，奖励的基础份数
         reward_money: 500 //基础金钱奖励
     },
 
@@ -197,7 +197,7 @@ Order.customerProperties = {// ===================== 矮人组织 ==============
         base_continue_rate: 0.4,
         rarity: "UNCOMMON",
         chance: 0.85,
-        reward: ["createdelight:orders/random_hatbag", 3],
+        reward: ["createdelight:orders/dwarven_brewery", 1],
         reward_money: 500
     },
 
@@ -211,7 +211,7 @@ Order.customerProperties = {// ===================== 矮人组织 ==============
         base_continue_rate: 0.5,
         rarity: "COMMON",
         chance: 0.8,
-        reward: ["createdelight:orders/random_hatbag", 1],
+        reward: ["createdelight:orders/dwarven_snack_hall", 1],
         reward_money: 500
     },
 
@@ -225,7 +225,7 @@ Order.customerProperties = {// ===================== 矮人组织 ==============
         base_continue_rate: 0.4,
         rarity: "UNCOMMON",
         chance: 0.85,
-        reward: ["createdelight:orders/random_hatbag", 3],
+        reward: ["createdelight:orders/dwarven_feast_hall", 1],
         reward_money: 500
     },
 
@@ -240,7 +240,7 @@ Order.customerProperties = {// ===================== 矮人组织 ==============
         base_continue_rate: 0.5,
         rarity: "UNCOMMON",
         chance: 0.8,
-        reward: ["createdelight:orders/random_doll", 1],
+        reward: ["createdelight:orders/elven_tea_house", 1],
         reward_money: 500
     },
 
@@ -254,7 +254,7 @@ Order.customerProperties = {// ===================== 矮人组织 ==============
         base_continue_rate: 0.5,
         rarity: "UNCOMMON",
         chance: 0.75,
-        reward: ["createdelight:orders/random_doll", 1],
+        reward: ["createdelight:orders/elven_patisserie", 1],
         reward_money: 500
     },
 
@@ -268,7 +268,7 @@ Order.customerProperties = {// ===================== 矮人组织 ==============
         base_continue_rate: 0.4,
         rarity: "RARE",
         chance: 0.7,
-        reward: ["createdelight:orders/random_doll", 2],
+        reward: ["createdelight:orders/elven_sushi_bar", 1],
         reward_money: 500
     },
 
@@ -282,7 +282,7 @@ Order.customerProperties = {// ===================== 矮人组织 ==============
         base_continue_rate: 0.5,
         rarity: "COMMON",
         chance: 0.8,
-        reward: ["createdelight:orders/random_doll", 1],
+        reward: ["createdelight:orders/elven_juice_corner", 1],
         reward_money: 500
     },
 
@@ -297,7 +297,7 @@ Order.customerProperties = {// ===================== 矮人组织 ==============
         base_continue_rate: 0.3,
         rarity: "RARE",
         chance: 0.7,
-        reward: ["createdelight:orders/random_hatbag", 2],
+        reward: ["createdelight:orders/monster_feast_hall", 1],
         reward_money: 500
     },
 
@@ -311,7 +311,7 @@ Order.customerProperties = {// ===================== 矮人组织 ==============
         base_continue_rate: 0.4,
         rarity: "RARE",
         chance: 0.75,
-        reward: ["createdelight:orders/random_hatbag", 2],
+        reward: ["createdelight:orders/monster_lab", 1],
         reward_money: 500
     },
 
@@ -325,7 +325,7 @@ Order.customerProperties = {// ===================== 矮人组织 ==============
         base_continue_rate: 0.4,
         rarity: "UNCOMMON",
         chance: 0.7,
-        reward: ["createdelight:orders/random_hatbag", 2],
+        reward: ["createdelight:orders/monster_canteen", 1],
         reward_money: 500
     },
 
@@ -339,7 +339,7 @@ Order.customerProperties = {// ===================== 矮人组织 ==============
         base_continue_rate: 0.3,
         rarity: "RARE",
         chance: 0.75,
-        reward: ["createdelight:orders/random_hatbag", 2],
+        reward: ["createdelight:orders/monster_grill", 1],
         reward_money: 500
     },
 
@@ -355,7 +355,7 @@ Order.customerProperties = {// ===================== 矮人组织 ==============
         base_continue_rate: 0.4,
         rarity: "COMMON",
         chance: 0.85,
-        reward: ["createdelight:orders/random_hatbag", 2],
+        reward: ["createdelight:orders/human_cafe", 1],
         reward_money: 500
     },
 
@@ -369,7 +369,7 @@ Order.customerProperties = {// ===================== 矮人组织 ==============
         base_continue_rate: 0.4,
         rarity: "COMMON",
         chance: 0.85,
-        reward: ["createdelight:orders/random_hatbag", 2],
+        reward: ["createdelight:orders/human_fast_food", 1],
         reward_money: 500
     },
 
@@ -383,7 +383,7 @@ Order.customerProperties = {// ===================== 矮人组织 ==============
         base_continue_rate: 0.4,
         rarity: "UNCOMMON",
         chance: 0.8,
-        reward: ["createdelight:orders/random_hatbag", 2],
+        reward: ["createdelight:orders/human_bakery", 1],
         reward_money: 500
     },
 
@@ -397,7 +397,7 @@ Order.customerProperties = {// ===================== 矮人组织 ==============
         base_continue_rate: 0.5,
         rarity: "UNCOMMON",
         chance: 0.8,
-        reward: ["createdelight:orders/random_hatbag", 2],
+        reward: ["createdelight:orders/human_tea_house", 1],
         reward_money: 500
     }
 

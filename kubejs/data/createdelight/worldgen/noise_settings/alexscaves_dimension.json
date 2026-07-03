@@ -147,6 +147,59 @@
         }
       },
       {
+        "type": "minecraft:condition",
+        "if_true": {
+          "type": "minecraft:biome",
+          "biome_is": [
+            "alexscaves:forlorn_hollows"
+          ]
+        },
+        "then_run": {
+          "type": "minecraft:sequence",
+          "sequence": [
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:stone_depth",
+                "offset": 0,
+                "surface_type": "floor",
+                "add_surface_depth": false,
+                "secondary_depth_range": 0
+              },
+              "then_run": {
+                "type": "minecraft:block",
+                "result_state": {
+                  "Name": "minecraft:packed_mud"
+                }
+              }
+            },
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "alexscaves:ac_simplex",
+                "noise_min": -0.2,
+                "noise_max": 0.4,
+                "noise_scale": 40,
+                "y_scale": 6,
+                "offset_type": 3
+              },
+              "then_run": {
+                "type": "minecraft:block",
+                "result_state": {
+                  "Name": "alexscaves:coprolith"
+                }
+              }
+            },
+            {
+              "type": "minecraft:block",
+              "result_state": {
+                "Name": "alexscaves:guanostone"
+              }
+            }
+          ]
+        }
+      },
+      {
         "type": "minecraft:sequence",
         "sequence": [
           {
