@@ -73,5 +73,40 @@ ItemEvents.tooltip(e => {
         text.add(Component.of("  ").append(global.MoneyUtil.convertBaseValueToString(global.Order.calculateMoneyReward(info) * customer.reward_money)))
     })
 
+    e.addAdvanced("createdelight:unopened_order", (item, advanced, text) => {
+        text.add(Text.translate("tooltip.createdelight.order_draft.use"))
+        let draft = item?.nbt?.OrderDraft
+        if (draft == null)
+            return
+
+        text.add("")
+        text.add(Text.translate("tooltip.createdelight.order_draft.title"))
+        if (draft.customerSeal != null)
+            text.add(Text.translate(
+                "tooltip.createdelight.order_draft.customer",
+                Text.translate(`tooltip.createdelight.order_draft.seal.${draft.customerSeal}`)
+            ))
+        if (draft.categorySeal != null)
+            text.add(Text.translate(
+                "tooltip.createdelight.order_draft.category",
+                Text.translate(`tooltip.createdelight.order_draft.seal.${draft.categorySeal}`)
+            ))
+    })
+
+    e.addAdvanced("createdelight:order_seal", (item, advanced, text) => {
+        let sealKey = item?.nbt?.OrderSeal == null ? null : `${item.nbt.OrderSeal}`
+        let seal = sealKey == null ? null : global.Order.orderDraftSeals[sealKey]
+        if (seal == null) {
+            text.add(Text.translate("tooltip.createdelight.order_seal.empty"))
+            return
+        }
+
+        text.add(Text.translate(
+            "tooltip.createdelight.order_seal.name",
+            Text.translate(`tooltip.createdelight.order_draft.seal.${seal.key}`)
+        ))
+        text.add(Text.translate("tooltip.createdelight.order_seal.use"))
+        text.add(Text.translate(`tooltip.createdelight.order_seal.${seal.type}`))
+    })
 
 })

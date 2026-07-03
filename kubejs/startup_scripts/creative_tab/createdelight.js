@@ -203,6 +203,16 @@ StartupEvents.registry("creative_mode_tab", e => {
       'createdelight:kinetic_transmission_component',
       'createdelight:sealed_joint_component',
       'createdelight:logic_component',
-      'createdelight:order_deliverer_item'
+      'createdelight:order_deliverer_item',
+      'createdelight:order',
+      'createdelight:unopened_order',
+      Item.of('createdelight:order_seal', { OrderSeal: 'human' }),
+      Item.of('createdelight:order_seal', { OrderSeal: 'elven' }),
+      Item.of('createdelight:order_seal', { OrderSeal: 'dwarven' }),
+      Item.of('createdelight:order_seal', { OrderSeal: 'monster' }),
+      Item.of('createdelight:order_seal', { OrderSeal: 'drink' }),
+      Item.of('createdelight:order_seal', { OrderSeal: 'dessert' }),
+      Item.of('createdelight:order_seal', { OrderSeal: 'staple' }),
+      Item.of('createdelight:order_seal', { OrderSeal: 'feast' })
     ])
 })

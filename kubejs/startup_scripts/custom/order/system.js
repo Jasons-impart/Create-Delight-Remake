@@ -24,11 +24,151 @@ Order.getCustomerUnlockLevel = function (customer) {
     return unlockLevel
 }
 
+Order.toArray = function (value) {
+    if (value == null)
+        return []
+    if (Array.isArray(value))
+        return value
+    if (typeof value == "string")
+        return [value]
+    let result = []
+    if (value.forEach != null) {
+        value.forEach(v => result.push(`${v}`))
+        return result
+    }
+    return [value]
+}
+
+Order.mergeSpec = function (base, addition) {
+    let result = base || {}
+    if (addition == null)
+        return result
+
+    if (addition.customerGroups != null)
+        result.customerGroups = this.toArray(result.customerGroups).concat(this.toArray(addition.customerGroups))
+    if (addition.categoryGroups != null)
+        result.categoryGroups = this.toArray(result.categoryGroups).concat(this.toArray(addition.categoryGroups))
+
+    if (addition.customerWeightBonus != null)
+        result.customerWeightBonus = Object.assign(result.customerWeightBonus || {}, addition.customerWeightBonus)
+    if (addition.categoryWeightBonus != null)
+        result.categoryWeightBonus = Object.assign(result.categoryWeightBonus || {}, addition.categoryWeightBonus)
+
+    if (addition.countMultiplier != null)
+        result.countMultiplier = (result.countMultiplier == null ? 1 : result.countMultiplier) * addition.countMultiplier
+    if (addition.entryCountMultiplier != null)
+        result.entryCountMultiplier = (result.entryCountMultiplier == null ? 1 : result.entryCountMultiplier) * addition.entryCountMultiplier
+    if (addition.minQualityBonus != null)
+        result.minQualityBonus = (result.minQualityBonus || 0) + addition.minQualityBonus
+    if (addition.moneyMultiplier != null)
+        result.moneyMultiplier = (result.moneyMultiplier == null ? 1 : result.moneyMultiplier) * addition.moneyMultiplier
+    if (addition.reputationMultiplier != null)
+        result.reputationMultiplier = (result.reputationMultiplier == null ? 1 : result.reputationMultiplier) * addition.reputationMultiplier
+
+    return result
+}
+
+Order.createSpecFromDraft = function (draft) {
+    let spec = {}
+    if (draft == null)
+        return null
+
+    let customerSeal = draft.customerSeal == null ? null : `${draft.customerSeal}`
+    let categorySeal = draft.categorySeal == null ? null : `${draft.categorySeal}`
+    if (customerSeal == null && categorySeal == null)
+        return null
+
+    for (let itemId in this.orderDraftSeals) {
+        let seal = this.orderDraftSeals[itemId]
+        if (seal.type == "customer" && seal.key == customerSeal)
+            spec = this.mergeSpec(spec, seal.spec)
+        if (seal.type == "category" && seal.key == categorySeal)
+            spec = this.mergeSpec(spec, seal.spec)
+    }
+
+    let sealCount = (customerSeal != null ? 1 : 0) + (categorySeal != null ? 1 : 0)
+    spec.selectionPrecision = sealCount
+    spec.source = "draft"
+    return spec
+}
+
+Order.applyDraftSeal = function (orderStack, sealStack) {
+    if (orderStack == null || sealStack == null || !orderStack.is("createdelight:unopened_order"))
+        return false
+    if (!sealStack.is("createdelight:order_seal"))
+        return false
+
+    let sealKey = sealStack.nbt == null || sealStack.nbt.OrderSeal == null ? null : `${sealStack.nbt.OrderSeal}`
+    let seal = sealKey == null ? null : this.orderDraftSeals[sealKey]
+    if (seal == null)
+        return false
+
+    let nbt = orderStack.nbt || {}
+    let draft = nbt.OrderDraft || {}
+    draft.Revision = 1
+
+    if (seal.type == "customer")
+        draft.customerSeal = seal.key
+    else if (seal.type == "category")
+        draft.categorySeal = seal.key
+    else
+        return false
+
+    nbt.OrderDraft = draft
+    orderStack.nbt = nbt
+    return true
+}
+
+Order.getCustomerWeightMultiplier = function (customerKey, spec) {
+    if (spec == null)
+        return 1
+
+    let multiplier = 1
+    let groups = this.toArray(spec.customerGroups)
+    if (groups.length > 0) {
+        let matched = groups.some(group => {
+            let prefix = this.customerGroupPrefixes[`${group}`]
+            return prefix != null && `${customerKey}`.startsWith(prefix)
+        })
+        multiplier *= matched ? 4 : 0.35
+    }
+
+    let directBonus = spec.customerWeightBonus != null ? spec.customerWeightBonus[customerKey] : null
+    if (directBonus != null)
+        multiplier *= directBonus
+
+    return multiplier
+}
+
+Order.getEntryWeightMultiplier = function (entryKey, spec) {
+    if (spec == null)
+        return 1
+
+    let multiplier = 1
+    let groups = this.toArray(spec.categoryGroups)
+    if (groups.length > 0) {
+        let matchedWeight = 0
+        groups.forEach(group => {
+            let groupMap = this.categoryGroups[`${group}`]
+            if (groupMap != null && groupMap[entryKey] != null)
+                matchedWeight = Math.max(matchedWeight, groupMap[entryKey])
+        })
+        multiplier *= matchedWeight > 0 ? matchedWeight : 0.35
+    }
+
+    let directBonus = spec.categoryWeightBonus != null ? spec.categoryWeightBonus[entryKey] : null
+    if (directBonus != null)
+        multiplier *= directBonus
+
+    return multiplier
+}
+
 /**
  * 根据玩家来生成订单
- * @param {Internal.Player} player 
+ * @param {Internal.Player} player
+ * @param {Object=} spec
  */
-Order.create = function (player) {
+Order.create = function (player, spec) {
     let level = this.reputation.getLevel(player);
     let order = {
         entries: [],
@@ -48,6 +188,7 @@ Order.create = function (player) {
         let unlockLevel = Order.getCustomerUnlockLevel(element);
         if (level < unlockLevel) continue;
         let weight = element.chance * (1 + Math.max(0, level - unlockLevel) * 0.15);
+        weight *= Order.getCustomerWeightMultiplier(key, spec);
         if (weight > 0) {
             let entry = { key: key, element: element, weight: weight };
             weightedList.push(entry);
@@ -82,6 +223,7 @@ Order.create = function (player) {
             weight = entryVal;
             minQuality = 0;
         }
+        weight *= Order.getEntryWeightMultiplier(key, spec);
         let entry = { key: key, weight: weight, minQuality: minQuality };
         entriesList.push(entry);
         totalEntryWeight += weight;
@@ -91,8 +233,12 @@ Order.create = function (player) {
     let count = 0;
     let canceled = false;
     let bonus = Math.sqrt(level);
+    let countMultiplier = spec != null && spec.countMultiplier != null ? spec.countMultiplier : 1;
+    let minQualityBonus = spec != null && spec.minQualityBonus != null ? spec.minQualityBonus : 0;
+    let entryCountMultiplier = spec != null && spec.entryCountMultiplier != null ? spec.entryCountMultiplier : 1;
+    let maxEntryCount = Math.max(1, Math.round(selected.max_count * entryCountMultiplier));
 
-    while (count < selected.max_count && !canceled && totalEntryWeight > 0) {
+    while (count < maxEntryCount && !canceled && totalEntryWeight > 0) {
         // 随机选一个条目
         let r = Utils.random.nextFloat() * totalEntryWeight;
         let chosenEntry;
@@ -106,16 +252,29 @@ Order.create = function (player) {
 
         if (!chosenEntry) break; // 防护
 
-        let amount = Order.orderProperties[chosenEntry.key].base_count * Utils.random.nextFloat(1, bonus * 1.25);
+        let amount = Order.orderProperties[chosenEntry.key].base_count * Utils.random.nextFloat(1, bonus * 1.25) * countMultiplier;
         order.entries.push({
             id: chosenEntry.key,
             count: parseInt(amount) * 4,
-            minQuality: Math.min(3, Math.max(chosenEntry.minQuality, 1))
+            minQuality: Math.min(3, Math.max(chosenEntry.minQuality + minQualityBonus, 1))
         });
 
         count++;
         let continueRate = Math.min(0.95, selected.base_continue_rate * bonus);
         if (Utils.random.nextFloat() >= continueRate) canceled = true;
+    }
+
+    if (spec != null) {
+        order.generationSpec = {
+            source: spec.source || "direct",
+            customerGroups: this.toArray(spec.customerGroups),
+            categoryGroups: this.toArray(spec.categoryGroups),
+            selectionPrecision: spec.selectionPrecision || 0
+        }
+        order.rewardMultipliers = {
+            money: spec.moneyMultiplier == null ? 1 : spec.moneyMultiplier,
+            reputation: spec.reputationMultiplier == null ? 1 : spec.reputationMultiplier
+        }
     }
 
     return order;
@@ -254,6 +413,8 @@ Order.checkAllPackages = function (orders, items) {
  */
 Order.calculateMoneyReward = function(order) {
     let origin = this.customerProperties[order.type]
+    if (origin == null)
+        return 0
     let rarityBonus = 1
     switch (origin.rarity) {
         case "UNCOMMON":
@@ -275,7 +436,10 @@ Order.calculateMoneyReward = function(order) {
         let qualityMultiplier = 1 + 0.2 * (entry.minQuality - 1)
         goodsBonus += qualityMultiplier * entry.count / this.orderProperties[entry.id].base_count
     })
-    return rarityBonus * chanceBonus * goodsBonus
+    let multiplier = order.rewardMultipliers != null && order.rewardMultipliers.money != null
+        ? order.rewardMultipliers.money
+        : 1
+    return rarityBonus * chanceBonus * goodsBonus * multiplier
 }
 
 /**
