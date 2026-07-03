@@ -1,6 +1,6 @@
 ServerEvents.tick(e => {    
     if (e.server.getLevel("minecraft:overworld").dayTime() % 12000 == 0) {
-        let count = Utils.random.nextInt(0, 4)
+        let count = Utils.random.nextInt(1, 4)
         for (let i = 0; i < count; i++)
             global.Order.addOrderToAuction()
     }
