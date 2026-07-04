@@ -194,12 +194,12 @@ ServerEvents.recipes(e => {
         "collectorsreap:pomegranate_ice_cream", "collectorsreap:pomegranate_milkshake",
         'cosmopolitan:pomegranate_ice_cream_cone', 'collectorsreap:pomegranate_ice_cream_block')
 
-    make_ice_cream(e, "collectorsreap:pink_dragon_fruit", "createdelight:pink_dragon_fruit_ice_cream",
+    make_ice_cream(e, "collectorsreap:pink_dragon_fruit", "cosmopolitan:pink_dragon_fruit_ice_cream",
         "createdelightcore:pink_dragon_fruit_milkshake", "createdelightcore:pink_dragon_fruit_ice_cream_scoop",
         "collectorsreap:pink_dragon_fruit_ice_cream", "collectorsreap:pink_dragon_fruit_milkshake",
         'cosmopolitan:pink_dragon_fruit_ice_cream_cone', 'collectorsreap:pink_dragon_fruit_ice_cream_block')
 
-    make_ice_cream(e, "collectorsreap:lucuma", "createdelight:lucuma_ice_cream",
+    make_ice_cream(e, "collectorsreap:lucuma", "cosmopolitan:lucuma_ice_cream",
         "createdelightcore:lucuma_milkshake", "createdelightcore:lucuma_ice_cream_scoop",
         "collectorsreap:lucuma_ice_cream", "collectorsreap:lucuma_milkshake",
         'cosmopolitan:lucuma_ice_cream_cone', 'collectorsreap:lucuma_ice_cream_block')

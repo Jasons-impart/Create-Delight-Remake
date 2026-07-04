@@ -285,7 +285,7 @@ ServerEvents.recipes(e => {
     create.emptying([Fluid.of("createdelight:winter_glogg", 250), "minecraft:glass_bottle"], 'cosmopolitan:winter_glogg').id("createdelight:emptying/winter_glogg")
     {
         let iner = 'cosmopolitan:arbutus_berries'
-        create.sequenced_assembly("createdelight:enchanted_golden_arbutus_berries", 'cosmopolitan:arbutus_berries', [
+        create.sequenced_assembly("cosmopolitan:enchanted_golden_arbutus_berries", 'cosmopolitan:arbutus_berries', [
             create.filling(iner, [iner, Fluid.of("create_enchantment_industry:experience", 120)]),
             create.deploying(iner, [iner, "minecraft:gold_block"]),
             create.deploying(iner, [iner, "minecraft:gold_block"]),
@@ -293,7 +293,7 @@ ServerEvents.recipes(e => {
         ])
             .loops(4)
             .transitionalItem(iner)
-            .id("createdelight:enchanted_golden_arbutus_berries")
+            .id("createdelight:sequenced_assembly/enchanted_golden_arbutus_berries")
     }
     create.filling(
         'cosmopolitan:golden_arbutus_berries',
