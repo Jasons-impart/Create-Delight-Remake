@@ -284,3 +284,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: `iafdragonfix` disables Ice and Fire dragon cave/roost placed features and re-registers them as structures with its own biome tags, so the pack's Northstar-only dragon placement can be bypassed.
 - **Fix/Lesson**: Override `data/iafdragonfix/tags/worldgen/biome/has_*_dragon_*.json` with `replace: true` and tune `data/iafdragonfix/worldgen/structure_set/*.json`, because Ice and Fire `config/iceandfire/*_dragon*_biomes.json` no longer controls the replacement structures.
 
+## Alex's Caves placement must use pack dimension data
+
+**Date**: 2026-07-05
+
+- **Problem**: Player-facing tips can incorrectly say every Alex's Caves biome is an independent dimension if they ignore the pack's Northstar dimension biome sources.
+- **Fix/Lesson**: Check `kubejs/data/northstar/dimension/` and `kubejs/data/createdelight/dimension/` before updating Alex's Caves access text, because `config/alexscaves_biome_generation/*.json` is disabled and still points at vanilla overworld generation.
+
