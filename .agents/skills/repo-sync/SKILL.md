@@ -1,53 +1,21 @@
 ---
 name: repo-sync
-description: Keep the Create-Delight Remake checkout current after Git updates. Use when switching branches, pulling latest changes, rebasing, merging, or updating release/main branches so the agent checks branch state, asset-path changes, and final worktree cleanliness.
+description: Apply Create-Delight Remake branch-specific checks after Git updates. Use when switching branches, pulling latest changes, rebasing, merging, or updating release/main branches where asset-path changes, local runtime JARs, or release-v048x packwiz rules may matter.
 ---
 
 # Repo Sync
 
-Use this workflow before reporting that a branch switch, pull, rebase, or merge is complete.
+Use normal non-interactive Git commands for branch switches, pulls, rebases, and merges. This skill only records repository-specific checks.
 
-## Workflow
+## Project Checks
 
-1. Check the current branch and local changes.
+- After updating a branch, inspect whether the changed range touched `mods/`, `resourcepacks/`, `shaderpacks/`, `pack.toml`, or `index.toml`.
+- On `release-v048x`, never run `packwiz refresh`; `mods/` uses direct JARs, while `resourcepacks/` and `shaderpacks/` may carry packwiz metadata for Actions.
+- Treat untracked local `mods/*.jar` files as local instance state unless the user explicitly asked to manage mod assets.
+- Report whether asset paths changed and whether the final worktree has tracked changes.
 
-```powershell
-git status --short --branch
-```
-
-2. Record the old target commit before the update.
-
-```powershell
-$oldHead = git rev-parse HEAD
-```
-
-When switching first, record the destination branch instead:
+Useful path diff:
 
 ```powershell
-$oldHead = git rev-parse release-v048x
-git switch release-v048x
-```
-
-3. Run the requested Git operation with non-interactive commands.
-
-```powershell
-git pull --ff-only
-git rebase origin/main
-```
-
-4. Inspect whether the update touched asset paths.
-
-```powershell
-$newHead = git rev-parse HEAD
 git diff --name-only $oldHead $newHead -- mods resourcepacks shaderpacks pack.toml index.toml
 ```
-
-5. If `mods/`, `resourcepacks/`, `shaderpacks/`, `pack.toml`, or `index.toml` changed, report which asset paths changed. On `release-v048x`, do not run `packwiz refresh`; `mods/` uses direct JARs, while `resourcepacks/` and `shaderpacks/` may carry packwiz metadata for Actions.
-
-6. Finish with status.
-
-```powershell
-git status --short --branch
-```
-
-Report the ending branch, whether the pull/rebase/merge succeeded, whether asset paths changed, and whether the final worktree has tracked changes. Treat untracked local runtime JARs as local instance state unless the user explicitly asked to manage mod assets.

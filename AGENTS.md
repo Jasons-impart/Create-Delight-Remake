@@ -82,20 +82,6 @@ CD-master-dev-048x/
 - Only `resourcepacks/` and `shaderpacks/` use packwiz metadata on this branch; inspect their diffs manually instead of refreshing the whole pack.
 - Avoid destructive bulk deletes in `config/`, `defaultconfigs/`, `kubejs/`, `mods/`, `hotai/`, `ldlib/`, `PCL/`, and `tacz/`.
 
-## COMMANDS
-
-```powershell
-# Agent skills
-/knowledge-check
-/release
-$repo-sync
-$packwiz-assets
-
-# KubeJS hot reload, run in game
-/kubejs reload server_scripts
-/reload
-```
-
 ## KNOWLEDGE BASE MAINTENANCE
 
 - Root `AGENTS.md` should stay short enough to scan; move long history to `docs/lessons-learned.md`.
