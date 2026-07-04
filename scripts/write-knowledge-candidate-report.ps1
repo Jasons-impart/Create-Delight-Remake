@@ -67,7 +67,8 @@ function ConvertTo-Reason([string]$Path) {
     if ($normalized -like "docs/plans/*" -or $normalized -like "docs/*plan*.md") { return "Design plan changed; after landing, move durable facts to docs/systems/." }
     if ($normalized -like ".github/*") { return "CI/release workflow changed; root knowledge may need an update." }
     if ($normalized -like "config/*" -or $normalized -like "defaultconfigs/*") { return "Config behavior changed; record only non-obvious side effects." }
-    if ($normalized -like "mods/*" -or $normalized -eq "pack.toml" -or $normalized -eq "index.toml") { return "Packwiz/modpack metadata changed; check version or mod-management rules." }
+    if ($normalized -like "mods/*") { return "Direct mod JAR set changed; on release-v048x do not run packwiz refresh." }
+    if ($normalized -like "resourcepacks/*" -or $normalized -like "shaderpacks/*" -or $normalized -eq "pack.toml" -or $normalized -eq "index.toml") { return "Action-facing pack metadata changed; verify branch-specific asset rules and do not run local packwiz refresh on release-v048x." }
     if ($normalized -like "*AGENTS.md" -or $normalized -eq "docs/lessons-learned.md") { return "Knowledge base changed; run validation and check for duplicate facts." }
     return "Changed file may encode a reusable project pattern."
 }

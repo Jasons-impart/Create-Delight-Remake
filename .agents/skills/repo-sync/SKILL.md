@@ -1,6 +1,6 @@
 ---
 name: repo-sync
-description: Keep the Create-Delight Remake checkout current after Git updates. Use when switching branches, pulling latest changes, rebasing, merging, or updating release/main branches so the agent checks branch state, changed packwiz paths, and final worktree cleanliness.
+description: Keep the Create-Delight Remake checkout current after Git updates. Use when switching branches, pulling latest changes, rebasing, merging, or updating release/main branches so the agent checks branch state, asset-path changes, and final worktree cleanliness.
 ---
 
 # Repo Sync
@@ -35,14 +35,14 @@ git pull --ff-only
 git rebase origin/main
 ```
 
-4. Inspect whether the update touched packwiz-managed assets.
+4. Inspect whether the update touched asset paths.
 
 ```powershell
 $newHead = git rev-parse HEAD
 git diff --name-only $oldHead $newHead -- mods resourcepacks shaderpacks pack.toml index.toml
 ```
 
-5. If `mods/`, `resourcepacks/`, `shaderpacks/`, `pack.toml`, or `index.toml` changed, report that packwiz-managed files changed. Run `packwiz refresh` only when the actual task changed packwiz-managed assets; do not refresh after ordinary KubeJS, config, docs, or lang-only updates.
+5. If `mods/`, `resourcepacks/`, `shaderpacks/`, `pack.toml`, or `index.toml` changed, report which asset paths changed. On `release-v048x`, do not run `packwiz refresh`; `mods/` uses direct JARs, while `resourcepacks/` and `shaderpacks/` may carry packwiz metadata for Actions.
 
 6. Finish with status.
 
@@ -50,4 +50,4 @@ git diff --name-only $oldHead $newHead -- mods resourcepacks shaderpacks pack.to
 git status --short --branch
 ```
 
-Report the ending branch, whether the pull/rebase/merge succeeded, whether packwiz-managed files changed, and whether the final worktree has tracked changes. Treat untracked local runtime JARs as local instance state unless the user explicitly asked to manage mod assets.
+Report the ending branch, whether the pull/rebase/merge succeeded, whether asset paths changed, and whether the final worktree has tracked changes. Treat untracked local runtime JARs as local instance state unless the user explicitly asked to manage mod assets.

@@ -56,11 +56,11 @@ Historical project knowledge: non-obvious bugs, release pitfalls, and workflow d
 
 **Lesson**: Treat `pack.toml` as the only version source; release automation should derive other versioned outputs.
 
-## Packwiz Scope
+## Release-v048x Packwiz Scope
 
-**Problem**: Running `packwiz refresh` after ordinary repo changes can rewrite `index.toml` and accidentally index local instance files.
+**Problem**: Running `packwiz refresh` locally on `release-v048x` can rewrite `index.toml` and accidentally index local instance files, while this branch tracks `mods/*.jar` directly.
 
-**Lesson**: Packwiz-managed resources are limited to `mods/`, `resourcepacks/`, and `shaderpacks/`; do not refresh for KubeJS, config, docs, lang, or other non-packwiz changes.
+**Lesson**: Do not run local `packwiz refresh` on `release-v048x`; `pack.toml`/`index.toml` are for GitHub Actions, `mods/` changes are direct JAR edits, and only `resourcepacks/`/`shaderpacks/` use packwiz metadata on this branch.
 
 ## PowerShell Here-Doc Pitfall
 

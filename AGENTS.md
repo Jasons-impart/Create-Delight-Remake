@@ -25,7 +25,7 @@ CD-master-dev-048x/
 ├── tacz/             # TACZ gunpacks and gun data
 ├── hotai/            # HotAI patch data
 ├── ldlib/            # Multiblocked/LDLib assets and machine definitions
-├── mods/             # Packwiz-managed mod jars
+├── mods/             # Release-v048x tracks mod JARs directly
 ├── resourcepacks/    # Packwiz-managed bundled resource packs
 ├── shaderpacks/      # Packwiz-managed bundled shader packs
 ├── .github/          # Release workflows and helper scripts
@@ -78,17 +78,13 @@ CD-master-dev-048x/
 - Commit style follows Conventional Commits loosely: `[fix]`, `[feat]`, `[mod]`, `[dev]`, `[conf]`, `[quest]`.
 - PR titles and descriptions should be written in Chinese unless the user explicitly requests another language.
 - Formal release flow is documented in `DevGuide.md`; GitHub Actions build test artifacts from `test-client`, `test-server`, and `test-patch`.
-- Packwiz only manages `mods/`, `resourcepacks/`, and `shaderpacks/`; only run `packwiz refresh` for changes in those areas.
-- Do not overwrite `index.toml`; KubeJS, config, docs, lang, and other ordinary repo changes should not trigger `packwiz refresh`.
+- On `release-v048x`, never run `packwiz refresh` locally; `pack.toml`/`index.toml` are for GitHub Actions, and `mods/` changes are direct JAR edits.
+- Only `resourcepacks/` and `shaderpacks/` use packwiz metadata on this branch; inspect their diffs manually instead of refreshing the whole pack.
 - Avoid destructive bulk deletes in `config/`, `defaultconfigs/`, `kubejs/`, `mods/`, `hotai/`, `ldlib/`, `PCL/`, and `tacz/`.
 
 ## COMMANDS
 
 ```powershell
-# Packwiz
-.\packwiz.exe refresh
-.\packwiz.exe curseforge export
-
 # Agent skills
 /knowledge-check
 /release
