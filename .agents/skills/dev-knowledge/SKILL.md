@@ -7,6 +7,8 @@ description: Find, record, and organize Create-Delight Remake development knowle
 
 Use this skill when the task is about where development knowledge lives, how to find existing implementation context, or how to record new knowledge after a feature or investigation.
 
+This skill is the source of truth for knowledge storage routing; `knowledge-check` should reference this map instead of duplicating it.
+
 ## Storage Map
 
 | Knowledge | Target | Use when |
