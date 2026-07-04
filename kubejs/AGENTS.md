@@ -17,6 +17,7 @@ For cross-module conventions, release notes, and safety rules, see root `AGENTS.
 | Selling/procurement logic | `startup_scripts/custom/procurement.js` and `server_scripts/mbd2/sell_bin.js` |
 | Custom textures/lang/models | `assets/{namespace}/` |
 | OEI item replacements | `data/oei/replacements/` |
+| Alex's Caves placement | `startup_scripts/custom_portal.js`, `data/createdelight/dimension/`, `data/northstar/dimension/`, `../config/alexscaves_biome_generation/` |
 | Shared helpers | `server_scripts/util/` and `server_scripts/mbd2_recipes/proxy_recipe/` |
 
 ## SEARCH PITFALLS
@@ -55,6 +56,13 @@ Other helpers: `util/metallurgy.js`, `util/ratatouille.js`, `util/loot.js`, `uti
 - Common ingredients should use the `quality_food:material_whitelist` tag when they should be accepted by value and procurement systems.
 - `ValueBlackList` excludes items from value assignment; do not use zero value as a substitute for exclusion.
 - Client price tooltip logic is in `client_scripts/tool_tip.js`.
+
+## ALEX'S CAVES PLACEMENT
+
+- Vanilla Alex's Caves biome generation is disabled in `../config/alexscaves_biome_generation/*.json`; do not infer current placement from those `dimensions` arrays alone.
+- Independent cave dimensions are defined in `data/createdelight/dimension/`: abyssal chasm, primordial caves, forlorn hollows, and candy cavity. Their portal entry rules are in `startup_scripts/custom_portal.js`.
+- Planet-embedded cave biomes are added to Northstar dimension biome sources: magnetic caves in `data/northstar/dimension/moon.json`, and toxic caves in `data/northstar/dimension/venus.json`.
+- When updating tips, quests, or access instructions, check the dimension JSON and Northstar planet JSON first. `server_scripts/Alex's Cave/Biology.js` only blocks non-Alex monster spawns and may contain stale dimension IDs.
 
 ## COMMANDS
 

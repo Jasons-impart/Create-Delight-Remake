@@ -56,6 +56,12 @@ Historical project knowledge: non-obvious bugs, release pitfalls, and workflow d
 
 **Lesson**: Treat `pack.toml` as the only version source; release automation should derive other versioned outputs.
 
+## Packwiz Scope
+
+**Problem**: Running `packwiz refresh` after ordinary repo changes can rewrite `index.toml` and accidentally index local instance files.
+
+**Lesson**: Packwiz-managed resources are limited to `mods/`, `resourcepacks/`, and `shaderpacks/`; do not refresh for KubeJS, config, docs, lang, or other non-packwiz changes.
+
 ## PowerShell Here-Doc Pitfall
 
 **Problem**: Bash-style `<<EOF` heredocs do not work in PowerShell.
