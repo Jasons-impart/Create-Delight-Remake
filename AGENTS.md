@@ -44,6 +44,7 @@ CD-master-dev/
 | Release workflow | `.github/workflows/release.yml` | Use `/release` skill |
 | Packwiz asset workflow | `mods/`, `packwiz-files/` | Use `/packwiz-assets` skill |
 | Content/how-to knowledge | `docs/dev-knowledge/` | Use `/dev-knowledge` skill |
+| Knowledge maintenance | `.agents/skills/knowledge-check/SKILL.md` | Use `/knowledge-check` skill |
 | Historical pitfalls | `lessons-learned.md` | Do not duplicate in AGENTS |
 
 ## GLOSSARY
@@ -91,26 +92,6 @@ CD-master-dev/
 - ❌ `e.remove()` or `e.removeById()` - use `remove_recipes_id(e, [...])`
 - ❌ Duplicate version in other files
 - ❌ Treat runtime dirs (`logs/`, `crash-reports/`, `saves/`, `screenshots/`, `simplebackups/`, `tmp-*`) as source
-
-## KNOWLEDGE BASE MAINTENANCE
-
-These rules ensure this knowledge base stays effective. Violating them degrades agent performance.
-
-- **Root AGENTS.md ≤150 lines** — If over limit, prune stale entries or move content to subdirectory files
-- **Subdirectory AGENTS.md ≤80 lines** — Keep focused on that domain only
-- **No duplication** — Each fact exists in exactly ONE file. Others reference it. Duplicate information = conflicting information
-- **Skills for workflows** — Multi-step operational procedures belong in `.agents/skills/`; AGENTS keeps discovery pointers and always-on constraints only
-- **Dev knowledge indexes** — Content implementation notes and lightweight how-to entries live in `docs/dev-knowledge/`, not AGENTS
-- **Concise > verbose** — One sentence per fact. No prose. Agents ignore buried instructions
-- **Include the Why** — Non-obvious rules must explain the reason (agents follow rules better when they understand the failure mode)
-- **Stale > harmful** — Outdated instructions are worse than no instructions. Update when architecture changes, prune aggressively
-- **Iterate, don't upfront** — Add rules only when agent makes a repeated mistake. Remove rules agent always follows correctly
-- **Lessons go to `lessons-learned.md`** — Never inline long historical entries in AGENTS.md
-- **After fixing a non-obvious bug** — Add entry to `lessons-learned.md` (use `/knowledge-check` skill for guidance)
-- **Validation** — Codex `Stop` hook runs `scripts/validate-knowledge-base.ps1` to catch line-limit and stale-path failures
-- **Candidate report** — Codex `Stop` hook writes `tmp-opencode/knowledge-candidate-report.md`; it is advisory only and should consider AGENTS, lessons, or skill targets
-- **Process notes** — When a task hits a non-obvious failure or workaround, append a temporary note with `scripts/add-knowledge-note.ps1`; the candidate report routes it for `/knowledge-check`
-- **Candidate decision** — Apply/reject candidate reports with `scripts/resolve-knowledge-candidate.ps1`; process-note candidates need user acceptance unless knowledge maintenance was explicitly requested
 
 ## NOTES
 

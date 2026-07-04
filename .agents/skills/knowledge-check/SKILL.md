@@ -27,6 +27,10 @@ Ask: "Did I learn anything new about THIS PROJECT that future sessions would ben
 
 If `tmp-opencode/knowledge-candidate-report.md` exists, read it before deciding; process notes require user acceptance unless the current task explicitly asked to maintain the knowledge base.
 
+Codex Stop hooks run `scripts/validate-knowledge-base.ps1` and write `tmp-opencode/knowledge-candidate-report.md`; the report is advisory and never edits knowledge files.
+
+When a task hits a non-obvious failure or workaround before the final knowledge decision, append a temporary note with `scripts/add-knowledge-note.ps1` so the candidate report can route it here.
+
 Worth-recording knowledge usually falls into one of these groups:
 - **Reusable project fact or location** → Route using the Storage Map in `.agents/skills/dev-knowledge/SKILL.md`
 - **Bug/pitfall discovered** → Prefer `lessons-learned.md`
@@ -57,6 +61,7 @@ After applying the dev-knowledge Storage Map, check these overrides:
 5. **Lessons-learned entries**: Include Problem, Fix/Lesson, and date.
 6. **Skill entries**: Put trigger-critical wording in YAML `description`; keep the body focused on executable workflow.
 7. **Dev-knowledge entries**: Use table rows with paths and links; do not copy long design rationale.
+8. **Iterate, don't upfront**: Add rules only after a recurring mistake or concrete discovery; remove rules agents already follow reliably.
 
 **ALLOWED actions** (knowledge update only):
 - ✅ Edit `AGENTS.md` files (root, `kubejs/`, `CDC-mod-src/`)
@@ -90,6 +95,7 @@ If nothing significant was learned, output ONLY: `📝 Knowledge: no update need
 - ❌ Duplicating information across multiple AGENTS.md files
 - ❌ Adding entries without pruning when files exceed line limits
 - ❌ Writing verbose prose instead of concise bullet points
+- ❌ Keeping knowledge-maintenance rules in root AGENTS instead of this skill
 
 ## Self-Check (MANDATORY before finalizing any knowledge update)
 
