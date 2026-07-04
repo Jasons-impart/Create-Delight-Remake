@@ -1,0 +1,33 @@
+{
+  "replace": true,
+  "key": "alex_telecore",
+  "category": "socket",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 300,
+  "integrityCost": 1,
+  "integrityGain": 0,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 1,
+  "effects": {
+    "more_mod_tetra:radioactive_material": 1,
+    "more_mod_tetra:scarlet_magnetizing_pole": 20,
+    "more_mod_tetra:azure_magnetizing_pole": 20
+  },
+  "tints": {
+    "glyph": "ffffff",
+    "texture": "ffffff"
+  },
+  "textures": [
+    "perk_glow_0",
+    "perk_sided_0"
+  ],
+  "material": {
+    "items": [
+      "alexscaves:telecore"
+    ]
+  }
+}

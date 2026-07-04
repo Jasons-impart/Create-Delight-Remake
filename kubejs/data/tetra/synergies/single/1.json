@@ -1,10 +1,14 @@
-[ {
-        "modules": [],
-        "matchSuffixed": true,
-        "moduleVariants": ["quarter_staff_head/oak", "long_handle/stick"],
-        "effects": {
-        },
+[
+  {
+    "modules": [],
+    "matchSuffixed": true,
+    "moduleVariants": [
+      "quarter_staff_head/oak",
+      "long_handle/stick"
+    ],
+    "effects": {},
     "attributes": {
-        "forge:attack_range":64
-   }
-}]
+      "forge:attack_range": 64
+    }
+  }
+]

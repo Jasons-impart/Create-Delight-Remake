@@ -1,13 +1,13 @@
 name = "Cuisine Delight"
-filename = "cuisinedelight-1.1.18.jar"
+filename = "cuisinedelight-1.1.20.jar"
 side = "both"
 
 [download]
 hash-format = "sha1"
-hash = "c65d63be93ddf251c24d5c2dc145ca5e426fe932"
+hash = "c4d91f01a20f346b892ba454c722b65ab0a6b832"
 mode = "metadata:curseforge"
 
 [update]
 [update.curseforge]
-file-id = 7732672
+file-id = 8214170
 project-id = 893541

@@ -1,0 +1,36 @@
+{
+  "replace": true,
+  "key": "alexscaves_toxic_paste",
+  "category": "fuller_material",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": -100,
+  "integrityCost": 0,
+  "integrityGain": 4,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "attributes": {
+    "**generic.attack_damage": 0.01
+  },
+  "effects": {
+    "more_mod_tetra:radioactive_material": 5
+  },
+  "tints": {
+    "glyph": "6bd96b",
+    "texture": "6bd96b"
+  },
+  "textures": [
+    "default"
+  ],
+  "material": {
+    "items": [
+      "alexscaves:toxic_paste"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": 2
+  }
+}

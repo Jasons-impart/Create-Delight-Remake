@@ -54,6 +54,31 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:white_grape_juice",
         "youkaishomecoming:black_grape_juice",
         "youkaishomecoming:red_grape_juice",
+        "youkaishomecoming:white_wine",
+        "youkaishomecoming:red_wine",
+        "youkaishomecoming:van_allen",
+        "youkaishomecoming:burgundy",
+        "youkaishomecoming:champagne",
+        "youkaishomecoming:filling/white_wine",
+        "youkaishomecoming:filling/red_wine",
+        "youkaishomecoming:filling/van_allen",
+        "youkaishomecoming:filling/burgundy",
+        "youkaishomecoming:filling/champagne",
+        "youkaishomecoming:filling/white_wine_bottle",
+        "youkaishomecoming:filling/red_wine_bottle",
+        "youkaishomecoming:filling/van_allen_bottle",
+        "youkaishomecoming:filling/burgundy_bottle",
+        "youkaishomecoming:filling/champagne_bottle",
+        "youkaishomecoming:emptying/white_wine_emptying",
+        "youkaishomecoming:emptying/red_wine_emptying",
+        "youkaishomecoming:emptying/van_allen_emptying",
+        "youkaishomecoming:emptying/burgundy_emptying",
+        "youkaishomecoming:emptying/champagne_emptying",
+        "youkaishomecoming:emptying/white_wine_bottle_emptying",
+        "youkaishomecoming:emptying/red_wine_bottle_emptying",
+        "youkaishomecoming:emptying/van_allen_bottle_emptying",
+        "youkaishomecoming:emptying/burgundy_bottle_emptying",
+        "youkaishomecoming:emptying/champagne_bottle_emptying",
         "youkaishomecoming:pork_rice_ball",
         "youkaishomecoming:shaved_ice_over_rice"
     ])
@@ -87,7 +112,7 @@ ServerEvents.recipes(e => {
             return
         ratatouille.baking(recipe.getOriginalRecipeResult(), recipe.getOriginalRecipeIngredients())
         .processingTime(200)
-        .id(`createdelight:baking/${recipe.getOriginalRecipeResult().getId().split(":")[1]}`)
+        .id(`createdelight:baking/${recipe.getId().split(":")[1]}`)
     })
 
     //饭团
@@ -137,7 +162,11 @@ ServerEvents.recipes(e => {
         .loops(1)
         .transitionalItem("bakeries:red_velvet_cake_base")
         .id("createdelight:sequenced_assembly/red_velvet_cake")
-    threshing(e, 'youkaishomecoming:pods', ['youkaishomecoming:soybean', Item.of('youkaishomecoming:soybean').withChance(0.5)], 200)
+    threshing(e, 'youkaishomecoming:pods', [
+        '2x youkaishomecoming:soybean',
+        Item.of('2x youkaishomecoming:soybean').withChance(0.5),
+        'createaddition:biomass'
+    ])
     farmersdelight.cooking(
         [
             'youkaishomecoming:soybean',
@@ -152,9 +181,12 @@ ServerEvents.recipes(e => {
             Fluid.of("bakeries:salt_water", 10)
         ]
     ).id('createdelight:compacting/tofu')
-    cutting_2(e, "youkaishomecoming:mandrake_root", [["youkaishomecoming:stripped_mandrake_root", 1]])
-    cutting_2(e, "youkaishomecoming:raw_lamprey", [["youkaishomecoming:raw_lamprey_fillet", 1]])
-    cutting_2(e, "youkaishomecoming:red_velvet_cake", [["youkaishomecoming:red_velvet_cake_slice", 7]])
+    cutting(e, "youkaishomecoming:mandrake_root", "youkaishomecoming:stripped_mandrake_root")
+    cutting(e, "youkaishomecoming:raw_lamprey", [
+        "2x youkaishomecoming:raw_lamprey_fillet",
+        "crabbersdelight:fish_bones"
+    ])
+    cutting(e, "youkaishomecoming:red_velvet_cake", "7x youkaishomecoming:red_velvet_cake_slice")
 
     e.custom({
         "type": "youkaishomecoming:simple_fermentation",
@@ -350,8 +382,7 @@ ServerEvents.recipes(e => {
     brewing(e, "farmersrespite:green_tea", ["#forge:crops/rice", "#forge:crops/rice"], "createdelight:genmai_tea", "youkaishomecoming:genmai_tea")
     brewing(e, "minecraft:water", ["#forge:salad_ingredients/cabbage", "#forge:salad_ingredients/cabbage"], "createdelight:green_water", "youkaishomecoming:green_water")
     brewing(e, "minecraft:water", ["youkaishomecoming:white_tea_leaves", "youkaishomecoming:white_tea_leaves"], "createdelight:white_tea", "youkaishomecoming:white_tea")
-    brewing_2(e, "minecraft:water", ['#forge:cream', "createcafe:coffee_grounds"], "createdelight:macchiato_fluid", "youkaishomecoming:macchiato")
-
+    brewing_2(e, "minecraft:water", ['#forge:cream', "createcafe:coffee_grounds"], "createdelight:macchiato_fluid")
     // pouring(e, "youkaishomecoming:espresso", "createdelight:espresso_fluid")
     // pouring(e, "youkaishomecoming:americano", "createdelight:americano_fluid")
     // pouring(e, "youkaishomecoming:ristretto", "createdelight:ristretto_fluid")
@@ -467,18 +498,6 @@ ServerEvents.recipes(e => {
             "minecraft:sugar"
         ]
     ).heated().id("createdelight:compacting/tamagoyaki")
-    farmersdelight.cutting(
-        "youkaishomecoming:salmon_futomaki",
-        "#forge:tools/knives",
-        "3x youkaishomecoming:salmon_futomaki_slice"
-    ).id("createdelight:salmon_futomaki_cutting")
-    farmersdelight.cutting('youkaishomecoming:california_roll', "#forge:tools/knives", "3x youkaishomecoming:california_roll_slice").id("createdelight:california_roll_cutting")
-    farmersdelight.cutting('youkaishomecoming:volcano_roll', "#forge:tools/knives", "3x youkaishomecoming:volcano_roll_slice").id("createdelight:volcano_roll_cutting")
-    farmersdelight.cutting('youkaishomecoming:roe_california_roll', "#forge:tools/knives", "3x youkaishomecoming:roe_california_roll_slice").id("createdelight:roe_california_roll_cutting")
-    farmersdelight.cutting('youkaishomecoming:salmon_lover_roll', "#forge:tools/knives", "3x youkaishomecoming:salmon_lover_roll_slice").id("createdelight:salmon_lover_roll_cutting")
-    farmersdelight.cutting("youkaishomecoming:rainbow_roll", "#forge:tools/knives", "3x youkaishomecoming:rainbow_roll_slice").id("createdelight:rainbow_roll_cutting")
-    farmersdelight.cutting("youkaishomecoming:egg_futomaki", "#forge:tools/knives", "3x youkaishomecoming:egg_futomaki_slice").id("createdelight:egg_futomaki_cutting")
-    farmersdelight.cutting('youkaishomecoming:rainbow_futomaki', "#forge:tools/knives", "3x youkaishomecoming:rainbow_futomaki_slice").id("createdelight:rainbow_futomaki_cutting")
     kubejs.shapeless(
         'youkaishomecoming:shaved_ice_over_rice',
         [

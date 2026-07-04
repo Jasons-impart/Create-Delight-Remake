@@ -1,0 +1,11 @@
+{
+  "dimensionId": "minecraft:dimension:northstar:europa",
+  "maxYPos": -1000,
+  "seaLevel": -1000,
+  "gravity": [
+    0.0,
+    -1.315,
+    0.0
+  ],
+  "priority": 1000
+}

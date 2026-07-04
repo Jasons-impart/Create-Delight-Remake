@@ -111,6 +111,10 @@ ServerEvents.tags("minecraft:item", e => {
         'createdelightcore:banana_syrup',
         'cosmopolitan:berry_syrup_block'
     ])
+    e.add("forge:fruits/coconut", [
+        'crabbersdelight:coconut_halve',
+        'crabbersdelight:coconut'
+    ])
 })
 
 ServerEvents.tags("minecraft:fluid", e => {

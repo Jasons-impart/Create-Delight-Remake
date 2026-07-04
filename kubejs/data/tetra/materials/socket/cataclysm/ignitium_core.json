@@ -1,0 +1,40 @@
+{
+  "replace": true,
+  "key": "ignitium_core",
+  "category": "over_core",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 0,
+  "integrityCost": 1,
+  "integrityGain": 0,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "attributes": {
+    "**generic.attack_damage": 0.1,
+    "**tetra:draw_damage": 0.1,
+    "**tetra:ability_damage": 0.1
+  },
+  "effects": {
+    "more_mod_tetra:blazing_absorb": 6,
+    "more_mod_tetra:blazing_brand": 2
+  },
+  "tints": {
+    "glyph": "FFE040",
+    "texture": "FFE040"
+  },
+  "textures": [
+    "perk_glow_0",
+    "perk_sided_0"
+  ],
+  "material": {
+    "items": [
+      "more_mod_tetra:ignitium_core"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": "minecraft:iron"
+  }
+}

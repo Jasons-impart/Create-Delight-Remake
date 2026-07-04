@@ -1,0 +1,16 @@
+{
+  "central_body": "northstar:jupiter",
+  "class": "moon",
+  "diameter": 3121.6,
+  "orbit": {
+    "type": "northstar:simple",
+    "duration_days": 3.551181,
+    "inclination_deg": 3.5960000000000005,
+    "radius": 0.00448602642
+  },
+  "renderer": "northstar:solar_system/jupiter/europa_sky",
+  "required_science": 1.0,
+  "rotation_period_days": -3.551181,
+  "science_weight_exp": 1.0,
+  "texture": "northstar:solar_system/jupiter/europa_sky"
+}

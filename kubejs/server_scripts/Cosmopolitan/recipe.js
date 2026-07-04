@@ -29,6 +29,22 @@ ServerEvents.recipes(e => {
     e.replaceInput({ mod: "cosmopolitan" }, "#forge:crops/wheat", "#forge:flour")
     e.replaceOutput({ mod: "cosmopolitan" }, "cosmopolitan:chorus_fruit_popsicle", "ends_delight:chorus_fruit_popsicle")
     e.remove({ type: "create:sequenced_assembly", output: ['cosmopolitan:classic_ice_cream', 'cosmopolitan:seasonal_ice_cream', 'neapolitan:neapolitan_ice_cream'] })
+    e.remove({ output: [
+        'cosmopolitan:bagel',
+        'createdelightcore:lucuma_ice_cream_cone',
+        'createdelightcore:pink_dragon_fruit_ice_cream_cone',
+        'createdelightcore:sunny_ice_cream_sandwich',
+        'cosmopolitan:collective_ice_cream',
+        'cosmopolitan:collective_ice_cream_sandwich',
+        'cosmopolitan:delightful_ice_cream',
+        'cosmopolitan:delightful_ice_cream_sandwich',
+        'cosmopolitan:exquisite_ice_cream',
+        'cosmopolitan:exquisite_ice_cream_sandwich',
+        'cosmopolitan:lucuma_ice_cream_cone',
+        'cosmopolitan:pink_dragon_fruit_ice_cream_cone',
+        'cosmopolitan:sunny_ice_cream_sandwich',
+        'cosmopolitan:neapolitan_ice_cream_bagel'
+    ] })
     /**
      *
      * @param {Internal.RecipesEventJS} e
@@ -97,8 +113,33 @@ ServerEvents.recipes(e => {
         "alexscaves:sweetberry_ice_cream_scoop", "createdelightcore:pumpkin_ice_cream_scoop", "createdelightcore:beetroot_ice_cream_scoop")
     make_mixed_ice_cream(e, "neapolitan:neapolitan_ice_cream", 'cosmopolitan:neapolitan_ice_cream_sandwich',
         "alexscaves:vanilla_ice_cream_scoop", "createdelightcore:strawberry_ice_cream_scoop", "alexscaves:chocolate_ice_cream_scoop")
-    make_mixed_ice_cream(e, "collectorsreap:sunny_ice_cream", 'createdelightcore:sunny_ice_cream_sandwich',
+    make_mixed_ice_cream(e, "collectorsreap:sunny_ice_cream", 'cosmopolitan:sunny_ice_cream_sandwich',
         "createdelightcore:strawberry_ice_cream_scoop", "alexscaves:vanilla_ice_cream_scoop", "createdelightcore:lucuma_ice_cream_scoop")
+    make_mixed_ice_cream(e, "cosmopolitan:collective_ice_cream", 'cosmopolitan:collective_ice_cream_sandwich',
+        "createdelightcore:lime_ice_cream_scoop", "createdelightcore:pomegranate_ice_cream_scoop", "createdelightcore:pink_dragon_fruit_ice_cream_scoop")
+    make_mixed_ice_cream(e, "cosmopolitan:delightful_ice_cream", 'cosmopolitan:delightful_ice_cream_sandwich',
+        "cosmopolitan:source_berry_pips", "cosmopolitan:kabloom_pips", "youkaishomecoming:matcha")
+    make_mixed_ice_cream(e, "cosmopolitan:exquisite_ice_cream", 'cosmopolitan:exquisite_ice_cream_sandwich',
+        "#forge:chorus_fruits", "cosmopolitan:aurora_kohakutou", "cosmopolitan:slabfish_jelly_popsicle")
+    create.sequenced_assembly('cosmopolitan:neapolitan_ice_cream_bagel', 'bakeries:bagel', [
+        create.deploying('bakeries:bagel', ['bakeries:bagel', 'alexscaves:vanilla_ice_cream_scoop']),
+        create.deploying('bakeries:bagel', ['bakeries:bagel', 'createdelightcore:strawberry_ice_cream_scoop']),
+        create.deploying('bakeries:bagel', ['bakeries:bagel', 'alexscaves:chocolate_ice_cream_scoop']),
+        create.deploying('bakeries:bagel', ['bakeries:bagel', 'bakeries:bagel'])
+    ])
+        .loops(1)
+        .transitionalItem('bakeries:bagel')
+        .id('createdelight:create/sequenced_assembly/neapolitan_ice_cream_bagel')
+    kubejs.shapeless(
+        'cosmopolitan:neapolitan_ice_cream_bagel',
+        [
+            'bakeries:bagel',
+            'bakeries:bagel',
+            'alexscaves:vanilla_ice_cream_scoop',
+            'createdelightcore:strawberry_ice_cream_scoop',
+            'alexscaves:chocolate_ice_cream_scoop'
+        ]
+    ).id('createdelight:shapeless/neapolitan_ice_cream_bagel')
 
     create.filling("cosmopolitan:cream_bun",
         [
@@ -244,7 +285,7 @@ ServerEvents.recipes(e => {
     create.emptying([Fluid.of("createdelight:winter_glogg", 250), "minecraft:glass_bottle"], 'cosmopolitan:winter_glogg').id("createdelight:emptying/winter_glogg")
     {
         let iner = 'cosmopolitan:arbutus_berries'
-        create.sequenced_assembly("createdelight:enchanted_golden_arbutus_berries", 'cosmopolitan:arbutus_berries', [
+        create.sequenced_assembly("cosmopolitan:enchanted_golden_arbutus_berries", 'cosmopolitan:arbutus_berries', [
             create.filling(iner, [iner, Fluid.of("create_enchantment_industry:experience", 120)]),
             create.deploying(iner, [iner, "minecraft:gold_block"]),
             create.deploying(iner, [iner, "minecraft:gold_block"]),
@@ -252,7 +293,7 @@ ServerEvents.recipes(e => {
         ])
             .loops(4)
             .transitionalItem(iner)
-            .id("createdelight:enchanted_golden_arbutus_berries")
+            .id("createdelight:sequenced_assembly/enchanted_golden_arbutus_berries")
     }
     create.filling(
         'cosmopolitan:golden_arbutus_berries',
@@ -261,27 +302,21 @@ ServerEvents.recipes(e => {
             Fluid.of("createmetallurgy:molten_gold", 450)
         ]
     ).id("createdelight:filling/golden_arbutus_berries")
-    cutting(e, 'minecraft:fern',
-        [
-            ["minecraft:wheat_seeds"],
-            ['alexscaves:fiddlehead', 1, 0.75],
-            ['alexscaves:fiddlehead', 1, 0.25]
-        ]
-    )
-    cutting(e, 'minecraft:large_fern',
-        [
-            ["minecraft:wheat_seeds"],
-            ['alexscaves:fiddlehead'],
-            ['alexscaves:fiddlehead', 1, 0.25]
-        ]
-    )
-    cutting(e, 'alexscaves:curly_fern',
-        [
-            ["minecraft:wheat_seeds"],
-            ['alexscaves:fiddlehead'],
-            ['alexscaves:fiddlehead', 1, 0.25]
-        ]
-    )
+    cutting(e, 'minecraft:fern',[
+        "minecraft:wheat_seeds",
+        Item.of('alexscaves:fiddlehead').withChance(0.75),
+        Item.of('alexscaves:fiddlehead').withChance(0.25)
+    ])
+    cutting(e, 'minecraft:large_fern', [
+        "minecraft:wheat_seeds",
+        'alexscaves:fiddlehead',
+        Item.of('alexscaves:fiddlehead').withChance(0.25)
+    ])
+    cutting(e, 'alexscaves:curly_fern', [
+        "minecraft:wheat_seeds",
+        'alexscaves:fiddlehead',
+        Item.of('alexscaves:fiddlehead').withChance(0.25)
+    ])
     {
         let iner = "bakeries:cut_cake_base"
         create.sequenced_assembly('cosmopolitan:jelly_roll', iner, [

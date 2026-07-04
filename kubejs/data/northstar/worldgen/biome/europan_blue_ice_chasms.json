@@ -1,0 +1,56 @@
+{
+  "carvers": {
+    "air": [
+      "minecraft:cave_extra_underground",
+      "minecraft:cave"
+    ]
+  },
+  "downfall": 0.1,
+  "effects": {
+    "fog_color": 6780917,
+    "sky_color": 5594623,
+    "water_color": 4159204,
+    "water_fog_color": 329011
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "northstar:blue_ice_cluster",
+      "northstar:ice_cluster",
+      "northstar:icicles",
+      "northstar:frost"
+    ]
+  ],
+  "has_precipitation": false,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [
+      {
+        "type": "northstar:moon_lunargrade",
+        "maxCount": 4,
+        "minCount": 1,
+        "weight": 30
+      },
+      {
+        "type": "northstar:moon_eel",
+        "maxCount": 4,
+        "minCount": 1,
+        "weight": 15
+      }
+    ],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 0.0
+}

@@ -10,12 +10,13 @@
   "magicCapacity": 100,
   "toolLevel": 0,
   "toolEfficiency": 0,
+  "attributes": {
+    "tetra:draw_speed": -0.4
+  },
+  "effects": {},
   "tints": {
     "glyph": "000000",
     "texture": "000000"
-  },
-  "attributes": {
-    "tetra:draw_speed": -0.4
   },
   "textures": [
     "default"
@@ -27,6 +28,5 @@
   },
   "requiredTools": {
     "cut": "minecraft:iron"
-  },
-  "effects": {}
+  }
 }

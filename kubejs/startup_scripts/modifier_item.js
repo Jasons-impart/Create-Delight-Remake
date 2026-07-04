@@ -366,8 +366,8 @@ ItemEvents.modification(e => {
     food_effects("createdelightcore:lush_confiture_jelly_bottle", "cosmopolitan:phototaxis", 30)
     food_effects('farmersrespite:rose_hip_pie_slice', "minecraft:regeneration", 5)
     food_effects('trailandtales_delight:cherry_cheese_pie_slice', "minecraft:regeneration", 10)
-    food_effects('createdelightcore:sunny_ice_cream_sandwich', "collectorsreap:rebound", 80, 1)
-    food_effects('createdelightcore:sunny_ice_cream_sandwich', "neapolitan:vanilla_scent")
+    food_effects('cosmopolitan:sunny_ice_cream_sandwich', "collectorsreap:rebound", 80, 1)
+    food_effects('cosmopolitan:sunny_ice_cream_sandwich', "neapolitan:vanilla_scent")
     food_effects('blackknightarmor:mied_floral_flavor_ice_cream', "createdelight:dragon_breath_resistance", 60)
     //紫颂果食物传送效果
     food_effects("ends_delight:chorus_fruit_milk_tea", "fruitsdelight:chorus", 0.05)
@@ -440,6 +440,12 @@ ItemEvents.modification(e => {
     food_effects('youkaishomecoming:salmon_futomaki', "farmersdelight:nourishment", 30, 0, 1)
     remove_effects('youkaishomecoming:rainbow_futomaki', "minecraft:saturation")
     food_effects('youkaishomecoming:rainbow_futomaki', "farmersdelight:nourishment", 30, 0, 1)
+    remove_effects('createcafe:banana_iced_coffee', "minecraft:saturation"),
+    food_effects('createcafe:banana_iced_coffee', "neapolitan:agility", 30)
+    remove_effects('createcafe:caramel_iced_coffee', "minecraft:saturation"),
+    food_effects('createcafe:caramel_iced_coffee', "farmersdelight:nourishment", 30, 0, 1)
+    remove_effects('createcafe:coconut_iced_coffee', "minecraft:water_breathing"),
+    food_effects('createcafe:coconut_iced_coffee', "minecraft:water_breathing", 60, 0, 1)
 
     //咖啡效果
     coffee_effect('createcafe:strawberry_iced_coffee', 600, 0, 600)
@@ -447,6 +453,7 @@ ItemEvents.modification(e => {
     coffee_effect('createcafe:mint_iced_coffee', 600, 0, 600)
     coffee_effect('createcafe:caramel_iced_coffee', 600, 0, 600)
     coffee_effect('createcafe:banana_iced_coffee', 600, 0, 600)
+    coffee_effect('createcafe:coconut_iced_coffee', 600, 0, 600)
     coffee_effect('createcafe:iced_coffee', 150, 2, 150)
     coffee_effect('createcafe:iced_coffee_milk', 300, 1, 300)
     coffee_effect('youkaishomecoming:coffee_mochi', 150, 0, 150)
@@ -489,6 +496,7 @@ ItemEvents.modification(e => {
     red_tea_effect('createcafe:vanilla_milk_tea', 45, 0, 45, 20)
     red_tea_effect('createcafe:oreo_milk_tea', 45, 0, 45, 20)
     red_tea_effect('createcafe:pomegranate_tea', 45, 0, 45, 20)
+    red_tea_effect('createcafe:coconut_milk_tea', 45, 0, 45, 20)
     red_tea_effect('collectorsreap:vernal_purge', 45, 0, 45, 20)
     red_tea_effect('collectorsreap:strong_vernal_purge', 30, 1, 30, 30)
     e.modify("farmersrespite:black_cod", item => {

@@ -1,0 +1,29 @@
+{
+  "replace": true,
+  "key": "radiation_absorption_core",
+  "category": "practical_core",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 0,
+  "integrityCost": 2,
+  "integrityGain": 0,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "effects": {
+    "more_mod_tetra:industrial_protection": 1
+  },
+  "tints": {
+    "glyph": "0152bc"
+  },
+  "textures": [
+    "radiation_absorption_core"
+  ],
+  "material": {
+    "items": [
+      "more_mod_tetra:radiation_absorption_core"
+    ]
+  }
+}

@@ -1,8 +1,8 @@
 {
   "replace": true,
   "key": "totem_of_undying",
-  "hidden": true,
   "category": "socket",
+  "hidden": true,
   "primary": 0,
   "secondary": 0,
   "tertiary": 0,

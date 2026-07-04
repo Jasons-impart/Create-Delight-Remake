@@ -1,7 +1,7 @@
 {
   "key": "blaze_powder",
-  "hidden": true,
   "category": "reagent",
+  "hidden": true,
   "primary": 0,
   "secondary": 0,
   "tertiary": 0,
@@ -11,6 +11,7 @@
   "magicCapacity": 0,
   "toolLevel": 0,
   "toolEfficiency": 0,
+  "effects": {},
   "tints": {
     "glyph": "f9a825",
     "texture": "f9a825"
@@ -18,11 +19,10 @@
   "textures": [
     "dust"
   ],
-  "effects": {},
+  "experienceCost": 3,
   "material": {
     "items": [
       "minecraft:blaze_powder"
     ]
-  },
-  "experienceCost": 3
+  }
 }

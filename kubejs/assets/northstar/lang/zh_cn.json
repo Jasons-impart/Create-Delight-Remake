@@ -1,4 +1,11 @@
 {
+    "biome.northstar.europan_blue_ice_chasms": "木卫二蓝冰裂谷",
+    "biome.northstar.europan_ice_plains": "木卫二冰原",
+    "biome.northstar.europan_ridge_fields": "木卫二冰脊原",
+    "biome.northstar.europan_subsurface_ocean": "木卫二冰下海",
+    "dimension.northstar.europa": "木卫二",
+    "dimension.northstar.europa_orbit": "木卫二轨道",
+    "dimension.northstar.jupiter_orbit": "木星轨道",
     "stat.northstar.rocket_crashes": "火箭坠毁了",
     "block.northstar.astronomy_table.tooltip.summary": "用于将_天文观测记录_加入_星图_。",
     "block.northstar.rocket_thruster": "火箭推进器",

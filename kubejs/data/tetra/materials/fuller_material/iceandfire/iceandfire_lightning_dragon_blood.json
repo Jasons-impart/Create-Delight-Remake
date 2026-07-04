@@ -1,0 +1,37 @@
+{
+  "replace": true,
+  "key": "iceandfire_lightning_dragon_blood",
+  "category": "fuller_material",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 0,
+  "integrityCost": 0,
+  "integrityGain": 7,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "attributes": {
+    "**generic.attack_damage": 0.05
+  },
+  "effects": {
+    "armorPenetration": 20,
+    "more_mod_tetra:lightning_dragon_blood_coating": 80
+  },
+  "tints": {
+    "glyph": "856fb5",
+    "texture": "856fb5"
+  },
+  "textures": [
+    "default"
+  ],
+  "material": {
+    "items": [
+      "iceandfire:lightning_dragon_blood"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": 4
+  }
+}

@@ -36,8 +36,8 @@ ServerEvents.recipes(e => {
     'create_bic_bit:ketchup_bottle',
     "trailandtales_delight:cheese_slice"
   ], "bakeries:raw_pizza", 1)
-  cutting(e, "createdelightcore:meatlovers_pizza", [["createdelightcore:meatlovers_pizza_slice", 4]])
-  cutting(e, "createdelightcore:vegetable_pizza", [["createdelightcore:vegetable_pizza_slice", 4]])
-  cutting(e, "bakeries:pizza", [["createdelightcore:pizza_slice", 4]])
-  cutting(e, "createdelightcore:nether_pizza", [["createdelightcore:nether_pizza_slice", 4]])
+  cutting(e, "createdelightcore:meatlovers_pizza", "4x createdelightcore:meatlovers_pizza_slice")
+  cutting(e, "createdelightcore:vegetable_pizza", "4x createdelightcore:vegetable_pizza_slice")
+  cutting(e, "bakeries:pizza", "4x createdelightcore:pizza_slice")
+  cutting(e, "createdelightcore:nether_pizza", "4x createdelightcore:nether_pizza_slice")
 })

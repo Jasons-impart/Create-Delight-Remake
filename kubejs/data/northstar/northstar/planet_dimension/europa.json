@@ -1,0 +1,60 @@
+{
+  "atmosphere": {
+    "collection_rate": 0.0,
+    "daytime_star_brightness": 1.0,
+    "fluid": "minecraft:empty",
+    "fluid_nbt": {},
+    "pressure_pa": 0.0
+  },
+  "averageTemperature": -170.0,
+  "dimension": "northstar:europa",
+  "dimension_above": "northstar:europa_orbit",
+  "gravity": 1.315,
+  "heat_gradient": 0.0,
+  "name": "surface",
+  "planet": "northstar:europa",
+  "sun_multiplier": {
+    "type": "northstar:arithmetic",
+    "a": {
+      "type": "northstar:light",
+      "mode": "sky_darken",
+      "normalize": true
+    },
+    "b": 0.55,
+    "mode": "mul"
+  },
+  "temperature": {
+    "type": "northstar:biome",
+    "entries": [
+      {
+        "key": "minecraft:fallback",
+        "value": {
+          "type": "northstar:block",
+          "entries": [
+            {
+              "key": "minecraft:fallback",
+              "value": -170.0
+            },
+            {
+              "key": "minecraft:water",
+              "value": 2.0
+            },
+            {
+              "key": "minecraft:bubble_column",
+              "value": 2.0
+            }
+          ]
+        }
+      },
+      {
+        "key": "northstar:europan_subsurface_ocean",
+        "value": 2.0
+      },
+      {
+        "key": "alexscaves:abyssal_chasm",
+        "value": 2.0
+      }
+    ]
+  },
+  "wind_multiplier": 0.0
+}

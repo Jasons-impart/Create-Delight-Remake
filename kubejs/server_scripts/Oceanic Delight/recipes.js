@@ -11,13 +11,13 @@ ServerEvents.recipes(e => {
     ])
     e.replaceInput({id: "oceanic_delight:fish_egg_noodle_soup"}, "#forge:pasta", 'createdelight:vermicelli')
     // 鱿鱼须相关
-    cutting_2(e, "oceanic_delight:squid_tentacles", [["createdelight:raw_calamari", 3]])
-    cutting_2(e, "oceanic_delight:glow_squid_tentacles", [["createdelight:raw_calamari", 3]])
+    cutting(e, "oceanic_delight:squid_tentacles", "3x createdelight:raw_calamari")
+    cutting(e, "oceanic_delight:glow_squid_tentacles", "3x createdelight:raw_calamari")
 
     //Oceanic delight
     e.replaceInput({}, "oceanic_delight:shrimp", "oceanic_delight:shrimp_slices")
     e.replaceInput({id: "crabbersdelight:sea_pickle_juice"}, "minecraft:sea_pickle", "#forge:sea_pickles")
-    cutting_2(e, "crabbersdelight:cooked_shrimp", [["oceanic_delight:shrimp_slices", 1]])
+    cutting(e, "crabbersdelight:cooked_shrimp", "oceanic_delight:shrimp_slices")
     // 虾仁薯片
     e.recipes.create.mixing(
         'oceanic_delight:shrimp_chips',
@@ -38,9 +38,7 @@ ServerEvents.recipes(e => {
     // 鲑鱼搅拌得到鲑鱼籽
     e.recipes.create.mixing(
         'oceanic_delight:salmon_eggs',
-        [
-            'minecraft:salmon'
-        ]
+        'minecraft:salmon'
     ).id("createdelight:mixing/salmon_eggs")
 })
 

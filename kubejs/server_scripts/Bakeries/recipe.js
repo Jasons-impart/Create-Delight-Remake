@@ -521,9 +521,9 @@ ServerEvents.recipes(e => {
         .heated()
         .id("createdelight:vacuumizing/brown_sugar_cube")
     //面包切割
-    cutting_2(e, 'bakeries:toast', [['bakeries:sliced_toast', 4]])
-    cutting_2(e, 'bakeries:cheese_cocoa_toast', [['bakeries:sliced_cheese_cocoa_toast', 4]])
-    cutting_2(e, 'bakeries:country_bread', [['bakeries:country_bread_slice', 6]])
+    cutting(e, 'bakeries:toast', '4x bakeries:sliced_toast')
+    cutting(e, 'bakeries:cheese_cocoa_toast', '4x bakeries:sliced_cheese_cocoa_toast')
+    cutting(e, 'bakeries:country_bread', '6x bakeries:country_bread_slice')
     create.cutting(
         '4x bakeries:sliced_toast',
         'bakeries:toast'
@@ -542,7 +542,7 @@ ServerEvents.recipes(e => {
 
     baking(e, "bakeries:paper_cup_cake_paste", "bakeries:cup_cake", 1, "food", 100)
 
-    cutting_1(e, "ratatouille:cake_base", [["bakeries:cut_cake_base", 2]])
+    cutting(e, "ratatouille:cake_base", "2x bakeries:cut_cake_base")
     create.filling("bakeries:soak_coffee_cut_cake_base", ["bakeries:cut_cake_base", Fluid.of("createdelight:espresso_fluid", 250)])
         .id("createdelight:filling/soak_coffee_cut_cake_base")
     create.compacting("bakeries:foamed_cream", [Fluid.of("cosmopolitan:cream", 250)])
@@ -554,7 +554,7 @@ ServerEvents.recipes(e => {
     //     .id("createdelight:filling/crispy_dough")
     create.cutting("8x bakeries:scone_dough", 'createdelight:puff_pastry')
         .id("createdelight:cutting/scone_dough")
-    cutting(e, 'bakeries:pound_cake', [['bakeries:sliced_pound_cake', 4]])
+    cutting(e, 'bakeries:pound_cake', '4x bakeries:sliced_pound_cake')
     e.custom({
         "type": "bakeries:dough_crafting_table",
         "count": 8,

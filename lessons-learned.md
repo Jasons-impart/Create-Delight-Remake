@@ -284,10 +284,78 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: `iafdragonfix` disables Ice and Fire dragon cave/roost placed features and re-registers them as structures with its own biome tags, so the pack's Northstar-only dragon placement can be bypassed.
 - **Fix/Lesson**: Override `data/iafdragonfix/tags/worldgen/biome/has_*_dragon_*.json` with `replace: true` and tune `data/iafdragonfix/worldgen/structure_set/*.json`, because Ice and Fire `config/iceandfire/*_dragon*_biomes.json` no longer controls the replacement structures.
 
+## Northstar custom planet biomes need consistent feature order
+
+**Date**: 2026-06-24
+
+- **Problem**: Europa chunk generation crashed with `Feature order cycle found` because `europan_ridge_fields` and `europan_blue_ice_chasms` listed shared placed features in conflicting relative order.
+- **Fix/Lesson**: Keep shared placed features in the same generation step ordered consistently across all custom planet biomes, varying biome decoration by subsets rather than reordered lists.
+
+## Northstar fluid freezing uses planet-dimension temperature
+
+**Date**: 2026-06-24
+
+- **Problem**: Europa subsurface ocean water froze even after raising biome temperature because Northstar `FluidStateMixin` checks `NorthstarTemperature.getTemperatureAt`, which reads `planet_dimension.temperature`, not the biome JSON temperature.
+- **Fix/Lesson**: For cold Northstar dimensions with liquid water, use a `planet_dimension.temperature` LevelFunction such as `northstar:block` to keep default terrain cold while returning above-freezing temperature for `minecraft:water`.
+## Packwiz-files same-name replacements must compare hashes
+
+**Date**: 2026-06-29
+
+- **Problem**: `scripts/update-packwiz-meta.ps1` skipped raw-URL local assets when the referenced filename still existed, so replacing `packwiz-files` payloads with the same filename left stale `.pw.toml` SHA256 hashes.
+- **Fix/Lesson**: Compare existing `.pw.toml` SHA256 values against same-name local files and refresh packwiz-files metadata on mismatch, because filename presence alone does not prove the payload is current.
+
+## Order header packages must not count as ingredient packages
+
+**Date**: 2026-07-02
+
+- **Problem**: Requester automation can send the order itself as a Create package, but including that header package in `Order.checkAllPackages()` makes order identity and ingredient settlement share one package pool.
+- **Fix/Lesson**: Let `order_deliverer.js` read orders from naked order items or package contents, but exclude any package containing an order from the ingredient package transfer.
+
+## Order deliverer leading empty table cloths must not become segment starts
+
+**Date**: 2026-07-02
+
+- **Problem**: `order_deliverer.js` kept leading empty table cloths as the segment start, so rewards for a later order could be placed back on the first empty table cloth and look like the later segment was ignored.
+- **Fix/Lesson**: Missing `create:table_cloth` remains the scan boundary, but each order segment should start at the table cloth containing its order.
+
+## Duplicate order categories need per-entry keys
+
+**Date**: 2026-07-02
+
+- **Problem**: Order requester selections and reward scoring used category id as the entry identity, so orders containing repeated categories such as multiple tea entries mixed their counts and estimates.
+- **Fix/Lesson**: Keep ratio rules keyed by category id, but key generated/fixed selections and per-entry scoring by stable occurrence keys such as `tea`, `tea#2`, and `tea#3`.
+
+## CDC generated lang can be shadowed by hand-written lang
+
+**Date**: 2026-07-02
+
+- **Problem**: CDC `processResources` uses `DuplicatesStrategy.EXCLUDE`, so `src/main/resources/assets/createdelightcore/lang/*.json` with the same path as datagen output can make the final jar keep only the smaller hand-written file.
+- **Fix/Lesson**: Put CDC lang additions in `EnglishLangHandler`/`ChineseLangHandler` and regenerate `src/generated/resources`, because `src/generated/resources` is already included as a main resource source set.
+
+## TerraBlender bypasses Citadel surface rules in custom Alex cave dimensions
+
+**Date**: 2026-07-02
+
+- **Problem**: Youkai's Homecoming embeds TerraBlender, making Citadel skip its direct `NoiseGeneratorSettings` surface-rule merge, so custom fixed/non-TerraBlender Alex cave dimensions can fall back to vanilla dirt/stone/deepslate surfaces.
+- **Fix/Lesson**: Put required Alex's Caves surface rules directly in the custom dimension noise settings, because TerraBlender only applies Citadel's compat rules to initialized TerraBlender region dimensions.
+
+## Northstar Europa bulk ice features can overwrite generated content
+
+**Date**: 2026-07-03
+
+- **Problem**: Europa's `ice_cluster`, `blue_ice_cluster`, `ice_column`, and `icicles` placed features run as biome decoration after structures and earlier features, so surface-height placements can cover or intersect generated content.
+- **Fix/Lesson**: Override the placed features with a `surface_relative_threshold_filter` below `OCEAN_FLOOR_WG`, because their built-in placement ranges sample the full 0-256 height band.
+
+## Integrated API jigsaw structures can reject liquid starts
+
+**Date**: 2026-07-03
+
+- **Problem**: Integrated API jigsaw structures projected with `WORLD_SURFACE_WG` can choose water as the surface and spawn large structures on liquid.
+- **Fix/Lesson**: Add `"cannot_spawn_in_liquid": true` to the structure JSON when using `integrated_api:jigsaw_structure` or `integrated_api:optional_dependency_structure`, because the codec checks the generated surface fluid before accepting the start chunk.
+
 ## Alex's Caves placement must use pack dimension data
 
 **Date**: 2026-07-05
 
 - **Problem**: Player-facing tips can incorrectly say every Alex's Caves biome is an independent dimension if they ignore the pack's Northstar dimension biome sources.
 - **Fix/Lesson**: Check `kubejs/data/northstar/dimension/` and `kubejs/data/createdelight/dimension/` before updating Alex's Caves access text, because `config/alexscaves_biome_generation/*.json` is disabled and still points at vanilla overworld generation.
-

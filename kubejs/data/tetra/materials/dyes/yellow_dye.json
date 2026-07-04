@@ -21,6 +21,8 @@
   ],
   "experienceCost": 3,
   "material": {
-    "items": [ "minecraft:yellow_dye" ]
+    "items": [
+      "minecraft:yellow_dye"
+    ]
   }
 }

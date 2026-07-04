@@ -55,8 +55,10 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:sweet_berry_cookie_dough',
     'createdelight:lime_cookie_dough',
     'createdelight:chorus_cookie_dough',
-    'createdelight:bat_cookie_dough',
+    'createdelight:star_cookie_dough',
+    'createdelight:herbal_cookie_dough',
     'createdelight:paw_cookie_dough',
+    'createdelight:bat_cookie_dough',
     // 未烤制玛芬
     'createdelight:unbaked_red_velvet_cupcake',
     'createdelight:unbaked_mixed_berry_muffin',
@@ -88,7 +90,6 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:empty_popsicle',
     'createdelight:enchanted_golden_lantern_fruit',
     'createdelight:enchanted_golden_carrot',
-    'createdelight:enchanted_golden_arbutus_berries',
     'createdelight:enchanted_golden_lucuma',
   ])
 })
@@ -202,6 +203,16 @@ StartupEvents.registry("creative_mode_tab", e => {
       'createdelight:kinetic_transmission_component',
       'createdelight:sealed_joint_component',
       'createdelight:logic_component',
-      'createdelight:order_deliverer_item'
+      'createdelight:order_deliverer_item',
+      'createdelight:order',
+      'createdelight:unopened_order',
+      Item.of('createdelight:order_seal', { OrderSeal: 'human' }),
+      Item.of('createdelight:order_seal', { OrderSeal: 'elven' }),
+      Item.of('createdelight:order_seal', { OrderSeal: 'dwarven' }),
+      Item.of('createdelight:order_seal', { OrderSeal: 'monster' }),
+      Item.of('createdelight:order_seal', { OrderSeal: 'drink' }),
+      Item.of('createdelight:order_seal', { OrderSeal: 'dessert' }),
+      Item.of('createdelight:order_seal', { OrderSeal: 'staple' }),
+      Item.of('createdelight:order_seal', { OrderSeal: 'feast' })
     ])
 })

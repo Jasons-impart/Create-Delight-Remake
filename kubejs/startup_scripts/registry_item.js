@@ -90,8 +90,10 @@ StartupEvents.registry("item", e => {
         "sweet_berry",
         "lime",
         "chorus",
+        "star",
+        "herbal",
+        "paw",
         "bat",
-        "paw"
     ]
     CookieDough.forEach(dough => {
         e.create(`createdelight:${dough}_cookie_dough`)
@@ -369,18 +371,6 @@ StartupEvents.registry("item", e => {
         })
         .glow(true)
         .translationKey("item.createdelight.enchanted_golden_carrot")
-    //附魔金杜鹃莓
-    e.create("createdelight:enchanted_golden_arbutus_berries")
-        .texture("cosmopolitan:item/golden_arbutus_berries")
-        .rarity("epic")
-        .food(f => {
-            f.hunger(4)
-                .saturation(1)
-                .effect("cosmopolitan:phototaxis", 1200, 1, 1.0)
-                .effect("minecraft:strength", 1200, 2, 1.0)
-        })
-        .glow(true)
-        .translationKey("item.createdelight.enchanted_golden_arbutus_berries")
     //附魔金蛋黄果
     e.create("createdelight:enchanted_golden_lucuma")
         .texture("collectorsreap:item/gilded_lucuma")
@@ -728,6 +718,8 @@ StartupEvents.registry("item", e => {
             .translationKey("item.createdelight.order")
     e.create("createdelight:unopened_order")
             .translationKey("item.createdelight.unopened_order")
+    e.create("createdelight:order_seal")
+            .translationKey("item.createdelight.order_seal")
     //悚怖之心
     e.create("createdelight:dread_heart")
         .rarity("epic")

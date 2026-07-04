@@ -1,7 +1,7 @@
 {
   "key": "popped_chorus_fruit",
   "category": "wood",
-  "primary":5.0,
+  "primary": 5.0,
   "secondary": 0.4,
   "tertiary": 6.0,
   "durability": 227,
@@ -20,11 +20,14 @@
     "default"
   ],
   "material": {
-    "items": ["minecraft:popped_chorus_fruit"]
+    "items": [
+      "minecraft:popped_chorus_fruit"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": 2
   },
   "improvements": {
     "hollow": 0
-  },
-  "requiredTools": {
-    "hammer_dig": 2    }
+  }
 }

@@ -1,0 +1,46 @@
+{
+  "key": "iceandfire_dragonscales_gray",
+  "category": "dragon_scales",
+  "hidden": true,
+  "hiddenOutcomes": true,
+  "primary": 3,
+  "secondary": 2.5,
+  "tertiary": 6,
+  "durability": 900,
+  "integrityCost": 1,
+  "integrityGain": 6,
+  "magicCapacity": 500,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+
+  "attributes": {
+    "**generic.attack_damage": 0.1,
+    "**tetra:draw_damage": 0.1,
+    "**tetra:ability_damage": 0.1
+  },
+  "tints": {
+    "glyph": "898989",
+    "texture": "898989"
+  },
+  "textures": [
+    "default"
+  ],
+  "effects": {
+    "armorPenetration": 10,
+    "more_mod_tetra:fire_dragon_blood_coating": 10
+  },
+  "requiredTools": {
+    "cut": "minecraft:gold"
+  },
+  "material": {
+    "items": [
+      "iceandfire:dragonscales_gray"
+    ]
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ]
+}

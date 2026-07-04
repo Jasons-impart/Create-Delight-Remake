@@ -1,32 +1,37 @@
 {
-    "key": "diamond",
-    "category": "gem",
-    "primary": 6,
-    "secondary": 2.9,
-    "tertiary": 0,
-    "durability": 1561,
-    "integrityCost": 2,
-    "integrityGain": 2,
-    "magicCapacity": 60,
-    "toolLevel": "minecraft:diamond",
-    "toolEfficiency": 8,
-    "tints": {
-        "glyph": "diamond_glyph",
-        "texture": "diamond"
-    },
-    "textures": ["shiny", "crude"],
-    "material": {
-        "items": [
-            "createdelight:mmd_diamond",
-            "minecraft:diamond",
-            "tetra:pristine_diamond"
-        ]
-    },
-    "requiredTools": {
-        "hammer_dig": 4
-    },
-    "improvements": {
-        "arrested": 0
-    },
-    "features": [ "pristine" ]
+  "key": "diamond",
+  "category": "gem",
+  "primary": 6,
+  "secondary": 2.9,
+  "tertiary": 0,
+  "durability": 1561,
+  "integrityCost": 2,
+  "integrityGain": 2,
+  "magicCapacity": 60,
+  "toolLevel": "minecraft:diamond",
+  "toolEfficiency": 8,
+  "tints": {
+    "glyph": "diamond_glyph",
+    "texture": "diamond"
+  },
+  "textures": [
+    "shiny",
+    "crude"
+  ],
+  "material": {
+    "items": [
+      "createdelight:mmd_diamond",
+      "minecraft:diamond",
+      "tetra:pristine_diamond"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": 4
+  },
+  "features": [
+    "pristine"
+  ],
+  "improvements": {
+    "arrested": 0
+  }
 }

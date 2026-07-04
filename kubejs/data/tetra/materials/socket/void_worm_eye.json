@@ -1,32 +1,39 @@
 {
-    "replace": true,
-    "key": "socket_void_worm_eye",
-    "hidden": true,
-    "category": "socket",
-    "primary": 0,
-    "secondary": 0,
-    "tertiary": 0,
-    "durability": 60,
-    "integrityCost": 1,
-    "integrityGain": 0,
-    "magicCapacity": 0,
-    "toolLevel": 0,
-    "toolEfficiency": 0,
-    "attributes": {
-        "generic.attack_damage": 2,
-        "forge:reach_distance":1,
-        "forge:attack_range":1
-    },
-    "effects": {
-        "criticalStrike": [ 25, 1.5 ],
-        "intuit": 5
-    },
-    "tints": {
-        "glyph": "4a42ab"
-    },
-    "textures": [ "worm_eye" ],
-    "experienceCost": 30,
-    "material": {
-        "items": [ "alexsmobs:void_worm_eye" ]
-    }
+  "replace": true,
+  "key": "socket_void_worm_eye",
+  "category": "socket",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 60,
+  "integrityCost": 1,
+  "integrityGain": 0,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "attributes": {
+    "generic.attack_damage": 2,
+    "forge:reach_distance": 1,
+    "forge:attack_range": 1
+  },
+  "effects": {
+    "criticalStrike": [
+      25,
+      1.5
+    ],
+    "intuit": 5
+  },
+  "tints": {
+    "glyph": "4a42ab"
+  },
+  "textures": [
+    "worm_eye"
+  ],
+  "experienceCost": 30,
+  "material": {
+    "items": [
+      "alexsmobs:void_worm_eye"
+    ]
+  }
 }

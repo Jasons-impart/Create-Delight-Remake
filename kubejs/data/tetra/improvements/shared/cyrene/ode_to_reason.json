@@ -13,7 +13,10 @@
     },
     "effects": {
       "more_mod_tetra:everything_is_in_everything": 400,
-      "more_mod_tetra:experience_edge": [25,0]
+      "more_mod_tetra:experience_edge": [
+        25,
+        0
+      ]
     }
   }
 ]

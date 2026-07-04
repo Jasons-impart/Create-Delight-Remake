@@ -25,15 +25,25 @@ function buildOrderRewardBundles(level, orderInfo, qualityScore) {
     return rewardBundles
 }
 
-function placeRewardBundles(level, pos, direction, start, rewardBundles) {
-    /**@type {Internal.TableClothBlockEntity} */
-    let startBe = level.getBlockEntity(pos[direction](start), "create:table_cloth").get()
+function placeRewardBundles(level, pos, direction, start, end, rewardBundles) {
     if (rewardBundles.length == 0)
+        return
+    let outputIndex = start
+    let startBe = null
+    for (let index = start; index <= end; index++) {
+        let obe = level.getBlockEntity(pos[direction](index), "create:table_cloth")
+        if (obe.isPresent()) {
+            outputIndex = index
+            startBe = obe.get()
+            break
+        }
+    }
+    if (startBe == null)
         return
     for (let index = 0; index < rewardBundles.length; index++) {
         let element = rewardBundles[index]
         if (startBe.manuallyAddedItems.size() == 4) {
-            global.CDServerJavaClasses.$PackageEntity.fromItemStack(level, pos[direction](start).offset(0.5, 1, 0.5), element)
+            global.CDServerJavaClasses.$PackageEntity.fromItemStack(level, pos[direction](outputIndex).offset(0.5, 1, 0.5), element)
         } else {
             startBe.manuallyAddedItems.push(element)
             startBe.notifyUpdate()
@@ -44,19 +54,40 @@ function placeRewardBundles(level, pos, direction, start, rewardBundles) {
 function clearOrderSegment(level, pos, direction, start, end) {
     for (let index = start; index <= end; index++) {
         /**@type {Internal.TableClothBlockEntity} */
-        let be = level.getBlockEntity(pos[direction](index), "create:table_cloth").get()
+        let obe = level.getBlockEntity(pos[direction](index), "create:table_cloth")
+        if (!obe.isPresent())
+            continue
+        let be = obe.get()
         be.manuallyAddedItems.clear()
         be.notifyUpdate()
     }
+}
+
+function findOrderInStack(item) {
+    if (item.is("createdelight:order"))
+        return item
+    if (!item.hasTag("create:packages"))
+        return null
+    let found = null
+    global.CDServerJavaClasses.$PackageItem.getContents(item).allItems.forEach(content => {
+        if (found == null && content.is("createdelight:order"))
+            found = content
+    })
+    return found
 }
 
 function notifyOrderReputation(level, orderInfo, qualityScore) {
     let result = global.Order.reputation.awardForOrder(level, orderInfo, qualityScore)
     if (result == null)
         return
-    result.player.tell(Component.translate("message.createdelight.order_reputation_gain", result.gain, result.value, result.level))
+    result.player.tell(Text.translate("message.createdelight.order_reputation_gain", [
+        result.gain,
+        result.completionBonus,
+        result.value,
+        result.level
+    ]))
     if (result.leveledUp)
-        result.player.tell(Component.translate("message.createdelight.order_reputation_level_up", result.level))
+        result.player.tell(Text.translate("message.createdelight.order_reputation_level_up", [result.level]))
 }
 
 function settleOrderSegment(level, pos, direction, start, end, orderStack, packages) {
@@ -71,7 +102,7 @@ function settleOrderSegment(level, pos, direction, start, end, orderStack, packa
 
     let rewardBundles = buildOrderRewardBundles(level, orderInfo, qualityScore)
     clearOrderSegment(level, pos, direction, start, end)
-    placeRewardBundles(level, pos, direction, start, rewardBundles)
+    placeRewardBundles(level, pos, direction, start, end, rewardBundles)
     notifyOrderReputation(level, orderInfo, qualityScore)
     return true
 }
@@ -115,21 +146,27 @@ MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
                     /**@type {Internal.TableClothBlockEntity} */
                     let be = obe.get()
                     let item = be.manuallyAddedItems
-                    let find = item.find(item => item.is("createdelight:order"))
+                    let find = null
+                    item.forEach(stack => {
+                        if (find == null)
+                            find = findOrderInStack(stack)
+                    })
 
                     if (find != null) {
                         if (order != null) {
                             end = index - 1
                             settleOrderSegment(level, pos, funcs[i], start, end, order, packages)
-                            start = index
                             packages = new ItemStackTransfer()
                             packages.setSize(64)
                         }
+                        start = index
                         order = find
                     }
-                    item.filter(item => item
-                        .hasTag("create:packages"))
-                        .forEach(item => ItemTransferHelper.insertItemStacked(packages, item, false))
+                    if (order != null) {
+                        item.filter(item => item
+                            .hasTag("create:packages") && findOrderInStack(item) == null)
+                            .forEach(item => ItemTransferHelper.insertItemStacked(packages, item, false))
+                    }
                     lastIndex = index
                 }
                 if (order != null) {

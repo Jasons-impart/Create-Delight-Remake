@@ -6,7 +6,8 @@ ServerEvents.recipes(e => {
         "neapolitan:adzuki/adzuki_crate_uncompress",
         "neapolitan:vanilla/vanilla_fudge",
         "neapolitan:banana/banana_bread",
-        "create_central_kitchen:mixing/vanilla_fudge"
+        "create_central_kitchen:mixing/vanilla_fudge",
+        "cosmopolitan:neapolitan/chocolate_banana_cream_bun"
     ])
     remove_recipes_output(e, [
         "neapolitan:chocolate_strawberries",
@@ -56,14 +57,12 @@ ServerEvents.recipes(e => {
     create.haunting("neapolitan:white_strawberries", "neapolitan:strawberries").id("createdelight:haunting/white_strawberries")
     
     
-    cutting_2(e, "neapolitan:banana_bunch", [
-        ["neapolitan:banana", 2],
-        ["neapolitan:banana", 1, 0.5],
-        ["neapolitan:banana", 1, 0.25]
+    cutting(e, "neapolitan:banana_bunch", [
+        "2x neapolitan:banana",
+        Item.of("neapolitan:banana").withChance(0.5),
+        Item.of("neapolitan:banana").withChance(0.25)
     ])
-    cutting_2(e, "neapolitan:banana_bundle", [
-        ["neapolitan:banana_bunch", 9]
-    ])
+    cutting(e, "neapolitan:banana_bundle", "9x neapolitan:banana_bunch")
 
     farmersdelight.cooking([
         "2x createdelight:adzuki_beans_seed",
@@ -112,4 +111,12 @@ ServerEvents.recipes(e => {
         .transitionalItem(iner)
         .id("createdelight:sequenced_assembly/strawberry_banana_smoothie")
     }
+    kubejs.shapeless(
+        '4x cosmopolitan:chocolate_banana_cream_bun',
+        [
+            "4x cosmopolitan:cream_bun",
+            "#supplementaries:chocolate_bars",
+            "neapolitan:banana"
+        ]
+    ).id("createdelight:shapeless/chocolate_banana_cream_bun")
 })
