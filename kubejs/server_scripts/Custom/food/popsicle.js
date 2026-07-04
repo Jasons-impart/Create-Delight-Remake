@@ -7,6 +7,43 @@ ServerEvents.tags("item", e => {
     ])
 })
 
+const solidPopsicleMoldDemolding = {
+    "ratatouille:melon_popsicle_mold_solid": "farmersdelight:melon_popsicle",
+    "createdelight:empty_popsicle_mold_solid": "createdelight:empty_popsicle",
+    "createdelight:chorus_fruit_popsicle_mold_solid": "ends_delight:chorus_fruit_popsicle",
+    "createdelight:berry_popsicle_mold_solid": "cosmopolitan:berry_popsicle",
+    "createdelight:milk_popsicle_mold_solid": "youkaishomecoming:milk_popsicle",
+    "createdelight:hamimelon_popsicle_mold_solid": "fruitsdelight:hamimelon_popsicle",
+    "createdelight:lime_popsicle_mold_solid": "collectorsreap:lime_popsicle",
+    "createdelight:kiwi_popsicle_mold_solid": "fruitsdelight:kiwi_popsicle",
+    "createdelight:green_tongue_mold_solid": "casualness_delight:green_tongue",
+    "createdelight:tear_popsicle_mold_solid": "mynethersdelight:tear_popsicle",
+    "createdelight:big_popsicle_mold_solid": "youkaishomecoming:big_popsicle"
+}
+
+function giveOrDropPopsicleDemolding(player, item) {
+    if (!player.getInventory().add(item)) {
+        player.drop(item, false)
+    }
+}
+
+Object.entries(solidPopsicleMoldDemolding).forEach(([mold, popsicle]) => {
+    ItemEvents.rightClicked(mold, e => {
+        const {player} = e
+        if (player == null || !player.isPlayer())
+            return
+
+        let handStack = player.getItemInHand(e.hand)
+        let amount = player.isCrouching() ? handStack.count : 1
+        handStack.shrink(amount)
+
+        giveOrDropPopsicleDemolding(player, Item.of(popsicle, amount))
+        giveOrDropPopsicleDemolding(player, Item.of("ratatouille:popsicle_mold", amount))
+        player.swing()
+        e.cancel()
+    })
+})
+
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "ratatouille:freezing/melon_popsicle_mold_solid",

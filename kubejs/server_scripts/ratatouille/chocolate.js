@@ -11,6 +11,36 @@ ServerEvents.tags("item", e => {
     ])
 })
 
+const solidChocolateMoldDemolding = {
+    "ratatouille:chocolate_mold_solid": "create:bar_of_chocolate",
+    "createdelightcore:black_chocolate_mold_solid": "create_confectionery:bar_of_black_chocolate",
+    "createdelightcore:white_chocolate_mold_solid": "create_confectionery:bar_of_white_chocolate",
+    "createdelightcore:ruby_chocolate_mold_solid": "create_confectionery:bar_of_ruby_chocolate"
+}
+
+function giveOrDrop(player, item) {
+    if (!player.getInventory().add(item)) {
+        player.drop(item, false)
+    }
+}
+
+Object.entries(solidChocolateMoldDemolding).forEach(([mold, chocolate]) => {
+    ItemEvents.rightClicked(mold, e => {
+        const {player} = e
+        if (player == null || !player.isPlayer())
+            return
+
+        let handStack = player.getItemInHand(e.hand)
+        let amount = player.isCrouching() ? handStack.count : 1
+        handStack.shrink(amount)
+
+        giveOrDrop(player, Item.of(chocolate, amount))
+        giveOrDrop(player, Item.of("ratatouille:chocolate_mold", amount))
+        player.swing()
+        e.cancel()
+    })
+})
+
 ServerEvents.recipes(e => {
     const {create, ratatouille} = e.recipes
     remove_recipes_id(e, [
