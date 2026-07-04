@@ -69,6 +69,8 @@ $requiredPaths = @(
     "docs/lessons-learned.md",
     ".agents/skills/knowledge-check/SKILL.md",
     ".agents/skills/release/SKILL.md",
+    ".agents/skills/repo-sync/SKILL.md",
+    ".agents/skills/packwiz-assets/SKILL.md",
     ".codex/hooks.json",
     ".github/workflows/release.yml",
     "scripts/validate-knowledge-base.ps1",

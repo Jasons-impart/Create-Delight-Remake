@@ -47,6 +47,7 @@ function ConvertTo-Target([string]$Path) {
     $normalized = $Path -replace "\\", "/"
     if ($normalized -eq "AGENTS.md") { return "AGENTS.md" }
     if ($normalized -eq "docs/lessons-learned.md") { return "docs/lessons-learned.md" }
+    if ($normalized -like ".agents/skills/*") { return ".agents/skills/" }
     if ($normalized -like "kubejs/*") { return "kubejs/AGENTS.md" }
     if ($normalized -like ".github/*" -or $normalized -like "scripts/*" -or $normalized -like "mods/*" -or $normalized -eq "pack.toml" -or $normalized -eq "index.toml") { return "AGENTS.md" }
     if ($normalized -like "config/*" -or $normalized -like "defaultconfigs/*") { return "docs/lessons-learned.md" }
@@ -59,6 +60,7 @@ function ConvertTo-Reason([string]$Path) {
     if ($normalized -like "kubejs/startup_scripts/*") { return "KubeJS registry/startup behavior may require restart or new conventions." }
     if ($normalized -like "kubejs/data/*") { return "Datapack/OEI/tag structure may need a routing note." }
     if ($normalized -like "scripts/*") { return "Project automation changed; root knowledge may need a command or workflow note." }
+    if ($normalized -like ".agents/skills/*") { return "Agent skill changed; validate skill frontmatter and keep workflow details out of AGENTS.md." }
     if ($normalized -like ".github/*") { return "CI/release workflow changed; root knowledge may need an update." }
     if ($normalized -like "config/*" -or $normalized -like "defaultconfigs/*") { return "Config behavior changed; record only non-obvious side effects." }
     if ($normalized -like "mods/*" -or $normalized -eq "pack.toml" -or $normalized -eq "index.toml") { return "Packwiz/modpack metadata changed; check version or mod-management rules." }
@@ -66,9 +68,31 @@ function ConvertTo-Reason([string]$Path) {
     return "Changed file may encode a reusable project pattern."
 }
 
-$dirtyFiles = Invoke-Git -GitArgs @("diff", "--name-only")
-$stagedFiles = Invoke-Git -GitArgs @("diff", "--cached", "--name-only")
-$untrackedFiles = Invoke-Git -GitArgs @("ls-files", "--others", "--exclude-standard")
+function Test-NoiseFile([string]$Path, [string]$Source) {
+    if ($Source -ne "untracked") {
+        return $false
+    }
+
+    $normalized = $Path -replace "\\", "/"
+    if ($normalized -match "^(mods|resourcepacks|shaderpacks)/.+\.(jar|zip)$") {
+        return $true
+    }
+
+    return $false
+}
+
+$dirtyFiles = @(Invoke-Git -GitArgs @("diff", "--name-only"))
+$stagedFiles = @(Invoke-Git -GitArgs @("diff", "--cached", "--name-only"))
+$rawUntrackedFiles = @(Invoke-Git -GitArgs @("ls-files", "--others", "--exclude-standard"))
+$untrackedFiles = @()
+$filteredFiles = New-Object System.Collections.Generic.List[string]
+foreach ($file in $rawUntrackedFiles) {
+    if (Test-NoiseFile -Path $file -Source "untracked") {
+        Add-Unique $filteredFiles $file
+    } else {
+        $untrackedFiles += $file
+    }
+}
 $head = (Invoke-Git -GitArgs @("rev-parse", "HEAD") | Select-Object -First 1)
 $lastReportedHead = ""
 if (Test-Path -LiteralPath $StatePath) {
@@ -154,6 +178,7 @@ $lines.Add("- Generated: $timestamp") | Out-Null
 $lines.Add("- Scope: working tree, index, and HEAD commit") | Out-Null
 $lines.Add("- Mode: report only; no knowledge files were edited") | Out-Null
 $lines.Add("- Decision: $decisionStatus") | Out-Null
+$lines.Add("- Filtered local runtime files: $($filteredFiles.Count)") | Out-Null
 $lines.Add("") | Out-Null
 $lines.Add("## Recommendation") | Out-Null
 $lines.Add("") | Out-Null

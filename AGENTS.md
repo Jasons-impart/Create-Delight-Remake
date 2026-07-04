@@ -7,7 +7,7 @@ Create-Delight Remake (齿轮盛宴) is a deep-modded Minecraft 1.20.1 Forge mod
 > KubeJS details: `kubejs/AGENTS.md`
 > Historical lessons: `docs/lessons-learned.md`
 > Developer notes: `DevGuide.md`
-> Agent skills: `.agents/skills/release/`, `.agents/skills/knowledge-check/`
+> Agent skills: `.agents/skills/` (release, knowledge-check, repo-sync, packwiz-assets)
 
 ## STRUCTURE
 
@@ -88,6 +88,8 @@ CD-master-dev-048x/
 # Agent skills
 /knowledge-check
 /release
+$repo-sync
+$packwiz-assets
 
 # KubeJS hot reload, run in game
 /kubejs reload server_scripts
@@ -98,6 +100,7 @@ CD-master-dev-048x/
 
 - Root `AGENTS.md` should stay short enough to scan; move long history to `docs/lessons-learned.md`.
 - `kubejs/AGENTS.md` should contain only KubeJS-specific rules, paths, and helper APIs.
+- Reusable command workflows belong in `.agents/skills/`; keep `AGENTS.md` for stable paths, constraints, and cross-links.
 - Record non-obvious bugs, release pitfalls, and recurring agent mistakes in `docs/lessons-learned.md`.
 - Avoid duplicating facts between files; cross-link instead.
 - Update these docs when architecture or workflow changes, because stale agent instructions are worse than missing instructions.

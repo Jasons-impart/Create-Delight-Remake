@@ -26,6 +26,7 @@ Categories of worth-recording knowledge:
 - **Bug/pitfall discovered** → `docs/lessons-learned.md`
 - **New convention or pattern** → Relevant `AGENTS.md` (root or `kubejs/`)
 - **New utility function or API** → `kubejs/AGENTS.md` HELPER FUNCTIONS section
+- **Reusable command workflow or decision tree** → `.agents/skills/<name>/SKILL.md`
 - **Config change with side effects** → `docs/lessons-learned.md` or relevant AGENTS.md
 
 ### Step 2: Choose Target File
@@ -34,6 +35,7 @@ Categories of worth-recording knowledge:
 |---------------|-------------|------|
 | Cross-module convention | Root `AGENTS.md` | Applies to entire project |
 | KubeJS recipe/dev pattern | `kubejs/AGENTS.md` | KubeJS-specific |
+| Reusable workflow | `.agents/skills/<name>/SKILL.md` | Multi-step command sequence, release/sync/packwiz process, or decision tree |
 | Bug fix / pitfall / history | `docs/lessons-learned.md` | Preventive knowledge |
 | New utility function | `kubejs/AGENTS.md` HELPER FUNCTIONS | Developer reference |
 
@@ -88,6 +90,6 @@ Before saving any edit to AGENTS.md or lessons-learned.md, verify ALL of these:
 3. **Concise** — Is each entry one sentence? Can any words be cut without losing meaning?
 4. **Why included** — For non-obvious rules, did I explain the failure mode/reason?
 5. **Stale check** — Am I adding to a file that contains outdated entries? Flag them for removal.
-6. **Right file** — Is this in the correct knowledge file per the routing table above? Cross-module → root, domain-specific → subdirectory, historical → lessons-learned.
+6. **Right file** — Is this in the correct knowledge file per the routing table above? Cross-module → root, domain-specific → subdirectory, reusable workflow → skill, historical → lessons-learned.
 
 If any check fails, fix before saving. This self-check is the primary mechanism ensuring knowledge base quality over time.
