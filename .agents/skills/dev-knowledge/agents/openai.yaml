@@ -1,0 +1,4 @@
+interface:
+  display_name: "开发知识"
+  short_description: "路由项目知识、实现记录、设计规划和技术做法。"
+  default_prompt: "使用 $dev-knowledge 查找、记录或组织内容笔记、实现位置和技术 how-to 知识。"

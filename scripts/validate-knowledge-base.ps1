@@ -43,6 +43,55 @@ function Get-FileText([string]$RelativePath) {
     return Get-Content -Raw -LiteralPath $path
 }
 
+function Test-DevKnowledgeChineseMarkdown([string]$RelativePath) {
+    $path = Join-Path $Root $RelativePath
+    if (-not (Test-Path -LiteralPath $path)) {
+        return
+    }
+
+    $inFrontMatter = $false
+    $inCodeFence = $false
+    $lines = Get-Content -LiteralPath $path
+
+    for ($i = 0; $i -lt $lines.Count; $i++) {
+        $lineNumber = $i + 1
+        $trimmed = $lines[$i].Trim()
+
+        if ($lineNumber -eq 1 -and $trimmed -eq "---") {
+            $inFrontMatter = $true
+            continue
+        }
+        if ($inFrontMatter) {
+            if ($lineNumber -gt 1 -and $trimmed -eq "---") {
+                $inFrontMatter = $false
+            }
+            continue
+        }
+
+        if ($trimmed -match '^```') {
+            $inCodeFence = -not $inCodeFence
+            continue
+        }
+        if ($inCodeFence -or [string]::IsNullOrWhiteSpace($trimmed)) {
+            continue
+        }
+        if ($trimmed -match '^\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?$') {
+            continue
+        }
+
+        $text = $trimmed -replace '`[^`]*`', ""
+        $text = $text -replace '\[[^\]]+\]\([^)]+\)', ""
+        $text = $text.Trim()
+        if ([string]::IsNullOrWhiteSpace($text)) {
+            continue
+        }
+
+        if ($text -match "[A-Za-z]" -and $text -notmatch "[\u4e00-\u9fff]") {
+            Add-Failure "Dev-knowledge prose must be Chinese-first: $RelativePath line $lineNumber has English-only text."
+        }
+    }
+}
+
 $knowledgeFiles = @(
     @{ Path = "AGENTS.md"; MaxLines = 150; Required = $true },
     @{ Path = "kubejs/AGENTS.md"; MaxLines = 80; Required = $true },
@@ -68,9 +117,15 @@ $requiredPaths = @(
     "AGENTS.md",
     "kubejs/AGENTS.md",
     "CDC-mod-src/AGENTS.md",
-    "lessons-learned.md",
+    "docs/lessons-learned.md",
+    "docs/dev-knowledge/index.md",
+    "docs/dev-knowledge/content-map.md",
+    "docs/dev-knowledge/how-to-index.md",
     ".agents/skills/knowledge-check/SKILL.md",
+    ".agents/skills/dev-knowledge/SKILL.md",
+    ".agents/skills/packwiz-assets/SKILL.md",
     ".github/workflows/release.yml",
+    ".codex/hooks.json",
     "scripts/sync-packwiz-assets.ps1",
     "scripts/update-packwiz-meta.ps1",
     "kubejs/data/oei/replacements",
@@ -80,6 +135,15 @@ $requiredPaths = @(
 foreach ($relativePath in $requiredPaths) {
     if (-not (Test-ProjectPath $relativePath)) {
         Add-Failure "Documented path does not exist: $relativePath"
+    }
+}
+
+Test-DevKnowledgeChineseMarkdown ".agents/skills/dev-knowledge/SKILL.md"
+
+$devKnowledgeDocsPath = Join-Path $Root "docs/dev-knowledge"
+if (Test-Path -LiteralPath $devKnowledgeDocsPath) {
+    foreach ($markdownFile in Get-ChildItem -LiteralPath $devKnowledgeDocsPath -Recurse -File -Filter "*.md") {
+        Test-DevKnowledgeChineseMarkdown (Get-RelPath $markdownFile.FullName)
     }
 }
 
@@ -111,7 +175,7 @@ foreach ($check in $duplicateChecks) {
 
 $antiPatterns = @(
     @{ Pattern = "e\.remove\(\) or e\.removeById\(\).*e\.remove\(\) or e\.removeById\(\)"; Message = "Recipe removal anti-pattern appears duplicated." },
-    @{ Pattern = "PowerShell.*backtick.*AGENTS\.md"; Message = "Long historical lesson appears to be in AGENTS.md; move history to lessons-learned.md." }
+    @{ Pattern = "PowerShell.*backtick.*AGENTS\.md"; Message = "Long historical lesson appears to be in AGENTS.md; move history to docs/lessons-learned.md." }
 )
 
 foreach ($antiPattern in $antiPatterns) {
@@ -120,7 +184,7 @@ foreach ($antiPattern in $antiPatterns) {
     }
 }
 
-$lessonsPath = Join-Path $Root "lessons-learned.md"
+$lessonsPath = Join-Path $Root "docs/lessons-learned.md"
 if (Test-Path -LiteralPath $lessonsPath) {
     $lessonsText = Get-Content -Raw -LiteralPath $lessonsPath
     $sections = [regex]::Split($lessonsText, "(?m)^##\s+").Where({ $_.Trim().Length -gt 0 })
