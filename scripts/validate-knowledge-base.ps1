@@ -66,6 +66,8 @@ foreach ($file in $knowledgeFiles) {
 $requiredPaths = @(
     "AGENTS.md",
     "kubejs/AGENTS.md",
+    "docs/systems/README.md",
+    "docs/plans/README.md",
     "docs/lessons-learned.md",
     ".agents/skills/knowledge-check/SKILL.md",
     ".agents/skills/release/SKILL.md",

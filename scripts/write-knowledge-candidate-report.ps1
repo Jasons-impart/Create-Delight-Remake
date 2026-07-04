@@ -47,6 +47,8 @@ function ConvertTo-Target([string]$Path) {
     $normalized = $Path -replace "\\", "/"
     if ($normalized -eq "AGENTS.md") { return "AGENTS.md" }
     if ($normalized -eq "docs/lessons-learned.md") { return "docs/lessons-learned.md" }
+    if ($normalized -like "docs/systems/*") { return "docs/systems/" }
+    if ($normalized -like "docs/plans/*" -or $normalized -like "docs/*plan*.md") { return "docs/plans/" }
     if ($normalized -like ".agents/skills/*") { return ".agents/skills/" }
     if ($normalized -like "kubejs/*") { return "kubejs/AGENTS.md" }
     if ($normalized -like ".github/*" -or $normalized -like "scripts/*" -or $normalized -like "mods/*" -or $normalized -eq "pack.toml" -or $normalized -eq "index.toml") { return "AGENTS.md" }
@@ -61,6 +63,8 @@ function ConvertTo-Reason([string]$Path) {
     if ($normalized -like "kubejs/data/*") { return "Datapack/OEI/tag structure may need a routing note." }
     if ($normalized -like "scripts/*") { return "Project automation changed; root knowledge may need a command or workflow note." }
     if ($normalized -like ".agents/skills/*") { return "Agent skill changed; validate skill frontmatter and keep workflow details out of AGENTS.md." }
+    if ($normalized -like "docs/systems/*") { return "Landed content-system documentation changed; verify it names implementation locations and change entry points." }
+    if ($normalized -like "docs/plans/*" -or $normalized -like "docs/*plan*.md") { return "Design plan changed; after landing, move durable facts to docs/systems/." }
     if ($normalized -like ".github/*") { return "CI/release workflow changed; root knowledge may need an update." }
     if ($normalized -like "config/*" -or $normalized -like "defaultconfigs/*") { return "Config behavior changed; record only non-obvious side effects." }
     if ($normalized -like "mods/*" -or $normalized -eq "pack.toml" -or $normalized -eq "index.toml") { return "Packwiz/modpack metadata changed; check version or mod-management rules." }
