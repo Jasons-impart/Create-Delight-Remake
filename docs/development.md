@@ -1,5 +1,10 @@
 # 开发指南
 
+## 结构化开发知识
+- 内容向“已做了什么、怎么实现、代码在哪里”记录在 `docs/dev-knowledge/content-map.md`。
+- 技术向“想做某类修改该怎么做”记录在 `docs/dev-knowledge/how-to-index.md`。
+- 复杂、可重复、需要命令顺序的流程记录为 `.agents/skills/` 下的项目级 skill。
+
 ## KubeJS 相关开发文档链接
 - https://docs.qq.com/doc/DWVVpeGFrSE1sSGpj
 - https://docs.mihono.cn/zh/modpack/kubejs/1.20.1/Introduction/Description

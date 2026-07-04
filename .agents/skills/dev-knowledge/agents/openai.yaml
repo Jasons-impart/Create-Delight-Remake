@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dev Knowledge"
+  short_description: "Route project dev knowledge."
+  default_prompt: "Use dev-knowledge to find, record, or organize content notes, implementation locations, and technical how-to knowledge."

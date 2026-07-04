@@ -1,0 +1,4 @@
+interface:
+  display_name: "Packwiz Assets"
+  short_description: "Manage modpack asset metadata."
+  default_prompt: "Use packwiz-assets to add, update, remove, sync, or validate modpack assets."
