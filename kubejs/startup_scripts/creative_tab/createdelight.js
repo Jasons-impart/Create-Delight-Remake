@@ -55,9 +55,10 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:sweet_berry_cookie_dough',
     'createdelight:lime_cookie_dough',
     'createdelight:chorus_cookie_dough',
+    'createdelight:star_cookie_dough',
     'createdelight:herbal_cookie_dough',
-    'createdelight:bat_cookie_dough',
     'createdelight:paw_cookie_dough',
+    'createdelight:bat_cookie_dough',
     // 未烤制玛芬
     'createdelight:unbaked_red_velvet_cupcake',
     'createdelight:unbaked_mixed_berry_muffin',
@@ -89,7 +90,6 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:empty_popsicle',
     'createdelight:enchanted_golden_lantern_fruit',
     'createdelight:enchanted_golden_carrot',
-    'createdelight:enchanted_golden_arbutus_berries',
     'createdelight:enchanted_golden_lucuma',
   ])
 })
