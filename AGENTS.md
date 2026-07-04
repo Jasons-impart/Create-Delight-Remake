@@ -96,7 +96,6 @@ CD-master-dev/
 
 ## NOTES
 
-- **AGENTS.md 是项目开发知识库，需要随规则变更一起提交**
 - **AGENTS.local.md 存放个人/机器特有配置，默认忽略，不提交**
 - **`.agents/skills/` 存放技能文件，OpenCode 和 Codex 都能自动发现**
 - Default client options source is `.options.txt`; release packaging renames it to `options.txt`, so do not rely on ignored runtime `options.txt` for pack defaults.
