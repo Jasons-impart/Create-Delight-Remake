@@ -1,13 +1,13 @@
-# Content Implementation Map
+# 内容实现地图
 
-Use this file for content-facing pack knowledge: what has been changed, how it roughly works, and where the implementation lives.
+本文件记录内容向的整合包知识：已经做了什么、玩法上如何表现、实现大致在哪。
 
-| Area | Player-facing change | Implementation sketch | Primary locations | Related docs | Status |
+| 领域 | 玩家可见变化 | 实现概览 | 主要位置 | 相关文档 | 状态 |
 |---|---|---|---|---|---|
-| Order system | Players submit produced foods through orders for money, reputation, and themed progression. | KubeJS startup data defines customers/orders, server scripts handle delivery, and LC config supports unlockable supply channels. | `kubejs/startup_scripts/custom/order/`, `kubejs/server_scripts/mbd2/order_deliverer.js`, `config/lightmanscurrency/PersistentTraders.json` | `docs/order-system-design.md`, `docs/order-acquisition-channels-plan.md`, `docs/order-time-and-automation-strategy.md` | Implemented skeleton with active design expansion. |
+| 订单系统 | 玩家提交量产食物订单，获得金钱、声望和主题进度反馈。 | KubeJS startup 数据定义顾客和订单，server 脚本处理交付，LC 配置承载可解锁供货渠道。 | `kubejs/startup_scripts/custom/order/`、`kubejs/server_scripts/mbd2/order_deliverer.js`、`config/lightmanscurrency/PersistentTraders.json` | `docs/order-system-design.md`、`docs/order-acquisition-channels-plan.md`、`docs/order-time-and-automation-strategy.md` | 主体骨架已实现，设计仍在扩展。 |
 
-## Entry Template
+## 条目模板
 
-| Area | Player-facing change | Implementation sketch | Primary locations | Related docs | Status |
+| 领域 | 玩家可见变化 | 实现概览 | 主要位置 | 相关文档 | 状态 |
 |---|---|---|---|---|---|
-| `<feature>` | `<what players see>` | `<how it roughly works>` | `<paths>` | `<docs or none>` | `<planned/implemented/needs validation>` |
+| `<功能>` | `<玩家看到什么>` | `<大致如何工作>` | `<路径>` | `<文档或无>` | `<计划中/已实现/待验证>` |

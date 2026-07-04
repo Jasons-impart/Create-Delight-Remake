@@ -1,21 +1,22 @@
-# Development Knowledge Index
+# 开发知识索引
 
-This directory is the stable entry point for project-specific development knowledge that is useful but too detailed for always-loaded `AGENTS.md`.
+本目录是项目开发知识的稳定入口，用于存放对未来开发有价值、但不适合常驻在 `AGENTS.md` 的信息。
 
-## Storage Rules
+## 存放规则
 
-| Knowledge | File |
+| 知识类型 | 文件 |
 |---|---|
-| Implemented content changes, player-facing behavior, rough implementation, and code locations | `docs/dev-knowledge/content-map.md` |
-| Technical "how do I make this kind of change?" notes that are not yet full workflows | `docs/dev-knowledge/how-to-index.md` |
-| Long design rationale, plans, and tradeoffs | Topic documents in `docs/` |
-| Repeatable command-heavy or failure-prone workflows | `.agents/skills/<name>/SKILL.md` |
-| Short always-on constraints and routing pointers | `AGENTS.md` or module `AGENTS.md` |
-| Historical pitfalls and root causes | `lessons-learned.md` |
+| 已实现的内容改动、玩家可见行为、实现概览和代码位置 | `docs/dev-knowledge/content-map.md` |
+| 技术向“某类修改该怎么做”的轻量笔记，且尚未复杂到需要 skill | `docs/dev-knowledge/how-to-index.md` |
+| 长篇设计理由、计划和取舍 | `docs/` 下的专题文档 |
+| 命令密集、容易出错或需要固定步骤的重复流程 | `.agents/skills/<name>/SKILL.md` |
+| 简短常驻约束和入口路由 | `AGENTS.md` 或模块级 `AGENTS.md` |
+| 历史坑、根因和修复经验 | `lessons-learned.md` |
 
-## Entry Rules
+## 条目规则
 
-- Record content facts as "what changed, how it works, where it lives, status".
-- Record how-to facts as "goal, edit locations, checklist, validation".
-- Prefer links to long docs over copying paragraphs.
-- Promote a how-to into a skill when command order, validation, or trigger wording matters.
+- 内容向事实写成“改了什么、如何工作、位置在哪里、当前状态”。
+- 技术向事实写成“目标、编辑位置、检查清单、验证方式”。
+- 优先链接长文档，不复制长段落。
+- 当 how-to 依赖命令顺序、验证步骤或触发描述时，提升为 skill。
+- 本目录正文必须以中文为主；路径、命令、函数名、mod 名和必要英文术语可以保留英文。

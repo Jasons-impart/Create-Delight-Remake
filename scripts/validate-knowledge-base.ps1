@@ -43,6 +43,55 @@ function Get-FileText([string]$RelativePath) {
     return Get-Content -Raw -LiteralPath $path
 }
 
+function Test-DevKnowledgeChineseMarkdown([string]$RelativePath) {
+    $path = Join-Path $Root $RelativePath
+    if (-not (Test-Path -LiteralPath $path)) {
+        return
+    }
+
+    $inFrontMatter = $false
+    $inCodeFence = $false
+    $lines = Get-Content -LiteralPath $path
+
+    for ($i = 0; $i -lt $lines.Count; $i++) {
+        $lineNumber = $i + 1
+        $trimmed = $lines[$i].Trim()
+
+        if ($lineNumber -eq 1 -and $trimmed -eq "---") {
+            $inFrontMatter = $true
+            continue
+        }
+        if ($inFrontMatter) {
+            if ($lineNumber -gt 1 -and $trimmed -eq "---") {
+                $inFrontMatter = $false
+            }
+            continue
+        }
+
+        if ($trimmed -match '^```') {
+            $inCodeFence = -not $inCodeFence
+            continue
+        }
+        if ($inCodeFence -or [string]::IsNullOrWhiteSpace($trimmed)) {
+            continue
+        }
+        if ($trimmed -match '^\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?$') {
+            continue
+        }
+
+        $text = $trimmed -replace '`[^`]*`', ""
+        $text = $text -replace '\[[^\]]+\]\([^)]+\)', ""
+        $text = $text.Trim()
+        if ([string]::IsNullOrWhiteSpace($text)) {
+            continue
+        }
+
+        if ($text -match "[A-Za-z]" -and $text -notmatch "[\u4e00-\u9fff]") {
+            Add-Failure "Dev-knowledge prose must be Chinese-first: $RelativePath line $lineNumber has English-only text."
+        }
+    }
+}
+
 $knowledgeFiles = @(
     @{ Path = "AGENTS.md"; MaxLines = 150; Required = $true },
     @{ Path = "kubejs/AGENTS.md"; MaxLines = 80; Required = $true },
@@ -86,6 +135,15 @@ $requiredPaths = @(
 foreach ($relativePath in $requiredPaths) {
     if (-not (Test-ProjectPath $relativePath)) {
         Add-Failure "Documented path does not exist: $relativePath"
+    }
+}
+
+Test-DevKnowledgeChineseMarkdown ".agents/skills/dev-knowledge/SKILL.md"
+
+$devKnowledgeDocsPath = Join-Path $Root "docs/dev-knowledge"
+if (Test-Path -LiteralPath $devKnowledgeDocsPath) {
+    foreach ($markdownFile in Get-ChildItem -LiteralPath $devKnowledgeDocsPath -Recurse -File -Filter "*.md") {
+        Test-DevKnowledgeChineseMarkdown (Get-RelPath $markdownFile.FullName)
     }
 }
 
