@@ -1,0 +1,4 @@
+interface:
+  display_name: "Repo Sync"
+  short_description: "Sync branches and check local state"
+  default_prompt: "Use $repo-sync to switch, pull, rebase, or update this repository and report required post-update checks."

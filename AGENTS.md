@@ -5,9 +5,11 @@ Create-Delight Remake (齿轮盛宴) is a deep-modded Minecraft 1.20.1 Forge mod
 **Core Stack**: Minecraft 1.20.1 | Forge 47.4.10 | KubeJS | Packwiz
 
 > KubeJS details: `kubejs/AGENTS.md`
+> Content knowledge: `docs/content/`
+> Technical references: `docs/technical/`
 > Historical lessons: `docs/lessons-learned.md`
 > Developer notes: `DevGuide.md`
-> Agent skills: `.agents/skills/release/`, `.agents/skills/knowledge-check/`
+> Agent skills: `.agents/skills/` (release, knowledge-check, repo-sync, packwiz-assets)
 
 ## STRUCTURE
 
@@ -16,14 +18,14 @@ CD-master-dev-048x/
 ├── kubejs/           # KubeJS scripts, assets, datapack overlay, ProbeJS data
 ├── config/           # Runtime mod configs
 ├── defaultconfigs/   # First-run server/client defaults
-├── docs/             # Project notes, announcements, update summaries, lessons
+├── docs/             # Content knowledge, technical references, announcements, summaries, lessons
 ├── .agents/          # Shared agent skills for release and knowledge workflows
 ├── .codex/           # Codex hooks and local agent configuration
 ├── scripts/          # Agent/project automation helpers
 ├── tacz/             # TACZ gunpacks and gun data
 ├── hotai/            # HotAI patch data
 ├── ldlib/            # Multiblocked/LDLib assets and machine definitions
-├── mods/             # Packwiz-managed mod jars
+├── mods/             # Release-v048x tracks mod JARs directly
 ├── resourcepacks/    # Packwiz-managed bundled resource packs
 ├── shaderpacks/      # Packwiz-managed bundled shader packs
 ├── .github/          # Release workflows and helper scripts
@@ -42,6 +44,8 @@ CD-master-dev-048x/
 | Custom loot/functions/tags | `kubejs/data/` | Datapack overlay |
 | MBD2 machines/recipes | `ldlib/assets/mbd2/` and `kubejs/server_scripts/mbd2*` | Check both data and scripts |
 | FTB Quests | `config/ftbquests/quests/` | SNBT format |
+| Current content knowledge | `docs/content/` | Content changes, design intent, implementation idea, and code locations |
+| Technical implementation references | `docs/technical/` | How to implement specific kinds of changes and reference examples |
 | Runtime configs | `config/` | User-facing current config |
 | New-world defaults | `defaultconfigs/` | Copied by Minecraft/mods on first run |
 | Version info | `pack.toml` | Do not duplicate version elsewhere |
@@ -74,30 +78,16 @@ CD-master-dev-048x/
 - Commit style follows Conventional Commits loosely: `[fix]`, `[feat]`, `[mod]`, `[dev]`, `[conf]`, `[quest]`.
 - PR titles and descriptions should be written in Chinese unless the user explicitly requests another language.
 - Formal release flow is documented in `DevGuide.md`; GitHub Actions build test artifacts from `test-client`, `test-server`, and `test-patch`.
-- Packwiz only manages `mods/`, `resourcepacks/`, and `shaderpacks/`; only run `packwiz refresh` for changes in those areas.
-- Do not overwrite `index.toml`; KubeJS, config, docs, lang, and other ordinary repo changes should not trigger `packwiz refresh`.
+- On `release-v048x`, never run `packwiz refresh` locally; `pack.toml`/`index.toml` are for GitHub Actions, and `mods/` changes are direct JAR edits.
+- Only `resourcepacks/` and `shaderpacks/` use packwiz metadata on this branch; inspect their diffs manually instead of refreshing the whole pack.
 - Avoid destructive bulk deletes in `config/`, `defaultconfigs/`, `kubejs/`, `mods/`, `hotai/`, `ldlib/`, `PCL/`, and `tacz/`.
-
-## COMMANDS
-
-```powershell
-# Packwiz
-.\packwiz.exe refresh
-.\packwiz.exe curseforge export
-
-# Agent skills
-/knowledge-check
-/release
-
-# KubeJS hot reload, run in game
-/kubejs reload server_scripts
-/reload
-```
 
 ## KNOWLEDGE BASE MAINTENANCE
 
 - Root `AGENTS.md` should stay short enough to scan; move long history to `docs/lessons-learned.md`.
 - `kubejs/AGENTS.md` should contain only KubeJS-specific rules, paths, and helper APIs.
+- Reusable command workflows belong in `.agents/skills/`; keep `AGENTS.md` for stable paths, constraints, and cross-links.
+- Current content knowledge belongs in `docs/content/`; technical implementation references belong in `docs/technical/`.
 - Record non-obvious bugs, release pitfalls, and recurring agent mistakes in `docs/lessons-learned.md`.
 - Avoid duplicating facts between files; cross-link instead.
 - Update these docs when architecture or workflow changes, because stale agent instructions are worse than missing instructions.

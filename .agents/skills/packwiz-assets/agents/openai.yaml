@@ -1,0 +1,4 @@
+interface:
+  display_name: "Packwiz Assets"
+  short_description: "Maintain packwiz-managed assets"
+  default_prompt: "Use $packwiz-assets when adding, updating, removing, refreshing, or reviewing packwiz-managed assets."
