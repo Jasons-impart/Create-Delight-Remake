@@ -90,9 +90,10 @@ StartupEvents.registry("item", e => {
         "sweet_berry",
         "lime",
         "chorus",
+        "star",
         "herbal",
+        "paw",
         "bat",
-        "paw"
     ]
     CookieDough.forEach(dough => {
         e.create(`createdelight:${dough}_cookie_dough`)

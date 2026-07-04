@@ -18,7 +18,6 @@ ServerEvents.recipes(e => {
     remove_recipes_output(e, [
         "cavedelight:fiddlehead_tea"
     ])
-    e.replaceInput({id: "cavedelight:star_cookie"}, "minecraft:wheat", "bakeries:flour")
     e.replaceInput({id: "luncheonmeatsdelight:cooking/fried_egg_luncheon_meat"}, "luncheonmeatsdelight:luncheon_meat", "cavedelight:cooked_slam_slice")
     e.replaceInput({id: "cavedelight:slam_breakfast"}, "#cavedelight:slam", "cavedelight:cooked_slam_slice")
     e.replaceInput({id: "cavedelight:slam_burger"}, "#cavedelight:slam", "cavedelight:cooked_slam_slice")
