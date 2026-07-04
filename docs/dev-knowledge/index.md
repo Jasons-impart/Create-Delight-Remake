@@ -8,7 +8,8 @@
 |---|---|
 | 已实现的内容改动、玩家可见行为、实现概览和代码位置 | `docs/dev-knowledge/content-map.md` |
 | 技术向“某类修改该怎么做”的轻量笔记，且尚未复杂到需要 skill | `docs/dev-knowledge/how-to-index.md` |
-| 长篇设计理由、计划和取舍 | `docs/` 下的专题文档 |
+| 稳定设计说明、参考和取舍 | `docs/` 下的专题文档 |
+| 前瞻设计规划、分阶段计划和未来扩展 | `docs/plan/` 下的专题文档 |
 | 命令密集、容易出错或需要固定步骤的重复流程 | `.agents/skills/<name>/SKILL.md` |
 | 简短常驻约束和入口路由 | `AGENTS.md` 或模块级 `AGENTS.md` |
 | 历史坑、根因和修复经验 | `docs/lessons-learned.md` |
@@ -29,9 +30,9 @@
 | `docs/development.md` | 人工开发指南 | 保留人工阅读的开发规范和入口指针，复杂流程转到 skill。 |
 | `docs/mod-research.md` | 调研清单 | 记录候选模组和已有优化模组参考，不属于实现事实。 |
 | `docs/order-system-design.md` | 内容设计说明 | 订单系统当前实现、设计原则和后续建议。 |
-| `docs/order-acquisition-channels-plan.md` | 内容设计计划 | 订单获取渠道的长期设计。 |
-| `docs/order-acquisition-crystal-modifier-plan.md` | 内容设计计划 | 订单构筑和修饰系统设计。 |
-| `docs/order-time-and-automation-strategy.md` | 内容设计策略 | 订单时间机制与自动化产线假设。 |
-| `docs/adventure-progression-overhaul-plan.md` | 内容设计计划 | 冒险流程、配方门槛和阶段推进规划。 |
+| `docs/plan/order-acquisition-channels-plan.md` | 内容设计计划 | 订单获取渠道的长期设计。 |
+| `docs/plan/order-acquisition-crystal-modifier-plan.md` | 内容设计计划 | 订单构筑和修饰系统设计。 |
+| `docs/plan/order-time-and-automation-strategy.md` | 内容设计策略 | 订单时间机制与自动化产线假设。 |
+| `docs/plan/adventure-progression-overhaul-plan.md` | 内容设计计划 | 冒险流程、配方门槛和阶段推进规划。 |
 | `docs/tetra-design-reference-2026-06-22.md` | 设计参考 | Tetra/MMT 数值、材料和模块参考。 |
 | `docs/announcement.md` | 发布素材 | 稳定版本公告片段，不作为开发知识入口。 |

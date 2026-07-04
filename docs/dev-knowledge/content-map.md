@@ -4,7 +4,7 @@
 
 | 领域 | 玩家可见变化 | 实现概览 | 主要位置 | 相关文档 | 状态 |
 |---|---|---|---|---|---|
-| 订单系统 | 玩家提交量产食物订单，获得金钱、声望和主题进度反馈。 | KubeJS startup 数据定义顾客和订单，server 脚本处理交付，LC 配置承载可解锁供货渠道。 | `kubejs/startup_scripts/custom/order/`、`kubejs/server_scripts/mbd2/order_deliverer.js`、`config/lightmanscurrency/PersistentTraders.json` | `docs/order-system-design.md`、`docs/order-acquisition-channels-plan.md`、`docs/order-time-and-automation-strategy.md` | 主体骨架已实现，设计仍在扩展。 |
+| 订单系统 | 玩家提交量产食物订单，获得金钱、声望和主题进度反馈。 | KubeJS startup 数据定义顾客和订单，server 脚本处理交付，LC 配置承载可解锁供货渠道。 | `kubejs/startup_scripts/custom/order/`、`kubejs/server_scripts/mbd2/order_deliverer.js`、`config/lightmanscurrency/PersistentTraders.json` | `docs/order-system-design.md`、`docs/plan/order-acquisition-channels-plan.md`、`docs/plan/order-time-and-automation-strategy.md` | 主体骨架已实现，设计仍在扩展。 |
 
 ## 条目模板
 
