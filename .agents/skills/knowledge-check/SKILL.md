@@ -1,6 +1,6 @@
 ---
 name: knowledge-check
-description: 在实现工作后执行结构化知识库检查。用于代码、配置、脚本、文档或流程变更完成后，判断是否需要沉淀项目知识，并将知识路由到 AGENTS、docs/dev-knowledge、docs/lessons-learned 或项目 skill。
+description: 实现后知识检查、知识库维护、项目经验沉淀。用于代码、配置、脚本、文档或流程变更完成后，判断是否需要记录项目知识，并将知识路由到 AGENTS、docs/dev-knowledge、docs/plan、docs/lessons-learned 或项目 skill。
 ---
 
 # 知识检查

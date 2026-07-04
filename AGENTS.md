@@ -8,6 +8,7 @@ Create-Delight Remake (齿轮盛宴) - A deep-modded Minecraft 1.20.1 Forge modp
 > Development knowledge: `docs/dev-knowledge/` (use `/dev-knowledge` for routing)
 > Historical lessons: `docs/lessons-learned.md`
 > Skills: `.agents/skills/` (OpenCode + Codex compatible; procedural workflows live here)
+> Skill routing: knowledge storage/design plan/how-to questions → `/dev-knowledge`; after implementation or non-obvious fixes → `/knowledge-check`
 
 ## STRUCTURE
 
@@ -45,6 +46,7 @@ CD-master-dev/
 | Release workflow | `.github/workflows/release.yml` | Use `/release` skill |
 | Packwiz asset workflow | `mods/`, `packwiz-files/` | Use `/packwiz-assets` skill |
 | Content/how-to knowledge | `docs/dev-knowledge/` | Use `/dev-knowledge` skill |
+| Design plans | `docs/plan/` | Use `/dev-knowledge` for routing |
 | Knowledge maintenance | `.agents/skills/knowledge-check/SKILL.md` | Use `/knowledge-check` skill |
 | Historical pitfalls | `docs/lessons-learned.md` | Do not duplicate in AGENTS |
 

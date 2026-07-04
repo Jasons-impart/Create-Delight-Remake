@@ -1,6 +1,6 @@
 ---
 name: dev-knowledge
-description: 查找、记录并组织 Create-Delight Remake 的开发知识。用于内容实现记录、已完成玩法总结、代码位置索引、设计文档指针、技术 how-to 笔记，以及判断知识应写入 docs、AGENTS、lessons-learned 还是项目 skill。
+description: 开发知识路由、知识库整理、实现记录、代码位置索引、设计规划归档、技术 how-to。用于查找或记录 Create-Delight Remake 项目知识，或判断信息应写入 AGENTS、docs/dev-knowledge、docs/plan、docs/lessons-learned 还是项目 skill。
 ---
 
 # 开发知识
