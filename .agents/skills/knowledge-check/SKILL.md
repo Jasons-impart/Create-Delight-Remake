@@ -33,7 +33,7 @@ When a task hits a non-obvious failure or workaround before the final knowledge 
 
 Worth-recording knowledge usually falls into one of these groups:
 - **Reusable project fact or location** → Route using the Storage Map in `.agents/skills/dev-knowledge/SKILL.md`
-- **Bug/pitfall discovered** → Prefer `lessons-learned.md`
+- **Bug/pitfall discovered** → Prefer `docs/lessons-learned.md`
 - **Knowledge routing or skill behavior changed** → Update the affected skill
 - **No reusable project-specific value** → Do not record
 
@@ -45,7 +45,7 @@ Read `.agents/skills/dev-knowledge/SKILL.md` and use its Storage Map as the sour
 
 After applying the dev-knowledge Storage Map, check these overrides:
 
-- Bug fix, root cause, or non-obvious workaround → `lessons-learned.md`
+- Bug fix, root cause, or non-obvious workaround → `docs/lessons-learned.md`
 - New KubeJS helper/API reference → `kubejs/AGENTS.md` UNIQUE STYLES if it is short; otherwise a dev-knowledge how-to or skill
 - Knowledge-check prompt, candidate routing, or trigger timing → `.agents/skills/knowledge-check/SKILL.md`
 - Dev-knowledge storage rules → `.agents/skills/dev-knowledge/SKILL.md`
@@ -65,7 +65,7 @@ After applying the dev-knowledge Storage Map, check these overrides:
 
 **ALLOWED actions** (knowledge update only):
 - ✅ Edit `AGENTS.md` files (root, `kubejs/`, `CDC-mod-src/`)
-- ✅ Edit `lessons-learned.md`
+- ✅ Edit `docs/lessons-learned.md`
 - ✅ Edit `docs/dev-knowledge/`
 - ✅ Edit `.agents/skills/` or `.opencode/plugins/`
 
@@ -99,7 +99,7 @@ If nothing significant was learned, output ONLY: `📝 Knowledge: no update need
 
 ## Self-Check (MANDATORY before finalizing any knowledge update)
 
-Before saving any edit to AGENTS.md or lessons-learned.md, verify ALL of these:
+Before saving any edit to AGENTS.md or docs/lessons-learned.md, verify ALL of these:
 
 1. **Line count** — Root AGENTS.md ≤150? Subdirectory AGENTS.md ≤80? If over, prune FIRST.
 2. **No duplication** — Does this information already exist in another knowledge file? If yes, reference instead of repeating.

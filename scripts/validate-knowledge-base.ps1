@@ -117,7 +117,7 @@ $requiredPaths = @(
     "AGENTS.md",
     "kubejs/AGENTS.md",
     "CDC-mod-src/AGENTS.md",
-    "lessons-learned.md",
+    "docs/lessons-learned.md",
     "docs/dev-knowledge/index.md",
     "docs/dev-knowledge/content-map.md",
     "docs/dev-knowledge/how-to-index.md",
@@ -175,7 +175,7 @@ foreach ($check in $duplicateChecks) {
 
 $antiPatterns = @(
     @{ Pattern = "e\.remove\(\) or e\.removeById\(\).*e\.remove\(\) or e\.removeById\(\)"; Message = "Recipe removal anti-pattern appears duplicated." },
-    @{ Pattern = "PowerShell.*backtick.*AGENTS\.md"; Message = "Long historical lesson appears to be in AGENTS.md; move history to lessons-learned.md." }
+    @{ Pattern = "PowerShell.*backtick.*AGENTS\.md"; Message = "Long historical lesson appears to be in AGENTS.md; move history to docs/lessons-learned.md." }
 )
 
 foreach ($antiPattern in $antiPatterns) {
@@ -184,7 +184,7 @@ foreach ($antiPattern in $antiPatterns) {
     }
 }
 
-$lessonsPath = Join-Path $Root "lessons-learned.md"
+$lessonsPath = Join-Path $Root "docs/lessons-learned.md"
 if (Test-Path -LiteralPath $lessonsPath) {
     $lessonsText = Get-Content -Raw -LiteralPath $lessonsPath
     $sections = [regex]::Split($lessonsText, "(?m)^##\s+").Where({ $_.Trim().Length -gt 0 })

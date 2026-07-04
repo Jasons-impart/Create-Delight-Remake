@@ -46,7 +46,7 @@ function Add-Unique([System.Collections.Generic.List[string]]$List, [string]$Val
 function ConvertTo-Target([string]$Path) {
     $normalized = $Path -replace "\\", "/"
     if ($normalized -eq "AGENTS.md") { return "AGENTS.md" }
-    if ($normalized -eq "lessons-learned.md") { return "lessons-learned.md" }
+    if ($normalized -eq "docs/lessons-learned.md") { return "docs/lessons-learned.md" }
     if ($normalized -like ".agents/skills/*") {
         $parts = $normalized -split "/"
         if ($parts.Count -ge 3 -and -not [string]::IsNullOrWhiteSpace($parts[2])) {
@@ -64,7 +64,7 @@ function ConvertTo-Target([string]$Path) {
     if ($normalized -eq "modpack.toml") { return "AGENTS.md" }
     if ($normalized -like ".github/workflows/release*" -or $normalized -like ".agents/skills/release/*") { return ".agents/skills/release/SKILL.md" }
     if ($normalized -like ".github/*" -or $normalized -like "scripts/*") { return "AGENTS.md" }
-    if ($normalized -like "config/*" -or $normalized -like "defaultconfigs/*") { return "lessons-learned.md" }
+    if ($normalized -like "config/*" -or $normalized -like "defaultconfigs/*") { return "docs/lessons-learned.md" }
     return ""
 }
 
@@ -87,7 +87,7 @@ function ConvertTo-Reason([string]$Path) {
     if ($normalized -like "config/*" -or $normalized -like "defaultconfigs/*") { return "Config behavior changed; record only non-obvious side effects." }
     if ($normalized -like "mods/*" -or $normalized -like "resourcepacks/*" -or $normalized -like "shaderpacks/*" -or $normalized -like "packwiz-files/*") { return "Packwiz asset metadata changed; record only reusable workflow changes in packwiz-assets skill." }
     if ($normalized -eq "modpack.toml") { return "Modpack metadata changed; check version rules." }
-    if ($normalized -like "*AGENTS.md" -or $normalized -eq "lessons-learned.md") { return "Knowledge base changed; run validation and check for duplicate facts." }
+    if ($normalized -like "*AGENTS.md" -or $normalized -eq "docs/lessons-learned.md") { return "Knowledge base changed; run validation and check for duplicate facts." }
     return "Changed file may encode a reusable project pattern."
 }
 
@@ -117,7 +117,7 @@ foreach ($file in @($dirtyFiles + $stagedFiles + $untrackedFiles + $recentFiles)
 }
 
 $knowledgeFiles = New-Object System.Collections.Generic.List[string]
-foreach ($file in @("AGENTS.md", "kubejs/AGENTS.md", "CDC-mod-src/AGENTS.md", "lessons-learned.md")) {
+foreach ($file in @("AGENTS.md", "kubejs/AGENTS.md", "CDC-mod-src/AGENTS.md", "docs/lessons-learned.md")) {
     Add-Unique $knowledgeFiles $file
 }
 $skillsDir = Join-Path $Root ".agents/skills"
@@ -142,7 +142,7 @@ foreach ($file in $allFiles) {
         Add-Unique $targets $target
         if ($target -like ".agents/skills/*") {
             Add-Unique $forms "Skill - procedural workflow, checklist, tool sequence, or task-specific prompt."
-        } elseif ($target -eq "lessons-learned.md") {
+        } elseif ($target -eq "docs/lessons-learned.md") {
             Add-Unique $forms "Lesson - historical pitfall, root cause, or non-obvious side effect."
         } elseif ($target -like "docs/dev-knowledge/*") {
             Add-Unique $forms "Dev knowledge - content implementation map or lightweight technical how-to index."
@@ -163,8 +163,8 @@ if ($hasProcessNotes) {
 }
 
 if ($hasProcessNotes -and -not [string]::IsNullOrWhiteSpace($processNotes)) {
-    $recommendation = "Process notes found; review them for lessons-learned.md or the relevant AGENTS.md."
-    Add-Unique $targets "lessons-learned.md"
+    $recommendation = "Process notes found; review them for docs/lessons-learned.md or the relevant AGENTS.md."
+    Add-Unique $targets "docs/lessons-learned.md"
 } elseif ($allFiles.Count -eq 0) {
     $recommendation = "No git changes or recent commit files were found."
 } elseif ($changedKnowledge.Count -gt 0) {

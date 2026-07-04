@@ -17,7 +17,7 @@ description: 查找、记录并组织 Create-Delight Remake 的开发知识。�
 | 已实现的内容改动 | `docs/dev-knowledge/content-map.md` | 记录整合包做了什么、玩法上如何表现、实现大致在哪。 |
 | 轻量技术做法 | `docs/dev-knowledge/how-to-index.md` | 记录“想做某类修改该怎么做”，但复杂度还不足以成为 skill。 |
 | 可重复或脆弱流程 | `.agents/skills/<name>/SKILL.md` | 任务依赖步骤顺序、命令、验证规则或触发描述。 |
-| 历史故障和绕路经验 | `lessons-learned.md` | 主要价值是避免再次踩同一个坑。 |
+| 历史故障和绕路经验 | `docs/lessons-learned.md` | 主要价值是避免再次踩同一个坑。 |
 | 长篇设计理由 | `docs/` 下的专题文档 | 功能需要叙述设计、取舍或未来计划。 |
 
 ## 内容地图条目
@@ -47,7 +47,7 @@ description: 查找、记录并组织 Create-Delight Remake 的开发知识。�
 
 ## 更新流程
 
-1. 搜索 `docs/dev-knowledge/`、`AGENTS.md`、相关模块 `AGENTS.md`、`.agents/skills/` 和 `lessons-learned.md`。
+1. 搜索 `docs/dev-knowledge/`、`AGENTS.md`、相关模块 `AGENTS.md`、`.agents/skills/` 和 `docs/lessons-learned.md`。
 2. 按存放表选择最小且持久的目标位置。
 3. 一个事实只写在一个地方；需要关联时使用链接，不复制内容。
 4. 修改 AGENTS、skill 或 dev-knowledge 索引后，运行 `scripts/validate-knowledge-base.ps1`。

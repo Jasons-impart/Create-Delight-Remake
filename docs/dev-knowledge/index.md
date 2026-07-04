@@ -11,7 +11,7 @@
 | 长篇设计理由、计划和取舍 | `docs/` 下的专题文档 |
 | 命令密集、容易出错或需要固定步骤的重复流程 | `.agents/skills/<name>/SKILL.md` |
 | 简短常驻约束和入口路由 | `AGENTS.md` 或模块级 `AGENTS.md` |
-| 历史坑、根因和修复经验 | `lessons-learned.md` |
+| 历史坑、根因和修复经验 | `docs/lessons-learned.md` |
 
 ## 条目规则
 
