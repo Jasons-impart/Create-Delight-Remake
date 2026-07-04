@@ -92,24 +92,6 @@ CD-master-dev/
 - ❌ Duplicate version in other files
 - ❌ Treat runtime dirs (`logs/`, `crash-reports/`, `saves/`, `screenshots/`, `simplebackups/`, `tmp-*`) as source
 
-## COMMANDS
-
-```bash
-# Sync all mod JARs locally for development
-./scripts/sync-packwiz-assets.ps1
-
-# Build modpack when needed
-packwiz curseforge export
-
-# KubeJS hot reload (in-game)
-/kubejs reload server_scripts
-/reload                         # Reload tags/loot
-
-# CDC mod build
-cd CDC-mod-src && ./gradlew build --no-daemon
-# Output: build/libs/*.jar (use the non-all/non-sources jar)
-```
-
 ## KNOWLEDGE BASE MAINTENANCE
 
 These rules ensure this knowledge base stays effective. Violating them degrades agent performance.
