@@ -5,8 +5,8 @@ Create-Delight Remake (齿轮盛宴) is a deep-modded Minecraft 1.20.1 Forge mod
 **Core Stack**: Minecraft 1.20.1 | Forge 47.4.10 | KubeJS | Packwiz
 
 > KubeJS details: `kubejs/AGENTS.md`
-> System docs: `docs/systems/`
-> Plans: `docs/plans/`
+> Content knowledge: `docs/content/`
+> Technical references: `docs/technical/`
 > Historical lessons: `docs/lessons-learned.md`
 > Developer notes: `DevGuide.md`
 > Agent skills: `.agents/skills/` (release, knowledge-check, repo-sync, packwiz-assets)
@@ -18,7 +18,7 @@ CD-master-dev-048x/
 ├── kubejs/           # KubeJS scripts, assets, datapack overlay, ProbeJS data
 ├── config/           # Runtime mod configs
 ├── defaultconfigs/   # First-run server/client defaults
-├── docs/             # System docs, plans, announcements, update summaries, lessons
+├── docs/             # Content knowledge, technical references, announcements, summaries, lessons
 ├── .agents/          # Shared agent skills for release and knowledge workflows
 ├── .codex/           # Codex hooks and local agent configuration
 ├── scripts/          # Agent/project automation helpers
@@ -44,8 +44,8 @@ CD-master-dev-048x/
 | Custom loot/functions/tags | `kubejs/data/` | Datapack overlay |
 | MBD2 machines/recipes | `ldlib/assets/mbd2/` and `kubejs/server_scripts/mbd2*` | Check both data and scripts |
 | FTB Quests | `config/ftbquests/quests/` | SNBT format |
-| Landed system knowledge | `docs/systems/` | Current behavior, implementation locations, and change entry points |
-| Future design plans | `docs/plans/` | Move durable facts to `docs/systems/` after landing |
+| Current content knowledge | `docs/content/` | Content changes, design intent, implementation idea, and code locations |
+| Technical implementation references | `docs/technical/` | How to implement specific kinds of changes and reference examples |
 | Runtime configs | `config/` | User-facing current config |
 | New-world defaults | `defaultconfigs/` | Copied by Minecraft/mods on first run |
 | Version info | `pack.toml` | Do not duplicate version elsewhere |
@@ -87,7 +87,7 @@ CD-master-dev-048x/
 - Root `AGENTS.md` should stay short enough to scan; move long history to `docs/lessons-learned.md`.
 - `kubejs/AGENTS.md` should contain only KubeJS-specific rules, paths, and helper APIs.
 - Reusable command workflows belong in `.agents/skills/`; keep `AGENTS.md` for stable paths, constraints, and cross-links.
-- Landed content-system knowledge belongs in `docs/systems/`; speculative implementation plans belong in `docs/plans/`.
+- Current content knowledge belongs in `docs/content/`; technical implementation references belong in `docs/technical/`.
 - Record non-obvious bugs, release pitfalls, and recurring agent mistakes in `docs/lessons-learned.md`.
 - Avoid duplicating facts between files; cross-link instead.
 - Update these docs when architecture or workflow changes, because stale agent instructions are worse than missing instructions.

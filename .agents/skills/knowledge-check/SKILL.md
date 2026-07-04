@@ -24,8 +24,8 @@ If `tmp-agent/knowledge-candidate-report.md` exists, read it before deciding; pr
 
 Categories of worth-recording knowledge:
 - **Bug/pitfall discovered** → `docs/lessons-learned.md`
-- **Landed content-system behavior, implementation locations, or change entry points** → `docs/systems/<system>.md`
-- **Speculative or not-yet-landed design plan** → `docs/plans/<topic>.md`
+- **Current modpack content change, design intent, implementation idea, or code location** → `docs/content/<area>.md`
+- **How to implement a specific kind of change, with project examples** → `docs/technical/<topic>.md`
 - **New convention or pattern** → Relevant `AGENTS.md` (root or `kubejs/`)
 - **New utility function or API** → `kubejs/AGENTS.md` HELPER FUNCTIONS section
 - **Reusable command workflow or decision tree** → `.agents/skills/<name>/SKILL.md`
@@ -37,8 +37,8 @@ Categories of worth-recording knowledge:
 |---------------|-------------|------|
 | Cross-module convention | Root `AGENTS.md` | Applies to entire project |
 | KubeJS recipe/dev pattern | `kubejs/AGENTS.md` | KubeJS-specific |
-| Landed content system | `docs/systems/<system>.md` | Current behavior, code/data locations, key mechanics, and change entry points |
-| Design plan | `docs/plans/<topic>.md` | Future work, alternatives, or not-yet-landed design |
+| Content knowledge | `docs/content/<area>.md` | Current modpack content, design intent, implementation idea, and code/data locations |
+| Technical reference | `docs/technical/<topic>.md` | Project-specific implementation approach, reference examples, and validation |
 | Reusable workflow | `.agents/skills/<name>/SKILL.md` | Multi-step command sequence, release/sync/packwiz process, or decision tree |
 | Bug fix / pitfall / history | `docs/lessons-learned.md` | Preventive knowledge |
 | New utility function | `kubejs/AGENTS.md` HELPER FUNCTIONS | Developer reference |
@@ -52,7 +52,8 @@ Categories of worth-recording knowledge:
 3. **No duplication** - If information exists elsewhere, reference it, don't repeat it.
 4. **Keep AGENTS.md ≤150 lines** (root) or ≤80 lines (subdirectory). If over limit, prune stale entries.
 5. **Lessons-learned entries**: Include Problem, Fix/Lesson, and date.
-6. **System docs**: Include Goal, Current Behavior, Implementation Locations, Key Mechanics, and Change Entry Points.
+6. **Content docs**: Include What Exists, Design Intent, Implementation, How It Works, and Where to Change It.
+7. **Technical docs**: Include Use When, Approach, Reference Implementations, Steps, and Validation.
 
 **ALLOWED actions** (knowledge update only):
 - ✅ Edit `AGENTS.md` files (root, `kubejs/`)
@@ -95,6 +96,6 @@ Before saving any edit to AGENTS.md or lessons-learned.md, verify ALL of these:
 3. **Concise** — Is each entry one sentence? Can any words be cut without losing meaning?
 4. **Why included** — For non-obvious rules, did I explain the failure mode/reason?
 5. **Stale check** — Am I adding to a file that contains outdated entries? Flag them for removal.
-6. **Right file** — Is this in the correct knowledge file per the routing table above? Current system → docs/systems, future plan → docs/plans, reusable workflow → skill, historical pitfall → lessons-learned.
+6. **Right file** — Is this in the correct knowledge file per the routing table above? Current content → docs/content, implementation how-to → docs/technical, reusable workflow → skill, historical pitfall → lessons-learned.
 
 If any check fails, fix before saving. This self-check is the primary mechanism ensuring knowledge base quality over time.
