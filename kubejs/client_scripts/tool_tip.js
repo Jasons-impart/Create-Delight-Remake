@@ -1,4 +1,3 @@
-
 ItemEvents.tooltip(e => {
     clearAddShiftTooltip(e, [
         'dreadsteel:kit_default',
@@ -9,6 +8,21 @@ ItemEvents.tooltip(e => {
     ])
     addShiftTooltip(e, [
         "ratatouille:frozen_block",
+        "ratatouille:chocolate_mold_solid",
+        "createdelightcore:black_chocolate_mold_solid",
+        "createdelightcore:white_chocolate_mold_solid",
+        "createdelightcore:ruby_chocolate_mold_solid",
+        "ratatouille:melon_popsicle_mold_solid",
+        "createdelight:empty_popsicle_mold_solid",
+        "createdelight:chorus_fruit_popsicle_mold_solid",
+        "createdelight:berry_popsicle_mold_solid",
+        "createdelight:milk_popsicle_mold_solid",
+        "createdelight:hamimelon_popsicle_mold_solid",
+        "createdelight:lime_popsicle_mold_solid",
+        "createdelight:kiwi_popsicle_mold_solid",
+        "createdelight:green_tongue_mold_solid",
+        "createdelight:tear_popsicle_mold_solid",
+        "createdelight:big_popsicle_mold_solid",
         "ratatouille:mechanical_demolder",
         "createdieselgenerators:distillation_controller",
         "createmetallurgy:wolframite_ore",
