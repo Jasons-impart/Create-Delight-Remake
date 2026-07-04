@@ -1,112 +1,118 @@
 ---
 name: knowledge-check
-description: Guides structured knowledge base updates after implementation work
+description: 在实现工作后执行结构化知识库检查。用于代码、配置、脚本、文档或流程变更完成后，判断是否需要沉淀项目知识，并将知识路由到 AGENTS、docs/dev-knowledge、docs/lessons-learned 或项目 skill。
 ---
 
-# Knowledge Check Skill
+# 知识检查
 
-Guides the agent through structured knowledge base updates after completing implementation work.
+本 skill 用于在实现工作结束后，判断是否学到了值得未来会话复用的项目知识，并把它写到正确位置。
 
-## When to Use
+## 何时使用
 
-Invoke this skill (via `/knowledge-check`) when:
-- You just completed a code change, bug fix, or configuration update
-- You discovered a non-obvious project pattern, pitfall, or constraint
-- You corrected a mistake that could recur in future sessions
+在以下情况调用本 skill：
 
-Do NOT invoke for:
-- Pure research/exploration tasks with no code changes
-- Trivial changes that follow well-documented patterns
-- General knowledge not specific to THIS project
+- 刚完成代码改动、bug 修复或配置更新。
+- 发现了非显而易见的项目模式、坑点或约束。
+- 修正了未来 agent 可能再次犯的错误。
+- 当前任务明确要求维护或整理知识库。
 
-## Process
+以下情况不要调用：
 
-### Step 1: Assess Significance
+- 纯研究或探索，且没有代码/配置/文档改动。
+- 完全按既有文档执行的琐碎改动。
+- 与本项目无关的通用知识。
 
-Ask: "Did I learn anything new about THIS PROJECT that future sessions would benefit from?"
+## 流程
 
-If `tmp-opencode/knowledge-candidate-report.md` exists, read it before deciding; process notes require user acceptance unless the current task explicitly asked to maintain the knowledge base.
+### 第 1 步：判断是否值得记录
 
-Codex Stop hooks run `scripts/validate-knowledge-base.ps1` and write `tmp-opencode/knowledge-candidate-report.md`; the report is advisory and never edits knowledge files.
+先问：“我是否学到了未来会话会受益的项目特定知识？”
 
-When a task hits a non-obvious failure or workaround before the final knowledge decision, append a temporary note with `scripts/add-knowledge-note.ps1` so the candidate report can route it here.
+如果存在 `tmp-opencode/knowledge-candidate-report.md`，先读取它再决定；除非当前任务明确要求维护知识库，否则 process note 候选需要用户接受后再落库。
 
-Worth-recording knowledge usually falls into one of these groups:
-- **Reusable project fact or location** → Route using the Storage Map in `.agents/skills/dev-knowledge/SKILL.md`
-- **Bug/pitfall discovered** → Prefer `docs/lessons-learned.md`
-- **Knowledge routing or skill behavior changed** → Update the affected skill
-- **No reusable project-specific value** → Do not record
+Codex Stop hook 会运行 `scripts/validate-knowledge-base.ps1`，并写入 `tmp-opencode/knowledge-candidate-report.md`；该报告只提供建议，不会自动修改知识文件。
 
-### Step 2: Choose Knowledge Form
+如果任务中途遇到非显而易见的失败或绕路做法，但最终还没决定是否落库，可用 `scripts/add-knowledge-note.ps1` 追加临时 note，让候选报告把它路由到这里。
 
-Read `.agents/skills/dev-knowledge/SKILL.md` and use its Storage Map as the source of truth for where knowledge belongs.
+通常值得记录的知识分为：
 
-### Step 3: Choose Target File
+- **可复用的项目事实或位置** → 按 `.agents/skills/dev-knowledge/SKILL.md` 的存放表路由。
+- **bug、坑点或历史教训** → 优先写入 `docs/lessons-learned.md`。
+- **知识路由或 skill 行为变化** → 更新受影响的 skill。
+- **没有可复用项目价值** → 不记录。
 
-After applying the dev-knowledge Storage Map, check these overrides:
+### 第 2 步：选择知识形态
 
-- Bug fix, root cause, or non-obvious workaround → `docs/lessons-learned.md`
-- New KubeJS helper/API reference → `kubejs/AGENTS.md` UNIQUE STYLES if it is short; otherwise a dev-knowledge how-to or skill
-- Knowledge-check prompt, candidate routing, or trigger timing → `.agents/skills/knowledge-check/SKILL.md`
-- Dev-knowledge storage rules → `.agents/skills/dev-knowledge/SKILL.md`
+读取 `.agents/skills/dev-knowledge/SKILL.md`，以其中的存放表作为知识落点的唯一来源。
 
-### Step 4: Write Update
+### 第 3 步：选择目标文件
 
-**Rules for updating knowledge base files**:
+应用 dev-knowledge 存放表后，再检查这些覆盖规则：
 
-1. **Be concise** - One sentence per fact. No prose.
-2. **Include the Why** - Non-obvious rules MUST explain the reason.
-3. **No duplication** - If information exists elsewhere, reference it, don't repeat it.
-4. **Keep AGENTS.md ≤150 lines** (root) or ≤80 lines (subdirectory). If over limit, prune stale entries.
-5. **Lessons-learned entries**: Include Problem, Fix/Lesson, and date.
-6. **Skill entries**: Put trigger-critical wording in YAML `description`; keep the body focused on executable workflow.
-7. **Dev-knowledge entries**: Use table rows with paths and links; do not copy long design rationale.
-8. **Iterate, don't upfront**: Add rules only after a recurring mistake or concrete discovery; remove rules agents already follow reliably.
+- bug 修复、根因或非显而易见的 workaround → `docs/lessons-learned.md`。
+- 新的 KubeJS helper/API 参考 → 内容很短时写入 `kubejs/AGENTS.md` 的 UNIQUE STYLES；否则写入 dev-knowledge how-to 或提升为 skill。
+- knowledge-check prompt、候选报告路由或触发时机 → `.agents/skills/knowledge-check/SKILL.md`。
+- dev-knowledge 存放规则 → `.agents/skills/dev-knowledge/SKILL.md`。
 
-**ALLOWED actions** (knowledge update only):
-- ✅ Edit `AGENTS.md` files (root, `kubejs/`, `CDC-mod-src/`)
-- ✅ Edit `docs/lessons-learned.md`
-- ✅ Edit `docs/dev-knowledge/`
-- ✅ Edit `.agents/skills/` or `.opencode/plugins/`
+### 第 4 步：写入更新
 
-**NOT ALLOWED** (when invoked as knowledge check):
-- ❌ Modifying code, recipes, configs unrelated to knowledge files
-- ❌ Running build/test commands
-- ❌ Git operations
+更新知识文件时遵守这些规则：
 
-### Step 5: Output Summary
+1. **保持简洁**：每个事实尽量一句话，不写长篇说明。
+2. **说明原因**：非显而易见的规则必须写出失败模式或原因。
+3. **避免重复**：如果信息已存在于其他文件，改用引用，不要复制。
+4. **控制 AGENTS 行数**：根 `AGENTS.md` 不超过 150 行，子目录 `AGENTS.md` 不超过 80 行；超限先精简。
+5. **lessons 条目**：包含 Problem、Fix/Lesson 和日期。
+6. **skill 条目**：触发条件写进 YAML `description`；正文聚焦可执行流程。
+7. **dev-knowledge 条目**：使用表格行、路径和链接；不要复制长篇设计理由。
+8. **迭代式维护**：只有出现重复错误或具体发现后才新增规则；删除 agent 已稳定遵守的规则。
 
-If applying or rejecting a candidate report, run `scripts/resolve-knowledge-candidate.ps1 -Status applied|rejected` after the decision so temporary process notes do not repeat.
+允许的知识维护动作：
 
-Output this block at the end:
+- 编辑根或模块级 `AGENTS.md`。
+- 编辑 `docs/lessons-learned.md`。
+- 编辑 `docs/dev-knowledge/`。
+- 编辑 `.agents/skills/` 或 `.opencode/plugins/`。
 
+作为 knowledge-check 调用时禁止：
+
+- 修改与知识维护无关的代码、配方或配置。
+- 运行 build/test 命令。
+- 执行 Git 操作。
+
+### 第 5 步：输出总结
+
+如果应用或拒绝候选报告，决策后运行 `scripts/resolve-knowledge-candidate.ps1 -Status applied|rejected`，避免临时 process note 重复出现。
+
+最后输出：
+
+```text
+Knowledge Check
+- Learned: [1-3 条，或 “nothing significant”]
+- Updated: [文件路径，或 “no update needed”]
+- Reason: [一句话说明]
 ```
-📝 Knowledge Check
-- Learned: [1-3 items or "nothing significant"]
-- Updated: [file path or "no update needed"]
-- Reason: [one sentence]
-```
 
-If nothing significant was learned, output ONLY: `📝 Knowledge: no update needed`
+如果没有值得记录的内容，只输出：`Knowledge: no update needed`。
 
-## Anti-Patterns
+## 反模式
 
-- ❌ Recording general programming knowledge (not project-specific)
-- ❌ Duplicating information across multiple AGENTS.md files
-- ❌ Adding entries without pruning when files exceed line limits
-- ❌ Writing verbose prose instead of concise bullet points
-- ❌ Keeping knowledge-maintenance rules in root AGENTS instead of this skill
+- 记录与本项目无关的通用编程知识。
+- 在多个 AGENTS 或知识文件中复制同一事实。
+- 文件超出行数限制时继续追加，而不是先精简。
+- 用长篇散文替代简洁条目。
+- 把知识维护流程规则放回根 `AGENTS.md`，而不是放在本 skill。
 
-## Self-Check (MANDATORY before finalizing any knowledge update)
+## 最终自检
 
-Before saving any edit to AGENTS.md or docs/lessons-learned.md, verify ALL of these:
+保存任何 `AGENTS.md` 或 `docs/lessons-learned.md` 更新前，必须确认：
 
-1. **Line count** — Root AGENTS.md ≤150? Subdirectory AGENTS.md ≤80? If over, prune FIRST.
-2. **No duplication** — Does this information already exist in another knowledge file? If yes, reference instead of repeating.
-3. **Concise** — Is each entry one sentence? Can any words be cut without losing meaning?
-4. **Why included** — For non-obvious rules, did I explain the failure mode/reason?
-5. **Stale check** — Am I adding to a file that contains outdated entries? Flag them for removal.
-6. **Skill check** — Is this a workflow/checklist/tool sequence that should be a skill instead of always-loaded AGENTS text?
-7. **Right file** — Does the target match the dev-knowledge Storage Map plus the overrides in this skill?
+1. **行数**：根 `AGENTS.md` 是否 ≤150 行，子目录 `AGENTS.md` 是否 ≤80 行？超限先精简。
+2. **无重复**：同一事实是否已存在于其他知识文件？如果存在，改为引用。
+3. **简洁**：每个条目是否能继续删字而不丢信息？
+4. **原因**：非显而易见的规则是否写清失败模式或理由？
+5. **过期检查**：正在追加的文件是否已有过期条目？如有，标记或删除。
+6. **skill 检查**：这是 workflow、checklist 或工具序列吗？如果是，应写入 skill，而不是常驻 AGENTS。
+7. **位置检查**：目标文件是否符合 dev-knowledge 存放表和本 skill 的覆盖规则？
 
-If any check fails, fix before saving. This self-check is the primary mechanism ensuring knowledge base quality over time.
+任何一项失败，都先修正再保存；这一步是长期保持知识库质量的主要机制。
