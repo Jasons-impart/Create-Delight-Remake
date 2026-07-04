@@ -1,5 +1,21 @@
 
-function buildOrderRewardBundles(level, orderInfo, qualityScore) {
+function getOrderMarketPlayer(level, orderInfo) {
+    if (global.Order.reputation == null || global.Order.reputation.getPlayer == null)
+        return null
+    return global.Order.reputation.getPlayer(level, orderInfo)
+}
+
+function getOrderMarketModifier(level, orderInfo) {
+    global.Order.ensureDataLoaded()
+    if (global.Order.marketSaturation == null)
+        return { multiplier: 1, penalty: 0, categoryPressure: 0, customerPressure: 0 }
+
+    let player = getOrderMarketPlayer(level, orderInfo)
+    return global.Order.marketSaturation.getModifier(player, orderInfo)
+}
+
+function buildOrderRewardBundles(level, orderInfo, qualityScore, marketModifier) {
+    global.Order.ensureDataLoaded()
     let customer = global.Order.customerProperties[orderInfo.type]
     let reward = customer.reward
     if (reward == null)
@@ -13,8 +29,8 @@ function buildOrderRewardBundles(level, orderInfo, qualityScore) {
         })
     }
 
-    let money = global.Order.calculateMoneyReward(orderInfo) * qualityScore * customer.reward_money
-    global.MoneyUtil.convertBaseValueToItems(money).forEach(item => {
+    let money = getOrderMoneySettlement(orderInfo, qualityScore, marketModifier)
+    global.MoneyUtil.convertBaseValueToItems(money.finalMoney).forEach(item => {
         list.add(item)
     })
 
@@ -23,6 +39,38 @@ function buildOrderRewardBundles(level, orderInfo, qualityScore) {
         rewardBundles.push(global.CDServerJavaClasses.$PackageItem.containing(list.subList(i, Math.min(i + 9, list.length))))
     }
     return rewardBundles
+}
+
+function getOrderMoneySettlement(orderInfo, qualityScore, marketModifier) {
+    global.Order.ensureDataLoaded()
+    let customer = global.Order.customerProperties[orderInfo.type]
+    let marketMultiplier = marketModifier == null || marketModifier.multiplier == null ? 1 : marketModifier.multiplier
+    let orderMoney = global.Order.calculateMoneyReward(orderInfo) * customer.reward_money
+    let preMarketMoney = orderMoney * qualityScore
+    return {
+        orderMoney: orderMoney,
+        preMarketMoney: preMarketMoney,
+        finalMoney: preMarketMoney * marketMultiplier,
+        qualityScore: qualityScore,
+        marketMultiplier: marketMultiplier
+    }
+}
+
+function getOrderMarketBreakdown(marketModifier) {
+    global.Order.ensureDataLoaded()
+    let config = global.Order.marketSaturationConfig
+    let categoryRaw = marketModifier == null ? 0 : Math.max(0, marketModifier.categoryPressure * config.categoryPenalty)
+    let customerRaw = marketModifier == null ? 0 : Math.max(0, marketModifier.customerPressure * config.customerPenalty)
+    let totalRaw = categoryRaw + customerRaw
+    let cappedPenalty = marketModifier == null ? 0 : Math.max(0, 1 - marketModifier.multiplier)
+    let categoryPenalty = totalRaw <= 0 ? 0 : cappedPenalty * categoryRaw / totalRaw
+    let customerPenalty = totalRaw <= 0 ? 0 : cappedPenalty * customerRaw / totalRaw
+    return {
+        categoryPercent: Math.round(categoryPenalty * 100),
+        customerPercent: Math.round(customerPenalty * 100),
+        rawPercent: Math.round(totalRaw * 100),
+        capped: totalRaw > cappedPenalty + 0.0001
+    }
 }
 
 function placeRewardBundles(level, pos, direction, start, end, rewardBundles) {
@@ -76,21 +124,99 @@ function findOrderInStack(item) {
     return found
 }
 
-function notifyOrderReputation(level, orderInfo, qualityScore) {
+function getOrderSettlementSummary(summaries, player) {
+    let key = `${player.uuid}`
+    let summary = summaries[key]
+    if (summary == null) {
+        summary = {
+            player: player,
+            count: 0,
+            finalMoney: 0,
+            orderMoney: 0,
+            reputationGain: 0,
+            completionBonus: 0,
+            scoreTotal: 0,
+            scoreMax: 0,
+            marketMultiplierTotal: 0,
+            marketMultiplierMin: 1,
+            cappedCount: 0,
+            rawPenaltyMax: 0,
+            categoryPercentTotal: 0,
+            customerPercentTotal: 0,
+            finalLevel: 0,
+            leveledUp: false
+        }
+        summaries[key] = summary
+    }
+    return summary
+}
+
+function recordOrderSettlement(level, orderInfo, qualityScore, marketModifier, summaries) {
     let result = global.Order.reputation.awardForOrder(level, orderInfo, qualityScore)
     if (result == null)
         return
-    result.player.tell(Text.translate("message.createdelight.order_reputation_gain", [
-        result.gain,
-        result.completionBonus,
-        result.value,
-        result.level
-    ]))
-    if (result.leveledUp)
-        result.player.tell(Text.translate("message.createdelight.order_reputation_level_up", [result.level]))
+
+    let money = getOrderMoneySettlement(orderInfo, qualityScore, marketModifier)
+    let market = getOrderMarketBreakdown(marketModifier)
+
+    let summary = getOrderSettlementSummary(summaries, result.player)
+    summary.count++
+    summary.finalMoney += money.finalMoney
+    summary.orderMoney += money.orderMoney
+    summary.reputationGain += result.gain
+    summary.completionBonus += result.completionBonus
+    summary.scoreTotal += money.qualityScore
+    summary.scoreMax = Math.max(summary.scoreMax, money.qualityScore)
+    summary.marketMultiplierTotal += money.marketMultiplier
+    summary.marketMultiplierMin = Math.min(summary.marketMultiplierMin, money.marketMultiplier)
+    summary.finalLevel = result.level
+    summary.leveledUp = summary.leveledUp || result.leveledUp
+    summary.categoryPercentTotal += market.categoryPercent
+    summary.customerPercentTotal += market.customerPercent
+    summary.rawPenaltyMax = Math.max(summary.rawPenaltyMax, market.rawPercent)
+    if (market.capped)
+        summary.cappedCount++
+
+    if (global.Order.marketSaturation != null)
+        global.Order.marketSaturation.recordCompletion(result.player, orderInfo)
+    if (global.syncOrderMarketSaturation != null)
+        global.syncOrderMarketSaturation(result.player)
 }
 
-function settleOrderSegment(level, pos, direction, start, end, orderStack, packages) {
+function flushOrderSettlementSummaries(summaries) {
+    for (let key in summaries) {
+        let summary = summaries[key]
+        let count = Math.max(1, summary.count)
+        let avgScore = summary.scoreTotal / count
+        let avgMarket = summary.marketMultiplierTotal / count
+        let avgCategory = Math.round(summary.categoryPercentTotal / count)
+        let avgCustomer = Math.round(summary.customerPercentTotal / count)
+
+        summary.player.tell(Text.translate("message.createdelight.order_batch_settlement", [
+            summary.count,
+            global.MoneyUtil.convertBaseValueToString(summary.finalMoney),
+            global.MoneyUtil.convertBaseValueToString(summary.orderMoney),
+            avgScore.toFixed(2),
+            Math.round(avgMarket * 100),
+            Math.round(summary.marketMultiplierMin * 100),
+            summary.reputationGain,
+            summary.completionBonus,
+            summary.finalLevel
+        ]))
+        summary.player.tell(Text.translate("message.createdelight.order_batch_market", [
+            avgCategory,
+            avgCustomer,
+            summary.rawPenaltyMax,
+            summary.cappedCount
+        ]))
+        if (summary.cappedCount > 0)
+            summary.player.tell(Text.translate("message.createdelight.order_market_recovery_hint"))
+        if (summary.leveledUp)
+            summary.player.tell(Text.translate("message.createdelight.order_reputation_level_up", [summary.finalLevel]))
+    }
+}
+
+function settleOrderSegment(level, pos, direction, start, end, orderStack, packages, summaries) {
     if (orderStack == null)
         return false
 
@@ -100,10 +226,11 @@ function settleOrderSegment(level, pos, direction, start, end, orderStack, packa
     if (qualityScore <= 0)
         return false
 
-    let rewardBundles = buildOrderRewardBundles(level, orderInfo, qualityScore)
+    let marketModifier = getOrderMarketModifier(level, orderInfo)
+    let rewardBundles = buildOrderRewardBundles(level, orderInfo, qualityScore, marketModifier)
     clearOrderSegment(level, pos, direction, start, end)
     placeRewardBundles(level, pos, direction, start, end, rewardBundles)
-    notifyOrderReputation(level, orderInfo, qualityScore)
+    recordOrderSettlement(level, orderInfo, qualityScore, marketModifier, summaries)
     return true
 }
 
@@ -129,6 +256,7 @@ MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
 
             let funcs = ["north", "south", "east", "west"]
             let count = 8
+            let settlementSummaries = {}
             for (let i = 0; i < 4; i++) {
                 let packages = new ItemStackTransfer()
                 packages.setSize(64)
@@ -155,7 +283,7 @@ MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
                     if (find != null) {
                         if (order != null) {
                             end = index - 1
-                            settleOrderSegment(level, pos, funcs[i], start, end, order, packages)
+                            settleOrderSegment(level, pos, funcs[i], start, end, order, packages, settlementSummaries)
                             packages = new ItemStackTransfer()
                             packages.setSize(64)
                         }
@@ -170,9 +298,10 @@ MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
                     lastIndex = index
                 }
                 if (order != null) {
-                    settleOrderSegment(level, pos, funcs[i], start, lastIndex, order, packages)
+                    settleOrderSegment(level, pos, funcs[i], start, lastIndex, order, packages, settlementSummaries)
                 }
             }
+            flushOrderSettlementSummaries(settlementSummaries)
 
             // /**@type {ItemStackTransfer} */
             // let storage = machine.getTraitByName("order_slot").storage

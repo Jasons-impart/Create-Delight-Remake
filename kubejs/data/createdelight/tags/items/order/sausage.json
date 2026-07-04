@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#forge:sausage",
+      "required": false
+    },
+    {
+      "id": "ends_delight:ender_sausage",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:hoglin_sausage",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:blazing_blood_sausage",
+      "required": false
+    }
+  ]
+}

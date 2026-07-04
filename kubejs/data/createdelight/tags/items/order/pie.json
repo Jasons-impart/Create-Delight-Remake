@@ -1,0 +1,153 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "casualness_delight:quiche_lorraine",
+      "required": false
+    },
+    {
+      "id": "casualness_delight:quiche_lorraine_slice",
+      "required": false
+    },
+    {
+      "id": "ends_delight:chorus_fruit_pie_slice",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:tarte_lune_slice",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:pineapple_pie",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:durian_pie",
+      "required": false
+    },
+    {
+      "id": "trailandtales_delight:cherry_cheese_pie_slice",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:rose_hip_pie_slice",
+      "required": false
+    },
+    {
+      "id": "silentsdelight:sculk_catalyst_pie_slice",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:water_pie_slice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:sweet_berry_cheesecake_slice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:apple_pie_slice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:chocolate_pie_slice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:apple_pie",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:chocolate_pie",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:sweet_berry_cheesecake",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:portobello_quiche_slice",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:lime_pie_slice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:shepherds_pie",
+      "required": false
+    },
+    {
+      "id": "cavedelight:slice_of_pinenut_pie",
+      "required": false
+    },
+    {
+      "id": "bakeries:egg_tart",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:quiche_slice",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:blisterberry_tart",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:mendosteen_tart",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:magebloom_tart",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:shoofly_pie_block",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:shoofly_pie_slice",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:water_pie",
+      "required": false
+    },
+    {
+      "id": "trailandtales_delight:cherry_cheese_pie",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:pumpkin_pie",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:pumpkin_pie_slice",
+      "required": false
+    },
+    {
+      "id": "create_central_kitchen:mulberry_pie_slice",
+      "required": false
+    },
+    {
+      "id": "create_central_kitchen:pumpkin_pie_slice",
+      "required": false
+    },
+    {
+      "id": "createdelightcore:pizza_slice",
+      "required": false
+    },
+    {
+      "id": "refurbished_furniture:vegetable_pizza_slice",
+      "required": false
+    },
+    {
+      "id": "refurbished_furniture:meatlovers_pizza_slice",
+      "required": false
+    },
+    {
+      "id": "netherexp:nether_pizza_slice",
+      "required": false
+    }
+  ]
+}

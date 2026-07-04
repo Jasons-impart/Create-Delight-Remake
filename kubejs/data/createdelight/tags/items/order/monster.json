@@ -1,0 +1,333 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "dungeonsdelight:ghast_roll",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:devilish_eggs",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:sculk_mayo",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:sculk_apple",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:bloated_baked_potato",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:malicious_sandwich",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:monster_muffin",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:spider_pie_slice",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:sculk_tart_slice",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:ghastly_spirits",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:bloody_mary",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:spider_bubble_tea",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:taro_milk_tea",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:sniffer_shank",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:cooked_sniffer_shank",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:gritty_flesh",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:brined_flesh",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:rotten_tripe",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:spider_meat",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:smoked_spider_meat",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:slime_bar",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:slime_noodles",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:silverfish_abdomen",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:ghast_tentacle",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:ghast_calamari",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:fried_ghast_calamari",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:cleaved_ancient_egg",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:wardenzola",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:wardenzola_crumbles",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:snifferwurst",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:cooked_snifferwurst",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:snuffledog",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:soft_serve_sniffer_egg",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:chicken_jockey_sandwich",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:ominous_omelette",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:terrine_loaf",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:monster_cake_slice",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:slicorice",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:amethyst_rock_candy",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:candied_silverfish_sucker",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:candied_vex_sucker",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:soaked_skewer",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:spider_tanghulu",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:chloropasta",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:cob_n_candy",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:shiokara",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:salt_soaked_stew",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:spider_salmagundi",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:gelled_salad",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:silverfish_fried_rice",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:au_rotten_potatoes",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:poi",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:sinigang",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:gyudon",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:ghoulash",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:tokayaki",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:poisonous_poutine",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:glow_berry_gelatin",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:ossobuco",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:guardian_angel",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:silverfish_and_chips",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:flesh_dumplings",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:flesh_stew",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:bowl_of_flesh_feast",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:flesh_chocolate_mousse",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:scarlet_devil_cake",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:bloody_flesh",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:red_velvet_cake_slice",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:hot_cream",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:hot_cream_cone",
+      "required": false
+    },
+    {
+      "id": "ends_delight:roasted_dragon_steak",
+      "required": false
+    },
+    {
+      "id": "ends_delight:stir_fried_shulker_meat",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:canned_flesh",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:cooked_flesh",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:cooked_flesh_slice",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:flesh",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:flesh_slice",
+      "required": false
+    },
+    {
+      "id": "miners_delight:baked_spider_leg",
+      "required": false
+    },
+    {
+      "id": "miners_delight:baked_tentacles",
+      "required": false
+    },
+    {
+      "id": "miners_delight:fake_meatloaf",
+      "required": false
+    },
+    {
+      "id": "miners_delight:weird_caviar",
+      "required": false
+    },
+    {
+      "id": "miners_delight:spider_leg",
+      "required": false
+    }
+  ]
+}

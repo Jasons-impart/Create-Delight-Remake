@@ -1,0 +1,229 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "brewinandchewin:scarlet_pierogi",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:fiery_fondue",
+      "required": false
+    },
+    {
+      "id": "ends_delight:shulker_omelette",
+      "required": false
+    },
+    {
+      "id": "ends_delight:dragon_leg_with_sauce",
+      "required": false
+    },
+    {
+      "id": "ends_delight:steamed_dragon_egg",
+      "required": false
+    },
+    {
+      "id": "ends_delight:grilled_shulker",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:han_palace",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:shirayuki",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:tofu_crab_stew",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:tuscan_salmon",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:honey_glazed_cucumber",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:lions_head",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:mapo_tofu",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:hokkaido_salmon_hotpot",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:pineapple_marinated_pork",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:lychee_chicken",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:blazing_chili",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:spicy_hoglin_stew",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:stuffed_pepper",
+      "required": false
+    },
+    {
+      "id": "oceanic_delight:steamed_beef",
+      "required": false
+    },
+    {
+      "id": "oceanic_delight:glow_squid_stew",
+      "required": false
+    },
+    {
+      "id": "oceanic_delight:shrimp_stew",
+      "required": false
+    },
+    {
+      "id": "oceanic_delight:squid_and_pickles",
+      "required": false
+    },
+    {
+      "id": "silentsdelight:plate_of_warden_heart",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:ghostly_chili",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:baked_cod_stew",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:grilled_salmon",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:roast_chicken",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:stuffed_pumpkin",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:mediterranean_salmon",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:cod_ceviche",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:pomegranate_mutton",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:pomegranate_pork",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:pomegranate_chicken",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:glazed_strider",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:clam_meatball_stew",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:clam_chowder",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:crab_miso",
+      "required": false
+    },
+    {
+      "id": "alexsdelight:kangaroo_stew",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:prawn_ceviche",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:prawn_stew",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:salmon_wrapped_prawn",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:platinum_bass_stew",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:fish_mix",
+      "required": false
+    },
+    {
+      "id": "create_bic_bit:stamppot_bowl",
+      "required": false
+    },
+    {
+      "id": "cavedelight:slam_breakfast",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:sausage_and_potatoes",
+      "required": false
+    },
+    {
+      "id": "cuisinedelight:fried_meat_and_melon",
+      "required": false
+    },
+    {
+      "id": "cuisinedelight:fried_mushroom",
+      "required": false
+    },
+    {
+      "id": "cuisinedelight:meat_platter",
+      "required": false
+    },
+    {
+      "id": "cuisinedelight:meat_with_seafood",
+      "required": false
+    },
+    {
+      "id": "cuisinedelight:meat_with_vegetables",
+      "required": false
+    },
+    {
+      "id": "cuisinedelight:scrambled_egg_and_tomato",
+      "required": false
+    },
+    {
+      "id": "cuisinedelight:seafood_platter",
+      "required": false
+    },
+    {
+      "id": "cuisinedelight:seafood_with_vegetables",
+      "required": false
+    },
+    {
+      "id": "cuisinedelight:vegetable_platter",
+      "required": false
+    }
+  ]
+}

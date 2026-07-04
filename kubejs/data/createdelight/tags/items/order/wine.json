@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#createdelight:order/western_wine",
+      "required": false
+    },
+    {
+      "id": "#createdelight:order/eastern_wine",
+      "required": false
+    }
+  ]
+}

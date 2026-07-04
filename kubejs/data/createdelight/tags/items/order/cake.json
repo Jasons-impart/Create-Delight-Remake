@@ -1,0 +1,205 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "fruitsdelight:mangosteen_cake",
+      "required": false
+    },
+    {
+      "id": "trailandtales_delight:cherry_cake",
+      "required": false
+    },
+    {
+      "id": "trailandtales_delight:cherry_cake_slice",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:coffee_cake_slice",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:magma_cake_slice",
+      "required": false
+    },
+    {
+      "id": "oceanic_delight:sponge_cake_slice",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:berry_cheesecake_bar",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:wheatgrass_cubecake",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:wheatgrass_cubecake_block",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:chorus_fruit_cubecake",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:chorus_fruit_cubecake_block",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:glow_berry_cubecake",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:glow_berry_cubecake_block",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:warped_velvet_cubecake",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:warped_velvet_cubecake_block",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:cake_slice",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:vanilla_cake_slice",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:chocolate_cake_slice",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:strawberry_cake_slice",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:banana_cake_slice",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:mint_cake_slice",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:adzuki_cake_slice",
+      "required": false
+    },
+    {
+      "id": "seasonals:pumpkin_cake_slice",
+      "required": false
+    },
+    {
+      "id": "seasonals:sweet_berry_cake_slice",
+      "required": false
+    },
+    {
+      "id": "seasonals:beetroot_cake_slice",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:lime_cake_slice",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:pomegranate_cake_slice",
+      "required": false
+    },
+    {
+      "id": "create_central_kitchen:honey_cake_slice",
+      "required": false
+    },
+    {
+      "id": "seasonals:red_velvet_cupcake",
+      "required": false
+    },
+    {
+      "id": "cavedelight:slice_of_spelunkie_cake",
+      "required": false
+    },
+    {
+      "id": "cavedelight:slice_of_tectonic_cheesecake",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:raindroop_cake",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:recovery_lava_cake",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:zebra_cake",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:yule_log_slice",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:five_nuts_mooncake",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:hawthorn_with_jujube_paste_mooncake",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:lotus_seed_paste_with_salted_yolk_mooncake",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:preserved_meat_mooncake",
+      "required": false
+    },
+    {
+      "id": "create_central_kitchen:aloe_cake_slice",
+      "required": false
+    },
+    {
+      "id": "create_central_kitchen:chocolate_cake_slice",
+      "required": false
+    },
+    {
+      "id": "create_central_kitchen:passion_fruit_cake_slice",
+      "required": false
+    },
+    {
+      "id": "create_central_kitchen:pumpkin_cake_slice",
+      "required": false
+    },
+    {
+      "id": "create_central_kitchen:sweet_berry_cake_slice",
+      "required": false
+    },
+    {
+      "id": "create_central_kitchen:yucca_cake_slice",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:yucca_gateau_slice",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:lucuma_cake_slice",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:pink_dragon_fruit_cake_slice",
+      "required": false
+    },
+    {
+      "id": "bakeries:cream_cake_cube",
+      "required": false
+    },
+    {
+      "id": "bakeries:yuntui_mooncake",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "fruitsdelight:hamimelon_juice",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:orange_juice",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:lemon_juice",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:pear_juice",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:bayberry_soup",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:kiwi_juice",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:strong_melon_juice",
+      "required": false
+    },
+    {
+      "id": "oceanic_delight:nautilus_juice",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:sea_pickle_juice",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:limeade",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:berry_limeade",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:pink_limeade",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:mint_limeade",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:pickerelweed_juice",
+      "required": false
+    },
+    {
+      "id": "vinery:apple_juice",
+      "required": false
+    },
+    {
+      "id": "vinery:red_grapejuice",
+      "required": false
+    },
+    {
+      "id": "vinery:red_jungle_grapejuice",
+      "required": false
+    },
+    {
+      "id": "vinery:red_savanna_grapejuice",
+      "required": false
+    },
+    {
+      "id": "vinery:red_taiga_grapejuice",
+      "required": false
+    },
+    {
+      "id": "vinery:white_grapejuice",
+      "required": false
+    },
+    {
+      "id": "vinery:white_jungle_grapejuice",
+      "required": false
+    },
+    {
+      "id": "vinery:white_savanna_grapejuice",
+      "required": false
+    },
+    {
+      "id": "vinery:white_taiga_grapejuice",
+      "required": false
+    },
+    {
+      "id": "nethervinery:crimson_grapejuice",
+      "required": false
+    },
+    {
+      "id": "nethervinery:warped_grapejuice",
+      "required": false
+    },
+    {
+      "id": "oceanic_delight:sea_grape_juice",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:black_grape_juice",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:red_grape_juice",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:white_grape_juice",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:strong_limeade",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:wildberry_punch",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:greenday_juice",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:sugarcane_juice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:melon_juice",
+      "required": false
+    }
+  ]
+}

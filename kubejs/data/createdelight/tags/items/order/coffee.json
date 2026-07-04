@@ -1,0 +1,141 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#createdelight:cafe",
+      "required": false
+    },
+    {
+      "id": "createcafe:iced_coffee",
+      "required": false
+    },
+    {
+      "id": "createcafe:iced_coffee_milk",
+      "required": false
+    },
+    {
+      "id": "createcafe:strawberry_iced_coffee",
+      "required": false
+    },
+    {
+      "id": "createcafe:vanilla_iced_coffee",
+      "required": false
+    },
+    {
+      "id": "createcafe:mint_iced_coffee",
+      "required": false
+    },
+    {
+      "id": "createcafe:caramel_iced_coffee",
+      "required": false
+    },
+    {
+      "id": "createcafe:banana_iced_coffee",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:espresso",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:americano",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:ristretto",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:latte",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:affogato",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:con_panna",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:cappuccino",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:macchiato",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:mocha",
+      "required": false
+    },
+    {
+      "id": "trailandtales_delight:ancient_coffee",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:coffee",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:long_coffee",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:strong_coffee",
+      "required": false
+    },
+    {
+      "id": "bakeries:brown_sugar_latte",
+      "required": false
+    },
+    {
+      "id": "bakeries:cream_bingle_coffee",
+      "required": false
+    },
+    {
+      "id": "bakeries:iced_american",
+      "required": false
+    },
+    {
+      "id": "bakeries:iced_latte",
+      "required": false
+    },
+    {
+      "id": "bakeries:orange_american",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:limbo_brew",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:long_limbo_brew",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:strong_limbo_brew",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:berry_syrup_americano",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:chorus_fruit_americano",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:iced_americano",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:mocha",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:orange_americano",
+      "required": false
+    }
+  ]
+}

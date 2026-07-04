@@ -1,0 +1,181 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "alexcaves_delight:pastawithtrilocaristail",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:noodle_soup",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:pasta_with_meatballs",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:pasta_with_mutton_chop",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:vegetable_noodles",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:squid_ink_pasta",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:spicy_noodle_soup",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:twisted_ghasta",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:plate_of_ghasta_with_cream",
+      "required": false
+    },
+    {
+      "id": "oceanic_delight:pasta_with_eyeball",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:clam_pasta",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:portobello_pasta",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:prawn_noodles",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:crab_noodles",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:carbonara_pasta",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:pink_noodles",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:stuffed_pasta_shells",
+      "required": false
+    },
+    {
+      "id": "cavedelight:dino_chop_pasta",
+      "required": false
+    },
+    {
+      "id": "cavedelight:tectonic_pasta",
+      "required": false
+    },
+    {
+      "id": "cavedelight:trilocaris_noodles",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:longevity_noodles",
+      "required": false
+    },
+    {
+      "id": "miners_delight:pasta_with_veggieballs",
+      "required": false
+    },
+    {
+      "id": "miners_delight:glow_ink_pasta",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:cheesy_pasta",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:green_pasta",
+      "required": false
+    },
+    {
+      "id": "casualness_delight:beef_noodles",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:pastitsio",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:crab_lasagna",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:horror_lasagna",
+      "required": false
+    },
+    {
+      "id": "ends_delight:ender_noodle",
+      "required": false
+    },
+    {
+      "id": "oceanic_delight:fish_egg_noodle_soup",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:pad_thai",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:cheese_pasta",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:eggplant_parmesan",
+      "required": false
+    },
+    {
+      "id": "alexsdelight:kangaroo_pasta",
+      "required": false
+    },
+    {
+      "id": "alexsdelight:lobster_pasta",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:duck_noodles",
+      "required": false
+    },
+    {
+      "id": "cavedelight:gamma_spaghetti",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:cucumber_noodles",
+      "required": false
+    },
+    {
+      "id": "cuisinedelight:fried_pasta",
+      "required": false
+    },
+    {
+      "id": "cuisinedelight:meat_pasta",
+      "required": false
+    },
+    {
+      "id": "cuisinedelight:mixed_pasta",
+      "required": false
+    },
+    {
+      "id": "cuisinedelight:seafood_pasta",
+      "required": false
+    },
+    {
+      "id": "cuisinedelight:vegetable_pasta",
+      "required": false
+    }
+  ]
+}

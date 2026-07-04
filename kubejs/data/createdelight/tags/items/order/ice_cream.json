@@ -1,0 +1,365 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "neapolitan:vanilla_ice_cream",
+      "required": false
+    },
+    {
+      "id": "neapolitan:chocolate_ice_cream",
+      "required": false
+    },
+    {
+      "id": "neapolitan:strawberry_ice_cream",
+      "required": false
+    },
+    {
+      "id": "neapolitan:banana_ice_cream",
+      "required": false
+    },
+    {
+      "id": "neapolitan:mint_ice_cream",
+      "required": false
+    },
+    {
+      "id": "neapolitan:adzuki_ice_cream",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:lime_ice_cream",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:pomegranate_ice_cream",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:apple_ice_cream",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:carrot_ice_cream",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:glow_berry_ice_cream",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:enchanted_fruit_ice_cream",
+      "required": false
+    },
+    {
+      "id": "neapolitan:neapolitan_ice_cream",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:classic_ice_cream",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:seasonal_ice_cream",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:collective_ice_cream",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:delightful_ice_cream",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:exquisite_ice_cream",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:carrot_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:apple_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:vanilla_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:strawberry_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:mint_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:chocolate_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:banana_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:adzuki_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:snow_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:pomegranate_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:lime_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:sweet_berry_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:pumpkin_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:beetroot_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:enchanted_fruit_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:glow_berry_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:aloe_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:aurora_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:azure_berry_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:black_tea_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:cherry_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:chorus_fruit_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:coffee_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:flavored_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:glacier_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:glowy_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:green_tea_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:ice_cream_float",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:jelly_ring_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:kabloom_ice_cream",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:kabloom_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:lucuma_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:matcha_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:midnight_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:passion_fruit_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:peculiar_ice_cream",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:phytochemical_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:pink_dragon_fruit_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:salmonberry_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:source_berry_ice_cream",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:source_berry_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:starcloud_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:torchberry_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:warzipan_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:yellow_tea_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:yucca_ice_cream_cone",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:hamimelon_shaved_ice",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:berry_syrup_shaved_ice",
+      "required": false
+    },
+    {
+      "id": "neapolitan:strawberry_banana_smoothie",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:pomegranate_smoothie",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:lucuma_ice_cream",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:pink_dragon_fruit_ice_cream",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:sunny_ice_cream",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:tropical_shaved_ice",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:aurora_ice_cream",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:blisterberry_sorbet",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:droopfruit_sorbet",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:wandering_gelato",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:classic_ice_cream_sandwich",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:collective_ice_cream_sandwich",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:delightful_ice_cream_sandwich",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:exquisite_ice_cream_sandwich",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:neapolitan_ice_cream_sandwich",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:neapolitan_ice_cream_bagel",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:peculiar_ice_cream_sandwich",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:rainbow_ice_cream_sandwich",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:refreshing_ice_cream_sandwich",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:respiteful_ice_cream_sandwich",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:seasonal_ice_cream_sandwich",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:sunny_ice_cream_sandwich",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:tricolored_ice_cream_sandwich",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:twilight_ice_cream_sandwich",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "ends_delight:chorus_sauce",
+      "required": false
+    },
+    {
+      "id": "create_bic_bit:mayonnaise_bottle",
+      "required": false
+    },
+    {
+      "id": "create_bic_bit:ketchup_bottle",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:relish_mason_jar",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:pepper_jam_mason_jar",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:nut_mash_mason_jar",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:honey_mason_jar",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:nut_mash_bottle",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:relish_bottle",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:pepper_jam_bottle",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:tomato_sauce",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:mayonnaise_bottle",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:soy_sauce_bottle",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:mayonnaise_flask",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:soy_sauce_flask",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:molasses_bottle",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:green_sauce",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:prawn_spread",
+      "required": false
+    }
+  ]
+}

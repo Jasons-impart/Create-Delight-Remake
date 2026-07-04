@@ -1,0 +1,93 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "neapolitan:vanilla_milkshake",
+      "required": false
+    },
+    {
+      "id": "neapolitan:chocolate_milkshake",
+      "required": false
+    },
+    {
+      "id": "neapolitan:strawberry_milkshake",
+      "required": false
+    },
+    {
+      "id": "neapolitan:banana_milkshake",
+      "required": false
+    },
+    {
+      "id": "neapolitan:mint_milkshake",
+      "required": false
+    },
+    {
+      "id": "neapolitan:adzuki_milkshake",
+      "required": false
+    },
+    {
+      "id": "silentsdelight:sculk_shrieker_shake",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:kelp_shake",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:lime_milkshake",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:pomegranate_milkshake",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:lucuma_milkshake",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:pink_dragon_fruit_milkshake",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:apple_milkshake",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:carrot_milkshake",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:glow_berry_milkshake",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:enchanted_fruit_milkshake",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:kabloom_milkshake",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:source_berry_milkshake",
+      "required": false
+    },
+    {
+      "id": "seasonals:pumpkin_milkshake",
+      "required": false
+    },
+    {
+      "id": "seasonals:sweet_berry_milkshake",
+      "required": false
+    },
+    {
+      "id": "seasonals:beetroot_milkshake",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:mango_milkshake",
+      "required": false
+    }
+  ]
+}

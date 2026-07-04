@@ -1,0 +1,101 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "casualness_delight:phantom_dumplings",
+      "required": false
+    },
+    {
+      "id": "dumplings_delight:pork_cabbage_boiled_dumpling",
+      "required": false
+    },
+    {
+      "id": "dumplings_delight:pork_kelp_boiled_dumpling",
+      "required": false
+    },
+    {
+      "id": "dumplings_delight:pork_potato_boiled_dumpling",
+      "required": false
+    },
+    {
+      "id": "dumplings_delight:pork_fennel_boiled_dumpling",
+      "required": false
+    },
+    {
+      "id": "dumplings_delight:mutton_boiled_dumpling",
+      "required": false
+    },
+    {
+      "id": "dumplings_delight:chicken_mushroom_boiled_dumpling",
+      "required": false
+    },
+    {
+      "id": "dumplings_delight:cod_boiled_dumpling",
+      "required": false
+    },
+    {
+      "id": "dumplings_delight:salmon_boiled_dumpling",
+      "required": false
+    },
+    {
+      "id": "dumplings_delight:eggplant_egg_boiled_dumpling",
+      "required": false
+    },
+    {
+      "id": "dumplings_delight:mushroom_boiled_dumpling",
+      "required": false
+    },
+    {
+      "id": "dumplings_delight:fungus_boiled_dumpling",
+      "required": false
+    },
+    {
+      "id": "dumplings_delight:garlic_chive_egg_boiled_dumpling",
+      "required": false
+    },
+    {
+      "id": "dumplings_delight:dandelion_leaf_boiled_dumpling",
+      "required": false
+    },
+    {
+      "id": "dumplings_delight:pufferfish_boiled_dumpling",
+      "required": false
+    },
+    {
+      "id": "dumplings_delight:rabbit_meat_boiled_dumpling",
+      "required": false
+    },
+    {
+      "id": "dumplings_delight:pork_carrot_wonton",
+      "required": false
+    },
+    {
+      "id": "dumplings_delight:pork_mushroom_wonton",
+      "required": false
+    },
+    {
+      "id": "dumplings_delight:pork_cabbage_wonton",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:dumplings",
+      "required": false
+    },
+    {
+      "id": "dumplings_delight:beef_tomato_boiled_dumpling",
+      "required": false
+    },
+    {
+      "id": "dumplings_delight:calamari_boiled_dumpling",
+      "required": false
+    },
+    {
+      "id": "dumplings_delight:pork_celery_boiled_dumpling",
+      "required": false
+    },
+    {
+      "id": "dumplings_delight:tomato_egg_boiled_dumpling",
+      "required": false
+    }
+  ]
+}

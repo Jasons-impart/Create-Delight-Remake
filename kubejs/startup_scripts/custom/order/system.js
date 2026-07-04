@@ -69,6 +69,7 @@ Order.mergeSpec = function (base, addition) {
 }
 
 Order.createSpecFromDraft = function (draft) {
+    this.ensureDataLoaded()
     let spec = {}
     if (draft == null)
         return null
@@ -93,6 +94,7 @@ Order.createSpecFromDraft = function (draft) {
 }
 
 Order.applyDraftSeal = function (orderStack, sealStack) {
+    this.ensureDataLoaded()
     if (orderStack == null || sealStack == null || !orderStack.is("createdelight:unopened_order"))
         return false
     if (!sealStack.is("createdelight:order_seal"))
@@ -119,7 +121,166 @@ Order.applyDraftSeal = function (orderStack, sealStack) {
     return true
 }
 
+Order.openDraft = function (player, draftStack) {
+    if (player == null || draftStack == null || !draftStack.is("createdelight:unopened_order"))
+        return null
+
+    let draft = draftStack.nbt == null ? null : draftStack.nbt.OrderDraft
+    let spec = this.createSpecFromDraft(draft)
+    draftStack.shrink(1)
+
+    let ret = this.create(player, spec)
+    let attempts = 0
+    while (ret.entries.length == 0 && attempts < 20) {
+        ret = this.create(player, spec)
+        attempts++
+    }
+
+    let orderStack = Item.of("createdelight:order", 1, { createdelightOrderInfo: ret })
+    player.give(orderStack)
+    return orderStack
+}
+
+Order.marketSaturation = {}
+
+Order.marketSaturation.getDay = function (playerOrLevel) {
+    let level = playerOrLevel == null ? null : (playerOrLevel.level || playerOrLevel)
+    if (level == null || level.dayTime == null)
+        return 0
+    return Math.floor(level.dayTime() / 24000)
+}
+
+Order.marketSaturation.createData = function (day) {
+    return {
+        lastDay: day,
+        categories: {},
+        customers: {}
+    }
+}
+
+Order.marketSaturation.read = function (player) {
+    let config = Order.marketSaturationConfig
+    let day = this.getDay(player)
+    if (player == null || player.persistentData == null)
+        return this.createData(day)
+
+    let raw = player.persistentData.getString(config.storageKey)
+    if (raw == null || raw.length == 0)
+        return this.createData(day)
+
+    try {
+        let data = JSON.parse(raw)
+        data.categories = data.categories || {}
+        data.customers = data.customers || {}
+        data.lastDay = data.lastDay == null ? day : data.lastDay
+        return data
+    } catch (error) {
+        return this.createData(day)
+    }
+}
+
+Order.marketSaturation.write = function (player, data) {
+    if (player == null || player.persistentData == null)
+        return
+    player.persistentData.putString(Order.marketSaturationConfig.storageKey, JSON.stringify(data))
+}
+
+Order.marketSaturation.decay = function (data, day) {
+    let config = Order.marketSaturationConfig
+    let elapsed = Math.max(0, day - (data.lastDay == null ? day : data.lastDay))
+    if (elapsed <= 0) {
+        data.lastDay = day
+        return data
+    }
+
+    let factor = Math.pow(config.decayPerDay, elapsed)
+    ;["categories", "customers"].forEach(group => {
+        let values = data[group] || {}
+        for (let key in values) {
+            values[key] *= factor
+            if (values[key] < 0.01)
+                delete values[key]
+        }
+        data[group] = values
+    })
+    data.lastDay = day
+    return data
+}
+
+Order.marketSaturation.getModifier = function (player, order) {
+    Order.ensureDataLoaded()
+    let config = Order.marketSaturationConfig
+    if (player == null || order == null || order.entries == null || order.entries.length == 0)
+        return { multiplier: 1, penalty: 0, categoryPressure: 0, customerPressure: 0 }
+
+    let data = this.decay(this.read(player), this.getDay(player))
+    let categoryPressure = 0
+    order.entries.forEach(entry => {
+        categoryPressure += data.categories[entry.id] || 0
+    })
+    categoryPressure /= Math.max(1, order.entries.length)
+
+    let customerPressure = data.customers[order.type] || 0
+    let penalty = Math.min(config.maxPenalty, categoryPressure * config.categoryPenalty + customerPressure * config.customerPenalty)
+    return {
+        multiplier: Math.max(0, 1 - penalty),
+        penalty: penalty,
+        categoryPressure: categoryPressure,
+        customerPressure: customerPressure
+    }
+}
+
+Order.marketSaturation.recordCompletion = function (player, order) {
+    Order.ensureDataLoaded()
+    let config = Order.marketSaturationConfig
+    if (player == null || order == null || order.entries == null)
+        return null
+
+    let day = this.getDay(player)
+    let data = this.decay(this.read(player), day)
+    let activeCategories = {}
+    order.entries.forEach(entry => {
+        activeCategories[entry.id] = true
+    })
+
+    let categoryRecovery = config.categoryCrossRecovery == null ? 1 : config.categoryCrossRecovery
+    let customerRecovery = config.customerCrossRecovery == null ? 1 : config.customerCrossRecovery
+    for (let id in data.categories) {
+        if (activeCategories[id])
+            continue
+        data.categories[id] *= categoryRecovery
+        if (data.categories[id] < 0.01)
+            delete data.categories[id]
+    }
+    for (let id in data.customers) {
+        if (id == order.type)
+            continue
+        data.customers[id] *= customerRecovery
+        if (data.customers[id] < 0.01)
+            delete data.customers[id]
+    }
+
+    let categoryScales = {}
+    order.entries.forEach(entry => {
+        let property = Order.orderProperties[entry.id]
+        let baseCount = property == null ? 64 : property.base_count
+        categoryScales[entry.id] = (categoryScales[entry.id] || 0) + entry.count / Math.max(1, baseCount * 4)
+    })
+
+    let categoryScaleMax = config.categoryCompletionScaleMax == null ? 2 : config.categoryCompletionScaleMax
+    for (let id in categoryScales) {
+        let scale = Math.max(1, Math.min(categoryScaleMax, categoryScales[id]))
+        data.categories[id] = (data.categories[id] || 0) + config.categoryCompletionGain * scale
+    }
+    if (order.type != null)
+        data.customers[order.type] = (data.customers[order.type] || 0) + config.customerCompletionGain
+
+    this.write(player, data)
+    return data
+}
+
 Order.getCustomerWeightMultiplier = function (customerKey, spec) {
+    this.ensureDataLoaded()
     if (spec == null)
         return 1
 
@@ -141,6 +302,7 @@ Order.getCustomerWeightMultiplier = function (customerKey, spec) {
 }
 
 Order.getEntryWeightMultiplier = function (entryKey, spec) {
+    this.ensureDataLoaded()
     if (spec == null)
         return 1
 
@@ -169,6 +331,7 @@ Order.getEntryWeightMultiplier = function (entryKey, spec) {
  * @param {Object=} spec
  */
 Order.create = function (player, spec) {
+    this.ensureDataLoaded()
     let level = this.reputation.getLevel(player);
     let order = {
         entries: [],
@@ -264,6 +427,9 @@ Order.create = function (player, spec) {
         if (Utils.random.nextFloat() >= continueRate) canceled = true;
     }
 
+    let moneyMultiplier = spec != null && spec.moneyMultiplier != null ? spec.moneyMultiplier : 1
+    let reputationMultiplier = spec != null && spec.reputationMultiplier != null ? spec.reputationMultiplier : 1
+
     if (spec != null) {
         order.generationSpec = {
             source: spec.source || "direct",
@@ -271,9 +437,12 @@ Order.create = function (player, spec) {
             categoryGroups: this.toArray(spec.categoryGroups),
             selectionPrecision: spec.selectionPrecision || 0
         }
+    }
+
+    if (spec != null) {
         order.rewardMultipliers = {
-            money: spec.moneyMultiplier == null ? 1 : spec.moneyMultiplier,
-            reputation: spec.reputationMultiplier == null ? 1 : spec.reputationMultiplier
+            money: moneyMultiplier,
+            reputation: reputationMultiplier
         }
     }
 
@@ -412,6 +581,7 @@ Order.checkAllPackages = function (orders, items) {
  * @param {{type: string, entries: [{ id: string, count: number, minQuality: number }]}} order 
  */
 Order.calculateMoneyReward = function(order) {
+    this.ensureDataLoaded()
     let origin = this.customerProperties[order.type]
     if (origin == null)
         return 0
@@ -439,6 +609,8 @@ Order.calculateMoneyReward = function(order) {
     let multiplier = order.rewardMultipliers != null && order.rewardMultipliers.money != null
         ? order.rewardMultipliers.money
         : 1
+    if (order.marketSaturation != null && order.marketSaturation.multiplier > 0)
+        multiplier /= order.marketSaturation.multiplier
     return rarityBonus * chanceBonus * goodsBonus * multiplier
 }
 
@@ -525,6 +697,7 @@ Order.reputation.getCompletionBonus = function(order, qualityScore) {
 }
 
 Order.reputation.getOrderGainDetails = function(order, qualityScore) {
+    Order.ensureDataLoaded()
     let customer = Order.customerProperties[order.type]
     let rarityBonus = 0
     switch (customer != null ? customer.rarity : "COMMON") {

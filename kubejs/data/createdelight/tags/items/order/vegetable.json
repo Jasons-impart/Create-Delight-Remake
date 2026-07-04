@@ -1,0 +1,97 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "minecraft:potato",
+      "required": false
+    },
+    {
+      "id": "minecraft:carrot",
+      "required": false
+    },
+    {
+      "id": "minecraft:beetroot",
+      "required": false
+    },
+    {
+      "id": "createcafe:cassava_root",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:eggplant",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:cut_eggplant",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:cabbage",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:tomato",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:onion",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:cabbage_leaf",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:chinese_cabbage",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:chinese_cabbage_leaf",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:greenonion",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:eggplant",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:garlic_chive",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:fennel",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:peanut",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:ghost_pepper",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:cucumber",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:fiddlehead",
+      "required": false
+    },
+    {
+      "id": "miners_delight:cave_carrot",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:cucumber",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:cucumber_slice",
+      "required": false
+    }
+  ]
+}

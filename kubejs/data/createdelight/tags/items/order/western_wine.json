@@ -1,0 +1,261 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "vinery:mead",
+      "required": false
+    },
+    {
+      "id": "vinery:apple_cider",
+      "required": false
+    },
+    {
+      "id": "vinery:apple_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:mellohi_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:glowing_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:solaris_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:noir_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:red_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:strad_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:cherry_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:cristel_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:creepers_crush",
+      "required": false
+    },
+    {
+      "id": "vinery:kelp_cider",
+      "required": false
+    },
+    {
+      "id": "vinery:lilitu_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:jo_special_mixture",
+      "required": false
+    },
+    {
+      "id": "vinery:eiswein",
+      "required": false
+    },
+    {
+      "id": "vinery:aegis_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:bolvar_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:chorus_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:villagers_fright",
+      "required": false
+    },
+    {
+      "id": "vinery:clark_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:magnetic_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:stal_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:chenet_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:bottle_mojang_noir",
+      "required": false
+    },
+    {
+      "id": "vinery:jellie_wine",
+      "required": false
+    },
+    {
+      "id": "vinery:blazewine_pinot",
+      "required": false
+    },
+    {
+      "id": "vinery:netherite_nectar",
+      "required": false
+    },
+    {
+      "id": "vinery:ghastly_grenache",
+      "required": false
+    },
+    {
+      "id": "vinery:lava_fizz",
+      "required": false
+    },
+    {
+      "id": "vinery:nether_fizz",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:bellini_cocktail",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:strong_apple_cider",
+      "required": false
+    },
+    {
+      "id": "nethervinery:blazewine_pinot",
+      "required": false
+    },
+    {
+      "id": "nethervinery:netherite_nectar",
+      "required": false
+    },
+    {
+      "id": "nethervinery:ghastly_grenache",
+      "required": false
+    },
+    {
+      "id": "nethervinery:lava_fizz",
+      "required": false
+    },
+    {
+      "id": "nethervinery:nether_fizz",
+      "required": false
+    },
+    {
+      "id": "nethervinery:improved_nether_fizz",
+      "required": false
+    },
+    {
+      "id": "nethervinery:improved_lava_fizz",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:apple_cider",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:long_apple_cider",
+      "required": false
+    },
+    {
+      "id": "ends_delight:chorus_fruit_wine",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:beer",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:bloody_mary",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:dread_nog",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:egg_grog",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:mead",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:pale_jane",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:red_rum",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:saccharine_rum",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:salty_folly",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:steel_toe_stout",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:strongroot_ale",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:vodka",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:cosmopolitan_cocktail",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:enchanted_cosmopolitan_cocktail",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:cachaca",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:exotic_mirage",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:generic_romance",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:green_beer",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:morning_fog",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:neverending_night",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:steeleaf_nectar",
+      "required": false
+    }
+  ]
+}

@@ -113,3 +113,4 @@ streetLightLevelExtraction = 1
 	#How much heat per tick a nuclear reactor rod loses above the 16000*overheatingMultiplier.
 	#Range: 0.0 ~ 1.7976931348623157E308
 	ReactorRodHeatLoss = 25.0
+

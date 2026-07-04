@@ -1,0 +1,121 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#createdelight:order/western_wine",
+      "required": false
+    },
+    {
+      "id": "#createdelight:order/eastern_wine",
+      "required": false
+    },
+    {
+      "id": "#createdelight:order/tea",
+      "required": false
+    },
+    {
+      "id": "#createdelight:order/milk_tea",
+      "required": false
+    },
+    {
+      "id": "#createdelight:order/coffee",
+      "required": false
+    },
+    {
+      "id": "#createdelight:order/juice",
+      "required": false
+    },
+    {
+      "id": "alexcaves_delight:jellyfish_soda",
+      "required": false
+    },
+    {
+      "id": "corn_delight:creamy_corn_drink",
+      "required": false
+    },
+    {
+      "id": "ends_delight:dragon_breath_soda",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:blueberry_custard",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:strong_hot_cocoa",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:pomegranate_custard",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:cherry_cream_soda",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:spring_soda",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:charmed_infusion",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:funguis_bottle",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:kykeon",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:soulblight_funguis_bottle",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:strawberry_matcha_latte",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:tisane",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:warped_funguis_bottle",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:glow_berry_custard",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:soothing_hot_chocolate",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:kombucha",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:black_cow",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:root_beer",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:summer_cordial",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:winter_glogg",
+      "required": false
+    },
+    {
+      "id": "cavedelight:radpop",
+      "required": false
+    }
+  ]
+}
