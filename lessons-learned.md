@@ -1,5 +1,7 @@
 # Lessons Learned
 
+本文件只记录历史坑、根因和修复经验；当前操作流程、内容实现地图和轻量 how-to 分别写入 `.agents/skills/`、`docs/dev-knowledge/content-map.md` 和 `docs/dev-knowledge/how-to-index.md`。
+
 ## 多分支 PR 时必须基于各自目标分支创建特性分支
 
 **日期**: 2026-05-18

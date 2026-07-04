@@ -20,3 +20,18 @@
 - 优先链接长文档，不复制长段落。
 - 当 how-to 依赖命令顺序、验证步骤或触发描述时，提升为 skill。
 - 本目录正文必须以中文为主；路径、命令、函数名、mod 名和必要英文术语可以保留英文。
+
+## 现有专题文档归类
+
+| 文档 | 类型 | 用途 |
+|---|---|---|
+| `GettingStarted.md` | 人类入口 | 开发环境快速开始；agent 执行应使用 `.agents/skills/dev-setup/SKILL.md`。 |
+| `docs/development.md` | 人工开发指南 | 保留人工阅读的开发规范和入口指针，复杂流程转到 skill。 |
+| `docs/mod-research.md` | 调研清单 | 记录候选模组和已有优化模组参考，不属于实现事实。 |
+| `docs/order-system-design.md` | 内容设计说明 | 订单系统当前实现、设计原则和后续建议。 |
+| `docs/order-acquisition-channels-plan.md` | 内容设计计划 | 订单获取渠道的长期设计。 |
+| `docs/order-acquisition-crystal-modifier-plan.md` | 内容设计计划 | 订单构筑和修饰系统设计。 |
+| `docs/order-time-and-automation-strategy.md` | 内容设计策略 | 订单时间机制与自动化产线假设。 |
+| `docs/adventure-progression-overhaul-plan.md` | 内容设计计划 | 冒险流程、配方门槛和阶段推进规划。 |
+| `docs/tetra-design-reference-2026-06-22.md` | 设计参考 | Tetra/MMT 数值、材料和模块参考。 |
+| `docs/announcement.md` | 发布素材 | 稳定版本公告片段，不作为开发知识入口。 |

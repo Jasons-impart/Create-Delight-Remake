@@ -53,6 +53,7 @@ function ConvertTo-Target([string]$Path) {
             return ".agents/skills/$($parts[2])/SKILL.md"
         }
     }
+    if ($normalized -eq "GettingStarted.md") { return ".agents/skills/dev-setup/SKILL.md" }
     if ($normalized -like "docs/dev-knowledge/*") { return $normalized }
     if ($normalized -eq "docs/development.md") { return "docs/dev-knowledge/how-to-index.md" }
     if ($normalized -like "docs/*design*.md" -or $normalized -like "docs/*plan.md" -or $normalized -like "docs/*strategy.md") { return "docs/dev-knowledge/content-map.md" }
@@ -70,6 +71,7 @@ function ConvertTo-Target([string]$Path) {
 function ConvertTo-Reason([string]$Path) {
     $normalized = $Path -replace "\\", "/"
     if ($normalized -like ".agents/skills/*") { return "Skill instructions changed; verify trigger wording, workflow scope, and AGENTS duplication." }
+    if ($normalized -eq "GettingStarted.md") { return "Development setup entry changed; update dev-setup skill if the executable workflow changed." }
     if ($normalized -like "docs/dev-knowledge/*") { return "Development knowledge index changed; verify entries stay short and point to source files." }
     if ($normalized -eq "docs/development.md") { return "Development guide changed; check whether a compact how-to entry should be indexed." }
     if ($normalized -like "docs/*design*.md" -or $normalized -like "docs/*plan.md" -or $normalized -like "docs/*strategy.md") { return "Design or plan doc changed; update content-map only if implemented behavior or code locations changed." }

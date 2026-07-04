@@ -41,6 +41,7 @@ CD-master-dev/
 | FTB Quests | `config/ftbquests/quests/` | .snbt format |
 | Java mod dev | `CDC-mod-src/src/main/java/` | Git submodule; commit source changes in Create-Delight-Core |
 | Version info | `modpack.toml` | ONLY source - don't duplicate |
+| Dev environment setup | `GettingStarted.md` | Use `/dev-setup` skill |
 | Release workflow | `.github/workflows/release.yml` | Use `/release` skill |
 | Packwiz asset workflow | `mods/`, `packwiz-files/` | Use `/packwiz-assets` skill |
 | Content/how-to knowledge | `docs/dev-knowledge/` | Use `/dev-knowledge` skill |

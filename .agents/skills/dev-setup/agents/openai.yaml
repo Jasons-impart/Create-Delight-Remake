@@ -1,0 +1,4 @@
+interface:
+  display_name: "开发环境搭建"
+  short_description: "搭建或修复整合包本地 HMCL 客户端开发环境流程。"
+  default_prompt: "使用 dev-setup 搭建或修复 Create-Delight Remake 的本地 HMCL 开发环境。"
