@@ -123,7 +123,6 @@ $requiredPaths = @(
     "docs/dev-knowledge/how-to-index.md",
     ".agents/skills/knowledge-check/SKILL.md",
     ".agents/skills/dev-knowledge/SKILL.md",
-    ".agents/skills/dev-setup/SKILL.md",
     ".agents/skills/packwiz-assets/SKILL.md",
     ".github/workflows/release.yml",
     ".codex/hooks.json",

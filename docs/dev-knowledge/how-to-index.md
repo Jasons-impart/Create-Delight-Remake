@@ -4,7 +4,7 @@
 
 | 目标 | 编辑位置 | 检查清单 | 验证方式 | 何时提升为 skill |
 |---|---|---|---|---|
-| 搭建本地开发环境 | `GettingStarted.md`、`.agents/skills/dev-setup/SKILL.md` | 人工入口保留在 `GettingStarted.md`；agent 执行依赖检查、Packwiz 同步、HMCL 版本隔离和收尾检查时使用 `/dev-setup`。 | 确认实例目录含 `.git/`、`kubejs/`、`config/`、`mods/*.jar`、`pack.toml` 和 HMCL 版本文件。 | 已提升为 `.agents/skills/dev-setup/SKILL.md`。 |
+| 搭建本地开发环境 | `GettingStarted.md` | 该流程面向尚未 clone 仓库的用户，必须在根文档中自包含；不要提升为项目 skill。 | 确认实例目录含 `.git/`、`kubejs/`、`config/`、`mods/*.jar`、`pack.toml` 和 HMCL 版本文件。 | 不提升；clone 前无法依赖仓库内 skill。 |
 | 修改 KubeJS 配方 | `kubejs/server_scripts/{Mod}/`，helper 位于 `kubejs/server_scripts/util/` | 搜索 `.js` 配方脚本，优先使用 `remove_recipes_id`、`cutting_2`、`centrifugation` 等既有 helper，配方 id 使用 `createdelight` 命名空间。 | 游戏内执行 `/kubejs reload server_scripts`；涉及标签或掉落时再执行 `/reload`。 | 任务需要批量生成、广泛迁移或命令密集验证。 |
 | 添加自定义资源或翻译 | `kubejs/assets/{namespace}/`，语言文件位于 `lang/` | 模型、贴图和语言写入所属 namespace；群系翻译键使用 `biome.{namespace}.xxx`；CD 自定义资源优先放在 `createdelight`。 | 根据资源类型执行资源重载或重启游戏；语言文件由 schema 校验。 | 资源生成或本地化流程开始重复出现。 |
 | 添加或更新整合包资产 | `mods/`、`resourcepacks/`、`shaderpacks/`、`packwiz-files/` | 使用 `/packwiz-assets` skill；除修复生成结果外，不手写 Packwiz 元数据。 | 运行 `scripts/sync-packwiz-assets.ps1`；检查 `.pw.toml` 和 `packwiz-files` diff。 | 已提升为 `.agents/skills/packwiz-assets/SKILL.md`。 |

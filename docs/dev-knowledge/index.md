@@ -25,7 +25,7 @@
 
 | 文档 | 类型 | 用途 |
 |---|---|---|
-| `GettingStarted.md` | 人类入口 | 开发环境快速开始；agent 执行应使用 `.agents/skills/dev-setup/SKILL.md`。 |
+| `GettingStarted.md` | 仓库外部启动入口 | 开发环境快速开始；面向尚未 clone 仓库的用户，必须保持自包含，不能依赖项目 skill。 |
 | `docs/development.md` | 人工开发指南 | 保留人工阅读的开发规范和入口指针，复杂流程转到 skill。 |
 | `docs/mod-research.md` | 调研清单 | 记录候选模组和已有优化模组参考，不属于实现事实。 |
 | `docs/order-system-design.md` | 内容设计说明 | 订单系统当前实现、设计原则和后续建议。 |

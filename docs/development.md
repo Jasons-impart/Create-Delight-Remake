@@ -61,7 +61,7 @@
 - 因为原始 repo 的发布文件已经过期，使用了个人 fork 的版本：https://github.com/wanquanw/packwiz-build
 
 ## 直接克隆仓库后的资源同步
-- 完整开发环境搭建使用 `.agents/skills/dev-setup/SKILL.md`，它负责依赖检查、HMCL 版本隔离和首次同步。
+- 完整开发环境搭建使用根目录 `GettingStarted.md`；该文档面向尚未 clone 仓库的场景，必须保持自包含。
 - 仅同步本地 Packwiz 资产时使用 `.agents/skills/packwiz-assets/SKILL.md`，直接运行 `scripts/sync-packwiz-assets.ps1`。
 - 本地同步默认按客户端侧处理，只下载 `side = "both"` 和 `side = "client"`；需要服务端侧文件时运行 `scripts/sync-packwiz-assets.ps1 -Side server`。
 
