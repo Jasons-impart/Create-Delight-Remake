@@ -111,6 +111,7 @@
 		}
 		{
 			dependencies: ["534742BED850E751"]
+			description: ["如果配方正确的情况下压缩机仍旧不工作，可以尝试给它的工作盆设置过滤然后再取消"]
 			hide_until_deps_visible: false
 			icon: "vintageimprovements:vacuum_chamber"
 			id: "70BA3B5FB6BA1B8A"
