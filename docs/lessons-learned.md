@@ -1,5 +1,7 @@
 # Lessons Learned
 
+本文件只记录历史坑、根因和修复经验；当前操作流程、内容实现地图和轻量 how-to 分别写入 `.agents/skills/`、`docs/dev-knowledge/content-map.md` 和 `docs/dev-knowledge/how-to-index.md`。
+
 ## 多分支 PR 时必须基于各自目标分支创建特性分支
 
 **日期**: 2026-05-18
@@ -352,3 +354,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: Integrated API jigsaw structures projected with `WORLD_SURFACE_WG` can choose water as the surface and spawn large structures on liquid.
 - **Fix/Lesson**: Add `"cannot_spawn_in_liquid": true` to the structure JSON when using `integrated_api:jigsaw_structure` or `integrated_api:optional_dependency_structure`, because the codec checks the generated surface fluid before accepting the start chunk.
+
+## Alex's Caves placement must use pack dimension data
+
+**Date**: 2026-07-05
+
+- **Problem**: Player-facing tips can incorrectly say every Alex's Caves biome is an independent dimension if they ignore the pack's Northstar dimension biome sources.
+- **Fix/Lesson**: Check `kubejs/data/northstar/dimension/` and `kubejs/data/createdelight/dimension/` before updating Alex's Caves access text, because `config/alexscaves_biome_generation/*.json` is disabled and still points at vanilla overworld generation.

@@ -5,12 +5,12 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"scripts/validate-knowledge-base.ps1\"",
+            "command": "pwsh -NoLogo -NoProfile -ExecutionPolicy Bypass -File \"scripts/validate-knowledge-base.ps1\"",
             "timeout": 30
           },
           {
             "type": "command",
-            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"scripts/write-knowledge-candidate-report.ps1\"",
+            "command": "pwsh -NoLogo -NoProfile -ExecutionPolicy Bypass -File \"scripts/write-knowledge-candidate-report.ps1\"",
             "timeout": 30
           }
         ]

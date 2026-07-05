@@ -1,0 +1,4 @@
+interface:
+  display_name: "知识检查"
+  short_description: "实现后判断是否需要沉淀项目知识。"
+  default_prompt: "使用 $knowledge-check 检查本次实现后是否需要更新项目知识库。"

@@ -158,7 +158,7 @@
 
 定位：让玩家自己构筑订单。
 
-这个渠道与 `docs/order-acquisition-crystal-modifier-plan.md` 配套。
+这个渠道与 `docs/plan/order-acquisition-crystal-modifier-plan.md` 配套。
 
 流程：
 
