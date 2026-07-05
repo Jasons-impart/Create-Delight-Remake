@@ -67,6 +67,7 @@ CD-master-dev/
 
 **Git Workflow**:
 - Branch from `main`: `git checkout main && git pull && git checkout -b feat/xxx`
+- Run `scripts/install-git-hooks.ps1` after clone to install local `.git/hooks` shims that call tracked `scripts/.githooks`; agents should confirm this before Git update workflows.
 - Commit format: `[类型] 描述 (#PR号)` - types: `fix`, `feat`, `mod`, `dev`, `conf`
 - PR title/body use Chinese by default because reviewers and release notes are Chinese-first.
 - For multiline PR bodies from PowerShell, use a here-string or `--body-file`; `\n` is literal and renders broken Markdown on GitHub.

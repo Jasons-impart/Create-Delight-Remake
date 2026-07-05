@@ -39,4 +39,4 @@ Use this workflow for modpack asset operations that touch `mods/`, `resourcepack
 
 ## After Git Updates
 
-For pull, rebase, merge, or branch updates, use the `repo-sync` skill. It compares the pre-update commit with the new HEAD and runs `scripts/sync-packwiz-assets.ps1` when metadata or `packwiz-files` changed.
+For pull, rebase, merge, or branch updates, use `repo-sync`: it installs local `.git/hooks` shims that call tracked `scripts/.githooks`, then calls `scripts/sync-packwiz-assets.ps1 -IfGitChanged` so Packwiz runtime sync logic stays in one script.

@@ -9,54 +9,38 @@ description: Keep the Create-Delight Remake checkout current and locally runnabl
 
 Use this workflow for repository update tasks before reporting completion.
 
-1. Confirm the worktree is clean enough to switch or update:
+1. Ensure local Git hook shims are installed, confirm status, and record the pre-update commit:
 
 ```powershell
+./scripts/install-git-hooks.ps1
 git status --short --branch
-```
-
-2. Record the pre-update target commit before pull, rebase, or merge.
-
-For updating the current branch:
-
-```powershell
 $oldHead = git rev-parse HEAD
 ```
 
-For switching to `main` and pulling, record `main` before updating it:
+When switching to `main` before pulling, record `main` before checkout:
 
 ```powershell
 $oldHead = git rev-parse main
 git checkout main
 ```
 
-3. Perform the requested Git operation. Prefer non-interactive commands such as:
+2. Perform the requested Git operation with non-interactive commands, then let the shared helper handle Packwiz runtime sync:
 
 ```powershell
 git pull --ff-only origin main
 git rebase origin/main
+./scripts/sync-packwiz-assets.ps1 -IfGitChanged -OldRev $oldHead -NewRev HEAD -HookName repo-sync
 ```
 
-4. Record the ending commit and inspect changed pack metadata paths:
+`-IfGitChanged` checks `mods|resourcepacks|shaderpacks/**/*.pw.toml` and `packwiz-files/**`; it runs the full runtime sync only when needed. Git hooks perform the same check for regular local Git operations, but still run this command here so agent-managed updates have a visible result.
 
-```powershell
-$newHead = git rev-parse HEAD
-git diff --name-only $oldHead $newHead -- mods resourcepacks shaderpacks packwiz-files
-```
-
-5. If any changed file is under `packwiz-files/` or ends with `.pw.toml` under `mods/`, `resourcepacks/`, or `shaderpacks/`, run:
-
-```powershell
-./scripts/sync-packwiz-assets.ps1
-```
-
-6. If `CDC-mod-src` changed or `git status` reports the submodule modified after update, run:
+3. If `CDC-mod-src` changed or `git status` reports the submodule modified after update, run:
 
 ```powershell
 git submodule update --init --recursive
 ```
 
-7. Finish with:
+4. Finish with:
 
 ```powershell
 git status --short --branch
