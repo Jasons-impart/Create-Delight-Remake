@@ -35,7 +35,8 @@ Use this workflow for modpack asset operations that touch `mods/`, `resourcepack
 1. Prefer published CurseForge metadata when a CDC release exists.
 2. For unpublished builds, keep the filename `packwiz-files/mods/Create-Delight-Core-1.20.1-dev.jar`.
 3. Run `scripts/update-packwiz-meta.ps1 -Category mods` so `mods/create-delight-core.pw.toml` hash changes with the jar.
-4. Before staging or summarizing CDC artifact changes, fetch `CDC-mod-src` `origin/1.20.1`; if it fast-forwards, include the submodule pointer in the same commit so source matches the packaged jar.
+4. On short-lived feature branches, set `PACKWIZ_FILES_RAW_PREFIX=https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/` before running metadata updates unless the branch itself must serve the payload; PR branches are normally deleted after merge, so branch raw URLs can break downloads.
+5. Before staging or summarizing CDC artifact changes, fetch `CDC-mod-src` `origin/1.20.1`; if it fast-forwards, include the submodule pointer in the same commit so source matches the packaged jar.
 
 ## After Git Updates
 
