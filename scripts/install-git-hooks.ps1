@@ -74,12 +74,21 @@ function Install-HookShim {
         $existing = Get-Content -LiteralPath $targetHook -Raw -ErrorAction SilentlyContinue
         if ($existing -notmatch [regex]::Escape($marker)) {
             if (Test-Path -LiteralPath $localHook) {
-                Write-InstallMessage "Skipped $Name because $targetHook is custom and $localHook already exists."
-                return
-            }
+                $timestamp = Get-Date -Format "yyyyMMddHHmmss"
+                $backupHook = Join-Path $gitHooksPath "$Name.local.$timestamp"
+                $suffix = 1
+                while (Test-Path -LiteralPath $backupHook) {
+                    $backupHook = Join-Path $gitHooksPath "$Name.local.$timestamp.$suffix"
+                    $suffix++
+                }
 
-            Move-Item -LiteralPath $targetHook -Destination $localHook
-            Write-InstallMessage "Preserved existing $Name as $Name.local"
+                Move-Item -LiteralPath $targetHook -Destination $backupHook
+                Write-InstallMessage "Preserved existing $Name as $(Split-Path $backupHook -Leaf)"
+            }
+            else {
+                Move-Item -LiteralPath $targetHook -Destination $localHook
+                Write-InstallMessage "Preserved existing $Name as $Name.local"
+            }
         }
     }
 
@@ -87,12 +96,14 @@ function Install-HookShim {
 #!/bin/sh
 # $marker. Edit scripts/.githooks/$Name for project behavior.
 hook_dir=`$(dirname "`$0")
-local_hook="`$hook_dir/$Name.local"
-if [ -x "`$local_hook" ]; then
-  "`$local_hook" "`$@" || exit `$?
-elif [ -f "`$local_hook" ]; then
-  sh "`$local_hook" "`$@" || exit `$?
-fi
+for local_hook in "`$hook_dir/$Name.local" "`$hook_dir/$Name.local."*; do
+  [ -e "`$local_hook" ] || continue
+  if [ -x "`$local_hook" ]; then
+    "`$local_hook" "`$@" || exit `$?
+  elif [ -f "`$local_hook" ]; then
+    sh "`$local_hook" "`$@" || exit `$?
+  fi
+done
 
 repo_root=`$(git rev-parse --show-toplevel 2>/dev/null) || exit 0
 tracked_hook="`$repo_root/scripts/.githooks/$Name"
