@@ -57,7 +57,7 @@
 	#
 	#--------------------------------------------------------------------------
 	#Whether to enable saw cache to improve efficiency of finding recipes
-	enable_cache_saw = true
+	enable_cache_saw = false
 	#
 	#--------------------------------------------------------------------------
 	#max cache count for each saw
@@ -66,7 +66,7 @@
 	#
 	#--------------------------------------------------------------------------
 	#Whether to enable basin lazy tick by cached recipes(Influence on mechanical mixer and mechanical press)
-	enable_lazy_basin = true
+	enable_lazy_basin = false
 	#
 	#--------------------------------------------------------------------------
 	#Whether to enable item drain lazy tick
@@ -86,7 +86,7 @@
 	#
 	#--------------------------------------------------------------------------
 	#Whether to enable crafter cache to improve efficiency of finding recipes
-	enable_cache_crafter = true
+	enable_cache_crafter = false
 	#
 	#--------------------------------------------------------------------------
 	#Whether to enable crafter debugger to show cache stats.
@@ -142,4 +142,3 @@
 	#The max delay tick for blocks in the 'Weak Lazy' list.
 	#Range: > 1
 	arm_weak_delay_max = 10
-
