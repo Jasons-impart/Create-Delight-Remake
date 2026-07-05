@@ -6,7 +6,12 @@ param(
     [string]$PackwizUrl = "https://github.com/Jasons-impart/packwiz/releases/latest/download/packwiz.exe",
     [string]$InstallerUrl = "https://github.com/packwiz/packwiz-installer/releases/latest/download/packwiz-installer.jar",
     [string]$PackwizFilesRef = $env:PACKWIZ_FILES_REF,
-    [string]$PackwizFilesRawPrefix = $env:PACKWIZ_FILES_RAW_PREFIX
+    [string]$PackwizFilesRawPrefix = $env:PACKWIZ_FILES_RAW_PREFIX,
+    [switch]$IfGitChanged,
+    [string]$OldRev,
+    [string]$NewRev = "HEAD",
+    [string]$HookName = "sync-packwiz-assets",
+    [switch]$DryRun
 )
 
 Set-StrictMode -Version Latest
@@ -31,6 +36,85 @@ $ServeProcess = $null
 function Write-Status {
     param([string]$Message)
     Write-Host "[sync] $Message" -ForegroundColor Cyan
+}
+
+function Resolve-GitCommit {
+    param([string]$Rev)
+
+    if ([string]::IsNullOrWhiteSpace($Rev)) {
+        return $null
+    }
+
+    $commit = & git -C $RepoRoot rev-parse --verify "$Rev^{commit}" 2>$null
+    if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($commit)) {
+        return $null
+    }
+
+    return $commit.Trim()
+}
+
+function Test-PackwizGitChanges {
+    param(
+        [string]$Old,
+        [string]$New,
+        [string]$Name
+    )
+
+    $oldCommit = Resolve-GitCommit $Old
+    $newCommit = Resolve-GitCommit $New
+
+    if ($null -eq $newCommit) {
+        Write-Warning "[$Name] Could not resolve new revision '$New'; skipping Packwiz sync."
+        return $false
+    }
+
+    if ($null -eq $oldCommit) {
+        Write-Warning "[$Name] Could not resolve old revision '$Old'; skipping Packwiz sync."
+        return $false
+    }
+
+    if ($oldCommit -eq $newCommit) {
+        Write-Host "[$Name] HEAD did not change; Packwiz sync not required."
+        return $false
+    }
+
+    $changedPaths = @(& git -C $RepoRoot diff --name-only $oldCommit $newCommit -- mods resourcepacks shaderpacks packwiz-files 2>$null)
+    if ($LASTEXITCODE -ne 0) {
+        Write-Warning "[$Name] Could not diff $oldCommit..$newCommit; skipping Packwiz sync."
+        return $false
+    }
+
+    $packwizChanges = @(
+        $changedPaths |
+            Where-Object {
+                $_ -like "packwiz-files/*" -or
+                $_ -match "^(mods|resourcepacks|shaderpacks)/.+\.pw\.toml$"
+            } |
+            Select-Object -Unique
+    )
+
+    if ($packwizChanges.Count -eq 0) {
+        Write-Host "[$Name] No Packwiz asset changes detected; sync not required."
+        return $false
+    }
+
+    Write-Host "[$Name] Packwiz asset changes detected; syncing local runtime assets..."
+    $packwizChanges | ForEach-Object { Write-Host "  $_" }
+    return $true
+}
+
+$ShouldSync = $true
+if ($IfGitChanged) {
+    $ShouldSync = Test-PackwizGitChanges -Old $OldRev -New $NewRev -Name $HookName
+}
+
+if (-not $ShouldSync) {
+    exit 0
+}
+
+if ($DryRun) {
+    Write-Host "[$HookName] Dry run enabled; Packwiz runtime sync was not executed."
+    exit 0
 }
 
 function Get-GitRefForPackwizFiles {

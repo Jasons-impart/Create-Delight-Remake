@@ -29,6 +29,10 @@
   java -version
   python --version
   ```
+- 安装仓库 Git hooks；脚本会在 `.git/hooks` 写入本地 shim 并保留已有 hook，后续 `pull`、`rebase` 或切换分支涉及 Packwiz 资产变更时，会自动同步本地 `mods/`、`resourcepacks/`、`shaderpacks/`：
+  ```powershell
+  pwsh -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-git-hooks.ps1
+  ```
 - 如果 `java -version` 不是 Java 17，但 `JAVA_HOME` 指向 Java 17，可继续；同步脚本会优先读取 `JAVA_HOME`。
 - 如果 `java -version` 和 `JAVA_HOME` 都不是 Java 17，修改 `variables.txt` 的 `JAVA=` 为本机 Java 17 的完整路径。
 - 下载 HMCL 启动器：
