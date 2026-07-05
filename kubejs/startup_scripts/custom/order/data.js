@@ -1,500 +1,55 @@
+// priority: 900
 
-//订单原料的质量等级划分
-Order.orderProperties = {
-    food: {
-        diversity: [1, 2, 3, 4], //默认的质量计算是根据多样性的。当食物大于第n-1个数小于第n个数时该食物的质量等级即为n
-        base_count: 32 //base_count最终会*4
-    },
-    burger: {
-        diversity: [4, 4.25, 4.5, 5],
-        base_count: 64
-    },
-    sandwich: {
-        diversity: [3.5, 4, 4.5, 5],
-        base_count: 64
-    },
-    fast_food: {
-        diversity: [4, 4.25, 4.5, 5],
-        base_count: 64
-    },
-    milk_tea: {
-        diversity: [-1, 0, 99, 99],
-        base_count: 32
-    },
-    cookie: {
-        diversity: [-1, 0, 99, 99],
-        base_count: 16
-    },
-    tea: {
-        diversity: [-1, -1, 99, 99],
-        base_count: 32
-    },
-    western_wine: {
-        diversity: [-1, 0, 99, 99],
-        base_count: 16
-    },
-    eastern_wine: {
-        diversity: [-1, -1, 99, 99],
-        base_count: 16
-    },
-    drink: {
-        diversity: [-1, -1, 99, 99],
-        base_count: 32
-    },
-    ice_cream: {
-        diversity: [-1, 0.6, 3, 99],
-        base_count: 16
-    },
-    fried_food: {
-        diversity: [-1, 1.5, 3, 99],
-        base_count: 32
-    },
-    bread: {
-        diversity: [-1, 1, 2.5, 99],
-        base_count: 32
-    },
-    fruit: {
-        diversity: [0, 1, 99, 99],
-        base_count: 16
-    },
-    vegetable: {
-        diversity: [0, 1, 99, 99],
-        base_count: 16
-    },
-    crop: {
-        diversity: [0, 1, 99, 99],
-        base_count: 16
-    },
-    jello: {
-        diversity: [-1, -1, 99, 99],
-        base_count: 16
-    },
-    jam: {
-        diversity: [-1, -1, 99, 99],
-        base_count: 16
-    },
-    gummy: {
-        diversity: [-1, -1, 99, 99],
-        base_count: 16
-    },
-    coffee: {
-        diversity: [-1, -1, 99, 99],
-        base_count: 32
-    },
-    snack: {
-        diversity: [-1, 0.3, 1, 99],
-        base_count: 32
-    },
-    sushi: {
-        diversity: [-1, 1, 3.5, 99],
-        base_count: 32
-    },
-    popsicle: {
-        diversity: [-1, 0.3, 0.7, 99],
-        base_count: 32
-    },
-    noodle: {
-        diversity: [-1, 3.5, 4.5, 99],
-        base_count: 32
-    },
-    staple_food: {
-        diversity: [0, 2, 4, 99],
-        base_count: 64
-    },
-    barbecue: {
-        diversity: [0, 1, 3, 99],
-        base_count: 16
-    },
-    dessert: {
-        diversity: [0, 1, 3, 99],
-        base_count: 16
-    },
-    meat_dish: {
-        diversity: [0, 2, 4, 99],
-        base_count: 32
-    },
-    vegetarian_dish: {
-        diversity: [0, 1, 3, 99],
-        base_count: 32
-    },
-    mixed_dish: {
-        diversity: [0, 2, 4, 99],
-        base_count: 32
-    },
-    soup: {
-        diversity: [0, 2, 4, 99],
-        base_count: 16
-    },
-    rice: {
-        diversity: [0, 2, 4, 99],
-        base_count: 64
-    },
-    dumpling: {
-        diversity: [0, 1, 3, 99],
-        base_count: 32
-    },
-    monster: {
-        diversity: [0, 1, 3, 99],
-        base_count: 64
-    },
-    sauce: {
-        diversity: [0, 1, 3, 99],
-        base_count: 16
-    },
-    salad: {
-        diversity: [0, 2, 4, 99],
-        base_count: 16
-    },
-    wrap: {
-        diversity: [0, 2, 4, 99],
-        base_count: 64
-    },
-    cake: {
-        diversity: [0, 0, 99, 99],
-        base_count: 64
-    },
-    juice: {
-        diversity: [0, 0, 99, 99],
-        base_count: 32
-    },
-    sausage: {
-        diversity: [0, 1, 3, 99],
-        base_count: 32
-    },
-    milkshake: {
-        diversity: [-1, -1, 3, 99],
-        base_count: 16
-    },
-    
-    pie: {
-        diversity: [0, 0, 99, 99],
-        base_count: 64
-    },
-}
+var CDOrderDataTarget = global.Order || {}
+global.Order = CDOrderDataTarget
 
-Order.customerGroupPrefixes = {
-    human: "human_",
-    elven: "elven_",
-    dwarven: "dwarven_",
-    monster: "monster_"
-}
-
-Order.categoryGroups = {
-    drink: {
-        drink: 4,
-        tea: 4,
-        milk_tea: 3,
-        coffee: 3,
-        juice: 3,
-        milkshake: 2,
-        western_wine: 2,
-        eastern_wine: 2
-    },
-    dessert: {
-        dessert: 4,
-        cake: 4,
-        pie: 3,
-        cookie: 3,
-        ice_cream: 3,
-        jam: 2,
-        jello: 2,
-        gummy: 2,
-        popsicle: 2
-    },
-    staple: {
-        staple_food: 4,
-        bread: 3,
-        rice: 3,
-        noodle: 3,
-        dumpling: 3,
-        sandwich: 2,
-        wrap: 2
-    },
-    feast: {
-        meat_dish: 4,
-        mixed_dish: 4,
-        staple_food: 3,
-        barbecue: 3,
-        soup: 3,
-        bread: 2,
-        sausage: 2
+function cdOrderDataToJs(value) {
+    if (value == null)
+        return value
+    if (value.getClass != null && `${value.getClass().getName()}`.startsWith("java.lang.")
+        && isFinite(Number(value)))
+        return Number(value)
+    if (Array.isArray(value))
+        return value.map(cdOrderDataToJs)
+    if (value.entrySet != null) {
+        let result = {}
+        value.entrySet().forEach(entry => {
+            result[`${entry.getKey()}`] = cdOrderDataToJs(entry.getValue())
+        })
+        return result
     }
+    if (value.forEach != null && value.getClass != null && `${value.getClass().getName()}`.startsWith("java.util.")) {
+        let result = []
+        value.forEach(entry => result.push(cdOrderDataToJs(entry)))
+        return result
+    }
+    return value
 }
 
-Order.orderDraftSeals = {
-    human: {
-        type: "customer",
-        key: "human",
-        spec: { customerGroups: ["human"], moneyMultiplier: 0.9 }
-    },
-    elven: {
-        type: "customer",
-        key: "elven",
-        spec: { customerGroups: ["elven"], moneyMultiplier: 0.9 }
-    },
-    dwarven: {
-        type: "customer",
-        key: "dwarven",
-        spec: { customerGroups: ["dwarven"], moneyMultiplier: 0.9 }
-    },
-    monster: {
-        type: "customer",
-        key: "monster",
-        spec: { customerGroups: ["monster"], moneyMultiplier: 0.9 }
-    },
-    drink: {
-        type: "category",
-        key: "drink",
-        spec: { categoryGroups: ["drink"], moneyMultiplier: 0.9 }
-    },
-    dessert: {
-        type: "category",
-        key: "dessert",
-        spec: { categoryGroups: ["dessert"], moneyMultiplier: 0.9 }
-    },
-    staple: {
-        type: "category",
-        key: "staple",
-        spec: { categoryGroups: ["staple"], moneyMultiplier: 0.9 }
-    },
-    feast: {
-        type: "category",
-        key: "feast",
-        spec: { categoryGroups: ["feast"], moneyMultiplier: 0.9, entryCountMultiplier: 1.15 }
-    }
+CDOrderDataTarget.reloadData = function () {
+    let bridge = global.CDStartupJavaClasses.$OrderDataKubeBridge
+    let snapshot = cdOrderDataToJs(bridge.all())
+    this.dataVersion = Number(snapshot.version || 0)
+    this.orderProperties = snapshot.orderProperties || {}
+    this.customerGroupPrefixes = snapshot.customerGroupPrefixes || {}
+    this.categoryGroups = snapshot.categoryGroups || {}
+    this.orderDraftSeals = snapshot.orderDraftSeals || {}
+    this.marketSaturationConfig = snapshot.marketSaturationConfig || {}
+    this.customerProperties = snapshot.customerProperties || {}
+    return this
 }
-//订单顾客的设定
-Order.customerProperties = {// ===================== 矮人组织 =====================
-    dwarven_bakery: {
-        entries: {
-            bread: [3, 2], //权重，最低品质需求
-            sausage: [2, 1],
-            meat_dish: [2, 2]
-        },
-        max_count: 3, //单个订单的最大要求数
-        base_continue_rate: 0.4, //生成一个要求后再次生成的概率
-        rarity: "COMMON", //稀有度
-        chance: 0.9, //生成概率
-        reward: ["createdelight:orders/dwarven_bakery", 1], //战利品表，奖励的基础份数
-        reward_money: 500 //基础金钱奖励
-    },
 
-    dwarven_brewery: {
-        entries: {
-            western_wine: [3, 2],
-            meat_dish: [2, 2],
-            barbecue: [2, 1]
-        },
-        max_count: 3,
-        base_continue_rate: 0.4,
-        rarity: "UNCOMMON",
-        chance: 0.85,
-        reward: ["createdelight:orders/dwarven_brewery", 1],
-        reward_money: 500
-    },
+CDOrderDataTarget.ensureDataLoaded = function () {
+    let currentVersion = Number(global.CDStartupJavaClasses.$OrderDataKubeBridge.version() || 0)
+    if (this.orderProperties == null || Object.keys(this.orderProperties).length == 0
+        || this.customerProperties == null || Object.keys(this.customerProperties).length == 0
+        || Number(this.dataVersion || 0) != currentVersion)
+        this.reloadData()
+    return this
+}
 
-    dwarven_snack_hall: {
-        entries: {
-            cookie: [2, 1],
-            juice: [2, 1],
-            fried_food: [1, 1]
-        },
-        max_count: 3,
-        base_continue_rate: 0.5,
-        rarity: "COMMON",
-        chance: 0.8,
-        reward: ["createdelight:orders/dwarven_snack_hall", 1],
-        reward_money: 500
-    },
+CDOrderDataTarget.reloadData()
 
-    dwarven_feast_hall: {
-        entries: {
-            meat_dish: [3, 2],
-            bread: [2, 1],
-            staple_food: [2, 2]
-        },
-        max_count: 3,
-        base_continue_rate: 0.4,
-        rarity: "UNCOMMON",
-        chance: 0.85,
-        reward: ["createdelight:orders/dwarven_feast_hall", 1],
-        reward_money: 500
-    },
-
-    // ===================== 精灵组织 =====================
-    elven_tea_house: {
-        entries: {
-            tea: [3, 2],
-            fruit: [2, 1],
-            salad: [2, 1]
-        },
-        max_count: 3,
-        base_continue_rate: 0.5,
-        rarity: "UNCOMMON",
-        chance: 0.8,
-        reward: ["createdelight:orders/elven_tea_house", 1],
-        reward_money: 500
-    },
-
-    elven_patisserie: {
-        entries: {
-            dessert: [3, 2],
-            jam: [2, 1],
-            jello: [2, 1]
-        },
-        max_count: 3,
-        base_continue_rate: 0.5,
-        rarity: "UNCOMMON",
-        chance: 0.75,
-        reward: ["createdelight:orders/elven_patisserie", 1],
-        reward_money: 500
-    },
-
-    elven_sushi_bar: {
-        entries: {
-            sushi: [3, 2],
-            rice: [2, 2],
-            mixed_dish: [2, 1]
-        },
-        max_count: 3,
-        base_continue_rate: 0.4,
-        rarity: "RARE",
-        chance: 0.7,
-        reward: ["createdelight:orders/elven_sushi_bar", 1],
-        reward_money: 500
-    },
-
-    elven_juice_corner: {
-        entries: {
-            juice: [3, 2],
-            popsicle: [2, 1],
-            gummy: [2, 1]
-        },
-        max_count: 3,
-        base_continue_rate: 0.5,
-        rarity: "COMMON",
-        chance: 0.8,
-        reward: ["createdelight:orders/elven_juice_corner", 1],
-        reward_money: 500
-    },
-
-    // ===================== 怪物组织 =====================
-    monster_feast_hall: {
-        entries: {
-            monster: [3, 2],
-            fried_food: [2, 1],
-            ice_cream: [1, 1]
-        },
-        max_count: 3,
-        base_continue_rate: 0.3,
-        rarity: "RARE",
-        chance: 0.7,
-        reward: ["createdelight:orders/monster_feast_hall", 1],
-        reward_money: 500
-    },
-
-    monster_lab: {
-        entries: {
-            meat_dish: [3, 2],
-            sauce: [2, 1],
-            snack: [2, 1]
-        },
-        max_count: 3,
-        base_continue_rate: 0.4,
-        rarity: "RARE",
-        chance: 0.75,
-        reward: ["createdelight:orders/monster_lab", 1],
-        reward_money: 500
-    },
-
-    monster_canteen: {
-        entries: {
-            milkshake: [3, 2],
-            popsicle: [2, 1],
-            jello: [2, 1]
-        },
-        max_count: 3,
-        base_continue_rate: 0.4,
-        rarity: "UNCOMMON",
-        chance: 0.7,
-        reward: ["createdelight:orders/monster_canteen", 1],
-        reward_money: 500
-    },
-
-    monster_grill: {
-        entries: {
-            barbecue: [3, 2],
-            fried_food: [2, 1],
-            sausage: [2, 1]
-        },
-        max_count: 3,
-        base_continue_rate: 0.3,
-        rarity: "RARE",
-        chance: 0.75,
-        reward: ["createdelight:orders/monster_grill", 1],
-        reward_money: 500
-    },
-
-    // ===================== 人类组织 =====================
-    human_cafe: {
-        entries: {
-            coffee: [3, 2],
-            cake: [2, 1],
-            sandwich: [2, 1],
-            juice: [1, 1]
-        },
-        max_count: 4,
-        base_continue_rate: 0.4,
-        rarity: "COMMON",
-        chance: 0.85,
-        reward: ["createdelight:orders/human_cafe", 1],
-        reward_money: 500
-    },
-
-    human_fast_food: {
-        entries: {
-            fast_food: [3, 2],
-            burger: [2, 1],
-            wrap: [2, 1]
-        },
-        max_count: 3,
-        base_continue_rate: 0.4,
-        rarity: "COMMON",
-        chance: 0.85,
-        reward: ["createdelight:orders/human_fast_food", 1],
-        reward_money: 500
-    },
-
-    human_bakery: {
-        entries: {
-            bread: [3, 2],
-            pie: [2, 1],
-            dessert: [2, 1]
-        },
-        max_count: 3,
-        base_continue_rate: 0.4,
-        rarity: "UNCOMMON",
-        chance: 0.8,
-        reward: ["createdelight:orders/human_bakery", 1],
-        reward_money: 500
-    },
-
-    human_tea_house: {
-        entries: {
-            tea: [3, 2],
-            milk_tea: [2, 1],
-            cookie: [2, 1]
-        },
-        max_count: 3,
-        base_continue_rate: 0.5,
-        rarity: "UNCOMMON",
-        chance: 0.8,
-        reward: ["createdelight:orders/human_tea_house", 1],
-        reward_money: 500
-    }
-
-
-};
-Order.ticketColorMapping = {
-    human_contract: 14464140,
+CDOrderDataTarget.ticketColorMapping = {
+    human_contract: 14464140
 }

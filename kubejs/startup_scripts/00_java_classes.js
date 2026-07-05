@@ -20,6 +20,7 @@ global.CDStartupJavaClasses = {
     $ItemEffect: Java.loadClass("se.mickelus.tetra.effect.ItemEffect"),
     $ModularItem: Java.loadClass("se.mickelus.tetra.items.modular.ModularItem"),
     $OrderCandidateFinder: Java.loadClass("io.github.jasonsimpart.createdelightcore.content.order.OrderCandidateFinder"),
+    $OrderDataKubeBridge: Java.loadClass("io.github.jasonsimpart.createdelightcore.content.order.data.OrderDataKubeBridge"),
     $OrderGoodsQuality: Java.loadClass("io.github.jasonsimpart.createdelightcore.content.order.OrderGoodsQuality"),
     $OrderInfo: Java.loadClass("io.github.jasonsimpart.createdelightcore.content.order.OrderInfo"),
     $OrderTypeProperties: Java.loadClass("io.github.jasonsimpart.createdelightcore.content.order.OrderTypeProperties"),

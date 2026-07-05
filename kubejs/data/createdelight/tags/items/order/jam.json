@@ -1,0 +1,61 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#forge:jams",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:gearo_berry_mason_jar",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:sweet_berry_mason_jar",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:glow_berry_mason_jar",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:apple_sauce_bottle",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:gearo_berry_jam_bottle",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:sweet_berry_jam_bottle",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:glow_berry_jam_bottle",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:glow_berry_marmalade",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:sweet_berry_jam",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:lush_confiture_bottle",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:jujube_paste",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:red_bean_paste",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:sweetened_lotus_seed_paste",
+      "required": false
+    }
+  ]
+}

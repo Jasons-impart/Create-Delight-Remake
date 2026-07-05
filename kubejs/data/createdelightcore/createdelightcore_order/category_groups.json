@@ -1,0 +1,49 @@
+{
+  "drink": {
+    "entries": {
+      "drink": 4,
+      "tea": 4,
+      "milk_tea": 3,
+      "coffee": 3,
+      "juice": 3,
+      "milkshake": 2,
+      "western_wine": 2,
+      "eastern_wine": 2
+    }
+  },
+  "dessert": {
+    "entries": {
+      "dessert": 4,
+      "cake": 4,
+      "pie": 3,
+      "cookie": 3,
+      "ice_cream": 3,
+      "jam": 2,
+      "jello": 2,
+      "gummy": 2,
+      "popsicle": 2
+    }
+  },
+  "staple": {
+    "entries": {
+      "staple_food": 4,
+      "bread": 3,
+      "rice": 3,
+      "noodle": 3,
+      "dumpling": 3,
+      "sandwich": 2,
+      "wrap": 2
+    }
+  },
+  "feast": {
+    "entries": {
+      "meat_dish": 4,
+      "mixed_dish": 4,
+      "staple_food": 3,
+      "barbecue": 3,
+      "soup": 3,
+      "bread": 2,
+      "sausage": 2
+    }
+  }
+}

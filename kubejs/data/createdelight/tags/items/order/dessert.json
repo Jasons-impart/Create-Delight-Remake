@@ -1,0 +1,537 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "create:chocolate_glazed_berries",
+      "required": false
+    },
+    {
+      "id": "create:bar_of_chocolate",
+      "required": false
+    },
+    {
+      "id": "create:sweet_roll",
+      "required": false
+    },
+    {
+      "id": "create:honeyed_apple",
+      "required": false
+    },
+    {
+      "id": "casualness_delight:phantom_puff",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:white_chocolate_candy_1",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:white_chocolate_candy_2",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:white_chocolate_candy_3",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:ruby_chocolate_candy",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:ruby_chocolate_candy_1",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:ruby_chocolate_candy_2",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:ruby_chocolate_candy_3",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:gingerbread",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:bar_of_black_chocolate",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:bar_of_white_chocolate",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:bar_of_ruby_chocolate",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:bar_of_caramel",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:gingerbread_man",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:black_chocolate_glazed_berries",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:white_chocolate_glazed_berries",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:caramel_glazed_berries",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:marshmallow_on_a_stick",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:caramelized_marshmellow_on_a_stick",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:marshmallow",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:chocolate_glazed_marshmallow",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:black_chocolate_glazed_marshmallow",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:white_chocolate_glazed_marshmallow",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:ruby_chocolate_glazed_marshmallow",
+      "required": false
+    },
+    {
+      "id": "alexscaves:candy_cane",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:honey_candy",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:chocolate_candy_1",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:chocolate_candy_2",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:chocolate_candy_3",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:black_chocolate_candy",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:black_chocolate_candy_1",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:black_chocolate_candy_2",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:black_chocolate_candy_3",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:white_chocolate_candy",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:chocolate_candy",
+      "required": false
+    },
+    {
+      "id": "ends_delight:stuffed_rice_cake",
+      "required": false
+    },
+    {
+      "id": "ends_delight:chorus_flower_pie",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:koishi_mousse",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:higi_chocolate",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:higi_doughnut",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:fairy_candy",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:candy_apple",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:blueberry_muffin",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:cranberry_muffin",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:fig_pudding_slice",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:hawberry_roll",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:hawberry_sheet",
+      "required": false
+    },
+    {
+      "id": "bakeries:egg_tart",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:lemon_tart",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:fig_tart",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:sizzling_pudding",
+      "required": false
+    },
+    {
+      "id": "neapolitan:chocolate_strawberries",
+      "required": false
+    },
+    {
+      "id": "neapolitan:adzuki_bun",
+      "required": false
+    },
+    {
+      "id": "neapolitan:vanilla_fudge",
+      "required": false
+    },
+    {
+      "id": "neapolitan:mint_chocolate",
+      "required": false
+    },
+    {
+      "id": "neapolitan:strawberry_scones",
+      "required": false
+    },
+    {
+      "id": "neapolitan:mint_candies",
+      "required": false
+    },
+    {
+      "id": "neapolitan:strawberry_bean_bonbons",
+      "required": false
+    },
+    {
+      "id": "neapolitan:chocolate_spider_eye",
+      "required": false
+    },
+    {
+      "id": "neapolitan:vanilla_pudding",
+      "required": false
+    },
+    {
+      "id": "silentsdelight:sculk_sensor_sprinkles",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:taiga_gulime_small",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:taiga_gulime",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:arid_gulime_small",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:arid_gulime",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:strawberry_gulime_small",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:strawberry_gulime",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:underground_gulime_small",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:chorus_gulime",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:chorus_gulime_small",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:glimmering_gulime",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:glimmering_gulime_small",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:gulime",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:gulime_small",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:llama_marshmallow",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:llama_marshmallow_brown",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:llama_marshmallow_trader",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:toffee_apple",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:toffee_golden_apple",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:underground_gulime",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:jelly_roll",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:jelly_roll_slice",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:chocolate_roll",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:chocolate_roll_slice",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:ink_roll",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:ink_roll_slice",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:candied_lime",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:chocolate_arils",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:chocolate_cannoli",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:coffee_cannoli",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:lucuma_pudding",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:heavens_cream",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:candy_cane",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:dark_chocolate_candy",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:dark_chocolate_glazed_berries",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:full_black_chocolate_bar",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:full_chocolate_bar",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:full_ruby_chocolate_bar",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:full_white_chocolate_bar",
+      "required": false
+    },
+    {
+      "id": "create_confectionery:ruby_chocolate_glazed_berries",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:coconut_pudding",
+      "required": false
+    },
+    {
+      "id": "neapolitan:vanilla_chocolate_fingers",
+      "required": false
+    },
+    {
+      "id": "cavedelight:spelunkie_pudding",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:doughnut",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:cannoli",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:lucuma_cannoli",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:mint_cannoli",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:strawberry_cannoli",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:vanilla_cannoli",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:cream_cheese",
+      "required": false
+    },
+    {
+      "id": "bakeries:matcha_parfait",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:qingtuan",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:seven_colored_yokan",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:eton_mess",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:flower_love",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:ghostcream",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:mojang_mess",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:penuche",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:popwart",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:rice_pudding",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:rodgrod",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:soulblight_ghostcream",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:spaghettieis",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:trifle",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:tuber_puree",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:tuber_puree_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:tuber_puree_cone_with_confiture",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:tuber_puree_with_confiture",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:warped_ghostcream",
+      "required": false
+    }
+  ]
+}

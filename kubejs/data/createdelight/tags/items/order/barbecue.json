@@ -1,0 +1,93 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "ends_delight:end_barbecue_stick",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:lamprey_skewer",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:spicy_skewer",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:red_loin_on_a_stick",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:bacon-wrapped_sausage_on_a_stick",
+      "required": false
+    },
+    {
+      "id": "miners_delight:improvised_barbecue_stick",
+      "required": false
+    },
+    {
+      "id": "oceanic_delight:seafood_skewer",
+      "required": false
+    },
+    {
+      "id": "silentsdelight:baked_warden_ear_on_a_stick",
+      "required": false
+    },
+    {
+      "id": "silentsdelight:sculk_barbecue_stick",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:fish_stick",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:shrimp_skewer",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:squid_kebob",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:frog_leg_kebob",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:barbecue_stick",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:chicken_taco",
+      "required": false
+    },
+    {
+      "id": "casualness_delight:gluten_skewer",
+      "required": false
+    },
+    {
+      "id": "cavedelight:slam_on_a_stick",
+      "required": false
+    },
+    {
+      "id": "silentsdelight:warden_ear_on_a_stick",
+      "required": false
+    },
+    {
+      "id": "cavedelight:shish_kebab",
+      "required": false
+    },
+    {
+      "id": "ends_delight:smoked_dragon_leg",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:fish_kebab",
+      "required": false
+    },
+    {
+      "id": "miners_delight:tentacles_on_a_stick",
+      "required": false
+    }
+  ]
+}

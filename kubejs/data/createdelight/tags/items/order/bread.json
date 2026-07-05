@@ -1,0 +1,217 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "corn_delight:cornbread",
+      "required": false
+    },
+    {
+      "id": "bakeries:scone",
+      "required": false
+    },
+    {
+      "id": "bakeries:bagel",
+      "required": false
+    },
+    {
+      "id": "bakeries:whole_wheat_bagel",
+      "required": false
+    },
+    {
+      "id": "bakeries:round_bread",
+      "required": false
+    },
+    {
+      "id": "bakeries:berry_bread",
+      "required": false
+    },
+    {
+      "id": "bakeries:brown_sugar_roll",
+      "required": false
+    },
+    {
+      "id": "bakeries:pineapple_bun",
+      "required": false
+    },
+    {
+      "id": "bakeries:meat_floss_bread",
+      "required": false
+    },
+    {
+      "id": "bakeries:croissant",
+      "required": false
+    },
+    {
+      "id": "bakeries:berry_bagel",
+      "required": false
+    },
+    {
+      "id": "bakeries:baguette_with_filling",
+      "required": false
+    },
+    {
+      "id": "bakeries:tomato_cheese_croissant_sandwich",
+      "required": false
+    },
+    {
+      "id": "bakeries:cup_cake",
+      "required": false
+    },
+    {
+      "id": "bakeries:cake_roll",
+      "required": false
+    },
+    {
+      "id": "bakeries:sliced_pound_cake",
+      "required": false
+    },
+    {
+      "id": "bakeries:salt_croissant",
+      "required": false
+    },
+    {
+      "id": "bakeries:sliced_toast",
+      "required": false
+    },
+    {
+      "id": "bakeries:honey_butter_spread_toast",
+      "required": false
+    },
+    {
+      "id": "bakeries:sliced_cheese_cocoa_toast",
+      "required": false
+    },
+    {
+      "id": "bakeries:baguette",
+      "required": false
+    },
+    {
+      "id": "bakeries:ciabatta",
+      "required": false
+    },
+    {
+      "id": "bakeries:focaccia",
+      "required": false
+    },
+    {
+      "id": "bakeries:country_bread_slice",
+      "required": false
+    },
+    {
+      "id": "bakeries:honey_butter_spread_country_bread",
+      "required": false
+    },
+    {
+      "id": "casualness_delight:yorkshire_pudding",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:nether_wart_sourdough",
+      "required": false
+    },
+    {
+      "id": "oceanic_delight:caviar_toast",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:strawberry_vanilla_cream_bun",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:adzuki_mint_cream_bun",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:cream_bun",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:chocolate_banana_cream_bun",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:avocado_toast",
+      "required": false
+    },
+    {
+      "id": "alexsdelight:gongylidia_bruschetta",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:lucuma_bread",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:panettone_slice",
+      "required": false
+    },
+    {
+      "id": "neapolitan:banana_bread",
+      "required": false
+    },
+    {
+      "id": "luncheonmeatsdelight:sliced_toast",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:jelly_bread",
+      "required": false
+    },
+    {
+      "id": "bakeries:cheese_cream_bread",
+      "required": false
+    },
+    {
+      "id": "bakeries:bake_sliced_toast",
+      "required": false
+    },
+    {
+      "id": "bakeries:flat_croissant",
+      "required": false
+    },
+    {
+      "id": "bakeries:garlic_flavored_baguette",
+      "required": false
+    },
+    {
+      "id": "bakeries:meat_floss_bread_roll",
+      "required": false
+    },
+    {
+      "id": "bakeries:rice_bread",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:slices_of_bread",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:toasts",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:bacon_egg_bagel",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:berry_cream_cheese_bagel",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:bush_bread",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:geode_bread",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:matcha_cream_cheese_ink_bagel",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:meadow_bread",
+      "required": false
+    }
+  ]
+}

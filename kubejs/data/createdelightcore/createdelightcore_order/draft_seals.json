@@ -1,0 +1,42 @@
+{
+  "human": {
+    "type": "customer",
+    "key": "human",
+    "spec": { "customer_groups": ["human"], "money_multiplier": 0.9 }
+  },
+  "elven": {
+    "type": "customer",
+    "key": "elven",
+    "spec": { "customer_groups": ["elven"], "money_multiplier": 0.9 }
+  },
+  "dwarven": {
+    "type": "customer",
+    "key": "dwarven",
+    "spec": { "customer_groups": ["dwarven"], "money_multiplier": 0.9 }
+  },
+  "monster": {
+    "type": "customer",
+    "key": "monster",
+    "spec": { "customer_groups": ["monster"], "money_multiplier": 0.9 }
+  },
+  "drink": {
+    "type": "category",
+    "key": "drink",
+    "spec": { "category_groups": ["drink"], "money_multiplier": 0.9 }
+  },
+  "dessert": {
+    "type": "category",
+    "key": "dessert",
+    "spec": { "category_groups": ["dessert"], "money_multiplier": 0.9 }
+  },
+  "staple": {
+    "type": "category",
+    "key": "staple",
+    "spec": { "category_groups": ["staple"], "money_multiplier": 0.9 }
+  },
+  "feast": {
+    "type": "category",
+    "key": "feast",
+    "spec": { "category_groups": ["feast"], "money_multiplier": 0.9, "entry_count_multiplier": 1.15 }
+  }
+}

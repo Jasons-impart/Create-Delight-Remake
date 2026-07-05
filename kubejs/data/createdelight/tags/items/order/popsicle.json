@@ -1,0 +1,105 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createdelight:empty_popsicle",
+      "required": false
+    },
+    {
+      "id": "ends_delight:chorus_fruit_popsicle",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:melon_popsicle",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:hamimelon_popsicle",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:kiwi_popsicle",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:lime_popsicle",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:milk_popsicle",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:big_popsicle",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:berry_popsicle",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:berry_popsicle_double",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:blisterberry_popsicle",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:blisterberry_popsicle_double",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:chorus_fruit_popsicle_double",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:chorus_fruit_popsicle",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:lime_popsicle_double",
+      "required": false
+    },
+    {
+      "id": "casualness_delight:green_tongue",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:tear_popsicle",
+      "required": false
+    },
+    {
+      "id": "corn_delight:corn_popsicle",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:ardent_split_popsicle",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:ardent_split_popsicle_double",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:gamblers_popsicle",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:gamblers_popsicle_double",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:slabfish_jelly_popsicle",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:tranquil_split_popsicle",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:tranquil_split_popsicle_double",
+      "required": false
+    }
+  ]
+}

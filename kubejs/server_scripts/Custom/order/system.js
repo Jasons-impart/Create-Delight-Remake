@@ -1,9 +1,34 @@
 ServerEvents.tick(e => {    
     if (e.server.getLevel("minecraft:overworld").dayTime() % 12000 == 0) {
-        let count = Utils.random.nextInt(0, 4)
+        let count = Utils.random.nextInt(1, 4)
         for (let i = 0; i < count; i++)
             global.Order.addOrderToAuction()
     }
+})
+
+const ORDER_MARKET_SYNC_PACKET = "createdelight_order_market_saturation"
+
+global.syncOrderMarketSaturation = function(player) {
+    if (player == null || global.Order == null || global.Order.marketSaturation == null)
+        return
+
+    global.Order.ensureDataLoaded()
+    let config = global.Order.marketSaturationConfig
+    let raw = player.persistentData.getString(config.storageKey)
+    player.sendData(ORDER_MARKET_SYNC_PACKET, {
+        data: raw == null ? "" : raw,
+        day: global.Order.marketSaturation.getDay(player)
+    })
+}
+
+PlayerEvents.loggedIn(e => {
+    global.syncOrderMarketSaturation(e.player)
+})
+
+PlayerEvents.tick(e => {
+    if (e.level.time % 200 != 0)
+        return
+    global.syncOrderMarketSaturation(e.player)
 })
 
 ItemEvents.rightClicked("createdelight:unopened_order", e => {
@@ -18,17 +43,8 @@ ItemEvents.rightClicked("createdelight:unopened_order", e => {
         return
     }
 
-    let draft = draftStack.nbt == null ? null : draftStack.nbt.OrderDraft
-    let spec = global.Order.createSpecFromDraft(draft)
-    draftStack.shrink(1)
-
-    let ret = global.Order.create(e.player, spec)
-    let attempts = 0
-    while (ret.entries.length == 0 && attempts < 20) {
-        ret = global.Order.create(e.player, spec)
-        attempts++
-    }
-    e.player.give(Item.of("createdelight:order", 1, { createdelightOrderInfo: ret }))
+    global.Order.openDraft(e.player, draftStack)
+    e.cancel()
 })
 
 ItemEvents.rightClicked("createdelight:order_seal", e => {

@@ -1,0 +1,221 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createdelight:fugu_roll",
+      "required": false
+    },
+    {
+      "id": "createdelight:radgill_sushi",
+      "required": false
+    },
+    {
+      "id": "alexscaves:deep_sea_sushi_roll",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:pufferfish_roll",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:chicken_roll_slice",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:tropical_roll",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:calamari_roll",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:salmon_roll",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:cod_roll",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:kelp_roll",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:kelp_roll_slice",
+      "required": false
+    },
+    {
+      "id": "oceanic_delight:shrimp_roll",
+      "required": false
+    },
+    {
+      "id": "oceanic_delight:sea_pickle_roll_slice",
+      "required": false
+    },
+    {
+      "id": "silentsdelight:sculk_sensor_tendril_roll",
+      "required": false
+    },
+    {
+      "id": "silentsdelight:sculk_sensor_tendril_roll_slice",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:uni_roll",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:clam_roll",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:prawn_roll",
+      "required": false
+    },
+    {
+      "id": "cavedelight:trilocaris_roll",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:egg_nigiri",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:tuna_nigiri",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:otoro_nigiri",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:flesh_roll",
+      "required": false
+    },
+    {
+      "id": "oceanic_delight:sea_pickle_roll",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:shinnko_maki",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:shinnko_maki_slice",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:kappa_maki",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:kappa_maki_slice",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:tekka_maki",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:roe_california_roll",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:roe_california_roll_slice",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:salmon_lover_roll",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:salmon_lover_roll_slice",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:volcano_roll",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:volcano_roll_slice",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:rainbow_roll",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:rainbow_roll_slice",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:tekka_maki_slice",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:egg_futomaki",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:egg_futomaki_slice",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:salmon_futomaki",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:salmon_futomaki_slice",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:rainbow_futomaki",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:rainbow_futomaki_slice",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:california_roll",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:california_roll_slice",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:tobiko_gunkan",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:seagrass_gunkan",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:nattou_gunkan",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:lorelei_nigiri",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:midori_roll",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:midori_roll_slice",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:chicken_roll",
+      "required": false
+    },
+    {
+      "id": "createdelight:deep_sea_sushi_roll_slice",
+      "required": false
+    }
+  ]
+}

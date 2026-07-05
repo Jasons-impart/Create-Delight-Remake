@@ -1,0 +1,241 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#forge:fruits/grape",
+      "required": false
+    },
+    {
+      "id": "minecraft:glow_berries",
+      "required": false
+    },
+    {
+      "id": "minecraft:sweet_berries",
+      "required": false
+    },
+    {
+      "id": "minecraft:apple",
+      "required": false
+    },
+    {
+      "id": "minecraft:melon_slice",
+      "required": false
+    },
+    {
+      "id": "minecraft:chorus_fruit",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:pear",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:hawberry",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:lychee",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:mango",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:persimmon",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:peach",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:orange",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:mangosteen",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:bayberry",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:kiwi",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:fig",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:blueberry",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:lemon",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:cranberry",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:pineapple_slice",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:lime",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:pomegranate_slice",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:pomegranate_seeds",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:durian_flesh",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:hamimelon_slice",
+      "required": false
+    },
+    {
+      "id": "ends_delight:chorus_fruit_grain",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:orange_slice",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:lemon_slice",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:baked_pear",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:dried_persimmon",
+      "required": false
+    },
+    {
+      "id": "#forge:fruits/strawberry",
+      "required": false
+    },
+    {
+      "id": "neapolitan:dried_banana",
+      "required": false
+    },
+    {
+      "id": "neapolitan:banana",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:lime_slice",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:black_grape",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:red_grape",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:white_grape",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:raisin",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:lucuma",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:pink_dragon_fruit",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:apricot",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:hawthorn",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:jujube",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:peach",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:persimmon",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:arbutus_berries",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:golden_arbutus_berries",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:enchanted_golden_arbutus_berries",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:occult_apple",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:wildberry",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:wildberry_medley",
+      "required": false
+    },
+    {
+      "id": "trailandtales_delight:lantern_fruit",
+      "required": false
+    },
+    {
+      "id": "trailandtales_delight:golden_lantern_fruit",
+      "required": false
+    },
+    {
+      "id": "createcafe:blood_orange",
+      "required": false
+    },
+    {
+      "id": "createcafe:mana_berries",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:dried_pink_dragon_fruit",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:stygian_pomegranate",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:gilded_lucuma",
+      "required": false
+    }
+  ]
+}

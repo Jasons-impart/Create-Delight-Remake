@@ -968,11 +968,36 @@
 			]
 			hide_until_deps_complete: true
 			id: "2397448B73CC8363"
-			rewards: [{
-				id: "71DEA704D4AD9CC2"
-				item: "createdelight:unopened_order"
-				type: "item"
-			}]
+			rewards: [
+				{
+					count: 3
+					id: "71DEA704D4AD9CC2"
+					item: "createdelight:unopened_order"
+					type: "item"
+				}
+				{
+					id: "4F8D1D2C58C63E91"
+					item: {
+						Count: 1
+						id: "createdelight:order_seal"
+						tag: {
+							OrderSeal: "drink"
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "6A9F0183E1E7C724"
+					item: {
+						Count: 1
+						id: "createdelight:order_seal"
+						tag: {
+							OrderSeal: "dessert"
+						}
+					}
+					type: "item"
+				}
+			]
 			shape: "hexagon"
 			size: 2.0d
 			subtitle: "JEI启动！搜索甜点！制作！交付！赚钱！"

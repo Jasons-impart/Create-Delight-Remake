@@ -77,8 +77,10 @@ global.CDServerJavaClasses = {
     $SwitchWidget: Java.loadClass("com.lowdragmc.lowdraglib.gui.widget.SwitchWidget"),
     $TableClothBlockEntity: Java.loadClass("com.simibubi.create.content.logistics.tableCloth.TableClothBlockEntity"),
     $TableItemManager: Java.loadClass("dev.xkmc.youkaishomecoming.content.pot.table.item.TableItemManager"),
+    $TextTexture: Java.loadClass("com.lowdragmc.lowdraglib.gui.texture.TextTexture"),
     $TimelessAPI: Java.loadClass("com.tacz.guns.api.TimelessAPI"),
     $TraderAPI: Java.loadClass("io.github.lightman314.lightmanscurrency.api.traders.TraderAPI"),
     $TraderData: Java.loadClass("io.github.lightman314.lightmanscurrency.api.traders.TraderData"),
+    $ResourceBorderTexture: Java.loadClass("com.lowdragmc.lowdraglib.gui.texture.ResourceBorderTexture"),
     $TraderDataCache: Java.loadClass("io.github.lightman314.lightmanscurrency.common.data.types.TraderDataCache")
 }

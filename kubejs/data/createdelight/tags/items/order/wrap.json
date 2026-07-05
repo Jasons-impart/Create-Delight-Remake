@@ -1,0 +1,89 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "cavedelight:flytrap_taco",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:hotdog",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:hotdog_with_mixed_salad",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:hotdog_with_nether_salad",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:chilidog",
+      "required": false
+    },
+    {
+      "id": "miners_delight:bat_rolls",
+      "required": false
+    },
+    {
+      "id": "miners_delight:vegan_wrap",
+      "required": false
+    },
+    {
+      "id": "miners_delight:insect_wrap",
+      "required": false
+    },
+    {
+      "id": "miners_delight:insect_stew",
+      "required": false
+    },
+    {
+      "id": "miners_delight:seasoned_arthropods",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:stuffed_burrito",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:mutton_wrap",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:cabbage_rolls",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:beef_burrito",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:pork_wrap",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:fish_taco",
+      "required": false
+    },
+    {
+      "id": "corn_delight:taco",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:portobello_wrap",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:sea_wrap",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:chard_rolls",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:glitterkelp_burrito",
+      "required": false
+    }
+  ]
+}

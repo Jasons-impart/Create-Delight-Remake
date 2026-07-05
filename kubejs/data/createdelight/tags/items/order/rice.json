@@ -1,0 +1,233 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "ends_delight:ender_bamboo_rice",
+      "required": false
+    },
+    {
+      "id": "ends_delight:ender_congee",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:sekibankiyaki",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:yakumo_inari",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:mochi",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:tsukimi_dango",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:coffee_mochi",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:matcha_mochi",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:sakura_mochi",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:onigili",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:senbei",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:blazing_red_curry",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:grilled_eel_over_rice",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:tutu_congee",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:bowl_of_pineapple_fried_rice",
+      "required": false
+    },
+    {
+      "id": "cavedelight:dino_cut_rice",
+      "required": false
+    },
+    {
+      "id": "cavedelight:prehistoric_egg_rice",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:pork_rice_ball",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:tea_curry",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:black_cod",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:dried_ghast_with_milk",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:spicy_curry",
+      "required": false
+    },
+    {
+      "id": "miners_delight:bowl_of_stuffed_squid",
+      "required": false
+    },
+    {
+      "id": "oceanic_delight:globular_rice",
+      "required": false
+    },
+    {
+      "id": "oceanic_delight:shrimp_rice",
+      "required": false
+    },
+    {
+      "id": "oceanic_delight:bowl_of_paella",
+      "required": false
+    },
+    {
+      "id": "oceanic_delight:plate_of_stuffed_pufferfish",
+      "required": false
+    },
+    {
+      "id": "silentsdelight:warden_ear_fried_rice",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:shrimp_fried_rice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:cooked_rice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:fried_rice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:mushroom_rice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:roasted_mutton_chops",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:steak_and_potatoes",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:honey_glazed_ham",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:honey_lime_chicken",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:spicy_curry",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:rice_ball",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:portobello_risotto",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:big_rice_ball",
+      "required": false
+    },
+    {
+      "id": "casualness_delight:bowl_of_sweet_rice",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:scaly_fiddlehead_risotto",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:wild_risotto",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:meat_zongzi",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:sweet_zongzi",
+      "required": false
+    },
+    {
+      "id": "cavedelight:musubi",
+      "required": false
+    },
+    {
+      "id": "cuisinedelight:fried_rice",
+      "required": false
+    },
+    {
+      "id": "cuisinedelight:ham_fried_rice",
+      "required": false
+    },
+    {
+      "id": "cuisinedelight:meat_fried_rice",
+      "required": false
+    },
+    {
+      "id": "cuisinedelight:mixed_fried_rice",
+      "required": false
+    },
+    {
+      "id": "cuisinedelight:seafood_fried_rice",
+      "required": false
+    },
+    {
+      "id": "cuisinedelight:vegetable_fried_rice",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:beetroot_mixed_rice",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:salted_qingtuan",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:sweet_qingtuan",
+      "required": false
+    },
+    {
+      "id": "trailandtales_delight:bamboo_tube_rice",
+      "required": false
+    },
+    {
+      "id": "trailandtales_delight:bamboo_tube_rice_block",
+      "required": false
+    }
+  ]
+}

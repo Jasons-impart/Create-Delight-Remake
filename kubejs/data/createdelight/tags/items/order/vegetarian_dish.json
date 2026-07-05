@@ -1,0 +1,153 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "brewinandchewin:vegetable_omelet",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:sweet_ormosia_mochi_mixed_boiled",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:udumbara_cake",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:bowl_of_heart_throbbing_surprise",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:kaguya_hime",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:bamboo_mizuyokan",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:stinky_tofu",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:tofu_burger",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:cold_tofu",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:scholar_ginkgo",
+      "required": false
+    },
+    {
+      "id": "trailandtales_delight:stuffed_sniffer_egg",
+      "required": false
+    },
+    {
+      "id": "neapolitan:adzuki_stew",
+      "required": false
+    },
+    {
+      "id": "neapolitan:adzuki_curry",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:potato_wedges",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:mashed_potato",
+      "required": false
+    },
+    {
+      "id": "miners_delight:vegan_steak_and_potatoes",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:jar_of_pickles",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:ratatouille",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:poached_eggplants",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:creamed_corn",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:potato_fritters",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:crimson_carrot_roast",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:stuffed_portobello_cap",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:baked_portobello_cap",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:spicy_grenadine_jelly",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:strawberry_jam_bun",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:pomegranate_bean_salad",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:tamagoyaki",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:tamagoyaki_slice",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:tofu",
+      "required": false
+    },
+    {
+      "id": "corn_delight:boiled_corn",
+      "required": false
+    },
+    {
+      "id": "corn_delight:grilled_corn",
+      "required": false
+    },
+    {
+      "id": "corn_delight:creamed_corn",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:elote",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:smoked_corn",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:couscous_with_vegetables",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:mana_salad",
+      "required": false
+    }
+  ]
+}

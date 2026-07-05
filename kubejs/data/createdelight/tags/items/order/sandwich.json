@@ -1,0 +1,113 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "cavedelight:pine_and_sap_sandwich",
+      "required": false
+    },
+    {
+      "id": "alexsdelight:bunfungus_sandwich",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:mutton_sandwich",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:egg_sandwich",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:chicken_sandwich",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:bacon_sandwich",
+      "required": false
+    },
+    {
+      "id": "luncheonmeatsdelight:luncheon_meat_sandwich",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:pb_j",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:prawn_po_boy",
+      "required": false
+    },
+    {
+      "id": "cavedelight:lux_and_ham_sandwich",
+      "required": false
+    },
+    {
+      "id": "miners_delight:insect_sandwich",
+      "required": false
+    },
+    {
+      "id": "miners_delight:squid_sandwich",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:chicken_jockey_sandwich",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:malicious_sandwich",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:ham_and_cheese_sandwich",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:woodland_sub",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:travelers_panini",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:bagel_sandwich",
+      "required": false
+    },
+    {
+      "id": "bakeries:salmon_sandwich",
+      "required": false
+    },
+    {
+      "id": "create_bic_bit:kroket_sandwich",
+      "required": false
+    },
+    {
+      "id": "create_bic_bit:ketchup_topped_kroket_sandwich",
+      "required": false
+    },
+    {
+      "id": "create_bic_bit:mayonnaise_topped_kroket_sandwich",
+      "required": false
+    },
+    {
+      "id": "create_bic_bit:mayonnaise_ketchup_topped_kroket_sandwich",
+      "required": false
+    },
+    {
+      "id": "create_bic_bit:frikandel_sandwich",
+      "required": false
+    },
+    {
+      "id": "create_bic_bit:ketchup_topped_frikandel_sandwich",
+      "required": false
+    },
+    {
+      "id": "create_bic_bit:mayonnaise_topped_frikandel_sandwich",
+      "required": false
+    },
+    {
+      "id": "create_bic_bit:mayonnaise_ketchup_topped_frikandel_sandwich",
+      "required": false
+    }
+  ]
+}

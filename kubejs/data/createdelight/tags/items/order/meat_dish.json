@@ -1,0 +1,333 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "alexcaves_delight:subterranodonamlette",
+      "required": false
+    },
+    {
+      "id": "alexcaves_delight:vallumraptoramlette",
+      "required": false
+    },
+    {
+      "id": "alexcaves_delight:atlatitanamlette",
+      "required": false
+    },
+    {
+      "id": "alexcaves_delight:grottoceratopsamlette",
+      "required": false
+    },
+    {
+      "id": "alexcaves_delight:tremorsaurusamlette",
+      "required": false
+    },
+    {
+      "id": "alexcaves_delight:relicheirusamlette",
+      "required": false
+    },
+    {
+      "id": "alexcaves_delight:tremorzillaamlette",
+      "required": false
+    },
+    {
+      "id": "alexcaves_delight:ammletfromembryo",
+      "required": false
+    },
+    {
+      "id": "casualness_delight:bowl_of_paper_wrapped_fish",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:kabayaki",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:steamed_egg_in_bamboo",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:apaki",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:rice_powder_pork",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:dried_fish",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:imitation_bear_paw",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:sauce_grilled_fish",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:blood_curd",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:cumberland_loin",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:tomato_sauce_cod",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:crab_meat",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:crab_roe",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:grilled_boarchop",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:grilled_boarchop_bits",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:grilled_venison",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:grilled_venison_slice",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:imitation_crab",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:steamed_crab",
+      "required": false
+    },
+    {
+      "id": "cavedelight:plate_of_grotto_burnt_ends",
+      "required": false
+    },
+    {
+      "id": "cavedelight:plate_of_grotto_leg",
+      "required": false
+    },
+    {
+      "id": "cavedelight:plate_of_roasted_dino_chop",
+      "required": false
+    },
+    {
+      "id": "cavedelight:plate_of_tail_cut",
+      "required": false
+    },
+    {
+      "id": "cavedelight:stuffed_trilo_tails",
+      "required": false
+    },
+    {
+      "id": "cavedelight:volcanic_chop",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:hot_wings",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:hot_wings_bucket",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:blue_tenderloin_steak",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:plate_of_stuffed_hoglin_ham",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:fried_hoglin_chop",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:rock_soup",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:plate_of_stuffed_hoglin_snout",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:roast_ear",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:plate_of_stuffed_hoglin",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:breakfast_sampler",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:plate_of_striderloaf",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:strider_stew",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:bleeding_tartar",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:scotch_eggs",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:deviled_egg",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:giant_takoyaki",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:plate_of_cold_striderloaf",
+      "required": false
+    },
+    {
+      "id": "miners_delight:bat_soup",
+      "required": false
+    },
+    {
+      "id": "miners_delight:takoyaki",
+      "required": false
+    },
+    {
+      "id": "oceanic_delight:takoyaki",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:crab_cakes",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:surf_and_turf",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:coral_crunch",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:fish_stew",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:bacon_and_eggs",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:salmon_tartare",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:buttered_legs",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:chieftain_claw",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:chieftain_crab_meat",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:cooked_platinum_bass",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:cooked_platinum_bass_slice",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:cooked_tiger_prawn",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:dune_platter",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:escargot",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:maple_glazed_bacon",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:passion_fruit_glazed_duck",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:perch_with_mushrooms",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:pike_with_beetroot",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:seared_venison",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:slabdish",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:venison_with_bamboo_shoots",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:baked_cod_with_mashed_potatoes",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:couscous_with_mutton",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:glazed_fish",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:glazed_fish_roll",
+      "required": false
+    },
+    {
+      "id": "miners_delight:baked_tentacles",
+      "required": false
+    },
+    {
+      "id": "miners_delight:fake_meatloaf",
+      "required": false
+    },
+    {
+      "id": "miners_delight:plate_of_fake_meatloaf",
+      "required": false
+    },
+    {
+      "id": "miners_delight:plate_of_glazed_arachnid_limbs",
+      "required": false
+    }
+  ]
+}

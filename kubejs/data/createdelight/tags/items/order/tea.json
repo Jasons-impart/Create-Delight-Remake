@@ -1,0 +1,225 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "cavedelight:fiddlehead_tea",
+      "required": false
+    },
+    {
+      "id": "trailandtales_delight:torchflower_tea",
+      "required": false
+    },
+    {
+      "id": "trailandtales_delight:cherry_petal_tea",
+      "required": false
+    },
+    {
+      "id": "trailandtales_delight:pitcher_plant_tea",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:autumn_tea",
+      "required": false
+    },
+    {
+      "id": "create:builders_tea",
+      "required": false
+    },
+    {
+      "id": "ends_delight:chorus_flower_tea",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:green_tea",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:yellow_tea",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:black_tea",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:rose_hip_tea",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:dandelion_tea",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:purulent_tea",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:gamblers_tea",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:long_green_tea",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:long_yellow_tea",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:long_black_tea",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:long_rose_hip_tea",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:long_dandelion_tea",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:long_purulent_tea",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:long_gamblers_tea",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:strong_green_tea",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:strong_yellow_tea",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:strong_black_tea",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:strong_rose_hip_tea",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:strong_purulent_tea",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:strong_gamblers_tea",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:hawberry_tea",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:mango_tea",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:peach_tea",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:lychee_cherry_tea",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:mangosteen_tea",
+      "required": false
+    },
+    {
+      "id": "alexcaves_delight:tree_star_tea",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:white_tea",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:cornflower_tea",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:tea_mocha",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:saidi_tea",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:sakura_honey_tea",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:genmai_tea",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:green_water",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:lemon_black_tea",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:black_tea",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:green_tea",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:oolong_tea",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:dark_tea",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:yellow_tea",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:scarlet_tea",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:pomegranate_black_tea",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:lime_green_tea",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:vernal_purge",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:strong_vernal_purge",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:sweet_recovery",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:long_sweet_recovery",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:strong_sweet_recovery",
+      "required": false
+    },
+    {
+      "id": "bakeries:matcha_latte",
+      "required": false
+    }
+  ]
+}

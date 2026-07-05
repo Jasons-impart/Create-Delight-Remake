@@ -1,0 +1,69 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#createdelight:order/noodle",
+      "required": false
+    },
+    {
+      "id": "#createdelight:order/bread",
+      "required": false
+    },
+    {
+      "id": "corn_delight:cornbread_stuffing",
+      "required": false
+    },
+    {
+      "id": "corn_delight:nachos_bowl",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:bun",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:mantou",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:oyaki",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:mantou",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:oatmeal",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:overnight_oats",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:stuffed_potato",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:farina",
+      "required": false
+    },
+    {
+      "id": "createdelightcore:pizza_slice",
+      "required": false
+    },
+    {
+      "id": "refurbished_furniture:vegetable_pizza_slice",
+      "required": false
+    },
+    {
+      "id": "refurbished_furniture:meatlovers_pizza_slice",
+      "required": false
+    },
+    {
+      "id": "netherexp:nether_pizza_slice",
+      "required": false
+    }
+  ]
+}
