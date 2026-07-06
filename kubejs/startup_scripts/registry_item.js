@@ -689,6 +689,21 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:quality_absorber")
         .useDuration(item => 20)
         .translationKey("item.createdelight.quality_absorber")
+    e.create("createdelight:life_matter")
+        .texture("createaddition:item/biomass")
+        .translationKey("item.createdelight.life_matter")
+    e.create("createdelight:quality_harvest_calibrator_tier_1")
+        .texture("create:item/precision_mechanism")
+        .rarity("uncommon")
+        .translationKey("item.createdelight.quality_harvest_calibrator_tier_1")
+    e.create("createdelight:quality_harvest_calibrator_tier_2")
+        .texture("create:item/precision_mechanism")
+        .rarity("rare")
+        .translationKey("item.createdelight.quality_harvest_calibrator_tier_2")
+    e.create("createdelight:quality_harvest_calibrator_tier_3")
+        .texture("create:item/precision_mechanism")
+        .rarity("epic")
+        .translationKey("item.createdelight.quality_harvest_calibrator_tier_3")
 
     //基因种子
     let seed_quality = ["inferior", "normal", "refined", "pure", "flawless"]

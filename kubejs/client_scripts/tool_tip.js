@@ -50,6 +50,12 @@ ItemEvents.tooltip(e => {
         'createdelightcore:fire_lily_cluster',
         'createdelightcore:frost_lily_cluster',
         'createdelightcore:lightning_lily_cluster',
+        'createdelight:quality_absorber',
+        'createdelight:life_matter_extractor',
+        'createdelight:life_matter',
+        'createdelight:quality_harvest_calibrator_tier_1',
+        'createdelight:quality_harvest_calibrator_tier_2',
+        'createdelight:quality_harvest_calibrator_tier_3',
     ])
     clearAddCtrlTooltip(e, [
 

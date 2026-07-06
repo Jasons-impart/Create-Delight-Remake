@@ -12,6 +12,8 @@ Use this workflow for modpack asset operations that touch `mods/`, `resourcepack
 - `mods/`, `resourcepacks/`, and `shaderpacks/` contain `.pw.toml` metadata only; do not track runtime jars there.
 - CF-restricted, manual-download, and custom payloads belong in `packwiz-files/{mods,resourcepacks,shaderpacks}/` with matching raw-URL metadata.
 - Add, update, or remove assets through `scripts/update-packwiz-meta.ps1 -Category ...`; avoid manual metadata edits unless repairing generated output.
+- Do not run `scripts/update-packwiz-meta.ps1` on short-lived feature/PR branches because it derives `packwiz-files` raw URLs from the current branch and can rewrite unrelated `.pw.toml` files to branch URLs that disappear after merge.
+- Branch-derived raw URLs are intended only for `main` and long-lived LTS/release-maintenance branches that must serve their own Packwiz payloads.
 - `pack.toml` and `index.toml` are generated from `modpack.toml`; do not commit them.
 - Shaderpack files containing `Clrwl` are generated locally and must not be tracked.
 - Set `side = "client"` or `side = "server"` explicitly for client-only or server-only mods.
@@ -19,7 +21,7 @@ Use this workflow for modpack asset operations that touch `mods/`, `resourcepack
 ## Add Or Update Assets
 
 1. Put custom or restricted payloads under the matching `packwiz-files/<category>/` directory.
-2. Run `./scripts/update-packwiz-meta.ps1 -Category mods|resourcepacks|shaderpacks`.
+2. Run `./scripts/update-packwiz-meta.ps1 -Category mods|resourcepacks|shaderpacks` only on `main` or a long-lived LTS/release-maintenance branch.
 3. For slow overseas services, retry once with `-Proxy "http://127.0.0.1:7890"`.
 4. Inspect the generated `.pw.toml` plus `packwiz-files` changes before staging.
 5. Run `./scripts/sync-packwiz-assets.ps1` when local runtime files must match metadata.
@@ -34,8 +36,8 @@ Use this workflow for modpack asset operations that touch `mods/`, `resourcepack
 
 1. Prefer published CurseForge metadata when a CDC release exists.
 2. For unpublished builds, keep the filename `packwiz-files/mods/Create-Delight-Core-1.20.1-dev.jar`.
-3. Run `scripts/update-packwiz-meta.ps1 -Category mods` so `mods/create-delight-core.pw.toml` hash changes with the jar.
-4. On short-lived feature branches, set `PACKWIZ_FILES_RAW_PREFIX=https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/` before running metadata updates unless the branch itself must serve the payload; PR branches are normally deleted after merge, so branch raw URLs can break downloads.
+3. On short-lived feature branches, update only `mods/create-delight-core.pw.toml` hash for the new jar and keep its raw URL pointing at `main`; do not run the full metadata update script.
+4. If a full metadata update is unavoidable off `main`, first set `PACKWIZ_FILES_RAW_PREFIX=https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/`, then inspect and revert unrelated `.pw.toml` URL rewrites before committing.
 5. Before staging or summarizing CDC artifact changes, fetch `CDC-mod-src` `origin/1.20.1`; if it fast-forwards, include the submodule pointer in the same commit so source matches the packaged jar.
 
 ## After Git Updates

@@ -61,6 +61,46 @@ ServerEvents.recipes(e => {
         C: "create:rose_quartz"
     })
     .id("createdelight:quality_absorber")
+
+    kubejs.shaped("createdelight:quality_harvest_calibrator_tier_1", [
+        "ABA",
+        "CDC",
+        "AEA"
+    ], {
+        A: "create:iron_sheet",
+        B: "create:mechanical_harvester",
+        C: "#createdelightcore:life_matter",
+        D: "createdelight:quality_absorber",
+        E: "create:andesite_casing"
+    })
+    .id("createdelight:quality_harvest_calibrator_tier_1")
+
+    kubejs.shaped("createdelight:quality_harvest_calibrator_tier_2", [
+        "ABA",
+        "CDC",
+        "AEA"
+    ], {
+        A: "#createdelightcore:life_matter",
+        B: "create:precision_mechanism",
+        C: "createdelight:normal_genetic_seed",
+        D: "createdelight:quality_harvest_calibrator_tier_1",
+        E: "createdelightcore:luna_soil"
+    })
+    .id("createdelight:quality_harvest_calibrator_tier_2")
+
+    kubejs.shaped("createdelight:quality_harvest_calibrator_tier_3", [
+        "ABA",
+        "CDC",
+        "AEA"
+    ], {
+        A: "#createdelightcore:life_matter",
+        B: "create_new_age:overcharged_diamond",
+        C: "createdelight:pure_genetic_seed",
+        D: "createdelight:quality_harvest_calibrator_tier_2",
+        E: "create:experience_block"
+    })
+    .id("createdelight:quality_harvest_calibrator_tier_3")
+
     cutting(e, "createdelightcore:fire_lily_cluster", "4x iceandfire:fire_lily")
     cutting(e, "createdelightcore:frost_lily_cluster", "4x iceandfire:frost_lily")
     cutting(e, "createdelightcore:lightning_lily_cluster", "4x iceandfire:lightning_lily")

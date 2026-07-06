@@ -84,6 +84,7 @@ CD-master-dev/
 - `mods/`, `resourcepacks/`, `shaderpacks/` contain `.pw.toml` metadata; no `mods/*.jar` files are tracked
 - CF-restricted/custom JARs/zip live in `packwiz-files/{mods,resourcepacks,shaderpacks}/`
 - For add/update/remove/sync/CDC artifact details, use `.agents/skills/packwiz-assets/SKILL.md` because the workflow is procedural and changes together.
+- Do not run `scripts/update-packwiz-meta.ps1` on short-lived feature branches: it may rewrite `packwiz-files` raw URLs to the current branch. Use it on `main` or a long-lived LTS/release-maintenance branch, or explicitly preserve `main` raw URLs.
 - After any pull/rebase/merge, compare pre-update target commit..new HEAD; if `mods|resourcepacks|shaderpacks/**/*.pw.toml` or `packwiz-files/**` changed, run `scripts/sync-packwiz-assets.ps1` because runtime JARs are local.
 - `pack.toml`/`index.toml` are generated from `modpack.toml`; don't commit them
 - `CDC-mod-src/` is a git submodule and must stay out of Packwiz artifacts because packages ship pack files, not Java source trees
