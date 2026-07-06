@@ -82,5 +82,6 @@ global.CDServerJavaClasses = {
     $TraderAPI: Java.loadClass("io.github.lightman314.lightmanscurrency.api.traders.TraderAPI"),
     $TraderData: Java.loadClass("io.github.lightman314.lightmanscurrency.api.traders.TraderData"),
     $ResourceBorderTexture: Java.loadClass("com.lowdragmc.lowdraglib.gui.texture.ResourceBorderTexture"),
-    $TraderDataCache: Java.loadClass("io.github.lightman314.lightmanscurrency.common.data.types.TraderDataCache")
+    $TraderDataCache: Java.loadClass("io.github.lightman314.lightmanscurrency.common.data.types.TraderDataCache"),
+    $UUID: Java.loadClass("java.util.UUID")
 }
