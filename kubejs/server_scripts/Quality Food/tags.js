@@ -114,6 +114,39 @@ ServerEvents.tags("block", e => {
 })
 
 ServerEvents.tags("item", e => {
+    e.add("createdelightcore:life_matter", [
+        "createdelight:life_matter"
+    ])
+    e.add("createdelight:life_matter", [
+        "createdelight:life_matter"
+    ])
+
+    const qualityHarvestCalibrators = [
+        "createdelight:quality_harvest_calibrator_tier_1",
+        "createdelight:quality_harvest_calibrator_tier_2",
+        "createdelight:quality_harvest_calibrator_tier_3"
+    ]
+    e.add("createdelightcore:quality_harvest_calibrators", qualityHarvestCalibrators)
+    e.add("createdelight:quality_harvest_calibrators", qualityHarvestCalibrators)
+    e.add("createdelightcore:quality_harvest_calibrators/tier_1", [
+        "createdelight:quality_harvest_calibrator_tier_1"
+    ])
+    e.add("createdelight:quality_harvest_calibrators/tier_1", [
+        "createdelight:quality_harvest_calibrator_tier_1"
+    ])
+    e.add("createdelightcore:quality_harvest_calibrators/tier_2", [
+        "createdelight:quality_harvest_calibrator_tier_2"
+    ])
+    e.add("createdelight:quality_harvest_calibrators/tier_2", [
+        "createdelight:quality_harvest_calibrator_tier_2"
+    ])
+    e.add("createdelightcore:quality_harvest_calibrators/tier_3", [
+        "createdelight:quality_harvest_calibrator_tier_3"
+    ])
+    e.add("createdelight:quality_harvest_calibrators/tier_3", [
+        "createdelight:quality_harvest_calibrator_tier_3"
+    ])
+
     e.remove("quality_food:material_whitelist", 
         "#farmersdelight:wild_crops"
     )
