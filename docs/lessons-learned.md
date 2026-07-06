@@ -98,6 +98,12 @@ Historical project knowledge: non-obvious bugs, release pitfalls, and workflow d
 
 **Lesson**: Restore the original release branch with quiet git commands, check `$LASTEXITCODE`, and only throw when the command really failed.
 
+## Northstar Zinc Ore Crushing Variants
+
+**Problem**: Northstar 0.5.4 has eight zinc ore crushing IDs across Moon, Mars, Mercury, and Venus, and each ordinary/deep variant can output iron ingots if only the sample ID is checked.
+
+**Lesson**: Enumerate `data/northstar/recipes/crushing/*zinc*_ore.json` from the active Northstar jar and override every matching ID in KubeJS.
+
 ---
 
 When adding entries, include Problem and Lesson, keep each item short, and remove entries that become common knowledge.
