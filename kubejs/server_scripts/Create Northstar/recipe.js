@@ -24,7 +24,15 @@ ServerEvents.recipes(e => {
         "northstar:crafting/titanium_ingot_from_block",
         "northstar:crafting/titanium_nugget_from_ingot",
         "northstar:crafting/titanium_ingot_from_nuggets",
-        "northstar:splashing/crushed_raw_tungsten"
+        "northstar:splashing/crushed_raw_tungsten",
+        "northstar:crushing/mars_deep_zinc_ore",
+        "northstar:crushing/mars_zinc_ore",
+        "northstar:crushing/mercury_deep_zinc_ore",
+        "northstar:crushing/mercury_zinc_ore",
+        "northstar:crushing/moon_deep_zinc_ore",
+        "northstar:crushing/moon_zinc_ore",
+        "northstar:crushing/venus_deep_zinc_ore",
+        "northstar:crushing/venus_zinc_ore"
     ])
     remove_recipes_output(e, [
         "northstar:circuit",
@@ -75,6 +83,29 @@ ServerEvents.recipes(e => {
     e.replaceInput("*", "northstar:hardened_precision_mechanism", "create_sa:heat_engine")
     e.replaceOutput({ id: "northstar:splashing/crushed_raw_tungsten" }, "minecraft:quartz", "minecraft:gold_nugget")
     e.replaceOutput("*", "northstar:raw_titanium_ore", "createdelight:crushed_raw_titanium")
+
+    const northstarZincCrushingFixes = [
+        ["mars_deep_zinc_ore", "mars_deep_stone", 350, 2, 0.25],
+        ["mars_zinc_ore", "mars_stone", 250, 1, 0.75],
+        ["mercury_deep_zinc_ore", "mercury_deep_stone", 350, 2, 0.25],
+        ["mercury_zinc_ore", "mercury_stone", 250, 1, 0.75],
+        ["moon_deep_zinc_ore", "moon_deep_stone", 350, 2, 0.25],
+        ["moon_zinc_ore", "moon_stone", 250, 1, 0.75],
+        ["venus_deep_zinc_ore", "venus_deep_stone", 350, 2, 0.25],
+        ["venus_zinc_ore", "venus_stone", 250, 1, 0.75]
+    ]
+
+    northstarZincCrushingFixes.forEach(([ore, stone, processingTime, primaryCount, bonusChance]) => {
+        create.crushing([
+            Item.of("create:crushed_raw_zinc", primaryCount),
+            Item.of("create:crushed_raw_zinc").withChance(bonusChance),
+            Item.of("create:experience_nugget").withChance(0.75),
+            Item.of(`northstar:${stone}`).withChance(0.125)
+        ], `northstar:${ore}`)
+            .processingTime(processingTime)
+            .id(`northstar:crushing/${ore}`)
+    })
+
     kubejs.shaped('createdelight:electrolyzer', [
         "AEA",
         "BCB",
