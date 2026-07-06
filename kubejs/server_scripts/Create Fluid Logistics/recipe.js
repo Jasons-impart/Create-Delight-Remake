@@ -18,6 +18,7 @@ ServerEvents.recipes(e => {
     e.replaceInput({id: "fluidlogistics:mechanical_crafting/infinite_fluid_tank"}, "create:railway_casing", "ae2:spatial_io_port")
     e.replaceInput({id: "fluidlogistics:mechanical_crafting/infinite_fluid_tank"}, "create:sturdy_sheet", "createdelight:space_casing")
     e.replaceInput({id: "fluidlogistics:smart_faucet"}, "minecraft:copper_ingot", "fluidlogistics:faucet")
+    e.replaceInput({id: "fluidlogistics:fluid_hatch"}, "create:item_hatch", "create:item_drain")
 
     kubejs.shaped("fluidlogistics:mechanical_fluid_gun", [
         "AAB",
