@@ -196,7 +196,6 @@ ItemEvents.modification(e => {
     maxStackSize_change('ends_delight:chorus_fruit_popsicle', 64)
     maxStackSize_change('youkaishomecoming:milk_popsicle', 64)
     maxStackSize_change('youkaishomecoming:big_popsicle', 64)
-    maxStackSize_change('createdelightcore:lush_confiture_jelly_bottle', 16)
     const iceCreamItems = [
         "cosmopolitan:tricolored_ice_cream_sandwich",
         "cosmopolitan:enchanted_fruit_ice_cream",
@@ -284,7 +283,6 @@ ItemEvents.modification(e => {
     food_hungers("createcafe:oreo_half", 5, 5)
     food_hungers("createcafe:oreo_crashed", 5, 2.5)
     food_hungers("createcafe:oreo", 12, 18)
-    food_hungers("createdelightcore:lush_confiture_jelly_bottle", 4, 3)
     food_hungers('createdelight:fugu_roll', 10, 10)
     food_hungers('silentsdelight:sculk_sensor_tendril_roll', 12, 9.8)
     food_hungers('farmersdelight:kelp_roll', 12, 9.8)
@@ -362,8 +360,6 @@ ItemEvents.modification(e => {
     food_effects("alexscaves:small_peppermint", "neapolitan:berserking", 45)
     food_effects("alexscaves:large_peppermint", "neapolitan:berserking", 120)
     food_effects("alexscaves:fiddlehead", "minecraft:poison", 5, 0, 0.2)
-    food_effects("createdelightcore:lush_confiture_jelly_bottle", "cosmopolitan:tracer", 30)
-    food_effects("createdelightcore:lush_confiture_jelly_bottle", "cosmopolitan:phototaxis", 30)
     food_effects('farmersrespite:rose_hip_pie_slice', "minecraft:regeneration", 5)
     food_effects('trailandtales_delight:cherry_cheese_pie_slice', "minecraft:regeneration", 10)
     food_effects('cosmopolitan:sunny_ice_cream_sandwich', "collectorsreap:rebound", 80, 1)
