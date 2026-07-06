@@ -10,6 +10,13 @@
     [
       {
         "type": "REGISTRY_NAME",
+        "negate": false,
+        "value": "northstar:martian_highlands"
+      }
+    ],
+    [
+      {
+        "type": "REGISTRY_NAME",
         "negate": true,
         "value": "terralith:wintry_lowlands"
       }

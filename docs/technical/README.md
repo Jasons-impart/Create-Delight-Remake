@@ -9,6 +9,7 @@ Use one file per implementation topic, for example:
 - `tetra-material-edits.md`
 - `custom-loot-and-tags.md`
 - `resource-overlays.md`
+- `worldgen-structure-edits.md`
 
 ## Template
 
