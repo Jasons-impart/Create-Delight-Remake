@@ -2,7 +2,6 @@
   "replace": false,
   "values": [
     "minecraft:milk",
-    "forge:milk",
     "create:honey",
     "create:chocolate",
     "createdelight:soya_milk",
