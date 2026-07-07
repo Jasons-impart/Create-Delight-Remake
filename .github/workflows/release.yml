@@ -239,6 +239,7 @@ jobs:
             rm -f KubeJSStyleGuide.md
             rm -f DevGuide.md
             rm -f AGENTS.md
+            rm -f kubejs/AGENTS.md
             rm -f pack.toml
             rm -f index.toml
             rm -f client_jvm_args.example.txt
