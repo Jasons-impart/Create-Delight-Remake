@@ -38,28 +38,7 @@
 			y: 3.5d
 		}
 		{
-			dependencies: ["67A7A1B0700FFCA3"]
-			id: "2AD38E54F361CFD2"
-			shape: "rsquare"
-			subtitle: "至此踏入本包种田之旅"
-			tasks: [{
-				id: "723AEC0D38887C6D"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "minecraft:hoes"
-					}
-				}
-				title: "任意锄"
-				type: "item"
-			}]
-			title: "终极奉献"
-			x: -0.5d
-			y: 1.0d
-		}
-		{
-			dependencies: ["2AD38E54F361CFD2"]
+			dependencies: ["7D4BF58FEC2F021C"]
 			icon: "eclipticseasons:calendar"
 			id: "2AA39C8B473231E0"
 			rewards: [{
@@ -562,7 +541,7 @@
 			y: -7.5d
 		}
 		{
-			dependencies: ["2AD38E54F361CFD2"]
+			dependencies: ["7D4BF58FEC2F021C"]
 			icon: "farmersdelight:rich_soil"
 			id: "1FAE95DDB868B787"
 			subtitle: "使用各种沃土可产出高品质作物"
@@ -1974,6 +1953,25 @@
 			}]
 			x: 2.5d
 			y: -4.0d
+		}
+		{
+			dependencies: ["67A7A1B0700FFCA3"]
+			id: "7D4BF58FEC2F021C"
+			shape: "rsquare"
+			tasks: [{
+				id: "14A00851600A2CC5"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "minecraft:hoes"
+					}
+				}
+				title: "任意锄"
+				type: "item"
+			}]
+			x: -0.5d
+			y: 1.0d
 		}
 	]
 	title: "&5盛宴准备时！"
