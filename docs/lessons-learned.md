@@ -410,3 +410,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: Quality Food Fluids marked Brewin' and Chewin' and Farmer's Respite as optional, but strict ranges such as `[3.2.1,)` rejected installed versions reported as `1.20.1-3.2.1` and put the mod into a broken state.
 - **Fix/Lesson**: For optional compat dependencies whose mod versions include loader or Minecraft prefixes, use a permissive `mods.toml` range and gate behavior with runtime mod checks/mixin plugins instead of relying on Forge's version range.
+
+## Jade addon components must not read Jade internal storage payloads
+
+**Date**: 2026-07-08
+
+- **Problem**: Quality Food Fluids read Jade's internal `JadeFluidStorage` payload from a broad `Block.class` provider, which could interfere with Jade's normal fluid container display.
+- **Fix/Lesson**: Jade addons should register their own `IServerDataProvider` key for extra data and append only addon-specific tooltip lines, leaving Jade's universal fluid storage payload untouched.
