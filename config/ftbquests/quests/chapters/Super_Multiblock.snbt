@@ -84,7 +84,6 @@
 			]
 			dependency_requirement: "one_completed"
 			description: ["要搭建结构，可参考整合包内自带蓝图 &ebutchery_\\nroom&r"]
-			hide_until_deps_complete: true
 			id: "62C31EFDB74E7053"
 			shape: "square"
 			size: 1.5d

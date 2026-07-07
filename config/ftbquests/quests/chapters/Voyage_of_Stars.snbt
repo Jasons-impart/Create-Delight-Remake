@@ -566,7 +566,6 @@
 		{
 			dependencies: ["40BDFCC7A3B77F26"]
 			description: ["在夜晚就可以通过它来看星星。左键点击某个望远镜视野内的星球，然后点击左侧的+号就可以制作一张记录。"]
-			hide_until_deps_complete: true
 			icon: "northstar:telescope"
 			id: "1EF771A80F0460CF"
 			shape: "hexagon"
