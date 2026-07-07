@@ -403,3 +403,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: `BulkFermentingRecipe#applyOutputs` receives rolled item/fluid output lists, but its capacity checks read the recipe's original rollable/fluid outputs again, so mutating only the method arguments does not make NBT-qualified quality outputs safe.
 - **Fix/Lesson**: Quality compat for `createdieselgenerators:bulk_fermenting` must intercept `applyOutputs` at HEAD and own both capacity simulation and insertion for quality-capable outputs, while storing a processing ticket before the run starts to avoid blocked-output rerolls.
+
+## Optional Forge dependency ranges still reject installed mismatches
+
+**Date**: 2026-07-08
+
+- **Problem**: Quality Food Fluids marked Brewin' and Chewin' and Farmer's Respite as optional, but strict ranges such as `[3.2.1,)` rejected installed versions reported as `1.20.1-3.2.1` and put the mod into a broken state.
+- **Fix/Lesson**: For optional compat dependencies whose mod versions include loader or Minecraft prefixes, use a permissive `mods.toml` range and gate behavior with runtime mod checks/mixin plugins instead of relying on Forge's version range.
