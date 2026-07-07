@@ -1552,6 +1552,7 @@
 		}
 		{
 			dependencies: ["67A7A1B0700FFCA3"]
+			description: ["本包的腌制罐有类似于&e工作盆&r的“开口”机制，可方便地导出产物"]
 			id: "2D31949080435F1A"
 			shape: "rsquare"
 			subtitle: "我们来腌制点东西"
@@ -1822,8 +1823,8 @@
 				}
 			]
 			title: "多样炉灶"
-			x: 5.5d
-			y: 0.0d
+			x: 6.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["10FDC3EC0D8AF9CD"]
@@ -2003,7 +2004,9 @@
 			y: -4.0d
 		}
 		{
+			dependencies: ["67A7A1B0700FFCA3"]
 			id: "33C679A615377ADF"
+			subtitle: "锄地吧少年"
 			tasks: [{
 				id: "0929FB89418F90B7"
 				item: {
@@ -2016,8 +2019,45 @@
 				title: "Any #minecraft:hoes"
 				type: "item"
 			}]
+			title: "任意锄头"
 			x: -0.5d
 			y: 1.0d
+		}
+		{
+			id: "4B42215B77F980EC"
+			subtitle: "卖鸡小子雷德（？"
+			tasks: [{
+				id: "0372444D8128727B"
+				item: "create_integrated_farming:roost"
+				type: "item"
+			}]
+			x: 6.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["4B42215B77F980EC"]
+			id: "31B589E54E598F32"
+			subtitle: "上好的鸡蛋，买些吧"
+			tasks: [{
+				id: "40E58FBD14DB2617"
+				item: "create_integrated_farming:chicken_roost"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["3CA964B6CCE41A2D"]
+			id: "1EF2F7A903A847C7"
+			shape: "rsquare"
+			subtitle: "可持续性的竭泽而渔"
+			tasks: [{
+				id: "6EE67B4585EDFE79"
+				item: "create_integrated_farming:fishing_net"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 2.0d
 		}
 	]
 	title: "&5盛宴准备时！"
