@@ -186,8 +186,9 @@ jobs:
         run: |
             rm -rf resourcepacks shaderpacks packwiz-files CDC-mod-src .agents .codex .github docs scripts
             rm -f ModList0.4a.md README.md TODOlist.md KubeJSStyleGuide.md GettingStarted.md \
-                  client_jvm_args.example.txt AGENTS.md lessons-learned.md .gitignore .gitmodules \
+                  client_jvm_args.example.txt lessons-learned.md .gitignore .gitmodules \
                   sync-packwiz-assets.bat update-packwiz-meta.bat
+            find . -name "AGENTS.md" -type f -delete
             find mods -name "*.pw.toml" -exec rm {} +
             rm -f modpack.toml pack.toml index.toml .packwizignore packwiz \
                   packwiz.json packwiz-installer.jar
