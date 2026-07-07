@@ -1241,7 +1241,6 @@
 				""
 				"使用安山桶喂烈焰人燃烧室燃料时需要进入&e潜行状态&r再右键。"
 			]
-			hide_until_deps_complete: true
 			id: "630FA0478B7DAAAA"
 			size: 1.0d
 			subtitle: "简化和机械动力流体容器的交互"
@@ -1797,7 +1796,6 @@
 				"29130F650B256E20"
 			]
 			description: ["无需额外应力接入，&2自行生产&r应力，应力总量&e一个满级风车&r"]
-			hide_until_deps_complete: true
 			id: "3DBEC3D3BC6BAD1A"
 			secret: true
 			shape: "gear"
@@ -1817,7 +1815,6 @@
 				"517B61DF9D117879"
 			]
 			description: ["无需额外应力接入，&2自行生产&r应力，应力总量&e一个满级风车&r"]
-			hide_until_deps_complete: true
 			id: "08571011E558AC3E"
 			secret: true
 			shape: "gear"
@@ -1881,7 +1878,6 @@
 		{
 			dependencies: ["262E66AD49F385AC"]
 			dependency_requirement: "one_completed"
-			hide_until_deps_complete: true
 			id: "64BDB4FEDC5142AF"
 			subtitle: "一个格子，能存2048个物品"
 			tasks: [{

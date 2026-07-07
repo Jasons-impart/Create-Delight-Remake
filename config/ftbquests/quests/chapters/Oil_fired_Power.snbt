@@ -16,7 +16,6 @@
 	quests: [
 		{
 			dependencies: ["3C02610297BB8C09"]
-			hide_until_deps_complete: true
 			id: "1ADBDFB31928124D"
 			shape: "square"
 			subtitle: "记得管道要连接到&4基岩&r上！"
@@ -192,7 +191,6 @@
 				"3C02610297BB8C09"
 				"1D724B9AB0915D18"
 			]
-			hide_until_deps_complete: true
 			id: "1A10B417B7C082DF"
 			shape: "square"
 			subtitle: "&4毋庸置疑&r的&e魅力&r！"
@@ -407,7 +405,6 @@
 		}
 		{
 			dependencies: ["4458E27C5252B296"]
-			hide_until_deps_complete: true
 			id: "5E075B9E7A889DF2"
 			secret: true
 			size: 1.0d
@@ -554,7 +551,6 @@
 		}
 		{
 			dependencies: ["4458E27C5252B296"]
-			hide_until_deps_complete: true
 			id: "2F0B3291F14AAA89"
 			rewards: [{
 				id: "22635BC82C9D788A"
@@ -605,7 +601,6 @@
 		{
 			dependencies: ["38E346D9F782E7BC"]
 			hide_dependency_lines: true
-			hide_until_deps_complete: true
 			id: "7DA3417CB0E6E7DB"
 			rewards: [{
 				id: "7204F07714B3B84B"
@@ -626,7 +621,6 @@
 				"7DA3417CB0E6E7DB"
 				"35F33D9F772B4551"
 			]
-			hide_until_deps_complete: true
 			id: "39D218E0652E1CE0"
 			rewards: [{
 				count: 3

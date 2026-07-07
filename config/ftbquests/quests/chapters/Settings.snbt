@@ -72,7 +72,6 @@
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
-			hide_until_deps_complete: true
 			icon: "minecraft:totem_of_undying"
 			id: "0CE3178223E28BB0"
 			rewards: [{
@@ -153,7 +152,6 @@
 				"使用&e指令&r也可以查看自己目前&4认领的区块数量和位置&r。"
 				"相关指令详见FTB chunks的百科页面"
 			]
-			hide_until_deps_complete: true
 			icon: "minecraft:cartography_table"
 			id: "1DC437E50E6AC1FC"
 			rewards: [{

@@ -462,7 +462,6 @@
 		{
 			dependencies: ["4C520BFAB5B97C59"]
 			description: ["“真正的远方不在脚下，而在维度之间的裂隙之中。”"]
-			hide_until_deps_complete: true
 			icon: {
 				Count: 1
 				id: "explorerscompass:explorerscompass"

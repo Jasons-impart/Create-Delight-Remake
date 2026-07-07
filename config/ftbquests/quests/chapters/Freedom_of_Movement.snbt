@@ -954,7 +954,6 @@
 				"7DED9A87C6CB80F0"
 				"07C28031281E5458"
 			]
-			hide_until_deps_complete: true
 			id: "6D20D47B7F514221"
 			subtitle: "寻找群系与结构的位置"
 			tasks: [
