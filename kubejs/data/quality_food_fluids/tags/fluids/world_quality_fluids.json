@@ -9,16 +9,49 @@
       "id": "forge:milk",
       "required": false
     },
-    "create:honey",
-    "create:chocolate",
-    "createdelight:soya_milk",
-    "createdelight:green_soylent",
-    "createdelight:radpop_fluid",
-    "createdelight:cake_batter",
-    "createdelight:red_velvet_cake_batter",
-    "createdelight:egg_yolk",
-    "createdelight:artificial_egg_yolk",
-    "createdelight:egg_tart_fluid",
-    "ratatouille:cocoa_liquor"
+    {
+      "id": "create:honey",
+      "required": false
+    },
+    {
+      "id": "create:chocolate",
+      "required": false
+    },
+    {
+      "id": "createdelight:soya_milk",
+      "required": false
+    },
+    {
+      "id": "createdelight:green_soylent",
+      "required": false
+    },
+    {
+      "id": "createdelight:radpop_fluid",
+      "required": false
+    },
+    {
+      "id": "createdelight:cake_batter",
+      "required": false
+    },
+    {
+      "id": "createdelight:red_velvet_cake_batter",
+      "required": false
+    },
+    {
+      "id": "createdelight:egg_yolk",
+      "required": false
+    },
+    {
+      "id": "createdelight:artificial_egg_yolk",
+      "required": false
+    },
+    {
+      "id": "createdelight:egg_tart_fluid",
+      "required": false
+    },
+    {
+      "id": "ratatouille:cocoa_liquor",
+      "required": false
+    }
   ]
 }

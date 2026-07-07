@@ -424,3 +424,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: Brewin' And Chewin' and Farmer's Respite compare recipe fluids with `FluidStack.isFluidEqual` or `areFluidStackTagsEqual`, so adding QFF quality NBT to the stored input fluid made otherwise valid recipes stop matching.
 - **Fix/Lesson**: For third-party machine compat, strip only QFF's own quality tag during fluid equality checks while leaving other fluid NBT and the stored tank contents intact.
+
+## Pack-specific fluid tags should use optional entries
+
+**Date**: 2026-07-08
+
+- **Problem**: A single missing fluid id such as `createdelight:base_syrup` can make Forge reject the whole `quality_food_fluids:quality_fluids` tag, leaving QFF without its quality whitelist.
+- **Fix/Lesson**: Use `{ "id": "...", "required": false }` for pack-specific fluid tag entries, because these ids move across addon namespaces and one absent compat fluid should not invalidate the entire tag.
