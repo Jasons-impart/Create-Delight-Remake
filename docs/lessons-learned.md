@@ -368,3 +368,38 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: CDC dynamic berry syrup fluid mixing can appear to always output sweet syrup if CDR still has a KubeJS `create.mixing` recipe with the same berry/base-syrup inputs and static `cosmopolitan:berry_syrup` output.
 - **Fix/Lesson**: Remove or override the old static KubeJS recipe when moving an output to a CDC dynamic Basin recipe, because Create may match the static recipe before the dynamic serializer runs.
+
+## Addon mixins must not ship classes in dependency packages
+
+**Date**: 2026-07-07
+
+- **Problem**: A Quality Food Fluids mixin class placed under `com.simibubi.create.*` caused ModLauncher module resolution to fail with both Create and the addon exporting the same package.
+- **Fix/Lesson**: Keep addon mixin classes in the addon's own package and use `@Coerce`, accessors, invokers, or access transformers for non-public dependency types, because Forge's module layer rejects split packages before mixins can run.
+
+## Quality Food Create recipe hook can overwrite addon result NBT
+
+**Date**: 2026-07-07
+
+- **Problem**: Quality Food Fluids applied sequenced assembly final quality inside `SequencedAssemblyRecipe.advance`, but Quality Food's own `RecipeApplierMixin` later recalculated the Create output from the transitional item and removed the addon quality result.
+- **Fix/Lesson**: For Create `RecipeApplier` paths, mark sequenced assembly final outputs as pending and reapply addon quality at `RecipeApplier.applyRecipeOn` return with lower mixin priority than Quality Food, then clear the internal pending tag.
+
+## KubeJS foodProperties edits should be applied once per item
+
+**Date**: 2026-07-07
+
+- **Problem**: After updating from KubeJS build.16 to build.26, repeated `item.foodProperties = food => { ... }` edits for the same item could behave as last-write-wins, leaving only the final food effect while earlier hunger/saturation/effects disappeared.
+- **Fix/Lesson**: Accumulate KubeJS food property changes per item and assign `item.foodProperties` once, especially when helper calls such as `food_hungers` and `food_effects` target the same item.
+
+## Optional compat mixins should use LoadingModList
+
+**Date**: 2026-07-07
+
+- **Problem**: A Mixin config plugin can run before normal runtime mod-list helpers are safe, so optional third-party compat mixins may crash while deciding whether to apply.
+- **Fix/Lesson**: Gate optional compat mixins with `LoadingModList.get().getModFileById(modid) != null` in `IMixinConfigPlugin.shouldApplyMixin`, and avoid loading the optional target class before that check.
+
+## Created Diesel Generators bulk fermenter output checks ignore passed output lists
+
+**Date**: 2026-07-07
+
+- **Problem**: `BulkFermentingRecipe#applyOutputs` receives rolled item/fluid output lists, but its capacity checks read the recipe's original rollable/fluid outputs again, so mutating only the method arguments does not make NBT-qualified quality outputs safe.
+- **Fix/Lesson**: Quality compat for `createdieselgenerators:bulk_fermenting` must intercept `applyOutputs` at HEAD and own both capacity simulation and insertion for quality-capable outputs, while storing a processing ticket before the run starts to avoid blocked-output rerolls.
