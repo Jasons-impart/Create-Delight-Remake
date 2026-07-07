@@ -3,6 +3,10 @@ README.md
 TODOlist.md
 KubeJSStyleGuide.md
 DevGuide.md
+AGENTS.md
+kubejs/AGENTS.md
+docs/
+scripts/
 start.bat
 start.sh
 variables.txt
