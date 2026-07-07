@@ -1,2 +1,4 @@
-### 最新版本! v0.4.8.13!已推出
-- 改用CurseForge元数据管理Create Functional Storage材质包
+### 最新版本! v0.4.8.14!已推出
+- 解除更多任务隐藏
+- 更新Vintage Improvements至0.3.7.4并更新zstdnet
+- 修复出货箱结算/北极星锌矿粉碎/序列组装进度倒退等问题
