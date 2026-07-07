@@ -1,8 +1,8 @@
 name = "Quality Food Fluids"
-filename = "quality_food_fluids-1.20.1-0.1.0.jar"
+filename = "quality_food_fluids-1.20.1-0.1.1.jar"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/quality_food_fluids-1.20.1-0.1.0.jar"
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/quality_food_fluids-1.20.1-0.1.1.jar"
 hash-format = "sha256"
-hash = "919bebea6b61dd9f726b2f9acbee1923e1ba7b7499b79d637c77016d569768c1"
+hash = "de1c4a567ee6d1a4b9608fba781cdf76b0813e5ed964c4cc5f0e5e203df8d3f2"
