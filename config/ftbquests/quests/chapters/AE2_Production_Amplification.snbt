@@ -141,7 +141,6 @@
 				"3F2537B88B8517A7"
 			]
 			hide_dependency_lines: true
-			hide_until_deps_complete: true
 			id: "05D52AC3EBD5ACF6"
 			tasks: [{
 				id: "111FE5AC3C0B14DC"
@@ -585,7 +584,6 @@
 				"你可能会遇上组装步骤与你想要的东西的组装步骤不一致的情况，不用担心，这是正常的。&e按照你想要做的东西的序列组装的步骤组装&r即可。"
 				"&4反正记住一点：步骤越复杂的合成方式消耗的材料越少。&r"
 			]
-			hide_until_deps_complete: true
 			id: "3F2537B88B8517A7"
 			shape: "hexagon"
 			size: 1.5d

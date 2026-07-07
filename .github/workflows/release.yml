@@ -232,11 +232,15 @@ jobs:
             # done
             rm -rf resourcepacks
             rm -rf shaderpacks
+            rm -rf scripts
+            rm -rf docs
             rm -f ModList0.4a.md
             rm -f README.md
             rm -f TODOlist.md
             rm -f KubeJSStyleGuide.md
             rm -f DevGuide.md
+            rm -f AGENTS.md
+            rm -f kubejs/AGENTS.md
             rm -f pack.toml
             rm -f index.toml
             rm -f client_jvm_args.example.txt
