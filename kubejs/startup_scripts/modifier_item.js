@@ -1,4 +1,11 @@
 ItemEvents.modification(e => {
+    let food_modifiers = {}
+    let queue_food_modifier = function (food, modifier) {
+        if (!food_modifiers[food]) {
+            food_modifiers[food] = []
+        }
+        food_modifiers[food].push(modifier)
+    }
     // 抗火
     /**
      * 
@@ -15,10 +22,8 @@ ItemEvents.modification(e => {
      * @param {Internal.Item} food 
      */
     let food_fastToEat = function (food) {
-        e.modify(food, item => {
-            item.foodProperties = food => {
-                food.fastToEat()
-            }
+        queue_food_modifier(food, food => {
+            food.fastToEat()
         })
     }
     // 食物修改,参数分别为食物id，饥饿值，饱和度
@@ -31,11 +36,9 @@ ItemEvents.modification(e => {
     let food_hungers = function (food, hunger, saturation) {
         hunger = hunger || 3
         saturation = saturation || 0.5
-        e.modify(food, item => {
-            item.foodProperties = food => {
-                food.hunger(hunger)
-                food.saturation(saturation / hunger)
-            }
+        queue_food_modifier(food, food => {
+            food.hunger(hunger)
+            food.saturation(saturation / hunger)
         })
     }
     // 食物效果修改,参数分别为食物id，效果id，持续时间（s），强度，获得效果的概率
@@ -51,10 +54,8 @@ ItemEvents.modification(e => {
         duration = duration || 10
         strength = strength || 0
         probability = probability || 1
-        e.modify(food, item => {
-            item.foodProperties = food => {
-                food.effect(effect, 20 * duration, strength, probability)
-            }
+        queue_food_modifier(food, food => {
+            food.effect(effect, 20 * duration, strength, probability)
         })
     }
     // 食物效果移除
@@ -64,10 +65,8 @@ ItemEvents.modification(e => {
      * @param {Special.MobEffect} effect 
      */
     let remove_effects = function (food, effect) {
-        e.modify(food, item => {
-            item.foodProperties = food => {
-                food.removeEffect(effect)
-            }
+        queue_food_modifier(food, food => {
+            food.removeEffect(effect)
         })
     }
     // 最大耐久度修改,物品id,最大耐久度
@@ -103,16 +102,14 @@ ItemEvents.modification(e => {
      * @param {number} [thick_duration] 以s为单位,若不填则不添加
      */
     let red_tea_effect = function (food, polyphenols_duration, polyphenols_strength, sober_duration, thick_duration) {
-        e.modify(food, item => {
-            item.foodProperties = food => {
-                food.removeEffect("farmersrespite:caffeinated")
-                food.effect("youkaishomecoming:tea_polyphenols", 20 * polyphenols_duration, polyphenols_strength, 1)
-                if (sober_duration !== undefined) {
-                    food.effect("youkaishomecoming:sober", 20 * sober_duration, 0, 1)
-                }
-                if (thick_duration !== undefined) {
-                    food.effect("youkaishomecoming:thick", 20 * thick_duration, 0, 1)
-                }
+        queue_food_modifier(food, food => {
+            food.removeEffect("farmersrespite:caffeinated")
+            food.effect("youkaishomecoming:tea_polyphenols", 20 * polyphenols_duration, polyphenols_strength, 1)
+            if (sober_duration !== undefined) {
+                food.effect("youkaishomecoming:sober", 20 * sober_duration, 0, 1)
+            }
+            if (thick_duration !== undefined) {
+                food.effect("youkaishomecoming:thick", 20 * thick_duration, 0, 1)
             }
         })
     }
@@ -126,16 +123,14 @@ ItemEvents.modification(e => {
      * @param {number} [smoothing_duration] 以s为单位,若不填则不添加
      */
     let yellow_tea_effect = function (food, polyphenols_duration, polyphenols_strength, sober_duration, smoothing_duration) {
-        e.modify(food, item => {
-            item.foodProperties = food => {
-                food.removeEffect("minecraft:resistance")
-                food.effect("youkaishomecoming:tea_polyphenols", 20 * polyphenols_duration, polyphenols_strength, 1)
-                if (sober_duration !== undefined) {
-                    food.effect("youkaishomecoming:sober", 20 * sober_duration, 0, 1)
-                }
-                if (smoothing_duration !== undefined) {
-                    food.effect("youkaishomecoming:smoothing", 20 * smoothing_duration, 0, 1)
-                }
+        queue_food_modifier(food, food => {
+            food.removeEffect("minecraft:resistance")
+            food.effect("youkaishomecoming:tea_polyphenols", 20 * polyphenols_duration, polyphenols_strength, 1)
+            if (sober_duration !== undefined) {
+                food.effect("youkaishomecoming:sober", 20 * sober_duration, 0, 1)
+            }
+            if (smoothing_duration !== undefined) {
+                food.effect("youkaishomecoming:smoothing", 20 * smoothing_duration, 0, 1)
             }
         })
     }
@@ -149,16 +144,14 @@ ItemEvents.modification(e => {
      * @param {number} [haste_duration] 以s为单位,若不填则不添加
      */
     let green_tea_effect = function (food, polyphenols_duration, polyphenols_strength, sober_duration, haste_duration) {
-        e.modify(food, item => {
-            item.foodProperties = food => {
-                food.removeEffect("minecraft:haste")
-                food.effect("youkaishomecoming:tea_polyphenols", 20 * polyphenols_duration, polyphenols_strength, 1)
-                if (sober_duration !== undefined) {
-                    food.effect("youkaishomecoming:sober", 20 * sober_duration, 0, 1)
-                }
-                if (haste_duration !== undefined) {
-                    food.effect("minecraft:haste", 20 * haste_duration, 0, 1)
-                }
+        queue_food_modifier(food, food => {
+            food.removeEffect("minecraft:haste")
+            food.effect("youkaishomecoming:tea_polyphenols", 20 * polyphenols_duration, polyphenols_strength, 1)
+            if (sober_duration !== undefined) {
+                food.effect("youkaishomecoming:sober", 20 * sober_duration, 0, 1)
+            }
+            if (haste_duration !== undefined) {
+                food.effect("minecraft:haste", 20 * haste_duration, 0, 1)
             }
         })
     }
@@ -172,15 +165,13 @@ ItemEvents.modification(e => {
      * @param {number} [sober_duration] 以s为单位,若不填则不添加
      */
     let coffee_effect = function (food, caffeinated_duration, caffeinated_strength, sober_duration) {
-        e.modify(food, item => {
-            item.foodProperties = food => {
-                food.removeEffect("createcafe:caffeinated")
-                food.removeEffect("youkaishomecoming:caffeinated")
-                food.removeEffect("youkaishomecoming:sober")
-                food.effect("farmersrespite:caffeinated", 20 * caffeinated_duration, caffeinated_strength, 1)
-                if (sober_duration !== undefined) {
-                    food.effect("youkaishomecoming:sober", 20 * sober_duration, 0, 1)
-                }
+        queue_food_modifier(food, food => {
+            food.removeEffect("createcafe:caffeinated")
+            food.removeEffect("youkaishomecoming:caffeinated")
+            food.removeEffect("youkaishomecoming:sober")
+            food.effect("farmersrespite:caffeinated", 20 * caffeinated_duration, caffeinated_strength, 1)
+            if (sober_duration !== undefined) {
+                food.effect("youkaishomecoming:sober", 20 * sober_duration, 0, 1)
             }
         })
     }
@@ -495,11 +486,9 @@ ItemEvents.modification(e => {
     red_tea_effect('createcafe:coconut_milk_tea', 45, 0, 45, 20)
     red_tea_effect('collectorsreap:vernal_purge', 45, 0, 45, 20)
     red_tea_effect('collectorsreap:strong_vernal_purge', 30, 1, 30, 30)
-    e.modify("farmersrespite:black_cod", item => {
-        item.foodProperties = food => {
-            food.removeEffect("farmersrespite:caffeinated")
-            food.effect("youkaishomecoming:thick", 600, 0, 1)
-        }
+    queue_food_modifier("farmersrespite:black_cod", food => {
+        food.removeEffect("farmersrespite:caffeinated")
+        food.effect("youkaishomecoming:thick", 600, 0, 1)
     })
 
     // 乌龙茶效果
@@ -539,13 +528,20 @@ ItemEvents.modification(e => {
     green_tea_effect('cavedelight:fiddlehead_tea', 45, 0, 45, 20)
     green_tea_effect('farmersrespite:green_tea_cookie', 20, 0, 20, 10)
     green_tea_effect('createdelight:green_tea_cookie_dough', 10, 0)
-    e.modify("collectorsreap:green_tea_gummy", item => {
-        item.foodProperties = food => {
-            food.removeEffect("minecraft:haste")
-            food.effect("youkaishomecoming:tea_polyphenols", 400, 2, 1)
-            food.effect("youkaishomecoming:sober", 400, 0, 1)
-            food.effect("minecraft:haste", 200, 2, 1)
-        }
+    queue_food_modifier("collectorsreap:green_tea_gummy", food => {
+        food.removeEffect("minecraft:haste")
+        food.effect("youkaishomecoming:tea_polyphenols", 400, 2, 1)
+        food.effect("youkaishomecoming:sober", 400, 0, 1)
+        food.effect("minecraft:haste", 200, 2, 1)
+    })
+
+    // Keep this after all food_* helper calls so each item is assigned once.
+    Object.keys(food_modifiers).forEach(food => {
+        e.modify(food, item => {
+            item.foodProperties = properties => {
+                food_modifiers[food].forEach(modifier => modifier(properties))
+            }
+        })
     })
 
     //合成后返还酒瓶
