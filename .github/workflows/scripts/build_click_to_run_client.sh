@@ -21,3 +21,4 @@ do
 done
 
 find "$dest" \( -name '*.pw.toml' -o -name 'pack.toml' -o -name 'index.toml' -o -name '.packwizignore' \) -delete
+find "$dest" -name 'AGENTS.md' -type f -delete
