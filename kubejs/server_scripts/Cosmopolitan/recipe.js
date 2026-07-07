@@ -24,7 +24,8 @@ ServerEvents.recipes(e => {
         "cosmopolitan:filling/create/ice_cream_float",
         "cosmopolitan:general/snow_cone",
         "cosmopolitan:farmersdelight/cooking/lush_confiture_bottle",
-        "createdelightcore:mixing/flowing_lush_confiture_jello"
+        "createdelightcore:mixing/flowing_lush_confiture_jello",
+        "cosmopolitan:farmersdelight/chocolate_roll",
     ])
 
     const { kubejs, create, create_new_age, farmersdelight } = e.recipes
@@ -123,6 +124,60 @@ ServerEvents.recipes(e => {
         "cosmopolitan:source_berry_pips", "cosmopolitan:kabloom_pips", "youkaishomecoming:matcha")
     make_mixed_ice_cream(e, "cosmopolitan:exquisite_ice_cream", 'cosmopolitan:exquisite_ice_cream_sandwich',
         "#forge:chorus_fruits", "cosmopolitan:aurora_kohakutou", "cosmopolitan:slabfish_jelly_popsicle")
+
+    let berrySyrupFlavors = [
+        ["sweet", "cosmopolitan:berry_syrup"],
+        ["spicy", "cosmopolitan:berry_syrup_spicy"],
+        ["sour", "cosmopolitan:berry_syrup_sour"],
+        ["bitter", "cosmopolitan:berry_syrup_bitter"],
+        ["strange", "cosmopolitan:berry_syrup_strange"]
+    ]
+    berrySyrupFlavors.forEach(entry => {
+        let flavor = entry[0]
+        let syrup = entry[1]
+        {
+            let iner = "bakeries:cut_cake_base"
+            create.sequenced_assembly(Item.of("cosmopolitan:jelly_roll", { berrySyrupFlavor: flavor }), iner, [
+                create.filling(iner, [iner, Fluid.of(syrup, 250)]),
+                create.pressing(iner, iner)
+            ])
+                .loops(1)
+                .transitionalItem(iner)
+                .id(`createdelight:sequenced_assembly/jelly_roll_${flavor}`)
+        }
+        {
+            let iner = "minecraft:apple"
+            create.sequenced_assembly(Item.of("cosmopolitan:toffee_apple", { berrySyrupFlavor: flavor }), iner, [
+                create.deploying(iner, [iner, "minecraft:stick"]),
+                create.filling(iner, [iner, Fluid.of(syrup, 250)])
+            ])
+                .loops(1)
+                .transitionalItem(iner)
+                .id(`createdelight:sequenced_assembly/toffee_apple_${flavor}`)
+        }
+        {
+            let iner = "minecraft:golden_apple"
+            create.sequenced_assembly(Item.of("cosmopolitan:toffee_golden_apple", { berrySyrupFlavor: flavor }), iner, [
+                create.deploying(iner, [iner, "minecraft:stick"]),
+                create.filling(iner, [iner, Fluid.of(syrup, 250)])
+            ])
+                .loops(1)
+                .transitionalItem(iner)
+                .id(`createdelight:sequenced_assembly/toffee_golden_apple_${flavor}`)
+        }
+        {
+            let iner = "#forge:cookies"
+            create.sequenced_assembly(Item.of("2x cosmopolitan:berry_cheesecake_bar", { berrySyrupFlavor: flavor }), iner, [
+                create.filling(iner, [iner, Fluid.of(syrup, 250)]),
+                create.deploying(iner, [iner, "bakeries:foamed_cream"]),
+                create.cutting(iner, iner)
+            ])
+                .loops(1)
+                .transitionalItem(iner)
+                .id(`createdelight:sequenced_assembly/berry_cheesecake_bar_${flavor}`)
+        }
+    })
+
     create.sequenced_assembly('cosmopolitan:neapolitan_ice_cream_bagel', 'bakeries:bagel', [
         create.deploying('bakeries:bagel', ['bakeries:bagel', 'alexscaves:vanilla_ice_cream_scoop']),
         create.deploying('bakeries:bagel', ['bakeries:bagel', 'createdelightcore:strawberry_ice_cream_scoop']),
@@ -172,16 +227,28 @@ ServerEvents.recipes(e => {
     ).id("createdelight:general/gulime")
     create.filling("cosmopolitan:cream", ["minecraft:bowl", Fluid.of("cosmopolitan:cream", 250)]).id("createdelight:filling/cream")
     create.filling("cosmopolitan:cream_bucket", ["minecraft:bucket", Fluid.of("cosmopolitan:cream", 1000)]).id("createdelight:filling/cream_bucket")
-    create.mixing(Fluid.of("cosmopolitan:berry_syrup", 250), [
-        "4x #forge:berries",
-        Fluid.of("createdelight:base_syrup", 500)
-    ]).heated().id("createdelight:mixing/cream_bucket")
     create.compacting([
         Fluid.of("cosmopolitan:birch_sap", 10),
         '4x createdieselgenerators:wood_chip',
         Item.of("farmersdelight:tree_bark").withChance(0.5)
     ], "minecraft:birch_log"
     ).heated().id("createdelight:compacting/birch_sap")
+    create.compacting(
+        'cosmopolitan:spicy_berry_syrup_block',
+        Fluid.of("cosmopolitan:berry_syrup_spicy", 1000)
+    ).id("createdelight:compacting/spicy_berry_syrup_block")
+    create.compacting(
+        'cosmopolitan:sour_berry_syrup_block',
+        Fluid.of("cosmopolitan:berry_syrup_sour", 1000)
+    ).id("createdelight:compacting/sour_berry_syrup_block")
+    create.compacting(
+        'cosmopolitan:bitter_berry_syrup_block',
+        Fluid.of("cosmopolitan:berry_syrup_bitter", 1000)
+    ).id("createdelight:compacting/bitter_berry_syrup_block")
+    create.compacting(
+        'cosmopolitan:strange_berry_syrup_block',
+        Fluid.of("cosmopolitan:berry_syrup_strange", 1000)
+    ).id("createdelight:compacting/strange_berry_syrup_block")
     create.compacting(
         'cosmopolitan:berry_syrup_block',
         Fluid.of("cosmopolitan:berry_syrup", 1000)
@@ -283,32 +350,33 @@ ServerEvents.recipes(e => {
         'alexscaves:fiddlehead',
         Item.of('alexscaves:fiddlehead').withChance(0.25)
     ])
-    {
-        let iner = "bakeries:cut_cake_base"
-        create.sequenced_assembly('cosmopolitan:jelly_roll', iner, [
-            create.filling(iner, [iner, Fluid.of("cosmopolitan:berry_syrup", 250)]),
-            create.pressing(iner, iner)
-        ])
-            .loops(1)
-            .transitionalItem(iner)
-            .id("createdelight:sequenced_assembly/jelly_roll")
-    }
-    kubejs.shapeless(
-        "cosmopolitan:jelly_roll",
+
+    e.recipes.minecraft.crafting_shapeless(
+        'cosmopolitan:jelly_roll',
         [
             "bakeries:cut_cake_base",
-            "cosmopolitan:berry_syrup_bottle"
+            'cosmopolitan:berry_syrup_bottle'
         ]
-    ).id("createdelight:farmersdelight/jelly_roll").replaceIngredient("cosmopolitan:berry_syrup_bottle", "minecraft:glass_bottle")
+    ).id("createdelight:farmersdelight/jelly_roll")
     {
-        let iner = "bakeries:cut_cake_base"
-        create.sequenced_assembly('cosmopolitan:chocolate_roll', iner, [
-            create.filling(iner, [iner, Fluid.of("create:chocolate", 250)]),
-            create.pressing(iner, iner)
-        ])
-            .loops(1)
-            .transitionalItem(iner)
-            .id("createdelight:sequenced_assembly/chocolate_roll_from_chocolate")
+        let chocolateFluids = [
+            ["create:chocolate", "chocolate_roll_from_chocolate"],
+            ["create_confectionery:black_chocolate", "chocolate_roll_from_black_chocolate"],
+            ["create_confectionery:white_chocolate", "chocolate_roll_from_white_chocolate"],
+            ["create_confectionery:ruby_chocolate", "chocolate_roll_from_ruby_chocolate"]
+        ]
+        chocolateFluids.forEach(entry => {
+            let fluid = entry[0]
+            let id = entry[1]
+            let iner = "bakeries:cut_cake_base"
+            create.sequenced_assembly('cosmopolitan:chocolate_roll', iner, [
+                create.filling(iner, [iner, Fluid.of(fluid, 250)]),
+                create.pressing(iner, iner)
+            ])
+                .loops(1)
+                .transitionalItem(iner)
+                .id(`createdelight:sequenced_assembly/${id}`)
+        })
     }
     kubejs.shapeless(
         "cosmopolitan:chocolate_roll",

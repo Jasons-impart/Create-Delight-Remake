@@ -26,7 +26,8 @@ ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "casualness_delight:crafting_shaped/deep_frying_pan",
         "create_deepfried:mixing/raw_chicken_nuggets",
-        'dungeonsdelight:fried_ghast_calamari_from_smoking'
+        'dungeonsdelight:fried_ghast_calamari_from_smoking',
+        "cosmopolitan:farmersdelight/frying/fiddlehead_tempura_from_deep_frying"
     ])
 
     // 油炸锅
@@ -79,6 +80,7 @@ ServerEvents.recipes(e => {
     deep_frying('create_deepfried:yuca_fries', 'createcafe:cassava_root', 100)
     deep_frying('create_deepfried:apfelkuchle', 'some_assembly_required:apple_slices', 100)
     deep_frying('create_deepfried:tempura', 'create_deepfried:raw_tempura', 100)
+    deep_frying('cosmopolitan:fiddlehead_tempura', 'alexscaves:fiddlehead', 100)
     deep_frying('create_deepfried:berliner', 'create_bic_bit:sweet_dough', 100)
     deep_frying('create_deepfried:deepfried_chocolate_bar', 'create:bar_of_chocolate', 100)
     deep_frying('create_deepfried:calamari', 'createdelightcore:unfried_calamari', 100)

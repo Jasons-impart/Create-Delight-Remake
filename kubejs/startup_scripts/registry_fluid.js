@@ -106,12 +106,6 @@ StartupEvents.registry("fluid", e => {
     textureFluid("createdelight:egg_yolk")
     textureFluid("createdelight:artificial_egg_yolk")
     textureFluid("createdelight:egg_tart_fluid")
-    textureFluid("createdelight:base_syrup", false, false)
-    textureFluid("createdelight:strawberry_syrup", false, false)
-    textureFluid("createdelight:vanilla_syrup", false, false)
-    textureFluid("createdelight:mint_syrup", false, false)
-    textureFluid("createdelight:banana_syrup", false, false)
-    textureFluid("createdelight:coconut_syrup", false, false)
     textureFluid("createdelight:filling", false, false)
 
     let bloods = [

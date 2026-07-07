@@ -361,3 +361,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: Player-facing tips can incorrectly say every Alex's Caves biome is an independent dimension if they ignore the pack's Northstar dimension biome sources.
 - **Fix/Lesson**: Check `kubejs/data/northstar/dimension/` and `kubejs/data/createdelight/dimension/` before updating Alex's Caves access text, because `config/alexscaves_biome_generation/*.json` is disabled and still points at vanilla overworld generation.
+
+## Dynamic Create mixing recipes must not keep static duplicates
+
+**Date**: 2026-07-06
+
+- **Problem**: CDC dynamic berry syrup fluid mixing can appear to always output sweet syrup if CDR still has a KubeJS `create.mixing` recipe with the same berry/base-syrup inputs and static `cosmopolitan:berry_syrup` output.
+- **Fix/Lesson**: Remove or override the old static KubeJS recipe when moving an output to a CDC dynamic Basin recipe, because Create may match the static recipe before the dynamic serializer runs.

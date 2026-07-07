@@ -191,6 +191,17 @@ ServerEvents.recipes(e => {
         B: "#forge:chests",
         C: "lightmanscurrency:trading_core"
     }).id("createdelight:sell_bin")
+    e.recipes.kubejs.shaped("createdelight:life_matter_extractor", [
+        "ABA",
+        "CDC",
+        "AEA"
+    ], {
+        A: "#forge:plates/bronze",
+        B: "create:brass_funnel",
+        C: "create:andesite_casing",
+        D: "createdelight:quality_absorber",
+        E: "create:item_drain"
+    }).id("createdelight:life_matter_extractor")
 
     e.recipes.create.mechanical_crafting("createdelight:big_centrifuge", [
         "AABAA",

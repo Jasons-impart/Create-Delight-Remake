@@ -119,11 +119,11 @@ ServerEvents.tags("minecraft:item", e => {
 
 ServerEvents.tags("minecraft:fluid", e => {
     e.add("forge:syrup", [
-        'createdelight:base_syrup',
-        'createdelight:strawberry_syrup',
-        'createdelight:vanilla_syrup',
-        'createdelight:mint_syrup',
-        'createdelight:banana_syrup',
+        'createdelightcore:base_syrup',
+        'createdelightcore:strawberry_syrup',
+        'createdelightcore:vanilla_syrup',
+        'createdelightcore:mint_syrup',
+        'createdelightcore:banana_syrup',
         'cosmopolitan:berry_syrup'
     ])
 })

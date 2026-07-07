@@ -486,3 +486,4 @@ return stack;
 - 对“当前未还原”条目，优先判断目标模组是否已改名、移除或被替换；如果连续版本都没有启动日志命中，可以考虑清理对应 `.badiff`。
 - 超导连接器相关补丁要和 `kubejs/assets/createaddition/`、`kubejs/server_scripts/Create Addition/` 一起验证；只看 HotAI class patch 不足以证明玩法完整。
 
+

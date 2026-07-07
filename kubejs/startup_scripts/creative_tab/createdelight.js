@@ -143,6 +143,10 @@ StartupEvents.modifyCreativeTab("createdelightcore:misc", e => {
       'createdelight:waste_paper',
       // 基因种子
       'createdelight:unfinished_leather',
+      'createdelight:life_matter',
+      'createdelight:quality_harvest_calibrator_tier_1',
+      'createdelight:quality_harvest_calibrator_tier_2',
+      'createdelight:quality_harvest_calibrator_tier_3',
       'createdelight:inferior_genetic_seed',
       'createdelight:normal_genetic_seed',
       'createdelight:refined_genetic_seed',
@@ -204,6 +208,7 @@ StartupEvents.registry("creative_mode_tab", e => {
       'createdelight:sealed_joint_component',
       'createdelight:logic_component',
       'createdelight:order_deliverer_item',
+      'createdelight:life_matter_extractor',
       'createdelight:order',
       'createdelight:unopened_order',
       Item.of('createdelight:order_seal', { OrderSeal: 'human' }),

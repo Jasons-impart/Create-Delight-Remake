@@ -35,6 +35,8 @@
 | `docs/plan/order-acquisition-channels-plan.md` | 内容设计计划 | 订单获取渠道的长期设计。 |
 | `docs/plan/order-acquisition-crystal-modifier-plan.md` | 内容设计计划 | 订单构筑和修饰系统设计。 |
 | `docs/plan/order-time-and-automation-strategy.md` | 内容设计策略 | 订单时间机制与自动化产线假设。 |
+| `docs/plan/quality-harvest-life-matter-plan.md` | 内容设计计划 | 品质收割、生命质回收和生命质扩展用途规划。 |
+| `docs/plan/fluid-quality-mod-plan.md` | 内容设计计划 | Quality Food 流体品质附属 mod 的数据模型、Create 接入、世界流体品质和阶段实施方案。 |
 | `docs/plan/adventure-progression-overhaul-plan.md` | 内容设计计划 | 冒险流程、配方门槛和阶段推进规划。 |
 | `docs/tetra-design-reference-2026-06-22.md` | 设计参考 | Tetra/MMT 数值、材料和模块参考。 |
 | `docs/announcement.md` | 发布素材 | 稳定版本公告片段，不作为开发知识入口。 |
