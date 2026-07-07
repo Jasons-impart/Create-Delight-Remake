@@ -232,6 +232,7 @@ jobs:
             # done
             rm -rf resourcepacks
             rm -rf shaderpacks
+            rm -rf scripts
             rm -f ModList0.4a.md
             rm -f README.md
             rm -f TODOlist.md
