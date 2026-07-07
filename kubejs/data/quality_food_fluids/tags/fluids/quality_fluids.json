@@ -1,418 +1,109 @@
 {
   "replace": false,
   "values": [
-    {
-      "id": "minecraft:milk",
-      "required": false
-    },
-    {
-      "id": "forge:milk",
-      "required": false
-    },
-    {
-      "id": "create:honey",
-      "required": false
-    },
-    {
-      "id": "create:chocolate",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:green_tea",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:yellow_tea",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:black_tea",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:coffee",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:rose_hip_tea",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:dandelion_tea",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:purulent_tea",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:gamblers_tea",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:apple_cider",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:melon_juice",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:hot_cocoa",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:long_green_tea",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:long_yellow_tea",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:long_black_tea",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:long_rose_hip_tea",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:long_dandelion_tea",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:long_purulent_tea",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:long_gamblers_tea",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:long_coffee",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:long_apple_cider",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:strong_green_tea",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:strong_yellow_tea",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:strong_black_tea",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:strong_rose_hip_tea",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:strong_purulent_tea",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:strong_gamblers_tea",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:strong_coffee",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:strong_apple_cider",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:strong_melon_juice",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:strong_hot_cocoa",
-      "required": false
-    },
-    {
-      "id": "brewinandchewin:honey",
-      "required": false
-    },
-    {
-      "id": "brewinandchewin:beer",
-      "required": false
-    },
-    {
-      "id": "brewinandchewin:vodka",
-      "required": false
-    },
-    {
-      "id": "brewinandchewin:mead",
-      "required": false
-    },
-    {
-      "id": "brewinandchewin:egg_grog",
-      "required": false
-    },
-    {
-      "id": "brewinandchewin:strongroot_ale",
-      "required": false
-    },
-    {
-      "id": "brewinandchewin:rice_wine",
-      "required": false
-    },
-    {
-      "id": "brewinandchewin:glittering_grenadine",
-      "required": false
-    },
-    {
-      "id": "brewinandchewin:steel_toe_stout",
-      "required": false
-    },
-    {
-      "id": "brewinandchewin:dread_nog",
-      "required": false
-    },
-    {
-      "id": "brewinandchewin:kombucha",
-      "required": false
-    },
-    {
-      "id": "brewinandchewin:saccharine_rum",
-      "required": false
-    },
-    {
-      "id": "brewinandchewin:pale_jane",
-      "required": false
-    },
-    {
-      "id": "brewinandchewin:salty_folly",
-      "required": false
-    },
-    {
-      "id": "brewinandchewin:bloody_mary",
-      "required": false
-    },
-    {
-      "id": "brewinandchewin:red_rum",
-      "required": false
-    },
-    {
-      "id": "brewinandchewin:withering_dross",
-      "required": false
-    },
-    {
-      "id": "brewinandchewin:flaxen_cheese",
-      "required": false
-    },
-    {
-      "id": "brewinandchewin:scarlet_cheese",
-      "required": false
-    },
-    {
-      "id": "createdieselgenerators:ethanol",
-      "required": false
-    },
-    {
-      "id": "createdieselgenerators:plant_oil",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:cream",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:condensed_milk",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:molasses",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:berry_syrup",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:berry_syrup_sour",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:berry_syrup_bitter",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:berry_syrup_spicy",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:berry_syrup_strange",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:birch_sap",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:steeleaf_nectar",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:wildberry_punch",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:root_beer",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:twilight_chartreuse",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:smoggy_aperol",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:cachaca",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:neverending_night",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:morning_fog",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:exotic_mirage",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:generic_romance",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:green_beer",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:vanilla_ice_cream",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:strawberry_ice_cream",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:chocolate_ice_cream",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:mint_ice_cream",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:adzuki_ice_cream",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:banana_ice_cream",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:apple_ice_cream",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:carrot_ice_cream",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:glow_berry_ice_cream",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:beetroot_ice_cream",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:sweet_berry_ice_cream",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:pumpkin_ice_cream",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:lime_ice_cream",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:pomegranate_ice_cream",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:lucuma_ice_cream",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:pink_dragon_fruit_ice_cream",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:enchanted_fruit_ice_cream",
-      "required": false
-    },
-    {
-      "id": "cosmopolitan:yucca_ice_cream",
-      "required": false
-    },
-    {
-      "id": "create_central_kitchen:vanilla_milkshake",
-      "required": false
-    },
-    {
-      "id": "create_central_kitchen:strawberry_milkshake",
-      "required": false
-    },
-    {
-      "id": "create_central_kitchen:chocolate_milkshake",
-      "required": false
-    },
-    {
-      "id": "create_central_kitchen:mint_milkshake",
-      "required": false
-    },
-    {
-      "id": "create_central_kitchen:adzuki_milkshake",
-      "required": false
-    },
-    {
-      "id": "create_central_kitchen:banana_milkshake",
-      "required": false
-    },
-    {
-      "id": "create_central_kitchen:sweet_berry_milkshake",
-      "required": false
-    },
-    {
-      "id": "create_central_kitchen:pumpkin_milkshake",
-      "required": false
-    },
-    {
-      "id": "create_central_kitchen:lime_milkshake",
-      "required": false
-    },
-    {
-      "id": "create_central_kitchen:pomegranate_milkshake",
-      "required": false
-    },
+    "minecraft:milk",
+    "forge:milk",
+    "create:honey",
+    "create:chocolate",
+    "farmersrespite:green_tea",
+    "farmersrespite:yellow_tea",
+    "farmersrespite:black_tea",
+    "farmersrespite:coffee",
+    "farmersrespite:rose_hip_tea",
+    "farmersrespite:dandelion_tea",
+    "farmersrespite:purulent_tea",
+    "farmersrespite:gamblers_tea",
+    "farmersrespite:apple_cider",
+    "farmersrespite:melon_juice",
+    "farmersrespite:hot_cocoa",
+    "farmersrespite:long_green_tea",
+    "farmersrespite:long_yellow_tea",
+    "farmersrespite:long_black_tea",
+    "farmersrespite:long_rose_hip_tea",
+    "farmersrespite:long_dandelion_tea",
+    "farmersrespite:long_purulent_tea",
+    "farmersrespite:long_gamblers_tea",
+    "farmersrespite:long_coffee",
+    "farmersrespite:long_apple_cider",
+    "farmersrespite:strong_green_tea",
+    "farmersrespite:strong_yellow_tea",
+    "farmersrespite:strong_black_tea",
+    "farmersrespite:strong_rose_hip_tea",
+    "farmersrespite:strong_purulent_tea",
+    "farmersrespite:strong_gamblers_tea",
+    "farmersrespite:strong_coffee",
+    "farmersrespite:strong_apple_cider",
+    "farmersrespite:strong_melon_juice",
+    "farmersrespite:strong_hot_cocoa",
+    "brewinandchewin:honey",
+    "brewinandchewin:beer",
+    "brewinandchewin:vodka",
+    "brewinandchewin:mead",
+    "brewinandchewin:egg_grog",
+    "brewinandchewin:strongroot_ale",
+    "brewinandchewin:rice_wine",
+    "brewinandchewin:glittering_grenadine",
+    "brewinandchewin:steel_toe_stout",
+    "brewinandchewin:dread_nog",
+    "brewinandchewin:kombucha",
+    "brewinandchewin:saccharine_rum",
+    "brewinandchewin:pale_jane",
+    "brewinandchewin:salty_folly",
+    "brewinandchewin:bloody_mary",
+    "brewinandchewin:red_rum",
+    "brewinandchewin:withering_dross",
+    "brewinandchewin:flaxen_cheese",
+    "brewinandchewin:scarlet_cheese",
+    "createdieselgenerators:ethanol",
+    "createdieselgenerators:plant_oil",
+    "cosmopolitan:cream",
+    "cosmopolitan:condensed_milk",
+    "cosmopolitan:molasses",
+    "cosmopolitan:berry_syrup",
+    "cosmopolitan:berry_syrup_sour",
+    "cosmopolitan:berry_syrup_bitter",
+    "cosmopolitan:berry_syrup_spicy",
+    "cosmopolitan:berry_syrup_strange",
+    "cosmopolitan:birch_sap",
+    "cosmopolitan:steeleaf_nectar",
+    "cosmopolitan:wildberry_punch",
+    "cosmopolitan:root_beer",
+    "cosmopolitan:twilight_chartreuse",
+    "cosmopolitan:smoggy_aperol",
+    "cosmopolitan:cachaca",
+    "cosmopolitan:neverending_night",
+    "cosmopolitan:morning_fog",
+    "cosmopolitan:exotic_mirage",
+    "cosmopolitan:generic_romance",
+    "cosmopolitan:green_beer",
+    "cosmopolitan:vanilla_ice_cream",
+    "cosmopolitan:strawberry_ice_cream",
+    "cosmopolitan:chocolate_ice_cream",
+    "cosmopolitan:mint_ice_cream",
+    "cosmopolitan:adzuki_ice_cream",
+    "cosmopolitan:banana_ice_cream",
+    "cosmopolitan:apple_ice_cream",
+    "cosmopolitan:carrot_ice_cream",
+    "cosmopolitan:glow_berry_ice_cream",
+    "cosmopolitan:beetroot_ice_cream",
+    "cosmopolitan:sweet_berry_ice_cream",
+    "cosmopolitan:pumpkin_ice_cream",
+    "cosmopolitan:lime_ice_cream",
+    "cosmopolitan:pomegranate_ice_cream",
+    "cosmopolitan:lucuma_ice_cream",
+    "cosmopolitan:pink_dragon_fruit_ice_cream",
+    "cosmopolitan:enchanted_fruit_ice_cream",
+    "cosmopolitan:yucca_ice_cream",
+    "create_central_kitchen:vanilla_milkshake",
+    "create_central_kitchen:strawberry_milkshake",
+    "create_central_kitchen:chocolate_milkshake",
+    "create_central_kitchen:mint_milkshake",
+    "create_central_kitchen:adzuki_milkshake",
+    "create_central_kitchen:banana_milkshake",
+    "create_central_kitchen:sweet_berry_milkshake",
+    "create_central_kitchen:pumpkin_milkshake",
+    "create_central_kitchen:lime_milkshake",
+    "create_central_kitchen:pomegranate_milkshake",
     "create_central_kitchen:adzuki_ice_cream",
     "create_central_kitchen:aloe_gel",
     "create_central_kitchen:aloe_ice_cream",
@@ -479,429 +170,111 @@
     "create_central_kitchen:yellow_tea",
     "create_central_kitchen:yucca_ice_cream",
     "create_central_kitchen:yucca_milkshake",
-    {
-      "id": "createdelightcore:apple_milkshake",
-      "required": false
-    },
-    {
-      "id": "createdelightcore:carrot_milkshake",
-      "required": false
-    },
-    {
-      "id": "createdelightcore:glow_berry_milkshake",
-      "required": false
-    },
-    {
-      "id": "createdelightcore:beetroot_milkshake",
-      "required": false
-    },
-    {
-      "id": "createdelightcore:lucuma_milkshake",
-      "required": false
-    },
-    {
-      "id": "createdelightcore:pink_dragon_fruit_milkshake",
-      "required": false
-    },
-    {
-      "id": "createdelightcore:enchanted_fruit_milkshake",
-      "required": false
-    },
-    {
-      "id": "createdelightcore:red_grapejuice",
-      "required": false
-    },
-    {
-      "id": "createdelightcore:jungle_red_grapejuice",
-      "required": false
-    },
-    {
-      "id": "createdelightcore:savanna_red_grapejuice",
-      "required": false
-    },
-    {
-      "id": "createdelightcore:taiga_red_grapejuice",
-      "required": false
-    },
-    {
-      "id": "createdelightcore:white_grapejuice",
-      "required": false
-    },
-    {
-      "id": "createdelightcore:jungle_white_grapejuice",
-      "required": false
-    },
-    {
-      "id": "createdelightcore:savanna_white_grapejuice",
-      "required": false
-    },
-    {
-      "id": "createdelightcore:taiga_white_grapejuice",
-      "required": false
-    },
-    {
-      "id": "createdelightcore:warped_grapejuice",
-      "required": false
-    },
-    {
-      "id": "createdelightcore:crimson_grapejuice",
-      "required": false
-    },
-    {
-      "id": "createdelightcore:base_syrup",
-      "required": false
-    },
-    {
-      "id": "createdelightcore:strawberry_syrup",
-      "required": false
-    },
-    {
-      "id": "createdelightcore:vanilla_syrup",
-      "required": false
-    },
-    {
-      "id": "createdelightcore:mint_syrup",
-      "required": false
-    },
-    {
-      "id": "createdelightcore:banana_syrup",
-      "required": false
-    },
-    {
-      "id": "createdelightcore:coconut_syrup",
-      "required": false
-    },
-    {
-      "id": "create_bic_bit:curdled_milk",
-      "required": false
-    },
-    {
-      "id": "create_bic_bit:mayonnaise",
-      "required": false
-    },
-    {
-      "id": "youkaishomecoming:mio",
-      "required": false
-    },
-    {
-      "id": "youkaishomecoming:soy_sauce",
-      "required": false
-    },
-    {
-      "id": "createdelight:nut_milk",
-      "required": false
-    },
-    {
-      "id": "createdelight:soya_milk",
-      "required": false
-    },
-    {
-      "id": "createdelight:vinegar",
-      "required": false
-    },
-    {
-      "id": "createdelight:unrefined_sugar",
-      "required": false
-    },
-    {
-      "id": "createdelight:yeast",
-      "required": false
-    },
-    {
-      "id": "createdelight:green_soylent",
-      "required": false
-    },
-    {
-      "id": "createdelight:radpop_fluid",
-      "required": false
-    },
-    {
-      "id": "createdelight:cake_batter",
-      "required": false
-    },
-    {
-      "id": "createdelight:red_velvet_cake_batter",
-      "required": false
-    },
-    {
-      "id": "createdelight:egg_yolk",
-      "required": false
-    },
-    {
-      "id": "createdelight:artificial_egg_yolk",
-      "required": false
-    },
-    {
-      "id": "createdelight:egg_tart_fluid",
-      "required": false
-    },
-    {
-      "id": "createdelight:base_syrup",
-      "required": false
-    },
-    {
-      "id": "createdelight:strawberry_syrup",
-      "required": false
-    },
-    {
-      "id": "createdelight:vanilla_syrup",
-      "required": false
-    },
-    {
-      "id": "createdelight:mint_syrup",
-      "required": false
-    },
-    {
-      "id": "createdelight:banana_syrup",
-      "required": false
-    },
-    {
-      "id": "createdelight:coconut_syrup",
-      "required": false
-    },
-    {
-      "id": "createdelight:filling",
-      "required": false
-    },
-    {
-      "id": "createdelight:ancient_coffee",
-      "required": false
-    },
-    {
-      "id": "createdelight:torchflower_tea",
-      "required": false
-    },
-    {
-      "id": "createdelight:cherry_petal_tea",
-      "required": false
-    },
-    {
-      "id": "createdelight:pitcher_plant_tea",
-      "required": false
-    },
-    {
-      "id": "createdelight:fiddlehead_tea",
-      "required": false
-    },
-    {
-      "id": "createdelight:scarlet_tea",
-      "required": false
-    },
-    {
-      "id": "createdelight:lemon_black_tea",
-      "required": false
-    },
-    {
-      "id": "createdelight:tea_mocha",
-      "required": false
-    },
-    {
-      "id": "createdelight:saidi_tea",
-      "required": false
-    },
-    {
-      "id": "createdelight:cornflower_tea",
-      "required": false
-    },
-    {
-      "id": "createdelight:sakura_honey_tea",
-      "required": false
-    },
-    {
-      "id": "createdelight:genmai_tea",
-      "required": false
-    },
-    {
-      "id": "createdelight:green_water",
-      "required": false
-    },
-    {
-      "id": "createdelight:white_tea",
-      "required": false
-    },
-    {
-      "id": "createdelight:spring_soda",
-      "required": false
-    },
-    {
-      "id": "createdelight:summer_cordial",
-      "required": false
-    },
-    {
-      "id": "createdelight:autumn_tea",
-      "required": false
-    },
-    {
-      "id": "createdelight:winter_glogg",
-      "required": false
-    },
-    {
-      "id": "createdelight:apple_juice",
-      "required": false
-    },
-    {
-      "id": "createdelight:mead",
-      "required": false
-    },
-    {
-      "id": "createdelight:apple_cider",
-      "required": false
-    },
-    {
-      "id": "createdelight:apple_wine",
-      "required": false
-    },
-    {
-      "id": "createdelight:mellohi_wine",
-      "required": false
-    },
-    {
-      "id": "createdelight:glowing_wine",
-      "required": false
-    },
-    {
-      "id": "createdelight:solaris_wine",
-      "required": false
-    },
-    {
-      "id": "createdelight:noir_wine",
-      "required": false
-    },
-    {
-      "id": "createdelight:red_wine",
-      "required": false
-    },
-    {
-      "id": "createdelight:strad_wine",
-      "required": false
-    },
-    {
-      "id": "createdelight:cherry_wine",
-      "required": false
-    },
-    {
-      "id": "createdelight:cristel_wine",
-      "required": false
-    },
-    {
-      "id": "createdelight:creepers_crush",
-      "required": false
-    },
-    {
-      "id": "createdelight:kelp_cider",
-      "required": false
-    },
-    {
-      "id": "createdelight:lilitu_wine",
-      "required": false
-    },
-    {
-      "id": "createdelight:jo_special_mixture",
-      "required": false
-    },
-    {
-      "id": "createdelight:eiswein",
-      "required": false
-    },
-    {
-      "id": "createdelight:aegis_wine",
-      "required": false
-    },
-    {
-      "id": "createdelight:bolvar_wine",
-      "required": false
-    },
-    {
-      "id": "createdelight:chorus_wine",
-      "required": false
-    },
-    {
-      "id": "createdelight:villagers_fright",
-      "required": false
-    },
-    {
-      "id": "createdelight:clark_wine",
-      "required": false
-    },
-    {
-      "id": "createdelight:magnetic_wine",
-      "required": false
-    },
-    {
-      "id": "createdelight:stal_wine",
-      "required": false
-    },
-    {
-      "id": "createdelight:chenet_wine",
-      "required": false
-    },
-    {
-      "id": "createdelight:bottle_mojang_noir",
-      "required": false
-    },
-    {
-      "id": "createdelight:jellie_wine",
-      "required": false
-    },
-    {
-      "id": "createdelight:blazewine_pinot",
-      "required": false
-    },
-    {
-      "id": "createdelight:netherite_nectar",
-      "required": false
-    },
-    {
-      "id": "createdelight:ghastly_grenache",
-      "required": false
-    },
-    {
-      "id": "createdelight:lava_fizz",
-      "required": false
-    },
-    {
-      "id": "createdelight:nether_fizz",
-      "required": false
-    },
-    {
-      "id": "createdelight:espresso_fluid",
-      "required": false
-    },
-    {
-      "id": "createdelight:americano_fluid",
-      "required": false
-    },
-    {
-      "id": "createdelight:ristretto_fluid",
-      "required": false
-    },
-    {
-      "id": "createdelight:latte_fluid",
-      "required": false
-    },
-    {
-      "id": "createdelight:affogato_fluid",
-      "required": false
-    },
-    {
-      "id": "createdelight:con_panna_fluid",
-      "required": false
-    },
-    {
-      "id": "createdelight:cappuccino_fluid",
-      "required": false
-    },
-    {
-      "id": "createdelight:macchiato_fluid",
-      "required": false
-    },
-    {
-      "id": "createdelight:mocha_fluid",
-      "required": false
-    },
-    {
-      "id": "ratatouille:cocoa_liquor",
-      "required": false
-    }
+    "createdelightcore:apple_milkshake",
+    "createdelightcore:carrot_milkshake",
+    "createdelightcore:glow_berry_milkshake",
+    "createdelightcore:beetroot_milkshake",
+    "createdelightcore:lucuma_milkshake",
+    "createdelightcore:pink_dragon_fruit_milkshake",
+    "createdelightcore:enchanted_fruit_milkshake",
+    "createdelightcore:red_grapejuice",
+    "createdelightcore:jungle_red_grapejuice",
+    "createdelightcore:savanna_red_grapejuice",
+    "createdelightcore:taiga_red_grapejuice",
+    "createdelightcore:white_grapejuice",
+    "createdelightcore:jungle_white_grapejuice",
+    "createdelightcore:savanna_white_grapejuice",
+    "createdelightcore:taiga_white_grapejuice",
+    "createdelightcore:warped_grapejuice",
+    "createdelightcore:crimson_grapejuice",
+    "createdelightcore:base_syrup",
+    "createdelightcore:strawberry_syrup",
+    "createdelightcore:vanilla_syrup",
+    "createdelightcore:mint_syrup",
+    "createdelightcore:banana_syrup",
+    "createdelightcore:coconut_syrup",
+    "create_bic_bit:curdled_milk",
+    "create_bic_bit:mayonnaise",
+    "youkaishomecoming:mio",
+    "youkaishomecoming:soy_sauce",
+    "createdelight:nut_milk",
+    "createdelight:soya_milk",
+    "createdelight:vinegar",
+    "createdelight:unrefined_sugar",
+    "createdelight:yeast",
+    "createdelight:green_soylent",
+    "createdelight:radpop_fluid",
+    "createdelight:cake_batter",
+    "createdelight:red_velvet_cake_batter",
+    "createdelight:egg_yolk",
+    "createdelight:artificial_egg_yolk",
+    "createdelight:egg_tart_fluid",
+    "createdelight:base_syrup",
+    "createdelight:strawberry_syrup",
+    "createdelight:vanilla_syrup",
+    "createdelight:mint_syrup",
+    "createdelight:banana_syrup",
+    "createdelight:coconut_syrup",
+    "createdelight:filling",
+    "createdelight:ancient_coffee",
+    "createdelight:torchflower_tea",
+    "createdelight:cherry_petal_tea",
+    "createdelight:pitcher_plant_tea",
+    "createdelight:fiddlehead_tea",
+    "createdelight:scarlet_tea",
+    "createdelight:lemon_black_tea",
+    "createdelight:tea_mocha",
+    "createdelight:saidi_tea",
+    "createdelight:cornflower_tea",
+    "createdelight:sakura_honey_tea",
+    "createdelight:genmai_tea",
+    "createdelight:green_water",
+    "createdelight:white_tea",
+    "createdelight:spring_soda",
+    "createdelight:summer_cordial",
+    "createdelight:autumn_tea",
+    "createdelight:winter_glogg",
+    "createdelight:apple_juice",
+    "createdelight:mead",
+    "createdelight:apple_cider",
+    "createdelight:apple_wine",
+    "createdelight:mellohi_wine",
+    "createdelight:glowing_wine",
+    "createdelight:solaris_wine",
+    "createdelight:noir_wine",
+    "createdelight:red_wine",
+    "createdelight:strad_wine",
+    "createdelight:cherry_wine",
+    "createdelight:cristel_wine",
+    "createdelight:creepers_crush",
+    "createdelight:kelp_cider",
+    "createdelight:lilitu_wine",
+    "createdelight:jo_special_mixture",
+    "createdelight:eiswein",
+    "createdelight:aegis_wine",
+    "createdelight:bolvar_wine",
+    "createdelight:chorus_wine",
+    "createdelight:villagers_fright",
+    "createdelight:clark_wine",
+    "createdelight:magnetic_wine",
+    "createdelight:stal_wine",
+    "createdelight:chenet_wine",
+    "createdelight:bottle_mojang_noir",
+    "createdelight:jellie_wine",
+    "createdelight:blazewine_pinot",
+    "createdelight:netherite_nectar",
+    "createdelight:ghastly_grenache",
+    "createdelight:lava_fizz",
+    "createdelight:nether_fizz",
+    "createdelight:espresso_fluid",
+    "createdelight:americano_fluid",
+    "createdelight:ristretto_fluid",
+    "createdelight:latte_fluid",
+    "createdelight:affogato_fluid",
+    "createdelight:con_panna_fluid",
+    "createdelight:cappuccino_fluid",
+    "createdelight:macchiato_fluid",
+    "createdelight:mocha_fluid",
+    "ratatouille:cocoa_liquor"
   ]
 }
