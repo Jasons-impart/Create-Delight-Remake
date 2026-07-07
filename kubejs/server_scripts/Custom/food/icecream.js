@@ -37,7 +37,7 @@ ServerEvents.recipes(e => {
             [
                 ingredient,
                 Fluid.of("cosmopolitan:cream", 500),
-                Fluid.of("createdelight:base_syrup", 250)
+                Fluid.of("createdelightcore:base_syrup", 250)
             ]
         ).heatRequirement("cooled").id(`createdelight:mixing/${outputFluidIcecream.split(":")[1]}`)
         create.mixing(

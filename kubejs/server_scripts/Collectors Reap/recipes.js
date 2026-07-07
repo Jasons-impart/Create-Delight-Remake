@@ -142,7 +142,7 @@ ServerEvents.recipes(e => {
             "8x collectorsreap:" + gummy[0] + "_gummy",
             [
                 Fluid.of("createdelightcore:slime", 810),
-                Fluid.of("createdelight:base_syrup", 1000),
+                Fluid.of("createdelightcore:base_syrup", 1000),
                 gummy[1]
             ]
         ).id("createdelight:mixing/" + gummy[0] + "_gummy")
