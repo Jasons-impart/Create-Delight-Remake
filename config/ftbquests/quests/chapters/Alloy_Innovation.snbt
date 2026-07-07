@@ -100,7 +100,7 @@
 				type: "item"
 			}]
 			size: 1.0d
-			subtitle: "&4黑奴控制器"
+			subtitle: "我作证，烈焰人是&c自愿&r打工的"
 			tasks: [{
 				id: "2B10D1A86D127809"
 				item: "create:empty_blaze_burner"
@@ -298,11 +298,15 @@
 		}
 		{
 			dependencies: ["271924B430C340EC"]
-			description: ["你可以直接使用&e空烈焰人燃烧室&r和&e爆弹椒&r制作&4烈焰人燃烧室&r。&n&l&4注意安全&r！&e烟药竹&r成熟之后&4会爆炸&r！"]
+			description: [
+				"你可以直接使用&e空烈焰人燃烧室&r和&e爆弹椒&r制作&c烈焰人燃烧室&r。&n&l&c注意安全&r！&e烟药竹&r成熟之后&c会爆炸&r！"
+				""
+				"如果害怕被炸伤，可以用&e动力臂&r自动化采收爆弹椒（详情见&e烟药竹&r的&e思索&r）"
+			]
 			id: "33623A848B5FF55A"
 			optional: true
 			shape: "square"
-			subtitle: "&e什么&r？&e不想去&r找&4下界要塞&r？&e找不到&4下界要塞&r？"
+			subtitle: "&e什么&r？&e不想去&r找&c下界要塞&r？&e找不到&c下界要塞&r？"
 			tasks: [
 				{
 					id: "7B385B9EE1537E56"
