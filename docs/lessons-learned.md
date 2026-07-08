@@ -98,6 +98,12 @@ Historical project knowledge: non-obvious bugs, release pitfalls, and workflow d
 
 **Lesson**: Restore the original release branch with quiet git commands, check `$LASTEXITCODE`, and only throw when the command really failed.
 
+## Packwiz Ignore Patterns Must Be Root-Anchored
+
+**Problem**: Adding `scripts/` to `.packwizignore` excluded nested TaCZ gunpack `scripts/*.lua`, so release exports missed runtime Lua state machines and TaCZ item icons rendered as missing textures.
+
+**Lesson**: Root-only release cleanup patterns in `.packwizignore` should use leading slashes such as `/scripts/` and `/docs/` to avoid excluding resource-pack or gunpack internals.
+
 ## Northstar Zinc Ore Crushing Variants
 
 **Problem**: Northstar 0.5.4 has eight zinc ore crushing IDs across Moon, Mars, Mercury, and Venus, and each ordinary/deep variant can output iron ingots if only the sample ID is checked.
