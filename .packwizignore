@@ -5,8 +5,8 @@ KubeJSStyleGuide.md
 DevGuide.md
 AGENTS.md
 kubejs/AGENTS.md
-docs/
-scripts/
+/docs/
+/scripts/
 start.bat
 start.sh
 variables.txt
