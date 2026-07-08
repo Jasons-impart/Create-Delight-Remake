@@ -1,14 +1,7 @@
 {
   "replace": false,
   "values": [
-    {
-      "id": "minecraft:milk",
-      "required": false
-    },
-    {
-      "id": "forge:milk",
-      "required": false
-    },
+    "minecraft:milk",
     "create:honey",
     "create:chocolate",
     "createdelight:soya_milk",

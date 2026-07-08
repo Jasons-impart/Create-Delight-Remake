@@ -410,3 +410,24 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: Quality Food Fluids marked Brewin' and Chewin' and Farmer's Respite as optional, but strict ranges such as `[3.2.1,)` rejected installed versions reported as `1.20.1-3.2.1` and put the mod into a broken state.
 - **Fix/Lesson**: For optional compat dependencies whose mod versions include loader or Minecraft prefixes, use a permissive `mods.toml` range and gate behavior with runtime mod checks/mixin plugins instead of relying on Forge's version range.
+
+## Jade addon components must not read Jade internal storage payloads
+
+**Date**: 2026-07-08
+
+- **Problem**: Quality Food Fluids read Jade's internal `JadeFluidStorage` payload from a broad `Block.class` provider, which could interfere with Jade's normal fluid container display.
+- **Fix/Lesson**: Jade addons should register their own `IServerDataProvider` key for extra data and append only addon-specific tooltip lines, leaving Jade's universal fluid storage payload untouched.
+
+## Fluid quality tags can break third-party FluidStack matching
+
+**Date**: 2026-07-08
+
+- **Problem**: Brewin' And Chewin' and Farmer's Respite compare recipe fluids with `FluidStack.isFluidEqual` or `areFluidStackTagsEqual`, so adding QFF quality NBT to the stored input fluid made otherwise valid recipes stop matching.
+- **Fix/Lesson**: For third-party machine compat, strip only QFF's own quality tag during fluid equality checks while leaving other fluid NBT and the stored tank contents intact.
+
+## Brewin' And Chewin' GUI extraction flag is not simulation
+
+**Date**: 2026-07-08
+
+- **Problem**: QFF treated the third boolean in `KegBlockEntity#fluidExtract(ItemStack, int, boolean, boolean)` as `simulate`, so the GUI path (`extractInGui` passes `true`) skipped quality post-processing while right-click extraction worked.
+- **Fix/Lesson**: Treat that boolean as the in-GUI path flag and still apply tank/container quality on return; only actual `IFluidHandler.FluidAction.SIMULATE` calls should be skipped.
