@@ -1,0 +1,13 @@
+name = "Quality Food Fluids"
+filename = "quality_food_fluids-1.20.1-0.1.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "8b38f164d519de62b51380e1a045255929308c50"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8390925
+project-id = 1601403
