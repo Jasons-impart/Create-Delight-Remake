@@ -133,7 +133,8 @@ StartupEvents.registry("item", e => {
         'lime',
         'kiwi',
         'berry',
-        'big'
+        'big',
+        'corn',
     ]
     popsicle_list.forEach(popsicle => {
         e.create(`createdelight:${popsicle}_popsicle_mold_filled`)
