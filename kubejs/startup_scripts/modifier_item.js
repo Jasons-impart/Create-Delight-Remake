@@ -378,6 +378,8 @@ ItemEvents.modification(e => {
     food_effects('collectorsreap:lime_popsicle', "minecraft:fire_resistance", 10)
     food_effects('cosmopolitan:berry_popsicle', "minecraft:fire_resistance", 10)
     food_effects('createdelight:empty_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('cosmopolitan:gamblers_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('corn_delight:corn_popsicle', "minecraft:fire_resistance", 10)
     food_effects('cosmopolitan:berry_popsicle_double', "minecraft:fire_resistance", 20)
     food_effects('cosmopolitan:chorus_fruit_popsicle_double', "minecraft:fire_resistance", 20)
     food_effects('cosmopolitan:lime_popsicle_double', "minecraft:fire_resistance", 20)

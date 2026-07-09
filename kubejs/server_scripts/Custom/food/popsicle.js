@@ -18,7 +18,8 @@ const solidPopsicleMoldDemolding = {
     "createdelight:kiwi_popsicle_mold_solid": "fruitsdelight:kiwi_popsicle",
     "createdelight:green_tongue_mold_solid": "casualness_delight:green_tongue",
     "createdelight:tear_popsicle_mold_solid": "mynethersdelight:tear_popsicle",
-    "createdelight:big_popsicle_mold_solid": "youkaishomecoming:big_popsicle"
+    "createdelight:big_popsicle_mold_solid": "youkaishomecoming:big_popsicle",
+    "createdelight:corn_popsicle_mold_solid": "corn_delight:corn_popsicle",
 }
 
 function giveOrDropPopsicleDemolding(player, item) {
@@ -58,7 +59,8 @@ ServerEvents.recipes(e => {
         "fruitsdelight:kiwi_popsicle",
         "casualness_delight:crafting_shaped/green_tongue",
         "abnormals_delight:neapolitan/melon_popsicle",
-        "youkaishomecoming:big_popsicle"
+        "youkaishomecoming:big_popsicle",
+        "corn_delight:corn_popsicle"
     ])
 
     //各种冰棍冰冻制作
@@ -70,7 +72,8 @@ ServerEvents.recipes(e => {
         ['fruitsdelight:hamimelon_popsicle', Fluid.of("fruitsdelight:hamimelon_juice", 100)],
         ['collectorsreap:lime_popsicle', Fluid.of("create_central_kitchen:limeade", 100)],
         ['fruitsdelight:kiwi_popsicle', Fluid.of("fruitsdelight:kiwi_juice", 100)],
-        ['casualness_delight:green_tongue', Fluid.of("createdelightcore:slime")],
+        ['casualness_delight:green_tongue', Fluid.of("createdelightcore:slime", 100)],
+        ['corn_delight:corn_popsicle', Fluid.of("create_central_kitchen:creamy_corn_drink", 100)],
     ]
     popsicle_recipe_list.forEach(popsicle => {
         let iner = "ratatouille:popsicle_mold"
@@ -124,7 +127,8 @@ let popsicle_list = [
     'collectorsreap:lime_popsicle',
     'fruitsdelight:kiwi_popsicle',
     'casualness_delight:green_tongue',
-    'youkaishomecoming:big_popsicle'
+    'youkaishomecoming:big_popsicle',
+    'corn_delight:corn_popsicle',
 ]
 popsicle_list.forEach(popsicle => {
     ItemEvents.foodEaten(popsicle, e => {
