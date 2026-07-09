@@ -37,7 +37,6 @@
 | 补丁文件 | 备注 |
 |---|---|
 | `org/antarcticgardens/newage/CreateNewAgePonders.badiff` | 当前 Create New Age JAR 中 Ponder 类路径已是 `org/antarcticgardens/cna/content/ponders/CNAPonders`；旧补丁常量指向旧 `newage` 包的 PonderPlugin 结构，不能直接套到当前 `cna` 包。该 badiff 来自提交 `e11d47f206c1e9cb28bdf506698c824586f9b00c`（`删除cna中无用的ponder (#649)`），推测目的就是移除当时 Create New Age 的无用 Ponder 注册。 |
-| `com/renyigesai/bakeries/api/block/properties/ModIntegerProperty.badiff` | 当前 Bakeries JAR 中未找到该 API 类；旧补丁语义是 `Property<Integer>` 自定义整数属性，当前相近类 `com/renyigesai/bakeries/block/state/BakeriesEnumProperty` 是 `StringRepresentable` 枚举，语义不匹配。该 badiff 与 `config/modernfix-mixins.properties` 中启用 `mixin.perf.dynamic_resources=true` 同提交加入，推测是为 Bakeries 旧整数方块状态属性适配 ModernFix dynamic resources。 |
 | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff`、`SuperconductingConnectorBlockEntity.badiff`、`SuperconductingConnectorBlockEntity$1.badiff` | 配套注册补丁会引用超导连接器类，但当前 `createaddition-1.20.1-1.3.3.jar` 直接扫描未找到这些 class；实际可用性需以最新启动日志和游戏内注册结果为准。 |
 
 ## 维护注意

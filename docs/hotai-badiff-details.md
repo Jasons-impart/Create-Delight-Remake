@@ -6,7 +6,7 @@
 
 `HOTAI_STATUS` 区块由 `scripts/update-hotai-docs.ps1` 维护，只记录当前补丁清单和目标 class 是否能在 JAR 中命中；方法级语义、历史提交依据和迁移建议仍写在人工维护区。
 
-## 当前生效性核查（2026-07-05）
+## 当前生效性核查（2026-07-09）
 
 核查方法：逐个读取当前 `hotai/**/*.badiff`，从当前 `mods/*.jar` 查找同名目标 class，并按 HotAI 的 ASM 归一化方式实际应用 badiff；能生成可解析 class 记为“可应用”。目标 class 不存在则本补丁本身不会被 HotAI 命中，但如果其他已应用补丁引用该缺失 class，则仍可能启动崩溃。
 
@@ -23,14 +23,13 @@
 | Better Compatibility Checker | `BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar` | 1/1 可应用：`ServerStatusPingerMixin`。 | 当前可生效。 |
 | Quality Food | `quality_food-1.20.1-2.3.2-all.jar` | 1/1 可应用：`BlockMixin`。 | 当前可生效。 |
 | Create New Age | `create-new-age-1.2.0+forge-mc1.20.1.jar` | 0/1；目标 `org/antarcticgardens/newage/CreateNewAgePonders` 缺失，当前 JAR 中相近类为 `org/antarcticgardens/cna/content/ponders/CNAPonders`；旧 badiff 可读常量指向旧 `newage` 包的 `PonderPlugin`、`registerScenes`、`registerTags`、`NewAgeBlocks`、`NewAgeItems` 和若干 `content/*Ponder` 类。 | 当前不生效；当前 `CNAPonders` 是语义上的新入口，但包名、字段和注册项已重构，旧补丁不能直接应用。该补丁来自提交 `e11d47f206c1e9cb28bdf506698c824586f9b00c`（`删除cna中无用的ponder (#649)`），应按“移除无用 Ponder”理解。 |
-| Bakeries | `bakeries-1.20.1-forge-1.2.5.jar` | 0/1；目标 `com/renyigesai/bakeries/api/block/properties/ModIntegerProperty` 缺失；旧 badiff 可读常量显示它是 `Property<Integer>`，含 `create(String, int, int)`、`getName(Integer)` / 解析整数值等语义。当前只找到 `com/renyigesai/bakeries/block/state/BakeriesEnumProperty`，它是 `StringRepresentable` 枚举。 | 当前不生效；未找到语义匹配的新目标，不能迁移到 `BakeriesEnumProperty`。该补丁与提交 `3f499561ab68a1262b14e777f2f1d30dcaa4e2aa`（`开启dynamic_resources (#715)`）同提交出现，推测用于适配 ModernFix dynamic resources。 |
 
-总计：清理已移除模组的遗留补丁后，当前 26 个 `.badiff` 中 21 个可应用，5 个当前找不到目标 class。真正需要优先处理的是 Create Addition 超导连接器 3 个缺失目标，因为其余 Create Addition 补丁仍会注册并引用这些缺失类；Create New Age 和 Bakeries 两项当前更像不会被命中的旧版本补丁，且未找到可直接迁移的新目标。
+总计：清理 Bakeries 旧版本遗留补丁后，当前 25 个 `.badiff` 中 21 个可应用，4 个当前找不到目标 class。真正需要优先处理的是 Create Addition 超导连接器 3 个缺失目标，因为其余 Create Addition 补丁仍会注册并引用这些缺失类；Create New Age 当前更像不会被命中的旧版本补丁，且未找到可直接迁移的新目标。
 
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 26 个 `.badiff`；目标 class 命中 21 个，未命中 5 个。
+当前扫描到 25 个 `.badiff`；目标 class 命中 21 个，未命中 4 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 当前目标 class |
 |---|---|---|---|
@@ -38,8 +37,8 @@
 | Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity.badiff` | `com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity` | 命中 `createliquidfuel-2.1.1-1.20.1.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/ConnectorType.badiff` | `com/mrh0/createaddition/blocks/connector/ConnectorType` | 命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock` | 未命中当前 JAR |
-| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity` | 未命中当前 JAR |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1` | 未命中当前 JAR |
+| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity` | 未命中当前 JAR |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/IWireNode.badiff` | `com/mrh0/createaddition/energy/IWireNode` | 命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/network/EnergyNetwork.badiff` | `com/mrh0/createaddition/energy/network/EnergyNetwork` | 命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/WireConnectResult.badiff` | `com/mrh0/createaddition/energy/WireConnectResult` | 命中 `createaddition-1.20.1-1.3.3.jar` |
@@ -50,7 +49,6 @@
 | Vintage Improvements | `hotai/com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene.badiff` | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene` | 命中 `vintageimprovements-1.20.1-0.3.7.3.jar` |
 | Vintage Improvements | `hotai/com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderTag.badiff` | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderTag` | 命中 `vintageimprovements-1.20.1-0.3.7.3.jar` |
 | Create Mechanical Spawner | `hotai/com/oierbravo/create_mechanical_spawner/foundation/utility/LivingEntityHelper.badiff` | `com/oierbravo/create_mechanical_spawner/foundation/utility/LivingEntityHelper` | 命中 `create_mechanical_spawner-1.20.1-0.1.7-6.0.6.jar` |
-| Bakeries | `hotai/com/renyigesai/bakeries/api/block/properties/ModIntegerProperty.badiff` | `com/renyigesai/bakeries/api/block/properties/ModIntegerProperty` | 未命中当前 JAR |
 | Create | `hotai/com/simibubi/create/compat/jei/category/ItemDrainCategory.badiff` | `com/simibubi/create/compat/jei/category/ItemDrainCategory` | 命中 `create-1.20.1-6.0.8.jar` |
 | Create | `hotai/com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour.badiff` | `com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour` | 命中 `create-1.20.1-6.0.8.jar` |
 | Create | `hotai/com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour.badiff` | `com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour` | 命中 `create-1.20.1-6.0.8.jar` |
@@ -393,9 +391,9 @@ return stack;
 ```
 
 ```java
-// CreateNewAgePonders.badiff / ModIntegerProperty.badiff
+// CreateNewAgePonders.badiff
 // 当前 JAR 扫描不到目标 class，无法生成可靠代码化摘要。
-// 这些条目只能保留目标路径、疑似历史来源和启动验证要求。
+// 该条目只能保留目标路径、疑似历史来源和启动验证要求。
 ```
 
 ## Create
@@ -473,17 +471,9 @@ return stack;
 |---|---|---|---|
 | `org/antarcticgardens/newage/CreateNewAgePonders.badiff` | 当前未还原 | 当前 `create-new-age-1.2.0+forge-mc1.20.1.jar` 中 Ponder 类路径为 `org/antarcticgardens/cna/content/ponders/CNAPonders`，未找到 `org/antarcticgardens/newage/CreateNewAgePonders`。旧 badiff 可读常量显示它针对旧包名下的 PonderPlugin / Ponder 场景与标签注册；当前 `CNAPonders` 仍承担 `registerScenes` / `registerTags`，但已切换到 `CNABlocks`、`CNAItems` 和 `content/ponders/*`。该 badiff 首次加入于 `e11d47f206c1e9cb28bdf506698c824586f9b00c`，提交标题为 `删除cna中无用的ponder (#649)`，同提交还修改了 `kubejs/assets/create_new_age/lang/zh_cn.json`，删除了 CNA heating、heater、reactor、wires 等 Ponder 文案。 | 旧补丁不能直接应用到当前 `CNAPonders`。结合提交信息，最可信的语义不是泛化的 Ponder API 适配，而是移除当时 Create New Age 中不需要展示的 Ponder 场景和标签；若仍需要该行为，应基于当前 `CNAPonders` 重新生成“删除无用 Ponder”补丁，不能只改路径复用旧 badiff。 |
 
-## Bakeries
-
-| 文件 | 状态 | 具体改动 | 影响 |
-|---|---|---|---|
-| `com/renyigesai/bakeries/api/block/properties/ModIntegerProperty.badiff` | 当前未还原 | 当前 `bakeries-1.20.1-forge-1.2.5.jar` 未找到 `api/block/properties/ModIntegerProperty`。旧 badiff 常量显示该类是 `Property<Integer>` 子类，含 `create(String, int, int)` 工厂、整数值集合和 `getName(Integer)` / 字符串解析逻辑；当前相近类只有 `com/renyigesai/bakeries/block/state/BakeriesEnumProperty`，它是 `StringRepresentable` 枚举 `NONE/BRASS/ONE_SHAPE/TWO_SHAPE`。该 badiff 首次加入于 `3f499561ab68a1262b14e777f2f1d30dcaa4e2aa`，提交标题为 `开启dynamic_resources (#715)`，同提交新增 `config/modernfix-mixins.properties` 并启用 `mixin.perf.dynamic_resources=true`。 | 当前未找到语义匹配的新类；不应把旧整数属性补丁迁移到 `BakeriesEnumProperty`。结合提交信息，最可信的语义是让 Bakeries 旧自定义整数方块状态属性适配 ModernFix dynamic resources / 资源加载优化；若 Bakeries 仍有旧问题，需要先定位具体方块状态崩溃或资源重载异常，再基于当前类重新补丁。 |
-
 ## 维护建议
 
 - 对“已还原”条目，更新目标模组后应重新运行 class diff 或至少确认启动日志中仍有对应 `Patched class:`。
 - 修改 `hotai/**/*.badiff` 后运行 `scripts/update-hotai-docs.ps1` 更新 `HOTAI_STATUS` 区块；`scripts/validate-knowledge-base.ps1` 会用 `-Check` 检查该区块是否过期。
 - 对“当前未还原”条目，优先判断目标模组是否已改名、移除或被替换；如果连续版本都没有启动日志命中，可以考虑清理对应 `.badiff`。
 - 超导连接器相关补丁要和 `kubejs/assets/createaddition/`、`kubejs/server_scripts/Create Addition/` 一起验证；只看 HotAI class patch 不足以证明玩法完整。
-
-

@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$Root = "",
     [string]$DetailsPath = "",
     [switch]$Check
@@ -120,7 +120,7 @@ $foundCount = @($rows | Where-Object { -not [string]::IsNullOrWhiteSpace($_.JarN
 $missingCount = $rows.Count - $foundCount
 $generatedBlock = Get-GeneratedBlock -Rows $rows -FoundCount $foundCount -MissingCount $missingCount
 
-$detailsText = Get-Content -Raw -LiteralPath $DetailsPath
+$detailsText = Get-Content -Raw -LiteralPath $DetailsPath -Encoding UTF8
 $begin = "<!-- HOTAI_STATUS:BEGIN -->"
 $end = "<!-- HOTAI_STATUS:END -->"
 
@@ -143,5 +143,6 @@ if ($Check) {
     return
 }
 
-Set-Content -LiteralPath $DetailsPath -Value $updatedText -Encoding UTF8
+$utf8NoBom = [System.Text.UTF8Encoding]::new($false)
+[System.IO.File]::WriteAllText($DetailsPath, $updatedText, $utf8NoBom)
 Write-Host "Updated HotAI generated documentation in $(Get-RelativePath $DetailsPath)"
