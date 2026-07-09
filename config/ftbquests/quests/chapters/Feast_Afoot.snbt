@@ -2059,6 +2059,41 @@
 			x: -3.0d
 			y: 2.0d
 		}
+		{
+			dependencies: ["7F49D3F72AC85F8D"]
+			id: "2EE4D90FD7E54C3B"
+			subtitle: "让烈焰人帮你掌勺"
+			tasks: [{
+				id: "0904E2AC60CB07B3"
+				item: {
+					Count: 1
+					id: "itemfilters:or"
+					tag: {
+						display: {
+							Name: "{\"text\":\"烹饪指南\",\"italic\":false}"
+						}
+						items: [
+							{
+								Count: 1b
+								id: "create_central_kitchen:cooking_guide"
+							}
+							{
+								Count: 1b
+								id: "create_central_kitchen:miners_cooking_guide"
+							}
+							{
+								Count: 1b
+								id: "centralvintage:pickling_guide"
+							}
+						]
+					}
+				}
+				type: "item"
+			}]
+			title: "烹饪指南"
+			x: 10.5d
+			y: 2.0d
+		}
 	]
 	title: "&5盛宴准备时！"
 }
