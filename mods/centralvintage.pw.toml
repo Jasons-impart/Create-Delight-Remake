@@ -1,13 +1,13 @@
 name = "Central Vintage"
-filename = "centralvintage-1.2.0.jar"
+filename = "centralvintage-1.2.1.jar"
 side = "both"
 
 [download]
 hash-format = "sha1"
-hash = "de223d05fb5a36b87053c32365f33a2e057fbb87"
+hash = "48897d34d8ee298c52c723c32d807ffb7a1ba9d4"
 mode = "metadata:curseforge"
 
 [update]
 [update.curseforge]
-file-id = 8398141
+file-id = 8404115
 project-id = 1590757
