@@ -1,0 +1,13 @@
+name = "Create: Factory Controller"
+filename = "createfactorycontroller-1.0.0-1.20.1-alpha-2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "5df39ed7064e5f3b57b0e2e3fca23ea2c1178fc2"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8376115
+project-id = 1573767
