@@ -431,3 +431,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: QFF treated the third boolean in `KegBlockEntity#fluidExtract(ItemStack, int, boolean, boolean)` as `simulate`, so the GUI path (`extractInGui` passes `true`) skipped quality post-processing while right-click extraction worked.
 - **Fix/Lesson**: Treat that boolean as the in-GUI path flag and still apply tank/container quality on return; only actual `IFluidHandler.FluidAction.SIMULATE` calls should be skipped.
+
+## Terralith dispenser_alt already covers the vanilla dispenser recipe
+
+**Date**: 2026-07-12
+
+- **Problem**: `terralith:dispenser_alt` outputs `minecraft:dispenser` with `#minecraft:stone_crafting_materials`; the vanilla tag already contains `minecraft:cobblestone`, and Terralith appends extra stone variants with `replace: false`, so keeping `minecraft:dispenser` leaves duplicate recipes.
+- **Fix/Lesson**: Remove the vanilla `minecraft:dispenser` recipe ID in KubeJS and keep Terralith's broader recipe.
