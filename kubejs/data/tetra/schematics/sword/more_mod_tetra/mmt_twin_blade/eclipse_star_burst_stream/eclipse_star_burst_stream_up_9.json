@@ -1,0 +1,21 @@
+{
+  "slots": ["sword/blade"],
+  "rarity": "hone",
+  "displayType": "improvement",
+  "materialSlotCount": 0,
+  "hone": true,
+  "glyph": {
+    "textureLocation": "tetra:textures/gui/wizard_glyphs.png",
+    "textureX": 96,
+    "textureY": 96
+  },
+  "requirement": {
+    "type": "tetra:improvement",
+    "improvement": "eclipse_star_burst_stream_up",
+    "level": 8
+  },
+  "outcomes": [{
+    "experienceFactor": 3,
+    "improvements": { "eclipse_star_burst_stream_up": 9 }
+  }]
+}

@@ -19,7 +19,9 @@
       ],
       "key": "heavy_blade/",
       "attributes": {
-        "generic.attack_speed": -1.7
+        "generic.attack_speed": -1.6,
+        "forge:reach_distance": 0.5,
+        "forge:attack_range": 0.5
       },
       "aspects": {
         "edged_weapon": 2,
@@ -30,20 +32,17 @@
           2,
           0.5
         ],
-        "truesweep": 1,
-        "slam": [
+        "reap": [
           100,
-          1.4
+          3
         ],
-        "abilityMomentum": [
-          50,
-          1.0
+        "abilityExhilaration": [
+          1,
+          10
         ],
+        "truesweep": 1,
         "shieldbreaker": 1,
-        "stun": [
-          -14,
-          -0.8
-        ]
+        "armorPenetration": 3
       },
       "tools": {
         "cut": [
@@ -56,23 +55,48 @@
         "primaryAttributes": {
           "generic.attack_damage": 0.5
         },
+        "primaryEffects": {
+          "abilityOvercharge": [
+            3,
+            1
+          ],
+          "abilityExhilaration": [
+            0,
+            1
+          ]
+        },
         "secondaryAttributes": {
-          "generic.attack_damage": 1.5,
-          "generic.attack_speed": -0.15
+          "generic.attack_damage": 2.5,
+          "generic.attack_speed": -0.25
         },
         "secondaryEffects": {
           "sweeping": 0.3,
-          "stun": [
-            7,
-            0.4
-          ],
-          "slam": [
-            10,
+          "reap": [
+            15,
             0
           ],
-          "abilityMomentum": [
-            10,
-            0.5
+          "abilityOvercharge": [
+            5,
+            1
+          ],
+          "abilityExhilaration": [
+            0,
+            1
+          ],
+        "armorPenetration": 3
+        },
+        "tertiaryAttributes": {
+          "forge:reach_distance": 0.1,
+          "forge:attack_range": 0.1
+        },
+        "tertiaryEffects":{
+          "reap":[
+            0,
+            0.3
+          ],
+          "abilityExhilaration": [
+            0,
+            2
           ]
         },
         "durability": 1,

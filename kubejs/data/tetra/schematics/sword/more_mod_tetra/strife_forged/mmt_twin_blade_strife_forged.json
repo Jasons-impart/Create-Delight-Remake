@@ -1,0 +1,34 @@
+{
+  "replace": true,
+  "slots": ["sword/blade"],
+  "rarity": "hone",
+  "displayType": "improvement",
+  "materialSlotCount": 0,
+  "hone": true,
+  "glyph": {
+    "textureLocation": "tetra:textures/gui/wizard_glyphs.png",
+    "textureX": 96,
+    "textureY": 96
+  },
+  "requirement": {
+    "type": "tetra:and",
+    "requirements": [
+      {
+        "type": "tetra:not",
+        "requirement": { "type": "tetra:improvement", "improvement": "mmt_twin_blade_strife_forged" }
+      },
+      {
+        "type": "tetra:module",
+        "module": "sword/more_mod_tetra/mmt_twin_blade"
+      },
+      {
+        "type": "tetra:locked",
+        "key": "tetra:shared/the_legend_scroll_of_strife_titan"
+      }
+    ]
+  },
+  "outcomes": [{
+    "experienceFactor": 1,
+    "improvements": { "mmt_twin_blade_strife_forged": 0 }
+  }]
+}
