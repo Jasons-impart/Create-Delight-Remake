@@ -45,6 +45,7 @@ CD-master-dev/
 | Dev environment setup | `GettingStarted.md` | Self-contained pre-clone bootstrap |
 | Release workflow | `.github/workflows/release.yml` | Use `/release` skill |
 | Packwiz asset workflow | `mods/`, `packwiz-files/` | Use `/packwiz-assets` skill |
+| Minecraft MCP testing/repair | `.agents/skills/minecraft-mcp/SKILL.md` | Use `/minecraft-mcp`; keep source work in `D:\learnmod` |
 | Content/how-to knowledge | `docs/dev-knowledge/` | Use `/dev-knowledge` skill |
 | Design plans | `docs/plan/` | Use `/dev-knowledge` for routing |
 | Knowledge maintenance | `.agents/skills/knowledge-check/SKILL.md` | Use `/knowledge-check` skill |
