@@ -1,9 +1,6 @@
 {
   "replace": false,
   "values": [
-    "minecraft:milk",
-    "create:honey",
-    "create:chocolate",
     "createdelight:soya_milk",
     "createdelight:green_soylent",
     "createdelight:radpop_fluid",
