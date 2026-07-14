@@ -1,0 +1,42 @@
+{
+  "slots": [
+    "single/handle",
+    "double/handle",
+    "sword/hilt",
+    "bow/string",
+    "crossbow/stock"
+  ],
+  "materialSlotCount": 1,
+  "rarity": "temporary",
+  "displayType": "improvement",
+  "glyph": {
+    "textureX": 128,
+    "textureY": 240
+  },
+  "requirement": {
+    "type": "tetra:and",
+    "requirements": [
+      {
+        "type": "tetra:locked",
+        "key": "tetra:shared/mmt_more_improvements"
+      },
+      {
+        "type": "tetra:improvement",
+        "improvement": "skillful",
+        "level": 3
+      }
+    ]
+  },
+  "outcomes": [
+    {
+      "experienceCost": 40,
+      "material": {
+        "items": [
+        ]
+      },
+      "improvements": {
+        "skillful": 4
+      }
+    }
+  ]
+}

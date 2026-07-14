@@ -1,0 +1,35 @@
+[
+    {
+        "key": "adze/sharpen",
+        "level": 1,
+        "integrity": -1,
+        "aspects": {
+            "honed": 1
+        },
+        "tools": {
+            "pickaxe_dig": 1
+        }
+    },
+    {
+        "key": "adze/sharpen",
+        "level": 2,
+        "integrity": -1,
+        "aspects": {
+            "honed": 2
+        },
+        "tools": {
+            "pickaxe_dig": 3
+        }
+    },
+    {
+        "key": "adze/sharpen",
+        "level": 3,
+        "integrity": -2,
+        "aspects": {
+            "honed": 3
+        },
+        "tools": {
+            "pickaxe_dig": 5
+        }
+    }
+]

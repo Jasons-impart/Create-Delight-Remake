@@ -1,0 +1,26 @@
+{
+  "replace": true,
+  "slots": ["sword/blade"],
+  "materialSlotCount": 1,
+  "displayType": "major",
+  "glyph": {
+    "textureLocation": "tetra:textures/gui/wizard_glyphs.png",
+    "textureX": 96,
+    "textureY": 80
+  },
+  "translation": {
+    "primaryAttributes": { "generic.attack_damage": 3 },
+    "secondaryAttributes": { "generic.attack_speed": -1 },
+    "secondaryEffects": { "jab": -1 },
+    "tools": { "cut": [2, 3] },
+    "durability": 4,
+    "integrity": -3,
+    "magicCapacity": 3
+  },
+  "outcomes": [{
+    "materials": ["tetra:wood/","tetra:stone/","tetra:metal/","tetra:gem/","tetra:bone/"],
+    "countFactor": 1,
+    "moduleKey": "sword/more_mod_tetra/mmt_twin_blade",
+    "moduleVariant": "mmt_twin_blade/"
+  }]
+}
