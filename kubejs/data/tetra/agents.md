@@ -1,5 +1,45 @@
 # Tetra / MMT 当前包设计参考
 
+<!-- TOC start -->
+**目录**
+
+| 章节 | 内容 |
+|------|------|
+| [§0](#sec-0) | 阅读对照 |
+| [§1](#sec-1) | Tetra 基础设计参考 |
+| · [§1.1](#sec-1-1) | 材料与属性语义 |
+| · [§1.2](#sec-1-2) | 材料三值设计思路 |
+| · [§1.3](#sec-1-3) | 原版 Tetra 效果速查 |
+| · [§1.4](#sec-1-4) | 原版武器与工具模块 |
+| · [§1.5](#sec-1-5) | 原版远程与盾牌模块 |
+| · [§1.6](#sec-1-6) | 原版工具腰带模块 |
+| · [§1.7](#sec-1-7) | 原版改良与设计入口 |
+| · [§1.8](#sec-1-8) | 原版打磨与当前包倍率平衡 |
+| · [§1.9](#sec-1-9) | GeoTetraArmor 盔甲模块 |
+| · [§1.10](#sec-1-10) | Tetra 效果参数语义：level 与 efficiency |
+| · [§1.11](#sec-1-11) | abilityExhilaration（振奋） |
+| · [§1.12](#sec-1-12) | abilityOvercharge（超蓄） |
+| · [§1.13](#sec-1-13) | abilitySpeed（冷却） |
+| · [§1.14](#sec-1-14) | abilityEcho（回声） |
+| · [§1.15](#sec-1-15) | abilityOverextend（过增） |
+| · [§1.16](#sec-1-16) | abilityRevenge（复仇） |
+| · [§1.17](#sec-1-17) | abilityCombo（连击） |
+| · [§1.18](#sec-1-18) | abilityMomentum（惯性） |
+| · [§1.19](#sec-1-19) | abilityDefensive（防御姿态） |
+| · [§1.20](#sec-1-20) | 被动效果与 ability 系统的隔离 |
+| [§2](#sec-2) | MMT 伤害公式 |
+| [§3](#sec-3) | MMT 主要收益机制与样例数值 |
+| [§4](#sec-4) | 泰坦卷轴与颂歌 |
+| [§5](#sec-5) | 饰品收益 |
+| [§6](#sec-6) | MMT 武器与远程模块 |
+| [§7](#sec-7) | 当前包内材料与 socket 收益 |
+| [§8](#sec-8) | 可选调整方向 |
+| [§9](#sec-9) | 快速检索命令 |
+| [§10](#sec-10) | MMT OP 物品清单 |
+| [§11](#sec-11) | chthonic_extractor 跨维度矿物提取 |
+
+<!-- TOC end -->
+
 日期：2026-06-22
 
 范围：以当前整合包实际安装的 Tetra、More Mod Tetra、GeoTetraArmor 以及当前 KubeJS 覆盖为准，整理 Tetra 基础属性、原版模块/效果、MMT 扩展收益和当前包里值得关注的数值入口。MMT jar 内含大量跨模组集成；当前包没有安装的集成不列入收益表。
@@ -24,6 +64,7 @@
 
 编译后的 JAR 通过 Packwiz 管理；KubeJS 覆盖（`kubejs/data/tetra/`）在此基础上调整模块定义、改良数值和材料属性。
 
+<a id="sec-0"></a>
 ## 0. 阅读对照
 
 文档里保留英文 ID 是为了方便回查 JSON、日志和代码；能加中文的地方都在后面用括号或中文名补上。
@@ -70,10 +111,12 @@
 | `*属性名` | Tetra 的属性乘法/倍率写法，当前泰坦和颂歌已改成这一档 |
 | `**属性名` | 更强的乘法属性写法，MMT 部分饰品模块仍保留 |
 
+<a id="sec-1"></a>
 ## 1. Tetra 基础设计参考
 
 这一节是给后续 MMT 分析打底：Tetra 原版的模块、材料、效果本身已经是一套“部件 + 材料三属性 + 效果词条 + 改良”的设计系统。MMT 的数值膨胀，很多时候是把更多模块和更高材料三属性接进了这套系统。
 
+<a id="sec-1-1"></a>
 ### 1.1 材料与属性语义
 
 | 设计项 | 含义 | 对数值设计的影响 |
@@ -158,6 +201,7 @@
 "tetra.material.ssbs": "神圣宝石"
 ```
 
+<a id="sec-1-2"></a>
 ### 1.2 材料三值设计思路
 
 这里的统计来自当前 Tetra 相关 jar 与 `kubejs/data/tetra/materials/` 中带 `primary/secondary/tertiary` 的材料。MMT jar 里有不少未安装联动材料，所以表里的“典型范围”更适合看设计倾向；具体平衡仍以当前包实际可用材料为准。
@@ -194,6 +238,7 @@
 | 新的石材 | 中高硬度，高密度，零韧性 | 强在硬和重，不应兼具弹性 |
 | 新的 socket/reagent | 三值归零，靠效果表达主题 | 这样不会意外喂给模块三属性公式 |
 
+<a id="sec-1-3"></a>
 ### 1.3 原版 Tetra 效果速查
 
 | 类型 | 效果 ID | 设计含义 |
@@ -212,6 +257,7 @@
 | 辅助槽位 | `quickAccess`（快捷取用），`quickSlot`（快捷槽），`quiverSlot`（箭袋槽），`storageSlot`（存储槽），`potionSlot`（药水槽） | 工具腰带、箭袋和容器类玩法 |
 | 质量/稳定 | `workable`（可加工），`intuit`（洞察），`stabilizing`（稳定），`unstable`（不稳定），`suspend`（悬浮/挂载） | 工艺、稳定性或功能性收益 |
 
+<a id="sec-1-4"></a>
 ### 1.4 原版武器与工具模块
 
 | 类别 | 模块 | 基础属性/效果 | 材料三值收益 | 设计定位 |
@@ -239,6 +285,7 @@
 | 单头 | `trident`（三叉戟） | 攻击 `+8`，攻速 `-1.25`，`pointy_weapon`，`throwable` | 原版模块不从三值继续加收益 | 高基础攻击投掷头 |
 | 单头 | `earthpiercer`（凿地器） | 攻击 `+2`，攻速 `-1.95`，`piercing +2`，`piercingHarvest +1` | 原版模块不从三值继续加收益 | 多方块/穿透采掘 |
 
+<a id="sec-1-5"></a>
 ### 1.5 原版远程与盾牌模块
 
 | 类别 | 模块 | 基础属性/效果 | 材料三值收益 | 设计定位 |
@@ -261,6 +308,7 @@
 | 盾配件 | `spike`（盾刺） | `ability_cooldown +0.3`，`blockingReflect [38,0.9]` | 硬度：反射第二参数 `+0.05`；密度：冷却 `+0.1`、反射第一参数 `-2` | 反射/反击 |
 | 盾配件 | `sturdy_boss`（坚固盾突） | `ability_cooldown +0.3`，`bashing [1,1]` | 硬度：盾击 `[+0.2,+0.3]`；密度：冷却 `+0.3`、盾击 `[+0.3,+0.1]` | 盾击 |
 
+<a id="sec-1-6"></a>
 ### 1.6 原版工具腰带模块
 
 | 模块 | 效果 | 设计定位 |
@@ -273,6 +321,7 @@
 | `booster`（推进器） | `booster +1` | 位移/推进功能 |
 | `suspender`（吊带） | `suspendSelf +1` | 悬挂/自身悬浮相关 |
 
+<a id="sec-1-7"></a>
 ### 1.7 原版改良与设计入口
 
 | 改良/入口 | 常见文件位置 | 设计含义 |
@@ -286,6 +335,7 @@
 | `schematics`（图纸） | `data/tetra/schematics/` | 控制模块解锁和可制作性 |
 | `synergies`（协同） | `data/tetra/synergies/` | 控制双头工具、模块组合等额外加成 |
 
+<a id="sec-1-8"></a>
 ### 1.8 原版打磨与当前包倍率平衡
 
 Tetra 原版打磨分成两种：白值型直接加属性，倍率型使用 `**` 属性。倍率型会先进入基础属性计算，再被 MMT 普通增伤和独立乘区继续放大，所以当前包对打磨里的 `**` 项做了压低覆盖。
@@ -305,6 +355,7 @@ Tetra 原版打磨分成两种：白值型直接加属性，倍率型使用 `**`
 | 盾板/盾握把白值伤害打磨 | `tetra:ability_damage +0.5` 到 `+3` | 保持原版 | 能力伤害白值型 |
 | 盾带速度打磨 | `tetra:ability_cooldown -0.5` 到 `-2.5` | 保持原版 | 冷却白值型 |
 
+<a id="sec-1-9"></a>
 ### 1.9 GeoTetraArmor 盔甲模块
 
 当前包对 GeoTetraArmor 有 KubeJS 覆盖和中文说明，盔甲也按 Tetra 的材料三属性计算。
@@ -321,6 +372,7 @@ Tetra 原版打磨分成两种：白值型直接加属性，倍率型使用 `**`
 
 盔甲模块的设计重点是：材料三属性不直接进入攻击乘区，但会通过护甲、护甲韧性、移动速度惩罚和附魔承载改变生存曲线。重型模块如果堆得太多，防御会变高，但移速损失也会叠加。
 
+<a id="sec-1-10"></a>
 ### 1.10 Tetra 效果参数语义：level 与 efficiency
 
 Tetra 效果在模块/改良/协同 JSON 中以 `"效果ID": 数值` 或 `"效果ID": [A, B]` 形式定义。理解数组两项的含义需要结合反序列化器和具体效果类的代码。
@@ -336,6 +388,7 @@ Tetra 效果在模块/改良/协同 JSON 中以 `"效果ID": 数值` 或 `"效�
 
 `TierData.getLevel(key)` 返回 `Math.round(levelMap.get(key))` 的 int；`getEfficiency(key)` 返回 float 原值。多来源（模块、材料、改良、协同）的 level/efficiency 会**求和叠加**。
 
+<a id="sec-1-10-2"></a>
 #### 1.10.2 效果参数语义对照
 
 **efficiency 不是统一语义**，由具体效果类决定。以下是已核实的效果参数含义：
@@ -371,9 +424,31 @@ javap -c -p -classpath mods/tetra-1.20.1-6.9.0.jar se.mickelus.tetra.effect.<Eff
 - level 常参与概率判断（`random < level / 100.0`）或百分比计算
 - efficiency 在不同类中含义差异最大：可能是物理量（秒、格）、折扣乘数、或计数器步长
 
+## 能力战铸右手互斥总览
+
+六种右手模块各独占一类 ability 协同树。**同一双头工具只能激活其中一种**——玩家通过选择右手模块来选定构筑方向。
+
+| 右手模块 | 激活的 ability | 核心机制 | 互斥替代方案 |
+|---|---|---|---|
+| `*/extractor_right` | **abilityEcho** | 技能延时复刻（3-5s 后重放） | — |
+| `*/hoe_right` | **abilityOverextend** | 饱腹消耗饥饿换取超额收益 | extractor (echo) |
+| `*/claw_right` | **abilityRevenge** | 被攻击后标记复仇目标获增益 | extractor, hoe |
+| `*/basic_pickaxe_right` | **abilityCombo** | 连击点数积累→技能消耗 | extractor, hoe, claw |
+| `*/basic_hammer_right` | **abilityMomentum** | 技能附带眩晕/击退/击飞 | 以上四种 |
+| `*/adze_right` | **abilityDefensive** (+abilityEcho) | 副手触发防御变体；主手保留 echo | 以上五种 |
+
+> **adze_right 是唯一的双 ability 右手**：主手提供 abilityEcho，副手提供 abilityDefensive。其余五种右手均只有单一 ability。
+>
+> **非战铸来源**：abilityExhilaration 和 abilityOvercharge 不由右手模块提供，而是来自 `heavy_blade`（重剑身）模块。abilitySpeed 仅来自 `butt`（握把头）战铸协同。
+
+---
+
+<a id="sec-1-11"></a>
+<details><summary>1.11 abilityExhilaration（振奋）数值逻辑 ▸ 展开</summary>
+
 ### 1.11 abilityExhilaration（振奋）数值逻辑
 
-`abilityExhilaration` 是一个跨技能的效果乘子，定义在重剑身模块（`modules/sword/heavy_blade.json`）中。它不是独立触发的效果，而是嵌入到各个蓄力技能（execute、reap、lunge、puncture、pry、overpower、slam）的 `perform()` 与 `applyBuff()` 中，在击杀或命中时提供额外收益。其字段 `[level, efficiency]` 与 §1.10 的反序列化规则一致。
+`abilityExhilaration` 是一个跨技能的效果乘子，定义在重剑身模块（`modules/sword/heavy_blade.json`）中。它不是独立触发的效果，而是嵌入到各个蓄力技能（execute、reap、lunge、puncture、pry、overpower、slam）的 `perform()` 与 `applyBuff()` 中，在击杀或命中时提供额外收益。其字段 `[level, efficiency]` 与 [§1.10](#sec-1-10) 的反序列化规则一致。
 
 #### 1.11.1 数据来源
 
@@ -432,7 +507,7 @@ if (level > 0):
     player.addEffect(new SmallAbsorb(600ticks=30s, finalAmplifier))
 ```
 
-`SmallAbsorb` 每级提供 `amplifier + 1` 点吸收值（详见 §1.11.5）。击杀实体数越多，护盾等级越高；后续收割击杀会刷新并保留较高等级。
+`SmallAbsorb` 每级提供 `amplifier + 1` 点吸收值（详见 [§1.11.5](#sec-1-11-5)）。击杀实体数越多，护盾等级越高；后续收割击杀会刷新并保留较高等级。
 
 > 注意：此处的 `level` 值用于判断"是否启用吸盾"（`level > 0`），但最终的护盾等级由击杀数决定，不直接等于 `level`。
 
@@ -458,7 +533,7 @@ durationSeconds = min(200, efficiency × maxHP)
 player.addEffect(new SmallStrength(durationTicks, damageAmplifier))
 ```
 
-`SmallStrength` 每级提供 +1 攻击伤害（ADDITION 模式，详见 §1.11.5）。
+`SmallStrength` 每级提供 +1 攻击伤害（ADDITION 模式，详见 [§1.11.5](#sec-1-11-5)）。
 
 **实例计算（基准 level=1, efficiency=10）：**
 
@@ -531,6 +606,7 @@ if (overpower_killed_target):  removeExhaustedEffectFrom(wielder)
 // 20 格距离时达到最大加成 = level
 ```
 
+<a id="sec-1-11-5"></a>
 #### 1.11.5 振奋触发的药水效果数值
 
 | 药水效果 | 触发技能 | 属性/机制 | 每级数值 |
@@ -561,6 +637,12 @@ if (overpower_killed_target):  removeExhaustedEffectFrom(wielder)
    - 三属性对 level 加成均为 0：level 仅由基础值（1）和改良提供，execute 收益天花板由改良控制
    - 硬度（primary）+ 密度（secondary）各给 +1 efficiency/单位
    - 韧性（tertiary）给 +2 efficiency/单位，最优先提升 CD 缩减和持续时间
+
+
+</details>
+
+<a id="sec-1-12"></a>
+<details><summary>1.12 abilityOvercharge（超蓄）数值逻辑 ▸ 展开</summary>
 
 ### 1.12 abilityOvercharge（超蓄）数值逻辑
 
@@ -616,7 +698,7 @@ overchargeTier = (int)Math.clamp(getOverchargeProgress(progress), 0, 3)
 > **level 与 efficiency 的角色差异**：
 > - **execute**：只用 level（直乘），efficiency 闲置
 > - **reap**：level 控伤害/范围（加法），efficiency 控 buff 持续时间
-> - 其余技能（lunge/overpower/pry/puncture/slam）：来自 MMT jar 或 tetra jar 的公式有所不同，具体使用时 `level × efficiency` 常作为折扣后的有效百分比（参见 §1.10.2 sickle 协同示例：`[10, 0.3]` → 有效 3%/段）
+> - 其余技能（lunge/overpower/pry/puncture/slam）：来自 MMT jar 或 tetra jar 的公式有所不同，具体使用时 `level × efficiency` 常作为折扣后的有效百分比（参见 [§1.10.2](#sec-1-10-2) sickle 协同示例：`[10, 0.3]` → 有效 3%/段）
 
 #### 1.12.4 逐个技能详细公式
 
@@ -735,6 +817,12 @@ duration = 600 × (1 + overchargeTier × getEffectEfficiency(stack, abilityOverc
 
 5. **与 1.10.2 的 efficiency 一致**：多来源超蓄叠加时，`level × efficiency` 作为有效折扣百分比，与 sickle.json 协同的 `[10, 0.3] → 3%` 语义一致。
 
+
+</details>
+
+<a id="sec-1-13"></a>
+<details><summary>1.13 abilitySpeed（冷却）数值逻辑 ▸ 展开</summary>
+
 ### 1.13 abilitySpeed（冷却）数值逻辑
 
 `abilitySpeed` 是 Tetra 能力系统的全局冷却加速效果。与 `abilityOvercharge` / `abilityExhilaration` 不同，它**不由 heavy_blade 模块提供**，而是仅通过双头战铸（warforged）协同（synergy）获得。它有两个独立的用途：全局冷却缩减（读 level）和收割击杀后移速增益（读 efficiency）。
@@ -825,6 +913,964 @@ if (abilitySpeedLevel > 0):
 
 3. **与 abilityOvercharge 的协同**：冷却缩减后，蓄满加速 → 超蓄触发更快 → 同时间内可获得更多超蓄段数。例如 butt warforged 提供 20% 冷却缩减后，在同样的等待时间里可能多获取一段超蓄。
 
+
+</details>
+
+<a id="sec-1-14"></a>
+<details><summary>1.14 abilityEcho（回声）数值逻辑 ▸ 展开</summary>
+
+### 1.14 abilityEcho（回声）数值逻辑
+
+`abilityEcho` 是 Tetra 蓄力技能的"后像/回响"机制。它不是独立触发的效果，而是嵌入到 7 个蓄力技能（execute、reap、lunge、slam、puncture、pry、overpower）的 `perform()` 中，在技能释放后创建一个延时复刻。核心实现为 `EchoHelper.echo(attacker, delay, callback)`：记录玩家当前位置为 `origin` → 每 10 tick 在 origin 处生成女巫粒子 → delay ticks 后将玩家传送回 origin → 执行 callback（重新施放技能） → 传送回当前位置。
+
+**唯一来源**：仅由双头工具的战铸（warforged）协同提供，且必须配对提取器（extractor）/未绑定提取器（unbound_extractor）作为右手模块。不存在于 KubeJS 覆盖、改良或模块基础数值中。
+
+> **与 focusEcho 区分**：`focusEcho` 是独立的效果（仅出现在 `sights/echo_shard` 瞄具变体中），保持蹲下时焦点散布不重置，与 `abilityEcho` 无关。
+
+#### 1.14.1 数据来源
+
+| 数据来源 | 内容 |
+|---|---|
+| Tetra jar: `synergies/double/warforged/{tool}.json`（7 个文件，14 条协同） | `abilityEcho` 的唯一提供源 |
+| 反编译/源码：`ExecuteEffect.java`（L107-159）、`ReapEffect.java`（L97-101,221-228,242-254）、`LungeEffect.java`（L147-175,271-275,280,307-324）、`SlamEffect.java`（L112-115,233-237,247-274）、`PunctureEffect.java`（L54-57,163-166）、`PryEffect.java`（L53-56,160-170）、`OverpowerEffect.java`（L84-91,189-211） | 各技能内嵌的 echo 逻辑 |
+| `EchoHelper.java` | 核心回响机制：传送 + 延迟回调 |
+| `LungeEchoPacket.java` | 猛冲空中 echo 网络包 |
+| `kubejs/assets/tetra/lang/zh_cn.json` | 各技能 `*_echo.tooltip` 汉化说明 |
+
+#### 1.14.2 协同来源总表
+
+所有协同位于 `data/tetra/synergies/double/warforged/`，模式为：左手模块 + extractor/unbound_extractor 右手模块 + warforged 改良。
+
+| 左手模块 | 右手 = `extractor_right` | 右手 = `unbound_extractor_right` | level/efficiency 语义 |
+|---|---|---|---|
+| `sickle_left`（镰刀） | `10` | `10` | level=10, efficiency=0 |
+| `basic_pickaxe_left`（镐） | `1` | `1` | level=1, efficiency=0 |
+| `basic_hoe_left`（锄） | `60` | `60` | level=60, efficiency=0 |
+| `basic_hammer_left`（锤） | `1` | `1` | level=1, efficiency=0 |
+| `adze_left`（锛） | `[2, 1.2]` | `[3, 1.2]` | level=2/3, efficiency=1.2 |
+| `basic_axe_left`（斧） | `1` | `1` | level=1, efficiency=0 |
+| `claw_left`（爪） | `1` | `1` | level=1, efficiency=0 |
+
+> 大多数协同 `abilityEcho` 为单值（仅 level），只有 **adze（锛）** 使用了数组 `[level, efficiency]`，efficiency 仅在 lunge 和 slam 某些变体中使用。
+
+#### 1.14.3 各技能回声效果速查
+
+| 技能 | level `[0]` 语义 | efficiency `[1]` 语义 | 延迟 | 行为概述 |
+|---|---|---|---|---|
+| **execute**（处决） | 二元开关（>0 启用） | — | 100 ticks (5s) | 5 秒后以简化公式再次处决同一目标 |
+| **reap**（收割） | 二元开关 + **攻击 buff 等级上限** | — | 60 ticks (3s) | 3 秒后在原位复刻收割 + 击杀后附加可叠加攻击 buff（上限=level） |
+| **lunge**（猛冲） | 额外空中突刺次数（echoCount） | 空中突刺推进力（echoStrength） | — | 首次猛冲后可在空中右键/跳跃进行额外突刺，共 echoCount 次 |
+| **slam**（下砸） | 单目标：二元开关；地面：回声伤害倍率 | — | 60 ticks (3s) | 3 秒后在原位复刻下砸；地面版伤害 × level/100 |
+| **puncture**（刺穿） | 二元开关 | — | 60 ticks (3s) | 3 秒后在原位再次刺穿同一目标 |
+| **pry**（撬击） | 二元开关 | — | 60 ticks (3s) | 3 秒后在原位再次撬击同一目标 |
+| **overpower**（压制） | 精疲力竭延迟附加量（ticks） | — | charge+cooldown+level ticks | 不瞬发精疲力竭，延迟到冷却结束后叠加生效 |
+
+<a id="sec-1-14-4"></a>
+#### 1.14.4 逐个技能详细公式
+
+##### execute（处决）回声
+
+**触发条件**：处决命中目标后（`perform()` 内），`echoLevel > 0` 即触发。
+
+**回声伤害公式**（简化版，无加成修饰）：
+```
+echoExecute:
+  missingHealth = clamp(1 - currentHP/maxHP, 0, 1)
+  harmfulCount = 负面效果总幅值（含着火/冻结）
+  damageMultiplier = missingHealth + harmfulCount
+  if (damageMultiplier > 0):
+      hitEntity(target, damageMultiplier, ...)
+```
+
+> **关键差异**：回声处决不使用原始处决的全部加成（无 efficiency、abilityCombo、abilityOvercharge、revenge、overextend 乘算），仅用目标已损 HP 比例 + 负面效果数作为伤害倍率。
+
+##### reap（收割）回声
+
+**双重机制**：
+
+1. **回声复刻**（`echoReap()`）：60 ticks 后在原 AABB 区域重新执行完整的 `hitEntities()` + `applyBuff()`，包括所有 buff（瞬间力量、急迫、吸收护盾等）。
+
+2. **可叠加攻击 buff**（`applyBuff()` 内 L221-228）：
+```
+if (echoLevel > 0):
+    currentAmp = player.getEffect(SmallStrength).amplifier  // 无效果时=-1
+    amp = min(echoLevel, currentAmp + kills)
+    player.addEffect(SmallStrength, 30s, amp)
+```
+即每次收割击杀都会叠加 +1 攻击，但上限被 **level 值** 限制。例如：
+- sickle-left + extractor_right（level=10）：最多叠加到 +11 攻击
+- hoe-left + extractor_right（level=60）：最多叠加到 +61 攻击
+
+每次回声复刻会刷新 buff 持续时间为 30 秒。
+
+##### lunge（猛冲）回声
+
+**最独特的回声机制**——不使用 `EchoHelper.echo()`，而是允许玩家在空中进行额外突刺。
+
+```
+if (echoLevel > 0):
+    echoCount = echoLevel      // 可用的额外突刺次数
+    echoStrength = efficiency  // 每次突刺的推进力倍率
+```
+
+**LungeData 存储**：`{ itemStack, damageMultiplierOffset, hitCooldown, exhaustDuration, echoCount, echoStrength }`，缓存于 `activeCache`（30 秒过期）。
+
+**空中操作**：
+- 右键 → 水平 echo 突刺（沿视线方向，推进力 = echoStrength）
+- 跳跃键 → 垂直 echo 突刺（推进力 × 0.3，附加垂直 boost = echoStrength × 0.5）
+- 蹲下 → 反向 echo（`scale(-0.8)`）
+- 每次使用后 `echoCount--`，耗尽后无法再 echo
+
+**仅 adze（锛）** 提供 efficiency 值（1.2），其余模块 efficiency=0 即 echo 推进力为 0（无实际位移但仍扣减次数）。
+
+##### slam（下砸）回声
+
+**两种变体**：
+
+1. **单目标 echoTarget**：`echoLevel > 0` → 60 ticks 后复刻 `directSlam()`（完整公式，与原始一致）
+
+2. **地面 echoGround**：`echoLevel > 0` → 60 ticks 后复刻地面冲击，但伤害倍率降为：
+```
+damageMultiplier *= echoLevel / 100
+```
+即回声地面冲击的伤害是原始冲击波的 `level%`：
+- level=1（镐/锤/斧/爪）：1% 伤害
+- level=60（锄）：60% 伤害
+- level=2（锛+extractor）：2% 伤害
+
+##### puncture（刺穿）回声
+
+`echoLevel > 0` → 60 ticks 后调用 `performRegular()` 完整复刻刺穿。回声包括：
+- 重新计算 punctured/bleeding 状态判定
+- 重新减甲（PuncturedPotionEffect）
+- 附加流血（BleedingPotionEffect）
+- 计算 overcharge、combo、overextend 等全部加成
+
+##### pry（撬击）回声
+
+`echoLevel > 0` → 60 ticks 后调用 `performRegular()` 完整复刻撬击。回声包括：
+- 重新计算 PriedPotionEffect 层数叠加
+- 重新计算 revenge、combo、exhilaration 等加成
+- 附加 StunPotionEffect 和护甲粒子
+
+##### overpower（压制）回声
+
+**唯一不使用传送复刻的 echo 效果**。代替立即施加精疲力竭，将精疲力竭延迟到冷却结束后：
+
+```
+delay = chargeTime + cooldown + echoLevel  (ticks)
+// delayData.amplifier += newAmp  // 多次压制可累积
+// 延迟结束后：attacker.addEffect(Exhausted, duration, currentAmp + data.amplifier)
+```
+
+- 延迟期间的额外压制会累加 amplifier
+- 延时结束后一次性施加累积的精疲力竭
+- 如果电平级使用防御模式或 combo 降 amp，降幅同样在延迟期内累积
+
+#### 1.14.5 level 与 efficiency 语义总结
+
+| 参数 | 用于 | 效果 |
+|---|---|---|
+| **level** `[0]`（单值或数组第一项） | execute/puncture/pry：回声开关 | >0 即触发 3-5 秒后回声 |
+| | reap：攻击 buff 等级上限 | `min(level, amp + kills)` 限制叠加 |
+| | lunge：空中 echo 可用次数 | 每次空中右键/跳跃 -1 |
+| | slam 地面：回声伤害倍率 | `originalDamage × level/100` |
+| | overpower：精疲力竭延迟 ticks | 冷却结束后额外等待 level ticks |
+| **efficiency** `[1]`（数组第二项，仅 adze 提供） | lunge：空中 echo 推进力 | 突刺位移矢量倍率 |
+| | 其他技能：未使用 | — |
+
+> **与 abilityExhilaration/abilityOvercharge 的区别**：abilityEcho 的 level 在 reap 中既做"开关"又做"上限"，在 lunge 中既做"开关"又做"次数"，在 overpower 中既做"开关"又做"延迟量"。这与先前文档中的 `level × efficiency` 折扣模式或 level/efficiency 分离模式都不同。
+
+#### 1.14.6 与其他主动技能的联动叠加
+
+##### echo + overcharge（超蓄）
+所有 echo 回调中**均不包含**超蓄的二次充能时间——回声在固定延时后触发，玩家无法在 echo 回调期间再超蓄。但原始施放时的超蓄收益（更高的 damageMultiplier/range/amplifier）会被 echo 回调完整继承。
+
+##### echo + exhilaration（振奋）
+- **reap echo**：回声中的击杀同样触发振奋冷却缩减（`cooldown × (1 - exhilarationEfficiency/100)`）和吸收护盾
+- **execute echo**：回声处决使用简化公式，不触发振奋
+- **slam echo**：回声不触发击退振奋 buff
+- **puncture echo**：回声中的刺穿同样判定 exhilaration 冷却重置条件
+- **pry echo**：回声中的撬击同样享受 exhilaration 伤害增幅
+
+##### echo + abilitySpeed（冷却）
+abilitySpeed 的冷却缩减不延长 echo 延迟，但缩短了原始技能的冷却时间，使得 echo + 下一次手动施放的间隔更短。这在 hoe-left（echoLevel=60）+ butt warforged（speed level=20）的构筑中效果显著。
+
+##### echo + reckoning（复仇，abilityRevenge）
+
+详见 [§1.16](#sec-1-16)。要点速查：
+- **pry/puncture echo**：回声中的 pry/puncture 同样可触发复仇加成（重新检查 `RevengeTracker.canRevenge()`），echo 回调调用完整 `performRegular()`。但原始施放后 `removeEnemy` 已消耗目标，echo 时目标已不在缓存中，通常**无法二次触发**（除非首次未移除——如 puncture reversal 不移除目标）。
+- **lunge echo**：空中 echo 突刺独立检查 `canRevenge()`，冷却归零同样生效。但原始突刺命中后 `removeEnemy`，echo 可能无法触发。
+- **reap echo**：echo 复刻重新调用 `hitEntities()` 包含 `RevengeTracker.canRevenge()` 检查。首次 reap 未击杀则 revenge 状态保留，echo 可触发。
+
+##### echo × echo（多重回声）
+**不会嵌套触发**。所有 echo 回调中不再检查 `abilityEcho`——回声不会产生二次回声。但 reap 的 applyBuff 中共存的"回声攻击 buff"（SmallStrength 叠加）和"回声复刻伤害"是独立生效的。
+
+##### 与 abilityOverextend 的叠加
+
+详见 [§1.15](#sec-1-15)。要点速查：
+- **execute echo**：简化公式不使用 overextend
+- **reap echo**：回声复刻中继承原始施放时的 `overextend` 布尔值和 `overextendLevel`——回声同样判定饱腹双倍、击杀后 SmallHealth buff 或未击杀 Exhausted 惩罚
+- **lunge echo**：空中 echo 突刺继承 LungeData 中的 `damageMultiplierOffset`（已包含原始施放时的 overextend 加成）和 `strength`（已包含 efficiency 推进力加成）
+- **puncture / pry echo**：回声调用 `performRegular()` 重新检查当前饱腹状态和 overextendLevel，即在回声 3 秒后如果玩家仍在饱腹状态，将再次触发 overextend 收益
+- **slam echo target**：回声调用 `directSlam()` 重新判定饱腹和伤害加值，overextend 可被回声二次应用
+- **slam echo ground**：`getAoeDamageMultiplier()` 中 overextend 伤害已被算入 `damageMultiplier`，echo 回调直接使用（不二次判定）；但范围 `getAoeRange()` 在 echo 调用前复制，不重新计算
+
+#### 1.14.7 设计考量
+
+1. **来源极度受限**：abilityEcho 仅由双头工具战铸协同提供，且必须配对 extractor/unbound_extractor 作为右手。单头工具和不需要提取器的双头组合无法获得回声。
+
+2. **锄头（hoe）回声最强**：level=60 带来超高收割攻击 buff 上限（+61）和 60% 地面下砸回声伤害，是能力战铸构筑中 echo 收益最高的左手模块。
+
+3. **锛（adze）是唯一支持 lunge echo 的模块**：其他模块 efficiency=0，lunge echo 有次数但无推进力，等于浪费 echoCount。只有 adze 可进行有效空中多段突刺。
+
+4. **execute echo 伤害打折**：回声处决使用简化公式，不受 combo/overcharge/revenge 等加成，实际伤害远低于原版处决。主要价值在于碰触 + 补刀。
+
+5. **echo 不参与二次超蓄**：回声回调在延时后直接执行，没有充能过程，不会被 abilitySpeed 加速触发。
+
+6. **overpower echo 是负面效果的延迟**：与其他技能的"增益性"echo 不同，overpower echo 将精疲力竭从"立即施加"改为"延迟施加且可累积"，本质上是用延时换取更高层数，风险更大。
+
+
+</details>
+
+<a id="sec-1-15"></a>
+<details><summary>1.15 abilityOverextend（过增）数值逻辑 ▸ 展开</summary>
+
+### 1.15 abilityOverextend（过增）数值逻辑
+
+`abilityOverextend` 是 Tetra 的"过增/透支"机制，通过消耗饥饿度/饱和度来换取技能额外收益。它不是独立触发的效果，而是嵌入到所有 7 个蓄力技能中的条件增益：当玩家**饱腹**（`!getFoodData().needsFood()`，即饥饿条满格）时，各技能可获得额外伤害、范围、减甲等加成，但消耗更多饥饿度。饱腹收割未击杀时还会受到精疲力竭惩罚。
+
+**唯一来源**：仅由双头工具的战铸（warforged）协同提供，且**右手必须为锄头（`*/hoe_right`）**。不存在于 KubeJS 覆盖、改良或模块基础数值中。
+
+#### 1.15.1 数据来源
+
+| 数据来源 | 内容 |
+|---|---|
+| Tetra jar: `synergies/double/warforged/{tool}.json`（7 个文件） | `abilityOverextend` 的唯一提供源 |
+| 反编译/源码：`ExecuteEffect.java`(L99-105)、`ReapEffect.java`(L42-43,127-129,231-239)、`LungeEffect.java`(L258-263,294)、`PunctureEffect.java`(L44-45,91-94,113-116)、`PryEffect.java`(L49-50,119-122)、`OverpowerEffect.java`(L50,79-81,94)、`SlamEffect.java`(L99-100,149-152,288-291,308-311) | 各技能内嵌的 overextend 逻辑 |
+| `AbilityStats.java` | 工具提示格式化参数 |
+| `SmallHealthPotionEffect.java` | Reap overextend 击杀奖励 buff（每级 +1 最大生命，ADDITION 模式） |
+
+#### 1.15.2 协同来源总表
+
+所有协同位于 `data/tetra/synergies/double/warforged/`。**关键约束**：左手为任意模块 + 右手必须为 `*/hoe_right`（锄头右手）。当前包无 KubeJS 覆盖。
+
+| 左手模块 | 右手 = `double/hoe_right` | JSON 值 | level | efficiency |
+|---|---|---:|---:|---|
+| `sickle_left`（镰刀） | hoe_right | `30` | 30 | 0 |
+| `adze_left`（锛头） | hoe_right | `[20, 0.5]` | 20 | 0.5 |
+| `basic_hammer_left`（锤头） | hoe_right | `[15, 1.5]` | 15 | 1.5 |
+| `basic_axe_left`（斧头） | hoe_right | `6` | 6 | 0 |
+| `basic_pickaxe_left`（镐头） | hoe_right | `[2, 1]` | 2 | 1 |
+| `basic_hoe_left`（锄头） | hoe_right | `1` | 1 | 0 |
+| `claw_left`（爪头） | hoe_right | `1` | 1 | 0 |
+
+> **与 abilityEcho 的互斥**：abilityEcho 需 extractor/unbound_extractor 右手，abilityOverextend 需 hoe 右手。两者不能在同一双头工具上共存——"回声（extractor 右手）"和"过增（hoe 右手）"是二选一的构筑分支。
+
+#### 1.15.3 level 与 efficiency 语义总结
+
+| 参数 | 技能 | 代码逻辑 | 语义 |
+|---|---|---|---|
+| **level** `[0]` | execute | `1 + level × exhaustion × 0.25 / 100`（乘法） | 与饥饿度相乘的伤害倍率因子 |
+| | reap | `health/maxHealth ≥ level/100`（条件） | 双倍伤害的血量阈值：≥ level% HP 触发 |
+| | lunge | `damageMultiplierOffset += level/100`（加法） | 伤害偏移量加成 |
+| | puncture | `amplifier += level`（加法） | Punctured 减甲额外 amplifier |
+| | pry | `amplifier++`（无条件 +1） | 撬击 debuff 多叠一层 |
+| | overpower | `newAmp = -1`（特殊赋值） | 饱腹时完全免除精疲力竭 |
+| | slam（直击/地面） | `damageMultiplier += level/100`（加法） | 直接/地面伤害加值 |
+| **efficiency** `[1]` | execute | 不读取 efficiency | — |
+| | reap | 不读取 efficiency | — |
+| | lunge | `strength += efficiency`（加法） | 突刺推进力 |
+| | puncture | `duration += efficiency × 20`（加法） | 额外流血时间（tick） |
+| | pry | 不读取 efficiency | — |
+| | overpower | 不读取 efficiency | — |
+| | slam（地面） | `range += efficiency`（加法） | AOE 冲击波射程加值（格） |
+| | slam（直击） | 不读取 efficiency | — |
+
+> **与 abilityOvercharge 模式不同**：abilityOverextend 不存在 `level × efficiency` 折扣关系，两个参数各自独立服务不同技能、不同机制。
+
+#### 1.15.4 逐个技能详细公式
+
+##### execute（处决）过增
+
+ExecuteEffect.java L99-105：
+
+```java
+int overextendLevel = item.getEffectLevel(itemStack, abilityOverextend);
+if (overextendLevel > 0) {
+    FoodData foodStats = attacker.getFoodData();
+    float exhaustion = Math.min(40, foodStats.getFoodLevel() + foodStats.getSaturationLevel());
+    damageMultiplier *= 1 + overextendLevel * exhaustion * 0.25 / 100;
+    attacker.causeFoodExhaustion(exhaustion);
+}
+```
+
+execute 是唯一将 level 与饥饿度**相乘**的技能，且乘算发生在 `damageMultiplier += 1` 和 overcharge、revenge 乘算之后——是真正的**总伤害末端乘数**。
+
+**实例（镰刀 level=30）：**
+
+| 饥饿状态 | 食物+饱和度 | exhaust 值 | 伤害倍率 | 消耗饥饿 |
+|---|---|---|---|---|
+| 全满 | 40 | 40 | `1 + 30×40×0.25/100 = ×4.00` | ~10 饥饿 |
+| 大半 | 30 | 30 | `1 + 30×30×0.25/100 = ×3.25` | ~7.5 |
+| 半满 | 20 | 20 | `1 + 30×20×0.25/100 = ×2.50` | ~5 |
+| 刚吃饱 | 8 | 8 | `1 + 30×8×0.25/100 = ×1.60` | ~2 |
+
+##### reap（收割）过增
+
+ReapEffect.java 有三个分支逻辑：
+
+**A. 伤害双倍判定**（hitEntities L127）：
+```java
+if (overextend && entity.getHealth() / entity.getMaxHealth() >= overextendLevel / 100f) {
+    individualDamageMultiplier *= 2;
+}
+```
+
+**B. 击杀奖励**（applyBuff L231-234）：
+```java
+if (kills > 0) {
+    attacker.addEffect(SmallHealth, 45×20 ticks, kills - 1);
+    // SmallHealth: 每级 +1 最大生命 (ADDITION 模式)
+}
+```
+
+**C. 未击杀惩罚**（applyBuff L235-238）：
+```java
+else if (!attacker.getFoodData().needsFood()) {
+    attacker.addEffect(Exhausted, 20×20 ticks, amplifier=4);
+    attacker.causeFoodExhaustion(12); // 三倍饥饿消耗
+}
+```
+
+> Exhausted amplifier=4：-40% 移动速度（MULTIPLY_TOTAL）、-20% 攻击速度（MULTIPLY_TOTAL）、挖掘速度额外 -25%。
+
+**实例（各模块 level 对应的双倍阈值）：**
+
+| 左手模块 | level | 双倍阈值 | 覆盖范围 |
+|---|---|---|---|
+| 镰刀 | 30 | HP ≥ 30% | 中高血量目标双倍 |
+| 锤头 | 15 | HP ≥ 15% | 大多数目标双倍 |
+| 斧 | 6 | HP ≥ 6% | 几乎所有目标双倍 |
+| 镐 | 2 | HP ≥ 2% | 几乎全目标双倍 |
+| 锄/爪 | 1 | HP ≥ 1% | 几乎全目标双倍（但高风险） |
+
+##### lunge（猛冲）过增
+
+LungeEffect.java L258-263,294：
+
+```java
+int overextendLevel = item.getEffectLevel(itemStack, abilityOverextend);
+if (overextendLevel > 0 && !attacker.getFoodData().needsFood()) {
+    damageMultiplierOffset += overextendLevel / 100d;
+    strength += item.getEffectEfficiency(itemStack, abilityOverextend);
+    verticalVelocityFactor += 0.1;
+}
+attacker.causeFoodExhaustion(overextendLevel > 0 ? 6 : 1);
+```
+
+- **伤害偏移**：`+level/100`（加法，存入 LungeData 传给空中 echo 突刺）
+- **推进力**：`+efficiency`（strength 矢量）
+- **垂直因子**：`+0.1`（弹跳感提升）
+
+##### puncture（刺穿）过增
+
+PunctureEffect.java L91-94,113-116：
+
+```java
+// level → 减甲 amplifier 加值
+int overextendLevel = item.getEffectLevel(itemStack, abilityOverextend);
+if (overextendLevel > 0 && isSatiated) {
+    amplifier += overextendLevel;
+}
+
+// efficiency → 流血时间加成
+double overextendEfficiency = item.getEffectEfficiency(itemStack, abilityOverextend);
+if (overextendEfficiency > 0 && isSatiated) {
+    duration += overextendEfficiency * 20;
+}
+```
+
+##### pry（撬击）过增
+
+PryEffect.java L119-122：
+
+```java
+double overextendLevel = item.getEffectLevel(itemStack, abilityOverextend);
+if (overextendLevel > 0 && isSatiated) {
+    amplifier++; // 护甲削减多叠一层
+}
+```
+
+最简洁的过增效果：**只要饱腹，撬击 PriedPotionEffect 必定额外 +1 层**（通常翻倍护甲削减）。不涉及具体 level 数值，level 仅作为 >0 判断的启用开关，不读取 efficiency。
+
+##### overpower（压制）过增
+
+OverpowerEffect.java L50,79-81：
+
+```java
+boolean overextended = item.getEffectLevel(itemStack, abilityOverextend) > 0;
+if (overextended && !attacker.getFoodData().needsFood()) {
+    newAmp = -1; // 跳过 Exhausted 施加
+}
+attacker.causeFoodExhaustion(overextended ? 6 : 1);
+```
+
+唯一"消除负面"的过增效果：饱腹时 `newAmp = -1` → `newAmp > 0` 不成立 → **不会精疲力竭**。以 6 点饥饿度消耗换取完全不施加 Exhausted。
+
+##### slam（下砸）过增
+
+SlamEffect.java 使用两套入口：
+
+**直接攻击**（directSlam L149-152）和**地面冲击伤害**（getAoeDamageMultiplier L288-291）：
+```java
+if (overextendLevel > 0 && !attacker.getFoodData().needsFood()) {
+    damageMultiplier += overextendLevel / 100d;
+}
+```
+
+**AOE 射程**（getAoeRange L308-311）：
+```java
+double overextendEfficiency = item.getEffectEfficiency(itemStack, abilityOverextend);
+if (overextendEfficiency > 0 && !attacker.getFoodData().needsFood()) {
+    range += overextendEfficiency;
+}
+```
+
+**实例（hammer level=15, efficiency=1.5）：** 单体/AOE 各 +15% 伤害、AOE 冲击波射程 +1.5 格。
+
+#### 1.15.5 饥饿度消耗对照
+
+| 场景 | 正常消耗 | overextend 消耗 |
+|---|---|---|
+| 任何有 overextend 等级的技能 | 1 | **6** |
+| reap 饱腹未击杀额外 | — | +12（合计 **18**） |
+| execute | — | `min(40, food + saturation)`（可高达 40） |
+
+#### 1.15.6 与其它 ability 的联动
+
+##### overextend + echo（回声）
+
+- **execute echo**：回声处决使用简化公式，**不包含 overextend** 乘算（见 [§1.14.4](#sec-1-14-4) execute 回声）
+- **reap echo**：echo 回调继承原始施放时的 `overextend` 布尔值和 `overextendLevel`，回声复刻中同样判定饱腹双倍、击杀后 SmallHealth buff 或未击杀 Exhausted 惩罚
+- **lunge echo**：空中 echo 突刺继承 LungeData 中的 `damageMultiplierOffset`，已包含原始施放时的 overextend 加成
+
+##### overextend + overcharge（超蓄）
+
+两者完全独立，可同时生效。以 execute 为例：
+1. overcharge 先乘 `× (1 + tier × overchargeLevel/100)`
+2. overextend 再乘 `× (1 + level × exhaustion × 0.25/100)`
+
+reap: overcharge 加 damagePercent/范围 → overextend 判定是否双倍（条件上独立于 overcharge）。slam: overcharge 和 overextend 各自的伤害加法值并叠加到同一 damageMultiplier。
+
+##### overextend + exhilaration（振奋）
+
+两者都是战铸协同提供的效果，可在同一构筑中共存：
+- **reap**：exhilaration 提供击杀 CD 缩减 + 吸收护盾；overextend 提供饱腹双倍 + 击杀生命上限 / 未击杀惩罚。两者在击杀事件各自独立触发
+- **lunge**：exhilaration 和 overextend 的伤害偏移加法叠加（+ exhilarLevel/100 + overextendLevel/100）
+- **slam**：exhilaration 多人增伤和 overextend 伤害加值独立叠加
+
+##### overextend + abilitySpeed（冷却）
+
+冷却缩减不直接影响 overextend 数值，但缩短冷却让玩家在饱腹窗口期内施放更多次 overextend 技能，间接触发更多收益/惩罚。
+
+#### 1.15.7 设计考量
+
+1. **右手必须为 hoe，与 echo 互斥**：abilityEcho 需 extractor 右手，abilityOverextend 需 hoe 右手。玩家不能同时获得回声和过增——这是 Tetra 有意的构筑二择。
+
+2. **镰刀 level=30 是 execute 最强过增**：全饱 ×4.00 总伤害倍率远超其它模块。镰刀本身高收割伤害和范围使其成为 overextend 最佳载体。
+
+3. **锤头是唯一同时为 slam 和 puncture 提供 high efficiency（1.5）的模块**：AOE 射程 +1.5 格、流血 +1.5 秒、推进力 +1.5。锛 level=20 更高但 efficiency 仅 0.5。
+
+4. **reap 过增高风险高回报**：饱腹收割几乎所有目标双倍伤害 + 击杀后 SmallHealth（+1 最大生命/杀），但未击杀则受 Exhausted(amp=4) 精疲力竭惩罚 + 三倍饥饿消耗。
+
+5. **overpower 过增最特殊**：唯一"消除负面"的过增——饱腹时完全免除精疲力竭。
+
+6. **pry 过增不区分 level 数值**：level 仅作为 >0 的二元开关，efficiency 不参与。任何等级的 overextend 都只给 +1 层撬击。
+
+7. **execute 的 level 是唯一与饥饿度相乘的参数**：全饱时 ×4.00，饿到刚吃饱时 ×1.60。其余技能 level 都是加法或条件阈值。
+
+8. **hoe_right 是关键枢纽模块**：hoe_right 的战铸协同同时提供 abilityEcho（60）、abilityOverextend（1~30 由左手决定）、abilityCombo、abilityRevenge 等多种效果。选择 hoe_right 而非 extractor_right 意味着放弃 extractor 矿物提取功能，但换取 overextend + combo/revenge 组合。
+
+
+</details>
+
+<a id="sec-1-16"></a>
+<details><summary>1.16 abilityRevenge（复仇）数值逻辑 ▸ 展开</summary>
+
+### 1.16 abilityRevenge（复仇）数值逻辑
+
+`abilityRevenge` 是 Tetra 的"复仇/追猎"机制。核心流程：当玩家被实体攻击时，该实体被标记为"复仇目标"（缓存 30 秒）；此后使用带 `abilityRevenge` 的工具对复仇目标施放技能时，可获得额外伤害、冷却重置、眩晕等收益，并消耗该目标的复仇状态。execute 的复仇是唯一的例外——它由玩家自身的负面状态触发，与目标是否在复仇缓存中无关。
+
+**唯一来源**：仅由双头工具的战铸（warforged）协同提供，且**右手必须为爪头（`*/claw_right`）**。不存在于 KubeJS 覆盖、改良或模块基础数值中。
+
+#### 1.16.1 数据来源
+
+| 数据来源 | 内容 |
+|---|---|
+| Tetra jar: `synergies/double/warforged/{tool}.json`（7 个文件） | `abilityRevenge` 的唯一提供源 |
+| `RevengeTracker.java` | 核心追踪机制：缓存结构、攻击事件监听、增删查询 |
+| `ItemEffectHandler.java`(L203) | 玩家被攻击时触发 `RevengeTracker.onAttackEntity()` |
+| `RevengeGui.java` | HUD 指示器：注视复仇目标时显示红色倒三角 |
+| 反编译/源码：`ExecuteEffect.java`(L185-193)、`ReapEffect.java`(L41,62,76-77,122-124,136-138,205-209)、`LungeEffect.java`(L96-99)、`PunctureEffect.java`(L77,105)、`PryEffect.java`(L63-65,75-84,115-117,165-167)、`OverpowerEffect.java`(L49,75-77,107-108,132-134)、`SlamEffect.java`(L70-72,104-106,167-168,210,227) | 各技能内嵌的 revenge 逻辑 |
+| `kubejs/assets/tetra/lang/zh_cn.json` | 各技能 `*_revenge.tooltip` 汉化说明 |
+
+#### 1.16.2 RevengeTracker 核心机制
+
+`RevengeTracker.java` 使用 Guava `Cache` 实现：
+
+```
+Cache<PlayerID, Set<EnemyID>>
+    最大容量: 100 玩家
+    过期时间: 30 秒（写入后）
+```
+
+**触发流程**：
+1. `LivingAttackEvent` → 服务器端，受害者是玩家 → `addEnemy(player, attacker)` → 同步到客户端
+2. `canRevenge(player, target)` 查询 target 是否在 player 的复仇集合中
+3. `removeEnemy(player, target)` 移除单个目标；`removeEnemySynced()` 额外同步客户端
+4. 客户端 HUD：注视复仇目标时，屏幕中央出现红色倒三角指示器（`RevengeGui`）
+
+**关键约束**：
+- 仅 30 秒有效窗口期
+- 需要玩家**被攻击**才能入池（主动攻击不触发）
+- 同时检查玩家工具是否有 `abilityRevenge`（`canRevenge(entity)` 重载）
+
+#### 1.16.3 协同来源总表
+
+所有协同位于 `data/tetra/synergies/double/warforged/`。**关键约束**：左手为任意模块 + 右手必须为 `*/claw_right`（爪头右手）。当前包无 KubeJS 覆盖。
+
+| 左手模块 | 右手 = `double/claw_right` | JSON 值 | level | efficiency |
+|---|---|---:|---:|---|
+| `basic_hammer_left`（锤头） | claw_right | `60` | 60 | 0 |
+| `sickle_left`（镰刀） | claw_right | `[40, 15]` | 40 | 15 |
+| `claw_left`（爪头） | claw_right | `40` | 40 | 0 |
+| `basic_axe_left`（斧头） | claw_right | `35` | 35 | 0 |
+| `basic_hoe_left`（锄头） | claw_right | `15` | 15 | 0 |
+| `adze_left`（锛头） | claw_right | `1` | 1 | 0 |
+| `basic_pickaxe_left`（镐头） | claw_right | `1` | 1 | 0 |
+
+#### 1.16.4 level 与 efficiency 语义总结
+
+| 参数 | 技能 | 语义 |
+|---|---|---|
+| **level** `[0]` | execute | 玩家有负面效果时返回倍率 `1 + level/100`（**不检查复仇缓存**） |
+| | reap | 对复仇目标 `+level/100` 伤害（加法） |
+| | lunge | 命中复仇目标 → cooldownMultiplier = 0（冷却归零） |
+| | puncture | "逆转"：目标护甲值 > 玩家护甲值 → 强制 Punctured + Bleeding（绕过 armor<6 限制） |
+| | pry | `+level/100` 伤害 + 额外 +1 层 Pried debuff |
+| | overpower（目标者） | `+level/100` 伤害 + 不施加精疲力竭（`newAmp--`） |
+| | slam | 对复仇目标施加 `revengeLevel` ticks 的眩晕 + `removeEnemySynced` |
+| **efficiency** `[1]` | reap | 每杀一个复仇目标增加 `+efficiency × 20 ticks` 的 SmallStrength buff 基础持续时间 |
+| | 其余技能 | 不读取 efficiency |
+
+#### 1.16.5 逐个技能详细公式
+
+##### execute（处决）复仇——"苦痛揭示"
+
+ExecuteEffect.java L185-193：
+
+```java
+private double getRevengeMultiplier(Player player, ItemModularHandheld item, ItemStack itemStack) {
+    int revengeLevel = item.getEffectLevel(itemStack, ItemEffect.abilityRevenge);
+    if (revengeLevel > 0 && (player.getActiveEffects().stream()
+            .anyMatch(effect -> effect.getEffect().getCategory() == MobEffectCategory.HARMFUL)
+            || player.isOnFire() || player.isFreezing())) {
+        return 1 + revengeLevel / 100d;
+    }
+    return 0;
+}
+```
+
+**execute 复仇是唯一的"不针对具体目标"的复仇效果**——它检查玩家自身状态（有害 potion 效果 / 着火 / 冻结），而非 RevengeTracker 缓存。返回的是总伤害乘数（在 `damageMultiplier += 1` 和 overcharge 乘算之后生效）。
+
+**实例（hammer level=60）：** 玩家被上了中毒/凋零等有害效果 → execute 伤害 ×1.60。
+
+| 模块 | level | 倍率 | 触发条件 |
+|---|---|---|---|---|
+| 锤头 | 60 | ×1.60 | 玩家有 HARMFUL 效果/着火/冻结 |
+| 镰刀/爪 | 40 | ×1.40 | 同上 |
+| 斧 | 35 | ×1.35 | 同上 |
+| 锄 | 15 | ×1.15 | 同上 |
+| 锛/镐 | 1 | ×1.01 | 同上 |
+
+##### reap（收割）复仇
+
+ReapEffect.java 有三段 revenge 逻辑：
+
+**A. 伤害加成**（hitEntities L122-125）：对复仇目标 +level% 伤害。
+**B. 击杀后复仇计数**（hitEntities L136-138）：`revengeKills++` + `removeEnemySynced`
+**C. 复仇击杀 buff**（applyBuff L205-209）：基础 20 秒 SmallStrength + efficiency × kills × 20 ticks
+
+**实例（镰刀 level=40, efficiency=15）：** 收割 2 个复仇目标 → damage +40% / 每目标、获得 SmallStrength(amplifier=1)，持续 20 + 15×2 = 50 秒。
+
+##### lunge（猛冲）复仇
+
+LungeEffect.java L96-99：命中复仇目标 → **冷却完全归零**（可以立即再次突刺）。不读取 level/efficiency 数值。
+
+##### puncture（刺穿）复仇——"逆转"
+
+PunctureEffect.java L77,105：当目标护甲值 > 玩家护甲值时，即使 armor ≥ 6 也强行施加 Punctured 减甲 + Bleeding 流血。不涉及 level 数值。
+
+##### pry（撬击）复仇
+
+PryEffect.java L75-84,115-117：对复仇目标 **+level% 伤害 + 额外 +1 层 Pried debuff**。技能结束后自动 `removeEnemy`。
+
+##### overpower（压制）复仇
+
+OverpowerEffect.java L75-77,132-134：对复仇目标 **+level% 伤害 + 精疲力竭减 1 级**。
+
+##### slam（下砸）复仇
+
+SlamEffect.java L70-72,167-168：对复仇目标施加 `revengeLevel` ticks 的眩晕。
+
+**实例（锤头 level=60 → 60 ticks = 3 秒眩晕；镰刀 level=40 → 40 ticks = 2 秒眩晕；锄 level=15 → 15 ticks = 0.75 秒眩晕）。**
+
+#### 1.16.6 复仇目标的移除时机
+
+| 技能 | 何时移除 | 方法 |
+|---|---|---|
+| execute | **不移除**（execute 复仇不涉及追踪器） | — |
+| reap | 击杀复仇目标时 | `removeEnemySynced` |
+| lunge | 突刺命中时 | `removeEnemy` |
+| puncture | **不移除**（reversal 仅作条件判定，不消耗复仇状态） | — |
+| pry | `perform()` 结束后 | `removeEnemy` |
+| overpower | `perform()` 结束后 | `removeEnemy` |
+| slam（地面） | 复仇目标命中时 | `removeEnemySynced` |
+| slam（直接） | `perform()` 结束后 | `removeEnemy` |
+
+> **关键区别**：execute 和 puncture 不消耗复仇状态——execute 检查自身负面效果，puncture 的 reversal 是护甲对比条件而非追踪器查询。这两种技能可重复利用同一复仇缓存。其余技能命中后即消耗目标。
+
+#### 1.16.7 与其它 ability 的联动
+
+##### revenge + echo（回声）
+
+- **reap echo**：echo 复刻中重新调用 `hitEntities()` ← 重新检查 `RevengeTracker.canRevenge()`，但复仇目标可能在原始施放时已被消耗
+- **lunge echo**：空中 echo 突刺独立检查 `canRevenge()`，但原始突刺命中后 `removeEnemy`，echo 可能无法触发
+- **pry/puncture echo**：回声调用完整 `performRegular()`，重新计算 revenge 伤害
+
+##### revenge + overcharge（超蓄）
+
+两个独立系统，无冲突。reap: `damagePercent + overchargeBonus×level + revengeLevel/100`（三者加法叠加）。
+
+##### revenge + exhilaration（振奋）
+
+两者可由不同右手模块的协同提供，可在同一构筑中通过不同工具共存。reap: exhilaration 提供 CD 缩减 + 吸收护盾；revenge 提供额外伤害 + 额外 SmallStrength buff。
+
+##### revenge + overextend（过增）
+
+两者互斥——revenge 需 claw_right，overextend 需 hoe_right，不能共存于同一双头工具。但可通过**主副手各持一把不同的双头工具**来同时使用。
+
+#### 1.16.8 设计考量
+
+1. **右手必须为 claw，三系互斥**：revenge（claw_right）、echo（extractor_right）、overextend（hoe_right）是三选一的构筑分支。
+
+2. **锤头 level=60 是 execute/reap/slam 最强 revenge**：×1.60 execute 倍率、+60% reap 伤害加成、60 ticks 眩晕。
+
+3. **镰刀是唯一使用 efficiency 的复仇来源**：`[40, 15]` → efficiency=15 让 reap 复仇击杀的 SmallStrength buff 每杀延长 15 秒。
+
+4. **execute 复仇是"伪复仇"**：不检查 RevengeTracker 缓存、不消耗复仇目标、仅判定玩家自身是否有负面效果。这意味着 execute 的 revenge 收益可以持续触发。
+
+5. **lunge 复仇是唯一提供冷却重置的 revenge**：冷却归零意味着可无限连突。
+
+6. **puncture reversal 是高甲差下的强制穿透**：当玩家护甲远低于目标时，reversal 绕过 armor<6 的限制直接施加减甲 + 流血。
+
+7. **revenge 缓存有时间窗口压力**：仅 30 秒窗口期，且需要被攻击才能激活。
+
+8. **claw_right 协同还提供 abilityCombo**，与 revenge 一起让 claw_right 成为"连段 + 复仇"的战斗节奏型右手选择。
+
+
+</details>
+
+<a id="sec-1-17"></a>
+<details><summary>1.17 abilityCombo（连击）数值逻辑 ▸ 展开</summary>
+
+### 1.17 abilityCombo（连击）数值逻辑
+
+`abilityCombo` 是 Tetra 的"连击点数"系统。核心流程：玩家持带 `abilityCombo` 的武器进行常规攻击（攻击力 ≥ 90% 时）积累连击点数（上限 5 点）；下一次蓄力技能施放时消耗所有点数，化为额外的伤害、蓄力加速、debuff 持续时间或概率性收益。每个技能对 level（伤害/时间系数）和 efficiency（概率/续时系数）的使用方式不同。
+
+**唯一来源**：仅由双头工具的战铸（warforged）协同提供，且**右手必须为镐头（`*/basic_pickaxe_right`）**。不存在于 KubeJS 覆盖、改良或模块基础数值中。
+
+#### 1.17.1 数据来源
+
+| 数据来源 | 内容 |
+|---|---|
+| Tetra jar: `synergies/double/warforged/{tool}.json`（7 个文件） | `abilityCombo` 的唯一提供源 |
+| `ComboPoints.java` | 核心连击系统：缓存结构、攻击事件监听、增删查 |
+| `ItemEffectHandler.java`(L156) | 玩家攻击实体时触发 `ComboPoints.onAttackEntity()` |
+| `ComboPointGui.java` | HUD 指示器：4 个发光圆点，当前点数亮起 |
+| 反编译/源码：`ExecuteEffect.java`(L56-57,83-85)、`ReapEffect.java`(L55-58,105-106,195-200)、`LungeEffect.java`(L223-226,248-251,302-303)、`PunctureEffect.java`(L34,60-61,86-88)、`PryEffect.java`(L38,59-60,77-79,103-106)、`OverpowerEffect.java`(L65-72,103-104,127-130)、`SlamEffect.java`(L88-91) | 各技能内嵌的 combo 逻辑 |
+
+#### 1.17.2 ComboPoints 核心机制
+
+`ComboPoints.java` 使用 Guava `Cache`：
+
+```
+Cache<PlayerID, Integer>
+    最大容量: 100 玩家
+    过期时间: 30 秒（写入后）
+    上限: 5 点
+```
+
+**触发流程**：
+1. `AttackEntityEvent` → 目标可攻击 + 玩家手持 combo 工具 + 攻击力 > 90% → `increment(player)`（+1，上限 5）
+2. 蓄力技能 `perform()` 开始时读取 `ComboPoints.get(player)`（0~5 点）
+3. 各技能使用 level 和 efficiency 配合当前点数计算收益
+4. 技能结算后 `ComboPoints.reset(player)`（消耗所有点数）
+5. 30 秒未攻击 → 点数自动过期
+
+**HUD 显示**：屏幕中央下方 4 个倒三角圆点（`ComboPointGui`），每点满攻击命中亮一个，技能施放后全部熄灭。
+
+#### 1.17.3 协同来源总表
+
+所有协同位于 `data/tetra/synergies/double/warforged/`。**关键约束**：左手为任意模块 + 右手必须为 `*/basic_pickaxe_right`（镐头右手）。当前包无 KubeJS 覆盖。
+
+| 左手模块 | 右手 = `double/basic_pickaxe_right` | JSON 值 | level | efficiency |
+|---|---|---:|---:|---|
+| `adze_left`（锛头） | pickaxe_right | `[25, 10]` | 25 | 10 |
+| `basic_hammer_left`（锤头） | pickaxe_right | `25` | 25 | 0 |
+| `basic_axe_left`（斧头） | pickaxe_right | `10` | 10 | 0 |
+| `sickle_left`（镰刀） | pickaxe_right | `[10, 5]` | 10 | 5 |
+| `basic_pickaxe_left`（镐头） | pickaxe_right | `10` | 10 | 0 |
+| `basic_hoe_left`（锄头） | pickaxe_right | `[8, 15]` | 8 | 15 |
+| `claw_left`（爪头） | pickaxe_right | `[5, 25]` | 5 | 25 |
+
+#### 1.17.4 level 与 efficiency 语义总结
+
+| 参数 | 技能 | 代码逻辑 | 语义 |
+|---|---|---|---|
+| **level** `[0]` | execute | `× (1 + level × points / 100)`（乘法） | 每点连击的额外伤害倍率 |
+| | reap | `+= level × points / 100`（加法） | 每点连击+攻击百分比 |
+| | lunge | `chargeTime ×= (1 - level × points / 100)` | 每点连击减少蓄力时间百分比 |
+| | puncture | `+= level × points`（ticks） | 每点连击增加流血 tick 数 |
+| | pry | `+= level × points / 100`（加法） | 每点连击 +攻击百分比 |
+| | overpower | `+= level × points / 100`（加法） | 每点连击 +攻击百分比 |
+| | slam | `chargeTime ×= (1 - level × points / 100)` | 每点连击减少蓄力时间百分比 |
+| **efficiency** `[1]` | execute | 不读取 efficiency | — |
+| | reap | `duration += efficiency × points × 20`（ticks） | 每点连击增加 Speed buff 时间 |
+| | lunge | `hitCooldown -= efficiency × points / 100` | 每点连击减少命中冷却 |
+| | puncture | 不读取 efficiency | — |
+| | pry | `random < efficiency × points / 100`（概率） | 每点连击有%概率双倍护甲削减 |
+| | overpower | `random < efficiency × points / 100`（概率） | 每点连击有%概率不精疲力竭（newAmp--） |
+| | slam | 不读取 efficiency | — |
+
+#### 1.17.5 逐个技能详细公式
+
+##### execute combo：×1.25（1点）到 ×2.25（5点，adze/锤 level=25）
+
+execute 是唯一使用**乘法**的 combo——`× (1 + level×points/100)`。发生在 `damageMultiplier += 1` 之前。
+
+##### reap combo：+level%×points 伤害，+efficiency×points 秒急迫 buff
+
+##### lunge combo：蓄力时间 ×(1 - level×points/100)，命中冷却 -efficiency×points/100
+
+##### puncture combo：流血 +level×points ticks
+
+##### pry combo：+level%×points 伤害，efficiency×points% 概率双倍层数
+
+##### overpower combo：+level%×points 伤害，efficiency×points% 概率不精疲力竭
+
+##### slam combo：蓄力时间 ×(1 - level×points/100)
+
+#### 1.17.6 连击点数消耗时机
+
+所有技能在 perform() 开始时读取点数（get），结束时统一清零（reset）。echo 回调中不额外读取——使用原始施放时缓存的 comboPoints。
+
+#### 1.17.7 设计考量
+
+1. **右手必须为镐头，六系互斥**：combo（pickaxe_right）与其它五种右手互斥。
+2. **execute combo 是唯一乘法 combo**：放大效应使 execute 成为 combo 收益最大化的技能。
+3. **锛 [25, 10] 和锤头 25 是 execute/slam/reap 伤害向最佳 combo**。
+4. **爪头 [5, 25] 是概率向 combo**：pry/overpower 概率收益最高。
+5. **锄头 [8, 15] 是持续向 combo**：reap buff 延长、lunge 冷却缩短。
+6. **combo 点数有限且需要攻击积累**：上限仅 5 点、30 秒过期、需 90%+ 攻击力命中。
+7. **combo 与 abilitySpeed 的协同**：高 combo 蓄力缩减 + abilitySpeed 冷却缩减使技能循环加速。
+
+
+</details>
+
+<a id="sec-1-18"></a>
+<details><summary>1.18 abilityMomentum（惯性）数值逻辑 ▸ 展开</summary>
+
+### 1.18 abilityMomentum（惯性）数值逻辑
+
+`abilityMomentum` 是 Tetra 的"惯性/动量"机制。它不是独立触发的效果，而是嵌入到所有 7 个蓄力技能中的副效果系统，主要提供三类收益：**目标眩晕**（Stun）、**击退/垂直位移**（velocity/push）、**玩家自身击退免疫**（Unwavering）。各技能对 level（眩晕时长/位移基数）和 efficiency（眩晕系数/位移乘数/击退模式切换）的使用方式高度分化。
+
+**唯一来源**：仅由双头工具的战铸（warforged）协同提供，且**右手必须为锤头（`*/basic_hammer_right`）**。不存在于 KubeJS 覆盖、改良或模块基础数值中。
+
+#### 1.18.1 数据来源
+
+| 数据来源 | 内容 |
+|---|---|
+| Tetra jar: `synergies/double/warforged/{tool}.json`（7 个文件） | `abilityMomentum` 的唯一提供源 |
+| 反编译/源码：`ExecuteEffect.java`(L115-119)、`ReapEffect.java`(L40,76-77,140-154,189-192)、`LungeEffect.java`(L94-125,253-255)、`PunctureEffect.java`(L122-127)、`PryEffect.java`(L131-134)、`OverpowerEffect.java`(L152-168)、`SlamEffect.java`(L46-48,63-67,139-165,209,227) | 各技能内嵌的 momentum 逻辑 |
+| `UnwaveringPotionEffect.java` | Reap momentum 提供的击退免疫 buff（每级 +1 击退抗性，ADDITION 模式） |
+
+#### 1.18.2 协同来源总表
+
+所有协同位于 `data/tetra/synergies/double/warforged/`。**关键约束**：左手为任意模块 + 右手必须为 `*/basic_hammer_right`（锤头右手）。当前包无 KubeJS 覆盖。
+
+| 左手模块 | 右手 = `double/basic_hammer_right` | JSON 值 | level | efficiency |
+|---|---|---:|---:|---|
+| `basic_hoe_left`（锄头） | hammer_right | `[30, 0.07]` | 30 | 0.07 |
+| `basic_hammer_left`（锤头） | hammer_right | `[29, 0.6]` | 29 | 0.6 |
+| `sickle_left`（镰刀） | hammer_right | `[15, 2]` | 15 | 2 |
+| `adze_left`（锛头） | hammer_right | `[10, 0.5]` | 10 | 0.5 |
+| `basic_pickaxe_left`（镐头） | hammer_right | `[10, 0.05]` | 10 | 0.05 |
+| `claw_left`（爪头） | hammer_right | `8` | 8 | 0 |
+| `basic_axe_left`（斧头） | hammer_right | `3` | 3 | 0 |
+
+#### 1.18.3 各技能 momentum 速查
+
+| 技能 | level 语义 | efficiency 语义 |
+|---|---|---|
+| **execute** | `stunTicks = level × damageMultiplier × 20` | 不读取 |
+| **reap** | 玩家 Unwavering 免疫：`level × kills × 20` ticks | 未死目标眩晕：`efficiency × kills × 20` ticks |
+| **lunge** | 摔落伤害上限 `min(level, fallDistance)` | 眩晕系数 + 垂直因子 1.2 |
+| **puncture** | 垂直位移基数 `level/100` | 护甲缩放 `efficiency × armor` |
+| **pry** | `stunTicks = level × (Pried层数+1)` | 不读取 |
+| **overpower** | 垂直位移基数 `level/100` | 双方疲惫缩放 |
+| **slam（直击）** | `stunTicks = level` | >0 切换为上抛模式 |
+| **slam（地面）** | 不读取 | >0 切换为上抛模式 + 40tick 眩晕 |
+
+#### 1.18.4 关键公式
+
+**execute**：眩晕 = level × damageMultiplier × 20 —— 高倍率处决产生长眩晕。锄头 level=30, ×5.0 → 150 秒。
+
+**reap**：击杀越多 → 击退免疫越长 + 未死目标眩晕越长。镰刀 efficiency=2 → 每杀 2 秒群控。
+
+**lunge**：摔落距离转伤害（上限 = level）+ 眩晕 + 摔落减免。
+
+**puncture/overpower**：向上击飞——puncture 看目标护甲，overpower 看双方疲惫层数。
+
+**slam**：efficiency > 0 → 从"强力击飞"变为"轻推 + 上抛 + 眩晕"。
+
+#### 1.18.5 设计考量
+
+1. **五系右手互斥完备**：momentum（hammer_right）是第五种右手选择。
+2. **锄头 level=30 是 execute 最强眩晕来源**。
+3. **镰刀 efficiency=2 是 reap 最强眩晕来源**。
+4. **锤头 [29, 0.6] 是位移专精**：hammer_left + hammer_right = 最纯正的 momentum 构筑。
+5. **lunge momentum 是唯一的"摔落转换"机制**。
+6. **slam momentum 的击退模式切换是设计亮点**。
+
+
+</details>
+
+<a id="sec-1-19"></a>
+<details><summary>1.19 abilityDefensive（防御姿态）数值逻辑 ▸ 展开</summary>
+
+### 1.19 abilityDefensive（防御姿态）数值逻辑
+
+`abilityDefensive` 是 Tetra 中唯一**切换技能形态**的效果。当带该效果的工具被置于**副手（OFF_HAND）**时，所有蓄力技能从"攻击模式"切换为"防御模式"——伤害降低但获得控制、debuff、自保等收益。在主手时，仅 reap 额外提供移动速度 buff。与其他 ability（echo/revenge/combo 等）不同，abilityDefensive 不增加伤害，而是**改变技能性质**。
+
+**唯一来源**：仅由双头工具的战铸（warforged）协同提供，且**右手必须为锛头（`*/adze_right`）**。不存在于 KubeJS 覆盖、改良或模块基础数值中。
+
+#### 1.19.1 核心机制：isDefensive
+
+`ChargedAbilityEffect.java` L99-101：
+
+```java
+public boolean isDefensive(ItemModularHandheld item, ItemStack itemStack, InteractionHand hand) {
+    return hand == InteractionHand.OFF_HAND && item.getEffectLevel(itemStack, abilityDefensive) > 0;
+}
+```
+
+**判定条件**：工具处于**副手**（OFF_HAND）+ 具有 `abilityDefensive` 效果等级 > 0。满足时所有蓄力技能路由到防御变体。
+
+#### 1.19.2 协同来源总表
+
+所有协同位于 `data/tetra/synergies/double/warforged/`。**关键约束**：左手为任意模块 + 右手必须为 `*/adze_right`（锛头右手）。
+
+| 左手模块 | 右手 = `double/adze_right` | JSON 值 | level | efficiency |
+|---|---|---:|---:|---|
+| `sickle_left`（镰刀） | adze_right | `[160, 45]` | 160 | 45 |
+| `basic_axe_left`（斧头） | adze_right | `[69, 50]` | 69 | 50 |
+| `basic_hoe_left`（锄头） | adze_right | `[59, 30]` | 59 | 30 |
+| `basic_hammer_left`（锤头） | adze_right | `[49, 5]` | 49 | 5 |
+| `adze_left`（锛头） | adze_right | `1` | 1 | 0 |
+| `claw_left`（爪头） | adze_right | `[1, 5]` | 1 | 5 |
+| `basic_pickaxe_left`（镐头） | adze_right | `[1, 5]` | 1 | 5 |
+
+#### 1.19.3 各技能防御模式速查
+
+| 技能 | 防御模式行为 | level 语义 | efficiency 语义 |
+|---|---|---|---|
+| **execute** | 施加 Severed（切割：-10%HP/-5%攻/级 ×3层上限） | 伤害倍率 `level/100` | 满血额外伤害 `+efficiency/100` |
+| **reap（副手）** | 每命中 +Steeled（+1 护甲/级） | buff 基础时间 `level×(1+kills×2)` ticks | — |
+| **reap（主手）** | 每击杀 +移速 | — | buff 时间 `efficiency×20` ticks |
+| **lunge** | 向后闪避（反方向位移） | — | — |
+| **puncture** | 击退 + 减速 | 减速 amplifier = `level` | 减速时间 `efficiency×20` ticks |
+| **pry** | 施加虚弱 | 虚弱 amplifier = `level-1` | 虚弱时间 `efficiency×20` ticks |
+| **overpower** | 仅给目标 1 层疲惫 | 伤害倍率 `level/100` | 冷却**增加** `×(1+efficiency/100)` |
+| **slam（直击）** | 伤害 -30%、眩晕 | 眩晕 ticks = `level` | — |
+| **slam（地面）** | AOE 减速 | — | 减速时间 `efficiency×20` ticks |
+
+#### 1.19.4 设计考量
+
+1. **六系完备**：adze_right 是第六种右手选择。
+2. **唯一副手触发机制**：不由"是否有此效果"决定，而是由"是否在副手"触发。
+3. **镰刀 [160, 45] 是防御数值王者**：pry 虚弱 159 级几乎完全瘫痪目标。
+4. **斧 [69, 50] 是最均衡的防御来源**。
+5. **锛 adze_left + adze_right 仅给 level=1**：只能解锁防御姿态本身。
+6. **defensive 是纯 debuff/控制向**：所有防御模式均降低伤害换取敌方 debuff。
+7. **adze_right 双重身份**：同时提供 abilityEcho（主手）和 abilityDefensive（副手）。
+
+
+</details>
+
+<a id="sec-1-20"></a>
+### 1.20 被动效果与 ability 系统的隔离
+
+Tetra 有两类效果体系：**蓄力技能 ability**（1.11-1.19）和**被动效果**。被动效果不由战铸右手模块提供，不走 `ChargedAbilityEffect.perform()` 代码路径，因此**与九个 ability 效果完全无联动**。
+
+#### 1.20.1 jab（猛刺）
+
+`ItemEffect.jab` 是一种**副手右键即时攻击**，与蓄力技能无关。
+
+**来源**：仅 `short_blade`（短剑身）模块：基础 `jab: 130`，密度每点 `jab: -8`。战铸协同无 jab 提供。
+
+**机制**（`ItemModularHandheld.java` L346-363,388-488）：
+- 仅在 **OFF_HAND** 生效
+- 右键空挥：触发 truesweep + howling，进入冷却
+- 右键命中实体：`hitEntity(stack, player, target, jabLevel/100f, 0.5f, 0.2f)`
+  - 伤害 = 基础伤害 × `jabLevel / 100`（短剑身 130 → 1.3 倍）
+  - 目标死亡时触发 draining 效果
+  - 冷却 = `getCooldownBase × 20` ticks
+- **不与任何 ability 联动**：jab 不经过 charged ability 系统
+
+#### 1.20.2 quickStrike（迅捷）
+
+`ItemEffect.quickStrike` 是一种**主手攻击伤害下限保障**。
+
+**来源**：仅 `forefinger_ring`（指环）模块：三种变体分别给 `2`、`3`、`5`。
+
+**机制**（`ItemEffectHandler.java` L213-223）：
+- 仅在 **主手** 生效（`LivingHurtEvent` 中读取主手物品）
+- 公式：`minDamage = maxAttackDamage × (0.2 + 0.05 × quickStrikeLevel)`
+
+| quickStrike 等级 | 最低伤害比例 | 来源 |
+|---|---|---|
+| 2 | 30% | forefinger_ring 变体 1 |
+| 3 | 35% | forefinger_ring 变体 2 |
+| 5 | 45% | forefinger_ring 变体 3 |
+
+- **不与任何 ability 联动**：quickStrike 在 `LivingHurtEvent` 中独立执行
+
+#### 1.20.3 总结：被动效果与 ability 的隔离
+
+| 效果 | 触发时机 | 伤害影响 | 与 9 ability 联动 |
+|---|---|---|---|
+| **jab** | 副手右键即时 | `×jabLevel/100` 倍率 | **无** |
+| **quickStrike** | 主手攻击伤害结算 | 提升伤害下限 | **无** |
+| truesweep | jab 右键或 sweep 时 | 真横扫 AOE | **无** |
+| howling | jab 右键或技能命中 | 防弹/风啸 | **无** |
+| severing | 近战命中 | 切割 debuff（-HP/-攻） | **无** |
+| armorPenetration | 近战命中 | 无视护甲 | **无** |
+
+> **设计意图**：被动效果独立于蓄力技能系统，确保 jab/quickStrike 等模块效果不会与战铸能力产生意外的乘法叠加。这也意味着短剑身（jab）+ 任意右手模块可以同时获得 jab 的副手攻击能力和战铸的蓄力能力——两者互不干扰。
+
+<a id="sec-2"></a>
 ## 2. MMT 伤害公式
 
 CDC 日志打印的公式：
@@ -856,6 +1902,7 @@ eventAmountAfterMMT(MMT处理后伤害)=2045.0071
 (139.7206 + 13.8438) * (1 + 7.1300) * 1.6380 = 2045.0071
 ```
 
+<a id="sec-3"></a>
 ## 3. MMT 主要收益机制与样例数值
 
 下面这一组数值来自一次测试观察，用来说明这些效果进入哪个乘区、在实战里可能表现到什么量级；没有同一份日志时，也可以按同样的公式和效果等级重新代入。
@@ -923,6 +1970,7 @@ amount(伤害)=2045.0071
 | 暴击 | `pristine_emerald`（无瑕绿宝石强化） | `criticalStrike [15,1]` |
 | 攻击距离 | `pristine_amethyst`（无瑕紫水晶强化） | `reach_distance +0.5`，`attack_range +0.5`，`reaching [6,0.25]` |
 
+<a id="sec-4"></a>
 ## 4. 泰坦卷轴与颂歌
 
 当前包已覆盖 MMT 原版 `**` 直接属性，改为 `*`。因此这些词条仍然提高攻速/攻击/弓属性，但不再走原先更夸张的 `**` 乘法属性写法。
@@ -992,6 +2040,7 @@ normalMulti(普通增伤) += level(效果等级) / 100 * coreflames(火种/轮�
 | `ode_to_worldbearing.json`（负世颂歌） | `pyric_corpus`（此身为炬） | 500 | 普通增伤，轮回计满理论 `+5.0` |
 | `ode_to_worldbearing.json`（负世颂歌） | `titan_slayer`（泰坦杀手） | 10 | boss/精英独立增伤 `x1.10` |
 
+<a id="sec-5"></a>
 ## 5. 饰品收益
 
 MMT 饰品收益通过 Curios 读取。伤害类 Curios 效果反编译确认均为独立乘区：
@@ -1074,6 +2123,7 @@ independentProduct(独立乘区) *= 1 + curiosEffectLevel(饰品效果总等级)
 | `critical_strike_damage_up`（暴击伤害强化） | 4 | `+0.12` | `+0.70` |
 | `critical_strike_damage_up`（暴击伤害强化） | 5 | `+0.15` | `+0.85` |
 
+<a id="sec-6"></a>
 ## 6. MMT 武器与远程模块
 
 同样，材料三属性按原版模块表的格式写作：硬度、密度、韧性统一放入“材料三值收益”。注意 `primaryEffects` 里偶尔会出现 `generic.attack_damage` 这种名字，它在 JSON 位置上仍是效果项，不是属性项。
@@ -1111,6 +2161,7 @@ independentProduct(独立乘区) *= 1 + curiosEffectLevel(饰品效果总等级)
 
 当前包还存在一批 MMT 容器/外观/基础结构模块，它们不直接给本次伤害相关属性，或只提供材料失效保护/容器配色，所以不展开收益公式：`mmt_amulet`（护符）的 `dye_item/fabric_envelope/fill_item`（染色/布套/填充物），`mmt_emblem/emblem_ring/base_ring`（徽章底环）与 `blank_emblem`（空白徽章），`mmt_necklace/chain`（项链链条）的三种 chain 和无直接伤害的 `arcane/heart/shield` pendant（奥术/心形/护盾坠饰），`mmt_crown/top/gem`（王冠顶部宝石），`mmt_glove/wristband`（手套腕带）的三种 wristband，`mmt_heart_protecting_mirror/base/hard_base`（坚硬护心镜基底），`mmt_jetpack`（喷气背包）的 shell/battery（外壳/电池），`mmt_white_bag/container/quiver/scabbard`（白色背包/容器/箭袋/剑鞘）的彩虹模块。
 
+<a id="sec-7"></a>
 ## 7. 当前包内材料与 socket 收益
 
 当前已安装相关集成：Alex's Caves、Cataclysm、Ice and Fire、Alex's Mobs、AE2、Create、Dreadsteel、Black Knight Armor、Apotheosis/Apothic Attributes、Curios、Quark、Waystones。下面只列当前包能实际关联到的内容；未安装集成不列。
@@ -1216,6 +2267,7 @@ entity.attack(player.damageSources().generic(), hp(目标生命值) * level(压�
 
 这不是 MMT 乘区，但它能解释高血量目标上的异常跳数：目标血量越高，追加伤害越明显。
 
+<a id="sec-8"></a>
 ## 8. 可选调整方向
 
 如果后续想压低伤害曲线，可以先观察这些方向：
@@ -1228,10 +2280,12 @@ entity.attack(player.damageSources().generic(), hp(目标生命值) * level(压�
 6. 对 `overwhelm`（压倒）加上目标血量上限、boss/假人限制或冷却。
 7. 检查副手 Tetra 物品，因为 MMT 很多效果取主手/副手最大等级。
 
+<a id="sec-10"></a>
 ## 10. MMT OP 物品清单
 
 当前包内识别出的过于强力（Overpowered）的 MMT 卷轴与改良，所有数据均来自 `more_mod_tetra-2.4.1-all.jar` 原始文件和 `kubejs/data/tetra/` 覆盖，已交叉验证 schematic + improvement 文件。
 
+<a id="sec-10-1"></a>
 ### 10.1 锻造技艺卷轴（完整性基础设施）
 
 | 卷轴 | Scroll Key | 生效方式 | 效果 |
@@ -1239,7 +2293,7 @@ entity.attack(player.damageSources().generic(), hp(目标生命值) * level(压�
 | ~~锻造技艺:稳固Ⅰ~~ | `mmt_settled_scroll` | `crafting_effects/scroll/` 直接施加 | **已禁用**：配方 `forge:false` + crafting_effect 覆盖为 no-op |
 | ~~锻造技艺:稳固Ⅱ~~ | `mmt_high_settled_scroll` | 同上 | **已禁用**：配方 `forge:false` + crafting_effect 覆盖为 no-op |
 | 锻造技艺:匠魂巧工 | `shared/mmt_more_improvements` | 解锁 `locked` 门 | 解锁 10 种魂匠改良 schematic，每项均为一次性 +1 完整度 |
-| 锻造技艺:超凡铭刻 | `shared/mmt_over_improvements` | 解锁 `locked` 门 | 解锁 13 种铭刻 schematic（5 级打磨渐进），见 §10.2 |
+| 锻造技艺:超凡铭刻 | `shared/mmt_over_improvements` | 解锁 `locked` 门 | 解锁 13 种铭刻 schematic（5 级打磨渐进），见 [§10.2](#sec-10-2) |
 
 **稳固Ⅰ/Ⅱ 配方**：通过 `forge_hammer` 合成台制作。稳固Ⅰ需书与笔+润滑剂分配器+金属碎片×2+排风板。稳固Ⅱ由 2 张稳固Ⅰ无序合成。
 
@@ -1248,6 +2302,7 @@ entity.attack(player.damageSources().generic(), hp(目标生命值) * level(压�
 
 共同条件：`tetra:locked` on `tetra:shared/mmt_more_improvements` + 模块槽位未安装此改良。示意图路径：`schematics/shared/more_mod_tetra/improvement/<key>.json`。
 
+<a id="sec-10-2"></a>
 ### 10.2 超凡铭刻（over_improvements）13 种铭刻
 
 由 `mmt_over_improvements` 卷轴解锁（配方：书与笔 + 铁剑×2 + 龙腱×2）。**没有 KubeJS 覆盖**，所有数值来自 MMT 原始 jar。全部为 5 级 `hone` 打磨（`experienceFactor: 2`），适用 70+ 武器模块槽位。
@@ -1360,7 +2415,7 @@ mmt_over_improvements 卷轴
 | **A** | Cyrene 颂歌（14 首） | 所有泰坦效果二次放大 + 固定伤害 +25、纷争 4 倍属性 | schematic + improvement 已核实 |
 | **A** | 匠魂巧工（10 种魂匠） | 额外完整度，让 S 级物品共存于同一工具 | schematic 已核实 |
 | **B** | Strife 铸造（29+ 种 forge） | 对 29+ 种武器模块直接强化 | schematic 已核实 |
-| **B** | 稳固Ⅰ/Ⅱ | ~~降低完整度消耗~~ | **已禁用**（见 §10.1） |
+| **B** | 稳固Ⅰ/Ⅱ | ~~降低完整度消耗~~ | **已禁用**（见 [§10.1](#sec-10-1)） |
 
 ### 10.5 相关文件位置索引
 
@@ -1377,6 +2432,7 @@ mmt_over_improvements 卷轴
 | 泰坦卷轴配方 | `data/tetra/recipes/more_mod_tetra/the_legend_scroll/titan/*.json`（13 个） | `time` 禁用 |
 | 锻造技艺配方 | `data/tetra/recipes/more_mod_tetra/forge_hammer/*scroll*.json` | 无覆盖 |
 
+<a id="sec-9"></a>
 ## 9. 快速检索命令
 
 查看 MMT 伤害日志：
@@ -1415,6 +2471,7 @@ rg -n "\"category\"|\"primary\"|\"secondary\"|\"tertiary\"" kubejs/data/tetra/ma
 rg -n "armor/(head|chest|legs|feet)|generic\\.armor|generic\\.armor_toughness|movement_speed" kubejs/data/tetra/modules/armor kubejs/data/tetra/schematics/armor
 ```
 
+<a id="sec-11"></a>
 ## 11. chthonic_extractor 跨维度矿物提取 — 待实现设计
 
 日期：2026-07-14 | 状态：**搁置，待未来实现**
