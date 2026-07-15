@@ -703,6 +703,139 @@
 			x: -3.0d
 			y: 3.0d
 		}
+		{
+			dependencies: ["291FBEC1BF0BE4CF"]
+			description: [
+				"出货箱适合处理普通食物库存，&e订单&r则是更有方向的批量委托。"
+				"订单会要求若干种食物品类，例如饮品、甜点、主食或宴席。你交付的物品质量越高、种类越丰富，结算时的&eScore&r通常也越高，金币和声望收益也会更好。"
+				"订单会记录近期完成的顾客和品类。反复完成同一方向时，市场热度会降低金币收益；换做其他顾客或品类可以让旧方向更快降温。"
+			]
+			icon: "createdelight:unopened_order"
+			id: "27EFA4B94982AB04"
+			shape: "hexagon"
+			size: 1.8d
+			subtitle: "比出货箱更挑剔，也更值得规划"
+			tasks: [{
+				id: "09515F30590BB2F6"
+				title: "读完订单说明"
+				type: "checkmark"
+			}]
+			title: "订单商会"
+			x: -6.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["27EFA4B94982AB04"]
+			description: [
+				"&e未开封订单&r可以直接开封，也可以先写入印章再开封。"
+				"&e顾客印章&r会影响顾客方向，例如人类、精灵、矮人或怪物；&e菜单印章&r会影响需求方向，例如饮品、甜点、主食或宴席。"
+				"印章不会指定最终货物。它只是让订单更偏向某个方向，所以玩家仍然需要准备能覆盖多个品类的产线。"
+			]
+			icon: {
+				Count: 1
+				id: "createdelight:order_seal"
+				tag: {
+					OrderSeal: "drink"
+				}
+			}
+			id: "4B72E6D91A03CF58"
+			shape: "square"
+			size: 1.5d
+			subtitle: "先决定方向，再让订单自己长出来"
+			tasks: [
+				{
+					id: "0C8B5A47F2E196D3"
+					item: "createdelight:unopened_order"
+					type: "item"
+				}
+				{
+					id: "61D8A0E4B3C75F29"
+					item: "createdelight:order_seal"
+					type: "item"
+				}
+			]
+			title: "草稿与印章"
+			x: -9.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["4B72E6D91A03CF58"]
+			description: [
+				"&e订单构筑台&r用于批量把印章写入订单草稿，也可以把草稿开封为正式订单。"
+				"放入订单草稿和顾客/菜单印章后，点击&e写入&r会把方向写到输出槽里的草稿上。点击&e开封&r会消耗一张草稿，并把正式订单放进输出槽。"
+				"机器开封订单时会记录放置机器的玩家作为订单主人，所以多人游玩时最好由需要结算声望的人放置机器。"
+			]
+			icon: "createdelight:order_builder"
+			id: "3EBA5F483A08F924"
+			shape: "square"
+			size: 1.5d
+			subtitle: "让订单草稿变得可控一点点"
+			tasks: [{
+				id: "312AE291FA7D8B2D"
+				item: "createdelight:order_builder"
+				type: "item"
+			}]
+			title: "订单构筑台"
+			x: -11.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4B72E6D91A03CF58"]
+			description: [
+				"&e订单解析器&r不是请求器的弱化版。它负责告诉你订单、草稿和印章到底意味着什么。"
+				"把印章放进去，可以查看它会影响哪些顾客或品类；把草稿放进去，可以查看已经写入的方向；把正式订单放进去，可以查看需求品类摘要。"
+				"如果你不确定“主食”“宴席”这类菜单方向包含哪些货物，先用解析器看一眼会省很多试错。"
+			]
+			icon: "createdelightcore:order_parser"
+			id: "196D9A36A457CC6E"
+			shape: "square"
+			size: 1.5d
+			subtitle: "看懂订单，再决定要不要接"
+			tasks: [{
+				id: "74D0756E9461DBD2"
+				item: "createdelightcore:order_parser"
+				type: "item"
+			}]
+			title: "订单解析器"
+			x: -11.0d
+			y: 4.0d
+		}
+		{
+			dependencies: [
+				"3EBA5F483A08F924"
+				"196D9A36A457CC6E"
+			]
+			description: [
+				"&e订单请求器&r可以绑定 Create 包裹网络，把订单需求转换成仓库里的具体物品。"
+				"固定数量模式适合手动决定每种货物的消耗量；比例模式适合为某个品类保存长期配比，订单数量变化时机器会自动换算本次要取多少。"
+				"保存请求后，给请求器一个红石脉冲即可再次按保存方案发送包裹请求。&e订单提交口&r可以接收正式订单和货物包裹，处理完成后把奖励包裹输出到自动化网络。"
+			]
+			icon: "createdelightcore:order_requester"
+			id: "5B3007687F408993"
+			shape: "square"
+			size: 1.5d
+			subtitle: "从看懂订单，到让仓库自己出货"
+			tasks: [
+				{
+					id: "26390BA5D2F81E38"
+					item: "createdelightcore:order_requester"
+					type: "item"
+				}
+				{
+					id: "52BC90E1D6A74F03"
+					item: "createdelight:order_deliverer_item"
+					type: "item"
+				}
+				{
+					id: "73AD50F29B6E184C"
+					item: "createdelight:order_submission_port"
+					type: "item"
+				}
+			]
+			title: "订单自动化"
+			x: -13.0d
+			y: 3.0d
+		}
 	]
 	title: "&e玩转经济！"
 }
