@@ -2208,7 +2208,7 @@ independentProduct(独立乘区) *= 1 + curiosEffectLevel(饰品效果总等级)
 | `fire/ice/lightning_dragonbone`（火/冰/雷龙骨，Ice and Fire） | - | `armorPenetration +15`，对应龙血涂层 `+75` | 元素龙骨 |
 | `hydra_fang`（九头蛇尖牙，Ice and Fire） | - | `armorPenetration +20`，`poison +1`（中毒） | 穿甲和毒 |
 | `sea_serpent_fang`（海蛇尖牙，Ice and Fire） | - | `crushing +2`（破甲/粉碎） | 近战效果 |
-| `witherbone`（凋灵骨，Ice and Fire） | - | `wither +1`（凋灵） | 负面状态 |
+| `witherbone`（凋灵骨，Ice and Fire） | - | `wither +1`（凋灵） | **已禁用**（2026-07-16，与 tetracelium `wither_bone` 双重匹配 `iceandfire:witherbone`，保留 tetracelium） |
 | `alexscaves_bioluminesscence`（生物荧光，Alex's Caves） | `**generic.attack_damage +0.015` | `attack_glowing_buff +10`（攻击发光增益） | fuller 材料 |
 | `alexscaves_ferrouslime_ball`（铁黏液球，Alex's Caves） | `**generic.attack_damage +0.025` | `magnetizing_metal +10`（磁化金属） | fuller 材料 |
 | `alexscaves_pewen_sap`（佩文树液，Alex's Caves） | `**generic.attack_damage +0.01` | - | fuller 材料 |
@@ -2216,12 +2216,12 @@ independentProduct(独立乘区) *= 1 + curiosEffectLevel(饰品效果总等级)
 | `cataclysm_dying_ember`（将熄余烬，Cataclysm） | `**generic.attack_damage +0.05` | `fire_combo +12`（火焰连段） | fuller 材料 |
 | `cataclysm_essence_of_the_storm`（风暴精华，Cataclysm） | `**generic.attack_damage +0.1` | `unceasing_storm +1`（不息风暴），`lightning_combo +5`（雷电连段） | fuller 材料 |
 | `iceandfire_*_dragon_blood`（火/冰/雷龙血，Ice and Fire） | `**generic.attack_damage +0.05` | `armorPenetration +20`，对应龙血涂层 `+80` | fuller 材料 |
-| `ae2_certus_quartz_crystal`（赛特斯石英，AE2） | - | `industrial_protection +1`（工业防护） | 宝石 |
-| `ae2_charged_certus_quartz_crystal`（充能赛特斯石英，AE2） | - | `industrial_protection +1`，`lightning_combo +10` | 宝石 |
+| `ae2_certus_quartz_crystal`（赛特斯石英，AE2） | - | `industrial_protection +1`（工业防护） | **已禁用**（2026-07-16，与 tetracelium `certus_quartz` tag 材料重复，保留 tetracelium） |
+| `ae2_charged_certus_quartz_crystal`（充能赛特斯石英，AE2） | - | `industrial_protection +1`，`lightning_combo +10` | **已禁用**（同上；socket 类 `vobrite_crystal` 不受影响） |
 | `ae2_fluix_crystal`（福鲁伊克斯水晶，AE2） | - | `industrial_protection +2`，`lightning_combo +15` | 宝石 |
 | `occult_gem`（秘法宝石，Alex's Caves） | - | `deep_dark_fantasy +1`（深暗幻想） | 宝石 |
 | `pearl`（珍珠，Alex's Caves） | - | `ocean_pearl +1`（海洋珍珠） | 宝石 |
-| `uranium`（铀，Alex's Caves） | - | `radioactive_material +1`（放射性材料） | 宝石 |
+| `uranium`（铀，Alex's Caves） | - | `radioactive_material +1`（放射性材料） | **已禁用**（2026-07-16，MMT key `alex_uranium` 与 kubejs `gem/uranium.json` 双重匹配，保留 kubejs；MMT `uranium_ingot` 因 `forge:ingots/uranium` tag 也一并禁用） |
 | `lacrima`（泪滴石，Cataclysm） | - | `tears_of_thunder +20`（雷霆之泪） | 宝石 |
 | Quark corundum clusters（刚玉簇，Quark） | 红色：`**generic.max_health +0.1` | 黑：`beheading +20`（斩首）；蓝：`blessings_of_water +7`（水之祝福）；绿：`multishot [4,3]`（多重射击）；靛：`fortune_and_looting +2`（时运/抢夺）；橙：`fire_combo +10`；紫：`dragon_breath_combo +10`（龙息连段）；白：`diamond_guard +4`（钻石守护）；黄：`lightning_combo +10` | 宝石，按颜色分效果 |
 | `dreadsteel_ingot`（恐钢锭，Dreadsteel） | `**attack_speed +0.02`，`**attack_damage +0.02`，`**draw_speed -0.02`，`**draw_strength +0.02` | `rising_slash +4`（上挑），`armorPenetration +20` | MMT jar 版本；当前 KubeJS 另有材料三属性覆盖 |
