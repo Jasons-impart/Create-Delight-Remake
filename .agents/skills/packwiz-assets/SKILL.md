@@ -26,6 +26,12 @@ Use this workflow for modpack asset operations that touch `mods/`, `resourcepack
 4. Inspect the generated `.pw.toml` plus `packwiz-files` changes before staging.
 5. Run `./scripts/sync-packwiz-assets.ps1` when local runtime files must match metadata.
 
+### 短期 PR 分支上的 CurseForge 定向更新
+
+1. 不要在仓库根目录直接运行 `packwiz update`，因为 `pack.toml` 和 `index.toml` 是生成文件且通常不存在。
+2. 用 `scripts/generate-packwiz-files.py --source modpack.toml --output-dir <temp>` 生成临时 pack，复制目标 `.pw.toml` 到相同相对路径，再在临时目录运行 `packwiz refresh` 和 `packwiz update <slug> --yes`。
+3. 只把目标 `.pw.toml` 回写仓库，并确认没有生成文件或无关元数据改动后运行 `scripts/sync-packwiz-assets.ps1`。
+
 ## Remove Assets
 
 1. On `main`, remove an asset by deleting its `.pw.toml` metadata.
