@@ -50,7 +50,7 @@ git log -1 --name-only | grep modpack.toml
 ### Decision 2: Release Type
 
 - 正式版 → 4 artifacts (Client + ClientPatch + Server + ServerPatch)
-- 测试版 → 2 artifacts (Client + Server only, no patches), no `docs/announcement.md` update
+- 测试版 → 2 artifacts (Client + Server only, no patches), no `docs/announcement.md` update; version/tag must end with `-test` and the GitHub release must be marked prerelease
 
 ### Decision 3: Announcement Content (Stable Only)
 
@@ -101,6 +101,16 @@ When the sub-version's **first stable release** is being published (e.g. v0.4.8.
 
 Output: PR URL
 
+For test releases, pass `-ReleaseType "测试"` and use a `-test` version/tag:
+
+```powershell
+.\.agents\skills\release\release-prepare.ps1 `
+    -Version "v0.4.7.15-test" `
+    -TargetBranch "release-v047x" `
+    -ReleaseType "测试" `
+    -Proxy "http://127.0.0.1:7890"
+```
+
 ### ⚠️ Human Gate: Merge the PR
 
 **Must wait for user to manually merge the PR.** Never auto-merge.
@@ -130,13 +140,39 @@ Note: `-PreviousVersion` is now optional. It auto-detects from the previous git 
 
 Output: Release URL
 
+### Transitional Test Tag Only
+
+For the current one-off transition where the pack version in `modpack.toml` is already correct but the GitHub test release must be discoverable by the README badge, skip Phase 1 and publish a `-test` tag directly from the target branch:
+
+```powershell
+.\.agents\skills\release\release-publish.ps1 `
+    -Version "v0.5.0.4-test" `
+    -TargetBranch "main" `
+    -PreviousVersion "v0.5.0.3" `
+    -ReleaseType "测试" `
+    -Proxy "http://127.0.0.1:7890"
+```
+
+Do not edit generated `pack.toml`. The release workflow uses the `v*-test` tag name for artifact names and release metadata, while `modpack.toml` can remain on the base pack version for this transition only. Do not use this as the long-term release model; future test release prepare PRs should use the `-test` version consistently.
+
+For test releases, publish the same `-test` tag and keep `-ReleaseType "测试"`:
+
+```powershell
+.\.agents\skills\release\release-publish.ps1 `
+    -Version "v0.4.7.15-test" `
+    -TargetBranch "release-v047x" `
+    -PreviousVersion "v0.4.7.14" `
+    -ReleaseType "测试" `
+    -Proxy "http://127.0.0.1:7890"
+```
+
 ## Script Reference
 
 ### release-prepare.ps1
 
 | Parameter | Required | Description |
 |-----------|----------|-------------|
-| `-Version` | ✅ | New version string (e.g. "v0.4.7.15") |
+| `-Version` | ✅ | New version string (e.g. "v0.4.7.15" for stable, "v0.4.7.15-test" for test) |
 | `-TargetBranch` | ✅ | Base branch for PR (e.g. "release-v047x") |
 | `-ReleaseType` | ❌ | "正式" (default) or "测试" |
 | `-Announcement` | ❌ | Comma-separated bullet points for stable `announcement.md` and PR body; for test releases, PR body only. Auto-generated from git log if omitted |
@@ -148,7 +184,7 @@ Output: Release URL
 
 | Parameter | Required | Description |
 |-----------|----------|-------------|
-| `-Version` | ✅ | Version tag to create (e.g. "v0.4.7.15") |
+| `-Version` | ✅ | Version tag to create (e.g. "v0.4.7.15" for stable, "v0.4.7.15-test" for test) |
 | `-TargetBranch` | ✅ | Branch to tag on (e.g. "release-v047x") |
 | `-PreviousVersion` | ❌ | Previous version for release notes and patch names (e.g. "v0.4.7.14"). Auto-detected via `git describe --tags --abbrev=0 HEAD^` if omitted |
 | `-ReleaseType` | ❌ | "正式" (default, 4 artifacts) or "测试" (2 artifacts, prerelease) |
@@ -162,7 +198,7 @@ Output: Release URL
 
 Both scripts include:
 
-- **Pre-flight validation**: Checks prerequisites (modpack.toml exists, version format, gh auth, TargetBranch exists on remote, no existing release) before any changes. Fails fast with clear error messages.
+- **Pre-flight validation**: Checks prerequisites (modpack.toml exists, release-type-specific version format, gh auth, TargetBranch exists on remote, no existing release) before any changes. Fails fast with clear error messages.
 - **Dry-run mode**: Pass `-WhatIf` to preview what the script would do without making any changes. Useful for validating parameters.
 - **Idempotency**: Scripts handle re-runs gracefully:
   - Existing tags on the correct commit → skipped
