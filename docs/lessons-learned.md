@@ -438,3 +438,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: `terralith:dispenser_alt` outputs `minecraft:dispenser` with `#minecraft:stone_crafting_materials`; the vanilla tag already contains `minecraft:cobblestone`, and Terralith appends extra stone variants with `replace: false`, so keeping `minecraft:dispenser` leaves duplicate recipes.
 - **Fix/Lesson**: Remove the vanilla `minecraft:dispenser` recipe ID in KubeJS and keep Terralith's broader recipe.
+
+## Client-only mods must not enter server artifacts
+
+**Date**: 2026-07-18
+
+- **Problem**: The `v0.5.0.3` server artifact crashed during Forge `CONSTRUCT` because `ExtraHoloPage` loaded `net.minecraft.client.Options` and `ShoulderSurfing` mixed into Create's `ContraptionHandlerClient` on `DEDICATED_SERVER`.
+- **Fix/Lesson**: Mark client-only Packwiz metadata such as `mods/ExtraHoloPage.pw.toml` and `mods/ShoulderSurfing.pw.toml` with `side = "client"` and smoke-test the server artifact until it reaches `Done`.

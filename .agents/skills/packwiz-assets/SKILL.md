@@ -23,14 +23,15 @@ Use this workflow for modpack asset operations that touch `mods/`, `resourcepack
 1. Put custom or restricted payloads under the matching `packwiz-files/<category>/` directory.
 2. Run `./scripts/update-packwiz-meta.ps1 -Category mods|resourcepacks|shaderpacks` only on `main` or a long-lived LTS/release-maintenance branch.
 3. For slow overseas services, retry once with `-Proxy "http://127.0.0.1:7890"`.
-4. Inspect the generated `.pw.toml` plus `packwiz-files` changes before staging.
+4. Inspect the generated `.pw.toml` plus `packwiz-files` changes before staging, especially that existing `side = "client"` or `side = "server"` entries were not reset to `both`.
 5. Run `./scripts/sync-packwiz-assets.ps1` when local runtime files must match metadata.
 
 ### 短期 PR 分支上的 CurseForge 定向更新
 
 1. 不要在仓库根目录直接运行 `packwiz update`，因为 `pack.toml` 和 `index.toml` 是生成文件且通常不存在。
-2. 用 `scripts/generate-packwiz-files.py --source modpack.toml --output-dir <temp>` 生成临时 pack，复制目标 `.pw.toml` 到相同相对路径，再在临时目录运行 `packwiz refresh` 和 `packwiz update <slug> --yes`。
-3. 只把目标 `.pw.toml` 回写仓库，并确认没有生成文件或无关元数据改动后运行 `scripts/sync-packwiz-assets.ps1`。
+2. 运行 `./scripts/update-packwiz-target.ps1 -Category mods|resourcepacks|shaderpacks -Slug <metadata-name>`，或用 `-Path <relative .pw.toml path>` 精确指定目标。
+3. 该脚本会生成临时 pack、只回写目标 `.pw.toml`、保留原始 `side`，并默认运行 `scripts/sync-packwiz-assets.ps1`；仅在明确不需要同步运行态文件时使用 `-SkipSync`，需要无网络预检时使用 `-DryRun`。
+4. 检查 diff，确认没有生成文件、无关元数据改动，且没有把 `client` 或 `server` 退回 `both`。
 
 ## Remove Assets
 
