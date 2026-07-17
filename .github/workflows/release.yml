@@ -114,6 +114,11 @@ jobs:
           git clean -fd -- mods resourcepacks shaderpacks
       - name: 下载所有客户端文件本体
         run: bash .github/workflows/scripts/download_mods.sh 8082 client
+      - name: 生成模组列表完整性清单
+        run: |
+          python3 scripts/generate-pack-integrity-manifest.py
+          mkdir -p ../lite-release/kubejs/config
+          cp kubejs/config/createdelight_pack_integrity_expected.json ../lite-release/kubejs/config/
       - name: 生成带mod本体的懒人包
         run: bash .github/workflows/scripts/build_click_to_run_client.sh ../click_to_run_release
       - name: 下载HMCL启动器与jdk环境

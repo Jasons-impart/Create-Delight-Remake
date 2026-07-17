@@ -40,6 +40,24 @@ Use this workflow for modpack asset operations that touch `mods/`, `resourcepack
 2. Remove matching `packwiz-files` payloads only when the committed payload is intentionally retired.
 3. Do not treat synced runtime jars as source; they are local development payloads.
 
+## Pack Integrity Warning
+
+The client has a mod list integrity warning for added or removed mods. Keep these files together:
+
+- `scripts/generate-pack-integrity-manifest.py`: scans managed `mods/**/*.pw.toml`, reads local `mods/*.jar`, extracts runtime mod ids, and writes the expected manifest.
+- `kubejs/config/createdelight_pack_integrity_expected.json`: generated expected mod id manifest; regenerate it after intended mod additions/removals.
+- `kubejs/config/createdelight_pack_integrity.json`: runtime config, including `allowedExtraModIds`.
+- `kubejs/client_scripts/pack_integrity_check.js`: client-side title-screen warning and JSON report writer for mod list changes and Java major-version mismatches.
+
+Generation workflow:
+
+```powershell
+./scripts/sync-packwiz-assets.ps1
+python scripts/generate-pack-integrity-manifest.py
+```
+
+CI exports the no-mod CurseForge pack before downloading runtime assets, then downloads client assets, generates the integrity manifest, and copies the generated manifest into `../lite-release/kubejs/config/`. This prevents downloaded resourcepack or shaderpack payloads from entering the no-mod export while still keeping the click-to-run package current.
+
 ## CDC Packaged Jar
 
 1. Prefer published CurseForge metadata when a CDC release exists.

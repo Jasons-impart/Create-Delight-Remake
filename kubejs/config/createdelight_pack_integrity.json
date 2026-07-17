@@ -1,0 +1,5 @@
+{
+  "enabled": true,
+  "allowedExtraModIds": [],
+  "ignoredRuntimeModIds": ["minecraft", "neoforge", "forge", "java"]
+}
