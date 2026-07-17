@@ -1,13 +1,13 @@
 name = "Vintage Improvenents - SSW Edition"
-filename = "vintageimprovements-1.20.1-0.3.7.3.jar"
+filename = "vintageimprovements-1.20.1-0.3.7.4.jar"
 side = "both"
 
 [download]
 hash-format = "sha1"
-hash = "5249514e020ec1cd3966c6f34b0c80390c2be310"
+hash = "3b890086aee37bd73ff85fbe2923170c076f5409"
 mode = "metadata:curseforge"
 
 [update]
 [update.curseforge]
-file-id = 8066288
+file-id = 8381863
 project-id = 1255448
