@@ -197,6 +197,10 @@
       gap: 12px;
     }
 
+    .category-grid.is-focused {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
     .category-card {
       min-height: 148px;
       display: grid;
@@ -215,6 +219,11 @@
     .category-card[aria-pressed="true"] {
       outline: 2px solid var(--tone);
       outline-offset: 2px;
+    }
+
+    .category-grid.is-focused .category-card {
+      min-height: 104px;
+      grid-template-rows: auto auto;
     }
 
     .category-top {
@@ -249,6 +258,10 @@
       align-self: end;
       color: var(--muted);
       font-size: .82rem;
+    }
+
+    .category-grid.is-focused .category-examples {
+      display: none;
     }
 
     .list-panel {
@@ -473,8 +486,8 @@
 
     <section class="section-title">
       <div>
-        <h2>分类总览</h2>
-        <p>点击分类卡片可聚焦查看该类模组；再次点击返回全部。</p>
+        <h2 id="categoryTitle">分类总览</h2>
+        <p id="categoryHint">点击分类卡片可聚焦查看该类模组；再次点击返回全部。</p>
       </div>
       <p id="filterSummary">全部分类</p>
     </section>
@@ -569,7 +582,7 @@
         label: "性能、修复与兼容",
         tone: "var(--indigo)",
         description: "性能优化、内存修复、网络修复、兼容补丁和调试工具。",
-        pattern: /performance|fast|ferrite|modernfix|memory|leak|spark|canary|radium|lithium|starlight|fix|bug|patch|fps|clumps|connectivity|packet|better chunk|async|smooth boot|lightspeed|mixin|saturn|immediatelyfast|accelerated|dynamic fps|entity culling|badoptimizations|krypton|cull|flerovium|prism|fragmentum/i
+        pattern: /performance|fast|ferrite|modernfix|memory|leak|spark|canary|radium|lithium|starlight|fix|bug|patch|fps|clumps|connectivity|packet|better chunk|async|smooth boot|lightspeed|mixin|saturn|immediatelyfast|accelerated|dynamic fps|entity culling|badoptimizations|krypton|cull|flerovium|prism|fragmentum|vanillin|save my shaky network|smsn|zstdnet/i
       },
       {
         key: "library",
@@ -660,7 +673,10 @@
       byId("categoryCount").textContent = String(categories.length);
       byId("bothCount").textContent = String(items.filter((mod) => mod.side === "both").length);
       byId("clientCount").textContent = String(items.filter((mod) => mod.side === "client").length);
-      byId("dataSummary").textContent = `基于 ${enrichedMods.length} 个 Packwiz 模组元数据`;
+      const dataTag = window.CDR_MOD_DATA_VERSION && window.CDR_MOD_DATA_VERSION.tag
+        ? window.CDR_MOD_DATA_VERSION.tag
+        : "未标注";
+      byId("dataSummary").textContent = `基于 ${enrichedMods.length} 个 Packwiz 模组元数据，截止 ${dataTag}`;
       const categoryText = state.category === "all" ? "全部分类" : categoryByKey.get(state.category).label;
       const sideText = state.side === "all" ? "全部端侧" : sideLabel(state.side);
       byId("filterSummary").textContent = `${categoryText} / ${sideText}`;
@@ -669,7 +685,14 @@
     function renderCategories() {
       const grid = byId("categoryGrid");
       grid.innerHTML = "";
-      categories.forEach((category) => {
+      const focused = state.category !== "all";
+      const categoriesToRender = focused ? [categoryByKey.get(state.category)] : categories;
+      grid.classList.toggle("is-focused", focused);
+      byId("categoryTitle").textContent = focused ? "当前分类" : "分类总览";
+      byId("categoryHint").textContent = focused
+        ? "再次点击当前分类卡片，或在分类下拉框选择全部分类，可返回完整总览。"
+        : "点击分类卡片可聚焦查看该类模组；再次点击返回全部。";
+      categoriesToRender.forEach((category) => {
         const totalItems = categoryMods(category.key, false);
         const visibleItems = categoryMods(category.key, true);
         const button = document.createElement("button");
@@ -690,7 +713,7 @@
         button.addEventListener("click", () => {
           state.category = state.category === category.key ? "all" : category.key;
           byId("categorySelect").value = state.category;
-          render();
+          render({ scrollToList: state.category !== "all" });
         });
         grid.appendChild(button);
       });
@@ -757,12 +780,15 @@
       });
     }
 
-    function render() {
+    function render(options = {}) {
       const items = filteredMods();
       renderStats(items);
       renderCategories();
       renderSummary(items);
       renderGroups(items);
+      if (options.scrollToList) {
+        byId("listTitle").scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
 
     renderControls();
@@ -772,7 +798,7 @@
     });
     byId("categorySelect").addEventListener("change", (event) => {
       state.category = event.target.value;
-      render();
+      render({ scrollToList: state.category !== "all" });
     });
     byId("sideSelect").addEventListener("change", (event) => {
       state.side = event.target.value;

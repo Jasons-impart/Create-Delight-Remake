@@ -1,5 +1,5 @@
-// Generated from mods/*.pw.toml. Update this file when the mod metadata changes.
-window.CDR_MOD_DATA_VERSION = {"source":"mods/*.pw.toml","count":377};
+// Generated from mods/*.pw.toml. Refresh manually only when explicitly requested.
+window.CDR_MOD_DATA_VERSION = {"source":"mods/*.pw.toml","count":377,"tag":"v0.5.0.4"};
 window.CDR_MODS =
 [
   {
