@@ -91,6 +91,7 @@ CD-master-dev/
 - After any pull/rebase/merge, compare pre-update target commit..new HEAD; if `mods|resourcepacks|shaderpacks/**/*.pw.toml` or `packwiz-files/**` changed, run `scripts/sync-packwiz-assets.ps1` because runtime JARs are local.
 - `pack.toml`/`index.toml` are generated from `modpack.toml`; don't commit them
 - `CDC-mod-src/` is a git submodule and must stay out of Packwiz artifacts because packages ship pack files, not Java source trees
+- GitHub Pages mod classification data (`docs/mods-data.js`) is expensive to refresh; do not update it during ordinary mod changes unless the user explicitly asks for a manual refresh.
 
 ## ANTI-PATTERNS
 
