@@ -140,6 +140,21 @@ Note: `-PreviousVersion` is now optional. It auto-detects from the previous git 
 
 Output: Release URL
 
+### Transitional Test Tag Only
+
+For the current one-off transition where the pack version in `modpack.toml` is already correct but the GitHub test release must be discoverable by the README badge, skip Phase 1 and publish a `-test` tag directly from the target branch:
+
+```powershell
+.\.agents\skills\release\release-publish.ps1 `
+    -Version "v0.5.0.4-test" `
+    -TargetBranch "main" `
+    -PreviousVersion "v0.5.0.3" `
+    -ReleaseType "测试" `
+    -Proxy "http://127.0.0.1:7890"
+```
+
+Do not edit generated `pack.toml`. The release workflow uses the `v*-test` tag name for artifact names and release metadata, while `modpack.toml` can remain on the base pack version for this transition only. Do not use this as the long-term release model; future test release prepare PRs should use the `-test` version consistently.
+
 For test releases, publish the same `-test` tag and keep `-ReleaseType "测试"`:
 
 ```powershell
