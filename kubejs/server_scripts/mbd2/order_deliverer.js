@@ -192,13 +192,17 @@ function flushOrderSettlementSummaries(summaries) {
         let avgCategory = Math.round(summary.categoryPercentTotal / count)
         let avgCustomer = Math.round(summary.customerPercentTotal / count)
 
-        summary.player.tell(Text.translate("message.createdelight.order_batch_settlement", [
-            summary.count,
+        summary.player.tell(Text.translate("message.createdelight.order_batch_title", [summary.count]))
+        summary.player.tell(Text.translate("message.createdelight.order_batch_money", [
             global.MoneyUtil.convertBaseValueToString(summary.finalMoney),
-            global.MoneyUtil.convertBaseValueToString(summary.orderMoney),
+            global.MoneyUtil.convertBaseValueToString(summary.orderMoney)
+        ]))
+        summary.player.tell(Text.translate("message.createdelight.order_batch_score", [
             avgScore.toFixed(2),
             Math.round(avgMarket * 100),
-            Math.round(summary.marketMultiplierMin * 100),
+            Math.round(summary.marketMultiplierMin * 100)
+        ]))
+        summary.player.tell(Text.translate("message.createdelight.order_batch_reputation", [
             summary.reputationGain,
             summary.completionBonus,
             summary.finalLevel
@@ -232,6 +236,13 @@ function settleOrderSegment(level, pos, direction, start, end, orderStack, packa
     placeRewardBundles(level, pos, direction, start, end, rewardBundles)
     recordOrderSettlement(level, orderInfo, qualityScore, marketModifier, summaries)
     return true
+}
+
+global.OrderDeliverySettlement = {
+    buildRewardBundles: buildOrderRewardBundles,
+    getMarketModifier: getOrderMarketModifier,
+    recordSettlement: recordOrderSettlement,
+    flushSummaries: flushOrderSettlementSummaries
 }
 
 MBDMachineEvents.onTick("createdelight:order_deliverer", e => {

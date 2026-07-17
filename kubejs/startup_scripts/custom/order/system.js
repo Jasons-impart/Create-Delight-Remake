@@ -732,20 +732,51 @@ Order.reputation.getOrderGain = function(order, qualityScore) {
 Order.reputation.getPlayer = function(level, order) {
     if (level == null || order == null)
         return null
-    let players = level.getPlayers()
+
+    function matchesOrderOwner(player) {
+        if (player == null)
+            return false
+        if (order.ownerUUID != null && `${player.uuid}` == `${order.ownerUUID}`)
+            return true
+        return order.ownerName != null && `${player.username}` == `${order.ownerName}`
+    }
+
+    function findInPlayers(players) {
+        let found = null
+        if (players == null)
+            return null
+        players.forEach(player => {
+            if (found == null && matchesOrderOwner(player))
+                found = player
+        })
+        return found
+    }
+
+    let sameLevelPlayer = findInPlayers(level.getPlayers())
+    if (sameLevelPlayer != null)
+        return sameLevelPlayer
+
+    let server = level.server
+    if (server == null)
+        return null
+
     let found = null
-    players.forEach(player => {
-        if (found != null)
-            return
-        if (order.ownerUUID != null && `${player.uuid}` == `${order.ownerUUID}`) {
-            found = player
-            return
+
+    if (order.ownerUUID != null && global.CDServerJavaClasses != null && global.CDServerJavaClasses.$UUID != null) {
+        try {
+            found = server.getPlayerList().getPlayer(global.CDServerJavaClasses.$UUID.fromString(`${order.ownerUUID}`))
+        } catch (error) {
+            found = null
         }
-        if (order.ownerName != null && `${player.username}` == `${order.ownerName}`) {
-            found = player
-        }
-    })
-    return found
+    }
+    if (found != null)
+        return found
+
+    try {
+        return findInPlayers(server.getPlayerList().getPlayers())
+    } catch (error) {
+        return null
+    }
 }
 
 Order.reputation.awardForOrder = function(level, order, qualityScore) {
