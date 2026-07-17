@@ -74,6 +74,7 @@ CD-master-dev/
 - PR title/body use Chinese by default because reviewers and release notes are Chinese-first.
 - For multiline PR bodies from PowerShell, use a here-string or `--body-file`; `\n` is literal and renders broken Markdown on GitHub.
 - ❌ Never commit directly on `main`; create a feature branch and merge through PR because remote `main` is protected.
+- ❌ Never merge PRs yourself (`gh pr merge`, GitHub web/API merge, or auto-merge). Create PRs and wait for the user to manually merge unless the user explicitly asks you in the current conversation to merge a specific PR.
 - ❌ Never commit on merged feature branches
 - ❌ Never force push to main
 
