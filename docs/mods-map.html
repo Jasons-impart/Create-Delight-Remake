@@ -1,0 +1,809 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="机械动力：齿轮盛宴模组分类思维导图。">
+  <title>模组分类思维导图 - 机械动力：齿轮盛宴</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #101214;
+      --surface: #171b1f;
+      --surface-2: #20252b;
+      --text: #f4f0e8;
+      --muted: #c5bdae;
+      --line: #3b342b;
+      --accent: #e7a83a;
+      --blue: #7dd3fc;
+      --green: #89d185;
+      --red: #ef8f7e;
+      --violet: #c9a7ff;
+      --teal: #65d6c5;
+      --pink: #f0a3c0;
+      --orange: #f0b45c;
+      --lime: #b5d96a;
+      --cyan: #8bd9e8;
+      --indigo: #9fb5ff;
+      --gray: #9ca3af;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        linear-gradient(180deg, rgba(16, 18, 20, .72), #101214 340px),
+        url("../kubejs/assets/createdelight/textures/images_for_readme/introduction.png") top center / cover no-repeat;
+      color: var(--text);
+      font-family: "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--blue);
+      text-underline-offset: 3px;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .page {
+      width: min(1320px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 40px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 180px;
+      max-width: 38vw;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 10px 18px rgba(0, 0, 0, .45));
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.45rem, 2.4vw, 2.5rem);
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .subline {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .back {
+      flex: 0 0 auto;
+      min-height: 40px;
+      padding: 8px 13px;
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 6px;
+      background: rgba(23, 27, 31, .78);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) minmax(160px, 220px) minmax(130px, 180px);
+      gap: 12px;
+      margin-bottom: 18px;
+      padding: 14px;
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 8px;
+      background: rgba(16, 18, 20, .76);
+      backdrop-filter: blur(8px);
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .field span {
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      min-height: 40px;
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 6px;
+      background: var(--surface);
+      color: var(--text);
+      padding: 8px 10px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .stat {
+      min-height: 76px;
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 8px;
+      background: rgba(23, 27, 31, .84);
+      padding: 12px 14px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.7rem;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(320px, .9fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .map-canvas,
+    .detail {
+      border: 1px solid rgba(255, 255, 255, .13);
+      border-radius: 8px;
+      background: rgba(20, 23, 26, .9);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, .24);
+    }
+
+    .map-canvas {
+      position: relative;
+      min-height: 680px;
+      overflow: hidden;
+      padding: 24px;
+    }
+
+    .connections {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      color: rgba(231, 168, 58, .45);
+    }
+
+    .connections path {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+
+    .root-node {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      width: min(360px, 100%);
+      min-height: 96px;
+      margin: 0 auto 24px;
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      background: linear-gradient(180deg, rgba(231, 168, 58, .23), rgba(231, 168, 58, .08));
+      color: var(--text);
+      text-align: center;
+      padding: 16px;
+    }
+
+    .root-node strong {
+      display: block;
+      font-size: 1.3rem;
+      line-height: 1.2;
+    }
+
+    .root-node span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .branch-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .branch {
+      min-height: 132px;
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+      gap: 8px;
+      width: 100%;
+      border: 1px solid color-mix(in srgb, var(--tone), transparent 42%);
+      border-radius: 8px;
+      background: linear-gradient(180deg, color-mix(in srgb, var(--tone), transparent 86%), rgba(23, 27, 31, .92));
+      color: var(--text);
+      text-align: left;
+      padding: 13px;
+      cursor: pointer;
+    }
+
+    .branch[aria-pressed="true"] {
+      outline: 2px solid var(--tone);
+      outline-offset: 2px;
+    }
+
+    .branch-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .branch-title {
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .branch-count {
+      flex: 0 0 auto;
+      min-width: 46px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--tone), transparent 78%);
+      color: var(--text);
+      text-align: center;
+      padding: 2px 8px;
+      font-weight: 700;
+    }
+
+    .branch-desc,
+    .examples {
+      color: var(--muted);
+      font-size: .84rem;
+    }
+
+    .examples {
+      align-self: end;
+    }
+
+    .detail {
+      max-height: 780px;
+      overflow: auto;
+    }
+
+    .detail-head {
+      position: sticky;
+      top: 0;
+      z-index: 3;
+      border-bottom: 1px solid rgba(255, 255, 255, .12);
+      background: rgba(23, 27, 31, .96);
+      padding: 16px;
+    }
+
+    .detail-head h2 {
+      margin: 0;
+      font-size: 1.22rem;
+      letter-spacing: 0;
+    }
+
+    .detail-head p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .side-breakdown {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .05);
+      color: var(--muted);
+      padding: 2px 8px;
+      font-size: .82rem;
+    }
+
+    .mod-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .mod-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .mod-item strong {
+      display: block;
+      overflow-wrap: anywhere;
+      line-height: 1.3;
+    }
+
+    .mod-item code {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: .78rem;
+      overflow-wrap: anywhere;
+    }
+
+    .side {
+      align-self: start;
+      min-width: 54px;
+      border-radius: 999px;
+      text-align: center;
+      padding: 2px 8px;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+
+    .side.both {
+      background: rgba(137, 209, 133, .16);
+      color: var(--green);
+    }
+
+    .side.client {
+      background: rgba(125, 211, 252, .15);
+      color: var(--blue);
+    }
+
+    .empty {
+      padding: 28px 16px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 1060px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .detail {
+        max-height: none;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .page {
+        width: min(100% - 22px, 1320px);
+        padding-top: 18px;
+      }
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .toolbar,
+      .stats,
+      .branch-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .map-canvas {
+        min-height: auto;
+        padding: 16px;
+      }
+
+      .connections {
+        display: none;
+      }
+
+      .mod-item {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand">
+        <img src="../kubejs/assets/createdelight/textures/images_for_readme/title.png" alt="机械动力：齿轮盛宴">
+        <div>
+          <h1>模组分类思维导图</h1>
+          <p class="subline" id="dataSummary">读取模组清单中</p>
+        </div>
+      </div>
+      <a class="back" href="../">返回首页</a>
+    </header>
+
+    <section class="toolbar" aria-label="筛选模组">
+      <label class="field">
+        <span>搜索</span>
+        <input id="searchInput" type="search" placeholder="输入模组名、文件名或分类">
+      </label>
+      <label class="field">
+        <span>分类</span>
+        <select id="categorySelect"></select>
+      </label>
+      <label class="field">
+        <span>端侧</span>
+        <select id="sideSelect">
+          <option value="all">全部</option>
+          <option value="both">双端</option>
+          <option value="client">客户端</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="stats" aria-label="模组统计">
+      <div class="stat"><strong id="totalCount">0</strong><span>当前模组</span></div>
+      <div class="stat"><strong id="categoryCount">0</strong><span>分类分支</span></div>
+      <div class="stat"><strong id="bothCount">0</strong><span>双端模组</span></div>
+      <div class="stat"><strong id="clientCount">0</strong><span>客户端模组</span></div>
+    </section>
+
+    <main class="layout">
+      <section class="map-canvas" id="mapCanvas" aria-label="模组分类思维导图">
+        <svg class="connections" id="connections" aria-hidden="true"></svg>
+        <div class="root-node" id="rootNode">
+          <strong>齿轮盛宴</strong>
+          <span id="rootMeta">0 个模组</span>
+        </div>
+        <div class="branch-grid" id="branchGrid"></div>
+      </section>
+
+      <aside class="detail" aria-live="polite">
+        <div class="detail-head">
+          <h2 id="detailTitle">全部模组</h2>
+          <p id="detailDescription">按分类查看当前整合包的模组组成。</p>
+          <div class="side-breakdown" id="sideBreakdown"></div>
+        </div>
+        <ul class="mod-list" id="modList"></ul>
+      </aside>
+    </main>
+  </div>
+
+  <script src="./mods-data.js"></script>
+  <script>
+    const mods = Array.isArray(window.CDR_MODS) ? window.CDR_MODS : [];
+    const categories = [
+      {
+        key: "create",
+        label: "机械动力与自动化",
+        tone: "var(--accent)",
+        description: "Create 本体、附属、动力网络、序列装配与自动化扩展。",
+        pattern: /create|contraption|steam|railways|crafts|kinetic|mechanical|slice|sequenced pattern|cobblefordays|industrial platform|vintage/i
+      },
+      {
+        key: "storage",
+        label: "存储、物流与 AE2",
+        tone: "var(--blue)",
+        description: "AE2、存储抽屉、背包、终端与物流网络。",
+        pattern: /applied|energistics|ae2|storage|drawer|backpack|sophisticated|functional|logistic|terminal|cell|omni|network analyser|cable|laser|pipe|refined|inventory connector/i
+      },
+      {
+        key: "food",
+        label: "农业、料理与生态",
+        tone: "var(--green)",
+        description: "农夫乐事、季节、食物、饮品、农作物与生态内容。",
+        pattern: /delight|farmer|food|cooking|brew|vinery|bakery|bakeries|beachparty|candlelight|herbal|crop|season|spice|apple|farm|aquaculture|fruits|vegetable|butcher|coffee|tea|corn|cuisine|nourish|youkai|ecologics|neapolitan|collectorsreap|cosmopolitan|festival|always.?eat/i
+      },
+      {
+        key: "world",
+        label: "世界、维度与结构",
+        tone: "var(--teal)",
+        description: "地形、群系、洞穴、维度、村庄、结构和传送探索。",
+        pattern: /biome|terralith|tectonic|yung|dungeon|structure|village|town|tower|cave|caves|alex|ad astra|twilight|deeper|deeperdarker|repurposed|incendium|nether|end|explor|lost|sky|realm|mineshaft|fortress|stronghold|waystone|waystones|bumblezone|gateways|natures.?compass|portal|lithostitched/i
+      },
+      {
+        key: "combat",
+        label: "战斗、装备与成长",
+        tone: "var(--red)",
+        description: "武器、护甲、枪械、Tetra、附魔、怪物和成长系统。",
+        pattern: /combat|weapon|armor|armour|tetra|tacz|gun|guns|apotheosis|apothic|attributes|enchant|boss|mobs|mutant|guard|loot|relic|curios|accessor|trinket|paraglider|health|damage|level|skill|spell|ars|magic|gobber|hearts|dreadsteel|dragons|dummy|soul fire|elytra slot|simple hats/i
+      },
+      {
+        key: "quest",
+        label: "任务、指南与信息",
+        tone: "var(--violet)",
+        description: "任务书、配方查看、探针、进度、提示与信息覆盖层。",
+        pattern: /quest|ftb|jei|emi|jade|probe|tooltip|loot info|advancement|guide|catalogue|configured|search|recipe|enchantment descriptions|patchouli|manual|map atlas|wthit|one enough|observable|just enough|jeed|meed|holo|pick up notifier|item borders|itemphysic/i
+      },
+      {
+        key: "visual",
+        label: "视觉、音效与沉浸",
+        tone: "var(--pink)",
+        description: "渲染、光影、音效、动画、镜头和沉浸式表现。",
+        pattern: /oculus|embeddium|rubidium|shader|iris|sound|audio|visual|animation|camera|skin|player animator|presence|ambient|dynamic lights|particle|sparkle|blur|fancymenu|fancy|drippy|panorama|resourceful|presence footsteps|smooth|colorwheel|lucent|net music|shoulder surfing|screenshot|immersive aircraft|aircraft|many planes/i
+      },
+      {
+        key: "building",
+        label: "建筑、装饰与方块扩展",
+        tone: "var(--orange)",
+        description: "家具、装饰、方块变体、建筑工具和细节补充。",
+        pattern: /macaw|furniture|decor|decoration|supplementaries|amendments|chisel|framed|block|builders|building|construction|handcrafted|architect|roof|window|door|trapdoor|every compat|rechiseled|copycats|beautify|another furniture|adorn|paint|sculpt|quark|torchmaster|comforts|carry on/i
+      },
+      {
+        key: "ui",
+        label: "界面、地图与操作体验",
+        tone: "var(--cyan)",
+        description: "快捷键、HUD、地图、小地图、物品栏和操作便利性。",
+        pattern: /mouse|controlling|key|inventory|hotbar|menu|hud|ui|gui|map|xaero|journey|minimap|zoom|apple.?skin|better f3|toast|plaque|chat|mod menu|skin layers|tips|equipment compare|crosshair|account switcher|lan world|resourcify|trade refresh/i
+      },
+      {
+        key: "economy",
+        label: "经济、社交与整合包定制",
+        tone: "var(--lime)",
+        description: "货币、任务奖励、反馈、整合包脚本扩展和定制内容。",
+        pattern: /currency|lightman|bountiful|stamp|album|hotai|general feedback|powerfuljs|morejs|moestweaks|central|kaleidoscope|glodium|harium|icterine|jupiter|flerovium|botarium|simple backups|remove stardust/i
+      },
+      {
+        key: "performance",
+        label: "性能、修复与兼容",
+        tone: "var(--indigo)",
+        description: "性能优化、内存修复、网络修复、兼容补丁和调试工具。",
+        pattern: /performance|fast|ferrite|modernfix|memory|leak|spark|canary|radium|lithium|starlight|fix|bug|patch|fps|clumps|connectivity|packet|better chunk|async|smooth boot|lightspeed|mixin|saturn|immediatelyfast|accelerated|dynamic fps|entity culling|badoptimizations|krypton|cull|flerovium|prism|fragmentum/i
+      },
+      {
+        key: "library",
+        label: "前置库与开发框架",
+        tone: "var(--gray)",
+        description: "API、库、配置框架、KubeJS 运行时和通用前置。",
+        pattern: /lib|library|api|core|architectury|cloth config|configured defaults|kubejs|rhino|geckolib|citadel|moonlight|resourceful|puzzles|bookshelf|balm|terrablender|curios api|framework|flywheel|placebo|selene|konkrete|blueprint|caelus|cupboard|mixinextras|searchables|supermartijn642|collective|kiwi|cobweb|coroutil|iceberg|kambrik|kotlin|melody|mutil|sqlite|titanium/i
+      },
+      {
+        key: "other",
+        label: "其他扩展",
+        tone: "var(--muted)",
+        description: "未被上方规则吸收的独立玩法、工具或兼容内容。",
+        pattern: /.^/
+      }
+    ];
+
+    const byId = (id) => document.getElementById(id);
+    const state = {
+      category: "all",
+      side: "all",
+      search: ""
+    };
+
+    const categoryByKey = new Map(categories.map((category) => [category.key, category]));
+
+    function sideLabel(side) {
+      if (side === "client") return "客户端";
+      if (side === "server") return "服务端";
+      return "双端";
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
+
+    function textFor(mod) {
+      return `${mod.id || ""} ${mod.name || ""} ${mod.filename || ""}`;
+    }
+
+    function getCategory(mod) {
+      const text = textFor(mod);
+      return categories.find((category) => category.key !== "other" && category.pattern.test(text)) || categoryByKey.get("other");
+    }
+
+    const enrichedMods = mods.map((mod) => {
+      const category = getCategory(mod);
+      return {
+        ...mod,
+        category: category.key,
+        categoryLabel: category.label
+      };
+    });
+
+    function matchesFilters(mod) {
+      const query = state.search.trim().toLowerCase();
+      const searchText = `${textFor(mod)} ${mod.categoryLabel}`.toLowerCase();
+      const categoryOk = state.category === "all" || mod.category === state.category;
+      const sideOk = state.side === "all" || mod.side === state.side;
+      const searchOk = query === "" || searchText.includes(query);
+      return categoryOk && sideOk && searchOk;
+    }
+
+    function filteredMods() {
+      return enrichedMods.filter(matchesFilters);
+    }
+
+    function categoryMods(categoryKey, useSearchAndSide) {
+      return enrichedMods.filter((mod) => {
+        if (mod.category !== categoryKey) return false;
+        if (!useSearchAndSide) return true;
+        const sideOk = state.side === "all" || mod.side === state.side;
+        const query = state.search.trim().toLowerCase();
+        const searchText = `${textFor(mod)} ${mod.categoryLabel}`.toLowerCase();
+        return sideOk && (query === "" || searchText.includes(query));
+      });
+    }
+
+    function formatExamples(items) {
+      return items.slice(0, 3).map((mod) => escapeHtml(mod.name)).join(" / ");
+    }
+
+    function renderControls() {
+      const categorySelect = byId("categorySelect");
+      categorySelect.innerHTML = "";
+      const allOption = document.createElement("option");
+      allOption.value = "all";
+      allOption.textContent = "全部分类";
+      categorySelect.appendChild(allOption);
+      categories.forEach((category) => {
+        const option = document.createElement("option");
+        option.value = category.key;
+        option.textContent = category.label;
+        categorySelect.appendChild(option);
+      });
+    }
+
+    function renderStats(items) {
+      byId("totalCount").textContent = String(items.length);
+      byId("categoryCount").textContent = String(categories.length);
+      byId("bothCount").textContent = String(items.filter((mod) => mod.side === "both").length);
+      byId("clientCount").textContent = String(items.filter((mod) => mod.side === "client").length);
+      byId("rootMeta").textContent = `${items.length} / ${enrichedMods.length} 个模组`;
+      byId("dataSummary").textContent = `基于 ${enrichedMods.length} 个 Packwiz 模组元数据`;
+    }
+
+    function renderBranches() {
+      const branchGrid = byId("branchGrid");
+      branchGrid.innerHTML = "";
+      categories.forEach((category) => {
+        const totalItems = categoryMods(category.key, false);
+        const visibleItems = categoryMods(category.key, true);
+        const button = document.createElement("button");
+        button.className = "branch";
+        button.type = "button";
+        button.dataset.category = category.key;
+        button.style.setProperty("--tone", category.tone);
+        button.setAttribute("aria-pressed", state.category === category.key ? "true" : "false");
+        button.innerHTML = `
+          <span class="branch-head">
+            <span class="branch-title">${category.label}</span>
+            <span class="branch-count">${visibleItems.length}</span>
+          </span>
+          <span class="branch-desc">${category.description}</span>
+          <span class="examples">${formatExamples(totalItems)}</span>
+        `;
+        button.addEventListener("click", () => {
+          state.category = state.category === category.key ? "all" : category.key;
+          byId("categorySelect").value = state.category;
+          render();
+        });
+        branchGrid.appendChild(button);
+      });
+      requestAnimationFrame(drawConnections);
+    }
+
+    function drawConnections() {
+      const canvas = byId("mapCanvas");
+      const root = byId("rootNode");
+      const svg = byId("connections");
+      const branches = Array.from(document.querySelectorAll(".branch"));
+      const canvasBox = canvas.getBoundingClientRect();
+      const rootBox = root.getBoundingClientRect();
+      const rootX = rootBox.left + rootBox.width / 2 - canvasBox.left;
+      const rootY = rootBox.bottom - canvasBox.top;
+      svg.setAttribute("viewBox", `0 0 ${canvasBox.width} ${canvasBox.height}`);
+      svg.innerHTML = branches.map((branch) => {
+        const box = branch.getBoundingClientRect();
+        const x = box.left + box.width / 2 - canvasBox.left;
+        const y = box.top - canvasBox.top;
+        const midY = rootY + Math.max(24, (y - rootY) * .38);
+        return `<path d="M ${rootX.toFixed(1)} ${rootY.toFixed(1)} C ${rootX.toFixed(1)} ${midY.toFixed(1)}, ${x.toFixed(1)} ${midY.toFixed(1)}, ${x.toFixed(1)} ${y.toFixed(1)}"></path>`;
+      }).join("");
+    }
+
+    function renderDetail(items) {
+      const list = byId("modList");
+      const title = byId("detailTitle");
+      const description = byId("detailDescription");
+      const breakdown = byId("sideBreakdown");
+      const selectedCategory = categoryByKey.get(state.category);
+      title.textContent = selectedCategory ? selectedCategory.label : "全部模组";
+      description.textContent = selectedCategory ? selectedCategory.description : "按分类查看当前整合包的模组组成。";
+
+      const both = items.filter((mod) => mod.side === "both").length;
+      const client = items.filter((mod) => mod.side === "client").length;
+      const server = items.filter((mod) => mod.side === "server").length;
+      breakdown.innerHTML = `
+        <span class="pill">结果 ${items.length}</span>
+        <span class="pill">双端 ${both}</span>
+        <span class="pill">客户端 ${client}</span>
+        <span class="pill">服务端 ${server}</span>
+      `;
+
+      list.innerHTML = "";
+      if (items.length === 0) {
+        const empty = document.createElement("li");
+        empty.className = "empty";
+        empty.textContent = "没有匹配的模组。";
+        list.appendChild(empty);
+        return;
+      }
+
+      items
+        .slice()
+        .sort((a, b) => a.name.localeCompare(b.name, "zh-CN"))
+        .forEach((mod) => {
+          const item = document.createElement("li");
+          item.className = "mod-item";
+          const sideClass = mod.side === "client" ? "client" : "both";
+          item.innerHTML = `
+            <span>
+              <strong>${escapeHtml(mod.name)}</strong>
+              <code>${escapeHtml(mod.filename)}</code>
+            </span>
+            <span class="side ${sideClass}">${sideLabel(mod.side)}</span>
+          `;
+          list.appendChild(item);
+        });
+    }
+
+    function render() {
+      const items = filteredMods();
+      renderStats(items);
+      renderBranches();
+      renderDetail(items);
+    }
+
+    renderControls();
+    byId("searchInput").addEventListener("input", (event) => {
+      state.search = event.target.value;
+      render();
+    });
+    byId("categorySelect").addEventListener("change", (event) => {
+      state.category = event.target.value;
+      render();
+    });
+    byId("sideSelect").addEventListener("change", (event) => {
+      state.side = event.target.value;
+      render();
+    });
+    window.addEventListener("resize", drawConnections);
+    render();
+  </script>
+</body>
+</html>
