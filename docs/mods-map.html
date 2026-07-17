@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="机械动力：齿轮盛宴模组分类思维导图。">
-  <title>模组分类思维导图 - 机械动力：齿轮盛宴</title>
+  <meta name="description" content="机械动力：齿轮盛宴模组分类浏览页。">
+  <link rel="icon" href="../icon.png">
+  <title>模组分类浏览 - 机械动力：齿轮盛宴</title>
   <style>
     :root {
       color-scheme: dark;
@@ -36,7 +37,7 @@
       margin: 0;
       min-height: 100vh;
       background:
-        linear-gradient(180deg, rgba(16, 18, 20, .72), #101214 340px),
+        linear-gradient(180deg, rgba(16, 18, 20, .66), #101214 360px),
         url("../kubejs/assets/createdelight/textures/images_for_readme/introduction.png") top center / cover no-repeat;
       color: var(--text);
       font-family: "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
@@ -55,9 +56,9 @@
     }
 
     .page {
-      width: min(1320px, calc(100% - 32px));
+      width: min(1240px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 28px 0 40px;
+      padding: 28px 0 44px;
     }
 
     .topbar {
@@ -65,7 +66,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     .brand {
@@ -76,7 +77,7 @@
     }
 
     .brand img {
-      width: 180px;
+      width: 178px;
       max-width: 38vw;
       height: auto;
       display: block;
@@ -85,7 +86,7 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(1.45rem, 2.4vw, 2.5rem);
+      font-size: clamp(1.55rem, 2.4vw, 2.55rem);
       line-height: 1.15;
       letter-spacing: 0;
     }
@@ -116,7 +117,7 @@
       padding: 14px;
       border: 1px solid rgba(255, 255, 255, .12);
       border-radius: 8px;
-      background: rgba(16, 18, 20, .76);
+      background: rgba(16, 18, 20, .78);
       backdrop-filter: blur(8px);
     }
 
@@ -170,164 +171,113 @@
       font-size: .88rem;
     }
 
-    .layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.6fr) minmax(320px, .9fr);
-      gap: 18px;
-      align-items: start;
+    .section-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 22px 0 12px;
     }
 
-    .map-canvas,
-    .detail {
-      border: 1px solid rgba(255, 255, 255, .13);
-      border-radius: 8px;
-      background: rgba(20, 23, 26, .9);
-      box-shadow: 0 18px 45px rgba(0, 0, 0, .24);
+    .section-title h2 {
+      margin: 0;
+      font-size: 1.24rem;
+      letter-spacing: 0;
     }
 
-    .map-canvas {
-      position: relative;
-      min-height: 680px;
-      overflow: hidden;
-      padding: 24px;
-    }
-
-    .connections {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      color: rgba(231, 168, 58, .45);
-    }
-
-    .connections path {
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2;
-    }
-
-    .root-node {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      place-items: center;
-      width: min(360px, 100%);
-      min-height: 96px;
-      margin: 0 auto 24px;
-      border: 2px solid var(--accent);
-      border-radius: 8px;
-      background: linear-gradient(180deg, rgba(231, 168, 58, .23), rgba(231, 168, 58, .08));
-      color: var(--text);
-      text-align: center;
-      padding: 16px;
-    }
-
-    .root-node strong {
-      display: block;
-      font-size: 1.3rem;
-      line-height: 1.2;
-    }
-
-    .root-node span {
-      display: block;
-      margin-top: 6px;
+    .section-title p {
+      margin: 0;
       color: var(--muted);
       font-size: .9rem;
     }
 
-    .branch-grid {
-      position: relative;
-      z-index: 2;
+    .category-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
     }
 
-    .branch {
-      min-height: 132px;
+    .category-card {
+      min-height: 148px;
       display: grid;
-      grid-template-rows: auto auto 1fr;
+      grid-template-rows: auto auto 1fr auto;
       gap: 8px;
       width: 100%;
-      border: 1px solid color-mix(in srgb, var(--tone), transparent 42%);
+      border: 1px solid color-mix(in srgb, var(--tone), transparent 46%);
       border-radius: 8px;
-      background: linear-gradient(180deg, color-mix(in srgb, var(--tone), transparent 86%), rgba(23, 27, 31, .92));
+      background: linear-gradient(180deg, color-mix(in srgb, var(--tone), transparent 88%), rgba(23, 27, 31, .92));
       color: var(--text);
       text-align: left;
-      padding: 13px;
+      padding: 14px;
       cursor: pointer;
     }
 
-    .branch[aria-pressed="true"] {
+    .category-card[aria-pressed="true"] {
       outline: 2px solid var(--tone);
       outline-offset: 2px;
     }
 
-    .branch-head {
+    .category-top {
       display: flex;
-      align-items: flex-start;
+      align-items: start;
       justify-content: space-between;
       gap: 10px;
     }
 
-    .branch-title {
+    .category-name {
       font-weight: 700;
       line-height: 1.25;
     }
 
-    .branch-count {
+    .category-count {
       flex: 0 0 auto;
-      min-width: 46px;
+      min-width: 44px;
       border-radius: 999px;
-      background: color-mix(in srgb, var(--tone), transparent 78%);
-      color: var(--text);
+      background: color-mix(in srgb, var(--tone), transparent 76%);
       text-align: center;
       padding: 2px 8px;
       font-weight: 700;
     }
 
-    .branch-desc,
-    .examples {
+    .category-card p {
+      margin: 0;
       color: var(--muted);
-      font-size: .84rem;
+      font-size: .85rem;
     }
 
-    .examples {
+    .category-examples {
       align-self: end;
+      color: var(--muted);
+      font-size: .82rem;
     }
 
-    .detail {
-      max-height: 780px;
-      overflow: auto;
+    .list-panel {
+      margin-top: 18px;
+      border: 1px solid rgba(255, 255, 255, .13);
+      border-radius: 8px;
+      background: rgba(20, 23, 26, .9);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, .22);
+      overflow: hidden;
     }
 
-    .detail-head {
-      position: sticky;
-      top: 0;
-      z-index: 3;
-      border-bottom: 1px solid rgba(255, 255, 255, .12);
-      background: rgba(23, 27, 31, .96);
+    .list-head {
+      display: grid;
+      gap: 8px;
       padding: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+      background: rgba(23, 27, 31, .92);
     }
 
-    .detail-head h2 {
+    .list-head h2 {
       margin: 0;
       font-size: 1.22rem;
       letter-spacing: 0;
     }
 
-    .detail-head p {
-      margin: 6px 0 0;
-      color: var(--muted);
-      font-size: .9rem;
-    }
-
-    .side-breakdown {
+    .summary-line {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 12px;
     }
 
     .pill {
@@ -339,17 +289,48 @@
       font-size: .82rem;
     }
 
-    .mod-list {
-      list-style: none;
+    .groups {
+      display: grid;
+      gap: 0;
+    }
+
+    .group {
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .group:last-child {
+      border-bottom: 0;
+    }
+
+    .group-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 13px 16px;
+      background: linear-gradient(90deg, color-mix(in srgb, var(--tone), transparent 86%), transparent);
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .group-title h3 {
       margin: 0;
-      padding: 0;
+      font-size: 1rem;
+      letter-spacing: 0;
+    }
+
+    .mod-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0;
     }
 
     .mod-item {
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 10px;
+      min-height: 74px;
       padding: 12px 16px;
+      border-right: 1px solid rgba(255, 255, 255, .08);
       border-bottom: 1px solid rgba(255, 255, 255, .08);
     }
 
@@ -388,50 +369,64 @@
       color: var(--blue);
     }
 
+    .side.server {
+      background: rgba(239, 143, 126, .15);
+      color: var(--red);
+    }
+
     .empty {
-      padding: 28px 16px;
+      padding: 32px 16px;
       color: var(--muted);
       text-align: center;
     }
 
-    @media (max-width: 1060px) {
-      .layout {
-        grid-template-columns: 1fr;
-      }
-
-      .detail {
-        max-height: none;
+    @media (max-width: 1080px) {
+      .category-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
 
-    @media (max-width: 820px) {
+    @media (max-width: 780px) {
       .page {
-        width: min(100% - 22px, 1320px);
+        width: min(100% - 22px, 1240px);
         padding-top: 18px;
       }
 
-      .topbar {
+      .topbar,
+      .section-title {
         align-items: flex-start;
         flex-direction: column;
       }
 
       .toolbar,
       .stats,
-      .branch-grid {
+      .category-grid,
+      .mod-grid {
         grid-template-columns: 1fr;
       }
 
-      .map-canvas {
-        min-height: auto;
-        padding: 16px;
+      .brand {
+        align-items: flex-start;
+        flex-direction: column;
       }
 
-      .connections {
-        display: none;
+      .brand img {
+        max-width: 230px;
+        width: 58vw;
+      }
+
+      .back {
+        width: 100%;
+        text-align: center;
+      }
+
+      .category-card {
+        min-height: 128px;
       }
 
       .mod-item {
         grid-template-columns: 1fr;
+        border-right: 0;
       }
     }
   </style>
@@ -442,7 +437,7 @@
       <div class="brand">
         <img src="../kubejs/assets/createdelight/textures/images_for_readme/title.png" alt="机械动力：齿轮盛宴">
         <div>
-          <h1>模组分类思维导图</h1>
+          <h1>模组分类浏览</h1>
           <p class="subline" id="dataSummary">读取模组清单中</p>
         </div>
       </div>
@@ -464,35 +459,34 @@
           <option value="all">全部</option>
           <option value="both">双端</option>
           <option value="client">客户端</option>
+          <option value="server">服务端</option>
         </select>
       </label>
     </section>
 
     <section class="stats" aria-label="模组统计">
-      <div class="stat"><strong id="totalCount">0</strong><span>当前模组</span></div>
-      <div class="stat"><strong id="categoryCount">0</strong><span>分类分支</span></div>
+      <div class="stat"><strong id="totalCount">0</strong><span>当前结果</span></div>
+      <div class="stat"><strong id="categoryCount">0</strong><span>分类</span></div>
       <div class="stat"><strong id="bothCount">0</strong><span>双端模组</span></div>
       <div class="stat"><strong id="clientCount">0</strong><span>客户端模组</span></div>
     </section>
 
-    <main class="layout">
-      <section class="map-canvas" id="mapCanvas" aria-label="模组分类思维导图">
-        <svg class="connections" id="connections" aria-hidden="true"></svg>
-        <div class="root-node" id="rootNode">
-          <strong>齿轮盛宴</strong>
-          <span id="rootMeta">0 个模组</span>
-        </div>
-        <div class="branch-grid" id="branchGrid"></div>
-      </section>
+    <section class="section-title">
+      <div>
+        <h2>分类总览</h2>
+        <p>点击分类卡片可聚焦查看该类模组；再次点击返回全部。</p>
+      </div>
+      <p id="filterSummary">全部分类</p>
+    </section>
 
-      <aside class="detail" aria-live="polite">
-        <div class="detail-head">
-          <h2 id="detailTitle">全部模组</h2>
-          <p id="detailDescription">按分类查看当前整合包的模组组成。</p>
-          <div class="side-breakdown" id="sideBreakdown"></div>
-        </div>
-        <ul class="mod-list" id="modList"></ul>
-      </aside>
+    <section class="category-grid" id="categoryGrid" aria-label="模组分类"></section>
+
+    <main class="list-panel" aria-live="polite">
+      <div class="list-head">
+        <h2 id="listTitle">全部模组</h2>
+        <div class="summary-line" id="summaryLine"></div>
+      </div>
+      <div class="groups" id="groups"></div>
     </main>
   </div>
 
@@ -588,19 +582,14 @@
         key: "other",
         label: "其他扩展",
         tone: "var(--muted)",
-        description: "未被上方规则吸收的独立玩法、工具或兼容内容。",
+        description: "独立玩法、工具或难以归入单一大类的兼容内容。",
         pattern: /.^/
       }
     ];
 
     const byId = (id) => document.getElementById(id);
-    const state = {
-      category: "all",
-      side: "all",
-      search: ""
-    };
-
     const categoryByKey = new Map(categories.map((category) => [category.key, category]));
+    const state = { category: "all", side: "all", search: "" };
 
     function sideLabel(side) {
       if (side === "client") return "客户端";
@@ -628,39 +617,27 @@
 
     const enrichedMods = mods.map((mod) => {
       const category = getCategory(mod);
-      return {
-        ...mod,
-        category: category.key,
-        categoryLabel: category.label
-      };
+      return { ...mod, category: category.key, categoryLabel: category.label };
     });
 
     function matchesFilters(mod) {
       const query = state.search.trim().toLowerCase();
       const searchText = `${textFor(mod)} ${mod.categoryLabel}`.toLowerCase();
-      const categoryOk = state.category === "all" || mod.category === state.category;
-      const sideOk = state.side === "all" || mod.side === state.side;
-      const searchOk = query === "" || searchText.includes(query);
-      return categoryOk && sideOk && searchOk;
+      return (state.category === "all" || mod.category === state.category)
+        && (state.side === "all" || mod.side === state.side)
+        && (query === "" || searchText.includes(query));
     }
 
     function filteredMods() {
       return enrichedMods.filter(matchesFilters);
     }
 
-    function categoryMods(categoryKey, useSearchAndSide) {
+    function categoryMods(categoryKey, includeFilters) {
       return enrichedMods.filter((mod) => {
         if (mod.category !== categoryKey) return false;
-        if (!useSearchAndSide) return true;
-        const sideOk = state.side === "all" || mod.side === state.side;
-        const query = state.search.trim().toLowerCase();
-        const searchText = `${textFor(mod)} ${mod.categoryLabel}`.toLowerCase();
-        return sideOk && (query === "" || searchText.includes(query));
+        if (!includeFilters) return true;
+        return matchesFilters({ ...mod, category: categoryKey });
       });
-    }
-
-    function formatExamples(items) {
-      return items.slice(0, 3).map((mod) => escapeHtml(mod.name)).join(" / ");
     }
 
     function renderControls() {
@@ -683,110 +660,109 @@
       byId("categoryCount").textContent = String(categories.length);
       byId("bothCount").textContent = String(items.filter((mod) => mod.side === "both").length);
       byId("clientCount").textContent = String(items.filter((mod) => mod.side === "client").length);
-      byId("rootMeta").textContent = `${items.length} / ${enrichedMods.length} 个模组`;
       byId("dataSummary").textContent = `基于 ${enrichedMods.length} 个 Packwiz 模组元数据`;
+      const categoryText = state.category === "all" ? "全部分类" : categoryByKey.get(state.category).label;
+      const sideText = state.side === "all" ? "全部端侧" : sideLabel(state.side);
+      byId("filterSummary").textContent = `${categoryText} / ${sideText}`;
     }
 
-    function renderBranches() {
-      const branchGrid = byId("branchGrid");
-      branchGrid.innerHTML = "";
+    function renderCategories() {
+      const grid = byId("categoryGrid");
+      grid.innerHTML = "";
       categories.forEach((category) => {
         const totalItems = categoryMods(category.key, false);
         const visibleItems = categoryMods(category.key, true);
         const button = document.createElement("button");
-        button.className = "branch";
+        button.className = "category-card";
         button.type = "button";
         button.dataset.category = category.key;
         button.style.setProperty("--tone", category.tone);
         button.setAttribute("aria-pressed", state.category === category.key ? "true" : "false");
+        const examples = totalItems.slice(0, 3).map((mod) => escapeHtml(mod.name)).join(" / ");
         button.innerHTML = `
-          <span class="branch-head">
-            <span class="branch-title">${category.label}</span>
-            <span class="branch-count">${visibleItems.length}</span>
+          <span class="category-top">
+            <span class="category-name">${escapeHtml(category.label)}</span>
+            <span class="category-count">${visibleItems.length}</span>
           </span>
-          <span class="branch-desc">${category.description}</span>
-          <span class="examples">${formatExamples(totalItems)}</span>
+          <p>${escapeHtml(category.description)}</p>
+          <span class="category-examples">${examples}</span>
         `;
         button.addEventListener("click", () => {
           state.category = state.category === category.key ? "all" : category.key;
           byId("categorySelect").value = state.category;
           render();
         });
-        branchGrid.appendChild(button);
+        grid.appendChild(button);
       });
-      requestAnimationFrame(drawConnections);
     }
 
-    function drawConnections() {
-      const canvas = byId("mapCanvas");
-      const root = byId("rootNode");
-      const svg = byId("connections");
-      const branches = Array.from(document.querySelectorAll(".branch"));
-      const canvasBox = canvas.getBoundingClientRect();
-      const rootBox = root.getBoundingClientRect();
-      const rootX = rootBox.left + rootBox.width / 2 - canvasBox.left;
-      const rootY = rootBox.bottom - canvasBox.top;
-      svg.setAttribute("viewBox", `0 0 ${canvasBox.width} ${canvasBox.height}`);
-      svg.innerHTML = branches.map((branch) => {
-        const box = branch.getBoundingClientRect();
-        const x = box.left + box.width / 2 - canvasBox.left;
-        const y = box.top - canvasBox.top;
-        const midY = rootY + Math.max(24, (y - rootY) * .38);
-        return `<path d="M ${rootX.toFixed(1)} ${rootY.toFixed(1)} C ${rootX.toFixed(1)} ${midY.toFixed(1)}, ${x.toFixed(1)} ${midY.toFixed(1)}, ${x.toFixed(1)} ${y.toFixed(1)}"></path>`;
-      }).join("");
-    }
-
-    function renderDetail(items) {
-      const list = byId("modList");
-      const title = byId("detailTitle");
-      const description = byId("detailDescription");
-      const breakdown = byId("sideBreakdown");
-      const selectedCategory = categoryByKey.get(state.category);
-      title.textContent = selectedCategory ? selectedCategory.label : "全部模组";
-      description.textContent = selectedCategory ? selectedCategory.description : "按分类查看当前整合包的模组组成。";
-
+    function renderSummary(items) {
       const both = items.filter((mod) => mod.side === "both").length;
       const client = items.filter((mod) => mod.side === "client").length;
       const server = items.filter((mod) => mod.side === "server").length;
-      breakdown.innerHTML = `
+      const selectedCategory = categoryByKey.get(state.category);
+      byId("listTitle").textContent = selectedCategory ? selectedCategory.label : "全部模组";
+      byId("summaryLine").innerHTML = `
         <span class="pill">结果 ${items.length}</span>
         <span class="pill">双端 ${both}</span>
         <span class="pill">客户端 ${client}</span>
         <span class="pill">服务端 ${server}</span>
       `;
+    }
 
-      list.innerHTML = "";
+    function renderGroups(items) {
+      const groups = byId("groups");
+      groups.innerHTML = "";
       if (items.length === 0) {
-        const empty = document.createElement("li");
+        const empty = document.createElement("div");
         empty.className = "empty";
         empty.textContent = "没有匹配的模组。";
-        list.appendChild(empty);
+        groups.appendChild(empty);
         return;
       }
 
-      items
-        .slice()
-        .sort((a, b) => a.name.localeCompare(b.name, "zh-CN"))
-        .forEach((mod) => {
-          const item = document.createElement("li");
-          item.className = "mod-item";
-          const sideClass = mod.side === "client" ? "client" : "both";
-          item.innerHTML = `
-            <span>
-              <strong>${escapeHtml(mod.name)}</strong>
-              <code>${escapeHtml(mod.filename)}</code>
-            </span>
-            <span class="side ${sideClass}">${sideLabel(mod.side)}</span>
+      const visibleCategories = categories
+        .map((category) => ({
+          ...category,
+          items: items
+            .filter((mod) => mod.category === category.key)
+            .sort((a, b) => a.name.localeCompare(b.name, "zh-CN"))
+        }))
+        .filter((category) => category.items.length > 0);
+
+      visibleCategories.forEach((category) => {
+        const section = document.createElement("section");
+        section.className = "group";
+        section.style.setProperty("--tone", category.tone);
+        const modsHtml = category.items.map((mod) => {
+          const sideClass = mod.side === "client" ? "client" : mod.side === "server" ? "server" : "both";
+          return `
+            <article class="mod-item">
+              <span>
+                <strong>${escapeHtml(mod.name)}</strong>
+                <code>${escapeHtml(mod.filename)}</code>
+              </span>
+              <span class="side ${sideClass}">${sideLabel(mod.side)}</span>
+            </article>
           `;
-          list.appendChild(item);
-        });
+        }).join("");
+        section.innerHTML = `
+          <div class="group-title">
+            <h3>${escapeHtml(category.label)}</h3>
+            <span class="pill">${category.items.length}</span>
+          </div>
+          <div class="mod-grid">${modsHtml}</div>
+        `;
+        groups.appendChild(section);
+      });
     }
 
     function render() {
       const items = filteredMods();
       renderStats(items);
-      renderBranches();
-      renderDetail(items);
+      renderCategories();
+      renderSummary(items);
+      renderGroups(items);
     }
 
     renderControls();
@@ -802,7 +778,6 @@
       state.side = event.target.value;
       render();
     });
-    window.addEventListener("resize", drawConnections);
     render();
   </script>
 </body>
