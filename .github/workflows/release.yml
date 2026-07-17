@@ -189,7 +189,7 @@ jobs:
             rm -rf resourcepacks shaderpacks packwiz-files CDC-mod-src .agents .codex .github docs scripts
             rm -f ModList0.4a.md README.md TODOlist.md KubeJSStyleGuide.md GettingStarted.md \
                   client_jvm_args.example.txt lessons-learned.md .gitignore .gitmodules \
-                  sync-packwiz-assets.bat update-packwiz-meta.bat
+                  sync-packwiz-assets.bat update-packwiz-meta.bat index.html
             find . -name "AGENTS.md" -type f -delete
             find mods -name "*.pw.toml" -exec rm {} +
             rm -f modpack.toml pack.toml index.toml .packwizignore packwiz \
@@ -263,7 +263,7 @@ jobs:
           python3 scripts/packwiz-side.py delete-payloads --metadata-base . --payload-base patch --side client --verbose
           rm -f patch/ModList0.4a.md patch/README.md patch/TODOlist.md \
                 patch/KubeJSStyleGuide.md patch/GettingStarted.md patch/modpack.toml \
-                patch/pack.toml patch/index.toml patch/client_jvm_args.example.txt \
+                patch/pack.toml patch/index.toml patch/index.html patch/client_jvm_args.example.txt \
                 patch/.gitmodules
           rm -rf patch/CDC-mod-src patch/docs
           # 将 patch/packwiz-files/ 中的文件移到标准目录
