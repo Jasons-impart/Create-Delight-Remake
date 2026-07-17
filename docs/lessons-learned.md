@@ -445,3 +445,80 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: The `v0.5.0.3` server artifact crashed during Forge `CONSTRUCT` because `ExtraHoloPage` loaded `net.minecraft.client.Options` and `ShoulderSurfing` mixed into Create's `ContraptionHandlerClient` on `DEDICATED_SERVER`.
 - **Fix/Lesson**: Mark client-only Packwiz metadata such as `mods/ExtraHoloPage.pw.toml` and `mods/ShoulderSurfing.pw.toml` with `side = "client"` and smoke-test the server artifact until it reaches `Done`.
+
+## Tetra material improvement previews do not retain material glyph tint
+
+**Date**: 2026-07-16
+
+- **Problem**: `ConfigSchematic#getPreviews` uses the schematic glyph for improvement outcomes, so `OutcomePreview.glyph` remains identical across material candidates even though `MaterialImprovementData.combine` generated tinted improvement data.
+- **Fix/Lesson**: Resolve material-improvement colors by matching `OutcomePreview.materials` against the schematic-scoped material candidates and use the captured `MaterialData.tints.glyph`; do not assume module-variant and improvement previews preserve glyph tint in the same way.
+
+## Tetra fixed-consumable outcomes are collapsed before HoloImprovementGui
+
+**Date**: 2026-07-16
+
+- **Problem**: Toolbelt schematics such as potion storage define several raw outcomes for different fixed consumables, but `ConfigSchematic#getPreviews` deduplicates them by `OutcomePreview.variantKey`; `HoloImprovementGui` therefore receives one preview and never creates the per-outcome buttons that a Shift overlay expected.
+- **Fix/Lesson**: Capture fixed consumables from raw `SchematicDefinition.outcomes[].material`, preserve `keySuffixes` aliases, and resolve tag-backed items after tag synchronization; do not infer visible GUI variants from the number of JSON outcomes or use `OutcomePreview.materials` as the only fixed-consumable source。缺失耗材过滤只能用于已捕获原始定义的 `ConfigSchematic`；附魔等自定义 Java schematic 即使声明材料槽，也可能不在预览阶段提供材料栈，按空 `OutcomePreview.materials` 过滤会令整类改进消失。
+
+## Tetra honing is filtered before the improvement list
+
+**Date**: 2026-07-16
+
+- **Problem**: `HoloVariantDetailGui.updateVariant` only forwards `SchematicType.improvement` to `HoloImprovementListGui`, while normal honing schematics use `isHoning() == true` with `SchematicType.major`; changing only the improvement-list layout therefore cannot make honing visible.
+- **Fix/Lesson**: Capture honing from the unfiltered `SchematicRegistry.getPreviewSchematics` result and give it a separate Tetra-styled entry/list; keep `isHoning()` schematics out of the ordinary improvement count and selection stack.
+
+## Tetra improvement discovery must preserve module ownership
+
+**Date**: 2026-07-17
+
+- **Problem**: MMT 的太刀、胁差专属打磨以及战争铸造、纷争铸造等普通改进会声明通用槽位或共用 improvement key，再通过正向 `tetra:module` requirement 限定模块；若为了展示完整候选而只检查 slot、preview 输出或 `acceptsImprovementLevel`，这些路径会出现在其他模块上。
+- **Fix/Lesson**: 扫描隐藏打磨和补全普通改进时都要递归解析正向 module/improvement requirements：模块约束不匹配的路径直接排除；正向 improvement 前置若由当前模块可用的普通改进提供，也必须作为打磨根节点，再沿 improvement key 扩展全部等级与分支。不要把模块归属约束与锁定、材料或等级等可预览条件合并成一个 availability 布尔值。
+
+## Tetra dynamic improvement widths require absolute extents and parent relayout
+
+**Date**: 2026-07-16
+
+- **Problem**: A `HoloImprovementGui` can grow after insertion into a `GuiHorizontalLayoutGroup`, and custom honing rendering cancels `updateVariants` at HEAD; a width correction injected at RETURN therefore never runs for honing, while the branch's old `header.getWidth()` formula also omits the title group's local offset and dynamic child extents. CDR 的 ExtraHoloPage 还会在同一方法的 RETURN 阶段按 `preview 数量 × 固定间距` 再次覆盖卡片宽度，因此开发环境正常的动态布局在整合包中即使只有少量改进也会重叠。
+- **Fix/Lesson**: Route normal and cancelled rendering branches through one width helper, compute bounds from local absolute extents such as `child.getX() + child.getWidth()`, and set the variants container width explicitly. 在列表完成所有卡片更新后再次校正每张卡片，再对 owning horizontal group 执行 `forceLayout()` 并标记 scroll container dirty；跨模组同时注入目标方法时，不要依赖同级 RETURN 注入的执行顺序。
+
+## Mixin 0.8.5 cannot transform array clone calls in a handler
+
+**Date**: 2026-07-16
+
+- **Problem**: Calling an array's `clone()` inside a Mixin handler (seen with both `UpgradeSchematic[]` and `IStatSorter[]`) compiles successfully, but Mixin 0.8.5 may treat the array descriptor as a class during runtime transformation, causing `ClassInfo.forName` to return null and crashing only when the target class is first loaded.
+- **Fix/Lesson**: Use `System.arraycopy` or another copy path that does not emit an array-owner `clone()` invocation, inspect the reobfuscated JAR with `javap -c`, and open every affected screen in the production client because Gradle compilation cannot detect this transformer failure.
+
+## Mixin injectors cannot target inherited mutil input handlers
+
+**Date**: 2026-07-16
+
+- **Problem**: `VerticalTabButtonGui` inherits `onMouseClick` from `GuiClickable`; an `@Inject(method = "onMouseClick")` targeting the subclass compiled successfully but failed when the workbench first constructed the class, preventing its screen from opening.
+- **Fix/Lesson**: Inject only methods declared by the Mixin target; for inherited mutil input behavior, target the declaring superclass with strict instance scoping or preserve the native handler and implement state through declared focus, styling, group callback, or child GUI hooks. Always open the affected screen during `runClient` regression because Gradle compilation cannot validate injection ownership.
+
+## Tetra array data stores cannot be disabled with replace objects
+
+**Date**: 2026-07-17
+
+- **Problem**: `ImprovementStore` 与 `SynergyStore` 直接把资源解析为数组，使用 `{"replace":true}` 覆盖会产生解析错误；`ModuleStore`、`SchematicStore` 等合并型 Store 虽接受该对象，但缺少类型或槽位的空定义会在注册阶段持续报警。MMT 的 Biomancy 联动旧覆盖同时触发了两种失败模式。
+- **Fix/Lesson**: 数组型 Store 可在相同资源路径覆盖为 `[]`；已有未安装模组条件的资源应删除多余覆盖，让 `MergingDataStore` 直接跳过原资源，但必须逐文件核对，不能假设同一联动目录条件一致。MMT 的 Biomancy 模块、材料和升级链有 `forge:mod_loaded`，根级的 7 个固定耗材改进 schematic 却没有，需在相同资源路径用 `forge:false` 覆盖。只有缺少条件保护的 module 才使用 `replace:true`、有效 type、不可达槽位和空 variants。不要用字段不完整的假 `MaterialData` 禁用材料：`hiddenOutcomes` 不会阻止 `ImprovementStore` 展开材料，缺失的 `primary/secondary/tertiary` 会在 `MaterialImprovementData.combineWrap` 中触发空指针并阻止世界加载。
+
+## Tetra sorter pagination implementations cannot coexist independently
+
+**Date**: 2026-07-16
+
+- **Problem**: TetraClip and Tetra Insight both paginated `HoloSortPopover`, but TetraClip's item `isVisible()` checked only its own page field; changing the Tetra Insight page label therefore left TetraClip on page 1 and made every later page blank.
+- **Fix/Lesson**: Keep one owner for sorter pagination or explicitly synchronize both page states; when replacing TetraClip, remove its Packwiz metadata, packaged payload and runtime JAR before judging the replacement UI.
+
+## Tetra module selection must not repeatedly expand the full schematic registry
+
+**Date**: 2026-07-16
+
+- **Problem**: CDR loaded 938 schematics, while Tetra Insight scanned the registry multiple times, repeatedly called `getPreviews`, linearly searched captured snapshots and exhaustively tested all registered attributes/effects whenever a module material was selected; even modules with no improvements stalled, and large improvement sets amplified the cost.
+- **Fix/Lesson**: Build one preview snapshot per selection, index captured data by key, derive contextual sorters from effects/attributes actually present on current outcomes, and construct only the current improvement page; log discovery/render timings in the production client.
+
+## Tetra 加工台槽位视觉与容器点击区域相互独立
+
+**Date**: 2026-07-17
+
+- **Problem**: 移动 `SchemaSlotGui` 的 placeholder、border 和 quantity 子元素只会改变单材料槽的画面位置；`WorkbenchContainer.materialSlots` 仍保留原来的 `ToggleableSlot.x`，导致点击与物品放置区域偏离可见槽位。
+- **Fix/Lesson**: 调整 Tetra 加工台材料槽时，必须同时移动 GUI 子元素，并在 `WorkbenchContainer.updateSlots` 完成后修正客户端容器槽位坐标；两边使用同一条单材料布局条件，多材料槽继续保留 Tetra 原生位置。
