@@ -28,7 +28,7 @@
     .\release-prepare.ps1 -Version "v0.4.7.16" -TargetBranch "main" -Announcement "修复BUG,新增物品,优化性能"
 
 .EXAMPLE
-    .\release-prepare.ps1 -Version "v0.4.7.16" -TargetBranch "release-v047x" -ReleaseType 测试 -Proxy "http://127.0.0.1:7890"
+    .\release-prepare.ps1 -Version "v0.4.7.16-test" -TargetBranch "release-v047x" -ReleaseType 测试 -Proxy "http://127.0.0.1:7890"
 #>
 [CmdletBinding()]
 param(
@@ -87,8 +87,10 @@ function Test-Prerequisites {
     }
     
     # Check Version format
-    if ($Version -notmatch '^v\d+\.\d+\.\d+\.\d+$') {
-        $errors += "Version format invalid: '$Version'. Expected format: v0.4.8.10"
+    $expectedVersionPattern = if ($ReleaseType -eq "测试") { '^v\d+\.\d+\.\d+\.\d+-test$' } else { '^v\d+\.\d+\.\d+\.\d+$' }
+    $expectedVersionExample = if ($ReleaseType -eq "测试") { 'v0.4.8.10-test' } else { 'v0.4.8.10' }
+    if ($Version -notmatch $expectedVersionPattern) {
+        $errors += "Version format invalid for $ReleaseType release: '$Version'. Expected format: $expectedVersionExample"
     }
     
     # Check gh CLI available
@@ -193,7 +195,7 @@ if ($StatusOutput) {
 Write-Host "📦 Updating modpack.toml version to $Version"
 try {
     $Content = Get-Content "modpack.toml" -Raw
-    $NewContent = $Content -replace 'version = "v[\d.]+"', "version = `"$Version`""
+    $NewContent = $Content -replace 'version = "v[\d.]+(?:-test)?"', "version = `"$Version`""
     if ($NewContent -eq $Content) {
         Write-Error "Failed to update version in modpack.toml - pattern not matched"
         Restore-State

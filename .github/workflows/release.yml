@@ -61,7 +61,9 @@ jobs:
         id: generate_modpack_version
         run: |
           VERSION="${{ steps.read-version.outputs.value }}"
-          if [[ "${{ github.ref_name }}" == *test* ]]; then
+          if [[ "${{ github.ref_type }}" == "tag" && "${{ github.ref_name }}" == *-test ]]; then
+            VERSION="${{ github.ref_name }}"
+          elif [[ "${{ github.ref_name }}" == test-* ]]; then
             VERSION="$VERSION-test-build-${{ github.run_number }}"
           fi
           echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
