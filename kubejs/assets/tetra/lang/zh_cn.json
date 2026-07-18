@@ -2999,6 +2999,7 @@
   "tetra/schematic/toolbelt/suspender.description": "稍作加工将一个悬浮器固定在腰带上，就可以从附近的信标或管道汲取能量，使腰带穿戴者能在空中悬停。",
   "tetra/schematic/toolbelt/suspender.name": "悬浮器",
   "tetra/schematic/toolbelt/suspender.slot1": "稳定器",
+  "tetra.improvement.skillful.name": "巧工",
   "tetra/schematic/shared/more_mod_tetra/improvement/skillful_up_1.name": "巧工Ⅰ",
   "tetra/schematic/shared/more_mod_tetra/improvement/skillful_up_1.slot1": "书与笔",
   "tetra/schematic/shared/more_mod_tetra/improvement/skillful_up_1.description": "提高工具基础完整度。",
