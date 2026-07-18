@@ -29,7 +29,7 @@
 ## CDR 接入
 
 - 删除 TetraClip 的 Packwiz 元数据和手动托管 JAR，避免两个附属同时分页 `HoloSortPopover`。
-- Tetra Insight 项目与首个 `0.1.0` 文件已通过 CurseForge 审核；本轮空材料等级热修后的 JAR 与已过审文件哈希不同，因此暂以 `packwiz-files/mods/tetra_insight-0.1.0.jar` 分发，并在 `mods/tetra-insight.pw.toml` 标记为客户端模组。
+- Tetra Insight 项目与首个 `0.1.0` 文件已通过 CurseForge 审核；包含本轮空材料等级热修的修订文件 `8456389` 已上传等待审核，过审前暂以 `packwiz-files/mods/tetra_insight-0.1.0.jar` 分发，并在 `mods/tetra-insight.pw.toml` 标记为客户端模组。
 - CurseForge 文件过审后，将手动托管元数据替换为 CurseForge 更新元数据，再移除 `packwiz-files` 临时载荷。
 
 ## Biomancy 联动清理
@@ -52,6 +52,6 @@ CDR 未安装 Biomancy，但 MMT 的部分根级固定耗材改进没有 `forge:
 
 ## 后续
 
-- 上传包含本轮热修的新 CurseForge 文件并通过审核后，切换为 CurseForge 更新元数据。
+- CurseForge 修订文件 `8456389` 通过审核后，切换为 CurseForge 更新元数据。
 - 继续补 GUI Scale 2/3/4、英文宽度和更多第三方 Tetra 附属回归。
 - 后续版本可增加当前材料与候选材料的最终结果差值比较。
