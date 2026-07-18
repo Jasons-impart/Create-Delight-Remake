@@ -40,6 +40,26 @@ Use this workflow for modpack asset operations that touch `mods/`, `resourcepack
 2. Remove matching `packwiz-files` payloads only when the committed payload is intentionally retired.
 3. Do not treat synced runtime jars as source; they are local development payloads.
 
+## Pack Integrity Warning
+
+The client has a mod list integrity warning for added or removed mods. Keep these files together:
+
+- `scripts/generate-pack-integrity-manifest.py`: scans managed `mods/**/*.pw.toml`, records expected managed JAR filenames, and writes the expected manifest without requiring downloaded JARs.
+- `kubejs/config/createdelight_pack_integrity_expected.json`: generated expected filename manifest; regenerate it after intended mod additions/removals.
+- `kubejs/config/createdelight_pack_integrity.json`: runtime config, including `allowedExtraFiles`.
+- `kubejs/client_scripts/pack_integrity_check.js`: client-side title-screen warning and JSON report writer for mod list changes and Java major-version mismatches.
+
+The runtime warning compares managed JAR filenames only. Do not use Forge/KubeJS runtime mod ids for this check because embedded library jars and JarJar metadata do not map reliably to actual files users add or remove.
+
+Generation workflow:
+
+```powershell
+./scripts/sync-packwiz-assets.ps1
+python scripts/generate-pack-integrity-manifest.py
+```
+
+CI generates the integrity manifest before exporting the no-mod CurseForge pack, so the manifest comes from Packwiz metadata and does not require downloading runtime JARs. Patch artifacts also regenerate and copy `createdelight_pack_integrity_expected.json` into `patch/kubejs/config/`, so patch releases pick up changed filenames even if the generated file was stale before CI.
+
 ## CDC Packaged Jar
 
 1. Prefer published CurseForge metadata when a CDC release exists.

@@ -105,6 +105,8 @@ jobs:
         run: |
           pip install requests
           python .github/workflows/scripts/update_credits.py --mode real --download-images
+      - name: 生成模组列表完整性清单
+        run: python3 scripts/generate-pack-integrity-manifest.py
       - name: 生成不带mod本体的包
         run: |
           bash .github/workflows/scripts/export_curseforge_pack.sh ../lite-release.zip 8083
@@ -254,6 +256,8 @@ jobs:
           modpack_name: ${{ env.MODPACK_NAME }}
           modpack_version: ${{ env.MODPACK_VERSION }}
           mode: patch
+      - name: 生成模组列表完整性清单
+        run: python3 scripts/generate-pack-integrity-manifest.py
       - name: 准备补丁文件
         run: bash .github/workflows/scripts/prepare_patch_diff.sh "$LATEST_TAG"
       - name: 移除服务端不需要的文件
@@ -287,6 +291,7 @@ jobs:
           mkdir -p patch/kubejs/config/
           cp kubejs/config/client.properties patch/kubejs/config/
           cp kubejs/config/probejs.json patch/kubejs/config/
+          cp kubejs/config/createdelight_pack_integrity_expected.json patch/kubejs/config/
           mkdir -p patch/config/GeneralFeedback/
           cp config/GeneralFeedback/default.json patch/config/GeneralFeedback/
           mkdir -p "patch/$VERSION_FILE_RELATIVE_DIR_PATH"
