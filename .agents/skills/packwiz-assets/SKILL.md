@@ -17,7 +17,6 @@ Use this workflow for modpack asset operations that touch `mods/`, `resourcepack
 - `pack.toml` and `index.toml` are generated from `modpack.toml`; do not commit them.
 - Shaderpack files containing `Clrwl` are generated locally and must not be tracked.
 - Set `side = "client"` or `side = "server"` explicitly for client-only or server-only mods.
-- 对真实运行目录执行 `scripts/sync-packwiz-assets.ps1` 时必须使用默认的全部元数据根；只传 `-MetadataRoots mods` 会让 installer 把未提供的资源包和光影判定为已移除。子集同步仅可用于隔离的临时输出目录。
 
 ## Add Or Update Assets
 
