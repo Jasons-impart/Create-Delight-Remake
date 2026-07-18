@@ -1,0 +1,33 @@
+{
+  "replace": true,
+  "key": "rage_soul_ingot",
+  "category": "metal",
+  "primary": 12,
+  "secondary": 5,
+  "tertiary": 3.5,
+  "durability": 1700,
+  "integrityCost": 3,
+  "integrityGain": 8,
+  "magicCapacity": 100,
+  "toolLevel": "minecraft:netherite",
+  "toolEfficiency": 11,
+  "effects": {
+    "createdelight:rage_soul": 1
+  },
+  "tints": {
+    "glyph": "66314a",
+    "texture": "66314a"
+  },
+  "textures": [
+    "heavy",
+    "metal"
+  ],
+  "material": {
+    "items": [
+      "blackknightarmor:rage_soul_ingot"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": 8
+  }
+}

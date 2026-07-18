@@ -1,0 +1,34 @@
+{
+  "replace": true,
+  "key": "dragon_fire_ingot",
+  "category": "metal",
+  "primary": 12,
+  "secondary": 4,
+  "tertiary": 4.5,
+  "durability": 1800,
+  "integrityCost": 3,
+  "integrityGain": 9,
+  "magicCapacity": 110,
+  "toolLevel": "minecraft:netherite",
+  "toolEfficiency": 11.5,
+  "effects": {
+    "createdelight:dragon_fire": 1,
+    "fiery": 4
+  },
+  "tints": {
+    "glyph": "c94b2b",
+    "texture": "c94b2b"
+  },
+  "textures": [
+    "heavy",
+    "metal"
+  ],
+  "material": {
+    "items": [
+      "blackknightarmor:dragon_fire_ingot"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": 8
+  }
+}
