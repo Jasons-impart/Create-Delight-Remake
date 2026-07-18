@@ -1,8 +1,8 @@
 name = "Tetra Insight"
-filename = "tetra_insight-0.1.0-alpha.3.jar"
+filename = "tetra_insight-0.1.0.jar"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/tetra_insight-0.1.0-alpha.3.jar"
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/tetra_insight-0.1.0.jar"
 hash-format = "sha256"
-hash = "e3ebcb8e9793e42adb7f3f2569fa76dd405d3633aeee7c072ae333644f73a711"
+hash = "d77d1b22f0ab1d07bd94eddf4879e02d4862e3cb6bbf99509039a501d1178415"
