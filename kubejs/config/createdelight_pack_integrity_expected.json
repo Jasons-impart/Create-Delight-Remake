@@ -1,430 +1,388 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-17T20:04:22Z",
+  "generatedAt": "2026-07-17T21:47:40Z",
   "generatedBy": "scripts/generate-pack-integrity-manifest.py",
-  "expectedModIds": {
+  "expectedFiles": {
     "common": [
-      "abnormals_delight",
-      "accessories",
-      "advancementplaques",
-      "advancements_tracker",
-      "ae2",
-      "ae2ct",
-      "ae2netanalyser",
-      "ae2omnicells",
-      "ae2wtlib",
-      "alex_cave_addon",
-      "alexscaves",
-      "alexsdelight",
-      "alexsmobs",
-      "ali",
-      "amendments",
-      "apotheosis",
-      "appleskin",
-      "appliedcreate",
-      "architectury",
-      "athena",
-      "attributefix",
-      "attributeslib",
-      "bakeries",
-      "balm",
-      "bcc",
-      "beefix",
-      "bettercombat",
-      "betterendisland",
-      "bettermineshafts",
-      "betterwitchhuts",
-      "biome_replacer",
-      "biomespy",
-      "bits_n_bobs",
-      "blackknightarmor",
-      "blueprint",
-      "bookshelf",
-      "botarium",
-      "bountiful",
-      "brewinandchewin",
-      "butchercraft",
-      "caelus",
-      "carryon",
-      "casualness_delight",
-      "cataclysm",
-      "cavedelight",
-      "centralvintage",
-      "charmofundying",
-      "chat_heads",
-      "chefsdelight",
-      "citadel",
-      "cloth_config",
-      "clumps",
-      "cmpackagecouriers",
-      "cmparallelpipes",
-      "cmr",
-      "cobblefordays",
-      "cobweb",
-      "collectorsreap",
-      "com_github_javaparser_javaparser_symbol_solver_core",
-      "com_teamresourceful_bytecodecs",
-      "com_teamresourceful_yabn",
-      "comforts",
-      "conditional_mixin",
-      "configuration",
-      "configured",
-      "constructionwand",
-      "copycats",
-      "corn_delight",
-      "coroutil",
-      "cosmeticarmorreworked",
-      "cosmopolitan",
-      "crabbersdelight",
-      "cratedelight",
-      "create",
-      "create_bic_bit",
-      "create_bs",
-      "create_central_kitchen",
-      "create_compatible_storage",
-      "create_confectionery",
-      "create_connected",
-      "create_deepfried",
-      "create_dragon_lib",
-      "create_enchantment_industry",
-      "create_enhanced_schematicannon",
-      "create_factory_abstractions",
-      "create_fantasizing",
-      "create_integrated_farming",
-      "create_jetpack",
-      "create_jetpack_curios",
-      "create_mechanical_spawner",
-      "create_new_age",
-      "create_oppenheimered",
-      "create_pattern_schematics",
-      "create_rustic_structures",
-      "create_sa",
-      "create_structures_arise",
-      "createaddition",
-      "createadditionallogistics",
-      "createbetterfps",
-      "createbiggerstoragetocreate6",
-      "createcafe",
-      "createdeco",
-      "createdelightcore",
-      "createdieselgenerators",
-      "createfactorycontroller",
-      "createfastschematiccannon",
-      "createfluidstuffs",
-      "createidlx",
-      "createlazytick",
-      "createliquidfuel",
-      "createmetallurgy",
-      "createoreexcavation",
-      "createprism",
-      "createrailwaysnavigator",
-      "createredstonelinkgui",
-      "createsolar",
-      "createstockbridge",
-      "createtransmission",
-      "createultimine",
-      "createutilities",
-      "creativecore",
-      "creeperoverhaul",
-      "cristellib",
-      "cuisinedelight",
-      "culturaldelights",
-      "curios",
-      "curiouslanterns",
-      "customportalapi",
-      "displaydelight",
-      "dragonlib",
-      "dramaticdoors",
-      "dreadsteel",
-      "dsbg",
-      "dummmmmmy",
-      "dumplings_delight",
-      "dungeonsdelight",
-      "eclipticseasons",
-      "elysium_api",
-      "elytraslot",
-      "endergetic",
-      "ends_delight",
-      "esl",
-      "expandability",
-      "expatternprovider",
-      "explorerscompass",
-      "extendedae_plus",
-      "extra_gauges",
-      "fabric_api_base",
-      "fabric_data_attachment_api_v1",
-      "fabric_entity_events_v1",
-      "fabric_object_builder_api_v1",
-      "farmersdelight",
-      "farmersrespite",
-      "ferritecore",
-      "festival_delicacies",
-      "flightlib",
-      "fluidlogistics",
-      "flywheel",
-      "fragmentum",
-      "framework",
-      "fruitsdelight",
-      "frycooks_delight",
-      "ftbchunks",
-      "ftbessentials",
-      "ftblibrary",
-      "ftbquestlocalizer",
-      "ftbquests",
-      "ftbranks",
-      "ftbteams",
-      "ftbultimine",
-      "ftbxaerocompat",
-      "ftbxmodcompat",
-      "functionalstorage",
-      "futurevillagertradesvisible",
-      "gateways",
-      "geckolib",
-      "geotetraarmor",
-      "glodium",
-      "guideme",
-      "harium",
-      "iafdragonfix",
-      "ias",
-      "iceandfire",
-      "iceberg",
-      "icterine",
-      "idas",
-      "immersive_aircraft",
-      "immersive_paintings",
-      "improvedmobs",
-      "industrial_platform",
-      "integrated_api",
-      "integrated_stronghold",
-      "integrated_villages",
-      "interiors",
-      "itemfilters",
-      "jade",
-      "jadeaddons",
-      "jei",
-      "jeitetra",
-      "jupiter",
-      "just_enough_couriers",
-      "justenoughbreeding",
-      "kaleidoscope_doll",
-      "kambrik",
-      "kinetic_pixel",
-      "kiwi",
-      "konkrete",
-      "kotlinforforge",
-      "krypton_fnp",
-      "kubejs",
-      "kubejs_create",
-      "kubejsdelight",
-      "kuma_api",
-      "l2damagetracker",
-      "l2harvester",
-      "l2harvester05x",
-      "l2harvester60x",
-      "l2library",
-      "lctech",
-      "ldlib",
-      "lightmanscurrency",
-      "lionfishapi",
-      "lithostitched",
-      "lootjs",
-      "lootr",
-      "luncheonmeatsdelight",
-      "man_of_many_planes",
-      "mbd2",
-      "meed",
-      "megacells",
-      "melody",
-      "midnightlib",
-      "miners_delight",
-      "mixinextras",
-      "modernfix",
-      "moestweaks",
-      "moonlight",
-      "more_mod_tetra",
-      "morejs",
-      "morerequirement",
-      "mutil",
-      "mynethersdelight",
-      "mysterious_mountain_lib",
-      "naturescompass",
-      "neapolitan",
-      "nebulusbetterportals",
-      "neruina",
-      "netherexp",
-      "nethervinery",
-      "netmusic",
-      "nochatreports",
-      "northstar",
-      "northstar_curios_compat",
-      "observable",
-      "oceanic_delight",
-      "oelib",
-      "oneenoughitem",
-      "oneenoughvalue",
-      "org_java_websocket_java_websocket",
-      "org_vineflower_vineflower",
-      "packetfixer",
-      "placebo",
-      "playeranimator",
-      "polyeng",
-      "polymorph",
-      "ponder",
-      "powerfuljs",
-      "prism",
-      "probejs",
-      "puzzlesaccessapi",
-      "puzzleslib",
-      "quality_food",
-      "quality_food_fluids",
-      "quark",
-      "quarkoddities",
-      "questsadditions",
-      "radiantgear",
-      "railways",
-      "ratatouille",
-      "refurbished_furniture",
-      "remove_sdl_intro",
-      "renderjs",
-      "resourcefulconfig",
-      "resourcefullib",
-      "resourcify",
-      "rhino",
-      "runiclib",
-      "salwayseat",
-      "searchables",
-      "seasonals",
-      "seasonhud",
-      "sequenced_pattern_provider",
-      "servercore",
-      "shadowizardlib",
-      "silentsdelight",
-      "simplebackups",
-      "simplehats",
-      "skinlayers3d",
-      "smsn",
-      "solapplepie",
-      "solardimensionaddon",
-      "solcarrot",
-      "some_assembly_required",
-      "sophisticatedbackpacks",
-      "sophisticatedbackpackscreateintegration",
-      "sophisticatedcore",
-      "soul_fire_d",
-      "spark",
-      "spectrelib",
-      "sqlite_jdbc",
-      "stampalbum",
-      "supermartijn642configlib",
-      "supermartijn642corelib",
-      "supplementaries",
-      "t_and_t",
-      "tacz",
-      "taczaddon",
-      "tectonic",
-      "tenshilib",
-      "terrablender",
-      "terralith",
-      "tetra",
-      "tetra_attribute_rebalancing",
-      "tetra_material_overhaul",
-      "tetracelium",
-      "tetraclip",
-      "tetracompat",
-      "tetrajs",
-      "tetratic_combat_expanded",
-      "the_bumblezone",
-      "tipsmod",
-      "titanium",
-      "torchmaster",
-      "totw_modded",
-      "traderefresh",
-      "trailandtales_delight",
-      "transition",
-      "trashcans",
-      "trashslot",
-      "trender",
-      "trueuuid",
-      "vinery",
-      "vintage_kubejs",
-      "vintagedelight",
-      "vintageimprovements",
-      "vvaddon",
-      "w2w2",
-      "watut",
-      "waystones",
-      "world_preview",
-      "xaerolib",
-      "xaerominimap",
-      "xaeroworldmap",
-      "yet_another_config_lib_v3",
-      "youkaishomecoming",
-      "youkaishomecoming_curios",
-      "yungsapi",
-      "yungsextras",
-      "zeta",
-      "zstdnet"
+      "[forge1.20.1]tetraclip-1.0.5.jar",
+      "abnormals_delight-1.20.1-5.0.1.jar",
+      "accessories-neoforge-1.0.0-beta.48+1.20.1.jar",
+      "advancedlootinfo-forge-1.20.1-1.12.0.jar",
+      "advancementplaques-1.20.1-forge-1.6.9.jar",
+      "advancements_tracker_1.20.1-6.1.0.jar",
+      "ae2ct-1.20.1-1.1.1.jar",
+      "ae2networkanalyzer-1.20-1.0.6-forge.jar",
+      "ae2omnicells-1.20.1-forge-1.1.1.jar",
+      "ae2wtlib-15.3.3-forge.jar",
+      "alex_cave_addon-5.1.0-1.20.1.jar",
+      "alexscaves-2.0.2.jar",
+      "alexsdelight-1.5.jar",
+      "alexsmobs-1.22.9.jar",
+      "alwayseat-5.2.jar",
+      "amendments-1.20-2.2.5.jar",
+      "apotheosis-1.20.1-7.4.8.jar",
+      "apothicattributes-1.20.1-1.3.7.jar",
+      "appleskin-forge-mc1.20.1-2.5.1.jar",
+      "appliedcreate-1.20.1-1.1.5.jar",
+      "appliedenergistics2-forge-15.4.10.jar",
+      "architectury-9.2.14-forge.jar",
+      "attributefix-forge-1.20.1-21.0.5.jar",
+      "bakeries-1.20.1-forge-1.2.5.jar",
+      "balm-forge-1.20.1-7.3.38-all.jar",
+      "beefix-1.20-1.0.7.jar",
+      "bettercombat-forge-1.9.0+1.20.1.jar",
+      "bettercompatibilitychecker-3.0.1-build.58+mc1.20.jar",
+      "biomereplacer-2.2-hippo-forge.jar",
+      "biomespy-1.3.3-all.jar",
+      "bits_n_bobs-0.0.41.jar",
+      "blackknightarmor-1.0.3-20260322-1620-reobf.jar",
+      "blueprint-1.20.1-7.1.3.jar",
+      "bookshelf-forge-1.20.1-20.2.15.jar",
+      "botarium-forge-1.20.1-2.3.4.jar",
+      "bountiful-6.0.4+1.20.1-forge.jar",
+      "brewinandchewin-1.20.1-3.2.1.jar",
+      "butchercraft-2.4.1.jar",
+      "caelus-forge-3.2.0+1.20.1.jar",
+      "carryon-forge-1.20.1-2.1.2.7.jar",
+      "casualness_delight-1.20.1-0.4n.jar",
+      "cave-delight-1.20.1-2.0.1.jar",
+      "centralvintage-1.2.1.jar",
+      "charmofundying-forge-6.5.0+1.20.1.jar",
+      "chat_heads-0.15.2-forge-1.20.jar",
+      "chefsdelight-1.0.4-forge-1.20.1.jar",
+      "citadel-2.6.3-1.20.1.jar",
+      "cloth-config-11.1.136-forge.jar",
+      "clumps-forge-1.20.1-12.0.0.4.jar",
+      "cmpackagecouriers-forge-2.2.2.jar",
+      "cmparallelpipes-forge-2.0.3.jar",
+      "cobblefordays-1.8.0.jar",
+      "cobweb-forge-1.20.1-1.0.1.jar",
+      "collectorsreap-1.20.1-1.5.5.jar",
+      "comforts-forge-6.4.0+1.20.1.jar",
+      "configured-forge-1.20.1-2.2.3.jar",
+      "constructionwand-1.20.1-2.11.jar",
+      "copycats-3.0.7+mc.1.20.1-forge.jar",
+      "corn_delight-1.2.11-1.20.1.jar",
+      "coroutil-forge-1.20.1-1.3.7.jar",
+      "cosmeticarmorreworked-1.20.1-v1a.jar",
+      "cosmopolitan-1.20.1-1.5.3.jar",
+      "crabbersdelight-1.20.1-1.2.3.jar",
+      "cratedelight-26.07.01-1.20-forge.jar",
+      "create more recipes-1.20.1-1.2.1-fix1.jar",
+      "create-1.20.1-6.0.8.jar",
+      "create-better-storages-forge-1.20.1-1.0b.release.jar",
+      "create-confectionery1.20.1_v1.1.3.jar",
+      "create-delight-core-1.20.1-dev.jar",
+      "create-integrated-farming-1.2.6-1.20.1.jar",
+      "create-new-age-1.2.0+forge-mc1.20.1.jar",
+      "create-stuff-additions1.20.1_v2.1.2.jar",
+      "create-utilities-j-1.20.1-0.3.3.jar",
+      "create_central_kitchen-1.20.1-for-create-6.0.8-1.5.0.jar",
+      "create_compatible_storage-2.11.0-all.jar",
+      "create_connected-1.1.13-mc1.20.1-all.jar",
+      "create_deepfried-forge-1.20.1-0.1.3c.jar",
+      "create_enchantment_industry-1.4.0-for-create-6.0.8.jar",
+      "create_enhanced_schematicannon-1.0.4-fork.jar",
+      "create_fantasizing-1.20.1-1.1.1.jar",
+      "create_jetpack-forge-4.4.6.jar",
+      "create_jetpack_curios-1.2.0-forge-1.20.1.jar",
+      "create_mechanical_spawner-1.20.1-0.1.7-6.0.6.jar",
+      "create_oppenheimered-1.0.5.jar",
+      "create_pattern_schematics-1.3.3.jar",
+      "create_ratatouille-1.20.1-1.3.8.jar",
+      "create_rustic_structures-1.0.0-forge-1.20.1.jar",
+      "create_structures_arise-176.49.48 forge 1.20.1.jar",
+      "createaddition-1.20.1-1.3.3.jar",
+      "createadditionallogistics-1.20.1-1.4.5.jar",
+      "createbetterfps-1.20.1-1.1.1.jar",
+      "createbicbit-forge-1.20.1-1.0.2b.jar",
+      "createbiggerstoragetocreate6-1.1.jar",
+      "createcafe-1.3-1.20.1.jar",
+      "createdeco-2.0.3-1.20.1-forge.jar",
+      "createdieselgenerators-1.20.1-1.3.12.jar",
+      "createfactorycontroller-1.0.0-1.20.1-alpha-2.jar",
+      "createfastschematiccannon-1.4.1-6.0.x-forge-1.20.1.jar",
+      "createfluidstuffs-1.2.1-all.jar",
+      "createidlx-1.20.1-1.3.jar",
+      "createlazytick-2.4.9-6.0.x-forge-1.20.1.jar",
+      "createliquidfuel-2.1.1-1.20.1.jar",
+      "createmetallurgy-1.0.1-1.20.1.jar",
+      "createoreexcavation-1.20-1.6.5.jar",
+      "createprism-1.20-1.1.0.jar",
+      "createrailwaysnavigator-forge-1.20.1-alpha-0.9.0-c6+2.jar",
+      "createredstonelinkgui-1.20.1-1.9.1.jar",
+      "createsolar-1.2.6-1.20.1.jar",
+      "createstockbridge-1.20-0.2.0.jar",
+      "createtransmission-1.1.0+forge-create6-1.20.1.jar",
+      "createultimine-1.20.1-forge-1.3.1.jar",
+      "creativecore_forge_v2.12.35_mc1.20.1.jar",
+      "creeperoverhaul-3.0.2-forge.jar",
+      "cristellib-1.1.6-forge.jar",
+      "cuisinedelight-1.1.20.jar",
+      "culturaldelights-0.16.7.jar",
+      "curios-forge-5.14.1+1.20.1.jar",
+      "curiouslanterns-1.20.1-1.3.7.jar",
+      "customportalapi-1.0.1-forge-1.20.1.jar",
+      "displaydelight-1.7.0.jar",
+      "dragonlib-forge-1.20.1-beta-3.0.24.jar",
+      "dramaticdoors-quifabrge-1.20.1-3.3.3.jar",
+      "dreadsteel-1.20.1-1.2.0.jar",
+      "dsbg-1.0-1.20.1.jar",
+      "dummmmmmy-1.20-2.0.9.jar",
+      "dumplings delight-1.20.1-forge-1.3.2.jar",
+      "eclipticseasons-1.20.1-forge-0.13.8.1-all.jar",
+      "elysiumapi-1.20.1-1.1.3.jar",
+      "elytraslot-forge-6.4.4+1.20.1.jar",
+      "endergetic-1.20.1-5.0.1.jar",
+      "ends_delight-2.5.1+forge.1.20.1.jar",
+      "explorerscompass-1.20.1-1.4.0-forge.jar",
+      "extendedae-1.20-1.4.14-forge.jar",
+      "extendedae_plus-1.5.3-fix.jar",
+      "extra_gauges-2.0.7.jar",
+      "farmersdelight-1.20.1-1.3.2.jar",
+      "farmersrespite-1.20.1-2.1.2.jar",
+      "ferritecore-6.0.1-forge.jar",
+      "festival_delicacies-2.0.0-beta+forge.1.20.1.jar",
+      "fluidlogistics-1.2.0.jar",
+      "forge-dungeonsdelight-1.20.1-1.3.0.jar",
+      "forge-runiclib-1.20.1-4.3.11.jar",
+      "fragmentum-forge-1.20.1-1.3.0.jar",
+      "framework-forge-1.20.1-0.8.0.jar",
+      "fruitsdelight-1.1.3.jar",
+      "frycooks_delight-1.20.1-1.0.1.jar",
+      "ftb-chunks-forge-2001.3.6.jar",
+      "ftb-essentials-forge-2001.2.4.jar",
+      "ftb-library-forge-2001.2.12.jar",
+      "ftb-quests-forge-2001.4.21.jar",
+      "ftb-ranks-forge-2001.1.7.jar",
+      "ftb-teams-forge-2001.3.2.jar",
+      "ftb-ultimine-forge-2001.1.8.jar",
+      "ftb-xmod-compat-forge-2.1.3.jar",
+      "ftbquestlocalizer-1.20.1-forge-3.2.3.jar",
+      "ftbxaerocompat-forge-1.1.3.jar",
+      "functionalstorage-1.20.1-1.2.13.jar",
+      "futurevillagertradesvisible-0.1.6+forge1.20.1.jar",
+      "gatewaystoeternity-1.20.1-4.2.6.jar",
+      "geckolib-forge-1.20.1-4.8.3.jar",
+      "geotetraarmor-6.9.0-1.0.4-fix.jar",
+      "glodium-1.20-1.5-forge.jar",
+      "guideme-20.1.14.jar",
+      "harium-mc1.20.1-1.0.0.jar",
+      "hotai-1.0.jar",
+      "iafdragonfix-2.0.0.jar",
+      "ias-forge-1.20.1-9.0.0.jar",
+      "iceandfire-2.1.13-1.20.1-beta-5.jar",
+      "iceberg-1.20.1-forge-1.1.25.jar",
+      "icterine-forge-1.20.0-1-1.3.0.jar",
+      "idas_forge-1.13.0+1.20.1.jar",
+      "immersive_aircraft-1.4.0+1.20.1-forge.jar",
+      "immersive_paintings-0.6.11+1.20.1-forge.jar",
+      "improvedmobs-1.20.1-1.13.7-forge.jar",
+      "industrial platform-1.20.1-1.7.1.jar",
+      "integrated_api-1.7.4+1.20.1-forge.jar",
+      "integrated_stronghold-1.1.2+1.20.1-forge.jar",
+      "integrated_villages-1.3.2+1.20.1-forge.jar",
+      "interiors-1.20.1-forge-0.6.0.jar",
+      "item-filters-forge-2001.1.0-build.59.jar",
+      "jade-1.20.1-forge-11.13.2.jar",
+      "jadeaddons-1.20.1-forge-5.5.0.jar",
+      "jadens-nether-expansion-2.3.5.jar",
+      "jei tetra-6.9.0-1.2.2.1.jar",
+      "jei-1.20.1-forge-15.20.0.132.jar",
+      "jupiter-2.3.7-1.20.1-forge.jar",
+      "just_enough_couriers-1.0.1.jar",
+      "justenoughbreeding-forge-1.20.1-3.0.1.jar",
+      "kaleidoscopedoll-1.3.1-forge+mc1.20.1.jar",
+      "kambrik-6.1.1+1.20.1-forge.jar",
+      "kinetic_pixel-1.0.3-forge-1.20.1.jar",
+      "kiwi-1.20.1-forge-11.10.1.jar",
+      "konkrete_forge_1.8.0_mc_1.20-1.20.1.jar",
+      "kotlinforforge-4.12.0-all.jar",
+      "krypton fnp-forge-1.20.1-0.2.28.2-1.20.1.jar",
+      "kubejs-create-forge-2001.3.0-build.8.jar",
+      "kubejs-forge-2001.6.5-build.26.jar",
+      "kubejsdelight-1.20.1-1.1.5.jar",
+      "l_enders_cataclysm-3.16.jar",
+      "lctech-1.20.1-0.2.2.7.jar",
+      "ldlib-forge-1.20.1-1.0.50.jar",
+      "letsdo-nethervinery-forge-1.2.19.jar",
+      "letsdo-vinery-forge-1.4.41.jar",
+      "lightmanscurrency-1.20.1-2.3.0.4g.jar",
+      "lionfishapi-2.7.jar",
+      "lithostitched-forge-1.20.1-1.4.11.jar",
+      "lootjs-forge-1.20.1-2.13.1.jar",
+      "lootr-forge-1.20-0.7.35.94.jar",
+      "luncheon-meat-s-delight-1.0.3-forge-1.20.1.jar",
+      "man_of_many_planes-0.2.0+1.20.1-forge.jar",
+      "meed-1.20.1-7.9.jar",
+      "megacells-forge-2.4.6-1.20.1.jar",
+      "melody_forge_1.0.3_mc_1.20.1-1.20.4.jar",
+      "midnightlib-forge-1.9.2+1.20.1.jar",
+      "miners_delight-1.20.1-1.4.5-backport.jar",
+      "modernfix-forge-5.27.58+mc1.20.1.jar",
+      "moestweaks-forge-1.20.1-1.1.2.jar",
+      "moonlight-1.20-2.16.27-forge.jar",
+      "more_mod_tetra-2.4.1-all.jar",
+      "morejs-forge-1.20.1-0.10.1.jar",
+      "morerequirement-1.2.3.jar",
+      "multiblocked2-1.20.1-1.0.38.a.jar",
+      "mutil-1.20.1-6.2.0.jar",
+      "mynethersdelight-1.20.1-0.1.8.jar",
+      "mysterious_mountain_lib-1.6.34-1.20.1.jar",
+      "naturescompass-1.20.1-1.12.0-forge.jar",
+      "neapolitan-1.20.1-5.1.0.jar",
+      "nebulusbetterportals-1.0.8-forge-1.20.1.jar",
+      "neruina-3.3.2+1.20.1-forge.jar",
+      "netmusic-1.4.0-forge+mc1.20.1.jar",
+      "nochatreports-forge-1.20.1-v2.2.2.jar",
+      "northstar-0.6.1+1.20.1.jar",
+      "northstar-curios-compat-1.3.1.jar",
+      "observable-4.4.2.jar",
+      "oceanic_delight-1.0.3-forge-1.20.1.jar",
+      "oelib-forge-1.20.1-0.2.3.jar",
+      "oneenoughitem-1.0.7-hotfix.jar",
+      "oneenoughvalue-1.0.2.jar",
+      "packetfixer-3.3.2-1.18-1.20.4-merged.jar",
+      "placebo-1.20.1-8.6.3.jar",
+      "player-animation-lib-forge-1.0.2-rc1+1.20.jar",
+      "polyeng-forge-0.1.1-1.20.1.jar",
+      "polymorph-forge-0.49.10+1.20.1.jar",
+      "powerfuljs-1.6.1.jar",
+      "prism-1.20.1-forge-1.0.5.jar",
+      "probejs-6.0.1-forge.jar",
+      "puzzleslib-v8.1.33-1.20.1-forge.jar",
+      "quality_food-1.20.1-2.3.2-all.jar",
+      "quality_food_fluids-1.20.1-0.1.3.jar",
+      "quark-4.0-462.jar",
+      "quarkoddities-1.20.1.jar",
+      "questsadditions-1.4.7.jar",
+      "radiantgear-forge-2.2.0+1.20.1.jar",
+      "refurbished_furniture-forge-1.20.1-1.0.20.jar",
+      "renderjs-forge-2001.2.1.jar",
+      "resourcefulconfig-forge-1.20.1-2.1.3.jar",
+      "resourcefullib-forge-1.20.1-2.1.29.jar",
+      "resourcify (1.20.1-forge)-1.8.1.jar",
+      "rhino-forge-2001.2.3-build.10.jar",
+      "searchables-forge-1.20.1-1.0.3.jar",
+      "seasonals-1.20.1-5.0.2.jar",
+      "seasonhud-forge-1.20.1-2.0.6.jar",
+      "sequenced_pattern_provider-1.20.1-0.2.1.jar",
+      "servercore-forge-1.5.2+1.20.1.jar",
+      "shadowizardlib-1.20.1-1.3.1.jar",
+      "silentsdelight-forge-1.0.1-1.20.1.jar",
+      "simplebackups-1.20.1-3.1.24.jar",
+      "simplehats-forge-1.20.1-0.4.0a.jar",
+      "skinlayers3d-forge-1.11.2-mc1.20.1.jar",
+      "smsn-forge-1.4.2-1.20.1.jar",
+      "solapplepie-1.20.1-2.3.0.jar",
+      "solardimensionaddon-1.2.0.jar",
+      "solcarrot-1.20.1-1.15.1.jar",
+      "some-assembly-required-1.20.1-4.2.3.jar",
+      "sophisticatedbackpacks-1.20.1-3.24.58.1934.jar",
+      "sophisticatedbackpackscreateintegration-1.20.1-0.1.8.116.jar",
+      "sophisticatedcore-1.20.1-1.3.58.2078.jar",
+      "soul-fire-d-forge-1.20.1-4.0.11.jar",
+      "spark-1.10.53-forge.jar",
+      "sqlite-jdbc-3.36.0.3+20211227-all.jar",
+      "stamp album-1.20.1-forge-1.1.1.jar",
+      "steam_rails-1.7.2+forge-mc1.20.1.jar",
+      "supermartijn642configlib-1.1.8-forge-mc1.20.jar",
+      "supermartijn642corelib-1.1.18-forge-mc1.20.1.jar",
+      "supplementaries-1.20-3.1.42-forge.jar",
+      "tacz-1.20.1-1.1.4-hotfix-all.jar",
+      "taczaddon-1.20.1-1.1.4-for1.1.4.jar",
+      "tectonic-3.0.17-forge-1.20.1.jar",
+      "tenshilib-1.20.1-1.7.6-forge.jar",
+      "terralith_1.20.x_v2.5.4.jar",
+      "tetra js-2001-6.9.0-1.0.2.jar",
+      "tetra-1.20.1-6.9.0.jar",
+      "tetracelium-1.20.1-1.3.1.jar",
+      "tetracompat-1.0.0-all.jar",
+      "tetratic-combat-expanded-1.20-2.8.3.jar",
+      "the_bumblezone-7.13.0+1.20.1-forge.jar",
+      "tips-forge-1.20.1-12.1.9.jar",
+      "titanium-1.20.1-3.8.32.jar",
+      "torchmaster-20.1.9.jar",
+      "totw_modded-forge-1.20.1-1.0.6.jar",
+      "towns-and-towers-1.12-fabric+forge.jar",
+      "traderefresh-2.5.2.jar",
+      "trailandtales_delight-1.7-all.jar",
+      "trashcans-1.0.18b-forge-mc1.20.jar",
+      "trashslot-forge-1.20.1-15.1.4.jar",
+      "trueuuid-1.1.2-forge1.20.1.jar",
+      "vintage_kubejs-1.20.1-1.0.0rc-2.jar",
+      "vintagedelight-0.1.6.jar",
+      "vintageimprovements-1.20.1-0.3.7.4.jar",
+      "vvaddon-1.20.1-alpha3.0.1.jar",
+      "watut-forge-1.20.1-1.2.3.jar",
+      "waystones-forge-1.20.1-14.1.20.jar",
+      "world_preview-forge-1.20.1-1.3.1.jar",
+      "xaerominimap-forge-1.20.1-26.1.0.jar",
+      "xaeros_waystones_compatibility-1.1 - 1.20.1.jar",
+      "xaeroworldmap-forge-1.20.1-1.41.2.jar",
+      "yet_another_config_lib_v3-3.6.6+1.20.1-forge.jar",
+      "youkaishomecoming-2.7.0.jar",
+      "youkaishomecoming_curios-0.03.jar",
+      "yungsapi-1.20-forge-4.0.6.jar",
+      "yungsbetterendisland-1.20-forge-2.0.6.jar",
+      "yungsbettermineshafts-1.20-forge-4.0.4.jar",
+      "yungsbetterwitchhuts-1.20-forge-3.0.3.jar",
+      "yungsextras-1.20-forge-4.0.3.jar",
+      "zeta-1.0-31.jar",
+      "zremove_sdl_intro_v1.2.2.jar",
+      "zstdnet-1.20.1-forge-1.4.7.jar"
     ],
     "client": [
-      "acceleratedrendering",
-      "betteradvancements",
-      "catalogue",
-      "certain_questing_additions",
-      "colorfulhearts",
-      "colorwheel",
-      "colorwheel_patcher",
-      "controlling",
-      "create_cyber_goggles",
-      "culllessleaves",
-      "customskinloader",
-      "drippyloadingscreen",
-      "dynamic_fps",
-      "dynamiccrosshair",
-      "dynamiccrosshairapi",
-      "embeddium",
-      "enchdesc",
-      "enhanced_boss_bars",
-      "entityculling",
-      "euphoria_patcher",
-      "extraholopage",
-      "fancymenu",
-      "fastboot",
-      "flerovium",
-      "flywheel",
-      "generalfeedback",
-      "imblocker",
-      "iris_shader_folder",
-      "itemborders",
-      "itemphysiclite",
-      "jecharacters",
-      "jeed",
-      "libbamboo",
-      "lucent",
-      "mcwifipnp",
-      "minemenu",
-      "mixinextras",
-      "modernui",
-      "mousetweaks",
-      "obscure_tooltips",
-      "oculus",
-      "overloadedarmorbar",
-      "oworld2create",
-      "pickupnotifier",
-      "ponder",
-      "ponderjs",
-      "presencefootsteps",
-      "rubidium",
-      "screenshot_viewer",
-      "shouldersurfing",
-      "sodiumextras",
-      "tetra_modify_core",
-      "tetra_view",
-      "transition",
-      "travelerstitles",
-      "trender",
-      "vanillin",
-      "visual_keybinder",
-      "yeetusexperimentus"
+      "0world2create-universal-1.19-1.20.x-1.0.0.jar",
+      "acceleratedrendering-1.0.7-1.20.1-alpha.jar",
+      "betteradvancements-neoforge-1.20.1-0.4.2.25.jar",
+      "catalogue-forge-1.20.1-1.8.0.jar",
+      "certain_questing_additions-forge-1.1.6+mc1.20.1.jar",
+      "colorfulhearts-forge-1.20.1-4.3.16.jar",
+      "colorwheel-forge-1.2.1+mc1.20.1.jar",
+      "colorwheel_patcher-forge-1.0.4+mc1.20.1.jar",
+      "controlling-forge-1.20.1-12.0.2.jar",
+      "createcybergoggles-1.20.1-7.2.2-forge.jar",
+      "culllessleaves-reforged-1.20.1-1.0.5.jar",
+      "customskinloader_forgev2-14.28.jar",
+      "drippyloadingscreen_forge_3.0.12_mc_1.20.1.jar",
+      "dynamic-fps-3.11.4+minecraft-1.20.0-forge.jar",
+      "dynamiccrosshair-9.10+1.20.1-forge.jar",
+      "embeddium-0.3.31+mc1.20.1.jar",
+      "enchantmentdescriptions-forge-1.20.1-17.1.21.jar",
+      "enhanced_boss_bars-1.20.1-1.0.0.jar",
+      "entityculling-forge-1.10.1-mc1.20.1.jar",
+      "euphoriapatcher-1.9.3-r5.8.1-forge.jar",
+      "extraholopage-6.9.0-1.2.16.jar",
+      "fancymenu_forge_3.7.0_mc_1.20.1.jar",
+      "fastboot-1.20.x-1.2.jar",
+      "flerovium-forge-1.20.1-1.2.18-all.jar",
+      "generalfeedback-1.0.1.jar",
+      "imblocker-5.5.0-forge+1.17-1.20.4.jar",
+      "iris_shader_folder-1.3.1-forge.jar",
+      "itemborders-1.20.1-forge-1.2.2.jar",
+      "itemphysiclite_forge_v1.6.6_mc1.20.1.jar",
+      "jecharacters-1.20.1-forge-4.6.3.jar",
+      "jeed-1.20-2.2.5.jar",
+      "lucent-1.20.1-1.5.5.jar",
+      "mcwifipnp-1.7.6-1.20.1-forge.jar",
+      "minemenu-1.20.1-1.12.3.jar",
+      "modernui-forge-1.20.1-3.12.0.1-universal.jar",
+      "mousetweaks-forge-mc1.20.1-2.25.1.jar",
+      "obscure_tooltips-forge-1.20.1-3.10.0.jar",
+      "oculus-mc1.20.1-1.8.0.jar",
+      "overloadedarmorbar-1.20.1-1.jar",
+      "pickupnotifier-v8.0.0-1.20.1-forge.jar",
+      "ponderjs-1.20.1-2.1.0.jar",
+      "presencefootsteps-1.20.1-1.9.1-beta.1.jar",
+      "screenshot_viewer-1.3.2-forge-mc1.20.1.jar",
+      "shouldersurfing-forge-1.20.1-5.0.4.jar",
+      "sodiumextras-forge-1.0.7-1.20.1.jar",
+      "tetra view-6.9.0-1.0.2.jar",
+      "travelerstitles-1.20-forge-4.0.2.jar",
+      "vanillin-forge-1.20.1-1.1.3.jar",
+      "visual_keybinder-1.20.1 - 0.1.12.jar",
+      "yeetusexperimentus-forge-2.3.1-build.6+mc1.20.1.jar"
     ],
     "server": []
   },
@@ -432,3131 +390,1887 @@
     {
       "side": "client",
       "metadata": "mods/0World2Create.pw.toml",
-      "filename": "0World2Create-Universal-1.19-1.20.X-1.0.0.jar",
-      "modIds": [
-        "oworld2create"
-      ]
+      "filename": "0World2Create-Universal-1.19-1.20.X-1.0.0.jar"
     },
     {
       "side": "client",
       "metadata": "mods/BetterAdvancements.pw.toml",
-      "filename": "BetterAdvancements-NeoForge-1.20.1-0.4.2.25.jar",
-      "modIds": [
-        "betteradvancements"
-      ]
+      "filename": "BetterAdvancements-NeoForge-1.20.1-0.4.2.25.jar"
     },
     {
       "side": "client",
       "metadata": "mods/Controlling.pw.toml",
-      "filename": "Controlling-forge-1.20.1-12.0.2.jar",
-      "modIds": [
-        "controlling"
-      ]
+      "filename": "Controlling-forge-1.20.1-12.0.2.jar"
     },
     {
       "side": "client",
       "metadata": "mods/CreateCyberGoggles.pw.toml",
-      "filename": "CreateCyberGoggles-1.20.1-7.2.2-Forge.jar",
-      "modIds": [
-        "create_cyber_goggles"
-      ]
+      "filename": "CreateCyberGoggles-1.20.1-7.2.2-Forge.jar"
     },
     {
       "side": "client",
       "metadata": "mods/CullLessLeaves-Reforged.pw.toml",
-      "filename": "CullLessLeaves-Reforged-1.20.1-1.0.5.jar",
-      "modIds": [
-        "culllessleaves"
-      ]
+      "filename": "CullLessLeaves-Reforged-1.20.1-1.0.5.jar"
     },
     {
       "side": "client",
       "metadata": "mods/CustomSkinLoader_ForgeV2.pw.toml",
-      "filename": "CustomSkinLoader_ForgeV2-14.28.jar",
-      "modIds": [
-        "customskinloader"
-      ]
+      "filename": "CustomSkinLoader_ForgeV2-14.28.jar"
     },
     {
       "side": "client",
       "metadata": "mods/EnchantmentDescriptions.pw.toml",
-      "filename": "EnchantmentDescriptions-Forge-1.20.1-17.1.21.jar",
-      "modIds": [
-        "enchdesc"
-      ]
+      "filename": "EnchantmentDescriptions-Forge-1.20.1-17.1.21.jar"
     },
     {
       "side": "client",
       "metadata": "mods/EuphoriaPatcher.pw.toml",
-      "filename": "EuphoriaPatcher-1.9.3-r5.8.1-forge.jar",
-      "modIds": [
-        "euphoria_patcher"
-      ]
+      "filename": "EuphoriaPatcher-1.9.3-r5.8.1-forge.jar"
     },
     {
       "side": "client",
       "metadata": "mods/ExtraHoloPage.pw.toml",
-      "filename": "ExtraHoloPage-6.9.0-1.2.16.jar",
-      "modIds": [
-        "extraholopage",
-        "tetra_modify_core"
-      ]
+      "filename": "ExtraHoloPage-6.9.0-1.2.16.jar"
     },
     {
       "side": "client",
       "metadata": "mods/GeneralFeedback.pw.toml",
-      "filename": "GeneralFeedback-1.0.1.jar",
-      "modIds": [
-        "generalfeedback"
-      ]
+      "filename": "GeneralFeedback-1.0.1.jar"
     },
     {
       "side": "client",
       "metadata": "mods/IMBlocker.pw.toml",
-      "filename": "IMBlocker-5.5.0-forge+1.17-1.20.4.jar",
-      "modIds": [
-        "imblocker"
-      ]
+      "filename": "IMBlocker-5.5.0-forge+1.17-1.20.4.jar"
     },
     {
       "side": "client",
       "metadata": "mods/ItemBorders.pw.toml",
-      "filename": "ItemBorders-1.20.1-forge-1.2.2.jar",
-      "modIds": [
-        "itemborders"
-      ]
+      "filename": "ItemBorders-1.20.1-forge-1.2.2.jar"
     },
     {
       "side": "client",
       "metadata": "mods/ItemPhysicLite.pw.toml",
-      "filename": "ItemPhysicLite_FORGE_v1.6.6_mc1.20.1.jar",
-      "modIds": [
-        "itemphysiclite"
-      ]
+      "filename": "ItemPhysicLite_FORGE_v1.6.6_mc1.20.1.jar"
     },
     {
       "side": "client",
       "metadata": "mods/MineMenu.pw.toml",
-      "filename": "MineMenu-1.20.1-1.12.3.jar",
-      "modIds": [
-        "minemenu"
-      ]
+      "filename": "MineMenu-1.20.1-1.12.3.jar"
     },
     {
       "side": "client",
       "metadata": "mods/ModernUI.pw.toml",
-      "filename": "ModernUI-Forge-1.20.1-3.12.0.1-universal.jar",
-      "modIds": [
-        "modernui"
-      ]
+      "filename": "ModernUI-Forge-1.20.1-3.12.0.1-universal.jar"
     },
     {
       "side": "client",
       "metadata": "mods/MouseTweaks.pw.toml",
-      "filename": "MouseTweaks-forge-mc1.20.1-2.25.1.jar",
-      "modIds": [
-        "mousetweaks"
-      ]
+      "filename": "MouseTweaks-forge-mc1.20.1-2.25.1.jar"
     },
     {
       "side": "client",
       "metadata": "mods/PickUpNotifier.pw.toml",
-      "filename": "PickUpNotifier-v8.0.0-1.20.1-Forge.jar",
-      "modIds": [
-        "pickupnotifier"
-      ]
+      "filename": "PickUpNotifier-v8.0.0-1.20.1-Forge.jar"
     },
     {
       "side": "client",
       "metadata": "mods/PresenceFootsteps.pw.toml",
-      "filename": "PresenceFootsteps-1.20.1-1.9.1-beta.1.jar",
-      "modIds": [
-        "presencefootsteps"
-      ]
+      "filename": "PresenceFootsteps-1.20.1-1.9.1-beta.1.jar"
     },
     {
       "side": "client",
       "metadata": "mods/ShoulderSurfing.pw.toml",
-      "filename": "ShoulderSurfing-Forge-1.20.1-5.0.4.jar",
-      "modIds": [
-        "shouldersurfing"
-      ]
+      "filename": "ShoulderSurfing-Forge-1.20.1-5.0.4.jar"
     },
     {
       "side": "client",
       "metadata": "mods/Tetra View.pw.toml",
-      "filename": "Tetra View-6.9.0-1.0.2.jar",
-      "modIds": [
-        "tetra_view"
-      ]
+      "filename": "Tetra View-6.9.0-1.0.2.jar"
     },
     {
       "side": "client",
       "metadata": "mods/TravelersTitles.pw.toml",
-      "filename": "TravelersTitles-1.20-Forge-4.0.2.jar",
-      "modIds": [
-        "travelerstitles"
-      ]
+      "filename": "TravelersTitles-1.20-Forge-4.0.2.jar"
     },
     {
       "side": "client",
       "metadata": "mods/YeetusExperimentus.pw.toml",
-      "filename": "YeetusExperimentus-Forge-2.3.1-build.6+mc1.20.1.jar",
-      "modIds": [
-        "yeetusexperimentus"
-      ]
+      "filename": "YeetusExperimentus-Forge-2.3.1-build.6+mc1.20.1.jar"
     },
     {
       "side": "client",
       "metadata": "mods/acceleratedrendering.pw.toml",
-      "filename": "acceleratedrendering-1.0.7-1.20.1-alpha.jar",
-      "modIds": [
-        "acceleratedrendering",
-        "mixinextras"
-      ]
+      "filename": "acceleratedrendering-1.0.7-1.20.1-alpha.jar"
     },
     {
       "side": "client",
       "metadata": "mods/catalogue.pw.toml",
-      "filename": "catalogue-forge-1.20.1-1.8.0.jar",
-      "modIds": [
-        "catalogue"
-      ]
+      "filename": "catalogue-forge-1.20.1-1.8.0.jar"
     },
     {
       "side": "client",
       "metadata": "mods/certain_questing_additions.pw.toml",
-      "filename": "certain_questing_additions-forge-1.1.6+mc1.20.1.jar",
-      "modIds": [
-        "certain_questing_additions"
-      ]
+      "filename": "certain_questing_additions-forge-1.1.6+mc1.20.1.jar"
     },
     {
       "side": "client",
       "metadata": "mods/colorfulhearts.pw.toml",
-      "filename": "colorfulhearts-forge-1.20.1-4.3.16.jar",
-      "modIds": [
-        "colorfulhearts"
-      ]
+      "filename": "colorfulhearts-forge-1.20.1-4.3.16.jar"
     },
     {
       "side": "client",
       "metadata": "mods/colorwheel.pw.toml",
-      "filename": "colorwheel-forge-1.2.1+mc1.20.1.jar",
-      "modIds": [
-        "colorwheel"
-      ]
+      "filename": "colorwheel-forge-1.2.1+mc1.20.1.jar"
     },
     {
       "side": "client",
       "metadata": "mods/colorwheel_patcher.pw.toml",
-      "filename": "colorwheel_patcher-forge-1.0.4+mc1.20.1.jar",
-      "modIds": [
-        "colorwheel_patcher"
-      ]
+      "filename": "colorwheel_patcher-forge-1.0.4+mc1.20.1.jar"
     },
     {
       "side": "client",
       "metadata": "mods/drippyloadingscreen.pw.toml",
-      "filename": "drippyloadingscreen_forge_3.0.12_MC_1.20.1.jar",
-      "modIds": [
-        "drippyloadingscreen",
-        "mixinextras"
-      ]
+      "filename": "drippyloadingscreen_forge_3.0.12_MC_1.20.1.jar"
     },
     {
       "side": "client",
       "metadata": "mods/dynamic-fps.pw.toml",
-      "filename": "dynamic-fps-3.11.4+minecraft-1.20.0-forge.jar",
-      "modIds": [
-        "dynamic_fps",
-        "mixinextras"
-      ]
+      "filename": "dynamic-fps-3.11.4+minecraft-1.20.0-forge.jar"
     },
     {
       "side": "client",
       "metadata": "mods/dynamiccrosshair.pw.toml",
-      "filename": "dynamiccrosshair-9.10+1.20.1-forge.jar",
-      "modIds": [
-        "dynamiccrosshair",
-        "dynamiccrosshairapi",
-        "libbamboo",
-        "mixinextras"
-      ]
+      "filename": "dynamiccrosshair-9.10+1.20.1-forge.jar"
     },
     {
       "side": "client",
       "metadata": "mods/embeddium.pw.toml",
-      "filename": "embeddium-0.3.31+mc1.20.1.jar",
-      "modIds": [
-        "embeddium",
-        "mixinextras",
-        "rubidium"
-      ]
+      "filename": "embeddium-0.3.31+mc1.20.1.jar"
     },
     {
       "side": "client",
       "metadata": "mods/enhanced_boss_bars.pw.toml",
-      "filename": "enhanced_boss_bars-1.20.1-1.0.0.jar",
-      "modIds": [
-        "enhanced_boss_bars"
-      ]
+      "filename": "enhanced_boss_bars-1.20.1-1.0.0.jar"
     },
     {
       "side": "client",
       "metadata": "mods/entityculling.pw.toml",
-      "filename": "entityculling-forge-1.10.1-mc1.20.1.jar",
-      "modIds": [
-        "entityculling",
-        "transition",
-        "trender"
-      ]
+      "filename": "entityculling-forge-1.10.1-mc1.20.1.jar"
     },
     {
       "side": "client",
       "metadata": "mods/fancymenu.pw.toml",
-      "filename": "fancymenu_forge_3.7.0_MC_1.20.1.jar",
-      "modIds": [
-        "fancymenu",
-        "mixinextras"
-      ]
+      "filename": "fancymenu_forge_3.7.0_MC_1.20.1.jar"
     },
     {
       "side": "client",
       "metadata": "mods/fastboot.pw.toml",
-      "filename": "fastboot-1.20.x-1.2.jar",
-      "modIds": [
-        "fastboot"
-      ]
+      "filename": "fastboot-1.20.x-1.2.jar"
     },
     {
       "side": "client",
       "metadata": "mods/flerovium.pw.toml",
-      "filename": "flerovium-forge-1.20.1-1.2.18-all.jar",
-      "modIds": [
-        "flerovium",
-        "mixinextras"
-      ]
+      "filename": "flerovium-forge-1.20.1-1.2.18-all.jar"
     },
     {
       "side": "client",
       "metadata": "mods/iris_shader_folder.pw.toml",
-      "filename": "iris_shader_folder-1.3.1-forge.jar",
-      "modIds": [
-        "iris_shader_folder"
-      ]
+      "filename": "iris_shader_folder-1.3.1-forge.jar"
     },
     {
       "side": "client",
       "metadata": "mods/jecharacters.pw.toml",
-      "filename": "jecharacters-1.20.1-forge-4.6.3.jar",
-      "modIds": [
-        "jecharacters"
-      ]
+      "filename": "jecharacters-1.20.1-forge-4.6.3.jar"
     },
     {
       "side": "client",
       "metadata": "mods/jeed.pw.toml",
-      "filename": "jeed-1.20-2.2.5.jar",
-      "modIds": [
-        "jeed"
-      ]
+      "filename": "jeed-1.20-2.2.5.jar"
     },
     {
       "side": "client",
       "metadata": "mods/lucent.pw.toml",
-      "filename": "lucent-1.20.1-1.5.5.jar",
-      "modIds": [
-        "lucent"
-      ]
+      "filename": "lucent-1.20.1-1.5.5.jar"
     },
     {
       "side": "client",
       "metadata": "mods/mcwifipnp.pw.toml",
-      "filename": "mcwifipnp-1.7.6-1.20.1-forge.jar",
-      "modIds": [
-        "mcwifipnp"
-      ]
+      "filename": "mcwifipnp-1.7.6-1.20.1-forge.jar"
     },
     {
       "side": "client",
       "metadata": "mods/obscure_tooltips.pw.toml",
-      "filename": "obscure_tooltips-forge-1.20.1-3.10.0.jar",
-      "modIds": [
-        "obscure_tooltips"
-      ]
+      "filename": "obscure_tooltips-forge-1.20.1-3.10.0.jar"
     },
     {
       "side": "client",
       "metadata": "mods/oculus.pw.toml",
-      "filename": "oculus-mc1.20.1-1.8.0.jar",
-      "modIds": [
-        "oculus"
-      ]
+      "filename": "oculus-mc1.20.1-1.8.0.jar"
     },
     {
       "side": "client",
       "metadata": "mods/overloadedarmorbar.pw.toml",
-      "filename": "overloadedarmorbar-1.20.1-1.jar",
-      "modIds": [
-        "overloadedarmorbar"
-      ]
+      "filename": "overloadedarmorbar-1.20.1-1.jar"
     },
     {
       "side": "client",
       "metadata": "mods/ponderjs.pw.toml",
-      "filename": "ponderjs-1.20.1-2.1.0.jar",
-      "modIds": [
-        "flywheel",
-        "ponder",
-        "ponderjs"
-      ]
+      "filename": "ponderjs-1.20.1-2.1.0.jar"
     },
     {
       "side": "client",
       "metadata": "mods/screenshot_viewer.pw.toml",
-      "filename": "screenshot_viewer-1.3.2-forge-mc1.20.1.jar",
-      "modIds": [
-        "screenshot_viewer"
-      ]
+      "filename": "screenshot_viewer-1.3.2-forge-mc1.20.1.jar"
     },
     {
       "side": "client",
       "metadata": "mods/sodiumextras.pw.toml",
-      "filename": "sodiumextras-forge-1.0.7-1.20.1.jar",
-      "modIds": [
-        "mixinextras",
-        "sodiumextras"
-      ]
+      "filename": "sodiumextras-forge-1.0.7-1.20.1.jar"
     },
     {
       "side": "client",
       "metadata": "mods/vanillin.pw.toml",
-      "filename": "vanillin-forge-1.20.1-1.1.3.jar",
-      "modIds": [
-        "flywheel",
-        "mixinextras",
-        "vanillin"
-      ]
+      "filename": "vanillin-forge-1.20.1-1.1.3.jar"
     },
     {
       "side": "client",
       "metadata": "mods/visual_keybinder.pw.toml",
-      "filename": "visual_keybinder-1.20.1 - 0.1.12.jar",
-      "modIds": [
-        "visual_keybinder"
-      ]
+      "filename": "visual_keybinder-1.20.1 - 0.1.12.jar"
     },
     {
       "side": "common",
       "metadata": "mods/AE2NetworkAnalyzer.pw.toml",
-      "filename": "AE2NetworkAnalyzer-1.20-1.0.6-forge.jar",
-      "modIds": [
-        "ae2netanalyser"
-      ]
+      "filename": "AE2NetworkAnalyzer-1.20-1.0.6-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/AdvancedLootInfo.pw.toml",
-      "filename": "AdvancedLootInfo-forge-1.20.1-1.12.0.jar",
-      "modIds": [
-        "ali"
-      ]
+      "filename": "AdvancedLootInfo-forge-1.20.1-1.12.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/AdvancementPlaques.pw.toml",
-      "filename": "AdvancementPlaques-1.20.1-forge-1.6.9.jar",
-      "modIds": [
-        "advancementplaques"
-      ]
+      "filename": "AdvancementPlaques-1.20.1-forge-1.6.9.jar"
     },
     {
       "side": "common",
       "metadata": "mods/AlwaysEat.pw.toml",
-      "filename": "AlwaysEat-5.2.jar",
-      "modIds": [
-        "salwayseat"
-      ]
+      "filename": "AlwaysEat-5.2.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Apotheosis.pw.toml",
-      "filename": "Apotheosis-1.20.1-7.4.8.jar",
-      "modIds": [
-        "apotheosis"
-      ]
+      "filename": "Apotheosis-1.20.1-7.4.8.jar"
     },
     {
       "side": "common",
       "metadata": "mods/ApothicAttributes.pw.toml",
-      "filename": "ApothicAttributes-1.20.1-1.3.7.jar",
-      "modIds": [
-        "attributeslib"
-      ]
+      "filename": "ApothicAttributes-1.20.1-1.3.7.jar"
     },
     {
       "side": "common",
       "metadata": "mods/AttributeFix.pw.toml",
-      "filename": "AttributeFix-Forge-1.20.1-21.0.5.jar",
-      "modIds": [
-        "attributefix"
-      ]
+      "filename": "AttributeFix-Forge-1.20.1-21.0.5.jar"
     },
     {
       "side": "common",
       "metadata": "mods/BeeFix.pw.toml",
-      "filename": "BeeFix-1.20-1.0.7.jar",
-      "modIds": [
-        "beefix"
-      ]
+      "filename": "BeeFix-1.20-1.0.7.jar"
     },
     {
       "side": "common",
       "metadata": "mods/BetterCompatibilityChecker.pw.toml",
-      "filename": "BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar",
-      "modIds": [
-        "bcc"
-      ]
+      "filename": "BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Bookshelf.pw.toml",
-      "filename": "Bookshelf-Forge-1.20.1-20.2.15.jar",
-      "modIds": [
-        "bookshelf"
-      ]
+      "filename": "Bookshelf-Forge-1.20.1-20.2.15.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Bountiful.pw.toml",
-      "filename": "Bountiful-6.0.4+1.20.1-forge.jar",
-      "modIds": [
-        "bountiful"
-      ]
+      "filename": "Bountiful-6.0.4+1.20.1-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/BrewinAndChewin.pw.toml",
-      "filename": "BrewinAndChewin-1.20.1-3.2.1.jar",
-      "modIds": [
-        "brewinandchewin",
-        "mixinextras"
-      ]
+      "filename": "BrewinAndChewin-1.20.1-3.2.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Cave-Delight.pw.toml",
-      "filename": "Cave-Delight-1.20.1-2.0.1.jar",
-      "modIds": [
-        "cavedelight"
-      ]
+      "filename": "Cave-Delight-1.20.1-2.0.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Clumps.pw.toml",
-      "filename": "Clumps-forge-1.20.1-12.0.0.4.jar",
-      "modIds": [
-        "clumps"
-      ]
+      "filename": "Clumps-forge-1.20.1-12.0.0.4.jar"
     },
     {
       "side": "common",
       "metadata": "mods/CobbleForDays.pw.toml",
-      "filename": "CobbleForDays-1.8.0.jar",
-      "modIds": [
-        "cobblefordays"
-      ]
+      "filename": "CobbleForDays-1.8.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Create More Recipes.pw.toml",
-      "filename": "Create More Recipes-1.20.1-1.2.1-fix1.jar",
-      "modIds": [
-        "cmr"
-      ]
+      "filename": "Create More Recipes-1.20.1-1.2.1-fix1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Create-Better-Storages.pw.toml",
-      "filename": "Create-Better-Storages-Forge-1.20.1-1.0b.Release.jar",
-      "modIds": [
-        "create_bs",
-        "mixinextras"
-      ]
+      "filename": "Create-Better-Storages-Forge-1.20.1-1.0b.Release.jar"
     },
     {
       "side": "common",
       "metadata": "mods/create-delight-core.pw.toml",
-      "filename": "Create-Delight-Core-1.20.1-dev.jar",
-      "modIds": [
-        "createdelightcore"
-      ]
+      "filename": "Create-Delight-Core-1.20.1-dev.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Create-Utilities-J.pw.toml",
-      "filename": "Create-Utilities-J-1.20.1-0.3.3.jar",
-      "modIds": [
-        "createutilities"
-      ]
+      "filename": "Create-Utilities-J-1.20.1-0.3.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/CreateFastSchematicCannon.pw.toml",
-      "filename": "CreateFastSchematicCannon-1.4.1-6.0.x-forge-1.20.1.jar",
-      "modIds": [
-        "createfastschematiccannon"
-      ]
+      "filename": "CreateFastSchematicCannon-1.4.1-6.0.x-forge-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/CreateLazyTick.pw.toml",
-      "filename": "CreateLazyTick-2.4.9-6.0.x-forge-1.20.1.jar",
-      "modIds": [
-        "createlazytick"
-      ]
+      "filename": "CreateLazyTick-2.4.9-6.0.x-forge-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/CreativeCore.pw.toml",
-      "filename": "CreativeCore_FORGE_v2.12.35_mc1.20.1.jar",
-      "modIds": [
-        "creativecore"
-      ]
+      "filename": "CreativeCore_FORGE_v2.12.35_mc1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/DramaticDoors-QuiFabrge.pw.toml",
-      "filename": "DramaticDoors-QuiFabrge-1.20.1-3.3.3.jar",
-      "modIds": [
-        "dramaticdoors"
-      ]
+      "filename": "DramaticDoors-QuiFabrge-1.20.1-3.3.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Dumplings Delight.pw.toml",
-      "filename": "Dumplings Delight-1.20.1-Forge-1.3.2.jar",
-      "modIds": [
-        "dumplings_delight"
-      ]
+      "filename": "Dumplings Delight-1.20.1-Forge-1.3.2.jar"
     },
     {
       "side": "common",
       "metadata": "mods/EclipticSeasons.pw.toml",
-      "filename": "EclipticSeasons-1.20.1-forge-0.13.8.1-all.jar",
-      "modIds": [
-        "eclipticseasons",
-        "mixinextras"
-      ]
+      "filename": "EclipticSeasons-1.20.1-forge-0.13.8.1-all.jar"
     },
     {
       "side": "common",
       "metadata": "mods/ElysiumAPI.pw.toml",
-      "filename": "ElysiumAPI-1.20.1-1.1.3.jar",
-      "modIds": [
-        "elysium_api"
-      ]
+      "filename": "ElysiumAPI-1.20.1-1.1.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/ExplorersCompass.pw.toml",
-      "filename": "ExplorersCompass-1.20.1-1.4.0-forge.jar",
-      "modIds": [
-        "explorerscompass"
-      ]
+      "filename": "ExplorersCompass-1.20.1-1.4.0-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/ExtendedAE.pw.toml",
-      "filename": "ExtendedAE-1.20-1.4.14-forge.jar",
-      "modIds": [
-        "expatternprovider"
-      ]
+      "filename": "ExtendedAE-1.20-1.4.14-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/FarmersDelight.pw.toml",
-      "filename": "FarmersDelight-1.20.1-1.3.2.jar",
-      "modIds": [
-        "farmersdelight",
-        "mixinextras"
-      ]
+      "filename": "FarmersDelight-1.20.1-1.3.2.jar"
     },
     {
       "side": "common",
       "metadata": "mods/GatewaysToEternity.pw.toml",
-      "filename": "GatewaysToEternity-1.20.1-4.2.6.jar",
-      "modIds": [
-        "gateways"
-      ]
+      "filename": "GatewaysToEternity-1.20.1-4.2.6.jar"
     },
     {
       "side": "common",
       "metadata": "mods/GeoTetraArmor.pw.toml",
-      "filename": "GeoTetraArmor-6.9.0-1.0.4-fix.jar",
-      "modIds": [
-        "geotetraarmor",
-        "tetra_material_overhaul"
-      ]
+      "filename": "GeoTetraArmor-6.9.0-1.0.4-fix.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Glodium.pw.toml",
-      "filename": "Glodium-1.20-1.5-forge.jar",
-      "modIds": [
-        "glodium"
-      ]
+      "filename": "Glodium-1.20-1.5-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Harium.pw.toml",
-      "filename": "Harium-mc1.20.1-1.0.0.jar",
-      "modIds": [
-        "harium"
-      ]
+      "filename": "Harium-mc1.20.1-1.0.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/IAS.pw.toml",
-      "filename": "IAS-Forge-1.20.1-9.0.0.jar",
-      "modIds": [
-        "ias"
-      ]
+      "filename": "IAS-Forge-1.20.1-9.0.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Iceberg.pw.toml",
-      "filename": "Iceberg-1.20.1-forge-1.1.25.jar",
-      "modIds": [
-        "iceberg"
-      ]
+      "filename": "Iceberg-1.20.1-forge-1.1.25.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Icterine.pw.toml",
-      "filename": "Icterine-forge-1.20.0-1-1.3.0.jar",
-      "modIds": [
-        "icterine"
-      ]
+      "filename": "Icterine-forge-1.20.0-1-1.3.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Industrial Platform.pw.toml",
-      "filename": "Industrial Platform-1.20.1-1.7.1.jar",
-      "modIds": [
-        "industrial_platform"
-      ]
+      "filename": "Industrial Platform-1.20.1-1.7.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/JEI Tetra.pw.toml",
-      "filename": "JEI Tetra-6.9.0-1.2.2.1.jar",
-      "modIds": [
-        "jeitetra"
-      ]
+      "filename": "JEI Tetra-6.9.0-1.2.2.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Jade.pw.toml",
-      "filename": "Jade-1.20.1-Forge-11.13.2.jar",
-      "modIds": [
-        "jade"
-      ]
+      "filename": "Jade-1.20.1-Forge-11.13.2.jar"
     },
     {
       "side": "common",
       "metadata": "mods/JadeAddons.pw.toml",
-      "filename": "JadeAddons-1.20.1-Forge-5.5.0.jar",
-      "modIds": [
-        "jadeaddons"
-      ]
+      "filename": "JadeAddons-1.20.1-Forge-5.5.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Jadens-Nether-Expansion.pw.toml",
-      "filename": "Jadens-Nether-Expansion-2.3.5.jar",
-      "modIds": [
-        "mixinextras",
-        "netherexp"
-      ]
+      "filename": "Jadens-Nether-Expansion-2.3.5.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Kambrik.pw.toml",
-      "filename": "Kambrik-6.1.1+1.20.1-forge.jar",
-      "modIds": [
-        "kambrik"
-      ]
+      "filename": "Kambrik-6.1.1+1.20.1-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Kiwi.pw.toml",
-      "filename": "Kiwi-1.20.1-Forge-11.10.1.jar",
-      "modIds": [
-        "kiwi",
-        "mixinextras"
-      ]
+      "filename": "Kiwi-1.20.1-Forge-11.10.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Krypton FNP.pw.toml",
-      "filename": "Krypton FNP-forge-1.20.1-0.2.28.2-1.20.1.jar",
-      "modIds": [
-        "krypton_fnp"
-      ]
+      "filename": "Krypton FNP-forge-1.20.1-0.2.28.2-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/L_Enders_Cataclysm.pw.toml",
-      "filename": "L_Enders_Cataclysm-3.16.jar",
-      "modIds": [
-        "cataclysm"
-      ]
+      "filename": "L_Enders_Cataclysm-3.16.jar"
     },
     {
       "side": "common",
       "metadata": "mods/MEED.pw.toml",
-      "filename": "MEED-1.20.1-7.9.jar",
-      "modIds": [
-        "meed"
-      ]
+      "filename": "MEED-1.20.1-7.9.jar"
     },
     {
       "side": "common",
       "metadata": "mods/MoreRequirement.pw.toml",
-      "filename": "MoreRequirement-1.2.3.jar",
-      "modIds": [
-        "morerequirement"
-      ]
+      "filename": "MoreRequirement-1.2.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/MyNethersDelight.pw.toml",
-      "filename": "MyNethersDelight-1.20.1-0.1.8.jar",
-      "modIds": [
-        "mynethersdelight"
-      ]
+      "filename": "MyNethersDelight-1.20.1-0.1.8.jar"
     },
     {
       "side": "common",
       "metadata": "mods/NaturesCompass.pw.toml",
-      "filename": "NaturesCompass-1.20.1-1.12.0-forge.jar",
-      "modIds": [
-        "naturescompass"
-      ]
+      "filename": "NaturesCompass-1.20.1-1.12.0-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/NoChatReports.pw.toml",
-      "filename": "NoChatReports-FORGE-1.20.1-v2.2.2.jar",
-      "modIds": [
-        "nochatreports"
-      ]
+      "filename": "NoChatReports-FORGE-1.20.1-v2.2.2.jar"
     },
     {
       "side": "common",
       "metadata": "mods/northstar.pw.toml",
-      "filename": "Northstar-0.6.1+1.20.1.jar",
-      "modIds": [
-        "northstar"
-      ]
+      "filename": "Northstar-0.6.1+1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/OELib.pw.toml",
-      "filename": "OELib-forge-1.20.1-0.2.3.jar",
-      "modIds": [
-        "oelib"
-      ]
+      "filename": "OELib-forge-1.20.1-0.2.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/OneEnoughItem.pw.toml",
-      "filename": "OneEnoughItem-1.0.7-hotfix.jar",
-      "modIds": [
-        "oneenoughitem"
-      ]
+      "filename": "OneEnoughItem-1.0.7-hotfix.jar"
     },
     {
       "side": "common",
       "metadata": "mods/OneEnoughValue.pw.toml",
-      "filename": "OneEnoughValue-1.0.2.jar",
-      "modIds": [
-        "oneenoughvalue"
-      ]
+      "filename": "OneEnoughValue-1.0.2.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Placebo.pw.toml",
-      "filename": "Placebo-1.20.1-8.6.3.jar",
-      "modIds": [
-        "placebo"
-      ]
+      "filename": "Placebo-1.20.1-8.6.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Prism.pw.toml",
-      "filename": "Prism-1.20.1-forge-1.0.5.jar",
-      "modIds": [
-        "prism"
-      ]
+      "filename": "Prism-1.20.1-forge-1.0.5.jar"
     },
     {
       "side": "common",
       "metadata": "mods/PuzzlesLib.pw.toml",
-      "filename": "PuzzlesLib-v8.1.33-1.20.1-Forge.jar",
-      "modIds": [
-        "mixinextras",
-        "puzzlesaccessapi",
-        "puzzleslib"
-      ]
+      "filename": "PuzzlesLib-v8.1.33-1.20.1-Forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Quark.pw.toml",
-      "filename": "Quark-4.0-462.jar",
-      "modIds": [
-        "quark"
-      ]
+      "filename": "Quark-4.0-462.jar"
     },
     {
       "side": "common",
       "metadata": "mods/QuarkOddities.pw.toml",
-      "filename": "QuarkOddities-1.20.1.jar",
-      "modIds": [
-        "quarkoddities"
-      ]
+      "filename": "QuarkOddities-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Resourcify.pw.toml",
-      "filename": "Resourcify (1.20.1-forge)-1.8.1.jar",
-      "modIds": [
-        "resourcify"
-      ]
+      "filename": "Resourcify (1.20.1-forge)-1.8.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Searchables.pw.toml",
-      "filename": "Searchables-forge-1.20.1-1.0.3.jar",
-      "modIds": [
-        "searchables"
-      ]
+      "filename": "Searchables-forge-1.20.1-1.0.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/SimpleBackups.pw.toml",
-      "filename": "SimpleBackups-1.20.1-3.1.24.jar",
-      "modIds": [
-        "simplebackups"
-      ]
+      "filename": "SimpleBackups-1.20.1-3.1.24.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Stamp Album.pw.toml",
-      "filename": "Stamp Album-1.20.1-forge-1.1.1.jar",
-      "modIds": [
-        "stampalbum"
-      ]
+      "filename": "Stamp Album-1.20.1-forge-1.1.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Steam_Rails.pw.toml",
-      "filename": "Steam_Rails-1.7.2+forge-mc1.20.1.jar",
-      "modIds": [
-        "railways"
-      ]
+      "filename": "Steam_Rails-1.7.2+forge-mc1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Terralith.pw.toml",
-      "filename": "Terralith_1.20.x_v2.5.4.jar",
-      "modIds": [
-        "terralith"
-      ]
+      "filename": "Terralith_1.20.x_v2.5.4.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Tetra JS.pw.toml",
-      "filename": "Tetra JS-2001-6.9.0-1.0.2.jar",
-      "modIds": [
-        "tetrajs"
-      ]
+      "filename": "Tetra JS-2001-6.9.0-1.0.2.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Tips.pw.toml",
-      "filename": "Tips-Forge-1.20.1-12.1.9.jar",
-      "modIds": [
-        "tipsmod"
-      ]
+      "filename": "Tips-Forge-1.20.1-12.1.9.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Towns-and-Towers.pw.toml",
-      "filename": "Towns-and-Towers-1.12-Fabric+Forge.jar",
-      "modIds": [
-        "t_and_t"
-      ]
+      "filename": "Towns-and-Towers-1.12-Fabric+Forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/YungsApi.pw.toml",
-      "filename": "YungsApi-1.20-Forge-4.0.6.jar",
-      "modIds": [
-        "yungsapi"
-      ]
+      "filename": "YungsApi-1.20-Forge-4.0.6.jar"
     },
     {
       "side": "common",
       "metadata": "mods/YungsBetterEndIsland.pw.toml",
-      "filename": "YungsBetterEndIsland-1.20-Forge-2.0.6.jar",
-      "modIds": [
-        "betterendisland"
-      ]
+      "filename": "YungsBetterEndIsland-1.20-Forge-2.0.6.jar"
     },
     {
       "side": "common",
       "metadata": "mods/YungsBetterMineshafts.pw.toml",
-      "filename": "YungsBetterMineshafts-1.20-Forge-4.0.4.jar",
-      "modIds": [
-        "bettermineshafts"
-      ]
+      "filename": "YungsBetterMineshafts-1.20-Forge-4.0.4.jar"
     },
     {
       "side": "common",
       "metadata": "mods/YungsBetterWitchHuts.pw.toml",
-      "filename": "YungsBetterWitchHuts-1.20-Forge-3.0.3.jar",
-      "modIds": [
-        "betterwitchhuts"
-      ]
+      "filename": "YungsBetterWitchHuts-1.20-Forge-3.0.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/YungsExtras.pw.toml",
-      "filename": "YungsExtras-1.20-Forge-4.0.3.jar",
-      "modIds": [
-        "yungsextras"
-      ]
+      "filename": "YungsExtras-1.20-Forge-4.0.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/Zeta.pw.toml",
-      "filename": "Zeta-1.0-31.jar",
-      "modIds": [
-        "mixinextras",
-        "zeta"
-      ]
+      "filename": "Zeta-1.0-31.jar"
     },
     {
       "side": "common",
       "metadata": "mods/forge1-20-1-tetra-clip.pw.toml",
-      "filename": "[Forge1.20.1]TetraClip-1.0.5.jar",
-      "modIds": [
-        "tetraclip"
-      ]
+      "filename": "[Forge1.20.1]TetraClip-1.0.5.jar"
     },
     {
       "side": "common",
       "metadata": "mods/abnormals_delight.pw.toml",
-      "filename": "abnormals_delight-1.20.1-5.0.1.jar",
-      "modIds": [
-        "abnormals_delight"
-      ]
+      "filename": "abnormals_delight-1.20.1-5.0.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/accessories.pw.toml",
-      "filename": "accessories-neoforge-1.0.0-beta.48+1.20.1.jar",
-      "modIds": [
-        "accessories",
-        "fabric_api_base",
-        "fabric_data_attachment_api_v1",
-        "fabric_entity_events_v1",
-        "fabric_object_builder_api_v1",
-        "mixinextras"
-      ]
+      "filename": "accessories-neoforge-1.0.0-beta.48+1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/advancements_tracker.pw.toml",
-      "filename": "advancements_tracker_1.20.1-6.1.0.jar",
-      "modIds": [
-        "advancements_tracker"
-      ]
+      "filename": "advancements_tracker_1.20.1-6.1.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/ae2ct.pw.toml",
-      "filename": "ae2ct-1.20.1-1.1.1.jar",
-      "modIds": [
-        "ae2ct"
-      ]
+      "filename": "ae2ct-1.20.1-1.1.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/ae2omnicells.pw.toml",
-      "filename": "ae2omnicells-1.20.1-forge-1.1.1.jar",
-      "modIds": [
-        "ae2omnicells"
-      ]
+      "filename": "ae2omnicells-1.20.1-forge-1.1.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/ae2wtlib.pw.toml",
-      "filename": "ae2wtlib-15.3.3-forge.jar",
-      "modIds": [
-        "ae2wtlib"
-      ]
+      "filename": "ae2wtlib-15.3.3-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/alex_cave_addon.pw.toml",
-      "filename": "alex_cave_addon-5.1.0-1.20.1.jar",
-      "modIds": [
-        "alex_cave_addon",
-        "mixinextras"
-      ]
+      "filename": "alex_cave_addon-5.1.0-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/alexscaves.pw.toml",
-      "filename": "alexscaves-2.0.2.jar",
-      "modIds": [
-        "alexscaves"
-      ]
+      "filename": "alexscaves-2.0.2.jar"
     },
     {
       "side": "common",
       "metadata": "mods/alexsdelight.pw.toml",
-      "filename": "alexsdelight-1.5.jar",
-      "modIds": [
-        "alexsdelight"
-      ]
+      "filename": "alexsdelight-1.5.jar"
     },
     {
       "side": "common",
       "metadata": "mods/alexsmobs.pw.toml",
-      "filename": "alexsmobs-1.22.9.jar",
-      "modIds": [
-        "alexsmobs"
-      ]
+      "filename": "alexsmobs-1.22.9.jar"
     },
     {
       "side": "common",
       "metadata": "mods/amendments.pw.toml",
-      "filename": "amendments-1.20-2.2.5.jar",
-      "modIds": [
-        "amendments",
-        "mixinextras"
-      ]
+      "filename": "amendments-1.20-2.2.5.jar"
     },
     {
       "side": "common",
       "metadata": "mods/appleskin.pw.toml",
-      "filename": "appleskin-forge-mc1.20.1-2.5.1.jar",
-      "modIds": [
-        "appleskin"
-      ]
+      "filename": "appleskin-forge-mc1.20.1-2.5.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/appliedcreate.pw.toml",
-      "filename": "appliedcreate-1.20.1-1.1.5.jar",
-      "modIds": [
-        "appliedcreate"
-      ]
+      "filename": "appliedcreate-1.20.1-1.1.5.jar"
     },
     {
       "side": "common",
       "metadata": "mods/appliedenergistics2.pw.toml",
-      "filename": "appliedenergistics2-forge-15.4.10.jar",
-      "modIds": [
-        "ae2"
-      ]
+      "filename": "appliedenergistics2-forge-15.4.10.jar"
     },
     {
       "side": "common",
       "metadata": "mods/architectury.pw.toml",
-      "filename": "architectury-9.2.14-forge.jar",
-      "modIds": [
-        "architectury"
-      ]
+      "filename": "architectury-9.2.14-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/bakeries.pw.toml",
-      "filename": "bakeries-1.20.1-forge-1.2.5.jar",
-      "modIds": [
-        "bakeries"
-      ]
+      "filename": "bakeries-1.20.1-forge-1.2.5.jar"
     },
     {
       "side": "common",
       "metadata": "mods/balm.pw.toml",
-      "filename": "balm-forge-1.20.1-7.3.38-all.jar",
-      "modIds": [
-        "balm",
-        "kuma_api"
-      ]
+      "filename": "balm-forge-1.20.1-7.3.38-all.jar"
     },
     {
       "side": "common",
       "metadata": "mods/bettercombat.pw.toml",
-      "filename": "bettercombat-forge-1.9.0+1.20.1.jar",
-      "modIds": [
-        "bettercombat",
-        "mixinextras"
-      ]
+      "filename": "bettercombat-forge-1.9.0+1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/biomereplacer.pw.toml",
-      "filename": "biomereplacer-2.2-hippo-forge.jar",
-      "modIds": [
-        "biome_replacer",
-        "mixinextras"
-      ]
+      "filename": "biomereplacer-2.2-hippo-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/biomespy.pw.toml",
-      "filename": "biomespy-1.3.3-all.jar",
-      "modIds": [
-        "biomespy",
-        "mixinextras"
-      ]
+      "filename": "biomespy-1.3.3-all.jar"
     },
     {
       "side": "common",
       "metadata": "mods/bits_n_bobs.pw.toml",
-      "filename": "bits_n_bobs-0.0.41.jar",
-      "modIds": [
-        "bits_n_bobs"
-      ]
+      "filename": "bits_n_bobs-0.0.41.jar"
     },
     {
       "side": "common",
       "metadata": "mods/blackknightarmor.pw.toml",
-      "filename": "blackknightarmor-1.0.3-20260322-1620-reobf.jar",
-      "modIds": [
-        "blackknightarmor"
-      ]
+      "filename": "blackknightarmor-1.0.3-20260322-1620-reobf.jar"
     },
     {
       "side": "common",
       "metadata": "mods/blueprint.pw.toml",
-      "filename": "blueprint-1.20.1-7.1.3.jar",
-      "modIds": [
-        "blueprint"
-      ]
+      "filename": "blueprint-1.20.1-7.1.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/botarium.pw.toml",
-      "filename": "botarium-forge-1.20.1-2.3.4.jar",
-      "modIds": [
-        "botarium"
-      ]
+      "filename": "botarium-forge-1.20.1-2.3.4.jar"
     },
     {
       "side": "common",
       "metadata": "mods/butchercraft.pw.toml",
-      "filename": "butchercraft-2.4.1.jar",
-      "modIds": [
-        "butchercraft"
-      ]
+      "filename": "butchercraft-2.4.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/caelus.pw.toml",
-      "filename": "caelus-forge-3.2.0+1.20.1.jar",
-      "modIds": [
-        "caelus"
-      ]
+      "filename": "caelus-forge-3.2.0+1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/carryon.pw.toml",
-      "filename": "carryon-forge-1.20.1-2.1.2.7.jar",
-      "modIds": [
-        "carryon",
-        "mixinextras"
-      ]
+      "filename": "carryon-forge-1.20.1-2.1.2.7.jar"
     },
     {
       "side": "common",
       "metadata": "mods/casualness_delight.pw.toml",
-      "filename": "casualness_delight-1.20.1-0.4n.jar",
-      "modIds": [
-        "casualness_delight"
-      ]
+      "filename": "casualness_delight-1.20.1-0.4n.jar"
     },
     {
       "side": "common",
       "metadata": "mods/centralvintage.pw.toml",
-      "filename": "centralvintage-1.2.1.jar",
-      "modIds": [
-        "centralvintage"
-      ]
+      "filename": "centralvintage-1.2.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/charmofundying.pw.toml",
-      "filename": "charmofundying-forge-6.5.0+1.20.1.jar",
-      "modIds": [
-        "charmofundying",
-        "spectrelib"
-      ]
+      "filename": "charmofundying-forge-6.5.0+1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/chat_heads.pw.toml",
-      "filename": "chat_heads-0.15.2-forge-1.20.jar",
-      "modIds": [
-        "chat_heads"
-      ]
+      "filename": "chat_heads-0.15.2-forge-1.20.jar"
     },
     {
       "side": "common",
       "metadata": "mods/chefsdelight.pw.toml",
-      "filename": "chefsdelight-1.0.4-forge-1.20.1.jar",
-      "modIds": [
-        "chefsdelight"
-      ]
+      "filename": "chefsdelight-1.0.4-forge-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/citadel.pw.toml",
-      "filename": "citadel-2.6.3-1.20.1.jar",
-      "modIds": [
-        "citadel"
-      ]
+      "filename": "citadel-2.6.3-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/cloth-config.pw.toml",
-      "filename": "cloth-config-11.1.136-forge.jar",
-      "modIds": [
-        "cloth_config"
-      ]
+      "filename": "cloth-config-11.1.136-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/cmpackagecouriers.pw.toml",
-      "filename": "cmpackagecouriers-forge-2.2.2.jar",
-      "modIds": [
-        "cmpackagecouriers",
-        "create_factory_abstractions"
-      ]
+      "filename": "cmpackagecouriers-forge-2.2.2.jar"
     },
     {
       "side": "common",
       "metadata": "mods/cmparallelpipes.pw.toml",
-      "filename": "cmparallelpipes-forge-2.0.3.jar",
-      "modIds": [
-        "cmparallelpipes"
-      ]
+      "filename": "cmparallelpipes-forge-2.0.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/cobweb.pw.toml",
-      "filename": "cobweb-forge-1.20.1-1.0.1.jar",
-      "modIds": [
-        "cobweb"
-      ]
+      "filename": "cobweb-forge-1.20.1-1.0.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/collectorsreap.pw.toml",
-      "filename": "collectorsreap-1.20.1-1.5.5.jar",
-      "modIds": [
-        "collectorsreap"
-      ]
+      "filename": "collectorsreap-1.20.1-1.5.5.jar"
     },
     {
       "side": "common",
       "metadata": "mods/comforts.pw.toml",
-      "filename": "comforts-forge-6.4.0+1.20.1.jar",
-      "modIds": [
-        "comforts",
-        "spectrelib"
-      ]
+      "filename": "comforts-forge-6.4.0+1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/configured.pw.toml",
-      "filename": "configured-forge-1.20.1-2.2.3.jar",
-      "modIds": [
-        "configured"
-      ]
+      "filename": "configured-forge-1.20.1-2.2.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/constructionwand.pw.toml",
-      "filename": "constructionwand-1.20.1-2.11.jar",
-      "modIds": [
-        "constructionwand"
-      ]
+      "filename": "constructionwand-1.20.1-2.11.jar"
     },
     {
       "side": "common",
       "metadata": "mods/copycats.pw.toml",
-      "filename": "copycats-3.0.7+mc.1.20.1-forge.jar",
-      "modIds": [
-        "copycats",
-        "mixinextras"
-      ]
+      "filename": "copycats-3.0.7+mc.1.20.1-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/corn_delight.pw.toml",
-      "filename": "corn_delight-1.2.11-1.20.1.jar",
-      "modIds": [
-        "corn_delight"
-      ]
+      "filename": "corn_delight-1.2.11-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/coroutil.pw.toml",
-      "filename": "coroutil-forge-1.20.1-1.3.7.jar",
-      "modIds": [
-        "coroutil"
-      ]
+      "filename": "coroutil-forge-1.20.1-1.3.7.jar"
     },
     {
       "side": "common",
       "metadata": "mods/cosmeticarmorreworked.pw.toml",
-      "filename": "cosmeticarmorreworked-1.20.1-v1a.jar",
-      "modIds": [
-        "cosmeticarmorreworked"
-      ]
+      "filename": "cosmeticarmorreworked-1.20.1-v1a.jar"
     },
     {
       "side": "common",
       "metadata": "mods/cosmopolitan.pw.toml",
-      "filename": "cosmopolitan-1.20.1-1.5.3.jar",
-      "modIds": [
-        "cosmopolitan"
-      ]
+      "filename": "cosmopolitan-1.20.1-1.5.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/crabbersdelight.pw.toml",
-      "filename": "crabbersdelight-1.20.1-1.2.3.jar",
-      "modIds": [
-        "crabbersdelight"
-      ]
+      "filename": "crabbersdelight-1.20.1-1.2.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/cratedelight.pw.toml",
-      "filename": "cratedelight-26.07.01-1.20-forge.jar",
-      "modIds": [
-        "cratedelight"
-      ]
+      "filename": "cratedelight-26.07.01-1.20-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/create.pw.toml",
-      "filename": "create-1.20.1-6.0.8.jar",
-      "modIds": [
-        "create",
-        "flywheel",
-        "mixinextras",
-        "ponder"
-      ]
+      "filename": "create-1.20.1-6.0.8.jar"
     },
     {
       "side": "common",
       "metadata": "mods/create-confectionery.pw.toml",
-      "filename": "create-confectionery1.20.1_v1.1.3.jar",
-      "modIds": [
-        "create_confectionery"
-      ]
+      "filename": "create-confectionery1.20.1_v1.1.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/create-integrated-farming.pw.toml",
-      "filename": "create-integrated-farming-1.2.6-1.20.1.jar",
-      "modIds": [
-        "conditional_mixin",
-        "create_integrated_farming",
-        "mixinextras"
-      ]
+      "filename": "create-integrated-farming-1.2.6-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/create-new-age.pw.toml",
-      "filename": "create-new-age-1.2.0+forge-mc1.20.1.jar",
-      "modIds": [
-        "create_new_age",
-        "esl",
-        "mixinextras"
-      ]
+      "filename": "create-new-age-1.2.0+forge-mc1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/create-stuff-additions.pw.toml",
-      "filename": "create-stuff-additions1.20.1_v2.1.2.jar",
-      "modIds": [
-        "create_sa"
-      ]
+      "filename": "create-stuff-additions1.20.1_v2.1.2.jar"
     },
     {
       "side": "common",
       "metadata": "mods/create_central_kitchen.pw.toml",
-      "filename": "create_central_kitchen-1.20.1-for-create-6.0.8-1.5.0.jar",
-      "modIds": [
-        "create_central_kitchen",
-        "mixinextras"
-      ]
+      "filename": "create_central_kitchen-1.20.1-for-create-6.0.8-1.5.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/create_compatible_storage.pw.toml",
-      "filename": "create_compatible_storage-2.11.0-all.jar",
-      "modIds": [
-        "create_compatible_storage"
-      ]
+      "filename": "create_compatible_storage-2.11.0-all.jar"
     },
     {
       "side": "common",
       "metadata": "mods/create_connected.pw.toml",
-      "filename": "create_connected-1.1.13-mc1.20.1-all.jar",
-      "modIds": [
-        "create_connected",
-        "mixinextras"
-      ]
+      "filename": "create_connected-1.1.13-mc1.20.1-all.jar"
     },
     {
       "side": "common",
       "metadata": "mods/create_deepfried.pw.toml",
-      "filename": "create_deepfried-forge-1.20.1-0.1.3C.jar",
-      "modIds": [
-        "create_deepfried"
-      ]
+      "filename": "create_deepfried-forge-1.20.1-0.1.3C.jar"
     },
     {
       "side": "common",
       "metadata": "mods/create_enchantment_industry.pw.toml",
-      "filename": "create_enchantment_industry-1.4.0-for-create-6.0.8.jar",
-      "modIds": [
-        "create_enchantment_industry"
-      ]
+      "filename": "create_enchantment_industry-1.4.0-for-create-6.0.8.jar"
     },
     {
       "side": "common",
       "metadata": "mods/create-enhanced-schematicannon.pw.toml",
-      "filename": "create_enhanced_schematicannon-1.0.4-fork.jar",
-      "modIds": [
-        "create_enhanced_schematicannon"
-      ]
+      "filename": "create_enhanced_schematicannon-1.0.4-fork.jar"
     },
     {
       "side": "common",
       "metadata": "mods/create_fantasizing.pw.toml",
-      "filename": "create_fantasizing-1.20.1-1.1.1.jar",
-      "modIds": [
-        "create_fantasizing"
-      ]
+      "filename": "create_fantasizing-1.20.1-1.1.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/create_jetpack.pw.toml",
-      "filename": "create_jetpack-forge-4.4.6.jar",
-      "modIds": [
-        "create_jetpack",
-        "flightlib",
-        "mixinextras"
-      ]
+      "filename": "create_jetpack-forge-4.4.6.jar"
     },
     {
       "side": "common",
       "metadata": "mods/create_jetpack_curios.pw.toml",
-      "filename": "create_jetpack_curios-1.2.0-forge-1.20.1.jar",
-      "modIds": [
-        "create_jetpack_curios"
-      ]
+      "filename": "create_jetpack_curios-1.2.0-forge-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/create_mechanical_spawner.pw.toml",
-      "filename": "create_mechanical_spawner-1.20.1-0.1.7-6.0.6.jar",
-      "modIds": [
-        "create_mechanical_spawner"
-      ]
+      "filename": "create_mechanical_spawner-1.20.1-0.1.7-6.0.6.jar"
     },
     {
       "side": "common",
       "metadata": "mods/create_oppenheimered.pw.toml",
-      "filename": "create_oppenheimered-1.0.5.jar",
-      "modIds": [
-        "create_oppenheimered"
-      ]
+      "filename": "create_oppenheimered-1.0.5.jar"
     },
     {
       "side": "common",
       "metadata": "mods/create_pattern_schematics.pw.toml",
-      "filename": "create_pattern_schematics-1.3.3.jar",
-      "modIds": [
-        "create_pattern_schematics"
-      ]
+      "filename": "create_pattern_schematics-1.3.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/create_ratatouille.pw.toml",
-      "filename": "create_ratatouille-1.20.1-1.3.8.jar",
-      "modIds": [
-        "ratatouille"
-      ]
+      "filename": "create_ratatouille-1.20.1-1.3.8.jar"
     },
     {
       "side": "common",
       "metadata": "mods/create_rustic_structures.pw.toml",
-      "filename": "create_rustic_structures-1.0.0-forge-1.20.1.jar",
-      "modIds": [
-        "create_rustic_structures"
-      ]
+      "filename": "create_rustic_structures-1.0.0-forge-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/create_structures_arise.pw.toml",
-      "filename": "create_structures_arise-176.49.48 Forge 1.20.1.jar",
-      "modIds": [
-        "create_structures_arise"
-      ]
+      "filename": "create_structures_arise-176.49.48 Forge 1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/createaddition.pw.toml",
-      "filename": "createaddition-1.20.1-1.3.3.jar",
-      "modIds": [
-        "createaddition"
-      ]
+      "filename": "createaddition-1.20.1-1.3.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/createadditionallogistics.pw.toml",
-      "filename": "createadditionallogistics-1.20.1-1.4.5.jar",
-      "modIds": [
-        "createadditionallogistics"
-      ]
+      "filename": "createadditionallogistics-1.20.1-1.4.5.jar"
     },
     {
       "side": "common",
       "metadata": "mods/createbetterfps.pw.toml",
-      "filename": "createbetterfps-1.20.1-1.1.1.jar",
-      "modIds": [
-        "createbetterfps"
-      ]
+      "filename": "createbetterfps-1.20.1-1.1.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/createbicbit.pw.toml",
-      "filename": "createbicbit-forge-1.20.1-1.0.2B.jar",
-      "modIds": [
-        "create_bic_bit"
-      ]
+      "filename": "createbicbit-forge-1.20.1-1.0.2B.jar"
     },
     {
       "side": "common",
       "metadata": "mods/createbiggerstoragetocreate6.pw.toml",
-      "filename": "createbiggerstoragetocreate6-1.1.jar",
-      "modIds": [
-        "createbiggerstoragetocreate6"
-      ]
+      "filename": "createbiggerstoragetocreate6-1.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/createcafe.pw.toml",
-      "filename": "createcafe-1.3-1.20.1.jar",
-      "modIds": [
-        "createcafe"
-      ]
+      "filename": "createcafe-1.3-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/createdeco.pw.toml",
-      "filename": "createdeco-2.0.3-1.20.1-forge.jar",
-      "modIds": [
-        "createdeco"
-      ]
+      "filename": "createdeco-2.0.3-1.20.1-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/createdieselgenerators.pw.toml",
-      "filename": "createdieselgenerators-1.20.1-1.3.12.jar",
-      "modIds": [
-        "createdieselgenerators"
-      ]
+      "filename": "createdieselgenerators-1.20.1-1.3.12.jar"
     },
     {
       "side": "common",
       "metadata": "mods/createfactorycontroller.pw.toml",
-      "filename": "createfactorycontroller-1.0.0-1.20.1-alpha-2.jar",
-      "modIds": [
-        "createfactorycontroller"
-      ]
+      "filename": "createfactorycontroller-1.0.0-1.20.1-alpha-2.jar"
     },
     {
       "side": "common",
       "metadata": "mods/createfluidstuffs.pw.toml",
-      "filename": "createfluidstuffs-1.2.1-all.jar",
-      "modIds": [
-        "create_dragon_lib",
-        "createfluidstuffs"
-      ]
+      "filename": "createfluidstuffs-1.2.1-all.jar"
     },
     {
       "side": "common",
       "metadata": "mods/createidlx.pw.toml",
-      "filename": "createidlx-1.20.1-1.3.jar",
-      "modIds": [
-        "createidlx"
-      ]
+      "filename": "createidlx-1.20.1-1.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/createliquidfuel.pw.toml",
-      "filename": "createliquidfuel-2.1.1-1.20.1.jar",
-      "modIds": [
-        "createliquidfuel"
-      ]
+      "filename": "createliquidfuel-2.1.1-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/createmetallurgy.pw.toml",
-      "filename": "createmetallurgy-1.0.1-1.20.1.jar",
-      "modIds": [
-        "createmetallurgy"
-      ]
+      "filename": "createmetallurgy-1.0.1-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/createoreexcavation.pw.toml",
-      "filename": "createoreexcavation-1.20-1.6.5.jar",
-      "modIds": [
-        "createoreexcavation"
-      ]
+      "filename": "createoreexcavation-1.20-1.6.5.jar"
     },
     {
       "side": "common",
       "metadata": "mods/createprism.pw.toml",
-      "filename": "createprism-1.20-1.1.0.jar",
-      "modIds": [
-        "createprism"
-      ]
+      "filename": "createprism-1.20-1.1.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/createrailwaysnavigator.pw.toml",
-      "filename": "createrailwaysnavigator-forge-1.20.1-alpha-0.9.0-C6+2.jar",
-      "modIds": [
-        "createrailwaysnavigator"
-      ]
+      "filename": "createrailwaysnavigator-forge-1.20.1-alpha-0.9.0-C6+2.jar"
     },
     {
       "side": "common",
       "metadata": "mods/createredstonelinkgui.pw.toml",
-      "filename": "createredstonelinkgui-1.20.1-1.9.1.jar",
-      "modIds": [
-        "createredstonelinkgui"
-      ]
+      "filename": "createredstonelinkgui-1.20.1-1.9.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/createsolar.pw.toml",
-      "filename": "createsolar-1.2.6-1.20.1.jar",
-      "modIds": [
-        "createsolar"
-      ]
+      "filename": "createsolar-1.2.6-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/createstockbridge.pw.toml",
-      "filename": "createstockbridge-1.20-0.2.0.jar",
-      "modIds": [
-        "createstockbridge"
-      ]
+      "filename": "createstockbridge-1.20-0.2.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/createtransmission.pw.toml",
-      "filename": "createtransmission-1.1.0+forge-create6-1.20.1.jar",
-      "modIds": [
-        "createtransmission"
-      ]
+      "filename": "createtransmission-1.1.0+forge-create6-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/createultimine.pw.toml",
-      "filename": "createultimine-1.20.1-forge-1.3.1.jar",
-      "modIds": [
-        "createultimine"
-      ]
+      "filename": "createultimine-1.20.1-forge-1.3.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/creeperoverhaul.pw.toml",
-      "filename": "creeperoverhaul-3.0.2-forge.jar",
-      "modIds": [
-        "com_teamresourceful_bytecodecs",
-        "com_teamresourceful_yabn",
-        "creeperoverhaul",
-        "resourcefullib"
-      ]
+      "filename": "creeperoverhaul-3.0.2-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/cristellib.pw.toml",
-      "filename": "cristellib-1.1.6-forge.jar",
-      "modIds": [
-        "cristellib"
-      ]
+      "filename": "cristellib-1.1.6-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/cuisinedelight.pw.toml",
-      "filename": "cuisinedelight-1.1.20.jar",
-      "modIds": [
-        "cuisinedelight",
-        "l2library",
-        "mixinextras"
-      ]
+      "filename": "cuisinedelight-1.1.20.jar"
     },
     {
       "side": "common",
       "metadata": "mods/culturaldelights.pw.toml",
-      "filename": "culturaldelights-0.16.7.jar",
-      "modIds": [
-        "culturaldelights"
-      ]
+      "filename": "culturaldelights-0.16.7.jar"
     },
     {
       "side": "common",
       "metadata": "mods/curios.pw.toml",
-      "filename": "curios-forge-5.14.1+1.20.1.jar",
-      "modIds": [
-        "curios"
-      ]
+      "filename": "curios-forge-5.14.1+1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/curiouslanterns.pw.toml",
-      "filename": "curiouslanterns-1.20.1-1.3.7.jar",
-      "modIds": [
-        "curiouslanterns"
-      ]
+      "filename": "curiouslanterns-1.20.1-1.3.7.jar"
     },
     {
       "side": "common",
       "metadata": "mods/customportalapi.pw.toml",
-      "filename": "customportalapi-1.0.1-forge-1.20.1.jar",
-      "modIds": [
-        "customportalapi"
-      ]
+      "filename": "customportalapi-1.0.1-forge-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/displaydelight.pw.toml",
-      "filename": "displaydelight-1.7.0.jar",
-      "modIds": [
-        "displaydelight"
-      ]
+      "filename": "displaydelight-1.7.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/dragonlib.pw.toml",
-      "filename": "dragonlib-forge-1.20.1-beta-3.0.24.jar",
-      "modIds": [
-        "architectury",
-        "dragonlib"
-      ]
+      "filename": "dragonlib-forge-1.20.1-beta-3.0.24.jar"
     },
     {
       "side": "common",
       "metadata": "mods/dreadsteel.pw.toml",
-      "filename": "dreadsteel-1.20.1-1.2.0.jar",
-      "modIds": [
-        "dreadsteel"
-      ]
+      "filename": "dreadsteel-1.20.1-1.2.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/dsbg.pw.toml",
-      "filename": "dsbg-1.0-1.20.1.jar",
-      "modIds": [
-        "dsbg"
-      ]
+      "filename": "dsbg-1.0-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/dummmmmmy.pw.toml",
-      "filename": "dummmmmmy-1.20-2.0.9.jar",
-      "modIds": [
-        "dummmmmmy",
-        "mixinextras"
-      ]
+      "filename": "dummmmmmy-1.20-2.0.9.jar"
     },
     {
       "side": "common",
       "metadata": "mods/elytraslot.pw.toml",
-      "filename": "elytraslot-forge-6.4.4+1.20.1.jar",
-      "modIds": [
-        "elytraslot"
-      ]
+      "filename": "elytraslot-forge-6.4.4+1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/endergetic.pw.toml",
-      "filename": "endergetic-1.20.1-5.0.1.jar",
-      "modIds": [
-        "endergetic",
-        "mixinextras"
-      ]
+      "filename": "endergetic-1.20.1-5.0.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/ends_delight.pw.toml",
-      "filename": "ends_delight-2.5.1+forge.1.20.1.jar",
-      "modIds": [
-        "ends_delight"
-      ]
+      "filename": "ends_delight-2.5.1+forge.1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/extendedae_plus.pw.toml",
-      "filename": "extendedae_plus-1.5.3-fix.jar",
-      "modIds": [
-        "configuration",
-        "extendedae_plus"
-      ]
+      "filename": "extendedae_plus-1.5.3-fix.jar"
     },
     {
       "side": "common",
       "metadata": "mods/extra_gauges.pw.toml",
-      "filename": "extra_gauges-2.0.7.jar",
-      "modIds": [
-        "extra_gauges"
-      ]
+      "filename": "extra_gauges-2.0.7.jar"
     },
     {
       "side": "common",
       "metadata": "mods/farmersrespite.pw.toml",
-      "filename": "farmersrespite-1.20.1-2.1.2.jar",
-      "modIds": [
-        "farmersrespite"
-      ]
+      "filename": "farmersrespite-1.20.1-2.1.2.jar"
     },
     {
       "side": "common",
       "metadata": "mods/ferritecore.pw.toml",
-      "filename": "ferritecore-6.0.1-forge.jar",
-      "modIds": [
-        "ferritecore"
-      ]
+      "filename": "ferritecore-6.0.1-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/festival_delicacies.pw.toml",
-      "filename": "festival_delicacies-2.0.0-beta+forge.1.20.1.jar",
-      "modIds": [
-        "festival_delicacies"
-      ]
+      "filename": "festival_delicacies-2.0.0-beta+forge.1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/fluidlogistics.pw.toml",
-      "filename": "fluidlogistics-1.2.0.jar",
-      "modIds": [
-        "fluidlogistics"
-      ]
+      "filename": "fluidlogistics-1.2.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/dungeonsdelight.pw.toml",
-      "filename": "forge-dungeonsdelight-1.20.1-1.3.0.jar",
-      "modIds": [
-        "dungeonsdelight"
-      ]
+      "filename": "forge-dungeonsdelight-1.20.1-1.3.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/runiclib.pw.toml",
-      "filename": "forge-runiclib-1.20.1-4.3.11.jar",
-      "modIds": [
-        "mixinextras",
-        "runiclib"
-      ]
+      "filename": "forge-runiclib-1.20.1-4.3.11.jar"
     },
     {
       "side": "common",
       "metadata": "mods/fragmentum.pw.toml",
-      "filename": "fragmentum-forge-1.20.1-1.3.0.jar",
-      "modIds": [
-        "fragmentum",
-        "yet_another_config_lib_v3"
-      ]
+      "filename": "fragmentum-forge-1.20.1-1.3.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/framework.pw.toml",
-      "filename": "framework-forge-1.20.1-0.8.0.jar",
-      "modIds": [
-        "framework"
-      ]
+      "filename": "framework-forge-1.20.1-0.8.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/fruitsdelight.pw.toml",
-      "filename": "fruitsdelight-1.1.3.jar",
-      "modIds": [
-        "fruitsdelight",
-        "l2harvester",
-        "l2harvester05x",
-        "l2harvester60x",
-        "l2library",
-        "mixinextras"
-      ]
+      "filename": "fruitsdelight-1.1.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/frycooks_delight.pw.toml",
-      "filename": "frycooks_delight-1.20.1-1.0.1.jar",
-      "modIds": [
-        "frycooks_delight"
-      ]
+      "filename": "frycooks_delight-1.20.1-1.0.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/ftb-chunks.pw.toml",
-      "filename": "ftb-chunks-forge-2001.3.6.jar",
-      "modIds": [
-        "ftbchunks",
-        "mixinextras"
-      ]
+      "filename": "ftb-chunks-forge-2001.3.6.jar"
     },
     {
       "side": "common",
       "metadata": "mods/ftb-essentials.pw.toml",
-      "filename": "ftb-essentials-forge-2001.2.4.jar",
-      "modIds": [
-        "ftbessentials"
-      ]
+      "filename": "ftb-essentials-forge-2001.2.4.jar"
     },
     {
       "side": "common",
       "metadata": "mods/ftb-library.pw.toml",
-      "filename": "ftb-library-forge-2001.2.12.jar",
-      "modIds": [
-        "ftblibrary"
-      ]
+      "filename": "ftb-library-forge-2001.2.12.jar"
     },
     {
       "side": "common",
       "metadata": "mods/ftb-quests.pw.toml",
-      "filename": "ftb-quests-forge-2001.4.21.jar",
-      "modIds": [
-        "ftbquests"
-      ]
+      "filename": "ftb-quests-forge-2001.4.21.jar"
     },
     {
       "side": "common",
       "metadata": "mods/ftb-ranks.pw.toml",
-      "filename": "ftb-ranks-forge-2001.1.7.jar",
-      "modIds": [
-        "ftbranks"
-      ]
+      "filename": "ftb-ranks-forge-2001.1.7.jar"
     },
     {
       "side": "common",
       "metadata": "mods/ftb-teams.pw.toml",
-      "filename": "ftb-teams-forge-2001.3.2.jar",
-      "modIds": [
-        "ftbteams"
-      ]
+      "filename": "ftb-teams-forge-2001.3.2.jar"
     },
     {
       "side": "common",
       "metadata": "mods/ftb-ultimine.pw.toml",
-      "filename": "ftb-ultimine-forge-2001.1.8.jar",
-      "modIds": [
-        "ftbultimine"
-      ]
+      "filename": "ftb-ultimine-forge-2001.1.8.jar"
     },
     {
       "side": "common",
       "metadata": "mods/ftb-xmod-compat.pw.toml",
-      "filename": "ftb-xmod-compat-forge-2.1.3.jar",
-      "modIds": [
-        "ftbxmodcompat"
-      ]
+      "filename": "ftb-xmod-compat-forge-2.1.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/ftbquestlocalizer.pw.toml",
-      "filename": "ftbquestlocalizer-1.20.1-forge-3.2.3.jar",
-      "modIds": [
-        "ftbquestlocalizer"
-      ]
+      "filename": "ftbquestlocalizer-1.20.1-forge-3.2.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/ftbxaerocompat.pw.toml",
-      "filename": "ftbxaerocompat-forge-1.1.3.jar",
-      "modIds": [
-        "ftbxaerocompat"
-      ]
+      "filename": "ftbxaerocompat-forge-1.1.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/functionalstorage.pw.toml",
-      "filename": "functionalstorage-1.20.1-1.2.13.jar",
-      "modIds": [
-        "functionalstorage"
-      ]
+      "filename": "functionalstorage-1.20.1-1.2.13.jar"
     },
     {
       "side": "common",
       "metadata": "mods/futurevillagertradesvisible.pw.toml",
-      "filename": "futurevillagertradesvisible-0.1.6+forge1.20.1.jar",
-      "modIds": [
-        "futurevillagertradesvisible"
-      ]
+      "filename": "futurevillagertradesvisible-0.1.6+forge1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/geckolib.pw.toml",
-      "filename": "geckolib-forge-1.20.1-4.8.3.jar",
-      "modIds": [
-        "geckolib"
-      ]
+      "filename": "geckolib-forge-1.20.1-4.8.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/guideme.pw.toml",
-      "filename": "guideme-20.1.14.jar",
-      "modIds": [
-        "guideme"
-      ]
+      "filename": "guideme-20.1.14.jar"
     },
     {
       "side": "common",
       "metadata": "mods/hotai.pw.toml",
-      "filename": "hotai-1.0.jar",
-      "modIds": [
-        "hotai"
-      ],
-      "nonRuntimeMod": true
+      "filename": "hotai-1.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/iafdragonfix.pw.toml",
-      "filename": "iafdragonfix-2.0.0.jar",
-      "modIds": [
-        "iafdragonfix"
-      ]
+      "filename": "iafdragonfix-2.0.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/iceandfire.pw.toml",
-      "filename": "iceandfire-2.1.13-1.20.1-beta-5.jar",
-      "modIds": [
-        "iceandfire"
-      ]
+      "filename": "iceandfire-2.1.13-1.20.1-beta-5.jar"
     },
     {
       "side": "common",
       "metadata": "mods/idas.pw.toml",
-      "filename": "idas_forge-1.13.0+1.20.1.jar",
-      "modIds": [
-        "idas"
-      ]
+      "filename": "idas_forge-1.13.0+1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/immersive_aircraft.pw.toml",
-      "filename": "immersive_aircraft-1.4.0+1.20.1-forge.jar",
-      "modIds": [
-        "immersive_aircraft"
-      ]
+      "filename": "immersive_aircraft-1.4.0+1.20.1-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/immersive_paintings.pw.toml",
-      "filename": "immersive_paintings-0.6.11+1.20.1-forge.jar",
-      "modIds": [
-        "immersive_paintings"
-      ]
+      "filename": "immersive_paintings-0.6.11+1.20.1-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/improvedmobs.pw.toml",
-      "filename": "improvedmobs-1.20.1-1.13.7-forge.jar",
-      "modIds": [
-        "improvedmobs"
-      ]
+      "filename": "improvedmobs-1.20.1-1.13.7-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/integrated_api.pw.toml",
-      "filename": "integrated_api-1.7.4+1.20.1-forge.jar",
-      "modIds": [
-        "integrated_api",
-        "mixinextras"
-      ]
+      "filename": "integrated_api-1.7.4+1.20.1-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/integrated_stronghold.pw.toml",
-      "filename": "integrated_stronghold-1.1.2+1.20.1-forge.jar",
-      "modIds": [
-        "integrated_stronghold",
-        "mixinextras"
-      ]
+      "filename": "integrated_stronghold-1.1.2+1.20.1-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/integrated_villages.pw.toml",
-      "filename": "integrated_villages-1.3.2+1.20.1-forge.jar",
-      "modIds": [
-        "integrated_villages",
-        "mixinextras"
-      ]
+      "filename": "integrated_villages-1.3.2+1.20.1-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/interiors.pw.toml",
-      "filename": "interiors-1.20.1-forge-0.6.0.jar",
-      "modIds": [
-        "interiors"
-      ]
+      "filename": "interiors-1.20.1-forge-0.6.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/item-filters.pw.toml",
-      "filename": "item-filters-forge-2001.1.0-build.59.jar",
-      "modIds": [
-        "itemfilters"
-      ]
+      "filename": "item-filters-forge-2001.1.0-build.59.jar"
     },
     {
       "side": "common",
       "metadata": "mods/jei.pw.toml",
-      "filename": "jei-1.20.1-forge-15.20.0.132.jar",
-      "modIds": [
-        "jei"
-      ]
+      "filename": "jei-1.20.1-forge-15.20.0.132.jar"
     },
     {
       "side": "common",
       "metadata": "mods/jupiter.pw.toml",
-      "filename": "jupiter-2.3.7-1.20.1-forge.jar",
-      "modIds": [
-        "jupiter"
-      ]
+      "filename": "jupiter-2.3.7-1.20.1-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/just_enough_couriers.pw.toml",
-      "filename": "just_enough_couriers-1.0.1.jar",
-      "modIds": [
-        "just_enough_couriers"
-      ]
+      "filename": "just_enough_couriers-1.0.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/justenoughbreeding.pw.toml",
-      "filename": "justenoughbreeding-forge-1.20.1-3.0.1.jar",
-      "modIds": [
-        "justenoughbreeding"
-      ]
+      "filename": "justenoughbreeding-forge-1.20.1-3.0.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/kaleidoscopedoll.pw.toml",
-      "filename": "kaleidoscopedoll-1.3.1-forge+mc1.20.1.jar",
-      "modIds": [
-        "kaleidoscope_doll"
-      ]
+      "filename": "kaleidoscopedoll-1.3.1-forge+mc1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/kinetic_pixel.pw.toml",
-      "filename": "kinetic_pixel-1.0.3-forge-1.20.1.jar",
-      "modIds": [
-        "kinetic_pixel"
-      ]
+      "filename": "kinetic_pixel-1.0.3-forge-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/konkrete.pw.toml",
-      "filename": "konkrete_forge_1.8.0_MC_1.20-1.20.1.jar",
-      "modIds": [
-        "konkrete"
-      ]
+      "filename": "konkrete_forge_1.8.0_MC_1.20-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/kotlinforforge.pw.toml",
-      "filename": "kotlinforforge-4.12.0-all.jar",
-      "modIds": [
-        "kotlinforforge"
-      ]
+      "filename": "kotlinforforge-4.12.0-all.jar"
     },
     {
       "side": "common",
       "metadata": "mods/kubejs-create.pw.toml",
-      "filename": "kubejs-create-forge-2001.3.0-build.8.jar",
-      "modIds": [
-        "kubejs_create"
-      ]
+      "filename": "kubejs-create-forge-2001.3.0-build.8.jar"
     },
     {
       "side": "common",
       "metadata": "mods/kubejs.pw.toml",
-      "filename": "kubejs-forge-2001.6.5-build.26.jar",
-      "modIds": [
-        "kubejs",
-        "mixinextras"
-      ]
+      "filename": "kubejs-forge-2001.6.5-build.26.jar"
     },
     {
       "side": "common",
       "metadata": "mods/kubejsdelight.pw.toml",
-      "filename": "kubejsdelight-1.20.1-1.1.5.jar",
-      "modIds": [
-        "kubejsdelight"
-      ]
+      "filename": "kubejsdelight-1.20.1-1.1.5.jar"
     },
     {
       "side": "common",
       "metadata": "mods/lctech.pw.toml",
-      "filename": "lctech-1.20.1-0.2.2.7.jar",
-      "modIds": [
-        "lctech"
-      ]
+      "filename": "lctech-1.20.1-0.2.2.7.jar"
     },
     {
       "side": "common",
       "metadata": "mods/ldlib.pw.toml",
-      "filename": "ldlib-forge-1.20.1-1.0.50.jar",
-      "modIds": [
-        "ldlib",
-        "mixinextras"
-      ]
+      "filename": "ldlib-forge-1.20.1-1.0.50.jar"
     },
     {
       "side": "common",
       "metadata": "mods/letsdo-nethervinery.pw.toml",
-      "filename": "letsdo-nethervinery-forge-1.2.19.jar",
-      "modIds": [
-        "nethervinery"
-      ]
+      "filename": "letsdo-nethervinery-forge-1.2.19.jar"
     },
     {
       "side": "common",
       "metadata": "mods/letsdo-vinery.pw.toml",
-      "filename": "letsdo-vinery-forge-1.4.41.jar",
-      "modIds": [
-        "vinery"
-      ]
+      "filename": "letsdo-vinery-forge-1.4.41.jar"
     },
     {
       "side": "common",
       "metadata": "mods/lightmanscurrency.pw.toml",
-      "filename": "lightmanscurrency-1.20.1-2.3.0.4g.jar",
-      "modIds": [
-        "lightmanscurrency",
-        "mixinextras"
-      ]
+      "filename": "lightmanscurrency-1.20.1-2.3.0.4g.jar"
     },
     {
       "side": "common",
       "metadata": "mods/lionfishapi.pw.toml",
-      "filename": "lionfishapi-2.7.jar",
-      "modIds": [
-        "lionfishapi"
-      ]
+      "filename": "lionfishapi-2.7.jar"
     },
     {
       "side": "common",
       "metadata": "mods/lithostitched.pw.toml",
-      "filename": "lithostitched-forge-1.20.1-1.4.11.jar",
-      "modIds": [
-        "lithostitched"
-      ]
+      "filename": "lithostitched-forge-1.20.1-1.4.11.jar"
     },
     {
       "side": "common",
       "metadata": "mods/lootjs.pw.toml",
-      "filename": "lootjs-forge-1.20.1-2.13.1.jar",
-      "modIds": [
-        "lootjs"
-      ]
+      "filename": "lootjs-forge-1.20.1-2.13.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/lootr.pw.toml",
-      "filename": "lootr-forge-1.20-0.7.35.94.jar",
-      "modIds": [
-        "lootr"
-      ]
+      "filename": "lootr-forge-1.20-0.7.35.94.jar"
     },
     {
       "side": "common",
       "metadata": "mods/luncheon-meat-s-delight.pw.toml",
-      "filename": "luncheon-meat-s-delight-1.0.3-forge-1.20.1.jar",
-      "modIds": [
-        "luncheonmeatsdelight"
-      ]
+      "filename": "luncheon-meat-s-delight-1.0.3-forge-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/man_of_many_planes.pw.toml",
-      "filename": "man_of_many_planes-0.2.0+1.20.1-forge.jar",
-      "modIds": [
-        "man_of_many_planes"
-      ]
+      "filename": "man_of_many_planes-0.2.0+1.20.1-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/megacells.pw.toml",
-      "filename": "megacells-forge-2.4.6-1.20.1.jar",
-      "modIds": [
-        "megacells"
-      ]
+      "filename": "megacells-forge-2.4.6-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/melody.pw.toml",
-      "filename": "melody_forge_1.0.3_MC_1.20.1-1.20.4.jar",
-      "modIds": [
-        "melody"
-      ]
+      "filename": "melody_forge_1.0.3_MC_1.20.1-1.20.4.jar"
     },
     {
       "side": "common",
       "metadata": "mods/midnightlib.pw.toml",
-      "filename": "midnightlib-forge-1.9.2+1.20.1.jar",
-      "modIds": [
-        "midnightlib"
-      ]
+      "filename": "midnightlib-forge-1.9.2+1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/miners_delight.pw.toml",
-      "filename": "miners_delight-1.20.1-1.4.5-backport.jar",
-      "modIds": [
-        "miners_delight"
-      ]
+      "filename": "miners_delight-1.20.1-1.4.5-backport.jar"
     },
     {
       "side": "common",
       "metadata": "mods/modernfix.pw.toml",
-      "filename": "modernfix-forge-5.27.58+mc1.20.1.jar",
-      "modIds": [
-        "mixinextras",
-        "modernfix"
-      ]
+      "filename": "modernfix-forge-5.27.58+mc1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/moestweaks.pw.toml",
-      "filename": "moestweaks-forge-1.20.1-1.1.2.jar",
-      "modIds": [
-        "moestweaks"
-      ]
+      "filename": "moestweaks-forge-1.20.1-1.1.2.jar"
     },
     {
       "side": "common",
       "metadata": "mods/moonlight.pw.toml",
-      "filename": "moonlight-1.20-2.16.27-forge.jar",
-      "modIds": [
-        "mixinextras",
-        "moonlight"
-      ]
+      "filename": "moonlight-1.20-2.16.27-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/more_mod_tetra.pw.toml",
-      "filename": "more_mod_tetra-2.4.1-all.jar",
-      "modIds": [
-        "expandability",
-        "mixinextras",
-        "more_mod_tetra",
-        "packetfixer",
-        "tetra_attribute_rebalancing"
-      ]
+      "filename": "more_mod_tetra-2.4.1-all.jar"
     },
     {
       "side": "common",
       "metadata": "mods/morejs.pw.toml",
-      "filename": "morejs-forge-1.20.1-0.10.1.jar",
-      "modIds": [
-        "morejs"
-      ]
+      "filename": "morejs-forge-1.20.1-0.10.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/multiblocked2.pw.toml",
-      "filename": "multiblocked2-1.20.1-1.0.38.a.jar",
-      "modIds": [
-        "mbd2"
-      ]
+      "filename": "multiblocked2-1.20.1-1.0.38.a.jar"
     },
     {
       "side": "common",
       "metadata": "mods/mutil.pw.toml",
-      "filename": "mutil-1.20.1-6.2.0.jar",
-      "modIds": [
-        "mutil"
-      ]
+      "filename": "mutil-1.20.1-6.2.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/mysterious_mountain_lib.pw.toml",
-      "filename": "mysterious_mountain_lib-1.6.34-1.20.1.jar",
-      "modIds": [
-        "mysterious_mountain_lib"
-      ]
+      "filename": "mysterious_mountain_lib-1.6.34-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/neapolitan.pw.toml",
-      "filename": "neapolitan-1.20.1-5.1.0.jar",
-      "modIds": [
-        "neapolitan"
-      ]
+      "filename": "neapolitan-1.20.1-5.1.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/nebulusbetterportals.pw.toml",
-      "filename": "nebulusbetterportals-1.0.8-forge-1.20.1.jar",
-      "modIds": [
-        "nebulusbetterportals"
-      ]
+      "filename": "nebulusbetterportals-1.0.8-forge-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/neruina.pw.toml",
-      "filename": "neruina-3.3.2+1.20.1-forge.jar",
-      "modIds": [
-        "neruina"
-      ]
+      "filename": "neruina-3.3.2+1.20.1-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/netmusic.pw.toml",
-      "filename": "netmusic-1.4.0-forge+mc1.20.1.jar",
-      "modIds": [
-        "netmusic"
-      ]
+      "filename": "netmusic-1.4.0-forge+mc1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/northstar-curios-compat.pw.toml",
-      "filename": "northstar-curios-compat-1.3.1.jar",
-      "modIds": [
-        "northstar_curios_compat"
-      ]
+      "filename": "northstar-curios-compat-1.3.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/observable.pw.toml",
-      "filename": "observable-4.4.2.jar",
-      "modIds": [
-        "observable"
-      ]
+      "filename": "observable-4.4.2.jar"
     },
     {
       "side": "common",
       "metadata": "mods/oceanic_delight.pw.toml",
-      "filename": "oceanic_delight-1.0.3-forge-1.20.1.jar",
-      "modIds": [
-        "oceanic_delight"
-      ]
+      "filename": "oceanic_delight-1.0.3-forge-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/packetfixer.pw.toml",
-      "filename": "packetfixer-3.3.2-1.18-1.20.4-merged.jar",
-      "modIds": [
-        "packetfixer"
-      ]
+      "filename": "packetfixer-3.3.2-1.18-1.20.4-merged.jar"
     },
     {
       "side": "common",
       "metadata": "mods/player-animation-lib.pw.toml",
-      "filename": "player-animation-lib-forge-1.0.2-rc1+1.20.jar",
-      "modIds": [
-        "playeranimator"
-      ]
+      "filename": "player-animation-lib-forge-1.0.2-rc1+1.20.jar"
     },
     {
       "side": "common",
       "metadata": "mods/polyeng.pw.toml",
-      "filename": "polyeng-forge-0.1.1-1.20.1.jar",
-      "modIds": [
-        "polyeng"
-      ]
+      "filename": "polyeng-forge-0.1.1-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/polymorph.pw.toml",
-      "filename": "polymorph-forge-0.49.10+1.20.1.jar",
-      "modIds": [
-        "polymorph",
-        "spectrelib"
-      ]
+      "filename": "polymorph-forge-0.49.10+1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/powerfuljs.pw.toml",
-      "filename": "powerfuljs-1.6.1.jar",
-      "modIds": [
-        "powerfuljs"
-      ]
+      "filename": "powerfuljs-1.6.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/probejs.pw.toml",
-      "filename": "probejs-6.0.1-forge.jar",
-      "modIds": [
-        "com_github_javaparser_javaparser_symbol_solver_core",
-        "org_java_websocket_java_websocket",
-        "org_vineflower_vineflower",
-        "probejs"
-      ]
+      "filename": "probejs-6.0.1-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/quality_food.pw.toml",
-      "filename": "quality_food-1.20.1-2.3.2-all.jar",
-      "modIds": [
-        "mixinextras",
-        "quality_food"
-      ]
+      "filename": "quality_food-1.20.1-2.3.2-all.jar"
     },
     {
       "side": "common",
       "metadata": "mods/quality-food-fluids.pw.toml",
-      "filename": "quality_food_fluids-1.20.1-0.1.3.jar",
-      "modIds": [
-        "quality_food_fluids"
-      ]
+      "filename": "quality_food_fluids-1.20.1-0.1.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/questsadditions.pw.toml",
-      "filename": "questsadditions-1.4.7.jar",
-      "modIds": [
-        "questsadditions"
-      ]
+      "filename": "questsadditions-1.4.7.jar"
     },
     {
       "side": "common",
       "metadata": "mods/radiantgear.pw.toml",
-      "filename": "radiantgear-forge-2.2.0+1.20.1.jar",
-      "modIds": [
-        "radiantgear"
-      ]
+      "filename": "radiantgear-forge-2.2.0+1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/refurbished_furniture.pw.toml",
-      "filename": "refurbished_furniture-forge-1.20.1-1.0.20.jar",
-      "modIds": [
-        "refurbished_furniture"
-      ]
+      "filename": "refurbished_furniture-forge-1.20.1-1.0.20.jar"
     },
     {
       "side": "common",
       "metadata": "mods/renderjs.pw.toml",
-      "filename": "renderjs-forge-2001.2.1.jar",
-      "modIds": [
-        "renderjs"
-      ]
+      "filename": "renderjs-forge-2001.2.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/resourcefulconfig.pw.toml",
-      "filename": "resourcefulconfig-forge-1.20.1-2.1.3.jar",
-      "modIds": [
-        "resourcefulconfig"
-      ]
+      "filename": "resourcefulconfig-forge-1.20.1-2.1.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/resourcefullib.pw.toml",
-      "filename": "resourcefullib-forge-1.20.1-2.1.29.jar",
-      "modIds": [
-        "com_teamresourceful_bytecodecs",
-        "com_teamresourceful_yabn",
-        "resourcefullib"
-      ]
+      "filename": "resourcefullib-forge-1.20.1-2.1.29.jar"
     },
     {
       "side": "common",
       "metadata": "mods/rhino.pw.toml",
-      "filename": "rhino-forge-2001.2.3-build.10.jar",
-      "modIds": [
-        "rhino"
-      ]
+      "filename": "rhino-forge-2001.2.3-build.10.jar"
     },
     {
       "side": "common",
       "metadata": "mods/seasonals.pw.toml",
-      "filename": "seasonals-1.20.1-5.0.2.jar",
-      "modIds": [
-        "seasonals"
-      ]
+      "filename": "seasonals-1.20.1-5.0.2.jar"
     },
     {
       "side": "common",
       "metadata": "mods/seasonhud.pw.toml",
-      "filename": "seasonhud-forge-1.20.1-2.0.6.jar",
-      "modIds": [
-        "seasonhud"
-      ]
+      "filename": "seasonhud-forge-1.20.1-2.0.6.jar"
     },
     {
       "side": "common",
       "metadata": "mods/sequenced-pattern-provider.pw.toml",
-      "filename": "sequenced_pattern_provider-1.20.1-0.2.1.jar",
-      "modIds": [
-        "sequenced_pattern_provider"
-      ]
+      "filename": "sequenced_pattern_provider-1.20.1-0.2.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/servercore.pw.toml",
-      "filename": "servercore-forge-1.5.2+1.20.1.jar",
-      "modIds": [
-        "mixinextras",
-        "servercore"
-      ]
+      "filename": "servercore-forge-1.5.2+1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/shadowizardlib.pw.toml",
-      "filename": "shadowizardlib-1.20.1-1.3.1.jar",
-      "modIds": [
-        "shadowizardlib"
-      ]
+      "filename": "shadowizardlib-1.20.1-1.3.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/silentsdelight.pw.toml",
-      "filename": "silentsdelight-forge-1.0.1-1.20.1.jar",
-      "modIds": [
-        "silentsdelight"
-      ]
+      "filename": "silentsdelight-forge-1.0.1-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/simplehats.pw.toml",
-      "filename": "simplehats-forge-1.20.1-0.4.0a.jar",
-      "modIds": [
-        "simplehats"
-      ]
+      "filename": "simplehats-forge-1.20.1-0.4.0a.jar"
     },
     {
       "side": "common",
       "metadata": "mods/skinlayers3d.pw.toml",
-      "filename": "skinlayers3d-forge-1.11.2-mc1.20.1.jar",
-      "modIds": [
-        "mixinextras",
-        "skinlayers3d",
-        "transition",
-        "trender"
-      ]
+      "filename": "skinlayers3d-forge-1.11.2-mc1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/smsn.pw.toml",
-      "filename": "smsn-forge-1.4.2-1.20.1.jar",
-      "modIds": [
-        "smsn"
-      ]
+      "filename": "smsn-forge-1.4.2-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/solapplepie.pw.toml",
-      "filename": "solapplepie-1.20.1-2.3.0.jar",
-      "modIds": [
-        "solapplepie"
-      ]
+      "filename": "solapplepie-1.20.1-2.3.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/solardimensionaddon.pw.toml",
-      "filename": "solardimensionaddon-1.2.0.jar",
-      "modIds": [
-        "solardimensionaddon"
-      ]
+      "filename": "solardimensionaddon-1.2.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/solcarrot.pw.toml",
-      "filename": "solcarrot-1.20.1-1.15.1.jar",
-      "modIds": [
-        "solcarrot"
-      ]
+      "filename": "solcarrot-1.20.1-1.15.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/some-assembly-required.pw.toml",
-      "filename": "some-assembly-required-1.20.1-4.2.3.jar",
-      "modIds": [
-        "some_assembly_required"
-      ]
+      "filename": "some-assembly-required-1.20.1-4.2.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/sophisticatedbackpacks.pw.toml",
-      "filename": "sophisticatedbackpacks-1.20.1-3.24.58.1934.jar",
-      "modIds": [
-        "sophisticatedbackpacks"
-      ]
+      "filename": "sophisticatedbackpacks-1.20.1-3.24.58.1934.jar"
     },
     {
       "side": "common",
       "metadata": "mods/sophisticatedbackpackscreateintegration.pw.toml",
-      "filename": "sophisticatedbackpackscreateintegration-1.20.1-0.1.8.116.jar",
-      "modIds": [
-        "sophisticatedbackpackscreateintegration"
-      ]
+      "filename": "sophisticatedbackpackscreateintegration-1.20.1-0.1.8.116.jar"
     },
     {
       "side": "common",
       "metadata": "mods/sophisticatedcore.pw.toml",
-      "filename": "sophisticatedcore-1.20.1-1.3.58.2078.jar",
-      "modIds": [
-        "sophisticatedcore"
-      ]
+      "filename": "sophisticatedcore-1.20.1-1.3.58.2078.jar"
     },
     {
       "side": "common",
       "metadata": "mods/soul-fire-d.pw.toml",
-      "filename": "soul-fire-d-forge-1.20.1-4.0.11.jar",
-      "modIds": [
-        "mixinextras",
-        "soul_fire_d"
-      ]
+      "filename": "soul-fire-d-forge-1.20.1-4.0.11.jar"
     },
     {
       "side": "common",
       "metadata": "mods/spark.pw.toml",
-      "filename": "spark-1.10.53-forge.jar",
-      "modIds": [
-        "spark"
-      ]
+      "filename": "spark-1.10.53-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/sqlite-jdbc.pw.toml",
-      "filename": "sqlite-jdbc-3.36.0.3+20211227-all.jar",
-      "modIds": [
-        "sqlite_jdbc"
-      ]
+      "filename": "sqlite-jdbc-3.36.0.3+20211227-all.jar"
     },
     {
       "side": "common",
       "metadata": "mods/supermartijn642configlib.pw.toml",
-      "filename": "supermartijn642configlib-1.1.8-forge-mc1.20.jar",
-      "modIds": [
-        "supermartijn642configlib"
-      ]
+      "filename": "supermartijn642configlib-1.1.8-forge-mc1.20.jar"
     },
     {
       "side": "common",
       "metadata": "mods/supermartijn642corelib.pw.toml",
-      "filename": "supermartijn642corelib-1.1.18-forge-mc1.20.1.jar",
-      "modIds": [
-        "supermartijn642corelib"
-      ]
+      "filename": "supermartijn642corelib-1.1.18-forge-mc1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/supplementaries.pw.toml",
-      "filename": "supplementaries-1.20-3.1.42-forge.jar",
-      "modIds": [
-        "mixinextras",
-        "supplementaries"
-      ]
+      "filename": "supplementaries-1.20-3.1.42-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/tacz.pw.toml",
-      "filename": "tacz-1.20.1-1.1.4-hotfix-all.jar",
-      "modIds": [
-        "mixinextras",
-        "tacz"
-      ]
+      "filename": "tacz-1.20.1-1.1.4-hotfix-all.jar"
     },
     {
       "side": "common",
       "metadata": "mods/taczaddon.pw.toml",
-      "filename": "taczaddon-1.20.1-1.1.4-for1.1.4.jar",
-      "modIds": [
-        "taczaddon"
-      ]
+      "filename": "taczaddon-1.20.1-1.1.4-for1.1.4.jar"
     },
     {
       "side": "common",
       "metadata": "mods/tectonic.pw.toml",
-      "filename": "tectonic-3.0.17-forge-1.20.1.jar",
-      "modIds": [
-        "tectonic"
-      ]
+      "filename": "tectonic-3.0.17-forge-1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/tenshilib.pw.toml",
-      "filename": "tenshilib-1.20.1-1.7.6-forge.jar",
-      "modIds": [
-        "tenshilib"
-      ]
+      "filename": "tenshilib-1.20.1-1.7.6-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/tetra.pw.toml",
-      "filename": "tetra-1.20.1-6.9.0.jar",
-      "modIds": [
-        "tetra"
-      ]
+      "filename": "tetra-1.20.1-6.9.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/tetracelium.pw.toml",
-      "filename": "tetracelium-1.20.1-1.3.1.jar",
-      "modIds": [
-        "tetracelium"
-      ]
+      "filename": "tetracelium-1.20.1-1.3.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/tetracompat.pw.toml",
-      "filename": "tetracompat-1.0.0-all.jar",
-      "modIds": [
-        "mixinextras",
-        "tetracompat"
-      ]
+      "filename": "tetracompat-1.0.0-all.jar"
     },
     {
       "side": "common",
       "metadata": "mods/tetratic-combat-expanded.pw.toml",
-      "filename": "tetratic-combat-expanded-1.20-2.8.3.jar",
-      "modIds": [
-        "tetratic_combat_expanded"
-      ]
+      "filename": "tetratic-combat-expanded-1.20-2.8.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/the_bumblezone.pw.toml",
-      "filename": "the_bumblezone-7.13.0+1.20.1-forge.jar",
-      "modIds": [
-        "athena",
-        "mixinextras",
-        "the_bumblezone"
-      ]
+      "filename": "the_bumblezone-7.13.0+1.20.1-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/titanium.pw.toml",
-      "filename": "titanium-1.20.1-3.8.32.jar",
-      "modIds": [
-        "titanium"
-      ]
+      "filename": "titanium-1.20.1-3.8.32.jar"
     },
     {
       "side": "common",
       "metadata": "mods/torchmaster.pw.toml",
-      "filename": "torchmaster-20.1.9.jar",
-      "modIds": [
-        "torchmaster"
-      ]
+      "filename": "torchmaster-20.1.9.jar"
     },
     {
       "side": "common",
       "metadata": "mods/totw_modded.pw.toml",
-      "filename": "totw_modded-forge-1.20.1-1.0.6.jar",
-      "modIds": [
-        "totw_modded"
-      ]
+      "filename": "totw_modded-forge-1.20.1-1.0.6.jar"
     },
     {
       "side": "common",
       "metadata": "mods/traderefresh.pw.toml",
-      "filename": "traderefresh-2.5.2.jar",
-      "modIds": [
-        "traderefresh"
-      ]
+      "filename": "traderefresh-2.5.2.jar"
     },
     {
       "side": "common",
       "metadata": "mods/trailandtales_delight.pw.toml",
-      "filename": "trailandtales_delight-1.7-all.jar",
-      "modIds": [
-        "mixinextras",
-        "trailandtales_delight"
-      ]
+      "filename": "trailandtales_delight-1.7-all.jar"
     },
     {
       "side": "common",
       "metadata": "mods/trashcans.pw.toml",
-      "filename": "trashcans-1.0.18b-forge-mc1.20.jar",
-      "modIds": [
-        "trashcans"
-      ]
+      "filename": "trashcans-1.0.18b-forge-mc1.20.jar"
     },
     {
       "side": "common",
       "metadata": "mods/trashslot.pw.toml",
-      "filename": "trashslot-forge-1.20.1-15.1.4.jar",
-      "modIds": [
-        "trashslot"
-      ]
+      "filename": "trashslot-forge-1.20.1-15.1.4.jar"
     },
     {
       "side": "common",
       "metadata": "mods/trueuuid.pw.toml",
-      "filename": "trueuuid-1.1.2-forge1.20.1.jar",
-      "modIds": [
-        "trueuuid"
-      ]
+      "filename": "trueuuid-1.1.2-forge1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/vintage_kubejs.pw.toml",
-      "filename": "vintage_kubejs-1.20.1-1.0.0rc-2.jar",
-      "modIds": [
-        "vintage_kubejs"
-      ]
+      "filename": "vintage_kubejs-1.20.1-1.0.0rc-2.jar"
     },
     {
       "side": "common",
       "metadata": "mods/vintagedelight.pw.toml",
-      "filename": "vintagedelight-0.1.6.jar",
-      "modIds": [
-        "vintagedelight"
-      ]
+      "filename": "vintagedelight-0.1.6.jar"
     },
     {
       "side": "common",
       "metadata": "mods/vintageimprovements.pw.toml",
-      "filename": "vintageimprovements-1.20.1-0.3.7.4.jar",
-      "modIds": [
-        "vintageimprovements"
-      ]
+      "filename": "vintageimprovements-1.20.1-0.3.7.4.jar"
     },
     {
       "side": "common",
       "metadata": "mods/vvaddon.pw.toml",
-      "filename": "vvaddon-1.20.1-alpha3.0.1.jar",
-      "modIds": [
-        "vvaddon"
-      ]
+      "filename": "vvaddon-1.20.1-alpha3.0.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/watut.pw.toml",
-      "filename": "watut-forge-1.20.1-1.2.3.jar",
-      "modIds": [
-        "watut"
-      ]
+      "filename": "watut-forge-1.20.1-1.2.3.jar"
     },
     {
       "side": "common",
       "metadata": "mods/waystones.pw.toml",
-      "filename": "waystones-forge-1.20.1-14.1.20.jar",
-      "modIds": [
-        "waystones"
-      ]
+      "filename": "waystones-forge-1.20.1-14.1.20.jar"
     },
     {
       "side": "common",
       "metadata": "mods/world_preview.pw.toml",
-      "filename": "world_preview-forge-1.20.1-1.3.1.jar",
-      "modIds": [
-        "world_preview"
-      ]
+      "filename": "world_preview-forge-1.20.1-1.3.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/xaerominimap.pw.toml",
-      "filename": "xaerominimap-forge-1.20.1-26.1.0.jar",
-      "modIds": [
-        "xaerolib",
-        "xaerominimap"
-      ]
+      "filename": "xaerominimap-forge-1.20.1-26.1.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/xaeros_waystones_compatibility.pw.toml",
-      "filename": "xaeros_waystones_compatibility-1.1 - 1.20.1.jar",
-      "modIds": [
-        "w2w2"
-      ]
+      "filename": "xaeros_waystones_compatibility-1.1 - 1.20.1.jar"
     },
     {
       "side": "common",
       "metadata": "mods/xaeroworldmap.pw.toml",
-      "filename": "xaeroworldmap-forge-1.20.1-1.41.2.jar",
-      "modIds": [
-        "xaerolib",
-        "xaeroworldmap"
-      ]
+      "filename": "xaeroworldmap-forge-1.20.1-1.41.2.jar"
     },
     {
       "side": "common",
       "metadata": "mods/yet_another_config_lib_v3.pw.toml",
-      "filename": "yet_another_config_lib_v3-3.6.6+1.20.1-forge.jar",
-      "modIds": [
-        "yet_another_config_lib_v3"
-      ]
+      "filename": "yet_another_config_lib_v3-3.6.6+1.20.1-forge.jar"
     },
     {
       "side": "common",
       "metadata": "mods/youkaishomecoming.pw.toml",
-      "filename": "youkaishomecoming-2.7.0.jar",
-      "modIds": [
-        "l2damagetracker",
-        "l2harvester",
-        "l2harvester05x",
-        "l2harvester60x",
-        "l2library",
-        "mixinextras",
-        "terrablender",
-        "youkaishomecoming"
-      ]
+      "filename": "youkaishomecoming-2.7.0.jar"
     },
     {
       "side": "common",
       "metadata": "mods/youkaishomecoming_curios.pw.toml",
-      "filename": "youkaishomecoming_curios-0.03.jar",
-      "modIds": [
-        "youkaishomecoming_curios"
-      ]
+      "filename": "youkaishomecoming_curios-0.03.jar"
     },
     {
       "side": "common",
       "metadata": "mods/zRemove_SDL_Intro.pw.toml",
-      "filename": "zRemove_SDL_Intro_v1.2.2.jar",
-      "modIds": [
-        "remove_sdl_intro"
-      ]
+      "filename": "zRemove_SDL_Intro_v1.2.2.jar"
     },
     {
       "side": "common",
       "metadata": "mods/zstdnet.pw.toml",
-      "filename": "zstdnet-1.20.1-forge-1.4.7.jar",
-      "modIds": [
-        "zstdnet"
-      ]
+      "filename": "zstdnet-1.20.1-forge-1.4.7.jar"
     }
   ]
 }

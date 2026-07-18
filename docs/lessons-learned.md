@@ -186,6 +186,13 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: A helper declared as `function calculateValueDistribution(...)` inside a `try` block passed `node --check` but was `undefined` in-game under Rhino, causing OEV to skip thousands of recipe value setters.
 - **Fix/Lesson**: Keep reusable KubeJS helper functions at script top level or assign them before guarded blocks; use in-game reload logs as the source of truth for Rhino scoping behavior.
 
+## KubeJS client Java interop must be verified in-game
+
+**Date**: 2026-07-18
+
+- **Problem**: `pack_integrity_check.js` passed Node syntax checks but repeatedly failed in KubeJS client reload because Rhino/LiveConnect rejected `KubeJSPaths.GAMEDIR`, `java.nio.file.Paths`, rest parameters, ambiguous `Path.resolve(...)`, missing `JsonUtils`, `JsonIO.write` values that were not `JsonObject`s, plain JS indexing over Java `File[]` silently produced an empty runtime mod list, and `java.lang.reflect.Array` was blocked by the class filter.
+- **Fix/Lesson**: For KubeJS client scripts using Java APIs, verify against `logs/latest.log`; use current `KubeJSPaths.CONFIG/LOCAL/DIRECTORY`, explicit overload calls such as `path["resolve(java.lang.String)"]("x")`, `JsonIO.of(value).getAsJsonObject()`, and `java.util.Arrays.asList(fileArray).forEach(...)` for `File[]`. KubeJS explicitly denies `net.minecraftforge.fml`, so do not use `ModList`; avoid Node-only syntax or other classes blocked by the filter.
+
 ## Release config edits need tracked source files
 
 **Date**: 2026-06-07
