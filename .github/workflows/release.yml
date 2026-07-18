@@ -259,48 +259,16 @@ jobs:
       - name: 生成模组列表完整性清单
         run: python3 scripts/generate-pack-integrity-manifest.py
       - name: 准备补丁文件
-        run: bash .github/workflows/scripts/prepare_patch_diff.sh "$LATEST_TAG"
+        run: |
+          python3 scripts/build-release-patch.py prepare \
+            --base "$LATEST_TAG" \
+            --output patch \
+            --deleted-list deleted_files.txt \
+            --modpack-name "$MODPACK_NAME" \
+            --modpack-version "$MODPACK_VERSION" \
+            --version-file-relative-dir "$VERSION_FILE_RELATIVE_DIR_PATH"
       - name: 移除服务端不需要的文件
-        run: |
-          set -euo pipefail
-          # 移除客户端 only 的 mod
-          python3 scripts/packwiz-side.py delete-payloads --metadata-base . --payload-base patch --side client --verbose
-          rm -f patch/ModList0.4a.md patch/README.md patch/TODOlist.md \
-                patch/KubeJSStyleGuide.md patch/GettingStarted.md patch/modpack.toml \
-                patch/pack.toml patch/index.toml patch/index.html patch/client_jvm_args.example.txt \
-                patch/.gitmodules
-          rm -rf patch/CDC-mod-src patch/docs
-          # 将 patch/packwiz-files/ 中的文件移到标准目录
-          if [ -d "patch/packwiz-files/mods" ]; then
-            mv patch/packwiz-files/mods/*.jar patch/mods/ 2>/dev/null || true
-          fi
-          if [ -d "patch/packwiz-files/resourcepacks" ]; then
-            mkdir -p patch/resourcepacks
-            mv patch/packwiz-files/resourcepacks/*.zip patch/resourcepacks/ 2>/dev/null || true
-          fi
-          if [ -d "patch/packwiz-files/shaderpacks" ]; then
-            mkdir -p patch/shaderpacks
-            mv patch/packwiz-files/shaderpacks/*.zip patch/shaderpacks/ 2>/dev/null || true
-          fi
-          rm -rf patch/packwiz-files
-      - name: 更新配置文件
-        run: |
-          set -euo pipefail
-          mkdir -p patch/config/
-          cp config/bcc-common.toml patch/config/
-          mkdir -p patch/kubejs/config/
-          cp kubejs/config/client.properties patch/kubejs/config/
-          cp kubejs/config/probejs.json patch/kubejs/config/
-          cp kubejs/config/createdelight_pack_integrity_expected.json patch/kubejs/config/
-          mkdir -p patch/config/GeneralFeedback/
-          cp config/GeneralFeedback/default.json patch/config/GeneralFeedback/
-          mkdir -p "patch/$VERSION_FILE_RELATIVE_DIR_PATH"
-          cat << EOF > "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
-          |||
-          $MODPACK_NAME $MODPACK_VERSION (patch)
-          MIT License Copyright (c) 2025 JSI Production Team
-          |||
-          EOF
+        run: python3 scripts/build-release-patch.py server --patch patch
       - name: 复制部署脚本
         run: |
           cp .github/workflows/scripts/deploy-patch.sh deploy-patch.sh
@@ -309,7 +277,7 @@ jobs:
         run: |
           bash .github/workflows/scripts/download_mods.sh 8081 server
           bash .github/workflows/scripts/normalize_packwiz_files_for_curseforge.sh
-          bash .github/workflows/scripts/remove_curseforge_payloads_from_patch.sh patch
+          python3 scripts/build-release-patch.py purge-curseforge --patch patch
       - name: 上传服务器补丁
         uses: actions/upload-artifact@v4
         with:
@@ -324,10 +292,7 @@ jobs:
         with:
           name: "[Dev]${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}-manifest"
       - name: 更新patch中的mod，并加入manifest.json
-        run: |
-          bash .github/workflows/scripts/copy_non_curseforge_payloads.sh patch
-          rm -rf patch/packwiz-files
-          mv manifest.json patch
+        run: python3 scripts/build-release-patch.py client --patch patch --manifest manifest.json
       - name: 上传客户端补丁
         uses: actions/upload-artifact@v4
         with:
