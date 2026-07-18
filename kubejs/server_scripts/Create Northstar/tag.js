@@ -65,20 +65,82 @@ const cataclysmDeeplingEntities = [
     "cataclysm:deepling_warlock"
 ]
 
+const lunarFarsideEntities = [
+    "minecraft:bat",
+    "minecraft:warden",
+    "alexscaves:gloomoth",
+    "alexscaves:underzealot",
+    "alexscaves:corrodent",
+    "alexscaves:vesper",
+    "alexscaves:watcher",
+    "alexscaves:forsaken"
+]
+
+const cataclysmLunarFactoryEntities = [
+    "cataclysm:the_harbinger",
+    "cataclysm:the_prowler",
+    "cataclysm:the_watcher"
+]
+
+const cataclysmMartianBlacksmithEntities = [
+    "cataclysm:netherite_ministrosity",
+    "cataclysm:netherite_monstrosity"
+]
+
+const cataclysmMercuryArenaEntities = [
+    "cataclysm:ignis",
+    "cataclysm:ignited_revenant",
+    "minecraft:blaze"
+]
+
+const cataclysmVenusPyramidEntities = [
+    "cataclysm:koboleton",
+    "cataclysm:wadjet",
+    "cataclysm:kobolediator",
+    "cataclysm:ancient_remnant"
+]
+
+const cataclysmEuropanPrisonEntities = [
+    "cataclysm:aptrgangr",
+    "cataclysm:draugr",
+    "cataclysm:elite_draugr",
+    "cataclysm:royal_draugr",
+    "cataclysm:maledictus"
+]
+
+const cataclysmEuropanLeviathanEntities = [
+    "cataclysm:the_leviathan"
+]
+
 ServerEvents.tags("entity_type", e => {
     e.add("northstar:can_survive_cold",
         "#createdelight:can_survive_northstar"
     )
     e.add("northstar:can_survive_cold", europanAbyssalEntities)
     e.add("northstar:can_survive_cold", cataclysmDeeplingEntities)
+    e.add("northstar:can_survive_cold", lunarFarsideEntities)
+    e.add("northstar:can_survive_cold", cataclysmLunarFactoryEntities)
+    e.add("northstar:can_survive_cold", cataclysmMartianBlacksmithEntities)
+    e.add("northstar:can_survive_cold", cataclysmMercuryArenaEntities)
+    e.add("northstar:can_survive_cold", cataclysmEuropanPrisonEntities)
+    e.add("northstar:can_survive_cold", cataclysmEuropanLeviathanEntities)
     e.add("northstar:can_survive_heat",
         "#createdelight:can_survive_northstar"
     )
+    e.add("northstar:can_survive_heat", cataclysmMercuryArenaEntities)
+    e.add("northstar:can_survive_heat", cataclysmVenusPyramidEntities)
     e.add("northstar:doesnt_require_oxygen",
         "#createdelight:can_survive_northstar"
     )
     e.add("northstar:doesnt_require_oxygen", europanAbyssalEntities)
     e.add("northstar:doesnt_require_oxygen", cataclysmDeeplingEntities)
+    e.add("northstar:doesnt_require_oxygen", lunarFarsideEntities)
+    e.add("northstar:doesnt_require_oxygen", cataclysmLunarFactoryEntities)
+    e.add("northstar:doesnt_require_oxygen", cataclysmMartianBlacksmithEntities)
+    e.add("northstar:doesnt_require_oxygen", cataclysmMercuryArenaEntities)
+    e.add("northstar:doesnt_require_oxygen", cataclysmVenusPyramidEntities)
+    e.add("northstar:doesnt_require_oxygen", cataclysmEuropanPrisonEntities)
+    e.add("northstar:doesnt_require_oxygen", cataclysmEuropanLeviathanEntities)
     e.add("createdelight:can_survive_northstar", [
         "iceandfire:mob_skull",
         "iceandfire:cyclops",

@@ -1,0 +1,14 @@
+{
+  "central_body": "northstar:earth",
+  "class": "moon",
+  "diameter": 3474.8,
+  "orbit": {
+    "type": "northstar:fixed",
+    "position": [-0.00257, 0.0, 0.0]
+  },
+  "renderer": "northstar:no_op",
+  "required_science": 1.0,
+  "rotation_period_days": -27.322,
+  "science_weight_exp": 1.0,
+  "texture": "northstar:solar_system/earth/moon"
+}

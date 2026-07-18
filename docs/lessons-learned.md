@@ -536,3 +536,17 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: 移动 `SchemaSlotGui` 的 placeholder、border 和 quantity 子元素只会改变单材料槽的画面位置；`WorkbenchContainer.materialSlots` 仍保留原来的 `ToggleableSlot.x`，导致点击与物品放置区域偏离可见槽位。
 - **Fix/Lesson**: 调整 Tetra 加工台材料槽时，必须同时移动 GUI 子元素，并在 `WorkbenchContainer.updateSlots` 完成后修正客户端容器槽位坐标；两边使用同一条单材料布局条件，多材料槽继续保留 Tetra 原生位置。
+
+## 灾变沉没城的周边群系预检不同于实际落点标签
+
+**Date**: 2026-07-19
+
+- **Problem**: `Sunken_City_Structure` 会在区块生成器最低高度附近检查半径 29 格内的全部群系是否属于 `cataclysm:required_sunken_city_surrounding`；只填写土卫二地下海洋群系时，最低高度可能解析为冰原、山脊或蓝冰裂谷，导致 `/locate` 的所有候选点被拒绝。
+- **Fix/Lesson**: `required_sunken_city_surrounding` 应引用完整的 `#northstar:europa_biomes` 以通过预检，同时保持 `has_structure/sunken_city_biomes` 只包含地下海洋与深渊裂谷，从而不扩大实际结构落点。
+
+## 自定义洞穴群系需要同步底材 surface rule
+
+**Date**: 2026-07-19
+
+- **Problem**: 只把 Alex's Caves 或深暗群系加入 Northstar 维度的 `multi_noise` 只会改变群系归属，洞壁和洞底仍由目标 `noise_settings.default_block` 与 `surface_rule` 生成；月岩底材还会让只替换 `alexscaves:galena_gen_replaceables` 的磁化洞穴矿物和碎屑失去生成目标。
+- **Fix/Lesson**: 将外来洞穴群系接入 Northstar 星球时必须同时核对其底材和 placed feature target；为对应星球覆盖或新增专用 noise settings，并在 bedrock 后、星球通用石材规则前加入 biome-conditioned surface rule。

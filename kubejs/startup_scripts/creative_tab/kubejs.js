@@ -121,6 +121,7 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:incomplete_crystal_fixer',
         'createdelight:prospector',
         'createdelight:prospector_core',
+        'createdelight:orbital_telemetry_scanner',
         'createdelight:overworld_metal_ore_cluster',
         'createdelight:overworld_noble_metal_ore_cluster',
         'createdelight:nether_ore_cluster',

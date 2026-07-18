@@ -14,6 +14,7 @@ global.CDServerJavaClasses = {
     $ClientboundSetSubtitleTextPacket: Java.loadClass("net.minecraft.network.protocol.game.ClientboundSetSubtitleTextPacket"),
     $ClientboundSetTitleTextPacket: Java.loadClass("net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket"),
     $CrossPlatformStuff: Java.loadClass("io.github.flemmli97.improvedmobs.platform.CrossPlatformStuff"),
+    $CompoundTag: Java.loadClass("net.minecraft.nbt.CompoundTag"),
     $CuriosApi: Java.loadClass("top.theillusivec4.curios.api.CuriosApi"),
     $Direction: Java.loadClass("net.minecraft.core.Direction"),
     $EnergyCellBlockItem: Java.loadClass("appeng.block.networking.EnergyCellBlockItem"),

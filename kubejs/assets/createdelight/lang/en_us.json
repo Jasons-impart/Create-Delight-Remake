@@ -131,5 +131,17 @@
   "gui.createdelight.order_submission_port.status.input_changed": "Inputs changed; this process was cancelled.",
   "gui.createdelight.order_submission_port.status.returned": "Inputs returned.",
   "tooltip.createdelight.order_submission_port.submit.1": "Accept an order or order package, plus all input goods packages.",
-  "tooltip.createdelight.order_submission_port.submit.2": "A redstone pulse can start processing too; pending rewards turn the redstone signal off."
+  "tooltip.createdelight.order_submission_port.submit.2": "A redstone pulse can start processing too; pending rewards turn the redstone signal off.",
+  "item.createdelight.orbital_telemetry_scanner": "Orbital Telemetry Scanner",
+  "tooltip.createdelight.orbital_telemetry_scanner.1": "Use in Earth orbit to scan for distant anomalous signals.",
+  "tooltip.createdelight.orbital_telemetry_scanner.2": "Carry a Space Atlas in your inventory to record the abandoned station waypoint.",
+  "message.createdelight.orbital_scanner.wrong_dimension": "Background noise is too strong. Deep-space scans require Earth orbit.",
+  "message.createdelight.orbital_scanner.need_atlas": "Carry a Space Atlas in your inventory to record the result.",
+  "message.createdelight.orbital_scanner.scanning": "Calibrating deep-space array...",
+  "message.createdelight.orbital_scanner.found": "Abandoned station found and recorded at %s, %s, %s",
+  "message.createdelight.orbital_scanner.rediscovered": "Abandoned station waypoint restored at %s, %s, %s",
+  "message.createdelight.orbital_scanner.failed": "Failed to lock onto the station signal. Try again later.",
+  "dimension.createdelight.lunar_farside": "Lunar Farside Anomaly",
+  "createdelight.planets.lunar_farside.name": "Lunar Farside Anomaly",
+  "northstar.planet.dimension.farside": " - Deep Lunar Rift"
 }
