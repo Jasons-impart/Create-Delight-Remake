@@ -755,6 +755,17 @@ StartupEvents.registry("item", e => {
     dread_upgrade.ingredientSlotDescriptionText = Text.translate("item.createdelight.smithing_template.dread_upgrade.additions_slot_description").blue()
     dread_upgrade.displayName(Component.translate("item.createdelight.dread_upgrade_smithing_template").blue())
 
+    // 黑骑士装备升级模板（原模组只有模型、贴图和标签引用，未实际注册物品）
+    let knight_upgrade = e.create("blackknightarmor:knight_upgrade_smithing_template", "smithing_template")
+        .armorIcons()
+        .ingotIcon()
+        .texture("blackknightarmor:item/knight_upgrade_smithing_template")
+    knight_upgrade.appliesToText = Text.translate("item.blackknightarmor.smithing_template.knight_upgrade.applies_to").blue()
+    knight_upgrade.ingredientsText = Text.translate("item.blackknightarmor.smithing_template.knight_upgrade.ingredients").blue()
+    knight_upgrade.appliesToSlotDescriptionText = Text.translate("item.blackknightarmor.smithing_template.knight_upgrade.base_slot_description").blue()
+    knight_upgrade.ingredientSlotDescriptionText = Text.translate("item.blackknightarmor.smithing_template.knight_upgrade.additions_slot_description").blue()
+    knight_upgrade.displayName(Component.translate("item.blackknightarmor.knight_upgrade_smithing_template").blue())
+
     //注册氧气罐
     e.create("createdelight:oxygen_tank")
         .translationKey("item.createdelight.oxygen_tank")

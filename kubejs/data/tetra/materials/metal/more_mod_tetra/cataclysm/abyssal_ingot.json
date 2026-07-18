@@ -1,0 +1,39 @@
+{
+  "key": "abyssal_ingot",
+  "category": "metal",
+  "replace": true,
+  "primary": 9.6,
+  "secondary": 3.6,
+  "tertiary": 4.4,
+  "durability": 1400,
+  "integrityCost": 2,
+  "integrityGain": 7,
+  "magicCapacity": 110,
+  "toolLevel": "minecraft:netherite",
+  "toolEfficiency": 9.5,
+  "tints": {
+    "glyph": "270F6A",
+    "texture": "270F6A"
+  },
+  "effects": {
+    "more_mod_tetra:abyssal_curse": 1
+  },
+  "textures": [
+    "heavy",
+    "metal"
+  ],
+  "material": {
+    "items": [
+      "more_mod_tetra:abyssal_ingot"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": 7
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ]
+}

@@ -1,4 +1,26 @@
 let difficultyLoots = {
+    "createdelight:dread_heart": [
+        {
+            entity: "iceandfire:dread_lich",
+            tier: 3,
+            chance: 0.25
+        },
+        {
+            entity: "iceandfire:dread_knight",
+            tier: 3,
+            chance: 0.12
+        },
+        {
+            entity: "iceandfire:dread_ghoul",
+            tier: 3,
+            chance: 0.05
+        },
+        {
+            entity: "iceandfire:dread_thrall",
+            tier: 3,
+            chance: 0.05
+        }
+    ],
     "iceandfire:cockatrice_eye": [
         {
             entity: "iceandfire:cockatrice",

@@ -516,6 +516,13 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: TetraClip and Tetra Insight both paginated `HoloSortPopover`, but TetraClip's item `isVisible()` checked only its own page field; changing the Tetra Insight page label therefore left TetraClip on page 1 and made every later page blank.
 - **Fix/Lesson**: Keep one owner for sorter pagination or explicitly synchronize both page states; when replacing TetraClip, remove its Packwiz metadata, packaged payload and runtime JAR before judging the replacement UI.
 
+## Tetra material overrides must replace the complete upstream entry
+
+**Date**: 2026-07-18
+
+- **Problem**: 在相同资源路径放置新的 Tetra `materials` JSON 时，`MaterialStore` 会按合并式数据存储处理；只改三值而不声明完整替换，MMT 上游字段可能继续并入，导致静态文件看似正确但运行时材料结果与设计不一致。
+- **Fix/Lesson**: 覆盖现有材料时使用完整有效的 `MaterialData`，保留需要的原效果、contexts、物品和条件，并显式加入 `"replace": true`；修改后应逐项对照运行 JAR，确认除计划调整的数值外没有误删效果或护甲上下文。
+
 ## Tetra module selection must not repeatedly expand the full schematic registry
 
 **Date**: 2026-07-16

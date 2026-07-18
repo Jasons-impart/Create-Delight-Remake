@@ -1,23 +1,23 @@
 {
   "replace": true,
-  "key": "end_dragon_ingot",
+  "key": "sun_light_ingot",
   "category": "metal",
-  "primary": 13,
-  "secondary": 4,
-  "tertiary": 6,
+  "primary": 11,
+  "secondary": 6,
+  "tertiary": 5.5,
   "durability": 2000,
   "integrityCost": 3,
   "integrityGain": 10,
-  "magicCapacity": 80,
+  "magicCapacity": 140,
   "toolLevel": "minecraft:netherite",
-  "toolEfficiency": 12,
+  "toolEfficiency": 10.5,
   "effects": {
-    "unbreaking": 3,
-    "workable": 10
+    "createdelight:solar_guard": 1,
+    "unbreaking": 1
   },
   "tints": {
-    "glyph": "311c3b",
-    "texture": "311c3b"
+    "glyph": "f0b93d",
+    "texture": "f0b93d"
   },
   "textures": [
     "heavy",
@@ -25,7 +25,7 @@
   ],
   "material": {
     "items": [
-      "blackknightarmor:end_dragon_ingot"
+      "blackknightarmor:sun_light_ingot"
     ]
   },
   "requiredTools": {
