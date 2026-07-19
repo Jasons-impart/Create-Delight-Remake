@@ -1,0 +1,23 @@
+{
+  "processors": [
+    {
+      "processor_type": "cataclysm:water_logging_fix_processor"
+    },
+    {
+      "processor_type": "integrated_api:windmill_bearing_processor"
+    },
+    {
+      "processor_type": "integrated_api:close_off_fluid_sources_processor",
+      "weighted_list_of_replacement_blocks": [
+        {
+          "block": "northstar:mercury_stone",
+          "weight": 3
+        },
+        {
+          "block": "northstar:mercury_deep_stone",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

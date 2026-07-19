@@ -1,0 +1,7 @@
+{
+  "dimensionId": "minecraft:dimension:createdelight:lunar_farside",
+  "maxYPos": -1000,
+  "seaLevel": -1000,
+  "gravity": [0.0, -1.6, 0.0],
+  "priority": 1000
+}

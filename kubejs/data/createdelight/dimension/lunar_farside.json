@@ -1,0 +1,84 @@
+{
+  "type": "northstar:moon",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "createdelight:lunar_farside",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "northstar:lunar_plains",
+          "parameters": {
+            "temperature": [-2, 2],
+            "humidity": [-2, -0.15],
+            "continentalness": [-2, 2],
+            "erosion": [-2, 0.35],
+            "weirdness": [-2, 0.35],
+            "depth": [-1, 0.8],
+            "offset": 0
+          }
+        },
+        {
+          "biome": "northstar:lunar_hills",
+          "parameters": {
+            "temperature": [-2, 0.2],
+            "humidity": [-0.15, 2],
+            "continentalness": [-2, 2],
+            "erosion": [-2, -0.2],
+            "weirdness": [0.35, 2],
+            "depth": [-1, 0.8],
+            "offset": 0
+          }
+        },
+        {
+          "biome": "northstar:lunar_crater_fields",
+          "parameters": {
+            "temperature": [0.2, 2],
+            "humidity": [-0.15, 2],
+            "continentalness": [-2, 2],
+            "erosion": [-0.2, 2],
+            "weirdness": [0.35, 2],
+            "depth": [-1, 0.8],
+            "offset": 0
+          }
+        },
+        {
+          "biome": "northstar:lunar_ice_caves",
+          "parameters": {
+            "temperature": [-2, -0.45],
+            "humidity": [-2, 2],
+            "continentalness": [-2, 2],
+            "erosion": [-2, 2],
+            "weirdness": [-2, 2],
+            "depth": [0.8, 1.15],
+            "offset": 0
+          }
+        },
+        {
+          "biome": "minecraft:deep_dark",
+          "parameters": {
+            "temperature": [-2, 0],
+            "humidity": [-2, 2],
+            "continentalness": [-2, 2],
+            "erosion": [-2, 2],
+            "weirdness": [-2, 2],
+            "depth": [1.1, 2],
+            "offset": 0
+          }
+        },
+        {
+          "biome": "alexscaves:forlorn_hollows",
+          "parameters": {
+            "temperature": [0, 2],
+            "humidity": [-2, 2],
+            "continentalness": [-2, 2],
+            "erosion": [-2, 2],
+            "weirdness": [-2, 2],
+            "depth": [1.1, 2],
+            "offset": 0
+          }
+        }
+      ]
+    }
+  }
+}

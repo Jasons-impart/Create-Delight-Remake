@@ -1052,5 +1052,17 @@
     "gui.createdelight.order_submission_port.status.input_changed": "输入内容已变化，本次处理已取消。",
     "gui.createdelight.order_submission_port.status.returned": "输入已退回。",
     "tooltip.createdelight.order_submission_port.submit.1": "受理当前订单或订单包裹，以及所有输入货物包裹。",
-    "tooltip.createdelight.order_submission_port.submit.2": "也可以给予红石脉冲开始处理；有待取奖励时会关闭红石信号。"
+    "tooltip.createdelight.order_submission_port.submit.2": "也可以给予红石脉冲开始处理；有待取奖励时会关闭红石信号。",
+    "item.createdelight.orbital_telemetry_scanner": "轨道遥测扫描仪",
+    "tooltip.createdelight.orbital_telemetry_scanner.1": "§7在§b地球轨道§7中使用，扫描极远处的异常信号。",
+    "tooltip.createdelight.orbital_telemetry_scanner.2": "§7背包中必须携带星图；首次扫描会记录破损空间站航点。",
+    "message.createdelight.orbital_scanner.wrong_dimension": "轨道背景噪声过强：只能在地球轨道进行深空扫描。",
+    "message.createdelight.orbital_scanner.need_atlas": "背包中需要携带一份星图来记录扫描结果。",
+    "message.createdelight.orbital_scanner.scanning": "正在校准深空阵列……",
+    "message.createdelight.orbital_scanner.found": "发现破损空间站，航点已写入星图：%s, %s, %s",
+    "message.createdelight.orbital_scanner.rediscovered": "已重新写入破损空间站航点：%s, %s, %s",
+    "message.createdelight.orbital_scanner.failed": "空间站信号锁定失败，请稍后重试。",
+    "dimension.createdelight.lunar_farside": "月背异常区",
+    "createdelight.planets.lunar_farside.name": "月背异常区",
+    "northstar.planet.dimension.farside": "·深月裂谷"
 }
