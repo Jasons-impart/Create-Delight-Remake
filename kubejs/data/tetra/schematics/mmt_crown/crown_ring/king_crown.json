@@ -1,0 +1,48 @@
+{
+  "slots": [
+    "mmt_crown/crown_ring"
+  ],
+  "materialSlotCount": 1,
+  "displayType": "major",
+  "glyph": {
+    "textureX": 176,
+    "textureY": 48
+  },
+  "translation": {
+    "primaryAttributes": {
+      "**generic.attack_damage": 4,
+      "**generic.armor": 4
+    },
+    "secondaryAttributes": {
+      "**generic.max_health": 6,
+      "**generic.armor_toughness": 6,
+      "**generic.movement_speed": -1
+    },
+    "tertiaryAttributes": {
+      "**generic.attack_speed": 4,
+      "**generic.movement_speed": 4
+    },
+    "durability": 1,
+    "integrity": 1,
+    "magicCapacity": 1
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:bone/",
+        "tetra:metal/",
+        "tetra:stone/",
+        "tetra:wood/",
+        "tetra:gem/"
+      ],
+      "countFactor": 2,
+      "moduleKey": "mmt_crown/crown_ring/king_crown",
+      "moduleVariant": "king_crown/"
+    }
+  ],
+  "requirement": {
+    "type": "tetra:locked",
+    "key": "createdelight:mmt_curios/astral_dominion"
+  },
+  "replace": true
+}

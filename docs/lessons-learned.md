@@ -523,6 +523,13 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: 在相同资源路径放置新的 Tetra `materials` JSON 时，`MaterialStore` 会按合并式数据存储处理；只改三值而不声明完整替换，MMT 上游字段可能继续并入，导致静态文件看似正确但运行时材料结果与设计不一致。
 - **Fix/Lesson**: 覆盖现有材料时使用完整有效的 `MaterialData`，保留需要的原效果、contexts、物品和条件，并显式加入 `"replace": true`；修改后应逐项对照运行 JAR，确认除计划调整的数值外没有误删效果或护甲上下文。
 
+## Tetra schematic material previews must match module extract data
+
+**Date**: 2026-07-19
+
+- **Problem**: MMT 饰品 schematic 的 `translation` 可能复制错误属性；若审计时只读取原 MMT JAR，还会忽略 `kubejs/data/tetra/modules/` 已把暴击等效果覆盖为 AttributesLib 属性，导致工作台预览重新指回不再生效的原模组 effect。
+- **Fix/Lesson**: 先读取工作区同路径 module 覆盖，缺失时才回退到 JAR，再按有效 variant 的 `extract.primary/secondary/tertiaryAttributes` 与 `Effects` 逐维核对 translation；只有暴击与固定护甲穿透等完全同语义效果才能归并到 AttributesLib，并同步 schematic 与 module 两层 description，所有覆盖继续保留 `replace: true`。
+
 ## Tetra module selection must not repeatedly expand the full schematic registry
 
 **Date**: 2026-07-16

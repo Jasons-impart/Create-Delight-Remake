@@ -3,6 +3,10 @@
     "mmt_emblem/emblem_type"
   ],
   "materialSlotCount": 1,
+  "requirement": {
+    "type": "tetra:locked",
+    "key": "createdelight:mmt_curios/path_emblems"
+  },
   "displayType": "major",
   "glyph": {
     "textureX": 176,
@@ -12,14 +16,14 @@
     "durability": 1,
     "integrity": 1,
     "magicCapacity": 1,
-    "primaryAttributes": {
-      "attributeslib:crit_chance": 0.01
+    "primaryEffects": {
+      "more_mod_tetra:curios_projectile_damage_up": 1
     },
-    "secondaryAttributes": {
-      "attributeslib:crit_chance": 0.01
+    "secondaryEffects": {
+      "more_mod_tetra:curios_projectile_damage_up": 1
     },
-    "tertiaryAttributes": {
-      "attributeslib:crit_chance": 0.01
+    "tertiaryEffects": {
+      "more_mod_tetra:curios_projectile_damage_up": 1
     }
   },
   "outcomes": [

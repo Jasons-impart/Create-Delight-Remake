@@ -1,0 +1,41 @@
+{
+  "slots": [
+    "mmt_heart_protecting_mirror/base"
+  ],
+  "materialSlotCount": 1,
+  "displayType": "major",
+  "glyph": {
+    "textureX": 176,
+    "textureY": 48
+  },
+  "translation": {
+    "tertiaryEffects": {
+      "more_mod_tetra:curios_protect": 1
+    },
+    "durability": 1,
+    "integrity": 1,
+    "magicCapacity": 1
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:bone/",
+        "tetra:metal/",
+        "tetra:stone/",
+        "tetra:gem/",
+        "tetra:wood/",
+        "tetra:skin/",
+        "tetra:fibre/",
+        "tetra:fabric/"
+      ],
+      "countFactor": 2,
+      "moduleKey": "mmt_heart_protecting_mirror/base/soft_base",
+      "moduleVariant": "soft_base/"
+    }
+  ],
+  "requirement": {
+    "type": "tetra:locked",
+    "key": "createdelight:mmt_curios/mars_guard"
+  },
+  "replace": true
+}

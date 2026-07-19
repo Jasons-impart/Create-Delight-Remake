@@ -2079,7 +2079,7 @@ independentProduct(独立乘区) *= 1 + curiosEffectLevel(饰品效果总等级)
 | `soft_base`（柔韧护心镜基底） | `mmt_heart_protecting_mirror/base` | 效果：伤害减免 `+2.25` | 韧性效果：伤害减免 `+0.75` |
 | `health_core`（生命核心） | `mmt_heart_protecting_mirror/core` | 属性：`generic.max_health`（最大生命）`+4` | 密度属性：最大生命 `+2` |
 | `cross`（十字坠饰） | `mmt_necklace/pendant` | 效果：`curios_kamui`（饰品神威）`+15` | 硬度效果：神威 `+2` |
-| `fang`（尖牙坠饰） | `mmt_necklace/pendant` | 效果：`curios_armor_penetration`（固定穿甲）`+2` | 硬度效果：固定穿甲 `+0.4`；密度效果：固定穿甲 `+0.2` |
+| `fang`（尖牙坠饰） | `mmt_necklace/pendant` | 属性：`attributeslib:armor_pierce`（盔甲穿透）`+2` | 硬度属性：盔甲穿透 `+0.4`；密度属性：盔甲穿透 `+0.2` |
 | `critical_strike_ring`（暴击之戒） | `mmt_ring/base_ring` | 属性：爆伤 `+0.0175` | 硬度属性：暴击率 `+0.005` |
 | `jank_ring`（磁力之戒） | `mmt_ring/base_ring` | 效果：`curios_jank`（饰品磁力）`+5` | 硬度效果：磁力 `+1`；密度效果：磁力 `+1`；韧性效果：磁力 `+0.75` |
 | `gem`（戒指镶嵌） | `mmt_ring/inlay` | 属性：爆伤 `+0.025` | 硬度属性：暴击率 `+0.0075` |

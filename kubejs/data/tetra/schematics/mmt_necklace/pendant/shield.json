@@ -1,0 +1,35 @@
+{
+  "slots": [
+    "mmt_necklace/pendant"
+  ],
+  "materialSlotCount": 1,
+  "requirement": {
+    "type": "tetra:locked",
+    "key": "createdelight:mmt_curios/hive_guard"
+  },
+  "displayType": "major",
+  "glyph": {
+    "textureX": 176,
+    "textureY": 48
+  },
+  "translation": {
+    "primaryAttributes": {
+      "generic.armor": 1
+    },
+    "durability": 1,
+    "integrity": 1,
+    "magicCapacity": 1
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:stone/",
+        "tetra:gem/"
+      ],
+      "countFactor": 1,
+      "moduleKey": "mmt_necklace/pendant/shield",
+      "moduleVariant": "shield/"
+    }
+  ],
+  "replace": true
+}
