@@ -550,3 +550,31 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: 只把 Alex's Caves 或深暗群系加入 Northstar 维度的 `multi_noise` 只会改变群系归属，洞壁和洞底仍由目标 `noise_settings.default_block` 与 `surface_rule` 生成；月岩底材还会让只替换 `alexscaves:galena_gen_replaceables` 的磁化洞穴矿物和碎屑失去生成目标。
 - **Fix/Lesson**: 将外来洞穴群系接入 Northstar 星球时必须同时核对其底材和 placed feature target；为对应星球覆盖或新增专用 noise settings，并在 bedrock 后、星球通用石材规则前加入 biome-conditioned surface rule。
+
+## Northstar 的字符串 renderer 是贴图快捷写法
+
+**Date**: 2026-07-19
+
+- **Problem**: 在 planet JSON 中写入 `"renderer": "northstar:no_op"` 会按简单星体贴图解析，而不是创建 `NoopPlanetRenderer`，因此目标星体仍会进入望远镜和天空渲染流程。
+- **Fix/Lesson**: 无绘制星体必须使用带类型的对象形式 `"renderer": { "type": "northstar:no_op" }`；字符串形式只用于贴图资源位置。
+
+## 灾变诅咒金字塔按中心地表统一放置全部分块
+
+**Date**: 2026-07-19
+
+- **Problem**: `Cursed_Pyramid_Structure` 自行读取中心点的 `WORLD_SURFACE_WG` 高度，并把 48×48 的四块地下模板统一下移 39 格；它不使用结构 JSON 的 `start_height`，在起伏地形上会让整片地下外墙裸露为直角断面。
+- **Fix/Lesson**: 不能用调整 `start_height` 或增加 `beard_box` 修复金字塔截断；应在生成入口对占地角、边与中心采样，坡度超过阈值时拒绝候选位置。
+
+## 大型地表结构的 beard_box 会制造包围盒尺度断崖
+
+**Date**: 2026-07-19
+
+- **Problem**: Integrated API 的水星炎魔竞技场体积很大，使用 `terrain_adaptation: beard_box` 会围绕完整结构包围盒重塑密度，在起伏地形上形成大面积垂直石墙。
+- **Fix/Lesson**: 大型地表建筑优先使用 `beard_thin` 并配合占地坡度预检；`beard_box` 只适合确实需要整块地基填充且包围盒较小的结构。
+
+## 外星结构生物抗性不能只按结构模板枚举
+
+**Date**: 2026-07-19
+
+- **Problem**: 土卫二沉没城的低温与缺氧抗性只覆盖结构模板直接关联的深潜者和利维坦，遗漏了在深渊裂谷自然生成的珊瑚傀儡，以及由同生态玩法产生的珊瑚巨兽、蓑鲉、紫晶蟹和幼年利维坦。
+- **Fix/Lesson**: 为外星结构补环境抗性时应同时审计 NBT/拼图池、群系生成配置、祭坛召唤物、Boss 衍生物与可携带幼体，再统一加入对应 Northstar 实体标签。

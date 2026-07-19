@@ -6,7 +6,7 @@
   "step": "underground_structures",
   "terrain_adaptation": "beard_box",
   "start_height": {
-    "absolute": -40
+    "absolute": -32
   },
   "use_expansion_hack": false,
   "spawn_overrides": {}

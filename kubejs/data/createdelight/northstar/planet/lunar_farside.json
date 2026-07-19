@@ -6,7 +6,9 @@
     "type": "northstar:fixed",
     "position": [-0.00257, 0.0, 0.0]
   },
-  "renderer": "northstar:no_op",
+  "renderer": {
+    "type": "northstar:no_op"
+  },
   "required_science": 1.0,
   "rotation_period_days": -27.322,
   "science_weight_exp": 1.0,
