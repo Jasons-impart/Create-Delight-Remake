@@ -1,0 +1,36 @@
+{
+  "type": "tetra:basic_major_module",
+  "slots": [
+    "mmt_crown/crown_ring"
+  ],
+  "improvements": [],
+  "variants": [
+    {
+      "materials": [
+        "tetra:metal/"
+      ],
+      "key": "starter_crown/",
+      "integrity": 0,
+      "effects": {
+        "more_mod_tetra:curios_materials_effect_invalidation": 1
+      },
+      "attributes": {
+        "generic.luck": 0.5
+      },
+      "extract": {
+        "glyph": {
+          "textureX": 176,
+          "textureY": 48
+        },
+        "availableTextures": [
+          ""
+        ],
+        "models": [
+          {
+            "location": "more_mod_tetra:item/module/mmt_crown/crown_ring/king_crown"
+          }
+        ]
+      }
+    }
+  ]
+}

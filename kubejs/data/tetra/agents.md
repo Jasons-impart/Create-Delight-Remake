@@ -2094,6 +2094,21 @@ independentProduct(独立乘区) *= 1 + curiosEffectLevel(饰品效果总等级)
 | `base_totem_core`（图腾核心） | `mmt_totem_of_undying/totem_core` | 效果：`curios_totem_effect`（图腾增强）`[5,1]` | 硬度效果：图腾增强 `[+1,+0]`；密度效果：图腾增强 `[+0,+0.7]` |
 | `base_totem_shell`（不死图腾外壳） | `mmt_totem_of_undying/totem_shell` | 效果：`curios_totem_cooldown`（图腾冷却）`180`，`curios_totem_health`（图腾回复）`10` | 硬度效果：图腾冷却 `-4`；密度效果：图腾回复 `+3` |
 
+首次把普通 MMT 基底转换成模块化物品时，不再预装上表中的卷轴能力模块，而是使用以下低收益初始模块：
+
+| 初始模块 | 槽位 | 固定收益 | 后续定位 |
+|---|---|---|---|
+| `starter_bracelet`（基础手镯） | `mmt_bracelet/base_bracelet` | 护甲韧性 `+0.5` | 用卷轴模块替换为暴击、攻速或减伤手镯 |
+| `starter_crown`（简易头冠） | `mmt_crown/crown_ring` | 幸运 `+0.5` | 用卷轴模块替换为法术或全能头冠 |
+| `starter_base`（普通护心镜） | `mmt_heart_protecting_mirror/base` | 护甲 `+1` | 不提供稳定减伤或生命核心 |
+| `starter_ring`（素面戒指） | `mmt_ring/base_ring` | 暴击率 `+0.005` | 不提供护甲、磁力或暴击伤害 |
+| `starter_boots`（轻便鞋面） | `mmt_shoes/upper` | `**movement_speed +0.01` | 不预装高移速鞋底、击退抗性或摔落保护 |
+| `starter_shell`（护身图腾外壳） | `mmt_totem_of_undying/totem_shell` | 最大生命 `+1` | 不提供复活、图腾冷却或复活回复 |
+| `mmt_white_container/.../starter_core` | 纯白容器白色槽 | 幸运 `+0.5` | 不承载七槽光谱增益 |
+| `mmt_white_scabbard/.../starter_core` | 纯白剑鞘白色槽 | 攻击 `+0.25` | 不触发近战附加状态 |
+| `mmt_white_quiver/.../starter_core` | 纯白箭袋白色槽 | 暴击率 `+0.005` | 不触发弹射物附加状态 |
+| `mmt_white_bag/.../starter_core` | 纯白书袋白色槽 | 爆伤 `+0.01` | 不触发法术或特殊伤害附加状态 |
+
 未列入正文的饰品模块：依赖当前未安装联动的模块。
 
 ### 5.2 暴击与爆伤

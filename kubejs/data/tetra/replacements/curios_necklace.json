@@ -1,0 +1,17 @@
+[
+  {
+    "predicate": {
+      "items": [
+        "more_mod_tetra:curios_necklace"
+      ]
+    },
+    "item": "more_mod_tetra:modular_mmt_necklace",
+    "modules": {
+      "relic/casing": [
+        "mmt_necklace/chain/base_chain",
+        "base_chain/iron"
+      ]
+    },
+    "improvements": {}
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "predicate": {
+      "items": [
+        "more_mod_tetra:tetra_white_quiver"
+      ]
+    },
+    "item": "more_mod_tetra:modular_mmt_white_quiver",
+    "modules": {
+      "relic/casing": [
+        "mmt_white_quiver/white/starter_core",
+        "starter_core/iron"
+      ]
+    },
+    "improvements": {}
+  }
+]

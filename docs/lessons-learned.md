@@ -523,12 +523,26 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: 在相同资源路径放置新的 Tetra `materials` JSON 时，`MaterialStore` 会按合并式数据存储处理；只改三值而不声明完整替换，MMT 上游字段可能继续并入，导致静态文件看似正确但运行时材料结果与设计不一致。
 - **Fix/Lesson**: 覆盖现有材料时使用完整有效的 `MaterialData`，保留需要的原效果、contexts、物品和条件，并显式加入 `"replace": true`；修改后应逐项对照运行 JAR，确认除计划调整的数值外没有误删效果或护甲上下文。
 
+## GeoTetraArmor materials require explicit armor contexts
+
+**Date**: 2026-07-19
+
+- **Problem**: Tetra Material Overhaul 会把材料根级 `effects` 放入 `default` context，而 GeoTetraArmor 模块只请求 `armor` 与具体部位 context；仅在根级声明的日耀守护、灵钢衬层等效果会出现在普通模块，却不会进入护甲的计算效果列表。
+- **Fix/Lesson**: 需要在护甲生效的材料必须同时保留根级效果并在 `contexts.armor.effects` 中显式声明护甲效果；只属于武器的效果不要复制进 `armor`，并通过实际装备 NBT、Buff 与 `ArmorEffectUtil` 汇总结果验证。
+
 ## Tetra schematic material previews must match module extract data
 
 **Date**: 2026-07-19
 
 - **Problem**: MMT 饰品 schematic 的 `translation` 可能复制错误属性；若审计时只读取原 MMT JAR，还会忽略 `kubejs/data/tetra/modules/` 已把暴击等效果覆盖为 AttributesLib 属性，导致工作台预览重新指回不再生效的原模组 effect。
 - **Fix/Lesson**: 先读取工作区同路径 module 覆盖，缺失时才回退到 JAR，再按有效 variant 的 `extract.primary/secondary/tertiaryAttributes` 与 `Effects` 逐维核对 translation；只有暴击与固定护甲穿透等完全同语义效果才能归并到 AttributesLib，并同步 schematic 与 module 两层 description，所有覆盖继续保留 `replace: true`。
+
+## Tetra replacements bypass schematic requirements
+
+**Date**: 2026-07-19
+
+- **Problem**: MMT 普通饰品基底通过 `data/tetra/replacements` 转换时会直接预装模块；`ReplacementDeserializer` 调用 `ItemModule.addModule()`，不会检查对应 schematic 的 `tetra:locked` requirement，因此仅给图纸加卷轴锁仍可通过首次转换取得被锁模块。
+- **Fix/Lesson**: 审计阶段锁时必须同时检查同一物品的 replacement；普通基底只预装默认开放结构或不含独立乘区、减伤、追踪、神威、复活和状态触发的低收益初始模块，把主要能力留到玩家取得卷轴后再安装。
 
 ## Tetra module selection must not repeatedly expand the full schematic registry
 
