@@ -86,7 +86,7 @@
       "create_fantasizing-1.20.1-1.1.1.jar",
       "create_jetpack-forge-4.4.6.jar",
       "create_jetpack_curios-1.2.0-forge-1.20.1.jar",
-      "create_mechanical_spawner-1.20.1-0.1.7-6.0.6.jar",
+      "create_mob_spawners-1.20.1-3.3.0.jar",
       "create_oppenheimered-1.0.5.jar",
       "create_pattern_schematics-1.3.3.jar",
       "create_ratatouille-1.20.1-1.3.8.jar",
@@ -1324,8 +1324,8 @@
     },
     {
       "side": "common",
-      "metadata": "mods/create_mechanical_spawner.pw.toml",
-      "filename": "create_mechanical_spawner-1.20.1-0.1.7-6.0.6.jar"
+      "metadata": "mods/create-mob-spawners.pw.toml",
+      "filename": "create_mob_spawners-1.20.1-3.3.0.jar"
     },
     {
       "side": "common",
