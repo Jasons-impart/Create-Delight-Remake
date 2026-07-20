@@ -15,6 +15,13 @@
     "createdelight:ghoststeel": 1,
     "createdelight:life_drain": 1
   },
+  "contexts": {
+    "armor": {
+      "effects": {
+        "createdelight:ghoststeel": 1
+      }
+    }
+  },
   "tints": {
     "glyph": "b7d5d0",
     "texture": "b7d5d0"

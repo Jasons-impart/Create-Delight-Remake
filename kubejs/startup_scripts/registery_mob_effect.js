@@ -9,4 +9,11 @@ StartupEvents.registry("minecraft:mob_effect", e => {
     .beneficial()
     .color(Color.rgba(43, 10, 61, 255))
 
+  // Independent display effect for Tetra sun light materials. The original
+  // Black Knight Armor effect is removed every tick unless the player wears
+  // the mod's complete Solar Flare armor set.
+  e.create("createdelight:solar_guard")
+    .beneficial()
+    .color(Color.rgba(255, 190, 64, 255))
+
 })

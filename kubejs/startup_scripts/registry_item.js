@@ -691,7 +691,7 @@ StartupEvents.registry("item", e => {
         .useDuration(item => 20)
         .translationKey("item.createdelight.quality_absorber")
     e.create("createdelight:life_matter")
-        .texture("createaddition:item/biomass")
+        .texture("createdelight:item/life_matter")
         .translationKey("item.createdelight.life_matter")
     e.create("createdelight:quality_harvest_calibrator_tier_1")
         .texture("create:item/precision_mechanism")

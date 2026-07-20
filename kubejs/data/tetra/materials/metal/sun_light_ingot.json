@@ -15,6 +15,14 @@
     "createdelight:solar_guard": 1,
     "unbreaking": 1
   },
+  "contexts": {
+    "armor": {
+      "effects": {
+        "createdelight:solar_guard": 1,
+        "unbreaking": 1
+      }
+    }
+  },
   "tints": {
     "glyph": "f0b93d",
     "texture": "f0b93d"

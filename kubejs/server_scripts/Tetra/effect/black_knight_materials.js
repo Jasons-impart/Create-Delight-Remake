@@ -152,7 +152,7 @@ PlayerEvents.tick(e => {
         player.persistentData.putInt("tetra_solar_guard_charges", charges)
         player.persistentData.putLong("tetra_solar_guard_next_charge", nextCharge)
         if (charges > 0)
-            player.potionEffects.add("blackknightarmor:solar_shield", 30, charges - 1, false, true)
+            player.potionEffects.add("createdelight:solar_guard", 30, charges - 1, false, true)
     } else {
         player.persistentData.putInt("tetra_solar_guard_charges", 0)
         player.persistentData.putLong("tetra_solar_guard_next_charge", now + config.solarRechargeTicks)
