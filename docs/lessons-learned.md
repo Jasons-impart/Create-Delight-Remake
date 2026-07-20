@@ -544,6 +544,13 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: MMT 普通饰品基底通过 `data/tetra/replacements` 转换时会直接预装模块；`ReplacementDeserializer` 调用 `ItemModule.addModule()`，不会检查对应 schematic 的 `tetra:locked` requirement，因此仅给图纸加卷轴锁仍可通过首次转换取得被锁模块。
 - **Fix/Lesson**: 审计阶段锁时必须同时检查同一物品的 replacement；普通基底只预装默认开放结构或不含独立乘区、减伤、追踪、神威、复活和状态触发的低收益初始模块，把主要能力留到玩家取得卷轴后再安装。多主模块物品还必须逐一填满决定本体外观的必需结构槽；只留下手套腕带或项链链条会让 `base_glove`/`pendant` 模型层缺失。
 
+## Stage scroll recipes should not consume progression objects
+
+**Date**: 2026-07-20
+
+- **Problem**: MMT 阶段卷轴曾消耗蜜蜂精华、完整磁力手套、灾变 Boss 召唤物和利维坦唯一掉落，导致同级卷轴造价悬殊，并迫使玩家在永久能力、装备或再次挑战 Boss 之间做无关取舍。
+- **Fix/Lesson**: 卷轴配方使用“单份阶段证明 + 双份可重复材料 + 单份主题材料”；永久奖励、完整装备、召唤物和可孵化唯一掉落只适合作为非消耗任务条件，IAF 与 Black Knight Armor 的可重复战利品或主题锭可用于拉开阶段但不应破坏支线奖励。
+
 ## Tetra module selection must not repeatedly expand the full schematic registry
 
 **Date**: 2026-07-16

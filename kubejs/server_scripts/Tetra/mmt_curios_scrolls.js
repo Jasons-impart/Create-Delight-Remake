@@ -1,13 +1,13 @@
 const mmtCuriosScrollRecipes = [
-  ['storm_combat', '62d9ff', 'cataclysm:essence_of_the_storm', 'createdelight:forged_steel_sheet', 'tetra:pristine_emerald'],
-  ['hive_guard', 'f4bf45', 'the_bumblezone:royal_jelly_bottle', 'the_bumblezone:glistering_honey_crystal', 'tetra:forged_mesh'],
-  ['path_emblems', 'b78cff', 'minecraft:dragon_breath', 'northstar:circuit', 'tetra:dragon_sinew'],
-  ['lunar_arcane', '9aa8ff', 'cataclysm:void_core', 'northstar:advanced_circuit', 'tetra:pristine_amethyst'],
-  ['mars_guard', 'c85b48', 'cataclysm:monstrous_horn', 'northstar:martian_steel_ingot', 'createdelight:forged_steel_sheet'],
-  ['magnetic_precision', 'e64f9b', 'alexscaves:telecore', 'northstar:advanced_circuit', 'cataclysm:ignitium_ingot'],
-  ['ancient_purification', '78b35a', 'cataclysm:ancient_metal_ingot', 'alexscaves:radon_bottle', 'alexscaves:occult_gem'],
-  ['deep_relic', '315d83', 'cataclysm:abyssal_egg', 'cataclysm:cursium_ingot', 'createdelight:sturdy_oxygen_tank'],
-  ['astral_dominion', 'd08cff', 'blackknightarmor:ultimate_dragon_heart', 'ae2:singularity', 'cataclysm:void_crystal']
+  ['storm_combat', '62d9ff', 'cataclysm:essence_of_the_storm', 'iceandfire:stymphalian_bird_feather', 'tetra:pristine_emerald'],
+  ['hive_guard', 'f4bf45', 'the_bumblezone:royal_jelly_bottle', 'the_bumblezone:glistering_honey_crystal', 'the_bumblezone:bee_stinger'],
+  ['path_emblems', 'b78cff', 'minecraft:dragon_breath', 'minecraft:ender_eye', 'tetra:dragon_sinew'],
+  ['lunar_arcane', '9aa8ff', 'cataclysm:void_core', 'minecraft:echo_shard', 'tetra:pristine_amethyst'],
+  ['mars_guard', 'c85b48', 'cataclysm:monstrous_horn', 'cataclysm:ancient_metal_ingot', 'blackknightarmor:frost_tooth_ingot'],
+  ['magnetic_precision', 'e64f9b', 'alexscaves:telecore', 'alexscaves:scarlet_neodymium_ingot', 'iceandfire:lightning_dragon_blood'],
+  ['ancient_purification', '78b35a', 'blackknightarmor:sun_light_ingot', 'iceandfire:pixie_dust', 'alexscaves:occult_gem'],
+  ['deep_relic', '315d83', 'blackknightarmor:ghoststeel_ingot', 'cataclysm:cursium_ingot', 'alexscaves:abyssmarine'],
+  ['astral_dominion', 'd08cff', 'blackknightarmor:ultimate_dragon_heart', 'blackknightarmor:end_dragon_ingot', 'cataclysm:void_crystal']
 ]
 
 function mmtCuriosScroll(key, ribbon) {
