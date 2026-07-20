@@ -1,0 +1,8 @@
+{
+  "item.tetra.scroll.shared/the_legend_scroll_of_trickery_titan.description": "The Coin of Whimsy grants luck, mobility, and nimble attacks. It no longer duplicates a creature's entire loot table.",
+  "tetra.improvement.the_legend_scroll_of_trickery_titan_up.description": "Grants luck, movement speed, and attack speed while held.",
+  "tetra/schematic/shared/more_mod_tetra/titan/the_legend_scroll_of_trickery_titan_up.description": "Inherit the Coreflame of Trickery to gain luck and mobility.",
+  "item.tetra.scroll.shared/the_legend_scroll_of_passage_titan.description": "The Gate of Infinity transfers slain enemies' loot to a bound container and improves mobility.",
+  "tetra.improvement.the_legend_scroll_of_passage_titan_up.description": "Transfers loot to a bound container and improves movement and attack speed.",
+  "tetra/schematic/shared/more_mod_tetra/titan/the_legend_scroll_of_passage_titan_up.description": "Inherit the Coreflame of Passage to gain remote loot transfer and mobility."
+}

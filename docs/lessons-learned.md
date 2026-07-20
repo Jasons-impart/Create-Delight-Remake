@@ -606,3 +606,24 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: 土卫二沉没城的低温与缺氧抗性只覆盖结构模板直接关联的深潜者和利维坦，遗漏了在深渊裂谷自然生成的珊瑚傀儡，以及由同生态玩法产生的珊瑚巨兽、蓑鲉、紫晶蟹和幼年利维坦。
 - **Fix/Lesson**: 为外星结构补环境抗性时应同时审计 NBT/拼图池、群系生成配置、祭坛召唤物、Boss 衍生物与可携带幼体，再统一加入对应 Northstar 实体标签。
+
+## Tetra Insight 中锁定图纸需要 revealable 才会显示
+
+**Date**: 2026-07-20
+
+- **Problem**: 带 `tetra:locked` 的 MMT 泰坦 schematic 使用默认 `preview=applicable` 时，未放置卷轴会从 Tetra Insight 全息球改良总览完全消失，而不是显示为锁定。
+- **Fix/Lesson**: 希望玩家能提前查看并看到所需卷轴的锁定图纸必须设置 `"preview": "revealable"`；`tetra:locked` 继续负责实际安装权限。
+
+## Tetra improvement requirement 只检查目标主模块
+
+**Date**: 2026-07-20
+
+- **Problem**: `tetra:improvement` requirement 调用 `CraftingContext.targetMajorModule.getImprovement()`，不会扫描整件武器的其他主模块；若同一类互斥强化开放在多个槽位，玩家可在各槽分别安装并绕过武器级上限。
+- **Fix/Lesson**: 纯数据实现武器级互斥时必须让相关 schematic 对每种武器共用唯一主槽；若确实要跨多个槽位安装，则需自定义整件物品检查，不能只依赖 `tetra:improvement`。
+
+## Tetra Insight 会过滤含不可接受 outcome key 的整张图纸
+
+**Date**: 2026-07-20
+
+- **Problem**: 为四组泰坦互斥在 schematic outcome 中追加仅作判定的 `titan_*_attunement` / `cyrene_attunement` 后，Tetra Insight 会调用目标模块的 `acceptsImprovementLevel()` 检查每个预览 key；辅助 key 不被接受时，整张图纸在 `preview: revealable` 生效前就被候选过滤，导致 12 首颂歌和泰坦方案消失。
+- **Fix/Lesson**: outcome 只写实际生效且模块已接受的 improvement；纯互斥应在 requirement 中枚举真实泰坦、`strife_forged` 或 `ode_to_*` key，不要追加隐藏辅助 improvement。

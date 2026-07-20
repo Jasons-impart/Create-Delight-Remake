@@ -1,17 +1,47 @@
 {
-  "conditions": [
-    {
-      "type": "forge:false"
-    }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " B ",
+    "CAC",
+    " D "
   ],
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "minecraft:barrier"
+  "key": {
+    "A": {
+      "item": "minecraft:writable_book"
+    },
+    "B": {
+      "item": "minecraft:echo_shard"
+    },
+    "C": {
+      "item": "alexscaves:immortal_embryo"
+    },
+    "D": {
+      "item": "blackknightarmor:ultimate_dragon_heart"
     }
-  ],
+  },
   "result": {
-    "item": "minecraft:barrier"
+    "item": "tetra:scroll_rolled",
+    "count": 1,
+    "nbt": {
+      "BlockEntityTag": {
+        "data": [
+          {
+            "key": "shared/the_legend_scroll_of_time_titan",
+            "schematics": [
+              "tetra:shared/the_legend_scroll_of_time_titan"
+            ],
+            "intricate": false,
+            "material": 2,
+            "ribbon": "ff33ff",
+            "glyphs": [
+              3,
+              8,
+              1,
+              4
+            ]
+          }
+        ]
+      }
+    }
   }
 }

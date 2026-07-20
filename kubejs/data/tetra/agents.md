@@ -1941,9 +1941,9 @@ amount(伤害)=2045.0071
 | 普通增伤 | `ode_to_trailblaze`（献给开拓的颂歌） | 等级 20 -> 样例 `+0.2000` | 进入 `normalMulti`（普通增伤） |
 | 普通增伤 | `duel`（终焉决斗） | 满挑战者/被挑战时：`(双方药水等级合计) * 效果等级 / 100`；样例出现 `+0.54`、`+1.08`、`+1.62`、`+2.16` | 来源主要是 `sword_stem_handguard`（剑茎护手） |
 | 普通增伤 | `heavy_chop`（重劈） | 样例常见 `+1.48` 到 `+2.00` | 来源主要是 `mmt_ceremonial_sword`（佩刀/礼仪剑），目标缺护甲件数越多越高 |
-| 普通增伤 | `torch_the_laws_of_old`（燃尽旧日律法） | 泰坦卷轴等级 50 时样例 `+1.7500`；颂歌等级 25 | 和双方血量差有关，是影响较明显的律法系普通增伤 |
-| 普通增伤 | `sirenic_serenade`（海妖在欢唱） | 泰坦卷轴等级 10，颂歌等级 5 | 给负面状态，并对负面目标增伤；不是独立乘区 |
-| 普通增伤 | `pyric_corpus`（此身为炬） | `level / 100 * coreflames / 33550336`；泰坦等级 1000，颂歌等级 500 | 火种/轮回计满时，泰坦理论 `+10.0`，颂歌理论 `+5.0` |
+| 普通增伤 | `torch_the_laws_of_old`（燃尽旧日律法） | 旧等级 50 时样例 `+1.7500`；当前泰坦 10、颂歌追加 5 | 和双方血量差有关，是影响较明显的律法系普通增伤 |
+| 普通增伤 | `sirenic_serenade`（海妖在欢唱） | 当前泰坦等级 4，颂歌追加 2 | 给负面状态，并对负面目标增伤；不是独立乘区 |
+| 普通增伤 | `pyric_corpus`（此身为炬） | `level / 100 * coreflames / 33550336`；当前泰坦 150、颂歌追加 75 | 火种/轮回计满时，基础理论 `+1.5`，颂歌后合计 `+2.25` |
 | 普通增伤 | `Witherite B`（凋灵合金日志项） | 样例 `+1.0067` 到 `+1.0200` | Cataclysm 相关，不是 MMT 本体，但和 MMT 乘区叠在一起 |
 | 独立乘区 | `notes`（记事） | 样例 `x1.3000` | Rosmontis 相关 socket，boss/精英独立增伤；可能来自副手 |
 | 独立乘区 | `curios_melee_damage_up`（饰品近战伤害增幅） | `1 + 总等级 / 100`；样例 `x1.2600` | 说明该样例里饰品近战增幅总等级为 26 |
@@ -1957,8 +1957,9 @@ amount(伤害)=2045.0071
 
 | 收益 | 来源 | 数值 |
 |---|---|---|
-| 攻击/攻速/弓属性倍率 | 每个泰坦卷轴强化、普通颂歌 | `*attack_speed +0.05`，`*attack_damage +0.05`，`*draw_speed -0.05`，`*draw_strength +0.05` |
-| 攻击/攻速/弓属性倍率 | `ode_to_strife`（纷争颂歌） | 上面四项的 4 倍：`+0.20/-0.20` |
+| 攻击/攻速/弓属性倍率 | 标准普通泰坦卷轴强化 | `*attack_speed +0.025`，`*attack_damage +0.025`，`*draw_speed -0.025`，`*draw_strength +0.025`；四组标准权能装满约为 10% |
+| 攻击/攻速/弓属性倍率 | 普通颂歌 | 标准值仍为 `+0.05/-0.05`，但一件武器只能安装一首颂歌 |
+| 攻击/攻速/弓属性倍率 | `ode_to_strife`（纷争颂歌） | 当前覆盖为普通颂歌四项的 2 倍：`+0.10/-0.10`，同样占唯一颂歌名额 |
 | 暴击率/爆伤 | `critical_strike_probability_up`（暴击率强化） | 1-5 级：暴击率 `+0.10/+0.15/+0.18/+0.22/+0.30`，爆伤 `+0.20/+0.30/+0.40/+0.45/+0.50` |
 | 暴击率/爆伤 | `critical_strike_damage_up`（暴击伤害强化） | 1-5 级：暴击率 `+0.03/+0.06/+0.09/+0.12/+0.15`，爆伤 `+0.25/+0.40/+0.55/+0.70/+0.85` |
 | 暴击率 | `critical_strike_bracelet`（暴击手镯）、手镯 `gem`（镶嵌） | 各 `+0.01` |
@@ -1975,22 +1976,24 @@ amount(伤害)=2045.0071
 
 当前包已覆盖 MMT 原版 `**` 直接属性，改为 `*`。因此这些词条仍然提高攻速/攻击/弓属性，但不再走原先更夸张的 `**` 乘法属性写法。
 
+浪漫、诡计和门径按流派重新分配了直接属性：浪漫侧重攻速，诡计侧重幸运/移动/攻速，门径侧重移动/攻速；其余普通泰坦保留下面的通用属性。四组三神允许一件武器跨组共存后，普通泰坦直接属性整体减半，颂歌则通过“全武器唯一一首”控制终局倍率。
+
 通用直接属性：
 
 ```text
-*generic.attack_speed(攻击速度) = +0.05
-*generic.attack_damage(攻击伤害) = +0.05
-*tetra:draw_speed(拉弓/弩速度) = -0.05
-*tetra:draw_strength(弓/弩力度) = +0.05
+*generic.attack_speed(攻击速度) = +0.025
+*generic.attack_damage(攻击伤害) = +0.025
+*tetra:draw_speed(拉弓/弩速度) = -0.025
+*tetra:draw_strength(弓/弩力度) = +0.025
 ```
 
 `ode_to_strife` 例外：
 
 ```text
-*generic.attack_speed(攻击速度) = +0.20
-*generic.attack_damage(攻击伤害) = +0.20
-*tetra:draw_speed(拉弓/弩速度) = -0.20
-*tetra:draw_strength(弓/弩力度) = +0.20
+*generic.attack_speed(攻击速度) = +0.10
+*generic.attack_damage(攻击伤害) = +0.10
+*tetra:draw_speed(拉弓/弩速度) = -0.10
+*tetra:draw_strength(弓/弩力度) = +0.10
 ```
 
 ### 4.1 泰坦卷轴
@@ -1999,17 +2002,17 @@ amount(伤害)=2045.0071
 |---|---|---:|---|
 | `the_legend_scroll_of_death_titan_up.json`（死亡泰坦卷轴强化） | `sanctuary_of_mooncocoon`（月茧之庇） | 5 | 保命/免伤，非直接增伤 |
 | `the_legend_scroll_of_earth_titan_up.json`（大地泰坦卷轴强化） | `though_worlds_apart`（纵然山河万程） | 10 | 攻击后按攻击力给伤害吸收 |
-| `the_legend_scroll_of_law_titan_up.json`（律法泰坦卷轴强化） | `torch_the_laws_of_old`（燃尽旧日律法） | 50 | 普通增伤/受击减伤；一次测试观察到 `+1.7500` |
-| `the_legend_scroll_of_ocean_titan_up.json`（海洋泰坦卷轴强化） | `sirenic_serenade`（海妖在欢唱） | 10 | 给负面状态；对七类负面目标增伤，普通乘区 |
-| `the_legend_scroll_of_passage_titan_up.json`（通路泰坦卷轴强化） | `the_century_gate`（百界门） | 1 | 战利品传送，非伤害 |
-| `the_legend_scroll_of_reason_titan_up.json`（理性泰坦卷轴强化） | `everything_is_in_everything`（万物皆在万物之中） | 400 | 经验收益；非伤害 |
-| `the_legend_scroll_of_reason_titan_up.json`（理性泰坦卷轴强化） | `experience_edge`（经验之刃） | `[25,50]` | 经验相关 |
+| `the_legend_scroll_of_law_titan_up.json`（律法泰坦卷轴强化） | `torch_the_laws_of_old`（燃尽旧日律法） | 10 | 普通增伤/受击减伤；旧等级 50 的历史测试曾观察到 `+1.7500` |
+| `the_legend_scroll_of_ocean_titan_up.json`（海洋泰坦卷轴强化） | `sirenic_serenade`（海妖在欢唱） | 4 | 给负面状态；每类目标负面提供 4% 普通增伤 |
+| `the_legend_scroll_of_passage_titan_up.json`（通路泰坦卷轴强化） | `the_century_gate`（百界门） | 1 | 战利品传送，并提供移动/攻速 |
+| `the_legend_scroll_of_reason_titan_up.json`（理性泰坦卷轴强化） | `everything_is_in_everything`（万物皆在万物之中） | 125 | 经验获取 +125% |
+| `the_legend_scroll_of_reason_titan_up.json`（理性泰坦卷轴强化） | `experience_edge`（经验之刃） | `[20,50]` | 50 级经验达到 20% 增伤 |
 | `the_legend_scroll_of_romance_titan_up.json`（浪漫泰坦卷轴强化） | `invulnerable_time_down`（破妄） | 25 | 降低无敌帧，间接提高连击收益 |
 | `the_legend_scroll_of_sky_titan_up.json`（天空泰坦卷轴强化） | `first_light_heals_the_world`（疗愈世间的晨曦） | 10 | 回复增强，非直接增伤 |
 | `the_legend_scroll_of_time_titan_up.json`（时间泰坦卷轴强化） | `to_evernights_stars`（致长夜的星光） | 20 | 按血量变化增伤/回血 |
-| `the_legend_scroll_of_trickery_titan_up.json`（诡计泰坦卷轴强化） | `jackpot_for_the_taking`（空手套白银） | 1 | 额外战利品，非伤害 |
-| `the_legend_scroll_of_worldbearing_titan_up.json`（负世泰坦卷轴强化） | `pyric_corpus`（此身为炬） | 1000 | 普通增伤，上限较高 |
-| `the_legend_scroll_of_worldbearing_titan_up.json`（负世泰坦卷轴强化） | `titan_slayer`（泰坦杀手） | 20 | boss/精英独立增伤 `x1.20` |
+| `the_legend_scroll_of_trickery_titan_up.json`（诡计泰坦卷轴强化） | 无 MMT 额外掉落效果 | - | `generic.luck +2`，并提供移动/攻速 |
+| `the_legend_scroll_of_worldbearing_titan_up.json`（负世泰坦卷轴强化） | `pyric_corpus`（此身为炬） | 150 | 火种计满时普通增伤 `+1.5` |
+| `the_legend_scroll_of_worldbearing_titan_up.json`（负世泰坦卷轴强化） | `titan_slayer`（泰坦杀手） | 12 | boss/精英独立增伤 `x1.12` |
 
 `pyric_corpus` 反编译确认公式核心为：
 
@@ -2017,7 +2020,7 @@ amount(伤害)=2045.0071
 normalMulti(普通增伤) += level(效果等级) / 100 * coreflames(火种/轮回计数) / 33550336
 ```
 
-因此 `pyric_corpus=1000` 在火种轮回计满时理论上可给 `+10.0` 普通增伤。平时收益取决于 NBT 中累计的火种/轮回。
+因此当前 `pyric_corpus=150` 在火种轮回计满时理论上可给 `+1.5` 普通增伤。平时收益取决于 NBT 中累计的火种/轮回。
 
 ### 4.2 颂歌
 
@@ -2291,7 +2294,7 @@ entity.attack(player.damageSources().generic(), hp(目标生命值) * level(压�
 
 1. 限制 `duel`（终焉决斗）堆叠。一次测试倒推等级约 27，满层给 `+216%` 普通增伤。
 2. 限制 `heavy_chop`（重劈）在高等级时的普通乘区贡献，尤其是无护甲目标。
-3. 调整 `torch_the_laws_of_old`（燃尽旧日律法）或给它设置上限，law titan（律法泰坦）等级 50 时曾观察到 `+175%` 普通增伤。
+3. `torch_the_laws_of_old`（燃尽旧日律法）已经由 50 降到 10；后续实机确认满血量差是否落在目标区间。
 4. 保持泰坦/颂歌直接属性使用 `*`，不要回到 `**`。
 5. 对 Curios 伤害类饰品设置更低等级或更少来源，因为它们是独立乘区。
 6. 对 `overwhelm`（压倒）加上目标血量上限、boss/假人限制或冷却。
@@ -2310,7 +2313,7 @@ entity.attack(player.damageSources().generic(), hp(目标生命值) * level(压�
 | ~~锻造技艺:稳固Ⅰ~~ | `mmt_settled_scroll` | `crafting_effects/scroll/` 直接施加 | **已禁用**：配方 `forge:false` + crafting_effect 覆盖为 no-op |
 | ~~锻造技艺:稳固Ⅱ~~ | `mmt_high_settled_scroll` | 同上 | **已禁用**：配方 `forge:false` + crafting_effect 覆盖为 no-op |
 | 锻造技艺:匠魂巧工 | `shared/mmt_more_improvements` | 解锁 `locked` 门 | 解锁 10 种魂匠改良 schematic，每项均为一次性 +1 完整度 |
-| 锻造技艺:超凡铭刻 | `shared/mmt_over_improvements` | 解锁 `locked` 门 | 解锁 13 种铭刻 schematic（5 级打磨渐进），见 [§10.2](#sec-10-2) |
+| ~~锻造技艺:超凡铭刻~~ | `shared/mmt_over_improvements` | 已禁用 | 已退出当前进度；泰坦与其他冒险卷轴不得再以它作为母卷轴，旧 schematic 仅作原始数据参考 |
 
 **稳固Ⅰ/Ⅱ 配方**：通过 `forge_hammer` 合成台制作。稳固Ⅰ需书与笔+润滑剂分配器+金属碎片×2+排风板。稳固Ⅱ由 2 张稳固Ⅰ无序合成。
 
@@ -2322,7 +2325,7 @@ entity.attack(player.damageSources().generic(), hp(目标生命值) * level(压�
 <a id="sec-10-2"></a>
 ### 10.2 超凡铭刻（over_improvements）13 种铭刻
 
-由 `mmt_over_improvements` 卷轴解锁（配方：书与笔 + 铁剑×2 + 龙腱×2）。**没有 KubeJS 覆盖**，所有数值来自 MMT 原始 jar。全部为 5 级 `hone` 打磨（`experienceFactor: 2`），适用 70+ 武器模块槽位。
+原 MMT 设计由 `mmt_over_improvements` 卷轴解锁；当前已用 `forge:false` 禁用其配方，超凡铭刻不再属于可用进度。以下数值保留用于核对 MMT 原始数据，不代表玩家当前可获取。全部为 5 级 `hone` 打磨（`experienceFactor: 2`），适用 70+ 武器模块槽位。
 
 | # | Improvement Key | 中文名 | Effect | 5 级数值 | 完整度消耗(L1-L5) | 效果说明 |
 |---|---------|--------|--------|---------|---------|---------|
@@ -2344,7 +2347,7 @@ entity.attack(player.damageSources().generic(), hp(目标生命值) * level(压�
 
 **schematic 层级结构**（以 over_slash 为例）：
 ```
-mmt_over_improvements 卷轴
+mmt_over_improvements 卷轴（旧版，当前不可用）
   └── over_slash_up_1 (需 locked 门 + 该改良未安装)
         └── over_slash_up_2 (需 L1 已安装)
               └── ... 至 over_slash_up_5
@@ -2358,11 +2361,13 @@ mmt_over_improvements 卷轴
 **架构说明**：13 张泰坦卷轴中，仅 11 张拥有完整的 `schematic → improvement` 体系。`strife`（其八）和 `cyrene`（其十三）无独立泰坦 improvement，而是作为"元卷轴"解锁不同的 schematic 体系。
 
 **通用设计**：
-- 所有 schematic 配方消耗：8 钻石，expFactor 15
+- 11 张普通泰坦 schematic 分别消耗对应阶段可重复生产材料，expFactor 15；Boss 证明只用于制作卷轴
 - 适用槽位：sword/blade、greatsword/blade、polearm/head、single/head、double/head_left、bow/stave、crossbow/stave、shield/plate + 70+ MMO 模块化武器槽
 - MMT jar 属性：`**generic.attack_speed +0.05`、`**generic.attack_damage +0.05`、`**tetra:draw_speed -0.05`、`**tetra:draw_strength +0.05`
-- **KubeJS 覆盖**：全部 11 个 improvement 的 `**` → `*`，并新增 `integrity: -1`。schematic 无覆盖。
-- `time`（岁月铭记）卷轴配方在 KubeJS 中被禁用（`forge:false`）
+- **KubeJS 覆盖**：全部 11 个 improvement 的 `**` → `*`，普通泰坦通用倍率减半；schematic 使用 `replace: true`，outcome 只写入实际泰坦 improvement。
+- 四组三神按原作分类：命运（门径/律法/岁月）、基石（大地/海洋/天空）、创世（负世/理性/浪漫）、灾祸（纷争/死亡/诡计）；普通泰坦和 36 个纷争图纸直接排斥同组的具体泰坦与 `strife_forged` improvement，实现一件武器最多四种、同组最多一种。
+- 所有泰坦图纸对每种武器只开放一个主战斗槽；虽然 `tetra:improvement` requirement 检查目标主模块，实际仍等价于武器级四组名额。
+- `time` 已改为星系终局配方；`cyrene` 通过四组三火种汇卷 + 书与笔合成，真实消耗十二张泰坦卷轴，书与笔只承担诗稿载体作用。
 
 #### 10.3.1 11 张核心泰坦卷轴（有 schematic + improvement）
 
@@ -2370,18 +2375,18 @@ mmt_over_improvements 卷轴
 |---|-----|--------|----------|------|------|
 | 1 | `sky` | 其一·天空指引 | `first_light_heals_the_world`（疗愈世间的晨曦） | 10 | 持有时每 5 秒回血 |
 | 2 | `earth` | 其二·大地庇护 | `though_worlds_apart`（纵然山河万程） | 10 | 攻击后按攻击力给伤害吸收 |
-| 3 | `ocean` | 其三·海洋回涛 | `sirenic_serenade`（海妖在欢唱） | 10 | 攻击附加负面状态，对负面目标普通增伤 |
+| 3 | `ocean` | 其三·海洋回涛 | `sirenic_serenade`（海妖在欢唱） | 4 | 攻击附加负面状态，每类负面提供 4% 普通增伤 |
 | 4 | `romance` | 其四·浪漫相伴 | `invulnerable_time_down`（破妄） | 25 | 降低无敌帧 |
-| 5 | `worldbearing` | 其五·负世伟业 | `pyric_corpus`（此身为炬）+ `titan_slayer`（泰坦杀手） | 1000 + 20 | 火种计满 +10.0 普通增伤；Boss 独立乘区 x1.20 |
-| 6 | `reason` | 其六·理性启迪 | `everything_is_in_everything` + `experience_edge` | 400 + [25,50] | 经验获取 + 经验之刃 |
-| 7 | `trickery` | 其七·诡计赐福 | `jackpot_for_the_taking`（空手套白银） | 1 | 击杀额外战利品 |
+| 5 | `worldbearing` | 其五·负世伟业 | `pyric_corpus`（此身为炬）+ `titan_slayer`（泰坦杀手） | 150 + 12 | 火种成长上限 +1.5 普通增伤；Boss 独立乘区 x1.12 |
+| 6 | `reason` | 其六·理性启迪 | `everything_is_in_everything` + `experience_edge` | 125 + [20,50] | 经验获取 +125%，50 级经验达到 20% 增伤 |
+| 7 | `trickery` | 其七·诡计赐福 | 无额外 Loot Table 抽取 | - | `generic.luck +2`，并提供移动/攻速；避免复制 Boss 完整战利品表 |
 | 8 | `death` | 其九·死亡祝佑 | `sanctuary_of_mooncocoon`（月茧之庇） | 5 | 持有时免疫死亡 |
-| 9 | `time` | 其十·岁月铭记 | `to_evernights_stars`（致长夜的星光） | 20 | 血量变动增伤/回血（配方已禁用） |
-| 10 | `law` | 其十一·律法裁定 | `torch_the_laws_of_old`（燃尽旧日律法） | 50 | 血量差普通增伤（测试 +175%） |
-| 11 | `passage` | 其十二·门径祝福 | `the_century_gate`（百界门） | 1 | 战利品远程传送至绑定容器 |
+| 9 | `time` | 其十·岁月铭记 | `to_evernights_stars`（致长夜的星光） | 20 | 血量变动增伤/回血，星系终局开放 |
+| 10 | `law` | 其十一·律法裁定 | `torch_the_laws_of_old`（燃尽旧日律法） | 10 | 按实际公式控制血量差攻防收益，避免旧等级 50 的约 +175% 增伤 |
+| 11 | `passage` | 其十二·门径祝福 | `the_century_gate`（百界门） | 1 | 战利品远程传送，并额外提供移动/攻速 |
 
 **文件路径**：
-- schematic：`data/tetra/schematics/shared/more_mod_tetra/titan/the_legend_scroll_of_<key>_titan_up.json`（MMT jar 内，无 KubeJS 覆盖）
+- schematic：`kubejs/data/tetra/schematics/shared/more_mod_tetra/titan/the_legend_scroll_of_<key>_titan_up.json`（11 个完整覆盖）
 - improvement（jar）：`data/tetra/improvements/shared/titan/the_legend_scroll_of_<key>_titan_up.json`
 - improvement（KubeJS）：`kubejs/data/tetra/improvements/shared/titan/the_legend_scroll_of_<key>_titan_up.json`
 
@@ -2389,34 +2394,32 @@ mmt_over_improvements 卷轴
 
 **无泰坦 improvement 和 schematic**。此卷轴作为 `locked` 门，解锁 29+ 种武器模块的 `strife_forged` 改良（独立 schematic）：katana、wakizashi、kunai、basic_blade、heavy_blade、machete、short_blade、mmt_ceremonial_sword、mmt_rapier、mmt_twin_blade、cooking_knife、throwing_knife、naginata、spearhead、flanged_mace、wrench、blade_bow + 弓弩变体。
 
-配方：下界合金剑 + 下界合金斧 + 龙腱×2 + 匠魂巧工卷轴。
+卷轴配方：书与笔 + `monstrous_eye` + 悚怖钢×2 + Witherite，不再依赖超凡铭刻卷轴。36 个纷争图纸每次消耗 2 个悚怖钢；图纸互相检查全部 `strife_forged` key，并与负世、律法互斥。
 
 #### 10.3.3 其十三·真我之诗（cyrene）—— 元卷轴
 
-**无泰坦 improvement 和 schematic**。此卷轴作为 `locked` 门，解锁 14 首颂歌示意图。schematic 配方消耗：2 下界合金锭，expFactor 20。
-
-配方：下界之星×4 + 龙腱×4 + 匠魂巧工卷轴。
+**无泰坦 improvement 和 schematic**。此卷轴作为 `locked` 门解锁颂歌。命运（门径/律法/岁月）、基石（大地/海洋/天空）、创世（负世/理性/浪漫）、灾祸（纷争/死亡/诡计）各自的三张卷轴先无序合成一张汇卷，四张汇卷再与书与笔合成真我之诗，因此最终配方会真实消耗全部十二火种；书与笔仅作为诗稿载体，不再追加重复使用的终局材料。每首可用颂歌消耗对应权柄的冒险材料，expFactor 20。
 
 #### 10.3.4 Cyrene 颂歌（14 首，由 cyrene 卷轴解锁）
 
-所有颂歌通用属性与泰坦相同（KubeJS 覆盖 `**` → `*`）。12 首需要对应泰坦已安装 + cyrene 锁，2 首仅需 cyrene 锁。
+12 首可用颂歌需要对应泰坦已安装 + cyrene 锁，并互相检查全部真实 `ode_to_*` key；已有任意可用颂歌时不能再安装第二首。颂歌保留当前 `*` 通用属性，作为四种已选权能中唯一的主火种强化；无泰坦前置的 `ode_to_cyrene` 与 `ode_to_trailblaze` 使用 `tetra:never` 禁用。
 
 | 颂歌 | 前置条件 | MMT 效果 | 等级 | 备注 |
 |------|---------|----------|------|------|
-| `ode_to_cyrene` | 仅 cyrene 锁 | `ode_to_cyrene`（固定伤害 `fixed` 段） | 25 | 测试观察 +13.8438 |
-| `ode_to_trailblaze` | 仅 cyrene 锁 | `ode_to_trailblaze`（普通增伤） | 20 | 普通增伤 +0.20 |
+| `ode_to_cyrene` | 禁用 | `ode_to_cyrene`（固定伤害 `fixed` 段） | 10 | 不允许脱离十二泰坦独立安装 |
+| `ode_to_trailblaze` | 禁用 | `ode_to_trailblaze`（普通增伤） | 10 | 不允许脱离十二泰坦独立安装 |
 | `ode_to_sky` | + sky_titan | `first_light_heals_the_world` | 5 | 回血增强 |
 | `ode_to_earth` | + earth_titan | `though_worlds_apart` | 5 | 伤害吸收增强 |
-| `ode_to_ocean` | + ocean_titan | `sirenic_serenade` | 5 | 负面状态增强 |
-| `ode_to_romance` | + romance_titan | `invulnerable_time_down` | 12.5 | 无敌帧削减增强 |
-| `ode_to_worldbearing` | + worldbearing_titan | `pyric_corpus` + `titan_slayer` | 500 + 10 | 火种 +5.0，Boss 独立 x1.10 |
-| `ode_to_reason` | + reason_titan | `everything_is_in_everything` + `experience_edge` | 400 + [25,0] | 经验增强 |
-| `ode_to_trickery` | + trickery_titan | `jackpot_for_the_taking` | 1 | 战利品增强 |
-| `ode_to_death` | + death_titan | `sanctuary_of_mooncocoon` | 45 | 更强免死 |
+| `ode_to_ocean` | + ocean_titan | `sirenic_serenade` | 2 | 总等级提升到 6 |
+| `ode_to_romance` | + romance_titan | `invulnerable_time_down` | 10 | 总无敌帧削减提升到 35 |
+| `ode_to_worldbearing` | + worldbearing_titan | `pyric_corpus` + `titan_slayer` | 75 + 5 | 总成长 225，Boss 独立 x1.17 |
+| `ode_to_reason` | + reason_titan | `everything_is_in_everything` + `experience_edge` | 50 + [5,0] | 总经验获取 175%，经验增伤 25% |
+| `ode_to_trickery` | + trickery_titan | 无额外 Loot Table 抽取 | - | 再提供 `generic.luck +1` |
+| `ode_to_death` | + death_titan | `sanctuary_of_mooncocoon` | 10 | 总保留生命比例提升到 15% |
 | `ode_to_time` | + time_titan | `to_evernights_stars` | 10 | 血量变动增强 |
-| `ode_to_law` | + law_titan | `torch_the_laws_of_old` | 25 | 血量差增伤增强 |
-| `ode_to_passage` | + passage_titan | `ode_to_passage` | 15 | 传送增强 |
-| `ode_to_strife` | cyrene 锁 + 任意 strife_forged | 无 runtime 效果 | - | 通用属性 4 倍：+0.20/-0.20 |
+| `ode_to_law` | + law_titan | `torch_the_laws_of_old` | 5 | 总等级提升到 15 |
+| `ode_to_passage` | + passage_titan | `ode_to_passage` | 5 | 保留终局追加伤害，但从 15 降到 5 |
+| `ode_to_strife` | cyrene 锁 + 任意 strife_forged | 无 runtime 效果 | - | 通用属性由 +0.20/-0.20 降为 +0.10/-0.10 |
 
 文件路径：
 - schematic：`data/tetra/schematics/shared/more_mod_tetra/cyrene/ode_to_<key>.json`（MMT jar 内，无 KubeJS 覆盖）
@@ -2427,9 +2430,9 @@ mmt_over_improvements 卷轴
 
 | 等级 | 项目 | 核心 OP 机制 | 验证状态 |
 |------|------|-------------|---------|
-| **S** | 泰坦 11 卷（全叠加） | 11×(`*` 四属性 + MMT 专属效果)，包括增伤、免死、无敌帧削减、血差增伤、火种 +10.0、Boss 独立 x1.20 | schematic + improvement 已核实 |
-| **S** | 超凡铭刻（13 种 × 5 级） | 暗杀满血、斩身高血量 +50、斩魂低血量 +50、破妄 -25% 无敌帧、流转 +75% 攻速 | schematic + improvement 已核实 |
-| **A** | Cyrene 颂歌（14 首） | 所有泰坦效果二次放大 + 固定伤害 +25、纷争 4 倍属性 | schematic + improvement 已核实 |
+| **A** | 泰坦十二火种 | 每件武器可在四组三神中各选一种，最多四种；同组互斥并按阶段提供输出、生存、异常、成长或探索专精 | 61 个图纸的真实 improvement 互斥已静态核实，待游戏 reload 回归 |
+| **禁用** | 超凡铭刻（13 种 × 5 级） | 原始 MMT 高强度铭刻，仅保留数据参考 | 配方已禁用，不进入当前玩家进度 |
+| **A** | Cyrene 颂歌（12 首可用） | 从最多四种已继承权能中只强化一个主火种；真我/开拓独立颂歌禁用，每次消耗对应权柄的冒险材料 | 十二火种汇卷配方与 12 个真实颂歌 key 互斥已静态核实 |
 | **A** | 匠魂巧工（10 种魂匠） | 额外完整度，让 S 级物品共存于同一工具 | schematic 已核实 |
 | **B** | Strife 铸造（29+ 种 forge） | 对 29+ 种武器模块直接强化 | schematic 已核实 |
 | **B** | 稳固Ⅰ/Ⅱ | ~~降低完整度消耗~~ | **已禁用**（见 [§10.1](#sec-10-1)） |
@@ -2439,14 +2442,14 @@ mmt_over_improvements 卷轴
 | 内容 | MMT jar 原始 | KubeJS 覆盖 |
 |------|-------------|------------|
 | 泰坦 improvement | `data/tetra/improvements/shared/titan/*_up.json`（11 个） | `kubejs/data/tetra/improvements/shared/titan/`（`**`→`*`+integrity:-1） |
-| 泰坦 schematic | `data/tetra/schematics/shared/more_mod_tetra/titan/*_up.json`（11 个） | 无覆盖 |
+| 泰坦 schematic | `data/tetra/schematics/shared/more_mod_tetra/titan/*_up.json`（11 个） | 完整覆盖：阶段铭刻材料 + 单火种互斥 + `replace: true` |
 | Cyrene 颂歌 improvement | `data/tetra/improvements/shared/cyrene/ode_to_*.json`（14 个） | `kubejs/data/tetra/improvements/shared/cyrene/`（`**`→`*`） |
-| Cyrene 颂歌 schematic | `data/tetra/schematics/shared/more_mod_tetra/cyrene/ode_to_*.json`（14 个） | 无覆盖 |
+| Cyrene 颂歌 schematic | `data/tetra/schematics/shared/more_mod_tetra/cyrene/ode_to_*.json`（14 个） | 完整覆盖：权柄主题冒险材料；真我/开拓禁用 |
 | 铭刻 improvement | `data/tetra/improvements/shared/<key>_up.json`（13 个） | 无覆盖 |
 | 铭刻 schematic | `data/tetra/schematics/shared/more_mod_tetra/<key>/<key>_up_{1-5}.json`（13 组 × 5） | 无覆盖 |
 | 魂匠改良 schematic | `data/tetra/schematics/shared/more_mod_tetra/improvement/<key>.json`（10 个） | 无覆盖 |
 | 卷轴 crafting_effects | `data/tetra/crafting_effects/scroll/mmt_settled_scroll.json` 等 | 无覆盖 |
-| 泰坦卷轴配方 | `data/tetra/recipes/more_mod_tetra/the_legend_scroll/titan/*.json`（13 个） | `time` 禁用 |
+| 泰坦卷轴配方 | `data/tetra/recipes/more_mod_tetra/the_legend_scroll/titan/*.json`（17 个） | 十二泰坦按阶段覆盖；四张三火种汇卷 + 书与笔合成 `cyrene` |
 | 锻造技艺配方 | `data/tetra/recipes/more_mod_tetra/forge_hammer/*scroll*.json` | 无覆盖 |
 
 <a id="sec-9"></a>
