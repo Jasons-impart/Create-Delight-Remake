@@ -2100,7 +2100,9 @@ independentProduct(独立乘区) *= 1 + curiosEffectLevel(饰品效果总等级)
 |---|---|---|---|
 | `starter_bracelet`（基础手镯） | `mmt_bracelet/base_bracelet` | 护甲韧性 `+0.5` | 用卷轴模块替换为暴击、攻速或减伤手镯 |
 | `starter_crown`（简易头冠） | `mmt_crown/crown_ring` | 幸运 `+0.5` | 用卷轴模块替换为法术或全能头冠 |
+| `starter_glove`（普通手套） | `mmt_glove/base_glove` | `**generic.attack_speed +0.02` | 补齐手套本体模型，不提供攻击距离、交互距离或额外攻击力 |
 | `starter_base`（普通护心镜） | `mmt_heart_protecting_mirror/base` | 护甲 `+1` | 不提供稳定减伤或生命核心 |
+| `starter_pendant`（简单挂坠） | `mmt_necklace/pendant` | 最大生命 `+0.5` | 补齐坠饰模型，不提供神威、穿甲、护盾或法术能力 |
 | `starter_ring`（素面戒指） | `mmt_ring/base_ring` | 暴击率 `+0.005` | 不提供护甲、磁力或暴击伤害 |
 | `starter_boots`（轻便鞋面） | `mmt_shoes/upper` | `**movement_speed +0.01` | 不预装高移速鞋底、击退抗性或摔落保护 |
 | `starter_shell`（护身图腾外壳） | `mmt_totem_of_undying/totem_shell` | 最大生命 `+1` | 不提供复活、图腾冷却或复活回复 |

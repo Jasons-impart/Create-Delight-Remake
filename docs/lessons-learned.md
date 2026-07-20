@@ -542,7 +542,7 @@ gh pr create --body '... `ad_astra:xxx` ...'
 **Date**: 2026-07-19
 
 - **Problem**: MMT 普通饰品基底通过 `data/tetra/replacements` 转换时会直接预装模块；`ReplacementDeserializer` 调用 `ItemModule.addModule()`，不会检查对应 schematic 的 `tetra:locked` requirement，因此仅给图纸加卷轴锁仍可通过首次转换取得被锁模块。
-- **Fix/Lesson**: 审计阶段锁时必须同时检查同一物品的 replacement；普通基底只预装默认开放结构或不含独立乘区、减伤、追踪、神威、复活和状态触发的低收益初始模块，把主要能力留到玩家取得卷轴后再安装。
+- **Fix/Lesson**: 审计阶段锁时必须同时检查同一物品的 replacement；普通基底只预装默认开放结构或不含独立乘区、减伤、追踪、神威、复活和状态触发的低收益初始模块，把主要能力留到玩家取得卷轴后再安装。多主模块物品还必须逐一填满决定本体外观的必需结构槽；只留下手套腕带或项链链条会让 `base_glove`/`pendant` 模型层缺失。
 
 ## Tetra module selection must not repeatedly expand the full schematic registry
 
