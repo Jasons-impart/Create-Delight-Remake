@@ -549,7 +549,7 @@ gh pr create --body '... `ad_astra:xxx` ...'
 **Date**: 2026-07-20
 
 - **Problem**: MMT 阶段卷轴曾消耗蜜蜂精华、完整磁力手套、灾变 Boss 召唤物和利维坦唯一掉落，导致同级卷轴造价悬殊，并迫使玩家在永久能力、装备或再次挑战 Boss 之间做无关取舍。
-- **Fix/Lesson**: 卷轴配方使用“单份阶段证明 + 双份可重复材料 + 单份主题材料”；永久奖励、完整装备、召唤物和可孵化唯一掉落只适合作为非消耗任务条件，IAF 与 Black Knight Armor 的可重复战利品或主题锭可用于拉开阶段但不应破坏支线奖励。
+- **Fix/Lesson**: 卷轴配方使用“单份阶段证明 + 双份可重复材料 + 单份主题材料”；永久奖励、完整装备、召唤物和可孵化唯一掉落只适合作为非消耗任务条件。Black Knight Armor 主题锭与终结龙锭均由悚怖钢二次处理，只能进入悚怖钢阶段后的卷轴；较早阶段优先使用 IAF 战利品等可重复材料。
 
 ## Tetra module selection must not repeatedly expand the full schematic registry
 
