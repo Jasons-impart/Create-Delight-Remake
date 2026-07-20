@@ -1,0 +1,29 @@
+{
+    "slots":  [
+                  "mmt_white_container/white"
+              ],
+    "materialSlotCount":  1,
+    "displayType":  "major",
+    "glyph":  {
+                  "textureX":  176,
+                  "textureY":  48
+              },
+    "translation":  {
+                         "integrity":  1
+                     },
+    "outcomes":  [
+                     {
+                         "materials":  [
+                                           "tetra:metal/"
+                                       ],
+                         "countFactor":  1,
+                         "moduleKey":  "mmt_white_container/white/rainbow_of_white",
+                         "moduleVariant":  "rainbow_of_white/"
+                     }
+                 ],
+    "requirement":  {
+                        "type":  "tetra:locked",
+                        "key":  "createdelight:mmt_curios/ancient_purification"
+                    },
+    "replace":  true
+}

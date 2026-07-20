@@ -1,0 +1,45 @@
+{
+    "slots":  [
+                  "mmt_white_quiver/white"
+              ],
+    "materialSlotCount":  1,
+    "displayType":  "major",
+    "glyph":  {
+                  "textureX":  176,
+                  "textureY":  48
+              },
+    "translation":  {
+                         "primaryEffects":  {
+                                                "more_mod_tetra:white_quiver":  4
+                                            },
+                         "secondaryEffects":  {
+                                                  "more_mod_tetra:white_quiver":  2
+                                              },
+                         "tertiaryEffects":  {
+                                                 "more_mod_tetra:white_quiver":  3
+                                             },
+                         "integrity":  1
+                     },
+    "outcomes":  [
+                     {
+                         "materials":  [
+                                           "tetra:bone/",
+                                           "tetra:metal/",
+                                           "tetra:stone/",
+                                           "tetra:wood/",
+                                           "tetra:gem/",
+                                           "tetra:skin/",
+                                           "tetra:fibre/",
+                                           "tetra:fabric/"
+                                       ],
+                         "countFactor":  1,
+                         "moduleKey":  "mmt_white_quiver/white/rainbow_of_white",
+                         "moduleVariant":  "rainbow_of_white/"
+                     }
+                 ],
+    "requirement":  {
+                        "type":  "tetra:locked",
+                        "key":  "createdelight:mmt_curios/ancient_purification"
+                    },
+    "replace":  true
+}

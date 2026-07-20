@@ -1,0 +1,21 @@
+[
+  {
+    "predicate": {
+      "items": [
+        "more_mod_tetra:curios_glove"
+      ]
+    },
+    "item": "more_mod_tetra:modular_mmt_glove",
+    "modules": {
+      "relic/casing": [
+        "mmt_glove/base_glove/starter_glove",
+        "starter_glove/leather"
+      ],
+      "relic/internal": [
+        "mmt_glove/wristband/hard_wristband",
+        "hard_wristband/iron"
+      ]
+    },
+    "improvements": {}
+  }
+]

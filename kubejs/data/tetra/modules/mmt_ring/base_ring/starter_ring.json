@@ -1,0 +1,44 @@
+{
+  "type": "tetra:basic_major_module",
+  "slots": [
+    "mmt_ring/base_ring"
+  ],
+  "improvements": [],
+  "variants": [
+    {
+      "materials": [
+        "tetra:metal/"
+      ],
+      "key": "starter_ring/",
+      "integrity": 0,
+      "effects": {
+        "more_mod_tetra:curios_materials_effect_invalidation": 1
+      },
+      "attributes": {
+        "attributeslib:crit_chance": 0.005
+      },
+      "extract": {
+        "glyph": {
+          "textureX": 176,
+          "textureY": 48
+        },
+        "availableTextures": [
+          ""
+        ],
+        "models": [
+          {
+            "location": "more_mod_tetra:item/module/mmt_ring/base_ring/guard_ring"
+          }
+        ]
+      },
+      "availableTextures": [
+        ""
+      ],
+      "models": [
+        {
+          "location": "more_mod_tetra:item/module/mmt_ring/base_ring/guard_ring_highlight"
+        }
+      ]
+    }
+  ]
+}

@@ -3,6 +3,10 @@
     "mmt_ring/base_ring"
   ],
   "materialSlotCount": 1,
+  "requirement": {
+    "type": "tetra:locked",
+    "key": "createdelight:mmt_curios/storm_combat"
+  },
   "displayType": "major",
   "glyph": {
     "textureX": 176,

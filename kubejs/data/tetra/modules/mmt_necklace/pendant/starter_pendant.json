@@ -1,0 +1,47 @@
+{
+  "type": "tetra:basic_major_module",
+  "slots": [
+    "mmt_necklace/pendant"
+  ],
+  "renderLayer": "higher",
+  "improvements": [],
+  "variants": [
+    {
+      "materials": [
+        "tetra:metal/"
+      ],
+      "key": "starter_pendant/",
+      "integrity": 0,
+      "effects": {
+        "more_mod_tetra:curios_materials_effect_invalidation": 1
+      },
+      "attributes": {
+        "generic.max_health": 0.5
+      },
+      "extract": {
+        "glyph": {
+          "textureX": 176,
+          "textureY": 48
+        },
+        "availableTextures": [
+          ""
+        ],
+        "models": [
+          {
+            "location": "more_mod_tetra:item/module/mmt_necklace/pendant/heart",
+            "renderLayer": "high"
+          }
+        ]
+      },
+      "availableTextures": [
+        ""
+      ],
+      "models": [
+        {
+          "location": "more_mod_tetra:item/module/mmt_necklace/pendant/heart_highlight",
+          "renderLayer": "high"
+        }
+      ]
+    }
+  ]
+}

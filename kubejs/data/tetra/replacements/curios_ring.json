@@ -1,0 +1,17 @@
+[
+  {
+    "predicate": {
+      "items": [
+        "more_mod_tetra:curios_ring"
+      ]
+    },
+    "item": "more_mod_tetra:modular_mmt_ring",
+    "modules": {
+      "relic/casing": [
+        "mmt_ring/base_ring/starter_ring",
+        "starter_ring/iron"
+      ]
+    },
+    "improvements": {}
+  }
+]

@@ -10,6 +10,28 @@ forcedJeiItems.forEach(id => {
 
 JEIEvents.addItems(e => {
   e.add(forcedJeiItems)
+  e.add([
+    ['storm_combat', '62d9ff'],
+    ['hive_guard', 'f4bf45'],
+    ['path_emblems', 'b78cff'],
+    ['lunar_arcane', '9aa8ff'],
+    ['mars_guard', 'c85b48'],
+    ['magnetic_precision', 'e64f9b'],
+    ['ancient_purification', '78b35a'],
+    ['deep_relic', '315d83'],
+    ['astral_dominion', 'd08cff']
+  ].map(([key, ribbon]) => Item.of('tetra:scroll_rolled', {
+    BlockEntityTag: {
+      data: [{
+        key: `mmt_curios/${key}`,
+        schematics: [`createdelight:mmt_curios/${key}`],
+        intricate: false,
+        material: 2,
+        ribbon: ribbon,
+        glyphs: [3, 8, 1, 4]
+      }]
+    }
+  })))
 })
 
 JEIEvents.addFluids(e => {

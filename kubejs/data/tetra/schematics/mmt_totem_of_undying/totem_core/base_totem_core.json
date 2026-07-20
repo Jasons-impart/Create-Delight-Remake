@@ -1,0 +1,37 @@
+{
+  "slots": [
+    "mmt_totem_of_undying/totem_core"
+  ],
+  "materialSlotCount": 1,
+  "displayType": "major",
+  "glyph": {
+    "textureX": 176,
+    "textureY": 48
+  },
+  "translation": {
+    "primaryEffects": {
+      "more_mod_tetra:curios_totem_effect": 1
+    },
+    "secondaryEffects": {
+      "more_mod_tetra:curios_totem_effect": 7
+    },
+    "durability": 1,
+    "integrity": 1,
+    "magicCapacity": 1
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:gem/"
+      ],
+      "countFactor": 2,
+      "moduleKey": "mmt_totem_of_undying/totem_core/base_totem_core",
+      "moduleVariant": "base_totem_core/"
+    }
+  ],
+  "requirement": {
+    "type": "tetra:locked",
+    "key": "createdelight:mmt_curios/deep_relic"
+  },
+  "replace": true
+}

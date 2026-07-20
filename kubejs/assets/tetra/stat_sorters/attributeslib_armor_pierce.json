@@ -1,0 +1,14 @@
+{
+  "type": "tetra:default",
+  "key": "tetra.stats.attributeslib_armor_pierce",
+  "stat": {
+    "type": "tetra:attribute",
+    "attribute": "attributeslib:armor_pierce",
+    "ignoreBase": true,
+    "ignoreBonuses": true
+  },
+  "format": {
+    "type": "tetra:basic",
+    "format": "double_decimal"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "slots": [
+    "mmt_heart_protecting_mirror/core"
+  ],
+  "materialSlotCount": 1,
+  "displayType": "major",
+  "glyph": {
+    "textureX": 176,
+    "textureY": 48
+  },
+  "translation": {
+    "secondaryAttributes": {
+      "generic.max_health": 2
+    },
+    "durability": 1,
+    "integrity": 1,
+    "magicCapacity": 1
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:wood/",
+        "tetra:bone/",
+        "tetra:metal/",
+        "tetra:stone/",
+        "tetra:gem/"
+      ],
+      "countFactor": 1,
+      "moduleKey": "mmt_heart_protecting_mirror/core/health_core",
+      "moduleVariant": "health_core/"
+    }
+  ],
+  "requirement": {
+    "type": "tetra:locked",
+    "key": "createdelight:mmt_curios/mars_guard"
+  },
+  "replace": true
+}

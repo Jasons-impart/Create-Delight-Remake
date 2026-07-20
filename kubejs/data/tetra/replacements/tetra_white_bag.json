@@ -1,0 +1,17 @@
+[
+  {
+    "predicate": {
+      "items": [
+        "more_mod_tetra:tetra_white_bag"
+      ]
+    },
+    "item": "more_mod_tetra:modular_mmt_white_bag",
+    "modules": {
+      "relic/casing": [
+        "mmt_white_bag/white/starter_core",
+        "starter_core/iron"
+      ]
+    },
+    "improvements": {}
+  }
+]

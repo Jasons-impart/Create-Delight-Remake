@@ -1,0 +1,34 @@
+{
+  "slots": [
+    "mmt_necklace/pendant"
+  ],
+  "materialSlotCount": 1,
+  "displayType": "major",
+  "glyph": {
+    "textureX": 176,
+    "textureY": 48
+  },
+  "translation": {
+    "primaryEffects": {
+      "more_mod_tetra:curios_kamui": 1
+    },
+    "durability": 1,
+    "integrity": 1,
+    "magicCapacity": 1
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:metal/"
+      ],
+      "countFactor": 1,
+      "moduleKey": "mmt_necklace/pendant/cross",
+      "moduleVariant": "cross/"
+    }
+  ],
+  "requirement": {
+    "type": "tetra:locked",
+    "key": "createdelight:mmt_curios/ancient_purification"
+  },
+  "replace": true
+}
