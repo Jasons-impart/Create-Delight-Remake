@@ -12,8 +12,8 @@
       "*tetra:draw_strength": 0.05
     },
     "effects": {
-      "more_mod_tetra:pyric_corpus": 500,
-      "more_mod_tetra:titan_slayer": 10
+      "more_mod_tetra:pyric_corpus": 75,
+      "more_mod_tetra:titan_slayer": 5
     }
   }
 ]

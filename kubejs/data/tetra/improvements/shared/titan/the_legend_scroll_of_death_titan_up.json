@@ -7,10 +7,10 @@
       "honed": 1
     },
     "attributes": {
-      "*generic.attack_speed": 0.05,
-      "*generic.attack_damage": 0.05,
-      "*tetra:draw_speed": -0.05,
-      "*tetra:draw_strength": 0.05
+      "*generic.attack_speed": 0.025,
+      "*generic.attack_damage": 0.025,
+      "*tetra:draw_speed": -0.025,
+      "*tetra:draw_strength": 0.025
     },
     "effects": {
       "more_mod_tetra:sanctuary_of_mooncocoon": 5

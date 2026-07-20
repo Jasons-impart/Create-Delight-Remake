@@ -39,7 +39,7 @@
 | 水星 | 星图水星科研达标、登陆水星、击败炎魔 | 炎魔、高温环境、磁场洞穴 | 火系法术、磁场/机械饰品、耐热材料 |
 | 金星 | 星图金星科研达标、登陆金星、击败远古遗魂 | 远古遗魂、辐射洞穴、原始洞穴 | 辐射防护、远古金属、原始/灭绝主题材料 |
 | 土卫二 | 木星系推进、登陆土卫二、击败咒翼灵骸/利维坦 | 咒翼灵骸、冰封地表、渊海深窟、利维坦 | 深渊、水下生存、冰寒/诅咒高阶材料 |
-| 星系终局 | 末影守卫、星系结晶、终局任务 | 末影守卫、终极龙心、星系结晶、AE2 奇点 | 终局泰坦卷轴、创造级镶嵌、最高阶装备 |
+| 星系终局 | 末影守卫、星系结晶、终局任务 | 末影守卫、终极龙心、星系结晶、不朽胚胎、回响碎片 | 终局泰坦卷轴、创造级镶嵌、最高阶装备 |
 
 ### Apotheosis 宝石体系
 
@@ -169,14 +169,17 @@
 
 ## 可用材料 ID
 
-- Cataclysm：`cataclysm:essence_of_the_storm`、`cataclysm:void_core`、`cataclysm:void_crystal`、`cataclysm:void_eye`、`cataclysm:monstrous_horn`、`cataclysm:monstrous_eye`、`cataclysm:flame_eye`、`cataclysm:ignitium_ingot`、`cataclysm:witherite_ingot`、`cataclysm:ancient_metal_ingot`、`cataclysm:necklace_of_the_desert`、`cataclysm:abyssal_egg`、`cataclysm:abyssal_sacrifice`、`cataclysm:abyss_eye`、`cataclysm:tidal_claws`、`cataclysm:cursium_ingot`、`cataclysm:cursed_eye`、`cataclysm:cursed_tombstone`、`cataclysm:gauntlet_of_guard`
+- Cataclysm：`cataclysm:essence_of_the_storm`、`cataclysm:void_core`、`cataclysm:void_crystal`、`cataclysm:void_eye`、`cataclysm:monstrous_horn`、`cataclysm:monstrous_eye`、`cataclysm:flame_eye`、`cataclysm:ignitium_ingot`、`cataclysm:witherite_ingot`、`cataclysm:ancient_metal_ingot`、`cataclysm:abyssal_egg`、`cataclysm:abyssal_sacrifice`、`cataclysm:abyss_eye`、`cataclysm:tidal_claws`、`cataclysm:cursium_ingot`、`cataclysm:cursed_eye`、`cataclysm:cursed_tombstone`、`cataclysm:gauntlet_of_guard`
 - Black Knight Armor：`blackknightarmor:ultimate_dragon_heart`、`blackknightarmor:storm_essence`、`blackknightarmor:end_dragon_ingot`、`blackknightarmor:end_dragon_blood`
 - Ice and Fire：`#iceandfire:dragon_bloods`、`iceandfire:fire_dragon_blood`、`iceandfire:ice_dragon_blood`、`iceandfire:lightning_dragon_blood`、`iceandfire:dragonbone`、`iceandfire:cyclops_eye`、`iceandfire:pixie_dust`
 - The Bumblezone：`the_bumblezone:essence_of_the_bees`、`the_bumblezone:royal_jelly_bottle`、`the_bumblezone:royal_jelly_bucket`、`the_bumblezone:pollen_puff`、`the_bumblezone:bee_stinger`、`the_bumblezone:honey_crystal_shards`、`the_bumblezone:glistering_honey_crystal`、`the_bumblezone:crystalline_flower`、`the_bumblezone:honey_crystal_shield`、`the_bumblezone:stinger_spear`、`the_bumblezone:bee_cannon`、`the_bumblezone:crystal_cannon`
 - Alex's Caves：`alexscaves:shadow_silk`、`alexscaves:pure_darkness`、`alexscaves:occult_gem`、`alexscaves:immortal_embryo`、`alexscaves:abyssmarine`、`alexscaves:sea_glass_shards`、`alexscaves:marine_snow`、`alexscaves:magic_conch`、`alexscaves:submarine`、`alexscaves:floater`、`alexscaves:scarlet_neodymium_ingot`、`alexscaves:azure_neodymium_ingot`、`alexscaves:galena_gauntlet`、`alexscaves:heart_of_iron`、`alexscaves:telecore`、`alexscaves:holocoder`、`alexscaves:polymer_plate`、`alexscaves:fissile_core`、`alexscaves:uranium`、`alexscaves:uranium_rod`、`alexscaves:radon_bottle`、`alexscaves:waste_drum`、`alexscaves:raygun`、`alexscaves:tremorzilla_egg`、`alexscaves:tectonic_shard`、`alexscaves:ominous_catalyst`、`alexscaves:volcanic_core`
 - Apotheosis：`apotheosis:gem`、`apotheosis:gem_dust`、`apotheosis:gem_cutting_table`、`apotheosis:gem_fused_slate`；宝石种类来自 `data/apotheosis/gems/**`，如 `lightning`、`lunar`、`earth`、`royalty`、`endersurge`、`mageslayer`、`inferno`、`blood_lord`
 - 本包 / 其他流程材料：`createdelight:dread_heart`、`createdelight:forged_steel_ingot`、`createdelight:forged_steel_sheet`、`createdelight:sturdy_oxygen_tank`、`dreadsteel:dreadsteel_ingot`、`northstar:circuit`、`northstar:advanced_circuit`、`northstar:martian_steel_ingot`、`northstar:martian_steel_sheet`、`northstar:titanium_sheet`、`northstar:durable_fabric`、`tetra:pristine_amethyst`、`tetra:pristine_diamond`、`tetra:pristine_emerald`、`tetra:forged_mesh`、`tetra:forged_bolt`
-- 终局/备选材料：`alexsmobs:void_worm_eye`、`ae2:singularity`
+- 终局冒险材料：`alexsmobs:void_worm_eye`、`minecraft:nether_star`、`minecraft:echo_shard`、`alexscaves:immortal_embryo`
+
+冒险卷轴、Boss 核心、遗迹改装和泰坦权能优先使用 Boss 战利品、地牢遗物、魔法材料、天然矿物与 Tetra 宝石，不使用 AE2 奇点/组件、Create 机构、Northstar 电路/氧气设备等科技合成材料。科技材料保留给机器、物流、航天设备和工业装备配方，避免冒险进度被工厂线强制绑架。
+远古遗魂项链这类用于唤醒或召唤 Boss 的关键道具不作为卷轴耗材，优先替换为远古金属、骨骸、宝石等可重复取得的主题材料。
 
 ## MMT 配方门槛
 
@@ -201,34 +204,42 @@
 | `forge_hammer/mmt_high_settled_scroll.json` | 低级卷轴直接升级 | 火星后 | 2 张 `mmt_settled_scroll` + `cataclysm:monstrous_horn` + `northstar:martian_steel_ingot` |
 | `mmt_skill_improvements.json` | 只吃铁工具和废金属 | Tetra 基础后 | `writable_book` + `tetra:forged_mesh` + `createdelight:forged_steel_ingot` + `create:precision_mechanism` |
 | `mmt_more_improvements.json` | 只吃钻石/紫水晶 | 月球后 | `mmt_skill_improvements` + `northstar:advanced_circuit` + `tetra:pristine_diamond` |
-| `mmt_over_improvements.json` | 强改装过早打开 | 金星后 | `mmt_more_improvements` + `cataclysm:ancient_metal_ingot` + `#iceandfire:dragon_bloods` |
+| `mmt_over_improvements.json` | 超凡铭刻已退出当前进度 | 禁用 | 保持 `forge:false`，泰坦与其他冒险卷轴不得再以它作为母卷轴 |
 | `mmt_bow_improvements.json` | 木棍/线/龙筋过早 | 末地或月球后 | `northstar:durable_fabric` + `tetra:dragon_sinew` + `cataclysm:void_core` |
 | `mmt_shield_skill.json` | 木板和铁即可 | 火星后 | `createdelight:forged_steel_sheet` + `northstar:martian_steel_sheet` + `cataclysm:monstrous_horn` |
 | `mmt_critical_strike_improvements.json` | 绿宝石成本过低 | 主世界 Boss 后 | `tetra:pristine_emerald` + `iceandfire:cyclops_eye` + `cataclysm:essence_of_the_storm` |
-| `mmt_katana_scroll.json` | 堆下界之星但不接流程 | 土卫二后 | `mmt_over_improvements` + `cataclysm:abyssal_egg` + `dreadsteel:dreadsteel_ingot` |
+| `mmt_katana_scroll.json` | 堆下界之星但不接流程 | 土卫二后 | `writable_book` + `cataclysm:abyssal_egg` + `dreadsteel:dreadsteel_ingot` |
 | `iceandfire/mmt_iceandfire_dragon_scroll.json` | 龙骨/手稿即可 | 龙猎支线中期 | `iceandfire:dragonbone` + 三色龙血各 1 + `createdelight:forged_steel_ingot`；主线锁定版本可追加 `northstar:martian_steel_ingot` |
 
 ### 泰坦卷轴
 
 覆盖路径：`kubejs/data/tetra/recipes/more_mod_tetra/the_legend_scroll/titan/*.json`
 
-基础结构：`mmt_more_improvements` 或 `mmt_over_improvements` + 阶段 Boss 战利品 + 阶段矿物/设备 + 对应阶段神化宝石或宝石粉。Tetra 无瑕宝石可作为锻造稳定材料追加，但不代表草稿中的宝石线。时间泰坦保持禁用，直到星系终局任务完成。
+当前实现采用书与笔 + 阶段 Boss 战利品 + 两份冒险主题材料，不再依赖已禁用的 `mmt_over_improvements`。卷轴负责一次性解锁知识；在工具上铭刻权能时只消耗可重复获取的冒险材料，不重复消耗 Boss 首杀证明，也不要求科技线组件。
+
+十二泰坦采用原作“四组三神”规则：命运组为门径/律法/岁月，基石组为大地/海洋/天空，创世组为负世/理性/浪漫，灾祸组为纷争/死亡/诡计。每件武器可从每组选择一种权能，最多同时拥有四种；同组图纸直接检查三位泰坦各自的真实 improvement，纷争则检查全部 `strife_forged` improvement，从而兼容新旧铭刻且不向 outcome 写入仅用于判定的辅助键。这批图纸对每种武器只开放一个主战斗槽，因此 Tetra 的主模块检查可以落实为武器级四组名额。
+
+四组成员以原作 Titans 的 Fate / Foundation / Creation / Calamity 分类为准。现有单体效果本身已对应各自权柄：命运组侧重规则、时间与通路，基石组侧重护盾、恢复与异常，创世组提供核心成长构筑，灾祸组在强战斗改造、保命与诡计收益间取舍，因此本轮只校正互斥关系，不额外替换 MMT 运行时效果。
+
+昔涟不占第五组；所有可用颂歌互相检查 12 个真实 `ode_to_*` improvement，只能从已继承的四种权能中选择一种作为主火种进行二次强化。真我/开拓颂歌仍只供预览，不允许脱离泰坦独立安装。
 
 | 卷轴 | 阶段 | 主题耗材 |
 |---|---:|---|
-| `the_legend_scroll_of_worldbearing_titan.json` | 主世界 / 斯库拉后 | `cataclysm:essence_of_the_storm` + 主世界/雷系神化宝石 |
-| `the_legend_scroll_of_reason_titan.json` | 月球 / 先驱者后 | `cataclysm:void_core` + `northstar:advanced_circuit` |
-| `the_legend_scroll_of_earth_titan.json` | 火星 / 下界合金巨兽后 | `cataclysm:monstrous_horn` + `northstar:martian_steel_ingot` |
-| `the_legend_scroll_of_law_titan.json` | 水星 / 炎魔后 | `cataclysm:ignitium_ingot` + `cataclysm:flame_eye` |
-| `the_legend_scroll_of_passage_titan.json` | 金星 / 远古遗魂后 | `cataclysm:ancient_metal_ingot` + `cataclysm:necklace_of_the_desert` |
-| `the_legend_scroll_of_ocean_titan.json` | 土卫二地下 / 利维坦后 | `cataclysm:abyssal_egg` + `cataclysm:tidal_claws` + `createdelight:sturdy_oxygen_tank` |
-| `the_legend_scroll_of_death_titan.json` | 土卫二地表 / 咒翼灵骸后 | `cataclysm:cursium_ingot` + `cataclysm:cursed_eye` + `createdelight:dread_heart` |
-| `the_legend_scroll_of_sky_titan.json` | 主世界 Boss 或雷系支线后 | `cataclysm:essence_of_the_storm` + `iceandfire:lightning_dragon_blood` |
-| `the_legend_scroll_of_romance_titan.json` | 蜜蜂领域 / 圣所支线后 | `the_bumblezone:essence_of_the_bees` 或六色能力精华 + `iceandfire:pixie_dust` |
-| `the_legend_scroll_of_strife_titan.json` | 终局战斗线 | `dreadsteel:dreadsteel_ingot` + `cataclysm:witherite_ingot` |
-| `the_legend_scroll_of_cyrene_titan.json` | 末地后期 / 终局 | `blackknightarmor:ultimate_dragon_heart` + `blackknightarmor:end_dragon_ingot` |
-| `the_legend_scroll_of_trickery_titan.json` | 末地 / 虚空支线 | `minecraft:echo_shard` + `alexscaves:pure_darkness` + `cataclysm:void_crystal` |
-| `the_legend_scroll_of_time_titan.json` | 星系终局 | 保持禁用；启用时使用“星系结晶” + `ae2:singularity` + `blackknightarmor:ultimate_dragon_heart` |
+| `the_legend_scroll_of_sky_titan.json` | 末影龙 / 末地城后 | `blackknightarmor:end_dragon_blood` + `tetra:dragon_sinew` + `cataclysm:essence_of_the_storm` |
+| `the_legend_scroll_of_romance_titan.json` | 蜜蜂女王完整愿望链，并要求末影龙材料 | `the_bumblezone:essence_of_the_bees` + `more_mod_tetra:golden_silk` + `blackknightarmor:end_dragon_blood` |
+| `the_legend_scroll_of_reason_titan.json` | 月球 / 先驱者后 | `cataclysm:void_core` + `minecraft:echo_shard` + `tetra:pristine_emerald` |
+| `the_legend_scroll_of_earth_titan.json` | 火星 / 下界合金巨兽后 | `cataclysm:monstrous_horn` + `cataclysm:ancient_metal_ingot` + `alexscaves:tectonic_shard` |
+| `the_legend_scroll_of_strife_titan.json` | 火星战斗线 | `cataclysm:monstrous_eye` + `dreadsteel:dreadsteel_ingot` + `cataclysm:witherite_ingot` |
+| `the_legend_scroll_of_law_titan.json` | 水星 / 炎魔后 | `cataclysm:flame_eye` + `cataclysm:ignitium_ingot` + `cataclysm:burning_ashes` |
+| `the_legend_scroll_of_passage_titan.json` | 水星 / 末影通路支线后 | `cataclysm:flame_eye` + `cataclysm:void_eye` + `minecraft:ender_eye` |
+| `the_legend_scroll_of_trickery_titan.json` | 金星与远古遗魂支线 | `cataclysm:ancient_metal_ingot` + `alexscaves:occult_gem` + `alexscaves:amber_curiosity` |
+| `the_legend_scroll_of_death_titan.json` | 土卫二地表 / 咒翼灵骸后 | `cataclysm:cursed_eye` + `cataclysm:cursium_ingot` + `createdelight:dread_heart` |
+| `the_legend_scroll_of_ocean_titan.json` | 土卫二地下 / 利维坦后 | `cataclysm:abyssal_sacrifice` + `more_mod_tetra:abyssal_ingot`×2 + `cataclysm:crystallized_coral` |
+| `the_legend_scroll_of_worldbearing_titan.json` | 末影守卫 / 星系终局 | `blackknightarmor:ultimate_dragon_heart` + `cataclysm:void_crystal` + `minecraft:nether_star` |
+| `the_legend_scroll_of_time_titan.json` | 星系终局 | `minecraft:echo_shard` + `alexscaves:immortal_embryo` + `blackknightarmor:ultimate_dragon_heart` |
+| `the_legend_scroll_of_cyrene_titan.json` | 十二火种收集后的终局合成 | 每组三张泰坦卷轴先无序合成命运/基石/创世/灾祸汇卷；四张汇卷再与书与笔合成真我之诗。十二火种本身承担终局成本，书与笔仅作为诗稿载体。颂歌每次消耗各自权柄对应的冒险材料。 |
+
+数值实现以“四组装满形成完整构筑，但单组仍有明确取舍”为目标：普通泰坦的通用攻击/攻速/远程倍率整体减半，标准值由 5% 降为 2.5%，四组标准权能装满约提供 10%；负世保持 `150 + 12`，律法为 10，海洋为 4，理性经验倍率为 125；诡计不复制完整战利品表，改为幸运、移动与攻速。昔涟颂歌只强化唯一主火种，独立的真我/开拓颂歌保持禁用。
 
 ### Iron's Spellbooks 卷轴
 
@@ -258,10 +269,10 @@
 | `tetra_curios/curios_emblem.json` | 铁锭/铁粒/圆石 | `createdelight:forged_steel_ingot` + `tetra:pristine_diamond` + `northstar:circuit` |
 | `cataclysm/monstrous_core.json` | 原配方已禁用 | 重开时使用 `cataclysm:monstrous_horn` + `cataclysm:monstrous_eye` + `northstar:martian_steel_ingot` |
 | `cataclysm/ignitium_core.json` | 钻石芯 + Ignitium | 追加 `cataclysm:flame_eye`，定位水星炎魔核心 |
-| `cataclysm/harbinger_core.json` | 钻石芯 + Witherite | 追加 `cataclysm:void_core` + `northstar:advanced_circuit`，定位月球机械/能量核心 |
-| `cataclysm/abyssal_core.json` | 钻石芯 + Abyssal | 追加 `cataclysm:abyssal_egg` + `createdelight:sturdy_oxygen_tank`，定位土卫二地下核心 |
+| `cataclysm/harbinger_core.json` | 钻石芯 + Witherite | 追加 `cataclysm:void_core` + `minecraft:echo_shard`，定位月球先驱者核心 |
+| `cataclysm/abyssal_core.json` | 钻石芯 + Abyssal | 追加 `cataclysm:abyssal_egg` + `alexscaves:abyssmarine`，定位土卫二地下核心 |
 | `cataclysm/cursium_core.json` | 钻石芯 + Cursium | 追加 `cataclysm:cursed_eye` + `createdelight:dread_heart`，定位土卫二地表核心 |
-| `cataclysm/storm_core.json` | 钻石芯 + Storm | 追加 `cataclysm:essence_of_the_storm` + `northstar:advanced_circuit`，定位斯库拉/雷系核心 |
+| `cataclysm/storm_core.json` | 钻石芯 + Storm | 追加 `cataclysm:essence_of_the_storm` + `iceandfire:cyclops_eye`，定位斯库拉/雷系核心 |
 | `iron/ingot/empty_arcane_ingot.json` | 不接 Tetra | 追加 `tetra:pristine_amethyst` 或 `createdelight:forged_steel_ingot` |
 
 ### 保留但加门槛的材料
@@ -284,7 +295,7 @@ MMT JAR 中已有 Alex's Caves 配方：
 
 | 覆盖路径 / 目标 | 当前问题 | 阶段 | 配方方向 |
 |---|---|---:|---|
-| `alexscaves/abyssal_ocean_ingot.json` | `iron_ingot + immortal_embryo` 直接出 8 个 | 土卫二地下 / 渊海深窟 | `alexscaves:immortal_embryo` + `alexscaves:abyssmarine` + `alexscaves:sea_glass_shards` + `createdelight:sturdy_oxygen_tank`，产量降为 2 |
+| `alexscaves/abyssal_ocean_ingot.json` | `iron_ingot + immortal_embryo` 直接出 8 个 | 土卫二地下 / 渊海深窟 | `alexscaves:immortal_embryo` + `alexscaves:abyssmarine` + `alexscaves:sea_glass_shards` + `cataclysm:crystallized_coral`，产量降为 2 |
 | `alexscaves/radiation_absorption_core.json` | 只吃 `polymer_plate + fissile_core` | 金星地下 / 辐射洞穴 | 追加 `alexscaves:radon_bottle`、`alexscaves:waste_drum`、`northstar:advanced_circuit`；后置版本追加 `alexscaves:tremorzilla_egg` |
 | `alexscaves/extinction_core.json` | 与主线连接弱 | 金星后或末地前 | 追加 `cataclysm:ancient_metal_ingot`、`alexscaves:volcanic_core` 或 `alexscaves:amber_monolith` |
 
@@ -380,7 +391,7 @@ MMT JAR 中已有 Alex's Caves 配方：
 1. 重做泰坦卷轴，按主世界、蜜蜂领域、末地、月球、火星、水星、金星、土卫二、星系终局分层。
 2. 重做 `curios_ring`、`curios_bracelet`、`curios_emblem` 三个饰品基底。
 3. 重做 `mmt_quality_scroll`、`mmt_settled_scroll` 和 high 版本，建立 Tetra 锻造与早期 Boss 门槛。
-4. 重做 `mmt_skill_improvements`、`mmt_more_improvements`、`mmt_over_improvements` 三层通用改装卷轴。
+4. 重做 `mmt_skill_improvements`、`mmt_more_improvements` 两层通用改装卷轴，保持 `mmt_over_improvements` 禁用并清除其他进度对它的依赖。
 5. 补齐末地材料用途，使 `tetra:dragon_sinew`、`blackknightarmor:end_dragon_blood`、`blackknightarmor:end_dragon_ingot`、`blackknightarmor:ultimate_dragon_heart` 分层进入配方。
 6. 补齐神化宝石投放，使阶段晶洞、精英怪和星球地牢按难度限制产出对应种类与品质的 `apotheosis:gem`。
 7. 补齐蜜蜂领域材料用途，使蜂王浆、蜂之精华、蜂蜜结晶和六色圣所精华进入支援型饰品、浪漫泰坦卷轴和特殊打磨。

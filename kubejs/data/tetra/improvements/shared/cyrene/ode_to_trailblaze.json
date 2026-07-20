@@ -12,7 +12,7 @@
       "*tetra:draw_strength": 0.05
     },
     "effects": {
-      "more_mod_tetra:ode_to_trailblaze": 20
+      "more_mod_tetra:ode_to_trailblaze": 10
     }
   }
 ]
