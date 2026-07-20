@@ -1,0 +1,69 @@
+[soul_catcher]
+	# Entity ids that should not be capturable.
+	entity_blacklist = [
+		"minecraft:iron_golem",
+		"minecraft:snow_golem",
+		"minecraft:warden",
+		"minecraft:villager",
+		"minecraft:wandering_trader",
+		"alexsmobs:void_worm",
+		"alexsmobs:warped_mosco",
+		"alexsmobs:underminer",
+		"alexscaves:luxtructosaurus",
+		"alexscaves:tremorzilla",
+		"alexscaves:hullbreaker",
+		"alexscaves:forsaken",
+		"alexscaves:licowitch",
+		"alexscaves:mine_guardian",
+		"cataclysm:coral_golem",
+		"cataclysm:coralssus",
+		"cataclysm:amethyst_crab",
+		"cataclysm:kobolediator",
+		"cataclysm:wadjet",
+		"cataclysm:aptrgangr",
+		"cataclysm:royal_draugr",
+		"cataclysm:elite_draugr",
+		"cataclysm:the_watcher",
+		"cataclysm:the_prowler",
+		"cataclysm:deepling_brute",
+		"cataclysm:deepling_priest",
+		"cataclysm:deepling_warlock"
+	]
+	# Maximum distance at which entities can be captured.
+	# Range: 5.0 ~ 50.0
+	max_distance = 10.0
+	# Entity health must be at or below this percentage before capture.
+	# Range: 0.0 ~ 1.0
+	max_health_percentage = 0.25
+	allow_bosses = false
+	# Only relevant when bosses are allowed.
+	# Range: 0.0 ~ 1.0
+	max_boss_health_percentage = 0.05
+	require_weakness = true
+
+[mechanical_spawner]
+	# Maximum stress impact; actual impact scales with entity health.
+	# Range: 1.0 ~ 1.7976931348623157E308
+	max_stress_impact = 80.0
+	# Range: 1.0 ~ 1.7976931348623157E308
+	min_rpm = 128.0
+	# Range: > 0
+	max_nearby_entities = 6
+	player_configuration_allowed = true
+	# Range: > 2
+	spawn_area_min_width = 3
+	# Range: > 2
+	spawn_area_max_width = 7
+	# Range: > 2
+	spawn_area_default_width = 7
+	# Range: > 0
+	spawn_area_min_height = 1
+	# Range: > 0
+	spawn_area_max_height = 5
+	# Range: > 0
+	spawn_area_default_height = 3
+	spawn_area_min_height_offset = -2
+	spawn_area_max_height_offset = 2
+	spawn_area_default_height_offset = 0
+	# Range: 0 ~ 72000
+	despawn_immunity_ticks = 600

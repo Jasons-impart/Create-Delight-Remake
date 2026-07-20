@@ -247,18 +247,18 @@ Create 动态结构的整车库存适合作为物流空间，但不适合作为�
 
 ### 遗传种子培养
 
-`Create Mechanical Spawner` 已有遗传种子和刷怪液链路：`inferior_genetic_seed`、`normal_genetic_seed`、`refined_genetic_seed`、`pure_genetic_seed`、`flawless_genetic_seed`。这条线天然接近生命工程，适合让生命质承担“稳定遗传表达”的催化剂角色。
+`Create: Mob Spawners` 使用灵魂捕捉器记录生物样本，并由 CDR 的五级遗传培养液驱动。`inferior_genetic_seed`、`normal_genetic_seed`、`refined_genetic_seed`、`pure_genetic_seed`、`flawless_genetic_seed` 继续构成生命工程主线，生命质负责稳定高阶遗传表达，灵质负责制备培养液。
 
-生命质不应直接生产刷怪液，也不应替代怪物材料、灵质或随机刷怪液。推荐做法是在既有升级链上增加高成本、高概率的替代配方，或把生命质作为额外输入提高升级成功率：
+生命质不直接生产培养液，也不替代灵质。它仅在种子升级时提高遗传稳定性；各级种子再与灵质混合为对应等级的培养液：
 
 | 工艺 | 基础定位 | 推荐生命质强化 |
 |---|---|---|
-| `inferior_genetic_seed` -> `normal_genetic_seed` | 入门遗传种子升级 | 额外消耗 1 个生命质，将概率提高到约 65%-70% |
-| `normal_genetic_seed` -> `refined_genetic_seed` | 中级升级 | 额外消耗 3 个生命质，将概率提高到约 70%-75% |
-| `refined_genetic_seed` -> `pure_genetic_seed` | 高级升级 | 额外消耗 8 个生命质，将概率提高到约 75%-85% |
-| `pure_genetic_seed` -> `flawless_genetic_seed` | 后期稳定化目标 | 消耗 16-24 个生命质和特殊催化物，提供高概率或稳定产出 |
+| `inferior_genetic_seed` -> `normal_genetic_seed` | 入门遗传种子升级 | 消耗 1 个生命质与 250 mB 灵质，成功率 70% |
+| `normal_genetic_seed` -> `refined_genetic_seed` | 中级升级 | 消耗 3 个生命质与 300 mB 灵质，成功率 75% |
+| `refined_genetic_seed` -> `pure_genetic_seed` | 高级升级 | 消耗 8 个生命质与 400 mB 灵质，成功率 82% |
+| `pure_genetic_seed` -> `flawless_genetic_seed` | 后期稳定化目标 | 消耗 12 个生命质、500 mB 灵质和 250 mB 龙息流体，稳定产出；单项物品输入不超过工作盆单个物品栈的 16 件上限 |
 
-这样生命质会让品质农场反哺生物自动化，但不会让普通生物质、怪物农场或刷怪液系统反过来成为生命质来源。
+每级种子、1 个谱系标记与 250 mB 灵质可制成 1000 mB 对应培养液。所有分型共用 `createdelightcore:genetic_culture`，由 `Grade`、`Lineage`、`Variant`、`Color`、`Name` NBT 决定等级、谱系、颜色和本地化名称。当前实现畜牧、温顺野生、地表敌对、亡灵、水生、下界、末影、洞穴、珍稀、异常和灾变仆从 11 个基础谱系，珍稀、异常和灾变仆从另有不扩展白名单的完美效率版本。每个精确实体白名单最多 10 项，避免 JEI 提示框再次膨胀；大型稀有怪、结构精英和可能破坏进度的生物通过捕获黑名单排除。这样品质农场会反哺生物自动化，但普通生物质、怪物农场或培养液仍不能反向成为生命质来源。
 
 ### 订单封缄
 
