@@ -27,6 +27,8 @@ Use this workflow for modpack asset operations that touch `mods/`, `resourcepack
 4. Inspect the generated `.pw.toml` plus `packwiz-files` changes before staging, especially that existing `side = "client"` or `side = "server"` entries were not reset to `both`.
 5. Run `./scripts/sync-packwiz-assets.ps1` when local runtime files must match metadata.
 
+When old and new runtime JARs coexist, `update-packwiz-meta.ps1` selects the preferred newer filename and updates the existing metadata entry instead of creating a duplicate. Missing runtime JARs do not remove metadata by default; remove the `.pw.toml` explicitly, or use `-AllowRemovals` only when bulk removal is intentional and the runtime directory is complete.
+
 ### 短期 PR 分支上的 CurseForge 定向更新
 
 1. 不要在仓库根目录直接运行 `packwiz update`，因为 `pack.toml` 和 `index.toml` 是生成文件且通常不存在。
