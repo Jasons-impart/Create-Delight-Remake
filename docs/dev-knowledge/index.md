@@ -36,6 +36,10 @@
 | `docs/plan/quality-harvest-life-matter-plan.md` | 内容设计计划 | 品质收割、生命质回收和生命质扩展用途规划。 |
 | `docs/plan/fluid-quality-mod-plan.md` | 内容设计计划 | Quality Food 流体品质附属 mod 的数据模型、Create 接入、世界流体品质和阶段实施方案。 |
 | `docs/plan/adventure-progression-overhaul-plan.md` | 内容设计计划 | 冒险流程、配方门槛和阶段推进规划。 |
+| `docs/plan/apotheosis-fallen-gems-affixes-integration-plan.md` | 内容设计计划 | Apotheosis、Fallen Gems & Affixes 与 Tetra 的职责边界、投放和数值控制规划。 |
+| `docs/plan/chromatic-compound-endgame-plan.md` | 内容设计计划 | 异彩化合物双路线、光辉石与暗影钢终盘分支的材料链规划。 |
+| `docs/plan/one-enough-damage-unified-damage-system.md` | 技术设计计划 | OneEnoughDamage 伤害扫描、逻辑分组、增伤与抗性统一方案。 |
+| `docs/plan/player-world-tier-progression-plan.md` | 内容设计计划 | 玩家独立世界等级、永久解锁上限、当前等级选择和晋阶试炼条件规划。 |
 | `docs/plan/mmt-curios-stage-progression-plan.md` | 内容设计计划 | MMT 模块化饰品的阶段开放、流派调律、重复制作和数值边界设计。 |
 | `docs/tetra-design-reference-2026-06-22.md` | 设计参考 | Tetra/MMT 数值、材料和模块参考。 |
 | `docs/announcement.md` | 发布素材 | 稳定版本公告片段，不作为开发知识入口。 |

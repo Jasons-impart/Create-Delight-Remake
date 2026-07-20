@@ -530,6 +530,13 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: Tetra Material Overhaul 会把材料根级 `effects` 放入 `default` context，而 GeoTetraArmor 模块只请求 `armor` 与具体部位 context；仅在根级声明的日耀守护、灵钢衬层等效果会出现在普通模块，却不会进入护甲的计算效果列表。
 - **Fix/Lesson**: 需要在护甲生效的材料必须同时保留根级效果并在 `contexts.armor.effects` 中显式声明护甲效果；只属于武器的效果不要复制进 `armor`，并通过实际装备 NBT、Buff 与 `ArmorEffectUtil` 汇总结果验证。
 
+## Black Knight Armor removes externally applied Solar Shield
+
+**Date**: 2026-07-20
+
+- **Problem**: `SolarFlareArmorEffects` 每个玩家 tick 都检查原生日耀套装；未穿齐时会主动移除 `blackknightarmor:solar_shield`，因此 KubeJS 为 Tetra 护甲添加该 Buff 后会在同一 tick 被清理。
+- **Fix/Lesson**: Tetra 日耀材料改用独立的 `createdelight:solar_guard` 状态效果显示蓄积层数，不要与原模组的套装 tick 逻辑竞争；新增 mob effect 必须完整重启才能注册。
+
 ## Tetra schematic material previews must match module extract data
 
 **Date**: 2026-07-19
@@ -627,3 +634,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: 为四组泰坦互斥在 schematic outcome 中追加仅作判定的 `titan_*_attunement` / `cyrene_attunement` 后，Tetra Insight 会调用目标模块的 `acceptsImprovementLevel()` 检查每个预览 key；辅助 key 不被接受时，整张图纸在 `preview: revealable` 生效前就被候选过滤，导致 12 首颂歌和泰坦方案消失。
 - **Fix/Lesson**: outcome 只写实际生效且模块已接受的 improvement；纯互斥应在 requirement 中枚举真实泰坦、`strife_forged` 或 `ode_to_*` key，不要追加隐藏辅助 improvement。
+
+## T.O 6.3.0 不兼容 Iron's Spells 3.16.x 的 Dead King 包路径
+
+**Date**: 2026-07-20
+
+- **Problem**: T.O Magic 'n Extras 6.3.0 直接引用 `dead_king_boss.DeadKingAnimatedWarlockAttackGoal`；Iron's Spells 从 3.16.0 起把该类移动到 `dead_king_boss.goals`，实例化 `EnragedDeadKingBoss` 时会触发 `NoClassDefFoundError`。
+- **Fix/Lesson**: 1.20.1 使用 T.O 6.3.0 时固定 Iron's Spells 3.15.6 与 Iron's Lib 1.0.2；不要只按 T.O 声明的 `[3.15.0,)` 版本范围升级到 3.16.x，更新前应检查闭源附属直接引用的类路径。

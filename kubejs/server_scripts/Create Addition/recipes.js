@@ -86,6 +86,19 @@ ServerEvents.recipes(e => {
         ]
     ).id("createdelight:crafting/portable_energy_interface")
 
+    // 超导金属：向琥珀金基底注入陨石溶液，并安装电子元件后压制定型
+    let incompleteSuperconductingMetal = Item.of("createaddition:electrum_ingot", "{createdelight_superconducting:1b}")
+    e.recipes.create.sequenced_assembly("vvaddon:mine_ingot", "createaddition:electrum_ingot", [
+        e.recipes.create.filling(incompleteSuperconductingMetal, [incompleteSuperconductingMetal, Fluid.of("createdelight:sky_solution", 250)]),
+        e.recipes.create.deploying(incompleteSuperconductingMetal, [incompleteSuperconductingMetal, "createaddition:capacitor"]),
+        e.recipes.create.deploying(incompleteSuperconductingMetal, [incompleteSuperconductingMetal, "createdelight:bleak_electron_tube"]),
+        e.recipes.create.deploying(incompleteSuperconductingMetal, [incompleteSuperconductingMetal, "vintageimprovements:redstone_module"]),
+        e.recipes.create.pressing(incompleteSuperconductingMetal, incompleteSuperconductingMetal)
+    ])
+        .transitionalItem(incompleteSuperconductingMetal)
+        .loops(1)
+        .id("createdelight:sequenced_assembly/superconducting_metal")
+
     e.recipes.kubejs.shapeless(
         "createaddition:superconducting_connector",
         [

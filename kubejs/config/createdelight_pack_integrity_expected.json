@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-20T15:57:56Z",
+  "generatedAt": "2026-07-20T16:21:59Z",
   "generatedBy": "scripts/generate-pack-integrity-manifest.py",
   "expectedFiles": {
     "common": [
@@ -179,6 +179,7 @@
       "improvedmobs-1.20.1-1.13.7-forge.jar",
       "industrial platform-1.20.1-1.8.0.jar",
       "integrated_api-1.7.4+1.20.1-forge.jar",
+      "integrated_cataclysm_forge-1.0.5+1.20.1.jar",
       "integrated_stronghold-1.1.2+1.20.1-forge.jar",
       "integrated_villages-1.3.2+1.20.1-forge.jar",
       "interiors-1.20.1-forge-0.6.0.jar",
@@ -218,6 +219,7 @@
       "megacells-forge-2.4.6-1.20.1.jar",
       "melody_forge_1.0.3_mc_1.20.1-1.20.4.jar",
       "midnightlib-forge-1.9.2+1.20.1.jar",
+      "minecraft-mcp-1.20.1-forge-v0.2.1.jar",
       "miners_delight-1.20.1-1.4.5-backport.jar",
       "modernfix-forge-5.27.66+mc1.20.1.jar",
       "moestweaks-forge-1.20.1-1.1.2.jar",
@@ -240,6 +242,7 @@
       "observable-4.4.2.jar",
       "oceanic_delight-1.0.3-forge-1.20.1.jar",
       "oelib-forge-1.20.1-0.2.3.jar",
+      "oneenoughdamage-1.20.1-1.0.2-hotfix.jar",
       "oneenoughitem-1.0.7-hotfix.jar",
       "oneenoughvalue-1.0.2.jar",
       "packetfixer-3.3.2-1.18-1.20.4-merged.jar",
@@ -903,6 +906,11 @@
       "side": "common",
       "metadata": "mods/OELib.pw.toml",
       "filename": "OELib-forge-1.20.1-0.2.3.jar"
+    },
+    {
+      "side": "common",
+      "metadata": "mods/oneenoughdamage.pw.toml",
+      "filename": "OneEnoughDamage-1.20.1-1.0.2-hotfix.jar"
     },
     {
       "side": "common",
@@ -1706,6 +1714,11 @@
     },
     {
       "side": "common",
+      "metadata": "mods/integrated-cataclysm.pw.toml",
+      "filename": "integrated_cataclysm_forge-1.0.5+1.20.1.jar"
+    },
+    {
+      "side": "common",
       "metadata": "mods/integrated_stronghold.pw.toml",
       "filename": "integrated_stronghold-1.1.2+1.20.1-forge.jar"
     },
@@ -1858,6 +1871,11 @@
       "side": "common",
       "metadata": "mods/midnightlib.pw.toml",
       "filename": "midnightlib-forge-1.9.2+1.20.1.jar"
+    },
+    {
+      "side": "common",
+      "metadata": "mods/moddev-mcp.pw.toml",
+      "filename": "minecraft-mcp-1.20.1-forge-v0.2.1.jar"
     },
     {
       "side": "common",
