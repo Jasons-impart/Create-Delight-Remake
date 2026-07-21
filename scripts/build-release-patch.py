@@ -45,6 +45,10 @@ def read_toml(path):
         return tomllib.load(source)
 
 
+def is_release_enabled(data):
+    return data.get("release", True) is not False
+
+
 def metadata_files(root, asset_dir):
     directory = root / asset_dir
     if directory.is_dir():
@@ -54,6 +58,8 @@ def metadata_files(root, asset_dir):
 def metadata_entries(root, asset_dir):
     for metadata_path in metadata_files(root, asset_dir):
         data = read_toml(metadata_path)
+        if not is_release_enabled(data):
+            continue
         filename = data.get("filename")
         if not filename:
             print(f"::warning::Missing filename in {metadata_path.as_posix()}")
@@ -171,8 +177,29 @@ def move_packwiz_payloads(patch):
     shutil.rmtree(patch / "packwiz-files", ignore_errors=True)
 
 
+def remove_release_disabled_payloads(patch):
+    for metadata_path in metadata_files(Path.cwd(), "mods"):
+        data = read_toml(metadata_path)
+        if is_release_enabled(data):
+            continue
+        filename = data.get("filename")
+        if filename:
+            for candidate in (
+                patch / "mods" / str(filename),
+                patch / "packwiz-files" / "mods" / str(filename),
+            ):
+                if candidate.is_file():
+                    candidate.unlink()
+                    print(f"Removed release-disabled payload: {candidate}")
+        metadata_candidate = patch / metadata_path.relative_to(Path.cwd())
+        if metadata_candidate.is_file():
+            metadata_candidate.unlink()
+            print(f"Removed release-disabled metadata: {metadata_candidate}")
+
+
 def command_server(args):
     patch = Path(args.patch)
+    remove_release_disabled_payloads(patch)
     remove_client_mod_payloads(patch)
     for relative_path in SERVER_EXCLUDED_FILES:
         target = patch / relative_path
