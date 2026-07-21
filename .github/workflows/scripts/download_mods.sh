@@ -38,9 +38,7 @@ LOCAL_PREFIX="http://127.0.0.1:$PORT/packwiz-files/"
 RAW_PREFIX_REGEX='https://raw\.githubusercontent\.com/Jasons-impart/Create-Delight-Remake/[^"[:space:]]*/packwiz-files/'
 find "$PACK_DIR" -name '*.pw.toml' -exec sed -E -i "s|${RAW_PREFIX_REGEX}|${LOCAL_PREFIX}|g" {} +
 
-if [ "$SIDE" != "all" ]; then
-  python3 scripts/packwiz-side.py prune-metadata --base "$PACK_DIR" --target "$SIDE"
-fi
+python3 scripts/packwiz-side.py prune-metadata --base "$PACK_DIR" --target "$SIDE" --release
 
 # 3. Refresh index in temp directory
 (cd "$PACK_DIR" && "$OLDPWD/packwiz" refresh)

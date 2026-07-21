@@ -39,7 +39,7 @@ trap cleanup EXIT
 
 python3 "$repo_root/scripts/generate-packwiz-files.py" --source "$repo_root/modpack.toml" --output-dir "$repo_root"
 side_backup="$(mktemp -d)"
-python3 "$repo_root/scripts/packwiz-side.py" prune-metadata --base "$repo_root" --target client --backup-dir "$side_backup"
+python3 "$repo_root/scripts/packwiz-side.py" prune-metadata --base "$repo_root" --target client --release --backup-dir "$side_backup"
 bash "$script_dir/normalize_packwiz_files_for_curseforge.sh"
 
 mkdir -p "$(dirname "$output")"

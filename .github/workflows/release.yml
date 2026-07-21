@@ -106,7 +106,7 @@ jobs:
           pip install requests
           python .github/workflows/scripts/update_credits.py --mode real --download-images
       - name: 生成模组列表完整性清单
-        run: python3 scripts/generate-pack-integrity-manifest.py
+        run: python3 scripts/generate-pack-integrity-manifest.py --release
       - name: 生成不带mod本体的包
         run: |
           bash .github/workflows/scripts/export_curseforge_pack.sh ../lite-release.zip 8083
@@ -257,7 +257,7 @@ jobs:
           modpack_version: ${{ env.MODPACK_VERSION }}
           mode: patch
       - name: 生成模组列表完整性清单
-        run: python3 scripts/generate-pack-integrity-manifest.py
+        run: python3 scripts/generate-pack-integrity-manifest.py --release
       - name: 准备补丁文件
         run: |
           python3 scripts/build-release-patch.py prepare \
