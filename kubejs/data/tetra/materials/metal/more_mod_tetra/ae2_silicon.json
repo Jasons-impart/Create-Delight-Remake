@@ -1,0 +1,34 @@
+{
+  "replace": true,
+  "key": "ae2_silicon",
+  "category": "misc",
+  "primary": 5,
+  "secondary": 0.5,
+  "tertiary": 0.2,
+  "durability": 200,
+  "integrityCost": 1,
+  "integrityGain": 4,
+  "magicCapacity": 0,
+  "toolLevel": "minecraft:iron",
+  "toolEfficiency": 1,
+  "tints": {
+    "glyph": "726b6e",
+    "texture": "726b6e"
+  },
+  "textures": [
+    "shiny",
+    "crude"
+  ],
+  "material": {
+    "tag": "createdelight:disabled_mmt_fragile_materials"
+  },
+  "requiredTools": {
+    "hammer_dig": "minecraft:wood"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ae2"
+    }
+  ]
+}
