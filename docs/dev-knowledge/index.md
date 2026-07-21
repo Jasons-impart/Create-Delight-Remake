@@ -39,6 +39,7 @@
 | `docs/plan/apotheosis-fallen-gems-affixes-integration-plan.md` | 内容设计计划 | Apotheosis、Fallen Gems & Affixes 与 Tetra 的职责边界、投放和数值控制规划。 |
 | `docs/plan/chromatic-compound-endgame-plan.md` | 内容设计计划 | 异彩化合物双路线、光辉石与暗影钢终盘分支的材料链规划。 |
 | `docs/plan/one-enough-damage-unified-damage-system.md` | 技术设计计划 | OneEnoughDamage 伤害扫描、逻辑分组、增伤与抗性统一方案。 |
+| `docs/attributeslib-traveloptics-echoing-strikes-analysis.md` | 技术研究参考 | AttributesLib 多重暴击、Travel Optics 暗影瘴气和 Iron's Spells 回响打击的跨模组伤害放大链、上游变化与修复取舍。 |
 | `docs/plan/player-world-tier-progression-plan.md` | 内容设计计划 | 玩家独立世界等级、永久解锁上限、当前等级选择和晋阶试炼条件规划。 |
 | `docs/plan/mmt-curios-stage-progression-plan.md` | 内容设计计划 | MMT 模块化饰品的阶段开放、流派调律、重复制作和数值边界设计。 |
 | `docs/tetra-design-reference-2026-06-22.md` | 设计参考 | Tetra/MMT 数值、材料和模块参考。 |

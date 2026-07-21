@@ -67,39 +67,70 @@ ServerEvents.recipes(e => {
         "CDC",
         "AEA"
     ], {
-        A: "create:iron_sheet",
-        B: "create:mechanical_harvester",
+        A: "create:brass_sheet",
+        B: "eclipticseasons:growth_detector",
         C: "#createdelightcore:life_matter",
         D: "createdelight:quality_absorber",
-        E: "create:andesite_casing"
+        E: "create:precision_mechanism"
     })
     .id("createdelight:quality_harvest_calibrator_tier_1")
 
-    kubejs.shaped("createdelight:quality_harvest_calibrator_tier_2", [
-        "ABA",
-        "CDC",
-        "AEA"
-    ], {
-        A: "#createdelightcore:life_matter",
-        B: "create:precision_mechanism",
-        C: "createdelight:normal_genetic_seed",
-        D: "createdelight:quality_harvest_calibrator_tier_1",
-        E: "createdelightcore:luna_soil"
-    })
-    .id("createdelight:quality_harvest_calibrator_tier_2")
+    {
+        let iner = "createdelight:quality_harvest_calibrator_tier_1"
+        create.sequenced_assembly("createdelight:quality_harvest_calibrator_tier_2", iner, [
+            create.deploying(iner, [iner, "create:precision_mechanism"]),
+            create.deploying(iner, [iner, "createdelight:normal_genetic_seed"]),
+            create.filling(iner, [iner, Fluid.of("netherexp:ectoplasm", 250)]),
+            create.deploying(iner, [iner, "#createdelightcore:life_matter"]),
+            create.pressing(iner, iner)
+        ])
+        .transitionalItem(iner)
+        .loops(2)
+        .id("createdelight:sequenced_assembly/quality_harvest_calibrator_tier_2")
+    }
 
-    kubejs.shaped("createdelight:quality_harvest_calibrator_tier_3", [
+    create.mechanical_crafting("createdelight:quality_harvest_calibrator_tier_3", [
+        " A A ",
+        "BCDCB",
+        " EFE ",
+        "BCGCB",
+        " A A "
+    ], {
+        A: "create_new_age:overcharged_diamond",
+        B: "#createdelightcore:life_matter",
+        C: "createdelight:pure_genetic_seed",
+        D: "create:experience_block",
+        E: "create:precision_mechanism",
+        F: "createdelight:quality_harvest_calibrator_tier_2",
+        G: "createdelight:flawless_genetic_seed"
+    })
+    .id("createdelight:mechanical_crafting/quality_harvest_calibrator_tier_3")
+
+    kubejs.shaped("createdelightcore:quality_harvest_controller", [
         "ABA",
         "CDC",
         "AEA"
     ], {
-        A: "#createdelightcore:life_matter",
-        B: "create_new_age:overcharged_diamond",
-        C: "createdelight:pure_genetic_seed",
-        D: "createdelight:quality_harvest_calibrator_tier_2",
-        E: "create:experience_block"
+        A: "create:brass_sheet",
+        B: "create:mechanical_harvester",
+        C: "#createdelightcore:life_matter",
+        D: "create:precision_mechanism",
+        E: "create:brass_casing"
     })
-    .id("createdelight:quality_harvest_calibrator_tier_3")
+    .id("createdelight:quality_harvest_controller")
+
+    kubejs.shaped("createdelightcore:life_matter_injector", [
+        "ABA",
+        "CDC",
+        "AEA"
+    ], {
+        A: "create:brass_sheet",
+        B: "create:portable_storage_interface",
+        C: "create:smart_chute",
+        D: "create:precision_mechanism",
+        E: "create:brass_casing"
+    })
+    .id("createdelight:life_matter_injector")
 
     cutting(e, "createdelightcore:fire_lily_cluster", "4x iceandfire:fire_lily")
     cutting(e, "createdelightcore:frost_lily_cluster", "4x iceandfire:frost_lily")

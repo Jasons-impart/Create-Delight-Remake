@@ -196,11 +196,11 @@ ServerEvents.recipes(e => {
         "CDC",
         "AEA"
     ], {
-        A: "#forge:plates/bronze",
+        A: "create:brass_sheet",
         B: "create:brass_funnel",
-        C: "create:andesite_casing",
+        C: "create:brass_casing",
         D: "createdelight:quality_absorber",
-        E: "create:item_drain"
+        E: "vintageimprovements:centrifuge"
     }).id("createdelight:life_matter_extractor")
 
     e.recipes.create.mechanical_crafting("createdelight:big_centrifuge", [

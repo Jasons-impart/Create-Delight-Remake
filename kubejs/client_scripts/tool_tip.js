@@ -57,6 +57,8 @@ ItemEvents.tooltip(e => {
         'createdelight:quality_harvest_calibrator_tier_1',
         'createdelight:quality_harvest_calibrator_tier_2',
         'createdelight:quality_harvest_calibrator_tier_3',
+        'createdelightcore:quality_harvest_controller',
+        'createdelightcore:life_matter_injector',
     ])
     clearAddCtrlTooltip(e, [
 

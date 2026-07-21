@@ -228,6 +228,55 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["7029D6C489D44144"]
+			description: [
+				"本包将许多 Create 及附属模组机器的合成统一为&e标准组件&r。组件配方一次产出 &e2&r 个；除工作台无序合成外，也可在 JEI 中查看对应的搅拌路线。"
+				"&7安山结构组件&r负责基础框架，&e传动组件&r负责旋转与运动机构；&6铜质流体组件&r与&b密封接头组件&r常用于流体设备和活动接口。进入黄铜时代后，&6黄铜控制组件&r负责精密控制，&d逻辑组件&r则用于打包与物流网络设备。"
+				"制作机器时，通常要把&e一种组件放入锻造模板槽&r、&e另一种组件放入基础槽&r，再把机器的特征零件放入附加槽。自动化时也可使用相同材料进行序列装配；具体组合与产量请以 JEI 为准。"
+				"三种附属引擎也能在切石机中拆回组件：热力引擎可选 &e8 个安山结构组件&r或 &e4 个传动组件&r；液压引擎可选 &e8 个铜质流体组件&r或 &e8 个密封接头组件&r；蒸汽引擎可选 &e8 个黄铜控制组件&r或 &e8 个传动组件&r。每次只能选择一种拆解结果。"
+			]
+			id: "3A2F80F9BA7B4FA0"
+			min_required_tasks: 1
+			shape: "gear"
+			size: 1.25d
+			subtitle: "一套零件，装配整条生产线"
+			tasks: [
+				{
+					id: "368630FFA5E64C4A"
+					item: "createdelight:andesite_structure_component"
+					type: "item"
+				}
+				{
+					id: "037F8837AF8C4E98"
+					item: "createdelight:kinetic_transmission_component"
+					type: "item"
+				}
+				{
+					id: "6A3F84FD4AB6D03A"
+					item: "createdelight:copper_fluid_component"
+					type: "item"
+				}
+				{
+					id: "38951C001CE8624C"
+					item: "createdelight:sealed_joint_component"
+					type: "item"
+				}
+				{
+					id: "50BF867A87D61457"
+					item: "createdelight:brass_control_component"
+					type: "item"
+				}
+				{
+					id: "5FB5AFFB0E94E78C"
+					item: "createdelight:logic_component"
+					type: "item"
+				}
+			]
+			title: "机动机器标准组件"
+			x: 10.0d
+			y: -3.5d
+		}
+		{
 			dependencies: ["28CB30AB88780BC7"]
 			hide_until_deps_visible: false
 			id: "4D7BB97AA55ACE20"
