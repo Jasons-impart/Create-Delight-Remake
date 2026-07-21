@@ -2,7 +2,7 @@
 
 日期：2026-07-21
 
-状态：调研完成；CDC `2.2.16c` 已实施三项兼容修复并通过有/无目标模组两种加载验证
+状态：调研完成；CDC `2.2.16d` 已实施三项兼容修复，其中新版暗影瘴气公式已通过构建与数值验证，等待用户启动完整整合包回归
 
 ## 研究结论
 
@@ -575,7 +575,7 @@ B × M × (1 + E)
 回响是独立二段伤害，不是最终伤害倍率的平方器
 ```
 
-## CDC 2.2.16c 实施结果
+## CDC 2.2.16d 实施结果
 
 本次修复已在 Create Delight Core 中实现：
 
@@ -583,13 +583,14 @@ B × M × (1 + E)
 |---|---|---|
 | AttributesLib 多重暴击 | 在 `AttributeEvents.apothCriticalStrike` 入口接管旧公式，使用上游新版“每层按原始伤害加算”的算法，并保留15%逐层衰减与暴击粒子。 | `enableAdditiveMulticrit = true` |
 | 回响打击原始伤害 | 在 `LivingHurtEvent` 构造完成时保存不可变金额；`EchoingStrikesEffect.createEcho` 只把读取金额替换为该快照，其余回响比例、延迟、范围和法术伤害流程保持原样。 | `echoingStrikesUseOriginalDamage = true` |
-| 暗影瘴气等级上限 | 只限制施法者获得的深渊打击等级，同时修正法术信息显示；敌人获得的深渊诅咒等级不受此上限影响。 | `shadowedMiasmaMaxAbyssalStrikeLevel = 100`；设为 `0` 可关闭上限。 |
+| 暗影瘴气强度换算 | 同时替换 `onCast` 与 `getUniqueInfo` 中的 `getSpellPower` 结果，使深渊打击、深渊诅咒和法术说明使用同一递减公式；不再使用100级硬上限。 | 超过1倍的倍率按 `1 + 4(m-1)/(m+3)` 换算，有效倍率渐近于5倍。 |
 
 主要源码位置：
 
 ```text
 src/main/java/io/github/jasonsimpart/createdelightcore/
 ├─ compat/combat/OriginalDamageAccess.java
+├─ compat/combat/MiasmaPowerScaling.java
 ├─ mixin/CombatMixinPlugin.java
 └─ mixin/combat/
    ├─ LivingHurtEventMixin.java
@@ -611,8 +612,9 @@ traveloptics
 验证结果：
 
 - `./gradlew clean build --no-daemon --console=plain` 构建成功。
-- CDRdev 完整环境中三个兼容 Mixin 均记录为 `Applying`，客户端进入整合包校验界面，Minecraft MCP 可连接。
+- CDC `2.2.16c` 完整环境中三个兼容 Mixin 均记录为 `Applying`，客户端进入整合包校验界面；`2.2.16d` 仅改变已命中的 Travel Optics 表达式处理器，完整启动由用户执行。
 - CDC 开发客户端不安装三个目标模组时，三个 Mixin 均记录为 `Skipping`，客户端正常进入主菜单并启动声音引擎。
+- 新公式代表值已直接调用编译后 helper 验证：三级法术在原倍率 `1×/2×/5×/10×/1000×` 时，最终强度分别约为 `4/7.2/12/15.08/19.94`。
 
 ## 实施后的验证清单
 
@@ -648,4 +650,4 @@ traveloptics
 
 ## 当前状态
 
-修复已在 Create Delight Core `2.2.16c` 中实施，整合包默认配置启用加算多重暴击、原始伤害回响，并将暗影瘴气的深渊打击限制为100级。尚未完成的是进存档后的定量伤害对照测试；加载安全、Mixin 命中和可选依赖行为已经验证。
+修复已在 Create Delight Core `2.2.16d` 中实施，整合包默认配置启用加算多重暴击与原始伤害回响。暗影瘴气不再使用硬上限，而是压缩其法术强度倍率；新版 JAR 的完整启动与存档内定量伤害对照由用户继续验证，可选依赖行为已由上一版相同插件结构验证。

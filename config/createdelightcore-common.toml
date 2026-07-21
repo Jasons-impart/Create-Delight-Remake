@@ -24,8 +24,4 @@ enableAdditiveMulticrit = true
 #Make Iron's Spells Echoing Strikes record the LivingHurtEvent amount captured at event construction.
 #This prevents event-based damage multipliers from being sampled once by the hit and again by the echo.
 echoingStrikesUseOriginalDamage = true
-#Maximum Abyssal Strike level granted by Travel Optics Shadowed Miasma.
-#Set to 0 to disable the cap. Only used when Travel Optics is installed.
-#Range: 0 ~ 10000
-shadowedMiasmaMaxAbyssalStrikeLevel = 100
 
