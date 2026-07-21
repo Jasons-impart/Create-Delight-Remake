@@ -2,7 +2,7 @@
 
 日期：2026-07-21
 
-状态：本地 JAR 与公开上游源码调研完成，尚未实施修复
+状态：调研完成；CDC `2.2.16c` 已实施三项兼容修复并通过有/无目标模组两种加载验证
 
 ## 研究结论
 
@@ -575,6 +575,45 @@ B × M × (1 + E)
 回响是独立二段伤害，不是最终伤害倍率的平方器
 ```
 
+## CDC 2.2.16c 实施结果
+
+本次修复已在 Create Delight Core 中实现：
+
+| 修复 | 实现 | 默认配置 |
+|---|---|---|
+| AttributesLib 多重暴击 | 在 `AttributeEvents.apothCriticalStrike` 入口接管旧公式，使用上游新版“每层按原始伤害加算”的算法，并保留15%逐层衰减与暴击粒子。 | `enableAdditiveMulticrit = true` |
+| 回响打击原始伤害 | 在 `LivingHurtEvent` 构造完成时保存不可变金额；`EchoingStrikesEffect.createEcho` 只把读取金额替换为该快照，其余回响比例、延迟、范围和法术伤害流程保持原样。 | `echoingStrikesUseOriginalDamage = true` |
+| 暗影瘴气等级上限 | 只限制施法者获得的深渊打击等级，同时修正法术信息显示；敌人获得的深渊诅咒等级不受此上限影响。 | `shadowedMiasmaMaxAbyssalStrikeLevel = 100`；设为 `0` 可关闭上限。 |
+
+主要源码位置：
+
+```text
+src/main/java/io/github/jasonsimpart/createdelightcore/
+├─ compat/combat/OriginalDamageAccess.java
+├─ mixin/CombatMixinPlugin.java
+└─ mixin/combat/
+   ├─ LivingHurtEventMixin.java
+   ├─ apothicattributes/AttributeEventsMixin.java
+   ├─ ironsspellbooks/EchoingStrikesEffectMixin.java
+   └─ traveloptics/ShadowedMiasmaSpellMixin.java
+```
+
+三个目标模组在 `mods.toml` 中均为可选依赖。`CombatMixinPlugin` 在 Mixin 早期加载阶段分别检查：
+
+```text
+attributeslib
+irons_spellbooks
+traveloptics
+```
+
+模组存在时应用对应 Mixin，不存在时完全跳过目标类；关键注入点使用 `require = 1`，避免目标版本变化后静默失效。
+
+验证结果：
+
+- `./gradlew clean build --no-daemon --console=plain` 构建成功。
+- CDRdev 完整环境中三个兼容 Mixin 均记录为 `Applying`，客户端进入整合包校验界面，Minecraft MCP 可连接。
+- CDC 开发客户端不安装三个目标模组时，三个 Mixin 均记录为 `Skipping`，客户端正常进入主菜单并启动声音引擎。
+
 ## 实施后的验证清单
 
 ### AttributesLib
@@ -609,4 +648,4 @@ B × M × (1 + E)
 
 ## 当前状态
 
-本文只记录已核实机制与推荐方向，没有修改任何伤害代码或配置。正式实施时应在独立 Forge 兼容模组或明确的核心源码仓库中完成，不应直接修改本地运行时 JAR。
+修复已在 Create Delight Core `2.2.16c` 中实施，整合包默认配置启用加算多重暴击、原始伤害回响，并将暗影瘴气的深渊打击限制为100级。尚未完成的是进存档后的定量伤害对照测试；加载安全、Mixin 命中和可选依赖行为已经验证。

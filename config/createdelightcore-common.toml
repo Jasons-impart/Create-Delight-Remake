@@ -19,4 +19,13 @@ lunaSoilBoostChance = 0.5
 #Whether to log More Mod Tetra independent damage multipliers.
 #Useful for debugging MMT damage stacking; logs only when MMT reports at least one independent multiplier.
 logMoreModTetraIndependentDamageMultipliers = true
+#Backport the newer Apothic Attributes additive multicrit formula when Apothic Attributes is installed.
+enableAdditiveMulticrit = true
+#Make Iron's Spells Echoing Strikes record the LivingHurtEvent amount captured at event construction.
+#This prevents event-based damage multipliers from being sampled once by the hit and again by the echo.
+echoingStrikesUseOriginalDamage = true
+#Maximum Abyssal Strike level granted by Travel Optics Shadowed Miasma.
+#Set to 0 to disable the cap. Only used when Travel Optics is installed.
+#Range: 0 ~ 10000
+shadowedMiasmaMaxAbyssalStrikeLevel = 100
 
