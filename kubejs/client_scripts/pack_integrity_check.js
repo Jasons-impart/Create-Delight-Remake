@@ -63,7 +63,10 @@
       return fallback;
     }
 
-    return JsonIO.toObject(json);
+    // JsonIO.toObject returns a Java Map. Rhino's NativeJavaMap crashes while
+    // unwrapping entries whose value is JSON null, so keep all later property
+    // access on ordinary JavaScript objects instead.
+    return JSON.parse(String(json));
   };
 
   const writePackIntegrityJson = (path, value) => {

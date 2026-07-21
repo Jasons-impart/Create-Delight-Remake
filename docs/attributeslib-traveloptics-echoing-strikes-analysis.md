@@ -2,7 +2,7 @@
 
 日期：2026-07-21
 
-状态：本地 JAR 与公开上游源码调研完成，尚未实施修复
+状态：调研完成；CDC `2.2.16d` 已实施三项兼容修复，其中新版暗影瘴气公式已通过构建与数值验证，等待用户启动完整整合包回归
 
 ## 研究结论
 
@@ -575,6 +575,47 @@ B × M × (1 + E)
 回响是独立二段伤害，不是最终伤害倍率的平方器
 ```
 
+## CDC 2.2.16d 实施结果
+
+本次修复已在 Create Delight Core 中实现：
+
+| 修复 | 实现 | 默认配置 |
+|---|---|---|
+| AttributesLib 多重暴击 | 在 `AttributeEvents.apothCriticalStrike` 入口接管旧公式，使用上游新版“每层按原始伤害加算”的算法，并保留15%逐层衰减与暴击粒子。 | `enableAdditiveMulticrit = true` |
+| 回响打击原始伤害 | 在 `LivingHurtEvent` 构造完成时保存不可变金额；`EchoingStrikesEffect.createEcho` 只把读取金额替换为该快照，其余回响比例、延迟、范围和法术伤害流程保持原样。 | `echoingStrikesUseOriginalDamage = true` |
+| 暗影瘴气强度换算 | 同时替换 `onCast` 与 `getUniqueInfo` 中的 `getSpellPower` 结果，使深渊打击、深渊诅咒和法术说明使用同一递减公式；不再使用100级硬上限。 | 超过1倍的倍率按 `1 + 4(m-1)/(m+3)` 换算，有效倍率渐近于5倍。 |
+
+主要源码位置：
+
+```text
+src/main/java/io/github/jasonsimpart/createdelightcore/
+├─ compat/combat/OriginalDamageAccess.java
+├─ compat/combat/MiasmaPowerScaling.java
+├─ mixin/CombatMixinPlugin.java
+└─ mixin/combat/
+   ├─ LivingHurtEventMixin.java
+   ├─ apothicattributes/AttributeEventsMixin.java
+   ├─ ironsspellbooks/EchoingStrikesEffectMixin.java
+   └─ traveloptics/ShadowedMiasmaSpellMixin.java
+```
+
+三个目标模组在 `mods.toml` 中均为可选依赖。`CombatMixinPlugin` 在 Mixin 早期加载阶段分别检查：
+
+```text
+attributeslib
+irons_spellbooks
+traveloptics
+```
+
+模组存在时应用对应 Mixin，不存在时完全跳过目标类；关键注入点使用 `require = 1`，避免目标版本变化后静默失效。
+
+验证结果：
+
+- `./gradlew clean build --no-daemon --console=plain` 构建成功。
+- CDC `2.2.16c` 完整环境中三个兼容 Mixin 均记录为 `Applying`，客户端进入整合包校验界面；`2.2.16d` 仅改变已命中的 Travel Optics 表达式处理器，完整启动由用户执行。
+- CDC 开发客户端不安装三个目标模组时，三个 Mixin 均记录为 `Skipping`，客户端正常进入主菜单并启动声音引擎。
+- 新公式代表值已直接调用编译后 helper 验证：三级法术在原倍率 `1×/2×/5×/10×/1000×` 时，最终强度分别约为 `4/7.2/12/15.08/19.94`。
+
 ## 实施后的验证清单
 
 ### AttributesLib
@@ -609,4 +650,4 @@ B × M × (1 + E)
 
 ## 当前状态
 
-本文只记录已核实机制与推荐方向，没有修改任何伤害代码或配置。正式实施时应在独立 Forge 兼容模组或明确的核心源码仓库中完成，不应直接修改本地运行时 JAR。
+修复已在 Create Delight Core `2.2.16d` 中实施，整合包默认配置启用加算多重暴击与原始伤害回响。暗影瘴气不再使用硬上限，而是压缩其法术强度倍率；新版 JAR 的完整启动与存档内定量伤害对照由用户继续验证，可选依赖行为已由上一版相同插件结构验证。
