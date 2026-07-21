@@ -11,6 +11,7 @@ Use this workflow for modpack asset operations that touch `mods/`, `resourcepack
 
 - `mods/`, `resourcepacks/`, and `shaderpacks/` contain `.pw.toml` metadata only; do not track runtime jars there.
 - CF-restricted, manual-download, and custom payloads belong in `packwiz-files/{mods,resourcepacks,shaderpacks}/` with matching raw-URL metadata.
+- For a `packwiz-files` mod that also exists on CurseForge, keep its `[release.curseforge]` project/file hint accurate. Client export must convert these hints to `metadata:curseforge` before best-effort detection; a failed hinted conversion is a release error, not permission to bundle the JAR under `overrides/mods`.
 - Add, update, or remove assets through `scripts/update-packwiz-meta.ps1 -Category ...`; avoid manual metadata edits unless repairing generated output.
 - Do not run `scripts/update-packwiz-meta.ps1` on short-lived feature/PR branches because it derives `packwiz-files` raw URLs from the current branch and can rewrite unrelated `.pw.toml` files to branch URLs that disappear after merge.
 - Branch-derived raw URLs are intended only for `main` and long-lived LTS/release-maintenance branches that must serve their own Packwiz payloads.
