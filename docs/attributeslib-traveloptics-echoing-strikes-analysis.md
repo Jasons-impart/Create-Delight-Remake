@@ -421,6 +421,25 @@ Iron's Spells 只阻止 `SpellDamageSource` 再创建新的回响，没有阻止
 
 并非所有增伤都会对魔法回响再次适用，但依赖逐个模组列黑名单无法从根本上保证兼容。
 
+### MMT 持有武器效果可能扩散到其他玩家归因伤害
+
+这里的风险严格来说来自 More Mod Tetra（MMT）的伤害事件实现，而不是 Tetra 基础伤害系统。当前安装的 MMT `2.4.15` 中，`MMTDamageCalculate.hurt` 并不要求伤害是玩家近战：它先把 `DamageSource` 的直接实体视为攻击者；直接实体不是生物时，再使用伤害归因实体。只要两者之一是 `LivingEntity`，MMT 就会发布统一的 `EffectLevelEvent`，随后由各个效果处理器向固定伤害、普通增伤或独立乘区写值。
+
+因此，玩家持有带 MMT/Tetra 效果的主手或副手武器时，法术、投射物、雷电、寒冷伤害和其他二次伤害只要仍归因于该玩家，就可能读取武器效果并获得乘区。是否发生取决于具体效果处理器有没有额外检查伤害类型；不能把所有 MMT 效果一概视为近战限定。
+
+2026-07-21 的 `latest.log` 测试中观察到：
+
+| 伤害 | 非近战证据 | 实际进入的 MMT 计算 |
+|---|---|---|
+| Iron's Spells `blood_magic` | 直接实体为 `BloodSlashProjectile` | `Heavy Chop +0.68`、`Sirenic Serenade +0.24`、`To Evernights Stars +0.10`、`Notes ×1.17`、`Curios All Damage Up ×1.11`；基础 `21.6462` 最终投影为 `57.3482`。 |
+| Iron's Spells `ender_magic` | 直接实体为 `MagicArrowProjectile` | `Fragile +6.0` 与 `Curios All Damage Up ×1.11`；基础 `48.0362` 最终投影为 `373.2416`。 |
+| Black Knight Armor `arrow` | 直接实体为 `WitherArrowEntity` | 至少获得 `Curios All Damage Up ×1.11`。 |
+| `indirectMagic` | `source` 不是玩家近战，但直接实体被填写为玩家 | 仍获得 `Curios All Damage Up ×1.11`，说明仅检查“直接实体是否为玩家”不能识别真实近战。 |
+
+其中 `Curios All Damage Up` 本来就是全伤害增幅，目标易伤也可能有意覆盖全部来伤；真正需要警惕的是 `Heavy Chop`、泰坦武器效果等带明显武器语义的收益同样作用于法术或二次伤害。`Notes` 的原实现还显式区分近战与非近战倍率，不能简单整体改成近战限定。
+
+当前 CDC 尚未过滤这类贡献。若以后修复，应按“效果来源 + 伤害语义”在 `EffectLevelEvent.addFixedDamage`、`addNormalMulti`、`addIndependentMulti` 层逐笔判断，而不是在 `MMTDamageCalculate` 入口取消所有非近战事件；伤害分类也应以 DamageType/tag 为主，不能只比较直接实体和归因实体。
+
 ## Fallen 宝石强度与重复宝石的叠加边界
 
 Fallen Gems & Affixes 的宝石强度本身是线性缩放器，而不是额外的指数层。其处理可以概括为：
