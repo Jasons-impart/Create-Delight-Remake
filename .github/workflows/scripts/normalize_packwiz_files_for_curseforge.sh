@@ -251,6 +251,39 @@ normalize_packwiz_files_for_category() {
   done < <(find "$dir" -name '*.pw.toml' -print0)
 }
 
+# Mod release hints are authoritative for CurseForge exports. Apply them before
+# copying packwiz-files JARs into mods/ for best-effort detection; otherwise
+# restricted CurseForge files can remain direct downloads and be bundled under
+# overrides/mods by `packwiz curseforge export`.
+normalize_release_hinted_mods() {
+  [ -d "mods" ] || return 0
+  [ -d "packwiz-files/mods" ] || return 0
+
+  local failed=0
+  while IFS= read -r -d '' meta; do
+    grep -Fq 'packwiz-files/mods/' "$meta" || continue
+    grep -Eq '^\[release\.curseforge\][[:space:]]*$' "$meta" || continue
+
+    local filename
+    filename="$(read_filename "$meta")"
+    if [ -z "$filename" ]; then
+      echo "::error::Cannot read filename from release-hinted metadata: $meta"
+      failed=1
+      continue
+    fi
+
+    if write_curseforge_metadata_from_release_hint "$meta" "mods" "$filename"; then
+      echo "Converted release-hinted mod metadata to CurseForge metadata: $meta"
+    else
+      echo "::error::Cannot convert release-hinted mod metadata: $meta"
+      failed=1
+    fi
+  done < <(find mods -name '*.pw.toml' -print0)
+
+  return "$failed"
+}
+
+normalize_release_hinted_mods
 copy_packwiz_file_mods_for_detection
 
 if [ -s "$copied_list" ]; then
