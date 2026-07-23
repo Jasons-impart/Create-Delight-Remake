@@ -6,9 +6,9 @@
 
 其他信息包括下载地址等见：[机械动力：悠然乐事重置版 信息汇总](https://xr5r5e86lk.feishu.cn/docx/LE9ud6DgXoBaQhxowJucOQVqnWb)
 
-![截图 001：概览](https://r2.jsi-team.com/cdr/docs/faq/overview/001.png)
+![截图 001：概览](https://img.jsi-team.com/cdr/docs/faq/overview/001.png)
 
-![截图 002：概览](https://r2.jsi-team.com/cdr/docs/faq/overview/002.png)
+![截图 002：概览](https://img.jsi-team.com/cdr/docs/faq/overview/002.png)
 
 ## 进入游戏前
 
@@ -24,7 +24,7 @@
 
 请确认是从正确位置下载的 [Client]开头的 压缩包。详见[机械动力：悠然乐事重置版 信息汇总](https://xr5r5e86lk.feishu.cn/docx/LE9ud6DgXoBaQhxowJucOQVqnWb#share-KvuqdYVZuoFoeYxqLQycRrSsnme)
 
-![截图 003：启动器不识别整合包 / 无法确定应当执行的文件拖拽操作](https://r2.jsi-team.com/cdr/docs/faq/pre-game/003.jpeg)
+![截图 003：启动器不识别整合包 / 无法确定应当执行的文件拖拽操作](https://img.jsi-team.com/cdr/docs/faq/pre-game/003.jpeg)
 
 #### 网络环境不佳，安装整合包失败，未完成依赖下载
 
@@ -36,11 +36,11 @@
 
 或者找个乐于助人的热心群友发一个安装好的给你，制作组受限于minecraft的用户协议约束无法合法地提供安装好的整合包。
 
-![截图 004：网络环境不佳，安装整合包失败，未完成依赖下载](https://r2.jsi-team.com/cdr/docs/faq/pre-game/004.png)
+![截图 004：网络环境不佳，安装整合包失败，未完成依赖下载](https://img.jsi-team.com/cdr/docs/faq/pre-game/004.png)
 
-![截图 005：网络环境不佳，安装整合包失败，未完成依赖下载](https://r2.jsi-team.com/cdr/docs/faq/pre-game/005.png)
+![截图 005：网络环境不佳，安装整合包失败，未完成依赖下载](https://img.jsi-team.com/cdr/docs/faq/pre-game/005.png)
 
-![截图 006：网络环境不佳，安装整合包失败，未完成依赖下载](https://r2.jsi-team.com/cdr/docs/faq/pre-game/006.png)
+![截图 006：网络环境不佳，安装整合包失败，未完成依赖下载](https://img.jsi-team.com/cdr/docs/faq/pre-game/006.png)
 
 #### 整合包所在路径过长
 
@@ -48,35 +48,35 @@
 
 如果还不理解可以求助AI。
 
-![截图 007：整合包所在路径过长](https://r2.jsi-team.com/cdr/docs/faq/pre-game/007.jpeg)
+![截图 007：整合包所在路径过长](https://img.jsi-team.com/cdr/docs/faq/pre-game/007.jpeg)
 
 #### 网络环境不佳，难以连接到服务器
 
 网络问题或mojang.账号服务器爆炸，尝试挂vpn或者离线登录。
 
-![截图 008：网络环境不佳，难以连接到服务器](https://r2.jsi-team.com/cdr/docs/faq/pre-game/008.png)
+![截图 008：网络环境不佳，难以连接到服务器](https://img.jsi-team.com/cdr/docs/faq/pre-game/008.png)
 
 #### PCL报错：部分mod版本已被Mod作者删除
 
-![截图 009：PCL报错：部分mod版本已被Mod作者删除](https://r2.jsi-team.com/cdr/docs/faq/pre-game/009.png)
+![截图 009：PCL报错：部分mod版本已被Mod作者删除](https://img.jsi-team.com/cdr/docs/faq/pre-game/009.png)
 
 这是因为PCL使用的镜像源有问题，缺失部分mod版本。请使用加速器加速curseforge，并修改PCL的下载为 尽量使用官方源 。
 
-![截图 010：PCL报错：部分mod版本已被Mod作者删除](https://r2.jsi-team.com/cdr/docs/faq/pre-game/010.png)
+![截图 010：PCL报错：部分mod版本已被Mod作者删除](https://img.jsi-team.com/cdr/docs/faq/pre-game/010.png)
 
 #### 启动时报错KubeJS alexscaves
 
 偶发错误，制作组无法复现。  解决方案：找到 游戏根目录下startup_scripts/custom/register_metal_dust.js这个文件，删除下图红框部分
 
-![截图 011：启动时报错KubeJS alexscaves](https://r2.jsi-team.com/cdr/docs/faq/pre-game/011.jpeg)
+![截图 011：启动时报错KubeJS alexscaves](https://img.jsi-team.com/cdr/docs/faq/pre-game/011.jpeg)
 
-![截图 012：启动时报错KubeJS alexscaves](https://r2.jsi-team.com/cdr/docs/faq/pre-game/012.png)
+![截图 012：启动时报错KubeJS alexscaves](https://img.jsi-team.com/cdr/docs/faq/pre-game/012.png)
 
 #### 启动时报错：Error loading mods，没有安装mod xxx
 
 安装有问题导致模组没有全部安装，参考[齿轮盛宴整合包 信息汇总](https://xr5r5e86lk.feishu.cn/docx/LE9ud6DgXoBaQhxowJucOQVqnWb)文档里正确安装方法安装后再启动。
 
-![截图 013：启动时报错：Error loading mods，没有安装mod xxx](https://r2.jsi-team.com/cdr/docs/faq/pre-game/013.jpeg)
+![截图 013：启动时报错：Error loading mods，没有安装mod xxx](https://img.jsi-team.com/cdr/docs/faq/pre-game/013.jpeg)
 
 ### 创建/进入世界的问题
 
@@ -84,7 +84,7 @@
 
 尝试升级ALI，如果依然卡住，可以移除ALI试试。
 
-![截图 014：创建新世界长时间卡住，日志显示 Registering recipes: ali:jei_plugin](https://r2.jsi-team.com/cdr/docs/faq/pre-game/014.png)
+![截图 014：创建新世界长时间卡住，日志显示 Registering recipes: ali:jei_plugin](https://img.jsi-team.com/cdr/docs/faq/pre-game/014.png)
 
 ### 无法进入老存档
 
@@ -146,23 +146,23 @@
 
 玩家的网络与服务器的连接不好，建议换个网络（如使用手机热点），换个服务器线路或者换个服务器。
 
-![截图 015：链接丢失、Connection time out / reset](https://r2.jsi-team.com/cdr/docs/faq/world/015.jpeg)
+![截图 015：链接丢失、Connection time out / reset](https://img.jsi-team.com/cdr/docs/faq/world/015.jpeg)
 
-![截图 016：链接丢失、Connection time out / reset](https://r2.jsi-team.com/cdr/docs/faq/world/016.jpeg)
+![截图 016：链接丢失、Connection time out / reset](https://img.jsi-team.com/cdr/docs/faq/world/016.jpeg)
 
 ### 无法连接至服务器 连接中断
 
 首先更新zstdnet到最新版再尝试。
 
-![截图 017：无法连接至服务器 连接中断](https://r2.jsi-team.com/cdr/docs/faq/world/017.jpeg)
+![截图 017：无法连接至服务器 连接中断](https://img.jsi-team.com/cdr/docs/faq/world/017.jpeg)
 
 如果还不行，请参考如下步骤进行联机：
 
 启动游戏，进入存档，点击开放局域网，这里面会多一个zstd端口的选择，在这里填入您想要使用frp/公网的端口，比如你设置了本地端口为25565，那么您在樱花/公网里面设置的本地端口应该为25565，樱花会分配远程端口给您，在日志里复制樱花的端口发给您的朋友即可
 
-![截图 018：无法连接至服务器 连接中断](https://r2.jsi-team.com/cdr/docs/faq/world/018.jpeg)
+![截图 018：无法连接至服务器 连接中断](https://img.jsi-team.com/cdr/docs/faq/world/018.jpeg)
 
-![截图 019：无法连接至服务器 连接中断](https://r2.jsi-team.com/cdr/docs/faq/world/019.png)
+![截图 019：无法连接至服务器 连接中断](https://img.jsi-team.com/cdr/docs/faq/world/019.png)
 
 如果依然不行
 
@@ -176,15 +176,15 @@
 
 请不要使用原版mc连接齿轮盛宴服务器。
 
-![截图 020：版本问题： mod mismatched ; error loading mods ; 缺少必需的数据包注册表](https://r2.jsi-team.com/cdr/docs/faq/world/020.png)
+![截图 020：版本问题： mod mismatched ; error loading mods ; 缺少必需的数据包注册表](https://img.jsi-team.com/cdr/docs/faq/world/020.png)
 
-![截图 021：版本问题： mod mismatched ; error loading mods ; 缺少必需的数据包注册表](https://r2.jsi-team.com/cdr/docs/faq/world/021.jpeg)
+![截图 021：版本问题： mod mismatched ; error loading mods ; 缺少必需的数据包注册表](https://img.jsi-team.com/cdr/docs/faq/world/021.jpeg)
 
-![截图 022：版本问题： mod mismatched ; error loading mods ; 缺少必需的数据包注册表](https://r2.jsi-team.com/cdr/docs/faq/world/022.png)
+![截图 022：版本问题： mod mismatched ; error loading mods ; 缺少必需的数据包注册表](https://img.jsi-team.com/cdr/docs/faq/world/022.png)
 
 - v0.4.5.6以后的服务器版本可在加入前检查。
 
-![截图 023：版本问题： mod mismatched ; error loading mods ; 缺少必需的数据包注册表](https://r2.jsi-team.com/cdr/docs/faq/world/023.png)
+![截图 023：版本问题： mod mismatched ; error loading mods ; 缺少必需的数据包注册表](https://img.jsi-team.com/cdr/docs/faq/world/023.png)
 
 ### 登录失败：无效会话
 
@@ -192,25 +192,25 @@
 
 如果还不行，请确认自己是否在使用离线登录进入开启了正版验证的服务器。
 
-![截图 024：登录失败：无效会话](https://r2.jsi-team.com/cdr/docs/faq/world/024.jpeg)
+![截图 024：登录失败：无效会话](https://img.jsi-team.com/cdr/docs/faq/world/024.jpeg)
 
 ### invalid characters in username
 
 用户名请使用英文
 
-![截图 025：invalid characters in username](https://r2.jsi-team.com/cdr/docs/faq/world/025.jpeg)
+![截图 025：invalid characters in username](https://img.jsi-team.com/cdr/docs/faq/world/025.jpeg)
 
 ### Non character in path
 
 检查服务端和客户端的整合包版本是否是一致的。
 
-![截图 026：Non character in path](https://r2.jsi-team.com/cdr/docs/faq/world/026.jpeg)
+![截图 026：Non character in path](https://img.jsi-team.com/cdr/docs/faq/world/026.jpeg)
 
 ### 链接服务器时崩溃
 
 例如：报错包含 Registry minecraft:block: Object did not get ID it asked for. Name: createdelight:andesite_export_bus Expected: 1243 Got: 0
 
-![截图 027：链接服务器时崩溃](https://r2.jsi-team.com/cdr/docs/faq/world/027.png)
+![截图 027：链接服务器时崩溃](https://img.jsi-team.com/cdr/docs/faq/world/027.png)
 
 检查整合包根目录里有没有ldlib这个文件夹，这通常是因为使用了由PCL的导出整合包导出的包所导致的文件缺失
 
@@ -220,13 +220,13 @@
 
 检查服务端和客户端的整合包版本是否是一致的。
 
-![截图 028：链接服务器时崩溃，崩溃报错信息包含 ModMismatchDisconnectedScreen](https://r2.jsi-team.com/cdr/docs/faq/world/028.png)
+![截图 028：链接服务器时崩溃，崩溃报错信息包含 ModMismatchDisconnectedScreen](https://img.jsi-team.com/cdr/docs/faq/world/028.png)
 
 ### 无法链接到服务器，提示OutOfMemoryError
 
 一般重启游戏可以解决，有条件的可以尝试在启动器配置分配更多内存。
 
-![截图 029：无法链接到服务器，提示OutOfMemoryError](https://r2.jsi-team.com/cdr/docs/faq/world/029.png)
+![截图 029：无法链接到服务器，提示OutOfMemoryError](https://img.jsi-team.com/cdr/docs/faq/world/029.png)
 
 ### 无法直接通过小地图传送，无法传送，无法使用/tp指令
 
@@ -242,9 +242,9 @@
 
 - 检查安装是否有异常，请遵循 [齿轮盛宴整合包 信息汇总](https://xr5r5e86lk.feishu.cn/docx/LE9ud6DgXoBaQhxowJucOQVqnWb) 内的安装方法。
 
-![截图 030：合成配方缺失，无法使用原木合成木板，JEI查询到的木板合成配方异常](https://r2.jsi-team.com/cdr/docs/faq/multiplayer/030.jpeg)
+![截图 030：合成配方缺失，无法使用原木合成木板，JEI查询到的木板合成配方异常](https://img.jsi-team.com/cdr/docs/faq/multiplayer/030.jpeg)
 
-![截图 031：合成配方缺失，无法使用原木合成木板，JEI查询到的木板合成配方异常](https://r2.jsi-team.com/cdr/docs/faq/multiplayer/031.png)
+![截图 031：合成配方缺失，无法使用原木合成木板，JEI查询到的木板合成配方异常](https://img.jsi-team.com/cdr/docs/faq/multiplayer/031.png)
 
 ### 进入服务器后部分机械动力配方（如电子管）查询不到，但实际上有配方
 
@@ -256,23 +256,23 @@
 
 /datapack disable "create_new_age:create_new_age_monkey_edition"
 
-![截图 032：老存档充电板配方缺失，新创建存档正常](https://r2.jsi-team.com/cdr/docs/faq/multiplayer/032.png)
+![截图 032：老存档充电板配方缺失，新创建存档正常](https://img.jsi-team.com/cdr/docs/faq/multiplayer/032.png)
 
 推测是存档迁移会导致不该生效的 机械动力电气时代[monkey edition] 数据包生效，它会移除充电板的配方。
 
-![截图 033：老存档充电板配方缺失，新创建存档正常](https://r2.jsi-team.com/cdr/docs/faq/multiplayer/033.png)
+![截图 033：老存档充电板配方缺失，新创建存档正常](https://img.jsi-team.com/cdr/docs/faq/multiplayer/033.png)
 
 ### 任务书无法打开 Quest locked
 
 小退世界重进
 
-![截图 034：任务书无法打开 Quest locked](https://r2.jsi-team.com/cdr/docs/faq/multiplayer/034.png)
+![截图 034：任务书无法打开 Quest locked](https://img.jsi-team.com/cdr/docs/faq/multiplayer/034.png)
 
 ### 任务书是空的
 
 安装有问题，本地游戏请重新安装，联机请让服主重新按正确步骤安装
 
-![截图 035：任务书是空的](https://r2.jsi-team.com/cdr/docs/faq/multiplayer/035.png)
+![截图 035：任务书是空的](https://img.jsi-team.com/cdr/docs/faq/multiplayer/035.png)
 
 ### 精妙背包无法打开，日志内有 Failed to create screen for menu type: sophisticatedbackpacks:backpack 报错
 
@@ -314,15 +314,15 @@ JAVA版本应使用17，而非21
 
 - 可先把物品都存放到箱子里来减少损失。
 
-![截图 036：部分方块和物品名称变为空气；材质错误；单次游戏内二次进入单人世界显示数据包错误；联机时非主机玩家放置方块导致客户端崩溃](https://r2.jsi-team.com/cdr/docs/faq/multiplayer/036.png)
+![截图 036：部分方块和物品名称变为空气；材质错误；单次游戏内二次进入单人世界显示数据包错误；联机时非主机玩家放置方块导致客户端崩溃](https://img.jsi-team.com/cdr/docs/faq/multiplayer/036.png)
 
-![截图 037：部分方块和物品名称变为空气；材质错误；单次游戏内二次进入单人世界显示数据包错误；联机时非主机玩家放置方块导致客户端崩溃](https://r2.jsi-team.com/cdr/docs/faq/multiplayer/037.png)
+![截图 037：部分方块和物品名称变为空气；材质错误；单次游戏内二次进入单人世界显示数据包错误；联机时非主机玩家放置方块导致客户端崩溃](https://img.jsi-team.com/cdr/docs/faq/multiplayer/037.png)
 
 ### 使用喷气背包飞行时卡顿：无法放置方块，背包内物品移动到快捷栏之后一段时间会直接回到背包
 
 回退喷气背包版本到4.4.1（mod名称 create_jetpack-forge-4.4.2.jar ）
 
-![截图 038：使用喷气背包飞行时卡顿：无法放置方块，背包内物品移动到快捷栏之后一段时间会直接回到背包](https://r2.jsi-team.com/cdr/docs/faq/multiplayer/038.png)
+![截图 038：使用喷气背包飞行时卡顿：无法放置方块，背包内物品移动到快捷栏之后一段时间会直接回到背包](https://img.jsi-team.com/cdr/docs/faq/multiplayer/038.png)
 
 [机械动力:喷气背包 (Create Jetpack) - MC百科|最大的Minecraft中文MOD百科](https://www.mcmod.cn/class/7338.html)
 
@@ -364,9 +364,9 @@ JAVA版本应使用17，而非21
 
 #### 箱子上面是黑的；工具箱是白的 等
 
-![截图 039：箱子上面是黑的；工具箱是白的 等](https://r2.jsi-team.com/cdr/docs/faq/multiplayer/039.jpeg)
+![截图 039：箱子上面是黑的；工具箱是白的 等](https://img.jsi-team.com/cdr/docs/faq/multiplayer/039.jpeg)
 
-![截图 040：箱子上面是黑的；工具箱是白的 等](https://r2.jsi-team.com/cdr/docs/faq/multiplayer/040.jpeg)
+![截图 040：箱子上面是黑的；工具箱是白的 等](https://img.jsi-team.com/cdr/docs/faq/multiplayer/040.jpeg)
 
 AMD/Intel显卡问题，参考：https://bbs.mcmod.cn/thread-16131-1-1.html
 
@@ -380,7 +380,7 @@ AMD/Intel显卡问题，参考：https://bbs.mcmod.cn/thread-16131-1-1.html
 
 更新Colorwheel版本到最新。
 
-![截图 041：机械动力移动实体变透明](https://r2.jsi-team.com/cdr/docs/faq/multiplayer/041.jpeg)
+![截图 041：机械动力移动实体变透明](https://img.jsi-team.com/cdr/docs/faq/multiplayer/041.jpeg)
 
 #### 我的风车/水车一直在鬼畜怎么办？
 
@@ -392,7 +392,7 @@ AMD/Intel显卡问题，参考：https://bbs.mcmod.cn/thread-16131-1-1.html
 
 模组本身材质缺失。
 
-![截图 042：隼巢胸甲渲染bug（机素防护）](https://r2.jsi-team.com/cdr/docs/faq/multiplayer/042.png)
+![截图 042：隼巢胸甲渲染bug（机素防护）](https://img.jsi-team.com/cdr/docs/faq/multiplayer/042.png)
 
 #### 看向机械动力装甲（机素防护）时fps严重下降
 
@@ -404,13 +404,13 @@ AMD/Intel显卡问题，参考：https://bbs.mcmod.cn/thread-16131-1-1.html
 
 为了使机械动力的飞轮兼容光影，整合包使用了[Colorwheel](https://www.mcmod.cn/class/20111.html)。  Colorwheel要求光影必须打补丁，为避免分发光影本体，整合包使用启动器下载光影并配合[Colorwheel Patcher](https://www.mcmod.cn/class/20210.html)自动给光影打补丁，这会导致 未打补丁 和 打补丁 的光影同时出现在光影选择列表里，请使用未被划删除线的光影。
 
-![截图 043：整合包内的光影(v0.4以及以后)；colorwheel报错not compatible](https://r2.jsi-team.com/cdr/docs/faq/multiplayer/043.png)
+![截图 043：整合包内的光影(v0.4以及以后)；colorwheel报错not compatible](https://img.jsi-team.com/cdr/docs/faq/multiplayer/043.png)
 
 选择错误可能导致包括但不限于看到烤箱用鼓风机崩溃等问题，请务必选择正确的光影。
 
 选择错误光影时会看到聊天框出现报错信息
 
-![截图 044：整合包内的光影(v0.4以及以后)；colorwheel报错not compatible](https://r2.jsi-team.com/cdr/docs/faq/multiplayer/044.png)
+![截图 044：整合包内的光影(v0.4以及以后)；colorwheel报错not compatible](https://img.jsi-team.com/cdr/docs/faq/multiplayer/044.png)
 
 并非所有光影都支持ColorWheel，具体支持列表请参考[Colorwheel curseforge](https://www.curseforge.com/minecraft/mc-mods/colorwheel)
 
@@ -428,7 +428,7 @@ AMD/Intel显卡问题，参考：https://bbs.mcmod.cn/thread-16131-1-1.html
 
 退出重进多试几次，如果仍然发生请重新安装整合包
 
-![截图 045：任务书打不开，显示Quest Locked](https://r2.jsi-team.com/cdr/docs/faq/game-errors/045.jpeg)
+![截图 045：任务书打不开，显示Quest Locked](https://img.jsi-team.com/cdr/docs/faq/game-errors/045.jpeg)
 
 ### 材质变成原版材质了，如何恢复？ OR 想要换回原版材质，如何更改？OR 为什么开启的栅栏门有绿色边框？
 
@@ -438,13 +438,13 @@ AMD/Intel显卡问题，参考：https://bbs.mcmod.cn/thread-16131-1-1.html
 
 如果不想要栅栏门出现绿色边框，可以移动右边的XK高亮到左边
 
-![截图 046：材质变成原版材质了，如何恢复？ OR 想要换回原版材质，如何更改？OR 为什么开启的栅栏门有绿色边框？](https://r2.jsi-team.com/cdr/docs/faq/game-errors/046.png)
+![截图 046：材质变成原版材质了，如何恢复？ OR 想要换回原版材质，如何更改？OR 为什么开启的栅栏门有绿色边框？](https://img.jsi-team.com/cdr/docs/faq/game-errors/046.png)
 
 ### 为什么中文翻译没了/缺失？
 
 进入资源包界面拉到最下面，确认红框圈住的四个资源包是否都添加了，且顺序是否和下图一致。
 
-![截图 047：为什么中文翻译没了/缺失？](https://r2.jsi-team.com/cdr/docs/faq/game-errors/047.png)
+![截图 047：为什么中文翻译没了/缺失？](https://img.jsi-team.com/cdr/docs/faq/game-errors/047.png)
 
 ### 为什么进游戏后我的皮肤没生效？如何设置皮肤？
 
@@ -478,7 +478,7 @@ PS2：在附近有大量机械动力机器的情况下，卡顿是玩机械动�
 
 - 如果希望不被修改，可以修改config/servercore/config.yml配置文件，把红框圈住的代码里的max和min都改成你想要调整到的数值。
 
-![截图 048：每游玩5min渲染距离就会被改动是什么原因？](https://r2.jsi-team.com/cdr/docs/faq/game-errors/048.png)
+![截图 048：每游玩5min渲染距离就会被改动是什么原因？](https://img.jsi-team.com/cdr/docs/faq/game-errors/048.png)
 
 [该类型的内容暂不支持下载]
 
@@ -488,37 +488,37 @@ PS2：在附近有大量机械动力机器的情况下，卡顿是玩机械动�
 
 [该类型的内容暂不支持下载]
 
-![截图 049：FTB组队提示未接收到队伍数据](https://r2.jsi-team.com/cdr/docs/faq/game-errors/049.png)
+![截图 049：FTB组队提示未接收到队伍数据](https://img.jsi-team.com/cdr/docs/faq/game-errors/049.png)
 
-![截图 050：FTB组队提示未接收到队伍数据](https://r2.jsi-team.com/cdr/docs/faq/game-errors/050.jpeg)
+![截图 050：FTB组队提示未接收到队伍数据](https://img.jsi-team.com/cdr/docs/faq/game-errors/050.jpeg)
 
 ### 为什么配方书看不了？如何查看可合成的物品配方？
 
-![截图 051：为什么配方书看不了？如何查看可合成的物品配方？](https://r2.jsi-team.com/cdr/docs/faq/game-errors/051.png)
+![截图 051：为什么配方书看不了？如何查看可合成的物品配方？](https://img.jsi-team.com/cdr/docs/faq/game-errors/051.png)
 
 mc原版的配方书非常消耗资源，和JEI功能重叠，因此被关闭了。
 
 如果需要可合成物品配方，可以在整合包基础上额外安装[EMI](https://www.mcmod.cn/class/6630.html)，即可在右侧边栏切换查看可合成物品，如下图所示：
 
-![截图 052：为什么配方书看不了？如何查看可合成的物品配方？](https://r2.jsi-team.com/cdr/docs/faq/game-errors/052.png)
+![截图 052：为什么配方书看不了？如何查看可合成的物品配方？](https://img.jsi-team.com/cdr/docs/faq/game-errors/052.png)
 
 ### 抱起的东西放不下来了？
 
 清空手上物品的指令：/carryon clear
 
-![截图 053：抱起的东西放不下来了？](https://r2.jsi-team.com/cdr/docs/faq/game-errors/053.png)
+![截图 053：抱起的东西放不下来了？](https://img.jsi-team.com/cdr/docs/faq/game-errors/053.png)
 
 ### 为什么有的物品光标移上去按住shift会有一堆内容？
 
 按下F3+H关闭[高级提示框](https://www.mcmod.cn/item/210715.html)
 
-![截图 054：为什么有的物品光标移上去按住shift会有一堆内容？](https://r2.jsi-team.com/cdr/docs/faq/game-errors/054.jpeg)
+![截图 054：为什么有的物品光标移上去按住shift会有一堆内容？](https://img.jsi-team.com/cdr/docs/faq/game-errors/054.jpeg)
 
 ### 右侧显示一大堆透明文字 0/x 等，如何关掉？
 
 进入任务书把 固定任务（右上角图标按钮） 关掉。
 
-![截图 055：右侧显示一大堆透明文字 0/x 等，如何关掉？](https://r2.jsi-team.com/cdr/docs/faq/game-errors/055.png)
+![截图 055：右侧显示一大堆透明文字 0/x 等，如何关掉？](https://img.jsi-team.com/cdr/docs/faq/game-errors/055.png)
 
 ### 为什么AE内物品会多倍显示？比如说实际只有1个钻石，终端显示有4个
 
@@ -538,11 +538,11 @@ mc原版的配方书非常消耗资源，和JEI功能重叠，因此被关闭了
 
 v0.4.7.6开始 HMCL和PCL2预期会自动加上这个参数配置。
 
-![截图 056：MineMenu的文字乱码](https://r2.jsi-team.com/cdr/docs/faq/game-errors/056.jpeg)
+![截图 056：MineMenu的文字乱码](https://img.jsi-team.com/cdr/docs/faq/game-errors/056.jpeg)
 
 ### hud显示季节卡在春季第一天，和实际季节不一致
 
-![截图 057：hud显示季节卡在春季第一天，和实际季节不一致](https://r2.jsi-team.com/cdr/docs/faq/game-errors/057.png)
+![截图 057：hud显示季节卡在春季第一天，和实际季节不一致](https://img.jsi-team.com/cdr/docs/faq/game-errors/057.png)
 
 目前已知修改游戏内时间会导致此问题，为节气模组的特性，目前制作组还不知道解决方法。
 
@@ -594,7 +594,7 @@ v0.3.2.0后会有 锌粒和铜粒加热搅拌4倍慢速合成黄铜粒的配方�
 
 v0.4.6.1(还在测试)以及以后添加了相关mod以支持夸克的变种箱子或精妙背包。
 
-![截图 058：为什么带箱子的动态结构无法正常工作/无法从箱子里获取物品？](https://r2.jsi-team.com/cdr/docs/faq/rendering/058.png)
+![截图 058：为什么带箱子的动态结构无法正常工作/无法从箱子里获取物品？](https://img.jsi-team.com/cdr/docs/faq/rendering/058.png)
 
 ### 如何制作x级别的锤子？
 
@@ -614,9 +614,9 @@ config文件夹下找到冰与火配置文件，将Pixies Steal Items改为false
 
 如果有人因为被偷了东西来打制作组，蓝蟹第一个投降┗( ´・∧・｀)┛
 
-![截图 059：冰与火的小精灵偷我东西](https://r2.jsi-team.com/cdr/docs/faq/rendering/059.png)
+![截图 059：冰与火的小精灵偷我东西](https://img.jsi-team.com/cdr/docs/faq/rendering/059.png)
 
-![截图 060：冰与火的小精灵偷我东西](https://r2.jsi-team.com/cdr/docs/faq/rendering/060.png)
+![截图 060：冰与火的小精灵偷我东西](https://img.jsi-team.com/cdr/docs/faq/rendering/060.png)
 
 [该类型的内容暂不支持下载]
 
@@ -628,11 +628,11 @@ config文件夹下找到冰与火配置文件，将Pixies Steal Items改为false
 
 苍蝇类似。
 
-![截图 061：蟑螂/苍蝇好多](https://r2.jsi-team.com/cdr/docs/faq/rendering/061.png)
+![截图 061：蟑螂/苍蝇好多](https://img.jsi-team.com/cdr/docs/faq/rendering/061.png)
 
 未禁用苍蝇的原因：
 
-![截图 062：蟑螂/苍蝇好多](https://r2.jsi-team.com/cdr/docs/faq/rendering/062.png)
+![截图 062：蟑螂/苍蝇好多](https://img.jsi-team.com/cdr/docs/faq/rendering/062.png)
 
 ### 为什么陈酿桶GUI打不开？
 
@@ -664,7 +664,7 @@ config文件夹下找到冰与火配置文件，将Pixies Steal Items改为false
 
 - 第二组水车依然贴着右手向地图上的西方挖，可以直接挖到末地大厅
 
-![截图 063：要塞结构太复杂了找不到传送门](https://r2.jsi-team.com/cdr/docs/faq/rendering/063.jpeg)
+![截图 063：要塞结构太复杂了找不到传送门](https://img.jsi-team.com/cdr/docs/faq/rendering/063.jpeg)
 
 - 或者干脆去另一个有末地传送门的结构，用结构指南针搜索createdungeonbase，或指令/locate structure create_structures_arise:create_dungeon_base里面有传送门。
 
@@ -678,7 +678,7 @@ config文件夹下找到冰与火配置文件，将Pixies Steal Items改为false
 
 方块就叫 【工作台】，mrcrayfish模组的
 
-![截图 064：找不到xx家具的合成需要用的方块](https://r2.jsi-team.com/cdr/docs/faq/rendering/064.jpeg)
+![截图 064：找不到xx家具的合成需要用的方块](https://img.jsi-team.com/cdr/docs/faq/rendering/064.jpeg)
 
 ### alex的洞穴怎么找不到？怎么去？
 
@@ -702,13 +702,13 @@ config文件夹下找到冰与火配置文件，将Pixies Steal Items改为false
 
 检查右上角是否从始终禁止改为了激活。
 
-![截图 065：商品交易终端配置好交易后仍然不交易](https://r2.jsi-team.com/cdr/docs/faq/rendering/065.png)
+![截图 065：商品交易终端配置好交易后仍然不交易](https://img.jsi-team.com/cdr/docs/faq/rendering/065.png)
 
 ### 商品交易终端无法使用钱包里的货币
 
 交易终端方块使用的是银行内的钱，请先把钱用ATM存入银行。
 
-![截图 066：商品交易终端无法使用钱包里的货币](https://r2.jsi-team.com/cdr/docs/faq/rendering/066.png)
+![截图 066：商品交易终端无法使用钱包里的货币](https://img.jsi-team.com/cdr/docs/faq/rendering/066.png)
 
 ### 为什么屠宰动物不出产物？
 
@@ -718,7 +718,7 @@ config文件夹下找到冰与火配置文件，将Pixies Steal Items改为false
 
 农夫暇事 ＆ 饮酒作乐均需要 先加入流体 再加入物品材料。
 
-![截图 067：为什么制作咖啡的水壶无法做出咖啡/需要重启才能做出来？](https://r2.jsi-team.com/cdr/docs/faq/rendering/067.png)
+![截图 067：为什么制作咖啡的水壶无法做出咖啡/需要重启才能做出来？](https://img.jsi-team.com/cdr/docs/faq/rendering/067.png)
 
 ### 蓝图大炮打印出的lc商店交易终端无法破坏
 
@@ -752,7 +752,7 @@ config文件夹下找到冰与火配置文件，将Pixies Steal Items改为false
 
 如果直接连入AE网络而非使用AE充能器充电，可能会出现差一点点满电的情况。
 
-![截图 068：为什么无法合成AE枪械使用的电池/弹夹？](https://r2.jsi-team.com/cdr/docs/faq/rendering/068.png)
+![截图 068：为什么无法合成AE枪械使用的电池/弹夹？](https://img.jsi-team.com/cdr/docs/faq/rendering/068.png)
 
 ### 分馏塔为什么3x3还是很慢，是bug么？
 
@@ -760,7 +760,7 @@ config文件夹下找到冰与火配置文件，将Pixies Steal Items改为false
 
 如果有需要可以向柴油动力作者提要求恢复效率和尺寸之间的关系。
 
-![截图 069：分馏塔为什么3x3还是很慢，是bug么？](https://r2.jsi-team.com/cdr/docs/faq/rendering/069.png)
+![截图 069：分馏塔为什么3x3还是很慢，是bug么？](https://img.jsi-team.com/cdr/docs/faq/rendering/069.png)
 
 ## 开服相关
 
@@ -772,7 +772,7 @@ config文件夹下找到冰与火配置文件，将Pixies Steal Items改为false
 
 https://www.minecraft.net/zh-hant/eula
 
-![截图 070：有不需要通过执行start脚本下载内容的完整版服务器端吗？](https://r2.jsi-team.com/cdr/docs/faq/client-features/070.png)
+![截图 070：有不需要通过执行start脚本下载内容的完整版服务器端吗？](https://img.jsi-team.com/cdr/docs/faq/client-features/070.png)
 
 ### 没有run.sh文件该怎么写启动脚本？
 
@@ -782,7 +782,7 @@ https://www.minecraft.net/zh-hant/eula
 
 forge安装过程中下载依赖库文件失败，请尝试其他网络环境 or 开启加速器/vpn(或更换挂的加速器/vpn)
 
-![截图 071：服务器启动脚本报错 contained no existing paths: [libraries\...](https://r2.jsi-team.com/cdr/docs/faq/client-features/071.png)
+![截图 071：服务器启动脚本报错 contained no existing paths: [libraries\...](https://img.jsi-team.com/cdr/docs/faq/client-features/071.png)
 
 ### 服务器磁盘吃的好多一下子就满了，为什么？
 
@@ -794,7 +794,7 @@ forge安装过程中下载依赖库文件失败，请尝试其他网络环境 or
 
 游戏目录下的simplebackup，里面是各个时间的世界的存档，直接解压到saves下即可。
 
-![截图 072：我存档炸了，能救吗？存档备份文件夹是哪个？](https://r2.jsi-team.com/cdr/docs/faq/gameplay/072.png)
+![截图 072：我存档炸了，能救吗？存档备份文件夹是哪个？](https://img.jsi-team.com/cdr/docs/faq/gameplay/072.png)
 
 ### 自从给我家AE插了空间锚服务器就巨卡，怎么办？
 
@@ -808,9 +808,9 @@ NBT编辑器可用：
 
 [该类型的内容暂不支持下载]
 
-![截图 073：自从给我家AE插了空间锚服务器就巨卡，怎么办？](https://r2.jsi-team.com/cdr/docs/faq/gameplay/073.png)
+![截图 073：自从给我家AE插了空间锚服务器就巨卡，怎么办？](https://img.jsi-team.com/cdr/docs/faq/gameplay/073.png)
 
-![截图 074：自从给我家AE插了空间锚服务器就巨卡，怎么办？](https://r2.jsi-team.com/cdr/docs/faq/gameplay/074.png)
+![截图 074：自从给我家AE插了空间锚服务器就巨卡，怎么办？](https://img.jsi-team.com/cdr/docs/faq/gameplay/074.png)
 
 ### 我找不到官方服务器群的密码了，怎么办？
 
@@ -862,7 +862,7 @@ Tweakerge 部分功能如果开启可能导致诸如龙尸直接消失无法获�
 
 - 确认整合包版本是否为最新，看标题界面右下角两行小字或游戏标题，红框圈住位置或游戏标题会有 v0.x.x.x 形式的整合包版本。最新整合包版本可通过三个小人下方的公告确认。如果不是最新，请先更新到最新以避免反馈已修复的bug。
 
-![截图 075：还有其他问题要反馈？](https://r2.jsi-team.com/cdr/docs/faq/misc/075.png)
+![截图 075：还有其他问题要反馈？](https://img.jsi-team.com/cdr/docs/faq/misc/075.png)
 
 - 请确认自己是否对整合包内的mod、kubejs脚本、mbd2文件等做了增删，整合包本体已经有大量的适配和兼容bug需要修复，制作组没有足够精力解决玩家自行修改整合包后的报错和反馈。
 
@@ -872,7 +872,7 @@ Tweakerge 部分功能如果开启可能导致诸如龙尸直接消失无法获�
 
 - 请收集报错信息。一般可进入日志文件夹获取latest.log
 
-![截图 076：还有其他问题要反馈？](https://r2.jsi-team.com/cdr/docs/faq/misc/076.png)
+![截图 076：还有其他问题要反馈？](https://img.jsi-team.com/cdr/docs/faq/misc/076.png)
 
 - 使用 https://mclo.gs/ 网站保存自己的报错信息，得到一个报错分享链接
 
