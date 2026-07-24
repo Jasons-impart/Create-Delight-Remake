@@ -159,7 +159,7 @@ $duplicateChecks = @(
     },
     @{
         Name = "release workflow guidance";
-        Pattern = "/release|release workflow";
+        Pattern = "Use `/release` skill";
         Max = 3
     },
     @{

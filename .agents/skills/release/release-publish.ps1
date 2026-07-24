@@ -770,7 +770,7 @@ if ($isFirstStable) {
         $summaryContent = Get-Content $summaryFilePath -Raw
         Write-Host "   📄 Found update summary: $summaryFilePath"
     } else {
-        Write-Host "   ⚠️ No exact update summary file found (expected docs/update-summary-$Version.md)"
+        Fail "First stable release requires update summary: docs/update-summary-$Version.md"
     }
 }
 
