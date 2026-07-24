@@ -6,7 +6,8 @@
 
 | 知识类型 | 文件 |
 |---|---|
-| 已实现的内容改动、玩家可见行为、实现概览和代码位置 | `docs/dev-knowledge/content-map.md` |
+| 内容改动（feat）：新增或有意调整的玩家体验、玩法与平衡 | `docs/dev-knowledge/content-map.md` |
+| 兼容与问题修复（bugfix/compat）：恢复预期行为、修复回归或适配上游变更 | `docs/dev-knowledge/compatibility-patches.md` |
 | 技术向“某类修改该怎么做”的轻量笔记，且尚未复杂到需要 skill | `docs/dev-knowledge/how-to-index.md` |
 | 稳定设计说明、参考和取舍 | `docs/` 下的专题文档 |
 | 前瞻设计规划、分阶段计划和未来扩展 | `docs/plan/` 下的专题文档 |
@@ -40,6 +41,7 @@
 | `docs/plan/chromatic-compound-endgame-plan.md` | 内容设计计划 | 异彩化合物双路线、光辉石与暗影钢终盘分支的材料链规划。 |
 | `docs/plan/one-enough-damage-unified-damage-system.md` | 技术设计计划 | OneEnoughDamage 伤害扫描、逻辑分组、增伤与抗性统一方案。 |
 | `docs/attributeslib-traveloptics-echoing-strikes-analysis.md` | 技术研究参考 | AttributesLib 多重暴击、Travel Optics 暗影瘴气和 Iron's Spells 回响打击的跨模组伤害放大链、上游变化与修复取舍。 |
+| `docs/dev-knowledge/compatibility-patches.md` | 兼容与问题修复台账 | 跟踪恢复预期行为、修复回归或适配上游变更的补丁、验证和复核条件；按目的而非 KubeJS、配置、HotAI、CDC 或 mixin 路径分类。 |
 | `docs/plan/player-world-tier-progression-plan.md` | 内容设计计划 | 玩家独立世界等级、永久解锁上限、当前等级选择和晋阶试炼条件规划。 |
 | `docs/plan/mmt-curios-stage-progression-plan.md` | 内容设计计划 | MMT 模块化饰品的阶段开放、流派调律、重复制作和数值边界设计。 |
 | `docs/tetra-design-reference-2026-06-22.md` | 设计参考 | Tetra/MMT 数值、材料和模块参考。 |
