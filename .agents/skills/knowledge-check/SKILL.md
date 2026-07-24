@@ -37,7 +37,8 @@ Codex Stop hook 会运行 `scripts/validate-knowledge-base.ps1`，并写入 `tmp
 通常值得记录的知识分为：
 
 - **可复用的项目事实或位置** → 按 `.agents/skills/dev-knowledge/SKILL.md` 的存放表路由。
-- **仍在生效的整合包覆写** → `docs/dev-knowledge/compatibility-patches.md`，包括第三方兼容补丁、KubeJS、配置、HotAI 行为覆写、CDC compat/mixin，记录上游版本、意图、覆盖位置与复核条件。
+- **内容改动（feat）** → `docs/dev-knowledge/content-map.md`，记录新增或有意调整的玩家体验、实现位置和验证状态。
+- **兼容与问题修复（bugfix/compat）** → `docs/dev-knowledge/compatibility-patches.md`，记录问题、上游变化、补丁位置、验证与复核条件。
 - **bug、坑点或历史教训** → 优先写入 `docs/lessons-learned.md`。
 - **知识路由或 skill 行为变化** → 更新受影响的 skill。
 - **没有可复用项目价值** → 不记录。
@@ -50,9 +51,9 @@ Codex Stop hook 会运行 `scripts/validate-knowledge-base.ps1`，并写入 `tmp
 
 应用 dev-knowledge 存放表后，再检查这些覆盖规则：
 
-- 改变上游模组行为的 KubeJS 资源、数据、脚本、配置、HotAI 数据或 CDC compat/mixin → `docs/dev-knowledge/compatibility-patches.md`；这是当前维护台账，优先于 lesson，避免重复记录。
-- 新增 CD 自有玩法、物品、机器或系统 → `docs/dev-knowledge/content-map.md`，记录玩家可见意图、实现位置和状态；不要因为实现位于 KubeJS 或 CDC 而遗漏。
-- `hotai/` 改动必须先按意图分类：新增内容走 `content-map.md`，既有 AI/平衡/兼容覆写走 `compatibility-patches.md`；候选报告会同时列出两者，不能仅凭目录自动定案。
+- 新增或有意调整配方、平衡、NPC、剧情、任务、物品、机器或系统 → `docs/dev-knowledge/content-map.md`；不因实现位于 KubeJS、配置、HotAI、CDC 或 mixin 而改变分类。
+- 恢复预期行为、修复错误或回归、适配上游版本变更 → `docs/dev-knowledge/compatibility-patches.md`；不因补丁目录而将其误归为 feat。
+- 候选报告会对可能改变玩法的整合包文件同时列出两种台账；依据改动目的选择，不确定时先检查玩家可见结果与问题描述。
 - 与具体补丁无关、未来会反复遇到的根因或非显而易见的 workaround → `docs/lessons-learned.md`。
 - 新的 KubeJS helper/API 参考 → 内容很短时写入 `kubejs/AGENTS.md` 的 UNIQUE STYLES；否则写入 dev-knowledge how-to 或提升为 skill。
 - knowledge-check prompt、候选报告路由或触发时机 → `.agents/skills/knowledge-check/SKILL.md`。

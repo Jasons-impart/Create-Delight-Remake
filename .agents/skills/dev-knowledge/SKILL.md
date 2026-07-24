@@ -14,8 +14,8 @@ description: 开发知识路由、知识库整理、实现记录、代码位置�
 | 知识类型 | 目标位置 | 使用场景 |
 |---|---|---|
 | 常驻约束和入口路由 | `AGENTS.md`、`kubejs/AGENTS.md`、`CDC-mod-src/AGENTS.md` | 每次相关任务都必须看到的事实。 |
-| 已实现的内容改动 | `docs/dev-knowledge/content-map.md` | 记录整合包做了什么、玩法上如何表现、实现大致在哪。 |
-| 整合包覆写与第三方兼容补丁 | `docs/dev-knowledge/compatibility-patches.md` | 记录对上游模组的 KubeJS、配置、HotAI 行为覆写、CDC compat/mixin，以及版本、验证和后续复核条件。 |
+| 内容改动（feat） | `docs/dev-knowledge/content-map.md` | 记录有意新增或调整的玩家体验、玩法与平衡，以及实现位置。 |
+| 兼容与问题修复（bugfix/compat） | `docs/dev-knowledge/compatibility-patches.md` | 记录恢复预期行为、修复回归或适配上游变更的补丁、验证与后续复核条件。 |
 | 轻量技术做法 | `docs/dev-knowledge/how-to-index.md` | 记录“想做某类修改该怎么做”，但复杂度还不足以成为 skill。 |
 | 可重复或脆弱流程 | `.agents/skills/<name>/SKILL.md` | 任务依赖步骤顺序、命令、验证规则或触发描述。 |
 | 历史故障和绕路经验 | `docs/lessons-learned.md` | 主要价值是避免再次踩同一个坑。 |
@@ -34,15 +34,13 @@ description: 开发知识路由、知识库整理、实现记录、代码位置�
 
 条目保持短小；长篇设计理由只链接 `docs/` 或 `docs/plan/` 的专题文档，不复制正文。
 
-## 整合包覆写与第三方兼容补丁条目
+## 兼容与问题修复条目
 
-当整合包以 KubeJS 资源包、数据包、脚本、模组配置、HotAI 数据，或 CDC 的 compat/mixin 覆写来改变上游模组行为时，更新 `docs/dev-knowledge/compatibility-patches.md`。
+当改动的主要目的为恢复预期行为、修复错误或适配上游模组更新时，更新 `docs/dev-knowledge/compatibility-patches.md`。
 
-- 每个明确意图一行，记录受影响模组与版本、意图或根因、覆盖文件、验证方式、上游跟踪位置和复核/移除条件。
-- 当前仍生效且会随模组升级受影响的覆盖必须入账；同一目标的一组配方或配置可合并为一行，避免逐文件流水账。
-- 纯翻译、格式化或不改变模组行为的资源不进入台账。
-- 新增的 CD 自有玩法、物品或系统仍写入 `content-map.md`，即使实现位于 KubeJS 或 CDC；台账仅保存其对第三方行为的覆写边界。
-- `hotai/` 不按目录决定落点：新增 NPC、剧情、任务或玩法内容写入 `content-map.md`；调整已有 NPC/AI 行为、兼容或平衡才写入本台账；同时存在时分别记录各自事实。
+- 每个明确修复一行，记录问题或上游变化、受影响模组与版本、补丁文件、验证方式、上游跟踪位置和复核/移除条件。
+- 不按 KubeJS、配置、HotAI、CDC 或 mixin 的目录决定落点：有意新增或调整玩家体验的是 feat；恢复预期行为、修复回归或适配上游的是 bugfix/compat。
+- 同一目标的一组配方或配置可合并为一行，避免逐文件流水账；纯翻译、格式化或不改变行为的资源不入账。
 - 同一事实不再重复写入 `docs/lessons-learned.md`；只有可脱离具体补丁复用的通用踩坑才写 lesson。
 
 ## 技术做法条目

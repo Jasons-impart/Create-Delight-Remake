@@ -69,26 +69,12 @@ function Get-SubmoduleChangedFiles([string]$RelativePath) {
     return $results.ToArray()
 }
 
-function Test-ModpackOverridePath([string]$Path) {
+function Test-ModpackBehaviorChangePath([string]$Path) {
     $normalized = $Path -replace "\\", "/"
-    return $normalized -match '^kubejs/(server_scripts|startup_scripts|client_scripts|config)/' -or
-        $normalized -match '^kubejs/assets/(?!createdelight/)' -or
-        $normalized -match '^kubejs/data/(?!createdelight/)' -or
-        $normalized -match '^(config|defaultconfigs)/' -or
-        $normalized -match '^CDC-mod-src/src/main/java/.+/(compat|mixin)/' -or
-        $normalized -match '^CDC-mod-src/src/main/resources/(assets|data)/(?!createdelightcore/)'
-}
-
-function Test-IntentDependentPath([string]$Path) {
-    $normalized = $Path -replace "\\", "/"
-    return $normalized -match '^hotai/'
-}
-
-function Test-ContentImplementationPath([string]$Path) {
-    $normalized = $Path -replace "\\", "/"
-    return $normalized -match '^kubejs/(assets|data)/(createdelight|createdelightcore)/' -or
-        $normalized -match '^CDC-mod-src/src/main/java/.+/(content|registry|eventhandlers|network)/' -or
-        $normalized -match '^CDC-mod-src/src/main/(resources/(assets|data)/createdelightcore|generated/resources)/'
+    return $normalized -match '^kubejs/(server_scripts|startup_scripts|client_scripts|config|assets|data)/' -or
+        $normalized -match '^(config|defaultconfigs|hotai)/' -or
+        $normalized -eq 'CDC-mod-src' -or
+        $normalized -match '^CDC-mod-src/src/(main|generated)/'
 }
 
 function ConvertTo-Target([string]$Path) {
@@ -105,10 +91,6 @@ function ConvertTo-Target([string]$Path) {
     if ($normalized -like "docs/dev-knowledge/*") { return $normalized }
     if ($normalized -eq "docs/development.md") { return "docs/dev-knowledge/how-to-index.md" }
     if ($normalized -like "docs/*design*.md" -or $normalized -like "docs/*plan.md" -or $normalized -like "docs/*strategy.md") { return "docs/dev-knowledge/content-map.md" }
-    if (Test-ModpackOverridePath $normalized) { return "docs/dev-knowledge/compatibility-patches.md" }
-    if (Test-ContentImplementationPath $normalized) { return "docs/dev-knowledge/content-map.md" }
-    if ($normalized -like "kubejs/*") { return "docs/dev-knowledge/content-map.md" }
-    if ($normalized -eq "CDC-mod-src" -or $normalized -like "CDC-mod-src/*") { return "docs/dev-knowledge/content-map.md" }
     if ($normalized -eq ".codex/hooks.json" -or $normalized -like "scripts/*knowledge*" -or $normalized -like "scripts/add-knowledge-note.ps1" -or $normalized -like "scripts/resolve-knowledge-candidate.ps1") { return ".agents/skills/knowledge-check/SKILL.md" }
     if ($normalized -like "scripts/sync-packwiz-assets.ps1" -or $normalized -like "scripts/add-packwiz-target.ps1" -or $normalized -like "scripts/update-packwiz-meta.ps1" -or $normalized -like "scripts/update-packwiz-target.ps1" -or $normalized -like "scripts/test-packwiz-files-ref.ps1" -or $normalized -like "mods/*" -or $normalized -like "resourcepacks/*" -or $normalized -like "shaderpacks/*" -or $normalized -like "packwiz-files/*") { return ".agents/skills/packwiz-assets/SKILL.md" }
     if ($normalized -eq "modpack.toml") { return "AGENTS.md" }
@@ -124,11 +106,7 @@ function ConvertTo-Reason([string]$Path) {
     if ($normalized -like "docs/dev-knowledge/*") { return "Development knowledge index changed; verify entries stay short and point to source files." }
     if ($normalized -eq "docs/development.md") { return "Development guide changed; check whether a compact how-to entry should be indexed." }
     if ($normalized -like "docs/*design*.md" -or $normalized -like "docs/*plan.md" -or $normalized -like "docs/*strategy.md") { return "Design or plan doc changed; update content-map only if implemented behavior or code locations changed." }
-    if (Test-IntentDependentPath $normalized) { return "HotAI may add CD content or override existing AI behavior; decide from player intent whether content map, override registry, or both are needed." }
-    if (Test-ModpackOverridePath $normalized) { return "Active modpack override may change third-party behavior; record intent, affected versions, validation, and review condition." }
-    if (Test-ContentImplementationPath $normalized) { return "Implemented CD content may need a content-map entry with player intent, source locations, and verification state." }
-    if ($normalized -like "kubejs/*") { return "KubeJS behavior changed; record it in the override ledger or content map according to whether it changes an upstream mod or adds CD content." }
-    if ($normalized -eq "CDC-mod-src" -or $normalized -like "CDC-mod-src/*") { return "CDC implementation changed; record it in the override ledger for compat/mixin work or content map for CD-owned features." }
+    if (Test-ModpackBehaviorChangePath $normalized) { return "Modpack behavior may be a feature or a bugfix/compat change; classify by intended player result, not by file path." }
     if ($normalized -eq ".codex/hooks.json" -or $normalized -like "scripts/*knowledge*" -or $normalized -like "scripts/add-knowledge-note.ps1" -or $normalized -like "scripts/resolve-knowledge-candidate.ps1") { return "Knowledge maintenance automation changed; update knowledge-check skill if the prompt or routing changed." }
     if ($normalized -like "scripts/sync-packwiz-assets.ps1" -or $normalized -like "scripts/add-packwiz-target.ps1" -or $normalized -like "scripts/update-packwiz-meta.ps1" -or $normalized -like "scripts/update-packwiz-target.ps1" -or $normalized -like "scripts/test-packwiz-files-ref.ps1") { return "Packwiz asset automation changed; update packwiz-assets skill if the workflow changed." }
     if ($normalized -like "scripts/*") { return "Project automation changed; decide whether this is an always-on AGENTS pointer or a task-specific skill workflow." }
@@ -186,7 +164,7 @@ foreach ($file in $allFiles) {
         Add-Unique $changedKnowledge $file
     }
 
-    $targetsForFile = if (Test-IntentDependentPath $file) {
+    $targetsForFile = if (Test-ModpackBehaviorChangePath $file) {
         @("docs/dev-knowledge/content-map.md", "docs/dev-knowledge/compatibility-patches.md")
     } else {
         @(ConvertTo-Target $file)
@@ -200,8 +178,10 @@ foreach ($file in $allFiles) {
             Add-Unique $forms "Skill - procedural workflow, checklist, tool sequence, or task-specific prompt."
         } elseif ($target -eq "docs/lessons-learned.md") {
             Add-Unique $forms "Lesson - historical pitfall, root cause, or non-obvious side effect."
+        } elseif ($target -eq "docs/dev-knowledge/content-map.md") {
+            Add-Unique $forms "Content change (feat) map - intended player-facing gameplay, balance, or content change."
         } elseif ($target -eq "docs/dev-knowledge/compatibility-patches.md") {
-            Add-Unique $forms "Modpack override registry - active KubeJS/config/HotAI/CDC compatibility or behavior override, with intent, verification, and review condition."
+            Add-Unique $forms "Compatibility and bugfix registry - expected-behavior restoration, regression fix, or upstream adaptation with verification and review condition."
         } elseif ($target -like "docs/dev-knowledge/*") {
             Add-Unique $forms "Dev knowledge - content implementation map or lightweight technical how-to index."
         } elseif ($target -like "*AGENTS.md") {
