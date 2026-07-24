@@ -12,8 +12,8 @@ Use this workflow for modpack asset operations that touch `mods/`, `resourcepack
 - `mods/`, `resourcepacks/`, and `shaderpacks/` contain `.pw.toml` metadata only; do not track runtime jars there.
 - CF-restricted, manual-download, and custom payloads belong in `packwiz-files/{mods,resourcepacks,shaderpacks}/` with matching raw-URL metadata.
 - For a `packwiz-files` mod that also exists on CurseForge, keep its `[release.curseforge]` project/file hint accurate. Client export must convert these hints to `metadata:curseforge` before best-effort detection; a failed hinted conversion is a release error, not permission to bundle the JAR under `overrides/mods`.
-- Add, update, or remove assets through `scripts/update-packwiz-meta.ps1 -Category ...`; avoid manual metadata edits unless repairing generated output.
-- Do not run `scripts/update-packwiz-meta.ps1` on short-lived feature/PR branches because it derives `packwiz-files` raw URLs from the current branch and can rewrite unrelated `.pw.toml` files to branch URLs that disappear after merge.
+- Add a known CurseForge asset through `scripts/add-packwiz-target.ps1`; update an existing CurseForge asset through `scripts/update-packwiz-target.ps1`; use `scripts/update-packwiz-meta.ps1 -FullReconcile` only for category-wide local-asset reconciliation. Avoid manual metadata edits unless repairing generated output.
+- Do not run `scripts/update-packwiz-meta.ps1 -FullReconcile` on short-lived feature/PR branches because it derives `packwiz-files` raw URLs from the current branch and can rewrite unrelated `.pw.toml` files to branch URLs that disappear after merge.
 - Branch-derived raw URLs are intended only for `main` and long-lived LTS/release-maintenance branches that must serve their own Packwiz payloads.
 - `pack.toml` and `index.toml` are generated from `modpack.toml`; do not commit them.
 - Shaderpack files containing `Clrwl` are generated locally and must not be tracked.
@@ -23,11 +23,12 @@ Use this workflow for modpack asset operations that touch `mods/`, `resourcepack
 
 ## Add Or Update Assets
 
-1. Put custom or restricted payloads under the matching `packwiz-files/<category>/` directory.
-2. Run `./scripts/update-packwiz-meta.ps1 -Category mods|resourcepacks|shaderpacks` only on `main` or a long-lived LTS/release-maintenance branch.
-3. For slow overseas services, retry once with `-Proxy "http://127.0.0.1:7890"`.
-4. Inspect the generated `.pw.toml` plus `packwiz-files` changes before staging, especially that existing `side = "client"` or `side = "server"` entries were not reset to `both`.
-5. Run `./scripts/sync-packwiz-assets.ps1` when local runtime files must match metadata.
+1. For one known CurseForge project/file, run `./scripts/add-packwiz-target.ps1 -CurseForgeUrl <project-or-file-URL> -Category mods|resourcepacks|shaderpacks -Side client|server|both`. It generates and validates one temporary metadata file, refuses to overwrite an existing target, and synchronizes local runtime assets by default.
+2. For an existing CurseForge metadata file, run `./scripts/update-packwiz-target.ps1 -Category mods|resourcepacks|shaderpacks -Slug <metadata-name>`, or use `-Path <relative .pw.toml path>`.
+3. Put custom/restricted payloads under the matching `packwiz-files/<category>/` directory. To inventory local JARs, reconcile many changed assets, or repair metadata drift, run `./scripts/update-packwiz-meta.ps1 -Category mods|resourcepacks|shaderpacks -FullReconcile` only on `main` or a long-lived LTS/release-maintenance branch.
+4. For slow overseas services, retry once with `-Proxy "http://127.0.0.1:7890"`.
+5. Inspect the generated `.pw.toml` plus `packwiz-files` changes before staging, especially that existing `side = "client"` or `side = "server"` entries were not reset to `both`.
+6. Run `./scripts/sync-packwiz-assets.ps1` when local runtime files must match metadata.
 
 When old and new runtime JARs coexist, `update-packwiz-meta.ps1` selects the preferred newer filename and updates the existing metadata entry instead of creating a duplicate. Missing runtime JARs do not remove metadata by default; remove the `.pw.toml` explicitly, or use `-AllowRemovals` only when bulk removal is intentional and the runtime directory is complete.
 

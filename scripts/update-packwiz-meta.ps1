@@ -6,12 +6,17 @@ param(
     [string]$InstallerUrl = "https://github.com/packwiz/packwiz-installer/releases/latest/download/packwiz-installer.jar",
     [string]$PackwizFilesRef = $env:PACKWIZ_FILES_REF,
     [string]$PackwizFilesRawPrefix = $env:PACKWIZ_FILES_RAW_PREFIX,
+    [switch]$FullReconcile,
     [switch]$AllowRemovals
 )
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 $ProgressPreference = "SilentlyContinue"
+
+if (-not $FullReconcile) {
+    throw "This is a category-wide reconciliation. Re-run with -FullReconcile, or use add-packwiz-target.ps1 / update-packwiz-target.ps1 for one CurseForge asset."
+}
 
 $RepoRoot = Split-Path -Parent $PSScriptRoot
 $ToolsRoot = Join-Path $RepoRoot ".cache\packwiz-sync\tools"
