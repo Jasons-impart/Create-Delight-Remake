@@ -60,7 +60,7 @@ function ConvertTo-Target([string]$Path) {
     if ($normalized -like "kubejs/*") { return "kubejs/AGENTS.md" }
     if ($normalized -like "CDC-mod-src/*") { return "CDC-mod-src/AGENTS.md" }
     if ($normalized -eq ".codex/hooks.json" -or $normalized -like "scripts/*knowledge*" -or $normalized -like "scripts/add-knowledge-note.ps1" -or $normalized -like "scripts/resolve-knowledge-candidate.ps1") { return ".agents/skills/knowledge-check/SKILL.md" }
-    if ($normalized -like "scripts/sync-packwiz-assets.ps1" -or $normalized -like "scripts/update-packwiz-meta.ps1" -or $normalized -like "scripts/test-packwiz-files-ref.ps1" -or $normalized -like "mods/*" -or $normalized -like "resourcepacks/*" -or $normalized -like "shaderpacks/*" -or $normalized -like "packwiz-files/*") { return ".agents/skills/packwiz-assets/SKILL.md" }
+    if ($normalized -like "scripts/sync-packwiz-assets.ps1" -or $normalized -like "scripts/add-packwiz-target.ps1" -or $normalized -like "scripts/update-packwiz-meta.ps1" -or $normalized -like "scripts/update-packwiz-target.ps1" -or $normalized -like "scripts/test-packwiz-files-ref.ps1" -or $normalized -like "mods/*" -or $normalized -like "resourcepacks/*" -or $normalized -like "shaderpacks/*" -or $normalized -like "packwiz-files/*") { return ".agents/skills/packwiz-assets/SKILL.md" }
     if ($normalized -eq "modpack.toml") { return "AGENTS.md" }
     if ($normalized -like ".github/workflows/release*" -or $normalized -like ".agents/skills/release/*") { return ".agents/skills/release/SKILL.md" }
     if ($normalized -like ".github/*" -or $normalized -like "scripts/*") { return "AGENTS.md" }
@@ -81,7 +81,7 @@ function ConvertTo-Reason([string]$Path) {
     if ($normalized -like "CDC-mod-src/src/main/java/*") { return "CDC Java package, mixin, registry, or compatibility pattern may have changed." }
     if ($normalized -like "CDC-mod-src/src/generated/*") { return "Datagen output changed; check whether the generator rule is still accurate." }
     if ($normalized -eq ".codex/hooks.json" -or $normalized -like "scripts/*knowledge*" -or $normalized -like "scripts/add-knowledge-note.ps1" -or $normalized -like "scripts/resolve-knowledge-candidate.ps1") { return "Knowledge maintenance automation changed; update knowledge-check skill if the prompt or routing changed." }
-    if ($normalized -like "scripts/sync-packwiz-assets.ps1" -or $normalized -like "scripts/update-packwiz-meta.ps1" -or $normalized -like "scripts/test-packwiz-files-ref.ps1") { return "Packwiz asset automation changed; update packwiz-assets skill if the workflow changed." }
+    if ($normalized -like "scripts/sync-packwiz-assets.ps1" -or $normalized -like "scripts/add-packwiz-target.ps1" -or $normalized -like "scripts/update-packwiz-meta.ps1" -or $normalized -like "scripts/update-packwiz-target.ps1" -or $normalized -like "scripts/test-packwiz-files-ref.ps1") { return "Packwiz asset automation changed; update packwiz-assets skill if the workflow changed." }
     if ($normalized -like "scripts/*") { return "Project automation changed; decide whether this is an always-on AGENTS pointer or a task-specific skill workflow." }
     if ($normalized -like ".github/*") { return "CI/release workflow changed; root knowledge may need an update." }
     if ($normalized -like "config/*" -or $normalized -like "defaultconfigs/*") { return "Config behavior changed; record only non-obvious side effects." }

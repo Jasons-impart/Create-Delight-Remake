@@ -128,6 +128,8 @@ $requiredPaths = @(
     ".codex/hooks.json",
     "scripts/sync-packwiz-assets.ps1",
     "scripts/update-packwiz-meta.ps1",
+    "scripts/add-packwiz-target.ps1",
+    "scripts/update-packwiz-target.ps1",
     "kubejs/data/oei/replacements",
     "modpack.toml"
 )

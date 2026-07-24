@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-20T16:21:59Z",
+  "generatedAt": "2026-07-24T13:11:02Z",
   "generatedBy": "scripts/generate-pack-integrity-manifest.py",
   "expectedFiles": {
     "common": [
@@ -219,7 +219,6 @@
       "megacells-forge-2.4.6-1.20.1.jar",
       "melody_forge_1.0.3_mc_1.20.1-1.20.4.jar",
       "midnightlib-forge-1.9.2+1.20.1.jar",
-      "minecraft-mcp-1.20.1-forge-v0.2.1.jar",
       "miners_delight-1.20.1-1.4.5-backport.jar",
       "modernfix-forge-5.27.66+mc1.20.1.jar",
       "moestweaks-forge-1.20.1-1.1.2.jar",
@@ -366,10 +365,12 @@
       "iris_shader_folder-1.3.3-forge.jar",
       "itemborders-1.20.1-forge-1.2.2.jar",
       "itemphysiclite_forge_v1.6.6_mc1.20.1.jar",
+      "ixeris-4.5.2+1.20.1-forge.jar",
       "jecharacters-1.20.1-forge-4.6.4.jar",
       "jeed-1.20-2.2.5.jar",
       "lucent-1.20.1-1.5.5.jar",
       "mcwifipnp-1.7.6-1.20.1-forge.jar",
+      "minecraft-mcp-1.20.1-forge-v0.2.1.jar",
       "minemenu-1.20.1-1.12.3.jar",
       "modernui-forge-1.20.1-3.12.0.1-universal.jar",
       "mousetweaks-forge-mc1.20.1-2.25.1.jar",
@@ -461,6 +462,11 @@
       "side": "client",
       "metadata": "mods/ItemPhysicLite.pw.toml",
       "filename": "ItemPhysicLite_FORGE_v1.6.6_mc1.20.1.jar"
+    },
+    {
+      "side": "client",
+      "metadata": "mods/ixeris.pw.toml",
+      "filename": "Ixeris-4.5.2+1.20.1-forge.jar"
     },
     {
       "side": "client",
@@ -606,6 +612,11 @@
       "side": "client",
       "metadata": "mods/mcwifipnp.pw.toml",
       "filename": "mcwifipnp-1.7.6-1.20.1-forge.jar"
+    },
+    {
+      "side": "client",
+      "metadata": "mods/moddev-mcp.pw.toml",
+      "filename": "minecraft-mcp-1.20.1-forge-v0.2.1.jar"
     },
     {
       "side": "client",
@@ -1871,11 +1882,6 @@
       "side": "common",
       "metadata": "mods/midnightlib.pw.toml",
       "filename": "midnightlib-forge-1.9.2+1.20.1.jar"
-    },
-    {
-      "side": "common",
-      "metadata": "mods/moddev-mcp.pw.toml",
-      "filename": "minecraft-mcp-1.20.1-forge-v0.2.1.jar"
     },
     {
       "side": "common",
