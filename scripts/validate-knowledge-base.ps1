@@ -120,6 +120,7 @@ $requiredPaths = @(
     "docs/lessons-learned.md",
     "docs/dev-knowledge/index.md",
     "docs/dev-knowledge/content-map.md",
+    "docs/dev-knowledge/compatibility-patches.md",
     "docs/dev-knowledge/how-to-index.md",
     ".agents/skills/knowledge-check/SKILL.md",
     ".agents/skills/dev-knowledge/SKILL.md",
