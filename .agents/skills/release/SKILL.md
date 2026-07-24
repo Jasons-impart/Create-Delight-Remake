@@ -1,254 +1,76 @@
 ---
 name: release
-description: Create-Delight Remake modpack release workflow - version bump, tag, artifacts download, and GitHub release creation
-license: MIT
-compatibility: opencode
-metadata:
-  audience: maintainers
-  workflow: github-actions
-  project: create-delight-remake
+description: 管理 Create-Delight Remake 整合包的正式版或测试版发布。用于用户要求发布版本、创建测试版、更新 modpack.toml 版本、打 tag、创建 GitHub Release 或处理发布产物时；先用 release-plan.ps1 解析版本、目标分支和上一版本，再按 Prepare、人工合并、Publish 流程执行。
 ---
 
-## What I do
+# Create-Delight Remake 发布
 
-Automate the full release pipeline using two PowerShell scripts:
-1. **release-prepare.ps1** — Version bump + PR creation (pre-merge)
-2. **release-publish.ps1** — Tag + CI + Download + Release (post-merge)
+发布脚本负责 Git 分支、版本写入、标签、CI、产物、Release、公告 PR 和重试。agent 只判断发布意图与玩家可读的文案。
 
-## When to use me
+## 先生成只读计划
 
-- "发布版本" / "发布新版本" / "release"
-- Version-related tasks like bumping `modpack.toml`
-- Creating GitHub releases
+从仓库根目录运行：
 
-## Agent Decision Points
-
-The agent only needs to make **5 decisions**; everything else is scripted:
-
-### Decision 0: Target Branch
-
-**Rules**:
-- If the version is a patch release on an existing release line (e.g. v0.4.7.15 on v0.4.7.x) → target the release branch (e.g. `release-v047x`)
-- If the version is a new sub-version's first release (e.g. first v0.4.9.x) → target `main`
-- If user specifies a branch → use specified branch
-
-**How to detect**: Check if a remote branch matching `release-v{major}{minor}x` exists for the version's prefix.
-
-### Decision 1: Version Number
-
-**Rules**:
-- User specifies → use specified version
-- User says "发布新版本" without specifying → auto-detect:
-  1. Check if `modpack.toml` was modified in the latest commit (`git log -1 --name-only | grep modpack.toml`)
-  2. If YES → the developer already bumped the version in modpack.toml, use the current version from modpack.toml
-  3. If NO → increment the last digit of the latest version (e.g. v0.4.7.14 → v0.4.7.15). Find the latest version from the most recent git tag matching `v*`.
-
-```bash
-git log -1 --name-only | grep modpack.toml
+```powershell
+.\.agents\skills\release\release-plan.ps1
 ```
 
-### Decision 2: Release Type
+传入用户已明确的值覆盖自动推导：
 
-- 正式版 → 4 artifacts (Client + ClientPatch + Server + ServerPatch)
-- 测试版 → 2 artifacts (Client + Server only, no patches), no `docs/announcement.md` update; version/tag must end with `-test` and the GitHub release must be marked prerelease
+```powershell
+.\.agents\skills\release\release-plan.ps1 -Version 'v0.5.0.6-test' -ReleaseType '测试' -AsJson
+```
 
-### Decision 3: Announcement Content (Stable Only)
+计划会推导版本、目标分支、上一稳定版本和首个正式版候选。用户明确指定版本、分支或发布类型时，以用户指定为准。
 
-测试版不更新 `docs/announcement.md`; `-Announcement` is only used in the prepare PR body for test releases.
+## Agent 必须完成的判断
 
-Summarize changes into **≤3 bullet points, each ≤20 characters**, separated by commas. Example:
-- "机械动力6.0升级,北极星太空探索,核反应堆实装"
+1. 确认是正式版还是测试版；版本带 `-test` 时必须是测试版。
+2. 正式版提供 1–3 条公告，逗号分隔、每条不超过 20 个中文字符。多个提交时不要采用脚本的“最近一条提交”兜底文案。
+3. 若计划显示可能是子版本首个正式版，在 Prepare 前撰写 `docs/update-summary-{Version}.md`：中文、按主题分组、含 PR 号、一句范围摘要，并以“升级须知”结束。Publish 会以 GitHub Release 状态再次确认，缺少精确文件时会停止。
 
-**Format**: announcement.md uses `### {版本}已发布` as the title line, followed by the bullet points.
+## 执行流程
 
-**For first stable of a sub-version**: Derive the 3 points from the update-summary file (`docs/update-summary-{Version}.md`), picking the 3 most impactful changes.
-
-**For other stable releases**: Determine `PreviousVersion` first, then extract from the full `PreviousVersion..TargetBranch` range or user input.
-
-**Do not rely on the script's default announcement generation** when the release range contains multiple commits; pass `-Announcement` explicitly with the 1-3 most important range changes.
-
-Use the latest single commit only when the release range contains exactly one meaningful change.
-
-### Decision 4: Update Summary (First Stable Release Only)
-
-When the sub-version's **first stable release** is being published (e.g. v0.4.8.9 is the first stable of 0.4.8.x, after v0.4.8.0-v0.4.8.8 were all pre-releases), the agent must generate an update summary markdown file **before** running release-publish.ps1.
-
-**Detection**: release-publish.ps1 automatically detects this by checking if no prior stable (non-prerelease) GitHub release exists for the sub-version prefix. If GitHub release status cannot be verified, it must skip first-stable summary prepending instead of guessing.
-
-**Agent responsibility**: Before Phase 2 (publish), generate `docs/update-summary-{Version}.md` covering all changes from the previous sub-version to this one. The file must:
-- Use Chinese (简体中文)
-- Group changes into categories with emoji headers
-- Include PR numbers (e.g. #1234) for each change
-- Start with a brief one-line summary of the update scope
-- End with an "升级须知" section recommending new saves
-
-**Release notes behavior**: release-publish.ps1 will automatically prepend the exact `docs/update-summary-{Version}.md` file content to the GitHub release body (above the per-commit auto-generated notes) when it detects a first stable release. Do not reuse a previous `update-summary` file for later stable releases.
-
-**Example**: For v0.4.8.9 (first stable of 0.4.8.x), generate `docs/update-summary-v0.4.8.9.md` summarizing all changes from v0.4.7.0 onward.
-
-## Release Workflow
-
-### Phase 1: Prepare (Pre-merge)
+### 1. Prepare
 
 ```powershell
 .\.agents\skills\release\release-prepare.ps1 `
-    -Version "v0.4.7.15" `
-    -TargetBranch "release-v047x" `
-    -ReleaseType "正式" `
-    -Announcement "更新TrueUUID修复旁观穿墙,补充zstd联机教学视频" `
-    -Proxy "http://127.0.0.1:7890"
+    -Version '<Version>' `
+    -TargetBranch '<TargetBranch>' `
+    -ReleaseType '<正式|测试>' `
+    -Announcement '<正式版公告，可省略>' `
+    -WhatIf
 ```
 
-Output: PR URL
+确认 dry run 后移除 `-WhatIf`。脚本会创建版本 PR；它会在稳定版时仅暂存与当前版本匹配的更新摘要文件。
 
-For test releases, pass `-ReleaseType "测试"` and use a `-test` version/tag:
+### 2. 人工合并关卡
 
-```powershell
-.\.agents\skills\release\release-prepare.ps1 `
-    -Version "v0.4.7.15-test" `
-    -TargetBranch "release-v047x" `
-    -ReleaseType "测试" `
-    -Proxy "http://127.0.0.1:7890"
-```
+必须等待用户手动合并版本 PR。不得自动合并或启用 auto-merge。
 
-### ⚠️ Human Gate: Merge the PR
+### 3. Publish
 
-**Must wait for user to manually merge the PR.** Never auto-merge.
-
-### Phase 2: Publish (Post-merge)
-
-After user confirms PR is merged:
+用户确认 PR 已合并后，先预览再正式执行：
 
 ```powershell
 .\.agents\skills\release\release-publish.ps1 `
-    -Version "v0.4.7.15" `
-    -TargetBranch "release-v047x" `
-    -ReleaseType "正式" `
-    -Proxy "http://127.0.0.1:7890"
+    -Version '<Version>' `
+    -TargetBranch '<TargetBranch>' `
+    -ReleaseType '<正式|测试>' `
+    -WhatIf
 ```
 
-Note: `-PreviousVersion` is now optional. It auto-detects from the previous git tag. Override manually if needed:
+`PreviousVersion` 默认自动推导；只有推导错误时才传入覆盖值。确认 dry run 后移除 `-WhatIf`。脚本会发布 4 个正式版产物或 2 个测试版产物，并在正式版时创建公告更新 PR；只报告该 PR，不要合并它。
 
-```powershell
-.\.agents\skills\release\release-publish.ps1 `
-    -Version "v0.4.7.15" `
-    -TargetBranch "release-v047x" `
-    -PreviousVersion "v0.4.7.14" `
-    -ReleaseType "正式" `
-    -Proxy "http://127.0.0.1:7890"
-```
+## 不可违反的约束
 
-Output: Release URL
+- 不编辑生成的 `pack.toml` 或 `index.toml`。
+- 不直接发布或复制 CDC JAR；CDC 源码与 Packwiz 资产分别遵循 `CDC-mod-src/AGENTS.md` 和 `/packwiz-assets`。
+- 脚本可恢复中断的草稿 Release；已公开的同名 Release 不可重建。
+- 运行脚本前需要 PowerShell 7、Git、GitHub CLI 登录和干净或可安全暂存的工作树。
 
-### Transitional Test Tag Only
+## 按需参考
 
-For the current one-off transition where the pack version in `modpack.toml` is already correct but the GitHub test release must be discoverable by the README badge, skip Phase 1 and publish a `-test` tag directly from the target branch:
-
-```powershell
-.\.agents\skills\release\release-publish.ps1 `
-    -Version "v0.5.0.4-test" `
-    -TargetBranch "main" `
-    -PreviousVersion "v0.5.0.3" `
-    -ReleaseType "测试" `
-    -Proxy "http://127.0.0.1:7890"
-```
-
-Do not edit generated `pack.toml`. The release workflow uses the `v*-test` tag name for artifact names and release metadata, while `modpack.toml` can remain on the base pack version for this transition only. Do not use this as the long-term release model; future test release prepare PRs should use the `-test` version consistently.
-
-For test releases, publish the same `-test` tag and keep `-ReleaseType "测试"`:
-
-```powershell
-.\.agents\skills\release\release-publish.ps1 `
-    -Version "v0.4.7.15-test" `
-    -TargetBranch "release-v047x" `
-    -PreviousVersion "v0.4.7.14" `
-    -ReleaseType "测试" `
-    -Proxy "http://127.0.0.1:7890"
-```
-
-## Script Reference
-
-### release-prepare.ps1
-
-| Parameter | Required | Description |
-|-----------|----------|-------------|
-| `-Version` | ✅ | New version string (e.g. "v0.4.7.15" for stable, "v0.4.7.15-test" for test) |
-| `-TargetBranch` | ✅ | Base branch for PR (e.g. "release-v047x") |
-| `-ReleaseType` | ❌ | "正式" (default) or "测试" |
-| `-Announcement` | ❌ | Comma-separated bullet points for stable `announcement.md` and PR body; for test releases, PR body only. Auto-generated from git log if omitted |
-| `-Proxy` | ❌ | HTTPS proxy (e.g. "http://127.0.0.1:7890") |
-
-**What it does**: Update modpack.toml → update announcement.md for stable releases only → auto-stage update-summary files for stable releases only → Create branch → Commit → Push → Create PR → Restore original branch
-
-### release-publish.ps1
-
-| Parameter | Required | Description |
-|-----------|----------|-------------|
-| `-Version` | ✅ | Version tag to create (e.g. "v0.4.7.15" for stable, "v0.4.7.15-test" for test) |
-| `-TargetBranch` | ✅ | Branch to tag on (e.g. "release-v047x") |
-| `-PreviousVersion` | ❌ | Previous version for release notes and patch names (e.g. "v0.4.7.14"). Auto-detected via `git describe --tags --abbrev=0 HEAD^` if omitted |
-| `-ReleaseType` | ❌ | "正式" (default, 4 artifacts) or "测试" (2 artifacts, prerelease) |
-| `-Proxy` | ❌ | HTTPS proxy |
-| `-CIPollIntervalSeconds` | ❌ | CI poll interval (default: 30) |
-| `-CITimeoutMinutes` | ❌ | CI timeout (default: 15) |
-
-**What it does**: Tag+Push → Wait CI → Download artifacts → Compress → Generate notes (+ prepend update summary if first stable) → Create release → Verify → Announcement PR to main (stable only)
-
-## Script Safety Features
-
-Both scripts include:
-
-- **Pre-flight validation**: Checks prerequisites (modpack.toml exists, release-type-specific version format, gh auth, TargetBranch exists on remote, no existing release) before any changes. Fails fast with clear error messages.
-- **Dry-run mode**: Pass `-WhatIf` to preview what the script would do without making any changes. Useful for validating parameters.
-- **Idempotency**: Scripts handle re-runs gracefully:
-  - Existing tags on the correct commit → skipped
-  - Existing branches → cleaned up and recreated
-  - Existing PRs → existing URL returned
-  - Existing releases → fail with clear message (cannot recreate)
-
----
-
-## ⚠️ CDC Mod Release (Separate Workflow)
-
-The following is a **separate** workflow for the custom Java mod, NOT part of the main modpack release pipeline. Only use this when specifically asked to update the CDC mod.
-
-CDC mod in `CDC-mod-src/`, separate repo: `Jasons-impart/Create-Delight-Core`
-
-```bash
-cd CDC-mod-src
-git checkout 1.20.1 && git pull
-git checkout -b fix/xxx
-./gradlew build --no-daemon
-git add -A && git commit -m "[fix] 描述"
-git push -u origin fix/xxx
-gh pr create --base 1.20.1 --title "[fix] 描述" --body "..."
-```
-
-After merge, update CDR mods:
-```bash
-cd ..
-Remove-Item mods/Create-Delight-Core-*.jar
-Copy-Item CDC-mod-src/build/libs/CDC-mod-src-*.jar mods/
-```
-
-## Important Notes
-
-- **PR merge**: Must wait for user to manually merge, cannot auto-merge
-- **Release notes**: Auto-generated from commit messages, appended with `(AI自动生成)`. For the first stable release of a sub-version, only the exact update summary file (`docs/update-summary-{Version}.md`) is automatically prepended.
-- **Announcement PR**: For stable releases, release-publish.ps1 automatically creates a PR to main with the updated `docs/announcement.md`. The agent only needs to inform the user about this PR — no need to wait for merge.
-- **`[]` in filenames**: Handled by release-publish.ps1 using `-LiteralPath` copy
-- **Proxy**: Pass `-Proxy` parameter if direct GitHub access is slow
-- **Temp directory**: release-publish.ps1 preserves temp dir at `$env:TEMP\opencode\<version>` for debugging
-
-## PowerShell + gh CLI Pitfalls
-
-These bugs were discovered during releases. DO NOT reintroduce them:
-
-1. **`-Announcement` is `[string]` not `[string[]]`** — bash→powershell comma-separated args become 1 string. Script splits on `,` internally.
-2. **Never use `Set-Content -Encoding utf8`** — PS5.x writes UTF-8 BOM which breaks TOML parsers. Use `[System.IO.File]::WriteAllText()` with `UTF8Encoding($false)`.
-3. **Never use `gh pr create --body $multiline`** — PowerShell truncates multiline args to external commands. Use `--body-file` with a temp file. Same applies to `gh release create --notes` — use `--notes-file` instead.
-4. **Never use `--jq` with double quotes** — PowerShell's string interpolation breaks `contains("...")` etc. Use PowerShell's `ConvertFrom-Json` + `Where-Object` instead.
-5. **Set proxy AFTER Test-Prerequisites** — Setting `$env:HTTPS_PROXY` before `gh auth status` breaks keyring authentication on Windows. Always run prerequisite checks (which include gh auth) WITHOUT proxy env vars, then set proxy afterwards for actual network operations.
-6. **Set ALL_PROXY alongside HTTPS_PROXY/HTTP_PROXY** — Some tools (git, gh) respect ALL_PROXY more reliably. When `-Proxy` is provided, set all three env vars.
-7. **Auto-stage update-summary files for stable releases** — release-prepare.ps1 must auto-detect and `git add` any `docs/update-summary-*.md` files in stable release PRs. Otherwise, the agent must manually add them to the PR branch after the script runs (error-prone).
-8. **Artifact transfer on Windows** — Use `curl --config -` for large artifact downloads and release asset uploads so tokens stay off disk and argv; when `-Proxy` is provided, benchmark proxy vs direct routes because the fastest path is machine-dependent.
+- Windows 下的代理、`gh` 认证和大文件传输细节：读 [release-windows-github.md](references/release-windows-github.md)。
+- 仅当用户明确要求“标签与 `modpack.toml` 版本不同”的历史过渡发布时：读 [transitional-test-tags.md](references/transitional-test-tags.md)。
+- 参数和脚本内部步骤以当前实现为准：运行 `Get-Help .\.agents\skills\release\release-prepare.ps1 -Full` 或 `Get-Help .\.agents\skills\release\release-publish.ps1 -Full`。
