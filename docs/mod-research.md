@@ -19,6 +19,9 @@
   - 更好的树叶渲染优化 https://www.mcmod.cn/class/9810.html
 - Flerovium
   - 物品、粒子渲染优化 https://www.mcmod.cn/class/17322.html
+- Ixeris
+  - 缓冲原始输入并拆分事件轮询与渲染线程，缓解高鼠标轮询率下移动视角时的帧率下降 https://www.curseforge.com/minecraft/mc-mods/ixeris
+  - **兼容性提示**：会改写 GLFW 事件轮询与渲染线程行为，可能与其他输入或渲染底层改动冲突；出现移动视角、鼠标输入或画面异常时需优先排查
 - ServerCore
   - 优化服务器运算、实体活动范围（可选启用）、动态性能检查、村民脑叶切除术、繁殖上限、区块活动距离 https://www.mcmod.cn/class/6542.html
 - Harium
