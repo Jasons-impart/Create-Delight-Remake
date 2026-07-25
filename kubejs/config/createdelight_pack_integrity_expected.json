@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-24T13:11:02Z",
+  "generatedAt": "2026-07-25T13:13:25Z",
   "generatedBy": "scripts/generate-pack-integrity-manifest.py",
   "expectedFiles": {
     "common": [
@@ -358,6 +358,7 @@
       "extraholopage-6.9.0-1.2.16.jar",
       "fancymenu_forge_3.9.8_mc_1.20.1.jar",
       "fastboot-1.20.x-1.2.jar",
+      "fastrecipesearch-1.20.1-26.1-forge.jar",
       "flerovium-forge-1.20.1-1.2.19-all.jar",
       "generalfeedback-1.0.1.jar",
       "imblocker-5.5.4-forge+1.17-1.20.4.jar",
@@ -582,6 +583,11 @@
       "side": "client",
       "metadata": "mods/fastboot.pw.toml",
       "filename": "fastboot-1.20.x-1.2.jar"
+    },
+    {
+      "side": "client",
+      "metadata": "mods/fast-recipe-search.pw.toml",
+      "filename": "fastrecipesearch-1.20.1-26.1-forge.jar"
     },
     {
       "side": "client",

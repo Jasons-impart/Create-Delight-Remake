@@ -2,7 +2,7 @@
 
 Create-Delight Remake (齿轮盛宴) - A deep-modded Minecraft 1.20.1 Forge modpack focused on Create + Farmer's Delight with 5000+ custom recipes via KubeJS.
 
-**Core Stack**: Minecraft 1.20.1 | Forge 47.4.10 | KubeJS | Packwiz
+**Core Stack**: Minecraft 1.20.1 | Forge 47.4.22 | KubeJS | Packwiz
 
 > Module-specific details: `kubejs/AGENTS.md`, `CDC-mod-src/AGENTS.md`
 > Development knowledge: `docs/dev-knowledge/` (use `/dev-knowledge` for routing)

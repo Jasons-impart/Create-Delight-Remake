@@ -2,7 +2,7 @@
 
 > 状态：规划中，尚未按本文完成数据接管与数值实装。
 >
-> 适用版本：Minecraft 1.20.1、Forge 47.4.10、Apotheosis 7.4.8、Fallen Gems & Affixes 2.1.2、Fallen Lib 1.4.4。
+> 适用版本：Minecraft 1.20.1、Forge 47.4.22、Apotheosis 7.4.8、Fallen Gems & Affixes 2.1.2、Fallen Lib 1.4.4。
 >
 > 总体冒险阶段、Northstar 星球分配和首领定位仍以 [冒险流程与配方魔改规划](./adventure-progression-overhaul-plan.md) 为上层设计；本文集中规定 Apotheosis 与 Fallen Gems & Affixes 的模块取舍、装备分工、投放、数值和实施边界。
 
