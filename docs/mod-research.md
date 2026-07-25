@@ -24,7 +24,11 @@
 - Harium
   - 锂的 forge 移植，优化各种原版机制计算方法 https://www.curseforge.com/minecraft/mc-mods/harium
 - moestweaks
-  - 关闭配方书 https://www.mcmod.cn/class/17039.html
+  - `noRecipeBook` 功能已禁用，当前保留原版配方书 https://www.mcmod.cn/class/17039.html
+- SaveMyRecipeBook
+  - 保留原版配方书完整功能并显示全部配方，同时避免保存已知配方，降低内存占用和玩家数据保存的主线程开销 https://www.curseforge.com/minecraft/mc-mods/savemyrecipebook
+- Fast Recipe Search
+  - 通过配方索引加速大量配方下的配方匹配与查找 https://www.curseforge.com/minecraft/mc-mods/fast-recipe-search
 - FerriteCore
   - 内存占用优化 https://www.mcmod.cn/class/3888.html
 - Placebo
