@@ -51,8 +51,10 @@ The client has a mod list integrity warning for added or removed mods. Keep thes
 
 - `scripts/generate-pack-integrity-manifest.py`: scans managed `mods/**/*.pw.toml`, records expected managed JAR filenames, and writes the expected manifest without requiring downloaded JARs.
 - `kubejs/config/createdelight_pack_integrity_expected.json`: generated expected filename manifest; regenerate it after intended mod additions/removals.
-- `kubejs/config/createdelight_pack_integrity.json`: runtime config, including `allowedExtraFiles`.
+- `kubejs/config/createdelight_pack_integrity.json`: runtime config, including `allowedMissingFiles` and `allowedExtraFiles`; both accept exact filenames or narrow `*`/`?` glob patterns.
 - `kubejs/client_scripts/pack_integrity_check.js`: client-side title-screen warning and JSON report writer for mod list changes and Java major-version mismatches.
+
+Only add a managed JAR to `allowedMissingFiles` when it is intentionally optional. For client-only candidates, check both reverse mandatory dependencies in runtime JAR metadata and direct project-script/config integration; `side = "client"` alone does not make removal safe. Prefer a version-independent but narrow filename pattern, then verify it matches only the intended entry in `createdelight_pack_integrity_expected.json`.
 
 The runtime warning compares managed JAR filenames only. Do not use Forge/KubeJS runtime mod ids for this check because embedded library jars and JarJar metadata do not map reliably to actual files users add or remove.
 
