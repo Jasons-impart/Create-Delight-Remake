@@ -1,0 +1,13 @@
+name = "Bye?Pregen!"
+filename = "byepregen-1.0.2.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "fe996c6242ef2dfa1e5f10c5ad8857d11aa7fdbd"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8318059
+project-id = 1567378

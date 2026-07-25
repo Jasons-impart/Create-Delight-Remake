@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-25T13:30:34Z",
+  "generatedAt": "2026-07-25T17:20:19Z",
   "generatedBy": "scripts/generate-pack-integrity-manifest.py",
   "expectedFiles": {
     "common": [
@@ -41,6 +41,7 @@
       "bountiful-6.0.4+1.20.1-forge.jar",
       "brewinandchewin-1.20.1-3.2.1.jar",
       "butchercraft-2.4.1.jar",
+      "byepregen-1.0.2.2.jar",
       "caelus-forge-3.2.0+1.20.1.jar",
       "carryon-forge-1.20.1-2.1.2.7.jar",
       "casualness_delight-1.20.1-0.4n.jar",
@@ -332,6 +333,7 @@
       "yungsbetterwitchhuts-1.20-forge-3.0.3.jar",
       "yungsextras-1.20-forge-4.0.3.jar",
       "zeta-1.0-31.jar",
+      "zfastnoise-1.0.13+1.20+forge.jar",
       "zremove_sdl_intro_v1.2.2.jar",
       "zstdnet-1.20.1-forge-1.4.7.jar"
     ],
@@ -1164,6 +1166,11 @@
       "side": "common",
       "metadata": "mods/butchercraft.pw.toml",
       "filename": "butchercraft-2.4.1.jar"
+    },
+    {
+      "side": "common",
+      "metadata": "mods/bye-pregen.pw.toml",
+      "filename": "byepregen-1.0.2.2.jar"
     },
     {
       "side": "common",
@@ -2314,6 +2321,11 @@
       "side": "common",
       "metadata": "mods/zRemove_SDL_Intro.pw.toml",
       "filename": "zRemove_SDL_Intro_v1.2.2.jar"
+    },
+    {
+      "side": "common",
+      "metadata": "mods/zfastnoise.pw.toml",
+      "filename": "zfastnoise-1.0.13+1.20+forge.jar"
     },
     {
       "side": "common",

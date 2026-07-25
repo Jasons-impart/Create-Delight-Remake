@@ -26,6 +26,10 @@
   - 优化服务器运算、实体活动范围（可选启用）、动态性能检查、村民脑叶切除术、繁殖上限、区块活动距离 https://www.mcmod.cn/class/6542.html
 - Harium
   - 锂的 forge 移植，优化各种原版机制计算方法 https://www.curseforge.com/minecraft/mc-mods/harium
+- Bye?Pregen!
+  - 优化区块预生成流程，减少预生成带来的加载开销 https://www.curseforge.com/minecraft/mc-mods/bye-pregen
+- Fast Noise
+  - 优化世界生成中的噪声计算 https://www.curseforge.com/minecraft/mc-mods/zfastnoise
 - moestweaks
   - `noRecipeBook` 功能已禁用，当前保留原版配方书 https://www.mcmod.cn/class/17039.html
 - SaveMyRecipeBook
