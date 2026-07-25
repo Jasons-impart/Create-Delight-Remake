@@ -548,7 +548,7 @@
 			]
 			shape: "pentagon"
 			size: 2.0d
-			subtitle: "{ \"text\": \"锻造之艺，就在其中\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"4745D3F50C44D020\" } }"
+			subtitle: "{ \"text\": \"锻造之艺，就在其中\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"4B6A861104F42DC2\" } }"
 			tasks: [{
 				id: "77549F0D9F837A05"
 				title: "锻造大师"
