@@ -167,6 +167,19 @@
 
   const difference = (left, right) => left.filter((entry) => right.indexOf(entry) === -1);
 
+  const matchesPackIntegrityPattern = (fileName, patterns) =>
+    patterns.some((pattern) => {
+      if (pattern.indexOf("*") === -1 && pattern.indexOf("?") === -1) {
+        return fileName === pattern;
+      }
+
+      const escapedPattern = pattern
+        .replace(/[.+^${}()|[\]\\]/g, "\\$&")
+        .replace(/\*/g, ".*")
+        .replace(/\?/g, ".");
+      return new RegExp(`^${escapedPattern}$`).test(fileName);
+    });
+
   const createFingerprint = (side, missingFiles, extraFiles) =>
     JSON.stringify({
       side: side,
@@ -230,6 +243,7 @@
   const loadPackIntegrityResult = () => {
     const config = readPackIntegrityJson(PACK_INTEGRITY_CONFIG_PATH, {
       enabled: true,
+      allowedMissingFiles: [],
       allowedExtraFiles: [],
     });
     const side = "client";
@@ -245,6 +259,7 @@
         hasDifferences: false,
         missingFiles: [],
         extraFiles: [],
+        allowedMissingFiles: [],
         allowedExtraFiles: [],
         fingerprint: "",
       };
@@ -260,6 +275,7 @@
         hasDifferences: false,
         missingFiles: [],
         extraFiles: [],
+        allowedMissingFiles: [],
         allowedExtraFiles: [],
         fingerprint: "",
       };
@@ -273,11 +289,16 @@
       commonExpectedFiles.concat(clientExpectedFiles)
     );
     const runtimeFiles = collectRuntimeModFiles();
+    const allowedMissingFilesConfig = normalizePackIntegrityList(config.allowedMissingFiles);
     const allowedExtraFilesConfig = normalizePackIntegrityList(config.allowedExtraFiles);
-    const missingFiles = difference(activeExpectedFiles, runtimeFiles);
+    const allMissingFiles = difference(activeExpectedFiles, runtimeFiles);
+    const allowedMissingFiles = allMissingFiles.filter((fileName) =>
+      matchesPackIntegrityPattern(fileName, allowedMissingFilesConfig)
+    );
+    const missingFiles = difference(allMissingFiles, allowedMissingFiles);
     const allExtraFiles = difference(runtimeFiles, activeExpectedFiles);
-    const allowedExtraFiles = allExtraFiles.filter(
-      (fileName) => allowedExtraFilesConfig.indexOf(fileName) !== -1
+    const allowedExtraFiles = allExtraFiles.filter((fileName) =>
+      matchesPackIntegrityPattern(fileName, allowedExtraFilesConfig)
     );
     const extraFiles = difference(allExtraFiles, allowedExtraFiles);
     const fingerprint = createFingerprint(side, missingFiles, extraFiles);
@@ -294,6 +315,7 @@
       runtimeFiles: runtimeFiles,
       missingFiles: missingFiles,
       extraFiles: extraFiles,
+      allowedMissingFiles: allowedMissingFiles,
       allowedExtraFiles: allowedExtraFiles,
       fingerprint: fingerprint,
     };
@@ -345,10 +367,25 @@
         `[Create Delight Pack Integrity] Extra files: ${result.extraFiles.join(", ") || "(none)"}`
       );
       console.warn(
+        `[Create Delight Pack Integrity] Allowed missing files: ${result.allowedMissingFiles.join(", ") || "(none)"}`
+      );
+      console.warn(
         `[Create Delight Pack Integrity] Allowed extra files: ${result.allowedExtraFiles.join(", ") || "(none)"}`
       );
     } else if (result.status === "ok") {
-      console.info("[Create Delight Pack Integrity] Mod list matches the published manifest.");
+      if (result.allowedMissingFiles.length > 0 || result.allowedExtraFiles.length > 0) {
+        console.info(
+          "[Create Delight Pack Integrity] Mod list matches after applying configured exceptions."
+        );
+        console.info(
+          `[Create Delight Pack Integrity] Allowed missing files: ${result.allowedMissingFiles.join(", ") || "(none)"}`
+        );
+        console.info(
+          `[Create Delight Pack Integrity] Allowed extra files: ${result.allowedExtraFiles.join(", ") || "(none)"}`
+        );
+      } else {
+        console.info("[Create Delight Pack Integrity] Mod list matches the published manifest.");
+      }
     }
   };
 
