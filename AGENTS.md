@@ -2,7 +2,7 @@
 
 Create-Delight Remake (齿轮盛宴) is a deep-modded Minecraft 1.20.1 Forge modpack focused on Create, Farmer's Delight, exploration, food systems, and KubeJS-driven progression.
 
-**Core Stack**: Minecraft 1.20.1 | Forge 47.4.10 | KubeJS | Packwiz
+**Core Stack**: Minecraft 1.20.1 | Forge 47.4.16 | KubeJS | Packwiz
 
 > KubeJS details: `kubejs/AGENTS.md`
 > Content knowledge: `docs/content/`
