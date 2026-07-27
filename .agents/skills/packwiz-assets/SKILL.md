@@ -18,7 +18,7 @@ Use this workflow for modpack asset operations that touch `mods/`, `resourcepack
 - `pack.toml` and `index.toml` are generated from `modpack.toml`; do not commit them.
 - Shaderpack files containing `Clrwl` are generated locally and must not be tracked.
 - Set `side = "client"` or `side = "server"` explicitly for client-only or server-only mods.
-- Set top-level `release = false` for development-only assets that must remain available to local Packwiz sync but must be removed from Client, Server, integrity manifests, and release patches. Release workflows must pass the release-pruning mode; ordinary `sync-packwiz-assets.ps1` runs must not.
+- Set top-level `stable = false` for assets allowed in local development and test releases but excluded from formal releases. Formal workflows pass stable-pruning mode for Client, Server, integrity manifests, and release patches; test workflows and ordinary `sync-packwiz-assets.ps1` runs must not.
 - Do not refresh GitHub Pages mod classification data (`docs/mods-data.js`) as part of normal asset changes; it is an expensive manual task and requires an explicit user request.
 
 ## Add Or Update Assets
