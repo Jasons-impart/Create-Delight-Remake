@@ -24,7 +24,7 @@
 - 源码：<https://github.com/SSWTLZZ69/TetraInsight>
 - 0.1.0 源码 PR：<https://github.com/SSWTLZZ69/TetraInsight/pull/1>
 - CurseForge：<https://www.curseforge.com/minecraft/mc-mods/tetra-insight>
-- 目标版本：Minecraft 1.20.1、Forge 47.4.22、Tetra 6.9.x、mutil 6.2.0+
+- 目标版本：Minecraft 1.20.1、Forge 47.4.16、Tetra 6.9.x、mutil 6.2.0+
 
 ## CDR 接入
 
