@@ -45,8 +45,8 @@ def read_toml(path):
         return tomllib.load(source)
 
 
-def is_release_enabled(data):
-    return data.get("release", True) is not False
+def is_stable_enabled(data):
+    return data.get("stable", True) is not False
 
 
 def metadata_files(root, asset_dir):
@@ -55,10 +55,10 @@ def metadata_files(root, asset_dir):
         yield from sorted(directory.rglob("*.pw.toml"))
 
 
-def metadata_entries(root, asset_dir):
+def metadata_entries(root, asset_dir, stable=False):
     for metadata_path in metadata_files(root, asset_dir):
         data = read_toml(metadata_path)
-        if not is_release_enabled(data):
+        if stable and not is_stable_enabled(data):
             continue
         filename = data.get("filename")
         if not filename:
@@ -151,8 +151,8 @@ def command_prepare(args):
     print(f"Prepared {output} with {len(deleted_paths)} deleted file(s).")
 
 
-def remove_client_mod_payloads(patch):
-    for _, filename, _, side in metadata_entries(Path.cwd(), "mods"):
+def remove_client_mod_payloads(patch, stable=False):
+    for _, filename, _, side in metadata_entries(Path.cwd(), "mods", stable=stable):
         if side != "client":
             continue
         for candidate in (
@@ -177,30 +177,32 @@ def move_packwiz_payloads(patch):
     shutil.rmtree(patch / "packwiz-files", ignore_errors=True)
 
 
-def remove_release_disabled_payloads(patch):
-    for metadata_path in metadata_files(Path.cwd(), "mods"):
-        data = read_toml(metadata_path)
-        if is_release_enabled(data):
-            continue
-        filename = data.get("filename")
-        if filename:
-            for candidate in (
-                patch / "mods" / str(filename),
-                patch / "packwiz-files" / "mods" / str(filename),
-            ):
-                if candidate.is_file():
-                    candidate.unlink()
-                    print(f"Removed release-disabled payload: {candidate}")
-        metadata_candidate = patch / metadata_path.relative_to(Path.cwd())
-        if metadata_candidate.is_file():
-            metadata_candidate.unlink()
-            print(f"Removed release-disabled metadata: {metadata_candidate}")
+def remove_stable_disabled_payloads(patch):
+    for asset_dir in ASSET_DIRS:
+        for metadata_path in metadata_files(Path.cwd(), asset_dir):
+            data = read_toml(metadata_path)
+            if is_stable_enabled(data):
+                continue
+            filename = data.get("filename")
+            if filename:
+                for candidate in (
+                    patch / asset_dir / str(filename),
+                    patch / "packwiz-files" / asset_dir / str(filename),
+                ):
+                    if candidate.is_file():
+                        candidate.unlink()
+                        print(f"Removed stable-disabled payload: {candidate}")
+            metadata_candidate = patch / metadata_path.relative_to(Path.cwd())
+            if metadata_candidate.is_file():
+                metadata_candidate.unlink()
+                print(f"Removed stable-disabled metadata: {metadata_candidate}")
 
 
 def command_server(args):
     patch = Path(args.patch)
-    remove_release_disabled_payloads(patch)
-    remove_client_mod_payloads(patch)
+    if args.stable:
+        remove_stable_disabled_payloads(patch)
+    remove_client_mod_payloads(patch, stable=args.stable)
     for relative_path in SERVER_EXCLUDED_FILES:
         target = patch / relative_path
         if target.is_file() or target.is_symlink():
@@ -214,7 +216,7 @@ def command_purge_curseforge(args):
     patch = Path(args.patch)
     metadata_root = Path(args.metadata_root)
     for asset_dir in ASSET_DIRS:
-        for _, filename, mode, _ in metadata_entries(metadata_root, asset_dir):
+        for _, filename, mode, _ in metadata_entries(metadata_root, asset_dir, stable=args.stable):
             if mode != "metadata:curseforge":
                 continue
             payload = patch / asset_dir / filename
@@ -235,10 +237,10 @@ def command_client(args):
         shutil.rmtree(destination, ignore_errors=True)
         curseforge_filenames = {
             filename
-            for _, filename, mode, _ in metadata_entries(metadata_root, asset_dir)
+            for _, filename, mode, _ in metadata_entries(metadata_root, asset_dir, stable=args.stable)
             if mode == "metadata:curseforge"
         }
-        for metadata_path, filename, _, _ in metadata_entries(metadata_root, asset_dir):
+        for metadata_path, filename, _, _ in metadata_entries(metadata_root, asset_dir, stable=args.stable):
             if filename in curseforge_filenames:
                 print(f"Skipping CurseForge manifest payload: {asset_dir}/{filename}")
                 continue
@@ -269,17 +271,20 @@ def main():
 
     server = commands.add_parser("server", help="Convert a shared patch into a server patch.")
     server.add_argument("--patch", default="patch")
+    server.add_argument("--stable", action="store_true", help="Exclude assets with stable = false.")
     server.set_defaults(func=command_server)
 
     purge = commands.add_parser("purge-curseforge", help="Remove payloads represented by CurseForge metadata.")
     purge.add_argument("--patch", default="patch")
     purge.add_argument("--metadata-root", default=".")
+    purge.add_argument("--stable", action="store_true", help="Exclude assets with stable = false.")
     purge.set_defaults(func=command_purge_curseforge)
 
     client = commands.add_parser("client", help="Populate a patch with non-CurseForge client payloads.")
     client.add_argument("--patch", default="patch")
     client.add_argument("--metadata-root", default=".")
     client.add_argument("--manifest", required=True)
+    client.add_argument("--stable", action="store_true", help="Exclude assets with stable = false.")
     client.set_defaults(func=command_client)
 
     args = parser.parse_args()

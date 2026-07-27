@@ -27,6 +27,7 @@ jobs:
       modpack_ver: ${{ steps.generate_modpack_version.outputs.VERSION }}
       mc_version: ${{ steps.read-minecraft.outputs.value }}
       forge_version: ${{ steps.read-forge.outputs.value }}
+      is_stable_release: ${{ steps.release_mode.outputs.is_stable_release }}
     steps:
       - name: 仅检出需要的文件
         uses: actions/checkout@v4
@@ -67,6 +68,15 @@ jobs:
             VERSION="$VERSION-test-build-${{ github.run_number }}"
           fi
           echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+      - name: 判断发布渠道
+        id: release_mode
+        run: |
+          IS_STABLE_RELEASE=true
+          if [[ "${{ github.ref_type }}" == "tag" && "${{ github.ref_name }}" == *-test ]] || \
+             [[ "${{ github.ref_type }}" == "branch" && "${{ github.ref_name }}" == test-* ]]; then
+            IS_STABLE_RELEASE=false
+          fi
+          echo "is_stable_release=$IS_STABLE_RELEASE" >> $GITHUB_OUTPUT
 
   # 客户端相关任务（并行执行）
   client-tasks:
@@ -77,6 +87,7 @@ jobs:
       MODPACK_VERSION: ${{ needs.common-steps.outputs.modpack_ver }}
       MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
       FORGE_VERSION: ${{ needs.common-steps.outputs.forge_version }}
+      PACKWIZ_STABLE_RELEASE: ${{ needs.common-steps.outputs.is_stable_release }}
     if: >
       startsWith(github.ref_name, 'release') || 
       startsWith(github.ref_name, 'test-release') ||
@@ -106,7 +117,12 @@ jobs:
           pip install requests
           python .github/workflows/scripts/update_credits.py --mode real --download-images
       - name: 生成模组列表完整性清单
-        run: python3 scripts/generate-pack-integrity-manifest.py --release
+        run: |
+          if [[ "$PACKWIZ_STABLE_RELEASE" == "true" ]]; then
+            python3 scripts/generate-pack-integrity-manifest.py --stable
+          else
+            python3 scripts/generate-pack-integrity-manifest.py
+          fi
       - name: 生成不带mod本体的包
         run: |
           bash .github/workflows/scripts/export_curseforge_pack.sh ../lite-release.zip 8083
@@ -151,6 +167,7 @@ jobs:
       MODPACK_VERSION: ${{ needs.common-steps.outputs.modpack_ver }}
       MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
       FORGE_VERSION: ${{ needs.common-steps.outputs.forge_version }}
+      PACKWIZ_STABLE_RELEASE: ${{ needs.common-steps.outputs.is_stable_release }}
     if: >
       startsWith(github.ref_name, 'release') || 
       startsWith(github.ref_name, 'test-release') ||
@@ -226,6 +243,7 @@ jobs:
       MODPACK_VERSION: ${{ needs.common-steps.outputs.modpack_ver }}
       MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
       FORGE_VERSION: ${{ needs.common-steps.outputs.forge_version }}
+      PACKWIZ_STABLE_RELEASE: ${{ needs.common-steps.outputs.is_stable_release }}
     if: >
       startsWith(github.ref_name, 'release') || 
       startsWith(github.ref_name, 'test-release') ||
@@ -257,7 +275,12 @@ jobs:
           modpack_version: ${{ env.MODPACK_VERSION }}
           mode: patch
       - name: 生成模组列表完整性清单
-        run: python3 scripts/generate-pack-integrity-manifest.py --release
+        run: |
+          if [[ "$PACKWIZ_STABLE_RELEASE" == "true" ]]; then
+            python3 scripts/generate-pack-integrity-manifest.py --stable
+          else
+            python3 scripts/generate-pack-integrity-manifest.py
+          fi
       - name: 准备补丁文件
         run: |
           python3 scripts/build-release-patch.py prepare \
@@ -268,7 +291,12 @@ jobs:
             --modpack-version "$MODPACK_VERSION" \
             --version-file-relative-dir "$VERSION_FILE_RELATIVE_DIR_PATH"
       - name: 移除服务端不需要的文件
-        run: python3 scripts/build-release-patch.py server --patch patch
+        run: |
+          if [[ "$PACKWIZ_STABLE_RELEASE" == "true" ]]; then
+            python3 scripts/build-release-patch.py server --patch patch --stable
+          else
+            python3 scripts/build-release-patch.py server --patch patch
+          fi
       - name: 复制部署脚本
         run: |
           cp .github/workflows/scripts/deploy-patch.sh deploy-patch.sh
@@ -277,7 +305,11 @@ jobs:
         run: |
           bash .github/workflows/scripts/download_mods.sh 8081 server
           bash .github/workflows/scripts/normalize_packwiz_files_for_curseforge.sh
-          python3 scripts/build-release-patch.py purge-curseforge --patch patch
+          if [[ "$PACKWIZ_STABLE_RELEASE" == "true" ]]; then
+            python3 scripts/build-release-patch.py purge-curseforge --patch patch --stable
+          else
+            python3 scripts/build-release-patch.py purge-curseforge --patch patch
+          fi
       - name: 上传服务器补丁
         uses: actions/upload-artifact@v4
         with:
@@ -292,7 +324,12 @@ jobs:
         with:
           name: "[Dev]${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}-manifest"
       - name: 更新patch中的mod，并加入manifest.json
-        run: python3 scripts/build-release-patch.py client --patch patch --manifest manifest.json
+        run: |
+          if [[ "$PACKWIZ_STABLE_RELEASE" == "true" ]]; then
+            python3 scripts/build-release-patch.py client --patch patch --manifest manifest.json --stable
+          else
+            python3 scripts/build-release-patch.py client --patch patch --manifest manifest.json
+          fi
       - name: 上传客户端补丁
         uses: actions/upload-artifact@v4
         with:

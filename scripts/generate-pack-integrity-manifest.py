@@ -61,17 +61,17 @@ def get_metadata_side(repo_root, metadata_path, metadata):
     return "common"
 
 
-def is_release_enabled(metadata):
-    value = metadata.get("release", True)
+def is_stable_enabled(metadata):
+    value = metadata.get("stable", True)
     if isinstance(value, bool):
         return value
     return str(value).strip().lower() not in {"false", "0", "no"}
 
 
-def get_pack_mod_metadata(repo_root, release=False):
+def get_pack_mod_metadata(repo_root, stable=False):
     for metadata_path in sorted((repo_root / "mods").rglob("*.pw.toml")):
         metadata = read_toml(metadata_path)
-        if release and not is_release_enabled(metadata):
+        if stable and not is_stable_enabled(metadata):
             continue
         filename = str(metadata.get("filename", "")).strip()
         if not filename:
@@ -110,8 +110,8 @@ def write_json_if_changed(path, manifest):
     return True
 
 
-def new_manifest(repo_root, release=False):
-    metadata_entries = list(get_pack_mod_metadata(repo_root, release=release))
+def new_manifest(repo_root, stable=False):
+    metadata_entries = list(get_pack_mod_metadata(repo_root, stable=stable))
     if not metadata_entries:
         raise RuntimeError("No mods/**/*.pw.toml files found; cannot generate integrity manifest.")
 
@@ -150,7 +150,7 @@ def main():
         default="kubejs/config/createdelight_pack_integrity_expected.json",
         help="Manifest output path, relative to repo root unless absolute.",
     )
-    parser.add_argument("--release", action="store_true", help="Exclude metadata with release = false.")
+    parser.add_argument("--stable", action="store_true", help="Exclude metadata with stable = false.")
     args = parser.parse_args()
 
     repo_root = Path(args.repo_root).resolve()
@@ -158,7 +158,7 @@ def main():
     if not output.is_absolute():
         output = repo_root / output
 
-    manifest = new_manifest(repo_root, release=args.release)
+    manifest = new_manifest(repo_root, stable=args.stable)
     write_json_if_changed(output, manifest)
     counts = manifest["expectedFiles"]
     print(f"common={len(counts['common'])}, client={len(counts['client'])}, server={len(counts['server'])}")

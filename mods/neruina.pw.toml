@@ -1,6 +1,7 @@
 name = "Neruina - Ticking Entity Fixer"
 filename = "neruina-3.3.3+1.20.1-forge.jar"
 side = "both"
+stable = false
 
 [download]
 hash-format = "sha1"
