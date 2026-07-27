@@ -13,4 +13,5 @@
 
 | 修复 | 类型 | 问题或根因 | 补丁位置 | 验证与跟踪 | 复核/移除条件 | 状态 |
 |---|---|---|---|---|---|---|
+| LazyTick × Vintage Improvements 压缩机工作盆缓存 | 模组兼容 | LazyTick `2.4.9` 的 Basin 配方缓存不会感知 Vacuum Chamber 继承的配方上下文变化，导致压缩机偶发需移动或重设过滤器后才加工。 | `mods/CreateLazyTick.pw.toml` 更新至 `2.5.15`，使用上游 `VacuumChamberBasinBypassMixin`/`IBasinLazyTickBypass`；`mods/vintageimprovements.pw.toml` 更新至 `0.3.7.8`，撤回 VI 侧临时快照 Mixin。 | 已核对 LazyTick 发布 JAR 包含上游旁路类，VI 发布 JAR 不再包含 LazyTick/`BasinStateSnapshot` Mixin；运行时 JAR SHA-256 分别为 `2416ABA4…BA77AD`、`BF590658…DAE4E`。 | LazyTick 后续移除该上游兼容或 VI 不再继承 Basin 配方路径时重新复核；无需在 VI 侧恢复重复补丁。 | 已同步，待游戏内压缩机回归 |
 | Frycooks Delight 油菜作物模型 | 资源兼容 | Frycooks Delight `1.0.1` 的 8 个油菜阶段仍引用 `farmersdelight:block/crop_cross`；Farmer's Delight `1.3.2` 将通用模板重命名为 `template_crop_cross`，造成紫黑缺失模型。 | `kubejs/assets/farmersdelight/models/block/crop_cross.json`：以旧路径提供与新模板等价的模型。 | 已由用户通过资源重载确认紫黑块消失；[#2007](https://github.com/Jasons-impart/Create-Delight-Remake/issues/2007)。 | Frycooks Delight 更新为引用 `farmersdelight:block/template_crop_cross` 或不再引用旧路径后，移除覆盖并回归油菜 8 个阶段。 | 生效中 |
