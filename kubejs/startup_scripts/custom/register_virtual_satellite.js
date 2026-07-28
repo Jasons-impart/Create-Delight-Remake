@@ -1,0 +1,18 @@
+StartupEvents.registry("item", event => {
+    event.create("createdelight:folded_mapping_satellite")
+        .translationKey("item.createdelight.folded_mapping_satellite")
+        .texture("northstar:item/targeting_computer")
+        .rarity("rare")
+        .unstackable()
+        .tooltip(Text.translate("tooltip.createdelight.folded_mapping_satellite.1"))
+        .tooltip(Text.translate("tooltip.createdelight.folded_mapping_satellite.2"))
+
+    event.create("createdelight:satellite_navigation_data_card")
+        .translationKey("item.createdelight.satellite_navigation_data_card")
+        .texture("northstar:item/advanced_circuit")
+        .rarity("uncommon")
+        .unstackable()
+        .tooltip(Text.translate("tooltip.createdelight.satellite_navigation_data_card.1"))
+        .tooltip(Text.translate("tooltip.createdelight.satellite_navigation_data_card.2"))
+        .tooltip(Text.translate("tooltip.createdelight.satellite_navigation_data_card.3"))
+})
