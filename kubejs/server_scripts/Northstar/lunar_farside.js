@@ -1,6 +1,7 @@
 const LUNAR_STATION_DIMENSION = "northstar:earth_orbit"
 const LUNAR_STATION_Y = 96
 const LUNAR_STATION_DATA_PREFIX = "createdelight_lunar_station_"
+const LUNAR_STATION_WAYPOINT_BLOCK = "northstar:rocket_waypoint"
 
 function getLunarStationCoordinates(player) {
     let data = player.persistentData
@@ -24,6 +25,23 @@ function getLunarStationCoordinates(player) {
 
 function runInLunarStationDimension(server, command) {
     return server.runCommandSilent(`execute in ${LUNAR_STATION_DIMENSION} run ${command}`)
+}
+
+function getLunarStationWaypointCoordinates(pos) {
+    return {
+        x: pos.x,
+        y: pos.y - 1,
+        z: pos.z + 18
+    }
+}
+
+function placeLunarStationWaypoint(server, pos) {
+    let waypoint = getLunarStationWaypointCoordinates(pos)
+    let result = runInLunarStationDimension(
+        server,
+        `setblock ${waypoint.x} ${waypoint.y} ${waypoint.z} ${LUNAR_STATION_WAYPOINT_BLOCK}`
+    )
+    return result
 }
 
 function buildAbandonedOrbitalStation(server, pos) {
@@ -64,6 +82,7 @@ function buildAbandonedOrbitalStation(server, pos) {
 }
 
 function addLunarStationWaypoint(atlas, pos) {
+    let waypoint = getLunarStationWaypointCoordinates(pos)
     let root = atlas.getOrCreateTag()
     let atlasTag = root.getCompound("atlas")
     let destinations = atlasTag.getList("destinations", 10)
@@ -80,7 +99,7 @@ function addLunarStationWaypoint(atlas, pos) {
         if (entry.getString("Dimension") != LUNAR_STATION_DIMENSION)
             continue
         let entryPos = entry.getCompound("Position")
-        if (entryPos.getInt("X") == pos.x && entryPos.getInt("Y") == pos.y - 1 && entryPos.getInt("Z") == pos.z + 18) {
+        if (entryPos.getInt("X") == waypoint.x && entryPos.getInt("Y") == waypoint.y && entryPos.getInt("Z") == waypoint.z) {
             entry.put("label", createLabel())
             atlasTag.put("destinations", destinations)
             root.put("atlas", atlasTag)
@@ -90,9 +109,9 @@ function addLunarStationWaypoint(atlas, pos) {
 
     let destination = new global.CDServerJavaClasses.$CompoundTag()
     let target = new global.CDServerJavaClasses.$CompoundTag()
-    target.putInt("X", pos.x)
-    target.putInt("Y", pos.y - 1)
-    target.putInt("Z", pos.z + 18)
+    target.putInt("X", waypoint.x)
+    target.putInt("Y", waypoint.y)
+    target.putInt("Z", waypoint.z)
     destination.putString("Dimension", LUNAR_STATION_DIMENSION)
     destination.put("Position", target)
     destination.putString("Direction", "up")
@@ -126,6 +145,7 @@ function useOrbitalTelemetryScanner(event) {
 
     let pos = getLunarStationCoordinates(player)
     if (player.persistentData.getBoolean(`${LUNAR_STATION_DATA_PREFIX}generated`)) {
+        placeLunarStationWaypoint(server, pos)
         addLunarStationWaypoint(atlas, pos)
         player.setStatusMessage(Component.translate("message.createdelight.orbital_scanner.rediscovered", pos.x, pos.y, pos.z))
         player.addItemCooldown(event.item.item, 40)
@@ -141,6 +161,7 @@ function useOrbitalTelemetryScanner(event) {
     server.scheduleInTicks(20, () => {
         let result = buildAbandonedOrbitalStation(server, pos)
         if (result > 0) {
+            placeLunarStationWaypoint(server, pos)
             player.persistentData.putBoolean(`${LUNAR_STATION_DATA_PREFIX}generated`, true)
             player.persistentData.putInt(`${LUNAR_STATION_DATA_PREFIX}x`, pos.x)
             player.persistentData.putInt(`${LUNAR_STATION_DATA_PREFIX}y`, pos.y)
