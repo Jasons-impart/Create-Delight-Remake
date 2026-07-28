@@ -32,6 +32,8 @@
 | `docs/development.md` | 人工开发指南 | 保留人工阅读的开发规范和入口指针，复杂流程转到 skill。 |
 | `docs/mod-research.md` | 调研清单 | 记录候选模组和已有优化模组参考，不属于实现事实。 |
 | `docs/order-system-design.md` | 内容设计说明 | 订单系统当前实现、设计原则和后续建议。 |
+| `docs/hotai-patch-map.md` | 技术参考 | HotAI 二进制补丁机制、当前 `hotai/*.badiff` 行为和验证注意事项。 |
+| `docs/hotai-badiff-details.md` | 技术参考 | 每个 HotAI `.badiff` 文件的具体补丁内容、状态和维护影响。 |
 | `docs/plan/order-acquisition-channels-plan.md` | 内容设计计划 | 订单获取渠道的长期设计。 |
 | `docs/plan/order-acquisition-crystal-modifier-plan.md` | 内容设计计划 | 订单构筑和修饰系统设计。 |
 | `docs/plan/order-time-and-automation-strategy.md` | 内容设计策略 | 订单时间机制与自动化产线假设。 |

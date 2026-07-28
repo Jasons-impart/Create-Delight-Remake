@@ -129,6 +129,9 @@ $requiredPaths = @(
     ".codex/hooks.json",
     "scripts/sync-packwiz-assets.ps1",
     "scripts/update-packwiz-meta.ps1",
+    "scripts/update-hotai-docs.ps1",
+    "docs/hotai-patch-map.md",
+    "docs/hotai-badiff-details.md",
     "scripts/add-packwiz-target.ps1",
     "scripts/update-packwiz-target.ps1",
     "kubejs/data/oei/replacements",
@@ -147,6 +150,15 @@ $devKnowledgeDocsPath = Join-Path $Root "docs/dev-knowledge"
 if (Test-Path -LiteralPath $devKnowledgeDocsPath) {
     foreach ($markdownFile in Get-ChildItem -LiteralPath $devKnowledgeDocsPath -Recurse -File -Filter "*.md") {
         Test-DevKnowledgeChineseMarkdown (Get-RelPath $markdownFile.FullName)
+    }
+}
+
+$hotaiDocScript = Join-Path $Root "scripts/update-hotai-docs.ps1"
+if (Test-Path -LiteralPath $hotaiDocScript) {
+    try {
+        & $hotaiDocScript -Root $Root -Check
+    } catch {
+        Add-Failure $_.Exception.Message
     }
 }
 
