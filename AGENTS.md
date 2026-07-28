@@ -2,7 +2,7 @@
 
 Create-Delight Remake (齿轮盛宴) - A deep-modded Minecraft 1.20.1 Forge modpack focused on Create + Farmer's Delight with 5000+ custom recipes via KubeJS.
 
-**Core Stack**: Minecraft 1.20.1 | Forge 47.4.10 | KubeJS | Packwiz
+**Core Stack**: Minecraft 1.20.1 | Forge 47.4.16 | KubeJS | Packwiz
 
 > Module-specific details: `kubejs/AGENTS.md`, `CDC-mod-src/AGENTS.md`
 > Development knowledge: `docs/dev-knowledge/` (use `/dev-knowledge` for routing)
@@ -45,6 +45,7 @@ CD-master-dev/
 | Dev environment setup | `GettingStarted.md` | Self-contained pre-clone bootstrap |
 | Release workflow | `.github/workflows/release.yml` | Use `/release` skill |
 | Packwiz asset workflow | `mods/`, `packwiz-files/` | Use `/packwiz-assets` skill |
+| Minecraft MCP testing/repair | `.agents/skills/minecraft-mcp/SKILL.md` | Use `/minecraft-mcp`; keep source work in `D:\learnmod` |
 | Content/how-to knowledge | `docs/dev-knowledge/` | Use `/dev-knowledge` skill |
 | Design plans | `docs/plan/` | Use `/dev-knowledge` for routing |
 | Knowledge maintenance | `.agents/skills/knowledge-check/SKILL.md` | Use `/knowledge-check` skill |
@@ -69,9 +70,11 @@ CD-master-dev/
 - Branch from `main`: `git checkout main && git pull && git checkout -b feat/xxx`
 - Run `scripts/install-git-hooks.ps1` after clone to install local `.git/hooks` shims that call tracked `scripts/.githooks`; agents should confirm this before Git update workflows.
 - Commit format: `[类型] 描述 (#PR号)` - types: `fix`, `feat`, `mod`, `dev`, `conf`
+- Commit messages must include a body; prefer Markdown-style structure in the body, such as short paragraphs, bullet lists, affected scope, and verification notes.
 - PR title/body use Chinese by default because reviewers and release notes are Chinese-first.
 - For multiline PR bodies from PowerShell, use a here-string or `--body-file`; `\n` is literal and renders broken Markdown on GitHub.
 - ❌ Never commit directly on `main`; create a feature branch and merge through PR because remote `main` is protected.
+- ❌ Never merge PRs yourself (`gh pr merge`, GitHub web/API merge, or auto-merge). Create PRs and wait for the user to manually merge unless the user explicitly asks you in the current conversation to merge a specific PR.
 - ❌ Never commit on merged feature branches
 - ❌ Never force push to main
 
@@ -84,10 +87,12 @@ CD-master-dev/
 - `mods/`, `resourcepacks/`, `shaderpacks/` contain `.pw.toml` metadata; no `mods/*.jar` files are tracked
 - CF-restricted/custom JARs/zip live in `packwiz-files/{mods,resourcepacks,shaderpacks}/`
 - For add/update/remove/sync/CDC artifact details, use `.agents/skills/packwiz-assets/SKILL.md` because the workflow is procedural and changes together.
-- Do not run `scripts/update-packwiz-meta.ps1` on short-lived feature branches: it may rewrite `packwiz-files` raw URLs to the current branch. Use it on `main` or a long-lived LTS/release-maintenance branch, or explicitly preserve `main` raw URLs.
+- `scripts/update-packwiz-meta.ps1 -FullReconcile` is category-wide local-asset reconciliation, not the default for one known CurseForge asset; use `scripts/add-packwiz-target.ps1` to add one and `scripts/update-packwiz-target.ps1` to update one.
+- Do not run `scripts/update-packwiz-meta.ps1 -FullReconcile` on short-lived feature branches: it may rewrite `packwiz-files` raw URLs to the current branch. Use it on `main` or a long-lived LTS/release-maintenance branch, or explicitly preserve `main` raw URLs.
 - After any pull/rebase/merge, compare pre-update target commit..new HEAD; if `mods|resourcepacks|shaderpacks/**/*.pw.toml` or `packwiz-files/**` changed, run `scripts/sync-packwiz-assets.ps1` because runtime JARs are local.
 - `pack.toml`/`index.toml` are generated from `modpack.toml`; don't commit them
 - `CDC-mod-src/` is a git submodule and must stay out of Packwiz artifacts because packages ship pack files, not Java source trees
+- GitHub Pages mod classification data (`docs/mods-data.js`) is expensive to refresh; do not update it during ordinary mod changes unless the user explicitly asks for a manual refresh.
 
 ## ANTI-PATTERNS
 

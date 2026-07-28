@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="机械动力：齿轮盛宴 - Minecraft 1.20.1 Forge 深度魔改整合包。">
+  <title>机械动力：齿轮盛宴</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #101214;
+      --panel: #191d21;
+      --text: #f3f0e8;
+      --muted: #c4bbb0;
+      --line: #3c3328;
+      --accent: #e7a83a;
+      --accent-strong: #ffca5c;
+      --link: #7dd3fc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .hero {
+      min-height: 88vh;
+      display: grid;
+      align-items: center;
+      padding: 48px 20px 40px;
+      background:
+        linear-gradient(180deg, rgba(16, 18, 20, .36), rgba(16, 18, 20, .94)),
+        url("kubejs/assets/createdelight/textures/images_for_readme/introduction.png") center / cover no-repeat;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .wrap {
+      width: min(1040px, 100%);
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: block;
+      width: min(860px, 100%);
+      height: auto;
+      margin: 0 auto 26px;
+      filter: drop-shadow(0 18px 28px rgba(0, 0, 0, .55));
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 5vw, 5.2rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+      text-align: center;
+    }
+
+    .lead {
+      width: min(780px, 100%);
+      margin: 20px auto 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+      text-align: center;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin: 26px auto 0;
+    }
+
+    .badges img {
+      display: block;
+      height: 20px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .action {
+      min-width: 168px;
+      padding: 11px 18px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 6px;
+      background: rgba(25, 29, 33, .72);
+      text-decoration: none;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .action.primary {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #1b1409;
+    }
+
+    main {
+      padding: 36px 20px 56px;
+      background: #14171a;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .item {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+      background: var(--panel);
+    }
+
+    .item h2 {
+      margin: 0 0 8px;
+      font-size: 1.18rem;
+      letter-spacing: 0;
+    }
+
+    .item p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .item a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    footer {
+      padding: 22px 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      background: #101214;
+      text-align: center;
+      font-size: .92rem;
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        min-height: auto;
+        padding-top: 36px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .action {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <img class="logo" src="kubejs/assets/createdelight/textures/images_for_readme/title.png" alt="机械动力：齿轮盛宴">
+      <h1>机械动力：齿轮盛宴</h1>
+      <p class="lead">Minecraft 1.20.1 Forge 深度魔改整合包，围绕机械动力、农夫乐事、任务引导和大规模 KubeJS 配方重构展开。</p>
+
+      <div class="badges" aria-label="项目状态">
+        <a href="https://github.com/Jasons-impart/Create-Delight-Remake/releases/latest">
+          <img src="https://img.shields.io/github/v/release/Jasons-impart/Create-Delight-Remake?label=%E6%AD%A3%E5%BC%8F%E7%89%88%E6%9C%AC&amp;color=2CB3A8" alt="正式版本">
+        </a>
+        <a href="https://github.com/Jasons-impart/Create-Delight-Remake/releases">
+          <img src="https://img.shields.io/github/v/release/Jasons-impart/Create-Delight-Remake?include_prereleases&amp;sort=date&amp;filter=*-test&amp;label=%E6%B5%8B%E8%AF%95%E7%89%88%E6%9C%AC&amp;color=yellow" alt="测试版本">
+        </a>
+        <a href="https://github.com/Jasons-impart/Create-Delight-Remake/graphs/contributors">
+          <img src="https://img.shields.io/github/contributors/Jasons-impart/Create-Delight-Remake.svg?style=flat-square" alt="贡献者">
+        </a>
+        <a href="https://github.com/Jasons-impart/Create-Delight-Remake/stargazers">
+          <img src="https://img.shields.io/github/stars/Jasons-impart/Create-Delight-Remake.svg?style=flat-square" alt="Star 数">
+        </a>
+        <a href="https://github.com/Jasons-impart/Create-Delight-Remake/issues">
+          <img src="https://img.shields.io/github/issues/Jasons-impart/Create-Delight-Remake.svg?style=flat-square" alt="Issue 数">
+        </a>
+        <a href="https://github.com/Jasons-impart/Create-Delight-Remake/blob/main/LICENSE">
+          <img src="https://img.shields.io/github/license/Jasons-impart/Create-Delight-Remake.svg?style=flat-square" alt="许可证">
+        </a>
+      </div>
+
+      <nav class="actions" aria-label="主要链接">
+        <a class="action primary" href="https://github.com/Jasons-impart/Create-Delight-Remake/releases">下载版本</a>
+        <a class="action" href="https://www.curseforge.com/minecraft/modpacks/create-delight-remake">CurseForge</a>
+        <a class="action" href="https://github.com/Jasons-impart/Create-Delight-Remake">GitHub 仓库</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap grid">
+      <section class="item">
+        <h2>介绍</h2>
+        <p>查看仓库 <a href="https://github.com/Jasons-impart/Create-Delight-Remake#readme">README</a> 获取整合包介绍、安装步骤和社区入口。</p>
+      </section>
+      <section class="item">
+        <h2>最新构建</h2>
+        <p>测试版与正式版均通过 <a href="https://github.com/Jasons-impart/Create-Delight-Remake/releases">GitHub Releases</a> 分发。</p>
+      </section>
+      <section class="item">
+        <h2>模组地图</h2>
+        <p>打开 <a href="docs/mods-map.html">模组分类浏览页</a>，快速了解当前整合包包含的模组类型。</p>
+      </section>
+      <section class="item">
+        <h2>反馈问题</h2>
+        <p>遇到崩溃、配方或任务问题时，请通过 <a href="https://github.com/Jasons-impart/Create-Delight-Remake/issues">Issues</a> 提交复现信息。</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    GitHub Pages for Jasons-impart/Create-Delight-Remake
+  </footer>
+</body>
+</html>

@@ -5,12 +5,18 @@ param(
     [string]$PackwizUrl = "https://github.com/Jasons-impart/packwiz/releases/latest/download/packwiz.exe",
     [string]$InstallerUrl = "https://github.com/packwiz/packwiz-installer/releases/latest/download/packwiz-installer.jar",
     [string]$PackwizFilesRef = $env:PACKWIZ_FILES_REF,
-    [string]$PackwizFilesRawPrefix = $env:PACKWIZ_FILES_RAW_PREFIX
+    [string]$PackwizFilesRawPrefix = $env:PACKWIZ_FILES_RAW_PREFIX,
+    [switch]$FullReconcile,
+    [switch]$AllowRemovals
 )
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 $ProgressPreference = "SilentlyContinue"
+
+if (-not $FullReconcile) {
+    throw "This is a category-wide reconciliation. Re-run with -FullReconcile, or use add-packwiz-target.ps1 / update-packwiz-target.ps1 for one CurseForge asset."
+}
 
 $RepoRoot = Split-Path -Parent $PSScriptRoot
 $ToolsRoot = Join-Path $RepoRoot ".cache\packwiz-sync\tools"
@@ -1402,28 +1408,35 @@ try {
     foreach ($entry in $pwEntries) {
         $currentFilename = $entry.Filename
         if (-not $currentFilename) { continue }
-        $hashRefreshSourcePath = Get-LocalMetadataHashRefresh -Entry $entry -SourceFiles $sourceFiles -PackwizFiles $packwizFiles
-        if ($hashRefreshSourcePath) {
-            $localUpdates += [pscustomobject]@{
-                Entry = $entry
-                OldFilename = $currentFilename
-                NewFilename = $currentFilename
-                SourcePath = $hashRefreshSourcePath
-            }
-            continue
-        }
-        if ($sourceFiles.ContainsKey($currentFilename)) { continue }
-        if ($packwizFiles.ContainsKey($currentFilename)) { continue }
-        if ($entry.IsManaged) { continue }
-
         $base = Derive-BaseName -Filename $currentFilename
         if (-not $base) { continue }
+
+        $newFilename = $null
+        if ($newFilesByBase.ContainsKey($base)) {
+            $newFilename = Get-PreferredFilename -Filenames $newFilesByBase[$base]
+        }
+
+        $hasReplacement = $newFilename -and $newFilename -ne $currentFilename
+        if (-not $hasReplacement) {
+            $hashRefreshSourcePath = Get-LocalMetadataHashRefresh -Entry $entry -SourceFiles $sourceFiles -PackwizFiles $packwizFiles
+            if ($hashRefreshSourcePath) {
+                $localUpdates += [pscustomobject]@{
+                    Entry = $entry
+                    OldFilename = $currentFilename
+                    NewFilename = $currentFilename
+                    SourcePath = $hashRefreshSourcePath
+                }
+                continue
+            }
+            if ($sourceFiles.ContainsKey($currentFilename)) { continue }
+            if ($packwizFiles.ContainsKey($currentFilename)) { continue }
+        }
+
         if (-not $newFilesByBase.ContainsKey($base)) {
             $removals += $entry
             continue
         }
 
-        $newFilename = Get-PreferredFilename -Filenames $newFilesByBase[$base]
         if (-not $newFilename) {
             $removals += $entry
             continue
@@ -1431,10 +1444,11 @@ try {
 
         if ($entry.IsManaged) {
             $managedUpdates += [pscustomobject]@{
-            Entry = $entry
-            OldFilename = $currentFilename
-            NewFilename = $newFilename
-        }
+                Entry = $entry
+                OldFilename = $currentFilename
+                NewFilename = $newFilename
+                SourcePath = $sourceFiles[$newFilename]
+            }
         }
         else {
             $localUpdates += [pscustomobject]@{
@@ -1460,8 +1474,8 @@ try {
             Sort-Object { Get-NaturalSortKey -Value $_ }
     )
 
-    $skipRemovals = $false
-    if ($removals.Count -gt 0) {
+    $skipRemovals = -not $AllowRemovals
+    if ($removals.Count -gt 0 -and $AllowRemovals) {
         if ($sourceFiles.Count -eq 0 -and $pwEntries.Count -gt 20) {
             $skipRemovals = $true
         }
@@ -1471,7 +1485,7 @@ try {
     }
 
     if ($skipRemovals) {
-        Write-Warn "  ! Detected $($removals.Count) missing $categoryDisplayName file(s); this looks like an unsynced or partial local $Category folder, so automatic removals were skipped."
+        Write-Warn "  ! Detected $($removals.Count) missing $categoryDisplayName file(s); automatic removals are disabled. Remove metadata explicitly or rerun with -AllowRemovals."
         $removals = @()
     }
 
@@ -1486,33 +1500,24 @@ try {
     foreach ($update in $managedUpdates) {
         $entry = $update.Entry
         $originalContent = Get-Content -LiteralPath $entry.PwTomlPath -Raw
+        $sourcePath = $update.SourcePath
+        $jarMetadata = Get-JarMetadata -Path $sourcePath
+        $candidates = @(Get-CurseForgeCandidates -Filename $update.NewFilename -JarMetadata $jarMetadata)
+        $cfMetadata = $null
+        if ($candidates.Count -gt 0) {
+            $cfMetadata = Try-ResolveCurseForgeMetadata -SourcePath $sourcePath -SourceFilename $update.NewFilename -Candidates $candidates -Category $Category
+        }
 
-        Write-Status "  ~ packwiz update: $($entry.Slug)"
-        $result = Invoke-PackwizCommand -Arguments @("update", $entry.Slug, "--yes")
-        if ($result.ExitCode -ne 0) {
-            Write-Utf8NoBomFile -Path $entry.PwTomlPath -Content $originalContent
-            Write-Warn "  ! packwiz update failed for $($entry.Slug)"
+        if (-not ($cfMetadata -and $cfMetadata.IsExactMatch)) {
+            $resolvedFilename = if ($cfMetadata) { $cfMetadata.ResolvedFilename } else { "<not found>" }
+            Write-Warn "  ! Could not resolve exact CurseForge metadata for '$($update.NewFilename)' (resolved: '$resolvedFilename'); keeping existing metadata."
             continue
         }
 
-        $updatedContentWithSide = Set-PwTomlSide -Content (Get-Content -LiteralPath $entry.PwTomlPath -Raw) -Side $entry.Side
-        Write-Utf8NoBomFile -Path $entry.PwTomlPath -Content $updatedContentWithSide
-
-        $updatedData = Parse-PwToml -Path $entry.PwTomlPath
-        $updatedFilename = Get-TomlVal -Data $updatedData -Key 'Filename'
-        if ($updatedFilename -ne $update.NewFilename) {
-            Write-Utf8NoBomFile -Path $entry.PwTomlPath -Content $originalContent
-            Write-Warn "  ! packwiz update for $($entry.Slug) resolved to '$updatedFilename', expected '$($update.NewFilename)'"
-            continue
-        }
-
-        $updatedName = Get-TomlVal -Data $updatedData -Key 'Name'
-        $updatedContent = Get-Content -LiteralPath $entry.PwTomlPath -Raw
-        $downloadability = Get-CurseForgeDownloadability -Content $updatedContent -MetaFileName $entry.PwTomlName -Name $updatedName
+        $updatedName = $cfMetadata.Name
+        $downloadability = Get-CurseForgeDownloadability -Content $cfMetadata.Content -MetaFileName $cfMetadata.MetaFileName -Name $updatedName
         if ($downloadability.Status -eq "restricted") {
-            $sourcePath = $sourceFiles[$update.NewFilename]
-            $jarMetadata = Get-JarMetadata -Path $sourcePath
-            Add-PackwizFilesMetadata -SourcePath $sourcePath -SourceFilename $update.NewFilename -JarMetadata $jarMetadata -ModsDirectory $modsDir -PwTomlPath $entry.PwTomlPath -DisplayName $updatedName -ReleaseCurseForgeContent $updatedContent | Out-Null
+            Add-PackwizFilesMetadata -SourcePath $sourcePath -SourceFilename $update.NewFilename -JarMetadata $jarMetadata -ModsDirectory $modsDir -PwTomlPath $entry.PwTomlPath -DisplayName $updatedName -ReleaseCurseForgeContent $cfMetadata.Content | Out-Null
             Write-Status "  ~ Updated (packwiz-files): $updatedName"
             $updatedLocalCount++
             continue
@@ -1523,7 +1528,8 @@ try {
             continue
         }
 
-        Write-Status "  ~ Updated (CurseForge): $($updatedData['Name'])"
+        Write-Utf8NoBomFile -Path $entry.PwTomlPath -Content (Set-PwTomlSide -Content $cfMetadata.Content -Side $entry.Side)
+        Write-Status "  ~ Updated (CurseForge): $updatedName"
         $updatedCount++
     }
 

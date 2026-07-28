@@ -26,10 +26,6 @@
 	#- ENABLED: Translucent RenderType will still be rendered in accelerated pipeline even if the pipeline does not support translucent sorting unless mods explicitly disable force translucent acceleration temporarily when rendering their own geometries.
 	#Allowed Values: DISABLED, ENABLED
 	force_translucent_acceleration = "ENABLED"
-	#- DISABLED: Poses with identical transform matrix and normal matrix that used to transform vertices will not be cached in buffer which slightly decreases CPU pressure but increase VRAM usage unless mods explicitly disable it when rendering.
-	#- ENABLED: Poses with identical transform matrix and normal matrix that used to transform vertices will be cached in buffer which save VRAM but slightly increase CPU pressure unless mods explicitly disable it when rendering.
-	#Allowed Values: DISABLED, ENABLED
-	cache_identical_pose = "ENABLED"
 	#- SIMPLE: The most basic implementation of cache. Usually used for testing if other cache types are working correctly.
 	#- HANDLE: Faster implementation of cache using VarHandle and flatten values to improve performance on read/write operations.
 	#- UNSAFE: Fastest implementation of cache using unsafe memory operations that skip multiple safety checks to read/write.
@@ -43,10 +39,6 @@
 	#- MERGED: Meshes with identical vertices will be merged together, which will use less VRAM more RAM in storing the data of meshes used in merging.
 	#Allowed Values: IGNORED, MERGED
 	mesh_merge_type = "MERGED"
-	#- DISABLED: Meshes that is going to be accelerated will be collected and uploaded together at the end for choosing better uploading method and increasing memory access efficiency to reach the best performance. Also this method allows mesh cache with bigger capacity (up to VRAM limit), but it may not follow the correct draw order.
-	#- ENABLED: Meshes that is going to be accelerated will be uploaded immediately after the draw command. It is less efficient and only have about 2GB mesh cache (generally enough) but will follow the original draw order to get the most compatibility.
-	#Allowed Values: DISABLED, ENABLED
-	upload_mesh_immediately = "DISABLED"
 	#- DISABLED: Dynamic render types like lightning on charged creepers and winds on breezes will not be accelerated for less VRAM usage and smoother animations, but may exceptionally skip acceleration in modded geometries using these render types.
 	#- ENABLED: Dynamic render types like lightning on charged creepers and winds on breezes will be accelerated to accelerate modded geometries using these render types, but may have more VRAM usage and less smooth animations based on resolution settings.
 	#Allowed Values: DISABLED, ENABLED
@@ -56,6 +48,23 @@
 	#- OPENGL: Viewport settings that will be modified by other mods will be recorded and restored using OpenGL to work correctly with them even if they don't set viewport using Mojang's GLStateManager, which is slower but has most compatibility.
 	#Allowed Values: IGNORED, MOJANG, OPENGL
 	viewport_binding_state = "IGNORED"
+	#Maximum amount of same meshes in a draw before it is switched to dense uploading method.
+	#Changing this value may affects your FPS in certain situation. Smaller value means meshes will use dense mesh uploading with fewer occurrences, while larger values means meshes will use sparse mesh uploading even with higher occurrences.
+	#Range: 16 ~ 128
+	sparse_threshold = 64
+	#- INDIRECT: Indices of vertices will be generated automatically every draw call, which allows advanced orientation culling to be applied before the actual draw call. But it could be slightly slower when there are too many draw calls present in a frame.
+	#- BASEVERTEX: Indices of vertices will be cached across the draw calls and frames, which will be faster when there are too many draw calls present in a frame. But orientation culling will be disabled when using this method.
+	#Allowed Values: INDIRECT, BASEVERTEX
+	draw_method_type = "BASEVERTEX"
+	#- SIMPLE: All faces including invisible faces of the model will be included in the final mesh of the model. It might be slower when rendering some models but it allows same models with different textures to be merged more effectively.
+	#- CULLED: Invisible faces of the model will be excluded from the final mesh of the model. It will speed up the rendering of some specific models but it might break the merging of same models with different textures.
+	#Allowed Values: CULLED, SIMPLE
+	mesh_collector_type = "CULLED"
+	#- IGNORED: Scissor settings that will be modified by other mods will not be restored after the acceleration, which is faster but reduces compatibility with them.
+	#- MOJANG: Scissor settings that will be modified by other mods will be recorded and restored using Mojang's GuiGraphics to work correctly with them.
+	#- OPENGL: Scissor settings that will be modified by other mods will be recorded and restored using OpenGL to work correctly with them even if they don't set viewport using Mojang's GuiGraphics, which is slower but has most compatibility.
+	#Allowed Values: IGNORED, MOJANG, OPENGL
+	scissor_binding_state = "MOJANG"
 
 	#Block Buffer Restoring Settings
 	#A few mods and shader packs will use their on block buffers when rendering, which may introduce conflicts when working with Accelerated Rendering that also uses block buffers.
@@ -134,10 +143,14 @@
 	#- ENABLED: Accelerated Rendering will still accelerate item models that are marked as "too small to make up the cost of acceleration" when rendering it in a container GUI unless mods explicitly disable it temporarily when rendering their own item models, which may slightly reduce the FPS but accelerate vanilla-like modded item models with large amount of vertices.
 	#Allowed Values: DISABLED, ENABLED
 	gui_acceleration = "ENABLED"
-	#- DISABLED: Items in the container GUI will be rendered as per item per batch if the GUI Acceleration is enabled, which is inefficient and may cause slight reduction in FPS, but it has better compatibility in modded container GUI.
+	#- DISABLED: Items in the container GUI will be rendered as per item per batch if the GUI Acceleration is enabled, which is inefficient and may cause reduction in FPS, but it has better compatibility in modded container GUI.
 	#- ENABLED: Items in the container will be rendered together in a single batch if the GUI Acceleration is enabled, which is much more efficient but has little compatibility in modded container GUI.
 	#Allowed Values: DISABLED, ENABLED
 	gui_item_batching = "ENABLED"
+	#- DISABLED: Items rendered in background and slots will be separated into two batches when accelerate container GUI, which is inefficient any may cause slight reduction in FPS, but it has better compatibility in modded container GUI.
+	#- ENABLED: Items rendered in background and slots will be merged into a single batch when accelerate container GUI, which is much more efficient but has less compatibility in modded container GUI.
+	#Allowed Values: DISABLED, ENABLED
+	merge_gui_item_batching = "ENABLED"
 
 #Accelerated Text Rendering Settings
 #Accelerated Text Rendering uses GPU to cache and transform vertices while rendering text through BakedGlyph, instead of generating and transforming vertices every time the text are rendered in CPU.
@@ -255,18 +268,6 @@
 	#Allowed Values: DISABLED, ENABLED
 	polygon_processing = "ENABLED"
 
-#Sodium Compatibility Settings
-#Sodium Compatibility Settings allows Accelerated Rendering to work correctly with Sodium.
-[sodium_compatibility]
-	#- DISABLED: Accelerated Rendering may be incompatible with Sodium that takes over the rendering before Accelerated Rendering.
-	#- ENABLED: Accelerated Rendering will take over the rendering before Sodium to work correctly with Sodium.
-	#Allowed Values: DISABLED, ENABLED
-	feature_status = "ENABLED"
-	#- DISABLED: Sodium's optimized vertex writing code path will not be disabled unless mods explicitly enable it temporarily when rendering their on geometries, which will take over the rendering before Accelerated Rendering's pipeline.
-	#- ENABLED: Sodium's optimized vertex writing code path will be disabled unless mods explicitly disable it temporarily when rendering their on geometries and Accelerated Rendering's pipeline can take over the rendering. However, when acceleration feature is disabled, it's highly recommend to enable the optimized code path.
-	#Allowed Values: DISABLED, ENABLED
-	disabled_optimized_path = "ENABLED"
-
 #Curios Compatibility Settings
 #Curios Compatibility Settings allows Accelerated Rendering to work correctly with Curios.
 [curios_compatibility]
@@ -289,4 +290,48 @@
 	#You can configure the curios item filter by this list.
 	#Curios item filter will use this list and the filter type to determine if a curios item can pass the filter.
 	item_filter_values = []
+
+#Miscellaneous Mods Compatibility Settings
+#Miscellaneous Mod Compatibility Settings allows Accelerated Rendering to prevent negative optimization on specific mods by controlling whether Accelerated Rendering should accelerate the rendering of the corresponding mod.
+[mods_compatibility]
+	#- DISABLED: Accelerations of all mods listed in the miscellaneous mods compatibility settings will be disabled.
+	#- ENABLED: Accelerated Rendering will determine if a mod should be accelerated by the acceleration feature configuration item of this mod listed below.
+	#Allowed Values: DISABLED, ENABLED
+	feature_status = "ENABLED"
+	#- DISABLED: Fixes for rendering order of armor trims and render layers in Vanilla Minecraft will be disabled, which is faster but cause slight visual inconsistency when rendering those features.
+	#- ENABLED: Fixes for rendering order of armor trims and render layers in Vanilla Minecraft will be enabled, which is slower but has consistent and correct rendering order when rendering those features.
+	#Allowed Values: DISABLED, ENABLED
+	vanilla_fix_feature_status = "ENABLED"
+	#- DISABLED: Accelerations of ModelPart models of Vanilla Minecraft will be disabled.
+	#- ENABLED: Accelerations of ModelPart models of Vanilla Minecraft will be enabled.
+	#Allowed Values: DISABLED, ENABLED
+	vanilla_feature_status = "ENABLED"
+	#- DISABLED: Accelerations of animated ModelPart variants in Entity Model Features will be disabled.
+	#- ENABLED: Accelerations of animated ModelPart variants in Entity Model Features will be enabled.
+	#Allowed Values: DISABLED, ENABLED
+	emf_feature_status = "ENABLED"
+	#- DISABLED: Accelerations of models in GeckoLib will be disabled.
+	#- ENABLED: Accelerations of models in GeckoLib will be enabled.
+	#Allowed Values: DISABLED, ENABLED
+	gecko_feature_status = "ENABLED"
+	#- DISABLED: Accelerations of GeckoLib variant models in Touhou Little Maid will be disabled.
+	#- ENABLED: Accelerations of GeckoLib variant models in Touhou Little Maid will be enabled.
+	#Allowed Values: DISABLED, ENABLED
+	tlm_feature_status = "ENABLED"
+	#- DISABLED: Accelerations of bedrock models in Simple Bedrock Model will be disabled.
+	#- ENABLED: Accelerations of bedrock models in Simple Bedrock Model will be enabled.
+	#Allowed Values: DISABLED, ENABLED
+	sbm_feature_status = "ENABLED"
+	#- DISABLED: Accelerations of UI driven by FTB Library will be disabled.
+	#- ENABLED: Accelerations of UI driven by FTB Library will be enabled.
+	#Allowed Values: DISABLED, ENABLED
+	ftb_feature_status = "ENABLED"
+	#- DISABLED: Accelerations of UI driven by Sophisticated Core will be disabled.
+	#- ENABLED: Accelerations of UI driven by Sophisticated Core will be enabled.
+	#Allowed Values: DISABLED, ENABLED
+	sophisticated_feature_status = "ENABLED"
+	#- DISABLED: Accelerations of text driven by ModernUI's modern text engine will be disabled.
+	#- ENABLED: Accelerations of text driven by by ModernUI's modern text engine will be enabled.
+	#Allowed Values: DISABLED, ENABLED
+	modernui_feature_status = "ENABLED"
 

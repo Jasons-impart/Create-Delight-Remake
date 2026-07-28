@@ -186,6 +186,13 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: A helper declared as `function calculateValueDistribution(...)` inside a `try` block passed `node --check` but was `undefined` in-game under Rhino, causing OEV to skip thousands of recipe value setters.
 - **Fix/Lesson**: Keep reusable KubeJS helper functions at script top level or assign them before guarded blocks; use in-game reload logs as the source of truth for Rhino scoping behavior.
 
+## KubeJS client Java interop must be verified in-game
+
+**Date**: 2026-07-18
+
+- **Problem**: `pack_integrity_check.js` passed Node syntax checks but repeatedly failed in KubeJS client reload because Rhino/LiveConnect rejected `KubeJSPaths.GAMEDIR`, `java.nio.file.Paths`, rest parameters, ambiguous `Path.resolve(...)`, missing `JsonUtils`, `JsonIO.write` values that were not `JsonObject`s, plain JS indexing over Java `File[]` silently produced an empty runtime mod list, and `java.lang.reflect.Array` was blocked by the class filter. Later, `JsonIO.toObject()` exposed JSON objects as `NativeJavaMap`; reading an entry whose JSON value was `null` crashed inside Rhino `ValueUnwrapper` when the warning dialog was confirmed.
+- **Fix/Lesson**: For KubeJS client scripts using Java APIs, verify against `logs/latest.log`; use current `KubeJSPaths.CONFIG/LOCAL/DIRECTORY`, explicit overload calls such as `path["resolve(java.lang.String)"]("x")`, `JsonIO.of(value).getAsJsonObject()`, `java.util.Arrays.asList(fileArray).forEach(...)` for `File[]`, and convert read JSON to ordinary JS objects with `JSON.parse(String(json))` before property access. KubeJS explicitly denies `net.minecraftforge.fml`, so do not use `ModList`; avoid Node-only syntax or other classes blocked by the filter.
+
 ## Release config edits need tracked source files
 
 **Date**: 2026-06-07
@@ -368,3 +375,283 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: CDC dynamic berry syrup fluid mixing can appear to always output sweet syrup if CDR still has a KubeJS `create.mixing` recipe with the same berry/base-syrup inputs and static `cosmopolitan:berry_syrup` output.
 - **Fix/Lesson**: Remove or override the old static KubeJS recipe when moving an output to a CDC dynamic Basin recipe, because Create may match the static recipe before the dynamic serializer runs.
+
+## Addon mixins must not ship classes in dependency packages
+
+**Date**: 2026-07-07
+
+- **Problem**: A Quality Food Fluids mixin class placed under `com.simibubi.create.*` caused ModLauncher module resolution to fail with both Create and the addon exporting the same package.
+- **Fix/Lesson**: Keep addon mixin classes in the addon's own package and use `@Coerce`, accessors, invokers, or access transformers for non-public dependency types, because Forge's module layer rejects split packages before mixins can run.
+
+## Quality Food Create recipe hook can overwrite addon result NBT
+
+**Date**: 2026-07-07
+
+- **Problem**: Quality Food Fluids applied sequenced assembly final quality inside `SequencedAssemblyRecipe.advance`, but Quality Food's own `RecipeApplierMixin` later recalculated the Create output from the transitional item and removed the addon quality result.
+- **Fix/Lesson**: For Create `RecipeApplier` paths, mark sequenced assembly final outputs as pending and reapply addon quality at `RecipeApplier.applyRecipeOn` return with lower mixin priority than Quality Food, then clear the internal pending tag.
+
+## KubeJS foodProperties edits should be applied once per item
+
+**Date**: 2026-07-07
+
+- **Problem**: After updating from KubeJS build.16 to build.26, repeated `item.foodProperties = food => { ... }` edits for the same item could behave as last-write-wins, leaving only the final food effect while earlier hunger/saturation/effects disappeared.
+- **Fix/Lesson**: Accumulate KubeJS food property changes per item and assign `item.foodProperties` once, especially when helper calls such as `food_hungers` and `food_effects` target the same item.
+
+## Optional compat mixins should use LoadingModList
+
+**Date**: 2026-07-07
+
+- **Problem**: A Mixin config plugin can run before normal runtime mod-list helpers are safe, so optional third-party compat mixins may crash while deciding whether to apply.
+- **Fix/Lesson**: Gate optional compat mixins with `LoadingModList.get().getModFileById(modid) != null` in `IMixinConfigPlugin.shouldApplyMixin`, and avoid loading the optional target class before that check.
+
+## Created Diesel Generators bulk fermenter output checks ignore passed output lists
+
+**Date**: 2026-07-07
+
+- **Problem**: `BulkFermentingRecipe#applyOutputs` receives rolled item/fluid output lists, but its capacity checks read the recipe's original rollable/fluid outputs again, so mutating only the method arguments does not make NBT-qualified quality outputs safe.
+- **Fix/Lesson**: Quality compat for `createdieselgenerators:bulk_fermenting` must intercept `applyOutputs` at HEAD and own both capacity simulation and insertion for quality-capable outputs, while storing a processing ticket before the run starts to avoid blocked-output rerolls.
+
+## Optional Forge dependency ranges still reject installed mismatches
+
+**Date**: 2026-07-08
+
+- **Problem**: Quality Food Fluids marked Brewin' and Chewin' and Farmer's Respite as optional, but strict ranges such as `[3.2.1,)` rejected installed versions reported as `1.20.1-3.2.1` and put the mod into a broken state.
+- **Fix/Lesson**: For optional compat dependencies whose mod versions include loader or Minecraft prefixes, use a permissive `mods.toml` range and gate behavior with runtime mod checks/mixin plugins instead of relying on Forge's version range.
+
+## Jade addon components must not read Jade internal storage payloads
+
+**Date**: 2026-07-08
+
+- **Problem**: Quality Food Fluids read Jade's internal `JadeFluidStorage` payload from a broad `Block.class` provider, which could interfere with Jade's normal fluid container display.
+- **Fix/Lesson**: Jade addons should register their own `IServerDataProvider` key for extra data and append only addon-specific tooltip lines, leaving Jade's universal fluid storage payload untouched.
+
+## Fluid quality tags can break third-party FluidStack matching
+
+**Date**: 2026-07-08
+
+- **Problem**: Brewin' And Chewin' and Farmer's Respite compare recipe fluids with `FluidStack.isFluidEqual` or `areFluidStackTagsEqual`, so adding QFF quality NBT to the stored input fluid made otherwise valid recipes stop matching.
+- **Fix/Lesson**: For third-party machine compat, strip only QFF's own quality tag during fluid equality checks while leaving other fluid NBT and the stored tank contents intact.
+
+## Brewin' And Chewin' GUI extraction flag is not simulation
+
+**Date**: 2026-07-08
+
+- **Problem**: QFF treated the third boolean in `KegBlockEntity#fluidExtract(ItemStack, int, boolean, boolean)` as `simulate`, so the GUI path (`extractInGui` passes `true`) skipped quality post-processing while right-click extraction worked.
+- **Fix/Lesson**: Treat that boolean as the in-GUI path flag and still apply tank/container quality on return; only actual `IFluidHandler.FluidAction.SIMULATE` calls should be skipped.
+
+## Terralith dispenser_alt already covers the vanilla dispenser recipe
+
+**Date**: 2026-07-12
+
+- **Problem**: `terralith:dispenser_alt` outputs `minecraft:dispenser` with `#minecraft:stone_crafting_materials`; the vanilla tag already contains `minecraft:cobblestone`, and Terralith appends extra stone variants with `replace: false`, so keeping `minecraft:dispenser` leaves duplicate recipes.
+- **Fix/Lesson**: Remove the vanilla `minecraft:dispenser` recipe ID in KubeJS and keep Terralith's broader recipe.
+
+## Client-only mods must not enter server artifacts
+
+**Date**: 2026-07-18
+
+- **Problem**: The `v0.5.0.3` server artifact crashed during Forge `CONSTRUCT` because `ExtraHoloPage` loaded `net.minecraft.client.Options` and `ShoulderSurfing` mixed into Create's `ContraptionHandlerClient` on `DEDICATED_SERVER`.
+- **Fix/Lesson**: Mark client-only Packwiz metadata such as `mods/ExtraHoloPage.pw.toml` and `mods/ShoulderSurfing.pw.toml` with `side = "client"` and smoke-test the server artifact until it reaches `Done`.
+
+## Tetra material improvement previews do not retain material glyph tint
+
+**Date**: 2026-07-16
+
+- **Problem**: `ConfigSchematic#getPreviews` uses the schematic glyph for improvement outcomes, so `OutcomePreview.glyph` remains identical across material candidates even though `MaterialImprovementData.combine` generated tinted improvement data.
+- **Fix/Lesson**: Resolve material-improvement colors by matching `OutcomePreview.materials` against the schematic-scoped material candidates and use the captured `MaterialData.tints.glyph`; do not assume module-variant and improvement previews preserve glyph tint in the same way.
+
+## Tetra fixed-consumable outcomes are collapsed before HoloImprovementGui
+
+**Date**: 2026-07-16
+
+- **Problem**: Toolbelt schematics such as potion storage define several raw outcomes for different fixed consumables, but `ConfigSchematic#getPreviews` deduplicates them by `OutcomePreview.variantKey`; `HoloImprovementGui` therefore receives one preview and never creates the per-outcome buttons that a Shift overlay expected.
+- **Fix/Lesson**: Capture fixed consumables from raw `SchematicDefinition.outcomes[].material`, preserve `keySuffixes` aliases, and resolve tag-backed items after tag synchronization; do not infer visible GUI variants from the number of JSON outcomes or use `OutcomePreview.materials` as the only fixed-consumable source。缺失耗材过滤只能用于已捕获原始定义的 `ConfigSchematic`；附魔等自定义 Java schematic 即使声明材料槽，也可能不在预览阶段提供材料栈，按空 `OutcomePreview.materials` 过滤会令整类改进消失。
+
+## Tetra honing is filtered before the improvement list
+
+**Date**: 2026-07-16
+
+- **Problem**: `HoloVariantDetailGui.updateVariant` only forwards `SchematicType.improvement` to `HoloImprovementListGui`, while normal honing schematics use `isHoning() == true` with `SchematicType.major`; changing only the improvement-list layout therefore cannot make honing visible.
+- **Fix/Lesson**: Capture honing from the unfiltered `SchematicRegistry.getPreviewSchematics` result and give it a separate Tetra-styled entry/list; keep `isHoning()` schematics out of the ordinary improvement count and selection stack.
+
+## Tetra improvement discovery must preserve module ownership
+
+**Date**: 2026-07-17
+
+- **Problem**: MMT 的太刀、胁差专属打磨以及战争铸造、纷争铸造等普通改进会声明通用槽位或共用 improvement key，再通过正向 `tetra:module` requirement 限定模块；若为了展示完整候选而只检查 slot、preview 输出或 `acceptsImprovementLevel`，这些路径会出现在其他模块上。
+- **Fix/Lesson**: 扫描隐藏打磨和补全普通改进时都要递归解析正向 module/improvement requirements：模块约束不匹配的路径直接排除；正向 improvement 前置若由当前模块可用的普通改进提供，也必须作为打磨根节点，再沿 improvement key 扩展全部等级与分支。不要把模块归属约束与锁定、材料或等级等可预览条件合并成一个 availability 布尔值。
+
+## Tetra dynamic improvement widths require absolute extents and parent relayout
+
+**Date**: 2026-07-16
+
+- **Problem**: A `HoloImprovementGui` can grow after insertion into a `GuiHorizontalLayoutGroup`, and custom honing rendering cancels `updateVariants` at HEAD; a width correction injected at RETURN therefore never runs for honing, while the branch's old `header.getWidth()` formula also omits the title group's local offset and dynamic child extents. CDR 的 ExtraHoloPage 还会在同一方法的 RETURN 阶段按 `preview 数量 × 固定间距` 再次覆盖卡片宽度，因此开发环境正常的动态布局在整合包中即使只有少量改进也会重叠。
+- **Fix/Lesson**: Route normal and cancelled rendering branches through one width helper, compute bounds from local absolute extents such as `child.getX() + child.getWidth()`, and set the variants container width explicitly. 在列表完成所有卡片更新后再次校正每张卡片，再对 owning horizontal group 执行 `forceLayout()` 并标记 scroll container dirty；跨模组同时注入目标方法时，不要依赖同级 RETURN 注入的执行顺序。
+
+## Mixin 0.8.5 cannot transform array clone calls in a handler
+
+**Date**: 2026-07-16
+
+- **Problem**: Calling an array's `clone()` inside a Mixin handler (seen with both `UpgradeSchematic[]` and `IStatSorter[]`) compiles successfully, but Mixin 0.8.5 may treat the array descriptor as a class during runtime transformation, causing `ClassInfo.forName` to return null and crashing only when the target class is first loaded.
+- **Fix/Lesson**: Use `System.arraycopy` or another copy path that does not emit an array-owner `clone()` invocation, inspect the reobfuscated JAR with `javap -c`, and open every affected screen in the production client because Gradle compilation cannot detect this transformer failure.
+
+## Mixin injectors cannot target inherited mutil input handlers
+
+**Date**: 2026-07-16
+
+- **Problem**: `VerticalTabButtonGui` inherits `onMouseClick` from `GuiClickable`; an `@Inject(method = "onMouseClick")` targeting the subclass compiled successfully but failed when the workbench first constructed the class, preventing its screen from opening.
+- **Fix/Lesson**: Inject only methods declared by the Mixin target; for inherited mutil input behavior, target the declaring superclass with strict instance scoping or preserve the native handler and implement state through declared focus, styling, group callback, or child GUI hooks. Always open the affected screen during `runClient` regression because Gradle compilation cannot validate injection ownership.
+
+## Tetra array data stores cannot be disabled with replace objects
+
+**Date**: 2026-07-17
+
+- **Problem**: `ImprovementStore` 与 `SynergyStore` 直接把资源解析为数组，使用 `{"replace":true}` 覆盖会产生解析错误；`ModuleStore`、`SchematicStore` 等合并型 Store 虽接受该对象，但缺少类型或槽位的空定义会在注册阶段持续报警。MMT 的 Biomancy 联动旧覆盖同时触发了两种失败模式。
+- **Fix/Lesson**: 数组型 Store 可在相同资源路径覆盖为 `[]`；已有未安装模组条件的资源应删除多余覆盖，让 `MergingDataStore` 直接跳过原资源，但必须逐文件核对，不能假设同一联动目录条件一致。MMT 的 Biomancy 模块、材料和升级链有 `forge:mod_loaded`，根级的 7 个固定耗材改进 schematic 却没有，需在相同资源路径用 `forge:false` 覆盖。只有缺少条件保护的 module 才使用 `replace:true`、有效 type、不可达槽位和空 variants。不要用字段不完整的假 `MaterialData` 禁用材料：`hiddenOutcomes` 不会阻止 `ImprovementStore` 展开材料，缺失的 `primary/secondary/tertiary` 会在 `MaterialImprovementData.combineWrap` 中触发空指针并阻止世界加载。
+
+## Tetra sorter pagination implementations cannot coexist independently
+
+**Date**: 2026-07-16
+
+- **Problem**: TetraClip and Tetra Insight both paginated `HoloSortPopover`, but TetraClip's item `isVisible()` checked only its own page field; changing the Tetra Insight page label therefore left TetraClip on page 1 and made every later page blank.
+- **Fix/Lesson**: Keep one owner for sorter pagination or explicitly synchronize both page states; when replacing TetraClip, remove its Packwiz metadata, packaged payload and runtime JAR before judging the replacement UI.
+
+## Tetra material overrides must replace the complete upstream entry
+
+**Date**: 2026-07-18
+
+- **Problem**: 在相同资源路径放置新的 Tetra `materials` JSON 时，`MaterialStore` 会按合并式数据存储处理；只改三值而不声明完整替换，MMT 上游字段可能继续并入，导致静态文件看似正确但运行时材料结果与设计不一致。
+- **Fix/Lesson**: 覆盖现有材料时使用完整有效的 `MaterialData`，保留需要的原效果、contexts、物品和条件，并显式加入 `"replace": true`；修改后应逐项对照运行 JAR，确认除计划调整的数值外没有误删效果或护甲上下文。
+
+## GeoTetraArmor materials require explicit armor contexts
+
+**Date**: 2026-07-19
+
+- **Problem**: Tetra Material Overhaul 会把材料根级 `effects` 放入 `default` context，而 GeoTetraArmor 模块只请求 `armor` 与具体部位 context；仅在根级声明的日耀守护、灵钢衬层等效果会出现在普通模块，却不会进入护甲的计算效果列表。
+- **Fix/Lesson**: 需要在护甲生效的材料必须同时保留根级效果并在 `contexts.armor.effects` 中显式声明护甲效果；只属于武器的效果不要复制进 `armor`，并通过实际装备 NBT、Buff 与 `ArmorEffectUtil` 汇总结果验证。
+
+## Black Knight Armor removes externally applied Solar Shield
+
+**Date**: 2026-07-20
+
+- **Problem**: `SolarFlareArmorEffects` 每个玩家 tick 都检查原生日耀套装；未穿齐时会主动移除 `blackknightarmor:solar_shield`，因此 KubeJS 为 Tetra 护甲添加该 Buff 后会在同一 tick 被清理。
+- **Fix/Lesson**: Tetra 日耀材料改用独立的 `createdelight:solar_guard` 状态效果显示蓄积层数，不要与原模组的套装 tick 逻辑竞争；新增 mob effect 必须完整重启才能注册。
+
+## Tetra schematic material previews must match module extract data
+
+**Date**: 2026-07-19
+
+- **Problem**: MMT 饰品 schematic 的 `translation` 可能复制错误属性；若审计时只读取原 MMT JAR，还会忽略 `kubejs/data/tetra/modules/` 已把暴击等效果覆盖为 AttributesLib 属性，导致工作台预览重新指回不再生效的原模组 effect。
+- **Fix/Lesson**: 先读取工作区同路径 module 覆盖，缺失时才回退到 JAR，再按有效 variant 的 `extract.primary/secondary/tertiaryAttributes` 与 `Effects` 逐维核对 translation；只有暴击与固定护甲穿透等完全同语义效果才能归并到 AttributesLib，并同步 schematic 与 module 两层 description，所有覆盖继续保留 `replace: true`。
+
+## Tetra replacements bypass schematic requirements
+
+**Date**: 2026-07-19
+
+- **Problem**: MMT 普通饰品基底通过 `data/tetra/replacements` 转换时会直接预装模块；`ReplacementDeserializer` 调用 `ItemModule.addModule()`，不会检查对应 schematic 的 `tetra:locked` requirement，因此仅给图纸加卷轴锁仍可通过首次转换取得被锁模块。
+- **Fix/Lesson**: 审计阶段锁时必须同时检查同一物品的 replacement；普通基底只预装默认开放结构或不含独立乘区、减伤、追踪、神威、复活和状态触发的低收益初始模块，把主要能力留到玩家取得卷轴后再安装。多主模块物品还必须逐一填满决定本体外观的必需结构槽；只留下手套腕带或项链链条会让 `base_glove`/`pendant` 模型层缺失。
+
+## Stage scroll recipes should not consume progression objects
+
+**Date**: 2026-07-20
+
+- **Problem**: MMT 阶段卷轴曾消耗蜜蜂精华、完整磁力手套、灾变 Boss 召唤物和利维坦唯一掉落，导致同级卷轴造价悬殊，并迫使玩家在永久能力、装备或再次挑战 Boss 之间做无关取舍。
+- **Fix/Lesson**: 卷轴配方使用“单份阶段证明 + 双份可重复材料 + 单份主题材料”；永久奖励、完整装备、召唤物和可孵化唯一掉落只适合作为非消耗任务条件。Black Knight Armor 主题锭与终结龙锭均由悚怖钢二次处理，只能进入悚怖钢阶段后的卷轴；较早阶段优先使用 IAF 战利品等可重复材料。
+
+## Tetra module selection must not repeatedly expand the full schematic registry
+
+**Date**: 2026-07-16
+
+- **Problem**: CDR loaded 938 schematics, while Tetra Insight scanned the registry multiple times, repeatedly called `getPreviews`, linearly searched captured snapshots and exhaustively tested all registered attributes/effects whenever a module material was selected; even modules with no improvements stalled, and large improvement sets amplified the cost.
+- **Fix/Lesson**: Build one preview snapshot per selection, index captured data by key, derive contextual sorters from effects/attributes actually present on current outcomes, and construct only the current improvement page; log discovery/render timings in the production client.
+
+## Tetra 加工台槽位视觉与容器点击区域相互独立
+
+**Date**: 2026-07-17
+
+- **Problem**: 移动 `SchemaSlotGui` 的 placeholder、border 和 quantity 子元素只会改变单材料槽的画面位置；`WorkbenchContainer.materialSlots` 仍保留原来的 `ToggleableSlot.x`，导致点击与物品放置区域偏离可见槽位。
+- **Fix/Lesson**: 调整 Tetra 加工台材料槽时，必须同时移动 GUI 子元素，并在 `WorkbenchContainer.updateSlots` 完成后修正客户端容器槽位坐标；两边使用同一条单材料布局条件，多材料槽继续保留 Tetra 原生位置。
+
+## 灾变沉没城的周边群系预检不同于实际落点标签
+
+**Date**: 2026-07-19
+
+- **Problem**: `Sunken_City_Structure` 会在区块生成器最低高度附近检查半径 29 格内的全部群系是否属于 `cataclysm:required_sunken_city_surrounding`；只填写土卫二地下海洋群系时，最低高度可能解析为冰原、山脊或蓝冰裂谷，导致 `/locate` 的所有候选点被拒绝。
+- **Fix/Lesson**: `required_sunken_city_surrounding` 应引用完整的 `#northstar:europa_biomes` 以通过预检，同时保持 `has_structure/sunken_city_biomes` 只包含地下海洋与深渊裂谷，从而不扩大实际结构落点。
+
+## 自定义洞穴群系需要同步底材 surface rule
+
+**Date**: 2026-07-19
+
+- **Problem**: 只把 Alex's Caves 或深暗群系加入 Northstar 维度的 `multi_noise` 只会改变群系归属，洞壁和洞底仍由目标 `noise_settings.default_block` 与 `surface_rule` 生成；月岩底材还会让只替换 `alexscaves:galena_gen_replaceables` 的磁化洞穴矿物和碎屑失去生成目标。
+- **Fix/Lesson**: 将外来洞穴群系接入 Northstar 星球时必须同时核对其底材和 placed feature target；为对应星球覆盖或新增专用 noise settings，并在 bedrock 后、星球通用石材规则前加入 biome-conditioned surface rule。
+
+## Northstar 的字符串 renderer 是贴图快捷写法
+
+**Date**: 2026-07-19
+
+- **Problem**: 在 planet JSON 中写入 `"renderer": "northstar:no_op"` 会按简单星体贴图解析，而不是创建 `NoopPlanetRenderer`，因此目标星体仍会进入望远镜和天空渲染流程。
+- **Fix/Lesson**: 无绘制星体必须使用带类型的对象形式 `"renderer": { "type": "northstar:no_op" }`；字符串形式只用于贴图资源位置。
+
+## 灾变诅咒金字塔按中心地表统一放置全部分块
+
+**Date**: 2026-07-19
+
+- **Problem**: `Cursed_Pyramid_Structure` 自行读取中心点的 `WORLD_SURFACE_WG` 高度，并把 48×48 的四块地下模板统一下移 39 格；它不使用结构 JSON 的 `start_height`，在起伏地形上会让整片地下外墙裸露为直角断面。
+- **Fix/Lesson**: 不能用调整 `start_height` 或增加 `beard_box` 修复金字塔截断；应在生成入口对占地角、边与中心采样，坡度超过阈值时拒绝候选位置。
+
+## 大型地表结构的 beard_box 会制造包围盒尺度断崖
+
+**Date**: 2026-07-19
+
+- **Problem**: Integrated API 的水星炎魔竞技场体积很大，使用 `terrain_adaptation: beard_box` 会围绕完整结构包围盒重塑密度，在起伏地形上形成大面积垂直石墙。
+- **Fix/Lesson**: 大型地表建筑优先使用 `beard_thin` 并配合占地坡度预检；`beard_box` 只适合确实需要整块地基填充且包围盒较小的结构。
+
+## 外星结构生物抗性不能只按结构模板枚举
+
+**Date**: 2026-07-19
+
+- **Problem**: 土卫二沉没城的低温与缺氧抗性只覆盖结构模板直接关联的深潜者和利维坦，遗漏了在深渊裂谷自然生成的珊瑚傀儡，以及由同生态玩法产生的珊瑚巨兽、蓑鲉、紫晶蟹和幼年利维坦。
+- **Fix/Lesson**: 为外星结构补环境抗性时应同时审计 NBT/拼图池、群系生成配置、祭坛召唤物、Boss 衍生物与可携带幼体，再统一加入对应 Northstar 实体标签。
+
+## Tetra Insight 中锁定图纸需要 revealable 才会显示
+
+**Date**: 2026-07-20
+
+- **Problem**: 带 `tetra:locked` 的 MMT 泰坦 schematic 使用默认 `preview=applicable` 时，未放置卷轴会从 Tetra Insight 全息球改良总览完全消失，而不是显示为锁定。
+- **Fix/Lesson**: 希望玩家能提前查看并看到所需卷轴的锁定图纸必须设置 `"preview": "revealable"`；`tetra:locked` 继续负责实际安装权限。
+
+## Tetra improvement requirement 只检查目标主模块
+
+**Date**: 2026-07-20
+
+- **Problem**: `tetra:improvement` requirement 调用 `CraftingContext.targetMajorModule.getImprovement()`，不会扫描整件武器的其他主模块；若同一类互斥强化开放在多个槽位，玩家可在各槽分别安装并绕过武器级上限。
+- **Fix/Lesson**: 纯数据实现武器级互斥时必须让相关 schematic 对每种武器共用唯一主槽；若确实要跨多个槽位安装，则需自定义整件物品检查，不能只依赖 `tetra:improvement`。
+
+## Tetra Insight 会过滤含不可接受 outcome key 的整张图纸
+
+**Date**: 2026-07-20
+
+- **Problem**: 为四组泰坦互斥在 schematic outcome 中追加仅作判定的 `titan_*_attunement` / `cyrene_attunement` 后，Tetra Insight 会调用目标模块的 `acceptsImprovementLevel()` 检查每个预览 key；辅助 key 不被接受时，整张图纸在 `preview: revealable` 生效前就被候选过滤，导致 12 首颂歌和泰坦方案消失。
+- **Fix/Lesson**: outcome 只写实际生效且模块已接受的 improvement；纯互斥应在 requirement 中枚举真实泰坦、`strife_forged` 或 `ode_to_*` key，不要追加隐藏辅助 improvement。
+
+## T.O 6.3.0 不兼容 Iron's Spells 3.16.x 的 Dead King 包路径
+
+**Date**: 2026-07-20
+
+- **Problem**: T.O Magic 'n Extras 6.3.0 直接引用 `dead_king_boss.DeadKingAnimatedWarlockAttackGoal`；Iron's Spells 从 3.16.0 起把该类移动到 `dead_king_boss.goals`，实例化 `EnragedDeadKingBoss` 时会触发 `NoClassDefFoundError`。
+- **Fix/Lesson**: 1.20.1 使用 T.O 6.3.0 时固定 Iron's Spells 3.15.6 与 Iron's Lib 1.0.2；不要只按 T.O 声明的 `[3.15.0,)` 版本范围升级到 3.16.x，更新前应检查闭源附属直接引用的类路径。
+
+## AE2 自定义线缆部件模型必须在预初始化阶段注册
+
+**Date**: 2026-07-25
+
+- **Problem**: 自定义 `IPart` 只覆盖 `getStaticModels()` 并返回附属命名空间模型时，JSON 即使存在也不会进入 AE2 的部件模型集合，渲染 CableBus 区块会因 `Trying to use an unregistered part model` 崩溃；附属注册的 `PartItem` 也不在 AE2 的物品着色遍历中，未单独注册颜色处理器时终端发光遮罩会显示为实心白色。
+- **Fix/Lesson**: 在模组构造阶段、AE2 冻结模型集合前调用 `appeng.api.parts.PartModels.registerModels(...)` 注册全部自定义部件模型，并通过 `RegisterColorHandlersEvent.Item` 为附属 `PartItem` 注册 `AEColor.TRANSPARENT.getVariantByTintIndex(...)`；`models/item` 既不能代替 CableBus 模型注册，也不会自动获得 AE2 物品 tint。
+
+## KubeJS Rhino 的 JSON.stringify 可能保留裸 NaN
+
+**Date**: 2026-07-28
+
+- **Problem**: KubeJS 服务端脚本把不存在的属性转为数值后会得到 `NaN`；Rhino 的 `JSON.stringify` 可能输出裸 `NaN` 而不是标准 JSON 的 `null`，字符串能写入 persistent data，但下次 `JSON.parse` 会让整条记录失效。
+- **Fix/Lesson**: 写入 JSON 字符串前必须把计时器等外部值转换为有限数值并提供 fallback，同时在 stringify replacer 中拦截非有限数；对已发布数据增加一次兼容解析，将裸 `NaN` 修为 `null` 后再规范化并回写。

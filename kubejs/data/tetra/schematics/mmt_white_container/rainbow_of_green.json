@@ -1,0 +1,26 @@
+{
+    "slots":  [
+                  "mmt_white_container/green"
+              ],
+    "materialSlotCount":  1,
+    "displayType":  "major",
+    "glyph":  {
+                  "textureX":  176,
+                  "textureY":  48
+              },
+    "outcomes":  [
+                     {
+                         "materials":  [
+                                           "tetra:rainbow/"
+                                       ],
+                         "countFactor":  1,
+                         "moduleKey":  "mmt_white_container/green/rainbow_of_green",
+                         "moduleVariant":  "rainbow_of_green/"
+                     }
+                 ],
+    "requirement":  {
+                        "type":  "tetra:locked",
+                        "key":  "createdelight:mmt_curios/ancient_purification"
+                    },
+    "replace":  true
+}

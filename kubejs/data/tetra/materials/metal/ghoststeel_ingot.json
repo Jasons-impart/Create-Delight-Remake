@@ -1,0 +1,41 @@
+{
+  "replace": true,
+  "key": "ghoststeel_ingot",
+  "category": "metal",
+  "primary": 10,
+  "secondary": 2.5,
+  "tertiary": 7.5,
+  "durability": 1600,
+  "integrityCost": 3,
+  "integrityGain": 11,
+  "magicCapacity": 200,
+  "toolLevel": "minecraft:netherite",
+  "toolEfficiency": 10.5,
+  "effects": {
+    "createdelight:ghoststeel": 1,
+    "createdelight:life_drain": 1
+  },
+  "contexts": {
+    "armor": {
+      "effects": {
+        "createdelight:ghoststeel": 1
+      }
+    }
+  },
+  "tints": {
+    "glyph": "b7d5d0",
+    "texture": "b7d5d0"
+  },
+  "textures": [
+    "heavy",
+    "metal"
+  ],
+  "material": {
+    "items": [
+      "blackknightarmor:ghoststeel_ingot"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": 8
+  }
+}

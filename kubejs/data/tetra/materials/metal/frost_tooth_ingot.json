@@ -1,0 +1,34 @@
+{
+  "replace": true,
+  "key": "frost_tooth_ingot",
+  "category": "metal",
+  "primary": 11.5,
+  "secondary": 5,
+  "tertiary": 5,
+  "durability": 1900,
+  "integrityCost": 3,
+  "integrityGain": 9,
+  "magicCapacity": 110,
+  "toolLevel": "minecraft:netherite",
+  "toolEfficiency": 11,
+  "effects": {
+    "createdelight:frost_tooth": 1,
+    "createdelight:frozen": 4
+  },
+  "tints": {
+    "glyph": "9ddce8",
+    "texture": "9ddce8"
+  },
+  "textures": [
+    "heavy",
+    "metal"
+  ],
+  "material": {
+    "items": [
+      "blackknightarmor:frost_tooth_ingot"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": 8
+  }
+}

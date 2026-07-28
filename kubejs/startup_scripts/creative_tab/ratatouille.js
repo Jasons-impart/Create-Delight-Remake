@@ -34,6 +34,8 @@ StartupEvents.modifyCreativeTab("ratatouille:base", e => {
     'createdelight:berry_popsicle_mold_solid',
     'createdelight:big_popsicle_mold_filled',
     'createdelight:big_popsicle_mold_solid',
+    'createdelight:corn_popsicle_mold_filled',
+    'createdelight:corn_popsicle_mold_solid',
     'createdelight:green_tongue_mold_filled',
     'createdelight:green_tongue_mold_solid',
   ])

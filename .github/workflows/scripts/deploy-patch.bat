@@ -1,6 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 chcp 65001
+cd /d "%~dp0"
 
 rem files to be deleted
 set "pathFile=deleted_files.txt"
@@ -32,6 +33,6 @@ for /f "usebackq delims=" %%a in ("%pathFile%") do (
 rem move patched files to right place
 %SystemRoot%\System32\xcopy /E /I /Y "patch" "."
 rd /S /Q "patch"
-rd deleted_files.txt
+del /F /Q "deleted_files.txt"
 
 endlocal

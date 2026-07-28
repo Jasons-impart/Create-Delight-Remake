@@ -1,0 +1,174 @@
+{
+  "preview": "revealable",
+  "slots": [
+    "bow/stave"
+  ],
+  "rarity": "temporary",
+  "displayType": "improvement",
+  "materialSlotCount": 1,
+  "glyph": {
+    "textureLocation": "tetra:textures/gui/titan.png",
+    "textureX": 112,
+    "textureY": 0
+  },
+  "requirement": {
+    "type": "tetra:and",
+    "requirements": [
+      {
+        "type": "tetra:not",
+        "requirement": {
+          "type": "tetra:or",
+          "requirements": [
+            {
+              "type": "tetra:improvement",
+              "improvement": "the_legend_scroll_of_death_titan_up"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "the_legend_scroll_of_trickery_titan_up"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "ama_no_mahagaki_no_yumi_bow_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "ama_no_mahagaki_no_yumi_crossbow_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "apollo_bow_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "apollo_crossbow_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "basic_blade_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "blade_bow_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "cooking_knife_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "flanged_mace_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "heavy_blade_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "katana_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "kunai_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "long_stave_bow_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "long_stave_crossbow_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "machete_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "mmt_ceremonial_sword_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "mmt_rapier_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "mmt_twin_blade_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "naginata_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "recurve_stave_bow_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "recurve_stave_crossbow_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "short_blade_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "spearhead_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "straight_stave_bow_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "straight_stave_crossbow_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "sun_shooting_bow_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "sun_shooting_crossbow_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "throwing_knife_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "wakizashi_strife_forged"
+            },
+            {
+              "type": "tetra:improvement",
+              "improvement": "wrench_strife_forged"
+            }
+          ]
+        }
+      },
+      {
+        "type": "tetra:module",
+        "module": "bow/straight_stave"
+      },
+      {
+        "type": "tetra:locked",
+        "key": "tetra:shared/the_legend_scroll_of_strife_titan"
+      }
+    ]
+  },
+  "outcomes": [
+    {
+      "experienceFactor": 15,
+      "improvements": {
+        "straight_stave_bow_strife_forged": 0
+      },
+      "material": {
+        "items": [
+          "dreadsteel:dreadsteel_ingot"
+        ],
+        "count": 2
+      }
+    }
+  ],
+  "replace": true
+}

@@ -1,0 +1,39 @@
+{
+  "slots": [
+    "mmt_glove/base_glove"
+  ],
+  "materialSlotCount": 1,
+  "requirement": {
+    "type": "tetra:locked",
+    "key": "createdelight:mmt_curios/storm_combat"
+  },
+  "displayType": "major",
+  "glyph": {
+    "textureX": 176,
+    "textureY": 48
+  },
+  "translation": {
+    "secondaryAttributes": {
+      "**generic.attack_speed": -1
+    },
+    "tertiaryAttributes": {
+      "**generic.attack_speed": 3
+    },
+    "durability": 1,
+    "integrity": 1,
+    "magicCapacity": 1
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:skin/",
+        "tetra:fibre/",
+        "tetra:fabric/"
+      ],
+      "countFactor": 1,
+      "moduleKey": "mmt_glove/base_glove/soft_glove",
+      "moduleVariant": "soft_glove/"
+    }
+  ],
+  "replace": true
+}

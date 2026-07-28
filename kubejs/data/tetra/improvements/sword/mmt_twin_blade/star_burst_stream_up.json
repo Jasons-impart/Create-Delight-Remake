@@ -1,0 +1,47 @@
+[
+  {
+    "key": "star_burst_stream_up",
+    "level": 1,
+    "integrity": 0,
+    "aspects": { "honed": 1 },
+    "effects": { "more_mod_tetra:star_burst_stream": 3 }
+  },
+  {
+    "key": "star_burst_stream_up",
+    "level": 2,
+    "integrity": 0,
+    "aspects": { "honed": 2 },
+    "effects": { "more_mod_tetra:star_burst_stream": 6 }
+  },
+  {
+    "key": "star_burst_stream_up",
+    "level": 3,
+    "integrity": 0,
+    "aspects": { "honed": 3 },
+    "effects": { "more_mod_tetra:star_burst_stream": 9 }
+  },
+  {
+    "key": "star_burst_stream_up",
+    "level": 4,
+    "integrity": 0,
+    "aspects": { "honed": 4 },
+    "effects": { "more_mod_tetra:star_burst_stream": 12 }
+  },
+  {
+    "key": "star_burst_stream_up",
+    "level": 5,
+    "integrity": 0,
+    "aspects": { "honed": 5 },
+    "effects": { "more_mod_tetra:star_burst_stream": 15 }
+  },
+  {
+    "key": "star_burst_stream_up",
+    "level": 6,
+    "integrity": -1,
+    "aspects": { "honed": 6 },
+    "effects": {
+      "more_mod_tetra:star_burst_stream": -3,
+      "more_mod_tetra:eclipse": 3
+    }
+  }
+]

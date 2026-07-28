@@ -120,6 +120,7 @@ $requiredPaths = @(
     "docs/lessons-learned.md",
     "docs/dev-knowledge/index.md",
     "docs/dev-knowledge/content-map.md",
+    "docs/dev-knowledge/compatibility-patches.md",
     "docs/dev-knowledge/how-to-index.md",
     ".agents/skills/knowledge-check/SKILL.md",
     ".agents/skills/dev-knowledge/SKILL.md",
@@ -131,6 +132,8 @@ $requiredPaths = @(
     "scripts/update-hotai-docs.ps1",
     "docs/hotai-patch-map.md",
     "docs/hotai-badiff-details.md",
+    "scripts/add-packwiz-target.ps1",
+    "scripts/update-packwiz-target.ps1",
     "kubejs/data/oei/replacements",
     "modpack.toml"
 )
@@ -168,7 +171,7 @@ $duplicateChecks = @(
     },
     @{
         Name = "release workflow guidance";
-        Pattern = "/release|release workflow";
+        Pattern = "Use `/release` skill";
         Max = 3
     },
     @{

@@ -1,0 +1,11 @@
+{
+  "replace": true,
+  "requirement": {
+    "type": "tetra:and",
+    "requirements": [
+      { "type": "tetra:locked", "key": "tetra:disabled_settled_scroll" },
+      { "type": "tetra:craft_type", "craft": "module" }
+    ]
+  },
+  "outcomes": []
+}

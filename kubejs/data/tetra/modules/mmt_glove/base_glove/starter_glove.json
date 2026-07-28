@@ -1,0 +1,38 @@
+{
+  "type": "tetra:basic_major_module",
+  "slots": [
+    "mmt_glove/base_glove"
+  ],
+  "improvements": [],
+  "variants": [
+    {
+      "materials": [
+        "tetra:skin/",
+        "tetra:fibre/",
+        "tetra:fabric/"
+      ],
+      "key": "starter_glove/",
+      "integrity": 0,
+      "effects": {
+        "more_mod_tetra:curios_materials_effect_invalidation": 1
+      },
+      "attributes": {
+        "**generic.attack_speed": 0.02
+      },
+      "extract": {
+        "glyph": {
+          "textureX": 176,
+          "textureY": 48
+        },
+        "availableTextures": [
+          ""
+        ],
+        "models": [
+          {
+            "location": "more_mod_tetra:item/module/mmt_glove/base_glove/soft_glove"
+          }
+        ]
+      }
+    }
+  ]
+}

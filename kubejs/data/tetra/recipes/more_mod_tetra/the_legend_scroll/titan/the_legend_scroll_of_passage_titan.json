@@ -1,0 +1,47 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " B ",
+    "CAC",
+    " D "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:writable_book"
+    },
+    "B": {
+      "item": "cataclysm:flame_eye"
+    },
+    "C": {
+      "item": "cataclysm:void_eye"
+    },
+    "D": {
+      "item": "minecraft:ender_eye"
+    }
+  },
+  "result": {
+    "item": "tetra:scroll_rolled",
+    "count": 1,
+    "nbt": {
+      "BlockEntityTag": {
+        "data": [
+          {
+            "key": "shared/the_legend_scroll_of_passage_titan",
+            "schematics": [
+              "tetra:shared/the_legend_scroll_of_passage_titan"
+            ],
+            "intricate": false,
+            "material": 2,
+            "ribbon": "ff0000",
+            "glyphs": [
+              3,
+              8,
+              1,
+              4
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

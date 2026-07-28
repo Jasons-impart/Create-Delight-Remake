@@ -1,0 +1,36 @@
+{
+  "type": "tetra:basic_major_module",
+  "slots": [
+    "mmt_shoes/upper"
+  ],
+  "improvements": [],
+  "variants": [
+    {
+      "materials": [
+        "tetra:skin/"
+      ],
+      "key": "starter_boots/",
+      "integrity": 0,
+      "effects": {
+        "more_mod_tetra:curios_materials_effect_invalidation": 1
+      },
+      "attributes": {
+        "**generic.movement_speed": 0.01
+      },
+      "extract": {
+        "glyph": {
+          "textureX": 176,
+          "textureY": 48
+        },
+        "availableTextures": [
+          ""
+        ],
+        "models": [
+          {
+            "location": "more_mod_tetra:item/module/mmt_shoes/upper/long_boots"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "type": "tetra:basic_major_module",
+  "replace": true,
+  "slots": [
+    "mmt_necklace/pendant"
+  ],
+  "renderLayer": "higher",
+  "improvements": [],
+  "variants": [
+    {
+      "materials": [
+        "tetra:bone/"
+      ],
+      "key": "fang/",
+      "integrity": 0,
+      "effects": {
+        "more_mod_tetra:curios_materials_effect_invalidation": 1
+      },
+      "attributes": {
+        "attributeslib:armor_pierce": 2
+      },
+      "extract": {
+        "glyph": {
+          "textureX": 176,
+          "textureY": 48
+        },
+        "primaryAttributes": {
+          "attributeslib:armor_pierce": 0.4
+        },
+        "secondaryAttributes": {
+          "attributeslib:armor_pierce": 0.2
+        },
+        "availableTextures": [
+          ""
+        ],
+        "models": [
+          {
+            "location": "more_mod_tetra:item/module/mmt_necklace/pendant/fang",
+            "renderLayer": "high"
+          }
+        ]
+      }
+    }
+  ]
+}

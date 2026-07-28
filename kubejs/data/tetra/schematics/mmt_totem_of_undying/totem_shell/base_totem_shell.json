@@ -1,0 +1,37 @@
+{
+  "slots": [
+    "mmt_totem_of_undying/totem_shell"
+  ],
+  "materialSlotCount": 1,
+  "displayType": "major",
+  "glyph": {
+    "textureX": 176,
+    "textureY": 48
+  },
+  "translation": {
+    "primaryEffects": {
+      "more_mod_tetra:curios_totem_cooldown": 1
+    },
+    "secondaryEffects": {
+      "more_mod_tetra:curios_totem_health": 2
+    },
+    "durability": 1,
+    "integrity": 1,
+    "magicCapacity": 1
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:metal/"
+      ],
+      "countFactor": 2,
+      "moduleKey": "mmt_totem_of_undying/totem_shell/base_totem_shell",
+      "moduleVariant": "base_totem_shell/"
+    }
+  ],
+  "requirement": {
+    "type": "tetra:locked",
+    "key": "createdelight:mmt_curios/deep_relic"
+  },
+  "replace": true
+}

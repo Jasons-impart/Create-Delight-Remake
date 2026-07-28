@@ -252,6 +252,7 @@ WorldFluidQuality:
 | Emptying / Item Drain | 带品质物品倒出为白名单流体时，流体继承物品品质 |
 | Filling / Spout | 品质流体装入可带品质食品或饮品时，输出物品继承流体品质 |
 | Basin Mixing / Compacting | 输出流体或物品按配方策略结算品质 |
+| Sequenced Assembly | 半成品 NBT 累积初始物品、部署器物品和注液流体的品质统计，最终 `advance` 时一次性结算到产物 |
 | Fluid Tank / Pipe | 保留 `FluidStack` NBT；不同品质同流体不自动合并 |
 | Smart Fluid Pipe / Filter | 过滤可选择是否匹配品质，第一版默认只按流体种类 |
 | Hose Pulley / Open-ended Pipe | 抽取品质世界源方块时复制品质；向世界放置品质流体源时写入世界品质；无限流体场景清除或拒绝品质 |
@@ -261,6 +262,7 @@ WorldFluidQuality:
 - `SmartFluidTank` 是否在所有插入、序列化、网络同步路径保留 tag。
 - 管道流体传输是否会创建不带 tag 的新 `FluidStack`。
 - Basin 配方消耗多个流体输入时，输入 tag 是否能被 recipe applier 读到。
+- 序列组装不能只 hook 普通加工产物转换；Create 的 `SequencedAssemblyRecipe.advance` 会新建半成品并最终从结果池复制产物，原物品 NBT 不会自然传递。
 - Hose Pulley 和 open-ended pipe 是否能拿到目标 `BlockPos` 与参与交互的 `FluidStack` tag。
 - Ponder、goggles、Jade 或 tooltip 是否能展示品质，避免玩家看不出管道里为什么不能混合。
 

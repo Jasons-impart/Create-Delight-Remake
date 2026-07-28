@@ -51,6 +51,13 @@ def side_for(data):
     return str(data.get("side", "both")).strip().lower()
 
 
+def is_stable_enabled(data):
+    value = data.get("stable", True)
+    if isinstance(value, bool):
+        return value
+    return str(value).strip().lower() not in {"false", "0", "no"}
+
+
 def is_allowed(side, target):
     if target == "all":
         return True
@@ -84,7 +91,8 @@ def cmd_prune_metadata(args):
     for meta in metadata_files(base, args.roots):
         data = read_toml(meta)
         side = side_for(data)
-        if is_allowed(side, args.target):
+        stable_excluded = args.stable and not is_stable_enabled(data)
+        if is_allowed(side, args.target) and not stable_excluded:
             continue
         if backup_dir is not None:
             rel = meta.relative_to(base)
@@ -94,7 +102,8 @@ def cmd_prune_metadata(args):
         meta.unlink()
         count += 1
         if args.verbose:
-            print(f"removed metadata for {args.target}: {meta.relative_to(base).as_posix()}")
+            reason = "stable-disabled" if stable_excluded else f"not allowed for {args.target}"
+            print(f"removed metadata ({reason}): {meta.relative_to(base).as_posix()}")
     if args.verbose:
         print(f"removed {count} metadata file(s)")
     return 0
@@ -171,6 +180,7 @@ def main():
     prune.add_argument("--base", default=".")
     prune.add_argument("--roots", nargs="+", default=list(DEFAULT_ROOTS))
     prune.add_argument("--target", choices=["client", "server", "all"], required=True)
+    prune.add_argument("--stable", action="store_true", help="Also remove metadata with stable = false.")
     prune.add_argument("--backup-dir")
     prune.add_argument("--verbose", action="store_true")
     prune.set_defaults(func=cmd_prune_metadata)

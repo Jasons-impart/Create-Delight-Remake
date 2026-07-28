@@ -119,6 +119,10 @@ StartupEvents.registry("fluid", e => {
             .createAttributes()
             .tickDelay(10)
     })
+    textureFluid("createdelight:end_dragon_blood")
+        .tag("forge:bloods")
+        .createAttributes()
+        .tickDelay(10)
 
 
     let vinery_fluid_list = [

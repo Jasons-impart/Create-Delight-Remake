@@ -1,0 +1,4 @@
+interface:
+  display_name: "整合包发布"
+  short_description: "规划并执行整合包正式版或测试版发布。"
+  default_prompt: "使用 $release 规划并执行 Create-Delight Remake 的版本发布。"

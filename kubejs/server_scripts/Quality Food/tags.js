@@ -150,11 +150,47 @@ ServerEvents.tags("item", e => {
     e.remove("quality_food:material_whitelist", 
         "#farmersdelight:wild_crops"
     )
+    const iceCreamScoops = []
+    Ingredient.of(["@alexscaves", "@createdelightcore"]).stacks.forEach(item => {
+        if (item.id.endsWith("_ice_cream_scoop")) {
+            iceCreamScoops.push(item.id)
+        }
+    })
+    const vineryQualityFoods = []
+    const vineryQualityFoodIds = [
+        "vinery:mead",
+        "vinery:creepers_crush",
+        "vinery:jo_special_mixture",
+        "vinery:eiswein",
+        "vinery:villagers_fright",
+        "vinery:bottle_mojang_noir"
+    ]
+    const vineryQualityFoodSuffixes = [
+        "_wine",
+        "_grapejuice",
+        "_juice",
+        "_cider",
+        "_fizz",
+        "_nectar",
+        "_grenache",
+        "_pinot"
+    ]
+    Ingredient.of(["@vinery", "@nethervinery"]).stacks.forEach(item => {
+        if (vineryQualityFoodIds.includes(item.id) || vineryQualityFoodSuffixes.some(suffix => item.id.endsWith(suffix))) {
+            vineryQualityFoods.push(item.id)
+        }
+    })
+    e.add("quality_food:material_whitelist", iceCreamScoops)
+    e.add("quality_food:material_whitelist", vineryQualityFoods)
     e.add("quality_food:material_whitelist", [
         'create:dough',
         'bakeries:pizza_flatbread',
         'farmersdelight:brown_mushroom_colony',
+        'farmersrespite:coffee_berries',
         'farmersrespite:coffee_beans',
+        'farmersrespite:green_tea_leaves',
+        'farmersrespite:yellow_tea_leaves',
+        'farmersrespite:black_tea_leaves',
         'farmersdelight:red_mushroom_colony', 
         'mynethersdelight:crimson_fungus_colony', 
         'mynethersdelight:warped_fungus_colony', 

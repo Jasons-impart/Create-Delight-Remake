@@ -1,0 +1,26 @@
+{
+    "slots":  [
+                  "mmt_white_quiver/purple"
+              ],
+    "materialSlotCount":  1,
+    "displayType":  "major",
+    "glyph":  {
+                  "textureX":  176,
+                  "textureY":  48
+              },
+    "outcomes":  [
+                     {
+                         "materials":  [
+                                           "tetra:white_material/"
+                                       ],
+                         "countFactor":  1,
+                         "moduleKey":  "mmt_white_quiver/purple/rainbow_of_purple",
+                         "moduleVariant":  "rainbow_of_purple/"
+                     }
+                 ],
+    "requirement":  {
+                        "type":  "tetra:locked",
+                        "key":  "createdelight:mmt_curios/ancient_purification"
+                    },
+    "replace":  true
+}

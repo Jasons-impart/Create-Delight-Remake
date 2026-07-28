@@ -3,6 +3,10 @@
     "mmt_ring/inlay"
   ],
   "materialSlotCount": 1,
+  "requirement": {
+    "type": "tetra:locked",
+    "key": "createdelight:mmt_curios/lunar_arcane"
+  },
   "displayType": "major",
   "glyph": {
     "textureX": 176,

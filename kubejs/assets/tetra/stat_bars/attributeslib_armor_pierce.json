@@ -1,0 +1,37 @@
+{
+  "type": "tetra:default",
+  "key": "tetra.stats.attributeslib_armor_pierce",
+  "contexts": [
+    "tetra:workbench",
+    "tetra:holosphere"
+  ],
+  "min": 0,
+  "max": 30,
+  "stat": {
+    "type": "tetra:attribute",
+    "attribute": "attributeslib:armor_pierce",
+    "ignoreBase": true
+  },
+  "label": {
+    "type": "tetra:basic",
+    "format": "double_decimal",
+    "diff_format": "double_decimal"
+  },
+  "tooltip": {
+    "type": "tetra:default",
+    "key": "tetra.stats.attributeslib_armor_pierce.tooltip",
+    "stats": [
+      {
+        "type": "tetra:attribute",
+        "attribute": "attributeslib:armor_pierce",
+        "ignoreBase": true
+      }
+    ],
+    "formatters": [
+      {
+        "type": "tetra:basic",
+        "format": "double_decimal"
+      }
+    ]
+  }
+}

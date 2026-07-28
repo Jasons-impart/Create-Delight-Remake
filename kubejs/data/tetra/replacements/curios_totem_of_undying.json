@@ -1,0 +1,17 @@
+[
+  {
+    "predicate": {
+      "items": [
+        "more_mod_tetra:curios_totem_of_undying"
+      ]
+    },
+    "item": "more_mod_tetra:modular_mmt_totem_of_undying",
+    "modules": {
+      "relic/internal": [
+        "mmt_totem_of_undying/totem_shell/starter_shell",
+        "starter_shell/iron"
+      ]
+    },
+    "improvements": {}
+  }
+]

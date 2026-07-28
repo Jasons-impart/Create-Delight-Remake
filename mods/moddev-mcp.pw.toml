@@ -1,0 +1,9 @@
+name = "ModDev MCP"
+filename = "minecraft-mcp-1.20.1-forge-v0.2.1.jar"
+side = "client"
+stable = false
+
+[download]
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/minecraft-mcp-1.20.1-forge-v0.2.1.jar"
+hash-format = "sha256"
+hash = "663042296eeea3a4f2635dd14740ab93fcadff1c5564700009aa41108986ef56"

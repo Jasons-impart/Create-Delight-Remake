@@ -1,0 +1,54 @@
+{
+  "slots": [
+    "mmt_crown/crown_ring"
+  ],
+  "materialSlotCount": 1,
+  "displayType": "major",
+  "glyph": {
+    "textureX": 176,
+    "textureY": 48
+  },
+  "translation": {
+    "primaryAttributes": {
+      "irons_spellbooks:spell_power": 1,
+      "irons_spellbooks:summon_damage": 1
+    },
+    "secondaryAttributes": {
+      "irons_spellbooks:max_mana": 3,
+      "irons_spellbooks:mana_regen": 2,
+      "irons_spellbooks:spell_resist": 1
+    },
+    "tertiaryAttributes": {
+      "irons_spellbooks:cooldown_reduction": 1,
+      "irons_spellbooks:cast_time_reduction": 1
+    },
+    "durability": 1,
+    "integrity": 1,
+    "magicCapacity": 1
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:bone/",
+        "tetra:metal/",
+        "tetra:stone/",
+        "tetra:wood/",
+        "tetra:gem/"
+      ],
+      "countFactor": 2,
+      "moduleKey": "mmt_crown/crown_ring/wizard_crown",
+      "moduleVariant": "wizard_crown/"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "irons_spellbooks"
+    }
+  ],
+  "requirement": {
+    "type": "tetra:locked",
+    "key": "createdelight:mmt_curios/lunar_arcane"
+  },
+  "replace": true
+}

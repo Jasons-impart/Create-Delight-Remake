@@ -1,0 +1,37 @@
+{
+  "replace": true,
+  "key": "cockatrice_eye",
+  "hidden": true,
+  "category": "socket",
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 300,
+  "integrityCost": 1,
+  "integrityGain": 0,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "tints": {
+    "glyph": "000000",
+    "texture": "000000"
+  },
+  "textures": [
+    "perk_glow_0",
+    "perk_sided_0"
+  ],
+  "material": {
+    "items": [
+      "iceandfire:cockatrice_eye"
+    ]
+  },
+  "effects": {
+    "more_mod_tetra:wither_realm": 1
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ]
+}

@@ -28,7 +28,7 @@
     .\release-prepare.ps1 -Version "v0.4.7.16" -TargetBranch "main" -Announcement "修复BUG,新增物品,优化性能"
 
 .EXAMPLE
-    .\release-prepare.ps1 -Version "v0.4.7.16" -TargetBranch "release-v047x" -ReleaseType 测试 -Proxy "http://127.0.0.1:7890"
+    .\release-prepare.ps1 -Version "v0.4.7.16-test" -TargetBranch "release-v047x" -ReleaseType 测试 -Proxy "http://127.0.0.1:7890"
 #>
 [CmdletBinding()]
 param(
@@ -87,8 +87,10 @@ function Test-Prerequisites {
     }
     
     # Check Version format
-    if ($Version -notmatch '^v\d+\.\d+\.\d+\.\d+$') {
-        $errors += "Version format invalid: '$Version'. Expected format: v0.4.8.10"
+    $expectedVersionPattern = if ($ReleaseType -eq "测试") { '^v\d+\.\d+\.\d+\.\d+-test$' } else { '^v\d+\.\d+\.\d+\.\d+$' }
+    $expectedVersionExample = if ($ReleaseType -eq "测试") { 'v0.4.8.10-test' } else { 'v0.4.8.10' }
+    if ($Version -notmatch $expectedVersionPattern) {
+        $errors += "Version format invalid for $ReleaseType release: '$Version'. Expected format: $expectedVersionExample"
     }
     
     # Check gh CLI available
@@ -153,10 +155,10 @@ if ($WhatIf) {
     Write-Host "   Proxy: $(if($Proxy){$Proxy}else{'(none)'})"
     Write-Host ""
     Write-Host "   Would:"
-    Write-Host "   1. Update modpack.toml version to $Version"
-    Write-Host "   2. $(if($ReleaseType -eq '正式'){'Update docs/announcement.md'}else{'Skip docs/announcement.md for test release'})"
-    Write-Host "   3. $(if($ReleaseType -eq '正式'){'Auto-stage update-summary file (if present)'}else{'Skip update-summary auto-stage for test release'})"
-    Write-Host "   4. Create branch $VersionBranch from $TargetBranch"
+    Write-Host "   1. Create branch $VersionBranch from $TargetBranch"
+    Write-Host "   2. Update modpack.toml version to $Version"
+    Write-Host "   3. $(if($ReleaseType -eq '正式'){'Update docs/announcement.md'}else{'Skip docs/announcement.md for test release'})"
+    Write-Host "   4. $(if($ReleaseType -eq '正式'){'Auto-stage the exact update-summary file (if present)'}else{'Skip update-summary auto-stage for test release'})"
     Write-Host "   5. Commit and push"
     Write-Host "   6. Create PR to $TargetBranch"
     exit 0
@@ -189,61 +191,6 @@ if ($StatusOutput) {
     $Stashed = $true
 }
 
-# Update modpack.toml
-Write-Host "📦 Updating modpack.toml version to $Version"
-try {
-    $Content = Get-Content "modpack.toml" -Raw
-    $NewContent = $Content -replace 'version = "v[\d.]+"', "version = `"$Version`""
-    if ($NewContent -eq $Content) {
-        Write-Error "Failed to update version in modpack.toml - pattern not matched"
-        Restore-State
-        exit 1
-    }
-    [System.IO.File]::WriteAllText((Join-Path $PWD "modpack.toml"), $NewContent, $utf8NoBom)
-    Write-Host "✅ modpack.toml updated"
-} catch {
-    Write-Error "Failed to update modpack.toml: $_"
-    Restore-State
-    exit 1
-}
-
-# Build release summary content
-Write-Host "📦 Building release summary"
-$AnnLines = @()
-if ($Announcement -and $Announcement.Trim()) {
-    # Split by comma (handles both "a,b,c" string and string[] array)
-    $Items = $Announcement -split ','
-    foreach ($Item in $Items) {
-        $Item = $Item.Trim()
-        if ($Item) {
-            $AnnLines += "- $Item"
-        }
-    }
-} else {
-    # Generate from git log
-    $LastMsg = git log -1 --pretty=format:'%s' 2>$null
-    if ($LastMsg) {
-        $AnnLines += "- $LastMsg"
-    }
-}
-
-$AnnContent = "### $Version 已发布"
-if ($AnnLines.Count -gt 0) {
-    $AnnContent += "`n" + ($AnnLines -join "`n")
-}
-
-$AnnPath = "docs/announcement.md"
-if ($ReleaseType -eq '正式') {
-    # Write announcement.md (use WriteAllText to avoid BOM)
-    if (-not (Test-Path "docs")) {
-        New-Item -ItemType Directory -Path "docs" | Out-Null
-    }
-    [System.IO.File]::WriteAllText((Join-Path $PWD $AnnPath), $AnnContent, $utf8NoBom)
-    Write-Host "✅ announcement.md updated"
-} else {
-    Write-Host "ℹ️ Test release: skipping announcement.md update"
-}
-
 # Create version-bump branch
 Write-Host "📦 Fetching remote branches"
 git fetch origin 2>$null
@@ -274,6 +221,57 @@ if ($LASTEXITCODE -ne 0) {
     exit 1
 }
 
+# Update files only after switching to the branch based on TargetBranch.
+Write-Host "📦 Updating modpack.toml version to $Version"
+try {
+    $Content = Get-Content "modpack.toml" -Raw
+    $NewContent = $Content -replace 'version = "v[\d.]+(?:-test)?"', "version = `"$Version`""
+    if ($NewContent -eq $Content) {
+        Write-Error "Failed to update version in modpack.toml - pattern not matched"
+        Restore-State
+        exit 1
+    }
+    [System.IO.File]::WriteAllText((Join-Path $PWD "modpack.toml"), $NewContent, $utf8NoBom)
+    Write-Host "✅ modpack.toml updated"
+} catch {
+    Write-Error "Failed to update modpack.toml: $_"
+    Restore-State
+    exit 1
+}
+
+Write-Host "📦 Building release summary"
+$AnnLines = @()
+if ($Announcement -and $Announcement.Trim()) {
+    $Items = $Announcement -split ','
+    foreach ($Item in $Items) {
+        $Item = $Item.Trim()
+        if ($Item) {
+            $AnnLines += "- $Item"
+        }
+    }
+} else {
+    $LastMsg = git log -1 --pretty=format:'%s' 2>$null
+    if ($LastMsg) {
+        $AnnLines += "- $LastMsg"
+    }
+}
+
+$AnnContent = "### $Version 已发布"
+if ($AnnLines.Count -gt 0) {
+    $AnnContent += "`n" + ($AnnLines -join "`n")
+}
+
+$AnnPath = "docs/announcement.md"
+if ($ReleaseType -eq '正式') {
+    if (-not (Test-Path "docs")) {
+        New-Item -ItemType Directory -Path "docs" | Out-Null
+    }
+    [System.IO.File]::WriteAllText((Join-Path $PWD $AnnPath), $AnnContent, $utf8NoBom)
+    Write-Host "✅ announcement.md updated"
+} else {
+    Write-Host "ℹ️ Test release: skipping announcement.md update"
+}
+
 # Stage and commit
 Write-Host "📦 Staging and committing"
 git add modpack.toml
@@ -293,16 +291,12 @@ if ($ReleaseType -eq '正式') {
 }
 
 if ($ReleaseType -eq '正式') {
-    # Auto-stage update-summary file if present (needed for first stable release)
-    $summaryFiles = Get-ChildItem -Path "docs" -Filter "update-summary-*.md" -ErrorAction SilentlyContinue
-    if ($summaryFiles) {
-        foreach ($sf in $summaryFiles) {
-            $relPath = "docs/$($sf.Name)"
-            Write-Host "📦 Auto-staging update summary: $relPath"
-            git add $relPath 2>$null
-            if ($LASTEXITCODE -eq 0) {
-                Write-Host "✅ Staged $relPath"
-            }
+    $summaryPath = "docs/update-summary-$Version.md"
+    if (Test-Path -LiteralPath $summaryPath) {
+        Write-Host "📦 Auto-staging update summary: $summaryPath"
+        git add $summaryPath 2>$null
+        if ($LASTEXITCODE -eq 0) {
+            Write-Host "✅ Staged $summaryPath"
         }
     }
 } else {

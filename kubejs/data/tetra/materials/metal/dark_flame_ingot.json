@@ -1,0 +1,35 @@
+{
+  "replace": true,
+  "key": "dark_flame_ingot",
+  "category": "metal",
+  "primary": 12,
+  "secondary": 4.5,
+  "tertiary": 4,
+  "durability": 1750,
+  "integrityCost": 3,
+  "integrityGain": 8,
+  "magicCapacity": 120,
+  "toolLevel": "minecraft:netherite",
+  "toolEfficiency": 11.5,
+  "effects": {
+    "createdelight:dark_flame": 1,
+    "fiery": 2,
+    "more_mod_tetra:ban_heal": 1
+  },
+  "tints": {
+    "glyph": "3b1427",
+    "texture": "3b1427"
+  },
+  "textures": [
+    "heavy",
+    "metal"
+  ],
+  "material": {
+    "items": [
+      "blackknightarmor:dark_flame_ingot"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": 8
+  }
+}

@@ -152,6 +152,58 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["089E81F7DCA47A98"]
+			description: [
+				"月球背面存在无法由普通望远镜直接观测的异常信号。使用扫描仪前，必须先让星图的地球科研达标并解锁地球轨道。"
+				"轨道遥测扫描仪只能在地球轨道使用，并要求背包中携带星图。"
+				"首次扫描会在极远处锁定并生成一座破损空间站，同时把空间站坐标写入星图。"
+				"火箭站读取这本星图后，会把记录的空间站坐标列为可选目的地，火箭可以直接飞往该位置。"
+			]
+			id: "1F2950ECAD5BEAC8"
+			subtitle: "在地球轨道搜索月背异常信号"
+			tasks: [{
+				id: "6BF2CB71D50411B1"
+				item: "createdelight:orbital_telemetry_scanner"
+				type: "item"
+			}]
+			title: "轨道遥测扫描仪"
+			x: 12.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["1F2950ECAD5BEAC8"]
+			description: [
+				"按扫描仪写入星图的坐标前往破损空间站。站内遥测储存箱保存着残损的月背记录。"
+				"把记录与星图放入天文台，即可让月背异常区成为正式火箭目的地。"
+			]
+			icon: "northstar:astronomical_reading"
+			id: "591CA06C6483B19B"
+			tasks: [{
+				id: "65B3285F63DC4542"
+				title: "取得并写入月背遥测记录"
+				type: "checkmark"
+			}]
+			title: "破损空间站"
+			x: 13.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["591CA06C6483B19B"]
+			description: ["月背异常区的地表仍是低重力真空月面，地下则会逐渐过渡为深暗地层与异寂空谷裂谷。"]
+			icon: "alexscaves:pure_darkness"
+			id: "1F6B56E6DE97C1D7"
+			size: 2.0d
+			tasks: [{
+				dimension: "createdelight:lunar_farside"
+				id: "76C2EE32057A2768"
+				title: "登陆月背异常区"
+				type: "dimension"
+			}]
+			title: "月背·深月裂谷"
+			x: 16.0d
+			y: 3.0d
+		}
+		{
 			dependencies: [
 				"6E1FA3004CE9768C"
 				"089E81F7DCA47A98"

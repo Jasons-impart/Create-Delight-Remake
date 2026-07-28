@@ -1,0 +1,12 @@
+{
+  "enabled": true,
+  "allowedMissingFiles": [
+    "acceleratedrendering-*.jar",
+    "culllessleaves-reforged-*.jar",
+    "dynamic-fps-*.jar",
+    "entityculling-*.jar",
+    "fastrecipesearch-*.jar",
+    "ixeris-*.jar"
+  ],
+  "allowedExtraFiles": []
+}

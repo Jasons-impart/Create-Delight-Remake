@@ -1,0 +1,17 @@
+[
+  {
+    "predicate": {
+      "items": [
+        "more_mod_tetra:curios_shoes"
+      ]
+    },
+    "item": "more_mod_tetra:modular_mmt_shoes",
+    "modules": {
+      "relic/casing": [
+        "mmt_shoes/upper/starter_boots",
+        "starter_boots/leather"
+      ]
+    },
+    "improvements": {}
+  }
+]

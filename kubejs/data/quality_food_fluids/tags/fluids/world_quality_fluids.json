@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "createdelight:soya_milk",
+    "createdelight:green_soylent",
+    "createdelight:radpop_fluid",
+    "createdelight:cake_batter",
+    "createdelight:red_velvet_cake_batter",
+    "createdelight:egg_yolk",
+    "createdelight:artificial_egg_yolk",
+    "createdelight:egg_tart_fluid",
+    "ratatouille:cocoa_liquor"
+  ]
+}

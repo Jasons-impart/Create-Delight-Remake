@@ -38,7 +38,7 @@
     .\release-publish.ps1 -Version v0.4.7.15 -TargetBranch release-v047x
 
 .EXAMPLE
-    .\release-publish.ps1 -Version v0.4.7.15 -TargetBranch release-v047x -PreviousVersion v0.4.7.14 -ReleaseType 测试 -Proxy http://127.0.0.1:7890
+    .\release-publish.ps1 -Version v0.4.7.15-test -TargetBranch release-v047x -PreviousVersion v0.4.7.14 -ReleaseType 测试 -Proxy http://127.0.0.1:7890
 #>
 [CmdletBinding()]
 param(
@@ -82,8 +82,10 @@ function Test-Prerequisites {
     $errors = @()
     
     # Check Version format
-    if ($Version -notmatch '^v\d+\.\d+\.\d+\.\d+$') {
-        $errors += "Version format invalid: '$Version'. Expected format: v0.4.8.10"
+    $expectedVersionPattern = if ($ReleaseType -eq "测试") { '^v\d+\.\d+\.\d+\.\d+-test$' } else { '^v\d+\.\d+\.\d+\.\d+$' }
+    $expectedVersionExample = if ($ReleaseType -eq "测试") { 'v0.4.8.10-test' } else { 'v0.4.8.10' }
+    if ($Version -notmatch $expectedVersionPattern) {
+        $errors += "Version format invalid for $ReleaseType release: '$Version'. Expected format: $expectedVersionExample"
     }
     
     # Check modpack.toml exists
@@ -768,7 +770,7 @@ if ($isFirstStable) {
         $summaryContent = Get-Content $summaryFilePath -Raw
         Write-Host "   📄 Found update summary: $summaryFilePath"
     } else {
-        Write-Host "   ⚠️ No exact update summary file found (expected docs/update-summary-$Version.md)"
+        Fail "First stable release requires update summary: docs/update-summary-$Version.md"
     }
 }
 
@@ -780,7 +782,7 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 # Filter out version bump commits - only filter the specific format used by prepare script
-$commits = $commits | Where-Object { $_ -notmatch '^\[feat\]\s*v\d[\d.]+\s+(正式版|测试版)版本更新$' }
+$commits = $commits | Where-Object { $_ -notmatch '^\[feat\]\s*v\d[\d.]+(?:-test)?\s+(正式版|测试版)版本更新$' }
 
 # Categorize
 $categories = [ordered]@{

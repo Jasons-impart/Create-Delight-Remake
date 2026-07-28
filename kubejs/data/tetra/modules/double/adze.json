@@ -1,0 +1,51 @@
+{
+    "replace": true,
+    "type": "tetra:multi_major_module",
+    "slots": [
+        "double/head_left",
+        "double/head_right"
+    ],
+    "slotSuffixes": [
+        "_left",
+        "_right"
+    ],
+    "improvements": [
+        "tetra:double/adze/",
+        "tetra:double/shared_head/",
+        "tetra:double/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": ["tetra:metal/", "tetra:stone/", "tetra:wood/", "tetra:gem/"],
+            "key": "adze/",
+            "attributes": {
+                "generic.attack_damage": -2,
+                "generic.attack_speed": -1.4
+            },
+            "aspects": {
+                "block_breaker": 2,
+                "breakable": 2
+            },
+            "durability": -10,
+            "extract": {
+                "primaryAttributes": {
+                    "generic.attack_damage": 1
+                },
+                "tools": {
+                    "axe_dig": [0.6, 0.6],
+                    "shovel_dig": [0.6, 0.6],
+                    "pickaxe_dig": [0, 0.6]
+                },
+                "durability": 0.5,
+                "integrity": -1,
+                "magicCapacity": 1,
+                "glyph": {
+                    "textureY": 32
+                },
+                "availableTextures": ["crude", "metal", "shiny"],
+                "models": [{ "location": "tetra:item/module/double/head/adze/" }]
+            }
+        }
+    ]
+}

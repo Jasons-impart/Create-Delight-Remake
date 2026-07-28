@@ -10,6 +10,28 @@ forcedJeiItems.forEach(id => {
 
 JEIEvents.addItems(e => {
   e.add(forcedJeiItems)
+  e.add([
+    ['storm_combat', '62d9ff'],
+    ['hive_guard', 'f4bf45'],
+    ['path_emblems', 'b78cff'],
+    ['lunar_arcane', '9aa8ff'],
+    ['mars_guard', 'c85b48'],
+    ['magnetic_precision', 'e64f9b'],
+    ['ancient_purification', '78b35a'],
+    ['deep_relic', '315d83'],
+    ['astral_dominion', 'd08cff']
+  ].map(([key, ribbon]) => Item.of('tetra:scroll_rolled', {
+    BlockEntityTag: {
+      data: [{
+        key: `mmt_curios/${key}`,
+        schematics: [`createdelight:mmt_curios/${key}`],
+        intricate: false,
+        material: 2,
+        ribbon: ribbon,
+        glyphs: [3, 8, 1, 4]
+      }]
+    }
+  })))
 })
 
 JEIEvents.addFluids(e => {
@@ -31,5 +53,28 @@ JEIEvents.hideItems(e => {
     'createdeco:industrial_iron_coinstack',
     'createdeco:zinc_coin',
     'createdeco:zinc_coinstack',
+
+    // MMT 禁用材料 - JEI 隐藏
+    'more_mod_tetra:fake_rose_golden_silk',
+    'more_mod_tetra:fake_silky_cloth',
+    'more_mod_tetra:bone_ingot',
+    'more_mod_tetra:tidal_ingot',
+    'more_mod_tetra:sacrifice_stone',
+    'more_mod_tetra:bokushuu_ingot',
+    'more_mod_tetra:bokuka_ingot',
+    'more_mod_tetra:rennshi_ingot',
+    'more_mod_tetra:blaze_ingot',
+    'more_mod_tetra:blue_ice_ingot',
+    'more_mod_tetra:electro_charged_ingot',
+    'more_mod_tetra:dragon_breath_ingot',
+    'more_mod_tetra:fake_alumite_ingot',
+    'more_mod_tetra:fake_manyullyn_ingot',
+    'more_mod_tetra:fake_hepatizon_ingot',
+    'more_mod_tetra:fake_rose_gold_ingot',
+    'more_mod_tetra:fake_pig_iron_ingot',
+    'more_mod_tetra:abyssal_ocean_ingot',
+    'more_mod_tetra:wither_ingot',
+    'more_mod_tetra:rotten_flesh_ingot',
+    'more_mod_tetra:wither_bone_ingot',
   ])
 })

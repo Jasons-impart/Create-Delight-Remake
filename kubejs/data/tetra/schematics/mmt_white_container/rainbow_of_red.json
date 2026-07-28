@@ -1,0 +1,26 @@
+{
+    "slots":  [
+                  "mmt_white_container/red"
+              ],
+    "materialSlotCount":  1,
+    "displayType":  "major",
+    "glyph":  {
+                  "textureX":  176,
+                  "textureY":  48
+              },
+    "outcomes":  [
+                     {
+                         "materials":  [
+                                           "tetra:rainbow/"
+                                       ],
+                         "countFactor":  1,
+                         "moduleKey":  "mmt_white_container/red/rainbow_of_red",
+                         "moduleVariant":  "rainbow_of_red/"
+                     }
+                 ],
+    "requirement":  {
+                        "type":  "tetra:locked",
+                        "key":  "createdelight:mmt_curios/ancient_purification"
+                    },
+    "replace":  true
+}

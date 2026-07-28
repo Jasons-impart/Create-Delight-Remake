@@ -11,16 +11,19 @@ LootJS.modifiers(e => {
 })
 
 EntityEvents.drops(e => {
-    const {drops, source} = e
-    if (source.player == null)
+    const {entity, drops, source} = e
+    if (entity.isPlayer() || source.player == null)
         return
-    let dropMultipler = [1, 1, 1.25, 1.5, 2, 3, 5]
-    let d = []
+    let dropMultipliers = [1, 1, 1.25, 1.5, 2, 3, 5]
+    let multiplier = dropMultipliers[Difficulty.getPlayerTier(source.player)]
     drops.forEach(itemEntity => {
         let item = itemEntity.item
-        d.push(item.copyWithCount(dropMultipler[Difficulty.getPlayerTier(source.player)] - 1 * item.count))
-    })
-    d.forEach(item =>{
-        e.addDrop(item)
+        let extraCount = (multiplier - 1) * item.count
+        let guaranteedCount = Math.floor(extraCount)
+        let fractionalChance = extraCount - guaranteedCount
+        if (guaranteedCount > 0)
+            e.addDrop(item.copyWithCount(guaranteedCount))
+        if (fractionalChance > 0)
+            e.addDrop(item.copyWithCount(1), fractionalChance)
     })
 })

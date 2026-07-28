@@ -19,12 +19,23 @@
   - 更好的树叶渲染优化 https://www.mcmod.cn/class/9810.html
 - Flerovium
   - 物品、粒子渲染优化 https://www.mcmod.cn/class/17322.html
+- Ixeris
+  - 缓冲原始输入并拆分事件轮询与渲染线程，缓解高鼠标轮询率下移动视角时的帧率下降 https://www.curseforge.com/minecraft/mc-mods/ixeris
+  - **兼容性提示**：会改写 GLFW 事件轮询与渲染线程行为，可能与其他输入或渲染底层改动冲突；出现移动视角、鼠标输入或画面异常时需优先排查
 - ServerCore
   - 优化服务器运算、实体活动范围（可选启用）、动态性能检查、村民脑叶切除术、繁殖上限、区块活动距离 https://www.mcmod.cn/class/6542.html
 - Harium
   - 锂的 forge 移植，优化各种原版机制计算方法 https://www.curseforge.com/minecraft/mc-mods/harium
+- Bye?Pregen!
+  - 优化区块预生成流程，减少预生成带来的加载开销 https://www.curseforge.com/minecraft/mc-mods/bye-pregen
+- Fast Noise
+  - 优化世界生成中的噪声计算 https://www.curseforge.com/minecraft/mc-mods/zfastnoise
 - moestweaks
-  - 关闭配方书 https://www.mcmod.cn/class/17039.html
+  - `noRecipeBook` 功能已禁用，当前保留原版配方书 https://www.mcmod.cn/class/17039.html
+- SaveMyRecipeBook
+  - 保留原版配方书完整功能并显示全部配方，同时避免保存已知配方，降低内存占用和玩家数据保存的主线程开销 https://www.curseforge.com/minecraft/mc-mods/savemyrecipebook
+- Fast Recipe Search
+  - 通过配方索引加速大量配方下的配方匹配与查找 https://www.curseforge.com/minecraft/mc-mods/fast-recipe-search
 - FerriteCore
   - 内存占用优化 https://www.mcmod.cn/class/3888.html
 - Placebo
