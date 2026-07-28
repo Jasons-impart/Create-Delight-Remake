@@ -641,3 +641,17 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: T.O Magic 'n Extras 6.3.0 直接引用 `dead_king_boss.DeadKingAnimatedWarlockAttackGoal`；Iron's Spells 从 3.16.0 起把该类移动到 `dead_king_boss.goals`，实例化 `EnragedDeadKingBoss` 时会触发 `NoClassDefFoundError`。
 - **Fix/Lesson**: 1.20.1 使用 T.O 6.3.0 时固定 Iron's Spells 3.15.6 与 Iron's Lib 1.0.2；不要只按 T.O 声明的 `[3.15.0,)` 版本范围升级到 3.16.x，更新前应检查闭源附属直接引用的类路径。
+
+## AE2 自定义线缆部件模型必须在预初始化阶段注册
+
+**Date**: 2026-07-25
+
+- **Problem**: 自定义 `IPart` 只覆盖 `getStaticModels()` 并返回附属命名空间模型时，JSON 即使存在也不会进入 AE2 的部件模型集合，渲染 CableBus 区块会因 `Trying to use an unregistered part model` 崩溃；附属注册的 `PartItem` 也不在 AE2 的物品着色遍历中，未单独注册颜色处理器时终端发光遮罩会显示为实心白色。
+- **Fix/Lesson**: 在模组构造阶段、AE2 冻结模型集合前调用 `appeng.api.parts.PartModels.registerModels(...)` 注册全部自定义部件模型，并通过 `RegisterColorHandlersEvent.Item` 为附属 `PartItem` 注册 `AEColor.TRANSPARENT.getVariantByTintIndex(...)`；`models/item` 既不能代替 CableBus 模型注册，也不会自动获得 AE2 物品 tint。
+
+## KubeJS Rhino 的 JSON.stringify 可能保留裸 NaN
+
+**Date**: 2026-07-28
+
+- **Problem**: KubeJS 服务端脚本把不存在的属性转为数值后会得到 `NaN`；Rhino 的 `JSON.stringify` 可能输出裸 `NaN` 而不是标准 JSON 的 `null`，字符串能写入 persistent data，但下次 `JSON.parse` 会让整条记录失效。
+- **Fix/Lesson**: 写入 JSON 字符串前必须把计时器等外部值转换为有限数值并提供 fallback，同时在 stringify replacer 中拦截非有限数；对已发布数据增加一次兼容解析，将裸 `NaN` 修为 `null` 后再规范化并回写。
