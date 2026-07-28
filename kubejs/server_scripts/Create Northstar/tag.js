@@ -114,6 +114,17 @@ const cataclysmEuropanPrisonEntities = [
     "cataclysm:maledictus"
 ]
 
+const dreadEntities = [
+    "iceandfire:dread_beast",
+    "iceandfire:dread_ghoul",
+    "iceandfire:dread_horse",
+    "iceandfire:dread_knight",
+    "iceandfire:dread_lich",
+    "iceandfire:dread_lich_skull",
+    "iceandfire:dread_scuttler",
+    "iceandfire:dread_thrall"
+]
+
 ServerEvents.tags("entity_type", e => {
     e.add("northstar:can_survive_cold",
         "#createdelight:can_survive_northstar"
@@ -125,6 +136,7 @@ ServerEvents.tags("entity_type", e => {
     e.add("northstar:can_survive_cold", cataclysmMartianBlacksmithEntities)
     e.add("northstar:can_survive_cold", cataclysmMercuryArenaEntities)
     e.add("northstar:can_survive_cold", cataclysmEuropanPrisonEntities)
+    e.add("northstar:can_survive_cold", dreadEntities)
     e.add("northstar:can_survive_heat",
         "#createdelight:can_survive_northstar"
     )
@@ -141,6 +153,7 @@ ServerEvents.tags("entity_type", e => {
     e.add("northstar:doesnt_require_oxygen", cataclysmMercuryArenaEntities)
     e.add("northstar:doesnt_require_oxygen", cataclysmVenusPyramidEntities)
     e.add("northstar:doesnt_require_oxygen", cataclysmEuropanPrisonEntities)
+    e.add("northstar:doesnt_require_oxygen", dreadEntities)
     e.add("createdelight:can_survive_northstar", [
         "iceandfire:mob_skull",
         "iceandfire:cyclops",
