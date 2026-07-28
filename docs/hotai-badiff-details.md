@@ -6,7 +6,7 @@
 
 `HOTAI_STATUS` 区块由 `scripts/update-hotai-docs.ps1` 维护，只记录当前补丁清单和目标 class 是否能在 JAR 中命中；方法级语义、历史提交依据和迁移建议仍写在人工维护区。
 
-## 当前生效性核查（2026-07-09）
+## 当前生效性核查（2026-07-29）
 
 核查方法：逐个读取当前 `hotai/**/*.badiff`，从当前 `mods/*.jar` 查找同名目标 class，并按 HotAI 的 ASM 归一化方式实际应用 badiff；能生成可解析 class 记为“可应用”。目标 class 不存在则本补丁本身不会被 HotAI 命中，但如果其他已应用补丁引用该缺失 class，则仍可能启动崩溃。
 
@@ -15,21 +15,21 @@
 | HotAI | `mods/hotai-1.0.jar` 存在 | 补丁加载器存在。 | HotAI 本体可用。 |
 | Create | `create-1.20.1-6.0.8.jar` | 4/4 可应用：`FluidManipulationBehaviour`、`FluidDrainingBehaviour`、`ItemDrainCategory`、`CTSpriteShifter`。 | 当前可生效。 |
 | Create Liquid Fuel | `createliquidfuel-2.1.1-1.20.1.jar` | 2/2 可应用：`BurnerStomachHandler`、`MixinBlazeBurnerTileEntity`。 | 当前可生效。 |
-| Create Addition | `createaddition-1.20.1-1.3.3.jar` | 10/13 可应用；`SuperconductingConnectorBlock`、`SuperconductingConnectorBlockEntity`、`SuperconductingConnectorBlockEntity$1` 目标 class 缺失。 | 部分可应用，但超导连接器整体当前不完整；`CABlocks`/`CABlockEntities` 补丁后会引用缺失的 `SuperconductingConnectorBlock*`，属于高风险。 |
+| Create Addition | `createaddition-1.20.1-1.3.3.jar` | 11/14 可应用；新增 `CAPonders` 补丁可应用；`SuperconductingConnectorBlock`、`SuperconductingConnectorBlockEntity`、`SuperconductingConnectorBlockEntity$1` 目标 class 缺失。 | Ponder 清理和现有线缆逻辑可生效，但超导连接器整体当前不完整；`CABlocks`/`CABlockEntities` 补丁后会引用缺失的 `SuperconductingConnectorBlock*`，属于高风险。 |
 | Vintage Improvements | `vintageimprovements-1.20.1-0.3.7.3.jar` | 2/2 可应用：`VintagePonderScene`、`VintagePonderTag`。 | 当前可生效。 |
 | Create Mechanical Spawner | `create_mechanical_spawner-1.20.1-0.1.7-6.0.6.jar` | 1/1 可应用：`LivingEntityHelper`。 | 当前可生效。 |
 | TACZ | `tacz-1.20.1-1.1.4-hotfix-all.jar` | 1/1 可应用：`ModCreativeTabs`。 | 当前可生效。 |
 | Neapolitan | `neapolitan-1.20.1-5.1.0.jar` | 1/1 可应用：`Neapolitan`。 | 当前可生效。 |
 | Better Compatibility Checker | `BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar` | 1/1 可应用：`ServerStatusPingerMixin`。 | 当前可生效。 |
 | Quality Food | `quality_food-1.20.1-2.3.2-all.jar` | 1/1 可应用：`BlockMixin`。 | 当前可生效。 |
-| Create New Age | `create-new-age-1.2.0+forge-mc1.20.1.jar` | 0/1；目标 `org/antarcticgardens/newage/CreateNewAgePonders` 缺失，当前 JAR 中相近类为 `org/antarcticgardens/cna/content/ponders/CNAPonders`；旧 badiff 可读常量指向旧 `newage` 包的 `PonderPlugin`、`registerScenes`、`registerTags`、`NewAgeBlocks`、`NewAgeItems` 和若干 `content/*Ponder` 类。 | 当前不生效；当前 `CNAPonders` 是语义上的新入口，但包名、字段和注册项已重构，旧补丁不能直接应用。该补丁来自提交 `e11d47f206c1e9cb28bdf506698c824586f9b00c`（`删除cna中无用的ponder (#649)`），应按“移除无用 Ponder”理解。 |
+| Create New Age | `create-new-age-1.2.0+forge-mc1.20.1.jar` | 1/1 可应用：旧 `org/antarcticgardens/newage/CreateNewAgePonders` 补丁已替换为当前路径 `org/antarcticgardens/cna/content/ponders/CNAPonders`。 | 当前可生效；补丁继续实现提交 `e11d47f206c1e9cb28bdf506698c824586f9b00c`（`删除cna中无用的ponder (#649)`）的意图，移除 heating、heater、reactor、wires 场景与对应标签。 |
 
-总计：清理 Bakeries 旧版本遗留补丁后，当前 25 个 `.badiff` 中 21 个可应用，4 个当前找不到目标 class。真正需要优先处理的是 Create Addition 超导连接器 3 个缺失目标，因为其余 Create Addition 补丁仍会注册并引用这些缺失类；Create New Age 当前更像不会被命中的旧版本补丁，且未找到可直接迁移的新目标。
+总计：当前 26 个 `.badiff` 中 23 个可应用，3 个当前找不到目标 class。未命中的目标全部属于 Create Addition 超导连接器实现类；其余 Create Addition 补丁仍会注册并引用这些缺失类，因此仍是需要优先处理的高风险项。Create New Age 旧路径补丁已完成迁移。
 
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 25 个 `.badiff`；目标 class 命中 21 个，未命中 4 个。
+当前扫描到 26 个 `.badiff`；目标 class 命中 23 个，未命中 3 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 当前目标 class |
 |---|---|---|---|
@@ -46,6 +46,7 @@
 | Create Addition | `hotai/com/mrh0/createaddition/index/CABlockEntities.badiff` | `com/mrh0/createaddition/index/CABlockEntities` | 命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/index/CABlocks.badiff` | `com/mrh0/createaddition/index/CABlocks` | 命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/index/CAItems.badiff` | `com/mrh0/createaddition/index/CAItems` | 命中 `createaddition-1.20.1-1.3.3.jar` |
+| Create Addition | `hotai/com/mrh0/createaddition/index/CAPonders.badiff` | `com/mrh0/createaddition/index/CAPonders` | 命中 `createaddition-1.20.1-1.3.3.jar` |
 | Vintage Improvements | `hotai/com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene.badiff` | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene` | 命中 `vintageimprovements-1.20.1-0.3.7.3.jar` |
 | Vintage Improvements | `hotai/com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderTag.badiff` | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderTag` | 命中 `vintageimprovements-1.20.1-0.3.7.3.jar` |
 | Create Mechanical Spawner | `hotai/com/oierbravo/create_mechanical_spawner/foundation/utility/LivingEntityHelper.badiff` | `com/oierbravo/create_mechanical_spawner/foundation/utility/LivingEntityHelper` | 命中 `create_mechanical_spawner-1.20.1-0.1.7-6.0.6.jar` |
@@ -57,7 +58,7 @@
 | Neapolitan | `hotai/com/teamabnormals/neapolitan/core/Neapolitan.badiff` | `com/teamabnormals/neapolitan/core/Neapolitan` | 命中 `neapolitan-1.20.1-5.1.0.jar` |
 | Quality Food | `hotai/de/cadentem/quality_food/mixin/BlockMixin.badiff` | `de/cadentem/quality_food/mixin/BlockMixin` | 命中 `quality_food-1.20.1-2.3.2-all.jar` |
 | Better Compatibility Checker | `hotai/dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin` | 命中 `BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar` |
-| Create New Age | `hotai/org/antarcticgardens/newage/CreateNewAgePonders.badiff` | `org/antarcticgardens/newage/CreateNewAgePonders` | 未命中当前 JAR |
+| Create New Age | `hotai/org/antarcticgardens/cna/content/ponders/CNAPonders.badiff` | `org/antarcticgardens/cna/content/ponders/CNAPonders` | 命中 `create-new-age-1.2.0+forge-mc1.20.1.jar` |
 <!-- HOTAI_STATUS:END -->
 
 ## 代码化改动索引
@@ -258,10 +259,16 @@ REQUIRES_SUPERCONDUCTING(
 
 ```java
 // IWireNode.badiff
-if (wn1.getConnectorType() == ConnectorType.Superconducting
-        && wn2.getConnectorType() == ConnectorType.Superconducting
-        && type != WireType.SUPERCONDUCTING) {
+boolean firstSuperconducting = wn1.getConnectorType() == ConnectorType.Superconducting;
+boolean secondSuperconducting = wn2.getConnectorType() == ConnectorType.Superconducting;
+if (firstSuperconducting != secondSuperconducting) {
+    return WireConnectResult.INVALID;
+}
+if (firstSuperconducting && type != WireType.SUPERCONDUCTING) {
     return WireConnectResult.REQUIRES_SUPERCONDUCTING;
+}
+if (!firstSuperconducting && type == WireType.SUPERCONDUCTING) {
+    return WireConnectResult.INVALID;
 }
 ```
 
@@ -280,6 +287,7 @@ public int getMaxBuff() {
 }
 
 public int push(int energy, boolean simulate) {
+    if (energy <= 0) return 0;
     long remaining = (long) getMaxBuff() - inBuff;
     if (remaining <= 0) return 0;
     int actual = minAsInt(energy, remaining);
@@ -296,7 +304,7 @@ public int demand(int demand) {
 }
 
 public int pull(int energy, boolean simulate) {
-    if (outBuff <= 0) return 0;
+    if (energy <= 0 || outBuff <= 0) return 0;
     int actual = Math.min(energy, outBuff);
     if (!simulate) {
         outBuff = Math.max(outBuff - actual, 0);
@@ -304,6 +312,13 @@ public int pull(int energy, boolean simulate) {
     }
     return actual;
 }
+```
+
+```java
+// CAPonders.badiff
+// registerTags: 不再把 CAItems.STRAW 加入 AllCreatePonderTags.FLUIDS。
+// registerScenes: 不再以 CAItems.STRAW 注册 liquid_blaze_burner；
+//                 AllBlocks.BLAZE_BURNER 的同名场景仍保留。
 ```
 
 ```java
@@ -391,9 +406,10 @@ return stack;
 ```
 
 ```java
-// CreateNewAgePonders.badiff
-// 当前 JAR 扫描不到目标 class，无法生成可靠代码化摘要。
-// 该条目只能保留目标路径、疑似历史来源和启动验证要求。
+// CNAPonders.badiff
+// 删除 WIRING、HEATING、REACTOR 三个 Ponder 标签及其注册项。
+// 删除 heating、heater、reactor、wires 场景注册。
+// 保留 ELECTRICAL、MAGNETS、ELECTRICITY_GENERATION、MOTOR_EXTENSION。
 ```
 
 ## Create
@@ -422,8 +438,9 @@ return stack;
 | `com/mrh0/createaddition/blocks/connector/ConnectorType.badiff` | 已还原 | 在枚举中新增 `Superconducting("superconducting")`，位于 `Small` 和 `Large` 之间。 | 让连接器逻辑能区分超导连接器类型。 |
 | `com/mrh0/createaddition/energy/WireType.badiff` | 已还原 | 新增 `SUPERCONDUCTING(4, Integer.MAX_VALUE, 134, 146, 252, CAItems.SUPERCONDUCTING_WIRE.asStack(4), CAItems.SUPERCONDUCTING_SPOOL.asStack())`；`fromIndex(4)` 返回 `SUPERCONDUCTING`；`fromSpool(...)` 识别 `SUPERCONDUCTING_SPOOL`。 | 新增无限传输上限的超导线缆类型，并让线轴物品能解析为该线缆。 |
 | `com/mrh0/createaddition/energy/WireConnectResult.badiff` | 已还原 | 新增结果 `REQUIRES_SUPERCONDUCTING`，翻译键为 `statusbar.createaddition.wire.requires_superconducting`，红色提示。 | 玩家用非超导线缆连接超导连接器时能看到专门失败提示。 |
-| `com/mrh0/createaddition/energy/IWireNode.badiff` | 已还原 | `connect(...)` 中新增限制：两端连接器类型都是 `ConnectorType.Superconducting` 且线缆不是 `WireType.SUPERCONDUCTING` 时，返回 `REQUIRES_SUPERCONDUCTING`；其余距离、重复连接和大连接器铜线限制保持。 | 超导连接器之间只能用超导线轴连接，防止普通线缆绕过高阶电力线设计。 |
-| `com/mrh0/createaddition/energy/network/EnergyNetwork.badiff` | 已还原 | `MAX_BUFF` 从 80000 提升到 `Integer.MAX_VALUE`；新增 `saturatedAdd` 防止统计值溢出；`getMaxBuff()` 改用 long 中间值并夹到 int 范围；`push`、`demand`、`pull` 改为饱和/夹取逻辑，避免负剩余容量和 int 溢出。 | 支持超导线缆的大吞吐网络，同时降低能量缓存和统计溢出风险。 |
+| `com/mrh0/createaddition/energy/IWireNode.badiff` | 已还原 | `connect(...)` 先判断两端是否都是 `ConnectorType.Superconducting`：一端为超导而另一端不是时返回 `INVALID`；两个超导连接器使用非超导线时返回 `REQUIRES_SUPERCONDUCTING`；普通连接器使用超导线时返回 `INVALID`。其余距离、重复连接和大连接器铜线限制保持。 | 超导线缆和超导连接器只能成套使用，禁止超导/普通连接器混接或让普通连接器使用超导线。 |
+| `com/mrh0/createaddition/energy/network/EnergyNetwork.badiff` | 已还原 | `MAX_BUFF` 从 80000 提升到 `Integer.MAX_VALUE`；新增 `saturatedAdd` 防止统计值溢出；`getMaxBuff()` 改用 long 中间值并夹到 int 范围；`push`、`demand`、`pull` 改为饱和/夹取逻辑，且 `push`、`pull` 对非正数请求直接返回 0。 | 支持超导线缆的大吞吐网络，同时降低能量缓存和统计溢出风险，避免负数推拉反向修改缓冲。 |
+| `com/mrh0/createaddition/index/CAPonders.badiff` | 已还原 | `registerTags(...)` 移除 `CAItems.STRAW` 到 `AllCreatePonderTags.FLUIDS` 的映射；`registerScenes(...)` 移除以 `CAItems.STRAW` 为入口的 `liquid_blaze_burner` 场景，保留 `AllBlocks.BLAZE_BURNER` 的同名场景。 | 吸管不再重复展示液体烈焰人燃烧室 Ponder，燃烧室本体仍可查看。 |
 | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | 当前未还原 | 当前 `createaddition-1.20.1-1.3.3.jar` 直接扫描未找到目标 class，无法反推出补丁前后差异；旧 `logs/latest.log` 曾出现 `Patched class: com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock`。 | 疑似历史版本中已有该 class 或运行环境曾包含额外来源。更新 Create Addition 或 HotAI 补丁时需重新启动验证注册。 |
 | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | 当前未还原 | 当前 Create Addition JAR 直接扫描未找到目标 class；旧日志曾显示已 patch。 | 可能是超导连接器方块实体实现补丁，但当前无法确认方法级改动。 |
 | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | 当前未还原 | 当前 Create Addition JAR 直接扫描未找到目标 inner class；旧日志未单独显示 inner class。 | 可能是超导连接器方块实体的匿名 capability / handler 类补丁，需实际启动验证。 |
@@ -469,7 +486,7 @@ return stack;
 
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
-| `org/antarcticgardens/newage/CreateNewAgePonders.badiff` | 当前未还原 | 当前 `create-new-age-1.2.0+forge-mc1.20.1.jar` 中 Ponder 类路径为 `org/antarcticgardens/cna/content/ponders/CNAPonders`，未找到 `org/antarcticgardens/newage/CreateNewAgePonders`。旧 badiff 可读常量显示它针对旧包名下的 PonderPlugin / Ponder 场景与标签注册；当前 `CNAPonders` 仍承担 `registerScenes` / `registerTags`，但已切换到 `CNABlocks`、`CNAItems` 和 `content/ponders/*`。该 badiff 首次加入于 `e11d47f206c1e9cb28bdf506698c824586f9b00c`，提交标题为 `删除cna中无用的ponder (#649)`，同提交还修改了 `kubejs/assets/create_new_age/lang/zh_cn.json`，删除了 CNA heating、heater、reactor、wires 等 Ponder 文案。 | 旧补丁不能直接应用到当前 `CNAPonders`。结合提交信息，最可信的语义不是泛化的 Ponder API 适配，而是移除当时 Create New Age 中不需要展示的 Ponder 场景和标签；若仍需要该行为，应基于当前 `CNAPonders` 重新生成“删除无用 Ponder”补丁，不能只改路径复用旧 badiff。 |
+| `org/antarcticgardens/cna/content/ponders/CNAPonders.badiff` | 已还原 | 旧 `org/antarcticgardens/newage/CreateNewAgePonders` 补丁已按当前包和注册 API 重建。补丁移除 `WIRING`、`HEATING`、`REACTOR` 字段及标签注册；移除 `heating`、`heater`、`reactor`、`wires` 场景，涉及热管、热泵、太阳能加热板、斯特林引擎、加热器、核反应堆组件、电气连接器及各类导线；保留 `ELECTRICAL`、`MAGNETS`、`ELECTRICITY_GENERATION`、`MOTOR_EXTENSION`。配套 `energiser.nbt`、`generation.nbt`、`motor.nbt`、`motor_extension.nbt` 已按当前方块 id 和方块实体数据刷新。 | 延续 `e11d47f206c1e9cb28bdf506698c824586f9b00c` 的“删除 CNA 无用 Ponder”意图，并让补丁重新命中当前 Create New Age 版本。 |
 
 ## 维护建议
 

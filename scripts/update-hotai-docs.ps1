@@ -28,7 +28,7 @@ function Get-HotaiModule([string]$InternalName) {
     if ($InternalName -like "com/teamabnormals/neapolitan/*") { return "Neapolitan" }
     if ($InternalName -like "dev/wuffs/bcc/*") { return "Better Compatibility Checker" }
     if ($InternalName -like "de/cadentem/quality_food/*") { return "Quality Food" }
-    if ($InternalName -like "org/antarcticgardens/newage/*") { return "Create New Age" }
+    if ($InternalName -like "org/antarcticgardens/newage/*" -or $InternalName -like "org/antarcticgardens/cna/*") { return "Create New Age" }
     if ($InternalName -like "com/renyigesai/bakeries/*") { return "Bakeries" }
     return "Unknown"
 }

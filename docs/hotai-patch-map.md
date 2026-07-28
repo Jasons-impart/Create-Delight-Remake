@@ -22,7 +22,9 @@
 | Create 分液池/流体搜索 | `com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour.badiff`、`FluidDrainingBehaviour.badiff`、`compat/jei/category/ItemDrainCategory.badiff` | 抽液搜索增加可覆写的继续搜索钩子，分液池按源方块数量判断无限流体，而不是按访问过的流体方块数量；同时区分源流体和流动流体。JEI 分液展示在复制物品后重新检查 `FLUID_HANDLER_ITEM`，避免 capability 消失导致异常。 |
 | Create 连接纹理缓存 | `com/simibubi/create/foundation/block/connected/CTSpriteShifter.badiff` | 将连接纹理缓存从 `HashMap` 改为 `ConcurrentHashMap`，降低并发注册/资源重载时的竞态风险。 |
 | Create Liquid Fuel 液体烈焰人燃烧室 | `com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff`、`mixin/MixinBlazeBurnerTileEntity.badiff` | 液体燃料 tick 返回是否已处理并可取消原 tick 后续逻辑；向燃烧室倒入流体时按容量部分抽取、更新容器状态，并在失败路径显式返回 false，避免容器未扣除或溢出。 |
-| Create Addition 超导电力线 | `com/mrh0/createaddition/index/CAItems.badiff`、`CABlocks.badiff`、`CABlockEntities.badiff`、`blocks/connector/ConnectorType.badiff`、`energy/WireType.badiff`、`WireConnectResult.badiff`、`IWireNode.badiff`、`energy/network/EnergyNetwork.badiff` | 注册 `superconducting_wire`、`superconducting_spool`、`superconducting_connector`，加入 `SUPERCONDUCTING` 线缆类型和 `Superconducting` 连接器类型；超导连接器之间只接受超导线缆；能量网络缓冲上限提升到 `Integer.MAX_VALUE` 并使用饱和加法，避免大数溢出。配套资源、配方和掉落位于 `kubejs/assets/createaddition/`、`kubejs/server_scripts/Create Addition/`。 |
+| Create Addition 超导电力线 | `com/mrh0/createaddition/index/CAItems.badiff`、`CABlocks.badiff`、`CABlockEntities.badiff`、`blocks/connector/ConnectorType.badiff`、`energy/WireType.badiff`、`WireConnectResult.badiff`、`IWireNode.badiff`、`energy/network/EnergyNetwork.badiff` | 注册 `superconducting_wire`、`superconducting_spool`、`superconducting_connector`，加入 `SUPERCONDUCTING` 线缆类型和 `Superconducting` 连接器类型；只允许两个超导连接器使用超导线缆互连，禁止超导/普通连接器混接或普通连接器使用超导线；能量网络缓冲上限提升到 `Integer.MAX_VALUE`，使用饱和加法并拒绝非正数推拉。配套资源、配方和掉落位于 `kubejs/assets/createaddition/`、`kubejs/server_scripts/Create Addition/`。 |
+| Create Addition Ponder 清理 | `com/mrh0/createaddition/index/CAPonders.badiff` | 从 `FLUIDS` 标签和 `liquid_blaze_burner` 场景入口移除 `CAItems.STRAW`，保留烈焰人燃烧室本体的场景入口，避免吸管重复展示该 Ponder。 |
+| Create New Age Ponder 清理 | `org/antarcticgardens/cna/content/ponders/CNAPonders.badiff` | 基于当前包路径移除 heating、heater、reactor、wires 场景和 `WIRING`、`HEATING`、`REACTOR` 标签，保留电气、磁力、发电和电机扩展 Ponder；配套结构位于 `kubejs/assets/create_new_age/ponder/`。 |
 | TACZ 创造模式页签图标 | `com/tacz/guns/init/ModCreativeTabs.badiff` | 将 TACZ 弹药、配件和枪械页签图标从默认资产替换为整合包自定义 `create_armorer` / `applied_armorer` 资产，和 Kinetic Pixel、TACZ 配方线保持一致。 |
 | Create Mechanical Spawner 刷怪实体创建 | `com/oierbravo/create_mechanical_spawner/foundation/utility/LivingEntityHelper.badiff` | 使用带 `ServerLevel`、`BlockPos`、`MobSpawnType.SPAWNER` 的实体创建入口，保留刷怪笼生成原因，减少依赖默认 `EntityType#create(Level)` 带来的兼容问题。 |
 | Vintage Improvements Ponder | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene.badiff`、`VintagePonderTag.badiff` | 从 Ponder 场景和 `KINETIC_APPLIANCES` 标签中移除 `BELT_GRINDER` 条目，避免砂带磨床 Ponder 继续注册。 |
@@ -36,7 +38,6 @@
 
 | 补丁文件 | 备注 |
 |---|---|
-| `org/antarcticgardens/newage/CreateNewAgePonders.badiff` | 当前 Create New Age JAR 中 Ponder 类路径已是 `org/antarcticgardens/cna/content/ponders/CNAPonders`；旧补丁常量指向旧 `newage` 包的 PonderPlugin 结构，不能直接套到当前 `cna` 包。该 badiff 来自提交 `e11d47f206c1e9cb28bdf506698c824586f9b00c`（`删除cna中无用的ponder (#649)`），推测目的就是移除当时 Create New Age 的无用 Ponder 注册。 |
 | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff`、`SuperconductingConnectorBlockEntity.badiff`、`SuperconductingConnectorBlockEntity$1.badiff` | 配套注册补丁会引用超导连接器类，但当前 `createaddition-1.20.1-1.3.3.jar` 直接扫描未找到这些 class；实际可用性需以最新启动日志和游戏内注册结果为准。 |
 
 ## 维护注意
