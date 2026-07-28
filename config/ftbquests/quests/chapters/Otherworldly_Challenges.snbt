@@ -529,7 +529,7 @@
 				type: "item"
 			}]
 			shape: "square"
-			subtitle: "悚怖生物只可在&6火星&r召唤！"
+			subtitle: "悚怖生物可在&6火星&r或&b木卫二&r生成！"
 			tasks: [{
 				dimension: "northstar:mars"
 				icon: "northstar:mars_sand"
