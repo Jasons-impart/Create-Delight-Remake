@@ -97,6 +97,8 @@ ServerEvents.tags("block", e => {
         "nethervinery:warped_grape_bush",
         "collectorsreap:pomegranate_bush",
         "collectorsreap:lime_bush",
+        "culturaldelights:corn",
+        "culturaldelights:corn_upper",
         "fruitsdelight:lemon_tree",
         "fruitsdelight:blueberry_bush",
         "fruitsdelight:cranberry_bush",
