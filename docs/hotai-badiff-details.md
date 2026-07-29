@@ -16,20 +16,20 @@
 | Create | `create-1.20.1-6.0.8.jar` | 4/4 可应用：`FluidManipulationBehaviour`、`FluidDrainingBehaviour`、`ItemDrainCategory`、`CTSpriteShifter`。 | 当前可生效。 |
 | Create Liquid Fuel | `createliquidfuel-2.1.1-1.20.1.jar` | 2/2 可应用：`BurnerStomachHandler`、`MixinBlazeBurnerTileEntity`。 | 当前可生效。 |
 | Create Addition | `createaddition-1.20.1-1.3.3.jar` | 11/14 可应用；新增 `CAPonders` 补丁可应用；`SuperconductingConnectorBlock`、`SuperconductingConnectorBlockEntity`、`SuperconductingConnectorBlockEntity$1` 目标 class 缺失。 | Ponder 清理和现有线缆逻辑可生效，但超导连接器整体当前不完整；`CABlocks`/`CABlockEntities` 补丁后会引用缺失的 `SuperconductingConnectorBlock*`，属于高风险。 |
-| Vintage Improvements | `vintageimprovements-1.20.1-0.3.7.3.jar` | 2/2 可应用：`VintagePonderScene`、`VintagePonderTag`。 | 当前可生效。 |
-| Create Mechanical Spawner | `create_mechanical_spawner-1.20.1-0.1.7-6.0.6.jar` | 1/1 可应用：`LivingEntityHelper`。 | 当前可生效。 |
+| Vintage Improvements | `vintageimprovements-1.20.1-0.3.7.8.jar` | 2/2 目标 class 命中：`VintagePonderScene`、`VintagePonderTag`。 | 当前 JAR 可匹配。 |
+| Create Mechanical Spawner | `create_mechanical_spawner-1.20.1-0.1.7-6.0.6.jar` | `LivingEntityHelper` 目标 class 未命中。 | 当前 JAR 无法由该 `.badiff` 匹配；需核对上游类路径并以启动日志验证。 |
 | TACZ | `tacz-1.20.1-1.1.4-hotfix-all.jar` | 1/1 可应用：`ModCreativeTabs`。 | 当前可生效。 |
 | Neapolitan | `neapolitan-1.20.1-5.1.0.jar` | 1/1 可应用：`Neapolitan`。 | 当前可生效。 |
 | Better Compatibility Checker | `BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar` | 1/1 可应用：`ServerStatusPingerMixin`。 | 当前可生效。 |
-| Quality Food | `quality_food-1.20.1-2.3.2-all.jar` | 1/1 可应用：`BlockMixin`。 | 当前可生效。 |
+| Quality Food | `quality_food-1.20.1-2.3.3-all.jar` | 1/1 目标 class 命中：`BlockMixin`。 | 当前 JAR 可匹配。 |
 | Create New Age | `create-new-age-1.2.0+forge-mc1.20.1.jar` | 1/1 可应用：旧 `org/antarcticgardens/newage/CreateNewAgePonders` 补丁已替换为当前路径 `org/antarcticgardens/cna/content/ponders/CNAPonders`。 | 当前可生效；补丁继续实现提交 `e11d47f206c1e9cb28bdf506698c824586f9b00c`（`删除cna中无用的ponder (#649)`）的意图，移除 heating、heater、reactor、wires 场景与对应标签。 |
 
-总计：当前 26 个 `.badiff` 中 23 个可应用，3 个当前找不到目标 class。未命中的目标全部属于 Create Addition 超导连接器实现类；其余 Create Addition 补丁仍会注册并引用这些缺失类，因此仍是需要优先处理的高风险项。Create New Age 旧路径补丁已完成迁移。
+总计：当前 26 个 `.badiff` 中 22 个目标 class 命中，4 个当前未命中。前三个未命中项属于 Create Addition 超导连接器实现类；其余 Create Addition 补丁仍会注册并引用这些缺失类，因此是需要优先处理的高风险项。`LivingEntityHelper` 也未命中当前 Create Mechanical Spawner JAR，需先确认上游类路径；静态扫描本身不能断言运行时结果。Create New Age 旧路径补丁已完成迁移。
 
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 26 个 `.badiff`；目标 class 命中 23 个，未命中 3 个。
+当前扫描到 26 个 `.badiff`；目标 class 命中 22 个，未命中 4 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 当前目标 class |
 |---|---|---|---|
@@ -37,8 +37,8 @@
 | Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity.badiff` | `com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity` | 命中 `createliquidfuel-2.1.1-1.20.1.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/ConnectorType.badiff` | `com/mrh0/createaddition/blocks/connector/ConnectorType` | 命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock` | 未命中当前 JAR |
-| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1` | 未命中当前 JAR |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity` | 未命中当前 JAR |
+| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1` | 未命中当前 JAR |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/IWireNode.badiff` | `com/mrh0/createaddition/energy/IWireNode` | 命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/network/EnergyNetwork.badiff` | `com/mrh0/createaddition/energy/network/EnergyNetwork` | 命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/WireConnectResult.badiff` | `com/mrh0/createaddition/energy/WireConnectResult` | 命中 `createaddition-1.20.1-1.3.3.jar` |
@@ -47,16 +47,16 @@
 | Create Addition | `hotai/com/mrh0/createaddition/index/CABlocks.badiff` | `com/mrh0/createaddition/index/CABlocks` | 命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/index/CAItems.badiff` | `com/mrh0/createaddition/index/CAItems` | 命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/index/CAPonders.badiff` | `com/mrh0/createaddition/index/CAPonders` | 命中 `createaddition-1.20.1-1.3.3.jar` |
-| Vintage Improvements | `hotai/com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene.badiff` | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene` | 命中 `vintageimprovements-1.20.1-0.3.7.3.jar` |
-| Vintage Improvements | `hotai/com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderTag.badiff` | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderTag` | 命中 `vintageimprovements-1.20.1-0.3.7.3.jar` |
-| Create Mechanical Spawner | `hotai/com/oierbravo/create_mechanical_spawner/foundation/utility/LivingEntityHelper.badiff` | `com/oierbravo/create_mechanical_spawner/foundation/utility/LivingEntityHelper` | 命中 `create_mechanical_spawner-1.20.1-0.1.7-6.0.6.jar` |
+| Vintage Improvements | `hotai/com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene.badiff` | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene` | 命中 `vintageimprovements-1.20.1-0.3.7.8.jar` |
+| Vintage Improvements | `hotai/com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderTag.badiff` | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderTag` | 命中 `vintageimprovements-1.20.1-0.3.7.8.jar` |
+| Create Mechanical Spawner | `hotai/com/oierbravo/create_mechanical_spawner/foundation/utility/LivingEntityHelper.badiff` | `com/oierbravo/create_mechanical_spawner/foundation/utility/LivingEntityHelper` | 未命中当前 JAR |
 | Create | `hotai/com/simibubi/create/compat/jei/category/ItemDrainCategory.badiff` | `com/simibubi/create/compat/jei/category/ItemDrainCategory` | 命中 `create-1.20.1-6.0.8.jar` |
 | Create | `hotai/com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour.badiff` | `com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour` | 命中 `create-1.20.1-6.0.8.jar` |
 | Create | `hotai/com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour.badiff` | `com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour` | 命中 `create-1.20.1-6.0.8.jar` |
 | Create | `hotai/com/simibubi/create/foundation/block/connected/CTSpriteShifter.badiff` | `com/simibubi/create/foundation/block/connected/CTSpriteShifter` | 命中 `create-1.20.1-6.0.8.jar` |
 | TACZ | `hotai/com/tacz/guns/init/ModCreativeTabs.badiff` | `com/tacz/guns/init/ModCreativeTabs` | 命中 `tacz-1.20.1-1.1.4-hotfix-all.jar` |
 | Neapolitan | `hotai/com/teamabnormals/neapolitan/core/Neapolitan.badiff` | `com/teamabnormals/neapolitan/core/Neapolitan` | 命中 `neapolitan-1.20.1-5.1.0.jar` |
-| Quality Food | `hotai/de/cadentem/quality_food/mixin/BlockMixin.badiff` | `de/cadentem/quality_food/mixin/BlockMixin` | 命中 `quality_food-1.20.1-2.3.2-all.jar` |
+| Quality Food | `hotai/de/cadentem/quality_food/mixin/BlockMixin.badiff` | `de/cadentem/quality_food/mixin/BlockMixin` | 命中 `quality_food-1.20.1-2.3.3-all.jar` |
 | Better Compatibility Checker | `hotai/dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin` | 命中 `BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar` |
 | Create New Age | `hotai/org/antarcticgardens/cna/content/ponders/CNAPonders.badiff` | `org/antarcticgardens/cna/content/ponders/CNAPonders` | 命中 `create-new-age-1.2.0+forge-mc1.20.1.jar` |
 <!-- HOTAI_STATUS:END -->
@@ -455,7 +455,7 @@ return stack;
 
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
-| `com/oierbravo/create_mechanical_spawner/foundation/utility/LivingEntityHelper.badiff` | 已还原 | 在指定实体和随机实体创建路径中，把 `EntityType#create(Level)` 替换为 `EntityType#create(ServerLevel, BlockPos, MobSpawnType.SPAWNER)`；新增 `MobSpawnType` import。 | 生成实体带有刷怪笼生成上下文，改善依赖生成原因、位置或服务端世界的实体兼容性。 |
+| `com/oierbravo/create_mechanical_spawner/foundation/utility/LivingEntityHelper.badiff` | 当前目标未命中（历史已还原） | 当前 JAR 未找到该 target class；历史补丁会在指定实体和随机实体创建路径中，把 `EntityType#create(Level)` 替换为 `EntityType#create(ServerLevel, BlockPos, MobSpawnType.SPAWNER)`，并新增 `MobSpawnType` import。 | 现版本不能据此确认补丁已加载；需先迁移到当前上游类路径，再以启动日志验证。 |
 
 ## Vintage Improvements
 

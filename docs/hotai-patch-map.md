@@ -39,6 +39,7 @@
 | 补丁文件 | 备注 |
 |---|---|
 | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff`、`SuperconductingConnectorBlockEntity.badiff`、`SuperconductingConnectorBlockEntity$1.badiff` | 配套注册补丁会引用超导连接器类，但当前 `createaddition-1.20.1-1.3.3.jar` 直接扫描未找到这些 class；实际可用性需以最新启动日志和游戏内注册结果为准。 |
+| `com/oierbravo/create_mechanical_spawner/foundation/utility/LivingEntityHelper.badiff` | 当前 `create_mechanical_spawner-1.20.1-0.1.7-6.0.6.jar` 直接扫描未找到目标 class；需先确认上游类路径是否迁移，再以启动日志验证。 |
 
 ## 维护注意
 
