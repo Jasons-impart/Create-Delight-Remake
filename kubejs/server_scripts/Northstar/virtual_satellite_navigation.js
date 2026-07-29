@@ -5,9 +5,22 @@ const SATELLITE_DATA_KEY = "createdelight_virtual_satellites"
 const SATELLITE_CARD_DIMENSION_KEY = "SatelliteTargetDimension"
 const SATELLITE_INITIAL_ENERGY = 32
 const SATELLITE_RISK_SAMPLE_RADIUS = 2
-const SATELLITE_SEARCH_RADIUS = 128
-const SATELLITE_SEARCH_STEP = 16
 const SATELLITE_WAYPOINT_BLOCK = "northstar:rocket_waypoint"
+const SATELLITE_LANDING_PLATFORM_BLOCK = "northstar:titanium_plating"
+const SATELLITE_LANDING_PLATFORM_RADIUS = 2
+const SATELLITE_UI_NAME = "satellite_navigation_data_card"
+const SATELLITE_UI_FILE = "ldlib:satellite_navigation_data_card"
+const SATELLITE_CARD_X_KEY = "SatelliteRequestX"
+const SATELLITE_CARD_Z_KEY = "SatelliteRequestZ"
+const SATELLITE_CARD_LABEL_KEY = "SatelliteWaypointLabel"
+const SATELLITE_COORDINATE_LIMIT = 29999984
+const SATELLITE_DATA_SYNC_PACKET = "createdelight_virtual_satellite_data"
+let SATELLITE_NAVIGATION_UI_CREATOR = null
+try {
+    SATELLITE_NAVIGATION_UI_CREATOR = UIProject.loadUIFromFile(SATELLITE_UI_FILE)
+} catch (error) {
+    console.error(`[Create Delight] Failed to load satellite navigation UI: ${error}`)
+}
 
 const SATELLITE_GROUPS = {
     earth: {
@@ -117,6 +130,14 @@ function writeSatelliteData(player, data) {
     }))
 }
 
+function syncSatelliteDataToClient(player) {
+    if (player == null)
+        return
+    player.sendData(SATELLITE_DATA_SYNC_PACKET, {
+        raw: JSON.stringify(readSatelliteData(player))
+    })
+}
+
 function dimensionName(dimension) {
     return SATELLITE_DIMENSION_NAMES[dimension] || dimension
 }
@@ -162,51 +183,42 @@ function findSpaceAtlas(player) {
     return atlas
 }
 
-function readCardName(item) {
-    try {
-        return `${item.hoverName.string}`.trim()
-    } catch (error) {
-        return ""
-    }
+function parseSatelliteCoordinate(value) {
+    let text = `${value}`.trim()
+    if (!/^-?\d+$/.test(text))
+        return null
+    let coordinate = Number(text)
+    if (!Number.isFinite(coordinate) || Math.abs(coordinate) > SATELLITE_COORDINATE_LIMIT)
+        return null
+    return Math.floor(coordinate)
 }
 
-function parseNavigationRequest(item) {
-    let value = readCardName(item)
-    if (!value || value == "卫星导航数据卡")
-        return null
+function dimensionFromName(name) {
+    let dimension = null
+    Object.keys(SATELLITE_DIMENSION_NAMES).forEach(id => {
+        if (SATELLITE_DIMENSION_NAMES[id] == name)
+            dimension = id
+    })
+    return dimension
+}
 
-    let named = value.split("|")
-    if (named.length >= 3) {
-        let x = Number(named[named.length - 2].trim())
-        let z = Number(named[named.length - 1].trim())
-        if (Number.isFinite(x) && Number.isFinite(z)) {
-            return {
-                label: named.slice(0, named.length - 2).join("|").trim() || "卫星着陆点",
-                x: Math.floor(x),
-                z: Math.floor(z)
-            }
-        }
-    }
+function satelliteLandingSummary(dimension, request, landing) {
+    let platformHint = landing.waterLanding ? "（水面，将部署着陆平台）" : ""
+    return `${dimensionName(dimension)}：${request.x}, ${request.z} → ${landing.x}, ${landing.y + 1}, ${landing.z}${platformHint}`
+}
 
-    let coordinates = value.split(/[，,\s]+/).filter(part => part.length > 0)
-    if (coordinates.length == 2) {
-        let x = Number(coordinates[0])
-        let z = Number(coordinates[1])
-        if (Number.isFinite(x) && Number.isFinite(z)) {
-            return {
-                label: `卫星着陆点 ${Math.floor(x)}, ${Math.floor(z)}`,
-                x: Math.floor(x),
-                z: Math.floor(z)
-            }
-        }
-    }
-    return null
+function isSatelliteWater(fluidState) {
+    if (fluidState.isEmpty())
+        return false
+    let fluidId = global.CDServerJavaClasses.$ForgeRegistries.FLUIDS.getKey(fluidState.getType())
+    return fluidId != null && (`${fluidId}` == "minecraft:water" || `${fluidId}` == "minecraft:flowing_water")
 }
 
 function isSafeLandingColumn(level, x, z) {
-    // ServerLevel height queries use an empty chunk result when the remote chunk has
-    // never been generated. Explicitly obtain the chunk before reading its heightmap.
-    level.getChunk(Math.floor(x / 16), Math.floor(z / 16))
+    // The scan entry point generates only the requested chunk. Risk samples crossing
+    // its edge must not synchronously generate more chunks on the server thread.
+    if (!level.hasChunk(Math.floor(x / 16), Math.floor(z / 16)))
+        return null
     let surfaceY = level.getHeight(global.CDServerJavaClasses.$HeightmapTypes.MOTION_BLOCKING_NO_LEAVES, x, z) - 1
     if (surfaceY <= level.minBuildHeight || surfaceY >= level.maxBuildHeight - 2)
         return null
@@ -217,7 +229,10 @@ function isSafeLandingColumn(level, x, z) {
 
     let groundState = level.getBlockState(groundPos)
     let groundId = `${level.getBlock(groundPos).id}`
-    if (groundState.isAir() || !groundState.getFluidState().isEmpty() || SATELLITE_HAZARDOUS_BLOCKS[groundId])
+    let fluidState = groundState.getFluidState()
+    if (groundState.isAir() || SATELLITE_HAZARDOUS_BLOCKS[groundId])
+        return null
+    if (!fluidState.isEmpty() && !isSatelliteWater(fluidState))
         return null
     return surfaceY
 }
@@ -226,6 +241,16 @@ function evaluateLandingSite(level, centerX, centerZ) {
     let centerY = isSafeLandingColumn(level, centerX, centerZ)
     if (centerY == null)
         return null
+
+    let centerPos = new global.CDServerJavaClasses.$BlockPos(centerX, centerY, centerZ)
+    let waterLanding = isSatelliteWater(level.getBlockState(centerPos).getFluidState())
+    if (waterLanding) {
+        let localX = ((centerX % 16) + 16) % 16
+        let localZ = ((centerZ % 16) + 16) % 16
+        if (localX < SATELLITE_LANDING_PLATFORM_RADIUS || localX > 15 - SATELLITE_LANDING_PLATFORM_RADIUS ||
+            localZ < SATELLITE_LANDING_PLATFORM_RADIUS || localZ > 15 - SATELLITE_LANDING_PLATFORM_RADIUS)
+            return null
+    }
 
     let minY = 2147483647
     let maxY = -2147483648
@@ -249,31 +274,57 @@ function evaluateLandingSite(level, centerX, centerZ) {
         y: centerY,
         z: centerZ,
         heightDelta: heightDelta,
-        safetyScore: safetyScore
+        safetyScore: safetyScore,
+        waterLanding: waterLanding
     }
 }
 
 function searchSafeLandingSite(level, requestedX, requestedZ) {
+    let requestedChunkX = Math.floor(requestedX / 16)
+    let requestedChunkZ = Math.floor(requestedZ / 16)
+    // Remote world generation is expensive in this modpack. Generate at most the one
+    // chunk explicitly requested by the player, then search a few columns inside it.
+    level.getChunk(requestedChunkX, requestedChunkZ)
+
     let direct = evaluateLandingSite(level, requestedX, requestedZ)
     if (direct != null)
         return direct
 
-    for (let radius = SATELLITE_SEARCH_STEP; radius <= SATELLITE_SEARCH_RADIUS; radius += SATELLITE_SEARCH_STEP) {
-        for (let offset = -radius; offset <= radius; offset += SATELLITE_SEARCH_STEP) {
-            let candidates = [
-                [requestedX + offset, requestedZ - radius],
-                [requestedX + offset, requestedZ + radius],
-                [requestedX - radius, requestedZ + offset],
-                [requestedX + radius, requestedZ + offset]
-            ]
-            for (let i = 0; i < candidates.length; i++) {
-                let candidate = evaluateLandingSite(level, candidates[i][0], candidates[i][1])
-                if (candidate != null)
-                    return candidate
-            }
-        }
+    let chunkMinX = requestedChunkX * 16
+    let chunkMinZ = requestedChunkZ * 16
+    let candidates = []
+    let localSamples = [2, 7, 12]
+    localSamples.forEach(localX => {
+        localSamples.forEach(localZ => {
+            let x = chunkMinX + localX
+            let z = chunkMinZ + localZ
+            candidates.push({
+                x: x,
+                z: z,
+                distance: Math.abs(x - requestedX) + Math.abs(z - requestedZ)
+            })
+        })
+    })
+    candidates.sort((a, b) => a.distance - b.distance)
+    for (let i = 0; i < candidates.length; i++) {
+        let candidate = evaluateLandingSite(level, candidates[i].x, candidates[i].z)
+        if (candidate != null)
+            return candidate
     }
     return null
+}
+
+function ensureSatelliteLandingChunk(level, landing) {
+    let chunkX = Math.floor(landing.x / 16)
+    let chunkZ = Math.floor(landing.z / 16)
+    if (!level.hasChunk(chunkX, chunkZ)) {
+        try {
+            level.getChunk(chunkX, chunkZ)
+        } catch (error) {
+            return false
+        }
+    }
+    return true
 }
 
 function writeSatelliteWaypoint(atlas, dimension, landing, label) {
@@ -303,6 +354,59 @@ function writeSatelliteWaypoint(atlas, dimension, landing, label) {
     return true
 }
 
+function rollbackSatelliteBlocks(level, changes) {
+    if (changes == null)
+        return
+    for (let i = changes.length - 1; i >= 0; i--)
+        level.setBlockAndUpdate(changes[i].pos, changes[i].state)
+}
+
+function placeSatelliteLandingPlatform(level, landing) {
+    if (!landing.waterLanding)
+        return { changes: [] }
+
+    let platformBlock = global.CDServerJavaClasses.$ForgeRegistries.BLOCKS.getValue(
+        new global.CDServerJavaClasses.$ResourceLocation(SATELLITE_LANDING_PLATFORM_BLOCK)
+    )
+    if (platformBlock == null)
+        return null
+
+    let platformState = platformBlock.defaultBlockState()
+    let changes = []
+    for (let offsetX = -SATELLITE_LANDING_PLATFORM_RADIUS; offsetX <= SATELLITE_LANDING_PLATFORM_RADIUS; offsetX++) {
+        for (let offsetZ = -SATELLITE_LANDING_PLATFORM_RADIUS; offsetZ <= SATELLITE_LANDING_PLATFORM_RADIUS; offsetZ++) {
+            let pos = new global.CDServerJavaClasses.$BlockPos(
+                landing.x + offsetX,
+                landing.y,
+                landing.z + offsetZ
+            )
+            if (!level.hasChunk(Math.floor(pos.x / 16), Math.floor(pos.z / 16)) ||
+                !level.worldBorder.isWithinBounds(pos.x + 0.5, pos.z + 0.5)) {
+                rollbackSatelliteBlocks(level, changes)
+                return null
+            }
+
+            let previousState = level.getBlockState(pos)
+            let fluidState = previousState.getFluidState()
+            if (!previousState.isAir() && fluidState.isEmpty())
+                continue
+            if (!fluidState.isEmpty() && !isSatelliteWater(fluidState)) {
+                rollbackSatelliteBlocks(level, changes)
+                return null
+            }
+            if (previousState == platformState)
+                continue
+
+            if (!level.setBlockAndUpdate(pos, platformState)) {
+                rollbackSatelliteBlocks(level, changes)
+                return null
+            }
+            changes.push({ pos: pos, state: previousState })
+        }
+    }
+    return { changes: changes }
+}
+
 function placeSatelliteWaypoint(level, landing) {
     let waypointPos = new global.CDServerJavaClasses.$BlockPos(landing.x, landing.y + 1, landing.z)
     let waypointBlock = global.CDServerJavaClasses.$ForgeRegistries.BLOCKS.getValue(
@@ -327,7 +431,8 @@ function placeSatelliteWaypoint(level, landing) {
             y: landing.y + 1,
             z: landing.z,
             heightDelta: landing.heightDelta,
-            safetyScore: landing.safetyScore
+            safetyScore: landing.safetyScore,
+            waterLanding: landing.waterLanding
         },
         pos: waypointPos,
         previousState: previousState,
@@ -364,6 +469,7 @@ function deployVirtualSatellite(event) {
         state: "active"
     }
     writeSatelliteData(player, data)
+    syncSatelliteDataToClient(player)
 
     if (!player.isCreative())
         item.shrink(1)
@@ -373,125 +479,344 @@ function deployVirtualSatellite(event) {
     player.swing()
 }
 
-function cycleSatelliteTarget(event, data) {
-    let dimensions = getAvailableTargetDimensions(data)
-    if (dimensions.length == 0) {
-        event.player.setStatusMessage(Component.translate("message.createdelight.satellite.none_available"))
-        return
-    }
+function scanSatelliteNavigation(player, dimension, request) {
+    if (findSpaceAtlas(player) == null)
+        return { ok: false, message: "背包中需要携带一份星图，才能开始卫星扫描。" }
 
-    let tag = event.item.getOrCreateTag()
-    let current = tag.getString(SATELLITE_CARD_DIMENSION_KEY)
-    let index = dimensions.indexOf(current)
-    let next = dimensions[(index + 1) % dimensions.length]
-    tag.putString(SATELLITE_CARD_DIMENSION_KEY, next)
-    event.player.setStatusMessage(Component.translate("message.createdelight.satellite.target_selected", dimensionName(next)))
-    event.player.addItemCooldown(event.item.item, 5)
-    event.player.swing()
-}
-
-function useSatelliteNavigationCard(event) {
-    const { player, server, level, item } = event
-    if (level.clientSide)
-        return
-    if (player.cooldowns.isOnCooldown(item.item)) {
-        return
-    }
-
+    let server = player.server
     let data = readSatelliteData(player)
-    if (player.isCrouching()) {
-        cycleSatelliteTarget(event, data)
-        return
-    }
-
     let dimensions = getAvailableTargetDimensions(data)
-    if (dimensions.length == 0) {
-        player.setStatusMessage(Component.translate("message.createdelight.satellite.none_available"))
-        return
-    }
-
-    let tag = item.getOrCreateTag()
-    let dimension = tag.getString(SATELLITE_CARD_DIMENSION_KEY)
-    if (dimensions.indexOf(dimension) < 0) {
-        dimension = dimensions[0]
-        tag.putString(SATELLITE_CARD_DIMENSION_KEY, dimension)
-        player.setStatusMessage(Component.translate("message.createdelight.satellite.target_selected", dimensionName(dimension)))
-        return
-    }
-
-    let request = parseNavigationRequest(item)
-    if (request == null) {
-        player.setStatusMessage(Component.translate("message.createdelight.satellite.invalid_card_name"))
-        return
-    }
-
-    let groupId = findCoverageGroup(dimension)
-    let satellite = groupId == null ? null : data.satellites[groupId]
-    if (satellite == null || satellite.state != "active" || satellite.energy <= 0) {
-        player.setStatusMessage(Component.translate("message.createdelight.satellite.no_coverage"))
-        return
-    }
-
-    let atlas = findSpaceAtlas(player)
-    if (atlas == null) {
-        player.setStatusMessage(Component.translate("message.createdelight.satellite.need_atlas"))
-        return
-    }
+    if (dimensions.indexOf(dimension) < 0)
+        return { ok: false, message: "该天体没有可用卫星，或导航能源已经耗尽。" }
 
     let targetLevel = server.getLevel(dimension)
-    if (targetLevel == null) {
-        player.setStatusMessage(Component.translate("message.createdelight.satellite.dimension_unavailable", dimension))
-        return
-    }
+    if (targetLevel == null)
+        return { ok: false, message: `目标维度当前不可用：${dimension}` }
 
-    player.setStatusMessage(Component.translate("message.createdelight.satellite.scanning", dimensionName(dimension), request.x, request.z))
     let landing = searchSafeLandingSite(targetLevel, request.x, request.z)
-    if (landing == null) {
-        player.addItemCooldown(item.item, 40)
-        player.setStatusMessage(Component.translate("message.createdelight.satellite.no_safe_landing"))
-        return
-    }
+    if (landing == null)
+        return { ok: false, message: "目标区块内没有找到可用地表。" }
 
-    let placedWaypoint = placeSatelliteWaypoint(targetLevel, landing)
-    if (placedWaypoint == null) {
-        player.setStatusMessage(Component.translate("message.createdelight.satellite.waypoint_placement_failed"))
-        return
+    return {
+        ok: true,
+        pending: {
+            dimension: dimension,
+            request: request,
+            landing: landing
+        }
     }
-    landing = placedWaypoint.landing
+}
 
-    if (!writeSatelliteWaypoint(atlas, dimension, landing, request.label)) {
-        if (placedWaypoint.changed)
+function confirmSatelliteNavigation(player, item, pending) {
+    let data = readSatelliteData(player)
+    let groupId = findCoverageGroup(pending.dimension)
+    let satellite = groupId == null ? null : data.satellites[groupId]
+    if (satellite == null || satellite.state != "active" || satellite.energy <= 0)
+        return { ok: false, message: "卫星已离线，或导航能源已经耗尽。" }
+
+    let atlas = findSpaceAtlas(player)
+    if (atlas == null)
+        return { ok: false, message: "背包中需要携带一份星图。" }
+
+    let targetLevel = player.server.getLevel(pending.dimension)
+    if (targetLevel == null)
+        return { ok: false, message: `目标维度当前不可用：${pending.dimension}` }
+
+    if (!ensureSatelliteLandingChunk(targetLevel, pending.landing))
+        return { ok: false, message: "目标区块当前不可用，请重新扫描。" }
+    let recheckedLanding = evaluateLandingSite(targetLevel, pending.landing.x, pending.landing.z)
+    if (recheckedLanding == null || recheckedLanding.y != pending.landing.y)
+        return { ok: false, message: "目标地表在扫描后发生变化，请重新扫描。" }
+
+    let placedPlatform = null
+    let placedWaypoint = null
+    let landing = null
+    try {
+        placedPlatform = placeSatelliteLandingPlatform(targetLevel, recheckedLanding)
+        if (placedPlatform == null)
+            return { ok: false, message: "已找到水面着陆点，但无法在那里部署着陆平台。" }
+
+        placedWaypoint = placeSatelliteWaypoint(targetLevel, recheckedLanding)
+        if (placedWaypoint == null) {
+            rollbackSatelliteBlocks(targetLevel, placedPlatform.changes)
+            return { ok: false, message: "已找到着陆点，但无法在那里部署火箭航点。" }
+        }
+        landing = placedWaypoint.landing
+
+        if (!writeSatelliteWaypoint(atlas, pending.dimension, landing, pending.request.label)) {
+            if (placedWaypoint.changed)
+                targetLevel.setBlockAndUpdate(placedWaypoint.pos, placedWaypoint.previousState)
+            rollbackSatelliteBlocks(targetLevel, placedPlatform.changes)
+            return { ok: false, message: "星图中的航点数量已经达到上限。" }
+        }
+    } catch (error) {
+        if (placedWaypoint != null && placedWaypoint.changed)
             targetLevel.setBlockAndUpdate(placedWaypoint.pos, placedWaypoint.previousState)
-        player.setStatusMessage(Component.translate("northstar.gui.rocket_waypoint.max_waypoints"))
-        return
+        if (placedPlatform != null)
+            rollbackSatelliteBlocks(targetLevel, placedPlatform.changes)
+        console.error(`[Create Delight] Failed to commit satellite waypoint: ${error}`)
+        return { ok: false, message: "写入星图时发生异常，未保留新建的火箭航点。" }
     }
 
     satellite.energy--
     writeSatelliteData(player, data)
+    syncSatelliteDataToClient(player)
     player.addItemCooldown(item.item, 40)
     player.playSound("minecraft:entity.experience_orb.pickup")
     player.setStatusMessage(Component.translate(
         "message.createdelight.satellite.waypoint_written",
-        request.x,
-        request.z,
+        pending.request.x,
+        pending.request.z,
         landing.x,
         landing.y,
         landing.z,
         satellite.energy
     ))
     player.swing()
+    return {
+        ok: true,
+        landing: landing,
+        energy: satellite.energy
+    }
+}
+
+function replaceSatelliteUIText(root, id, fallbackX, fallbackY, textSupplier) {
+    let oldWidget = root.getFirstWidgetById(id)
+    let x = fallbackX
+    let y = fallbackY
+    if (oldWidget != null) {
+        x = oldWidget.getSelfPositionX()
+        y = oldWidget.getSelfPositionY()
+        root.removeWidget(oldWidget)
+    }
+    let label = new LabelWidget()
+    label.setId(id)
+    label.setSelfPosition(x, y)
+    label.setTextProvider(textSupplier)
+    label.setTextColor(0xFFFFFF)
+    root.addWidget(label)
+    return label
+}
+
+function findMissingSatelliteUIWidgets(widgets) {
+    let missing = []
+    Object.keys(widgets).forEach(id => {
+        if (widgets[id] == null)
+            missing.push(id)
+    })
+    return missing
+}
+
+function replaceSatelliteDimensionSelector(root, serializedSelector, candidateNames) {
+    let candidates = new global.CDServerJavaClasses.$ArrayList()
+    candidateNames.forEach(name => candidates.add(name))
+
+    let position = serializedSelector.getSelfPosition()
+    let size = serializedSelector.getSize()
+    let selector = new global.CDServerJavaClasses.$SelectorWidget(
+        position.x,
+        position.y,
+        size.width,
+        size.height,
+        candidates,
+        -1
+    )
+    selector.setId("target_dimension_selecter")
+    selector.setButtonBackground(serializedSelector.getBackgroundTexture())
+    root.removeWidget(serializedSelector)
+    root.addWidget(selector)
+    return selector
+}
+
+function createSatelliteNavigationUI(event) {
+    if (SATELLITE_NAVIGATION_UI_CREATOR == null)
+        return null
+
+    let root = SATELLITE_NAVIGATION_UI_CREATOR.get()
+    if (root == null)
+        return null
+    let player = event.player
+    let item = event.held
+    let data = readSatelliteData(player)
+    let availableDimensions = getAvailableTargetDimensions(data)
+    let selectableDimensions = availableDimensions
+    let selectableDimensionNames = selectableDimensions.map(dimensionName)
+    let tag = item.getOrCreateTag()
+    let savedDimension = tag.getString(SATELLITE_CARD_DIMENSION_KEY)
+    if (selectableDimensions.indexOf(savedDimension) < 0)
+        savedDimension = availableDimensions.length > 0 ? availableDimensions[0] : "minecraft:overworld"
+
+    let state = {
+        status: availableDimensions.length == 0
+            ? "没有可用的虚拟卫星，或导航能源已经耗尽。"
+            : findSpaceAtlas(player) == null
+                ? "背包中需要携带一份星图。"
+                : "请输入坐标并扫描着陆点。",
+        result: "尚未扫描。",
+        pending: null
+    }
+
+    let widgets = {
+        target_dimension_selecter: root.getFirstWidgetById("target_dimension_selecter"),
+        waypoint_name_textfield: root.getFirstWidgetById("waypoint_name_textfield"),
+        x_pos_textfield: root.getFirstWidgetById("x_pos_textfield"),
+        z_pos_textfield: root.getFirstWidgetById("z_pos_textfield"),
+        scan_button: root.getFirstWidgetById("scan_button"),
+        confirm_button: root.getFirstWidgetById("confirm_button")
+    }
+    let missingWidgets = findMissingSatelliteUIWidgets(widgets)
+    if (missingWidgets.length > 0) {
+        let message = `卫星导航界面缺少必要控件：${missingWidgets.join(", ")}`
+        console.error(`[Create Delight] ${message}`)
+        player.setStatusMessage(Component.literal(message))
+        return null
+    }
+
+    let dimensionSelector = replaceSatelliteDimensionSelector(root, widgets.target_dimension_selecter, selectableDimensionNames)
+    let nameField = widgets.waypoint_name_textfield
+    let xField = widgets.x_pos_textfield
+    let zField = widgets.z_pos_textfield
+    let scanButton = widgets.scan_button
+    let confirmButton = widgets.confirm_button
+
+    // The synchronized client mirror lets both sides build the same native selector
+    // tree containing only active satellite coverage with remaining energy.
+    dimensionSelector.setValue(dimensionName(savedDimension))
+
+    let defaultLabel = tag.getString(SATELLITE_CARD_LABEL_KEY) || `${dimensionName(savedDimension)}卫星着陆点`
+    let defaultX = tag.getString(SATELLITE_CARD_X_KEY) || `${Math.floor(player.x)}`
+    let defaultZ = tag.getString(SATELLITE_CARD_Z_KEY) || `${Math.floor(player.z)}`
+    nameField.setCurrentString(defaultLabel)
+    nameField.setMaxStringLength(32)
+    xField.setCurrentString(defaultX)
+    xField.setMaxStringLength(9)
+    zField.setCurrentString(defaultZ)
+    zField.setMaxStringLength(9)
+
+    scanButton.setButtonTexture(ResourceBorderTexture.BUTTON_COMMON, new TextTexture("扫描着陆点"))
+    confirmButton.setButtonTexture(ResourceBorderTexture.BUTTON_COMMON, new TextTexture("写入星图"))
+    replaceSatelliteUIText(root, "scan_status_text", 17, 131, () => state.status)
+    replaceSatelliteUIText(root, "landing_result_text", 17, 144, () => state.result)
+
+    scanButton.setOnPressCallback(click => {
+        if (click.isRemote)
+            return
+        try {
+            let dimension = dimensionFromName(dimensionSelector.getValue())
+            let x = parseSatelliteCoordinate(xField.getCurrentString())
+            let z = parseSatelliteCoordinate(zField.getCurrentString())
+            if (dimension == null || x == null || z == null) {
+                state.pending = null
+                state.status = "请选择目标天体，并输入有效的整数 X/Z。"
+                state.result = "扫描失败。"
+                return
+            }
+
+            let label = `${nameField.getCurrentString()}`.trim() || `${dimensionName(dimension)}卫星着陆点`
+            let request = { label: label, x: x, z: z }
+            state.status = `正在扫描${dimensionName(dimension)}……`
+            let result = scanSatelliteNavigation(player, dimension, request)
+            if (!result.ok) {
+                state.pending = null
+                state.status = result.message
+                state.result = "扫描失败。"
+                return
+            }
+
+            state.pending = result.pending
+            state.status = `扫描完成；安全评分 ${result.pending.landing.safetyScore}，请确认写入。`
+            state.result = satelliteLandingSummary(dimension, request, result.pending.landing)
+            tag.putString(SATELLITE_CARD_DIMENSION_KEY, dimension)
+            tag.putString(SATELLITE_CARD_LABEL_KEY, label)
+            tag.putString(SATELLITE_CARD_X_KEY, `${x}`)
+            tag.putString(SATELLITE_CARD_Z_KEY, `${z}`)
+        } catch (error) {
+            state.pending = null
+            state.status = "卫星扫描发生异常。"
+            state.result = "扫描失败。"
+            console.error(`[Create Delight] Satellite UI scan failed: ${error}`)
+        }
+    })
+
+    confirmButton.setOnPressCallback(click => {
+        if (click.isRemote)
+            return
+        try {
+            if (state.pending == null) {
+                state.status = "请先扫描着陆点。"
+                return
+            }
+
+            let selectedDimension = dimensionFromName(dimensionSelector.getValue())
+            let currentX = parseSatelliteCoordinate(xField.getCurrentString())
+            let currentZ = parseSatelliteCoordinate(zField.getCurrentString())
+            let currentLabel = `${nameField.getCurrentString()}`.trim() || `${dimensionName(state.pending.dimension)}卫星着陆点`
+            if (selectedDimension != state.pending.dimension || currentX != state.pending.request.x || currentZ != state.pending.request.z || currentLabel != state.pending.request.label) {
+                state.pending = null
+                state.status = "输入内容已经变化，请重新扫描。"
+                state.result = "预览已失效。"
+                return
+            }
+
+            let result = confirmSatelliteNavigation(player, item, state.pending)
+            if (!result.ok) {
+                state.status = result.message
+                return
+            }
+            state.status = `航点已写入；卫星剩余能源 ${result.energy}。`
+            state.result = `${dimensionName(selectedDimension)}：${result.landing.x}, ${result.landing.y}, ${result.landing.z}`
+            state.pending = null
+        } catch (error) {
+            state.status = "写入星图时发生异常。"
+            console.error(`[Create Delight] Satellite UI confirmation failed: ${error}`)
+        }
+    })
+
+    return root
 }
 
 ItemEvents.rightClicked("createdelight:folded_mapping_satellite", event => {
     deployVirtualSatellite(event)
 })
 
-ItemEvents.rightClicked("createdelight:satellite_navigation_data_card", event => {
-    try {
-        useSatelliteNavigationCard(event)
-    } catch (error) {
-        console.error(`[Create Delight] Satellite navigation failed: ${error}`)
+PlayerEvents.loggedIn(event => {
+    syncSatelliteDataToClient(event.player)
+})
+
+ItemEvents.firstRightClicked("createdelight:satellite_navigation_data_card", event => {
+    if (event.level.clientSide)
+        return
+    if (SATELLITE_NAVIGATION_UI_CREATOR == null) {
+        event.player.setStatusMessage(Component.literal("卫星导航界面加载失败。"))
+        return
     }
+    let player = event.player
+    let hand = event.hand
+    syncSatelliteDataToClient(player)
+    // KubeJS and LDLib use separate client packet handlers. Give the snapshot time
+    // to populate the client player's local persistentData before building the UI.
+    player.server.scheduleInTicks(2, () => {
+        if (player.getItemInHand(hand).id != "createdelight:satellite_navigation_data_card")
+            return
+        ItemUIFactory.INSTANCE.openUI(player, hand, SATELLITE_UI_NAME)
+        player.swing()
+    })
+})
+
+LDLibUI.item(SATELLITE_UI_NAME, event => {
+    let root = null
+    try {
+        root = createSatelliteNavigationUI(event)
+    } catch (error) {
+        console.error(`[Create Delight] Failed to create satellite navigation UI: ${error}`)
+        event.player.setStatusMessage(Component.literal("卫星导航界面初始化失败，请检查日志。"))
+        return
+    }
+    if (root == null) {
+        event.player.setStatusMessage(Component.literal("卫星导航界面加载失败，请检查 UI 文件。"))
+        return
+    }
+    event.success(root)
 })
 
 ServerEvents.recipes(event => {
