@@ -1,0 +1,70 @@
+
+[general]
+	#Master switch. If false, all JEI Optimize mixin behavior no-ops or falls back to JEI baseline.
+	enabled = true
+
+[jeiContent]
+	#Hide JEI's generated anvil repair recipes (repairing an item with its crafting material).
+	#Also skips generating them during startup, which saves time. Default false.
+	disableAnvilRepairRecipes = false
+	#Hide JEI's generated anvil enchanting recipes (combining enchanted books on an anvil).
+	#Also skips generating them during startup, which saves time. Default false.
+	disableAnvilEnchantRecipes = false
+
+[diagnostics]
+	#Enable per-plugin and per-stage JEI timing logs.
+	pluginTiming = false
+	#Enable JEI registration count diagnostics.
+	registrationCounts = false
+
+[syncOptimizations]
+	#Enable one-start UID/string/sort helper caches.
+	cacheScope = true
+	#Enable IngredientFilter batch initialization optimization.
+	batchIngredientFilterInit = true
+	#Enable sort key and tag count short cache.
+	sortKeyCache = true
+	#Enable delayed JEI compact scheduling.
+	delayCompact = true
+
+[async]
+	#Async search prefix index preheat. Default OFF (disabled).
+	#Reason: this builds a separate, approximate search index that can override JEI's
+	#own results for prefixed queries (@ mod, # tooltip, $ tag, % tab, ^ color, & id).
+	#It is redundant with asyncIngredientFilter, which already rebuilds JEI's real
+	#ElementSearch off-thread; the shadow index can return incomplete results and may
+	#block the render thread if a prefixed search runs before it finishes building.
+	#Enable only if you specifically need it and accept these trade-offs.
+	searchPreheat = false
+	#Enable client-tick chunked snapshot extraction.
+	snapshotChunking = true
+	#Enable async sort computation.
+	sortPreheat = true
+	#Enable async recipe focus index preheat.
+	recipeFocusPreheat = true
+	#Enable async catalyst index preheat.
+	catalystPreheat = true
+	#Worker thread count. Ignored when all async features are disabled.
+	#Range: 1 ~ 8
+	workerThreads = 4
+	#Per-client-tick snapshot extraction budget in milliseconds. Ignored when snapshotChunking is disabled.
+	#Range: 1 ~ 10
+	snapshotBudgetMs = 2
+	#Build the JEI ingredient search filter in the background after entering the world instead of blocking startup. The JEI item list fills in progressively.
+	deferredIngredientFilter = true
+	#Per-client-tick budget in milliseconds for the deferred ingredient filter build. Higher fills faster but costs more per tick.
+	#Range: 1 ~ 40
+	ingredientFilterBudgetMs = 10
+	#Number of ingredients added per work unit during the deferred ingredient filter build.
+	#Range: 50 ~ 4000
+	ingredientFilterChunkSize = 500
+	#Build the JEI ingredient search filter on worker threads after entering the world, then atomically swap it in.
+	#This removes the multi-second 'Building ingredient filter' cost from the loading screen. The JEI item list
+	#appears a few seconds after you enter the world. Falls back to a synchronous build if the off-thread build fails.
+	#Enabled by default.
+	asyncIngredientFilter = true
+	#Validate JEI's built-in (vanilla) recipes in parallel across CPU cores during startup.
+	#The result is identical to JEI's sequential output; it falls back to sequential validation on any error.
+	#Enabled by default.
+	parallelVanillaRecipes = false
+
