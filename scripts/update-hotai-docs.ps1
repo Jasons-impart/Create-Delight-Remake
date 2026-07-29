@@ -33,17 +33,23 @@ function Get-HotaiModule([string]$InternalName) {
     return "Unknown"
 }
 
-function Get-GeneratedBlock([array]$Rows, [int]$FoundCount, [int]$MissingCount) {
+function Get-GeneratedBlock([array]$Rows, [int]$StaticFoundCount, [int]$RuntimeCreatedCount, [int]$UnverifiedCount) {
     $lines = New-Object System.Collections.Generic.List[string]
     $lines.Add("<!-- HOTAI_STATUS:BEGIN -->") | Out-Null
     $lines.Add("> 本区块由 ``scripts/update-hotai-docs.ps1`` 生成。修改 ``hotai/**/*.badiff`` 后运行该脚本；人工解释写在区块外。") | Out-Null
     $lines.Add("") | Out-Null
-    $lines.Add("当前扫描到 $($Rows.Count) 个 ``.badiff``；目标 class 命中 $FoundCount 个，未命中 $MissingCount 个。") | Out-Null
+    $lines.Add("当前扫描到 $($Rows.Count) 个 ``.badiff``；静态 JAR 命中 $StaticFoundCount 个，静态未命中但已由当前启动日志确认动态创建 $RuntimeCreatedCount 个，尚未由当前启动日志确认 $UnverifiedCount 个。") | Out-Null
     $lines.Add("") | Out-Null
-    $lines.Add("| 模组/领域 | 补丁文件 | 目标 class | 当前目标 class |") | Out-Null
+    $lines.Add("| 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |") | Out-Null
     $lines.Add("|---|---|---|---|") | Out-Null
     foreach ($row in $Rows) {
-        $status = if ($row.JarName) { "命中 ``$($row.JarName)``" } else { "未命中当前 JAR" }
+        $status = if ($row.JarName) {
+            "静态命中 ``$($row.JarName)``"
+        } elseif ($row.RuntimePatched) {
+            "运行时已确认动态创建（静态 JAR 无此 class）"
+        } else {
+            "静态 JAR 无此 class；当前启动日志未确认（可能按需加载）"
+        }
         $lines.Add("| $($row.Module) | ``$($row.BadiffPath)`` | ``$($row.InternalName)`` | $status |") | Out-Null
     }
     $lines.Add("<!-- HOTAI_STATUS:END -->") | Out-Null
@@ -65,6 +71,7 @@ $badiffFiles = @(Get-ChildItem -LiteralPath $hotaiPath -Recurse -File -Filter "*
 $rows = New-Object System.Collections.Generic.List[object]
 $targetClasses = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
 $targetToRow = @{}
+$internalNameToRow = @{}
 
 foreach ($file in $badiffFiles) {
     $relativePath = Get-RelativePath $file.FullName
@@ -77,10 +84,12 @@ foreach ($file in $badiffFiles) {
         InternalName = $internalName
         TargetClass = $targetClass
         JarName = ""
+        RuntimePatched = $false
     }
     $rows.Add($row) | Out-Null
     $targetClasses.Add($targetClass) | Out-Null
     $targetToRow[$targetClass] = $row
+    $internalNameToRow[$internalName] = $row
 }
 
 $jarRoots = @(
@@ -116,9 +125,21 @@ foreach ($jar in $jarFiles) {
     }
 }
 
-$foundCount = @($rows | Where-Object { -not [string]::IsNullOrWhiteSpace($_.JarName) }).Count
-$missingCount = $rows.Count - $foundCount
-$generatedBlock = Get-GeneratedBlock -Rows $rows -FoundCount $foundCount -MissingCount $missingCount
+$latestLogPath = Join-Path $Root "logs/latest.log"
+if (Test-Path -LiteralPath $latestLogPath) {
+    $latestLogText = Get-Content -LiteralPath $latestLogPath -Raw
+    foreach ($match in [regex]::Matches($latestLogText, "(?m)Patched class:\s+([^\r\n]+)")) {
+        $internalName = $match.Groups[1].Value.Trim()
+        if ($internalNameToRow.ContainsKey($internalName)) {
+            $internalNameToRow[$internalName].RuntimePatched = $true
+        }
+    }
+}
+
+$staticFoundCount = @($rows | Where-Object { -not [string]::IsNullOrWhiteSpace($_.JarName) }).Count
+$runtimeCreatedCount = @($rows | Where-Object { -not $_.JarName -and $_.RuntimePatched }).Count
+$unverifiedCount = @($rows | Where-Object { -not $_.JarName -and -not $_.RuntimePatched }).Count
+$generatedBlock = Get-GeneratedBlock -Rows $rows -StaticFoundCount $staticFoundCount -RuntimeCreatedCount $runtimeCreatedCount -UnverifiedCount $unverifiedCount
 
 $detailsText = Get-Content -Raw -LiteralPath $DetailsPath -Encoding UTF8
 $begin = "<!-- HOTAI_STATUS:BEGIN -->"

@@ -12,7 +12,7 @@
 
 - 整合包实际使用的 `hotai-1.0.jar` 是 Forge ModLauncher `ITransformationService`，启动时读取游戏目录 `hotai/` 下的 `.badiff` 或 `.class`。
 - `.badiff` 文件路径就是目标 class 的 internal name，例如 `hotai/com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour.badiff` 会补丁 `com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour`。
-- `.badiff` 是针对目标 class 字节码的二进制 diff，和目标模组版本强绑定。目标 class 缺失或字节码变化过大时，补丁不会按预期生效，需看启动日志中的 `Patched class:`。
+- `.badiff` 是针对目标 class 字节码的二进制 diff，和目标模组版本强绑定。Forge ModLauncher 会为转换器声明、但没有原始字节码的目标创建空 `ClassNode`，因此 HotAI 可用 `.badiff` 动态创建 class；静态 JAR 未命中时必须看启动日志中的 `Patched class:`，不能直接判为失效。
 - GitHub 当前 HEAD 已移植到 NeoForge `ClassProcessorProvider`，但读取 `hotai/`、支持 `.badiff`、支持把 `.class` 转存为 `.badiff` 的核心语义与整合包使用的 Forge 版一致。
 
 ## 当前可还原确认的补丁
@@ -31,17 +31,17 @@
 | Better Compatibility Checker 状态 ping mixin | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | 将匿名内部类捕获的 `ServerData` 改为反射查找，并兼容混淆/反混淆方法名；注入点改到响应处理尾部，降低字段名变化造成的 mixin 失败。 |
 | Quality Food 方块掉落品质 | `de/cadentem/quality_food/mixin/BlockMixin.badiff` | 只在存在 `DropData` 且方块通过 `Utils.isValidBlock` 时应用方块品质，移除无上下文时对掉落物套品质的 fallback。 |
 
-## 目标类未在当前 JAR 扫描中还原的补丁
+## 静态 JAR 外动态创建的超导连接器类
 
-以下 `.badiff` 文件存在于 `hotai/`，但按当前 `mods/*.jar` 直接查找同名 class 时未找到目标，分析时无法还原补丁后源码。它们可能是历史遗留、目标模组版本迁移后的无效补丁，或依赖实际启动环境中其他来源的 class；修改相关模组版本时必须用启动日志验证。
+以下 `.badiff` 的目标 class 不在当前 `mods/*.jar` 中；Forge ModLauncher 会提供空 `ClassNode`，由 HotAI 应用 diff 后动态创建。静态扫描不能还原其完整源码，运行时状态以启动日志为准。
 
 | 补丁文件 | 备注 |
 |---|---|
-| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff`、`SuperconductingConnectorBlockEntity.badiff`、`SuperconductingConnectorBlockEntity$1.badiff` | 配套注册补丁会引用超导连接器类，但当前 `createaddition-1.20.1-1.3.3.jar` 直接扫描未找到这些 class；实际可用性需以最新启动日志和游戏内注册结果为准。 |
+| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff`、`SuperconductingConnectorBlockEntity.badiff`、`SuperconductingConnectorBlockEntity$1.badiff` | 配套注册补丁会引用超导连接器类；当前启动日志已确认前两个 class 被 HotAI 动态创建。匿名内部类 `$1` 可能按需加载，需在实际使用超导连接器时继续核对日志和游戏内注册结果。 |
 
 ## 维护注意
 
-- 更新目标模组时，先确认对应 class 路径仍存在，再看 `logs/latest.log` 是否出现每个目标的 `Patched class:`。
+- 更新目标模组时，先确认目标是上游静态 class 还是由 HotAI 动态创建；再看 `logs/latest.log` 是否出现每个目标的 `Patched class:`。
 - 修改 `hotai/**/*.badiff` 后运行 `scripts/update-hotai-docs.ps1`，再运行 `scripts/update-hotai-docs.ps1 -Check` 或 `scripts/validate-knowledge-base.ps1`；校验会阻止生成状态区过期。
 - 新增或替换补丁时优先保留 `.badiff`，不要把目标模组完整 class 当作长期源文件；HotAI 可在加载 `.class` 后自动转存为 `.badiff`。
 - 超导连接器不仅依赖 HotAI 注册补丁，还依赖 `kubejs/assets/createaddition/` 的模型、贴图、语言和 `kubejs/server_scripts/Create Addition/` 的配方、标签、掉落。
