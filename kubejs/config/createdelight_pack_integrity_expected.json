@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-29T14:15:25Z",
+  "generatedAt": "2026-07-29T18:07:25Z",
   "generatedBy": "scripts/generate-pack-integrity-manifest.py",
   "expectedFiles": {
     "common": [
@@ -22,7 +22,7 @@
       "apotheosis-1.20.1-7.4.8.jar",
       "apothicattributes-1.20.1-1.3.7.jar",
       "appleskin-forge-mc1.20.1-2.5.1.jar",
-      "appliedcreate-1.20.1-1.1.5.jar",
+      "appliedcreate-1.20.1-1.1.6.jar",
       "appliedenergistics2-forge-15.4.10.jar",
       "architectury-9.2.14-forge.jar",
       "attributefix-forge-1.20.1-21.0.5.jar",
@@ -48,7 +48,7 @@
       "cave-delight-1.20.1-2.0.1.jar",
       "centralvintage-1.2.1.jar",
       "charmofundying-forge-6.5.0+1.20.1.jar",
-      "chat_heads-0.15.2-forge-1.20.jar",
+      "chat_heads-0.15.3-forge-1.20.jar",
       "chefsdelight-1.0.4-forge-1.20.1.jar",
       "citadel-2.6.3-1.20.1.jar",
       "cloth-config-11.1.136-forge.jar",
@@ -113,7 +113,7 @@
       "createredstonelinkgui-1.20.1-1.9.1.jar",
       "createsolar-1.2.6-1.20.1.jar",
       "createstockbridge-1.20-0.2.0.jar",
-      "createtransmission-1.1.0+forge-create6-1.20.1.jar",
+      "createtransmission-1.2.1+forge-create6-1.20.1.jar",
       "createultimine-1.20.1-forge-1.3.1.jar",
       "creativecore_forge_v2.12.35_mc1.20.1.jar",
       "creeperoverhaul-3.0.2-forge.jar",
@@ -237,7 +237,7 @@
       "neruina-3.3.3+1.20.1-forge.jar",
       "netmusic-1.5.1-forge+mc1.20.1.jar",
       "nochatreports-forge-1.20.1-v2.2.2.jar",
-      "northstar-0.6.1+1.20.1.jar",
+      "northstar-0.6.4+1.20.1.jar",
       "northstar-curios-compat-1.3.1.jar",
       "observable-4.4.2.jar",
       "oceanic_delight-1.0.3-forge-1.20.1.jar",
@@ -282,9 +282,9 @@
       "solardimensionaddon-1.2.0.jar",
       "solcarrot-1.20.1-1.15.1.jar",
       "some-assembly-required-1.20.1-4.2.3.jar",
-      "sophisticatedbackpacks-1.20.1-3.24.60.1982.jar",
+      "sophisticatedbackpacks-1.20.1-3.24.62.2017.jar",
       "sophisticatedbackpackscreateintegration-1.20.1-0.1.8.116.jar",
-      "sophisticatedcore-1.20.1-1.3.71.2181.jar",
+      "sophisticatedcore-1.20.1-1.3.73.2192.jar",
       "soul-fire-d-forge-1.20.1-4.0.11.jar",
       "spark-1.10.53-forge.jar",
       "sqlite-jdbc-3.36.0.3+20211227-all.jar",
@@ -312,8 +312,8 @@
       "traderefresh-2.5.2.jar",
       "trailandtales_delight-1.7-all.jar",
       "trashcans-1.0.18b-forge-mc1.20.jar",
-      "trashslot-forge-1.20.1-15.1.4.jar",
-      "trueuuid-1.1.2-forge1.20.1.jar",
+      "trashslot-forge-1.20.1-15.1.5.jar",
+      "trueuuid-1.2.0-forge-1.20.1.jar",
       "vintage_kubejs-1.20.1-1.0.0rc-2.jar",
       "vintagedelight-0.1.6.jar",
       "vintageimprovements-1.20.1-0.3.7.8.jar",
@@ -321,9 +321,9 @@
       "watut-forge-1.20.1-1.2.3.jar",
       "waystones-forge-1.20.1-14.1.20.jar",
       "world_preview-forge-1.20.1-1.3.1.jar",
-      "xaerominimap-forge-1.20.1-26.1.0.jar",
+      "xaerominimap-forge-1.20.1-26.4.2.jar",
       "xaeros_waystones_compatibility-1.1 - 1.20.1.jar",
-      "xaeroworldmap-forge-1.20.1-1.41.2.jar",
+      "xaeroworldmap-forge-1.20.1-1.44.2.jar",
       "yet_another_config_lib_v3-3.6.6+1.20.1-forge.jar",
       "youkaishomecoming-2.7.0.jar",
       "youkaishomecoming_curios-0.03.jar",
@@ -369,7 +369,7 @@
       "iris_shader_folder-1.3.3-forge.jar",
       "itemborders-1.20.1-forge-1.2.2.jar",
       "itemphysiclite_forge_v1.6.6_mc1.20.1.jar",
-      "ixeris-4.5.2+1.20.1-forge.jar",
+      "ixeris-4.6.0+1.20.1-forge.jar",
       "jecharacters-1.20.1-forge-4.6.4.jar",
       "jeed-1.20-2.2.5.jar",
       "lucent-1.20.1-1.5.5.jar",
@@ -470,7 +470,7 @@
     {
       "side": "client",
       "metadata": "mods/ixeris.pw.toml",
-      "filename": "Ixeris-4.5.2+1.20.1-forge.jar"
+      "filename": "Ixeris-4.6.0+1.20.1-forge.jar"
     },
     {
       "side": "client",
@@ -920,7 +920,7 @@
     {
       "side": "common",
       "metadata": "mods/northstar.pw.toml",
-      "filename": "Northstar-0.6.1+1.20.1.jar"
+      "filename": "Northstar-0.6.4+1.20.1.jar"
     },
     {
       "side": "common",
@@ -1105,7 +1105,7 @@
     {
       "side": "common",
       "metadata": "mods/appliedcreate.pw.toml",
-      "filename": "appliedcreate-1.20.1-1.1.5.jar"
+      "filename": "appliedcreate-1.20.1-1.1.6.jar"
     },
     {
       "side": "common",
@@ -1200,7 +1200,7 @@
     {
       "side": "common",
       "metadata": "mods/chat_heads.pw.toml",
-      "filename": "chat_heads-0.15.2-forge-1.20.jar"
+      "filename": "chat_heads-0.15.3-forge-1.20.jar"
     },
     {
       "side": "common",
@@ -1485,7 +1485,7 @@
     {
       "side": "common",
       "metadata": "mods/createtransmission.pw.toml",
-      "filename": "createtransmission-1.1.0+forge-create6-1.20.1.jar"
+      "filename": "createtransmission-1.2.1+forge-create6-1.20.1.jar"
     },
     {
       "side": "common",
@@ -2125,7 +2125,7 @@
     {
       "side": "common",
       "metadata": "mods/sophisticatedbackpacks.pw.toml",
-      "filename": "sophisticatedbackpacks-1.20.1-3.24.60.1982.jar"
+      "filename": "sophisticatedbackpacks-1.20.1-3.24.62.2017.jar"
     },
     {
       "side": "common",
@@ -2135,7 +2135,7 @@
     {
       "side": "common",
       "metadata": "mods/sophisticatedcore.pw.toml",
-      "filename": "sophisticatedcore-1.20.1-1.3.71.2181.jar"
+      "filename": "sophisticatedcore-1.20.1-1.3.73.2192.jar"
     },
     {
       "side": "common",
@@ -2245,12 +2245,12 @@
     {
       "side": "common",
       "metadata": "mods/trashslot.pw.toml",
-      "filename": "trashslot-forge-1.20.1-15.1.4.jar"
+      "filename": "trashslot-forge-1.20.1-15.1.5.jar"
     },
     {
       "side": "common",
       "metadata": "mods/trueuuid.pw.toml",
-      "filename": "trueuuid-1.1.2-forge1.20.1.jar"
+      "filename": "trueuuid-1.2.0-forge-1.20.1.jar"
     },
     {
       "side": "common",
@@ -2290,7 +2290,7 @@
     {
       "side": "common",
       "metadata": "mods/xaerominimap.pw.toml",
-      "filename": "xaerominimap-forge-1.20.1-26.1.0.jar"
+      "filename": "xaerominimap-forge-1.20.1-26.4.2.jar"
     },
     {
       "side": "common",
@@ -2300,7 +2300,7 @@
     {
       "side": "common",
       "metadata": "mods/xaeroworldmap.pw.toml",
-      "filename": "xaeroworldmap-forge-1.20.1-1.41.2.jar"
+      "filename": "xaeroworldmap-forge-1.20.1-1.44.2.jar"
     },
     {
       "side": "common",
