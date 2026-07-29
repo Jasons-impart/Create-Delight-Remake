@@ -17,19 +17,18 @@
 | Create Liquid Fuel | `createliquidfuel-2.1.1-1.20.1.jar` | 2/2 可应用：`BurnerStomachHandler`、`MixinBlazeBurnerTileEntity`。 | 当前可生效。 |
 | Create Addition | `createaddition-1.20.1-1.3.3.jar` | 11/14 可应用；新增 `CAPonders` 补丁可应用；`SuperconductingConnectorBlock`、`SuperconductingConnectorBlockEntity`、`SuperconductingConnectorBlockEntity$1` 目标 class 缺失。 | Ponder 清理和现有线缆逻辑可生效，但超导连接器整体当前不完整；`CABlocks`/`CABlockEntities` 补丁后会引用缺失的 `SuperconductingConnectorBlock*`，属于高风险。 |
 | Vintage Improvements | `vintageimprovements-1.20.1-0.3.7.8.jar` | 2/2 目标 class 命中：`VintagePonderScene`、`VintagePonderTag`。 | 当前 JAR 可匹配。 |
-| Create Mechanical Spawner | `create_mechanical_spawner-1.20.1-0.1.7-6.0.6.jar` | `LivingEntityHelper` 目标 class 未命中。 | 当前 JAR 无法由该 `.badiff` 匹配；需核对上游类路径并以启动日志验证。 |
 | TACZ | `tacz-1.20.1-1.1.4-hotfix-all.jar` | 1/1 可应用：`ModCreativeTabs`。 | 当前可生效。 |
 | Neapolitan | `neapolitan-1.20.1-5.1.0.jar` | 1/1 可应用：`Neapolitan`。 | 当前可生效。 |
 | Better Compatibility Checker | `BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar` | 1/1 可应用：`ServerStatusPingerMixin`。 | 当前可生效。 |
 | Quality Food | `quality_food-1.20.1-2.3.3-all.jar` | 1/1 目标 class 命中：`BlockMixin`。 | 当前 JAR 可匹配。 |
 | Create New Age | `create-new-age-1.2.0+forge-mc1.20.1.jar` | 1/1 可应用：旧 `org/antarcticgardens/newage/CreateNewAgePonders` 补丁已替换为当前路径 `org/antarcticgardens/cna/content/ponders/CNAPonders`。 | 当前可生效；补丁继续实现提交 `e11d47f206c1e9cb28bdf506698c824586f9b00c`（`删除cna中无用的ponder (#649)`）的意图，移除 heating、heater、reactor、wires 场景与对应标签。 |
 
-总计：当前 26 个 `.badiff` 中 22 个目标 class 命中，4 个当前未命中。前三个未命中项属于 Create Addition 超导连接器实现类；其余 Create Addition 补丁仍会注册并引用这些缺失类，因此是需要优先处理的高风险项。`LivingEntityHelper` 也未命中当前 Create Mechanical Spawner JAR，需先确认上游类路径；静态扫描本身不能断言运行时结果。Create New Age 旧路径补丁已完成迁移。
+总计：当前 25 个 `.badiff` 中 22 个目标 class 命中，3 个当前未命中。未命中的目标全部属于 Create Addition 超导连接器实现类；其余 Create Addition 补丁仍会注册并引用这些缺失类，因此是需要优先处理的高风险项。Create New Age 旧路径补丁已完成迁移。
 
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 26 个 `.badiff`；目标 class 命中 22 个，未命中 4 个。
+当前扫描到 25 个 `.badiff`；目标 class 命中 22 个，未命中 3 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 当前目标 class |
 |---|---|---|---|
@@ -49,7 +48,6 @@
 | Create Addition | `hotai/com/mrh0/createaddition/index/CAPonders.badiff` | `com/mrh0/createaddition/index/CAPonders` | 命中 `createaddition-1.20.1-1.3.3.jar` |
 | Vintage Improvements | `hotai/com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene.badiff` | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene` | 命中 `vintageimprovements-1.20.1-0.3.7.8.jar` |
 | Vintage Improvements | `hotai/com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderTag.badiff` | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderTag` | 命中 `vintageimprovements-1.20.1-0.3.7.8.jar` |
-| Create Mechanical Spawner | `hotai/com/oierbravo/create_mechanical_spawner/foundation/utility/LivingEntityHelper.badiff` | `com/oierbravo/create_mechanical_spawner/foundation/utility/LivingEntityHelper` | 未命中当前 JAR |
 | Create | `hotai/com/simibubi/create/compat/jei/category/ItemDrainCategory.badiff` | `com/simibubi/create/compat/jei/category/ItemDrainCategory` | 命中 `create-1.20.1-6.0.8.jar` |
 | Create | `hotai/com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour.badiff` | `com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour` | 命中 `create-1.20.1-6.0.8.jar` |
 | Create | `hotai/com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour.badiff` | `com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour` | 命中 `create-1.20.1-6.0.8.jar` |
@@ -349,11 +347,6 @@ GUN_MG_TAB.icon = gun("create_armorer:mg_platemag_flywheel");
 ### 其他兼容修复
 
 ```java
-// LivingEntityHelper.badiff
-Entity entity = entityType.create(serverLevel, pos, MobSpawnType.SPAWNER);
-```
-
-```java
 // VintagePonderScene.badiff
 // 删除：
 helper.forComponents(VintageBlocks.BELT_GRINDER)
@@ -450,12 +443,6 @@ return stack;
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
 | `com/tacz/guns/init/ModCreativeTabs.badiff` | 已还原 | 移除 `DefaultAssets` 默认图标引用；把 TACZ 各创造页签图标替换为整合包枪械线资产：弹药 `create_armorer:slap`，瞄具 `create_armorer:scope_telephoto`，枪口 `create_armorer:muzzle_refit_brass_retractor`，枪托 `applied_armorer:bracelet_zenith`，握把 `create_armorer:grip_gantry_shaft`，扩容弹匣 `create_armorer:extended_mag_ca_3`，手枪 `create_armorer:pistol_auto_stress`，狙击枪 `create_armorer:sniper_semi_clockwork`，步枪 `create_armorer:rifle_assult_crane`，霰弹枪 `create_armorer:shotgun_pump_bearing`，冲锋枪 `create_armorer:smg_auto_crank`，RPG 页 `create_armorer:special_melee_wrench`，机枪 `create_armorer:mg_platemag_flywheel`。 | 创造模式中 TACZ 页签直接展示整合包自定义军械内容，而不是 TACZ 默认枪械。 |
-
-## Create Mechanical Spawner
-
-| 文件 | 状态 | 具体改动 | 影响 |
-|---|---|---|---|
-| `com/oierbravo/create_mechanical_spawner/foundation/utility/LivingEntityHelper.badiff` | 当前目标未命中（历史已还原） | 当前 JAR 未找到该 target class；历史补丁会在指定实体和随机实体创建路径中，把 `EntityType#create(Level)` 替换为 `EntityType#create(ServerLevel, BlockPos, MobSpawnType.SPAWNER)`，并新增 `MobSpawnType` import。 | 现版本不能据此确认补丁已加载；需先迁移到当前上游类路径，再以启动日志验证。 |
 
 ## Vintage Improvements
 

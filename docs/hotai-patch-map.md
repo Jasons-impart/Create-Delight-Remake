@@ -26,7 +26,6 @@
 | Create Addition Ponder 清理 | `com/mrh0/createaddition/index/CAPonders.badiff` | 从 `FLUIDS` 标签和 `liquid_blaze_burner` 场景入口移除 `CAItems.STRAW`，保留烈焰人燃烧室本体的场景入口，避免吸管重复展示该 Ponder。 |
 | Create New Age Ponder 清理 | `org/antarcticgardens/cna/content/ponders/CNAPonders.badiff` | 基于当前包路径移除 heating、heater、reactor、wires 场景和 `WIRING`、`HEATING`、`REACTOR` 标签，保留电气、磁力、发电和电机扩展 Ponder；配套结构位于 `kubejs/assets/create_new_age/ponder/`。 |
 | TACZ 创造模式页签图标 | `com/tacz/guns/init/ModCreativeTabs.badiff` | 将 TACZ 弹药、配件和枪械页签图标从默认资产替换为整合包自定义 `create_armorer` / `applied_armorer` 资产，和 Kinetic Pixel、TACZ 配方线保持一致。 |
-| Create Mechanical Spawner 刷怪实体创建 | `com/oierbravo/create_mechanical_spawner/foundation/utility/LivingEntityHelper.badiff` | 使用带 `ServerLevel`、`BlockPos`、`MobSpawnType.SPAWNER` 的实体创建入口，保留刷怪笼生成原因，减少依赖默认 `EntityType#create(Level)` 带来的兼容问题。 |
 | Vintage Improvements Ponder | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene.badiff`、`VintagePonderTag.badiff` | 从 Ponder 场景和 `KINETIC_APPLIANCES` 标签中移除 `BELT_GRINDER` 条目，避免砂带磨床 Ponder 继续注册。 |
 | Neapolitan 客户端页签编辑 | `com/teamabnormals/neapolitan/core/Neapolitan.badiff` | 客户端初始化时跳过 `NeapolitanBlocks.setupTabEditors()` 和 `NeapolitanItems.setupTabEditors()`，避免 Neapolitan 自行编辑创造页签。 |
 | Better Compatibility Checker 状态 ping mixin | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | 将匿名内部类捕获的 `ServerData` 改为反射查找，并兼容混淆/反混淆方法名；注入点改到响应处理尾部，降低字段名变化造成的 mixin 失败。 |
@@ -39,7 +38,6 @@
 | 补丁文件 | 备注 |
 |---|---|
 | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff`、`SuperconductingConnectorBlockEntity.badiff`、`SuperconductingConnectorBlockEntity$1.badiff` | 配套注册补丁会引用超导连接器类，但当前 `createaddition-1.20.1-1.3.3.jar` 直接扫描未找到这些 class；实际可用性需以最新启动日志和游戏内注册结果为准。 |
-| `com/oierbravo/create_mechanical_spawner/foundation/utility/LivingEntityHelper.badiff` | 当前 `create_mechanical_spawner-1.20.1-0.1.7-6.0.6.jar` 直接扫描未找到目标 class；需先确认上游类路径是否迁移，再以启动日志验证。 |
 
 ## 维护注意
 
