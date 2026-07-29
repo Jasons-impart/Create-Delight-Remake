@@ -121,7 +121,7 @@
 	#Apply patch withering code for crop leave blocks if tick failed.
 	CropLeavesPatch = true
 	#Bone meal may fail under unsuitable growing conditions.
-	RestrictBoneMeal = true
+	RestrictBoneMeal = false
 	#The duration required for the Prayer Ritual (relative to one Solar Term).
 	#Range: 1.0E-5 ~ 5000.0
 	SeasonalRitualTimeCost = 0.15
