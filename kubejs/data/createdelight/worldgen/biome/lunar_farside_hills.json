@@ -1,0 +1,75 @@
+{
+  "carvers": {
+    "air": [
+      "minecraft:cave_extra_underground",
+      "minecraft:cave"
+    ]
+  },
+  "downfall": 0.4,
+  "effects": {
+    "fog_color": 0,
+    "sky_color": 0,
+    "water_color": 4159204,
+    "water_fog_color": 329011
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "northstar:moon_ore_titanium",
+      "northstar:moon_ore_copper",
+      "northstar:moon_ore_diamond",
+      "northstar:moon_ore_gold",
+      "northstar:moon_ore_iron",
+      "northstar:moon_ore_iron_large",
+      "northstar:moon_ore_lapis",
+      "northstar:moon_ore_redstone",
+      "northstar:moon_ore_zinc",
+      "northstar:moon_ore_glowstone",
+      "northstar:moon_blob_andesite",
+      "northstar:moon_blob_asurine",
+      "northstar:moon_blob_basalt",
+      "northstar:moon_blob_blackstone"
+    ],
+    [
+      "northstar:moon_lunar_sapphire_geode",
+      "northstar:frost_sparse"
+    ]
+  ],
+  "has_precipitation": false,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [
+      {
+        "type": "northstar:moon_lunargrade",
+        "maxCount": 4,
+        "minCount": 1,
+        "weight": 40
+      },
+      {
+        "type": "northstar:moon_snail",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 20
+      },
+      {
+        "type": "northstar:moon_eel",
+        "maxCount": 5,
+        "minCount": 2,
+        "weight": 20
+      }
+    ],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 0.8
+}
