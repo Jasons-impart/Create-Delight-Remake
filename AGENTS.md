@@ -19,7 +19,7 @@ CD-master-dev/
 ├── config/           # 50+ mod configs
 ├── defaultconfigs/   # First-run defaults copied to config/
 ├── tacz/             # TACZ gun data: armorer packs & gun config
-├── hotai/            # HotAI mod data
+├── hotai/            # hotai mod data
 ├── mods/             # Packwiz metadata only (*.pw.toml); no tracked JARs
 ├── packwiz-files/    # Manually-managed mod JARs (CF-restricted, custom)
 ├── scripts/          # Utility scripts (sync, update-packwiz-meta)

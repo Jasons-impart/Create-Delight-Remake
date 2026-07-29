@@ -75,6 +75,9 @@ function Test-DevKnowledgeChineseMarkdown([string]$RelativePath) {
         if ($inCodeFence -or [string]::IsNullOrWhiteSpace($trimmed)) {
             continue
         }
+        if ($trimmed -match '^<!--.*-->$') {
+            continue
+        }
         if ($trimmed -match '^\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?$') {
             continue
         }
@@ -130,8 +133,9 @@ $requiredPaths = @(
     "scripts/sync-packwiz-assets.ps1",
     "scripts/update-packwiz-meta.ps1",
     "scripts/update-hotai-docs.ps1",
-    "docs/hotai-patch-map.md",
-    "docs/hotai-badiff-details.md",
+    "docs/dev-knowledge/hotai/README.md",
+    "docs/dev-knowledge/hotai/patch-map.md",
+    "docs/dev-knowledge/hotai/badiff-details.md",
     "scripts/add-packwiz-target.ps1",
     "scripts/update-packwiz-target.ps1",
     "kubejs/data/oei/replacements",

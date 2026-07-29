@@ -41,6 +41,7 @@ Codex Stop hook 会运行 `scripts/validate-knowledge-base.ps1`，并写入 `tmp
 - **兼容与问题修复（bugfix/compat）** → `docs/dev-knowledge/compatibility-patches.md`，记录问题、上游变化、补丁位置、验证与复核条件。
 - **bug、坑点或历史教训** → 优先写入 `docs/lessons-learned.md`。
 - **知识路由或 skill 行为变化** → 更新受影响的 skill。
+- **成组项目技术资料或其生成脚本** → 以 `docs/dev-knowledge/<专题>/README.md` 作为专题入口；内容/兼容台账只保留分类与入口链接，不复制专题事实与操作流程。
 - **没有可复用项目价值** → 不记录。
 
 ### 第 2 步：选择知识形态
@@ -51,11 +52,12 @@ Codex Stop hook 会运行 `scripts/validate-knowledge-base.ps1`，并写入 `tmp
 
 应用 dev-knowledge 存放表后，再检查这些覆盖规则：
 
-- 新增或有意调整配方、平衡、NPC、剧情、任务、物品、机器或系统 → `docs/dev-knowledge/content-map.md`；不因实现位于 KubeJS、配置、HotAI、CDC 或 mixin 而改变分类。
+- 新增或有意调整配方、平衡、NPC、剧情、任务、物品、机器或系统 → `docs/dev-knowledge/content-map.md`；不因实现位于 KubeJS、配置、hotai、CDC 或 mixin 而改变分类。
 - 恢复预期行为、修复错误或回归、适配上游版本变更 → `docs/dev-knowledge/compatibility-patches.md`；不因补丁目录而将其误归为 feat。
 - 候选报告会对可能改变玩法的整合包文件同时列出两种台账；依据改动目的选择，不确定时先检查玩家可见结果与问题描述。
 - 与具体补丁无关、未来会反复遇到的根因或非显而易见的 workaround → `docs/lessons-learned.md`。
 - 新的 KubeJS helper/API 参考 → 内容很短时写入 `kubejs/AGENTS.md` 的 UNIQUE STYLES；否则写入 dev-knowledge how-to 或提升为 skill。
+- `hotai/` 补丁、`docs/dev-knowledge/hotai/` 专题资料或 `scripts/update-hotai-docs.ps1` → 使用 `/hotai` skill；逐文件语义和生成状态写入 `docs/dev-knowledge/hotai/`，玩家体验与兼容修复仍按目的分别登记到对应台账。
 - knowledge-check prompt、候选报告路由或触发时机 → `.agents/skills/knowledge-check/SKILL.md`。
 - dev-knowledge 存放规则 → `.agents/skills/dev-knowledge/SKILL.md`。
 
