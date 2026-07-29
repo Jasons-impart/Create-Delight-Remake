@@ -655,3 +655,24 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: KubeJS 服务端脚本把不存在的属性转为数值后会得到 `NaN`；Rhino 的 `JSON.stringify` 可能输出裸 `NaN` 而不是标准 JSON 的 `null`，字符串能写入 persistent data，但下次 `JSON.parse` 会让整条记录失效。
 - **Fix/Lesson**: 写入 JSON 字符串前必须把计时器等外部值转换为有限数值并提供 fallback，同时在 stringify replacer 中拦截非有限数；对已发布数据增加一次兼容解析，将裸 `NaN` 修为 `null` 后再规范化并回写。
+
+## 双格作物重置必须分别恢复上下半格状态
+
+**Date**: 2026-07-30
+
+- **Problem**: 收割兼容若把当前 `BlockState` 同时写回双格作物的两个位置，会把 `DoublePlantBlock.HALF` 一并复制，形成两个 `LOWER` 或两个 `UPPER`，随后邻居更新会把无效结构整株清除。
+- **Fix/Lesson**: 先归一化到底部坐标，再分别构造并写回 `LOWER` 与 `UPPER` 状态；年龄等共享属性可以同步，但不能复用未经修正的半格状态。
+
+## ProcessingRecipe 的 toolNotConsumed 不会自动保留机械手工具
+
+**Date**: 2026-07-30
+
+- **Problem**: `ProcessingRecipeBuilder.toolNotConsumed()` 只写入配方参数；Create `6.0.8` 的机械手执行路径只从 `ItemApplicationRecipe.shouldKeepHeldItem()` 读取该语义，普通 `ProcessingRecipe` 即使声明不消耗仍会扣数量或耐久。
+- **Fix/Lesson**: 第三方机械手配方应继承 Create 的保留工具配方类型，或在 Create 消耗点按明确配方类型兼容；修补时必须区分传送带原料的第一次 `shrink` 与手持工具的第二次 `shrink`。
+
+## 第三方方块覆盖原版方法时仍需生成 Minecraft 方法映射
+
+**Date**: 2026-07-30
+
+- **Problem**: 对第三方方块类使用类级 `@Mixin(..., remap = false)` 会连带禁止 `use` 等原版方法名生成 refmap，开发环境可以编译，但生产 JAR 中目标已是 `m_6227_`，注入可能失效。
+- **Fix/Lesson**: Mixin 类保持默认 remap，让原版覆盖方法映射到 SRG；仅对第三方自定义调用点（如 `dropFruit`）在对应 `@At` 上单独设置 `remap = false`，并检查最终 refmap。
