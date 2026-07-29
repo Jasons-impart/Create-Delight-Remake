@@ -17,12 +17,13 @@
 | 常驻约束与模块入口 | 根目录或模块内的 `AGENTS.md`。 |
 | 可重复、命令密集或脆弱的流程 | `.agents/skills/` 中对应 skill。 |
 | 已归纳的历史根因与绕路 | [lessons-learned.md](../lessons-learned.md)。 |
-| 当前设计、研究和取舍 | `docs/` 根目录下的专题文档。 |
+| 当前设计、研究和取舍 | `docs/<专题>/README.md`；单页专题可直接位于 `docs/`。 |
+| 与仓库实现直接相关的技术专题 | `docs/dev-knowledge/<专题>/README.md`。 |
 | 尚未实施的分阶段设计 | `docs/plan/`。 |
 | 面向人工的通用开发入口 | [development.md](../development.md)。 |
 | 未 clone 仓库时的环境启动说明 | `GettingStarted.md`（保持自包含）。 |
 
-`docs/plan/` 和 `docs/` 专题文档会随功能增减；不在本页维护容易过期的逐文件清单。需要按主题查找时，先查看目录名和一级标题，再按 dev-knowledge skill 的路由规则决定是否新增索引条目。
+`docs/plan/`、`docs/<专题>/` 和 `docs/dev-knowledge/<专题>/` 会随功能增减；不在本页维护容易过期的专题内逐文件清单。需要按主题查找时，先查看专题入口和一级标题，再按 dev-knowledge skill 的路由规则决定是否新增索引条目。
 
 ## 现有专题文档归类
 
@@ -32,8 +33,7 @@
 | `docs/development.md` | 人工开发指南 | 保留人工阅读的开发规范和入口指针，复杂流程转到 skill。 |
 | `docs/mod-research.md` | 调研清单 | 记录候选模组和已有优化模组参考，不属于实现事实。 |
 | `docs/order-system-design.md` | 内容设计说明 | 订单系统当前实现、设计原则和后续建议。 |
-| `docs/hotai-patch-map.md` | 技术参考 | HotAI 二进制补丁机制、当前 `hotai/*.badiff` 行为和验证注意事项。 |
-| `docs/hotai-badiff-details.md` | 技术参考 | 每个 HotAI `.badiff` 文件的具体补丁内容、状态和维护影响。 |
+| [hotai/](hotai/README.md) | 技术参考专题 | `hotai` 二进制补丁的运行机制、按领域行为、逐文件明细与自动生成状态。 |
 | `docs/plan/order-acquisition-channels-plan.md` | 内容设计计划 | 订单获取渠道的长期设计。 |
 | `docs/plan/order-acquisition-crystal-modifier-plan.md` | 内容设计计划 | 订单构筑和修饰系统设计。 |
 | `docs/plan/order-time-and-automation-strategy.md` | 内容设计策略 | 订单时间机制与自动化产线假设。 |

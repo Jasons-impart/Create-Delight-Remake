@@ -88,7 +88,12 @@ function ConvertTo-Target([string]$Path) {
         }
     }
     if ($normalized -eq "GettingStarted.md") { return "GettingStarted.md" }
-    if ($normalized -like "hotai/*" -or $normalized -like "docs/hotai-*" -or $normalized -eq "scripts/update-hotai-docs.ps1") { return "docs/hotai-badiff-details.md" }
+    if ($normalized -like "hotai/*" -or $normalized -eq "scripts/update-hotai-docs.ps1" -or $normalized -eq "docs/hotai-badiff-details.md") { return "docs/dev-knowledge/hotai/badiff-details.md" }
+    if ($normalized -eq "docs/hotai-patch-map.md") { return "docs/dev-knowledge/hotai/patch-map.md" }
+    if ($normalized -like "docs/hotai/*") {
+        $legacyPath = $normalized.Substring("docs/hotai/".Length)
+        return "docs/dev-knowledge/hotai/$legacyPath"
+    }
     if ($normalized -like "docs/dev-knowledge/*") { return $normalized }
     if ($normalized -eq "docs/development.md") { return "docs/dev-knowledge/how-to-index.md" }
     if ($normalized -like "docs/*design*.md" -or $normalized -like "docs/*plan.md" -or $normalized -like "docs/*strategy.md") { return "docs/dev-knowledge/content-map.md" }
@@ -104,10 +109,10 @@ function ConvertTo-Reason([string]$Path) {
     $normalized = $Path -replace "\\", "/"
     if ($normalized -like ".agents/skills/*") { return "Skill instructions changed; verify trigger wording, workflow scope, and AGENTS duplication." }
     if ($normalized -eq "GettingStarted.md") { return "Pre-clone development setup entry changed; keep it self-contained because project skills are unavailable before clone." }
+    if ($normalized -like "hotai/*") { return "hotai patch set changed; run scripts/update-hotai-docs.ps1 and update the manual badiff explanation if behavior changed." }
+    if ($normalized -like "docs/dev-knowledge/hotai/*" -or $normalized -like "docs/hotai/*" -or $normalized -like "docs/hotai-*.md") { return "hotai development knowledge changed; keep generated status, manual semantics, and domain summary in their assigned files." }
     if ($normalized -like "docs/dev-knowledge/*") { return "Development knowledge index changed; verify entries stay short and point to source files." }
-    if ($normalized -like "hotai/*") { return "HotAI patch set changed; run scripts/update-hotai-docs.ps1 and update the manual badiff explanation if behavior changed." }
-    if ($normalized -like "docs/hotai-*") { return "HotAI reference doc changed; keep generated status and manual behavior notes separated." }
-    if ($normalized -eq "scripts/update-hotai-docs.ps1") { return "HotAI documentation automation changed; verify validation still checks generated status." }
+    if ($normalized -eq "scripts/update-hotai-docs.ps1") { return "hotai documentation automation changed; verify validation still checks generated status." }
     if ($normalized -eq "docs/development.md") { return "Development guide changed; check whether a compact how-to entry should be indexed." }
     if ($normalized -like "docs/*design*.md" -or $normalized -like "docs/*plan.md" -or $normalized -like "docs/*strategy.md") { return "Design or plan doc changed; update content-map only if implemented behavior or code locations changed." }
     if (Test-ModpackBehaviorChangePath $normalized) { return "Modpack behavior may be a feature or a bugfix/compat change; classify by intended player result, not by file path." }
@@ -186,10 +191,10 @@ foreach ($file in $allFiles) {
             Add-Unique $forms "Content change (feat) map - intended player-facing gameplay, balance, or content change."
         } elseif ($target -eq "docs/dev-knowledge/compatibility-patches.md") {
             Add-Unique $forms "Compatibility and bugfix registry - expected-behavior restoration, regression fix, or upstream adaptation with verification and review condition."
+        } elseif ($target -like "docs/dev-knowledge/hotai/*") {
+            Add-Unique $forms "Dev knowledge topic - stable hotai reference or generated patch inventory."
         } elseif ($target -like "docs/dev-knowledge/*") {
             Add-Unique $forms "Dev knowledge - content implementation map or lightweight technical how-to index."
-        } elseif ($target -like "docs/hotai-*") {
-            Add-Unique $forms "Project doc - stable HotAI reference or generated patch inventory."
         } elseif ($target -like "*AGENTS.md") {
             Add-Unique $forms "AGENTS - always-on constraint, routing pointer, or stable convention."
         }

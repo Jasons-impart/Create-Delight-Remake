@@ -1,18 +1,18 @@
-# HotAI 补丁地图
+# hotai 补丁地图
 
-本文记录整合包 `hotai/` 目录下的 HotAI 二进制补丁意图和当前可确认行为。HotAI 本体由 `mods/hotai-1.0.jar` 提供，源代码参考 [friendlyhj/Hotai](https://github.com/friendlyhj/Hotai)。逐文件方法级明细和自动生成的目标 class 命中表见 `docs/hotai-badiff-details.md`。
+本文记录整合包 `hotai/` 目录下的二进制补丁意图和当前可确认行为。上游 Hotai 本体由 `mods/hotai-1.0.jar` 提供。逐文件方法级明细和自动生成的目标 class 命中表见 [badiff-details.md](badiff-details.md)。
 
 ## 文档组织
 
-- 本文只保留 HotAI 机制、补丁领域概览和维护原则。
-- `docs/hotai-badiff-details.md` 记录每个 `.badiff` 的代码化改动摘要、历史提交依据和当前适用性。
-- `docs/hotai-badiff-details.md` 中的 `HOTAI_STATUS` 区块由 `scripts/update-hotai-docs.ps1` 生成；人工推测和方法级解释写在区块外。
+- 本文只保留 `hotai` 机制、补丁领域概览和维护原则。
+- [badiff-details.md](badiff-details.md) 记录每个 `.badiff` 的代码化改动摘要、历史提交依据和当前适用性。
+- `badiff-details.md` 中的 `HOTAI_STATUS` 区块由 `scripts/update-hotai-docs.ps1` 生成；人工推测和方法级解释写在区块外。
 
 ## 运行机制
 
 - 整合包实际使用的 `hotai-1.0.jar` 是 Forge ModLauncher `ITransformationService`，启动时读取游戏目录 `hotai/` 下的 `.badiff` 或 `.class`。
 - `.badiff` 文件路径就是目标 class 的 internal name，例如 `hotai/com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour.badiff` 会补丁 `com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour`。
-- `.badiff` 是针对目标 class 字节码的二进制 diff，和目标模组版本强绑定。Forge ModLauncher 会为转换器声明、但没有原始字节码的目标创建空 `ClassNode`，因此 HotAI 可用 `.badiff` 动态创建 class；静态 JAR 未命中时必须看启动日志中的 `Patched class:`，不能直接判为失效。
+- `.badiff` 是针对目标 class 字节码的二进制 diff，和目标模组版本强绑定。Forge ModLauncher 会为转换器声明、但没有原始字节码的目标创建空 `ClassNode`，因此 `hotai` 可用 `.badiff` 动态创建 class；静态 JAR 未命中时必须看启动日志中的 `Patched class:`，不能直接判为失效。
 - GitHub 当前 HEAD 已移植到 NeoForge `ClassProcessorProvider`，但读取 `hotai/`、支持 `.badiff`、支持把 `.class` 转存为 `.badiff` 的核心语义与整合包使用的 Forge 版一致。
 
 ## 当前可还原确认的补丁
@@ -33,15 +33,15 @@
 
 ## 静态 JAR 外动态创建的超导连接器类
 
-以下 `.badiff` 的目标 class 不在当前 `mods/*.jar` 中；Forge ModLauncher 会提供空 `ClassNode`，由 HotAI 应用 diff 后动态创建。静态扫描不能还原其完整源码，运行时状态以启动日志为准。
+以下 `.badiff` 的目标 class 不在当前 `mods/*.jar` 中；Forge ModLauncher 会提供空 `ClassNode`，由 `hotai` 应用 diff 后动态创建。静态扫描不能还原其完整源码，运行时状态以启动日志为准。
 
 | 补丁文件 | 备注 |
 |---|---|
-| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff`、`SuperconductingConnectorBlockEntity.badiff`、`SuperconductingConnectorBlockEntity$1.badiff` | 配套注册补丁会引用超导连接器类；当前启动日志已确认前两个 class 被 HotAI 动态创建。匿名内部类 `$1` 可能按需加载，需在实际使用超导连接器时继续核对日志和游戏内注册结果。 |
+| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff`、`SuperconductingConnectorBlockEntity.badiff`、`SuperconductingConnectorBlockEntity$1.badiff` | 配套注册补丁会引用超导连接器类；当前启动日志已确认前两个 class 被 `hotai` 动态创建。匿名内部类 `$1` 可能按需加载，需在实际使用超导连接器时继续核对日志和游戏内注册结果。 |
 
 ## 维护注意
 
-- 更新目标模组时，先确认目标是上游静态 class 还是由 HotAI 动态创建；再看 `logs/latest.log` 是否出现每个目标的 `Patched class:`。
+- 更新目标模组时，先确认目标是上游静态 class 还是由 `hotai` 动态创建；再看 `logs/latest.log` 是否出现每个目标的 `Patched class:`。
 - 修改 `hotai/**/*.badiff` 后运行 `scripts/update-hotai-docs.ps1`，再运行 `scripts/update-hotai-docs.ps1 -Check` 或 `scripts/validate-knowledge-base.ps1`；校验会阻止生成状态区过期。
-- 新增或替换补丁时优先保留 `.badiff`，不要把目标模组完整 class 当作长期源文件；HotAI 可在加载 `.class` 后自动转存为 `.badiff`。
-- 超导连接器不仅依赖 HotAI 注册补丁，还依赖 `kubejs/assets/createaddition/` 的模型、贴图、语言和 `kubejs/server_scripts/Create Addition/` 的配方、标签、掉落。
+- 新增或替换补丁时优先保留 `.badiff`，不要把目标模组完整 class 当作长期源文件；`hotai` 可在加载 `.class` 后自动转存为 `.badiff`。
+- 超导连接器不仅依赖 `hotai` 注册补丁，还依赖 `kubejs/assets/createaddition/` 的模型、贴图、语言和 `kubejs/server_scripts/Create Addition/` 的配方、标签、掉落。

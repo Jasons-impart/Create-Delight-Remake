@@ -11,7 +11,7 @@ if ([string]::IsNullOrWhiteSpace($Root)) {
 }
 
 if ([string]::IsNullOrWhiteSpace($DetailsPath)) {
-    $DetailsPath = Join-Path $Root "docs/hotai-badiff-details.md"
+    $DetailsPath = Join-Path $Root "docs/dev-knowledge/hotai/badiff-details.md"
 }
 
 function Get-RelativePath([string]$Path) {
@@ -58,11 +58,11 @@ function Get-GeneratedBlock([array]$Rows, [int]$StaticFoundCount, [int]$RuntimeC
 
 $hotaiPath = Join-Path $Root "hotai"
 if (-not (Test-Path -LiteralPath $hotaiPath)) {
-    throw "HotAI directory not found: $hotaiPath"
+    throw "hotai directory not found: $hotaiPath"
 }
 
 if (-not (Test-Path -LiteralPath $DetailsPath)) {
-    throw "HotAI details document not found: $DetailsPath"
+    throw "hotai details document not found: $DetailsPath"
 }
 
 Add-Type -AssemblyName System.IO.Compression.FileSystem
@@ -158,12 +158,12 @@ if ($detailsText.Contains($begin) -and $detailsText.Contains($end)) {
 
 if ($Check) {
     if ($updatedText -ne $detailsText) {
-        throw "HotAI generated documentation is out of date. Run scripts/update-hotai-docs.ps1."
+        throw "hotai generated documentation is out of date. Run scripts/update-hotai-docs.ps1."
     }
-    Write-Host "HotAI generated documentation is up to date." -ForegroundColor Green
+    Write-Host "hotai generated documentation is up to date." -ForegroundColor Green
     return
 }
 
 $utf8NoBom = [System.Text.UTF8Encoding]::new($false)
 [System.IO.File]::WriteAllText($DetailsPath, $updatedText, $utf8NoBom)
-Write-Host "Updated HotAI generated documentation in $(Get-RelativePath $DetailsPath)"
+Write-Host "Updated hotai generated documentation in $(Get-RelativePath $DetailsPath)"

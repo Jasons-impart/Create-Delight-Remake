@@ -1,6 +1,6 @@
-# HotAI badiff 逐文件明细
+# hotai badiff 逐文件明细
 
-本文逐个记录 `hotai/**/*.badiff` 的补丁内容。已还原条目基于当前 `mods/*.jar` 中的目标 class、HotAI 对 class 的 ASM 归一化方式、以及补丁后 class 的反编译 diff；静态 JAR 未找到目标 class 时还需结合启动日志判断 HotAI 是否动态创建该类。
+本文逐个记录 `hotai/**/*.badiff` 的补丁内容。已还原条目基于当前 `mods/*.jar` 中的目标 class、`hotai` 对 class 的 ASM 归一化方式、以及补丁后 class 的反编译 diff；静态 JAR 未找到目标 class 时还需结合启动日志判断 `hotai` 是否动态创建该类。
 
 代码块是“等价改动摘要”，不是完整反编译源码。它们用于表达字段、方法、条件和注册项的变化，避免把第三方模组源码整段复制进仓库。
 
@@ -8,14 +8,14 @@
 
 ## 当前生效性核查（2026-07-29）
 
-核查方法：逐个读取当前 `hotai/**/*.badiff`，扫描当前 `mods/*.jar` 中的同名目标 class，并核对 `logs/latest.log` 的 `Patched class:` 记录。Forge ModLauncher 会为不存在原始字节码、但被转换器声明为目标的类创建空 `ClassNode`；HotAI 可对其应用 `.badiff` 并动态创建完整类，因此静态 JAR 未命中不是失效结论。
+核查方法：逐个读取当前 `hotai/**/*.badiff`，扫描当前 `mods/*.jar` 中的同名目标 class，并核对 `logs/latest.log` 的 `Patched class:` 记录。Forge ModLauncher 会为不存在原始字节码、但被转换器声明为目标的类创建空 `ClassNode`；`hotai` 可对其应用 `.badiff` 并动态创建完整类，因此静态 JAR 未命中不是失效结论。
 
 | 对应模组 | 当前 JAR / 状态 | 补丁结果 | 结论 |
 |---|---|---|---|
-| HotAI | `mods/hotai-1.0.jar` 存在 | 补丁加载器存在。 | HotAI 本体可用。 |
+| hotai | `mods/hotai-1.0.jar` 存在 | 补丁加载器存在。 | `hotai` 本体可用。 |
 | Create | `create-1.20.1-6.0.8.jar` | 4/4 可应用：`FluidManipulationBehaviour`、`FluidDrainingBehaviour`、`ItemDrainCategory`、`CTSpriteShifter`。 | 当前可生效。 |
 | Create Liquid Fuel | `createliquidfuel-2.1.1-1.20.1.jar` | 2/2 可应用：`BurnerStomachHandler`、`MixinBlazeBurnerTileEntity`。 | 当前可生效。 |
-| Create Addition | `createaddition-1.20.1-1.3.3.jar` | 11/14 静态命中；`SuperconductingConnectorBlock` 与 `SuperconductingConnectorBlockEntity` 已在当前启动日志确认由 HotAI 动态创建；`SuperconductingConnectorBlockEntity$1` 尚未在本次启动日志出现。 | 超导连接器实现类不在上游 JAR 中，而由对应 `.badiff` 创建；匿名内部类可能按需加载，需在实际使用超导连接器时继续核对日志。 |
+| Create Addition | `createaddition-1.20.1-1.3.3.jar` | 11/14 静态命中；`SuperconductingConnectorBlock` 与 `SuperconductingConnectorBlockEntity` 已在当前启动日志确认由 `hotai` 动态创建；`SuperconductingConnectorBlockEntity$1` 尚未在本次启动日志出现。 | 超导连接器实现类不在上游 JAR 中，而由对应 `.badiff` 创建；匿名内部类可能按需加载，需在实际使用超导连接器时继续核对日志。 |
 | Vintage Improvements | `vintageimprovements-1.20.1-0.3.7.8.jar` | 2/2 目标 class 命中：`VintagePonderScene`、`VintagePonderTag`。 | 当前 JAR 可匹配。 |
 | TACZ | `tacz-1.20.1-1.1.4-hotfix-all.jar` | 1/1 可应用：`ModCreativeTabs`。 | 当前可生效。 |
 | Neapolitan | `neapolitan-1.20.1-5.1.0.jar` | 1/1 可应用：`Neapolitan`。 | 当前可生效。 |
@@ -128,7 +128,7 @@ private static final Map<String, CTSpriteShiftEntry> ENTRY_CACHE =
     new ConcurrentHashMap<>();
 ```
 
-### Create Liquid Fuel
+### Create Liquid Fuel 补丁
 
 ```java
 // BurnerStomachHandler.badiff
@@ -321,7 +321,7 @@ public int pull(int energy, boolean simulate) {
 
 ```java
 // SuperconductingConnectorBlock*.badiff
-// 上游 JAR 没有目标 class；ModLauncher 提供空 ClassNode，HotAI 据此动态创建。
+// 上游 JAR 没有目标 class；ModLauncher 提供空 ClassNode，hotai 据此动态创建。
 // 当前启动日志已确认 Block 与 BlockEntity；$1 需在实际使用时继续验证。
 ```
 
@@ -405,7 +405,7 @@ return stack;
 // 保留 ELECTRICAL、MAGNETS、ELECTRICITY_GENERATION、MOTOR_EXTENSION。
 ```
 
-## Create
+## Create 补丁
 
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
@@ -414,14 +414,14 @@ return stack;
 | `com/simibubi/create/compat/jei/category/ItemDrainCategory.badiff` | 已还原 | JEI 枚举可分液物品时，先检查原物品有 `FLUID_HANDLER_ITEM`，复制 `ItemStack` 后重新获取 capability；若复制后 capability 消失，写入 Create logger warn 并跳过。 | 避免某些物品复制后 capability 丢失导致 JEI 分液分类初始化异常。 |
 | `com/simibubi/create/foundation/block/connected/CTSpriteShifter.badiff` | 已还原 | `ENTRY_CACHE` 从 `HashMap` 改为 `ConcurrentHashMap`；缓存 key 仍由原贴图、连接贴图和 `CTType` id 组成，只简化字符串拼接。 | 降低连接纹理并发注册或资源重载时的缓存竞态风险。 |
 
-## Create Liquid Fuel
+## Create Liquid Fuel 补丁
 
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
 | `com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff` | 已还原 | `tick(SmartBlockEntity)` 从 `void` 改为 `boolean`，只有成功消耗液体燃料并增加燃烧时间时返回 true；早退路径全部返回 false。`tryUpdateFuel(...)` 改用 `IFluidHandlerItem`，失败路径显式 `cir.setReturnValue(false)`；检查燃烧室剩余容量，按 `min(space, fluidStack.amount)` 部分抽取容器流体并 `stomach.fill(...)`；新增 `syncContainerState`，把容器扣除后的 count、NBT 和 damage 同步回手持堆叠。 | 修复向液体烈焰人燃烧室倒入流体时可能不扣容器、超容量或错误成功的问题。 |
 | `com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity.badiff` | 已还原 | `tick` 注入点从方法尾部改到第二次调用 `BlazeBurnerBlockEntity.updateBlockState()` 前；注入改为 `cancellable=true`；当 `BurnerStomachHandler.tick(this)` 返回 true 时取消原 tick 后续逻辑。 | 液体燃料成功接管燃烧状态时，不再让原版后续逻辑覆盖热量或燃烧时间。 |
 
-## Create Addition
+## Create Addition 补丁
 
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
@@ -434,42 +434,42 @@ return stack;
 | `com/mrh0/createaddition/energy/IWireNode.badiff` | 已还原 | `connect(...)` 先判断两端是否都是 `ConnectorType.Superconducting`：一端为超导而另一端不是时返回 `INVALID`；两个超导连接器使用非超导线时返回 `REQUIRES_SUPERCONDUCTING`；普通连接器使用超导线时返回 `INVALID`。其余距离、重复连接和大连接器铜线限制保持。 | 超导线缆和超导连接器只能成套使用，禁止超导/普通连接器混接或让普通连接器使用超导线。 |
 | `com/mrh0/createaddition/energy/network/EnergyNetwork.badiff` | 已还原 | `MAX_BUFF` 从 80000 提升到 `Integer.MAX_VALUE`；新增 `saturatedAdd` 防止统计值溢出；`getMaxBuff()` 改用 long 中间值并夹到 int 范围；`push`、`demand`、`pull` 改为饱和/夹取逻辑，且 `push`、`pull` 对非正数请求直接返回 0。 | 支持超导线缆的大吞吐网络，同时降低能量缓存和统计溢出风险，避免负数推拉反向修改缓冲。 |
 | `com/mrh0/createaddition/index/CAPonders.badiff` | 已还原 | `registerTags(...)` 移除 `CAItems.STRAW` 到 `AllCreatePonderTags.FLUIDS` 的映射；`registerScenes(...)` 移除以 `CAItems.STRAW` 为入口的 `liquid_blaze_burner` 场景，保留 `AllBlocks.BLAZE_BURNER` 的同名场景。 | 吸管不再重复展示液体烈焰人燃烧室 Ponder，燃烧室本体仍可查看。 |
-| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | 运行时已确认动态创建 | 上游 JAR 不含目标 class；Forge ModLauncher 为声明的转换目标提供空 `ClassNode`，HotAI 应用 `.badiff` 后创建完整类。当前 `logs/latest.log` 已记录 `Patched class`。 | 这是超导连接器方块的实现补丁；更新 Create Addition 或 HotAI 后需重新启动验证注册。 |
-| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | 运行时已确认动态创建 | 上游 JAR 不含目标 class；当前 `logs/latest.log` 已记录 `Patched class`，说明 HotAI 已应用该 `.badiff` 创建方块实体类。 | 为超导连接器提供方块实体实现；仍需游戏内验证注册和渲染。 |
+| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | 运行时已确认动态创建 | 上游 JAR 不含目标 class；Forge ModLauncher 为声明的转换目标提供空 `ClassNode`，`hotai` 应用 `.badiff` 后创建完整类。当前 `logs/latest.log` 已记录 `Patched class`。 | 这是超导连接器方块的实现补丁；更新 Create Addition 或 `hotai` 后需重新启动验证注册。 |
+| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | 运行时已确认动态创建 | 上游 JAR 不含目标 class；当前 `logs/latest.log` 已记录 `Patched class`，说明 `hotai` 已应用该 `.badiff` 创建方块实体类。 | 为超导连接器提供方块实体实现；仍需游戏内验证注册和渲染。 |
 | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | 动态创建待按需确认 | 上游 JAR 不含目标匿名内部类；当前启动日志尚无对应 `Patched class`，可能尚未走到加载路径。 | 预期为超导连接器方块实体的匿名 capability / handler 类；在实际使用超导连接器后检查日志。 |
 
-## TACZ / Kinetic Pixel
+## TACZ / Kinetic Pixel 补丁
 
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
 | `com/tacz/guns/init/ModCreativeTabs.badiff` | 已还原 | 移除 `DefaultAssets` 默认图标引用；把 TACZ 各创造页签图标替换为整合包枪械线资产：弹药 `create_armorer:slap`，瞄具 `create_armorer:scope_telephoto`，枪口 `create_armorer:muzzle_refit_brass_retractor`，枪托 `applied_armorer:bracelet_zenith`，握把 `create_armorer:grip_gantry_shaft`，扩容弹匣 `create_armorer:extended_mag_ca_3`，手枪 `create_armorer:pistol_auto_stress`，狙击枪 `create_armorer:sniper_semi_clockwork`，步枪 `create_armorer:rifle_assult_crane`，霰弹枪 `create_armorer:shotgun_pump_bearing`，冲锋枪 `create_armorer:smg_auto_crank`，RPG 页 `create_armorer:special_melee_wrench`，机枪 `create_armorer:mg_platemag_flywheel`。 | 创造模式中 TACZ 页签直接展示整合包自定义军械内容，而不是 TACZ 默认枪械。 |
 
-## Vintage Improvements
+## Vintage Improvements 补丁
 
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
 | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene.badiff` | 已还原 | 移除 `BeltGrinderScenes` import；删除 `VintageBlocks.BELT_GRINDER` 的 `belt_grinder/processing` storyboard 注册。 | 禁用 Vintage Improvements 砂带磨床 Ponder 场景。 |
 | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderTag.badiff` | 已还原 | 从 `AllCreatePonderTags.KINETIC_APPLIANCES` 添加链中移除 `VintageBlocks.BELT_GRINDER`，保留弹簧卷曲机、真空室、振动台、离心机等其他机器。 | 砂带磨床不再出现在 Create Ponder 动力设备标签页里。 |
 
-## Neapolitan
+## Neapolitan 补丁
 
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
 | `com/teamabnormals/neapolitan/core/Neapolitan.badiff` | 已还原 | 移除 `NeapolitanItems` import；客户端 `DistExecutor.unsafeRunWhenOn` 块中删除 `NeapolitanBlocks.setupTabEditors()` 和 `NeapolitanItems.setupTabEditors()`，保留模型层、渲染器和头颅模型注册。 | 阻止 Neapolitan 自行编辑创造模式页签，减少与整合包/其他模组页签整理的冲突。 |
 
-## Better Compatibility Checker
+## Better Compatibility Checker 补丁
 
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
 | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | 已还原 | 不再 `@Shadow @Final ServerData val$p_105460_`；新增静态 `SERVER_DATA_FIELD`，优先反射字段 `val$p_105460_`，失败时遍历匿名类字段找 `ServerData` 类型；注入方法同时声明反混淆名和混淆名，注入点改为 TAIL，`remap=false`、`require=0`；反射失败时在 Minecraft 线程抛出 Error。 | 降低 Minecraft/Forge 映射字段名变化导致 BCC 服务器列表 ping mixin 失效的概率。 |
 
-## Quality Food
+## Quality Food 补丁
 
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
 | `de/cadentem/quality_food/mixin/BlockMixin.badiff` | 已还原 | `quality_food$applyQuality` 移除 `dropData == null` 时对掉落物调用 `QualityUtils.applyQuality(stack, null)` 的 fallback；新增 `Utils.isValidBlock(dropData.state())` 判断，只有存在 `DropData` 且来源方块有效时才按方块状态、品质、玩家和耕地信息应用品质。 | 避免无方块上下文的掉落物被 Quality Food 随机套品质；只让白名单/有效方块掉落继承品质。 |
 
-## Create New Age
+## Create New Age 补丁
 
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
@@ -480,4 +480,4 @@ return stack;
 - 对“已还原”条目，更新目标模组后应重新运行 class diff 或至少确认启动日志中仍有对应 `Patched class:`。
 - 修改 `hotai/**/*.badiff` 后运行 `scripts/update-hotai-docs.ps1` 更新 `HOTAI_STATUS` 区块；`scripts/validate-knowledge-base.ps1` 会用 `-Check` 检查该区块是否过期。
 - 对“当前未还原”条目，优先判断目标模组是否已改名、移除或被替换；如果连续版本都没有启动日志命中，可以考虑清理对应 `.badiff`。
-- 超导连接器相关补丁要和 `kubejs/assets/createaddition/`、`kubejs/server_scripts/Create Addition/` 一起验证；只看 HotAI class patch 不足以证明玩法完整。
+- 超导连接器相关补丁要和 `kubejs/assets/createaddition/`、`kubejs/server_scripts/Create Addition/` 一起验证；只看 `hotai` class patch 不足以证明玩法完整。

@@ -17,9 +17,10 @@ description: 开发知识路由、知识库整理、实现记录、代码位置�
 | 内容改动（feat） | `docs/dev-knowledge/content-map.md` | 记录有意新增或调整的玩家体验、玩法与平衡，以及实现位置。 |
 | 兼容与问题修复（bugfix/compat） | `docs/dev-knowledge/compatibility-patches.md` | 记录恢复预期行为、修复回归或适配上游变更的补丁、验证与后续复核条件。 |
 | 轻量技术做法 | `docs/dev-knowledge/how-to-index.md` | 记录“想做某类修改该怎么做”，但复杂度还不足以成为 skill。 |
+| 项目技术专题参考 | `docs/dev-knowledge/<专题>/` 下的专题文档 | 记录与仓库实现和维护直接相关的机制、状态与参考；多文件专题以 `README.md` 为唯一入口。 |
 | 可重复或脆弱流程 | `.agents/skills/<name>/SKILL.md` | 任务依赖步骤顺序、命令、验证规则或触发描述。 |
 | 历史故障和绕路经验 | `docs/lessons-learned.md` | 主要价值是避免再次踩同一个坑。 |
-| 稳定设计说明和参考 | `docs/` 下的专题文档 | 功能需要叙述当前设计、取舍或参考资料。 |
+| 稳定设计说明和参考 | `docs/<专题>/` 下的专题文档 | 功能需要叙述当前设计、取舍或参考资料；专题有多份关联文档时以 `README.md` 作为唯一入口。 |
 | 前瞻设计规划 | `docs/plan/` 下的专题文档 | 功能仍在规划、分阶段推进或描述未来扩展。 |
 
 ## 内容地图条目
@@ -41,7 +42,7 @@ description: 开发知识路由、知识库整理、实现记录、代码位置�
 当改动的主要目的为恢复预期行为、修复错误或适配上游模组更新时，更新 `docs/dev-knowledge/compatibility-patches.md`。
 
 - 每个明确修复一行，记录问题或上游变化、受影响模组与版本、补丁文件、验证方式、上游跟踪位置和复核/移除条件。
-- 不按 KubeJS、配置、HotAI、CDC 或 mixin 的目录决定落点：有意新增或调整玩家体验的是 feat；恢复预期行为、修复回归或适配上游的是 bugfix/compat。
+- 不按 KubeJS、配置、hotai、CDC 或 mixin 的目录决定落点：有意新增或调整玩家体验的是 feat；恢复预期行为、修复回归或适配上游的是 bugfix/compat。
 - 同一目标的一组配方或配置可合并为一行，避免逐文件流水账；纯翻译、格式化或不改变行为的资源不入账。
 - 同一事实不再重复写入 `docs/lessons-learned.md`；只有可脱离具体补丁复用的通用踩坑才写 lesson。
 
@@ -52,6 +53,7 @@ description: 开发知识路由、知识库整理、实现记录、代码位置�
 - 每个条目保持为紧凑 checklist。
 - 优先写具体路径和已有 helper 名称。
 - 一旦条目变成多步骤流程、包含重复命令或有明显踩坑风险，就提升为 `.agents/skills/<name>/SKILL.md`。
+- 已有专题入口或专用 skill 时，只保留链接和分类，不复制专题事实或操作步骤。
 
 ## 语言规则
 
