@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-28T15:12:03Z",
+  "generatedAt": "2026-07-29T14:15:25Z",
   "generatedBy": "scripts/generate-pack-integrity-manifest.py",
   "expectedFiles": {
     "common": [
@@ -269,7 +269,7 @@
       "searchables-forge-1.20.1-1.0.3.jar",
       "seasonals-1.20.1-5.0.2.jar",
       "seasonhud-forge-1.20.1-2.0.6.jar",
-      "sequenced_pattern_provider-1.20.1-0.2.1.jar",
+      "sequenced_pattern_provider-1.20.1-0.3.1.jar",
       "servercore-forge-1.5.2+1.20.1.jar",
       "shadowizardlib-1.20.1-1.3.1.jar",
       "silentsdelight-forge-1.0.1-1.20.1.jar",
@@ -2065,7 +2065,7 @@
     {
       "side": "common",
       "metadata": "mods/sequenced-pattern-provider.pw.toml",
-      "filename": "sequenced_pattern_provider-1.20.1-0.2.1.jar"
+      "filename": "sequenced_pattern_provider-1.20.1-0.3.1.jar"
     },
     {
       "side": "common",

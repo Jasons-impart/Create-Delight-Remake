@@ -1,13 +1,13 @@
 name = "Sequenced Pattern Provider"
-filename = "sequenced_pattern_provider-1.20.1-0.2.1.jar"
+filename = "sequenced_pattern_provider-1.20.1-0.3.1.jar"
 side = "both"
 
 [download]
 hash-format = "sha1"
-hash = "1fc39e2d256a54e1c1170f3c5f580cb403535f72"
+hash = "2d2a96c4343d76b056ce4e3d300aa2f14c8a751d"
 mode = "metadata:curseforge"
 
 [update]
 [update.curseforge]
-file-id = 8423252
+file-id = 8533565
 project-id = 1607551
