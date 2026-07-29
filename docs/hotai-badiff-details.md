@@ -434,9 +434,9 @@ return stack;
 | `com/mrh0/createaddition/energy/IWireNode.badiff` | 已还原 | `connect(...)` 先判断两端是否都是 `ConnectorType.Superconducting`：一端为超导而另一端不是时返回 `INVALID`；两个超导连接器使用非超导线时返回 `REQUIRES_SUPERCONDUCTING`；普通连接器使用超导线时返回 `INVALID`。其余距离、重复连接和大连接器铜线限制保持。 | 超导线缆和超导连接器只能成套使用，禁止超导/普通连接器混接或让普通连接器使用超导线。 |
 | `com/mrh0/createaddition/energy/network/EnergyNetwork.badiff` | 已还原 | `MAX_BUFF` 从 80000 提升到 `Integer.MAX_VALUE`；新增 `saturatedAdd` 防止统计值溢出；`getMaxBuff()` 改用 long 中间值并夹到 int 范围；`push`、`demand`、`pull` 改为饱和/夹取逻辑，且 `push`、`pull` 对非正数请求直接返回 0。 | 支持超导线缆的大吞吐网络，同时降低能量缓存和统计溢出风险，避免负数推拉反向修改缓冲。 |
 | `com/mrh0/createaddition/index/CAPonders.badiff` | 已还原 | `registerTags(...)` 移除 `CAItems.STRAW` 到 `AllCreatePonderTags.FLUIDS` 的映射；`registerScenes(...)` 移除以 `CAItems.STRAW` 为入口的 `liquid_blaze_burner` 场景，保留 `AllBlocks.BLAZE_BURNER` 的同名场景。 | 吸管不再重复展示液体烈焰人燃烧室 Ponder，燃烧室本体仍可查看。 |
-| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | 当前未还原 | 当前 `createaddition-1.20.1-1.3.3.jar` 直接扫描未找到目标 class，无法反推出补丁前后差异；旧 `logs/latest.log` 曾出现 `Patched class: com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock`。 | 疑似历史版本中已有该 class 或运行环境曾包含额外来源。更新 Create Addition 或 HotAI 补丁时需重新启动验证注册。 |
-| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | 当前未还原 | 当前 Create Addition JAR 直接扫描未找到目标 class；旧日志曾显示已 patch。 | 可能是超导连接器方块实体实现补丁，但当前无法确认方法级改动。 |
-| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | 当前未还原 | 当前 Create Addition JAR 直接扫描未找到目标 inner class；旧日志未单独显示 inner class。 | 可能是超导连接器方块实体的匿名 capability / handler 类补丁，需实际启动验证。 |
+| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | 运行时已确认动态创建 | 上游 JAR 不含目标 class；Forge ModLauncher 为声明的转换目标提供空 `ClassNode`，HotAI 应用 `.badiff` 后创建完整类。当前 `logs/latest.log` 已记录 `Patched class`。 | 这是超导连接器方块的实现补丁；更新 Create Addition 或 HotAI 后需重新启动验证注册。 |
+| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | 运行时已确认动态创建 | 上游 JAR 不含目标 class；当前 `logs/latest.log` 已记录 `Patched class`，说明 HotAI 已应用该 `.badiff` 创建方块实体类。 | 为超导连接器提供方块实体实现；仍需游戏内验证注册和渲染。 |
+| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | 动态创建待按需确认 | 上游 JAR 不含目标匿名内部类；当前启动日志尚无对应 `Patched class`，可能尚未走到加载路径。 | 预期为超导连接器方块实体的匿名 capability / handler 类；在实际使用超导连接器后检查日志。 |
 
 ## TACZ / Kinetic Pixel
 
