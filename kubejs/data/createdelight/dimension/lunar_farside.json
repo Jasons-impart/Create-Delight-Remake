@@ -7,7 +7,7 @@
       "type": "minecraft:multi_noise",
       "biomes": [
         {
-          "biome": "northstar:lunar_plains",
+          "biome": "createdelight:lunar_farside_plains",
           "parameters": {
             "temperature": [-2, 2],
             "humidity": [-2, -0.15],
@@ -19,7 +19,7 @@
           }
         },
         {
-          "biome": "northstar:lunar_hills",
+          "biome": "createdelight:lunar_farside_hills",
           "parameters": {
             "temperature": [-2, 0.2],
             "humidity": [-0.15, 2],
@@ -31,7 +31,7 @@
           }
         },
         {
-          "biome": "northstar:lunar_crater_fields",
+          "biome": "createdelight:lunar_farside_crater_fields",
           "parameters": {
             "temperature": [0.2, 2],
             "humidity": [-0.15, 2],
@@ -43,7 +43,7 @@
           }
         },
         {
-          "biome": "northstar:lunar_ice_caves",
+          "biome": "createdelight:lunar_farside_ice_caves",
           "parameters": {
             "temperature": [-2, -0.45],
             "humidity": [-2, 2],
