@@ -23,9 +23,9 @@ Use this workflow for modpack asset operations that touch `mods/`, `resourcepack
 
 ## Add Or Update Assets
 
-1. For one known CurseForge project/file, run `./scripts/add-packwiz-target.ps1 -CurseForgeUrl <project-or-file-URL> -Category mods|resourcepacks|shaderpacks -Side client|server|both`. It generates and validates one temporary metadata file, refuses to overwrite an existing target, and synchronizes local runtime assets by default.
+1. For one known CurseForge project/file, run `./scripts/add-packwiz-target.ps1 -CurseForgeUrl <project-or-file-URL> -Category mods|resourcepacks|shaderpacks -Side client|server|both`. It identifies the requested project's metadata even when Packwiz also generates temporary dependency entries, refuses to overwrite an existing target, and synchronizes local runtime assets by default. Resourcepack and shaderpack probes ignore the pack's mod-loader filter.
 2. For an existing CurseForge metadata file, run `./scripts/update-packwiz-target.ps1 -Category mods|resourcepacks|shaderpacks -Slug <metadata-name>`, or use `-Path <relative .pw.toml path>`.
-3. Put custom/restricted payloads under the matching `packwiz-files/<category>/` directory. To inventory local JARs, reconcile many changed assets, or repair metadata drift, run `./scripts/update-packwiz-meta.ps1 -Category mods|resourcepacks|shaderpacks -FullReconcile` only on `main` or a long-lived LTS/release-maintenance branch.
+3. Put custom/restricted payloads under the matching `packwiz-files/<category>/` directory. To inventory local JARs, reconcile many changed assets, or repair metadata drift, run `./scripts/update-packwiz-meta.ps1 -Category mods|resourcepacks|shaderpacks -FullReconcile` only on `main` or a long-lived LTS/release-maintenance branch. Non-mod reconciliation removes loader filtering, strips trailing parenthesized version suffixes when searching CurseForge, and defaults new metadata to `side = "client"`.
 4. For slow overseas services, retry once with `-Proxy "http://127.0.0.1:7890"`.
 5. Inspect the generated `.pw.toml` plus `packwiz-files` changes before staging, especially that existing `side = "client"` or `side = "server"` entries were not reset to `both`.
 6. Run `./scripts/sync-packwiz-assets.ps1` when local runtime files must match metadata.
