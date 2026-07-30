@@ -120,5 +120,11 @@
 	"block.create_new_age.advanced_motor_extension": "超级电机超频器",
 	"item.create_new_age.copper_circuit": "铜线电路板",
 	"item.create_new_age.blank_circuit": "电路板底板",
-	"tooltip.create_new_age.motor_extension": "需要放在电机后面使用"
+	"tooltip.create_new_age.motor_extension": "需要放在电机后面使用",
+
+	"block.create_new_age.street_light": "路灯",
+	"block.create_new_age.lamp_post": "灯柱",
+	"create.create_new_age.street_light.light_level": "光照等级",
+	"create.tooltip.create_new_age.per_light_level": "每级光照等级",
+	"item.create_new_age.incomplete_reactor_casing": "未完成的反应堆外壳"
 }
