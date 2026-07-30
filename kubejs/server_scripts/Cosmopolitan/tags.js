@@ -31,4 +31,7 @@ ServerEvents.tags("minecraft:item", e => {
         'cosmopolitan:paw_cookie',
         "cosmopolitan:herbal_cookie"
     ])
+    e.removeAllTagsFrom([
+        'cosmopolitan:sugarcane_pieces',
+    ])
 })

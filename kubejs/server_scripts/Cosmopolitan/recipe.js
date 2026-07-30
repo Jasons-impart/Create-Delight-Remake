@@ -26,10 +26,13 @@ ServerEvents.recipes(e => {
         "cosmopolitan:farmersdelight/cooking/lush_confiture_bottle",
         "createdelightcore:mixing/flowing_lush_confiture_jello",
         "cosmopolitan:farmersdelight/chocolate_roll",
+        "cosmopolitan:brewinandchewin/fermenting/saccharine_rum_from_molasses",
+        "cosmopolitan:organic_compost_from_dirt",
     ])
 
     const { kubejs, create, create_new_age, farmersdelight } = e.recipes
     e.replaceInput({ mod: "cosmopolitan" }, "#forge:crops/wheat", "#forge:flour")
+    e.replaceInput({ id: "minecraft:paper" }, "cosmopolitan:bagasse", 'minecraft:bamboo')
     e.replaceOutput({ mod: "cosmopolitan" }, "cosmopolitan:chorus_fruit_popsicle", "ends_delight:chorus_fruit_popsicle"),
     e.remove({ type: "create:sequenced_assembly", output: ['cosmopolitan:classic_ice_cream', 'cosmopolitan:seasonal_ice_cream', 'neapolitan:neapolitan_ice_cream'] })
     e.remove({ output: [

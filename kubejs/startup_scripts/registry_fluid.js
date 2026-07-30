@@ -74,7 +74,6 @@ StartupEvents.registry("fluid", e => {
     //simpleFluid("createdelight:dragon_breath_soda", 0xdb9bc3, true, false, false)
     simpleFluid("createdelight:vinegar", 0x570000, true, false)
     simpleFluid("createdelight:radon", 0XA0FFDA, true, false)
-    simpleFluid("createdelight:unrefined_sugar", 0XBCB998)
     simpleFluid("createdelight:yeast", 0x9B897E, false)
     simpleFluid("createdelight:ancient_coffee", 0X58321E, true, false, false)
     simpleFluid("createdelight:torchflower_tea", 0XF3B727, true, false, false)

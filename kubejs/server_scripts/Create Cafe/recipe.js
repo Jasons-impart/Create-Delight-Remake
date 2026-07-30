@@ -39,7 +39,7 @@ ServerEvents.recipes(e => {
         "createdelight:milling/coffee_beans"
     ])
     create.mixing(Fluid.of("createdelightcore:base_syrup", 125), "minecraft:sugar").heated().id("createdelight:mixing/sugar_melting")
-    vintageimprovements.vacuumizing("minecraft:sugar", Fluid.of("createdelightcore:base_syrup", 125)).id("createdelight:vacuumizing/melted_sugar_vacuumizing")
+    vintageimprovements.vacuumizing("minecraft:sugar", Fluid.of("createdelightcore:base_syrup", 25)).id("createdelight:vacuumizing/melted_sugar_vacuumizing")
     create.compacting("createdelightcore:base_syrup", Fluid.of("createdelightcore:base_syrup", 1000)).id("createdelight:compacting/base_syrup")
     create.compacting("createdelightcore:strawberry_syrup", Fluid.of("createdelightcore:strawberry_syrup", 1000)).id("createdelight:compacting/strawberry_syrup")
     create.compacting("createdelightcore:banana_syrup", Fluid.of("createdelightcore:banana_syrup", 1000)).id("createdelight:compacting/banana_syrup")

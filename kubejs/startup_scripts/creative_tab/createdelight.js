@@ -173,7 +173,6 @@ StartupEvents.modifyCreativeTab("createdelightcore:fluid", e => {
     'createdelight:fuel_mixtures_bucket',
     'createdelight:sky_solution_bucket',
     'createdelight:spent_liquor_bucket',
-    'createdelight:unrefined_sugar_bucket',
     'createdelight:unfermented_paper_pulp_bucket',
     'createdelight:paper_pulp_bucket',
     'createdelight:light_crude_oil_bucket',
