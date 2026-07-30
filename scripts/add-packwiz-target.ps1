@@ -90,6 +90,58 @@ function Set-PwTomlSide {
     throw "packwiz metadata is missing a filename field."
 }
 
+function Remove-PackwizLoaderVersions {
+    param([string]$PackFilePath)
+
+    $lines = @(Get-Content -LiteralPath $PackFilePath)
+    $updatedLines = [System.Collections.Generic.List[string]]::new()
+    $inVersions = $false
+    $changed = $false
+
+    foreach ($line in $lines) {
+        if ($line -match '^\s*\[([^]]+)\]\s*$') {
+            $inVersions = ($Matches[1] -eq "versions")
+            $updatedLines.Add($line) | Out-Null
+            continue
+        }
+
+        if ($inVersions -and $line -match '^\s*(forge|neoforge|fabric|quilt|liteloader)\s*=') {
+            $changed = $true
+            continue
+        }
+
+        $updatedLines.Add($line) | Out-Null
+    }
+
+    if ($changed) {
+        Write-Utf8NoBomFile -LiteralPath $PackFilePath -Content (($updatedLines -join "`n") + "`n")
+    }
+}
+
+function Get-AddedProjectFilename {
+    param([object[]]$Output)
+
+    foreach ($line in $Output) {
+        $text = [string]$line
+        if ($text -match '^Project ".+" successfully added! \((.+)\)$') {
+            return $Matches[1]
+        }
+    }
+
+    return $null
+}
+
+function Get-PwTomlFilename {
+    param([string]$Path)
+
+    $content = Get-Content -LiteralPath $Path -Raw
+    if ($content -match '(?m)^filename\s*=\s*"(.+)"\s*$') {
+        return $Matches[1]
+    }
+
+    return $null
+}
+
 function Invoke-WithProxy {
     param([scriptblock]$Script)
 
@@ -131,9 +183,18 @@ function Invoke-Packwiz {
 
     Push-Location $WorkingDirectory
     try {
-        Invoke-WithProxy { & $PackwizExe @Arguments }
-        if ($LASTEXITCODE -ne 0) {
-            throw "packwiz $($Arguments -join ' ') exited with code $LASTEXITCODE."
+        $output = @(Invoke-WithProxy { & $PackwizExe @Arguments 2>&1 })
+        $exitCode = $LASTEXITCODE
+        foreach ($line in $output) {
+            Write-Host ([string]$line)
+        }
+        if ($exitCode -ne 0) {
+            throw "packwiz $($Arguments -join ' ') exited with code $exitCode."
+        }
+
+        return [pscustomobject]@{
+            ExitCode = $exitCode
+            Output = $output
         }
     }
     finally {
@@ -146,10 +207,14 @@ New-Item -ItemType Directory -Force -Path $WorkRoot | Out-Null
 try {
     Write-Status "Generating temporary packwiz pack..."
     Invoke-GeneratePackwizFiles -OutputDir $WorkRoot
+    if ($Category -ne "mods") {
+        Write-Status "Removing mod-loader filters from the temporary $Category pack..."
+        Remove-PackwizLoaderVersions -PackFilePath (Join-Path $WorkRoot "pack.toml")
+    }
     Ensure-Tool -Url $PackwizUrl -Destination $PackwizExe
 
     Write-Status "Adding the requested CurseForge file in the temporary pack..."
-    Invoke-Packwiz -Arguments @(
+    $addResult = Invoke-Packwiz -Arguments @(
         "curseforge", "add", $CurseForgeUrl,
         "--meta-folder", $Category,
         "--meta-folder-base", ".",
@@ -158,19 +223,27 @@ try {
 
     $tempCategoryRoot = Join-Path $WorkRoot $Category
     $generatedMetadata = @(Get-ChildItem -LiteralPath $tempCategoryRoot -Filter "*.pw.toml" -File -ErrorAction SilentlyContinue)
-    if ($generatedMetadata.Count -ne 1) {
-        throw "Expected exactly one generated $Category metadata file, found $($generatedMetadata.Count)."
+    $mainProjectFilename = Get-AddedProjectFilename -Output $addResult.Output
+    if (-not $mainProjectFilename) {
+        throw "Packwiz did not report the requested project's generated filename."
     }
 
-    $tempTargetPath = $generatedMetadata[0].FullName
+    $targetMetadata = @(
+        $generatedMetadata | Where-Object { (Get-PwTomlFilename -Path $_.FullName) -eq $mainProjectFilename }
+    )
+    if ($targetMetadata.Count -ne 1) {
+        throw "Expected exactly one metadata file for '$mainProjectFilename', found $($targetMetadata.Count)."
+    }
+
+    $tempTargetPath = $targetMetadata[0].FullName
     $content = Get-Content -LiteralPath $tempTargetPath -Raw
     $content = Set-PwTomlSide -Content $content -Side $Side
     Write-Utf8NoBomFile -LiteralPath $tempTargetPath -Content $content
 
     Write-Status "Refreshing the temporary pack..."
-    Invoke-Packwiz -Arguments @("refresh") -WorkingDirectory $WorkRoot
+    $null = Invoke-Packwiz -Arguments @("refresh") -WorkingDirectory $WorkRoot
 
-    $targetPath = Join-Path (Join-Path $RepoRoot $Category) $generatedMetadata[0].Name
+    $targetPath = Join-Path (Join-Path $RepoRoot $Category) $targetMetadata[0].Name
     if (Test-Path -LiteralPath $targetPath) {
         if ($DryRun) {
             Write-Status "Dry run: metadata is valid, but $targetPath already exists and would not be replaced."
@@ -180,12 +253,12 @@ try {
     }
 
     if ($DryRun) {
-        Write-Status "Dry run: would add $($generatedMetadata[0].Name) with side = `"$Side`"."
+        Write-Status "Dry run: would add $($targetMetadata[0].Name) with side = `"$Side`"."
         return
     }
 
     Write-Utf8NoBomFile -LiteralPath $targetPath -Content $content
-    Write-Status "Added $Category/$($generatedMetadata[0].Name) with side = `"$Side`"."
+    Write-Status "Added $Category/$($targetMetadata[0].Name) with side = `"$Side`"."
 }
 finally {
     if (Test-Path -LiteralPath $WorkRoot) {

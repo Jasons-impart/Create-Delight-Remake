@@ -183,6 +183,34 @@ function Invoke-GeneratePackwizFiles {
     }
 }
 
+function Remove-PackwizLoaderVersions {
+    param([string]$PackFilePath)
+
+    $lines = @(Get-Content -LiteralPath $PackFilePath)
+    $updatedLines = [System.Collections.Generic.List[string]]::new()
+    $inVersions = $false
+    $changed = $false
+
+    foreach ($line in $lines) {
+        if ($line -match '^\s*\[([^]]+)\]\s*$') {
+            $inVersions = ($Matches[1] -eq "versions")
+            $updatedLines.Add($line) | Out-Null
+            continue
+        }
+
+        if ($inVersions -and $line -match '^\s*(forge|neoforge|fabric|quilt|liteloader)\s*=') {
+            $changed = $true
+            continue
+        }
+
+        $updatedLines.Add($line) | Out-Null
+    }
+
+    if ($changed) {
+        Write-Utf8NoBomFile -Path $PackFilePath -Content (($updatedLines -join "`n") + "`n")
+    }
+}
+
 function Get-AssetFiles {
     param(
         [string]$Directory,
@@ -202,12 +230,27 @@ function Get-AssetFiles {
     return $files
 }
 
+function Remove-FilenameVersionSuffix {
+    param([string]$Value)
+
+    if (-not $Value) { return "" }
+
+    $result = $Value.Trim()
+    while ($true) {
+        $suffixMatch = [regex]::Match($result, '(?i)\s*[\(\[]\s*(?:mc\s*)?v?\d[^\)\]]*[\)\]]\s*$')
+        if (-not $suffixMatch.Success) { break }
+        $result = $result.Substring(0, $suffixMatch.Index).TrimEnd()
+    }
+
+    return $result
+}
+
 function Derive-BaseName {
     param([string]$Filename)
 
     if (-not $Filename) { return "" }
 
-    $name = [IO.Path]::GetFileNameWithoutExtension($Filename)
+    $name = Remove-FilenameVersionSuffix -Value ([IO.Path]::GetFileNameWithoutExtension($Filename))
     $parts = $name -split '[-_]'
     $baseParts = @()
 
@@ -226,7 +269,7 @@ function Get-SearchStemFromFilename {
 
     if (-not $Filename) { return "" }
 
-    $name = [IO.Path]::GetFileNameWithoutExtension($Filename)
+    $name = Remove-FilenameVersionSuffix -Value ([IO.Path]::GetFileNameWithoutExtension($Filename))
     $parts = $name -split '[-_]'
     $kept = @()
 
@@ -421,6 +464,13 @@ function Normalize-PwSide {
     $normalized = $Side.Trim().ToLowerInvariant()
     if (@("both", "client", "server") -contains $normalized) { return $normalized }
     return "both"
+}
+
+function Get-DefaultPwSideForCategory {
+    param([string]$Value)
+
+    if ($Value -eq "mods") { return "both" }
+    return "client"
 }
 
 function Set-PwTomlSide {
@@ -928,11 +978,17 @@ function Get-CurseForgeCandidates {
 }
 
 function New-DetectionWorkspace {
-    param([string]$MetadataFolder = "mods")
+    param(
+        [string]$MetadataFolder = "mods",
+        [switch]$IgnoreModLoader
+    )
 
     $workspace = Join-Path $TempDetectRoot ([guid]::NewGuid().Guid)
     New-Item -ItemType Directory -Force -Path (Join-Path $workspace $MetadataFolder) | Out-Null
     Invoke-GeneratePackwizFiles -OutputDir $workspace
+    if ($IgnoreModLoader) {
+        Remove-PackwizLoaderVersions -PackFilePath (Join-Path $workspace "pack.toml")
+    }
     return $workspace
 }
 
@@ -976,7 +1032,7 @@ function Try-ResolveCurseForgeMetadata {
     $bestMismatch = $null
     $cfCategory = Get-CurseForgeCategorySlug -Value $Category
     foreach ($candidate in $Candidates) {
-        $workspace = New-DetectionWorkspace -MetadataFolder $Category
+        $workspace = New-DetectionWorkspace -MetadataFolder $Category -IgnoreModLoader:($Category -ne "mods")
         try {
             $arguments = @("curseforge", "add", $candidate, "--yes", "--meta-folder", $Category)
             if ($cfCategory) {
@@ -1103,6 +1159,9 @@ function Add-PackwizFilesMetadata {
     if (-not $Side -and $PwTomlPath -and (Test-Path $PwTomlPath)) {
         $existingData = Parse-PwToml -Path $PwTomlPath
         $Side = Get-TomlVal -Data $existingData -Key 'Side'
+    }
+    if (-not $Side) {
+        $Side = Get-DefaultPwSideForCategory -Value $Category
     }
     $sideValue = Normalize-PwSide -Side $Side
 
@@ -1617,7 +1676,8 @@ try {
 
             $metaName = Get-UniqueMetaName -PreferredName $preferredMetaName -Directory $modsDir
             $pwTomlPath = Join-Path $modsDir ($metaName + ".pw.toml")
-            Write-Utf8NoBomFile -Path $pwTomlPath -Content (Set-PwTomlSide -Content $cfMetadata.Content -Side "both")
+            $defaultSide = Get-DefaultPwSideForCategory -Value $Category
+            Write-Utf8NoBomFile -Path $pwTomlPath -Content (Set-PwTomlSide -Content $cfMetadata.Content -Side $defaultSide)
             Write-Status "  ~ Added (CurseForge): $($cfMetadata.Name)"
             $addedCurseForgeCount++
             continue

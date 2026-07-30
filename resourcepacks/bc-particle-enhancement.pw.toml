@@ -1,0 +1,13 @@
+name = "BetterCombat Particle Enhancements + Compact"
+filename = "BC Particle Enhancement (1.20.1) (1.0).zip"
+side = "client"
+
+[download]
+hash-format = "sha1"
+hash = "5bedcf55305fe9466ea7e2b983f3cfe5cd63a32c"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8289057
+project-id = 1538952
