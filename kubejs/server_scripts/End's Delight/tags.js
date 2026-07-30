@@ -14,4 +14,5 @@ ServerEvents.tags("item", e => {
         'iceandfire:dragonegg_silver',
         'minecraft:dragon_egg'
     ])
+    e.add("forge:raw_dragon_meat", "#createdelight:dragon_flesh")
 })
