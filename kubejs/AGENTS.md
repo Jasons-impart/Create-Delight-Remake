@@ -48,7 +48,7 @@ config/             # KubeJS config files
 - Startup scripts include a legacy misspelling (`registery_*`); search both `registry` and `registery`.
 - KJS `Java.loadClass` facades are per script domain (`CDStartupJavaClasses`, `CDServerJavaClasses`, `CDClientJavaClasses`); startup is not a shared replacement for server/client because each domain has distinct load timing and side safety.
 - Business scripts should access facade members directly, e.g. `global.CDServerJavaClasses.$ModularItem`; top-level aliases still share Rhino scope and can redeclare across files.
-- Alex's Caves placement is split: magnetic caves are in `data/northstar/dimension/moon.json`, toxic caves are in `data/northstar/dimension/venus.json`, other caves are independent dimensions in `data/createdelight/dimension/`, and `../config/alexscaves_biome_generation/*.json` is disabled so do not infer placement from it.
+- Alex's Caves placement is split: magnetic caves are in `data/northstar/dimension/moon.json`, toxic caves are in `data/northstar/dimension/venus.json`, abyssal chasm is in `data/northstar/dimension/europa.json`, forlorn hollows is in `data/createdelight/dimension/lunar_farside.json`; only primordial caves and candy cavity remain independent dimensions, and `../config/alexscaves_biome_generation/*.json` is disabled so do not infer placement from it.
 
 ## UNIQUE STYLES
 

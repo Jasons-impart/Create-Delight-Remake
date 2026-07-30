@@ -9,9 +9,10 @@
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["1F6B56E6DE97C1D7"]
 			description: [
 				"异寂空谷以恐怖的黑暗和诡谲的黑魔法为主题。这里的生物多为发生了异变的诡异生物，而这里的居民都是不欢迎外来者的邪教徒。此处被深邃的黑暗笼罩着，玩家在这里的视野会被缩短，同时光源放出的光也会变得更加微弱。往远处看，玩家只能看到一个个猩红的眼球。危险悄然潜伏于黑暗之中......"
-				"&4进入方法：使用&e泥胚&4搭建传送门框架，使用恶意碎片激活。"
+				"&4进入方法：解锁并乘火箭前往&b月背异常区&4，异寂空谷位于其地下深处。"
 			]
 			icon: {
 				Count: 1
@@ -27,7 +28,7 @@
 				advancement: "alexscaves:alexscaves/discover_forlorn_hollows"
 				criterion: ""
 				id: "258831EFD983106F"
-				title: "前往黑暗世界"
+				title: "抵达异寂空谷"
 				type: "advancement"
 			}]
 			x: 0.0d
