@@ -1,3 +1,4 @@
+
 [Debug]
 	#Show development-related metrics in the on-screen display.
 	DebugInfo = false
@@ -116,3 +117,4 @@
 	[Compat.Oculus]
 		#Harmonizes shading parameters for all snow-covered surfaces when using shaders.
 		UnifiedSnowyBlockShading = true
+
