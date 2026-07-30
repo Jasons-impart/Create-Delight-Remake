@@ -1,0 +1,69 @@
+// ### THE MOD REQUIRES A RESTART OF THE GAME TO APPLY CHANGES ###
+{
+  // A moderate global reduction for this structure-heavy modpack.
+  "spreadFactor": 1.5,
+
+  // Use a unique salt derived from each structure-set id to reduce clustering.
+  "idBasedSalt": true,
+
+  // Exempt Alex's Caves structures: the upstream mod documents generation
+  // issues when those structures are altered.
+  "customSpreadFactors": [
+    {
+      "structure": "alexscaves:abyssal_ruins",
+      "factor": 1
+    },
+    {
+      "structure": "alexscaves:acid_pit",
+      "factor": 1
+    },
+    {
+      "structure": "alexscaves:cake_cave",
+      "factor": 1
+    },
+    {
+      "structure": "alexscaves:dino_bowl",
+      "factor": 1
+    },
+    {
+      "structure": "alexscaves:donut_arch",
+      "factor": 1
+    },
+    {
+      "structure": "alexscaves:ferrocave",
+      "factor": 1
+    },
+    {
+      "structure": "alexscaves:forlorn_bridge",
+      "factor": 1
+    },
+    {
+      "structure": "alexscaves:forlorn_canyon",
+      "factor": 1
+    },
+    {
+      "structure": "alexscaves:gingerbread_town",
+      "factor": 1
+    },
+    {
+      "structure": "alexscaves:licowitch_tower",
+      "factor": 1
+    },
+    {
+      "structure": "alexscaves:ocean_trench",
+      "factor": 1
+    },
+    {
+      "structure": "alexscaves:soda_bottle",
+      "factor": 1
+    },
+    {
+      "structure": "alexscaves:underground_cabin",
+      "factor": 1
+    },
+    {
+      "structure": "alexscaves:volcano",
+      "factor": 1
+    }
+  ]
+}
