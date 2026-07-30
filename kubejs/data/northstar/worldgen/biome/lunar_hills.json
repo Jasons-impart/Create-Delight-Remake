@@ -1,0 +1,65 @@
+{
+  "temperature": 0.8,
+  "downfall": 0.4,
+  "precipitation": "none",
+  "has_precipitation": false,
+  "effects": {
+    "sky_color": 0,
+    "fog_color": 0,
+    "water_color": 4159204,
+    "water_fog_color": 329011
+  },
+  "creature_spawn_probability": 0.01,
+  "spawners": {
+    "monster": [
+      {
+        "type": "northstar:moon_lunargrade",
+        "weight": 40,
+        "minCount": 1,
+        "maxCount": 4
+      },
+      {
+        "type": "northstar:moon_snail",
+        "weight": 20,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "northstar:moon_eel",
+        "weight": 20,
+        "minCount": 2,
+        "maxCount": 5
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {
+    "air": [
+      "minecraft:cave_extra_underground",
+      "minecraft:cave"
+    ]
+  },
+  "features": [
+    [],
+    [
+      "northstar:moon_andesite_blob",
+      "northstar:moon_ore_titanium",
+      "northstar:moon_ore_copper",
+      "northstar:moon_ore_diamond",
+      "northstar:moon_ore_gold",
+      "northstar:moon_ore_iron",
+      "northstar:moon_ore_iron_large",
+      "northstar:moon_ore_lapis",
+      "northstar:moon_ore_redstone",
+      "northstar:moon_ore_zinc",
+      "northstar:moon_basalt_blob",
+      "northstar:moon_blackstone_blob",
+      "northstar:moon_asurine_blob",
+      "northstar:lunar_sapphire_geode",
+      "northstar:frost_sparse"
+    ],
+    [
+      "northstar:moon_ore_glowstone"
+    ]
+  ]
+}
