@@ -512,10 +512,10 @@ ServerEvents.recipes(e => {
     //其他
     vintageimprovements.vacuumizing(
         [
-            Fluid.water(150),
+            Fluid.water(25),
             "bakeries:brown_sugar_cube"
         ],
-        Fluid.of("createdelight:unrefined_sugar", 200)
+        Fluid.of("cosmopolitan:molasses", 50)
     )
         .secondaryFluidOutput(0)
         .heated()
