@@ -2,9 +2,9 @@
   "biomes": [
     [
       {
-        "type": "BIOME_TAG",
+        "type": "REGISTRY_NAME",
         "negate": false,
-        "value": "northstar:moon_biomes"
+        "value": "northstar:lunar_hills"
       }
     ],
     [

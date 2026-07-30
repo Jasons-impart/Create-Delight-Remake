@@ -197,6 +197,7 @@
 		}
 		{
 			dependencies: ["6AF0BCF34F1E3853"]
+			description: ["鸡蛇仅在月球丘陵生成。"]
 			id: "36C9F799E0135534"
 			tasks: [{
 				entity: "iceandfire:cockatrice"
