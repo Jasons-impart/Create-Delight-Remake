@@ -28,7 +28,7 @@ ServerEvents.recipes(e => {
         "create_new_age:layered_magnet",
         "create_new_age:carbon_brushes"
     ])
-
+    e.replaceInput({id: "create_new_age:shaped/street_light"}, "create_new_age:electrical_connector", "createaddition:small_light_connector")
     e.forEachRecipe({ type: "createaddition:charging", mod: "createaddition" }, r => {
         let energy = r.json.get("energy").asDouble
         let input = r.json.get("input").asJsonObject
