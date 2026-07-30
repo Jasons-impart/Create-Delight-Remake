@@ -1,0 +1,20 @@
+StartupEvents.modifyCreativeTab("ae2omnicells:ae2_omni_cells_creative_tab", e => {
+  e.add([
+    'createdelight:initial_processing_of_printed_omni_link_processor',
+    'createdelight:omni_link_processor_inscribed',
+    'createdelight:initial_processing_of_printed_complex_link_processor',
+    'createdelight:complex_link_processor_inscribed',
+    'createdelight:initial_processing_of_printed_multidimensional_expansion_processor',
+    'createdelight:multidimensional_expansion_processor_inscribed',
+    'createdelight:initial_processing_of_omni_cell_housing',
+    'createdelight:omni_cell_housing_blank',
+    'createdelight:unformed_omni_cell_housing',
+    'createdelight:initial_processing_of_complex_omni_cell_housing',
+    'createdelight:complex_omni_cell_housing_blank',
+    'createdelight:unformed_complex_omni_cell_housing',
+    'createdelight:initial_processing_of_quantum_omni_cell_housing',
+    'createdelight:quantum_omni_cell_housing_blank',
+    'createdelight:unformed_quantum_omni_cell_housing',
+    'createdelight:ultimate_universal_press',
+  ])
+})
