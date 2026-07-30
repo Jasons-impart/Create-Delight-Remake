@@ -29,6 +29,7 @@ Use this workflow for modpack asset operations that touch `mods/`, `resourcepack
 4. For slow overseas services, retry once with `-Proxy "http://127.0.0.1:7890"`.
 5. Inspect the generated `.pw.toml` plus `packwiz-files` changes before staging, especially that existing `side = "client"` or `side = "server"` entries were not reset to `both`.
 6. Run `./scripts/sync-packwiz-assets.ps1` when local runtime files must match metadata.
+7. When a resource pack should be enabled for new clients by default, add its exact `file/<filename>` entry to `.options.txt` `resourcePacks`; release packaging renames this tracked file to `options.txt`. Verify its `pack.mcmeta` format before adding it to `incompatibleResourcePacks`.
 
 When old and new runtime JARs coexist, `update-packwiz-meta.ps1` selects the preferred newer filename and updates the existing metadata entry instead of creating a duplicate. Missing runtime JARs do not remove metadata by default; remove the `.pw.toml` explicitly, or use `-AllowRemovals` only when bulk removal is intentional and the runtime directory is complete.
 
