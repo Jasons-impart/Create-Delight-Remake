@@ -167,7 +167,9 @@ StartupEvents.modifyCreativeTab("createdelightcore:fluid", e => {
     'createdelight:fire_dragon_blood_bucket',
     'createdelight:ice_dragon_blood_bucket',
     'createdelight:lightning_dragon_blood_bucket',
+    'createdelight:end_dragon_blood_bucket',
     // 工业大生产液体
+    'createdelight:cryo_fuel_bucket',
     'createdelight:fuel_mixtures_bucket',
     'createdelight:sky_solution_bucket',
     'createdelight:spent_liquor_bucket',
@@ -177,6 +179,7 @@ StartupEvents.modifyCreativeTab("createdelightcore:fluid", e => {
     'createdelight:light_crude_oil_bucket',
     'createdelight:ethylene_fluid_bucket',
     'createdelight:lubricating_oil_bucket',
+    'createdelight:ice_lubricating_oil_bucket',
     // 气体桶
     'createdelight:radon_bucket',
     // 食物相关流体
@@ -208,6 +211,7 @@ StartupEvents.registry("creative_mode_tab", e => {
       'createdelight:sealed_joint_component',
       'createdelight:logic_component',
       'createdelight:order_deliverer_item',
+      'createdelight:quality_absorber',
       'createdelight:life_matter_extractor',
       'createdelight:order',
       'createdelight:unopened_order',

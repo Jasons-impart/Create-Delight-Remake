@@ -112,7 +112,8 @@ StartupEvents.registry("fluid", e => {
     let bloods = [
         "fire_dragon",
         "ice_dragon",
-        "lightning_dragon"
+        "lightning_dragon",
+        "end_dragon",
     ]
     bloods.forEach(blood => {
         textureFluid(`createdelight:${blood}_blood`)
@@ -120,11 +121,6 @@ StartupEvents.registry("fluid", e => {
             .createAttributes()
             .tickDelay(10)
     })
-    textureFluid("createdelight:end_dragon_blood")
-        .tag("forge:bloods")
-        .createAttributes()
-        .tickDelay(10)
-
 
     let vinery_fluid_list = [
         ["apple_juice", 0xeed4a7],

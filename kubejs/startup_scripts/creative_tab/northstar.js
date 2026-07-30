@@ -8,5 +8,12 @@ StartupEvents.modifyCreativeTab("northstar:northstar_items", e => {
         'northstar:hydrocarbon_bucket',
         'northstar:solar_panel', 
         'northstar:circuit_engraver', 
-        'northstar:electrolysis_machine'])
+        'northstar:electrolysis_machine'
+    ])
+    e.add([
+        'createdelight:oxygen_tank',
+        'createdelight:sturdy_oxygen_tank',
+        'createdelight:folded_mapping_satellite',
+        'createdelight:satellite_navigation_data_card',
+    ])
 })
