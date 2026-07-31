@@ -46,27 +46,25 @@ When old and new runtime JARs coexist, `update-packwiz-meta.ps1` selects the pre
 2. Remove matching `packwiz-files` payloads only when the committed payload is intentionally retired.
 3. Do not treat synced runtime jars as source; they are local development payloads.
 
-## Pack Integrity Warning
+## Crash Assistant 模组变更提醒
 
-The client has a mod list integrity warning for added or removed mods. Keep these files together:
+客户端通过 Crash Assistant 在启动时提醒 Mod 文件变更。以下文件必须保持一致：
 
-- `scripts/generate-pack-integrity-manifest.py`: scans managed `mods/**/*.pw.toml`, records expected managed JAR filenames, and writes the expected manifest without requiring downloaded JARs.
-- `kubejs/config/createdelight_pack_integrity_expected.json`: generated expected filename manifest; regenerate it after intended mod additions/removals.
-- `kubejs/config/createdelight_pack_integrity.json`: runtime config, including `allowedMissingFiles` and `allowedExtraFiles`; both accept exact filenames or narrow `*`/`?` glob patterns.
-- `kubejs/client_scripts/pack_integrity_check.js`: client-side title-screen warning and JSON report writer for mod list changes and Java major-version mismatches.
+- `scripts/generate-crash-assistant-modlist.py`：扫描受管理的 `mods/**/*.pw.toml`，生成客户端可用 JAR 的文件标识和末尾数字版本基线。
+- `config/modpack_defaults/config/crash_assistant/modlist.json`：生成的对象基线，包含从 JAR 文件名推断的 Mod ID、显示名和版本；不要写入 CurseForge/Modrinth 指纹，以维持回退/恢复功能关闭。
+- `config/modpack_defaults/config/crash_assistant/scripts/startup/20_modlist_changes_warning.jexl`：按可选客户端 Mod 白名单统计新增、移除和更新；无法按运行时 Mod ID 匹配的更新会以文件标识与末尾数字版本段配对，并分段显示详情。
+- `config/modpack_defaults/config/crash_assistant/crash_assistant_localization_overrides/zh_cn.json`：提示的中文文本。
 
-Only add a managed JAR to `allowedMissingFiles` when it is intentionally optional. For client-only candidates, check both reverse mandatory dependencies in runtime JAR metadata and direct project-script/config integration; `side = "client"` alone does not make removal safe. Prefer a version-independent but narrow filename pattern, then verify it matches only the intended entry in `createdelight_pack_integrity_expected.json`.
+仅当 Mod 确实可选时才加入脚本白名单；除 `side = "client"` 外，还要检查反向强制依赖及直接脚本/配置集成。白名单应使用与目标 JAR 对应的窄文件名前缀，并同时覆盖新增、移除和更新。文件名不带末尾数字版本段时不能可靠识别为一次版本变化，应保留为独立新增/移除项。
 
-The runtime warning compares managed JAR filenames only. Do not use Forge/KubeJS runtime mod ids for this check because embedded library jars and JarJar metadata do not map reliably to actual files users add or remove.
-
-Generation workflow:
+生成流程：
 
 ```powershell
 ./scripts/sync-packwiz-assets.ps1
-python scripts/generate-pack-integrity-manifest.py
+python scripts/generate-crash-assistant-modlist.py
 ```
 
-CI generates the integrity manifest before exporting the no-mod CurseForge pack, so the manifest comes from Packwiz metadata and does not require downloading runtime JARs. Patch artifacts also regenerate and copy `createdelight_pack_integrity_expected.json` into `patch/kubejs/config/`, so patch releases pick up changed filenames even if the generated file was stale before CI.
+CI 会在 Client 与 Patch 构建前重新生成基线；Patch 也会包含 Crash Assistant 默认配置、基线、启动脚本与本地化文件。Crash Assistant 内置 `too_many_changes_warning` 必须保持 `count = -1`，因为它不支持白名单。
 
 ## CDC Packaged Jar
 

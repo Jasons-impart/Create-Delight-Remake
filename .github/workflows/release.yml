@@ -116,12 +116,12 @@ jobs:
         run: |
           pip install requests
           python .github/workflows/scripts/update_credits.py --mode real --download-images
-      - name: 生成模组列表完整性清单
+      - name: 生成 Crash Assistant 模组基线
         run: |
           if [[ "$PACKWIZ_STABLE_RELEASE" == "true" ]]; then
-            python3 scripts/generate-pack-integrity-manifest.py --stable
+            python3 scripts/generate-crash-assistant-modlist.py --stable
           else
-            python3 scripts/generate-pack-integrity-manifest.py
+            python3 scripts/generate-crash-assistant-modlist.py
           fi
       - name: 生成不带mod本体的包
         run: |
@@ -274,12 +274,12 @@ jobs:
           modpack_name: ${{ env.MODPACK_NAME }}
           modpack_version: ${{ env.MODPACK_VERSION }}
           mode: patch
-      - name: 生成模组列表完整性清单
+      - name: 生成 Crash Assistant 模组基线
         run: |
           if [[ "$PACKWIZ_STABLE_RELEASE" == "true" ]]; then
-            python3 scripts/generate-pack-integrity-manifest.py --stable
+            python3 scripts/generate-crash-assistant-modlist.py --stable
           else
-            python3 scripts/generate-pack-integrity-manifest.py
+            python3 scripts/generate-crash-assistant-modlist.py
           fi
       - name: 准备补丁文件
         run: |

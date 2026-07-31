@@ -1,0 +1,219 @@
+// 文件名前缀用于将未携带运行时 Mod ID 的旧版基线与新 JAR 配对为一次版本变化。
+var optionalClientModPrefixes = [
+    "acceleratedrendering-",
+    "culllessleaves-reforged-",
+    "dynamic-fps-",
+    "entityculling-",
+    "fastrecipesearch-",
+    "ixeris-"
+];
+
+var diff = ModListDiff.getDiff(true);
+var addedItems = "";
+var removedItems = "";
+var updatedItems = "";
+var addedCount = 0;
+var removedCount = 0;
+var updatedCount = 0;
+
+// Crash Assistant 能以真实 Mod ID 识别出的版本变化。
+for (updatedPair : diff.getUpdatedMods()) {
+    var optionalUpdate = true;
+    for (currentMod : updatedPair.getOldMods()) {
+        var jarName = currentMod.getJarName().toLowerCase();
+        var knownOptionalJar = false;
+        for (prefix : optionalClientModPrefixes) {
+            if (jarName.startsWith(prefix) && jarName.endsWith(".jar")) {
+                knownOptionalJar = true;
+                break;
+            }
+        }
+        if (!knownOptionalJar) {
+            optionalUpdate = false;
+            break;
+        }
+    }
+    if (optionalUpdate) {
+        for (currentMod : updatedPair.getNewMods()) {
+            var jarName = currentMod.getJarName().toLowerCase();
+            var knownOptionalJar = false;
+            for (prefix : optionalClientModPrefixes) {
+                if (jarName.startsWith(prefix) && jarName.endsWith(".jar")) {
+                    knownOptionalJar = true;
+                    break;
+                }
+            }
+            if (!knownOptionalJar) {
+                optionalUpdate = false;
+                break;
+            }
+        }
+    }
+    if (optionalUpdate) {
+        continue;
+    }
+
+    var oldVersions = "";
+    for (oldMod : updatedPair.getOldMods()) {
+        if (!oldVersions.isEmpty()) {
+            oldVersions = oldVersions + ", ";
+        }
+        oldVersions = oldVersions + oldMod.getVersion();
+    }
+    var newVersions = "";
+    for (newMod : updatedPair.getNewMods()) {
+        if (!newVersions.isEmpty()) {
+            newVersions = newVersions + ", ";
+        }
+        newVersions = newVersions + newMod.getVersion();
+    }
+    var updateItem = LanguageProvider.get("custom.cdr_modlist_updated_item");
+    updateItem = updateItem.replace("$MOD$", updatedPair.getModId());
+    updateItem = updateItem.replace("$OLD_VERSION$", oldVersions);
+    updateItem = updateItem.replace("$NEW_VERSION$", newVersions);
+    updatedItems = updatedItems + updateItem;
+    updatedCount = updatedCount + 1;
+}
+
+// 旧版基线只有文件名时，按末尾数字版本段配对“移除 + 新增”。
+for (removedMod : diff.getRemovedMods()) {
+    var oldJarName = removedMod.getJarName();
+    var oldJarNameLower = oldJarName.toLowerCase();
+    var optionalRemovedMod = false;
+    for (prefix : optionalClientModPrefixes) {
+        if (oldJarNameLower.startsWith(prefix) && oldJarNameLower.endsWith(".jar")) {
+            optionalRemovedMod = true;
+            break;
+        }
+    }
+    if (optionalRemovedMod) {
+        continue;
+    }
+
+    var oldIdentity = oldJarName.replaceAll("(?i)(?:[-_]\\d[0-9A-Za-z.+_-]*)\\.jar$", "");
+    if (oldIdentity.equals(oldJarName)) {
+        continue;
+    }
+    for (addedMod : diff.getAddedMods()) {
+        var newJarName = addedMod.getJarName();
+        var newJarNameLower = newJarName.toLowerCase();
+        var optionalAddedMod = false;
+        for (prefix : optionalClientModPrefixes) {
+            if (newJarNameLower.startsWith(prefix) && newJarNameLower.endsWith(".jar")) {
+                optionalAddedMod = true;
+                break;
+            }
+        }
+        if (optionalAddedMod) {
+            continue;
+        }
+        var newIdentity = newJarName.replaceAll("(?i)(?:[-_]\\d[0-9A-Za-z.+_-]*)\\.jar$", "");
+        if (!oldIdentity.equals(newIdentity)) {
+            continue;
+        }
+
+        var oldVersion = oldJarName.replaceAll("(?i)^.*[-_](\\d[0-9A-Za-z.+_-]*)\\.jar$", "$1");
+        var newVersion = newJarName.replaceAll("(?i)^.*[-_](\\d[0-9A-Za-z.+_-]*)\\.jar$", "$1");
+        var updateItem = LanguageProvider.get("custom.cdr_modlist_updated_item");
+        updateItem = updateItem.replace("$MOD$", oldIdentity);
+        updateItem = updateItem.replace("$OLD_VERSION$", oldVersion);
+        updateItem = updateItem.replace("$NEW_VERSION$", newVersion);
+        updatedItems = updatedItems + updateItem;
+        updatedCount = updatedCount + 1;
+        break;
+    }
+}
+
+for (addedMod : diff.getAddedMods()) {
+    var jarName = addedMod.getJarName();
+    var jarNameLower = jarName.toLowerCase();
+    var optionalClientMod = false;
+    for (prefix : optionalClientModPrefixes) {
+        if (jarNameLower.startsWith(prefix) && jarNameLower.endsWith(".jar")) {
+            optionalClientMod = true;
+            break;
+        }
+    }
+    if (optionalClientMod) {
+        continue;
+    }
+    var pairedAddition = false;
+    var jarIdentity = jarName.replaceAll("(?i)(?:[-_]\\d[0-9A-Za-z.+_-]*)\\.jar$", "");
+    if (!jarIdentity.equals(jarName)) {
+        for (removedMod : diff.getRemovedMods()) {
+            var removedJarName = removedMod.getJarName();
+            var removedIdentity = removedJarName.replaceAll("(?i)(?:[-_]\\d[0-9A-Za-z.+_-]*)\\.jar$", "");
+            if (jarIdentity.equals(removedIdentity)) {
+                pairedAddition = true;
+                break;
+            }
+        }
+    }
+    if (pairedAddition) {
+        continue;
+    }
+    var addedItem = LanguageProvider.get("custom.cdr_modlist_added_item");
+    addedItem = addedItem.replace("$MOD$", jarName);
+    addedItems = addedItems + addedItem;
+    addedCount = addedCount + 1;
+}
+
+for (removedMod : diff.getRemovedMods()) {
+    var jarName = removedMod.getJarName();
+    var jarNameLower = jarName.toLowerCase();
+    var optionalClientMod = false;
+    for (prefix : optionalClientModPrefixes) {
+        if (jarNameLower.startsWith(prefix) && jarNameLower.endsWith(".jar")) {
+            optionalClientMod = true;
+            break;
+        }
+    }
+    if (optionalClientMod) {
+        continue;
+    }
+    var pairedRemoval = false;
+    var jarIdentity = jarName.replaceAll("(?i)(?:[-_]\\d[0-9A-Za-z.+_-]*)\\.jar$", "");
+    if (!jarIdentity.equals(jarName)) {
+        for (addedMod : diff.getAddedMods()) {
+            var addedJarName = addedMod.getJarName();
+            var addedIdentity = addedJarName.replaceAll("(?i)(?:[-_]\\d[0-9A-Za-z.+_-]*)\\.jar$", "");
+            if (jarIdentity.equals(addedIdentity)) {
+                pairedRemoval = true;
+                break;
+            }
+        }
+    }
+    if (pairedRemoval) {
+        continue;
+    }
+    var removedItem = LanguageProvider.get("custom.cdr_modlist_removed_item");
+    removedItem = removedItem.replace("$MOD$", jarName);
+    removedItems = removedItems + removedItem;
+    removedCount = removedCount + 1;
+}
+
+var modificationsCount = addedCount + removedCount + updatedCount;
+if (modificationsCount > 0) {
+    var modificationDetails = "";
+    if (addedCount > 0) {
+        var addedSection = LanguageProvider.get("custom.cdr_modlist_added_section");
+        addedSection = addedSection.replace("$COUNT$", addedCount.toString());
+        modificationDetails = modificationDetails + addedSection.replace("$ITEMS$", addedItems);
+    }
+    if (removedCount > 0) {
+        var removedSection = LanguageProvider.get("custom.cdr_modlist_removed_section");
+        removedSection = removedSection.replace("$COUNT$", removedCount.toString());
+        modificationDetails = modificationDetails + removedSection.replace("$ITEMS$", removedItems);
+    }
+    if (updatedCount > 0) {
+        var updatedSection = LanguageProvider.get("custom.cdr_modlist_updated_section");
+        updatedSection = updatedSection.replace("$COUNT$", updatedCount.toString());
+        modificationDetails = modificationDetails + updatedSection.replace("$ITEMS$", updatedItems);
+    }
+    var message = LanguageProvider.get("custom.cdr_modlist_changes_warning");
+    message = message.replace("$MODIFICATIONS_COUNT$", modificationsCount.toString());
+    message = message.replace("$MODIFICATION_DETAILS$", modificationDetails);
+    Startup.addBootWarning(message)
+        .withDontShowAgain("cdr.modlist_changes_warning")
+        .withCustomDontShowAgainCheckboxText("我已知悉，不要再提示了");
+}

@@ -1,0 +1,10 @@
+{
+  "custom.cdr_modlist_changes_warning": "<span style='color:#c62828; font-size:16pt;'><strong>检测到$MODIFICATIONS_COUNT$项模组变更</strong></span>\n\n$MODIFICATION_DETAILS$\n添加、移除或升级模组在 MC 整合包中都可能引入 <span style='color:#c62828;'><strong>兼容性问题</strong></span>，制作组的能力不足以保证这种情况下的整合包能正常运行，也难以提供帮助。\n\n如果您在游玩过程中遇到 <span style='color:#c62828;'><strong>异常或崩溃</strong></span>，建议先使用 <span style='color:#2e7d32;'><strong>未经修改的原整合包</strong></span> 尝试；如果在未修改的原整合包中问题仍然存在，欢迎附上 <span style='color:#1565c0;'><strong>整合包版本和日志来官方 QQ 频道 pd06113710</strong></span> 反馈，我们会尝试定位问题并帮助解决。\n\n如果你确信你没有修改过模组，请检查你的整合包是否是从 <span style='color:#1565c0;'><strong>官方渠道（www.齿轮盛宴.com）</strong></span> 下载安装的。请注意，我们无法保证 <span style='color:#ef6c00;'><strong>第三方打包</strong></span> 的整合包的安全性，且已有其他整合包出现三方打包带 <span style='color:#c62828;'><strong>盗号模组</strong></span> 的情况。\n\n<span style='color:#c62828;'><strong>请务必保证你的整合包是从官方渠道下载安装的。</strong></span>",
+  "custom.cdr_modlist_added_section": "<span style='color:#2e7d32;'><strong>新增模组（$COUNT$）</strong></span><ul>$ITEMS$</ul>",
+  "custom.cdr_modlist_removed_section": "<span style='color:#c62828;'><strong>移除模组（$COUNT$）</strong></span><ul>$ITEMS$</ul>",
+  "custom.cdr_modlist_updated_section": "<span style='color:#1565c0;'><strong>版本变化（$COUNT$）</strong></span><ul>$ITEMS$</ul>",
+  "custom.cdr_modlist_added_item": "<li><span style='color:#2e7d32;'><strong>$MOD$</strong></span></li>",
+  "custom.cdr_modlist_removed_item": "<li><span style='color:#c62828;'><strong>$MOD$</strong></span></li>",
+  "custom.cdr_modlist_updated_item": "<li><strong>$MOD$</strong>：<span style='color:#c62828;'>$OLD_VERSION$</span> → <span style='color:#2e7d32;'>$NEW_VERSION$</span></li>",
+  "custom.cdr_java_version_warning": "<span style='color:#c62828; font-size:16pt;'><strong>检测到不推荐的 Java 版本</strong></span>\n\n当前正在使用 <span style='color:#c62828;'><strong>Java $JAVA_VERSION$</strong></span>。本整合包建议使用 <span style='color:#2e7d32;'><strong>Java 17</strong></span>，请在启动器的游戏设置中切换后再启动。\n\n使用其他 Java 版本可能导致 <span style='color:#c62828;'><strong>启动失败、异常或崩溃</strong></span>。"
+}

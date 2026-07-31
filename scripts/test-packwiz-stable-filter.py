@@ -21,7 +21,7 @@ def load_module(name, relative_path):
     return module
 
 
-INTEGRITY = load_module("pack_integrity", "scripts/generate-pack-integrity-manifest.py")
+CRASH_ASSISTANT_MODLIST = load_module("crash_assistant_modlist", "scripts/generate-crash-assistant-modlist.py")
 PATCH = load_module("release_patch", "scripts/build-release-patch.py")
 
 
@@ -89,13 +89,24 @@ class PackwizStableFilterTests(unittest.TestCase):
         self.assertFalse((target / "resourcepacks/test-pack.pw.toml").exists())
         self.assertFalse((target / "shaderpacks/test-shader.pw.toml").exists())
 
-    def test_integrity_and_patch_selection_follow_stable_mode(self):
-        test_manifest = INTEGRITY.new_manifest(self.root)
-        formal_manifest = INTEGRITY.new_manifest(self.root, stable=True)
+    def test_crash_assistant_modlist_and_patch_selection_follow_stable_mode(self):
+        test_modlist = CRASH_ASSISTANT_MODLIST.client_mod_baseline(self.root)
+        formal_modlist = CRASH_ASSISTANT_MODLIST.client_mod_baseline(self.root, stable=True)
 
-        self.assertIn("client-test.jar", test_manifest["expectedFiles"]["client"])
-        self.assertNotIn("client-test.jar", formal_manifest["expectedFiles"]["client"])
-        self.assertIn("common-stable.jar", formal_manifest["expectedFiles"]["common"])
+        self.assertIn("client-test.jar", test_modlist)
+        self.assertNotIn("client-test.jar", formal_modlist)
+        self.assertIn("common-stable.jar", formal_modlist)
+        self.assertNotIn("server-test.jar", test_modlist)
+        self.assertEqual(
+            {"modId": "client-test", "name": "client-test", "version": "unknown"},
+            test_modlist["client-test.jar"],
+        )
+
+    def test_crash_assistant_modlist_extracts_tail_version(self):
+        self.assertEqual(
+            {"modId": "example-forge", "name": "Example", "version": "1.20.1-2.3.4"},
+            CRASH_ASSISTANT_MODLIST.mod_record("Example-forge-1.20.1-2.3.4.jar", "Example"),
+        )
 
         for asset_dir in ("mods", "resourcepacks", "shaderpacks"):
             test_names = {entry[1] for entry in PATCH.metadata_entries(self.root, asset_dir)}
