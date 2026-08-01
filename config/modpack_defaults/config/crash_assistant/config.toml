@@ -1,0 +1,26 @@
+[general]
+help_link = "https://pd.qq.com/s/garjk9nn5?b=9"
+formulation_type = "GITHUB"
+
+[text]
+support_name = "齿轮盛宴官方 QQ 频道（pd06113710）"
+modpack_name = "Create Delight Remake"
+
+[generated_message]
+generated_msg_lang = "zh_cn"
+color_message = false
+ansi_block_pattern = "$PREFIX$$HEADER$\n$CONTENT$"
+
+[modpack_modlist]
+enabled = true
+modpack_creators = ["SSWTLZZ69", "JasonQ", "AzureCrab", "UltraZett"]
+auto_update = true
+add_resourcepacks = false
+add_datapacks = false
+add_modloader_jar_name = false
+add_modlist_txt_as_log = true
+
+[too_many_changes_warning]
+# 已由 scripts/startup/20_modlist_changes_warning.jexl 接管，以便忽略可选客户端模组。
+count = -1
+formulation_type = "NOTIFY"

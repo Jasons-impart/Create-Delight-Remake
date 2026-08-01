@@ -1,0 +1,164 @@
+// 可选客户端 Mod 不计入告警；使用窄文件名前缀，避免放行无关 Mod。
+var optionalClientModPrefixes = [
+    "acceleratedrendering-",
+    "culllessleaves-reforged-",
+    "dynamic-fps-",
+    "entityculling-",
+    "fastrecipesearch-",
+    "ixeris-"
+];
+
+function isOptionalClientMod(jarName) {
+    var normalizedJarName = jarName.toLowerCase();
+    for (prefix : optionalClientModPrefixes) {
+        if (normalizedJarName.startsWith(prefix) && normalizedJarName.endsWith(".jar")) {
+            return true;
+        }
+    }
+    return false;
+}
+
+// 将“移除 + 新增”按相同文件标识配对为版本变化；无尾部数字版本的文件不配对。
+function findVersionPair(jarName, candidates) {
+    var identity = jarName.replaceAll("(?i)(?:[-_]\\d[0-9A-Za-z.+_-]*)\\.jar$", "");
+    if (identity.equals(jarName)) {
+        return null;
+    }
+    for (candidate : candidates) {
+        var candidateJarName = candidate.getJarName();
+        if (isOptionalClientMod(candidateJarName)) {
+            continue;
+        }
+        var candidateIdentity = candidateJarName.replaceAll("(?i)(?:[-_]\\d[0-9A-Za-z.+_-]*)\\.jar$", "");
+        if (identity.equals(candidateIdentity)) {
+            return candidate;
+        }
+    }
+    return null;
+}
+
+var diff = ModListDiff.getDiff(true);
+var addedItems = "";
+var removedItems = "";
+var updatedItems = "";
+var addedCount = 0;
+var removedCount = 0;
+var updatedCount = 0;
+
+// Crash Assistant 能以真实 Mod ID 识别出的版本变化。
+for (updatedPair : diff.getUpdatedMods()) {
+    var optionalUpdate = true;
+    for (currentMod : updatedPair.getOldMods()) {
+        if (!isOptionalClientMod(currentMod.getJarName())) {
+            optionalUpdate = false;
+            break;
+        }
+    }
+    if (optionalUpdate) {
+        for (currentMod : updatedPair.getNewMods()) {
+            if (!isOptionalClientMod(currentMod.getJarName())) {
+                optionalUpdate = false;
+                break;
+            }
+        }
+    }
+    if (optionalUpdate) {
+        continue;
+    }
+
+    var oldVersions = "";
+    for (oldMod : updatedPair.getOldMods()) {
+        if (!oldVersions.isEmpty()) {
+            oldVersions = oldVersions + ", ";
+        }
+        oldVersions = oldVersions + oldMod.getVersion();
+    }
+    var newVersions = "";
+    for (newMod : updatedPair.getNewMods()) {
+        if (!newVersions.isEmpty()) {
+            newVersions = newVersions + ", ";
+        }
+        newVersions = newVersions + newMod.getVersion();
+    }
+    var updateItem = LanguageProvider.get("custom.cdr_modlist_updated_item");
+    updateItem = updateItem.replace("$MOD$", updatedPair.getModId());
+    updateItem = updateItem.replace("$OLD_VERSION$", oldVersions);
+    updateItem = updateItem.replace("$NEW_VERSION$", newVersions);
+    updatedItems = updatedItems + updateItem;
+    updatedCount = updatedCount + 1;
+}
+
+// 旧版基线只有文件名时，按末尾数字版本段配对“移除 + 新增”。
+for (removedMod : diff.getRemovedMods()) {
+    var oldJarName = removedMod.getJarName();
+    if (isOptionalClientMod(oldJarName)) {
+        continue;
+    }
+    var pairedAddedMod = findVersionPair(oldJarName, diff.getAddedMods());
+    if (pairedAddedMod == null) {
+        continue;
+    }
+    var oldIdentity = oldJarName.replaceAll("(?i)(?:[-_]\\d[0-9A-Za-z.+_-]*)\\.jar$", "");
+    var oldVersion = oldJarName.replaceAll("(?i)^.*[-_](\\d[0-9A-Za-z.+_-]*)\\.jar$", "$1");
+    var newVersion = pairedAddedMod.getJarName().replaceAll("(?i)^.*[-_](\\d[0-9A-Za-z.+_-]*)\\.jar$", "$1");
+    var updateItem = LanguageProvider.get("custom.cdr_modlist_updated_item");
+    updateItem = updateItem.replace("$MOD$", oldIdentity);
+    updateItem = updateItem.replace("$OLD_VERSION$", oldVersion);
+    updateItem = updateItem.replace("$NEW_VERSION$", newVersion);
+    updatedItems = updatedItems + updateItem;
+    updatedCount = updatedCount + 1;
+}
+
+for (addedMod : diff.getAddedMods()) {
+    var jarName = addedMod.getJarName();
+    if (isOptionalClientMod(jarName)) {
+        continue;
+    }
+    if (findVersionPair(jarName, diff.getRemovedMods()) != null) {
+        continue;
+    }
+    var addedItem = LanguageProvider.get("custom.cdr_modlist_added_item");
+    addedItem = addedItem.replace("$MOD$", jarName);
+    addedItems = addedItems + addedItem;
+    addedCount = addedCount + 1;
+}
+
+for (removedMod : diff.getRemovedMods()) {
+    var jarName = removedMod.getJarName();
+    if (isOptionalClientMod(jarName)) {
+        continue;
+    }
+    if (findVersionPair(jarName, diff.getAddedMods()) != null) {
+        continue;
+    }
+    var removedItem = LanguageProvider.get("custom.cdr_modlist_removed_item");
+    removedItem = removedItem.replace("$MOD$", jarName);
+    removedItems = removedItems + removedItem;
+    removedCount = removedCount + 1;
+}
+
+var modificationsCount = addedCount + removedCount + updatedCount;
+if (modificationsCount > 0) {
+    var modificationDetails = "";
+    if (addedCount > 0) {
+        var addedSection = LanguageProvider.get("custom.cdr_modlist_added_section");
+        addedSection = addedSection.replace("$COUNT$", addedCount.toString());
+        modificationDetails = modificationDetails + addedSection.replace("$ITEMS$", addedItems);
+    }
+    if (removedCount > 0) {
+        var removedSection = LanguageProvider.get("custom.cdr_modlist_removed_section");
+        removedSection = removedSection.replace("$COUNT$", removedCount.toString());
+        modificationDetails = modificationDetails + removedSection.replace("$ITEMS$", removedItems);
+    }
+    if (updatedCount > 0) {
+        var updatedSection = LanguageProvider.get("custom.cdr_modlist_updated_section");
+        updatedSection = updatedSection.replace("$COUNT$", updatedCount.toString());
+        modificationDetails = modificationDetails + updatedSection.replace("$ITEMS$", updatedItems);
+    }
+    var message = LanguageProvider.get("custom.cdr_modlist_changes_warning");
+    message = message.replace("$MODIFICATIONS_COUNT$", modificationsCount.toString());
+    message = message.replace("$MODIFICATION_DETAILS$", modificationDetails);
+    Startup.addBootWarning(message)
+        .withDontShowAgain("cdr.modlist_changes_warning")
+        .withCustomDontShowAgainCheckboxText("我已知悉，不要再提示了");
+}

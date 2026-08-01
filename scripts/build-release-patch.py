@@ -31,7 +31,7 @@ OVERLAY_FILES = (
     Path("config/bcc-common.toml"),
     Path("kubejs/config/client.properties"),
     Path("kubejs/config/probejs.json"),
-    Path("kubejs/config/createdelight_pack_integrity_expected.json"),
+    Path("config/modpack_defaults/config/crash_assistant/modlist.json"),
     Path("config/GeneralFeedback/default.json"),
 )
 
