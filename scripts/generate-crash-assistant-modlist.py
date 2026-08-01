@@ -85,10 +85,6 @@ def client_mod_baseline(repo_root, stable=False):
     return dict(sorted(records.items(), key=lambda item: item[0].casefold()))
 
 
-def client_mod_filenames(repo_root, stable=False):
-    return list(client_mod_baseline(repo_root, stable=stable))
-
-
 def write_json_if_changed(path, modlist):
     if path.is_file():
         try:

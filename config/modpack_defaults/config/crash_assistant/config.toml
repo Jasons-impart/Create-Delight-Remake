@@ -21,6 +21,6 @@ add_modloader_jar_name = false
 add_modlist_txt_as_log = true
 
 [too_many_changes_warning]
-# 已由 scripts/startup/10_modlist_changes_warning.jexl 接管，以便忽略可选客户端模组。
+# 已由 scripts/startup/20_modlist_changes_warning.jexl 接管，以便忽略可选客户端模组。
 count = -1
 formulation_type = "NOTIFY"
