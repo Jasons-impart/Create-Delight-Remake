@@ -66,6 +66,8 @@ python scripts/generate-crash-assistant-modlist.py
 
 CI 会在 Client 与 Patch 构建前重新生成基线；Patch 也会包含 Crash Assistant 默认配置、基线、启动脚本与本地化文件。Crash Assistant 内置 `too_many_changes_warning` 必须保持 `count = -1`，因为它不支持白名单。
 
+Crash Assistant 的 JEXL 使用严格词法作用域：不要以 `var` 声明与后续 `for (...)` 迭代变量同名；提交前应使用模组 JAR 内置的 JEXL3 编译启动脚本，避免游戏启动时才暴露解析错误。
+
 ## CDC Packaged Jar
 
 1. Prefer published CurseForge metadata when a CDC release exists.
