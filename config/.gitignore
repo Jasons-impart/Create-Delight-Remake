@@ -2,14 +2,7 @@
 !/modpack_defaults/
 !/modpack_defaults/config/
 !/modpack_defaults/config/crash_assistant/
-!/modpack_defaults/config/crash_assistant/config.toml
-!/modpack_defaults/config/crash_assistant/modlist.json
-!/modpack_defaults/config/crash_assistant/scripts/
-!/modpack_defaults/config/crash_assistant/scripts/startup/
-!/modpack_defaults/config/crash_assistant/scripts/startup/10_modlist_changes_warning.jexl
-!/modpack_defaults/config/crash_assistant/scripts/startup/20_modlist_changes_warning.jexl
-!/modpack_defaults/config/crash_assistant/crash_assistant_localization_overrides/
-!/modpack_defaults/config/crash_assistant/crash_assistant_localization_overrides/zh_cn.json
+!/modpack_defaults/config/crash_assistant/**
 !/sparsestructures.json5
 # 忽略当前目录下所以文件
 # 反选不忽略的文件夹和文件

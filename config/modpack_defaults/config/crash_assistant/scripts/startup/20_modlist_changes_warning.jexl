@@ -1,12 +1,5 @@
-// 文件名前缀用于将未携带运行时 Mod ID 的旧版基线与新 JAR 配对为一次版本变化。
-var optionalClientModPrefixes = [
-    "acceleratedrendering-",
-    "culllessleaves-reforged-",
-    "dynamic-fps-",
-    "entityculling-",
-    "fastrecipesearch-",
-    "ixeris-"
-];
+// 可选客户端 Mod 不计入告警；此模式也用于旧基线的版本变化配对。
+var optionalClientModPattern = "^(?:acceleratedrendering|culllessleaves-reforged|dynamic-fps|entityculling|fastrecipesearch|ixeris)-.*\\.jar$";
 
 var diff = ModListDiff.getDiff(true);
 var addedItems = "";
@@ -20,30 +13,14 @@ var updatedCount = 0;
 for (updatedPair : diff.getUpdatedMods()) {
     var optionalUpdate = true;
     for (currentMod : updatedPair.getOldMods()) {
-        var jarName = currentMod.getJarName().toLowerCase();
-        var knownOptionalJar = false;
-        for (prefix : optionalClientModPrefixes) {
-            if (jarName.startsWith(prefix) && jarName.endsWith(".jar")) {
-                knownOptionalJar = true;
-                break;
-            }
-        }
-        if (!knownOptionalJar) {
+        if (!currentMod.getJarName().toLowerCase().matches(optionalClientModPattern)) {
             optionalUpdate = false;
             break;
         }
     }
     if (optionalUpdate) {
         for (currentMod : updatedPair.getNewMods()) {
-            var jarName = currentMod.getJarName().toLowerCase();
-            var knownOptionalJar = false;
-            for (prefix : optionalClientModPrefixes) {
-                if (jarName.startsWith(prefix) && jarName.endsWith(".jar")) {
-                    knownOptionalJar = true;
-                    break;
-                }
-            }
-            if (!knownOptionalJar) {
+            if (!currentMod.getJarName().toLowerCase().matches(optionalClientModPattern)) {
                 optionalUpdate = false;
                 break;
             }
@@ -78,15 +55,7 @@ for (updatedPair : diff.getUpdatedMods()) {
 // 旧版基线只有文件名时，按末尾数字版本段配对“移除 + 新增”。
 for (removedMod : diff.getRemovedMods()) {
     var oldJarName = removedMod.getJarName();
-    var oldJarNameLower = oldJarName.toLowerCase();
-    var optionalRemovedMod = false;
-    for (prefix : optionalClientModPrefixes) {
-        if (oldJarNameLower.startsWith(prefix) && oldJarNameLower.endsWith(".jar")) {
-            optionalRemovedMod = true;
-            break;
-        }
-    }
-    if (optionalRemovedMod) {
+    if (oldJarName.toLowerCase().matches(optionalClientModPattern)) {
         continue;
     }
 
@@ -96,15 +65,7 @@ for (removedMod : diff.getRemovedMods()) {
     }
     for (addedMod : diff.getAddedMods()) {
         var newJarName = addedMod.getJarName();
-        var newJarNameLower = newJarName.toLowerCase();
-        var optionalAddedMod = false;
-        for (prefix : optionalClientModPrefixes) {
-            if (newJarNameLower.startsWith(prefix) && newJarNameLower.endsWith(".jar")) {
-                optionalAddedMod = true;
-                break;
-            }
-        }
-        if (optionalAddedMod) {
+        if (newJarName.toLowerCase().matches(optionalClientModPattern)) {
             continue;
         }
         var newIdentity = newJarName.replaceAll("(?i)(?:[-_]\\d[0-9A-Za-z.+_-]*)\\.jar$", "");
@@ -126,15 +87,7 @@ for (removedMod : diff.getRemovedMods()) {
 
 for (addedMod : diff.getAddedMods()) {
     var jarName = addedMod.getJarName();
-    var jarNameLower = jarName.toLowerCase();
-    var optionalClientMod = false;
-    for (prefix : optionalClientModPrefixes) {
-        if (jarNameLower.startsWith(prefix) && jarNameLower.endsWith(".jar")) {
-            optionalClientMod = true;
-            break;
-        }
-    }
-    if (optionalClientMod) {
+    if (jarName.toLowerCase().matches(optionalClientModPattern)) {
         continue;
     }
     var pairedAddition = false;
@@ -160,15 +113,7 @@ for (addedMod : diff.getAddedMods()) {
 
 for (removedMod : diff.getRemovedMods()) {
     var jarName = removedMod.getJarName();
-    var jarNameLower = jarName.toLowerCase();
-    var optionalClientMod = false;
-    for (prefix : optionalClientModPrefixes) {
-        if (jarNameLower.startsWith(prefix) && jarNameLower.endsWith(".jar")) {
-            optionalClientMod = true;
-            break;
-        }
-    }
-    if (optionalClientMod) {
+    if (jarName.toLowerCase().matches(optionalClientModPattern)) {
         continue;
     }
     var pairedRemoval = false;

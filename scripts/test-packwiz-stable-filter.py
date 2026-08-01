@@ -102,12 +102,7 @@ class PackwizStableFilterTests(unittest.TestCase):
             test_modlist["client-test.jar"],
         )
 
-    def test_crash_assistant_modlist_extracts_tail_version(self):
-        self.assertEqual(
-            {"modId": "example-forge", "name": "Example", "version": "1.20.1-2.3.4"},
-            CRASH_ASSISTANT_MODLIST.mod_record("Example-forge-1.20.1-2.3.4.jar", "Example"),
-        )
-
+    def test_patch_selection_follow_stable_mode(self):
         for asset_dir in ("mods", "resourcepacks", "shaderpacks"):
             test_names = {entry[1] for entry in PATCH.metadata_entries(self.root, asset_dir)}
             formal_names = {entry[1] for entry in PATCH.metadata_entries(self.root, asset_dir, stable=True)}
@@ -116,6 +111,12 @@ class PackwizStableFilterTests(unittest.TestCase):
                 {"mods": "client-test.jar", "resourcepacks": "test-pack.zip", "shaderpacks": "test-shader.zip"}[asset_dir],
                 formal_names,
             )
+
+    def test_crash_assistant_modlist_extracts_tail_version(self):
+        self.assertEqual(
+            {"modId": "example-forge", "name": "Example", "version": "1.20.1-2.3.4"},
+            CRASH_ASSISTANT_MODLIST.mod_record("Example-forge-1.20.1-2.3.4.jar", "Example"),
+        )
 
     def test_formal_server_patch_removes_stable_disabled_metadata_and_payloads(self):
         patch = self.root / "patch"
