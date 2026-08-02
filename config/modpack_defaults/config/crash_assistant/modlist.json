@@ -1744,10 +1744,10 @@
     "name": "Tetra",
     "version": "1.20.1-6.9.0"
   },
-  "tetra_insight-0.1.1.jar": {
+  "tetra_insight-0.1.2.jar": {
     "modId": "tetra_insight",
     "name": "Tetra Insight",
-    "version": "0.1.1"
+    "version": "0.1.2"
   },
   "tetracelium-1.20.1-1.3.1.jar": {
     "modId": "tetracelium",

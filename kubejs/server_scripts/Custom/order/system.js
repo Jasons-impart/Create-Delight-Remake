@@ -35,10 +35,28 @@ ItemEvents.rightClicked("createdelight:unopened_order", e => {
     let draftStack = e.player.getItemInHand(e.hand)
     let otherStack = `${e.hand}` == "MAIN_HAND" ? e.player.offHandItem : e.player.mainHandItem
 
-    if (global.Order.applyDraftSeal(draftStack, otherStack)) {
+    if (otherStack.is("createdelight:order_seal")) {
+        if (!global.Order.applyDraftSeal(draftStack, otherStack)) {
+            e.player.tell(Text.translate("message.createdelight.order_draft_material_failed"))
+            e.cancel()
+            return
+        }
         if (!e.player.isCreative())
             otherStack.shrink(1)
         e.player.tell(Text.translate("message.createdelight.order_draft_sealed"))
+        e.cancel()
+        return
+    }
+
+    if (otherStack.is("createdelight:order_clause")) {
+        if (!global.Order.applyDraftClause(draftStack, otherStack)) {
+            e.player.tell(Text.translate("message.createdelight.order_draft_clause_failed"))
+            e.cancel()
+            return
+        }
+        if (!e.player.isCreative())
+            otherStack.shrink(1)
+        e.player.tell(Text.translate("message.createdelight.order_draft_clause_applied"))
         e.cancel()
         return
     }
@@ -57,5 +75,23 @@ ItemEvents.rightClicked("createdelight:order_seal", e => {
     if (!e.player.isCreative())
         sealStack.shrink(1)
     e.player.tell(Text.translate("message.createdelight.order_draft_sealed"))
+    e.cancel()
+})
+
+ItemEvents.rightClicked("createdelight:order_clause", e => {
+    let clauseStack = e.player.getItemInHand(e.hand)
+    let draftStack = `${e.hand}` == "MAIN_HAND" ? e.player.offHandItem : e.player.mainHandItem
+
+    if (!draftStack.is("createdelight:unopened_order"))
+        return
+    if (!global.Order.applyDraftClause(draftStack, clauseStack)) {
+        e.player.tell(Text.translate("message.createdelight.order_draft_clause_failed"))
+        e.cancel()
+        return
+    }
+
+    if (!e.player.isCreative())
+        clauseStack.shrink(1)
+    e.player.tell(Text.translate("message.createdelight.order_draft_clause_applied"))
     e.cancel()
 })
