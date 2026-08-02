@@ -1,0 +1,44 @@
+{
+  "replace": true,
+  "preview": "revealable",
+  "slots": [
+    "single/head"
+  ],
+  "rarity": "temporary",
+  "displayType": "improvement",
+  "materialSlotCount": 1,
+  "glyph": {
+    "textureLocation": "tetra:textures/gui/wizard_glyphs.png",
+    "textureX": 0,
+    "textureY": 0
+  },
+  "requirement": {
+    "type": "tetra:and",
+    "requirements": [
+      {
+        "type": "tetra:not",
+        "requirement": {
+          "type": "tetra:improvement",
+          "improvement": "trident_activation"
+        }
+      },
+      {
+        "type": "tetra:module",
+        "variant": "trident/trident"
+      }
+    ]
+  },
+  "outcomes": [
+    {
+      "improvements": {
+        "trident_activation": 0
+      },
+      "material": {
+        "items": [
+          "alexscaves:immortal_embryo"
+        ],
+        "count": 1
+      }
+    }
+  ]
+}

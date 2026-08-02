@@ -1,0 +1,28 @@
+{
+  "replace": true,
+  "slots": [
+    "toolbelt/belt"
+  ],
+  "materialSlotCount": 1,
+  "preview": "always",
+  "requirement": {
+    "type": "tetra:module",
+    "variant": "belt/inlaid"
+  },
+  "displayType": "minor",
+  "glyph": {
+    "textureY": 112
+  },
+  "outcomes": [
+    {
+      "material": {
+        "items": [
+          "createdelight:forged_steel_sheet"
+        ],
+        "count": 4
+      },
+      "moduleKey": "toolbelt/belt_socket",
+      "moduleVariant": "belt_socket"
+    }
+  ]
+}

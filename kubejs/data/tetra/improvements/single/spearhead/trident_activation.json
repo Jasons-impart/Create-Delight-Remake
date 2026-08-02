@@ -1,0 +1,10 @@
+[
+  {
+    "key": "trident_activation",
+    "integrity": -1,
+    "attributes": {
+      "generic.attack_damage": 1
+    },
+    "magicCapacity": 72
+  }
+]

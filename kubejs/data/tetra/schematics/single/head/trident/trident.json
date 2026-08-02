@@ -1,0 +1,28 @@
+{
+  "replace": true,
+  "slots": [
+    "single/head"
+  ],
+  "materialSlotCount": 1,
+  "displayType": "major",
+  "requirement": {
+    "type": "tetra:module",
+    "variant": "trident/trident"
+  },
+  "glyph": {
+    "textureX": 192,
+    "textureY": 32
+  },
+  "outcomes": [
+    {
+      "material": {
+        "items": [
+          "minecraft:sea_lantern"
+        ],
+        "count": 1
+      },
+      "moduleKey": "single/trident",
+      "moduleVariant": "trident/trident"
+    }
+  ]
+}

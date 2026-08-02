@@ -37,6 +37,7 @@
 | [§9](#sec-9) | 快速检索命令 |
 | [§10](#sec-10) | MMT OP 物品清单 |
 | [§11](#sec-11) | chthonic_extractor 跨维度矿物提取 |
+| [§12](#sec-12) | 源码实现机制速查（NBT/数据同步/效果双引擎/tint/工作台） |
 
 <!-- TOC end -->
 
@@ -2557,3 +2558,85 @@ rg -n "armor/(head|chest|legs|feet)|generic\\.armor|generic\\.armor_toughness|mo
 | extractor_breakable 标签 | `data/tetra/tags/blocks/extractor_breakable.json`（Tetra JAR） | 控制哪些方块可被裂缝破坏 |
 | Tier 1-4 战利品表 | `data/tetra/loot_tables/extractor/tier{1-4}.json`（Tetra JAR） | 矿石产出权重表 |
 | 主逻辑类 | `se/mickelus/tetra/blocks/forged/chthonic/FracturedBedrockTile.class` | `tick()`/`breakBlock()`/`spawnOre()`/`updateLuck()` |
+
+<a id="sec-12"></a>
+## 12. 源码实现机制速查（对接 Tetra 源码）
+
+> 本节内容来自对本地 `tetra/` 源码仓库（`1.20` 分支，≈ 线上 6.9.0）的系统阅读。补充前面各节缺少的"实现机制"层知识，用于理解**改 JSON 之后发生了什么**、**哪些东西数据包改不了**。完整逐类笔记在 `C:\Users\admin\AppData\Local\Temp\opencode\tetra-学习计划.md`。
+
+### 12.1 物品状态全在 NBT，`id` 是缓存令牌
+
+- 一把模块化工具的**组合就是 NBT 里两个字符串**：`槽位key → 模块名` + `模块名_material → 材料变体`（`IModularItem.putModuleInSlot`）
+- 每次组合变更（制作/打磨/强化/微调/修理）都会 `updateIdentifier()` 写一个新 UUID 到 `id` key
+- 属性（attributeCache/toolCache/effectCache/propertyCache）和模型（ModularOverrideList.bakedModelCache）的 **缓存 key = 这个 `id`**；改 NBT 即换 id，旧缓存自动失效
+- **对包内开发的意义**：
+  - 改 `kubejs/data/tetra/` 数据后，游戏内 `/reload` 会触发 DataStore 重载 → 全部缓存/模型/工作台蓝图重建
+  - 调试"数值没变"问题时，先确认是不是旧工具没重建（换 `id` 的才是新组合）
+  - 打磨进度/修理计数也在 NBT：`honing_progress`/`honing_available`/`honing_count`/`repairCount`
+
+### 12.2 数据同步是服务端权威，客户端不读数据文件夹
+
+- `DataManager` 维护 16 个 `DataStore`，一一对应 `data/tetra/{tiers,tweaks,materials,improvements,modules,enchantments,synergies,replacements,schematics,crafting_effects,repairs,actions,unlocks,archetypes,item_effects,modifier_effects}`
+- 服务端加载 JSON → 玩家登录（`PlayerLoggedInEvent`）/ 数据 reload（`AddReloadListenerEvent`）→ 通过 `UpdateDataPacket` 把**整目录 JSON 下发** → 客户端 `loadFromPacket` 后触发各 `onReload` 回调
+- **对包内开发的意义**：
+  - 专用服只改服务端 JSON 即可，客户端不用同步数据文件
+  - `kubejs/data/tetra/` 覆盖层与 JAR 内同目录 JSON 按"数据包优先级"合并，`"replace": true` 才整文件替换
+  - `/reload` 是整套数据改动后的验证入口
+
+### 12.3 所有 JSON `type` 字段都必须在 Java 注册反序列化器
+
+- 模块类型（ModuleRegistry）、模型类型（ModuleModelRegistry）、效果条件/结果（ItemEffectCondition/Outcome）、数值提供器（NumberProvider）、crafting effect 条件/结果等，全部是"**注册表 + JSON 按 `type` 选择**"模式
+- **对包内开发的意义**：数据包只能引用**已注册的 type**；想在 JSON 里发明新 type 需要伴生 mod/Mixin 注册，KubeJS 脚本做不了
+- `ItemEffect` 也是注册表式（`ItemEffect.get(key)`），所以效果 key 本质是字符串——数据包只要引用已存在的 key 就能用，不需额外注册
+
+### 12.4 效果是"双引擎"，挂在同四个入口
+
+| 引擎 | 位置 | 内容 |
+|---|---|---|
+| Java 事件 | `ItemEffectHandler`（Forge 事件订阅） | 流血/背刺/暴击/横扫/破甲等**硬编码效果**，按 `getEffectLevel(stack, effect)` 分发 |
+| 数据驱动 | `data/tetra/item_effects/*.json` | `trigger → condition → outcome` 管道（`ItemEffectContext` 传递命名数值/向量/实体） |
+
+两者都挂在 use / hit / mine_block / break_block 四个入口（`DataEffectsHandler` + `ItemEffectHandler`），**互相独立叠加**。§1.20 的"被动效果与 ability 隔离"正是这一层的事实来源。
+
+### 12.5 模型与 tint 机制（加材料/换贴图必看）
+
+- 模块模型默认是 `tetra:grid_texture`：**每个模块一张 16×16 网格贴图**，不同材料靠"贴图路径后缀拼接 + tint 着色"复用同一张贴图
+- 材料 JSON 的 `textures` 列表 + `tints.texture` 决定最终贴图与颜色（`GridTextureModelData.forMaterial`）
+- **tint 是 shader 逐通道乘法**（`tex × tint`）：只会压暗不会变亮；`0xFFFFFF`= 不变色
+  - 想让某材料颜色"亮"，别靠 tint——把颜色**烤进贴图**再把 tint 设白，或新增贴图并让 `textures`/`textureOverrides` 指向它
+  - 发光效果用模型 JSON 的 `emission` 字段（独立发光层，不受乘法影响）
+- 模型 JSON（物品 `modular_*.json`）里的 `variants` 定义姿态变换（throwing/blocking），由 `getTransformVariant` 运行时选择
+
+### 12.6 工作台机制速查（改蓝图/解锁逻辑前先看）
+
+- `WorkbenchTile` 是 4 槽 `ItemStackHandler`：槽 0 = 目标工具，槽 1-3 = 材料槽；**槽位数量随当前蓝图动态变化**（`getSlots()` = `schematic.getNumMaterialSlots() + 1`）
+- `craft()` 数据管道：`canApplyUpgrade` 校验 → `applyUpgrade` → CraftingEffect 加成 → 消耗工具（背包→工具腰带→附近方块）→ `assemble()` 刷新 id → 材料回写 + 清蓝图
+- **卷轴解锁** = 工作台扫描周围 5×5×5 内所有 `ISchematicProviderBlock`（即 `ScrollBlock`）+ `data/tetra/unlocks` 数据 → 拼成蓝图 ResourceLocation 数组（`getSchematics`）；intricate 卷轴必须正好在工作台上方一格
+- 锻造锤 `HammerBaseBlockEntity.tick()` 对工作台顶面的 `BlockInteraction`（要求 hammer 工具 + 等级）自动 `applyOutcome`——"自动敲击"与玩家手动敲是同一入口
+
+### 12.7 源码位置索引（包内开发常用）
+
+| 关注点 | 源码文件（`tetra/src/main/java/se/mickelus/tetra/`） |
+|---|---|
+| 属性/效果聚合、NBT 存取、缓存 | `items/modular/IModularItem.java`、`items/modular/ModularItem.java` |
+| 具体工具槽位/右键逻辑 | `items/modular/impl/`（sword/single/double/bow/crossbow/shield/toolbelt） |
+| 效果反序列化（level/efficiency） | `module/data/EffectData.java`（§1.10 依据） |
+| 材料×模块合成 | `module/data/MaterialVariantData.java`（`combine()` 公式） |
+| 数据驱动效果管道 | `effect/data/DataEffectsHandler.java`、`effect/data/ItemEffectContext.java` |
+| 战斗效果事件 Hub | `effect/ItemEffectHandler.java` |
+| 工作台制作/容器 | `blocks/workbench/WorkbenchTile.java`、`WorkbenchContainer.java`、`action/` |
+| 锻造锤/提取器 | `blocks/forged/hammer/HammerBaseBlockEntity.java`、`blocks/forged/chthonic/` |
+| 卷轴/全息球 | `blocks/scroll/`、`blocks/holo/` |
+| 数据同步总线 | `data/DataManager.java`（16 个 DataStore + gson 中枢） |
+| 动态模型 | `client/model/ModularOverrideList.java`、`module/model/GridTextureModelData.java` |
+| 属性条 HUD | `gui/stats/GuiStats.java`、`gui/stats/getter/`、`gui/stats/data/` |
+
+### 12.8 与包内设计文档的关系
+
+| 学习计划阶段 | 对应本节/前文 |
+|---|---|
+| 材料/模块/蓝图数据 | §1.1-§1.8 + §12.1（NBT 存哪、缓存怎么失效） |
+| level/efficiency 语义 | §1.10（反序列化规则）+ 反编译效果类 |
+| 工作台/卷轴/锻造 | §10（解锁门控体系）+ §12.6（机制） |
+| 效果引擎 | §1.11-§1.20 + §12.4（双引擎入口） |
+| 模型/tint | §1.1.x（材料字段）+ §12.5（乘法 tint 陷阱） |
