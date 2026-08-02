@@ -519,5 +519,11 @@
             "cosmopolitan:bagel"
         ],
         "resultItems": "bakeries:bagel"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:can"
+        ],
+        "resultItems": "luncheonmeatsdelight:can_shell"
     }
 ]
