@@ -1,0 +1,49 @@
+[
+  {
+    "modules": [
+      "single/trident"
+    ],
+    "improvements": [
+      "activation"
+    ],
+    "attributes": {
+      "**generic.attack_speed": 0.1
+    },
+    "effects": {
+      "createdelight:activation": 1
+    }
+  },
+  {
+    "improvements": [
+      "trident_activation"
+    ],
+    "moduleVariants": [
+      "light_handle/prismarine"
+    ],
+    "attributes": {
+      "**generic.attack_damage": 0.1
+    }
+  },
+  {
+    "improvements": [
+      "trident_activation"
+    ],
+    "moduleVariants": [
+      "basic_handle/prismarine"
+    ],
+    "attributes": {
+      "**generic.attack_damage": 0.1
+    }
+  },
+  {
+    "improvements": [
+      "trident_activation"
+    ],
+    "moduleVariants": [
+      "long_handle/prismarine"
+    ],
+    "attributes": {
+      "**generic.attack_damage": 0.1
+    }
+  }
+]

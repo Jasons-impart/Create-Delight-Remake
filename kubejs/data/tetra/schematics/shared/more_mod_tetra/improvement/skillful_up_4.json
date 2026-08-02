@@ -31,8 +31,7 @@
     {
       "experienceCost": 40,
       "material": {
-        "items": [
-        ]
+        "tag": "more_mod_tetra:over_core"
       },
       "improvements": {
         "skillful": 4
