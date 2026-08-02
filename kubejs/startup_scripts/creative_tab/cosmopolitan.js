@@ -3,6 +3,9 @@ StartupEvents.modifyCreativeTab("cosmopolitan:tab", e => {
     'cosmopolitan:chorus_fruit_popsicle',
     'cosmopolitan:bagel',
     'cosmopolitan:sugarcane_pieces',
-    'cosmopolitan:bagasse'
+    'cosmopolitan:bagasse',
+    'cosmopolitan:frozen_dessert_tub',
+    "cosmopolitan:copper_frozen_dessert_tub",
+    'cosmopolitan:netherite_frozen_dessert_tub'
   ])
 })
