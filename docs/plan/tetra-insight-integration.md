@@ -18,19 +18,23 @@
 - 材料型改进复用模块选材风格；按住 Shift 查看耗材；固定耗材与附魔使用紧凑汇总。
 - 全息球与加工台的动态属性 Bar 分别按 14/18 项分页，并支持箭头与鼠标滚轮切页，避免第四行或额外横列覆盖相邻界面。
 - 缺失材料定义的候选不会渲染，但附魔等自定义 Java schematic 不按空预览材料误删。
+- 当加工台模块没有可见方案时显示“在全息球中查看”，并通过 Tetra 原生模块选择流程定位到当前物品与槽位。
+- 全息球材料与变体分类超过八项时折叠为七项加展开控件，保留当前选中项，并兼容 ExtraHoloPage 1.2.16 的替换分组。
+- CDC 为 ExtraHoloPage 的附加全息入口提供每页七项的分页，返回物品列表时保留当前页。
 
 独立源码与正式版本：
 
 - 源码：<https://github.com/SSWTLZZ69/TetraInsight>
-- 0.1.0 源码 PR：<https://github.com/SSWTLZZ69/TetraInsight/pull/1>
+- 0.1.1 源码 PR：<https://github.com/SSWTLZZ69/TetraInsight/pull/2>
 - CurseForge：<https://www.curseforge.com/minecraft/mc-mods/tetra-insight>
 - 目标版本：Minecraft 1.20.1、Forge 47.4.16、Tetra 6.9.x、mutil 6.2.0+
 
 ## CDR 接入
 
 - 删除 TetraClip 的 Packwiz 元数据和手动托管 JAR，避免两个附属同时分页 `HoloSortPopover`。
-- Tetra Insight 项目与包含本轮热修的修订文件 `8456389` 均已通过 CurseForge 审核；`mods/tetra-insight.pw.toml` 使用 CurseForge 更新元数据，并明确标记为客户端模组。
+- Tetra Insight `0.1.1` 文件 `8559459` 已上传 CurseForge；`mods/tetra-insight.pw.toml` 已切换到该文件并明确标记为客户端模组。
 - 已移除 `packwiz-files` 临时载荷，后续版本由 Packwiz 根据 CurseForge 项目 `1613955` 更新。
+- CDC `2.2.16e` 继续通过 `packwiz-files/mods/Create-Delight-Core-1.20.1-dev.jar` 分发，不使用 CurseForge 文件。
 
 ## Biomancy 联动清理
 
@@ -44,11 +48,12 @@ CDR 未安装 Biomancy，但 MMT 的部分根级固定耗材改进没有 `forge:
 
 ## 验证状态
 
-- Tetra Insight `0.1.0` 已通过本地 `test build`；其功能代码与 CDR 托管 JAR 一致。
+- Tetra Insight `0.1.1` 已通过本地 `clean test build`，加工台入口与全息球跳转由用户完成真实客户端确认。
 - 已回归普通改进、打磨与附魔的组合顺序、选择/取消状态、悬停属性预测，以及三行属性 Bar 与详情返回入口的布局。
 - 已在 CDR 真实环境回归加工台、全息球、材料影响、筛选、改进、打磨、附魔、协同和模块特性。
 - 已确认移除 TetraClip 后筛选分页正常，Biomancy `material.primary` 空指针不再出现。
-- Packwiz CurseForge 元数据的 SHA-1 已与文件 `8456389` 核对，并确认本地同步后旧 dev/TetraClip/临时托管 JAR 不残留。
+- Tetra Insight 文件 `8559459` 的 CDN SHA-1 `cb6988cb78354923638fbf477c653219d6dd8f02` 与 Packwiz 元数据和运行 JAR 一致。
+- CDC `2.2.16e` 的源码子模块、`packwiz-files` JAR、运行 JAR 和 Packwiz SHA-256 `e72d0eb1a81f17f978741ced1c1dad0fa69701bf2d60945602d0d6b279555b8d` 一致。
 
 ## 后续
 
