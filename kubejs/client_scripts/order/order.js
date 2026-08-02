@@ -119,13 +119,33 @@ ItemEvents.tooltip(e => {
         if (reward == null)
             reward = [`createdelight:orders/${info.type}`, 1]
         let rewardType = reward[0]
-        let rewardAmount = reward[1] * entries.length
+        let giftMultiplier = info.rewardMultipliers != null && info.rewardMultipliers.gifts != null
+            ? Math.max(0, Number(info.rewardMultipliers.gifts))
+            : 1
+        let rewardAmount = Math.max(0, Math.round(reward[1] * entries.length * giftMultiplier))
 
         // 标题
         text.add(Text.translate("tooltip.createdelight.order.title",
             Text.translate("tooltip.createdelight.order.customer." + type)
         ))
+        let grade = Number(info.orderGrade || info.generationSpec?.orderGrade || 1)
+        text.add(Text.translate(
+            "tooltip.createdelight.order.grade",
+            grade,
+            Text.translate(`tooltip.createdelight.order.grade.${grade}`)
+        ).gold())
         text.add(Text.translate(`rarity.${customer.rarity.toLowerCase()}`).color(global.CDClientJavaClasses.$Rarity[customer.rarity.toUpperCase()].color))
+
+        let modifiers = global.Order.toArray(info.modifiers == null ? info.generationSpec?.modifiers : info.modifiers)
+        if (modifiers.length > 0) {
+            text.add(Text.translate("tooltip.createdelight.order.modifiers.title"))
+            modifiers.forEach(value => {
+                text.add(Text.translate(
+                    "tooltip.createdelight.order.modifiers.entry",
+                    Text.translate(`tooltip.createdelight.order_clause.${value}.name`)
+                ).gray())
+            })
+        }
         // 空行
         text.add("")
 
@@ -167,6 +187,19 @@ ItemEvents.tooltip(e => {
             "tooltip.createdelight.order.money.base",
             global.MoneyUtil.convertBaseValueToString(baseMoney)
         ))
+        let reputationMultiplier = info.rewardMultipliers != null && info.rewardMultipliers.reputation != null
+            ? Number(info.rewardMultipliers.reputation)
+            : 1
+        if (Math.abs(reputationMultiplier - 1) > 0.001)
+            text.add(Text.translate(
+                "tooltip.createdelight.order.reputation_multiplier",
+                (reputationMultiplier * 100).toFixed(0)
+            ).gray())
+        if (Math.abs(giftMultiplier - 1) > 0.001)
+            text.add(Text.translate(
+                "tooltip.createdelight.order.gift_multiplier",
+                (giftMultiplier * 100).toFixed(0)
+            ).gray())
 
         let marketModifier = getClientOrderMarketModifier(info)
         if (marketModifier == null) {
@@ -207,6 +240,13 @@ ItemEvents.tooltip(e => {
                 "tooltip.createdelight.order_draft.category",
                 Text.translate(`tooltip.createdelight.order_draft.seal.${draft.categorySeal}`)
             ))
+        let clauses = global.Order.toArray(draft.Clauses)
+        clauses.forEach(value => {
+            text.add(Text.translate(
+                "tooltip.createdelight.order_draft.clause",
+                Text.translate(`tooltip.createdelight.order_clause.${value}.name`)
+            ))
+        })
     })
 
     e.addAdvanced("createdelight:order_seal", (item, advanced, text) => {
@@ -223,6 +263,26 @@ ItemEvents.tooltip(e => {
         ))
         text.add(Text.translate("tooltip.createdelight.order_seal.use"))
         text.add(Text.translate(`tooltip.createdelight.order_seal.${seal.type}`))
+    })
+
+    e.addAdvanced("createdelight:order_clause", (item, advanced, text) => {
+        let clauseKey = global.Order.getClauseKey(item)
+        let clause = global.Order.getClause(clauseKey)
+        if (clause == null) {
+            text.add(Text.translate("tooltip.createdelight.order_clause.empty"))
+            return
+        }
+
+        text.add(Text.translate(`tooltip.createdelight.order_clause.${clauseKey}.name`).gold())
+        text.add(Text.translate(`tooltip.createdelight.order_clause.${clauseKey}.effect`))
+        text.add(Text.translate("tooltip.createdelight.order_clause.category",
+            Text.translate(`tooltip.createdelight.order_clause.category.${clause.category}`)
+        ).gray())
+        if (clause.minGrade != null)
+            text.add(Text.translate("tooltip.createdelight.order_clause.min_grade", clause.minGrade).darkGray())
+        if (clause.maxGrade != null)
+            text.add(Text.translate("tooltip.createdelight.order_clause.max_grade", clause.maxGrade).darkGray())
+        text.add(Text.translate("tooltip.createdelight.order_clause.use").darkGray())
     })
 
 })

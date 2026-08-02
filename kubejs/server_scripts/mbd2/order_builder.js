@@ -30,9 +30,11 @@ const ORDER_BUILDER_LANG = {
     openButton: "gui.createdelight.order_builder.open",
     customerOnly: "message.createdelight.order_builder.customer_only",
     categoryOnly: "message.createdelight.order_builder.category_only",
+    clauseOnly: "message.createdelight.order_builder.clause_only",
+    clauseFailed: "message.createdelight.order_builder.clause_failed",
     sealFailed: "message.createdelight.order_builder.seal_failed",
     needDraft: "message.createdelight.order_builder.need_draft",
-    needSeal: "message.createdelight.order_builder.need_seal",
+    needMaterial: "message.createdelight.order_builder.need_material",
     resultBlocked: "message.createdelight.order_builder.result_blocked",
     needOwner: "message.createdelight.order_builder.need_owner",
     applied: "message.createdelight.order_builder.applied",
@@ -41,7 +43,7 @@ const ORDER_BUILDER_LANG = {
     opened: "message.createdelight.order_builder.opened",
     statusReady: "gui.createdelight.order_builder.status.ready",
     statusNeedDraft: "gui.createdelight.order_builder.status.need_draft",
-    statusNeedSeal: "gui.createdelight.order_builder.status.need_seal",
+    statusNeedMaterial: "gui.createdelight.order_builder.status.need_material",
     statusResultBlocked: "gui.createdelight.order_builder.status.result_blocked",
     statusNeedOwner: "gui.createdelight.order_builder.status.need_owner",
     statusApplied: "gui.createdelight.order_builder.status.applied",
@@ -139,6 +141,10 @@ function isOrderBuilderSealType(stack, type) {
     return seal != null && seal.type == type
 }
 
+function isOrderBuilderClause(stack) {
+    return !isOrderBuilderStackEmpty(stack) && global.Order.getClause(stack) != null
+}
+
 function consumeOrderBuilderSlot(machine, name, count) {
     let storage = getOrderBuilderTraitStorage(machine, name)
     if (storage != null)
@@ -223,7 +229,7 @@ function applyOrderBuilderSealSlot(machine, player, statusWidget, draftStack, tr
     return true
 }
 
-function getOrderBuilderValidSealPlan(machine, player, statusWidget) {
+function getOrderBuilderValidMaterialPlan(machine, player, statusWidget, draftStack) {
     let plan = []
     let customerSeal = getOrderBuilderSlot(machine, ORDER_BUILDER_TRAITS.customerSeal)
     let categorySeal = getOrderBuilderSlot(machine, ORDER_BUILDER_TRAITS.categorySeal)
@@ -234,7 +240,7 @@ function getOrderBuilderValidSealPlan(machine, player, statusWidget) {
             setOrderBuilderStatus(statusWidget, ORDER_BUILDER_LANG.customerOnly)
             return null
         }
-        plan.push({ trait: ORDER_BUILDER_TRAITS.customerSeal, stack: customerSeal })
+        plan.push({ trait: ORDER_BUILDER_TRAITS.customerSeal, stack: customerSeal, kind: "seal" })
     }
 
     if (!isOrderBuilderStackEmpty(categorySeal)) {
@@ -243,30 +249,57 @@ function getOrderBuilderValidSealPlan(machine, player, statusWidget) {
             setOrderBuilderStatus(statusWidget, ORDER_BUILDER_LANG.categoryOnly)
             return null
         }
-        plan.push({ trait: ORDER_BUILDER_TRAITS.categorySeal, stack: categorySeal })
+        plan.push({ trait: ORDER_BUILDER_TRAITS.categorySeal, stack: categorySeal, kind: "seal" })
+    }
+
+    let draftSource = draftStack.nbt == null ? null : draftStack.nbt.OrderDraft
+    let draft = {
+        Clauses: global.Order.toArray(draftSource == null ? null : draftSource.Clauses).map(value => `${value}`)
+    }
+    let modifierTraits = [ORDER_BUILDER_TRAITS.modifier1, ORDER_BUILDER_TRAITS.modifier2]
+    for (let i = 0; i < modifierTraits.length; i++) {
+        let modifierStack = getOrderBuilderSlot(machine, modifierTraits[i])
+        if (isOrderBuilderStackEmpty(modifierStack))
+            continue
+        if (!isOrderBuilderClause(modifierStack)) {
+            tellOrderBuilder(player, ORDER_BUILDER_LANG.clauseOnly)
+            setOrderBuilderStatus(statusWidget, ORDER_BUILDER_LANG.clauseOnly)
+            return null
+        }
+        let clauseKey = global.Order.getClauseKey(modifierStack)
+        if (global.Order.validateDraftClause(draft, clauseKey) != null) {
+            tellOrderBuilder(player, ORDER_BUILDER_LANG.clauseFailed)
+            setOrderBuilderStatus(statusWidget, ORDER_BUILDER_LANG.clauseFailed)
+            return null
+        }
+        draft.Clauses = global.Order.toArray(draft.Clauses).concat([clauseKey])
+        plan.push({ trait: modifierTraits[i], stack: modifierStack, kind: "clause" })
     }
 
     if (plan.length <= 0) {
-        tellOrderBuilder(player, ORDER_BUILDER_LANG.needSeal)
-        setOrderBuilderStatus(statusWidget, ORDER_BUILDER_LANG.statusNeedSeal)
+        tellOrderBuilder(player, ORDER_BUILDER_LANG.needMaterial)
+        setOrderBuilderStatus(statusWidget, ORDER_BUILDER_LANG.statusNeedMaterial)
         return null
     }
 
     return plan
 }
 
-function getOrderBuilderBatchLimit(draftStack, sealPlan) {
+function getOrderBuilderBatchLimit(draftStack, materialPlan) {
     let limit = draftStack.count
-    sealPlan.forEach(seal => {
-        limit = Math.min(limit, seal.stack.count)
+    materialPlan.forEach(material => {
+        limit = Math.min(limit, material.stack.count)
     })
     return limit
 }
 
-function createOrderBuilderSealedDraft(draftStack, sealPlan, count) {
+function createOrderBuilderModifiedDraft(draftStack, materialPlan, count) {
     let output = draftStack.copyWithCount(count)
-    for (let i = 0; i < sealPlan.length; i++) {
-        if (!global.Order.applyDraftSeal(output, sealPlan[i].stack))
+    for (let i = 0; i < materialPlan.length; i++) {
+        let applied = materialPlan[i].kind == "clause"
+            ? global.Order.applyDraftClause(output, materialPlan[i].stack)
+            : global.Order.applyDraftSeal(output, materialPlan[i].stack)
+        if (!applied)
             return Item.empty
     }
     return output
@@ -294,13 +327,13 @@ function applyOrderBuilderSlots(machine, player, statusWidget) {
         return
     }
 
-    let sealPlan = getOrderBuilderValidSealPlan(machine, player, statusWidget)
-    if (sealPlan == null)
+    let materialPlan = getOrderBuilderValidMaterialPlan(machine, player, statusWidget, draftStack)
+    if (materialPlan == null)
         return
 
     let resultStorage = getOrderBuilderTraitStorage(machine, ORDER_BUILDER_TRAITS.result)
-    let batchLimit = getOrderBuilderBatchLimit(draftStack, sealPlan)
-    let outputStack = createOrderBuilderSealedDraft(draftStack, sealPlan, batchLimit)
+    let batchLimit = getOrderBuilderBatchLimit(draftStack, materialPlan)
+    let outputStack = createOrderBuilderModifiedDraft(draftStack, materialPlan, batchLimit)
     if (isOrderBuilderStackEmpty(outputStack)) {
         tellOrderBuilder(player, ORDER_BUILDER_LANG.sealFailed)
         setOrderBuilderStatus(statusWidget, ORDER_BUILDER_LANG.sealFailed)
@@ -316,7 +349,7 @@ function applyOrderBuilderSlots(machine, player, statusWidget) {
 
     let finalOutput = insertable == outputStack.count ? outputStack : outputStack.copyWithCount(insertable)
     consumeOrderBuilderSlot(machine, ORDER_BUILDER_TRAITS.draft, insertable)
-    sealPlan.forEach(seal => consumeOrderBuilderSlot(machine, seal.trait, insertable))
+    materialPlan.forEach(material => consumeOrderBuilderSlot(machine, material.trait, insertable))
     ItemTransferHelper.insertItemStacked(resultStorage, finalOutput, false)
 
     tellOrderBuilderArgs(player, ORDER_BUILDER_LANG.appliedCount, [insertable])
@@ -418,11 +451,11 @@ function setOrderBuilderStorageFilters(machine) {
 
     let modifier1 = getOrderBuilderTraitStorage(machine, ORDER_BUILDER_TRAITS.modifier1)
     if (modifier1 != null)
-        modifier1.setFilter(item => false)
+        modifier1.setFilter(item => isOrderBuilderClause(item))
 
     let modifier2 = getOrderBuilderTraitStorage(machine, ORDER_BUILDER_TRAITS.modifier2)
     if (modifier2 != null)
-        modifier2.setFilter(item => false)
+        modifier2.setFilter(item => isOrderBuilderClause(item))
 
     let result = getOrderBuilderTraitStorage(machine, ORDER_BUILDER_TRAITS.result)
     if (result != null)
@@ -534,10 +567,32 @@ MBDMachineEvents.onRightClick("createdelight:order_builder", e => {
         return
     }
 
+    if (heldItem.is("createdelight:order_clause")) {
+        if (global.Order.applyDraftClause(otherStack, heldItem)) {
+            consumeOrderBuilderSeal(player, heldItem)
+            player.tell(Text.translate("message.createdelight.order_draft_clause_applied"))
+            player.swing()
+            cancelOrderBuilderEvent(event)
+        }
+        return
+    }
+
     if (!heldItem.is("createdelight:unopened_order"))
         return
 
     if (trySealOrderDraftAtBuilder(player, heldItem, otherStack)) {
+        cancelOrderBuilderEvent(event)
+        return
+    }
+
+    if (otherStack.is("createdelight:order_clause")) {
+        if (global.Order.applyDraftClause(heldItem, otherStack)) {
+            consumeOrderBuilderSeal(player, otherStack)
+            player.tell(Text.translate("message.createdelight.order_draft_clause_applied"))
+            player.swing()
+        } else {
+            player.tell(Text.translate("message.createdelight.order_draft_clause_failed"))
+        }
         cancelOrderBuilderEvent(event)
         return
     }

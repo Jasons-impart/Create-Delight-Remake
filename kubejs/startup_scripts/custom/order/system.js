@@ -15,6 +15,87 @@ Order.customerUnlockLevels = {
     EPIC: 6
 }
 
+Order.customerRarityRanks = {
+    COMMON: 0,
+    UNCOMMON: 1,
+    RARE: 2,
+    EPIC: 3
+}
+
+Order.gradeProfiles = {
+    1: { key: "trial", minTotal: 32, maxTotal: 96, minEntries: 1, maxEntries: 1, qualityBonus: -1, maxCustomerRarity: 0 },
+    2: { key: "regular", minTotal: 64, maxTotal: 160, minEntries: 1, maxEntries: 2, qualityBonus: 0, maxCustomerRarity: 1 },
+    3: { key: "guild", minTotal: 128, maxTotal: 320, minEntries: 2, maxEntries: 3, qualityBonus: 0, maxCustomerRarity: 2 },
+    4: { key: "professional", minTotal: 192, maxTotal: 512, minEntries: 2, maxEntries: 4, qualityBonus: 0, maxCustomerRarity: 2 },
+    5: { key: "major", minTotal: 320, maxTotal: 768, minEntries: 3, maxEntries: 4, qualityBonus: 1, maxCustomerRarity: 3 },
+    6: { key: "festival", minTotal: 512, maxTotal: 1024, minEntries: 3, maxEntries: 5, qualityBonus: 1, maxCustomerRarity: 3 }
+}
+
+Order.gradeWeightsByReputation = {
+    1: [[1, 1]],
+    2: [[1, 0.45], [2, 0.55]],
+    3: [[2, 0.55], [3, 0.45]],
+    4: [[2, 0.2], [3, 0.5], [4, 0.3]],
+    5: [[3, 0.2], [4, 0.5], [5, 0.3]],
+    6: [[4, 0.2], [5, 0.5], [6, 0.3]]
+}
+
+Order.orderClauses = {
+    newcomer: {
+        category: "support",
+        exclusive: true,
+        maxGrade: 2,
+        spec: { countMultiplier: 0.25, moneyMultiplier: 2, reputationMultiplier: 0.5 }
+    },
+    small_trial: {
+        category: "menu",
+        maxGrade: 3,
+        spec: { countMultiplier: 0.7, moneyMultiplier: 0.93, reputationMultiplier: 0.9, maxEntries: 1 }
+    },
+    lenient_acceptance: {
+        category: "inspection",
+        maxGrade: 3,
+        spec: { minQualityBonus: -1, moneyMultiplier: 0.75, reputationMultiplier: 0.8 }
+    },
+    specialty_supply: {
+        category: "menu",
+        spec: { countMultiplier: 1.6, moneyMultiplier: 1.05, maxEntries: 1 }
+    },
+    banquet_assortment: {
+        category: "menu",
+        minGrade: 2,
+        spec: { countMultiplier: 0.55, entryCountMultiplier: 1.5, moneyMultiplier: 1.1, reputationMultiplier: 1.15, minEntries: 2 }
+    },
+    thin_margin_volume: {
+        category: "scale",
+        minGrade: 2,
+        spec: { countMultiplier: 2, moneyMultiplier: 0.75, reputationMultiplier: 1.1 }
+    },
+    small_premium: {
+        category: "scale",
+        minGrade: 2,
+        spec: { countMultiplier: 0.5, minQualityBonus: 1, moneyMultiplier: 2.2, reputationMultiplier: 1.25 }
+    },
+    bulk_purchase: {
+        category: "scale",
+        minGrade: 3,
+        spec: { countMultiplier: 2.5, moneyMultiplier: 1.15, reputationMultiplier: 1.25 }
+    },
+    quality_inspection: {
+        category: "inspection",
+        minGrade: 3,
+        spec: { minQualityBonus: 1, moneyMultiplier: 1.35, reputationMultiplier: 1.25 }
+    },
+    reputation_priority: {
+        category: "settlement",
+        spec: { moneyMultiplier: 0.7, reputationMultiplier: 1.75 }
+    },
+    cash_settlement: {
+        category: "settlement",
+        spec: { moneyMultiplier: 1.35, reputationMultiplier: 0.5, rewardMultiplier: 0.25 }
+    }
+}
+
 Order.getCustomerUnlockLevel = function (customer) {
     if (customer == null || customer.rarity == null)
         return 1
@@ -64,8 +145,80 @@ Order.mergeSpec = function (base, addition) {
         result.moneyMultiplier = (result.moneyMultiplier == null ? 1 : result.moneyMultiplier) * addition.moneyMultiplier
     if (addition.reputationMultiplier != null)
         result.reputationMultiplier = (result.reputationMultiplier == null ? 1 : result.reputationMultiplier) * addition.reputationMultiplier
+    if (addition.rewardMultiplier != null)
+        result.rewardMultiplier = (result.rewardMultiplier == null ? 1 : result.rewardMultiplier) * addition.rewardMultiplier
+    if (addition.minGrade != null)
+        result.minGrade = Math.max(result.minGrade == null ? 1 : result.minGrade, addition.minGrade)
+    if (addition.maxGrade != null)
+        result.maxGrade = Math.min(result.maxGrade == null ? 6 : result.maxGrade, addition.maxGrade)
+    if (addition.minEntries != null)
+        result.minEntries = Math.max(result.minEntries == null ? 1 : result.minEntries, addition.minEntries)
+    if (addition.maxEntries != null)
+        result.maxEntries = Math.min(result.maxEntries == null ? 99 : result.maxEntries, addition.maxEntries)
 
     return result
+}
+
+Order.getClauseKey = function (stack) {
+    if (stack == null || !stack.is("createdelight:order_clause"))
+        return null
+    return stack.nbt == null || stack.nbt.OrderClause == null ? null : `${stack.nbt.OrderClause}`
+}
+
+Order.getClause = function (stackOrKey) {
+    let key = typeof stackOrKey == "string" ? stackOrKey : this.getClauseKey(stackOrKey)
+    return key == null ? null : this.orderClauses[key]
+}
+
+Order.validateDraftClause = function (draft, clauseKey) {
+    let clause = this.getClause(`${clauseKey}`)
+    if (clause == null)
+        return "unknown"
+
+    let existing = this.toArray(draft == null ? null : draft.Clauses).map(value => `${value}`)
+    if (existing.indexOf(`${clauseKey}`) >= 0)
+        return "duplicate"
+    if (existing.length >= 2)
+        return "slots"
+    if (clause.exclusive && existing.length > 0)
+        return "incompatible"
+
+    let minGrade = clause.minGrade == null ? 1 : clause.minGrade
+    let maxGrade = clause.maxGrade == null ? 6 : clause.maxGrade
+    for (let i = 0; i < existing.length; i++) {
+        let other = this.getClause(existing[i])
+        if (other == null)
+            continue
+        if (other.exclusive || other.category == clause.category)
+            return "incompatible"
+        minGrade = Math.max(minGrade, other.minGrade == null ? 1 : other.minGrade)
+        maxGrade = Math.min(maxGrade, other.maxGrade == null ? 6 : other.maxGrade)
+    }
+    if (minGrade > maxGrade)
+        return "grade"
+    if (existing.length + 1 > 1 && maxGrade <= 2)
+        return "slots"
+    return null
+}
+
+Order.applyDraftClause = function (orderStack, clauseStack) {
+    if (orderStack == null || clauseStack == null || !orderStack.is("createdelight:unopened_order"))
+        return false
+
+    let clauseKey = this.getClauseKey(clauseStack)
+    if (clauseKey == null)
+        return false
+
+    let nbt = orderStack.nbt || {}
+    let draft = nbt.OrderDraft || {}
+    if (this.validateDraftClause(draft, clauseKey) != null)
+        return false
+
+    draft.Revision = 2
+    draft.Clauses = this.toArray(draft.Clauses).map(value => `${value}`).concat([clauseKey])
+    nbt.OrderDraft = draft
+    orderStack.nbt = nbt
+    return true
 }
 
 Order.createSpecFromDraft = function (draft) {
@@ -76,7 +229,8 @@ Order.createSpecFromDraft = function (draft) {
 
     let customerSeal = draft.customerSeal == null ? null : `${draft.customerSeal}`
     let categorySeal = draft.categorySeal == null ? null : `${draft.categorySeal}`
-    if (customerSeal == null && categorySeal == null)
+    let clauses = this.toArray(draft.Clauses).map(value => `${value}`)
+    if (customerSeal == null && categorySeal == null && clauses.length == 0)
         return null
 
     for (let itemId in this.orderDraftSeals) {
@@ -87,8 +241,24 @@ Order.createSpecFromDraft = function (draft) {
             spec = this.mergeSpec(spec, seal.spec)
     }
 
+    clauses.forEach(clauseKey => {
+        let clause = this.getClause(clauseKey)
+        if (clause == null)
+            return
+        spec = this.mergeSpec(spec, clause.spec)
+        spec = this.mergeSpec(spec, {
+            minGrade: clause.minGrade,
+            maxGrade: clause.maxGrade
+        })
+    })
+    if (clauses.length >= 2)
+        spec.minGrade = Math.max(spec.minGrade == null ? 1 : spec.minGrade, 3)
+
     let sealCount = (customerSeal != null ? 1 : 0) + (categorySeal != null ? 1 : 0)
     spec.selectionPrecision = sealCount
+    spec.modifiers = clauses
+    if (draft.Grade != null && Number(draft.Grade) > 0)
+        spec.grade = Number(draft.Grade)
     spec.source = "draft"
     return spec
 }
@@ -325,6 +495,28 @@ Order.getEntryWeightMultiplier = function (entryKey, spec) {
     return multiplier
 }
 
+Order.chooseGrade = function (reputationLevel, spec) {
+    if (spec != null && spec.grade != null)
+        return Math.max(1, Math.min(6, Math.round(Number(spec.grade))))
+
+    let minGrade = spec != null && spec.minGrade != null ? Math.max(1, Math.round(spec.minGrade)) : 1
+    let maxGrade = spec != null && spec.maxGrade != null ? Math.min(6, Math.round(spec.maxGrade)) : 6
+    let weights = this.gradeWeightsByReputation[reputationLevel] || this.gradeWeightsByReputation[1]
+    let filtered = weights.filter(value => value[0] >= minGrade && value[0] <= maxGrade)
+    if (filtered.length == 0)
+        return Math.max(minGrade, Math.min(maxGrade, reputationLevel))
+
+    let total = 0
+    filtered.forEach(value => total += value[1])
+    let random = Utils.random.nextFloat() * total
+    for (let i = 0; i < filtered.length; i++) {
+        random -= filtered[i][1]
+        if (random <= 0)
+            return filtered[i][0]
+    }
+    return filtered[filtered.length - 1][0]
+}
+
 /**
  * 根据玩家来生成订单
  * @param {Internal.Player} player
@@ -333,8 +525,12 @@ Order.getEntryWeightMultiplier = function (entryKey, spec) {
 Order.create = function (player, spec) {
     this.ensureDataLoaded()
     let level = this.reputation.getLevel(player);
+    let grade = this.chooseGrade(level, spec)
+    let gradeProfile = this.gradeProfiles[grade]
     let order = {
         entries: [],
+        orderGrade: grade,
+        modifiers: spec == null ? [] : this.toArray(spec.modifiers),
         generatedReputationLevel: level,
         ownerName: `${player.username}`,
         ownerUUID: `${player.uuid}`
@@ -350,6 +546,8 @@ Order.create = function (player, spec) {
         let element = Order.customerProperties[key];
         let unlockLevel = Order.getCustomerUnlockLevel(element);
         if (level < unlockLevel) continue;
+        let rarityRank = Order.customerRarityRanks[element.rarity] == null ? 0 : Order.customerRarityRanks[element.rarity]
+        if (rarityRank > gradeProfile.maxCustomerRarity) continue;
         let weight = element.chance * (1 + Math.max(0, level - unlockLevel) * 0.15);
         weight *= Order.getCustomerWeightMultiplier(key, spec);
         if (weight > 0) {
@@ -392,57 +590,91 @@ Order.create = function (player, spec) {
         totalEntryWeight += weight;
     }
 
-    // --- 生成订单条目，按加权随机选择 ---
-    let count = 0;
-    let canceled = false;
-    let bonus = Math.sqrt(level);
+    // --- 由订单等级决定条目数和总货量，条目按权重无重复抽取 ---
     let countMultiplier = spec != null && spec.countMultiplier != null ? spec.countMultiplier : 1;
     let minQualityBonus = spec != null && spec.minQualityBonus != null ? spec.minQualityBonus : 0;
     let entryCountMultiplier = spec != null && spec.entryCountMultiplier != null ? spec.entryCountMultiplier : 1;
-    let maxEntryCount = Math.max(1, Math.round(selected.max_count * entryCountMultiplier));
+    let profileMinEntries = gradeProfile.minEntries
+    let profileMaxEntries = Math.min(gradeProfile.maxEntries, selected.max_count, entriesList.length)
+    let baseEntryCount = Math.floor(Utils.random.nextFloat(profileMinEntries, profileMaxEntries + 1))
+    let targetEntryCount = Math.max(1, Math.round(baseEntryCount * entryCountMultiplier))
+    if (spec != null && spec.minEntries != null)
+        targetEntryCount = Math.max(targetEntryCount, Math.round(spec.minEntries))
+    if (spec != null && spec.maxEntries != null)
+        targetEntryCount = Math.min(targetEntryCount, Math.round(spec.maxEntries))
+    targetEntryCount = Math.max(1, Math.min(targetEntryCount, selected.max_count, entriesList.length))
 
-    while (count < maxEntryCount && !canceled && totalEntryWeight > 0) {
-        // 随机选一个条目
-        let r = Utils.random.nextFloat() * totalEntryWeight;
+    let selectedEntries = []
+    let availableEntries = entriesList.slice()
+    while (selectedEntries.length < targetEntryCount && availableEntries.length > 0) {
+        let availableWeight = 0
+        availableEntries.forEach(value => availableWeight += Math.max(0, value.weight))
+        if (availableWeight <= 0)
+            break
+        let r = Utils.random.nextFloat() * availableWeight;
         let chosenEntry;
-        for (let i = 0; i < entriesList.length; i++) {
-            r -= entriesList[i].weight;
+        let chosenIndex = -1
+        for (let i = 0; i < availableEntries.length; i++) {
+            r -= availableEntries[i].weight;
             if (r <= 0) {
-                chosenEntry = entriesList[i];
+                chosenEntry = availableEntries[i];
+                chosenIndex = i
                 break;
             }
         }
+        if (!chosenEntry)
+            break
+        selectedEntries.push(chosenEntry)
+        availableEntries.splice(chosenIndex, 1)
+    }
 
-        if (!chosenEntry) break; // 防护
+    let targetTotal = Utils.random.nextFloat(gradeProfile.minTotal, gradeProfile.maxTotal) * countMultiplier
+    let targetUnits = Math.max(selectedEntries.length, Math.round(targetTotal / 4))
+    let allocationWeights = []
+    let allocationWeightTotal = 0
+    selectedEntries.forEach(chosenEntry => {
+        let property = Order.orderProperties[chosenEntry.key]
+        let weight = Math.max(1, property == null ? 16 : property.base_count) * Utils.random.nextFloat(0.8, 1.2)
+        allocationWeights.push(weight)
+        allocationWeightTotal += weight
+    })
 
-        let amount = Order.orderProperties[chosenEntry.key].base_count * Utils.random.nextFloat(1, bonus * 1.25) * countMultiplier;
+    let remainingUnits = targetUnits
+    selectedEntries.forEach((chosenEntry, index) => {
+        let remainingEntries = selectedEntries.length - index - 1
+        let units = remainingUnits
+        if (remainingEntries > 0) {
+            units = Math.max(1, Math.round(targetUnits * allocationWeights[index] / allocationWeightTotal))
+            units = Math.min(units, remainingUnits - remainingEntries)
+        }
+        remainingUnits -= units
         order.entries.push({
             id: chosenEntry.key,
-            count: parseInt(amount) * 4,
-            minQuality: Math.min(3, Math.max(chosenEntry.minQuality + minQualityBonus, 1))
+            count: units * 4,
+            minQuality: Math.min(3, Math.max(chosenEntry.minQuality + gradeProfile.qualityBonus + minQualityBonus, 1))
         });
-
-        count++;
-        let continueRate = Math.min(0.95, selected.base_continue_rate * bonus);
-        if (Utils.random.nextFloat() >= continueRate) canceled = true;
-    }
+    })
 
     let moneyMultiplier = spec != null && spec.moneyMultiplier != null ? spec.moneyMultiplier : 1
     let reputationMultiplier = spec != null && spec.reputationMultiplier != null ? spec.reputationMultiplier : 1
+    let rewardMultiplier = spec != null && spec.rewardMultiplier != null ? spec.rewardMultiplier : 1
 
     if (spec != null) {
         order.generationSpec = {
             source: spec.source || "direct",
             customerGroups: this.toArray(spec.customerGroups),
             categoryGroups: this.toArray(spec.categoryGroups),
-            selectionPrecision: spec.selectionPrecision || 0
+            selectionPrecision: spec.selectionPrecision || 0,
+            modifiers: this.toArray(spec.modifiers),
+            orderGrade: grade
         }
     }
 
-    if (spec != null) {
+    if (spec != null || moneyMultiplier != 1 || reputationMultiplier != 1 || rewardMultiplier != 1) {
         order.rewardMultipliers = {
             money: moneyMultiplier,
-            reputation: reputationMultiplier
+            reputation: reputationMultiplier,
+            gifts: rewardMultiplier
         }
     }
 
@@ -716,9 +948,15 @@ Order.reputation.getOrderGainDetails = function(order, qualityScore) {
     }
     let entryBonus = Math.max(1, Math.round(order.entries.length * 0.5))
     let completionBonus = this.getCompletionBonus(order, qualityScore)
-    let gain = Math.max(1, entryBonus + rarityBonus + completionBonus)
+    let baseGain = Math.max(1, entryBonus + rarityBonus + completionBonus)
+    let multiplier = order.rewardMultipliers != null && order.rewardMultipliers.reputation != null
+        ? Number(order.rewardMultipliers.reputation)
+        : 1
+    let gain = Math.max(0, Math.round(baseGain * multiplier))
     return {
         gain: gain,
+        baseGain: baseGain,
+        multiplier: multiplier,
         rarityBonus: rarityBonus,
         entryBonus: entryBonus,
         completionBonus: completionBonus

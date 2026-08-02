@@ -221,6 +221,17 @@ StartupEvents.registry("creative_mode_tab", e => {
       Item.of('createdelight:order_seal', { OrderSeal: 'drink' }),
       Item.of('createdelight:order_seal', { OrderSeal: 'dessert' }),
       Item.of('createdelight:order_seal', { OrderSeal: 'staple' }),
-      Item.of('createdelight:order_seal', { OrderSeal: 'feast' })
+      Item.of('createdelight:order_seal', { OrderSeal: 'feast' }),
+      Item.of('createdelight:order_clause', { OrderClause: 'newcomer' }),
+      Item.of('createdelight:order_clause', { OrderClause: 'small_trial' }),
+      Item.of('createdelight:order_clause', { OrderClause: 'lenient_acceptance' }),
+      Item.of('createdelight:order_clause', { OrderClause: 'specialty_supply' }),
+      Item.of('createdelight:order_clause', { OrderClause: 'banquet_assortment' }),
+      Item.of('createdelight:order_clause', { OrderClause: 'thin_margin_volume' }),
+      Item.of('createdelight:order_clause', { OrderClause: 'small_premium' }),
+      Item.of('createdelight:order_clause', { OrderClause: 'bulk_purchase' }),
+      Item.of('createdelight:order_clause', { OrderClause: 'quality_inspection' }),
+      Item.of('createdelight:order_clause', { OrderClause: 'reputation_priority' }),
+      Item.of('createdelight:order_clause', { OrderClause: 'cash_settlement' })
     ])
 })

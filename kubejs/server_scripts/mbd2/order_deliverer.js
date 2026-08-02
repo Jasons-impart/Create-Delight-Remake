@@ -22,7 +22,11 @@ function buildOrderRewardBundles(level, orderInfo, qualityScore, marketModifier)
         reward = [`createdelight:orders/${orderInfo.type}`, 1]
 
     let list = Utils.newList()
-    for (let i = 0; i < qualityScore * reward[1] * orderInfo.entries.length; i++) {
+    let giftMultiplier = orderInfo.rewardMultipliers != null && orderInfo.rewardMultipliers.gifts != null
+        ? Math.max(0, Number(orderInfo.rewardMultipliers.gifts))
+        : 1
+    let giftRolls = Math.max(0, Math.round(qualityScore * reward[1] * orderInfo.entries.length * giftMultiplier))
+    for (let i = 0; i < giftRolls; i++) {
         let rewardItems = LootUtils.getLootItems(reward[0], level)
         rewardItems.forEach(item => {
             list.add(item)

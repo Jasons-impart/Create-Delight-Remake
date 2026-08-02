@@ -49,7 +49,7 @@ function unlockAllAtlasPlanets(player, atlas) {
             commandReading.science = Math.max(0, requiredScience)
         }
 
-        atlasPlanet.recalculateScience(properties.scienceWeightExp())
+        atlasPlanet.recalculateScience(properties.scienceDecayExp())
         if (!wasUnlocked && atlasPlanet.science >= requiredScience)
             unlocked++
     }

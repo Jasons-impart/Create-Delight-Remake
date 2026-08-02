@@ -4422,6 +4422,150 @@
             "Chain": "main",
             "type": "lightmanscurrency:coins"
           }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:order_clause",
+            "Count": 1,
+            "Tag": "{OrderClause:\"specialty_supply\"}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 4
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:order_clause",
+            "Count": 1,
+            "Tag": "{OrderClause:\"banquet_assortment\"}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:order_clause",
+            "Count": 1,
+            "Tag": "{OrderClause:\"thin_margin_volume\"}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:order_clause",
+            "Count": 1,
+            "Tag": "{OrderClause:\"small_premium\"}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 6
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:order_clause",
+            "Count": 1,
+            "Tag": "{OrderClause:\"bulk_purchase\"}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 8
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:order_clause",
+            "Count": 1,
+            "Tag": "{OrderClause:\"quality_inspection\"}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 7
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:order_clause",
+            "Count": 1,
+            "Tag": "{OrderClause:\"reputation_priority\"}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 6
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:order_clause",
+            "Count": 1,
+            "Tag": "{OrderClause:\"cash_settlement\"}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 6
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
         }
       ]
     }
