@@ -1,0 +1,9 @@
+{
+  "item": "more_mod_tetra:modular_mmt_shoes",
+  "icon": {
+    "textureLocation": "tetra:textures/gui/mmt_extra_holo.png",
+    "textureX": 84,
+    "textureY": 0
+  },
+  "position": 14
+}

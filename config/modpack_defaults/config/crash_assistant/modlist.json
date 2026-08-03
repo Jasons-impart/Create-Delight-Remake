@@ -789,11 +789,6 @@
     "name": "Create: Extra Gauges",
     "version": "2.0.7"
   },
-  "ExtraHoloPage-6.9.0-1.2.16.jar": {
-    "modId": "extraholopage",
-    "name": "ExtraHoloPage",
-    "version": "6.9.0-1.2.16"
-  },
   "fancymenu_forge_3.9.8_MC_1.20.1.jar": {
     "modId": "fancymenu_forge",
     "name": "FancyMenu",
@@ -1334,10 +1329,10 @@
     "name": "Multiblocked2",
     "version": "1.20.1-1.0.38.a"
   },
-  "mutil-1.20.1-6.2.0.jar": {
+  "mutil-1.20.1-6.3.0.jar": {
     "modId": "mutil",
     "name": "mutil",
-    "version": "1.20.1-6.2.0"
+    "version": "1.20.1-6.3.0"
   },
   "MyNethersDelight-1.20.1-0.1.8.jar": {
     "modId": "mynethersdelight",
@@ -1744,10 +1739,10 @@
     "name": "Tetra View",
     "version": "6.9.0-1.0.2"
   },
-  "tetra-1.20.1-6.9.0.jar": {
+  "tetra-1.20.1-6.16.0.jar": {
     "modId": "tetra",
     "name": "Tetra",
-    "version": "1.20.1-6.9.0"
+    "version": "1.20.1-6.16.0"
   },
   "tetra_immersion-0.1.1.jar": {
     "modId": "tetra_immersion",
