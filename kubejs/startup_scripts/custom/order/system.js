@@ -878,7 +878,13 @@ Order.addOrderToAuction = function() {
     data.setMinBidDifferent(global.MoneyUtil.coinValueFromItemOrValue("createdeco:copper_coin", 1))
     data.setStartingBid(global.MoneyUtil.coinValueFromItemOrValue("createdelightcore:gold_coin", 1).multiplyValue(Utils.random.nextFloat(0.5, 2)))
     data.setDuration(1000 * 60 * 60 * 1)
-    global.CDStartupJavaClasses.$TraderAPI.getApi().GetTrader(false, 0).addTrade(data, null, false)
+    let auctionHouse = global.CDStartupJavaClasses.$TraderDataCache.TYPE.get(false).getAuctionHouse()
+    if (auctionHouse == null) {
+        console.error("Unable to add order auction: auction house not found")
+        return false
+    }
+    auctionHouse.addTrade(data, null, false)
+    return true
 }
 
 Order.reputation = {}

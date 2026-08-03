@@ -42,6 +42,7 @@
 | `docs/plan/adventure-progression-overhaul-plan.md` | 内容设计计划 | 冒险流程、配方门槛和阶段推进规划。 |
 | `docs/plan/apotheosis-fallen-gems-affixes-integration-plan.md` | 内容设计计划 | Apotheosis、Fallen Gems & Affixes 与 Tetra 的职责边界、投放和数值控制规划。 |
 | `docs/plan/apotheosis-chiseled-bookshelf-attunement-mod-plan.md` | 技术设计计划 | 使用雕纹书架构建 Apotheosis 附魔筛选、权重控制与动态附魔台接入方案。 |
+| `docs/plan/enchantment-three-stage-progression-plan.md` | 内容设计计划 | 神化普通获取、附魔工业精炼与 Quark 古卷最终突破的三级附魔成长、绕过封锁和实施边界。 |
 | `docs/plan/chromatic-compound-endgame-plan.md` | 内容设计计划 | 异彩化合物双路线、光辉石与暗影钢终盘分支的材料链规划。 |
 | `docs/plan/create-processing-multiblock-plan.md` | 技术设计计划 | 基于 Create 加工流程与 MBD2 构建可组合多方块机器的实现规划。 |
 | `docs/plan/one-enough-damage-unified-damage-system.md` | 技术设计计划 | OneEnoughDamage 伤害扫描、逻辑分组、增伤与抗性统一方案。 |

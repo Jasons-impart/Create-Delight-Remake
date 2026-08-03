@@ -3,8 +3,8 @@ ServerEvents.recipes(e => {
         "farmersdelight:cutting/sugar_cane_alt"
     ])
     cutting(e, 'minecraft:sugar_cane', [
-        'minecraft:sugar',
-        Item.of('minecraft:sugar').withChance(0.25)
+        '2x cosmopolitan:sugarcane_pieces',
+        Item.of('minecraft:sugar').withChance(0.5)
     ])
     e.recipes.create.filling(
         'farmersdelight:milk_bottle',

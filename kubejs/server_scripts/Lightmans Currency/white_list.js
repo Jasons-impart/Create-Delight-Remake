@@ -8,7 +8,11 @@ ItemEvents.rightClicked("minecraft:stick", e => {
 function unlockTraderTrade(e, id, item) {
     if (!(item instanceof Array))
         item = [item]
-    let trader = TradeUtil.getTradeAPI().GetTrader(false, id)
+    let trader = global.CDServerJavaClasses.$TraderDataCache.TYPE.get(false).getTrader(id)
+    if (trader == null) {
+        console.error(`Unable to unlock persistent trader '${id}': trader not found`)
+        return
+    }
     let player = e.player
     trader.tradeData.forEach(tradeData => {
         tradeData.rules.forEach(rule => {
@@ -60,14 +64,14 @@ let res_list = [
 ]
 tech_list.forEach(v => {
     FTBQuestsEvents.completed(v[0], e => {
-        unlockTraderTrade(e, 7, v[1])
+        unlockTraderTrade(e, "technology_help_trade", v[1])
         global.CDServerJavaClasses.$TraderDataCache.TYPE.get(false).reloadPersistentTraders()
     })
 })
 
 res_list.forEach(v => {
     FTBQuestsEvents.completed(v[0], e => {
-        unlockTraderTrade(e, 10, v[1])
+        unlockTraderTrade(e, "resource_trader", v[1])
         global.CDServerJavaClasses.$TraderDataCache.TYPE.get(false).reloadPersistentTraders()
     })
 })
