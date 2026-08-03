@@ -12,7 +12,7 @@
 			dependencies: ["73F6088E76969E13"]
 			id: "38CD78E43A6497DC"
 			size: 1.0d
-			subtitle: "可通过/locate structure ocean_ruin定位海底遗迹，在其中的箱子里可以找到；可通过充电再生"
+			subtitle: "可在海底遗迹(ocean_ruin)中的箱子里找到；可通过充电再生"
 			tasks: [{
 				id: "41507FB3303D2212"
 				item: "art_of_forging:vobrite_crystal"
