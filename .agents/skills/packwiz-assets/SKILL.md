@@ -16,6 +16,7 @@ Use this workflow for modpack asset operations that touch `mods/`, `resourcepack
 - Do not run `scripts/update-packwiz-meta.ps1 -FullReconcile` on short-lived feature/PR branches because it derives `packwiz-files` raw URLs from the current branch and can rewrite unrelated `.pw.toml` files to branch URLs that disappear after merge.
 - Branch-derived raw URLs are intended only for `main` and long-lived LTS/release-maintenance branches that must serve their own Packwiz payloads.
 - `pack.toml` and `index.toml` are generated from `modpack.toml`; do not commit them.
+- Do not narrow `sync-packwiz-assets.ps1 -MetadataRoots` when syncing a populated live instance: packwiz-installer treats omitted categories as removed from the temporary pack and deletes their local files. Use the default roots for live sync; limit roots only in an isolated disposable directory.
 - Shaderpack files containing `Clrwl` are generated locally and must not be tracked.
 - Set `side = "client"` or `side = "server"` explicitly for client-only or server-only mods.
 - Set top-level `stable = false` for assets allowed in local development and test releases but excluded from formal releases. Formal workflows pass stable-pruning mode for Client, Server, integrity manifests, and release patches; test workflows and ordinary `sync-packwiz-assets.ps1` runs must not.
