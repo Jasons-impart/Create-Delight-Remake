@@ -1,0 +1,8 @@
+{
+  "module": "createdelightcore:logistics_configuration_module",
+  "target": "create:packager",
+  "charge_cost": 8,
+  "required_tier": 0,
+  "sort_index": 50,
+  "placement": "createdelightcore:block_item"
+}

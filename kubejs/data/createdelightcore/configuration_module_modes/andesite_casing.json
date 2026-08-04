@@ -1,0 +1,8 @@
+{
+  "module": "createdelightcore:structural_configuration_module",
+  "target": "create:andesite_casing",
+  "charge_cost": 4,
+  "required_tier": 0,
+  "sort_index": 10,
+  "placement": "createdelightcore:block_item"
+}

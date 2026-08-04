@@ -1,0 +1,16 @@
+{
+  "type": "createdelightcore:configuration_module_refill",
+  "category": "misc",
+  "module": {
+    "item": "createdelightcore:kinetic_configuration_module"
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "item": "createdelight:kinetic_transmission_component"
+      },
+      "count": 1
+    }
+  ],
+  "charge": 4
+}

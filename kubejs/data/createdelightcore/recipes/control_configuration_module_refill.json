@@ -1,0 +1,16 @@
+{
+  "type": "createdelightcore:configuration_module_refill",
+  "category": "misc",
+  "module": {
+    "item": "createdelightcore:control_configuration_module"
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "item": "createdelight:brass_control_component"
+      },
+      "count": 1
+    }
+  ],
+  "charge": 4
+}

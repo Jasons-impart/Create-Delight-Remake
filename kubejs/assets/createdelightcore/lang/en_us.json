@@ -1,4 +1,5 @@
 {
+  "key.categories.createdelightcore": "Create Delight",
   "itemGroup.createdelightcore.coin": "Coins & Items",
   "item.createdelightcore.iron_coin": "§7Iron Coin",
   "item.createdelightcore.iron_coin.plural": "§7Iron Coins",
@@ -9,5 +10,25 @@
   "item.createdelightcore.emerald_coin": "§2Emerald Coin",
   "item.createdelightcore.emerald_coin.plural": "§2Emerald Coins",
   "item.createdelightcore.netherite_coin": "§5Netherite Coin",
-  "item.createdelightcore.netherite_coin.plural": "§5Netherite Coins"
+  "item.createdelightcore.netherite_coin.plural": "§5Netherite Coins",
+  "item.createdelightcore.kinetic_configuration_module": "Kinetic Configuration Module",
+  "item.createdelightcore.structural_configuration_module": "Structural Configuration Module",
+  "item.createdelightcore.fluid_configuration_module": "Fluid Configuration Module",
+  "item.createdelightcore.control_configuration_module": "Control Configuration Module",
+  "item.createdelightcore.logistics_configuration_module": "Logistics Configuration Module",
+  "item.createdelightcore.configuration_module.tooltip.mode": "Current form: %s",
+  "item.createdelightcore.configuration_module.tooltip.unselected": "Current form: unselected",
+  "item.createdelightcore.configuration_module.tooltip.target": "Target ID: %s",
+  "item.createdelightcore.configuration_module.tooltip.charge": "Configuration charge: %s / %s",
+  "item.createdelightcore.configuration_module.tooltip.cost": "Placement cost: %s charge",
+  "item.createdelightcore.configuration_module.tooltip.control": "Hold %s to open the configuration wheel",
+  "item.createdelightcore.configuration_module.tooltip.auto_refill": "Automatically consumes refill components when charge is insufficient",
+  "item.createdelightcore.configuration_module.message.mode": "Selected: %s",
+  "item.createdelightcore.configuration_module.message.auto_refill": "Refilled %s time(s) and restored %s charge",
+  "item.createdelightcore.configuration_module.error.no_modes": "No configuration forms are available",
+  "item.createdelightcore.configuration_module.error.invalid_target": "The selected form cannot be placed",
+  "item.createdelightcore.configuration_module.error.invalid_mode": "The selected form is no longer available",
+  "item.createdelightcore.configuration_module.error.no_charge": "Not enough charge or refill components",
+  "menu.createdelightcore.configuration_module.title": "Select Configuration",
+  "menu.createdelightcore.configuration_module.release_to_select": "Release %s to select a form"
 }

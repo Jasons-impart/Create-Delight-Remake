@@ -1,0 +1,7 @@
+{
+  "item": "createdelightcore:kinetic_configuration_module",
+  "max_charge": 64,
+  "initial_charge": 4,
+  "default_mode": "createdelightcore:shaft",
+  "fallback_mode": "createdelightcore:shaft"
+}

@@ -1,0 +1,22 @@
+{
+  "type": "createdelightcore:configuration_module_refill",
+  "category": "misc",
+  "module": {
+    "item": "createdelightcore:fluid_configuration_module"
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "item": "createdelight:copper_fluid_component"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "item": "createdelight:sealed_joint_component"
+      },
+      "count": 1
+    }
+  ],
+  "charge": 8
+}

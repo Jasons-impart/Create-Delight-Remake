@@ -1,0 +1,8 @@
+{
+  "module": "createdelightcore:control_configuration_module",
+  "target": "create:sequenced_gearshift",
+  "charge_cost": 8,
+  "required_tier": 0,
+  "sort_index": 10,
+  "placement": "createdelightcore:block_item"
+}
