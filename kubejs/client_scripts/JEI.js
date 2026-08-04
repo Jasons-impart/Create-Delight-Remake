@@ -54,10 +54,6 @@ JEIEvents.hideItems(e => {
     'createdeco:zinc_coin',
     'createdeco:zinc_coinstack',
 
-    // 月球钛矿生成已禁用 - JEI 隐藏
-    'northstar:moon_titanium_ore',
-    'northstar:moon_deep_titanium_ore',
-
     // MMT 禁用材料 - JEI 隐藏
     'more_mod_tetra:fake_rose_golden_silk',
     'more_mod_tetra:fake_silky_cloth',
