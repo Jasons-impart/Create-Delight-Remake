@@ -1,0 +1,22 @@
+#!/bin/sh
+set -eu
+
+repo_root=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0
+cd "$repo_root" || exit 0
+
+if ! git diff --cached --name-only --diff-filter=ACMRD -- mods | grep -Eq '^mods/.+\.pw\.toml$'; then
+  exit 0
+fi
+
+if command -v python >/dev/null 2>&1; then
+  python_cmd=python
+elif command -v python3 >/dev/null 2>&1; then
+  python_cmd=python3
+else
+  printf >&2 '%s\n' "Python is required to update the Crash Assistant mod-list baseline."
+  exit 1
+fi
+
+printf '%s\n' "Packwiz mod metadata changed; regenerating Crash Assistant baseline..."
+"$python_cmd" scripts/generate-crash-assistant-modlist.py
+git add -- config/modpack_defaults/config/crash_assistant/modlist.json

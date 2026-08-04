@@ -124,12 +124,12 @@ if ($null -ne $isWindowsVariable) {
     $isWindowsPlatform = [bool]$isWindowsVariable.Value
 }
 
-foreach ($hookName in @("post-merge", "post-checkout", "post-rewrite")) {
+foreach ($hookName in @("pre-commit", "post-merge", "post-checkout", "post-rewrite")) {
     Install-HookShim -Name $hookName
 }
 
 if (-not $isWindowsPlatform) {
-    Get-ChildItem -LiteralPath $gitHooksPath -File | Where-Object { $_.Name -in @("post-merge", "post-checkout", "post-rewrite") } | ForEach-Object {
+    Get-ChildItem -LiteralPath $gitHooksPath -File | Where-Object { $_.Name -in @("pre-commit", "post-merge", "post-checkout", "post-rewrite") } | ForEach-Object {
         chmod +x $_.FullName
     }
 }

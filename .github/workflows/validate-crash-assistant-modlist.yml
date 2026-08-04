@@ -1,0 +1,24 @@
+name: Validate Crash Assistant mod list
+
+on:
+  pull_request:
+    paths:
+      - 'mods/**/*.pw.toml'
+      - 'config/modpack_defaults/config/crash_assistant/modlist.json'
+      - 'scripts/generate-crash-assistant-modlist.py'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Regenerate Crash Assistant mod-list baseline
+        run: python3 scripts/generate-crash-assistant-modlist.py
+      - name: Verify generated baseline is committed
+        run: git diff --exit-code -- config/modpack_defaults/config/crash_assistant/modlist.json
