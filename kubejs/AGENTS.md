@@ -37,11 +37,11 @@ config/             # KubeJS config files
 
 ## CONVENTIONS
 
-- Recipe ID namespace: `createdelight`
-- Recipe folders use display names with spaces/apostrophes; quote paths in shell commands.
+- Recipe ID namespace: `createdelight`; recipe folders use display names with spaces/apostrophes, so quote paths in shell commands.
 - Use `cutting_2()` for knife recipes (includes tetra module)
 - Use `centrifugation()` for centrifuge recipes (handles 3 variants)
 - Delete recipes via `remove_recipes_id(e, [...])` - NOT `e.remove()` or `e.removeById()`
+- 移除物品时，优先使用 `StartupEvents.modifyCreativeTab(...).remove(...)` 从对应创造标签移除；仅该方式不生效时才使用 `JEIEvents.hideItems(...)` 隐藏。
 - Tag definitions: `server_scripts/{Mod}/tag.js`
 - Hot reload: `/kubejs reload server_scripts` (in-game); LDLib 的 `event.success(root)` 会用 `EventExit` 正常结束事件，不要包进宽泛的 `try/catch`；物品 UI 回调会在服务端和客户端分别构建组件，玩家 `persistentData` 只在服务端有权威内容，客户端只读状态用 `player.sendData()` 写入本地镜像；LDLib 1.0.50 从 `.ui` 反序列化 `SelectorWidget` 会替换其构造器子组件却不重绑 final 内部引用，应在代码中用原位置和尺寸重建原生 Selector，服务端再校验实际状态。
 - Registry changes require game restart; `ServerEvents.commandRegistry` callback changes require restarting the integrated/dedicated server because `/kubejs reload server_scripts` does not rebuild the Brigadier command tree；KubeJS 的 `CommandSourceStack.sendSuccess` 直接接收 `Component`，传箭头函数会被 Rhino 转成 `ArrowFunction` 聊天文本。
