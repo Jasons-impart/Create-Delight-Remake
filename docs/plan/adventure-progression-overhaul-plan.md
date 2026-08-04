@@ -251,7 +251,7 @@
 | 元素法杖卷轴 | 基础卷轴 + 符文即可 | 每个元素追加对应 `more_mod_tetra:*_arcane_ingot`，并绑定一个 Boss 或星球材料 |
 | 雷系 / storm | 可与斯库拉支线重合 | 使用 `cataclysm:essence_of_the_storm`，定位主世界 Boss 后 |
 | 火系 / ignis | 缺少星球门槛 | 使用 `cataclysm:ignitium_ingot` 或 `cataclysm:flame_eye`，定位水星 |
-| 末影 / 虚空 | 应分层到月球和末地 | 中期用 `cataclysm:void_core` 或 `blackknightarmor:end_dragon_blood`，终局用 `cataclysm:void_crystal` |
+| 末影 / 虚空 | 应分层到月球和末地 | 使用可正常获取的 `cataclysm:void_core` 或 `blackknightarmor:end_dragon_blood`，不依赖无生存来源的 `cataclysm:void_crystal` |
 | `more_mod_tetra_iron_spell_eldritch_staff_scroll.json` | 邪术类效果过早 | `minecraft:echo_shard` 或 `alexscaves:pure_darkness`，定位金星后或末地 |
 | `more_mod_tetra_iron_spell_sound_staff_scroll.json` | sound 材料来源不稳定 | 保持禁用，直到 `familiarslib:sound_rune` 来源明确 |
 
