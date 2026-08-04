@@ -14,6 +14,7 @@ const ORDER_SUBMISSION_WIDGETS = {
 }
 
 const ORDER_SUBMISSION_PROCESS_TICKS = 15 * 60 * 20
+const ORDER_SUBMISSION_PACKAGE_BUFFER_CAPACITY = 32
 
 const ORDER_SUBMISSION_LANG = {
     submit: "gui.createdelight.order_submission_port.submit",
@@ -32,8 +33,13 @@ const ORDER_SUBMISSION_LANG = {
     finishedWaitingOutput: "gui.createdelight.order_submission_port.status.finished_waiting_output",
     inputChanged: "gui.createdelight.order_submission_port.status.input_changed",
     returned: "gui.createdelight.order_submission_port.status.returned",
+    buffered: "gui.createdelight.order_submission_port.status.buffered",
+    bufferFull: "gui.createdelight.order_submission_port.status.buffer_full",
+    incompleteBuffered: "gui.createdelight.order_submission_port.status.incomplete_buffered",
+    returningPackages: "gui.createdelight.order_submission_port.status.returning_packages",
     submitTip1: "tooltip.createdelight.order_submission_port.submit.1",
-    submitTip2: "tooltip.createdelight.order_submission_port.submit.2"
+    submitTip2: "tooltip.createdelight.order_submission_port.submit.2",
+    submitTip3: "tooltip.createdelight.order_submission_port.submit.3"
 }
 
 const ORDER_SUBMISSION_DATA = {
@@ -42,7 +48,9 @@ const ORDER_SUBMISSION_DATA = {
     startedTime: "startedTime",
     finishTime: "finishTime",
     inputFingerprint: "inputFingerprint",
-    outputSignal: "outputSignal"
+    outputSignal: "outputSignal",
+    packageBuffer: "packageBuffer",
+    returningPackages: "returningPackages"
 }
 
 function orderSubmissionTranslate(key) {
@@ -111,7 +119,16 @@ function getOrderSubmissionRemainingTicks(machine) {
 
 function setOrderSubmissionProcessStatus(machine, statusWidget) {
     if (!isOrderSubmissionProcessing(machine)) {
-        setOrderSubmissionStatus(statusWidget, ORDER_SUBMISSION_LANG.ready)
+        let buffered = getOrderSubmissionBufferedPackageCount(machine)
+        if (isOrderSubmissionReturningPackages(machine))
+            setOrderSubmissionStatus(statusWidget, ORDER_SUBMISSION_LANG.returningPackages,
+                [getOrderSubmissionPendingPackageReturnCount(machine)])
+        else if (buffered >= ORDER_SUBMISSION_PACKAGE_BUFFER_CAPACITY)
+            setOrderSubmissionStatus(statusWidget, ORDER_SUBMISSION_LANG.bufferFull, [buffered, ORDER_SUBMISSION_PACKAGE_BUFFER_CAPACITY])
+        else if (buffered > 0)
+            setOrderSubmissionStatus(statusWidget, ORDER_SUBMISSION_LANG.buffered, [buffered, ORDER_SUBMISSION_PACKAGE_BUFFER_CAPACITY])
+        else
+            setOrderSubmissionStatus(statusWidget, ORDER_SUBMISSION_LANG.ready)
         return
     }
 
@@ -183,6 +200,149 @@ function isOrderSubmissionPlainPackage(stack) {
     return isOrderSubmissionPackage(stack) && findOrderInSubmissionStack(stack) == null
 }
 
+function isOrderSubmissionReturningPackages(machine) {
+    return machine != null && machine.customData.getBoolean(ORDER_SUBMISSION_DATA.returningPackages)
+}
+
+function getOrderSubmissionBufferedPackages(machine) {
+    let packages = []
+    if (machine == null)
+        return packages
+
+    let buffer = machine.customData.getCompound(ORDER_SUBMISSION_DATA.packageBuffer)
+    let count = Math.max(0, Math.min(ORDER_SUBMISSION_PACKAGE_BUFFER_CAPACITY, buffer.getInt("Count")))
+    for (let index = 0; index < count; index++) {
+        let stack = global.CDServerJavaClasses.$ItemStack.of(buffer.getCompound(`Package${index}`))
+        if (isOrderSubmissionPlainPackage(stack))
+            packages.push(stack.copyWithCount(1))
+    }
+    return packages
+}
+
+function setOrderSubmissionBufferedPackages(machine, packages) {
+    if (machine == null)
+        return
+
+    let buffer = new global.CDServerJavaClasses.$CompoundTag()
+    let count = Math.min(ORDER_SUBMISSION_PACKAGE_BUFFER_CAPACITY, packages == null ? 0 : packages.length)
+    buffer.putInt("Count", count)
+    for (let index = 0; index < count; index++) {
+        let stackTag = new global.CDServerJavaClasses.$CompoundTag()
+        packages[index].copyWithCount(1).save(stackTag)
+        buffer.put(`Package${index}`, stackTag)
+    }
+    machine.customData.put(ORDER_SUBMISSION_DATA.packageBuffer, buffer)
+}
+
+function clearOrderSubmissionBufferedPackages(machine) {
+    setOrderSubmissionBufferedPackages(machine, [])
+}
+
+function getOrderSubmissionBufferedPackageCount(machine) {
+    return getOrderSubmissionBufferedPackages(machine).length
+}
+
+function getOrderSubmissionPendingPackageReturnCount(machine) {
+    let count = getOrderSubmissionBufferedPackageCount(machine)
+    let packageInput = getOrderSubmissionTraitStorage(machine, ORDER_SUBMISSION_TRAITS.packageInput)
+    getOrderSubmissionStacks(packageInput, stack => isOrderSubmissionPlainPackage(stack))
+        .forEach(ref => count += ref.stack.count)
+    return count
+}
+
+function ingestOrderSubmissionPackages(machine, allowWhileReturning) {
+    if (machine == null || isOrderSubmissionProcessing(machine)
+        || isOrderSubmissionReturningPackages(machine) && !allowWhileReturning)
+        return 0
+
+    let packageInput = getOrderSubmissionTraitStorage(machine, ORDER_SUBMISSION_TRAITS.packageInput)
+    if (packageInput == null)
+        return 0
+
+    let packages = getOrderSubmissionBufferedPackages(machine)
+    let refs = getOrderSubmissionStacks(packageInput, stack => isOrderSubmissionPlainPackage(stack))
+    let moved = 0
+
+    for (let refIndex = 0; refIndex < refs.length && packages.length < ORDER_SUBMISSION_PACKAGE_BUFFER_CAPACITY; refIndex++) {
+        let ref = refs[refIndex]
+        let accepted = Math.min(ref.stack.count, ORDER_SUBMISSION_PACKAGE_BUFFER_CAPACITY - packages.length)
+        for (let count = 0; count < accepted; count++)
+            packages.push(ref.stack.copyWithCount(1))
+        if (accepted > 0) {
+            packageInput.extractItem(ref.slot, accepted, false, false)
+            moved += accepted
+        }
+    }
+
+    if (moved > 0) {
+        setOrderSubmissionBufferedPackages(machine, packages)
+        setOrderSubmissionStorageFilters(machine)
+    }
+    return moved
+}
+
+function pumpOrderSubmissionPackageReturns(machine) {
+    if (machine == null || !isOrderSubmissionReturningPackages(machine))
+        return 0
+
+    let packageReturn = getOrderSubmissionTraitStorage(machine, ORDER_SUBMISSION_TRAITS.packageReturn)
+    if (packageReturn == null)
+        return 0
+
+    let moved = 0
+    while (true) {
+        let packages = getOrderSubmissionBufferedPackages(machine)
+        while (packages.length > 0) {
+            let remainder = ItemTransferHelper.insertItemStacked(packageReturn, packages[0].copy(), false)
+            if (!isOrderSubmissionStackEmpty(remainder)) {
+                setOrderSubmissionBufferedPackages(machine, packages)
+                return moved
+            }
+            packages.shift()
+            moved++
+        }
+
+        setOrderSubmissionBufferedPackages(machine, packages)
+        if (ingestOrderSubmissionPackages(machine, true) <= 0)
+            break
+    }
+
+    machine.customData.putBoolean(ORDER_SUBMISSION_DATA.returningPackages, false)
+    setOrderSubmissionStorageFilters(machine)
+    return moved
+}
+
+function startOrderSubmissionPackageReturn(machine, statusWidget) {
+    if (getOrderSubmissionBufferedPackageCount(machine) <= 0)
+        return false
+    machine.customData.putBoolean(ORDER_SUBMISSION_DATA.returningPackages, true)
+    setOrderSubmissionStorageFilters(machine)
+    pumpOrderSubmissionPackageReturns(machine)
+    let remaining = getOrderSubmissionPendingPackageReturnCount(machine)
+    if (remaining > 0)
+        setOrderSubmissionStatus(statusWidget, ORDER_SUBMISSION_LANG.returningPackages, [remaining])
+    else
+        setOrderSubmissionStatus(statusWidget, ORDER_SUBMISSION_LANG.returned)
+    return true
+}
+
+function dropOrderSubmissionBufferedPackages(machine) {
+    if (machine == null || machine.level == null)
+        return
+    let packages = getOrderSubmissionBufferedPackages(machine)
+    clearOrderSubmissionBufferedPackages(machine)
+    packages.forEach(stack => {
+        let entity = new global.CDServerJavaClasses.$ItemEntity(
+            machine.level,
+            machine.pos.x + 0.5,
+            machine.pos.y + 0.75,
+            machine.pos.z + 0.5,
+            stack
+        )
+        machine.level.addFreshEntity(entity)
+    })
+}
+
 function isOrderSubmissionOrderStack(stack) {
     return !isOrderSubmissionStackEmpty(stack) && findOrderInSubmissionStack(stack) != null
 }
@@ -199,14 +359,16 @@ function isOrderSubmissionValidOrder(stack) {
 }
 
 function setOrderSubmissionStorageFilters(machine) {
-    let locked = isOrderSubmissionProcessing(machine)
+    let locked = isOrderSubmissionProcessing(machine) || isOrderSubmissionReturningPackages(machine)
     let orderInput = getOrderSubmissionTraitStorage(machine, ORDER_SUBMISSION_TRAITS.orderInput)
     if (orderInput != null)
         orderInput.setFilter(item => !locked && isOrderSubmissionOrderStack(item))
 
     let packageInput = getOrderSubmissionTraitStorage(machine, ORDER_SUBMISSION_TRAITS.packageInput)
     if (packageInput != null)
-        packageInput.setFilter(item => !locked && isOrderSubmissionPlainPackage(item))
+        packageInput.setFilter(item => !locked
+            && getOrderSubmissionBufferedPackageCount(machine) < ORDER_SUBMISSION_PACKAGE_BUFFER_CAPACITY
+            && isOrderSubmissionPlainPackage(item))
 
     let orderReturn = getOrderSubmissionTraitStorage(machine, ORDER_SUBMISSION_TRAITS.orderReturn)
     if (orderReturn != null)
@@ -246,21 +408,10 @@ function createOrderSubmissionTransferFromStorage(storage, predicate) {
     return transfer
 }
 
-function createOrderSubmissionPackageTransfer(storage) {
-    let refs = getOrderSubmissionStacks(storage, stack => isOrderSubmissionPlainPackage(stack))
-    let total = 0
-    refs.forEach(ref => total += ref.stack.count)
-
+function createOrderSubmissionPackageTransfer(packages) {
     let transfer = new ItemStackTransfer()
-    transfer.setSize(total)
-
-    let slot = 0
-    refs.forEach(ref => {
-        for (let i = 0; i < ref.stack.count; i++) {
-            transfer.setStackInSlot(slot, ref.stack.copyWithCount(1))
-            slot++
-        }
-    })
+    transfer.setSize(packages.length)
+    packages.forEach((stack, slot) => transfer.setStackInSlot(slot, stack.copyWithCount(1)))
     return transfer
 }
 
@@ -284,22 +435,20 @@ function getOrderSubmissionStackFingerprint(stack) {
     return `${stack.id}|${stack.count}|${nbt}`
 }
 
-function createOrderSubmissionInputFingerprint(orderRef, packageRefs) {
+function createOrderSubmissionInputFingerprint(orderRef, packages) {
     let parts = []
     if (orderRef != null)
         parts.push(`order:${orderRef.slot}:${getOrderSubmissionStackFingerprint(orderRef.stack)}`)
-    packageRefs.forEach(ref => {
-        parts.push(`package:${ref.slot}:${getOrderSubmissionStackFingerprint(ref.stack)}`)
+    packages.forEach((stack, index) => {
+        parts.push(`package:${index}:${getOrderSubmissionStackFingerprint(stack)}`)
     })
     return parts.join("\n")
 }
 
 function createCurrentOrderSubmissionInputFingerprint(machine) {
     let orderInput = getOrderSubmissionTraitStorage(machine, ORDER_SUBMISSION_TRAITS.orderInput)
-    let packageInput = getOrderSubmissionTraitStorage(machine, ORDER_SUBMISSION_TRAITS.packageInput)
     let orderRef = getFirstOrderSubmissionStack(orderInput, stack => isOrderSubmissionOrderStack(stack))
-    let packageRefs = getOrderSubmissionStacks(packageInput, stack => !isOrderSubmissionStackEmpty(stack))
-    return createOrderSubmissionInputFingerprint(orderRef, packageRefs)
+    return createOrderSubmissionInputFingerprint(orderRef, getOrderSubmissionBufferedPackages(machine))
 }
 
 function createOrderSubmissionStorageSnapshot(storage) {
@@ -375,7 +524,6 @@ function returnOrderSubmissionInputs(machine, orderRef, packageRefs, statusWidge
 
 function validateOrderSubmissionInputs(machine, statusWidget, returnInvalidInputs) {
     let orderInput = getOrderSubmissionTraitStorage(machine, ORDER_SUBMISSION_TRAITS.orderInput)
-    let packageInput = getOrderSubmissionTraitStorage(machine, ORDER_SUBMISSION_TRAITS.packageInput)
 
     let orderRef = getFirstOrderSubmissionStack(orderInput, stack => isOrderSubmissionOrderStack(stack))
     if (orderRef == null) {
@@ -389,26 +537,18 @@ function validateOrderSubmissionInputs(machine, statusWidget, returnInvalidInput
         return null
     }
 
-    let packageRefs = getOrderSubmissionStacks(packageInput, stack => !isOrderSubmissionStackEmpty(stack))
-    if (packageRefs.length <= 0) {
+    let packages = getOrderSubmissionBufferedPackages(machine)
+    if (packages.length <= 0) {
         setOrderSubmissionStatus(statusWidget, ORDER_SUBMISSION_LANG.missingPackage)
         return null
     }
 
-    for (let i = 0; i < packageRefs.length; i++) {
-        if (!isOrderSubmissionPlainPackage(packageRefs[i].stack)) {
-            if (returnInvalidInputs && returnOrderSubmissionInputs(machine, orderRef, packageRefs, statusWidget))
-                setOrderSubmissionStatus(statusWidget, ORDER_SUBMISSION_LANG.invalidPackage)
-            return null
-        }
-    }
-
-    let packages = createOrderSubmissionPackageTransfer(packageInput)
+    let packageTransfer = createOrderSubmissionPackageTransfer(packages)
     let orderInfo = getOrderSubmissionOrderInfo(orderRef.stack)
-    let score = global.Order.checkAllPackages([orderInfo], packages)[0]
+    let score = global.Order.checkAllPackages([orderInfo], packageTransfer)[0]
     if (score <= 0) {
-        if (returnInvalidInputs && returnOrderSubmissionInputs(machine, orderRef, packageRefs, statusWidget))
-            setOrderSubmissionStatus(statusWidget, ORDER_SUBMISSION_LANG.notMatched)
+        setOrderSubmissionStatus(statusWidget, ORDER_SUBMISSION_LANG.incompleteBuffered,
+            [packages.length, ORDER_SUBMISSION_PACKAGE_BUFFER_CAPACITY])
         return null
     }
 
@@ -420,17 +560,16 @@ function validateOrderSubmissionInputs(machine, statusWidget, returnInvalidInput
 
     return {
         orderInput: orderInput,
-        packageInput: packageInput,
         orderRef: orderRef,
-        packageRefs: packageRefs,
+        packages: packages,
         orderInfo: orderInfo,
         score: score,
         settlement: settlement,
-        fingerprint: createOrderSubmissionInputFingerprint(orderRef, packageRefs)
+        fingerprint: createOrderSubmissionInputFingerprint(orderRef, packages)
     }
 }
 
-function startOrderSubmissionProcess(machine, statusWidget) {
+function startOrderSubmissionProcess(machine, statusWidget, returnBufferedWithoutOrder) {
     if (isOrderSubmissionProcessing(machine)) {
         let remaining = getOrderSubmissionRemainingTicks(machine)
         if (remaining > 0)
@@ -439,6 +578,12 @@ function startOrderSubmissionProcess(machine, statusWidget) {
             finishOrderSubmissionProcess(machine, statusWidget)
         return false
     }
+
+    ingestOrderSubmissionPackages(machine)
+    let orderInput = getOrderSubmissionTraitStorage(machine, ORDER_SUBMISSION_TRAITS.orderInput)
+    let orderRef = getFirstOrderSubmissionStack(orderInput, stack => isOrderSubmissionOrderStack(stack))
+    if (orderRef == null && returnBufferedWithoutOrder && startOrderSubmissionPackageReturn(machine, statusWidget))
+        return false
 
     let validation = validateOrderSubmissionInputs(machine, statusWidget, true)
     if (validation == null)
@@ -450,6 +595,7 @@ function startOrderSubmissionProcess(machine, statusWidget) {
     machine.customData.putDouble(ORDER_SUBMISSION_DATA.startedTime, startedTime)
     machine.customData.putDouble(ORDER_SUBMISSION_DATA.finishTime, finishTime)
     machine.customData.putString(ORDER_SUBMISSION_DATA.inputFingerprint, validation.fingerprint)
+    machine.customData.putBoolean(ORDER_SUBMISSION_DATA.returningPackages, false)
     setOrderSubmissionStorageFilters(machine)
     updateOrderSubmissionOutputSignal(machine)
 
@@ -493,7 +639,7 @@ function finishOrderSubmissionProcess(machine, statusWidget) {
     }
 
     validation.orderInput.extractItem(validation.orderRef.slot, 1, false, false)
-    extractOrderSubmissionStacks(validation.packageInput, validation.packageRefs)
+    clearOrderSubmissionBufferedPackages(machine)
     insertOrderSubmissionStacks(rewardOutput, rewardBundles)
     clearOrderSubmissionProcess(machine)
     updateOrderSubmissionOutputSignal(machine)
@@ -523,7 +669,8 @@ function configureOrderSubmissionTooltips(root) {
     if (submitButton != null) {
         submitButton.setHoverTooltips(
             orderSubmissionTranslate(ORDER_SUBMISSION_LANG.submitTip1),
-            orderSubmissionTranslate(ORDER_SUBMISSION_LANG.submitTip2)
+            orderSubmissionTranslate(ORDER_SUBMISSION_LANG.submitTip2),
+            orderSubmissionTranslate(ORDER_SUBMISSION_LANG.submitTip3)
         )
     }
 }
@@ -533,7 +680,7 @@ function handleOrderSubmissionPulse(machine) {
     let wasPowered = machine.customData.getBoolean(ORDER_SUBMISSION_DATA.powered)
     machine.customData.putBoolean(ORDER_SUBMISSION_DATA.powered, powered)
     if (powered && !wasPowered)
-        startOrderSubmissionProcess(machine, null)
+        startOrderSubmissionProcess(machine, null, false)
 }
 
 MBDMachineEvents.onLoad(ORDER_SUBMISSION_PORT, e => {
@@ -555,11 +702,19 @@ MBDMachineEvents.onNeighborChanged(ORDER_SUBMISSION_PORT, e => {
 
 MBDMachineEvents.onTick(ORDER_SUBMISSION_PORT, e => {
     const { machine } = e.event
+    if (isOrderSubmissionReturningPackages(machine))
+        pumpOrderSubmissionPackageReturns(machine)
+    else if (!isOrderSubmissionProcessing(machine))
+        ingestOrderSubmissionPackages(machine)
     if (machine.level.time % 20 != 0)
         return
     if (isOrderSubmissionProcessing(machine))
         finishOrderSubmissionProcess(machine, null)
     updateOrderSubmissionOutputSignal(machine)
+})
+
+MBDMachineEvents.onRemoved(ORDER_SUBMISSION_PORT, e => {
+    dropOrderSubmissionBufferedPackages(e.event.machine)
 })
 
 MBDMachineEvents.onUI(ORDER_SUBMISSION_PORT, e => {
@@ -576,7 +731,7 @@ MBDMachineEvents.onUI(ORDER_SUBMISSION_PORT, e => {
     if (submitButton != null) {
         submitButton.setOnPressCallback(clickData => {
             if (!clickData.isRemote)
-                startOrderSubmissionProcess(machine, statusText)
+                startOrderSubmissionProcess(machine, statusText, true)
         })
     }
 })

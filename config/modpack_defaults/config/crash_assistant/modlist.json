@@ -664,6 +664,11 @@
     "name": "CustomSkinLoader",
     "version": "15.0.1"
   },
+  "damage_trace-1.20.1-0.1.0.jar": {
+    "modId": "damage_trace",
+    "name": "Damage Trace",
+    "version": "1.20.1-0.1.0"
+  },
   "displaydelight-1.7.0.jar": {
     "modId": "displaydelight",
     "name": "Display Delight",
