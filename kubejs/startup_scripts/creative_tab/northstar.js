@@ -8,7 +8,10 @@ StartupEvents.modifyCreativeTab("northstar:northstar_items", e => {
         'northstar:hydrocarbon_bucket',
         'northstar:solar_panel', 
         'northstar:circuit_engraver', 
-        'northstar:electrolysis_machine'
+        'northstar:electrolysis_machine',
+        // 月球钛矿生成已禁用，避免创造标签和物品列表继续展示。
+        'northstar:moon_titanium_ore',
+        'northstar:moon_deep_titanium_ore'
     ])
     e.add([
         'createdelight:oxygen_tank',
