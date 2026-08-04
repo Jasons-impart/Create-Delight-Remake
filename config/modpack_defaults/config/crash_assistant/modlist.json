@@ -1749,6 +1749,11 @@
     "name": "Tetra",
     "version": "1.20.1-6.9.0"
   },
+  "tetra_immersion-0.1.1.jar": {
+    "modId": "tetra_immersion",
+    "name": "Tetra Immersion",
+    "version": "0.1.1"
+  },
   "tetra_insight-0.1.2.jar": {
     "modId": "tetra_insight",
     "name": "Tetra Insight",

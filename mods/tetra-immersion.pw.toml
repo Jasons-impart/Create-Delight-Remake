@@ -1,0 +1,13 @@
+name = "Tetra Immersion"
+filename = "tetra_immersion-0.1.1.jar"
+side = "client"
+
+[download]
+hash-format = "sha1"
+hash = "bdce5606f012c2628b2c726b81a11cc9f8d7cc6e"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8574216
+project-id = 1635848
