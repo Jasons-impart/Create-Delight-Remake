@@ -1880,8 +1880,9 @@
 				type: "custom"
 			}]
 			tasks: [{
-				dimension: "createdelight:forlorn_hollows_dimension"
+				dimension: "createdelight:lunar_farside"
 				id: "69FA9C531CABE582"
+				title: "前往月背异常区，解锁异寂空谷"
 				type: "dimension"
 			}]
 			x: 3.5d

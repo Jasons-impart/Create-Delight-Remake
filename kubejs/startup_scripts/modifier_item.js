@@ -412,7 +412,11 @@ ItemEvents.modification(e => {
     food_effects("createcafe:oreo", "minecraft:fire_resistance", 20, 1, 1)
     food_effects("createcafe:oreo", "minecraft:absorption", 20, 1, 1)
     //逆天饱和效果修改
-    remove_effects("bakeries:whole_wheat_bagel", "minecraft:saturation")
+    queue_food_modifier("bakeries:whole_wheat_bagel", food => {
+        food.hunger(8)
+        food.saturation(0.35)
+        food.removeEffect("minecraft:saturation")
+    })
     remove_effects("cosmopolitan:mashed_potato", "minecraft:saturation")
     food_effects('cosmopolitan:mashed_potato', "farmersdelight:nourishment", 30, 0, 1)
     remove_effects('cosmopolitan:mashed_potato_cone', "minecraft:saturation")

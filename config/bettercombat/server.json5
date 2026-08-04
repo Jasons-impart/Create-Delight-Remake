@@ -6,7 +6,7 @@
 	   - `0.5` (default, fast paced attack initiation) upswing typically lasts 25% of the attack cooldown
 	   - `1.0` (classic setting, realistic attack initiation) upswing typically lasts 50% of the attack cooldown
 	*/
-	"upswing_multiplier": 0.0,
+	"upswing_multiplier": 0.10000000149011612,
 	// Bypass damage receive throttling of LivingEntity from player attacks.
 	"allow_fast_attacks": true,
 	// Allows client-side target search and server-side attack request execution against currently mounted entity of the player

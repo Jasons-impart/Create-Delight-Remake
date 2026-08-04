@@ -26,4 +26,29 @@ ServerEvents.recipes(e => {
     createmetallurgy.alloying(Fluid.of("createdelightcore:molten_lightning_steel", 180), [Fluid.of("createdelightcore:molten_lightning_steel", 90), Fluid.of("createdelight:lightning_dragon_blood", 250), "createdelight:forged_steel_ingot"])
     .heatRequirement("superheated")
     .id("createdelight:alloying/molten_lightning_steel_2")
+
+    createmetallurgy.bulk_melting(Fluid.of("createdelightcore:molten_fire_steel", 180), [
+        Fluid.of("createdelightcore:molten_fire_steel", 90),
+        Fluid.of("createdelightcore:molten_forged_steel", 90),
+        Fluid.of("createdelight:fire_dragon_blood", 250)
+    ])
+    .minHeatRequirement(9)
+    .processingTime(160)
+    .id("createdelight:bulk_melting/molten_fire_steel_from_three_fluids")
+    createmetallurgy.bulk_melting(Fluid.of("createdelightcore:molten_ice_steel", 180), [
+        Fluid.of("createdelightcore:molten_ice_steel", 90),
+        Fluid.of("createdelightcore:molten_forged_steel", 90),
+        Fluid.of("createdelight:ice_dragon_blood", 250)
+    ])
+    .minHeatRequirement(9)
+    .processingTime(160)
+    .id("createdelight:bulk_melting/molten_ice_steel_from_three_fluids")
+    createmetallurgy.bulk_melting(Fluid.of("createdelightcore:molten_lightning_steel", 180), [
+        Fluid.of("createdelightcore:molten_lightning_steel", 90),
+        Fluid.of("createdelightcore:molten_forged_steel", 90),
+        Fluid.of("createdelight:lightning_dragon_blood", 250)
+    ])
+    .minHeatRequirement(9)
+    .processingTime(160)
+    .id("createdelight:bulk_melting/molten_lightning_steel_from_three_fluids")
 })

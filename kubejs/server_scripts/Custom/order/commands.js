@@ -1,7 +1,7 @@
 // priority: 100
 
 function cdOrderCommandSend(source, component) {
-    source.sendSuccess(() => component, false)
+    source.sendSuccess(component, false)
 }
 
 function cdOrderCommandFail(source, component) {

@@ -669,3 +669,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: 对第三方方块类使用类级 `@Mixin(..., remap = false)` 会连带禁止 `use` 等原版方法名生成 refmap，开发环境可以编译，但生产 JAR 中目标已是 `m_6227_`，注入可能失效。
 - **Fix/Lesson**: Mixin 类保持默认 remap，让原版覆盖方法映射到 SRG；仅对第三方自定义调用点（如 `dropFruit`）在对应 `@At` 上单独设置 `remap = false`，并检查最终 refmap。
+
+## Better Combat 前摇倍率必须保持严格正数
+
+**Date**: 2026-08-04
+
+- **Problem**: Better Combat `1.9.0` 的动画速度路径会除以 `upswing_multiplier`；即使 Mixin 放开服务端原有的 `0.2` 下限，配置为 `0.0` 仍会把 `Infinity` 传给 Player Animator，并可能造成攻击动画冻结。
+- **Fix/Lesson**: 零前摇不能只靠放宽配置夹取实现；本包必须使用严格大于 `0` 的倍率，修改后完整重启并实测攻击动画。当前 `0.1` 仅完成配置与静态检查，仍需玩家回归。

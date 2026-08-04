@@ -169,7 +169,7 @@
 
 ## 可用材料 ID
 
-- Cataclysm：`cataclysm:essence_of_the_storm`、`cataclysm:void_core`、`cataclysm:void_crystal`、`cataclysm:void_eye`、`cataclysm:monstrous_horn`、`cataclysm:monstrous_eye`、`cataclysm:flame_eye`、`cataclysm:ignitium_ingot`、`cataclysm:witherite_ingot`、`cataclysm:ancient_metal_ingot`、`cataclysm:abyssal_egg`、`cataclysm:abyssal_sacrifice`、`cataclysm:abyss_eye`、`cataclysm:tidal_claws`、`cataclysm:cursium_ingot`、`cataclysm:cursed_eye`、`cataclysm:cursed_tombstone`、`cataclysm:gauntlet_of_guard`
+- Cataclysm：`cataclysm:essence_of_the_storm`、`cataclysm:void_core`、`cataclysm:void_eye`、`cataclysm:monstrous_horn`、`cataclysm:monstrous_eye`、`cataclysm:flame_eye`、`cataclysm:ignitium_ingot`、`cataclysm:witherite_ingot`、`cataclysm:ancient_metal_ingot`、`cataclysm:abyssal_egg`、`cataclysm:abyssal_sacrifice`、`cataclysm:abyss_eye`、`cataclysm:tidal_claws`、`cataclysm:cursium_ingot`、`cataclysm:cursed_eye`、`cataclysm:cursed_tombstone`、`cataclysm:gauntlet_of_guard`
 - Black Knight Armor：`blackknightarmor:ultimate_dragon_heart`、`blackknightarmor:storm_essence`、`blackknightarmor:end_dragon_ingot`、`blackknightarmor:end_dragon_blood`
 - Ice and Fire：`#iceandfire:dragon_bloods`、`iceandfire:fire_dragon_blood`、`iceandfire:ice_dragon_blood`、`iceandfire:lightning_dragon_blood`、`iceandfire:dragonbone`、`iceandfire:cyclops_eye`、`iceandfire:pixie_dust`
 - The Bumblezone：`the_bumblezone:essence_of_the_bees`、`the_bumblezone:royal_jelly_bottle`、`the_bumblezone:royal_jelly_bucket`、`the_bumblezone:pollen_puff`、`the_bumblezone:bee_stinger`、`the_bumblezone:honey_crystal_shards`、`the_bumblezone:glistering_honey_crystal`、`the_bumblezone:crystalline_flower`、`the_bumblezone:honey_crystal_shield`、`the_bumblezone:stinger_spear`、`the_bumblezone:bee_cannon`、`the_bumblezone:crystal_cannon`
@@ -235,7 +235,7 @@
 | `the_legend_scroll_of_trickery_titan.json` | 金星与远古遗魂支线 | `cataclysm:ancient_metal_ingot` + `alexscaves:occult_gem` + `alexscaves:amber_curiosity` |
 | `the_legend_scroll_of_death_titan.json` | 土卫二地表 / 咒翼灵骸后 | `cataclysm:cursed_eye` + `cataclysm:cursium_ingot` + `createdelight:dread_heart` |
 | `the_legend_scroll_of_ocean_titan.json` | 土卫二地下 / 利维坦后 | `cataclysm:abyssal_sacrifice` + `more_mod_tetra:abyssal_ingot`×2 + `cataclysm:crystallized_coral` |
-| `the_legend_scroll_of_worldbearing_titan.json` | 末影守卫 / 星系终局 | `blackknightarmor:ultimate_dragon_heart` + `cataclysm:void_crystal` + `minecraft:nether_star` |
+| `the_legend_scroll_of_worldbearing_titan.json` | 末影守卫 / 星系终局 | `blackknightarmor:end_dragon_ingot` + `cataclysm:void_core`×2 + `minecraft:nether_star` |
 | `the_legend_scroll_of_time_titan.json` | 星系终局 | `minecraft:echo_shard` + `alexscaves:immortal_embryo` + `blackknightarmor:ultimate_dragon_heart` |
 | `the_legend_scroll_of_cyrene_titan.json` | 十二火种收集后的终局合成 | 每组三张泰坦卷轴先无序合成命运/基石/创世/灾祸汇卷；四张汇卷再与书与笔合成真我之诗。十二火种本身承担终局成本，书与笔仅作为诗稿载体。颂歌每次消耗各自权柄对应的冒险材料。 |
 

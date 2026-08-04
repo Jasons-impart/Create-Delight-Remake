@@ -688,16 +688,28 @@ Order.create = function (player, spec) {
  * @returns {ItemStackTransfer} 
  */
 Order.convertPackageToItemHandler = function (items) {
-
-    let transfer = new ItemStackTransfer()
-    transfer.setSize(81)
+    let unpacked = []
     for (let index = 0; index < items.getSlots(); index++) {
         let item = items.getStackInSlot(index)
-        if (!item.is("air"))
-            global.CDStartupJavaClasses.$PackageItem.getContents(item).allItems.forEach(i => {
-                ItemTransferHelper.insertItemStacked(transfer, i, false)
+        if (item.isEmpty())
+            continue
+
+        let packageCount = Math.max(0, item.count)
+        for (let packageIndex = 0; packageIndex < packageCount; packageIndex++) {
+            global.CDStartupJavaClasses.$PackageItem.getContents(item.copyWithCount(1)).allItems.forEach(content => {
+                if (!content.isEmpty())
+                    unpacked.push(content.copy())
             })
+        }
     }
+
+    let transfer = new ItemStackTransfer()
+    transfer.setSize(Math.max(1, unpacked.length))
+    unpacked.forEach(content => {
+        let remainder = ItemTransferHelper.insertItemStacked(transfer, content, false)
+        if (!remainder.isEmpty())
+            console.error(`[Order] Package conversion overflowed with ${remainder.id} x${remainder.count}`)
+    })
     return transfer
 }
 

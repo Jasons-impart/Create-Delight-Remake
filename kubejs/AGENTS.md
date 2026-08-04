@@ -44,7 +44,7 @@ config/             # KubeJS config files
 - Delete recipes via `remove_recipes_id(e, [...])` - NOT `e.remove()` or `e.removeById()`
 - Tag definitions: `server_scripts/{Mod}/tag.js`
 - Hot reload: `/kubejs reload server_scripts` (in-game); LDLib 的 `event.success(root)` 会用 `EventExit` 正常结束事件，不要包进宽泛的 `try/catch`；物品 UI 回调会在服务端和客户端分别构建组件，玩家 `persistentData` 只在服务端有权威内容，客户端只读状态用 `player.sendData()` 写入本地镜像；LDLib 1.0.50 从 `.ui` 反序列化 `SelectorWidget` 会替换其构造器子组件却不重绑 final 内部引用，应在代码中用原位置和尺寸重建原生 Selector，服务端再校验实际状态。
-- Registry changes require game restart; `ServerEvents.commandRegistry` callback changes require restarting the integrated/dedicated server because `/kubejs reload server_scripts` reloads script files but does not rebuild the Brigadier command tree.
+- Registry changes require game restart; `ServerEvents.commandRegistry` callback changes require restarting the integrated/dedicated server because `/kubejs reload server_scripts` does not rebuild the Brigadier command tree；KubeJS 的 `CommandSourceStack.sendSuccess` 直接接收 `Component`，传箭头函数会被 Rhino 转成 `ArrowFunction` 聊天文本。
 - Startup scripts include a legacy misspelling (`registery_*`); search both `registry` and `registery`.
 - KJS `Java.loadClass` facades are per script domain (`CDStartupJavaClasses`, `CDServerJavaClasses`, `CDClientJavaClasses`); startup is not a shared replacement for server/client because each domain has distinct load timing and side safety.
 - Business scripts should access facade members directly, e.g. `global.CDServerJavaClasses.$ModularItem`; top-level aliases still share Rhino scope and can redeclare across files.

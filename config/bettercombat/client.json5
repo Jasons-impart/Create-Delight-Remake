@@ -1,6 +1,6 @@
 {
 	"isHoldToAttackEnabled": true,
-	"isMiningWithWeaponsEnabled": false,
+	"isMiningWithWeaponsEnabled": true,
 	"isSwingThruGrassEnabled": true,
 	"isAttackInsteadOfMineWhenEnemiesCloseEnabled": false,
 	"isHighlightCrosshairEnabled": true,

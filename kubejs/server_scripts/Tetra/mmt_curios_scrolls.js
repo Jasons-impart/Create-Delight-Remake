@@ -7,7 +7,7 @@ const mmtCuriosScrollRecipes = [
   ['magnetic_precision', 'e64f9b', 'alexscaves:telecore', 'alexscaves:scarlet_neodymium_ingot', 'iceandfire:lightning_dragon_blood'],
   ['ancient_purification', '78b35a', 'blackknightarmor:sun_light_ingot', 'iceandfire:pixie_dust', 'alexscaves:occult_gem'],
   ['deep_relic', '315d83', 'blackknightarmor:ghoststeel_ingot', 'cataclysm:cursium_ingot', 'alexscaves:abyssmarine'],
-  ['astral_dominion', 'd08cff', 'blackknightarmor:end_dragon_ingot', 'blackknightarmor:end_dragon_ingot', 'cataclysm:void_crystal']
+  ['astral_dominion', 'd08cff', 'blackknightarmor:end_dragon_ingot', 'blackknightarmor:end_dragon_ingot', 'cataclysm:void_core']
 ]
 
 function mmtCuriosScroll(key, ribbon) {
