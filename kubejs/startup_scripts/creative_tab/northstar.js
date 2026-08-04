@@ -9,3 +9,11 @@ StartupEvents.modifyCreativeTab("northstar:northstar_items", e => {
         'northstar:circuit_engraver', 
         'northstar:electrolysis_machine'])
 })
+
+StartupEvents.modifyCreativeTab("northstar:northstar_blocks", e => {
+    e.remove([
+        // 月球钛矿的世界生成已被移除，避免其在 JEI 中误导玩家。
+        'northstar:moon_titanium_ore',
+        'northstar:moon_deep_titanium_ore',
+    ])
+})
