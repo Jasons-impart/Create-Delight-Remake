@@ -58,7 +58,7 @@ When old and new runtime JARs coexist, `update-packwiz-meta.ps1` selects the pre
 
 仅当 Mod 确实可选时才加入脚本白名单；除 `side = "client"` 外，还要检查反向强制依赖及直接脚本/配置集成。白名单应使用与目标 JAR 对应的窄文件名前缀，并同时覆盖新增、移除和更新。文件名不带末尾数字版本段时不能可靠识别为一次版本变化，应保留为独立新增/移除项。
 
-生成流程：
+提交 `mods/**/*.pw.toml` 变动时，已通过 `scripts/install-git-hooks.ps1` 安装的 `pre-commit` hook 会自动重建并暂存该基线；PR 校验会再次生成并检查文件是否已提交。未安装 hook 或明确使用 `--no-verify` 时，手动执行以下流程：
 
 ```powershell
 ./scripts/sync-packwiz-assets.ps1
