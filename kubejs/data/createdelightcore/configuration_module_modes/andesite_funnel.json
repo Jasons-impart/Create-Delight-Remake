@@ -1,0 +1,8 @@
+{
+  "module": "createdelightcore:logistics_configuration_module",
+  "target": "create:andesite_funnel",
+  "charge_cost": 2,
+  "required_tier": 0,
+  "sort_index": 30,
+  "placement": "createdelightcore:block_item"
+}

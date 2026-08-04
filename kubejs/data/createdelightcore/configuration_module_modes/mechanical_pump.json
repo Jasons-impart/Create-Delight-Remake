@@ -1,0 +1,8 @@
+{
+  "module": "createdelightcore:fluid_configuration_module",
+  "target": "create:mechanical_pump",
+  "charge_cost": 6,
+  "required_tier": 0,
+  "sort_index": 40,
+  "placement": "createdelightcore:block_item"
+}

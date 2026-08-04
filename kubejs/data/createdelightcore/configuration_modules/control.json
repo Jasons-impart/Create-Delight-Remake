@@ -1,0 +1,7 @@
+{
+  "item": "createdelightcore:control_configuration_module",
+  "max_charge": 64,
+  "initial_charge": 4,
+  "default_mode": "createdelightcore:redstone_link",
+  "fallback_mode": "createdelightcore:redstone_link"
+}

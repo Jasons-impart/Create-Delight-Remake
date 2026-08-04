@@ -277,6 +277,25 @@
 			y: -3.5d
 		}
 		{
+			dependencies: ["3A2F80F9BA7B4FA0"]
+			description: [
+				"&e构形模块&r把同一工程领域的常用零件收纳为一种施工工具。手持模块时，按住 Create 的工具箱菜单键（默认 &b左 Alt&r）打开径向轮盘，指向目标后松开按键切换；物品图标、构形量条和提示会显示即将放置的真实方块与费用。"
+				"传动模块覆盖转轴、齿轮和带特征材料的传动箱；结构、流体、控制、物流模块则分别用于机壳底盘、管道泵阀、精密控制和库存网络施工。对支持 Create 放置辅助的目标，模块也会显示原生幽灵预览并沿既有结构预测延伸。"
+				"所有模块最多储存 &b64 点&r。构形量不足时，只要背包内有该模块充填配方所需的标准组件，成功放置后就会自动充填并结算；高价值构形会消耗更多构形量，不再额外扣除机壳、电子管等物品。放下的仍是真实方块，破坏后不返还构形量。"
+			]
+			id: "5E27C3A7395AF7AC"
+			shape: "gear"
+			subtitle: "标准组件驱动的现场施工工具"
+			tasks: [{
+				id: "155DE6EF1F070AA4"
+				item: "createdelightcore:kinetic_configuration_module"
+				type: "item"
+			}]
+			title: "构形模块：传动入口"
+			x: 10.0d
+			y: -5.5d
+		}
+		{
 			dependencies: ["28CB30AB88780BC7"]
 			hide_until_deps_visible: false
 			id: "4D7BB97AA55ACE20"

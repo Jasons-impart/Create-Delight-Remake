@@ -1,0 +1,8 @@
+{
+  "module": "createdelightcore:structural_configuration_module",
+  "target": "create:radial_chassis",
+  "charge_cost": 3,
+  "required_tier": 0,
+  "sort_index": 40,
+  "placement": "createdelightcore:block_item"
+}

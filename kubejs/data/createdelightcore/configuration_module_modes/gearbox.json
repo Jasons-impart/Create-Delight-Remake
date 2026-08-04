@@ -1,0 +1,8 @@
+{
+  "module": "createdelightcore:kinetic_configuration_module",
+  "target": "create:gearbox",
+  "charge_cost": 12,
+  "required_tier": 0,
+  "sort_index": 40,
+  "placement": "createdelightcore:block_item"
+}
