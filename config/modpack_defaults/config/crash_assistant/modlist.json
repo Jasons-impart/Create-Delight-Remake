@@ -1824,10 +1824,10 @@
     "name": "Traveler's Titles (Forge/NeoForge)",
     "version": "1.20-Forge-4.0.2"
   },
-  "trueuuid-1.2.0-forge-1.20.1.jar": {
+  "trueuuid-1.1.2-forge1.20.1.jar": {
     "modId": "trueuuid",
     "name": "TrueUUID",
-    "version": "1.2.0-forge-1.20.1"
+    "version": "1.1.2-forge1.20.1"
   },
   "vanillin-forge-1.20.1-1.1.3.jar": {
     "modId": "vanillin-forge",
@@ -1913,11 +1913,6 @@
     "modId": "yungsapi",
     "name": "YUNG's API (Forge/NeoForge)",
     "version": "1.20-Forge-4.0.6"
-  },
-  "YungsBetterEndIsland-1.20-Forge-2.0.6.jar": {
-    "modId": "yungsbetterendisland",
-    "name": "YUNG's Better End Island (Forge/NeoForge)",
-    "version": "1.20-Forge-2.0.6"
   },
   "YungsBetterMineshafts-1.20-Forge-4.0.4.jar": {
     "modId": "yungsbettermineshafts",
