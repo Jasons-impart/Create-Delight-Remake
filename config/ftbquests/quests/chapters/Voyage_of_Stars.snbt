@@ -807,6 +807,111 @@
 			x: 20.5d
 			y: 1.0d
 		}
+		{
+			dependencies: ["089E81F7DCA47A98"]
+			description: [
+				"古代工厂现在仅生成于&b月球&r群系，并埋藏在月球地下约 Y=-30 的深处。探索月球地下时，请留意规模庞大的机械遗迹。"
+				"世界生成改动不会把结构补进已经生成的旧区块；若始终找不到，请前往新的月球区块继续探索。"
+			]
+			icon: "cataclysm:emp"
+			id: "1E148D2AD79A465D"
+			subtitle: "月球地下的机械遗迹"
+			tasks: [{
+				advancement: "cataclysm:find_ancient_factory"
+				criterion: ""
+				id: "3C8D901D87D046EF"
+				title: "找到古代工厂"
+				type: "advancement"
+			}]
+			title: "古代工厂"
+			x: 9.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["77DBDCB991847E35"]
+			description: ["灵魂锻造厂现在生成于&c火星&r群系，并被埋藏在火星地下约 Y=-32 的深处。"]
+			icon: "minecraft:blackstone"
+			id: "264224E79AD8458C"
+			subtitle: "火星地下的灵魂熔炉"
+			tasks: [{
+				advancement: "cataclysm:find_soul_black_smith"
+				criterion: ""
+				id: "3C933CAA2A6A4600"
+				title: "找到灵魂锻造厂"
+				type: "advancement"
+			}]
+			title: "灵魂锻造厂"
+			x: 16.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["0BAC02A069A5B123"]
+			description: ["被诅咒的金字塔现在生成于&e金星&r的金星平原与金星荒地地表。"]
+			icon: "cataclysm:sandstone_poison_dart_trap"
+			id: "4F715326FDD9412E"
+			subtitle: "金星荒原上的诅咒遗迹"
+			tasks: [{
+				advancement: "cataclysm:find_cursed_pyramid"
+				criterion: ""
+				id: "75962AA8144EFF15"
+				title: "找到被诅咒的金字塔"
+				type: "advancement"
+			}]
+			title: "被诅咒的金字塔"
+			x: 22.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["62C9A01A68274195"]
+			description: ["熔岩竞技场现在生成于&6水星&r群系的地表。"]
+			icon: "cataclysm:altar_of_fire"
+			id: "078AB159C7278790"
+			subtitle: "水星地表的燃烧试炼场"
+			tasks: [{
+				advancement: "cataclysm:find_burning_arena"
+				criterion: ""
+				id: "786012C81F2644E2"
+				title: "找到熔岩竞技场"
+				type: "advancement"
+			}]
+			title: "熔岩竞技场"
+			x: 24.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["75D1E8A0C4B29F63"]
+			description: ["苦寒监牢现在生成于&b木卫二&r地表的冰原与山脊地带。"]
+			icon: "cataclysm:door_of_seal"
+			id: "6240D4B23EB3E8A2"
+			subtitle: "木卫二冰原上的封印监牢"
+			tasks: [{
+				advancement: "cataclysm:find_frosted_prison"
+				criterion: ""
+				id: "7CC6C3CC703C4964"
+				title: "找到苦寒监牢"
+				type: "advancement"
+			}]
+			title: "苦寒监牢"
+			x: 28.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["75D1E8A0C4B29F63"]
+			description: ["沉沦之城现在生成于&b木卫二&r的冰下海与渊海陷窟，应在地下海洋区域寻找。"]
+			icon: "cataclysm:stone_tiles"
+			id: "1AB9C234F9274019"
+			subtitle: "木卫二冰下海中的失落城市"
+			tasks: [{
+				advancement: "cataclysm:find_sunken_city"
+				criterion: ""
+				id: "6FB8B094353E4FC9"
+				title: "找到沉沦之城"
+				type: "advancement"
+			}]
+			title: "沉沦之城"
+			x: 28.5d
+			y: -2.0d
+		}
 	]
 	title: "群星之旅"
 }
