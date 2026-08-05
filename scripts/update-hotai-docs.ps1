@@ -26,6 +26,7 @@ function Get-HotaiModule([string]$InternalName) {
     if ($InternalName -like "com/oierbravo/create_mechanical_spawner/*") { return "Create Mechanical Spawner" }
     if ($InternalName -like "com/tacz/guns/*") { return "TACZ" }
     if ($InternalName -like "com/teamabnormals/neapolitan/*") { return "Neapolitan" }
+    if ($InternalName -like "com/iafdragonfix/*") { return "IAF Dragon Fix" }
     if ($InternalName -like "dev/wuffs/bcc/*") { return "Better Compatibility Checker" }
     if ($InternalName -like "de/cadentem/quality_food/*") { return "Quality Food" }
     if ($InternalName -like "org/antarcticgardens/newage/*" -or $InternalName -like "org/antarcticgardens/cna/*") { return "Create New Age" }

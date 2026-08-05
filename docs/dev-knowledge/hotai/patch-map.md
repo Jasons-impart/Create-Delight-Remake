@@ -29,6 +29,7 @@
 | Vintage Improvements Ponder | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene.badiff`、`VintagePonderTag.badiff` | 从 Ponder 场景和 `KINETIC_APPLIANCES` 标签中移除 `BELT_GRINDER` 条目，避免砂带磨床 Ponder 继续注册。 |
 | Neapolitan 客户端页签编辑 | `com/teamabnormals/neapolitan/core/Neapolitan.badiff` | 客户端初始化时跳过 `NeapolitanBlocks.setupTabEditors()` 和 `NeapolitanItems.setupTabEditors()`，避免 Neapolitan 自行编辑创造页签。 |
 | Better Compatibility Checker 状态 ping mixin | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | 将匿名内部类捕获的 `ServerData` 改为反射查找，并兼容混淆/反混淆方法名；注入点改到响应处理尾部，降低字段名变化造成的 mixin 失败。 |
+| IAF Dragon Fix 地下冰龙穴避海 | `com/iafdragonfix/structure/DragonDenPiece.badiff` | 地下冰龙穴确定中心后检查中心及周围 16 格的 3×3 群系采样；任一点命中 `#createdelight:blocks_ice_dragon_caves` 就跳过生成，避免木卫二龙穴切入地下海，同时保留木卫二陆地区域和火星的地下冰龙穴。补丁必须由 HotAI 将 `.class` 转存为其 `MemoryDiff` 序列化格式，不得使用 `BadiffCli diff` 生成不兼容的 `BadiffFileDiff`。 |
 | Quality Food 方块掉落品质 | `de/cadentem/quality_food/mixin/BlockMixin.badiff` | 只在存在 `DropData` 且方块通过 `Utils.isValidBlock` 时应用方块品质，移除无上下文时对掉落物套品质的 fallback。 |
 
 ## 静态 JAR 外动态创建的超导连接器类
