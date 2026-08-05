@@ -111,7 +111,7 @@ CDR 已经通过悚怖钢承担“三系龙钢融合”定位，因此 Black Kni
 | `rage_soul_ingot` | 高风险狂战核心 | 悚怖钢 ×1 + Black Knight 风暴精华 ×1 + 雷龙血 250 mB | 难度系统投放的悚怖之心与 `cataclysm:monstrous_horn` | 刀刃、握柄或护甲组合改良 |
 | `sun_light_ingot` | 防御、充能与反击核心 | 悚怖钢 ×1 + 闪耀蜂蜜结晶 ×1 + Ambersol ×1 | 黄色竞技场与 `the_bumblezone:essence_radiance` 对应的图纸/任务解锁 | 盾板和护甲专属改良 |
 | `frost_tooth_ingot` | 冻结、重击和斧类专精 | 悚怖钢 ×1 + Soul Permafrost ×1 + 冰龙血 250 mB | `cold_desire` 核心或冰系任务 | 斧头、重刃和护甲材料 |
-| `ghoststeel_ingot` | 轻质、隐匿和高魔力容量材料 | 悚怖钢 ×1 + Portaplasm ×1 + Ice and Fire 灵质 ×1 | `alexscaves:occult_gem`；咒魂锭留给最终强化 | 握柄、绑定件和护甲衬层 |
+| `ghoststeel_ingot` | 轻质、隐匿和高魔力容量材料 | 悚怖钢 ×1 + 女妖粉末 ×1 + Ice and Fire 灵质 ×1 | `alexscaves:occult_gem`；咒魂锭留给最终强化 | 握柄、绑定件和护甲衬层 |
 | `dragon_fire_ingot` | 红莲龙炎与高温冲锋核心 | 悚怖钢 ×1 + 构造碎片 ×1 + 火龙血 250 mB | `cataclysm:flame_eye` 或 Ignis 击杀进度 | 火系武器和护甲专用 |
 | `end_dragon_ingot` | 悚怖钢同层的末地侧升金属 | 悚怖钢 ×1 + 紫颂果 ×1 + 终结龙血 250 mB | 末影龙击杀与终结龙珍宝 | `primary` 已从 14 调整为 13，以末地能力和加工性区别于悚怖钢，而不是靠跨级硬度压制 |
 
@@ -161,7 +161,7 @@ CDR 已经通过悚怖钢承担“三系龙钢融合”定位，因此 Black Kni
 | 怒魂锭 | 超级加热压块塑形 | `dreadsteel:dreadsteel_ingot` ×1；`blackknightarmor:storm_essence` ×1；`createdelight:lightning_dragon_blood` 250 mB | 产出 1；悚怖之心改由险象环生难度投放，不作为配方耗材 |
 | 日光锭 | 加热压块塑形 | `dreadsteel:dreadsteel_ingot` ×1；`the_bumblezone:glistering_honey_crystal` ×1；`alexscaves:ambersol` ×1 | 产出 1；不使用蜂蜜、花粉或 Royal Jelly，辉光精华只负责路线解锁 |
 | 霜牙锭 | 无热源压块塑形 | `dreadsteel:dreadsteel_ingot` ×1；`netherexp:soul_permafrost` ×1；`createdelight:ice_dragon_blood` 250 mB | 产出 1；构造碎片属于高热材料，不进入冰系路线 |
-| 灵钢锭 | 无热源压块塑形 | `dreadsteel:dreadsteel_ingot` ×1；`endergetic:portaplasm` ×1；`iceandfire:ectoplasm` ×1 | 产出 1；沿用原模组和 Ice and Fire 幽灵剑的幽灵材料线，秘法宝石只负责图纸或任务解锁 |
+| 灵钢锭 | 无热源压块塑形 | `dreadsteel:dreadsteel_ingot` ×1；`netherexp:banshee_powder` ×1；`iceandfire:ectoplasm` ×1 | 产出 1；女妖粉末可由女妖棒粉碎增产，适合逐枚消耗；秘法宝石只负责图纸或任务解锁，传送质保留给末地能力与结构强化 |
 | 红莲龙炎锭 | 超级加热压块塑形 | `dreadsteel:dreadsteel_ingot` ×1；`alexscaves:tectonic_shard` ×1；`createdelight:fire_dragon_blood` 250 mB | 产出 1；构造碎片的地热语义用于高温路线，Ignitium 留给更高阶红莲核心 |
 
 Royal Jelly 不进入日光锭量产配方，只在阳光精华或日耀最终强化中少量消耗；如果龙血 250 mB 的成本实测仍然过高，优先降低流体消耗，不增加普通廉价填充物。主题材料应保持清晰，避免再次形成“主体相同、最后塞一个辅料”的配方。
