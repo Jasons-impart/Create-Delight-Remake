@@ -25,7 +25,7 @@ description: 维护、分析、迁移或验证 Create-Delight Remake 的 `hotai/
 2. 从 `.badiff` 相对路径推导目标 class internal name；例如 `hotai/a/b/C.badiff` 对应 `a/b/C`。
 3. 更新或分析补丁后，运行 `scripts/update-hotai-docs.ps1` 刷新 `HOTAI_STATUS` 区块。不要手改该区块。
 4. 在 `badiff-details.md` 的生成区块外记录方法级语义和证据；在 `patch-map.md` 只更新领域级摘要与跨目录依赖。
-5. 运行 `scripts/update-hotai-docs.ps1 -Check`；需要完整知识库校验时再运行 `scripts/validate-knowledge-base.ps1`。
+5. 运行 `scripts/update-hotai-docs.ps1 -Check`，它只校验受版本控制的 `.badiff` 路径与目标 class 映射；需要复核某一参考运行环境的 JAR/日志状态时，运行 `scripts/update-hotai-docs.ps1 -Check -StrictRuntimeStatus`。通用 `scripts/validate-knowledge-base.ps1` 默认不读取本地 JAR 或日志；仅传入 `-CheckHotaiRuntimeStatus` 时才执行严格运行时状态校验。
 
 ## 状态判定
 

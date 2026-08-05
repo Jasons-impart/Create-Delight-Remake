@@ -1,7 +1,8 @@
 ﻿param(
     [string]$Root = "",
     [string]$DetailsPath = "",
-    [switch]$Check
+    [switch]$Check,
+    [switch]$StrictRuntimeStatus
 )
 
 $ErrorActionPreference = "Stop"
@@ -158,10 +159,36 @@ if ($detailsText.Contains($begin) -and $detailsText.Contains($end)) {
 }
 
 if ($Check) {
-    if ($updatedText -ne $detailsText) {
-        throw "hotai generated documentation is out of date. Run scripts/update-hotai-docs.ps1."
+    if ($StrictRuntimeStatus) {
+        if ($updatedText -ne $detailsText) {
+            throw "hotai runtime status is out of date for the current local JARs and logs. Run scripts/update-hotai-docs.ps1 from the reference runtime."
+        }
+        Write-Host "hotai patch map and current runtime status are up to date." -ForegroundColor Green
+        return
     }
-    Write-Host "hotai generated documentation is up to date." -ForegroundColor Green
+
+    $statusBlockMatch = [regex]::Match($detailsText, "(?s)<!-- HOTAI_STATUS:BEGIN -->.*?<!-- HOTAI_STATUS:END -->")
+    if (-not $statusBlockMatch.Success) {
+        throw "hotai status block is missing from $DetailsPath. Run scripts/update-hotai-docs.ps1."
+    }
+
+    $documentedTargets = @(
+        [regex]::Matches($statusBlockMatch.Value, '(?m)^\|\s*[^|]+\|\s*`([^`]+\.badiff)`\s*\|\s*`([^`]+)`\s*\|') |
+            ForEach-Object { "$($_.Groups[1].Value)|$($_.Groups[2].Value)" } |
+            Sort-Object
+    )
+    $expectedTargets = @(
+        $rows |
+            ForEach-Object { "$($_.BadiffPath)|$($_.InternalName)" } |
+            Sort-Object
+    )
+    $targetDiff = Compare-Object -ReferenceObject $expectedTargets -DifferenceObject $documentedTargets
+    if ($targetDiff) {
+        $diffText = ($targetDiff | ForEach-Object { $_.InputObject }) -join ", "
+        throw "hotai patch map is out of date: $diffText. Run scripts/update-hotai-docs.ps1."
+    }
+
+    Write-Host "hotai patch map is up to date; local runtime status was not compared." -ForegroundColor Green
     return
 }
 

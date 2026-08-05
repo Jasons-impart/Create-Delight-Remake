@@ -1,6 +1,7 @@
 param(
     [string]$Root = "",
-    [switch]$StrictWarnings
+    [switch]$StrictWarnings,
+    [switch]$CheckHotaiRuntimeStatus
 )
 
 $ErrorActionPreference = "Stop"
@@ -158,9 +159,9 @@ if (Test-Path -LiteralPath $devKnowledgeDocsPath) {
 }
 
 $hotaiDocScript = Join-Path $Root "scripts/update-hotai-docs.ps1"
-if (Test-Path -LiteralPath $hotaiDocScript) {
+if ($CheckHotaiRuntimeStatus -and (Test-Path -LiteralPath $hotaiDocScript)) {
     try {
-        & $hotaiDocScript -Root $Root -Check
+        & $hotaiDocScript -Root $Root -Check -StrictRuntimeStatus
     } catch {
         Add-Failure $_.Exception.Message
     }

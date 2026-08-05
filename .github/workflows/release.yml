@@ -238,6 +238,8 @@ jobs:
   patch-tasks:
     needs: [common-steps, client-tasks]
     runs-on: ubuntu-latest
+    outputs:
+      previous_version: ${{ steps.read-previous-tag.outputs.latest_tag }}
     env:
       MODPACK_NAME: ${{ needs.common-steps.outputs.modpack_name }}
       MODPACK_VERSION: ${{ needs.common-steps.outputs.modpack_ver }}
@@ -259,6 +261,7 @@ jobs:
       - name: 安装 Packwiz
         uses: ./.github/actions/setup-packwiz
       - name: 获取最近的tag并配置环境变量
+        id: read-previous-tag
         run: |
           set -euo pipefail
           if git describe --tags --exact-match >/dev/null 2>&1; then
@@ -268,6 +271,7 @@ jobs:
           fi
           echo "最近的tag是: $latest_tag"
           echo "LATEST_TAG=$latest_tag" >> $GITHUB_ENV
+          echo "latest_tag=$latest_tag" >> $GITHUB_OUTPUT
       - name: 更新整合包配置与版本信息
         uses: ./.github/actions/update-modpack-config
         with:
@@ -339,3 +343,118 @@ jobs:
             deploy-patch.sh
             deploy-patch.bat
             patch/
+
+  # 标签构建直接将同一次运行的 artifact 压缩并上传至草稿 Release。
+  # release-publish.ps1 保留发布说明、公开发布与公告 PR 的控制权。
+  release-assets:
+    needs: [common-steps, client-tasks, server-tasks, patch-tasks]
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    if: github.ref_type == 'tag'
+    permissions:
+      contents: write
+    env:
+      MODPACK_NAME: ${{ needs.common-steps.outputs.modpack_name }}
+      MODPACK_VERSION: ${{ needs.common-steps.outputs.modpack_ver }}
+      PREVIOUS_VERSION: ${{ needs.patch-tasks.outputs.previous_version }}
+      IS_STABLE_RELEASE: ${{ needs.common-steps.outputs.is_stable_release }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: 创建或确认草稿 Release
+        shell: bash
+        run: |
+          set -euo pipefail
+          if gh release view "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --json isDraft >/dev/null 2>&1; then
+            is_draft=$(gh release view "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft)
+            if [[ "$is_draft" != "true" ]]; then
+              echo "Release $GITHUB_REF_NAME is already public" >&2
+              exit 1
+            fi
+            exit 0
+          fi
+
+          title="$GITHUB_REF_NAME 正式版"
+          prerelease_args=()
+          if [[ "$IS_STABLE_RELEASE" != "true" ]]; then
+            title="$GITHUB_REF_NAME 测试版"
+            prerelease_args=(--prerelease)
+          fi
+          gh release create "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --title "$title" --draft "${prerelease_args[@]}"
+      - name: 下载客户端包 artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: "[Client]${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}"
+          path: release-artifacts/client
+      - name: 下载服务端包 artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: "Server-${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}"
+          path: release-artifacts/server
+      - name: 下载客户端补丁 artifact
+        if: env.IS_STABLE_RELEASE == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: "[ClientPatch]${{ env.MODPACK_NAME }}-${{ env.PREVIOUS_VERSION }}-to-${{ env.MODPACK_VERSION }}"
+          path: release-artifacts/clientpatch
+      - name: 下载服务端补丁 artifact
+        if: env.IS_STABLE_RELEASE == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: "[ServerPatch]${{ env.MODPACK_NAME }}-${{ env.PREVIOUS_VERSION }}-to-${{ env.MODPACK_VERSION }}"
+          path: release-artifacts/serverpatch
+      - name: 压缩 Release 文件
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p release-assets
+
+          package_directory() {
+            local source_dir="$1"
+            local destination_name="$2"
+            if [[ ! -d "$source_dir" ]]; then
+              echo "Missing artifact directory: $source_dir" >&2
+              exit 1
+            fi
+            (
+              cd "$source_dir"
+              zip -rq "$GITHUB_WORKSPACE/release-assets/$destination_name" .
+            )
+          }
+
+          package_directory release-artifacts/client "Client-${MODPACK_NAME}-${MODPACK_VERSION}.zip"
+          package_directory release-artifacts/server "Server-${MODPACK_NAME}-${MODPACK_VERSION}.zip"
+
+          if [[ "$IS_STABLE_RELEASE" == "true" ]]; then
+            package_directory release-artifacts/clientpatch "ClientPatch-${MODPACK_NAME}-${PREVIOUS_VERSION}-to-${MODPACK_VERSION}.zip"
+            package_directory release-artifacts/serverpatch "ServerPatch-${MODPACK_NAME}-${PREVIOUS_VERSION}-to-${MODPACK_VERSION}.zip"
+          fi
+      - name: 上传 Release 资产至草稿
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          assets=(release-assets/*.zip)
+          expected_count=2
+          if [[ "$IS_STABLE_RELEASE" == "true" ]]; then
+            expected_count=4
+          fi
+          if [[ "${#assets[@]}" -ne "$expected_count" ]]; then
+            echo "Expected $expected_count release archives, got ${#assets[@]}" >&2
+            exit 1
+          fi
+
+          for asset in "${assets[@]}"; do
+            uploaded=false
+            for attempt in {1..5}; do
+              echo "Uploading $(basename "$asset") ($attempt/5)"
+              if timeout 3600 gh release upload "$GITHUB_REF_NAME" "$asset" --repo "$GITHUB_REPOSITORY" --clobber; then
+                uploaded=true
+                break
+              fi
+              sleep 15
+            done
+            if [[ "$uploaded" != "true" ]]; then
+              echo "Failed to upload $(basename "$asset")" >&2
+              exit 1
+            fi
+          done

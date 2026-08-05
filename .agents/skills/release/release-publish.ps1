@@ -5,12 +5,9 @@
 .DESCRIPTION
     Handles the full release pipeline after PR merge:
     - Tags the target branch and pushes the tag
-    - Waits for GitHub Actions CI to complete
-    - Downloads build artifacts (Client, Server, and optionally Patch)
-    - Re-compresses artifacts into zip files
-    - Copies to bracket-free paths (PowerShell [] glob workaround)
+    - Waits for GitHub Actions CI to build and upload release assets
     - Generates release notes from git log
-    - Creates GitHub Release with artifacts
+    - Updates and publishes the GitHub Release
     - Verifies all assets uploaded
 
 .PARAMETER Version
@@ -222,15 +219,12 @@ if ($WhatIf) {
     Write-Host ""
     Write-Host "   Would:"
     Write-Host "   A. Create tag $Version on $TargetBranch and push"
-    Write-Host "   B. Wait for CI (timeout: $CITimeoutMinutes min)"
-    Write-Host "   C. Download artifacts (Client, Server$(if($ReleaseType -eq '正式'){', ClientPatch, ServerPatch'}))"
-    Write-Host "   D. Compress and prepare for upload"
-    Write-Host "   E. Generate release notes from $PreviousVersion..$Version"
-    Write-Host "   F. Create draft GitHub release"
-    Write-Host "   G. Upload assets one by one with retries, then publish"
-    Write-Host "   H. Verify assets"
+    Write-Host "   B. Wait for CI to prepare and upload release assets (timeout: $CITimeoutMinutes min)"
+    Write-Host "   C. Generate release notes from $PreviousVersion..$Version"
+    Write-Host "   D. Update and publish the draft release"
+    Write-Host "   E. Verify assets"
     if ($ReleaseType -eq "正式") {
-        Write-Host "   I. Create announcement PR to main"
+        Write-Host "   F. Create announcement PR to main"
     }
     exit 0
 }
@@ -335,15 +329,15 @@ $stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
 $RunId = $null
 
 # Wait for the workflow run triggered by our tag to appear.
-# Match by workflow name AND head_sha to avoid picking up a previous run.
+# Match by workflow name, tag name, and head SHA to avoid its branch-push run.
 # Use single quotes for --jq to avoid PowerShell string interpolation issues.
 $workflowName = "发布版本"
 while ($stopwatch.Elapsed -lt $timeout) {
     # First get all runs, then filter in PowerShell to avoid jq quoting hell
-    $allRuns = gh run list --repo $repo --limit 10 --json databaseId,status,conclusion,name,headSha 2>$null
+    $allRuns = gh run list --repo $repo --limit 10 --json databaseId,status,conclusion,name,headBranch,headSha 2>$null
     if ($LASTEXITCODE -eq 0 -and $allRuns) {
         $runs = $allRuns | ConvertFrom-Json -ErrorAction SilentlyContinue
-        $matchingRun = $runs | Where-Object { $_.name -eq $workflowName -and $_.headSha -eq $commitSha } | Select-Object -First 1
+        $matchingRun = $runs | Where-Object { $_.name -eq $workflowName -and $_.headBranch -eq $Version -and $_.headSha -eq $commitSha } | Select-Object -First 1
         if ($matchingRun -and $matchingRun.databaseId) {
             $RunId = $matchingRun.databaseId
             break
@@ -391,9 +385,10 @@ if ($stopwatch.Elapsed -ge $timeout) {
 }
 
 # ============================================================
-# Phase C: Download Artifacts
+# Phase C: CI asset transfer
 # ============================================================
-Write-Host "📥 Phase C: Downloading artifacts"
+Write-Host "📦 Phase C: Release assets are prepared and uploaded by GitHub Actions"
+<# Artifact download, compression, and upload moved to the release-assets CI job.
 
 $tmpDir = Join-Path $env:TEMP "opencode\$Version"
 New-Item -ItemType Directory -Path "$tmpDir\client" -Force | Out-Null
@@ -714,6 +709,7 @@ if ($ReleaseType -eq "正式") {
 }
 
 Write-Host "✅ Bracket-free copies created in $uploadDir"
+#>
 
 # ============================================================
 # Phase F: Generate Release Notes
@@ -876,10 +872,8 @@ Write-Host "🚀 Phase G: Creating GitHub Release"
 
 if ($ReleaseType -eq "正式") {
     $title = "$Version 正式版"
-    $uploadAssets = @($uploadClient, $uploadClientPatch, $uploadServer, $uploadServerPatch)
 } else {
     $title = "$Version 测试版"
-    $uploadAssets = @($uploadClient, $uploadServer)
 }
 
 $notesFile = Join-Path $env:TEMP "opencode\release-notes-$Version.md"
@@ -917,6 +911,7 @@ if ($LASTEXITCODE -eq 0 -and $releaseViewJson) {
 Remove-Item $notesFile -Force -ErrorAction SilentlyContinue
 Write-Host "✅ Draft release ready: $title"
 
+<# Release asset upload moved to the release-assets CI job.
 function Get-ReleaseForUpload {
     $releaseListJson = gh api "repos/$repo/releases" --paginate 2>$null
     if ($LASTEXITCODE -ne 0 -or -not $releaseListJson) {
@@ -1079,6 +1074,7 @@ foreach ($asset in $uploadAssets) {
 }
 
 Write-Host "✅ Release assets uploaded"
+#>
 
 if ($ReleaseType -eq "正式") {
     gh release edit $Version --repo $repo --draft=false --prerelease=false
@@ -1239,4 +1235,3 @@ Write-Host "🔗 $releaseUrl"
 if ($announcementPrUrl) {
     Write-Host "📢 Announcement PR: $announcementPrUrl"
 }
-Write-Host "📁 Temp directory preserved: $tmpDir"
