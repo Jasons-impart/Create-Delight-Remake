@@ -20,24 +20,26 @@
 | TACZ | `tacz-1.20.1-1.1.4-hotfix-all.jar` | 1/1 可应用：`ModCreativeTabs`。 | 当前可生效。 |
 | Neapolitan | `neapolitan-1.20.1-5.1.0.jar` | 1/1 可应用：`Neapolitan`。 | 当前可生效。 |
 | Better Compatibility Checker | `BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar` | 1/1 可应用：`ServerStatusPingerMixin`。 | 当前可生效。 |
+| IAF Dragon Fix | `iafdragonfix-2.0.0.jar` | `DragonDenPiece.class` 已由 HotAI 转存为运行时 `.badiff`，启动日志记录 `Patched class`。 | 当前 JAR 已完成首次转换启动；配套禁止群系标签由 KubeJS 数据包提供，badiff 第二次启动重放仍待确认。 |
 | Quality Food | `quality_food-1.20.1-2.3.3-all.jar` | 1/1 目标 class 命中：`BlockMixin`。 | 当前 JAR 可匹配。 |
 | Create New Age | `create-new-age-1.2.0+forge-mc1.20.1.jar` | 1/1 可应用：旧 `org/antarcticgardens/newage/CreateNewAgePonders` 补丁已替换为当前路径 `org/antarcticgardens/cna/content/ponders/CNAPonders`。 | 当前可生效；补丁继续实现提交 `e11d47f206c1e9cb28bdf506698c824586f9b00c`（`删除cna中无用的ponder (#649)`）的意图，移除 heating、heater、reactor、wires 场景与对应标签。 |
 
-总计：当前 25 个 `.badiff` 中 22 个静态 JAR 命中，2 个由当前启动日志确认动态创建，1 个尚未在当前启动日志确认。三个静态未命中项均属于 Create Addition 超导连接器实现类，不应仅因 JAR 扫描未命中而删除。Create New Age 旧路径补丁已完成迁移。
+总计：当前 26 个 `.badiff` 中 23 个静态 JAR 命中，2 个由当前启动日志确认动态创建，1 个尚未在当前启动日志确认。三个静态未命中项均属于 Create Addition 超导连接器实现类，不应仅因 JAR 扫描未命中而删除。Create New Age 旧路径补丁已完成迁移。
 
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 25 个 `.badiff`；静态 JAR 命中 22 个，静态未命中但已由当前启动日志确认动态创建 2 个，尚未由当前启动日志确认 1 个。
+当前扫描到 26 个 `.badiff`；静态 JAR 命中 23 个，静态未命中但已由当前启动日志确认动态创建 2 个，尚未由当前启动日志确认 1 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |
 |---|---|---|---|
 | Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff` | `com/forsteri/createliquidfuel/core/BurnerStomachHandler` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
 | Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity.badiff` | `com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
+| IAF Dragon Fix | `hotai/com/iafdragonfix/structure/DragonDenPiece.badiff` | `com/iafdragonfix/structure/DragonDenPiece` | 静态命中 `iafdragonfix-2.0.0.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/ConnectorType.badiff` | `com/mrh0/createaddition/blocks/connector/ConnectorType` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock` | 运行时已确认动态创建（静态 JAR 无此 class） |
-| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity` | 运行时已确认动态创建（静态 JAR 无此 class） |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity` | 运行时已确认动态创建（静态 JAR 无此 class） |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/IWireNode.badiff` | `com/mrh0/createaddition/energy/IWireNode` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/network/EnergyNetwork.badiff` | `com/mrh0/createaddition/energy/network/EnergyNetwork` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/WireConnectResult.badiff` | `com/mrh0/createaddition/energy/WireConnectResult` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
@@ -462,6 +464,12 @@ return stack;
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
 | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | 已还原 | 不再 `@Shadow @Final ServerData val$p_105460_`；新增静态 `SERVER_DATA_FIELD`，优先反射字段 `val$p_105460_`，失败时遍历匿名类字段找 `ServerData` 类型；注入方法同时声明反混淆名和混淆名，注入点改为 TAIL，`remap=false`、`require=0`；反射失败时在 Minecraft 线程抛出 Error。 | 降低 Minecraft/Forge 映射字段名变化导致 BCC 服务器列表 ping mixin 失效的概率。 |
+
+## IAF Dragon Fix 补丁
+
+| 文件 | 状态 | 具体改动 | 影响 |
+|---|---|---|---|
+| `com/iafdragonfix/structure/DragonDenPiece.badiff` | 首次转换启动已确认 | `generateCave(...)` 仅在龙种为 `ICE_CAVE` 时创建 `#createdelight:blocks_ice_dragon_caves` 群系标签，并在实际地下中心的 X/Z 各偏移 `-16/0/16` 组成的 3×3 点阵读取群系；任一点命中标签就提前返回。配套标签包含 `northstar:europan_subsurface_ocean` 与 `alexscaves:abyssal_chasm`。首次错误补丁由 `BadiffCli diff` 生成 `BadiffFileDiff`，与 HotAI 使用 `DefaultSerialization` 读取的 `MemoryDiff` 格式不兼容，触发 `Not all bytes consumed from byte[]`；现有文件由 HotAI 官方 `.class` 转存流程生成。 | 木卫二地下冰龙穴仍可在冰原和山脊区域生成，但不会以地下海或渊海陷窟为中心、也不会跨入其近邻 16 格范围；火星冰龙穴及所有地表龙巢不受影响。首次转换启动已记录 `Patched class` 并成功进入木卫二；仍需第二次启动确认 badiff 重放，以及在新生成区块验证结构分布。 |
 
 ## Quality Food 补丁
 
