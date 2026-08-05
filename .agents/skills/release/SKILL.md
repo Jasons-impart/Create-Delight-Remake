@@ -5,7 +5,7 @@ description: 管理 Create-Delight Remake 整合包的正式版或测试版发�
 
 # Create-Delight Remake 发布
 
-发布脚本负责 Git 分支、版本写入、标签、CI、产物、Release、公告 PR 和重试。agent 只判断发布意图与玩家可读的文案。
+发布脚本负责 Git 分支、版本写入、标签、CI 等待、说明、公开 Release、公告 PR 和重试；标签 CI 的 `release-assets` job 负责下载同一次运行的 artifact、压缩并上传 Release 资产。agent 只判断发布意图与玩家可读的文案。
 
 ## 先生成只读计划
 
