@@ -66,7 +66,7 @@ ServerEvents.recipes(e => {
 
   create.compacting("blackknightarmor:ghoststeel_ingot", [
     "dreadsteel:dreadsteel_ingot",
-    "endergetic:portaplasm",
+    "netherexp:banshee_powder",
     "iceandfire:ectoplasm"
   ]).id("createdelight:compacting/ghoststeel_ingot")
 
