@@ -160,5 +160,5 @@ if (modificationsCount > 0) {
     message = message.replace("$MODIFICATION_DETAILS$", modificationDetails);
     Startup.addBootWarning(message)
         .withDontShowAgain("cdr.modlist_changes_warning")
-        .withCustomDontShowAgainCheckboxText("我已知悉，不要再提示了");
+        .withCustomDontShowAgainCheckboxText(LanguageProvider.get("custom.cdr_dont_show_again_checkbox"));
 }

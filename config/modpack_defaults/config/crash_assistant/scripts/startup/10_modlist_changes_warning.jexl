@@ -4,5 +4,5 @@ if (javaMajorVersion != 17) {
     javaVersionMessage = javaVersionMessage.replace("$JAVA_VERSION$", PlatformHelp.javaVersion);
     Startup.addBootWarning(javaVersionMessage)
         .withDontShowAgain("cdr.java_version_warning")
-        .withCustomDontShowAgainCheckboxText("我已知悉，不要再提示了");
+        .withCustomDontShowAgainCheckboxText(LanguageProvider.get("custom.cdr_dont_show_again_checkbox"));
 }
