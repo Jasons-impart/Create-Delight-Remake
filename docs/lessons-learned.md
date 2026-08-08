@@ -387,8 +387,8 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 **Date**: 2026-07-07
 
-- **Problem**: After updating from KubeJS build.16 to build.26, repeated `item.foodProperties = food => { ... }` edits for the same item could behave as last-write-wins, leaving only the final food effect while earlier hunger/saturation/effects disappeared.
-- **Fix/Lesson**: Accumulate KubeJS food property changes per item and assign `item.foodProperties` once, especially when helper calls such as `food_hungers` and `food_effects` target the same item.
+- **Problem**: After updating from KubeJS build.16 to build.26, `item.foodProperties = food => { ... }` could enter the new `FoodBuilder.of` conversion path and build from an empty builder, so any food property not rewritten by the callback—including hunger, saturation, effects, and fast/always-edible flags—could disappear.
+- **Fix/Lesson**: Restore the pre-build.26 direct food-property helpers and keep later intentional food ID/effect/property changes separate. Build.24 is currently being tested as the least disruptive rollback, but it still contains the `FoodProperties` type wrapper; do not call it a confirmed fix until a full restart regression passes. An effect-only workaround is not sufficient because the regression affects the whole `FoodProperties` object.
 
 ## Optional compat mixins should use LoadingModList
 

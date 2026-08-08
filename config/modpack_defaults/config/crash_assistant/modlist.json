@@ -1174,10 +1174,10 @@
     "name": "KubeJS Create",
     "version": "2001.3.0-build.8"
   },
-  "kubejs-forge-2001.6.5-build.26.jar": {
+  "kubejs-forge-2001.6.5-build.24.jar": {
     "modId": "kubejs-forge",
     "name": "KubeJS",
-    "version": "2001.6.5-build.26"
+    "version": "2001.6.5-build.24"
   },
   "kubejsdelight-1.20.1-1.1.5.jar": {
     "modId": "kubejsdelight",
