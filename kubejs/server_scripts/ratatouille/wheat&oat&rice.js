@@ -22,6 +22,7 @@ ServerEvents.recipes(e => {
         "create_central_kitchen:crafting/dough_2",
         "create_central_kitchen:crafting/dough_1",
         "farmersdelight:wheat_dough_from_water",
+        "farmersdelight:wheat_dough_from_water_alternative",
         "create:mixing/wheat_dough_egg_create",
         "minecraft:bread",
         "quark:tweaks/crafting/utility/bent/bread",
