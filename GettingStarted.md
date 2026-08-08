@@ -10,6 +10,7 @@
 - Git，用于克隆仓库和提交变更。
 - Java 17，游戏、Forge 服务端和 CDC 模组构建都使用 Java 17。
 - Python 3，`scripts/sync-packwiz-assets.ps1` 会用它启动本地静态文件服务。
+- Node.js 20 或更高版本，用于通过 `npx` 启动 Minecraft MCP 的 stdio 桥接器。
 - 支持 CurseForge 整合包或本地实例导入的启动器，例如 HMCL。
 - 能访问 CurseForge、GitHub raw 和对应 CDN；如果网络失败，先配置代理后重试。
 
@@ -35,6 +36,7 @@
   ```
 - 如果 `java -version` 不是 Java 17，但 `JAVA_HOME` 指向 Java 17，可继续；同步脚本会优先读取 `JAVA_HOME`。
 - 如果 `java -version` 和 `JAVA_HOME` 都不是 Java 17，修改 `variables.txt` 的 `JAVA=` 为本机 Java 17 的完整路径。
+- 配置 Minecraft MCP：阅读 [AI 工具集成指南](https://github.com/langyo/minecraft-mod-mcp/blob/master/docs/guides/zhs/AI-TOOLS.md)，使用 `npx -y minecraft-mod-mcp` 作为 stdio 桥接器连接 AI 工具；不要把游戏 HTTP 端口或 `/api/events` 直接配置成 MCP/SSE 地址。
 - 下载 HMCL 启动器：
   ```powershell
   Invoke-WebRequest -Uri "https://github.com/HMCL-dev/HMCL/releases/download/v3.13.2/HMCL-3.13.2.jar" -OutFile ".\HMCL.jar"
