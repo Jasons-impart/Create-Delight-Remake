@@ -38,7 +38,7 @@ config/             # KubeJS config files
 ## CONVENTIONS
 
 - Recipe ID namespace: `createdelight`; recipe folders use display names with spaces/apostrophes, so quote paths in shell commands.
-- **职责边界**：KubeJS 是内容配置层，仅新增或调整配方、标签、战利品表、简单物品移除/隐藏及其必要的兼容数据；不要在此实现新的游戏机制。
+- **职责边界**：KubeJS 是内容配置层，仅新增或调整配方、标签、战利品表、简单物品移除/隐藏及其必要的兼容数据；可实现无状态的轻量交互（如单次鼠标右键效果）和纯客户端展示（如 tooltip、JEI 信息），不要在此实现新的游戏机制。
 - **CDC 优先**：自定义方块/物品的行为、机器或菜单、能力与持久化状态、命令、网络包、服务端/客户端联动、实体/方块交互、tick 逻辑、渲染和跨模组运行时兼容，默认在 `CDC-mod-src/` 的 Create Delight Core 中实现。KubeJS 只引用 CDC 提供的稳定数据或 API 来配置内容。
 - **例外处理**：若上游限制使运行时逻辑暂时不能迁入 CDC，必须在 KubeJS 文件中说明原因并关联跟踪 issue；不要新增无迁移计划的事件处理器、Java 反射桥接或客户端网络逻辑。
 - Use `cutting_2()` for knife recipes (includes tetra module)
