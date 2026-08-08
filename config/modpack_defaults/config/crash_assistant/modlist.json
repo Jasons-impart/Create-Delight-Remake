@@ -659,10 +659,10 @@
     "name": "Custom Portal API [Forge]",
     "version": "1.0.1-forge-1.20.1"
   },
-  "CustomSkinLoader_Universal-15.0.1.jar": {
-    "modId": "customskinloader_universal",
+  "CustomSkinLoader_ForgeV2-14.28.jar": {
+    "modId": "customskinloader_forgev2",
     "name": "CustomSkinLoader",
-    "version": "15.0.1"
+    "version": "14.28"
   },
   "damage_trace-1.20.1-0.1.0.jar": {
     "modId": "damage_trace",
