@@ -17,7 +17,8 @@
 | Create Liquid Fuel | `createliquidfuel-2.1.1-1.20.1.jar` | 2/2 可应用：`BurnerStomachHandler`、`MixinBlazeBurnerTileEntity`。 | 当前可生效。 |
 | Create Addition | `createaddition-1.20.1-1.3.3.jar` | 11/14 静态命中；`SuperconductingConnectorBlock` 与 `SuperconductingConnectorBlockEntity` 已在当前启动日志确认由 `hotai` 动态创建；`SuperconductingConnectorBlockEntity$1` 尚未在本次启动日志出现。 | 超导连接器实现类不在上游 JAR 中，而由对应 `.badiff` 创建；匿名内部类可能按需加载，需在实际使用超导连接器时继续核对日志。 |
 | Vintage Improvements | `vintageimprovements-1.20.1-0.3.7.8.jar` | 2/2 目标 class 命中：`VintagePonderScene`、`VintagePonderTag`。 | 当前 JAR 可匹配。 |
-| TACZ | `tacz-1.20.1-1.1.4-hotfix-all.jar` | 1/1 可应用：`ModCreativeTabs`。 | 当前可生效。 |
+| TACZ | `tacz-1.20.1-1.1.8-hotfix.jar` | 1/1 可应用：`ModCreativeTabs`。 | 已按 1.1.8 重建并完成客户端页签回归。 |
+| TACZ-addon | `taczaddon-1.20.1-1.1.8-hotfix2-for-new-soph.jar` | 1/1 可应用：`ShoulderSurfingCompatInner`。 | 已按 Shoulder Surfing 5.0.7 API 重建，已完成开镜回归。 |
 | Neapolitan | `neapolitan-1.20.1-5.1.0.jar` | 1/1 可应用：`Neapolitan`。 | 当前可生效。 |
 | Better Compatibility Checker | `BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar` | 1/1 可应用：`ServerStatusPingerMixin`。 | 当前可生效。 |
 | IAF Dragon Fix | `iafdragonfix-2.0.0.jar` | `DragonDenPiece.class` 已由 HotAI 转存为运行时 `.badiff`，启动日志记录 `Patched class`。 | 当前 JAR 已完成首次转换启动；配套禁止群系标签由 KubeJS 数据包提供，badiff 第二次启动重放仍待确认。 |
@@ -29,17 +30,18 @@
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 26 个 `.badiff`；静态 JAR 命中 23 个，静态未命中但已由当前启动日志确认动态创建 2 个，尚未由当前启动日志确认 1 个。
+当前扫描到 27 个 `.badiff`；静态 JAR 命中 24 个，静态未命中但已由当前启动日志确认动态创建 2 个，尚未由当前启动日志确认 1 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |
 |---|---|---|---|
 | Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff` | `com/forsteri/createliquidfuel/core/BurnerStomachHandler` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
 | Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity.badiff` | `com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
 | IAF Dragon Fix | `hotai/com/iafdragonfix/structure/DragonDenPiece.badiff` | `com/iafdragonfix/structure/DragonDenPiece` | 静态命中 `iafdragonfix-2.0.0.jar` |
+| TACZ-addon | `hotai/com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner.badiff` | `com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner` | 静态命中 `taczaddon-1.20.1-1.1.8-hotfix2-for-new-soph.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/ConnectorType.badiff` | `com/mrh0/createaddition/blocks/connector/ConnectorType` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock` | 运行时已确认动态创建（静态 JAR 无此 class） |
-| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity` | 运行时已确认动态创建（静态 JAR 无此 class） |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity` | 运行时已确认动态创建（静态 JAR 无此 class） |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/IWireNode.badiff` | `com/mrh0/createaddition/energy/IWireNode` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/network/EnergyNetwork.badiff` | `com/mrh0/createaddition/energy/network/EnergyNetwork` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/WireConnectResult.badiff` | `com/mrh0/createaddition/energy/WireConnectResult` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
@@ -54,7 +56,7 @@
 | Create | `hotai/com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour.badiff` | `com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour` | 静态命中 `create-1.20.1-6.0.8.jar` |
 | Create | `hotai/com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour.badiff` | `com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour` | 静态命中 `create-1.20.1-6.0.8.jar` |
 | Create | `hotai/com/simibubi/create/foundation/block/connected/CTSpriteShifter.badiff` | `com/simibubi/create/foundation/block/connected/CTSpriteShifter` | 静态命中 `create-1.20.1-6.0.8.jar` |
-| TACZ | `hotai/com/tacz/guns/init/ModCreativeTabs.badiff` | `com/tacz/guns/init/ModCreativeTabs` | 静态命中 `tacz-1.20.1-1.1.4-hotfix-all.jar` |
+| TACZ | `hotai/com/tacz/guns/init/ModCreativeTabs.badiff` | `com/tacz/guns/init/ModCreativeTabs` | 静态命中 `tacz-1.20.1-1.1.8-hotfix.jar` |
 | Neapolitan | `hotai/com/teamabnormals/neapolitan/core/Neapolitan.badiff` | `com/teamabnormals/neapolitan/core/Neapolitan` | 静态命中 `neapolitan-1.20.1-5.1.0.jar` |
 | Quality Food | `hotai/de/cadentem/quality_food/mixin/BlockMixin.badiff` | `de/cadentem/quality_food/mixin/BlockMixin` | 静态命中 `quality_food-1.20.1-2.3.3-all.jar` |
 | Better Compatibility Checker | `hotai/dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin` | 静态命中 `BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar` |
@@ -444,7 +446,9 @@ return stack;
 
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
-| `com/tacz/guns/init/ModCreativeTabs.badiff` | 已还原 | 移除 `DefaultAssets` 默认图标引用；把 TACZ 各创造页签图标替换为整合包枪械线资产：弹药 `create_armorer:slap`，瞄具 `create_armorer:scope_telephoto`，枪口 `create_armorer:muzzle_refit_brass_retractor`，枪托 `applied_armorer:bracelet_zenith`，握把 `create_armorer:grip_gantry_shaft`，扩容弹匣 `create_armorer:extended_mag_ca_3`，手枪 `create_armorer:pistol_auto_stress`，狙击枪 `create_armorer:sniper_semi_clockwork`，步枪 `create_armorer:rifle_assult_crane`，霰弹枪 `create_armorer:shotgun_pump_bearing`，冲锋枪 `create_armorer:smg_auto_crank`，RPG 页 `create_armorer:special_melee_wrench`，机枪 `create_armorer:mg_platemag_flywheel`。 | 创造模式中 TACZ 页签直接展示整合包自定义军械内容，而不是 TACZ 默认枪械。 |
+| `com/tacz/guns/init/ModCreativeTabs.badiff` | 已按 TACZ 1.1.8 重建并完成客户端回归 | 移除 `DefaultAssets` 默认图标引用；把 TACZ 各创造页签图标替换为整合包枪械线资产：弹药 `create_armorer:slap`，瞄具 `create_armorer:scope_telephoto`，枪口 `create_armorer:muzzle_refit_brass_retractor`，枪托 `applied_armorer:bracelet_zenith`，握把 `create_armorer:grip_gantry_shaft`，扩容弹匣 `create_armorer:extended_mag_ca_3`，手枪 `create_armorer:pistol_auto_stress`，狙击枪 `create_armorer:sniper_semi_clockwork`，步枪 `create_armorer:rifle_assult_crane`，霰弹枪 `create_armorer:shotgun_pump_bearing`，冲锋枪 `create_armorer:smg_auto_crank`，RPG 页 `create_armorer:special_melee_wrench`，机枪 `create_armorer:mg_platemag_flywheel`。 | 创造模式中 TACZ 页签直接展示整合包自定义军械内容，而不是 TACZ 默认枪械。 |
+
+| `com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner.badiff` | 已运行时验证 | `isShoulderSurfing()` 将 `ShoulderSurfingImpl.getInstance().isShoulderSurfing()` 改为 `ShoulderSurfing.getInstance().isShoulderSurfing()`；`enableShoulderSurfing()` 同步将实例类型和 `Perspective` 枚举从旧 `api/model` 包迁移到 `api/client` 包，仍请求 `SHOULDER_SURFING` 视角。 | `logs/latest.log` 已记录 `Patched class`，第三人称持枪开镜和松开瞄准回归成功；补丁强绑定该 TACZ-addon JAR 与 Shoulder Surfing 5.x API。 |
 
 ## Vintage Improvements 补丁
 

@@ -26,6 +26,7 @@ function Get-HotaiModule([string]$InternalName) {
     if ($InternalName -like "com/negodya1/vintageimprovements/*") { return "Vintage Improvements" }
     if ($InternalName -like "com/oierbravo/create_mechanical_spawner/*") { return "Create Mechanical Spawner" }
     if ($InternalName -like "com/tacz/guns/*") { return "TACZ" }
+    if ($InternalName -like "com/mafuyu404/taczaddon/*") { return "TACZ-addon" }
     if ($InternalName -like "com/teamabnormals/neapolitan/*") { return "Neapolitan" }
     if ($InternalName -like "com/iafdragonfix/*") { return "IAF Dragon Fix" }
     if ($InternalName -like "dev/wuffs/bcc/*") { return "Better Compatibility Checker" }

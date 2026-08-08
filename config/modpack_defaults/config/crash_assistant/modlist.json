@@ -444,10 +444,10 @@
     "name": "Create: Enchantment Industry",
     "version": "1.4.0-for-create-6.0.8"
   },
-  "create_enhanced_schematicannon-1.0.4-fork.jar": {
+  "create_enhanced_schematicannon-1.0.5-fork.jar": {
     "modId": "create_enhanced_schematicannon",
     "name": "Create: Enhanced Schematicannon (Unofficial Fixed Fork)",
-    "version": "1.0.4-fork"
+    "version": "1.0.5-fork"
   },
   "create_fantasizing-1.20.1-1.1.1.jar": {
     "modId": "create_fantasizing",
@@ -1709,15 +1709,15 @@
     "name": "Supplementaries",
     "version": "1.20-3.1.42-forge"
   },
-  "tacz-1.20.1-1.1.4-hotfix-all.jar": {
+  "tacz-1.20.1-1.1.8-hotfix.jar": {
     "modId": "tacz",
     "name": "[TaCZ] Timeless and Classics Zero Guns",
-    "version": "1.20.1-1.1.4-hotfix-all"
+    "version": "1.20.1-1.1.8-hotfix"
   },
-  "taczaddon-1.20.1-1.1.4-for1.1.4.jar": {
+  "taczaddon-1.20.1-1.1.8-hotfix2-for-new-soph.jar": {
     "modId": "taczaddon",
     "name": "TaCZ addon",
-    "version": "1.20.1-1.1.4-for1.1.4"
+    "version": "1.20.1-1.1.8-hotfix2-for-new-soph"
   },
   "tectonic-3.0.17-forge-1.20.1.jar": {
     "modId": "tectonic",
