@@ -109,7 +109,7 @@
 	#Note: When this option is enabled, if you attempt to activate a mechanical crafter in a lazy-loaded state via redstone,
 	#you must ensure that the duration of the changed redstone signal is longer than the lazy-loading interval.
 	#A mechanical crafter in an active state can respond immediately without requiring the above conditions.
-	enable_lazy_crafter_redstone = false
+	enable_lazy_crafter_redstone = true
 	#
 	#--------------------------------------------------------------------------
 	#The maximum delay for activating a mechanical crafter via redstone after it has been inactive for a period of time.
