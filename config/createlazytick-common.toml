@@ -114,7 +114,7 @@
 	#--------------------------------------------------------------------------
 	#The maximum delay for activating a mechanical crafter via redstone after it has been inactive for a period of time.
 	#Range: > 0
-	crafter_redstone_delay_max = 20
+	crafter_redstone_delay_max = 18
 
 #Mechanical Arm Settings
 [arm]
