@@ -20,6 +20,8 @@ if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($repoRoot)) {
 
 $repoRoot = $repoRoot.Trim()
 $hooksPath = Join-Path $repoRoot "scripts/.githooks"
+$hookNames = @("pre-commit", "post-merge", "post-checkout", "post-rewrite")
+$marker = "Create-Delight managed hook shim"
 $gitCommonDir = (& git rev-parse --git-common-dir 2>$null)
 if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($gitCommonDir)) {
     throw "Could not resolve Git common directory."
@@ -56,6 +58,27 @@ if (-not (Test-Path -LiteralPath $hooksPath)) {
     throw "Missing tracked hooks directory: $hooksPath"
 }
 
+if ($IfUnset) {
+    $needsInstall = $false
+    foreach ($hookName in $hookNames) {
+        $targetHook = Join-Path $gitHooksPath $hookName
+        if (-not (Test-Path -LiteralPath $targetHook)) {
+            $needsInstall = $true
+            break
+        }
+
+        $existing = Get-Content -LiteralPath $targetHook -Raw -ErrorAction SilentlyContinue
+        if ($existing -notmatch [regex]::Escape($marker)) {
+            $needsInstall = $true
+            break
+        }
+    }
+
+    if (-not $needsInstall) {
+        exit 0
+    }
+}
+
 New-Item -ItemType Directory -Force -Path $gitHooksPath | Out-Null
 
 function Install-HookShim {
@@ -68,29 +91,6 @@ function Install-HookShim {
 
     $targetHook = Join-Path $gitHooksPath $Name
     $localHook = Join-Path $gitHooksPath "$Name.local"
-    $marker = "Create-Delight managed hook shim"
-
-    if (Test-Path -LiteralPath $targetHook) {
-        $existing = Get-Content -LiteralPath $targetHook -Raw -ErrorAction SilentlyContinue
-        if ($existing -notmatch [regex]::Escape($marker)) {
-            if (Test-Path -LiteralPath $localHook) {
-                $timestamp = Get-Date -Format "yyyyMMddHHmmss"
-                $backupHook = Join-Path $gitHooksPath "$Name.local.$timestamp"
-                $suffix = 1
-                while (Test-Path -LiteralPath $backupHook) {
-                    $backupHook = Join-Path $gitHooksPath "$Name.local.$timestamp.$suffix"
-                    $suffix++
-                }
-
-                Move-Item -LiteralPath $targetHook -Destination $backupHook
-                Write-InstallMessage "Preserved existing $Name as $(Split-Path $backupHook -Leaf)"
-            }
-            else {
-                Move-Item -LiteralPath $targetHook -Destination $localHook
-                Write-InstallMessage "Preserved existing $Name as $Name.local"
-            }
-        }
-    }
 
     $shim = @"
 #!/bin/sh
@@ -114,6 +114,32 @@ elif [ -f "`$tracked_hook" ]; then
 fi
 "@
 
+    if (Test-Path -LiteralPath $targetHook) {
+        $existing = Get-Content -LiteralPath $targetHook -Raw -ErrorAction SilentlyContinue
+        if ($existing -eq $shim) {
+            return
+        }
+
+        if ($existing -notmatch [regex]::Escape($marker)) {
+            if (Test-Path -LiteralPath $localHook) {
+                $timestamp = Get-Date -Format "yyyyMMddHHmmss"
+                $backupHook = Join-Path $gitHooksPath "$Name.local.$timestamp"
+                $suffix = 1
+                while (Test-Path -LiteralPath $backupHook) {
+                    $backupHook = Join-Path $gitHooksPath "$Name.local.$timestamp.$suffix"
+                    $suffix++
+                }
+
+                Move-Item -LiteralPath $targetHook -Destination $backupHook
+                Write-InstallMessage "Preserved existing $Name as $(Split-Path $backupHook -Leaf)"
+            }
+            else {
+                Move-Item -LiteralPath $targetHook -Destination $localHook
+                Write-InstallMessage "Preserved existing $Name as $Name.local"
+            }
+        }
+    }
+
     $utf8NoBom = [System.Text.UTF8Encoding]::new($false)
     [System.IO.File]::WriteAllText($targetHook, $shim, $utf8NoBom)
 }
@@ -124,7 +150,7 @@ if ($null -ne $isWindowsVariable) {
     $isWindowsPlatform = [bool]$isWindowsVariable.Value
 }
 
-foreach ($hookName in @("pre-commit", "post-merge", "post-checkout", "post-rewrite")) {
+foreach ($hookName in $hookNames) {
     Install-HookShim -Name $hookName
 }
 
@@ -136,3 +162,4 @@ if (-not $isWindowsPlatform) {
 
 Write-InstallMessage "Git hooks installed in .git/hooks"
 Write-InstallMessage "Packwiz assets will sync automatically after relevant merge, rebase, or branch checkout changes."
+exit 0
