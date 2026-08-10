@@ -1,27 +1,38 @@
-{
-  "replace": true,
-  "key": "fake_manyullyn_ingot",
-  "category": "metal",
-  "hidden": true,
-  "hiddenOutcomes": true,
-  "primary": 0,
-  "secondary": 0,
-  "tertiary": 0,
-  "durability": 0,
-  "integrityCost": 0,
-  "integrityGain": 0,
-  "magicCapacity": 0,
-  "toolLevel": 0,
-  "toolEfficiency": 0,
-  "tints": {
-    "glyph": "000000",
-    "texture": "000000"
-  },
-  "textures": ["crude"],
-  "material": {
-    "items": ["minecraft:barrier"]
-  },
-  "requiredTools": {
-    "hammer_dig": 4
-  }
+﻿{
+    "key":  "fake_manyullyn_ingot",
+    "category":  "metal",
+    "primary":  7.74,
+    "secondary":  3.2,
+    "tertiary":  4.5,
+    "durability":  1512,
+    "integrityCost":  2,
+    "integrityGain":  8,
+    "magicCapacity":  90,
+    "toolLevel":  "minecraft:netherite",
+    "toolEfficiency":  9,
+    "tints":  {
+                  "glyph":  "9060CA",
+                  "texture":  "9060CA"
+              },
+    "textures":  [
+                     "heavy",
+                     "metal"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "effects":  {
+                    "more_mod_tetra:fake_insatiable":  1
+                },
+    "requiredTools":  {
+                          "hammer_dig":  "minecraft:iron"
+                      },
+    "contexts":  {
+                     "armor":  {
+                                   "effects":  {
+                                                   "more_mod_tetra:fake_kinetic":  1
+                                               }
+                               }
+                 },
+    "replace":  true
 }

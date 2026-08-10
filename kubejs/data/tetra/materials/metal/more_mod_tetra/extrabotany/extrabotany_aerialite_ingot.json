@@ -28,9 +28,7 @@
     "default"
   ],
   "material": {
-    "items": [
-      "extrabotany:aerialite_ingot"
-    ]
+    "tag": "createdelight:disabled_mmt_fragile_materials"
   },
   "requiredTools": {
     "hammer_dig": "minecraft:stone"

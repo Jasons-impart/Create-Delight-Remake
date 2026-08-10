@@ -6,7 +6,7 @@
   "tertiary": 6.0,
   "durability": 227,
   "integrityCost": 1,
-  "integrityGain": 8,
+  "integrityGain": 6,
   "magicCapacity": 100,
   "toolLevel": "minecraft:stone",
   "toolEfficiency": 4.0,

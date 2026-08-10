@@ -1,0 +1,33 @@
+{
+  "key": "mmt_ender_rod",
+  "primary": 4.1,
+  "secondary": 0.6,
+  "tertiary": 2,
+  "durability": 142,
+  "integrityCost": 2,
+  "integrityGain": 6,
+  "magicCapacity": 152,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "effects": {
+    "janking": [4, 0]
+  },
+  "aspects": {
+    "reverberating": 1
+  },
+  "tints": {
+    "glyph": "63eec9",
+    "texture": "63eec9"
+  },
+  "textures": [
+    "default"
+  ],
+  "material": {
+    "items": [
+      "more_mod_tetra:ender_rod"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": "minecraft:wood"
+  }
+}

@@ -1,27 +1,31 @@
-{
-  "replace": true,
-  "key": "bokushuu_ingot",
-  "category": "metal",
-  "hidden": true,
-  "hiddenOutcomes": true,
-  "primary": 0,
-  "secondary": 0,
-  "tertiary": 0,
-  "durability": 0,
-  "integrityCost": 0,
-  "integrityGain": 0,
-  "magicCapacity": 0,
-  "toolLevel": 0,
-  "toolEfficiency": 0,
-  "tints": {
-    "glyph": "000000",
-    "texture": "000000"
-  },
-  "textures": ["crude"],
-  "material": {
-    "items": ["minecraft:barrier"]
-  },
-  "requiredTools": {
-    "hammer_dig": 4
-  }
+﻿{
+    "key":  "bokushuu_ingot",
+    "category":  "metal",
+    "primary":  6.6,
+    "secondary":  1.1,
+    "tertiary":  6.6,
+    "durability":  1024,
+    "integrityCost":  2,
+    "integrityGain":  6,
+    "magicCapacity":  100,
+    "toolLevel":  "minecraft:diamond",
+    "toolEfficiency":  7,
+    "tints":  {
+                  "glyph":  "60a5e3",
+                  "texture":  "60a5e3"
+              },
+    "textures":  [
+                     "heavy",
+                     "metal"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "effects":  {
+                    "more_mod_tetra:bokushuu_s_desire":  20
+                },
+    "requiredTools":  {
+                          "hammer_dig":  "minecraft:stone"
+                      },
+    "replace":  true
 }

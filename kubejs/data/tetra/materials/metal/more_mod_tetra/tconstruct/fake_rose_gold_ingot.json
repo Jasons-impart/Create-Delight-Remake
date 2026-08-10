@@ -1,27 +1,36 @@
-{
-  "replace": true,
-  "key": "fake_rose_gold_ingot",
-  "category": "metal",
-  "hidden": true,
-  "hiddenOutcomes": true,
-  "primary": 0,
-  "secondary": 0,
-  "tertiary": 0,
-  "durability": 0,
-  "integrityCost": 0,
-  "integrityGain": 0,
-  "magicCapacity": 0,
-  "toolLevel": 0,
-  "toolEfficiency": 0,
-  "tints": {
-    "glyph": "000000",
-    "texture": "000000"
-  },
-  "textures": ["crude"],
-  "material": {
-    "items": ["minecraft:barrier"]
-  },
-  "requiredTools": {
-    "hammer_dig": 4
-  }
+﻿{
+    "key":  "fake_rose_gold_ingot",
+    "category":  "metal",
+    "primary":  4.2,
+    "secondary":  3.2,
+    "tertiary":  3.5,
+    "durability":  134,
+    "integrityCost":  1,
+    "integrityGain":  9,
+    "magicCapacity":  290,
+    "toolLevel":  "minecraft:iron",
+    "toolEfficiency":  14,
+    "tints":  {
+                  "glyph":  "f4cbb9",
+                  "texture":  "f4cbb9"
+              },
+    "textures":  [
+                     "heavy",
+                     "metal"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "effects":  {
+                    "more_mod_tetra:fake_enhanced":  1,
+                    "more_mod_tetra:fake_silky":  1
+                },
+    "attributes":  {
+                       "**generic.attack_damage":  -0.175,
+                       "**tetra:draw_strength":  -0.175
+                   },
+    "requiredTools":  {
+                          "hammer_dig":  "minecraft:wood"
+                      },
+    "replace":  true
 }
