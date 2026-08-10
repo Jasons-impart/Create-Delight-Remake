@@ -1,27 +1,31 @@
-{
-  "replace": true,
-  "key": "fake_silky_cloth",
-  "category": "fabric",
-  "hidden": true,
-  "hiddenOutcomes": true,
-  "primary": 0,
-  "secondary": 0,
-  "tertiary": 0,
-  "durability": 0,
-  "integrityCost": 0,
-  "integrityGain": 0,
-  "magicCapacity": 0,
-  "toolLevel": 0,
-  "toolEfficiency": 0,
-  "tints": {
-    "glyph": "000000",
-    "texture": "000000"
-  },
-  "textures": ["crude"],
-  "material": {
-    "items": ["minecraft:barrier"]
-  },
-  "requiredTools": {
-    "hammer_dig": 4
-  }
+﻿{
+    "key":  "fake_silky_cloth",
+    "category":  "fabric",
+    "primary":  2.1,
+    "secondary":  1.1,
+    "tertiary":  8,
+    "durability":  100,
+    "integrityCost":  1,
+    "integrityGain":  9,
+    "magicCapacity":  300,
+    "toolLevel":  0,
+    "toolEfficiency":  0,
+    "tints":  {
+                  "glyph":  "f4cbb9",
+                  "texture":  "f4cbb9"
+              },
+    "textures":  [
+                     "crude",
+                     "default"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "effects":  {
+                    "more_mod_tetra:fake_enhanced":  1
+                },
+    "requiredTools":  {
+                          "cut":  "minecraft:wood"
+                      },
+    "replace":  true
 }

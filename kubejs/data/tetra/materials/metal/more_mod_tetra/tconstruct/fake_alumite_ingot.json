@@ -1,27 +1,31 @@
-{
-  "replace": true,
-  "key": "fake_alumite_ingot",
-  "category": "metal",
-  "hidden": true,
-  "hiddenOutcomes": true,
-  "primary": 0,
-  "secondary": 0,
-  "tertiary": 0,
-  "durability": 0,
-  "integrityCost": 0,
-  "integrityGain": 0,
-  "magicCapacity": 0,
-  "toolLevel": 0,
-  "toolEfficiency": 0,
-  "tints": {
-    "glyph": "000000",
-    "texture": "000000"
-  },
-  "textures": ["crude"],
-  "material": {
-    "items": ["minecraft:barrier"]
-  },
-  "requiredTools": {
-    "hammer_dig": 4
-  }
+﻿{
+    "key":  "fake_alumite_ingot",
+    "category":  "metal",
+    "primary":  4.8,
+    "secondary":  2.1,
+    "tertiary":  1.8,
+    "durability":  1001,
+    "integrityCost":  2,
+    "integrityGain":  5,
+    "magicCapacity":  104,
+    "toolLevel":  "minecraft:iron",
+    "toolEfficiency":  7,
+    "tints":  {
+                  "glyph":  "f4ceec",
+                  "texture":  "f4ceec"
+              },
+    "textures":  [
+                     "heavy",
+                     "metal"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "effects":  {
+                    "more_mod_tetra:the_century_gate":  1
+                },
+    "requiredTools":  {
+                          "hammer_dig":  "minecraft:wood"
+                      },
+    "replace":  true
 }

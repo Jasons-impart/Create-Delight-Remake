@@ -1,27 +1,37 @@
-{
-  "replace": true,
-  "key": "witherbone",
-  "category": "bone",
-  "hidden": true,
-  "hiddenOutcomes": true,
-  "primary": 0,
-  "secondary": 0,
-  "tertiary": 0,
-  "durability": 0,
-  "integrityCost": 0,
-  "integrityGain": 0,
-  "magicCapacity": 0,
-  "toolLevel": 0,
-  "toolEfficiency": 0,
-  "tints": {
-    "glyph": "000000",
-    "texture": "000000"
-  },
-  "textures": ["crude"],
-  "material": {
-    "items": ["minecraft:barrier"]
-  },
-  "requiredTools": {
-    "hammer_dig": 4
-  }
+﻿{
+    "key":  "witherbone",
+    "category":  "bone",
+    "primary":  5.3,
+    "secondary":  3.9,
+    "tertiary":  3,
+    "durability":  120,
+    "integrityCost":  1,
+    "integrityGain":  6,
+    "magicCapacity":  108,
+    "toolLevel":  "minecraft:stone",
+    "toolEfficiency":  4.5,
+    "tints":  {
+                  "glyph":  "000000",
+                  "texture":  "000000"
+              },
+    "effects":  {
+                    "more_mod_tetra:wither":  1
+                },
+    "textures":  [
+                     "bone",
+                     "crude"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "requiredTools":  {
+                          "hammer_dig":  "minecraft:wood"
+                      },
+    "conditions":  [
+                       {
+                           "type":  "forge:mod_loaded",
+                           "modid":  "iceandfire"
+                       }
+                   ],
+    "replace":  true
 }
