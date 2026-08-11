@@ -525,5 +525,23 @@
             "youkaishomecoming:can"
         ],
         "resultItems": "luncheonmeatsdelight:can_shell"
+    },
+    {
+        "matchItems": [
+            "crabbersdelight:crab_bucket"
+        ],
+        "resultItems": "youkaishomecoming:crab_bucket"
+    },
+    {
+        "matchItems": [
+            "crabbersdelight:crab"
+        ],
+        "resultItems": "youkaishomecoming:crab"
+    },
+    {
+        "matchItems": [
+            "crabbersdelight:cooked_crab"
+        ],
+        "resultItems": "youkaishomecoming:steamed_crab"
     }
 ]
