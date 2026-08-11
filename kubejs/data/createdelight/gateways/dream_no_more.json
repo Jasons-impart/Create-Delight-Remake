@@ -17,7 +17,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 5.5
+					"value": 6.0
 				},
 				{
 					"attribute": "generic.armor",
@@ -77,7 +77,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 5.5
+					"value": 6.5
 				},
                 {
 					"attribute": "generic.armor",
@@ -145,7 +145,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 6.5
+					"value": 8.0
 				},
                 {
 					"attribute": "generic.armor",
@@ -215,7 +215,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 5.5
+					"value": 6.6
 				},
                 {
 					"attribute": "generic.armor",
@@ -235,7 +235,7 @@
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": -0.5
+					"value": 0.5
 				}
 			],
 			"rewards": [
@@ -370,7 +370,7 @@
 								{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": -1.0
+					"value": 0.1
 				}
 			],
 			"rewards": [
