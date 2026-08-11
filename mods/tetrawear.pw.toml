@@ -1,0 +1,13 @@
+name = "tetrawear"
+filename = "tetrawear-1.20.1-1.0.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "ad553ea80f844b6a6c9f620a3d5d3945b1f02af4"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8570793
+project-id = 670545

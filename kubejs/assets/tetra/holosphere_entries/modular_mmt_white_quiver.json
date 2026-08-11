@@ -2,8 +2,8 @@
   "item": "more_mod_tetra:modular_mmt_white_quiver",
   "icon": {
     "textureLocation": "tetra:textures/gui/mmt_extra_holo.png",
-    "textureX": 0,
-    "textureY": 126
+    "textureX": 2,
+    "textureY": 128
   },
   "position": 24
 }

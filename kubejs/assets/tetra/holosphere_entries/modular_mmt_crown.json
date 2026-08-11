@@ -2,8 +2,8 @@
   "item": "more_mod_tetra:modular_mmt_crown",
   "icon": {
     "textureLocation": "tetra:textures/gui/mmt_extra_holo.png",
-    "textureX": 0,
-    "textureY": 42
+    "textureX": 2,
+    "textureY": 44
   },
   "position": 16
 }

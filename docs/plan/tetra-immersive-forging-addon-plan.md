@@ -428,7 +428,7 @@ Mixin 应优先落在最外层 Screen 生命周期、最终绘制入口、鼠标
 
 - Tetra 6.9.0 + Tetra Insight 0.1.0-r2。
 - ExtraHoloPage 1.2.16，配置为两行材料、两行模块、间距 `28`、筛选数 `10`。
-- Tetra View 及当前安装的 MMT、GeoTetraArmor、Tetracelium、Tetra Compat、Tetratic Combat Expanded 等附属。
+- Tetra View 及当前安装的 MMT、Tetrawear、Tetracelium、Tetra Compat、Tetratic Combat Expanded 等附属。
 - GUI Scale 2/3/4，中文与英文，窗口化/全屏，1080p 与至少一种较窄窗口。
 - Embeddium/Oculus 在光影关闭和启用时的透明、深度、ItemStack 光照与性能。
 - 客户端安装新附属、专用服务器不安装新附属的多人连接与制作回归。

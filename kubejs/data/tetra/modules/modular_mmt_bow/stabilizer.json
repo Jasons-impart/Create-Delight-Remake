@@ -1,0 +1,58 @@
+{
+    "slots": [
+        "modular_mmt_bow/riser"
+    ],
+    "type": "tetra:basic_module",
+    "variants": [
+        {
+            "materials": [
+                "tetra:wood/",
+                "tetra:metal/",
+                "tetra:bone/"
+            ],
+            "key": "stabilizer/",
+            "effects": {
+                "velocity": 15
+            },
+            "integrity": -1,
+            "durability": 10,
+            "extract": {
+                "tertiaryEffects": {
+                    "velocity": 6
+                },
+                "durability": 0.2,
+                "glyph": {
+                    "textureX": 112,
+                    "textureY": 112
+                },
+                "availableTextures": [
+                    "default"
+                ],
+                "models": [
+                    {
+                        "location": "tetra:item/module/bow/riser/stabilizer/"
+                    }
+                ]
+            }
+        },
+        {
+            "key": "stabilizer/linear",
+            "durability": 40,
+            "integrity": -1,
+            "effects": {
+                "velocity": 20,
+                "suspend": 1
+            },
+            "glyph": {
+                "tint": "bolt_glyph",
+                "textureX": 112,
+                "textureY": 112
+            },
+            "models": [
+                {
+                    "location": "tetra:item/module/bow/riser/stabilizer/linear"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,94 @@
+{
+    "slots": [
+        "modular_mmt_bow/stave"
+    ],
+    "type": "tetra:basic_major_module",
+    "improvements": [
+        "tetra:bow/",
+        "tetra:bow/recurve_stave/",
+        "tetra:bow/shared_stave/",
+        "tetra:bow/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": [
+                "tetra:wood/",
+                "tetra:stone/",
+                "tetra:metal/",
+                "tetra:gem/",
+                "tetra:bone/",
+                "tetra:rod/stick"
+            ],
+            "key": "apollo_bow/",
+            "attributes": {
+                "tetra:draw_speed": 0.35,
+                "tetra:draw_strength": 1.1
+            },
+            "aspects": {
+                "bow": 2,
+                "breakable": 2
+            },
+            "effects": {
+                "spread": [
+                    0,
+                    99
+                ],
+                "multishot": [
+                    1,
+                    10
+                ]
+            },
+            "durability": 317,
+            "extract": {
+                "primaryAttributes": {
+                    "tetra:draw_speed": 0.11,
+                    "tetra:draw_strength": 1.55
+                },
+                "tertiaryAttributes": {
+                    "tetra:draw_speed": -0.45,
+                    "tetra:draw_strength": 0.9
+                },
+                "primaryEffects": {
+                    "more_mod_tetra:glowing": 2,
+                    "multishot": 0.5
+                },
+                "tertiaryEffects": {
+                    "more_mod_tetra:glowing": 1.5,
+                    "multishot": 0.5
+                },
+                "durability": 1,
+                "integrity": -1,
+                "magicCapacity": 1,
+                "glyph": {
+                    "textureLocation": "tetra:textures/gui/wizard_glyphs.png",
+                    "textureX": 80,
+                    "textureY": 160
+                },
+                "availableTextures": [
+                    ""
+                ],
+                "models": [
+                    {
+                        "location": "more_mod_tetra:item/module/bow/more_mod_tetra/apollo_bow"
+                    },
+                    {
+                        "type": "tetra:filtered_grid_texture",
+                        "location": "more_mod_tetra:item/module/bow/more_mod_tetra/apollo_bow",
+                        "filter": "draw_0"
+                    },
+                    {
+                        "type": "tetra:filtered_grid_texture",
+                        "location": "more_mod_tetra:item/module/bow/more_mod_tetra/apollo_bow",
+                        "filter": "draw_1"
+                    },
+                    {
+                        "type": "tetra:filtered_grid_texture",
+                        "location": "more_mod_tetra:item/module/bow/more_mod_tetra/apollo_bow",
+                        "filter": "draw_2"
+                    }
+                ]
+            }
+        }
+    ]
+}

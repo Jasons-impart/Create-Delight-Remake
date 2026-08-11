@@ -15,7 +15,7 @@
 | · [§1.6](#sec-1-6) | 原版工具腰带模块 |
 | · [§1.7](#sec-1-7) | 原版改良与设计入口 |
 | · [§1.8](#sec-1-8) | 原版打磨与当前包倍率平衡 |
-| · [§1.9](#sec-1-9) | GeoTetraArmor 盔甲模块 |
+| · [§1.9](#sec-1-9) | Tetrawear 盔甲模块 |
 | · [§1.10](#sec-1-10) | Tetra 效果参数语义：level 与 efficiency |
 | · [§1.11](#sec-1-11) | abilityExhilaration（振奋） |
 | · [§1.12](#sec-1-12) | abilityOvercharge（超蓄） |
@@ -43,12 +43,13 @@
 
 日期：2026-06-22
 
-范围：以当前整合包实际安装的 Tetra、More Mod Tetra、GeoTetraArmor 以及当前 KubeJS 覆盖为准，整理 Tetra 基础属性、原版模块/效果、MMT 扩展收益和当前包里值得关注的数值入口。MMT jar 内含大量跨模组集成；当前包没有安装的集成不列入收益表。
+范围：以当前整合包实际安装的 Tetra、More Mod Tetra、Tetrawear 以及当前 KubeJS 覆盖为准，整理 Tetra 基础属性、原版模块/效果、MMT 扩展收益和当前包里值得关注的数值入口。MMT jar 内含大量跨模组集成；当前包没有安装的集成不列入收益表。
 
 数据来源：
 
-- `mods/more_mod_tetra-2.3.01-all.jar`
-- `mods/tetra-1.20.1-6.9.0.jar`
+- `mods/more_mod_tetra-2.4.15-all.jar`
+- `mods/tetra-1.20.1-6.17.0.jar`
+- `mods/tetrawear-1.20.1-1.0.0.jar`
 - `kubejs/data/tetra/`
 - `logs/latest.log` 中 `[CDCore][MMT Damage]`
 - `javap` 对关键 MMT class 的反编译结果
@@ -59,9 +60,9 @@
 
 | 目录 | 仓库 | 分支 | 在整合包中的角色 |
 |------|------|------|------|
-| `tetra/` | [mickelus/tetra](https://github.com/mickelus/tetra) | `1.20` | **核心模组**。提供模块化工具/武器/弓弩系统，包括材料三属性（硬度/密度/韧性）、模块组装、效果等级、改良打磨、工具腰带等完整框架。是 MMT 和 GeoTetraArmor 的依赖基础。JAR: `mods/tetra-1.20.1-6.9.0.jar` |
-| `tetracelium/` | [mickelus/tetracelium](https://github.com/mickelus/tetracelium) | `1.20` | **轻量级自定义 addon**。仅为一个 Tetra 小刀模块（`knife`）提供自定义模型和 GUI 贴图（glyph），不涉及数值设计，不新增效果或材料。JAR: `mods/tetracelium-1.20.1-1.3.1.jar` |
-| `GeoTetraArmor/` | [yiran1457/GeoTetraArmor](https://github.com/yiran1457/GeoTetraArmor) | `6.9.0` | **盔甲扩展模组**。为 Tetra 添加 GeckoLib 动画驱动的模块化盔甲系统（头盔/胸甲/护腿/靴子），按 Tetra 材料三属性计算护甲值和韧性，支持香草和重型两种风格。JAR: `mods/GeoTetraArmor-6.9.0-1.0.4-fix.jar` |
+| `tetra/` | [mickelus/tetra](https://github.com/mickelus/tetra) | `1.20` | **核心模组**。提供模块化工具/武器/弓弩系统，包括材料三属性（硬度/密度/韧性）、模块组装、效果等级、改良打磨、工具腰带等完整框架。是 MMT、Tetrawear 和 Tetracelium 的依赖基础。JAR: `mods/tetra-1.20.1-6.17.0.jar` |
+| `tetracelium/` | [mickelus/tetracelium](https://github.com/mickelus/tetracelium) | `1.20` | **官方作者附属**。为 Tetra 小刀模块提供自定义模型和 GUI 贴图。JAR: `mods/tetracelium-1.20.1-1.3.2.jar` |
+| Tetrawear | [Modrinth](https://modrinth.com/mod/tetrawear) | `1.20.1-1.0.0` | **官方作者护甲附属**。提供四件模块化护甲、35 个模块、energy/dodge/temperature/stealth/honing、原版护甲 replacements 和四个原生全息入口。JAR: `mods/tetrawear-1.20.1-1.0.0.jar`；详细记录见 `docs/dev-knowledge/tetrawear/README.md`。 |
 
 编译后的 JAR 通过 Packwiz 管理；KubeJS 覆盖（`kubejs/data/tetra/`）在此基础上调整模块定义、改良数值和材料属性。
 
@@ -357,21 +358,20 @@ Tetra 原版打磨分成两种：白值型直接加属性，倍率型使用 `**`
 | 盾带速度打磨 | `tetra:ability_cooldown -0.5` 到 `-2.5` | 保持原版 | 冷却白值型 |
 
 <a id="sec-1-9"></a>
-### 1.9 GeoTetraArmor 盔甲模块
+### 1.9 Tetrawear 盔甲模块
 
-当前包对 GeoTetraArmor 有 KubeJS 覆盖和中文说明，盔甲也按 Tetra 的材料三属性计算。
+当前包使用 Mickelus 的 Tetrawear 作为 Tetra `6.17+` 模块化护甲附属。四件物品及结构槽位为：
 
-| 部位/模块 | 风格 | 材料三属性对应收益 | 备注 |
-|---|---|---|---|
-| `armor/head/base`（头盔主体） | `vanilla`（香草）/ `heavy`（重型） | 硬度主要提高护甲；密度少量提高护甲并提高护甲韧性；韧性提高护甲韧性 | 重型约为香草 `1.2x` 护甲、`1.5x` 韧性，并降低移速 |
-| `armor/chest/base`（胸甲主体） | 香草/重型 | 同上 | 胸甲主体权重较高，是护甲值主要来源 |
-| `armor/chest/left/right`（左右肩甲） | 香草/重型 | 同上 | 分摊胸甲侧边收益 |
-| `armor/legs/belt`（腰带） | 香草/重型 | 同上 | 腿部中间模块，权重比单侧腿甲更高 |
-| `armor/legs/left/right`（左右腿甲） | 香草/重型 | 同上 | 分摊护腿收益 |
-| `armor/feet/left/right`（左右鞋子） | 香草/重型 | 同上 | 分摊靴子收益 |
-| `armor/chest/extra/dragon_wing`（龙翼额外件） | 特殊额外模块 | 主要走额外能力/外观入口 | 来自 GeoTetraArmor jar；可作为特殊胸甲扩展位 |
+| 物品 | 主要槽位 | 当前包重点模块 |
+|---|---|---|
+| `tetrawear:modular_helmet` | `helmet/lining`、`helmet/cover`、`helmet/attachment` | sallet、cap、guise |
+| `tetrawear:modular_chest` | `chest/inner`、`chest/outer`、`chest/arms` | cuirass、shoulderguards、heavy shoulderguards、armwraps、shroud |
+| `tetrawear:modular_leggings` | `leggings/lining`、`leggings/cover`、`leggings/attachment` | legplates、heavy legplates |
+| `tetrawear:modular_boots` | `boots/lining`、`boots/body`、`boots/sole`、`boots/attachment` | plate body、sole |
 
-盔甲模块的设计重点是：材料三属性不直接进入攻击乘区，但会通过护甲、护甲韧性、移动速度惩罚和附魔承载改变生存曲线。重型模块如果堆得太多，防御会变高，但移速损失也会叠加。
+标准板甲可由 sallet、cuirass、shoulderguards、legplates 和 plate body 构成，重甲可将肩甲和腿甲换成官方 heavy variants。当前包不覆盖这些模块和方案的防御系数，材料 `primary / secondary / tertiary`、固定属性与完整度代价均按 Tetrawear JAR 原始数据结算。
+
+Tetrawear 的重甲代价由 `tetrawear:agility`、energy 与 dodge 系统承担，不再使用 Geo 九部件累计约 `-45%` 移速的旧规则。官方还提供 temperature、stealth、honing、染色和盔甲纹饰；完整内容与迁移边界见 `docs/dev-knowledge/tetrawear/README.md`。
 
 <a id="sec-1-10"></a>
 ### 1.10 Tetra 效果参数语义：level 与 efficiency
@@ -380,7 +380,7 @@ Tetra 效果在模块/改良/协同 JSON 中以 `"效果ID": 数值` 或 `"效�
 
 #### 1.10.1 反序列化规则（EffectData$Deserializer）
 
-来源：`se.mickelus.tetra.module.data.EffectData$Deserializer`（位于 `mods/tetra-1.20.1-6.9.0.jar`）
+来源：`se.mickelus.tetra.module.data.EffectData$Deserializer`（位于 `mods/tetra-1.20.1-6.17.0.jar`）
 
 | JSON 写法 | levelMap | efficiencyMap | 说明 |
 |-----------|----------|---------------|------|
@@ -2486,7 +2486,7 @@ rg -n "\"replace\"|primaryAttributes|secondaryAttributes|tertiaryAttributes|effe
 rg -n "\"category\"|\"primary\"|\"secondary\"|\"tertiary\"" kubejs/data/tetra/materials -g "*.json"
 ```
 
-查 GeoTetraArmor 盔甲模块：
+查整合包中是否意外存在 Tetrawear 护甲数据覆盖：
 
 ```powershell
 rg -n "armor/(head|chest|legs|feet)|generic\\.armor|generic\\.armor_toughness|movement_speed" kubejs/data/tetra/modules/armor kubejs/data/tetra/schematics/armor

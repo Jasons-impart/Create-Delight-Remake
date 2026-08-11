@@ -2,8 +2,8 @@
   "item": "more_mod_tetra:modular_mmt_ring",
   "icon": {
     "textureLocation": "tetra:textures/gui/mmt_extra_holo.png",
-    "textureX": 126,
-    "textureY": 0
+    "textureX": 128,
+    "textureY": 2
   },
   "position": 15
 }

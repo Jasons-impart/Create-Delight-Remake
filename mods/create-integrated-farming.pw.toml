@@ -1,13 +1,13 @@
 name = "Create Integrated Farming [Unofficial]"
-filename = "create-integrated-farming-1.2.6-1.20.1.jar"
+filename = "create-integrated-farming-1.2.6-1.20.1-port.2.jar"
 side = "both"
 
 [download]
 hash-format = "sha1"
-hash = "951b05e6fc6c2a5635546abcfb61de164069af5f"
+hash = "b64b1e4b7fdcf7748496d00a8b364297354b82ff"
 mode = "metadata:curseforge"
 
 [update]
 [update.curseforge]
-file-id = 8385381
+file-id = 8616477
 project-id = 1600926

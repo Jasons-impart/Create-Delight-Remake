@@ -35,18 +35,5 @@
       "type": "forge:mod_loaded",
       "modid": "cataclysm"
     }
-  ],
-  "contexts": {
-    "armor": {
-      "attributes": {
-        "**generic.knockback_resistance": 0.05
-      },
-      "effects": {
-        "more_mod_tetra:ignitium_suit": [
-          15,
-          1
-        ]
-      }
-    }
-  }
+  ]
 }

@@ -79,10 +79,9 @@ TetraUtil.getEffectLevel = function(item, effect) {
 TetraUtil.getArmorEffectLevel = function(entity, effect) {
     if (entity == null)
         return 0
-    return global.CDServerJavaClasses.$GeoArmorEffectUtil.getArmorTotalEffectLevel(
-        entity,
-        global.CDServerJavaClasses.$ItemEffect.get(effect)
-    )
+    return global.CDServerJavaClasses.$TetrawearArmorHelper
+        .getArmorEffects(entity)
+        .getLevel(global.CDServerJavaClasses.$ItemEffect.get(effect))
 }
 
 /**

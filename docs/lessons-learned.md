@@ -514,14 +514,14 @@ gh pr create --body '... `ad_astra:xxx` ...'
 **Date**: 2026-07-18
 
 - **Problem**: 在相同资源路径放置新的 Tetra `materials` JSON 时，`MaterialStore` 会按合并式数据存储处理；只改三值而不声明完整替换，MMT 上游字段可能继续并入，导致静态文件看似正确但运行时材料结果与设计不一致。
-- **Fix/Lesson**: 覆盖现有材料时使用完整有效的 `MaterialData`，保留需要的原效果、contexts、物品和条件，并显式加入 `"replace": true`；修改后应逐项对照运行 JAR，确认除计划调整的数值外没有误删效果或护甲上下文。
+- **Fix/Lesson**: 覆盖现有材料时使用当前目标 Tetra 版本可识别的完整 `MaterialData`，保留需要的原效果、物品和条件，并显式加入 `"replace": true`；修改后应逐项对照运行 JAR，确认除计划调整的数值外没有误删有效字段。不要延续已从目标版本反序列化器移除的旧字段。
 
-## GeoTetraArmor materials require explicit armor contexts
+## GeoTetraArmor armor contexts are version-specific legacy data
 
 **Date**: 2026-07-19
 
-- **Problem**: Tetra Material Overhaul 会把材料根级 `effects` 放入 `default` context，而 GeoTetraArmor 模块只请求 `armor` 与具体部位 context；仅在根级声明的日耀守护、灵钢衬层等效果会出现在普通模块，却不会进入护甲的计算效果列表。
-- **Fix/Lesson**: 需要在护甲生效的材料必须同时保留根级效果并在 `contexts.armor.effects` 中显式声明护甲效果；只属于武器的效果不要复制进 `armor`，并通过实际装备 NBT、Buff 与 `ArmorEffectUtil` 汇总结果验证。
+- **Problem**: GeoTetraArmor `1.0.4-fix` 会请求 `armor` 与具体部位 context，因此 Tetra `6.9` 时必须重复声明护甲效果；但 Tetra `6.17` 的 `MaterialData` 已不读取 `contexts`，Tetrawear 也没有复刻该机制，继续保留这些 JSON 只会制造错误预期。
+- **Fix/Lesson**: 材料上下文必须按目标 Tetra 与护甲附属的真实反序列化器复核，不能跨版本照搬。Tetrawear 使用护甲物品自身的模块数据和 `ArmorHelper` 汇总效果；护甲专属属性若没有明确玩法需求，不要机械移到材料根级，也不要为旧 Geo 行为重新实现一套上下文模拟。
 
 ## Black Knight Armor removes externally applied Solar Shield
 

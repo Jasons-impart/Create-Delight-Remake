@@ -1,0 +1,54 @@
+{
+    "slots": [
+        "crossbow/stock"
+    ],
+    "type": "tetra:basic_major_module",
+    "improvements": [
+        "tetra:crossbow/stock/",
+        "tetra:crossbow/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": [
+                "tetra:wood/",
+                "tetra:rod/stick",
+                "tetra:metal/"
+            ],
+            "key": "snipe_stock/",
+            "attributes": {
+                "tetra:draw_speed": 0.58,
+                "tetra:draw_strength": 1.5
+            },
+            "aspects": {
+                "crossbow": 2,
+                "breakable": 2
+            },
+            "durability": 85,
+            "extract": {
+                "primaryAttributes": {
+                    "tetra:draw_strength": 1
+                },
+                "secondaryAttributes": {
+                    "tetra:draw_speed": 0.25,
+                    "tetra:draw_strength": 0.125
+                },
+                "durability": 0.7,
+                "integrity": 0.75,
+                "magicCapacity": 1,
+                "glyph": {
+                    "textureX": 128,
+                    "textureY": 48
+                },
+                "availableTextures": [
+                    ""
+                ],
+                "models": [
+                    {
+                        "location": "more_mod_tetra:item/module/crossbow/more_mod_tetra/snipe_stock"
+                    }
+                ]
+            }
+        }
+    ]
+}

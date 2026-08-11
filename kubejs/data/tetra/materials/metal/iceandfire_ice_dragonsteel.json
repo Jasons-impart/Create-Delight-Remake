@@ -38,13 +38,5 @@
       "type": "forge:mod_loaded",
       "modid": "iceandfire"
     }
-  ],
-  "contexts": {
-    "armor": {
-      "effects": {
-        "more_mod_tetra:freeze_thorns": 10,
-        "more_mod_tetra:armor_last_stand": 8
-      }
-    }
-  }
+  ]
 }

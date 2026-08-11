@@ -1,0 +1,82 @@
+{
+    "slots": [
+        "modular_mmt_bow/stave"
+    ],
+    "type": "tetra:basic_major_module",
+    "improvements": [
+        "tetra:bow/",
+        "tetra:bow/long_stave/",
+        "tetra:bow/shared_stave/",
+        "tetra:bow/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": [
+                "tetra:wood/",
+                "tetra:rod/stick",
+                "tetra:metal/"
+            ],
+            "key": "long_stave/",
+            "attributes": {
+                "tetra:draw_speed": 1.6,
+                "tetra:draw_strength": 1.5
+            },
+            "aspects": {
+                "bow": 2,
+                "breakable": 2
+            },
+            "effects": {
+                "overbowed": 60,
+                "spread": [
+                    0,
+                    98.5
+                ]
+            },
+            "durability": 171,
+            "extract": {
+                "primaryAttributes": {
+                    "tetra:draw_speed": 0.22,
+                    "tetra:draw_strength": 1.3
+                },
+                "tertiaryAttributes": {
+                    "tetra:draw_speed": -0.04,
+                    "tetra:draw_strength": 0.75
+                },
+                "primaryEffects": {
+                    "overbowed": -6
+                },
+                "durability": 1.05,
+                "integrity": -1,
+                "magicCapacity": 1,
+                "glyph": {
+                    "textureX": 144,
+                    "textureY": 32
+                },
+                "availableTextures": [
+                    "crude"
+                ],
+                "models": [
+                    {
+                        "location": "tetra:item/module/bow/stave/long/"
+                    },
+                    {
+                        "type": "tetra:filtered_grid_texture",
+                        "location": "tetra:item/module/bow/stave/long/0_",
+                        "filter": "draw_0"
+                    },
+                    {
+                        "type": "tetra:filtered_grid_texture",
+                        "location": "tetra:item/module/bow/stave/long/1_",
+                        "filter": "draw_1"
+                    },
+                    {
+                        "type": "tetra:filtered_grid_texture",
+                        "location": "tetra:item/module/bow/stave/long/2_",
+                        "filter": "draw_2"
+                    }
+                ]
+            }
+        }
+    ]
+}

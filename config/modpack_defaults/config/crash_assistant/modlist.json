@@ -399,10 +399,15 @@
     "name": "Create Delight Core",
     "version": "1.20.1-dev"
   },
-  "create-integrated-farming-1.2.6-1.20.1.jar": {
+  "create-enchantment-industry-2.5.0b.jar": {
+    "modId": "create-enchantment-industry",
+    "name": "Create: Enchantment Industry",
+    "version": "2.5.0b"
+  },
+  "create-integrated-farming-1.2.6-1.20.1-port.2.jar": {
     "modId": "create-integrated-farming",
     "name": "Create Integrated Farming [Unofficial]",
-    "version": "1.2.6-1.20.1"
+    "version": "1.2.6-1.20.1-port.2"
   },
   "create-new-age-1.2.0+forge-mc1.20.1.jar": {
     "modId": "create-new-age",
@@ -438,11 +443,6 @@
     "modId": "create_deepfried-forge",
     "name": "Create: Deepfried",
     "version": "1.20.1-0.1.3C"
-  },
-  "create_enchantment_industry-1.4.0-for-create-6.0.8.jar": {
-    "modId": "create_enchantment_industry",
-    "name": "Create: Enchantment Industry",
-    "version": "1.4.0-for-create-6.0.8"
   },
   "create_enhanced_schematicannon-1.0.5-fork.jar": {
     "modId": "create_enhanced_schematicannon",
@@ -538,6 +538,11 @@
     "modId": "createdieselgenerators",
     "name": "Create: Diesel Generators",
     "version": "1.20.1-1.3.12"
+  },
+  "CreateDragonsPlus-1.11.6.jar": {
+    "modId": "createdragonsplus",
+    "name": "Create: Dragons Plus",
+    "version": "1.11.6"
   },
   "createfactorycontroller-1.0.0-1.20.1-alpha-2.jar": {
     "modId": "createfactorycontroller",
@@ -938,11 +943,6 @@
     "modId": "generalfeedback",
     "name": "General Feedback",
     "version": "1.0.1"
-  },
-  "GeoTetraArmor-6.9.0-1.0.4-fix.jar": {
-    "modId": "geotetraarmor",
-    "name": "GeoTetraArmor",
-    "version": "6.9.0-1.0.4-fix"
   },
   "Glodium-1.20-1.5-forge.jar": {
     "modId": "glodium",
@@ -1729,11 +1729,6 @@
     "name": "Terralith",
     "version": "1.20.x_v2.5.4"
   },
-  "Tetra JS-2001-6.9.0-1.0.2.jar": {
-    "modId": "tetra js",
-    "name": "TetraJS",
-    "version": "2001-6.9.0-1.0.2"
-  },
   "Tetra View-6.9.0-1.0.2.jar": {
     "modId": "tetra view",
     "name": "Tetra View",
@@ -1744,15 +1739,15 @@
     "name": "Tetra",
     "version": "1.20.1-6.17.0"
   },
-  "tetra_immersion-0.1.1.jar": {
+  "tetra_immersion-0.1.4.jar": {
     "modId": "tetra_immersion",
     "name": "Tetra Immersion",
-    "version": "0.1.1"
+    "version": "0.1.4"
   },
-  "tetra_insight-0.1.2.jar": {
+  "tetra_insight-0.1.4.jar": {
     "modId": "tetra_insight",
     "name": "Tetra Insight",
-    "version": "0.1.2"
+    "version": "0.1.4"
   },
   "tetracelium-1.20.1-1.3.2.jar": {
     "modId": "tetracelium",
@@ -1768,6 +1763,11 @@
     "modId": "tetratic-combat-expanded",
     "name": "Tetratic Combat Expanded",
     "version": "1.20-2.8.3"
+  },
+  "tetrawear-1.20.1-1.0.0.jar": {
+    "modId": "tetrawear",
+    "name": "tetrawear",
+    "version": "1.20.1-1.0.0"
   },
   "the_bumblezone-7.13.3+1.20.1-forge.jar": {
     "modId": "the_bumblezone",

@@ -1,9 +1,0 @@
-{
-  "item": "geotetraarmor:head",
-  "icon": {
-    "textureLocation": "geotetraarmor:textures/gui/gta.png",
-    "textureX": 84,
-    "textureY": 0
-  },
-  "position": 10
-}

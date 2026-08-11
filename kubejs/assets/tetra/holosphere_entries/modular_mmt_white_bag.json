@@ -2,8 +2,8 @@
   "item": "more_mod_tetra:modular_mmt_white_bag",
   "icon": {
     "textureLocation": "tetra:textures/gui/mmt_extra_holo.png",
-    "textureX": 42,
-    "textureY": 126
+    "textureX": 44,
+    "textureY": 128
   },
   "position": 25
 }

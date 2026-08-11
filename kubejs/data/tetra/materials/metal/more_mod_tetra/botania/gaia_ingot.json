@@ -38,18 +38,5 @@
       "type": "forge:mod_loaded",
       "modid": "botania"
     }
-  ],
-  "contexts": {
-    "armor": {
-      "effects": {
-        "more_mod_tetra:diamond_guard": 5,
-        "more_mod_tetra:mana_regeneration": 20,
-        "more_mod_tetra:mana_repair": 5
-      },
-      "attributes": {
-        "attributeslib:crit_chance": 0.05,
-        "attributeslib:crit_damage": 0.1
-      }
-    }
-  }
+  ]
 }

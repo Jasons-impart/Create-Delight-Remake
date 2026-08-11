@@ -5,7 +5,7 @@
 
 ## 目标
 
-保留 Black Knight Armor 的武器主动能力、套装状态机、风暴生物和升级祭坛等特色，同时解决材料定位重复、配方同质化、数值失控和流程绕过问题，并将 Alex's Caves、Cataclysm、The Bumblezone、NetherExp、Endergetic 等冒险内容接入材料分支，再将合适的能力用于 Tetra、GeoTetraArmor、Better Combat、Farmer's Delight 与 Create。
+保留 Black Knight Armor 的武器主动能力、套装状态机、风暴生物和升级祭坛等特色，同时解决材料定位重复、配方同质化、数值失控和流程绕过问题，并将 Alex's Caves、Cataclysm、The Bumblezone、NetherExp、Endergetic 等冒险内容接入材料分支，再将合适的能力用于 Tetra、Tetrawear、Better Combat、Farmer's Delight 与 Create。
 
 ## 第一阶段实施记录
 
@@ -265,7 +265,7 @@ Royal Jelly 不进入日光锭量产配方，只在阳光精华或日耀最终�
 
 终极龙心应继续接入末影守卫、虚空结晶、不朽胚胎或星系终局阶段，并改为 Curios、指定槽位或完整套装能力；不建议仅凭背包持有就提供飞行。Endergetic 的 Portaplasm 与 Poise Cluster 更适合进入末地 Tetra 模块、能力核心或装备结构强化，不进入基础终结龙锭。
 
-## Tetra 与 GeoTetraArmor 接入
+## Tetra 与 Tetrawear 接入
 
 Tetra 会把材料效果直接合并到使用该材料的模块中，因此材料只承载一级身份效果和少量基础效果；主动技能、完整套装状态机和更高等级能力仍使用限定 schematic/improvement，避免普通材料直接复制原生套装的完整能力。
 
@@ -286,20 +286,20 @@ Tetra 会把材料效果直接合并到使用该材料的模块中，因此材�
 |---|---|
 | 暗炎锋刃 | 近战命中使目标燃烧 `2 + 等级` 秒；材料同时提供 MMT 重伤 I，使目标在 10 秒内降低 20% 所有生命恢复 |
 | 怒魂核心 | 玩家每损失 10% 生命值，每级提高 1% 近战伤害；每级最多贡献 5%，总加成最高 30% |
-| 日耀守护 | GeoTetraArmor 总等级加主副手最高等级共同决定减伤，使日光盾牌同样可用；每 7 秒恢复一层、最多三层，受击消耗一层并每级减伤 4%、上限 24%，同时反射部分已减免伤害；复用 `blackknightarmor:solar_shield` Buff 显示 |
+| 日耀守护 | Tetrawear `ArmorHelper` 汇总等级加主副手最高等级共同决定减伤，使日光盾牌同样可用；每 7 秒恢复一层、最多三层，受击消耗一层并每级减伤 4%、上限 24%，同时反射部分已减免伤害；复用 `blackknightarmor:solar_shield` Buff 显示 |
 | 霜牙重击 | 对已经处于 Ice and Fire 冰冻状态的目标每级增伤 3%、上限 18%，并提高击退；随后原有 `createdelight:frozen` 继续刷新冰冻 |
-| 灵钢衬层 | GeoTetraArmor 穿戴者停止攻击和受击后进入灵体状态，获得速度并清除附近怪物仇恨；复用 `blackknightarmor:ghost` Buff 显示，等级缩短等待并扩大范围 |
+| 灵钢衬层 | Tetrawear 穿戴者停止攻击和受击后进入灵体状态，获得速度并清除附近怪物仇恨；复用 `blackknightarmor:ghost` Buff 显示，等级缩短等待并扩大范围 |
 | 红莲冲锋 | 冲刺或完全蓄力近战每级增伤 4%、上限 24%，延长燃烧并短暂给予防火 Buff |
 
 原模组的 `blackknightarmor:berserk` Buff 即使最低等级也会直接增加约 3 点攻击和 0.2 攻速，不适合作为主题材料的基础 Buff；怒魂因此使用独立的按失血比例增伤，不直接套用原狂战 Buff。`red_dragon` 的完整范围灼烧和 `ice_crystal` 的自动冰箭也保留给原生完整套装，不由普通材料常驻获得。
 
-日光锭的主防御不是简单堆高 `primary`：GeoTetraArmor 普通胸甲公式下，它约提供 `3.15` 护甲与 `0.413` 护甲韧性；悚怖钢约为 `3.28` 护甲与 `0.307` 护甲韧性。因此日光锭会少一点基础护甲和武器白值，但明显提高护甲韧性，并由高密度带来更重、更慢的代价。
+日光锭的主防御不是简单堆高 `primary`：它以较低硬度换取更高密度与韧性，实际护甲、护甲韧性和重装代价完全按 Tetrawear 官方模块定义结算，不再为延续 GeoTetraArmor 档位覆盖模块系数。日耀守护与灵钢等身份效果仍由材料根级 `ItemEffect` 和 `ArmorHelper` 读取，不依赖旧护甲数值迁移。
 
 | 原生能力 | Tetra/护甲改良 | 适用模块 |
 |---|---|---|
 | 黑骑士燃烧模式 | 暗炎锋刃 | 刀刃、重刃 |
 | 狂战士累计伤害 | 怒魂核心 | 刀刃、握柄、护甲组合 |
-| 日耀盾充能反击 | 日耀守护 | 盾板、GeoTetraArmor |
+| 日耀盾充能反击 | 日耀守护 | 盾板、Tetrawear |
 | 白色巨兽自动冰箭 | 巨兽之眼 | 头盔或完整护甲组合 |
 | 幽灵脱战 | 灵钢衬层 | 护甲、绑定件 |
 | 风弹与追踪箭 | 风暴核心 | 弓臂、弓弦、长柄 |
@@ -351,7 +351,7 @@ Tetra 会把材料效果直接合并到使用该材料的模块中，因此材�
 6. 将 Solar 与 Berserk 的玩家状态从静态 UUID Map 迁移到持久化 capability/NBT，并在退出、死亡和重载时清理。
 7. 修复 `cold_desire` 来源，统一燃烧剑魂、阳光精华和无尽愤怒的获取逻辑。
 8. 将终极龙心飞行限制到 Curios、指定槽位或完整套装。
-9. 为 Tetra/GeoTetraArmor 暴露能力检测入口，而不是在模组中硬编码 Tetra 具体类。
+9. 为 Tetra/Tetrawear 暴露能力检测入口，而不是在模组中硬编码具体模块路径。
 
 ## 实施顺序
 
@@ -373,7 +373,7 @@ Tetra 会把材料效果直接合并到使用该材料的模块中，因此材�
 
 - 先实现暗炎锋刃、怒魂核心、灵钢衬层和风暴核心。
 - 通过实战测试确定效果等级、完整度消耗和模块白名单。
-- 验证 GeoTetraArmor、多件组合、MMT 效果合并和 Better Combat 交互。
+- 验证 Tetrawear 多件组合、`ArmorHelper` 效果合并和 Better Combat 交互。
 
 ### P3：内容完善
 
@@ -384,7 +384,7 @@ Tetra 会把材料效果直接合并到使用该材料的模块中，因此材�
 ## 验证重点
 
 - 同一次伤害事件中龙息和普通减伤只结算一次。
-- 原生套装与 Tetra/GeoTetraArmor 的能力强度分层明确。
+- 原生套装与 Tetra/Tetrawear 的能力强度分层明确。
 - 主题材料不会在不合理的 Tetra 模块上出现能力。
 - 任何终结龙锭、终极龙心和高阶武器来源都不能绕过对应阶段。
 - 升级祭坛正确保留附魔、名称、耐久和其他 NBT。

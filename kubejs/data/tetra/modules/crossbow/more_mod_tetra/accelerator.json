@@ -1,0 +1,40 @@
+{
+    "slots": [
+        "crossbow/attachment_0",
+        "crossbow/attachment_1"
+    ],
+    "type": "tetra:basic_module",
+    "variants": [
+        {
+            "materials": [
+                "tetra:metal/"
+            ],
+            "key": "accelerator/",
+            "integrity": -1,
+            "durability": 12,
+            "extract": {
+                "primaryEffects": {
+                    "piercing": 0.7,
+                    "velocity": 5
+                },
+                "secondaryEffects": {
+                    "piercing": 0.5,
+                    "velocity": 5
+                },
+                "durability": 0.2,
+                "glyph": {
+                    "textureX": 112,
+                    "textureY": 112
+                },
+                "availableTextures": [
+                    ""
+                ],
+                "models": [
+                    {
+                        "location": "more_mod_tetra:item/module/crossbow/more_mod_tetra/accelerator"
+                    }
+                ]
+            }
+        }
+    ]
+}

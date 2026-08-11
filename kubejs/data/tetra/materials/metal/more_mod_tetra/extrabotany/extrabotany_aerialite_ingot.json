@@ -40,17 +40,5 @@
       "type": "forge:mod_loaded",
       "modid": "extrabotany"
     }
-  ],
-  "contexts": {
-    "armor": {
-      "effects": {
-        "more_mod_tetra:mana_regeneration": 7,
-        "more_mod_tetra:mana_repair": 2
-      },
-      "attributes": {
-        "attributeslib:crit_chance": 0.02,
-        "attributeslib:crit_damage": 0.05
-      }
-    }
-  }
+  ]
 }

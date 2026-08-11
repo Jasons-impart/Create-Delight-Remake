@@ -78,7 +78,7 @@ oneenoughdamage:com/github/l_ender/cataclysm/entity/animation_monster/boss_monst
 | `/r` | replace，替换固定伤害 | `属性值 × global_damage` |
 | `/m` | multiply，乘算原始伤害 | `原始伤害 × 属性值 × global_damage` |
 
-Minecraft 中 `2.0` 点伤害等于一颗心。当前 OED Mixin 在 `LivingEntity.hurt(DamageSource, float)` 入口修改传入的 `amount`，因此它是护甲、保护附魔和抗性等受击侧结算前的入射伤害，不是最终生命值差；完整阶段、GeoTetraArmor/宝石档位以及 Quality Food 抗性食物的乘算影响见 `docs/attributeslib-armor-balance-analysis.md`。
+Minecraft 中 `2.0` 点伤害等于一颗心。当前 OED Mixin 在 `LivingEntity.hurt(DamageSource, float)` 入口修改传入的 `amount`，因此它是护甲、保护附魔和抗性等受击侧结算前的入射伤害，不是最终生命值差；完整阶段、Tetrawear/宝石档位以及 Quality Food 抗性食物的乘算影响见 `docs/attributeslib-armor-balance-analysis.md`。
 
 ### 全局伤害倍率
 
