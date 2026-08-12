@@ -15,6 +15,7 @@ global.CDStartupJavaClasses = {
     // Common startup integrations
     $BrassDroneEntity: Java.loadClass("net.mcreator.createstuffadditions.entity.BrassDroneEntity"),
     $CustomPortalBuilder: Java.loadClass("net.kyrptonaught.customportalapi.api.CustomPortalBuilder"),
+    $FoodBuilder: Java.loadClass("dev.latvian.mods.kubejs.item.FoodBuilder"),
     $FoodInstance: Java.loadClass("com.tarinoita.solsweetpotato.tracking.FoodInstance"),
     $FoodList: Java.loadClass("com.tarinoita.solsweetpotato.tracking.FoodList"),
     $ItemEffect: Java.loadClass("se.mickelus.tetra.effect.ItemEffect"),

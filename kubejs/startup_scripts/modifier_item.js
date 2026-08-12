@@ -46,12 +46,24 @@ ItemEvents.modification(e => {
      * @param {number} [duration] 以s为单位,若不填则默认为10s
      * @param {number} [strength] 实际值为strength+1,若不填则默认为0
      * @param {number} [probability] 概率,若不填则默认为1
+     * @param {number} [overwrite] 是否覆盖原有效果，默认1；传入0时保留原有效果并追加
      */
-    let food_effects = function (food, effect, duration, strength, probability) {
+    let food_effects = function (food, effect, duration, strength, probability, overwrite) {
         duration = duration || 10
         strength = strength || 0
         probability = probability || 1
+        overwrite = overwrite === undefined ? 1 : overwrite
         e.modify(food, item => {
+            if (overwrite === 0) {
+                if (item.getFoodProperties() === null) {
+                    console.warn(`[Create Delight] ${item.getId()} is not a food item; cannot append ${effect}`)
+                    return
+                }
+                item.foodProperties = new global.CDStartupJavaClasses.$FoodBuilder(item.getFoodProperties())
+                    .effect(effect, 20 * duration, strength, probability)
+                    .build()
+                return
+            }
             item.foodProperties = food => {
                 food.effect(effect, 20 * duration, strength, probability)
             }
@@ -444,6 +456,19 @@ ItemEvents.modification(e => {
     food_effects('createcafe:caramel_iced_coffee', "farmersdelight:nourishment", 30, 0, 1)
     remove_effects('createcafe:coconut_iced_coffee', "minecraft:water_breathing"),
     food_effects('createcafe:coconut_iced_coffee', "minecraft:water_breathing", 60, 0, 1)
+
+    // 螃蟹料理：横行霸道
+    food_effects('crabbersdelight:crab_legs', 'youkaishomecoming:craby', 30, 0, 0.05, 0)
+    food_effects('crabbersdelight:crab_cakes', 'youkaishomecoming:craby', 300, 0, 1, 0)
+    food_effects('collectorsreap:chieftain_claw', 'youkaishomecoming:craby', 45, 1, 0.5, 0)
+    food_effects('collectorsreap:chieftain_leg', 'youkaishomecoming:craby', 45, 1, 0.125, 0)
+    food_effects('collectorsreap:chieftain_crab_meat', 'youkaishomecoming:craby', 45, 1, 0.1666, 0)
+    food_effects('collectorsreap:crab_miso', 'youkaishomecoming:craby', 45, 1, 0.5, 0)
+    food_effects('collectorsreap:crab_noodles', 'youkaishomecoming:craby', 300, 0, 1, 0)
+    food_effects('collectorsreap:crab_lasagna', 'youkaishomecoming:craby', 300, 0, 1, 0)
+    food_effects('collectorsreap:buttered_legs', 'youkaishomecoming:craby', 300, 0, 1, 0)
+    food_effects('collectorsreap:sea_wrap', 'youkaishomecoming:craby', 450, 1, 1, 0)
+    food_effects('collectorsreap:land_and_sea_burger', 'youkaishomecoming:craby', 450, 1, 1, 0)
 
     //咖啡效果
     coffee_effect('createcafe:strawberry_iced_coffee', 600, 0, 600)

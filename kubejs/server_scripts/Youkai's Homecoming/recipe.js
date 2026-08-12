@@ -80,7 +80,11 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:emptying/burgundy_bottle_emptying",
         "youkaishomecoming:emptying/champagne_bottle_emptying",
         "youkaishomecoming:pork_rice_ball",
-        "youkaishomecoming:shaved_ice_over_rice"
+        "youkaishomecoming:shaved_ice_over_rice",
+        "farmersdelight:cutting/cooked_crab",
+        "youkaishomecoming:crab_meat",
+        "farmersdelight:cutting/cooked_crab_using_deployer",
+        "youkaishomecoming:crab_meat_using_deployer"
     ])
     remove_recipes_type(e, [
         "youkaishomecoming:moka_pot",
@@ -520,4 +524,9 @@ ServerEvents.recipes(e => {
         .transitionalItem(iner)
         .id("createdelight:sequenced_assembly/shaved_ice_over_rice")
     }
+
+    cutting(e, "youkaishomecoming:steamed_crab", [
+        "4x crabbersdelight:crab_legs",
+        "youkaishomecoming:crab_meat"
+    ])
 })
