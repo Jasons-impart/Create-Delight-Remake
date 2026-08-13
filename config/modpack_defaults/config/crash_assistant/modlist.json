@@ -564,10 +564,10 @@
     "name": "Create: Improved Display Link Experience",
     "version": "1.20.1-1.3"
   },
-  "CreateLazyTick-2.5.15-6.0.x-forge-1.20.1.jar": {
+  "CreateLazyTick-2.5.21-6.0.x-forge-1.20.1.jar": {
     "modId": "createlazytick",
     "name": "Create:LazyTick",
-    "version": "2.5.15-6.0.x-forge-1.20.1"
+    "version": "2.5.21-6.0.x-forge-1.20.1"
   },
   "createliquidfuel-2.1.1-1.20.1.jar": {
     "modId": "createliquidfuel",
