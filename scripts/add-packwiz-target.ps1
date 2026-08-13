@@ -11,7 +11,7 @@ param(
     [string]$Side,
 
     [string]$PackwizUrl = "https://github.com/Jasons-impart/packwiz/releases/latest/download/packwiz.exe",
-    [string]$Proxy = "",
+    [string]$Proxy = $env:PACKWIZ_PROXY,
     [switch]$SkipSync,
     [switch]$DryRun
 )
@@ -268,7 +268,7 @@ finally {
 
 if (-not $SkipSync) {
     Write-Status "Syncing local Packwiz assets..."
-    & $SyncPackwizAssetsScript
+    & $SyncPackwizAssetsScript -Proxy $Proxy
     if ($LASTEXITCODE -ne 0) {
         throw "sync-packwiz-assets.ps1 exited with code $LASTEXITCODE."
     }
