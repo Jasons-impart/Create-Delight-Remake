@@ -544,10 +544,10 @@
     "name": "Create: Dragons Plus",
     "version": "1.11.6"
   },
-  "createfactorycontroller-1.0.0-1.20.1-alpha-2.jar": {
+  "createfactorycontroller-1.1.1-forge-1.20.1.jar": {
     "modId": "createfactorycontroller",
     "name": "Create: Factory Controller",
-    "version": "1.0.0-1.20.1-alpha-2"
+    "version": "1.1.1-forge-1.20.1"
   },
   "CreateFastSchematicCannon-1.4.1-6.0.x-forge-1.20.1.jar": {
     "modId": "createfastschematiccannon",
@@ -1744,10 +1744,10 @@
     "name": "Tetra Immersion",
     "version": "0.1.4"
   },
-  "tetra_insight-0.1.4.jar": {
+  "tetra_insight-0.1.5.jar": {
     "modId": "tetra_insight",
     "name": "Tetra Insight",
-    "version": "0.1.4"
+    "version": "0.1.5"
   },
   "tetracelium-1.20.1-1.3.2.jar": {
     "modId": "tetracelium",

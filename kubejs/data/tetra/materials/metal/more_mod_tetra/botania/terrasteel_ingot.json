@@ -25,9 +25,7 @@
     "default"
   ],
   "material": {
-    "items": [
-      "botania:terrasteel_ingot"
-    ]
+    "tag": "createdelight:disabled_mmt_fragile_materials"
   },
   "requiredTools": {
     "hammer_dig": "minecraft:stone"

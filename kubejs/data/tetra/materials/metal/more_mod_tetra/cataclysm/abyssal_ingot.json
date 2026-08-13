@@ -23,9 +23,7 @@
     "metal"
   ],
   "material": {
-    "items": [
-      "more_mod_tetra:abyssal_ingot"
-    ]
+    "tag": "createdelight:disabled_mmt_fragile_materials"
   },
   "requiredTools": {
     "hammer_dig": 7

@@ -26,9 +26,7 @@
     "default"
   ],
   "material": {
-    "items": [
-      "botania:gaia_ingot"
-    ]
+    "tag": "createdelight:disabled_mmt_fragile_materials"
   },
   "requiredTools": {
     "hammer_dig": "minecraft:iron"

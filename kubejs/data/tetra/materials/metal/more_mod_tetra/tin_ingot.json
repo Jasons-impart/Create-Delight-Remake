@@ -1,27 +1,28 @@
-{
-  "replace": true,
-  "key": "tin_ingot",
-  "category": "metal",
-  "hidden": true,
-  "hiddenOutcomes": true,
-  "primary": 0,
-  "secondary": 0,
-  "tertiary": 0,
-  "durability": 0,
-  "integrityCost": 0,
-  "integrityGain": 0,
-  "magicCapacity": 0,
-  "toolLevel": 0,
-  "toolEfficiency": 0,
-  "tints": {
-    "glyph": "000000",
-    "texture": "000000"
-  },
-  "textures": ["crude"],
-  "material": {
-    "items": ["minecraft:barrier"]
-  },
-  "requiredTools": {
-    "hammer_dig": 4
-  }
+﻿{
+    "key":  "tin_ingot",
+    "category":  "metal",
+    "primary":  5.2,
+    "secondary":  2.1,
+    "tertiary":  2.7,
+    "durability":  320,
+    "integrityCost":  2,
+    "integrityGain":  6,
+    "magicCapacity":  100,
+    "toolLevel":  "minecraft:iron",
+    "toolEfficiency":  5,
+    "tints":  {
+                  "glyph":  "F5F7F9",
+                  "texture":  "F5F7F9"
+              },
+    "textures":  [
+                     "metal",
+                     "default"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "requiredTools":  {
+                          "hammer_dig":  "minecraft:stone"
+                      },
+    "replace":  true
 }

@@ -1,27 +1,35 @@
-{
-  "replace": true,
-  "key": "fake_rose_golden_silk",
-  "category": "fibre",
-  "hidden": true,
-  "hiddenOutcomes": true,
-  "primary": 0,
-  "secondary": 0,
-  "tertiary": 0,
-  "durability": 0,
-  "integrityCost": 0,
-  "integrityGain": 0,
-  "magicCapacity": 0,
-  "toolLevel": 0,
-  "toolEfficiency": 0,
-  "tints": {
-    "glyph": "000000",
-    "texture": "000000"
-  },
-  "textures": ["crude"],
-  "material": {
-    "items": ["minecraft:barrier"]
-  },
-  "requiredTools": {
-    "hammer_dig": 4
-  }
+﻿{
+    "key":  "fake_rose_golden_silk",
+    "category":  "fibre",
+    "primary":  3.1,
+    "secondary":  1.1,
+    "tertiary":  4,
+    "durability":  100,
+    "integrityCost":  1,
+    "integrityGain":  8.5,
+    "magicCapacity":  400,
+    "toolLevel":  0,
+    "toolEfficiency":  0,
+    "tints":  {
+                  "glyph":  "f4cbb9",
+                  "texture":  "f4cbb9"
+              },
+    "textures":  [
+                     "shiny",
+                     "metal",
+                     "default"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "attributes":  {
+                       "**tetra:draw_speed":  -0.1
+                   },
+    "effects":  {
+                    "more_mod_tetra:fake_enhanced":  1
+                },
+    "requiredTools":  {
+                          "cut":  "minecraft:wood"
+                      },
+    "replace":  true
 }
