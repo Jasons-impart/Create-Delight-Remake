@@ -34,6 +34,7 @@
 
 | 糖蜜加工替代未精炼糖汁 | 甘蔗、甜菜根、甘草藤与糖浆可加工为 Cosmopolitan 糖蜜；原自定义未精炼糖汁及其桶不再显示，品质食物流体和相关配方同步转用糖蜜。 | 移除自定义流体注册、语言和创造标签项，替换压实、真空与加压配方并清理冲突的 Cosmopolitan 糖蜜制糖配方。 | `kubejs/startup_scripts/registry_fluid.js`、`kubejs/server_scripts/{Bakeries,Cosmopolitan,Create Cafe,Custom}/`、`kubejs/data/quality_food_fluids/tags/fluids/quality_fluids.json` | 无 | JS 与 JSON 静态检查通过；需重启并在 JEI 中复核糖蜜产物、数量和制糖配方。 |
 | 妖怪料理横行霸道 | 指定料理可按各自概率和时长给予“横行霸道”，物品悬浮提示会以妖怪归家原生效果格式显示概率与时长，同时保留料理原有效果。 | `food_effects(..., overwrite)` 默认以 `1` 覆盖；传 `0` 时借助 KubeJS `FoodBuilder` 复制现有 `FoodProperties` 后链式追加 `youkaishomecoming:craby`，由 JEED 格式化展示。 | `kubejs/startup_scripts/{00_java_classes,modifier_item}.js` | 无 | 已在游戏内验证：原有效果与横行霸道均正常保留、显示和生效。 |
+| 赞助者头衔同步 | `donate_list.json` 中的玩家登录后自动获得对应的 FTB Ranks 名称格式；默认开启，可通过 CDC 服务端配置关闭。 | CDC 可选加载 FTB Ranks 兼容层，在登录事件中读取服务端根目录名单，按玩家稳定创建/复用 rank 并幂等更新 `ftbranks.name_format`；KubeJS 登录脚本仅保留首次登录发放任务书。 | `CDC-mod-src/src/main/java/io/github/jasonsimpart/createdelightcore/compat/ftbranks/FTBRanksCompat.java`、`defaultconfigs/createdelightcore-server.toml`、`kubejs/server_scripts/Custom/player_login.js`、`donate_list.json` | [Issue #2159](https://github.com/Jasons-impart/Create-Delight-Remake/issues/2159) | CDC clean build 与 JAR/Packwiz 哈希静态核验通过；需在加载 FTB Ranks 的游戏实例中登录赞助者并验证 rank 持久化。 |
 
 ## 条目模板
 
