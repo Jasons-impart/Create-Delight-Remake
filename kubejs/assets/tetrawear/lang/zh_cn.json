@@ -46,6 +46,7 @@
   "tetrawear.attribute.energy_item_use_cost.name": "物品能力精力消耗修正",
   "tetra.stats.energy_item_use_cost": "能力消耗修正",
   "tetra.stats.energy_item_use_cost.tooltip": "穿戴者的精力未耗尽时，物品能力精力消耗修正：§e%s§r",
+  "tetrawear.attribute.energy_defence_cost.name": "精力防御消耗修正",
   "tetra.stats.energy_defence_cost": "防御消耗修正",
   "tetra.stats.energy_defence_cost.tooltip": "精力防御的精力消耗修正：§e%s§r",
   "tetrawear.attribute.energy_attack_cost.name": "精力攻击消耗修正",
