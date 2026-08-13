@@ -1,0 +1,9 @@
+{
+  "item": "more_mod_tetra:modular_mmt_heart_protecting_mirror",
+  "icon": {
+    "textureLocation": "tetra:textures/gui/mmt_extra_holo.png",
+    "textureX": 86,
+    "textureY": 44
+  },
+  "position": 18
+}

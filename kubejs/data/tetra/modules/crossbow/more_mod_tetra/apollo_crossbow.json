@@ -1,0 +1,70 @@
+{
+    "slots": [
+        "crossbow/stave"
+    ],
+    "type": "tetra:basic_major_module",
+    "improvements": [
+        "tetra:crossbow/stave/",
+        "tetra:crossbow/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": [
+                "tetra:wood/",
+                "tetra:rod/stick",
+                "tetra:metal/"
+            ],
+            "key": "apollo_crossbow/",
+            "attributes": {
+                "tetra:draw_speed": 0.55,
+                "tetra:draw_strength": 1.5
+            },
+            "aspects": {
+                "crossbow": 2,
+                "breakable": 2
+            },
+            "effects": {
+                "multishot": [
+                    1,
+                    10
+                ]
+            },
+            "durability": 317,
+            "extract": {
+                "primaryAttributes": {
+                    "tetra:draw_speed": 0.16,
+                    "tetra:draw_strength": 1.75
+                },
+                "tertiaryAttributes": {
+                    "tetra:draw_speed": -0.4,
+                    "tetra:draw_strength": 1.35
+                },
+                "primaryEffects": {
+                    "more_mod_tetra:glowing": 2,
+                    "multishot": 0.5
+                },
+                "tertiaryEffects": {
+                    "more_mod_tetra:glowing": 1.5,
+                    "multishot": 0.5
+                },
+                "durability": 1,
+                "integrity": -1,
+                "magicCapacity": 1,
+                "glyph": {
+                    "textureLocation": "tetra:textures/gui/wizard_glyphs.png",
+                    "textureX": 80,
+                    "textureY": 160
+                },
+                "availableTextures": [
+                    ""
+                ],
+                "models": [
+                    {
+                        "location": "more_mod_tetra:item/module/crossbow/more_mod_tetra/apollo_crossbow"
+                    }
+                ]
+            }
+        }
+    ]
+}

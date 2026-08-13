@@ -36,32 +36,5 @@
       "type": "forge:mod_loaded",
       "modid": "cataclysm"
     }
-  ],
-  "contexts": {
-    "armor": {
-      "attributes": {
-        "**generic.knockback_resistance": 0.015
-      }
-    },
-    "armor_head": {
-      "effects": {
-        "more_mod_tetra:cursium_head": 24
-      }
-    },
-    "armor_chest": {
-      "effects": {
-        "more_mod_tetra:cursium_chest": 3
-      }
-    },
-    "armor_legs": {
-      "effects": {
-        "more_mod_tetra:cursium_legs": 3
-      }
-    },
-    "armor_feet": {
-      "effects": {
-        "more_mod_tetra:cursium_feet": 20
-      }
-    }
-  }
+  ]
 }

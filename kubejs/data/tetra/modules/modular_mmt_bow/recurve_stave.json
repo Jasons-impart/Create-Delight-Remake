@@ -1,0 +1,78 @@
+{
+    "slots": [
+        "modular_mmt_bow/stave"
+    ],
+    "type": "tetra:basic_major_module",
+    "improvements": [
+        "tetra:bow/",
+        "tetra:bow/recurve_stave/",
+        "tetra:bow/shared_stave/",
+        "tetra:bow/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": [
+                "tetra:wood/",
+                "tetra:rod/stick",
+                "tetra:metal/"
+            ],
+            "key": "recurve_stave/",
+            "attributes": {
+                "tetra:draw_speed": 0.95
+            },
+            "aspects": {
+                "bow": 2,
+                "breakable": 2
+            },
+            "effects": {
+                "spread": [
+                    0,
+                    95
+                ]
+            },
+            "durability": 200,
+            "integrity": -1,
+            "extract": {
+                "primaryAttributes": {
+                    "tetra:draw_speed": 0.14,
+                    "tetra:draw_strength": 0.95
+                },
+                "tertiaryAttributes": {
+                    "tetra:draw_speed": -0.09,
+                    "tetra:draw_strength": 0.5
+                },
+                "durability": 0.6,
+                "integrity": -1,
+                "magicCapacity": 1,
+                "glyph": {
+                    "textureX": 160,
+                    "textureY": 32
+                },
+                "availableTextures": [
+                    "crude"
+                ],
+                "models": [
+                    {
+                        "location": "tetra:item/module/bow/stave/recurve/"
+                    },
+                    {
+                        "type": "tetra:filtered_grid_texture",
+                        "location": "tetra:item/module/bow/stave/recurve/",
+                        "filter": "draw_0"
+                    },
+                    {
+                        "type": "tetra:filtered_grid_texture",
+                        "location": "tetra:item/module/bow/stave/recurve/1_",
+                        "filter": "draw_1"
+                    },
+                    {
+                        "type": "tetra:filtered_grid_texture",
+                        "location": "tetra:item/module/bow/stave/recurve/1_",
+                        "filter": "draw_2"
+                    }
+                ]
+            }
+        }
+    ]
+}

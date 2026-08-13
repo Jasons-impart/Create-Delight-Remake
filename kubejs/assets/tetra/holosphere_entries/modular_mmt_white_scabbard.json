@@ -1,0 +1,9 @@
+{
+  "item": "more_mod_tetra:modular_mmt_white_scabbard",
+  "icon": {
+    "textureLocation": "tetra:textures/gui/mmt_extra_holo.png",
+    "textureX": 128,
+    "textureY": 86
+  },
+  "position": 23
+}

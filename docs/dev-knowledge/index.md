@@ -34,6 +34,7 @@
 | `docs/mod-research.md` | 调研清单 | 记录候选模组和已有优化模组参考，不属于实现事实。 |
 | `docs/order-system-design.md` | 内容设计说明 | 订单系统当前实现、设计原则和后续建议。 |
 | [hotai/](hotai/README.md) | 技术参考专题 | `hotai` 二进制补丁的运行机制、按领域行为、逐文件明细与自动生成状态。 |
+| [tetrawear/](tetrawear/README.md) | 技术参考专题 | 官方 Tetra 模块化护甲的内容、配置、平衡覆盖、GeoTetraArmor 迁移边界与验证状态。 |
 | `docs/plan/order-acquisition-channels-plan.md` | 内容设计计划 | 订单获取渠道的长期设计。 |
 | `docs/plan/order-acquisition-crystal-modifier-plan.md` | 内容设计计划 | 订单构筑和修饰系统设计。 |
 | `docs/plan/order-time-and-automation-strategy.md` | 内容设计策略 | 订单时间机制与自动化产线假设。 |
@@ -46,7 +47,7 @@
 | `docs/plan/chromatic-compound-endgame-plan.md` | 内容设计计划 | 异彩化合物双路线、光辉石与暗影钢终盘分支的材料链规划。 |
 | `docs/plan/create-processing-multiblock-plan.md` | 技术设计计划 | 基于 Create 加工流程与 MBD2 构建可组合多方块机器的实现规划。 |
 | `docs/plan/one-enough-damage-unified-damage-system.md` | 技术设计计划 | OneEnoughDamage 伤害扫描、逻辑分组、增伤与抗性统一方案。 |
-| `docs/attributeslib-armor-balance-analysis.md` | 技术研究参考 | OED 护甲前伤害阶段、Improved Mobs/Fallen 极端压力、GeoTetraArmor/生命档位，以及 2026-07-22 已采用的 AttributesLib 护甲与保护公式。 |
+| `docs/attributeslib-armor-balance-analysis.md` | 技术研究参考 | OED 护甲前伤害阶段、Improved Mobs/Fallen 极端压力、Tetrawear/生命档位，以及 2026-07-22 已采用的 AttributesLib 护甲与保护公式。 |
 | `docs/attributeslib-traveloptics-echoing-strikes-analysis.md` | 技术研究参考 | AttributesLib 多重暴击、Travel Optics 暗影瘴气和 Iron's Spells 回响打击的跨模组伤害放大链、上游变化与修复取舍。 |
 | `docs/plan/player-world-tier-progression-plan.md` | 内容设计计划 | 玩家独立世界等级、永久解锁上限、当前等级选择和晋阶试炼条件规划。 |
 | `docs/plan/mmt-curios-stage-progression-plan.md` | 内容设计计划 | MMT 模块化饰品的阶段开放、流派调律、重复制作和数值边界设计。 |

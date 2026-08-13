@@ -1,7 +1,9 @@
-# AttributesLib 护甲、OED 与 GeoTetraArmor 数值分析
+# AttributesLib 护甲、OED 与 GeoTetraArmor 历史数值分析
 
 日期：2026-07-21
 状态：本地配置与 JAR 调查完成；护甲与保护公式已于 2026-07-22 写入 `config/attributeslib.cfg`，等待完整重启后的运行时验证
+
+> 本文的模块化护甲基线来自迁移前的 GeoTetraArmor。当前 Tetrawear 保留官方模块与方案数值，不能把下文 Geo 换算直接当作现行 Tetrawear 数据；后续若重新调整全局护甲公式，应另行按官方 Tetrawear 数据复算。
 
 ## 调查范围
 
@@ -84,7 +86,7 @@ Fallen universal Boss 的最高 Fabled 档可出现：
 
 ## GeoTetraArmor 换算方式
 
-当前工作区用九个模块组成完整护甲。模块会把材料的 `primary / secondary / tertiary` 换算成实体属性。
+GeoTetraArmor 用九个模块组成完整护甲。模块会把材料的 `primary / secondary / tertiary` 换算成实体属性。
 
 全套普通结构的基础换算约为：
 
@@ -102,7 +104,7 @@ Fallen universal Boss 的最高 Fabled 档可出现：
 
 九个重甲模块还会累计约 `-45%` 移动速度，因此全重甲数值是有明显机动代价的上界，不应当作无代价常态。
 
-## 当前 GeoTetraArmor 档位
+## 当时的 GeoTetraArmor 档位
 
 按当前 KubeJS 材料覆盖计算，基础数值大致可分为四档：
 
@@ -241,7 +243,7 @@ Fallen 的 `GemBonusModifier` 先把所有 `IGemPowerProvider` 增量相加，�
 
 ## 已采用的护甲公式
 
-结合 GeoTetraArmor 的材料上界、词缀和宝石后，推荐把韧性有效区间校准到 0～10，让高伤害下的护甲衰减从接近 `1 / damage` 改为约 `1 / sqrt(damage)`，同时对总护甲加入 120 点软上限：
+结合当时 GeoTetraArmor 的材料上界、词缀和宝石后，推荐把韧性有效区间校准到 0～10，让高伤害下的护甲衰减从接近 `1 / damage` 改为约 `1 / sqrt(damage)`，同时对总护甲加入 120 点软上限：
 
 ```text
 S:"A-Value Formula"=12 + 3 * sqrt(damage)
@@ -254,7 +256,7 @@ S:"Armor Formula"=a / (a + (armor / (1 + armor / 120)) * (0.7 + 0.3 * min(1, tou
 该公式的设计含义：
 
 - 无韧性护甲保留 70% 基础效率。
-- 10 点韧性达到完整护甲效率，正好覆盖当前 GeoTetraArmor 的基础终局上界。
+- 10 点韧性达到完整护甲效率，正好覆盖当时 GeoTetraArmor 的基础终局上界。
 - 超过 10 点韧性不再继续放大护甲公式，避免 Fallen 等怪物凭十几点额外韧性获得过高收益；额外韧性仍可通过 AttributesLib 的穿甲/撕裂抗性发挥作用。
 - `armor / (1 + armor / 120)` 为护甲软上限：42 点护甲折算约 31 点，90 点折算约 51 点，150 点折算约 67 点；护甲仍持续成长，但宝石堆叠不会线性推高减伤。
 - 小伤害下比当前公式略弱，高伤害下明显更稳定。

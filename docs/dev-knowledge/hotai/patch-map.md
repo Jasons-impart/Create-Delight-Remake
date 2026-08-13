@@ -33,6 +33,12 @@
 | IAF Dragon Fix 地下冰龙穴避海 | `com/iafdragonfix/structure/DragonDenPiece.badiff` | 地下冰龙穴确定中心后检查中心及周围 16 格的 3×3 群系采样；任一点命中 `#createdelight:blocks_ice_dragon_caves` 就跳过生成，避免木卫二龙穴切入地下海，同时保留木卫二陆地区域和火星的地下冰龙穴。补丁必须由 HotAI 将 `.class` 转存为其 `MemoryDiff` 序列化格式，不得使用 `BadiffCli diff` 生成不兼容的 `BadiffFileDiff`。 |
 | Quality Food 方块掉落品质 | `de/cadentem/quality_food/mixin/BlockMixin.badiff` | 只在存在 `DropData` 且方块通过 `Utils.isValidBlock` 时应用方块品质，移除无上下文时对掉落物套品质的 fallback。 |
 
+## 待首次启动转存的可审阅 class
+
+| 目标领域 | 当前文件 | 行为变化与状态 |
+|---|---|---|
+| More Mod Tetra × Tetra 6.17 属性精度 | `net/yiran/rebalancing/core/mixins/AttributeHelperMixin.class` | 将 MMT `AttributeHelperMixin` 的 `@ModifyVariable` 局部变量名从旧 `multiplier` 改为 Tetra 6.17 的 `rounding`，并将旧“乘 `1000` 后取整”所需常量改为等价步长 `0.001d`。该完整 class 用于人工反编译审阅；尚未启动客户端，HotAI 还未把它转存为 `.badiff`，也未完成第二次启动重放。 |
+
 ## 静态 JAR 外动态创建的超导连接器类
 
 以下 `.badiff` 的目标 class 不在当前 `mods/*.jar` 中；Forge ModLauncher 会提供空 `ClassNode`，由 `hotai` 应用 diff 后动态创建。静态扫描不能还原其完整源码，运行时状态以启动日志为准。
@@ -46,4 +52,5 @@
 - 更新目标模组时，先确认目标是上游静态 class 还是由 `hotai` 动态创建；再看 `logs/latest.log` 是否出现每个目标的 `Patched class:`。
 - 修改 `hotai/**/*.badiff` 后运行 `scripts/update-hotai-docs.ps1`，再运行 `scripts/update-hotai-docs.ps1 -Check` 或 `scripts/validate-knowledge-base.ps1`；校验会阻止生成状态区过期。
 - 新增或替换补丁时优先保留 `.badiff`，不要把目标模组完整 class 当作长期源文件；`hotai` 可在加载 `.class` 后自动转存为 `.badiff`。
+- 用户需要先审阅二进制改动时，可短期保留完整 `.class`；必须记录 SHA-256 和待转存状态，不能把静态反汇编当成 HotAI 首次转存或第二次重放已通过。
 - 超导连接器不仅依赖 `hotai` 注册补丁，还依赖 `kubejs/assets/createaddition/` 的模型、贴图、语言和 `kubejs/server_scripts/Create Addition/` 的配方、标签、掉落。

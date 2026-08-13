@@ -30,13 +30,14 @@
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 27 个 `.badiff`；静态 JAR 命中 24 个，静态未命中但已由当前启动日志确认动态创建 2 个，尚未由当前启动日志确认 1 个。
+当前扫描到 29 个 `.badiff`；静态 JAR 命中 25 个，静态未命中但已由当前启动日志确认动态创建 2 个，尚未由当前启动日志确认 2 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |
 |---|---|---|---|
 | Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff` | `com/forsteri/createliquidfuel/core/BurnerStomachHandler` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
 | Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity.badiff` | `com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
 | IAF Dragon Fix | `hotai/com/iafdragonfix/structure/DragonDenPiece.badiff` | `com/iafdragonfix/structure/DragonDenPiece` | 静态命中 `iafdragonfix-2.0.0.jar` |
+| Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow` | 静态命中 `more_mod_tetra-2.4.15-all.jar` |
 | TACZ-addon | `hotai/com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner.badiff` | `com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner` | 静态命中 `taczaddon-1.20.1-1.1.8-hotfix2-for-new-soph.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/ConnectorType.badiff` | `com/mrh0/createaddition/blocks/connector/ConnectorType` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock` | 运行时已确认动态创建（静态 JAR 无此 class） |
@@ -60,6 +61,7 @@
 | Neapolitan | `hotai/com/teamabnormals/neapolitan/core/Neapolitan.badiff` | `com/teamabnormals/neapolitan/core/Neapolitan` | 静态命中 `neapolitan-1.20.1-5.1.0.jar` |
 | Quality Food | `hotai/de/cadentem/quality_food/mixin/BlockMixin.badiff` | `de/cadentem/quality_food/mixin/BlockMixin` | 静态命中 `quality_food-1.20.1-2.3.3-all.jar` |
 | Better Compatibility Checker | `hotai/dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin` | 静态命中 `BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar` |
+| Unknown | `hotai/net/yiran/rebalancing/core/mixins/AttributeHelperMixin.badiff` | `net/yiran/rebalancing/core/mixins/AttributeHelperMixin` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
 | Create New Age | `hotai/org/antarcticgardens/cna/content/ponders/CNAPonders.badiff` | `org/antarcticgardens/cna/content/ponders/CNAPonders` | 静态命中 `create-new-age-1.2.0+forge-mc1.20.1.jar` |
 <!-- HOTAI_STATUS:END -->
 
@@ -408,6 +410,18 @@ return stack;
 // 删除 heating、heater、reactor、wires 场景注册。
 // 保留 ELECTRICAL、MAGNETS、ELECTRICITY_GENERATION、MOTOR_EXTENSION。
 ```
+
+## 待首次启动转存的 MMT class
+
+`hotai/net/yiran/rebalancing/core/mixins/AttributeHelperMixin.class` 是供人工反编译审阅的完整 Java 17 class，当前长度 6349 字节，SHA-256 为 `12346144BFA21040CDC8B2DC36DCD24698C579B1E73BF9AA9C6E77FCC4714514`。它不属于上方只扫描 `.badiff` 的 `HOTAI_STATUS` 生成区块；在客户端首次加载前，不得将它记录成已转存或已重放。
+
+等价改动摘要：
+
+- 注入方法为 `AttributeHelper#round(Attribute, AttributeModifier)`，注入点仍是 `@At("STORE")`。
+- `@ModifyVariable` 的目标局部变量名从 `multiplier` 改为 `rounding`。
+- 原处理器 `multiplier(double)` 的返回常量从 `1000d` 改为 `0.001d`。
+
+MMT 原 class 针对 Tetra 6.9 的局部变量名 `multiplier`，返回 `1000d`，对应“属性值乘以倍率、取整、再除回”的实现。Tetra 6.17 改为“属性值除以步长、取整、再乘回”，局部变量名也改为 `rounding`；因此只改注入变量名会把精度语义反转，必须同时把 `1000d` 换成等价步长 `0.001d`。`javap -c -v` 已确认常量和 Mixin 注解，但仍需首次启动观察 `.class → .badiff` 转存，再在第二次启动确认 `MemoryDiff` 重放与 `Patched class: net/yiran/rebalancing/core/mixins/AttributeHelperMixin` 日志。
 
 ## Create 补丁
 

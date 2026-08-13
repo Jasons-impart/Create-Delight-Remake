@@ -40,7 +40,6 @@ global.CDStartupJavaClasses = {
     sophisticatedBackpacks$$RegistryInfo: Java.loadClass("dev.latvian.mods.kubejs.registry.RegistryInfo"),
     sophisticatedBackpacks$$ShapedRecipeSchema: Java.loadClass("dev.latvian.mods.kubejs.recipe.schema.minecraft.ShapedRecipeSchema")
 }
-
 global.CDLightmansCurrencyApi = {
     CoinValue: global.CDStartupJavaClasses.CoinValue,
     MoneyAPI: global.CDStartupJavaClasses.MoneyAPI,
@@ -71,16 +70,4 @@ global.CDStartupJavaClasses.getTetraWorkbenchStats = function () {
         }
     }
     return this.TetraWorkbenchStats
-}
-
-global.CDStartupJavaClasses.getExtraHoloPageClasses = function () {
-    if (this.ExtraHoloPageClasses == null) {
-        this.ExtraHoloPageClasses = {
-            $ExtraHoloRegister: Java.loadClass("net.yiran.extraholopage.api.ExtraHoloRegister"),
-            $ExtraHoloBuilder: Java.loadClass("net.yiran.extraholopage.api.ExtraHoloBuilder"),
-            $IModularItem: Java.loadClass("se.mickelus.tetra.items.modular.IModularItem"),
-            $ResourceLocation: Java.loadClass("net.minecraft.resources.ResourceLocation")
-        }
-    }
-    return this.ExtraHoloPageClasses
 }

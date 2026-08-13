@@ -1,0 +1,47 @@
+{
+    "slots": [
+        "crossbow/attachment_0",
+        "crossbow/attachment_1"
+    ],
+    "type": "tetra:basic_module",
+    "variants": [
+        {
+            "materials": [
+                "tetra:metal/"
+            ],
+            "key": "diffusion_rest/",
+            "integrity": -1,
+            "durability": 12,
+            "effects": {
+                "multishot": [
+                    0,
+                    10
+                ]
+            },
+            "extract": {
+                "primaryEffects": {
+                    "multishot": 0.9
+                },
+                "tertiaryEffects": {
+                    "multishot": [
+                        0,
+                        -1
+                    ]
+                },
+                "durability": 0.2,
+                "glyph": {
+                    "textureX": 128,
+                    "textureY": 112
+                },
+                "availableTextures": [
+                    ""
+                ],
+                "models": [
+                    {
+                        "location": "more_mod_tetra:item/module/crossbow/more_mod_tetra/diffusion_rest"
+                    }
+                ]
+            }
+        }
+    ]
+}

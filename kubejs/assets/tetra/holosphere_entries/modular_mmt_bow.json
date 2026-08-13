@@ -1,0 +1,9 @@
+{
+  "item": "more_mod_tetra:modular_mmt_bow",
+  "icon": {
+    "textureLocation": "tetra:textures/gui/mmt_extra_holo.png",
+    "textureX": 86,
+    "textureY": 128
+  },
+  "position": 26
+}

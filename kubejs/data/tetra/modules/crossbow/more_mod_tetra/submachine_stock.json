@@ -1,0 +1,52 @@
+{
+    "slots": [
+        "crossbow/stock"
+    ],
+    "type": "tetra:basic_major_module",
+    "improvements": [
+        "tetra:crossbow/stock/",
+        "tetra:crossbow/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": [
+                "tetra:wood/",
+                "tetra:rod/stick",
+                "tetra:metal/"
+            ],
+            "key": "submachine_stock/",
+            "attributes": {
+                "tetra:draw_speed": 0.25
+            },
+            "aspects": {
+                "crossbow": 2,
+                "breakable": 2
+            },
+            "durability": 85,
+            "extract": {
+                "primaryAttributes": {
+                    "tetra:draw_speed": -0.05
+                },
+                "secondaryAttributes": {
+                    "tetra:draw_speed": 0.12
+                },
+                "durability": 0.6,
+                "integrity": 0.75,
+                "magicCapacity": 1,
+                "glyph": {
+                    "textureX": 128,
+                    "textureY": 48
+                },
+                "availableTextures": [
+                    ""
+                ],
+                "models": [
+                    {
+                        "location": "more_mod_tetra:item/module/crossbow/more_mod_tetra/submachine_stock"
+                    }
+                ]
+            }
+        }
+    ]
+}

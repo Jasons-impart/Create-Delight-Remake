@@ -8,8 +8,17 @@
 function freezing(event, ingredients, results, time) {
   time = time || 200
   event.recipes.ratatouille.freezing(results, ingredients).id(`createdelightcore:freezing/${results.split(":")[1]}`)
-  event.recipes.createdelightcore.fan_freezing(results, ingredients).id(`createdelightcore:fan_freezing/${ingredients.split(":")[1]}`)
+  dragonPlusFreezing(event, results, ingredients, `createdelightcore:fan_freezing/${ingredients.split(":")[1]}`)
   event.custom({type: "refurbished_furniture:freezer_solidifying", category: "blocks", ingredient:{item: ingredients}, result:{item: results}, time: time}).id(`refurbished_furniture:freezer_solidifying/${results.split(":")[1]}`)
+}
+
+function dragonPlusFreezing(event, results, ingredients, id) {
+  const ingredient = typeof ingredients === "string" ? { item: ingredients } : ingredients.toJson()
+  event.custom({
+    type: "create_dragons_plus:freezing",
+    ingredients: [ingredient],
+    results: [{ item: results }]
+  }).id(id)
 }
 /**
  * @param { Internal.RecipesEventJS } event 

@@ -34,7 +34,7 @@ global.CDServerJavaClasses = {
     $ForgeEnergyRecipeCapability: Java.loadClass("com.lowdragmc.mbd2.common.capability.recipe.ForgeEnergyRecipeCapability"),
     $ForgeRegistries: Java.loadClass("net.minecraftforge.registries.ForgeRegistries"),
     $GrowthDetectorItem: Java.loadClass("com.teamtea.eclipticseasons.common.item.GrowthDetectorItem"),
-    $GeoArmorEffectUtil: Java.loadClass("ovo.yiran.geotetraarmor.ArmorEffectUtil"),
+    $TetrawearArmorHelper: Java.loadClass("se.mickelus.tetrawear.util.ArmorHelper"),
     $HeightmapTypes: Java.loadClass("net.minecraft.world.level.levelgen.Heightmap$Types"),
     $HumidityControlProvider: Java.loadClass("com.teamtea.eclipticseasons.common.core.crop.HumidityControlProvider"),
     $ICurioItem: Java.loadClass("top.theillusivec4.curios.api.type.capability.ICurioItem"),
