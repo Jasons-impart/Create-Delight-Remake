@@ -7,10 +7,12 @@ param(
     [string]$InstallerUrl = "https://github.com/packwiz/packwiz-installer/releases/latest/download/packwiz-installer.jar",
     [string]$PackwizFilesRef = $env:PACKWIZ_FILES_REF,
     [string]$PackwizFilesRawPrefix = $env:PACKWIZ_FILES_RAW_PREFIX,
+    [string]$Proxy = $env:PACKWIZ_PROXY,
     [switch]$IfGitChanged,
     [string]$OldRev,
     [string]$NewRev = "HEAD",
     [string]$HookName = "sync-packwiz-assets",
+    [switch]$Force,
     [switch]$DryRun
 )
 
@@ -26,12 +28,17 @@ $PackwizExe = Join-Path $ToolsRoot "packwiz.exe"
 $InstallerJarPath = Join-Path $ToolsRoot "packwiz-installer.jar"
 $ServeLog = Join-Path $WorkRoot "serve.log"
 $ServeErrLog = Join-Path $WorkRoot "serve.err.log"
+$SyncStatePath = Join-Path $WorkRoot "sync-state.json"
+$SyncLockPath = Join-Path $WorkRoot "sync.lock"
 $PackwizFilesRoot = Join-Path $RepoRoot "packwiz-files"
 $PackwizFilesRawUrlPattern = 'https://raw\.githubusercontent\.com/Jasons-impart/Create-Delight-Remake/.+/packwiz-files/'
 $StaticServerScript = Join-Path $PSScriptRoot "packwiz-static-server.py"
 $GeneratePackwizScript = Join-Path $PSScriptRoot "generate-packwiz-files.py"
 $PackwizSideScript = Join-Path $PSScriptRoot "packwiz-side.py"
 $ServeProcess = $null
+$script:SyncOldCommit = $null
+$script:SyncNewCommit = $null
+$script:SyncLockStream = $null
 
 function Write-Status {
     param([string]$Message)
@@ -73,6 +80,9 @@ function Test-PackwizGitChanges {
         return $false
     }
 
+    $script:SyncOldCommit = $oldCommit
+    $script:SyncNewCommit = $newCommit
+
     if ($oldCommit -eq $newCommit) {
         Write-Host "[$Name] HEAD did not change; Packwiz sync not required."
         return $false
@@ -106,15 +116,175 @@ function Test-PackwizGitChanges {
 $ShouldSync = $true
 if ($IfGitChanged) {
     $ShouldSync = Test-PackwizGitChanges -Old $OldRev -New $NewRev -Name $HookName
+    if (-not $ShouldSync -and $Force -and -not [string]::IsNullOrWhiteSpace($script:SyncNewCommit)) {
+        Write-Host "[$HookName] Force mode enabled; running Packwiz sync despite Git change detection."
+        $ShouldSync = $true
+    }
+} else {
+    $script:SyncNewCommit = Resolve-GitCommit $NewRev
 }
 
 if (-not $ShouldSync) {
     exit 0
 }
 
+function Get-SyncStateKey {
+    param([string]$Commit)
+
+    if ([string]::IsNullOrWhiteSpace($Commit)) {
+        return $null
+    }
+
+    $rootKey = @(
+        $MetadataRoots |
+            ForEach-Object { ($_ -replace '^[\\/]+|[\\/]+$', '').ToLowerInvariant() } |
+            Sort-Object
+    ) -join '|'
+    $scriptHash = (Get-FileHash -LiteralPath $PSCommandPath -Algorithm SHA256).Hash.ToLowerInvariant()
+    $proxyKey = if ([string]::IsNullOrWhiteSpace($Proxy)) { "direct" } else { $Proxy.Trim().ToLowerInvariant() }
+    $packwizFilesRefKey = if ([string]::IsNullOrWhiteSpace($PackwizFilesRef)) { "auto" } else { $PackwizFilesRef.Trim() }
+    $packwizFilesRawPrefixKey = if ([string]::IsNullOrWhiteSpace($PackwizFilesRawPrefix)) { "auto" } else { $PackwizFilesRawPrefix.Trim() }
+
+    return "v4|$Commit|$Side|$rootKey|$proxyKey|$packwizFilesRefKey|$packwizFilesRawPrefixKey|$PackwizUrl|$InstallerUrl|$scriptHash"
+}
+
+function Test-SyncStateCompleted {
+    param([string]$StateKey)
+
+    if ([string]::IsNullOrWhiteSpace($StateKey) -or -not (Test-Path -LiteralPath $SyncStatePath)) {
+        return $false
+    }
+
+    try {
+        $state = Get-Content -Raw -LiteralPath $SyncStatePath | ConvertFrom-Json
+        return [string]$state.key -eq $StateKey
+    }
+    catch {
+        Write-Warning "Could not read Packwiz sync state; running a fresh sync."
+        return $false
+    }
+}
+
+function Write-SyncState {
+    param([string]$StateKey)
+
+    if ([string]::IsNullOrWhiteSpace($StateKey)) {
+        return
+    }
+
+    try {
+        New-Item -ItemType Directory -Force -Path $WorkRoot | Out-Null
+        $state = [ordered]@{
+            schemaVersion = 1
+            key = $StateKey
+            oldCommit = $script:SyncOldCommit
+            newCommit = $script:SyncNewCommit
+            side = $Side
+            metadataRoots = @($MetadataRoots)
+            proxy = if ([string]::IsNullOrWhiteSpace($Proxy)) { "direct" } else { $Proxy.Trim() }
+            packwizFilesRef = if ([string]::IsNullOrWhiteSpace($PackwizFilesRef)) { "auto" } else { $PackwizFilesRef.Trim() }
+            packwizFilesRawPrefix = if ([string]::IsNullOrWhiteSpace($PackwizFilesRawPrefix)) { "auto" } else { $PackwizFilesRawPrefix.Trim() }
+            completedAtUtc = (Get-Date).ToUniversalTime().ToString("o")
+        }
+        $stateJson = $state | ConvertTo-Json -Depth 4
+        Write-Utf8NoBomFile -Path $SyncStatePath -Content $stateJson
+    }
+    catch {
+        Write-Warning "Packwiz sync succeeded, but the duplicate-run state could not be saved: $($_.Exception.Message)"
+    }
+}
+
+function Resolve-ProxyUri {
+    param([string]$ProxyValue)
+
+    if ([string]::IsNullOrWhiteSpace($ProxyValue)) {
+        return $null
+    }
+
+    try {
+        $proxyUri = [Uri]::new($ProxyValue.Trim())
+    }
+    catch {
+        throw "Invalid proxy URL '$ProxyValue'. Use an absolute HTTP URL such as http://127.0.0.1:7890."
+    }
+
+    if (-not $proxyUri.IsAbsoluteUri -or $proxyUri.Scheme -notin @("http", "https")) {
+        throw "Unsupported proxy URL '$ProxyValue'. Use an absolute HTTP or HTTPS proxy URL."
+    }
+    if ([string]::IsNullOrWhiteSpace($proxyUri.Host) -or $proxyUri.UserInfo) {
+        throw "Proxy URL must contain only a host and port; proxy credentials are not supported by this sync path."
+    }
+    if ($proxyUri.AbsolutePath -ne "/" -or $proxyUri.Query -or $proxyUri.Fragment) {
+        throw "Proxy URL '$ProxyValue' must not contain a path, query, or fragment."
+    }
+
+    return [pscustomobject]@{
+        Uri = $proxyUri
+        Host = $proxyUri.Host
+        Port = $proxyUri.Port
+    }
+}
+
+function Invoke-WithProxy {
+    param([scriptblock]$Script)
+
+    if ($null -eq $script:ProxyConfig) {
+        return & $Script
+    }
+
+    $oldHttpProxy = $env:HTTP_PROXY
+    $oldHttpsProxy = $env:HTTPS_PROXY
+    $oldAllProxy = $env:ALL_PROXY
+    try {
+        $env:HTTP_PROXY = $script:ProxyConfig.Uri.AbsoluteUri
+        $env:HTTPS_PROXY = $script:ProxyConfig.Uri.AbsoluteUri
+        $env:ALL_PROXY = $script:ProxyConfig.Uri.AbsoluteUri
+        return & $Script
+    }
+    finally {
+        $env:HTTP_PROXY = $oldHttpProxy
+        $env:HTTPS_PROXY = $oldHttpsProxy
+        $env:ALL_PROXY = $oldAllProxy
+    }
+}
+
+$script:ProxyConfig = Resolve-ProxyUri -ProxyValue $Proxy
+if ($null -ne $script:ProxyConfig) {
+    Write-Status ("Using proxy {0}:{1} for Packwiz downloads." -f $script:ProxyConfig.Host, $script:ProxyConfig.Port)
+}
+
 if ($DryRun) {
     Write-Host "[$HookName] Dry run enabled; Packwiz runtime sync was not executed."
     exit 0
+}
+
+$syncStateKey = Get-SyncStateKey -Commit $script:SyncNewCommit
+
+function Enter-SyncLock {
+    New-Item -ItemType Directory -Force -Path $WorkRoot | Out-Null
+    for ($attempt = 0; $attempt -lt 600; $attempt++) {
+        try {
+            $script:SyncLockStream = [System.IO.FileStream]::new(
+                $SyncLockPath,
+                [System.IO.FileMode]::OpenOrCreate,
+                [System.IO.FileAccess]::ReadWrite,
+                [System.IO.FileShare]::None
+            )
+            return
+        }
+        catch [System.IO.IOException] {
+            Start-Sleep -Milliseconds 200
+        }
+    }
+
+    throw "Timed out waiting for another Packwiz sync to finish: $SyncLockPath"
+}
+
+function Exit-SyncLock {
+    if ($null -ne $script:SyncLockStream) {
+        $script:SyncLockStream.Dispose()
+        $script:SyncLockStream = $null
+    }
 }
 
 function Get-GitRefForPackwizFiles {
@@ -259,7 +429,7 @@ function Ensure-Tool {
 
     New-Item -ItemType Directory -Force -Path (Split-Path $Destination -Parent) | Out-Null
     Write-Status ("Downloading {0}..." -f (Split-Path $Destination -Leaf))
-    Invoke-WebRequest -Uri $Url -OutFile $Destination -UseBasicParsing
+    Invoke-WithProxy { Invoke-WebRequest -Uri $Url -OutFile $Destination -UseBasicParsing }
 }
 
 function Write-Utf8NoBomFile {
@@ -283,6 +453,12 @@ function Invoke-GeneratePackwizFiles {
 }
 
 try {
+    Enter-SyncLock
+    if ($IfGitChanged -and -not $Force -and (Test-SyncStateCompleted -StateKey $syncStateKey)) {
+        Write-Host "[$HookName] Packwiz sync already completed for this revision; skipping duplicate run."
+        return
+    }
+
     Set-Location $RepoRoot
 
     $metadataFiles = @()
@@ -348,7 +524,7 @@ try {
     Write-Status ("Building temporary packwiz pack from {0} metadata file(s)..." -f $metadataFiles.Count)
     Push-Location $PackRoot
     try {
-        & $PackwizExe refresh
+        Invoke-WithProxy { & $PackwizExe refresh }
         if ($LASTEXITCODE -ne 0) {
             throw "packwiz refresh exited with code $LASTEXITCODE."
         }
@@ -384,15 +560,34 @@ try {
     }
 
     Write-Status "Running packwiz-installer..."
-    & $javaCommand -cp $InstallerJarPath "link.infra.packwiz.installer.Main" "--bootstrap-no-update" "-g" $packUrl
+    $javaArguments = @()
+    if ($null -ne $script:ProxyConfig) {
+        $javaArguments += "-Dhttp.proxyHost=$($script:ProxyConfig.Host)"
+        $javaArguments += "-Dhttp.proxyPort=$($script:ProxyConfig.Port)"
+        $javaArguments += "-Dhttps.proxyHost=$($script:ProxyConfig.Host)"
+        $javaArguments += "-Dhttps.proxyPort=$($script:ProxyConfig.Port)"
+        $javaArguments += "-Dhttp.nonProxyHosts=localhost|127.*|[::1]"
+        $javaArguments += "-Dhttps.nonProxyHosts=localhost|127.*|[::1]"
+    }
+    $javaArguments += @(
+        "-cp",
+        $InstallerJarPath,
+        "link.infra.packwiz.installer.Main",
+        "--bootstrap-no-update",
+        "-g",
+        $packUrl
+    )
+    & $javaCommand @javaArguments
     if ($LASTEXITCODE -ne 0) {
         throw "packwiz-installer exited with code $LASTEXITCODE."
     }
 
     Write-Status "Sync finished successfully."
+    Write-SyncState -StateKey $syncStateKey
 }
 finally {
     if ($ServeProcess -and -not $ServeProcess.HasExited) {
         Stop-Process -Id $ServeProcess.Id -Force -ErrorAction SilentlyContinue
     }
+    Exit-SyncLock
 }

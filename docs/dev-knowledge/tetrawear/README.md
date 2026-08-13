@@ -207,8 +207,8 @@ Ghost 板甲同时有 `1.1^4 = 1.4641×` 的材料根攻速倍率；End Dragon �
 
 | 模块 | End Dragon 属性 / 完整度 | Ghost 属性 / 完整度 |
 |---|---:|---:|
-| flat heavy shoulders | `6.1 / 3.9`，`-2` | `4.3 / 2.7`，`-1` |
-| plate heavy legplates | `9.7 / 9.4`，`-3` | `8.05 / 6.1`，`-2` |
+| 平板式重型护肩（`flat heavy shoulders`） | `6.1 / 3.9`，`-2` | `4.3 / 2.7`，`-1` |
+| 板式重型腿甲（`plate heavy legplates`） | `9.7 / 9.4`，`-3` | `8.05 / 6.1`，`-2` |
 | 对应 Ghost trim | 无根攻速 | `0` 完整度、额外 `+10% attack speed` |
 
 把 sallet、cuirass、重肩、重腿和 plate boots 组合后：

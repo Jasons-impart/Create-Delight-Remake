@@ -38,6 +38,8 @@ if ($LASTEXITCODE -eq 1) {
 
 `-IfGitChanged` checks `mods|resourcepacks|shaderpacks/**/*.pw.toml` and `packwiz-files/**`; it runs the full runtime sync only when needed. Git hooks perform the same check for regular local Git operations, but still run this command here so agent-managed updates have a visible result.
 
+The sync script records the last successful revision in the ignored `.cache/packwiz-sync/sync-state.json`. This makes the hook and the explicit workflow call idempotent: the second call for the same revision, side, metadata roots, and sync-script version exits without downloading again. Use `-Force` when repairing a known local runtime mismatch. For slow overseas downloads, set `PACKWIZ_PROXY=http://127.0.0.1:7890`; the hooks inherit this environment variable.
+
 The installer is idempotent: `-IfUnset` exits when all four shims already exist and are managed, while a full install only rewrites a shim when its generated content differs. The post-update hook installation only runs when the installer or tracked hooks changed. This makes newly added hooks available immediately, while ordinary repository updates do not rewrite local hook shims.
 
 3. If `CDC-mod-src` changed or `git status` reports the submodule modified after update, run:

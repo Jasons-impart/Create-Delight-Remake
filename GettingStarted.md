@@ -45,6 +45,12 @@
   ```powershell
   powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\sync-packwiz-assets.ps1
   ```
+- 如果 GitHub 或 CurseForge 下载较慢，可指定代理；Git hook 自动同步时使用 `PACKWIZ_PROXY`：
+  ```powershell
+  $env:PACKWIZ_PROXY = "http://127.0.0.1:7890"
+  powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\sync-packwiz-assets.ps1 -Proxy $env:PACKWIZ_PROXY
+  ```
+- Git 更新后的 hook 与外层同步流程会复用 `.cache/packwiz-sync/sync-state.json`，同一提交不会重复下载；若本地运行时文件损坏，可加 `-Force` 重新同步。
 - 脚本会自动下载 `packwiz.exe` 和 `packwiz-installer.jar` 到 `.cache/packwiz-sync/tools/`，执行 `packwiz refresh`，并按 `mods/`、`resourcepacks/`、`shaderpacks/` 下的 `*.pw.toml` 同步实际文件。
 - 本地开发环境默认按客户端侧同步，只保留 `side = "both"` 和 `side = "client"` 的 mod；`side = "server"` 的服务端专用 mod 不会下载到客户端实例。
 - 如果需要调试服务端侧文件，可显式运行 `powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\sync-packwiz-assets.ps1 -Side server`。
