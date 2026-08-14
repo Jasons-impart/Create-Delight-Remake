@@ -62,4 +62,13 @@ ServerEvents.recipes(e => {
         B: "create:smart_fluid_pipe",
         C: "fluidlogistics:fluid_transporter"
     }).id("createdelight:multi_fluid_access_port")
+
+    kubejs.shaped("fluidlogistics:copper_schematicannon", [
+        "AAA",
+        "ABA",
+        "AAA"
+    ], {
+        A: "create:copper_sheet",
+        B: "create:schematicannon"
+    }).id("createdelight:copper_schematicannon")
 })
