@@ -7,6 +7,6 @@ surfaceDepthLimit = 16
 #Sandpaper polishing recipe IDs to block from the Belt Grinder.
 #Example: ["createdelight:sandpaper_polishing/rose_quartz"]
 beltGrinderBlockedSandpaperRecipes = ["createdelight:sandpaper_polishing/rose_quartz"]
-#Whether to automatically grant sponsor titles through FTB Ranks from donate_list.json.
+#Whether to automatically grant sponsor titles through FTB Ranks from the built-in or remote sponsor list.
 enableSponsorTitles = true
 
