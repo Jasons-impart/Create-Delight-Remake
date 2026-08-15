@@ -1,0 +1,54 @@
+
+[featureToggles]
+	fluidTransporterEnabled = true
+	smartFaucetEnabled = true
+	faucetEnabled = true
+	multiFluidTankEnabled = true
+	horizontalMultiFluidTankEnabled = true
+	multiFluidAccessPortEnabled = true
+	smartHopperEnabled = true
+	fluidPumpEnabled = true
+	infiniteFluidTankEnabled = true
+	waterContainingCopperCasingEnabled = true
+	copperBasinEnabled = true
+	mechanicalFluidGunEnabled = true
+	handPointerEnabled = true
+	copperFrogportEnabled = false
+	fluidPackagerEnabled = false
+	fluidRepackagerEnabled = false
+	copperBucketEnabled = true
+	phantomChainEnabled = true
+	fluidHatchEnabled = true
+
+[blockProperties]
+	#Maximum fluid amount a fluid package can hold (in mB)
+	#Range: > 1
+	fluidPackageCapacity = 10000
+	#Maximum distance a Fluid Pump can push or pull fluids on either side
+	#Range: > 1
+	fluidPumpRange = 24
+	#Maximum number of Mechanical Arms configurable in one Hand Pointer session
+	#Range: 1 ~ 64
+	handPointerMaxArms = 5
+	#Maximum number of Package Frogports configurable in one Hand Pointer session
+	#Range: 1 ~ 64
+	handPointerMaxFrogports = 5
+	#Maximum number of Postboxes configurable in one Hand Pointer session
+	#Range: 1 ~ 64
+	handPointerMaxMailboxes = 5
+	#ALLOW_BY_TAG allows fluid containers in #fluidlogistics:faucet_fillable; ALLOW_ALL allows every fluid container; DENY_ALL allows none
+	#Allowed Values: ALLOW_BY_TAG, ALLOW_ALL, DENY_ALL
+	faucetFluidContainerMode = "ALLOW_BY_TAG"
+	#Allow the fluid transporter to extract infinite water from waterlogged leaves
+	fluidTransporterInfiniteWaterEnabled = true
+	#Allow the faucet and smart faucet to extract infinite water from waterlogged leaves
+	faucetInfiniteWaterEnabled = true
+	#Allow the smart hopper to extract infinite water from waterlogged leaves
+	smartHopperInfiniteWaterEnabled = true
+	#Infinite tank capacity (in B/buckets). -1 = follow Create's infinite fluid capacity config option
+	#Range: -1 ~ 2147483
+	infiniteFluidTankCapacity = -1
+	#FOLLOW_CREATE = follow Create's bottomless fluid config option
+	#Allowed Values: FOLLOW_CREATE, ALLOW_ALL, DENY_ALL, ALLOW_BY_TAG, DENY_BY_TAG
+	infiniteFluidTankAllowedFluids = "FOLLOW_CREATE"
+

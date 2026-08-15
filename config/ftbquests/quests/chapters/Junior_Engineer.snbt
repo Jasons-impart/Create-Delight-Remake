@@ -726,14 +726,34 @@
 			dependencies: ["510B2EE25982FD73"]
 			id: "3956BF6CE5009F66"
 			rewards: [{
-				id: "77FC11C2EB85F290"
-				item: "create:empty_schematic"
-				type: "item"
+				exclude_from_claim_all: true
+				id: "5E729FC92F8ED737"
+				table_id: 8748750126615270084L
+				type: "choice"
 			}]
 			subtitle: "将空白蓝图放入蓝图桌以打印出可以放置结构虚影的蓝图"
 			tasks: [{
-				id: "46BB39AD997856F2"
-				item: "create:empty_schematic"
+				id: "225D165884A8691D"
+				item: {
+					Count: 1
+					id: "itemfilters:or"
+					tag: {
+						RepairCost: 0
+						display: {
+							Name: "{\"text\":\"空白蓝图\"}"
+						}
+						items: [
+							{
+								Count: 1b
+								id: "create:empty_schematic"
+							}
+							{
+								Count: 1b
+								id: "fluidlogistics:empty_fluid_schematic"
+							}
+						]
+					}
+				}
 				type: "item"
 			}]
 			x: -2.5d
@@ -788,8 +808,27 @@
 			]
 			subtitle: "如标题所示，这就是机械动力的神，浪漫而又实用"
 			tasks: [{
-				id: "562475D62C420631"
-				item: "create:schematicannon"
+				id: "66449000664166AB"
+				item: {
+					Count: 1
+					id: "itemfilters:or"
+					tag: {
+						RepairCost: 0
+						display: {
+							Name: "{\"text\":\"蓝图加农炮\"}"
+						}
+						items: [
+							{
+								Count: 1b
+								id: "create:schematicannon"
+							}
+							{
+								Count: 1b
+								id: "fluidlogistics:copper_schematicannon"
+							}
+						]
+					}
+				}
 				type: "item"
 			}]
 			title: "论机械动力为什么能称之为神"
@@ -1810,7 +1849,7 @@
 			}]
 			title: "四倍速鼓风机"
 			x: 16.0d
-			y: 3.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["762CD49FCDC889E2"]
@@ -1857,7 +1896,7 @@
 			}]
 			title: "最丐机械动力刷铁机"
 			x: 16.0d
-			y: 4.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["0DC2E7BC4657D633"]
@@ -2040,6 +2079,19 @@
 			}]
 			x: 13.5d
 			y: -6.5d
+		}
+		{
+			dependencies: ["5C40F5E0F477394B"]
+			description: ["注：本包中真空收割机的&e工作半径&r为&b4&r，对应&e工作范围&r为以收割机为中心的&b9×9&r方形"]
+			id: "41E23FA7C33D867C"
+			subtitle: "放空大脑的自动收割"
+			tasks: [{
+				id: "7312940A8AE58730"
+				item: "create_integrated_farming:vacuum_harvester"
+				type: "item"
+			}]
+			x: 15.5d
+			y: 5.0d
 		}
 	]
 	title: "&2初识机械"
