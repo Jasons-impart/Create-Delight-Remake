@@ -88,6 +88,13 @@ ItemEvents.tooltip(e => {
         'create_jetpack:netherite_jetpack',
     ])
 })
+
+ItemEvents.tooltip(e => {
+    e.add(
+        'createdelightcore:sponsor_medal',
+        Text.translatable('item.createdelightcore.sponsor_medal.desc')
+    )
+})
 let tooltips = [
     ["createfluidstuffs:multi_fluid_tank", "§6来自海上机械师的神奇储罐", "§6From the Sea of Mechanical Engineers"],
     ['alexscaves:cave_map', "§l§4该物品已无实际用处，且不可按照显示的配方合成", "§l§4This item is no longer useful and cannot be crafted using the displayed recipe"],
