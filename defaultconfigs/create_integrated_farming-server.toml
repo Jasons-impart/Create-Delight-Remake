@@ -1,0 +1,66 @@
+#.
+#Settings for Farming utilities
+[farming]
+	#.
+	#When harvested by Harvester, if mushroom colonies drops itself instead of corresponding mushroom.
+	mushroomColoniesDropSelf = false
+	#.
+	#The horizontal radius harvested by a stationary or contraption-mounted Vacuum Harvester.
+	#Its vertical range is always one block above and below the machine.
+	#Range: 1 ~ 16
+	vacuumHarvesterRange = 4
+	#.
+	#The number of ticks a Vacuum Harvester takes to charge at 64 RPM.
+	#Stationary harvesters scale this time with RPM, while contraption-mounted harvesters use it directly.
+	#Range: 20 ~ 72000
+	vacuumHarvesterChargeTime = 600
+
+#.
+#Settings for Fishing utilities
+[fishing]
+	#.
+	#If Fishing Net should check for open water.
+	#When disabled, the open water check will be skipped and return false.
+	fishingNetChecksOpenWater = true
+	#.
+	#Fishing Net's cooldown will be multiplied by this value.
+	#The base cooldown is the same as Fishing Rod's lure speed (100 ~ 600 ticks).
+	#Range: 1 ~ 256
+	fishingNetCooldownMultiplier = 8
+	#.
+	#The maximum amount of the visited valid blocks for fishing recorded by the Fishing Net.
+	#Fishing Net's chance of successful catch depends on [amount] / [maximum amount] of visited valid blocks.
+	#Increasing this value will reduce the efficiency of Fishing Net that travels in a fixed short route.
+	#Example: Fishing Net placed near the rotating axis.
+	#Range: 1 ~ 64
+	fishingNetMaxRecordedBlocks = 8
+	#.
+	#If Fishing Net should capture small creature and automatically process them.
+	#"Process" means captured entity will be discard and all drops will be collected.
+	fishingNetCaptureCreatureInWater = true
+	#.
+	#The maximum size (width and height) of creatures that can be caught by the Fishing Net.
+	#Range: 0.009999999776482582 ~ 10.0
+	fishingNetCapturedCreatureMaxSize = 0.699999988079071
+	#.
+	#If creatures captured by Fishing Net should drop Nugget of Experience.
+	fishingNetCapturedCreatureDropExpNugget = true
+
+#.
+#Settings for Ranching utilities
+[ranching]
+	#.
+	#If leashed entity automatically sits on unoccupied seat.
+	#When enabled, falls back to vanilla Create behaviour.
+	#When disabled, seated leashable entity can be dismounted by lead.
+	leashedEntitySitsAutomatically = false
+	#.
+	#The amount of Inventory Slot that the Chicken Roost has available.
+	#[@cui:RequiresReload:server]
+	#Range: 1 ~ 27
+	roostingInventorySlotCount = 9
+	#.
+	#The amount of items per Inventory slot that the Chicken Roost can hold.
+	#[@cui:RequiresReload:server]
+	#Range: 1 ~ 16
+	roostingInventorySlotSize = 1

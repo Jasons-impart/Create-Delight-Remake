@@ -404,10 +404,10 @@
     "name": "Create: Enchantment Industry",
     "version": "2.5.0b"
   },
-  "create-integrated-farming-1.2.6-1.20.1-port.2.jar": {
+  "create-integrated-farming-1.3.0-1.20.1.jar": {
     "modId": "create-integrated-farming",
     "name": "Create Integrated Farming [Unofficial]",
-    "version": "1.2.6-1.20.1-port.2"
+    "version": "1.3.0-1.20.1"
   },
   "create-new-age-1.2.0+forge-mc1.20.1.jar": {
     "modId": "create-new-age",
@@ -539,10 +539,10 @@
     "name": "Create: Diesel Generators",
     "version": "1.20.1-1.3.12"
   },
-  "CreateDragonsPlus-1.11.6.jar": {
+  "CreateDragonsPlus-1.11.7.jar": {
     "modId": "createdragonsplus",
     "name": "Create: Dragons Plus",
-    "version": "1.11.6"
+    "version": "1.11.7"
   },
   "createfactorycontroller-1.1.1-forge-1.20.1.jar": {
     "modId": "createfactorycontroller",
@@ -834,10 +834,10 @@
     "name": "Flerovium",
     "version": "1.20.1-1.2.19-all"
   },
-  "fluidlogistics-1.2.0.jar": {
+  "fluidlogistics-1.2.7.jar": {
     "modId": "fluidlogistics",
     "name": "Create: FluidLogistic",
-    "version": "1.2.0"
+    "version": "1.2.7"
   },
   "forge-dungeonsdelight-1.20.1-1.3.0.jar": {
     "modId": "forge-dungeonsdelight",
@@ -1878,11 +1878,6 @@
     "modId": "xaerominimap-forge",
     "name": "Xaero's Minimap",
     "version": "1.20.1-26.4.2"
-  },
-  "xaeros_waystones_compatibility-1.1 - 1.20.1.jar": {
-    "modId": "xaeros_waystones_compatibility-1.1 - 1.20.1",
-    "name": "Xaero's Minimap & World Map - Waystones Compatibility [Forge & NeoForge]",
-    "version": "unknown"
   },
   "xaeroworldmap-forge-1.20.1-1.44.2.jar": {
     "modId": "xaeroworldmap-forge",
