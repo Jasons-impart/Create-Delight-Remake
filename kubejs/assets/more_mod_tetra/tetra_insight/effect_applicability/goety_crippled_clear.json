@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "paths": [
+    {
+      "scopes": [
+        "curios"
+      ],
+      "triggers": [
+        "wear_passive"
+      ],
+      "stacking": "curios_max"
+    },
+    {
+      "scopes": [
+        "curios"
+      ],
+      "triggers": [
+        "wear_passive"
+      ],
+      "stacking": "curios_sum"
+    }
+  ]
+}

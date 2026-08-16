@@ -1,0 +1,42 @@
+{
+  "replace": false,
+  "paths": [
+    {
+      "scopes": [
+        "curios"
+      ],
+      "triggers": [
+        "attack"
+      ],
+      "stacking": "curios_sum"
+    },
+    {
+      "scopes": [
+        "curios"
+      ],
+      "triggers": [
+        "wear_passive"
+      ],
+      "stacking": "curios_max"
+    },
+    {
+      "scopes": [
+        "curios"
+      ],
+      "triggers": [
+        "wear_passive"
+      ],
+      "stacking": "curios_sum"
+    },
+    {
+      "scopes": [
+        "main_hand",
+        "off_hand"
+      ],
+      "triggers": [
+        "attack"
+      ],
+      "stacking": "held_max"
+    }
+  ]
+}

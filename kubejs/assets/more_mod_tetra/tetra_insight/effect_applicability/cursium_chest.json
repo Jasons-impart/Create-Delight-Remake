@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "paths": [
+    {
+      "scopes": [
+        "armor"
+      ],
+      "triggers": [
+        "death"
+      ],
+      "stacking": "armor_sum"
+    }
+  ]
+}
