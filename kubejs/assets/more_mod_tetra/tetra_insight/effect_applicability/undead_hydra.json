@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "paths": [
+    {
+      "scopes": [
+        "armor"
+      ],
+      "triggers": [
+        "receive_hit"
+      ],
+      "stacking": "armor_sum"
+    },
+    {
+      "scopes": [
+        "curios"
+      ],
+      "triggers": [
+        "attack"
+      ],
+      "stacking": "curios_max"
+    },
+    {
+      "scopes": [
+        "main_hand",
+        "off_hand"
+      ],
+      "triggers": [
+        "attack"
+      ],
+      "stacking": "held_max"
+    }
+  ]
+}

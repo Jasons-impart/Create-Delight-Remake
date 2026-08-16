@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "paths": [
+    {
+      "scopes": [
+        "curios"
+      ],
+      "triggers": [
+        "kill_entity"
+      ],
+      "stacking": "curios_sum"
+    },
+    {
+      "scopes": [
+        "main_hand",
+        "off_hand"
+      ],
+      "triggers": [
+        "attack"
+      ],
+      "stacking": "held_max"
+    }
+  ]
+}

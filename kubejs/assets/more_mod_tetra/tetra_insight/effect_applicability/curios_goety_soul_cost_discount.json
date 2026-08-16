@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "paths": [
+    {
+      "scopes": [
+        "curios"
+      ],
+      "triggers": [
+        "use_item"
+      ],
+      "stacking": "curios_max"
+    }
+  ]
+}

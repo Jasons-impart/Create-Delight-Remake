@@ -1,0 +1,44 @@
+{
+  "replace": false,
+  "paths": [
+    {
+      "scopes": [
+        "armor"
+      ],
+      "triggers": [
+        "receive_hit"
+      ],
+      "stacking": "armor_sum"
+    },
+    {
+      "scopes": [
+        "main_hand",
+        "off_hand"
+      ],
+      "triggers": [
+        "heal"
+      ],
+      "stacking": "held_sum"
+    },
+    {
+      "scopes": [
+        "main_hand",
+        "off_hand"
+      ],
+      "triggers": [
+        "receive_hit"
+      ],
+      "stacking": "held_sum"
+    },
+    {
+      "scopes": [
+        "main_hand",
+        "off_hand"
+      ],
+      "triggers": [
+        "wear_passive"
+      ],
+      "stacking": "held_sum"
+    }
+  ]
+}

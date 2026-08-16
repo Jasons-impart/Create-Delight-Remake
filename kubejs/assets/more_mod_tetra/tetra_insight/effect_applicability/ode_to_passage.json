@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "paths": [
+    {
+      "scopes": [
+        "main_hand",
+        "off_hand"
+      ],
+      "triggers": [
+        "receive_hit"
+      ],
+      "stacking": "held_max"
+    }
+  ]
+}

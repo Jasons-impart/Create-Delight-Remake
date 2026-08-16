@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "paths": [
+    {
+      "scopes": [
+        "armor"
+      ],
+      "triggers": [
+        "receive_hit"
+      ],
+      "stacking": "armor_sum"
+    },
+    {
+      "scopes": [
+        "curios"
+      ],
+      "triggers": [
+        "attack"
+      ],
+      "stacking": "curios_sum"
+    }
+  ]
+}

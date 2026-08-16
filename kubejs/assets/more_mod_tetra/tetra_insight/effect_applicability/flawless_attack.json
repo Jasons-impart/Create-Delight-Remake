@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "paths": [
+    {
+      "scopes": [
+        "main_hand"
+      ],
+      "triggers": [
+        "attack"
+      ],
+      "stacking": "item"
+    },
+    {
+      "scopes": [
+        "off_hand"
+      ],
+      "triggers": [
+        "attack"
+      ],
+      "stacking": "item"
+    }
+  ]
+}
