@@ -29,8 +29,8 @@ ServerEvents.recipes(e => {
     {
         let iner = "minecraft:bowl"
         create.sequenced_assembly("cosmopolitan:seasonal_ice_cream", iner, [
-            create.deploying(iner, [iner, 'youkaishomecoming:ice_cube']),
             create.filling(iner, [iner, Fluid.of("cosmopolitan:sweet_berry_ice_cream", 250)]),
+            create.deploying(iner, [iner, 'youkaishomecoming:ice_cube']),
             create.filling(iner, [iner, Fluid.of("cosmopolitan:beetroot_ice_cream", 250)]),
             create.filling(iner, [iner, Fluid.of("cosmopolitan:pumpkin_ice_cream", 250)])
         ])
@@ -41,8 +41,8 @@ ServerEvents.recipes(e => {
     {
         let iner = "minecraft:bowl"
         create.sequenced_assembly("neapolitan:neapolitan_ice_cream", iner, [
-            create.deploying(iner, [iner, 'youkaishomecoming:ice_cube']),
             create.filling(iner, [iner, Fluid.of("cosmopolitan:chocolate_ice_cream", 250)]),
+            create.deploying(iner, [iner, 'youkaishomecoming:ice_cube']),
             create.filling(iner, [iner, Fluid.of("cosmopolitan:strawberry_ice_cream", 250)]),
             create.filling(iner, [iner, Fluid.of("cosmopolitan:vanilla_ice_cream", 250)])
         ])

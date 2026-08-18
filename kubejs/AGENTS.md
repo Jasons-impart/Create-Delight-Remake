@@ -36,7 +36,7 @@ For cross-module conventions, release notes, and safety rules, see root `AGENTS.
 - Keep recipe IDs explicit and meaningful; use `createdelight` namespace for project-defined recipes unless compatibility requires another namespace.
 - Use `cutting_2(e, input, outputs)` for knife recipes because it also registers tetra modular knife support.
 - Use `centrifugation(e, results, ingredients, processingTime, minimalRPM)` when all centrifuge variants should exist.
-- Sequence assembly recipes need conflict checks: recipes sharing the same initial item can conflict when steps match.
+- Sequence assembly recipes need conflict checks: regardless of whether a transitional item is registered, recipes sharing the same initial item must not have the same first step.
 - Registry script changes require a game restart; ordinary server recipe changes can usually use `/kubejs reload server_scripts`.
 
 ## HELPER FUNCTIONS
