@@ -39,8 +39,8 @@ ServerEvents.recipes(e => {
     e.replaceInput({ id: "corn_delight:cooking/nachos_block" }, "#forge:milk", "#forge:cheese")
     combination(e, [
         "create:dough",
-        "trailandtales_delight:cheese_slice",
         "minecraft:carrot",
+        "trailandtales_delight:cheese_slice",
         "minecraft:beetroot",
         "minecraft:potato"
     ], "refurbished_furniture:raw_vegetable_pizza", 1)

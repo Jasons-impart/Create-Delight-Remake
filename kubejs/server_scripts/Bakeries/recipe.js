@@ -345,8 +345,8 @@ ServerEvents.recipes(e => {
         let iner = "bakeries:round_bread_dough"
         create.sequenced_assembly('bakeries:brown_sugar_roll_dough', iner,
             [
-                create.deploying(iner, [iner, 'createdelight:butter']),
-                create.deploying(iner, [iner, "bakeries:brown_sugar_cube"])
+                create.deploying(iner, [iner, "bakeries:brown_sugar_cube"]),
+                create.deploying(iner, [iner, 'createdelight:butter'])
             ]
         )
             .loops(1)

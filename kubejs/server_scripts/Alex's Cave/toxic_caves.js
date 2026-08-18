@@ -193,9 +193,9 @@ ServerEvents.recipes(e => {
     {
         let iner = "bakeries:cut_cake_base"
         e.recipes.create.sequenced_assembly('alexscaves:spelunkie', iner, [
+            e.recipes.create.pressing(iner, iner),
             e.recipes.create.deploying(iner, [iner, "alexscaves:sulfur_dust"]),
-            e.recipes.create.filling(iner, [iner, Fluid.of("cosmopolitan:cream", 250)]),
-            e.recipes.create.pressing(iner, iner)
+            e.recipes.create.filling(iner, [iner, Fluid.of("cosmopolitan:cream", 250)])
         ])
             .loops(1)
             .transitionalItem(iner)
