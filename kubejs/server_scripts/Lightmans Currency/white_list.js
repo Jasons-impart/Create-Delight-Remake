@@ -1,19 +1,27 @@
 ItemEvents.rightClicked("minecraft:stick", e => {
 })
-/**
- * 
- * @param {Internal.QuestObjectCompletedEventJS} e 
- * @param {Internal.ItemStack_[]} item 
- */
-function unlockTraderTrade(e, id, item) {
+
+function cdTraderUnlockStackMatches(stack, target) {
+    if (stack == null || stack.isEmpty())
+        return false
+    let targetStack = Item.of(target)
+    if (!stack.is(targetStack.id))
+        return false
+    if (!targetStack.hasNBT())
+        return true
+    return stack.hasNBT() && stack.nbt.equals(targetStack.nbt)
+}
+
+/** @param {Internal.ServerPlayer} player */
+function unlockTraderTradeForPlayer(player, id, item) {
     if (!(item instanceof Array))
         item = [item]
     let trader = global.CDServerJavaClasses.$TraderDataCache.TYPE.get(false).getTrader(id)
     if (trader == null) {
         console.error(`Unable to unlock persistent trader '${id}': trader not found`)
-        return
+        return false
     }
-    let player = e.player
+    let changed = false
     trader.tradeData.forEach(tradeData => {
         tradeData.rules.forEach(rule => {
             if (rule instanceof global.CDServerJavaClasses.$PlayerListing) {
@@ -26,14 +34,28 @@ function unlockTraderTrade(e, id, item) {
                 */
                 let itemTradeData = tradeData
                 item.forEach(item => {
-                    if (itemTradeData.getSellItem(0).is(item) || itemTradeData.getSellItem(1).is(item)) {
-                        if (listRule.addToWhitelist(player))
+                    if (cdTraderUnlockStackMatches(itemTradeData.getSellItem(0), item)
+                        || cdTraderUnlockStackMatches(itemTradeData.getSellItem(1), item)) {
+                        if (listRule.addToWhitelist(player)) {
                             trader.markTradeRulesDirty()
+                            changed = true
+                        }
                     }
                 })
             }
         })
     })
+    return changed
+}
+
+function hasCompletedTradeUnlockQuest(player, questId) {
+    let file = global.CDServerJavaClasses.$ServerQuestFile.INSTANCE
+    if (file == null)
+        return false
+    let quest = file.getQuest(file.getID(questId))
+    if (quest == null)
+        return false
+    return file.getOrCreateTeamData(player).isCompleted(quest)
 }
 
 let tech_list = [
@@ -62,16 +84,81 @@ let res_list = [
     ["441F72B76AC3D7AC", ["minecraft:gold_ingot", "minecraft:diamond", "iceandfire:silver_ingot"]],
     ["36114A8D5283E6E5", ["createmetallurgy:tungsten_ingot", "minecraft:ancient_debris"]]
 ]
+
+let order_clause_trade_unlocks = [
+    { level: 2, clauses: ["specialty_supply", "banquet_assortment"] },
+    { level: 3, clauses: ["bulk_purchase", "small_premium"] },
+    { level: 4, clauses: ["quality_inspection"] },
+    { level: 5, clauses: ["reputation_priority", "cash_settlement"] }
+]
+
+function cdOrderClauseTradeStack(clause) {
+    return Item.of("createdelight:order_clause", 1, { OrderClause: clause })
+}
+
+function cdUnlockOrderClauseTrades(player, minimumExclusiveLevel, currentLevel, notify) {
+    let changed = false
+    order_clause_trade_unlocks.forEach(tier => {
+        if (tier.level <= minimumExclusiveLevel || tier.level > currentLevel)
+            return
+        tier.clauses.forEach(clause => {
+            let clauseChanged = unlockTraderTradeForPlayer(
+                player,
+                "order_guild_trader",
+                cdOrderClauseTradeStack(clause)
+            )
+            if (clauseChanged && notify) {
+                player.tell(Text.translate(
+                    "message.createdelight.order_clause.trade_unlocked",
+                    tier.level,
+                    Text.translate(`tooltip.createdelight.order_clause.${clause}.name`)
+                ))
+            }
+            changed = clauseChanged || changed
+        })
+    })
+    return changed
+}
+
+global.Order.reputation.notifyTradeUnlocks = function(player, beforeLevel, afterLevel) {
+    if (cdUnlockOrderClauseTrades(player, beforeLevel, afterLevel, true))
+        global.CDServerJavaClasses.$TraderDataCache.TYPE.get(false).reloadPersistentTraders()
+}
 tech_list.forEach(v => {
     FTBQuestsEvents.completed(v[0], e => {
-        unlockTraderTrade(e, "technology_help_trade", v[1])
-        global.CDServerJavaClasses.$TraderDataCache.TYPE.get(false).reloadPersistentTraders()
+        if (unlockTraderTradeForPlayer(e.player, "technology_help_trade", v[1]))
+            global.CDServerJavaClasses.$TraderDataCache.TYPE.get(false).reloadPersistentTraders()
     })
 })
 
 res_list.forEach(v => {
     FTBQuestsEvents.completed(v[0], e => {
-        unlockTraderTrade(e, "resource_trader", v[1])
-        global.CDServerJavaClasses.$TraderDataCache.TYPE.get(false).reloadPersistentTraders()
+        if (unlockTraderTradeForPlayer(e.player, "resource_trader", v[1]))
+            global.CDServerJavaClasses.$TraderDataCache.TYPE.get(false).reloadPersistentTraders()
     })
+})
+
+PlayerEvents.loggedIn(e => {
+    let changed = false
+    tech_list.forEach(v => {
+        if (!hasCompletedTradeUnlockQuest(e.player, v[0]))
+            return
+        changed = unlockTraderTradeForPlayer(e.player, "technology_help_trade", v[1]) || changed
+    })
+    res_list.forEach(v => {
+        if (!hasCompletedTradeUnlockQuest(e.player, v[0]))
+            return
+        changed = unlockTraderTradeForPlayer(e.player, "resource_trader", v[1]) || changed
+    })
+    let reputationLevel = global.Order.reputation.getLevel(e.player)
+    let clauseChanged = cdUnlockOrderClauseTrades(e.player, 0, reputationLevel, false)
+    if (clauseChanged) {
+        e.player.tell(Text.translate(
+            "message.createdelight.order_clause.trade_reconciled",
+            reputationLevel
+        ))
+    }
+    changed = clauseChanged || changed
+    if (changed)
+        global.CDServerJavaClasses.$TraderDataCache.TYPE.get(false).reloadPersistentTraders()
 })

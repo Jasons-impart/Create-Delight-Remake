@@ -6,29 +6,15 @@ global.CDOrderMarketSaturation = {
 }
 
 NetworkEvents.dataReceived(ORDER_MARKET_SYNC_PACKET, e => {
-    let raw = e.data.data
-    let day = e.data.day
-    if (raw == null && e.data.get != null) {
-        raw = e.data.get("data").getAsString()
-        day = e.data.get("day").getAsInt()
-    }
+    let raw = e.data.get("data").getAsString()
 
     try {
-        let parsed = raw == null || `${raw}`.length == 0 ? null : JSON.parse(`${raw}`)
-        if (typeof parsed == "string" && parsed.length > 0)
-            parsed = JSON.parse(parsed)
-        global.CDOrderMarketSaturation.data = parsed
+        global.CDOrderMarketSaturation.data = raw.length == 0 ? null : JSON.parse(raw)
     } catch (error) {
         global.CDOrderMarketSaturation.data = null
     }
-    global.CDOrderMarketSaturation.day = day == null ? 0 : Number(day)
+    global.CDOrderMarketSaturation.day = e.data.get("day").getAsInt()
 })
-
-function cloneOrderMarketData(data) {
-    if (data == null)
-        return null
-    return JSON.parse(JSON.stringify(data))
-}
 
 function getOrderMarketNumber(value, fallback) {
     let number = Number(value)
@@ -42,21 +28,61 @@ function formatOrderNumber(value, digits) {
     return number.toFixed(digits == null ? 0 : digits)
 }
 
-function getClientOrderMarketModifier(order) {
-    if (global.Order == null || global.Order.marketSaturation == null)
+function getOrderClientValue(container, key) {
+    if (container == null || key == null)
         return null
+
+    try {
+        if (container.containsKey != null && container.containsKey(key))
+            return container.get(key)
+    } catch (ignored) {
+    }
+    try {
+        if (container.contains != null && container.contains(key))
+            return container.get(key)
+    } catch (ignored) {
+    }
+    try {
+        let value = container[key]
+        return value == null ? null : value
+    } catch (ignored) {
+        return null
+    }
+}
+
+function getClientOrderReputationLevel() {
+    let status = global.CDOrderSupplyStatus
+    if (status == null || Client.player == null)
+        return null
+    let playerId = getOrderClientValue(status, "playerId")
+    if (playerId != null && `${Client.player.uuid}` != `${playerId}`)
+        return null
+    let level = Number(getOrderClientValue(status, "reputationLevel"))
+    return isFinite(level) ? Math.max(1, level) : null
+}
+
+function getNextOrderMachinePermitLevel(level) {
+    let nextLevel = null
+    global.Order.reputation.machinePermits.forEach(permit => {
+        if (permit.level > level && (nextLevel == null || permit.level < nextLevel))
+            nextLevel = permit.level
+    })
+    return nextLevel
+}
+
+function getClientOrderMarketModifier(order) {
     global.Order.ensureDataLoaded()
-    if (global.CDOrderMarketSaturation == null || global.CDOrderMarketSaturation.data == null)
+    if (global.CDOrderMarketSaturation.data == null)
         return null
     if (order == null || order.entries == null || order.entries.length == 0)
-        return { multiplier: 1, penalty: 0, categoryPressure: 0, customerPressure: 0 }
+        return { multiplier: 1, bonus: 0, consumedBonus: 0, rawConsumption: 0, saturated: false, categoryPressure: 0, customerPressure: 0 }
 
-    let config = global.Order.marketSaturationConfig || {}
-    let categoryPenaltyValue = getOrderMarketNumber(config.categoryPenalty, 0.08)
-    let customerPenaltyValue = getOrderMarketNumber(config.customerPenalty, 0.05)
-    let maxPenaltyValue = getOrderMarketNumber(config.maxPenalty, 0.35)
+    let config = global.Order.marketSaturationConfig
+    let categoryPenaltyValue = Number(config.categoryPenalty)
+    let customerPenaltyValue = Number(config.customerPenalty)
+    let maxBonusValue = Number(config.maxBonus)
     let data = global.Order.marketSaturation.decay(
-        cloneOrderMarketData(global.CDOrderMarketSaturation.data),
+        JSON.parse(JSON.stringify(global.CDOrderMarketSaturation.data)),
         global.CDOrderMarketSaturation.day
     )
     data.categories = data.categories || {}
@@ -69,23 +95,31 @@ function getClientOrderMarketModifier(order) {
     categoryPressure /= Math.max(1, order.entries.length)
 
     let customerPressure = getOrderMarketNumber(data.customers[order.type], 0)
-    let pressure = categoryPressure * categoryPenaltyValue + customerPressure * customerPenaltyValue
-    let penalty = Math.min(maxPenaltyValue, pressure)
-    if (!isFinite(penalty))
-        return null
-
-    return {
-        multiplier: 1 - penalty,
-        penalty: penalty,
-        rawPenalty: pressure,
-        capped: pressure > penalty + 0.0001,
+    let rawConsumption = categoryPressure * categoryPenaltyValue + customerPressure * customerPenaltyValue
+    let consumedBonus = Math.min(maxBonusValue, Math.max(0, rawConsumption))
+    let availableBonus = Math.max(0, maxBonusValue - consumedBonus)
+    let result = {
+        multiplier: 1 + availableBonus,
+        bonus: availableBonus,
+        consumedBonus: consumedBonus,
+        rawConsumption: rawConsumption,
+        saturated: rawConsumption >= maxBonusValue - 0.0001,
         categoryPressure: categoryPressure,
         customerPressure: customerPressure
     }
+    return global.Order.marketSaturation.applyPolicy(order, result)
 }
 
 ItemEvents.tooltip(e => {
     global.Order.ensureDataLoaded()
+    e.addAdvanced("lightmanscurrency:ticket", (item, advanced, text) => {
+        let ticketColor = Number(item?.nbt?.TicketColor)
+        let ticketId = Number(item?.nbt?.TicketID)
+        if (ticketColor != global.Order.guildVoucherColor || ticketId != -10)
+            return
+        text.add(Text.translate("item.createdelight.name.guild_voucher").gold())
+        text.add(Text.translate("tooltip.createdelight.order.guild_voucher").gray())
+    })
     e.addAdvancedToAll((item, advanced, text) => {
         let comp = Component.empty()
         let added = false
@@ -94,7 +128,7 @@ ItemEvents.tooltip(e => {
         tags.filter(tag => tag.location().toString().startsWith("createdelight:order"))
             .forEach(tag => {
                 let type = tag.location().path.split("/")[1]
-                if (type == null || global.Order.orderProperties[type] == null)
+                if (type == null || getOrderClientValue(global.Order.orderProperties, type) == null)
                     return
                 let quality = global.Order.getGoodsOrderProperty(item, type)
                 if (quality == null || !isFinite(Number(quality)))
@@ -112,9 +146,9 @@ ItemEvents.tooltip(e => {
         let info = item?.nbt?.createdelightOrderInfo
         if (!info) return
 
-        let entries = info.entries
+        let entries = global.Order.toObjectArray(info.entries)
         let type = info.type
-        let customer = global.Order.customerProperties[type]
+        let customer = getOrderClientValue(global.Order.customerProperties, type)
         let reward = customer.reward
         if (reward == null)
             reward = [`createdelight:orders/${info.type}`, 1]
@@ -153,14 +187,15 @@ ItemEvents.tooltip(e => {
         text.add(Text.translate("tooltip.createdelight.order.require.title"))
         if (e.shift)
             entries.forEach(value => {
-                let good = global.Order.orderProperties[value.id]
+                let good = getOrderClientValue(global.Order.orderProperties, value.id)
                 text.add(Text.translate(
                     "tooltip.createdelight.order.require.entry_shift",
                     Text.translate("tooltip.createdelight.order.entries." + value.id),
                     formatOrderNumber(value.count),
                     Text.translate("tooltip.createdelight.order.tier." + value.minQuality),
                     Text.of(formatOrderNumber(good == null ? 0 : good.base_count)).gray(),
-                    Text.of(formatOrderNumber(Number(value.count) / Math.max(1, Number(good == null ? 1 : good.base_count)), 2)).gray()
+                    Text.of(formatOrderNumber(Number(value.count) / Math.max(1, Number(good == null ? 1 : good.base_count)), 2)).gray(),
+                    Text.of(((Math.max(0.1, Number(good == null ? 1 : good.reward_weight) || 1)) * 100).toFixed(0)).gray()
                 ))
             })
         else
@@ -187,6 +222,14 @@ ItemEvents.tooltip(e => {
             "tooltip.createdelight.order.money.base",
             global.MoneyUtil.convertBaseValueToString(baseMoney)
         ))
+        if (e.shift) {
+            let grade = Math.max(1, Math.min(6, Number(info.orderGrade) || 1))
+            let gradeBaseMoney = Math.max(0, Number(global.Order.gradeProfiles[grade].baseMoney) || 0)
+            text.add(Text.translate(
+                "tooltip.createdelight.order.money.grade_base",
+                global.MoneyUtil.convertBaseValueToString(gradeBaseMoney)
+            ).darkGray())
+        }
         let reputationMultiplier = info.rewardMultipliers != null && info.rewardMultipliers.reputation != null
             ? Number(info.rewardMultipliers.reputation)
             : 1
@@ -202,19 +245,48 @@ ItemEvents.tooltip(e => {
             ).gray())
 
         let marketModifier = getClientOrderMarketModifier(info)
+        let timeModifier = global.Order.getTimeRewardModifier(info, Client.level)
+        if (info.acceptedGameTime != null) {
+            if (timeModifier.remainingTicks > 0)
+                text.add(Text.translate(
+                    "tooltip.createdelight.order.money.time_bonus",
+                    (timeModifier.multiplier * 100).toFixed(0),
+                    (timeModifier.remainingTicks / 24000).toFixed(1)
+                ).gray())
+            else
+                text.add(Text.translate("tooltip.createdelight.order.money.time_bonus_expired").darkGray())
+        }
+        let generationSpec = getOrderClientValue(info, "generationSpec")
+        let marketFloor = generationSpec == null ? NaN : Number(getOrderClientValue(generationSpec, "marketMultiplierFloor"))
+        if (isFinite(marketFloor) && marketFloor > 1) {
+            let marketGapCategoryValue = generationSpec == null ? null : getOrderClientValue(generationSpec, "marketGapCategory")
+            let marketGapCategory = marketGapCategoryValue == null ? null : `${marketGapCategoryValue}`
+            if (marketGapCategory != null && marketGapCategory.length > 0) {
+                text.add(Text.translate(
+                    "tooltip.createdelight.order.money.market_gap",
+                    Text.translate(`tooltip.createdelight.order.entries.${marketGapCategory}`),
+                    (marketFloor * 100).toFixed(0)
+                ).gold())
+            } else {
+                text.add(Text.translate(
+                    "tooltip.createdelight.order.money.market_floor",
+                    (marketFloor * 100).toFixed(0)
+                ).gold())
+            }
+        }
         if (marketModifier == null) {
             text.add(Text.translate("tooltip.createdelight.order.market_saturation.delivery_time").gray())
         } else {
-            let currentMoney = baseMoney * marketModifier.multiplier
+            let currentMoney = baseMoney * marketModifier.multiplier * timeModifier.multiplier
             text.add(Text.translate(
                 "tooltip.createdelight.order.money.current_market",
                 global.MoneyUtil.convertBaseValueToString(currentMoney),
                 (marketModifier.multiplier * 100).toFixed(0)
             ).gray())
-            if (marketModifier.capped) {
+            if (marketModifier.saturated) {
                 text.add(Text.translate(
                     "tooltip.createdelight.order.money.market_capped",
-                    (marketModifier.rawPenalty * 100).toFixed(0)
+                    (marketModifier.rawConsumption * 100).toFixed(0)
                 ).darkGray())
                 text.add(Text.translate("tooltip.createdelight.order.money.cross_recovery").darkGray())
             }
@@ -230,6 +302,9 @@ ItemEvents.tooltip(e => {
 
         text.add("")
         text.add(Text.translate("tooltip.createdelight.order_draft.title"))
+        let draftGrade = Math.max(0, Math.floor(Number(draft.Grade) || 0))
+        if (draftGrade > 0)
+            text.add(Text.translate("tooltip.createdelight.order_draft.grade", `${draftGrade}`))
         if (draft.customerSeal != null)
             text.add(Text.translate(
                 "tooltip.createdelight.order_draft.customer",
@@ -240,7 +315,26 @@ ItemEvents.tooltip(e => {
                 "tooltip.createdelight.order_draft.category",
                 Text.translate(`tooltip.createdelight.order_draft.seal.${draft.categorySeal}`)
             ))
-        let clauses = global.Order.toArray(draft.Clauses)
+        let requiredCategories = global.Order.toArray(getOrderClientValue(draft, "requiredCategories")).map(value => `${value}`)
+        let requiredCategory = getOrderClientValue(draft, "requiredCategory")
+        if (requiredCategory != null && requiredCategories.indexOf(`${requiredCategory}`) < 0)
+            requiredCategories.push(`${requiredCategory}`)
+        requiredCategories.forEach(category => {
+            text.add(Text.translate(
+                "tooltip.createdelight.order_draft.required_category",
+                Text.translate(`tooltip.createdelight.order.entries.${category}`)
+            ).gold())
+        })
+        let boardKind = getOrderClientValue(draft, "BoardKind")
+        if (`${boardKind}` == "adapted" && requiredCategories.length > 0)
+            text.add(Text.translate("tooltip.createdelight.order_draft.adapted_fixed").green())
+        let boardMarketMultiplier = Number(getOrderClientValue(draft, "BoardMarketMultiplier"))
+        if (`${boardKind}` == "opportunity" && isFinite(boardMarketMultiplier) && boardMarketMultiplier > 1)
+            text.add(Text.translate(
+                "tooltip.createdelight.order_draft.market_floor",
+                (boardMarketMultiplier * 100).toFixed(0)
+            ).gold())
+        let clauses = global.Order.toArray(getOrderClientValue(draft, "Clauses"))
         clauses.forEach(value => {
             text.add(Text.translate(
                 "tooltip.createdelight.order_draft.clause",
@@ -282,7 +376,113 @@ ItemEvents.tooltip(e => {
             text.add(Text.translate("tooltip.createdelight.order_clause.min_grade", clause.minGrade).darkGray())
         if (clause.maxGrade != null)
             text.add(Text.translate("tooltip.createdelight.order_clause.max_grade", clause.maxGrade).darkGray())
+        let returnReasonValue = item.nbt == null ? null : getOrderClientValue(item.nbt, "ClauseReturnReason")
+        let returnReason = returnReasonValue == null ? null : `${returnReasonValue}`
+        if (returnReason != null)
+            text.add(Text.translate("tooltip.createdelight.order_clause.return_reason",
+                Text.translate(`tooltip.createdelight.order_clause.return_reason.${returnReason}`)
+            ).darkGreen())
+        else if (clauseKey != "newcomer")
+            text.add(Text.translate("tooltip.createdelight.order_clause.return_source").darkGreen())
         text.add(Text.translate("tooltip.createdelight.order_clause.use").darkGray())
+    })
+
+    e.addAdvanced("createdelight:order_reputation_certificate", (item, advanced, text) => {
+        let hasLevel = item.nbt != null && item.nbt.contains("OrderReputationLevel")
+        let level = hasLevel ? Math.max(0, item.nbt.getInt("OrderReputationLevel")) : 0
+        let hasPermits = item.nbt != null && item.nbt.contains("OrderMachinePermits")
+        let permits = hasPermits ? item.nbt.getCompound("OrderMachinePermits") : null
+        let hasOwner = item.nbt != null && item.nbt.contains("OrderCertificateOwner")
+        if (permits != null && !hasLevel && !hasOwner) {
+            text.add(Text.translate("tooltip.createdelight.order_reputation_certificate.required_permits").gray())
+            global.Order.reputation.machinePermits.forEach(permit => {
+                if (permits.getBoolean(permit.key))
+                    text.add(Text.translate(
+                        "tooltip.createdelight.order_reputation_certificate.permit",
+                        Text.translate(permit.nameKey)
+                    ).green())
+            })
+            text.add(Text.translate("tooltip.createdelight.order_reputation_certificate.keep").gray())
+            return
+        }
+        let reputationLevel = getClientOrderReputationLevel()
+        text.add(Text.translate("tooltip.createdelight.order_reputation_certificate.level", `${level}`).gold())
+        if (reputationLevel == null) {
+            text.add(Text.translate("tooltip.createdelight.order_reputation_certificate.status_waiting").darkGray())
+        } else {
+            text.add(Text.translate(
+                "tooltip.createdelight.order_reputation_certificate.actual_level",
+                `${Math.max(0, Math.floor(Number(reputationLevel) || 0))}`
+            ).aqua())
+            if (reputationLevel > level)
+                text.add(Text.translate("tooltip.createdelight.order_reputation_certificate.refresh_needed").yellow())
+        }
+        if (level < 2 || permits == null) {
+            text.add(Text.translate("tooltip.createdelight.order_reputation_certificate.unverified").red())
+        } else {
+            text.add(Text.translate("tooltip.createdelight.order_reputation_certificate.permits").gray())
+            global.Order.reputation.machinePermits.forEach(permit => {
+                if (permits.getBoolean(permit.key))
+                    text.add(Text.translate(
+                        "tooltip.createdelight.order_reputation_certificate.permit",
+                        Text.translate(permit.nameKey)
+                    ).green())
+            })
+        }
+        if (reputationLevel != null) {
+            let nextLevel = getNextOrderMachinePermitLevel(reputationLevel)
+            if (nextLevel == null) {
+                text.add(Text.translate("tooltip.createdelight.order_reputation_certificate.all_unlocked").green())
+            } else {
+                text.add(Text.translate(
+                    "tooltip.createdelight.order_reputation_certificate.next_level",
+                    `${nextLevel}`
+                ).aqua())
+                global.Order.reputation.machinePermits.forEach(permit => {
+                    if (permit.level == nextLevel)
+                        text.add(Text.translate(
+                            "tooltip.createdelight.order_reputation_certificate.next_permit",
+                            Text.translate(permit.nameKey)
+                        ).gray())
+                })
+            }
+            if (reputationLevel == 4)
+                text.add(Text.translate("tooltip.createdelight.order_reputation_certificate.level4_guide").yellow())
+        }
+        text.add(Text.translate("tooltip.createdelight.order_reputation_certificate.keep").gray())
+        text.add(Text.translate("tooltip.createdelight.order_reputation_certificate.refresh").darkGray())
+    })
+
+    global.Order.reputation.machinePermits.forEach(permit => {
+        e.addAdvanced(permit.item, (item, advanced, text) => {
+            text.add(Text.translate(permit.roleKey).gray())
+            let reputationLevel = getClientOrderReputationLevel()
+            if (reputationLevel == null) {
+                text.add(Text.translate(
+                    "tooltip.createdelight.order_machine_certificate.required",
+                    `${permit.level}`
+                ).gold())
+                text.add(Text.translate("tooltip.createdelight.order_machine_certificate.status_waiting").darkGray())
+            } else {
+                let statusLine = Text.translate(
+                    "tooltip.createdelight.order_machine_certificate.status",
+                    `${Math.max(0, Math.floor(Number(reputationLevel) || 0))}`,
+                    `${permit.level}`
+                )
+                if (reputationLevel >= permit.level) {
+                    text.add(statusLine.green())
+                    text.add(Text.translate("tooltip.createdelight.order_machine_certificate.unlocked").green())
+                } else {
+                    text.add(statusLine.red())
+                    text.add(Text.translate("tooltip.createdelight.order_machine_certificate.locked").red())
+                }
+            }
+            let guideKey = getOrderClientValue(permit, "guideKey")
+            if (guideKey != null)
+                text.add(Text.translate(guideKey).yellow())
+            text.add(Text.translate("tooltip.createdelight.order_machine_certificate.borrow").gray())
+            text.add(Text.translate("tooltip.createdelight.order_machine_certificate.kept").darkGray())
+        })
     })
 
 })

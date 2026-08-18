@@ -58,6 +58,31 @@ function cdOrderCommandShowReputation(source, player) {
             nextThreshold
         ))
     }
+
+    let currentPermit = null
+    let nextPermit = null
+    reputation.machinePermits.forEach(permit => {
+        if (permit.level <= level)
+            currentPermit = permit
+        else if (nextPermit == null)
+            nextPermit = permit
+    })
+    cdOrderCommandSend(source, Text.translate(
+        "command.createdelight.order.reputation.current_machine",
+        currentPermit == null
+            ? Text.translate("item.createdelight.order_deliverer_item")
+            : Text.translate(currentPermit.nameKey)
+    ))
+    if (nextPermit == null) {
+        cdOrderCommandSend(source, Text.translate("command.createdelight.order.reputation.all_machines"))
+    } else {
+        cdOrderCommandSend(source, Text.translate(
+            "command.createdelight.order.reputation.next_machine",
+            nextPermit.level,
+            Text.translate(nextPermit.nameKey)
+        ))
+    }
+
     return 1
 }
 
@@ -75,13 +100,13 @@ function cdOrderCommandTopMarketEntries(values) {
 function cdOrderCommandShowMarket(source, player) {
     global.Order.ensureDataLoaded()
     let market = global.Order.marketSaturation
-    let config = global.Order.marketSaturationConfig || {}
+    let config = global.Order.marketSaturationConfig
     let day = market.getDay(player)
     let data = market.decay(market.read(player), day)
-    let categoryPenalty = Number(config.categoryPenalty || 0)
-    let customerPenalty = Number(config.customerPenalty || 0)
-    let decayPerDay = Number(config.decayPerDay == null ? 1 : config.decayPerDay)
-    let maxPenalty = Number(config.maxPenalty || 0)
+    let categoryPenalty = Number(config.categoryPenalty)
+    let customerPenalty = Number(config.customerPenalty)
+    let decayPerDay = Number(config.decayPerDay)
+    let maxBonus = Number(config.maxBonus)
     let categories = cdOrderCommandTopMarketEntries(data.categories)
     let customers = cdOrderCommandTopMarketEntries(data.customers)
 
@@ -89,7 +114,7 @@ function cdOrderCommandShowMarket(source, player) {
         "command.createdelight.order.market.header",
         cdOrderCommandPlayerName(player),
         cdOrderCommandFormat(decayPerDay * 100, 0),
-        cdOrderCommandFormat(maxPenalty * 100, 0)
+        cdOrderCommandFormat(maxBonus * 100, 0)
     ))
 
     if (categories.length == 0 && customers.length == 0) {
@@ -119,8 +144,7 @@ function cdOrderCommandShowMarket(source, player) {
 function cdOrderCommandResetMarket(source, player) {
     let market = global.Order.marketSaturation
     market.write(player, market.createData(market.getDay(player)))
-    if (global.syncOrderMarketSaturation != null)
-        global.syncOrderMarketSaturation(player)
+    global.syncOrderMarketSaturation(player)
     cdOrderCommandSend(source, Text.translate(
         "command.createdelight.order.admin.market.reset",
         cdOrderCommandPlayerName(player)

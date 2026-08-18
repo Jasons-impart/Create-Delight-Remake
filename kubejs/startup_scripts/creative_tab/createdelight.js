@@ -210,6 +210,7 @@ StartupEvents.registry("creative_mode_tab", e => {
       'createdelight:sealed_joint_component',
       'createdelight:logic_component',
       'createdelight:order_deliverer_item',
+      'createdelight:order_reputation_certificate',
       'createdelight:quality_absorber',
       'createdelight:life_matter_extractor',
       'createdelight:order',
@@ -227,11 +228,11 @@ StartupEvents.registry("creative_mode_tab", e => {
       Item.of('createdelight:order_clause', { OrderClause: 'lenient_acceptance' }),
       Item.of('createdelight:order_clause', { OrderClause: 'specialty_supply' }),
       Item.of('createdelight:order_clause', { OrderClause: 'banquet_assortment' }),
-      Item.of('createdelight:order_clause', { OrderClause: 'thin_margin_volume' }),
       Item.of('createdelight:order_clause', { OrderClause: 'small_premium' }),
       Item.of('createdelight:order_clause', { OrderClause: 'bulk_purchase' }),
       Item.of('createdelight:order_clause', { OrderClause: 'quality_inspection' }),
       Item.of('createdelight:order_clause', { OrderClause: 'reputation_priority' }),
-      Item.of('createdelight:order_clause', { OrderClause: 'cash_settlement' })
+      Item.of('createdelight:order_clause', { OrderClause: 'cash_settlement' }),
+      Item.of('createdelight:order_clause', { OrderClause: 'urgent_delivery' })
     ])
 })

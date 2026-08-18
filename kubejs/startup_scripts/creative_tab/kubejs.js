@@ -269,6 +269,7 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:wafer_dough',
         'createdelight:raw_potato_pancake',
         'createdelight:order_deliverer_item',
+        'createdelight:order_reputation_certificate',
         "createdelight:guncotton",
         "createdelight:incomplete_gunkan",
         "createdelight:incomplete_nigiri",
