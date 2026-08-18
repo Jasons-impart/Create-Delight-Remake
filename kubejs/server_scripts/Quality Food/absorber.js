@@ -6,6 +6,9 @@ ItemEvents.rightClicked("createdelight:quality_absorber", e => {
     let items = player.getCapability(ForgeCapabilities.ITEM_HANDLER).orElse(null)
     let amount = 0
     items.allItems.forEach(item => {
+        if (!item.hasTag("createdelightcore:life_matter_sources"))
+            return
+
         let quality = global.CDServerJavaClasses.$QualityUtils.getQuality(item)
         if (quality.level() > 0) {
             amount += getLifeMatterExtractionValue(quality.level()) * item.count
@@ -19,7 +22,7 @@ ItemEvents.rightClicked("createdelight:quality_absorber", e => {
         return
 
     player.give(Item.of("createdelight:life_matter", amount))
-    player.tell(Component.of(`将物品栏中的所有品质物品提取为 ${amount} 个生命质。`))
+    player.tell(Component.of(`将物品栏中的指定品质原材料提取为 ${amount} 个生命质。`))
 })
 
 function getLifeMatterExtractionValue(qualityLevel) {

@@ -1,13 +1,13 @@
 name = "Tetra Insight"
-filename = "tetra_insight-0.1.5.jar"
+filename = "tetra_insight-0.1.6.jar"
 side = "client"
 
 [download]
 hash-format = "sha1"
-hash = "8eacf89d87fe1126ac282344993635950ecabdf8"
+hash = "916d34b529d953be9b9c63ebd02b165bb327f75a"
 mode = "metadata:curseforge"
 
 [update]
 [update.curseforge]
-file-id = 8622254
+file-id = 8655038
 project-id = 1613955

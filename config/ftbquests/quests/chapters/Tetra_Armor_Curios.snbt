@@ -1,0 +1,5610 @@
+{
+	autofocus_id: "4F4B89AF71FA7538"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "Tetra_Armor_Curios"
+	group: "57E934AC8166BC73"
+	icon: {
+		Count: 1
+		id: "tetrawear:modular_chest"
+		tag: {
+			Damage: 0
+			"armor/chest/elytra_material": "elytra/elytra"
+			"armor/chest/harness_material": "harness/makeshift"
+			"armor/chest/shoulderguards_material": "shoulderguards/netherite"
+			"chest/arms": "armor/chest/shoulderguards"
+			"chest/inner": "armor/chest/harness"
+			"chest/outer": "armor/chest/elytra"
+			id: "f9d35748-5e5d-5aaf-b9d1-19bc358f8c16"
+		}
+	}
+	id: "4ED32291AEAD9E7F"
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"&e用途：左侧查询模块化护甲，右侧查询饰品家族。"
+				"&b阅读：每个命名模块只出现一次。"
+				"&a提示：需要卷轴的模块会显示醒目的“需要”短行。"
+			]
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_chest"
+				tag: {
+					Damage: 0
+					"armor/chest/elytra_material": "elytra/elytra"
+					"armor/chest/harness_material": "harness/makeshift"
+					"armor/chest/shoulderguards_material": "shoulderguards/netherite"
+					"chest/arms": "armor/chest/shoulderguards"
+					"chest/inner": "armor/chest/harness"
+					"chest/outer": "armor/chest/elytra"
+					id: "f9d35748-5e5d-5aaf-b9d1-19bc358f8c16"
+				}
+			}
+			id: "4F4B89AF71FA7538"
+			shape: "hexagon"
+			size: 3.0d
+			tasks: [{
+				id: "6408F995587E240E"
+				title: "阅读护甲与饰品"
+				type: "checkmark"
+			}]
+			title: "&6护甲与饰品"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4F4B89AF71FA7538"]
+			description: ["&e用途：汇总模块化护甲的物品与模块。"]
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_helmet"
+				tag: {
+					Damage: 0
+					"armor/helmet/diving_cap_material": "diving_cap/turtle_scute"
+					"armor/helmet/standard_lining_material": "helmet/standard_lining/makeshift"
+					"helmet/cover": "armor/helmet/diving_cap"
+					"helmet/lining": "armor/helmet/standard_lining"
+					id: "c28799d1-359e-502c-b7a8-ae7982cf7387"
+				}
+			}
+			id: "2EA468C04A5F96E2"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "7BF835E562A31BA1"
+				title: "阅读模块化护甲"
+				type: "checkmark"
+			}]
+			title: "&a模块化护甲"
+			x: -19.65d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2EA468C04A5F96E2"]
+			description: [
+				"&e用途：查看头部护甲的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_helmet"
+				tag: {
+					Damage: 0
+					"armor/helmet/diving_cap_material": "diving_cap/turtle_scute"
+					"armor/helmet/standard_lining_material": "helmet/standard_lining/makeshift"
+					"helmet/cover": "armor/helmet/diving_cap"
+					"helmet/lining": "armor/helmet/standard_lining"
+					id: "89f80c3a-a601-5f51-9087-e2fb8a4f8922"
+				}
+			}
+			id: "358E3E08807EB29D"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "17B276C43B709FAD"
+				title: "阅读头部护甲"
+				type: "checkmark"
+			}]
+			title: "&a头部护甲"
+			x: -29.3d
+			y: -5.0d
+		}
+		{
+			dependencies: ["358E3E08807EB29D"]
+			description: [
+				"&e用途：汇总“附件”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_helmet"
+				tag: {
+					Damage: 0
+					"armor/helmet/diving_cap_material": "diving_cap/turtle_scute"
+					"armor/helmet/standard_lining_material": "helmet/standard_lining/makeshift"
+					"helmet/attachment": "armor/helmet/guise"
+					"helmet/cover": "armor/helmet/diving_cap"
+					"helmet/lining": "armor/helmet/standard_lining"
+					id: "caf6736e-84b2-5672-904a-56d987f6c346"
+				}
+			}
+			id: "1C1923D6875E014B"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "6FAD60ADA9A4D538"
+				title: "阅读附件"
+				type: "checkmark"
+			}]
+			title: "&b附件"
+			x: -33.05d
+			y: -9.0d
+		}
+		{
+			dependencies: ["1C1923D6875E014B"]
+			description: [
+				"&e用途：用特定生物制成的伪装，可缩短同类生物发现穿戴者的距离。"
+				"&b适合：安装在“附件”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_helmet"
+				tag: {
+					Damage: 0
+					"armor/helmet/diving_cap_material": "diving_cap/turtle_scute"
+					"armor/helmet/standard_lining_material": "helmet/standard_lining/makeshift"
+					"helmet/attachment": "armor/helmet/guise"
+					"helmet/cover": "armor/helmet/diving_cap"
+					"helmet/lining": "armor/helmet/standard_lining"
+					id: "742f2bd0-3baa-5eed-8bc7-ad7e57947a23"
+				}
+			}
+			id: "67DBF7F3436BB718"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "61E3C7753BBA5EB7"
+				title: "阅读伪装"
+				type: "checkmark"
+			}]
+			title: "伪装"
+			x: -33.05d
+			y: -11.7d
+		}
+		{
+			dependencies: ["358E3E08807EB29D"]
+			description: [
+				"&e用途：汇总“外覆层”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_helmet"
+				tag: {
+					Damage: 0
+					"armor/helmet/diving_cap_material": "diving_cap/turtle_scute"
+					"armor/helmet/standard_lining_material": "helmet/standard_lining/makeshift"
+					"helmet/cover": "armor/helmet/diving_cap"
+					"helmet/lining": "armor/helmet/standard_lining"
+					id: "778cfed5-7c9f-5d6d-8c5d-78346a9f21f1"
+				}
+			}
+			id: "751437A06FBE4D39"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "0013DD6B2F103DF7"
+				title: "阅读外覆层"
+				type: "checkmark"
+			}]
+			title: "&b外覆层"
+			x: -25.55d
+			y: -9.0d
+		}
+		{
+			dependencies: ["751437A06FBE4D39"]
+			description: [
+				"&e用途：潜水帽能提供一定的护甲值，并让穿戴者在水下呼吸一段时间。"
+				"&b适合：安装在“外覆层”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_helmet"
+				tag: {
+					Damage: 0
+					"armor/helmet/diving_cap_material": "diving_cap/turtle_scute"
+					"armor/helmet/standard_lining_material": "helmet/standard_lining/makeshift"
+					"helmet/cover": "armor/helmet/diving_cap"
+					"helmet/lining": "armor/helmet/standard_lining"
+					id: "492be2d6-c716-507f-8329-8fac1f5a61b0"
+				}
+			}
+			id: "3753850032BA3348"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "4F76CB3BD8A6D9E4"
+				title: "阅读潜水帽"
+				type: "checkmark"
+			}]
+			title: "潜水帽"
+			x: -26.72d
+			y: -11.7d
+		}
+		{
+			dependencies: ["751437A06FBE4D39"]
+			description: [
+				"&e用途：硬质甲片覆盖头部大部分区域，能提供护甲值和盔甲韧性，但会降低敏捷。"
+				"&b适合：安装在“外覆层”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_helmet"
+				tag: {
+					Damage: 0
+					"armor/helmet/diving_cap_material": "diving_cap/turtle_scute"
+					"armor/helmet/sallet_material": "sallet/iron"
+					"armor/helmet/standard_lining_material": "helmet/standard_lining/makeshift"
+					"helmet/cover": "armor/helmet/sallet"
+					"helmet/lining": "armor/helmet/standard_lining"
+					id: "01e711fd-2c75-5f70-be41-d9aa80ae663b"
+				}
+			}
+			id: "36B95ABB0167C834"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "0EB41D629C6418EA"
+				title: "阅读萨莱特盔"
+				type: "checkmark"
+			}]
+			title: "萨莱特盔"
+			x: -24.37d
+			y: -11.7d
+		}
+		{
+			dependencies: ["751437A06FBE4D39"]
+			description: [
+				"&e用途：标准软帽，能提供一定的护甲值，并防止粉雪造成的冰冻伤害。"
+				"&b适合：安装在“外覆层”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_helmet"
+				tag: {
+					Damage: 0
+					"armor/helmet/cap_material": "cap/leather"
+					"armor/helmet/diving_cap_material": "diving_cap/turtle_scute"
+					"armor/helmet/standard_lining_material": "helmet/standard_lining/makeshift"
+					"helmet/cover": "armor/helmet/cap"
+					"helmet/lining": "armor/helmet/standard_lining"
+					id: "7d17eb80-e12b-5b5e-a8e8-b5b389756ff7"
+				}
+			}
+			id: "3F95367DF3ABE4F6"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "4394E4F705F7EDA0"
+				title: "阅读软帽"
+				type: "checkmark"
+			}]
+			title: "软帽"
+			x: -26.72d
+			y: -13.8d
+		}
+		{
+			dependencies: ["358E3E08807EB29D"]
+			description: [
+				"&e用途：汇总“内衬”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_helmet"
+				tag: {
+					Damage: 0
+					"armor/helmet/diving_cap_material": "diving_cap/turtle_scute"
+					"armor/helmet/standard_lining_material": "helmet/standard_lining/wool"
+					"helmet/cover": "armor/helmet/diving_cap"
+					"helmet/lining": "armor/helmet/standard_lining"
+					id: "cbc2b614-7b85-5ac1-9445-af1720d33257"
+				}
+			}
+			id: "36472E2FDE160820"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "060842EF61DC804A"
+				title: "阅读内衬"
+				type: "checkmark"
+			}]
+			title: "&b内衬"
+			x: -33.05d
+			y: -16.6d
+		}
+		{
+			dependencies: ["36472E2FDE160820"]
+			description: [
+				"&e用途：内衬能为头盔提供完整度。"
+				"&b适合：安装在“内衬”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_helmet"
+				tag: {
+					Damage: 0
+					"armor/helmet/diving_cap_material": "diving_cap/turtle_scute"
+					"armor/helmet/standard_lining_material": "helmet/standard_lining/wool"
+					"helmet/cover": "armor/helmet/diving_cap"
+					"helmet/lining": "armor/helmet/standard_lining"
+					id: "803de474-d4a1-57da-a57d-50c608bb4163"
+				}
+			}
+			id: "0734DB923E24A9E3"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "588693721AE46FD3"
+				title: "阅读标准内衬"
+				type: "checkmark"
+			}]
+			title: "标准内衬"
+			x: -33.05d
+			y: -19.3d
+		}
+		{
+			dependencies: ["2EA468C04A5F96E2"]
+			description: [
+				"&e用途：查看胸部护甲的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_chest"
+				tag: {
+					Damage: 0
+					"armor/chest/elytra_material": "elytra/elytra"
+					"armor/chest/harness_material": "harness/makeshift"
+					"armor/chest/shoulderguards_material": "shoulderguards/netherite"
+					"chest/arms": "armor/chest/shoulderguards"
+					"chest/inner": "armor/chest/harness"
+					"chest/outer": "armor/chest/elytra"
+					id: "bf099696-1394-513b-92ec-17fa33b9223b"
+				}
+			}
+			id: "79A8E7A7D6717C3B"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "1A49A4E2BE858990"
+				title: "阅读胸部护甲"
+				type: "checkmark"
+			}]
+			title: "&a胸部护甲"
+			x: -11.15d
+			y: -5.0d
+		}
+		{
+			dependencies: ["79A8E7A7D6717C3B"]
+			description: [
+				"&e用途：汇总“双臂”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_chest"
+				tag: {
+					Damage: 0
+					"armor/chest/elytra_material": "elytra/elytra"
+					"armor/chest/harness_material": "harness/makeshift"
+					"armor/chest/shoulderguards_material": "shoulderguards/iron"
+					"chest/arms": "armor/chest/shoulderguards"
+					"chest/inner": "armor/chest/harness"
+					"chest/outer": "armor/chest/elytra"
+					id: "6c8e200b-8ab2-5d11-a431-706bd42b9907"
+				}
+			}
+			id: "42D81D7504ACA399"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "52F7A9A7BE2FB1FF"
+				title: "阅读双臂"
+				type: "checkmark"
+			}]
+			title: "&b双臂"
+			x: -14.9d
+			y: -9.0d
+		}
+		{
+			dependencies: ["42D81D7504ACA399"]
+			description: [
+				"&e用途：一对能提供少量护甲值的护肩。"
+				"&b适合：安装在“双臂”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_chest"
+				tag: {
+					Damage: 0
+					"armor/chest/elytra_material": "elytra/elytra"
+					"armor/chest/harness_material": "harness/makeshift"
+					"armor/chest/shoulderguards_material": "shoulderguards/iron"
+					"chest/arms": "armor/chest/shoulderguards"
+					"chest/inner": "armor/chest/harness"
+					"chest/outer": "armor/chest/elytra"
+					id: "fea111c6-9edf-535c-a310-e59de99d01de"
+				}
+			}
+			id: "6A85C83C922954B6"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "78053956AE35AA75"
+				title: "阅读护肩"
+				type: "checkmark"
+			}]
+			title: "护肩"
+			x: -17.25d
+			y: -11.7d
+		}
+		{
+			dependencies: ["42D81D7504ACA399"]
+			description: [
+				"&e用途：一件精美的披肩，能提供环境防护。"
+				"&b适合：安装在“双臂”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_chest"
+				tag: {
+					Damage: 0
+					"armor/chest/elytra_material": "elytra/elytra"
+					"armor/chest/harness_material": "harness/makeshift"
+					"armor/chest/poncho_material": "poncho/wool"
+					"armor/chest/shoulderguards_material": "shoulderguards/netherite"
+					"chest/arms": "armor/chest/poncho"
+					"chest/inner": "armor/chest/harness"
+					"chest/outer": "armor/chest/elytra"
+					id: "20b0bbbb-0f3e-57c3-ba2f-eb5f7c87cb7b"
+				}
+			}
+			id: "397EED5D552AA0B1"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "1C33C9C54F52E46B"
+				title: "阅读披肩"
+				type: "checkmark"
+			}]
+			title: "披肩"
+			x: -14.9d
+			y: -11.7d
+		}
+		{
+			dependencies: ["42D81D7504ACA399"]
+			description: [
+				"&e用途：一对缠臂，提供一定的精力防御，并提高穿戴者使用物品能力时的精力效率。"
+				"&b适合：安装在“双臂”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_chest"
+				tag: {
+					Damage: 0
+					"armor/chest/armwraps_material": "armwraps/wool"
+					"armor/chest/elytra_material": "elytra/elytra"
+					"armor/chest/harness_material": "harness/makeshift"
+					"armor/chest/shoulderguards_material": "shoulderguards/netherite"
+					"chest/arms": "armor/chest/armwraps"
+					"chest/inner": "armor/chest/harness"
+					"chest/outer": "armor/chest/elytra"
+					id: "fc5f794c-9e6a-5d6a-aa67-b8b5864bc13f"
+				}
+			}
+			id: "027C23211AAC6E54"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "0670928C0634A651"
+				title: "阅读缠臂"
+				type: "checkmark"
+			}]
+			title: "缠臂"
+			x: -12.55d
+			y: -11.7d
+		}
+		{
+			dependencies: ["42D81D7504ACA399"]
+			description: [
+				"&e用途：一对能提供一定护甲值和盔甲韧性的重型护肩，但会略微降低敏捷。"
+				"&b适合：安装在“双臂”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_chest"
+				tag: {
+					Damage: 0
+					"armor/chest/elytra_material": "elytra/elytra"
+					"armor/chest/harness_material": "harness/makeshift"
+					"armor/chest/heavy_shoulderguards_curved_material": "heavy_shoulderguards/leather"
+					"armor/chest/shoulderguards_material": "shoulderguards/netherite"
+					"chest/arms": "armor/chest/heavy_shoulderguards_curved"
+					"chest/inner": "armor/chest/harness"
+					"chest/outer": "armor/chest/elytra"
+					id: "58b0870f-b665-56e7-9b36-247b663cd9c7"
+				}
+			}
+			id: "11B0C849828D029B"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "008DB38A77565748"
+				title: "阅读重型护肩"
+				type: "checkmark"
+			}]
+			title: "重型护肩"
+			x: -17.25d
+			y: -13.8d
+		}
+		{
+			dependencies: ["42D81D7504ACA399"]
+			description: [
+				"&e用途：一对能提供较多护甲值和盔甲韧性的重型护肩，但会降低敏捷。"
+				"&b适合：安装在“双臂”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_chest"
+				tag: {
+					Damage: 0
+					"armor/chest/elytra_material": "elytra/elytra"
+					"armor/chest/harness_material": "harness/makeshift"
+					"armor/chest/heavy_shoulderguards_flat_material": "heavy_shoulderguards/iron"
+					"armor/chest/shoulderguards_material": "shoulderguards/netherite"
+					"chest/arms": "armor/chest/heavy_shoulderguards_flat"
+					"chest/inner": "armor/chest/harness"
+					"chest/outer": "armor/chest/elytra"
+					id: "13f3511e-7498-5955-8c2f-1b48b25c40c1"
+				}
+			}
+			id: "7E765C793B4CD094"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "6E5066535423FC47"
+				title: "阅读重型护肩"
+				type: "checkmark"
+			}]
+			title: "重型护肩"
+			x: -14.9d
+			y: -13.8d
+		}
+		{
+			dependencies: ["42D81D7504ACA399"]
+			description: [
+				"&e用途：一对能提供较多护甲值和盔甲韧性的重型护肩，但会降低穿戴者的攻击速度和挖掘速度。"
+				"&b适合：安装在“双臂”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_chest"
+				tag: {
+					Damage: 0
+					"armor/chest/elytra_material": "elytra/elytra"
+					"armor/chest/harness_material": "harness/makeshift"
+					"armor/chest/heavy_shoulderguards_vent_material": "heavy_shoulderguards/vent_plate"
+					"armor/chest/shoulderguards_material": "shoulderguards/netherite"
+					"chest/arms": "armor/chest/heavy_shoulderguards_vent"
+					"chest/inner": "armor/chest/harness"
+					"chest/outer": "armor/chest/elytra"
+					id: "525f669f-1bd6-5713-86dc-6092a907e827"
+				}
+			}
+			id: "0C5C54D148A90158"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "452BC00413A6A117"
+				title: "阅读重型护肩"
+				type: "checkmark"
+			}]
+			title: "重型护肩"
+			x: -12.55d
+			y: -13.8d
+		}
+		{
+			dependencies: ["42D81D7504ACA399"]
+			description: [
+				"&e用途：看似杂乱的织物经过巧妙排列，使穿戴者更难被发现。"
+				"&b适合：安装在“双臂”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_chest"
+				tag: {
+					Damage: 0
+					"armor/chest/elytra_material": "elytra/elytra"
+					"armor/chest/harness_material": "harness/makeshift"
+					"armor/chest/shoulderguards_material": "shoulderguards/netherite"
+					"armor/chest/shroud_material": "shroud/wool"
+					"chest/arms": "armor/chest/shroud"
+					"chest/inner": "armor/chest/harness"
+					"chest/outer": "armor/chest/elytra"
+					id: "38838fa0-9c3c-5d65-814b-5d8d7f9b8fbc"
+				}
+			}
+			id: "15D814487EFB129D"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "584B0C082441F0E5"
+				title: "阅读隐匿披风"
+				type: "checkmark"
+			}]
+			title: "隐匿披风"
+			x: -17.25d
+			y: -15.9d
+		}
+		{
+			dependencies: ["79A8E7A7D6717C3B"]
+			description: [
+				"&e用途：汇总“内层”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_chest"
+				tag: {
+					Damage: 0
+					"armor/chest/elytra_material": "elytra/elytra"
+					"armor/chest/harness_material": "harness/makeshift"
+					"armor/chest/shoulderguards_material": "shoulderguards/netherite"
+					"armor/chest/undercoat_material": "undercoat/wool"
+					"chest/arms": "armor/chest/shoulderguards"
+					"chest/inner": "armor/chest/undercoat"
+					"chest/outer": "armor/chest/elytra"
+					id: "dee97170-b6a1-54d7-b1dc-1832f1b18ca4"
+				}
+			}
+			id: "3D3473F03AC960AB"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "267DB609E0DD290D"
+				title: "阅读内层"
+				type: "checkmark"
+			}]
+			title: "&b内层"
+			x: -6.25d
+			y: -9.0d
+		}
+		{
+			dependencies: ["3D3473F03AC960AB"]
+			description: [
+				"&e用途：内衬衣提供一定的完整度与寒冷抗性。"
+				"&b适合：安装在“内层”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_chest"
+				tag: {
+					Damage: 0
+					"armor/chest/elytra_material": "elytra/elytra"
+					"armor/chest/harness_material": "harness/makeshift"
+					"armor/chest/shoulderguards_material": "shoulderguards/netherite"
+					"armor/chest/undercoat_material": "undercoat/wool"
+					"chest/arms": "armor/chest/shoulderguards"
+					"chest/inner": "armor/chest/undercoat"
+					"chest/outer": "armor/chest/elytra"
+					id: "13797b35-0d53-5fb4-9abf-121ccf14d256"
+				}
+			}
+			id: "6D0C0A2D92AC92DC"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "1A362D6246D17B15"
+				title: "阅读内衬衣"
+				type: "checkmark"
+			}]
+			title: "内衬衣"
+			x: -7.42d
+			y: -11.7d
+		}
+		{
+			dependencies: ["3D3473F03AC960AB"]
+			description: [
+				"&e用途：背带能为盔甲提供完整度，且不会降低敏捷。"
+				"&b适合：安装在“内层”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_chest"
+				tag: {
+					Damage: 0
+					"armor/chest/elytra_material": "elytra/elytra"
+					"armor/chest/harness_material": "harness/leather"
+					"armor/chest/shoulderguards_material": "shoulderguards/netherite"
+					"chest/arms": "armor/chest/shoulderguards"
+					"chest/inner": "armor/chest/harness"
+					"chest/outer": "armor/chest/elytra"
+					id: "2e656477-7a96-576e-a148-e78f39695def"
+				}
+			}
+			id: "797CCA4BBCDBF822"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "30010E5CF1B596DB"
+				title: "阅读背带"
+				type: "checkmark"
+			}]
+			title: "背带"
+			x: -5.07d
+			y: -11.7d
+		}
+		{
+			dependencies: ["79A8E7A7D6717C3B"]
+			description: [
+				"&e用途：汇总“外层”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_chest"
+				tag: {
+					Damage: 0
+					"armor/chest/elytra_material": "elytra/elytra"
+					"armor/chest/harness_material": "harness/makeshift"
+					"armor/chest/shoulderguards_material": "shoulderguards/netherite"
+					"armor/chest/vest_material": "vest/leather"
+					"chest/arms": "armor/chest/shoulderguards"
+					"chest/inner": "armor/chest/harness"
+					"chest/outer": "armor/chest/vest"
+					id: "f97e03c7-2ef1-56fa-9be2-2d5b52a8ddbb"
+				}
+			}
+			id: "635CA8FDE6B93F99"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "533D0B52FB22CE20"
+				title: "阅读外层"
+				type: "checkmark"
+			}]
+			title: "&b外层"
+			x: -6.25d
+			y: -16.6d
+		}
+		{
+			dependencies: ["635CA8FDE6B93F99"]
+			description: [
+				"&e用途：皮革背心，能提供一定的护甲值，并防止粉雪造成的冰冻伤害。"
+				"&b适合：安装在“外层”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_chest"
+				tag: {
+					Damage: 0
+					"armor/chest/elytra_material": "elytra/elytra"
+					"armor/chest/harness_material": "harness/makeshift"
+					"armor/chest/shoulderguards_material": "shoulderguards/netherite"
+					"armor/chest/vest_material": "vest/leather"
+					"chest/arms": "armor/chest/shoulderguards"
+					"chest/inner": "armor/chest/harness"
+					"chest/outer": "armor/chest/vest"
+					id: "eef8cc0b-c943-5abb-9246-3387236f3f6e"
+				}
+			}
+			id: "7B47FD0ABFE56E48"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "655DEB049FA5A696"
+				title: "阅读背心"
+				type: "checkmark"
+			}]
+			title: "背心"
+			x: -7.42d
+			y: -19.3d
+		}
+		{
+			dependencies: ["635CA8FDE6B93F99"]
+			description: [
+				"&e用途：基础胸甲，以硬质甲片覆盖胸部和背部。"
+				"&b适合：安装在“外层”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_chest"
+				tag: {
+					Damage: 0
+					"armor/chest/cuirass_material": "cuirass/iron"
+					"armor/chest/elytra_material": "elytra/elytra"
+					"armor/chest/harness_material": "harness/makeshift"
+					"armor/chest/shoulderguards_material": "shoulderguards/netherite"
+					"chest/arms": "armor/chest/shoulderguards"
+					"chest/inner": "armor/chest/harness"
+					"chest/outer": "armor/chest/cuirass"
+					id: "58b30267-65cf-5938-826c-c4e67467c5db"
+				}
+			}
+			id: "7AB4958B83999B4F"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "3BF03F17E736620B"
+				title: "阅读胸甲"
+				type: "checkmark"
+			}]
+			title: "胸甲"
+			x: -5.07d
+			y: -19.3d
+		}
+		{
+			dependencies: ["2EA468C04A5F96E2"]
+			description: [
+				"&e用途：查看腿部护甲的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_leggings"
+				tag: {
+					Damage: 0
+					"armor/leggings/legplates_material": "legplates/netherite"
+					"armor/leggings/underpants_material": "underpants/makeshift"
+					id: "e24ccfcb-e103-5b28-b312-bb9bfa4d7dd5"
+					"leggings/cover": "armor/leggings/legplates"
+					"leggings/lining": "armor/leggings/underpants"
+				}
+			}
+			id: "6AE111829BE06AE2"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "4D458056C8D06FB3"
+				title: "阅读腿部护甲"
+				type: "checkmark"
+			}]
+			title: "&a腿部护甲"
+			x: -28.15d
+			y: 5.0d
+		}
+		{
+			dependencies: ["6AE111829BE06AE2"]
+			description: [
+				"&e用途：汇总“外覆层”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_leggings"
+				tag: {
+					Damage: 0
+					"armor/leggings/legplates_material": "legplates/iron"
+					"armor/leggings/underpants_material": "underpants/makeshift"
+					id: "eb13bb27-3a85-5f9a-be92-fceaa4747579"
+					"leggings/cover": "armor/leggings/legplates"
+					"leggings/lining": "armor/leggings/underpants"
+				}
+			}
+			id: "7552F4FB614608FC"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "15AD26108BE86640"
+				title: "阅读外覆层"
+				type: "checkmark"
+			}]
+			title: "&b外覆层"
+			x: -31.9d
+			y: 9.0d
+		}
+		{
+			dependencies: ["7552F4FB614608FC"]
+			description: [
+				"&e用途：一对覆盖腿部的硬质腿甲，能提供护甲值和盔甲韧性，但会降低敏捷。"
+				"&b适合：安装在“外覆层”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_leggings"
+				tag: {
+					Damage: 0
+					"armor/leggings/legplates_material": "legplates/iron"
+					"armor/leggings/underpants_material": "underpants/makeshift"
+					id: "6b3a696b-09cf-5980-aedd-ffabb72f0331"
+					"leggings/cover": "armor/leggings/legplates"
+					"leggings/lining": "armor/leggings/underpants"
+				}
+			}
+			id: "4879DA01FD242A10"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "2C45A0C8AD46543C"
+				title: "阅读腿甲"
+				type: "checkmark"
+			}]
+			title: "腿甲"
+			x: -33.07d
+			y: 11.7d
+		}
+		{
+			dependencies: ["7552F4FB614608FC"]
+			description: [
+				"&e用途：一对能提供较多护甲值和盔甲韧性的重型腿甲，但会降低敏捷。"
+				"&b适合：安装在“外覆层”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_leggings"
+				tag: {
+					Damage: 0
+					"armor/leggings/heavy_legplates_plate_material": "heavy_legplates/iron"
+					"armor/leggings/legplates_material": "legplates/netherite"
+					"armor/leggings/underpants_material": "underpants/makeshift"
+					id: "acaeac22-730e-58c8-9f62-24b8da27d2e4"
+					"leggings/cover": "armor/leggings/heavy_legplates_plate"
+					"leggings/lining": "armor/leggings/underpants"
+				}
+			}
+			id: "2F28C5F0F31F2DB9"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "54E73F4384279742"
+				title: "阅读重型腿甲"
+				type: "checkmark"
+			}]
+			title: "重型腿甲"
+			x: -30.72d
+			y: 11.7d
+		}
+		{
+			dependencies: ["7552F4FB614608FC"]
+			description: [
+				"&e用途：一对能提供一定护甲值和盔甲韧性的重型腿甲，但会略微降低敏捷。"
+				"&b适合：安装在“外覆层”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_leggings"
+				tag: {
+					Damage: 0
+					"armor/leggings/heavy_legplates_skirt_material": "heavy_legplates/leather"
+					"armor/leggings/legplates_material": "legplates/netherite"
+					"armor/leggings/underpants_material": "underpants/makeshift"
+					id: "12e884d9-2856-5762-9ce1-3cf0b5c922fd"
+					"leggings/cover": "armor/leggings/heavy_legplates_skirt"
+					"leggings/lining": "armor/leggings/underpants"
+				}
+			}
+			id: "57C8E59C244FE404"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "159BDCFA7894F507"
+				title: "阅读重型腿甲"
+				type: "checkmark"
+			}]
+			title: "重型腿甲"
+			x: -33.07d
+			y: 13.8d
+		}
+		{
+			dependencies: ["7552F4FB614608FC"]
+			description: [
+				"&e用途：一对能提供较多护甲值和盔甲韧性的重型腿甲，但会降低穿戴者的攻击速度和挖掘速度。"
+				"&b适合：安装在“外覆层”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_leggings"
+				tag: {
+					Damage: 0
+					"armor/leggings/heavy_legplates_vent_material": "heavy_legplates/vent_plate"
+					"armor/leggings/legplates_material": "legplates/netherite"
+					"armor/leggings/underpants_material": "underpants/makeshift"
+					id: "057587b4-a8bc-5cb4-b516-d1e4d0b7fd50"
+					"leggings/cover": "armor/leggings/heavy_legplates_vent"
+					"leggings/lining": "armor/leggings/underpants"
+				}
+			}
+			id: "6A24D1C296C97942"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "7262AB6BD4A0057C"
+				title: "阅读重型腿甲"
+				type: "checkmark"
+			}]
+			title: "重型腿甲"
+			x: -30.72d
+			y: 13.8d
+		}
+		{
+			dependencies: ["6AE111829BE06AE2"]
+			description: [
+				"&e用途：汇总“内衬”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_leggings"
+				tag: {
+					Damage: 0
+					"armor/leggings/legplates_material": "legplates/netherite"
+					"armor/leggings/pants_material": "pants/leather"
+					"armor/leggings/underpants_material": "underpants/makeshift"
+					id: "8d134d6e-bf28-5310-9ace-a329a93a3576"
+					"leggings/cover": "armor/leggings/legplates"
+					"leggings/lining": "armor/leggings/pants"
+				}
+			}
+			id: "1CB4BDD307B3F0A3"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "5A1024BF47C76C98"
+				title: "阅读内衬"
+				type: "checkmark"
+			}]
+			title: "&b内衬"
+			x: -24.4d
+			y: 9.0d
+		}
+		{
+			dependencies: ["1CB4BDD307B3F0A3"]
+			description: [
+				"&e用途：皮革长裤，能提供一定的完整度和护甲值，并防止粉雪造成的冰冻伤害。"
+				"&b适合：安装在“内衬”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_leggings"
+				tag: {
+					Damage: 0
+					"armor/leggings/legplates_material": "legplates/netherite"
+					"armor/leggings/pants_material": "pants/leather"
+					"armor/leggings/underpants_material": "underpants/makeshift"
+					id: "3c5b3b1f-bb6f-5b07-b413-90d26215412c"
+					"leggings/cover": "armor/leggings/legplates"
+					"leggings/lining": "armor/leggings/pants"
+				}
+			}
+			id: "76A1EEB804477B34"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "66A141CA85D39848"
+				title: "阅读背心"
+				type: "checkmark"
+			}]
+			title: "背心"
+			x: -25.57d
+			y: 11.7d
+		}
+		{
+			dependencies: ["1CB4BDD307B3F0A3"]
+			description: [
+				"&e用途：衬裤能为护腿提供较高的完整度，且不会降低敏捷。"
+				"&b适合：安装在“内衬”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_leggings"
+				tag: {
+					Damage: 0
+					"armor/leggings/legplates_material": "legplates/netherite"
+					"armor/leggings/underpants_material": "underpants/wool"
+					id: "06f4bcb5-4732-511a-8001-d44abe29a39c"
+					"leggings/cover": "armor/leggings/legplates"
+					"leggings/lining": "armor/leggings/underpants"
+				}
+			}
+			id: "03203B1E3F2A96CA"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "090E9177B98F1F5E"
+				title: "阅读衬裤"
+				type: "checkmark"
+			}]
+			title: "衬裤"
+			x: -23.22d
+			y: 11.7d
+		}
+		{
+			dependencies: ["2EA468C04A5F96E2"]
+			description: [
+				"&e用途：查看足部护甲的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_boots"
+				tag: {
+					Damage: 0
+					"armor/boots/makeshift_sole_material": "makeshift_sole/netherite"
+					"armor/boots/plate_body_material": "plate_body/netherite"
+					"armor/boots/standard_lining_material": "standard_lining/makeshift"
+					"boots/body": "armor/boots/plate_body"
+					"boots/lining": "armor/boots/standard_lining"
+					"boots/sole": "armor/boots/makeshift_sole"
+					id: "8bbc9e08-d9df-5e25-8d7b-96c45c602e5e"
+				}
+			}
+			id: "244D797723DEC1F8"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "283A8E52E9BDE04C"
+				title: "阅读足部护甲"
+				type: "checkmark"
+			}]
+			title: "&a足部护甲"
+			x: -11.15d
+			y: 5.0d
+		}
+		{
+			dependencies: ["244D797723DEC1F8"]
+			description: [
+				"&e用途：汇总“附件”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_boots"
+				tag: {
+					Damage: 0
+					"armor/boots/lacing_material": "lacing/string"
+					"armor/boots/makeshift_sole_material": "makeshift_sole/netherite"
+					"armor/boots/plate_body_material": "plate_body/netherite"
+					"armor/boots/standard_lining_material": "standard_lining/makeshift"
+					"boots/attachment": "armor/boots/lacing"
+					"boots/body": "armor/boots/plate_body"
+					"boots/lining": "armor/boots/standard_lining"
+					"boots/sole": "armor/boots/makeshift_sole"
+					id: "279bdc6e-6090-58ff-9400-0c62266e322f"
+				}
+			}
+			id: "1917B35D0B018CF9"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "5DCD276E35E6CBD5"
+				title: "阅读附件"
+				type: "checkmark"
+			}]
+			title: "&b附件"
+			x: -14.9d
+			y: 9.0d
+		}
+		{
+			dependencies: ["1917B35D0B018CF9"]
+			description: [
+				"&e用途：纤维制成的系带，能略微提高移动速度。"
+				"&b适合：安装在“附件”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_boots"
+				tag: {
+					Damage: 0
+					"armor/boots/lacing_material": "lacing/string"
+					"armor/boots/makeshift_sole_material": "makeshift_sole/netherite"
+					"armor/boots/plate_body_material": "plate_body/netherite"
+					"armor/boots/standard_lining_material": "standard_lining/makeshift"
+					"boots/attachment": "armor/boots/lacing"
+					"boots/body": "armor/boots/plate_body"
+					"boots/lining": "armor/boots/standard_lining"
+					"boots/sole": "armor/boots/makeshift_sole"
+					id: "f853b1dd-af4e-5676-8ccd-dbf004650491"
+				}
+			}
+			id: "4E5540B38BC8BFA2"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "514977CC65863458"
+				title: "阅读系带"
+				type: "checkmark"
+			}]
+			title: "系带"
+			x: -14.9d
+			y: 11.7d
+		}
+		{
+			dependencies: ["244D797723DEC1F8"]
+			description: [
+				"&e用途：汇总“主体”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_boots"
+				tag: {
+					Damage: 0
+					"armor/boots/makeshift_sole_material": "makeshift_sole/netherite"
+					"armor/boots/plate_body_material": "plate_body/iron"
+					"armor/boots/standard_lining_material": "standard_lining/makeshift"
+					"boots/body": "armor/boots/plate_body"
+					"boots/lining": "armor/boots/standard_lining"
+					"boots/sole": "armor/boots/makeshift_sole"
+					id: "bda5c796-cc01-5d01-aea1-52a713a1c7c5"
+				}
+			}
+			id: "7C429DAA88774E63"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "7494080FE9E15878"
+				title: "阅读主体"
+				type: "checkmark"
+			}]
+			title: "&b主体"
+			x: -7.4d
+			y: 9.0d
+		}
+		{
+			dependencies: ["7C429DAA88774E63"]
+			description: [
+				"&e用途：硬质甲片覆盖双脚，能提供护甲值和盔甲韧性，但会降低敏捷。"
+				"&b适合：安装在“主体”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_boots"
+				tag: {
+					Damage: 0
+					"armor/boots/makeshift_sole_material": "makeshift_sole/netherite"
+					"armor/boots/plate_body_material": "plate_body/iron"
+					"armor/boots/standard_lining_material": "standard_lining/makeshift"
+					"boots/body": "armor/boots/plate_body"
+					"boots/lining": "armor/boots/standard_lining"
+					"boots/sole": "armor/boots/makeshift_sole"
+					id: "e4fe1661-4a65-58a9-a7e5-008fb79a68cd"
+				}
+			}
+			id: "36FF6371BF3A72B8"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "2BDB9379C2673998"
+				title: "阅读板甲鞋身"
+				type: "checkmark"
+			}]
+			title: "板甲鞋身"
+			x: -8.57d
+			y: 11.7d
+		}
+		{
+			dependencies: ["7C429DAA88774E63"]
+			description: [
+				"&e用途：标准鞋身，能提供一定的护甲值，并防止粉雪造成的冰冻伤害。"
+				"&b适合：安装在“主体”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_boots"
+				tag: {
+					Damage: 0
+					"armor/boots/makeshift_sole_material": "makeshift_sole/netherite"
+					"armor/boots/plate_body_material": "plate_body/netherite"
+					"armor/boots/standard_body_material": "standard_body/leather"
+					"armor/boots/standard_lining_material": "standard_lining/makeshift"
+					"boots/body": "armor/boots/standard_body"
+					"boots/lining": "armor/boots/standard_lining"
+					"boots/sole": "armor/boots/makeshift_sole"
+					id: "28f875ff-029a-5ab3-ada1-d26b8571170c"
+				}
+			}
+			id: "67CFA3F0EEC60E77"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "6147CFA6B323EF25"
+				title: "阅读标准鞋身"
+				type: "checkmark"
+			}]
+			title: "标准鞋身"
+			x: -6.22d
+			y: 11.7d
+		}
+		{
+			dependencies: ["244D797723DEC1F8"]
+			description: [
+				"&e用途：汇总“内衬”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_boots"
+				tag: {
+					Damage: 0
+					"armor/boots/makeshift_sole_material": "makeshift_sole/netherite"
+					"armor/boots/plate_body_material": "plate_body/netherite"
+					"armor/boots/standard_lining_material": "standard_lining/wool"
+					"boots/body": "armor/boots/plate_body"
+					"boots/lining": "armor/boots/standard_lining"
+					"boots/sole": "armor/boots/makeshift_sole"
+					id: "a9160f14-694b-5332-9f14-f355f62b3e7e"
+				}
+			}
+			id: "5C3ABC59DF3F008E"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "59B37723C7D84434"
+				title: "阅读内衬"
+				type: "checkmark"
+			}]
+			title: "&b内衬"
+			x: -14.9d
+			y: 16.6d
+		}
+		{
+			dependencies: ["5C3ABC59DF3F008E"]
+			description: [
+				"&e用途：内衬能为靴子提供完整度。"
+				"&b适合：安装在“内衬”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_boots"
+				tag: {
+					Damage: 0
+					"armor/boots/makeshift_sole_material": "makeshift_sole/netherite"
+					"armor/boots/plate_body_material": "plate_body/netherite"
+					"armor/boots/standard_lining_material": "standard_lining/wool"
+					"boots/body": "armor/boots/plate_body"
+					"boots/lining": "armor/boots/standard_lining"
+					"boots/sole": "armor/boots/makeshift_sole"
+					id: "f499deb8-0a7c-5d75-a61e-650fe16ac014"
+				}
+			}
+			id: "525C29C3F8EE5DF6"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "15F0AC752B31A4AD"
+				title: "阅读标准内衬"
+				type: "checkmark"
+			}]
+			title: "标准内衬"
+			x: -14.9d
+			y: 19.3d
+		}
+		{
+			dependencies: ["244D797723DEC1F8"]
+			description: [
+				"&e用途：汇总“鞋底”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_boots"
+				tag: {
+					Damage: 0
+					"armor/boots/hiking_sole_material": "hiking_sole/leather"
+					"armor/boots/makeshift_sole_material": "makeshift_sole/netherite"
+					"armor/boots/plate_body_material": "plate_body/netherite"
+					"armor/boots/standard_lining_material": "standard_lining/makeshift"
+					"boots/body": "armor/boots/plate_body"
+					"boots/lining": "armor/boots/standard_lining"
+					"boots/sole": "armor/boots/hiking_sole"
+					id: "94666928-8d33-5025-85bb-9b77b145ace7"
+				}
+			}
+			id: "542A211756A3D517"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "3F4186995245F69C"
+				title: "阅读鞋底"
+				type: "checkmark"
+			}]
+			title: "&b鞋底"
+			x: -7.4d
+			y: 16.6d
+		}
+		{
+			dependencies: ["542A211756A3D517"]
+			description: [
+				"&e用途：登山鞋底能让穿戴者轻松登上方块。"
+				"&b适合：安装在“鞋底”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_boots"
+				tag: {
+					Damage: 0
+					"armor/boots/hiking_sole_material": "hiking_sole/leather"
+					"armor/boots/makeshift_sole_material": "makeshift_sole/netherite"
+					"armor/boots/plate_body_material": "plate_body/netherite"
+					"armor/boots/standard_lining_material": "standard_lining/makeshift"
+					"boots/body": "armor/boots/plate_body"
+					"boots/lining": "armor/boots/standard_lining"
+					"boots/sole": "armor/boots/hiking_sole"
+					id: "c8d26d40-5a86-57dc-8cb5-47310243184c"
+				}
+			}
+			id: "4E0FD74CA7C51834"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "6ED03ED44A27FD6F"
+				title: "阅读登山鞋底"
+				type: "checkmark"
+			}]
+			title: "登山鞋底"
+			x: -8.57d
+			y: 19.3d
+		}
+		{
+			dependencies: ["542A211756A3D517"]
+			description: [
+				"&e用途：轻羽鞋底能使穿戴者更难被发现。"
+				"&b适合：安装在“鞋底”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_boots"
+				tag: {
+					Damage: 0
+					"armor/boots/featherstep_sole_material": "featherstep_sole/leather"
+					"armor/boots/makeshift_sole_material": "makeshift_sole/netherite"
+					"armor/boots/plate_body_material": "plate_body/netherite"
+					"armor/boots/standard_lining_material": "standard_lining/makeshift"
+					"boots/body": "armor/boots/plate_body"
+					"boots/lining": "armor/boots/standard_lining"
+					"boots/sole": "armor/boots/featherstep_sole"
+					id: "c260ecbd-64ed-5c08-9c60-6b806886a391"
+				}
+			}
+			id: "4AA06EF7AF6254C6"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "0847306AA8C61A98"
+				title: "阅读轻羽鞋底"
+				type: "checkmark"
+			}]
+			title: "轻羽鞋底"
+			x: -6.22d
+			y: 19.3d
+		}
+		{
+			dependencies: ["542A211756A3D517"]
+			description: [
+				"&e用途：雪行鞋底能让穿戴者在粉雪上行走而不会下沉。"
+				"&b适合：安装在“鞋底”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetrawear:modular_boots"
+				tag: {
+					Damage: 0
+					"armor/boots/makeshift_sole_material": "makeshift_sole/netherite"
+					"armor/boots/plate_body_material": "plate_body/netherite"
+					"armor/boots/snowwalker_sole_material": "snowwalker_sole/leather"
+					"armor/boots/standard_lining_material": "standard_lining/makeshift"
+					"boots/body": "armor/boots/plate_body"
+					"boots/lining": "armor/boots/standard_lining"
+					"boots/sole": "armor/boots/snowwalker_sole"
+					id: "bd3b0bf7-9b32-594b-8920-5a983ad06993"
+				}
+			}
+			id: "5D8CB4F8066805C4"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "1B3CC6E87274B84E"
+				title: "阅读雪行鞋底"
+				type: "checkmark"
+			}]
+			title: "雪行鞋底"
+			x: -8.57d
+			y: 21.4d
+		}
+		{
+			dependencies: ["4F4B89AF71FA7538"]
+			description: ["&e用途：汇总模块化饰品的物品与模块。"]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_ring"
+				tag: {
+					Damage: 0
+					id: "5bb857dc-cf6d-5d5b-bd08-c523bad238d9"
+					"mmt_ring/base_ring": "mmt_ring/base_ring/starter_ring"
+					"mmt_ring/base_ring/starter_ring_material": "starter_ring/iron"
+					"mmt_ring/inlay": "mmt_ring/inlay/gem"
+					"mmt_ring/inlay/gem_material": "gem/amethyst"
+				}
+			}
+			id: "439778E0ACC0CD94"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "1700D04DB479B002"
+				title: "阅读模块化饰品"
+				type: "checkmark"
+			}]
+			title: "&a模块化饰品"
+			x: 36.65d
+			y: 0.0d
+		}
+		{
+			dependencies: ["439778E0ACC0CD94"]
+			description: [
+				"&e用途：查看戒指的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_ring"
+				tag: {
+					Damage: 0
+					id: "6858627c-9e07-5020-a6f0-be75a327c4b4"
+					"mmt_ring/base_ring": "mmt_ring/base_ring/starter_ring"
+					"mmt_ring/base_ring/starter_ring_material": "starter_ring/iron"
+					"mmt_ring/inlay": "mmt_ring/inlay/gem"
+					"mmt_ring/inlay/gem_material": "gem/amethyst"
+				}
+			}
+			id: "03B3618351B75174"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "3C94D82F971A8C0C"
+				title: "阅读戒指"
+				type: "checkmark"
+			}]
+			title: "&a戒指"
+			x: 10.0d
+			y: -5.0d
+		}
+		{
+			dependencies: ["03B3618351B75174"]
+			description: [
+				"&e用途：汇总“戒环”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_ring"
+				tag: {
+					Damage: 0
+					id: "55ee7d5b-c0ab-5548-844a-efbcbc54f48a"
+					"mmt_ring/base_ring": "mmt_ring/base_ring/guard_ring"
+					"mmt_ring/base_ring/guard_ring_material": "guard_ring/bone"
+					"mmt_ring/base_ring/starter_ring_material": "starter_ring/iron"
+					"mmt_ring/inlay": "mmt_ring/inlay/gem"
+					"mmt_ring/inlay/gem_material": "gem/amethyst"
+				}
+			}
+			id: "231CD82801FF0BAF"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "4E40474B1DF7608F"
+				title: "阅读戒环"
+				type: "checkmark"
+			}]
+			title: "&b戒环"
+			x: 6.25d
+			y: -9.0d
+		}
+		{
+			dependencies: ["231CD82801FF0BAF"]
+			description: [
+				"&e用途：【需要蜂巢守护卷轴】材料硬度提高护甲，密度会降低攻击速度。"
+				"&b适合：安装在“戒环”槽位。"
+				"&d需要：蜂巢守护。"
+				"{\"text\":\"查看卷轴：蜂巢守护\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"721B61FDF7A96289\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_ring"
+				tag: {
+					Damage: 0
+					id: "42c389ab-0e60-51fe-aea3-bb3fa0a1cc18"
+					"mmt_ring/base_ring": "mmt_ring/base_ring/guard_ring"
+					"mmt_ring/base_ring/guard_ring_material": "guard_ring/bone"
+					"mmt_ring/base_ring/starter_ring_material": "starter_ring/iron"
+					"mmt_ring/inlay": "mmt_ring/inlay/gem"
+					"mmt_ring/inlay/gem_material": "gem/amethyst"
+				}
+			}
+			id: "127C72E7FB480A9D"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "1064FFFB456C79D4"
+				title: "阅读守护之戒"
+				type: "checkmark"
+			}]
+			title: "守护之戒"
+			x: 5.08d
+			y: -11.7d
+		}
+		{
+			dependencies: ["231CD82801FF0BAF"]
+			description: [
+				"&e用途：【需要雷鸣战技卷轴】自带暴击伤害。"
+				"&b适合：安装在“戒环”槽位。"
+				"&d需要：雷鸣战技。"
+				"{\"text\":\"查看卷轴：雷鸣战技\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6ABDD3C44A9FD0CC\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_ring"
+				tag: {
+					Damage: 0
+					id: "f881c586-e50d-5980-8307-a4c4758c61c0"
+					"mmt_ring/base_ring": "mmt_ring/base_ring/critical_strike_ring"
+					"mmt_ring/base_ring/critical_strike_ring_material": "critical_strike_ring/bone"
+					"mmt_ring/base_ring/starter_ring_material": "starter_ring/iron"
+					"mmt_ring/inlay": "mmt_ring/inlay/gem"
+					"mmt_ring/inlay/gem_material": "gem/amethyst"
+				}
+			}
+			id: "492F33B59D200011"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "60AD2BA060995D33"
+				title: "阅读暴击之戒"
+				type: "checkmark"
+			}]
+			title: "暴击之戒"
+			x: 7.42d
+			y: -11.7d
+		}
+		{
+			dependencies: ["231CD82801FF0BAF"]
+			description: [
+				"&e用途：【需要磁场精密卷轴】吸引附近掉落物。"
+				"&b适合：安装在“戒环”槽位。"
+				"&d需要：磁场精密。"
+				"{\"text\":\"查看卷轴：磁场精密\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5B4CB8D40A179585\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_ring"
+				tag: {
+					Damage: 0
+					id: "d1945966-0c34-5ca4-907b-3a761f2ba159"
+					"mmt_ring/base_ring": "mmt_ring/base_ring/jank_ring"
+					"mmt_ring/base_ring/jank_ring_material": "jank_ring/bone"
+					"mmt_ring/base_ring/starter_ring_material": "starter_ring/iron"
+					"mmt_ring/inlay": "mmt_ring/inlay/gem"
+					"mmt_ring/inlay/gem_material": "gem/amethyst"
+				}
+			}
+			id: "64550D2AC1386B8A"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "62DE3D48A78BDA39"
+				title: "阅读磁力之戒"
+				type: "checkmark"
+			}]
+			title: "磁力之戒"
+			x: 5.08d
+			y: -13.8d
+		}
+		{
+			dependencies: ["03B3618351B75174"]
+			description: [
+				"&e用途：汇总“镶嵌”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_ring"
+				tag: {
+					Damage: 0
+					id: "4c946e54-f021-591e-a1ee-26d834a9a0b5"
+					"mmt_ring/base_ring": "mmt_ring/base_ring/starter_ring"
+					"mmt_ring/base_ring/starter_ring_material": "starter_ring/iron"
+					"mmt_ring/inlay": "mmt_ring/inlay/cooldown_gem"
+					"mmt_ring/inlay/cooldown_gem_material": "cooldown_gem/amethyst"
+					"mmt_ring/inlay/gem_material": "gem/amethyst"
+				}
+			}
+			id: "6002F6CCA139B9E6"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "2E9AA84DC6AFF004"
+				title: "阅读镶嵌"
+				type: "checkmark"
+			}]
+			title: "&b镶嵌"
+			x: 13.75d
+			y: -9.0d
+		}
+		{
+			dependencies: ["6002F6CCA139B9E6"]
+			description: [
+				"&e用途：【需要月相奥术卷轴】自带暴击伤害。"
+				"&b适合：安装在“镶嵌”槽位。"
+				"&d需要：月相奥术。"
+				"{\"text\":\"查看卷轴：月相奥术\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"3EF0F7EF83739997\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_ring"
+				tag: {
+					Damage: 0
+					id: "248b3bf6-fc47-54f1-9107-ad6ce9792913"
+					"mmt_ring/base_ring": "mmt_ring/base_ring/starter_ring"
+					"mmt_ring/base_ring/starter_ring_material": "starter_ring/iron"
+					"mmt_ring/inlay": "mmt_ring/inlay/cooldown_gem"
+					"mmt_ring/inlay/cooldown_gem_material": "cooldown_gem/amethyst"
+					"mmt_ring/inlay/gem_material": "gem/amethyst"
+				}
+			}
+			id: "59507034A0DD6BBB"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "39E92B354AFF4CDA"
+				title: "阅读复效宝石镶嵌"
+				type: "checkmark"
+			}]
+			title: "复效宝石镶嵌"
+			x: 12.57d
+			y: -11.7d
+		}
+		{
+			dependencies: ["6002F6CCA139B9E6"]
+			description: [
+				"&e用途：【需要磁场精密卷轴】固定提供暴击率、暴击伤害和弹射物追踪。"
+				"&b适合：安装在“镶嵌”槽位。"
+				"&d需要：磁场精密。"
+				"{\"text\":\"查看卷轴：磁场精密\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5B4CB8D40A179585\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_ring"
+				tag: {
+					Damage: 0
+					id: "20245eb8-230a-5482-abf1-21f7e16c938d"
+					"mmt_ring/base_ring": "mmt_ring/base_ring/starter_ring"
+					"mmt_ring/base_ring/starter_ring_material": "starter_ring/iron"
+					"mmt_ring/inlay": "mmt_ring/inlay/tracking"
+					"mmt_ring/inlay/gem_material": "gem/amethyst"
+				}
+			}
+			id: "2E9A359C498A15A4"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "3E0EE0B634E88BCC"
+				title: "阅读追迹核心"
+				type: "checkmark"
+			}]
+			title: "追迹核心"
+			x: 14.93d
+			y: -11.7d
+		}
+		{
+			dependencies: ["6002F6CCA139B9E6"]
+			description: [
+				"&e用途：【需要月相奥术卷轴】自带暴击伤害。"
+				"&b适合：安装在“镶嵌”槽位。"
+				"&d需要：月相奥术。"
+				"{\"text\":\"查看卷轴：月相奥术\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"3EF0F7EF83739997\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_ring"
+				tag: {
+					Damage: 0
+					id: "7e0ba2c4-a781-5f58-a1f9-909c2cb5567c"
+					"mmt_ring/base_ring": "mmt_ring/base_ring/starter_ring"
+					"mmt_ring/base_ring/starter_ring_material": "starter_ring/iron"
+					"mmt_ring/inlay": "mmt_ring/inlay/cast_time_gem"
+					"mmt_ring/inlay/cast_time_gem_material": "cast_time_gem/amethyst"
+					"mmt_ring/inlay/gem_material": "gem/amethyst"
+				}
+			}
+			id: "3849C3890001D50D"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "3042397F3E8435B8"
+				title: "阅读速吟宝石镶嵌"
+				type: "checkmark"
+			}]
+			title: "速吟宝石镶嵌"
+			x: 12.57d
+			y: -13.8d
+		}
+		{
+			dependencies: ["6002F6CCA139B9E6"]
+			description: [
+				"&e用途：【需要雷鸣战技卷轴】镶嵌后自带暴击伤害。"
+				"&b适合：安装在“镶嵌”槽位。"
+				"&d需要：雷鸣战技。"
+				"{\"text\":\"查看卷轴：雷鸣战技\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6ABDD3C44A9FD0CC\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_ring"
+				tag: {
+					Damage: 0
+					id: "285ec6db-ffa9-50e3-808e-8c9d9a52d86a"
+					"mmt_ring/base_ring": "mmt_ring/base_ring/starter_ring"
+					"mmt_ring/base_ring/starter_ring_material": "starter_ring/iron"
+					"mmt_ring/inlay": "mmt_ring/inlay/gem"
+					"mmt_ring/inlay/gem_material": "gem/amethyst"
+				}
+			}
+			id: "532D5F49600C3E78"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "14FEBCB30FA1E8DA"
+				title: "阅读镶嵌"
+				type: "checkmark"
+			}]
+			title: "镶嵌"
+			x: 14.93d
+			y: -13.8d
+		}
+		{
+			dependencies: ["439778E0ACC0CD94"]
+			description: [
+				"&e用途：查看手镯的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bracelet"
+				tag: {
+					Damage: 0
+					id: "82db62c3-256e-552a-a275-4ee29fab573c"
+					"mmt_bracelet/base_bracelet": "mmt_bracelet/base_bracelet/starter_bracelet"
+					"mmt_bracelet/base_bracelet/starter_bracelet_material": "starter_bracelet/iron"
+					"mmt_bracelet/inlay": "mmt_bracelet/inlay/gem"
+					"mmt_bracelet/inlay/gem_material": "gem/amethyst"
+				}
+			}
+			id: "48E6F54DA1D7073A"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "1FD8386F29E769E6"
+				title: "阅读手镯"
+				type: "checkmark"
+			}]
+			title: "&a手镯"
+			x: 27.0d
+			y: -5.0d
+		}
+		{
+			dependencies: ["48E6F54DA1D7073A"]
+			description: [
+				"&e用途：汇总“镯环”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bracelet"
+				tag: {
+					Damage: 0
+					id: "453cd2e9-51f2-5302-b6cc-dae684f6ad09"
+					"mmt_bracelet/base_bracelet": "mmt_bracelet/base_bracelet/protect_bracelet"
+					"mmt_bracelet/base_bracelet/protect_bracelet_material": "protect_bracelet/bone"
+					"mmt_bracelet/base_bracelet/starter_bracelet_material": "starter_bracelet/iron"
+					"mmt_bracelet/inlay": "mmt_bracelet/inlay/gem"
+					"mmt_bracelet/inlay/gem_material": "gem/amethyst"
+				}
+			}
+			id: "439665285E4CDD1E"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "4472922DEF1CF014"
+				title: "阅读镯环"
+				type: "checkmark"
+			}]
+			title: "&b镯环"
+			x: 23.25d
+			y: -9.0d
+		}
+		{
+			dependencies: ["439665285E4CDD1E"]
+			description: [
+				"&e用途：【需要蜂巢守护卷轴】提供基础伤害减免。"
+				"&b适合：安装在“镯环”槽位。"
+				"&d需要：蜂巢守护。"
+				"{\"text\":\"查看卷轴：蜂巢守护\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"721B61FDF7A96289\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bracelet"
+				tag: {
+					Damage: 0
+					id: "a4d83e08-b150-5c4f-b702-63105133faf4"
+					"mmt_bracelet/base_bracelet": "mmt_bracelet/base_bracelet/protect_bracelet"
+					"mmt_bracelet/base_bracelet/protect_bracelet_material": "protect_bracelet/bone"
+					"mmt_bracelet/base_bracelet/starter_bracelet_material": "starter_bracelet/iron"
+					"mmt_bracelet/inlay": "mmt_bracelet/inlay/gem"
+					"mmt_bracelet/inlay/gem_material": "gem/amethyst"
+				}
+			}
+			id: "4FA1676749F2A433"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "4F1A3FCE29B18178"
+				title: "阅读抗性手镯"
+				type: "checkmark"
+			}]
+			title: "抗性手镯"
+			x: 22.07d
+			y: -11.7d
+		}
+		{
+			dependencies: ["439665285E4CDD1E"]
+			description: [
+				"&e用途：【需要雷鸣战技卷轴】自带暴击率。"
+				"&b适合：安装在“镯环”槽位。"
+				"&d需要：雷鸣战技。"
+				"{\"text\":\"查看卷轴：雷鸣战技\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6ABDD3C44A9FD0CC\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bracelet"
+				tag: {
+					Damage: 0
+					id: "1ebe801d-8e4f-54c6-ad4e-bd5e7e20aec8"
+					"mmt_bracelet/base_bracelet": "mmt_bracelet/base_bracelet/critical_strike_bracelet"
+					"mmt_bracelet/base_bracelet/critical_strike_bracelet_material": "critical_strike_bracelet/bone"
+					"mmt_bracelet/base_bracelet/starter_bracelet_material": "starter_bracelet/iron"
+					"mmt_bracelet/inlay": "mmt_bracelet/inlay/gem"
+					"mmt_bracelet/inlay/gem_material": "gem/amethyst"
+				}
+			}
+			id: "7F227303A4DF15C2"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "11810154A95DBC22"
+				title: "阅读暴击手镯"
+				type: "checkmark"
+			}]
+			title: "暴击手镯"
+			x: 24.43d
+			y: -11.7d
+		}
+		{
+			dependencies: ["439665285E4CDD1E"]
+			description: [
+				"&e用途：【需要雷鸣战技卷轴】自带攻击速度。"
+				"&b适合：安装在“镯环”槽位。"
+				"&d需要：雷鸣战技。"
+				"{\"text\":\"查看卷轴：雷鸣战技\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6ABDD3C44A9FD0CC\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bracelet"
+				tag: {
+					Damage: 0
+					id: "9d27a134-6011-5c1e-a8c5-6dbc6de7c850"
+					"mmt_bracelet/base_bracelet": "mmt_bracelet/base_bracelet/cyclone_bracelet"
+					"mmt_bracelet/base_bracelet/cyclone_bracelet_material": "cyclone_bracelet/bone"
+					"mmt_bracelet/base_bracelet/starter_bracelet_material": "starter_bracelet/iron"
+					"mmt_bracelet/inlay": "mmt_bracelet/inlay/gem"
+					"mmt_bracelet/inlay/gem_material": "gem/amethyst"
+				}
+			}
+			id: "63A790DCF73C76AC"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "1FFC8C58E97211FE"
+				title: "阅读疾风手镯"
+				type: "checkmark"
+			}]
+			title: "疾风手镯"
+			x: 22.07d
+			y: -13.8d
+		}
+		{
+			dependencies: ["48E6F54DA1D7073A"]
+			description: [
+				"&e用途：汇总“镶嵌”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bracelet"
+				tag: {
+					Damage: 0
+					id: "c5299768-9ce9-5c8a-aff7-c51edff9f9a2"
+					"mmt_bracelet/base_bracelet": "mmt_bracelet/base_bracelet/starter_bracelet"
+					"mmt_bracelet/base_bracelet/starter_bracelet_material": "starter_bracelet/iron"
+					"mmt_bracelet/inlay": "mmt_bracelet/inlay/gem"
+					"mmt_bracelet/inlay/gem_material": "gem/amethyst"
+				}
+			}
+			id: "41A3F9C49C679552"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "0CC665C041E37BB1"
+				title: "阅读镶嵌"
+				type: "checkmark"
+			}]
+			title: "&b镶嵌"
+			x: 30.75d
+			y: -9.0d
+		}
+		{
+			dependencies: ["41A3F9C49C679552"]
+			description: [
+				"&e用途：【需要雷鸣战技卷轴】镶嵌后自带暴击率。"
+				"&b适合：安装在“镶嵌”槽位。"
+				"&d需要：雷鸣战技。"
+				"{\"text\":\"查看卷轴：雷鸣战技\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6ABDD3C44A9FD0CC\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bracelet"
+				tag: {
+					Damage: 0
+					id: "3d48b679-6685-5fed-94a7-ec454f0a25c9"
+					"mmt_bracelet/base_bracelet": "mmt_bracelet/base_bracelet/starter_bracelet"
+					"mmt_bracelet/base_bracelet/starter_bracelet_material": "starter_bracelet/iron"
+					"mmt_bracelet/inlay": "mmt_bracelet/inlay/gem"
+					"mmt_bracelet/inlay/gem_material": "gem/amethyst"
+				}
+			}
+			id: "24E16AD241211026"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "54E70A8A37086183"
+				title: "阅读镶嵌"
+				type: "checkmark"
+			}]
+			title: "镶嵌"
+			x: 30.75d
+			y: -11.7d
+		}
+		{
+			dependencies: ["439778E0ACC0CD94"]
+			description: [
+				"&e用途：查看项链的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_necklace"
+				tag: {
+					Damage: 0
+					id: "92b1e7d7-6309-51be-b96b-5ba0bfef1b54"
+					"mmt_necklace/chain": "mmt_necklace/chain/base_chain"
+					"mmt_necklace/chain/base_chain_material": "base_chain/iron"
+					"mmt_necklace/pendant": "mmt_necklace/pendant/starter_pendant"
+					"mmt_necklace/pendant/starter_pendant_material": "starter_pendant/iron"
+				}
+			}
+			id: "2108DBFD5617ACD6"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "7E813D4FE8E99AC5"
+				title: "阅读项链"
+				type: "checkmark"
+			}]
+			title: "&a项链"
+			x: 45.15d
+			y: -5.0d
+		}
+		{
+			dependencies: ["2108DBFD5617ACD6"]
+			description: [
+				"&e用途：汇总“链条”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_necklace"
+				tag: {
+					Damage: 0
+					id: "c34f42fe-5f0d-5007-8cf3-a7c459bb9863"
+					"mmt_necklace/chain": "mmt_necklace/chain/base_chain"
+					"mmt_necklace/chain/base_chain_material": "base_chain/iron"
+					"mmt_necklace/pendant": "mmt_necklace/pendant/starter_pendant"
+					"mmt_necklace/pendant/starter_pendant_material": "starter_pendant/iron"
+				}
+			}
+			id: "3F5244CD2671EBCD"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "185C5E1A0E60E41F"
+				title: "阅读链条"
+				type: "checkmark"
+			}]
+			title: "&b链条"
+			x: 40.25d
+			y: -9.0d
+		}
+		{
+			dependencies: ["3F5244CD2671EBCD"]
+			description: [
+				"&e用途：【默认开放】硬度提高护甲韧性，密度会降低移动速度，是均衡链条。"
+				"&b适合：安装在“链条”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_necklace"
+				tag: {
+					Damage: 0
+					id: "3ce373b9-f66c-5423-8f3e-1ba130ced3f5"
+					"mmt_necklace/chain": "mmt_necklace/chain/base_chain"
+					"mmt_necklace/chain/base_chain_material": "base_chain/iron"
+					"mmt_necklace/pendant": "mmt_necklace/pendant/starter_pendant"
+					"mmt_necklace/pendant/starter_pendant_material": "starter_pendant/iron"
+				}
+			}
+			id: "3615A13C29D8AEA8"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "685A3511DB78A0BD"
+				title: "阅读普通链条"
+				type: "checkmark"
+			}]
+			title: "普通链条"
+			x: 39.08d
+			y: -11.7d
+		}
+		{
+			dependencies: ["3F5244CD2671EBCD"]
+			description: [
+				"&e用途：【默认开放】硬度提供较高护甲韧性，但密度造成的移动速度惩罚也更大。"
+				"&b适合：安装在“链条”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_necklace"
+				tag: {
+					Damage: 0
+					id: "7cb32bce-7cd6-5899-be89-5175dacfae07"
+					"mmt_necklace/chain": "mmt_necklace/chain/thick_chain"
+					"mmt_necklace/chain/base_chain_material": "base_chain/iron"
+					"mmt_necklace/chain/thick_chain_material": "thick_chain/iron"
+					"mmt_necklace/pendant": "mmt_necklace/pendant/starter_pendant"
+					"mmt_necklace/pendant/starter_pendant_material": "starter_pendant/iron"
+				}
+			}
+			id: "78AA57A573ADDFCB"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "58373BA9371D62DF"
+				title: "阅读粗链条"
+				type: "checkmark"
+			}]
+			title: "粗链条"
+			x: 41.42d
+			y: -11.7d
+		}
+		{
+			dependencies: ["3F5244CD2671EBCD"]
+			description: [
+				"&e用途：【默认开放】硬度提供少量护甲韧性，且没有密度带来的移动速度惩罚。"
+				"&b适合：安装在“链条”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_necklace"
+				tag: {
+					Damage: 0
+					id: "b80cc206-1f49-536a-a08c-64c552c8f4ea"
+					"mmt_necklace/chain": "mmt_necklace/chain/thin_chain"
+					"mmt_necklace/chain/base_chain_material": "base_chain/iron"
+					"mmt_necklace/chain/thin_chain_material": "thin_chain/iron"
+					"mmt_necklace/pendant": "mmt_necklace/pendant/starter_pendant"
+					"mmt_necklace/pendant/starter_pendant_material": "starter_pendant/iron"
+				}
+			}
+			id: "00E7CA639CCF532C"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "2C63901BB98B501D"
+				title: "阅读细链条"
+				type: "checkmark"
+			}]
+			title: "细链条"
+			x: 39.08d
+			y: -13.8d
+		}
+		{
+			dependencies: ["2108DBFD5617ACD6"]
+			description: [
+				"&e用途：汇总“坠饰”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_necklace"
+				tag: {
+					Damage: 0
+					id: "32e465fb-3439-5115-9662-d833212a17c4"
+					"mmt_necklace/chain": "mmt_necklace/chain/base_chain"
+					"mmt_necklace/chain/base_chain_material": "base_chain/iron"
+					"mmt_necklace/pendant": "mmt_necklace/pendant/cross"
+					"mmt_necklace/pendant/cross_material": "cross/iron"
+					"mmt_necklace/pendant/starter_pendant_material": "starter_pendant/iron"
+				}
+			}
+			id: "4009EC8FF2311EEC"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "4DFF7A79D7CB58CD"
+				title: "阅读坠饰"
+				type: "checkmark"
+			}]
+			title: "&b坠饰"
+			x: 48.9d
+			y: -9.0d
+		}
+		{
+			dependencies: ["4009EC8FF2311EEC"]
+			description: [
+				"&e用途：【需要远古净化卷轴】提供神威，即受击后的短暂无敌时间。"
+				"&b适合：安装在“坠饰”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_necklace"
+				tag: {
+					Damage: 0
+					id: "102f58d4-993b-5235-a153-b543dab4f288"
+					"mmt_necklace/chain": "mmt_necklace/chain/base_chain"
+					"mmt_necklace/chain/base_chain_material": "base_chain/iron"
+					"mmt_necklace/pendant": "mmt_necklace/pendant/cross"
+					"mmt_necklace/pendant/cross_material": "cross/iron"
+					"mmt_necklace/pendant/starter_pendant_material": "starter_pendant/iron"
+				}
+			}
+			id: "6D101577C61AFF9D"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "0BECEABDF56D1C6C"
+				title: "阅读十字坠饰"
+				type: "checkmark"
+			}]
+			title: "十字坠饰"
+			x: 46.55d
+			y: -11.7d
+		}
+		{
+			dependencies: ["4009EC8FF2311EEC"]
+			description: [
+				"&e用途：【需要蜂巢守护卷轴】材料硬度越高，提供的护甲越高。"
+				"&b适合：安装在“坠饰”槽位。"
+				"&d需要：蜂巢守护。"
+				"{\"text\":\"查看卷轴：蜂巢守护\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"721B61FDF7A96289\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_necklace"
+				tag: {
+					Damage: 0
+					id: "eb64575e-c862-5db7-ba42-cc719b9075ff"
+					"mmt_necklace/chain": "mmt_necklace/chain/base_chain"
+					"mmt_necklace/chain/base_chain_material": "base_chain/iron"
+					"mmt_necklace/pendant": "mmt_necklace/pendant/shield"
+					"mmt_necklace/pendant/shield_material": "shield/stone"
+					"mmt_necklace/pendant/starter_pendant_material": "starter_pendant/iron"
+				}
+			}
+			id: "31B7CD93CCAAF240"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "25FF8A00E5E08126"
+				title: "阅读圆盾坠饰"
+				type: "checkmark"
+			}]
+			title: "圆盾坠饰"
+			x: 48.9d
+			y: -11.7d
+		}
+		{
+			dependencies: ["4009EC8FF2311EEC"]
+			description: [
+				"&e用途：【需要月相奥术卷轴】硬度提高法力回复，密度提高法力上限，适合法术循环构筑。"
+				"&b适合：安装在“坠饰”槽位。"
+				"&d需要：月相奥术。"
+				"{\"text\":\"查看卷轴：月相奥术\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"3EF0F7EF83739997\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_necklace"
+				tag: {
+					Damage: 0
+					id: "ac0d8359-4e14-5e4b-8ef2-124bf9c0fcde"
+					"mmt_necklace/chain": "mmt_necklace/chain/base_chain"
+					"mmt_necklace/chain/base_chain_material": "base_chain/iron"
+					"mmt_necklace/pendant": "mmt_necklace/pendant/arcane"
+					"mmt_necklace/pendant/arcane_material": "arcane/amethyst"
+					"mmt_necklace/pendant/starter_pendant_material": "starter_pendant/iron"
+				}
+			}
+			id: "2D5B221BCAE09DC1"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "721D1C86D0CC5C46"
+				title: "阅读奥术坠饰"
+				type: "checkmark"
+			}]
+			title: "奥术坠饰"
+			x: 51.25d
+			y: -11.7d
+		}
+		{
+			dependencies: ["4009EC8FF2311EEC"]
+			description: [
+				"&e用途：【需要重装守御卷轴】自带固定穿甲。"
+				"&b适合：安装在“坠饰”槽位。"
+				"&d需要：重装守御。"
+				"{\"text\":\"查看卷轴：重装守御\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2B1949EAEA5799F7\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_necklace"
+				tag: {
+					Damage: 0
+					id: "0ef99b7a-6f76-57a2-ab9b-9ae72bef7e8c"
+					"mmt_necklace/chain": "mmt_necklace/chain/base_chain"
+					"mmt_necklace/chain/base_chain_material": "base_chain/iron"
+					"mmt_necklace/pendant": "mmt_necklace/pendant/fang"
+					"mmt_necklace/pendant/fang_material": "fang/bone"
+					"mmt_necklace/pendant/starter_pendant_material": "starter_pendant/iron"
+				}
+			}
+			id: "011F51F3AB5A13B9"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "43CDBD59DA2B7376"
+				title: "阅读尖牙坠饰"
+				type: "checkmark"
+			}]
+			title: "尖牙坠饰"
+			x: 46.55d
+			y: -13.8d
+		}
+		{
+			dependencies: ["4009EC8FF2311EEC"]
+			description: [
+				"&e用途：【需要蜂巢守护卷轴】硬度、密度与韧性都会提高最大生命，其中硬度与密度收益更高。"
+				"&b适合：安装在“坠饰”槽位。"
+				"&d需要：蜂巢守护。"
+				"{\"text\":\"查看卷轴：蜂巢守护\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"721B61FDF7A96289\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_necklace"
+				tag: {
+					Damage: 0
+					id: "7563b616-1f17-5f86-afeb-4b5fd86cae7c"
+					"mmt_necklace/chain": "mmt_necklace/chain/base_chain"
+					"mmt_necklace/chain/base_chain_material": "base_chain/iron"
+					"mmt_necklace/pendant": "mmt_necklace/pendant/heart"
+					"mmt_necklace/pendant/heart_material": "heart/bone"
+					"mmt_necklace/pendant/starter_pendant_material": "starter_pendant/iron"
+				}
+			}
+			id: "46E74F43CF4E6E14"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "3ADA4705B881CB75"
+				title: "阅读心形坠饰"
+				type: "checkmark"
+			}]
+			title: "心形坠饰"
+			x: 48.9d
+			y: -13.8d
+		}
+		{
+			dependencies: ["439778E0ACC0CD94"]
+			description: [
+				"&e用途：查看手套的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_glove"
+				tag: {
+					Damage: 0
+					id: "b1b4fa34-9ee0-5fd3-aa7a-ff0916a36e92"
+					"mmt_glove/base_glove": "mmt_glove/base_glove/starter_glove"
+					"mmt_glove/base_glove/starter_glove_material": "starter_glove/leather"
+					"mmt_glove/wristband": "mmt_glove/wristband/hard_wristband"
+					"mmt_glove/wristband/hard_wristband_material": "hard_wristband/iron"
+				}
+			}
+			id: "24C70DE59CE45EA5"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "12A3F4B2C897FAF3"
+				title: "阅读手套"
+				type: "checkmark"
+			}]
+			title: "&a手套"
+			x: 63.3d
+			y: -5.0d
+		}
+		{
+			dependencies: ["24C70DE59CE45EA5"]
+			description: [
+				"&e用途：汇总“手套”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_glove"
+				tag: {
+					Damage: 0
+					id: "e10c6b49-62d6-5524-b1e6-bc6c086ecc66"
+					"mmt_glove/base_glove": "mmt_glove/base_glove/hard_glove"
+					"mmt_glove/base_glove/hard_glove_material": "hard_glove/bone"
+					"mmt_glove/base_glove/starter_glove_material": "starter_glove/leather"
+					"mmt_glove/wristband": "mmt_glove/wristband/hard_wristband"
+					"mmt_glove/wristband/hard_wristband_material": "hard_wristband/iron"
+				}
+			}
+			id: "0A5675DB81D5781A"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "36B5F69752A2E25D"
+				title: "阅读手套"
+				type: "checkmark"
+			}]
+			title: "&b手套"
+			x: 59.55d
+			y: -9.0d
+		}
+		{
+			dependencies: ["0A5675DB81D5781A"]
+			description: [
+				"&e用途：【需要雷鸣战技卷轴】自带攻击距离、交互距离与攻击力。"
+				"&b适合：安装在“手套”槽位。"
+				"&d需要：雷鸣战技。"
+				"{\"text\":\"查看卷轴：雷鸣战技\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6ABDD3C44A9FD0CC\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_glove"
+				tag: {
+					Damage: 0
+					id: "53fc4255-db90-551d-981c-4ecb036e6ca6"
+					"mmt_glove/base_glove": "mmt_glove/base_glove/hard_glove"
+					"mmt_glove/base_glove/hard_glove_material": "hard_glove/bone"
+					"mmt_glove/base_glove/starter_glove_material": "starter_glove/leather"
+					"mmt_glove/wristband": "mmt_glove/wristband/hard_wristband"
+					"mmt_glove/wristband/hard_wristband_material": "hard_wristband/iron"
+				}
+			}
+			id: "3FF2A613B198166F"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "7448D4128F440E9E"
+				title: "阅读坚硬手套"
+				type: "checkmark"
+			}]
+			title: "坚硬手套"
+			x: 58.38d
+			y: -11.7d
+		}
+		{
+			dependencies: ["0A5675DB81D5781A"]
+			description: [
+				"&e用途：【需要雷鸣战技卷轴】自带攻击距离、交互距离与攻速。"
+				"&b适合：安装在“手套”槽位。"
+				"&d需要：雷鸣战技。"
+				"{\"text\":\"查看卷轴：雷鸣战技\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6ABDD3C44A9FD0CC\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_glove"
+				tag: {
+					Damage: 0
+					id: "a1d610fc-a86f-5926-aa1d-c26cd0f653a9"
+					"mmt_glove/base_glove": "mmt_glove/base_glove/soft_glove"
+					"mmt_glove/base_glove/soft_glove_material": "soft_glove/bone"
+					"mmt_glove/base_glove/starter_glove_material": "starter_glove/leather"
+					"mmt_glove/wristband": "mmt_glove/wristband/hard_wristband"
+					"mmt_glove/wristband/hard_wristband_material": "hard_wristband/iron"
+				}
+			}
+			id: "5491A2556462B339"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "3674F1C213928802"
+				title: "阅读柔软手套"
+				type: "checkmark"
+			}]
+			title: "柔软手套"
+			x: 60.72d
+			y: -11.7d
+		}
+		{
+			dependencies: ["24C70DE59CE45EA5"]
+			description: [
+				"&e用途：汇总“腕带”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_glove"
+				tag: {
+					Damage: 0
+					id: "d507467a-373a-59cc-81b4-44c210a0a0bd"
+					"mmt_glove/base_glove": "mmt_glove/base_glove/starter_glove"
+					"mmt_glove/base_glove/starter_glove_material": "starter_glove/leather"
+					"mmt_glove/wristband": "mmt_glove/wristband/hard_wristband"
+					"mmt_glove/wristband/hard_wristband_material": "hard_wristband/bone"
+				}
+			}
+			id: "2748AA8115578AFD"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "5F8C2D8DA148FD90"
+				title: "阅读腕带"
+				type: "checkmark"
+			}]
+			title: "&b腕带"
+			x: 67.05d
+			y: -9.0d
+		}
+		{
+			dependencies: ["2748AA8115578AFD"]
+			description: [
+				"&e用途：【默认开放】硬度同时提高护甲与护甲韧性，适合作为防御腕带。"
+				"&b适合：安装在“腕带”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_glove"
+				tag: {
+					Damage: 0
+					id: "6fa8f0df-cb29-57d8-8b63-fd5e8660d9bd"
+					"mmt_glove/base_glove": "mmt_glove/base_glove/starter_glove"
+					"mmt_glove/base_glove/starter_glove_material": "starter_glove/leather"
+					"mmt_glove/wristband": "mmt_glove/wristband/hard_wristband"
+					"mmt_glove/wristband/hard_wristband_material": "hard_wristband/bone"
+				}
+			}
+			id: "18F28E1E651591FC"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "380251500DD32D3E"
+				title: "阅读坚固腕带"
+				type: "checkmark"
+			}]
+			title: "坚固腕带"
+			x: 65.88d
+			y: -11.7d
+		}
+		{
+			dependencies: ["2748AA8115578AFD"]
+			description: [
+				"&e用途：【默认开放】密度提高百分比攻击伤害，适合偏重型的近战手套。"
+				"&b适合：安装在“腕带”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_glove"
+				tag: {
+					Damage: 0
+					id: "1ac9bd01-9ca3-57d9-a290-f434dfd32890"
+					"mmt_glove/base_glove": "mmt_glove/base_glove/starter_glove"
+					"mmt_glove/base_glove/starter_glove_material": "starter_glove/leather"
+					"mmt_glove/wristband": "mmt_glove/wristband/heavy_wristband"
+					"mmt_glove/wristband/hard_wristband_material": "hard_wristband/iron"
+					"mmt_glove/wristband/heavy_wristband_material": "heavy_wristband/bone"
+				}
+			}
+			id: "7A8E658DBD7D65CB"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "0092ECE6F3378FF6"
+				title: "阅读沉重腕带"
+				type: "checkmark"
+			}]
+			title: "沉重腕带"
+			x: 68.22d
+			y: -11.7d
+		}
+		{
+			dependencies: ["2748AA8115578AFD"]
+			description: [
+				"&e用途：【默认开放】韧性提高百分比攻击速度，适合轻快型手套。"
+				"&b适合：安装在“腕带”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_glove"
+				tag: {
+					Damage: 0
+					id: "f5570ca5-3022-5839-a9d1-dfd85ee3a2e1"
+					"mmt_glove/base_glove": "mmt_glove/base_glove/starter_glove"
+					"mmt_glove/base_glove/starter_glove_material": "starter_glove/leather"
+					"mmt_glove/wristband": "mmt_glove/wristband/swift_wristband"
+					"mmt_glove/wristband/hard_wristband_material": "hard_wristband/iron"
+					"mmt_glove/wristband/swift_wristband_material": "swift_wristband/bone"
+				}
+			}
+			id: "0FD35A7A88827532"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "34EA4C6448E46DA0"
+				title: "阅读迅捷腕带"
+				type: "checkmark"
+			}]
+			title: "迅捷腕带"
+			x: 65.88d
+			y: -13.8d
+		}
+		{
+			dependencies: ["439778E0ACC0CD94"]
+			description: [
+				"&e用途：查看鞋的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_shoes"
+				tag: {
+					Damage: 0
+					id: "762cdb50-0c5b-5f6e-bad0-492c7e0aa053"
+					"mmt_shoes/sole": "mmt_shoes/sole/flat_sole"
+					"mmt_shoes/sole/flat_sole_material": "flat_sole/iron"
+					"mmt_shoes/upper": "mmt_shoes/upper/starter_boots"
+					"mmt_shoes/upper/starter_boots_material": "starter_boots/leather"
+				}
+			}
+			id: "2691D35FB3C8D235"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "258A77C6AEE0CBD2"
+				title: "阅读鞋"
+				type: "checkmark"
+			}]
+			title: "&a鞋"
+			x: 18.5d
+			y: -24.7d
+		}
+		{
+			dependencies: ["2691D35FB3C8D235"]
+			description: [
+				"&e用途：汇总“鞋底”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_shoes"
+				tag: {
+					Damage: 0
+					id: "48f55525-14ab-50b9-b679-0d94b46930ef"
+					"mmt_shoes/sole": "mmt_shoes/sole/platform_shoes"
+					"mmt_shoes/sole/flat_sole_material": "flat_sole/iron"
+					"mmt_shoes/sole/platform_shoes_material": "platform_shoes/bone"
+					"mmt_shoes/upper": "mmt_shoes/upper/starter_boots"
+					"mmt_shoes/upper/starter_boots_material": "starter_boots/leather"
+				}
+			}
+			id: "0A2914E62079AE6D"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "03AC9C980D0FCBE5"
+				title: "阅读鞋底"
+				type: "checkmark"
+			}]
+			title: "&b鞋底"
+			x: 14.75d
+			y: -28.7d
+		}
+		{
+			dependencies: ["0A2914E62079AE6D"]
+			description: [
+				"&e用途：加厚鞋底。"
+				"&b适合：安装在“鞋底”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_shoes"
+				tag: {
+					Damage: 0
+					id: "c5fd204f-ac33-5f7c-9796-eddcd8dfb301"
+					"mmt_shoes/sole": "mmt_shoes/sole/platform_shoes"
+					"mmt_shoes/sole/flat_sole_material": "flat_sole/iron"
+					"mmt_shoes/sole/platform_shoes_material": "platform_shoes/bone"
+					"mmt_shoes/upper": "mmt_shoes/upper/starter_boots"
+					"mmt_shoes/upper/starter_boots_material": "starter_boots/leather"
+				}
+			}
+			id: "48ADF44CE0045515"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "68A033F62681C804"
+				title: "阅读加厚鞋底"
+				type: "checkmark"
+			}]
+			title: "加厚鞋底"
+			x: 13.57d
+			y: -31.4d
+		}
+		{
+			dependencies: ["0A2914E62079AE6D"]
+			description: [
+				"&e用途：平底鞋底。"
+				"&b适合：安装在“鞋底”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_shoes"
+				tag: {
+					Damage: 0
+					id: "af43dc22-37b2-5de1-bfff-2744df0d78aa"
+					"mmt_shoes/sole": "mmt_shoes/sole/flat_sole"
+					"mmt_shoes/sole/flat_sole_material": "flat_sole/bone"
+					"mmt_shoes/upper": "mmt_shoes/upper/starter_boots"
+					"mmt_shoes/upper/starter_boots_material": "starter_boots/leather"
+				}
+			}
+			id: "2F19A53815478F4F"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "21E9688E42397572"
+				title: "阅读平底鞋底"
+				type: "checkmark"
+			}]
+			title: "平底鞋底"
+			x: 15.93d
+			y: -31.4d
+		}
+		{
+			dependencies: ["0A2914E62079AE6D"]
+			description: [
+				"&e用途：钉形鞋底。"
+				"&b适合：安装在“鞋底”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_shoes"
+				tag: {
+					Damage: 0
+					id: "801520f5-848c-5233-ac0a-7178bde78219"
+					"mmt_shoes/sole": "mmt_shoes/sole/spiked_shoes"
+					"mmt_shoes/sole/flat_sole_material": "flat_sole/iron"
+					"mmt_shoes/sole/spiked_shoes_material": "spiked_shoes/bone"
+					"mmt_shoes/upper": "mmt_shoes/upper/starter_boots"
+					"mmt_shoes/upper/starter_boots_material": "starter_boots/leather"
+				}
+			}
+			id: "7793DF575058F689"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "28EDBD4A790FC604"
+				title: "阅读钉形鞋底"
+				type: "checkmark"
+			}]
+			title: "钉形鞋底"
+			x: 13.57d
+			y: -33.5d
+		}
+		{
+			dependencies: ["0A2914E62079AE6D"]
+			description: [
+				"&e用途：鞋底。"
+				"&b适合：安装在“鞋底”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_shoes"
+				tag: {
+					Damage: 0
+					id: "e5685620-6c00-5f43-a966-c05f3aa7a57d"
+					"mmt_shoes/sole": "mmt_shoes/sole/block_sole"
+					"mmt_shoes/sole/block_sole_material": "block_sole/acacia_planks"
+					"mmt_shoes/sole/flat_sole_material": "flat_sole/iron"
+					"mmt_shoes/upper": "mmt_shoes/upper/starter_boots"
+					"mmt_shoes/upper/starter_boots_material": "starter_boots/leather"
+				}
+			}
+			id: "7C5BF1B0E6FC52C0"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "7546BA3C9B9A0F61"
+				title: "阅读鞋底"
+				type: "checkmark"
+			}]
+			title: "鞋底"
+			x: 15.93d
+			y: -33.5d
+		}
+		{
+			dependencies: ["2691D35FB3C8D235"]
+			description: [
+				"&e用途：汇总“鞋面”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_shoes"
+				tag: {
+					Damage: 0
+					id: "bc6c6227-a545-57d7-9171-b99c6f5eab74"
+					"mmt_shoes/sole": "mmt_shoes/sole/flat_sole"
+					"mmt_shoes/sole/flat_sole_material": "flat_sole/iron"
+					"mmt_shoes/upper": "mmt_shoes/upper/short_boots"
+					"mmt_shoes/upper/short_boots_material": "short_boots/leather"
+					"mmt_shoes/upper/starter_boots_material": "starter_boots/leather"
+				}
+			}
+			id: "69F8F96CC7FA20D9"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "754A130AE40D832D"
+				title: "阅读鞋面"
+				type: "checkmark"
+			}]
+			title: "&b鞋面"
+			x: 22.25d
+			y: -28.7d
+		}
+		{
+			dependencies: ["69F8F96CC7FA20D9"]
+			description: [
+				"&e用途：短靴鞋面。"
+				"&b适合：安装在“鞋面”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_shoes"
+				tag: {
+					Damage: 0
+					id: "baa90bea-e463-5803-8bc5-ac00eb222f15"
+					"mmt_shoes/sole": "mmt_shoes/sole/flat_sole"
+					"mmt_shoes/sole/flat_sole_material": "flat_sole/iron"
+					"mmt_shoes/upper": "mmt_shoes/upper/short_boots"
+					"mmt_shoes/upper/short_boots_material": "short_boots/leather"
+					"mmt_shoes/upper/starter_boots_material": "starter_boots/leather"
+				}
+			}
+			id: "168963EBE8235BEA"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "318FD501963F1E55"
+				title: "阅读短靴鞋面"
+				type: "checkmark"
+			}]
+			title: "短靴鞋面"
+			x: 21.07d
+			y: -31.4d
+		}
+		{
+			dependencies: ["69F8F96CC7FA20D9"]
+			description: [
+				"&e用途：运动鞋面。"
+				"&b适合：安装在“鞋面”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_shoes"
+				tag: {
+					Damage: 0
+					id: "5743fb3b-55eb-505f-80bc-41f04780f070"
+					"mmt_shoes/sole": "mmt_shoes/sole/flat_sole"
+					"mmt_shoes/sole/flat_sole_material": "flat_sole/iron"
+					"mmt_shoes/upper": "mmt_shoes/upper/sports_shoes"
+					"mmt_shoes/upper/sports_shoes_material": "sports_shoes/leather"
+					"mmt_shoes/upper/starter_boots_material": "starter_boots/leather"
+				}
+			}
+			id: "6EF02023D042EC8E"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "4E07F619FD4CA5A5"
+				title: "阅读运动鞋面"
+				type: "checkmark"
+			}]
+			title: "运动鞋面"
+			x: 23.43d
+			y: -31.4d
+		}
+		{
+			dependencies: ["69F8F96CC7FA20D9"]
+			description: [
+				"&e用途：长靴鞋面。"
+				"&b适合：安装在“鞋面”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_shoes"
+				tag: {
+					Damage: 0
+					id: "19d88c30-b694-570d-a3aa-8b71d78b99ae"
+					"mmt_shoes/sole": "mmt_shoes/sole/flat_sole"
+					"mmt_shoes/sole/flat_sole_material": "flat_sole/iron"
+					"mmt_shoes/upper": "mmt_shoes/upper/long_boots"
+					"mmt_shoes/upper/long_boots_material": "long_boots/leather"
+					"mmt_shoes/upper/starter_boots_material": "starter_boots/leather"
+				}
+			}
+			id: "2DD34D97288CAEF9"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "2EA5E2AF017F37F1"
+				title: "阅读长靴鞋面"
+				type: "checkmark"
+			}]
+			title: "长靴鞋面"
+			x: 21.07d
+			y: -33.5d
+		}
+		{
+			dependencies: ["439778E0ACC0CD94"]
+			description: [
+				"&e用途：查看护心镜的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_heart_protecting_mirror"
+				tag: {
+					Damage: 0
+					id: "816af386-dbee-5f29-8a41-f5969e7210d5"
+					"mmt_heart_protecting_mirror/base": "mmt_heart_protecting_mirror/base/starter_base"
+					"mmt_heart_protecting_mirror/base/starter_base_material": "starter_base/iron"
+					"mmt_heart_protecting_mirror/core": "mmt_heart_protecting_mirror/core/health_core"
+					"mmt_heart_protecting_mirror/core/health_core_material": "health_core/amethyst"
+				}
+			}
+			id: "5F6422E3F41535C6"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "306DBF0BFD40F1AC"
+				title: "阅读护心镜"
+				type: "checkmark"
+			}]
+			title: "&a护心镜"
+			x: 35.5d
+			y: -24.7d
+		}
+		{
+			dependencies: ["5F6422E3F41535C6"]
+			description: [
+				"&e用途：汇总“基底”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_heart_protecting_mirror"
+				tag: {
+					Damage: 0
+					id: "6572f41a-e5ac-5552-8434-701326353ed5"
+					"mmt_heart_protecting_mirror/base": "mmt_heart_protecting_mirror/base/hard_base"
+					"mmt_heart_protecting_mirror/base/hard_base_material": "hard_base/bone"
+					"mmt_heart_protecting_mirror/base/starter_base_material": "starter_base/iron"
+					"mmt_heart_protecting_mirror/core": "mmt_heart_protecting_mirror/core/health_core"
+					"mmt_heart_protecting_mirror/core/health_core_material": "health_core/amethyst"
+				}
+			}
+			id: "0DC2D714220B09CE"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "22799D8308A276D9"
+				title: "阅读基底"
+				type: "checkmark"
+			}]
+			title: "&b基底"
+			x: 31.75d
+			y: -28.7d
+		}
+		{
+			dependencies: ["0DC2D714220B09CE"]
+			description: [
+				"&e用途：【需要重装守御卷轴】将护心镜改为装甲基底。"
+				"&b适合：安装在“基底”槽位。"
+				"&d需要：重装守御。"
+				"{\"text\":\"查看卷轴：重装守御\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2B1949EAEA5799F7\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_heart_protecting_mirror"
+				tag: {
+					Damage: 0
+					id: "ea09197a-afcb-5a07-b61a-e794f209698e"
+					"mmt_heart_protecting_mirror/base": "mmt_heart_protecting_mirror/base/hard_base"
+					"mmt_heart_protecting_mirror/base/hard_base_material": "hard_base/bone"
+					"mmt_heart_protecting_mirror/base/starter_base_material": "starter_base/iron"
+					"mmt_heart_protecting_mirror/core": "mmt_heart_protecting_mirror/core/health_core"
+					"mmt_heart_protecting_mirror/core/health_core_material": "health_core/amethyst"
+				}
+			}
+			id: "3FCAD432A639DA2E"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "382752B263659AFB"
+				title: "阅读坚固基底"
+				type: "checkmark"
+			}]
+			title: "坚固基底"
+			x: 30.57d
+			y: -31.4d
+		}
+		{
+			dependencies: ["0DC2D714220B09CE"]
+			description: [
+				"&e用途：【需要重装守御卷轴】提供基础伤害减免。"
+				"&b适合：安装在“基底”槽位。"
+				"&d需要：重装守御。"
+				"{\"text\":\"查看卷轴：重装守御\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2B1949EAEA5799F7\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_heart_protecting_mirror"
+				tag: {
+					Damage: 0
+					id: "cdc7a4a5-10b0-56c7-a961-3d5cc2d2ecd3"
+					"mmt_heart_protecting_mirror/base": "mmt_heart_protecting_mirror/base/soft_base"
+					"mmt_heart_protecting_mirror/base/soft_base_material": "soft_base/bone"
+					"mmt_heart_protecting_mirror/base/starter_base_material": "starter_base/iron"
+					"mmt_heart_protecting_mirror/core": "mmt_heart_protecting_mirror/core/health_core"
+					"mmt_heart_protecting_mirror/core/health_core_material": "health_core/amethyst"
+				}
+			}
+			id: "3FB16BA157C44223"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "530C5AF62F6D1E57"
+				title: "阅读柔韧基底"
+				type: "checkmark"
+			}]
+			title: "柔韧基底"
+			x: 32.92d
+			y: -31.4d
+		}
+		{
+			dependencies: ["5F6422E3F41535C6"]
+			description: [
+				"&e用途：汇总“核心”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_heart_protecting_mirror"
+				tag: {
+					Damage: 0
+					id: "29a67c97-eed6-571b-b668-eda70bef7242"
+					"mmt_heart_protecting_mirror/base": "mmt_heart_protecting_mirror/base/starter_base"
+					"mmt_heart_protecting_mirror/base/starter_base_material": "starter_base/iron"
+					"mmt_heart_protecting_mirror/core": "mmt_heart_protecting_mirror/core/health_core"
+					"mmt_heart_protecting_mirror/core/health_core_material": "health_core/oak"
+				}
+			}
+			id: "1D162022E6341F2A"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "20981737FBF3BF40"
+				title: "阅读核心"
+				type: "checkmark"
+			}]
+			title: "&b核心"
+			x: 39.25d
+			y: -28.7d
+		}
+		{
+			dependencies: ["1D162022E6341F2A"]
+			description: [
+				"&e用途：【需要重装守御卷轴】核心自带最大生命。"
+				"&b适合：安装在“核心”槽位。"
+				"&d需要：重装守御。"
+				"{\"text\":\"查看卷轴：重装守御\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2B1949EAEA5799F7\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_heart_protecting_mirror"
+				tag: {
+					Damage: 0
+					id: "bb8e2c31-5bdc-5eb1-aece-96e44894769c"
+					"mmt_heart_protecting_mirror/base": "mmt_heart_protecting_mirror/base/starter_base"
+					"mmt_heart_protecting_mirror/base/starter_base_material": "starter_base/iron"
+					"mmt_heart_protecting_mirror/core": "mmt_heart_protecting_mirror/core/health_core"
+					"mmt_heart_protecting_mirror/core/health_core_material": "health_core/oak"
+				}
+			}
+			id: "38B298EBC77172EF"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "72420741ED0E5F31"
+				title: "阅读生命核心"
+				type: "checkmark"
+			}]
+			title: "生命核心"
+			x: 39.25d
+			y: -31.4d
+		}
+		{
+			dependencies: ["439778E0ACC0CD94"]
+			description: [
+				"&e用途：查看徽章的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_emblem"
+				tag: {
+					Damage: 0
+					id: "f653faa6-4ff9-5488-af0e-bf8c26deb53c"
+					"mmt_emblem/emblem_ring": "mmt_emblem/emblem_ring/base_ring"
+					"mmt_emblem/emblem_ring/base_ring_material": "base_ring/iron"
+					"mmt_emblem/emblem_type": "mmt_emblem/emblem_type/blank_emblem"
+					"mmt_emblem/emblem_type/blank_emblem_material": "blank_emblem/iron"
+				}
+			}
+			id: "2D7E51A2AF31AD4D"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "2CA5FA61D1B17585"
+				title: "阅读徽章"
+				type: "checkmark"
+			}]
+			title: "&a徽章"
+			x: 53.65d
+			y: -24.7d
+		}
+		{
+			dependencies: ["2D7E51A2AF31AD4D"]
+			description: [
+				"&e用途：汇总“徽环”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_emblem"
+				tag: {
+					Damage: 0
+					id: "b1062a25-941b-589f-9ec7-bad6a642ebe6"
+					"mmt_emblem/emblem_ring": "mmt_emblem/emblem_ring/base_ring"
+					"mmt_emblem/emblem_ring/base_ring_material": "base_ring/bone"
+					"mmt_emblem/emblem_type": "mmt_emblem/emblem_type/blank_emblem"
+					"mmt_emblem/emblem_type/blank_emblem_material": "blank_emblem/iron"
+				}
+			}
+			id: "03ED6B5B86D25A6E"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "2CC6ABF0BE9F927B"
+				title: "阅读徽环"
+				type: "checkmark"
+			}]
+			title: "&b徽环"
+			x: 48.75d
+			y: -28.7d
+		}
+		{
+			dependencies: ["03ED6B5B86D25A6E"]
+			description: [
+				"&e用途：【默认开放】徽环是徽章的基础结构。"
+				"&b适合：安装在“徽环”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_emblem"
+				tag: {
+					Damage: 0
+					id: "61c68d64-e7fb-550f-8ad9-cb785c0ca876"
+					"mmt_emblem/emblem_ring": "mmt_emblem/emblem_ring/base_ring"
+					"mmt_emblem/emblem_ring/base_ring_material": "base_ring/bone"
+					"mmt_emblem/emblem_type": "mmt_emblem/emblem_type/blank_emblem"
+					"mmt_emblem/emblem_type/blank_emblem_material": "blank_emblem/iron"
+				}
+			}
+			id: "4E36DF433B7EBFE4"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "4179D7E912C49231"
+				title: "阅读徽环"
+				type: "checkmark"
+			}]
+			title: "徽环"
+			x: 48.75d
+			y: -31.4d
+		}
+		{
+			dependencies: ["2D7E51A2AF31AD4D"]
+			description: [
+				"&e用途：汇总“徽纹”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_emblem"
+				tag: {
+					Damage: 0
+					id: "a6446026-cd89-5403-99cd-7de70bf89ffb"
+					"mmt_emblem/emblem_ring": "mmt_emblem/emblem_ring/base_ring"
+					"mmt_emblem/emblem_ring/base_ring_material": "base_ring/iron"
+					"mmt_emblem/emblem_type": "mmt_emblem/emblem_type/avenger_emblem"
+					"mmt_emblem/emblem_type/avenger_emblem_material": "avenger_emblem/bone"
+					"mmt_emblem/emblem_type/blank_emblem_material": "blank_emblem/iron"
+				}
+			}
+			id: "2FEBC3A5262B1975"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "26F06A4CDA8C8169"
+				title: "阅读徽纹"
+				type: "checkmark"
+			}]
+			title: "&b徽纹"
+			x: 57.4d
+			y: -28.7d
+		}
+		{
+			dependencies: ["2FEBC3A5262B1975"]
+			description: [
+				"&e用途：【需要星界统御卷轴】提供较低倍率的独立全伤害增幅。"
+				"&b适合：安装在“徽纹”槽位。"
+				"&d需要：星界统御。"
+				"{\"text\":\"查看卷轴：星界统御\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"70BB8E19BB4E73B1\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_emblem"
+				tag: {
+					Damage: 0
+					id: "16e64878-c26b-589a-a965-738deb68d1f0"
+					"mmt_emblem/emblem_ring": "mmt_emblem/emblem_ring/base_ring"
+					"mmt_emblem/emblem_ring/base_ring_material": "base_ring/iron"
+					"mmt_emblem/emblem_type": "mmt_emblem/emblem_type/avenger_emblem"
+					"mmt_emblem/emblem_type/avenger_emblem_material": "avenger_emblem/bone"
+					"mmt_emblem/emblem_type/blank_emblem_material": "blank_emblem/iron"
+				}
+			}
+			id: "7DD494295398C5F3"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "5F263310DAC1F1A4"
+				title: "阅读复仇者徽章"
+				type: "checkmark"
+			}]
+			title: "复仇者徽章"
+			x: 55.05d
+			y: -31.4d
+		}
+		{
+			dependencies: ["2FEBC3A5262B1975"]
+			description: [
+				"&e用途：【需要流派徽记卷轴】提供独立魔法伤害增幅。"
+				"&b适合：安装在“徽纹”槽位。"
+				"&d需要：流派徽记。"
+				"{\"text\":\"查看卷轴：流派徽记\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6FDA30E1584BF2AD\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_emblem"
+				tag: {
+					Damage: 0
+					id: "2d686ca7-fbb2-5ab7-a7cf-90273b8aaf3d"
+					"mmt_emblem/emblem_ring": "mmt_emblem/emblem_ring/base_ring"
+					"mmt_emblem/emblem_ring/base_ring_material": "base_ring/iron"
+					"mmt_emblem/emblem_type": "mmt_emblem/emblem_type/sorcerer_emblem"
+					"mmt_emblem/emblem_type/blank_emblem_material": "blank_emblem/iron"
+					"mmt_emblem/emblem_type/sorcerer_emblem_material": "sorcerer_emblem/bone"
+				}
+			}
+			id: "0E29F41B0CFBC0D2"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "15845AFA4675F337"
+				title: "阅读巫师徽章"
+				type: "checkmark"
+			}]
+			title: "巫师徽章"
+			x: 57.4d
+			y: -31.4d
+		}
+		{
+			dependencies: ["2FEBC3A5262B1975"]
+			description: [
+				"&e用途：【需要流派徽记卷轴】提供独立近战伤害增幅。"
+				"&b适合：安装在“徽纹”槽位。"
+				"&d需要：流派徽记。"
+				"{\"text\":\"查看卷轴：流派徽记\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6FDA30E1584BF2AD\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_emblem"
+				tag: {
+					Damage: 0
+					id: "225d6926-ef08-5901-b738-7e9e7e05ae90"
+					"mmt_emblem/emblem_ring": "mmt_emblem/emblem_ring/base_ring"
+					"mmt_emblem/emblem_ring/base_ring_material": "base_ring/iron"
+					"mmt_emblem/emblem_type": "mmt_emblem/emblem_type/warrior_emblem"
+					"mmt_emblem/emblem_type/blank_emblem_material": "blank_emblem/iron"
+					"mmt_emblem/emblem_type/warrior_emblem_material": "warrior_emblem/bone"
+				}
+			}
+			id: "64D7AAD13401AB7E"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "29BFCEF134F19A15"
+				title: "阅读战士徽章"
+				type: "checkmark"
+			}]
+			title: "战士徽章"
+			x: 59.75d
+			y: -31.4d
+		}
+		{
+			dependencies: ["2FEBC3A5262B1975"]
+			description: [
+				"&e用途：【需要流派徽记卷轴】提供独立弹射物伤害增幅。"
+				"&b适合：安装在“徽纹”槽位。"
+				"&d需要：流派徽记。"
+				"{\"text\":\"查看卷轴：流派徽记\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6FDA30E1584BF2AD\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_emblem"
+				tag: {
+					Damage: 0
+					id: "22faad65-d3ee-5dad-9edc-e8f76785aa1c"
+					"mmt_emblem/emblem_ring": "mmt_emblem/emblem_ring/base_ring"
+					"mmt_emblem/emblem_ring/base_ring_material": "base_ring/iron"
+					"mmt_emblem/emblem_type": "mmt_emblem/emblem_type/ranger_emblem"
+					"mmt_emblem/emblem_type/blank_emblem_material": "blank_emblem/iron"
+					"mmt_emblem/emblem_type/ranger_emblem_material": "ranger_emblem/bone"
+				}
+			}
+			id: "48C704FFC308A81A"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "7AD7F43296380D93"
+				title: "阅读游侠徽章"
+				type: "checkmark"
+			}]
+			title: "游侠徽章"
+			x: 55.05d
+			y: -33.5d
+		}
+		{
+			dependencies: ["2FEBC3A5262B1975"]
+			description: [
+				"&e用途：【默认开放】不提供战斗能力，用于制作尚未选择流派的基础徽章。"
+				"&b适合：安装在“徽纹”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_emblem"
+				tag: {
+					Damage: 0
+					id: "92750809-ed3c-5be5-a7b3-f7e431dd4bfc"
+					"mmt_emblem/emblem_ring": "mmt_emblem/emblem_ring/base_ring"
+					"mmt_emblem/emblem_ring/base_ring_material": "base_ring/iron"
+					"mmt_emblem/emblem_type": "mmt_emblem/emblem_type/blank_emblem"
+					"mmt_emblem/emblem_type/blank_emblem_material": "blank_emblem/bone"
+				}
+			}
+			id: "79BFCE990659F97E"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "32BF2AA83193CC75"
+				title: "阅读空白徽章"
+				type: "checkmark"
+			}]
+			title: "空白徽章"
+			x: 57.4d
+			y: -33.5d
+		}
+		{
+			dependencies: ["2FEBC3A5262B1975"]
+			description: [
+				"&e用途：【需要流派徽记卷轴】提供伤害减免。"
+				"&b适合：安装在“徽纹”槽位。"
+				"&d需要：流派徽记。"
+				"{\"text\":\"查看卷轴：流派徽记\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6FDA30E1584BF2AD\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_emblem"
+				tag: {
+					Damage: 0
+					id: "749e4837-7012-5e2f-9338-2e35b05baa05"
+					"mmt_emblem/emblem_ring": "mmt_emblem/emblem_ring/base_ring"
+					"mmt_emblem/emblem_ring/base_ring_material": "base_ring/iron"
+					"mmt_emblem/emblem_type": "mmt_emblem/emblem_type/knight_emblem"
+					"mmt_emblem/emblem_type/blank_emblem_material": "blank_emblem/iron"
+					"mmt_emblem/emblem_type/knight_emblem_material": "knight_emblem/bone"
+				}
+			}
+			id: "2F6B3E66505981EE"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "0C02648927D21CD9"
+				title: "阅读骑士徽章"
+				type: "checkmark"
+			}]
+			title: "骑士徽章"
+			x: 59.75d
+			y: -33.5d
+		}
+		{
+			dependencies: ["439778E0ACC0CD94"]
+			description: [
+				"&e用途：查看王冠的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_crown"
+				tag: {
+					Damage: 0
+					id: "c1519faa-e3ed-5141-939d-2fa47a559dbf"
+					"mmt_crown/crown_ring": "mmt_crown/crown_ring/starter_crown"
+					"mmt_crown/crown_ring/starter_crown_material": "starter_crown/iron"
+					"mmt_crown/top": "mmt_crown/top/gem"
+					"mmt_crown/top/gem_material": "gem/amethyst"
+				}
+			}
+			id: "59E0127E37C28DD6"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "58C503313572EE7C"
+				title: "阅读王冠"
+				type: "checkmark"
+			}]
+			title: "&a王冠"
+			x: 10.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["59E0127E37C28DD6"]
+			description: [
+				"&e用途：汇总“冠环”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_crown"
+				tag: {
+					Damage: 0
+					id: "10efd289-c0a6-5ab1-adc9-0d29c7275895"
+					"mmt_crown/crown_ring": "mmt_crown/crown_ring/king_crown"
+					"mmt_crown/crown_ring/king_crown_material": "king_crown/bone"
+					"mmt_crown/crown_ring/starter_crown_material": "starter_crown/iron"
+					"mmt_crown/top": "mmt_crown/top/gem"
+					"mmt_crown/top/gem_material": "gem/amethyst"
+				}
+			}
+			id: "373DB4B0230573BB"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "71FBA18E86F7A473"
+				title: "阅读冠环"
+				type: "checkmark"
+			}]
+			title: "&b冠环"
+			x: 6.25d
+			y: 9.0d
+		}
+		{
+			dependencies: ["373DB4B0230573BB"]
+			description: [
+				"&e用途：【需要星界统御卷轴】提供小幅全能百分比加成。"
+				"&b适合：安装在“冠环”槽位。"
+				"&d需要：星界统御。"
+				"{\"text\":\"查看卷轴：星界统御\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"70BB8E19BB4E73B1\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_crown"
+				tag: {
+					Damage: 0
+					id: "f9eeb88f-9cbe-5176-8884-3175cd9775b0"
+					"mmt_crown/crown_ring": "mmt_crown/crown_ring/king_crown"
+					"mmt_crown/crown_ring/king_crown_material": "king_crown/bone"
+					"mmt_crown/crown_ring/starter_crown_material": "starter_crown/iron"
+					"mmt_crown/top": "mmt_crown/top/gem"
+					"mmt_crown/top/gem_material": "gem/amethyst"
+				}
+			}
+			id: "4D2727E26E6B1D0E"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "66CA57531DD67F6F"
+				title: "阅读王者之冠"
+				type: "checkmark"
+			}]
+			title: "王者之冠"
+			x: 5.08d
+			y: 11.7d
+		}
+		{
+			dependencies: ["373DB4B0230573BB"]
+			description: [
+				"&e用途：【需要月相奥术卷轴】提供法术强度、召唤伤害、法力、回复、抗性、冷却与吟唱加成。"
+				"&b适合：安装在“冠环”槽位。"
+				"&d需要：月相奥术。"
+				"{\"text\":\"查看卷轴：月相奥术\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"3EF0F7EF83739997\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_crown"
+				tag: {
+					Damage: 0
+					id: "e69be522-af53-543c-8b4b-639c13086dfc"
+					"mmt_crown/crown_ring": "mmt_crown/crown_ring/wizard_crown"
+					"mmt_crown/crown_ring/starter_crown_material": "starter_crown/iron"
+					"mmt_crown/crown_ring/wizard_crown_material": "wizard_crown/bone"
+					"mmt_crown/top": "mmt_crown/top/gem"
+					"mmt_crown/top/gem_material": "gem/amethyst"
+				}
+			}
+			id: "6974DE22C7CD87D7"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "38CF768EAB8A9524"
+				title: "阅读魔导之冠"
+				type: "checkmark"
+			}]
+			title: "魔导之冠"
+			x: 7.42d
+			y: 11.7d
+		}
+		{
+			dependencies: ["59E0127E37C28DD6"]
+			description: [
+				"&e用途：汇总“顶部”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_crown"
+				tag: {
+					Damage: 0
+					id: "2970c346-9b5f-55b2-92c0-7668379516a7"
+					"mmt_crown/crown_ring": "mmt_crown/crown_ring/starter_crown"
+					"mmt_crown/crown_ring/starter_crown_material": "starter_crown/iron"
+					"mmt_crown/top": "mmt_crown/top/gem"
+					"mmt_crown/top/gem_material": "gem/amethyst"
+				}
+			}
+			id: "092DDD0716C6511F"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "2C40ED2333B9EB3B"
+				title: "阅读顶部"
+				type: "checkmark"
+			}]
+			title: "&b顶部"
+			x: 13.75d
+			y: 9.0d
+		}
+		{
+			dependencies: ["092DDD0716C6511F"]
+			description: [
+				"&e用途：【需要月相奥术卷轴】王冠宝石的硬度与密度都会提高幸运。"
+				"&b适合：安装在“顶部”槽位。"
+				"&d需要：月相奥术。"
+				"{\"text\":\"查看卷轴：月相奥术\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"3EF0F7EF83739997\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_crown"
+				tag: {
+					Damage: 0
+					id: "900c2721-92fa-5a14-84c9-7bd5a70bb4e9"
+					"mmt_crown/crown_ring": "mmt_crown/crown_ring/starter_crown"
+					"mmt_crown/crown_ring/starter_crown_material": "starter_crown/iron"
+					"mmt_crown/top": "mmt_crown/top/gem"
+					"mmt_crown/top/gem_material": "gem/amethyst"
+				}
+			}
+			id: "18A006F18F458118"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "6EDFF48E5C3B8E3F"
+				title: "阅读镶嵌"
+				type: "checkmark"
+			}]
+			title: "镶嵌"
+			x: 13.75d
+			y: 11.7d
+		}
+		{
+			dependencies: ["439778E0ACC0CD94"]
+			description: [
+				"&e用途：查看不死图腾的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_totem_of_undying"
+				tag: {
+					Damage: 0
+					id: "07e80482-17eb-5207-a811-622da3e62420"
+					"mmt_totem_of_undying/totem_core": "mmt_totem_of_undying/totem_core/base_totem_core"
+					"mmt_totem_of_undying/totem_core/base_totem_core_material": "base_totem_core/emerald"
+					"mmt_totem_of_undying/totem_shell": "mmt_totem_of_undying/totem_shell/starter_shell"
+					"mmt_totem_of_undying/totem_shell/starter_shell_material": "starter_shell/iron"
+				}
+			}
+			id: "5739B18A47DD7A0C"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "77BB927DAAB92E1F"
+				title: "阅读不死图腾"
+				type: "checkmark"
+			}]
+			title: "&a不死图腾"
+			x: 27.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["5739B18A47DD7A0C"]
+			description: [
+				"&e用途：汇总“图腾核心”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_totem_of_undying"
+				tag: {
+					Damage: 0
+					id: "d25d5b7d-6f92-5f37-89cb-1b03469ba643"
+					"mmt_totem_of_undying/totem_core": "mmt_totem_of_undying/totem_core/base_totem_core"
+					"mmt_totem_of_undying/totem_core/base_totem_core_material": "base_totem_core/amethyst"
+					"mmt_totem_of_undying/totem_shell": "mmt_totem_of_undying/totem_shell/starter_shell"
+					"mmt_totem_of_undying/totem_shell/starter_shell_material": "starter_shell/iron"
+				}
+			}
+			id: "4E72820B03EDFB4D"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "422652D4C136862B"
+				title: "阅读图腾核心"
+				type: "checkmark"
+			}]
+			title: "&b图腾核心"
+			x: 23.25d
+			y: 9.0d
+		}
+		{
+			dependencies: ["4E72820B03EDFB4D"]
+			description: [
+				"&e用途：【需要深渊遗物卷轴】决定复活后的增益。"
+				"&b适合：安装在“图腾核心”槽位。"
+				"&d需要：深渊遗物。"
+				"{\"text\":\"查看卷轴：深渊遗物\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"16B6ECC56BE8A659\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_totem_of_undying"
+				tag: {
+					Damage: 0
+					id: "68482382-b26b-5610-b521-145eb7a5a658"
+					"mmt_totem_of_undying/totem_core": "mmt_totem_of_undying/totem_core/base_totem_core"
+					"mmt_totem_of_undying/totem_core/base_totem_core_material": "base_totem_core/amethyst"
+					"mmt_totem_of_undying/totem_shell": "mmt_totem_of_undying/totem_shell/starter_shell"
+					"mmt_totem_of_undying/totem_shell/starter_shell_material": "starter_shell/iron"
+				}
+			}
+			id: "09FD9388E32BCF5B"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "2D30EF1A2D993278"
+				title: "阅读图腾核心"
+				type: "checkmark"
+			}]
+			title: "图腾核心"
+			x: 23.25d
+			y: 11.7d
+		}
+		{
+			dependencies: ["5739B18A47DD7A0C"]
+			description: [
+				"&e用途：汇总“图腾外壳”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_totem_of_undying"
+				tag: {
+					Damage: 0
+					id: "d34f5f71-7284-5410-b897-bdeb12541f29"
+					"mmt_totem_of_undying/totem_core": "mmt_totem_of_undying/totem_core/base_totem_core"
+					"mmt_totem_of_undying/totem_core/base_totem_core_material": "base_totem_core/emerald"
+					"mmt_totem_of_undying/totem_shell": "mmt_totem_of_undying/totem_shell/base_totem_shell"
+					"mmt_totem_of_undying/totem_shell/base_totem_shell_material": "base_totem_shell/iron"
+					"mmt_totem_of_undying/totem_shell/starter_shell_material": "starter_shell/iron"
+				}
+			}
+			id: "5E747AB62CCB655B"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "54B1F2272AA78DBF"
+				title: "阅读图腾外壳"
+				type: "checkmark"
+			}]
+			title: "&b图腾外壳"
+			x: 30.75d
+			y: 9.0d
+		}
+		{
+			dependencies: ["5E747AB62CCB655B"]
+			description: [
+				"&e用途：【需要深渊遗物卷轴】决定图腾冷却与复活回复。"
+				"&b适合：安装在“图腾外壳”槽位。"
+				"&d需要：深渊遗物。"
+				"{\"text\":\"查看卷轴：深渊遗物\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"16B6ECC56BE8A659\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_totem_of_undying"
+				tag: {
+					Damage: 0
+					id: "5dbc0c66-3f42-57e0-89d1-3a23804f183f"
+					"mmt_totem_of_undying/totem_core": "mmt_totem_of_undying/totem_core/base_totem_core"
+					"mmt_totem_of_undying/totem_core/base_totem_core_material": "base_totem_core/emerald"
+					"mmt_totem_of_undying/totem_shell": "mmt_totem_of_undying/totem_shell/base_totem_shell"
+					"mmt_totem_of_undying/totem_shell/base_totem_shell_material": "base_totem_shell/iron"
+					"mmt_totem_of_undying/totem_shell/starter_shell_material": "starter_shell/iron"
+				}
+			}
+			id: "7E455F4C7A1C0144"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "12040473B02645C1"
+				title: "阅读不死图腾"
+				type: "checkmark"
+			}]
+			title: "不死图腾"
+			x: 30.75d
+			y: 11.7d
+		}
+		{
+			dependencies: ["439778E0ACC0CD94"]
+			description: [
+				"&e用途：查看护符的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_amulet"
+				tag: {
+					Damage: 0
+					id: "dcb5669e-5d26-5dd7-b9e6-3682fd5740eb"
+					"mmt_amulet/envelope": "mmt_amulet/envelope/fabric_envelope"
+					"mmt_amulet/envelope/fabric_envelope_material": "fabric_envelope/leather"
+					"mmt_amulet/fill": "mmt_amulet/fill/fill_item"
+					"mmt_amulet/fill/fill_item_material": "fill_item/paper"
+				}
+			}
+			id: "5FAFAE913822EC8E"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "36A31FD13681C71D"
+				title: "阅读护符"
+				type: "checkmark"
+			}]
+			title: "&a护符"
+			x: 44.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["5FAFAE913822EC8E"]
+			description: [
+				"&e用途：汇总“染料”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_amulet"
+				tag: {
+					Damage: 0
+					id: "eec1b47f-844c-520f-b3a4-42a17f01add2"
+					"mmt_amulet/dye": "mmt_amulet/dye/dye_item"
+					"mmt_amulet/dye/dye_item_material": "dye_item/dye_white"
+					"mmt_amulet/envelope": "mmt_amulet/envelope/fabric_envelope"
+					"mmt_amulet/envelope/fabric_envelope_material": "fabric_envelope/leather"
+					"mmt_amulet/fill": "mmt_amulet/fill/fill_item"
+					"mmt_amulet/fill/fill_item_material": "fill_item/paper"
+				}
+			}
+			id: "40E741F1CDA459B8"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "35E185CF765732A0"
+				title: "阅读染料"
+				type: "checkmark"
+			}]
+			title: "&b染料"
+			x: 40.25d
+			y: 9.0d
+		}
+		{
+			dependencies: ["40E741F1CDA459B8"]
+			description: [
+				"&e用途：款式。"
+				"&b适合：安装在“染料”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_amulet"
+				tag: {
+					Damage: 0
+					id: "3b8d9271-7481-52af-93a6-a7ec3c81f165"
+					"mmt_amulet/dye": "mmt_amulet/dye/dye_item"
+					"mmt_amulet/dye/dye_item_material": "dye_item/dye_white"
+					"mmt_amulet/envelope": "mmt_amulet/envelope/fabric_envelope"
+					"mmt_amulet/envelope/fabric_envelope_material": "fabric_envelope/leather"
+					"mmt_amulet/fill": "mmt_amulet/fill/fill_item"
+					"mmt_amulet/fill/fill_item_material": "fill_item/paper"
+				}
+			}
+			id: "6015E9A4FC664B3C"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "3C5796CF07B9A23F"
+				title: "阅读款式"
+				type: "checkmark"
+			}]
+			title: "款式"
+			x: 40.25d
+			y: 11.7d
+		}
+		{
+			dependencies: ["5FAFAE913822EC8E"]
+			description: [
+				"&e用途：汇总“封套”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_amulet"
+				tag: {
+					Damage: 0
+					id: "b2fd401c-aeca-52f0-b2a8-460b6e181176"
+					"mmt_amulet/envelope": "mmt_amulet/envelope/fabric_envelope"
+					"mmt_amulet/envelope/fabric_envelope_material": "fabric_envelope/leather"
+					"mmt_amulet/fill": "mmt_amulet/fill/fill_item"
+					"mmt_amulet/fill/fill_item_material": "fill_item/paper"
+				}
+			}
+			id: "7E2ABC30EC5AFD34"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "52EF41EE7F22A52D"
+				title: "阅读封套"
+				type: "checkmark"
+			}]
+			title: "&b封套"
+			x: 47.75d
+			y: 9.0d
+		}
+		{
+			dependencies: ["7E2ABC30EC5AFD34"]
+			description: [
+				"&e用途：封套。"
+				"&b适合：安装在“封套”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_amulet"
+				tag: {
+					Damage: 0
+					id: "ddd71488-4087-595c-8e76-85240364e71d"
+					"mmt_amulet/envelope": "mmt_amulet/envelope/fabric_envelope"
+					"mmt_amulet/envelope/fabric_envelope_material": "fabric_envelope/leather"
+					"mmt_amulet/fill": "mmt_amulet/fill/fill_item"
+					"mmt_amulet/fill/fill_item_material": "fill_item/paper"
+				}
+			}
+			id: "284BDE3647FD23FB"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "35F9DBD7827324FF"
+				title: "阅读封套"
+				type: "checkmark"
+			}]
+			title: "封套"
+			x: 47.75d
+			y: 11.7d
+		}
+		{
+			dependencies: ["5FAFAE913822EC8E"]
+			description: [
+				"&e用途：汇总“内芯”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_amulet"
+				tag: {
+					Damage: 0
+					id: "03fbc88f-bb33-5bfb-b75e-ffaa5a3a4611"
+					"mmt_amulet/envelope": "mmt_amulet/envelope/fabric_envelope"
+					"mmt_amulet/envelope/fabric_envelope_material": "fabric_envelope/leather"
+					"mmt_amulet/fill": "mmt_amulet/fill/fill_item"
+					"mmt_amulet/fill/fill_item_material": "fill_item/wool"
+				}
+			}
+			id: "668F549F1B52DE43"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "7E01E1327A27D858"
+				title: "阅读内芯"
+				type: "checkmark"
+			}]
+			title: "&b内芯"
+			x: 40.25d
+			y: 16.6d
+		}
+		{
+			dependencies: ["668F549F1B52DE43"]
+			description: [
+				"&e用途：内芯。"
+				"&b适合：安装在“内芯”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_amulet"
+				tag: {
+					Damage: 0
+					id: "03a753a2-dd6d-5ad4-893b-dcdfd3a64597"
+					"mmt_amulet/envelope": "mmt_amulet/envelope/fabric_envelope"
+					"mmt_amulet/envelope/fabric_envelope_material": "fabric_envelope/leather"
+					"mmt_amulet/fill": "mmt_amulet/fill/fill_item"
+					"mmt_amulet/fill/fill_item_material": "fill_item/wool"
+				}
+			}
+			id: "65EDD8F88B789204"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "06E875E331B60F5A"
+				title: "阅读内芯"
+				type: "checkmark"
+			}]
+			title: "内芯"
+			x: 40.25d
+			y: 19.3d
+		}
+		{
+			dependencies: ["439778E0ACC0CD94"]
+			description: [
+				"&e用途：查看纯白容器的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_container"
+				tag: {
+					Damage: 0
+					id: "fc928c64-a0b7-5ac6-ae02-3ec7da62bfae"
+					"mmt_white_container/white": "mmt_white_container/white/starter_core"
+					"mmt_white_container/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "2562AD4FA6E8E1C4"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "38990AE99EC919B8"
+				title: "阅读纯白容器"
+				type: "checkmark"
+			}]
+			title: "&a纯白容器"
+			x: 62.15d
+			y: 5.0d
+		}
+		{
+			dependencies: ["2562AD4FA6E8E1C4"]
+			description: [
+				"&e用途：汇总“七种色彩模块”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_container"
+				tag: {
+					Damage: 0
+					id: "a785a583-2a22-566c-a2ac-2a15aea3fb0b"
+					"mmt_white_container/cyan": "mmt_white_container/cyan/rainbow_of_cyan"
+					"mmt_white_container/cyan/rainbow_of_cyan_material": "rainbow_of_cyan/speed"
+					"mmt_white_container/white": "mmt_white_container/white/starter_core"
+					"mmt_white_container/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "3EB8421B0B4A570F"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "6DE6AF76AC89FCF3"
+				title: "阅读七种色彩模块"
+				type: "checkmark"
+			}]
+			title: "&b七种色彩模块"
+			x: 58.4d
+			y: 9.0d
+		}
+		{
+			dependencies: ["3EB8421B0B4A570F"]
+			description: [
+				"&e用途：【需要远古净化卷轴】向天青槽写入一种光谱材料效果，穿戴时持续生效。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_container"
+				tag: {
+					Damage: 0
+					id: "14e77819-caf8-53ef-8d37-2d0f8a0b495c"
+					"mmt_white_container/cyan": "mmt_white_container/cyan/rainbow_of_cyan"
+					"mmt_white_container/cyan/rainbow_of_cyan_material": "rainbow_of_cyan/speed"
+					"mmt_white_container/white": "mmt_white_container/white/starter_core"
+					"mmt_white_container/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "057DBF35E533AF84"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "59BCAEA7F801582C"
+				title: "阅读天青之铭"
+				type: "checkmark"
+			}]
+			title: "天青之铭"
+			x: 56.05d
+			y: 11.7d
+		}
+		{
+			dependencies: ["3EB8421B0B4A570F"]
+			description: [
+				"&e用途：【需要远古净化卷轴】向海蓝槽写入一种光谱材料效果，穿戴时持续生效。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_container"
+				tag: {
+					Damage: 0
+					id: "66b0821f-cb12-5ce2-94d7-0b21eaef0ccc"
+					"mmt_white_container/blue": "mmt_white_container/blue/rainbow_of_blue"
+					"mmt_white_container/blue/rainbow_of_blue_material": "rainbow_of_blue/speed"
+					"mmt_white_container/white": "mmt_white_container/white/starter_core"
+					"mmt_white_container/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "7F3C50CD4177D3CF"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "684F432F1E173C9A"
+				title: "阅读海蓝之铭"
+				type: "checkmark"
+			}]
+			title: "海蓝之铭"
+			x: 58.4d
+			y: 11.7d
+		}
+		{
+			dependencies: ["3EB8421B0B4A570F"]
+			description: [
+				"&e用途：【需要远古净化卷轴】向炽橙槽写入一种光谱材料效果，穿戴时持续生效。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_container"
+				tag: {
+					Damage: 0
+					id: "73381d43-0022-5375-9808-590b18b760e6"
+					"mmt_white_container/orange": "mmt_white_container/orange/rainbow_of_orange"
+					"mmt_white_container/orange/rainbow_of_orange_material": "rainbow_of_orange/speed"
+					"mmt_white_container/white": "mmt_white_container/white/starter_core"
+					"mmt_white_container/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "788F712B532188F5"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "043C58AE4CF9BFE0"
+				title: "阅读炽橙之铭"
+				type: "checkmark"
+			}]
+			title: "炽橙之铭"
+			x: 60.75d
+			y: 11.7d
+		}
+		{
+			dependencies: ["3EB8421B0B4A570F"]
+			description: [
+				"&e用途：【需要远古净化卷轴】向草绿槽写入一种光谱材料效果，穿戴时持续生效。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_container"
+				tag: {
+					Damage: 0
+					id: "f8068ab4-1de3-55d0-a950-41eebc86d0ad"
+					"mmt_white_container/green": "mmt_white_container/green/rainbow_of_green"
+					"mmt_white_container/green/rainbow_of_green_material": "rainbow_of_green/speed"
+					"mmt_white_container/white": "mmt_white_container/white/starter_core"
+					"mmt_white_container/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "253AAFE7625E7A03"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "56198892CDCEF09F"
+				title: "阅读草绿之铭"
+				type: "checkmark"
+			}]
+			title: "草绿之铭"
+			x: 56.05d
+			y: 13.8d
+		}
+		{
+			dependencies: ["3EB8421B0B4A570F"]
+			description: [
+				"&e用途：【需要远古净化卷轴】向血红槽写入一种光谱材料效果，穿戴时持续生效。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_container"
+				tag: {
+					Damage: 0
+					id: "0a34ad94-c427-53fe-b2f5-3e5ce66a5c5e"
+					"mmt_white_container/red": "mmt_white_container/red/rainbow_of_red"
+					"mmt_white_container/red/rainbow_of_red_material": "rainbow_of_red/speed"
+					"mmt_white_container/white": "mmt_white_container/white/starter_core"
+					"mmt_white_container/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "6C8E0194CE2BADFC"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "3F76C8C4ADBDA882"
+				title: "阅读血红之铭"
+				type: "checkmark"
+			}]
+			title: "血红之铭"
+			x: 58.4d
+			y: 13.8d
+		}
+		{
+			dependencies: ["3EB8421B0B4A570F"]
+			description: [
+				"&e用途：【需要远古净化卷轴】向辉黄槽写入一种光谱材料效果，穿戴时持续生效。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_container"
+				tag: {
+					Damage: 0
+					id: "0b505402-ad17-5752-b3c5-bb6e7a3aeeb1"
+					"mmt_white_container/white": "mmt_white_container/white/starter_core"
+					"mmt_white_container/white/starter_core_material": "starter_core/iron"
+					"mmt_white_container/yellow": "mmt_white_container/yellow/rainbow_of_yellow"
+					"mmt_white_container/yellow/rainbow_of_yellow_material": "rainbow_of_yellow/speed"
+				}
+			}
+			id: "3D215F9A896561E4"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "776819F6EDF3C369"
+				title: "阅读辉黄之铭"
+				type: "checkmark"
+			}]
+			title: "辉黄之铭"
+			x: 60.75d
+			y: 13.8d
+		}
+		{
+			dependencies: ["3EB8421B0B4A570F"]
+			description: [
+				"&e用途：【需要远古净化卷轴】向霞紫槽写入一种光谱材料效果，穿戴时持续生效。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_container"
+				tag: {
+					Damage: 0
+					id: "20bf886d-31e6-5d85-ba32-92235ebcdd44"
+					"mmt_white_container/purple": "mmt_white_container/purple/rainbow_of_purple"
+					"mmt_white_container/purple/rainbow_of_purple_material": "rainbow_of_purple/speed"
+					"mmt_white_container/white": "mmt_white_container/white/starter_core"
+					"mmt_white_container/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "052FA84FB24BFE16"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "608E582E1F8A8339"
+				title: "阅读霞紫之铭"
+				type: "checkmark"
+			}]
+			title: "霞紫之铭"
+			x: 56.05d
+			y: 15.9d
+		}
+		{
+			dependencies: ["2562AD4FA6E8E1C4"]
+			description: [
+				"&e用途：汇总“纯白”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_container"
+				tag: {
+					Damage: 0
+					id: "5cca3049-5049-559a-8044-bf2f45735bb5"
+					"mmt_white_container/white": "mmt_white_container/white/rainbow_of_white"
+					"mmt_white_container/white/rainbow_of_white_material": "rainbow_of_white/iron"
+					"mmt_white_container/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "2B1610516DEADDB3"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "670A72BF4C8DF3A7"
+				title: "阅读纯白"
+				type: "checkmark"
+			}]
+			title: "&b纯白"
+			x: 67.05d
+			y: 9.0d
+		}
+		{
+			dependencies: ["2B1610516DEADDB3"]
+			description: [
+				"&e用途：【需要远古净化卷轴】纯白容器的结构核心，仅提供完整度。"
+				"&b适合：安装在“纯白”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_container"
+				tag: {
+					Damage: 0
+					id: "4bec4821-2c02-5d64-9938-52a9f3b1d84a"
+					"mmt_white_container/white": "mmt_white_container/white/rainbow_of_white"
+					"mmt_white_container/white/rainbow_of_white_material": "rainbow_of_white/iron"
+					"mmt_white_container/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "7FFDA0AC9A40B229"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "21602C1B9DC75703"
+				title: "阅读纯白之匣"
+				type: "checkmark"
+			}]
+			title: "纯白之匣"
+			x: 67.05d
+			y: 11.7d
+		}
+		{
+			dependencies: ["439778E0ACC0CD94"]
+			description: [
+				"&e用途：查看纯白剑鞘的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_scabbard"
+				tag: {
+					Damage: 0
+					id: "fed235b8-d614-5e7b-a170-eaaa27235eb5"
+					"mmt_white_scabbard/white": "mmt_white_scabbard/white/starter_core"
+					"mmt_white_scabbard/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "46499A7A5C1E892A"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "0AE124C956DFE421"
+				title: "阅读纯白剑鞘"
+				type: "checkmark"
+			}]
+			title: "&a纯白剑鞘"
+			x: 17.35d
+			y: 30.2d
+		}
+		{
+			dependencies: ["46499A7A5C1E892A"]
+			description: [
+				"&e用途：汇总“七种色彩模块”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_scabbard"
+				tag: {
+					Damage: 0
+					id: "5ead55a9-8139-5871-9ece-9071bc648848"
+					"mmt_white_scabbard/cyan": "mmt_white_scabbard/cyan/rainbow_of_cyan"
+					"mmt_white_scabbard/cyan/rainbow_of_cyan_material": "rainbow_of_cyan/minecraft_poison_attack"
+					"mmt_white_scabbard/white": "mmt_white_scabbard/white/starter_core"
+					"mmt_white_scabbard/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "51501C62658DE33D"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "3F0C266A28BE3888"
+				title: "阅读七种色彩模块"
+				type: "checkmark"
+			}]
+			title: "&b七种色彩模块"
+			x: 13.6d
+			y: 34.2d
+		}
+		{
+			dependencies: ["51501C62658DE33D"]
+			description: [
+				"&e用途：【需要远古净化卷轴】为近战触发列表加入一种状态效果。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_scabbard"
+				tag: {
+					Damage: 0
+					id: "62c6f6a6-1b8e-53fc-b461-6fdfa90266e7"
+					"mmt_white_scabbard/cyan": "mmt_white_scabbard/cyan/rainbow_of_cyan"
+					"mmt_white_scabbard/cyan/rainbow_of_cyan_material": "rainbow_of_cyan/minecraft_poison_attack"
+					"mmt_white_scabbard/white": "mmt_white_scabbard/white/starter_core"
+					"mmt_white_scabbard/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "5EEB1493635F73BC"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "028C57D07018351C"
+				title: "阅读天青之铭"
+				type: "checkmark"
+			}]
+			title: "天青之铭"
+			x: 11.25d
+			y: 36.9d
+		}
+		{
+			dependencies: ["51501C62658DE33D"]
+			description: [
+				"&e用途：【需要远古净化卷轴】为近战触发列表加入一种状态效果。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_scabbard"
+				tag: {
+					Damage: 0
+					id: "099202b6-239b-5c28-91d5-d79c65a639d3"
+					"mmt_white_scabbard/blue": "mmt_white_scabbard/blue/rainbow_of_blue"
+					"mmt_white_scabbard/blue/rainbow_of_blue_material": "rainbow_of_blue/minecraft_poison_attack"
+					"mmt_white_scabbard/white": "mmt_white_scabbard/white/starter_core"
+					"mmt_white_scabbard/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "187D8F5BBACBADF7"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "51C9F9FF59794F8E"
+				title: "阅读海蓝之铭"
+				type: "checkmark"
+			}]
+			title: "海蓝之铭"
+			x: 13.6d
+			y: 36.9d
+		}
+		{
+			dependencies: ["51501C62658DE33D"]
+			description: [
+				"&e用途：【需要远古净化卷轴】为近战触发列表加入一种状态效果。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_scabbard"
+				tag: {
+					Damage: 0
+					id: "3afd8f24-d11b-5afc-96bf-f4ee273b603d"
+					"mmt_white_scabbard/orange": "mmt_white_scabbard/orange/rainbow_of_orange"
+					"mmt_white_scabbard/orange/rainbow_of_orange_material": "rainbow_of_orange/minecraft_poison_attack"
+					"mmt_white_scabbard/white": "mmt_white_scabbard/white/starter_core"
+					"mmt_white_scabbard/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "2E24D80E50B1B0F4"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "7BA11BF79DED4C6A"
+				title: "阅读炽橙之铭"
+				type: "checkmark"
+			}]
+			title: "炽橙之铭"
+			x: 15.95d
+			y: 36.9d
+		}
+		{
+			dependencies: ["51501C62658DE33D"]
+			description: [
+				"&e用途：【需要远古净化卷轴】为近战触发列表加入一种状态效果。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_scabbard"
+				tag: {
+					Damage: 0
+					id: "74a87ab9-5b75-5a9b-a2a7-1d4b81b104c4"
+					"mmt_white_scabbard/green": "mmt_white_scabbard/green/rainbow_of_green"
+					"mmt_white_scabbard/green/rainbow_of_green_material": "rainbow_of_green/minecraft_poison_attack"
+					"mmt_white_scabbard/white": "mmt_white_scabbard/white/starter_core"
+					"mmt_white_scabbard/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "62D3909BF37D6502"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "251B9B7EFE3F4681"
+				title: "阅读草绿之铭"
+				type: "checkmark"
+			}]
+			title: "草绿之铭"
+			x: 11.25d
+			y: 39.0d
+		}
+		{
+			dependencies: ["51501C62658DE33D"]
+			description: [
+				"&e用途：【需要远古净化卷轴】为近战触发列表加入一种状态效果。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_scabbard"
+				tag: {
+					Damage: 0
+					id: "f6bb6555-4765-514e-a7b7-0f0c7361d2df"
+					"mmt_white_scabbard/red": "mmt_white_scabbard/red/rainbow_of_red"
+					"mmt_white_scabbard/red/rainbow_of_red_material": "rainbow_of_red/minecraft_poison_attack"
+					"mmt_white_scabbard/white": "mmt_white_scabbard/white/starter_core"
+					"mmt_white_scabbard/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "06E0105A4EF46291"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "434B47F5FD892CD8"
+				title: "阅读血红之铭"
+				type: "checkmark"
+			}]
+			title: "血红之铭"
+			x: 13.6d
+			y: 39.0d
+		}
+		{
+			dependencies: ["51501C62658DE33D"]
+			description: [
+				"&e用途：【需要远古净化卷轴】为近战触发列表加入一种状态效果。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_scabbard"
+				tag: {
+					Damage: 0
+					id: "e60318d7-2f00-5f5c-afa5-508a0da4c56f"
+					"mmt_white_scabbard/white": "mmt_white_scabbard/white/starter_core"
+					"mmt_white_scabbard/white/starter_core_material": "starter_core/iron"
+					"mmt_white_scabbard/yellow": "mmt_white_scabbard/yellow/rainbow_of_yellow"
+					"mmt_white_scabbard/yellow/rainbow_of_yellow_material": "rainbow_of_yellow/minecraft_poison_attack"
+				}
+			}
+			id: "2E7350F02A027895"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "4B942709A01BB053"
+				title: "阅读辉黄之铭"
+				type: "checkmark"
+			}]
+			title: "辉黄之铭"
+			x: 15.95d
+			y: 39.0d
+		}
+		{
+			dependencies: ["51501C62658DE33D"]
+			description: [
+				"&e用途：【需要远古净化卷轴】为近战触发列表加入一种状态效果。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_scabbard"
+				tag: {
+					Damage: 0
+					id: "3afcb176-68ca-5f2c-a328-c623267777fd"
+					"mmt_white_scabbard/purple": "mmt_white_scabbard/purple/rainbow_of_purple"
+					"mmt_white_scabbard/purple/rainbow_of_purple_material": "rainbow_of_purple/minecraft_poison_attack"
+					"mmt_white_scabbard/white": "mmt_white_scabbard/white/starter_core"
+					"mmt_white_scabbard/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "4CD7F21F532B5383"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "6D940B966E6C9126"
+				title: "阅读霞紫之铭"
+				type: "checkmark"
+			}]
+			title: "霞紫之铭"
+			x: 11.25d
+			y: 41.1d
+		}
+		{
+			dependencies: ["46499A7A5C1E892A"]
+			description: [
+				"&e用途：汇总“纯白”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_scabbard"
+				tag: {
+					Damage: 0
+					id: "c8b3aadb-11f4-574e-a8e8-c0f89f3add2b"
+					"mmt_white_scabbard/white": "mmt_white_scabbard/white/rainbow_of_white"
+					"mmt_white_scabbard/white/rainbow_of_white_material": "rainbow_of_white/bone"
+					"mmt_white_scabbard/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "1CE41A471D5551FB"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "1B9D14F7E723411F"
+				title: "阅读纯白"
+				type: "checkmark"
+			}]
+			title: "&b纯白"
+			x: 22.25d
+			y: 34.2d
+		}
+		{
+			dependencies: ["1CE41A471D5551FB"]
+			description: [
+				"&e用途：【需要远古净化卷轴】近战攻击有基础概率附加色彩槽中的负面状态。"
+				"&b适合：安装在“纯白”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_scabbard"
+				tag: {
+					Damage: 0
+					id: "72c69f7d-9e3b-5263-b742-6e2583f20614"
+					"mmt_white_scabbard/white": "mmt_white_scabbard/white/rainbow_of_white"
+					"mmt_white_scabbard/white/rainbow_of_white_material": "rainbow_of_white/bone"
+					"mmt_white_scabbard/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "1AC39FA116DC9F92"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "2C208460A435CBD5"
+				title: "阅读纯白剑鞘"
+				type: "checkmark"
+			}]
+			title: "纯白剑鞘"
+			x: 22.25d
+			y: 36.9d
+		}
+		{
+			dependencies: ["439778E0ACC0CD94"]
+			description: [
+				"&e用途：查看纯白箭袋的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_quiver"
+				tag: {
+					Damage: 0
+					id: "04e5672c-bc3c-517d-b30c-1508fcde4720"
+					"mmt_white_quiver/white": "mmt_white_quiver/white/starter_core"
+					"mmt_white_quiver/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "2F1701F4FEC10C11"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "70A0CD6EF37F2267"
+				title: "阅读纯白箭袋"
+				type: "checkmark"
+			}]
+			title: "&a纯白箭袋"
+			x: 36.65d
+			y: 30.2d
+		}
+		{
+			dependencies: ["2F1701F4FEC10C11"]
+			description: [
+				"&e用途：汇总“七种色彩模块”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_quiver"
+				tag: {
+					Damage: 0
+					id: "ebcbc1aa-dbc9-5ddc-8266-6bbd836e2116"
+					"mmt_white_quiver/cyan": "mmt_white_quiver/cyan/rainbow_of_cyan"
+					"mmt_white_quiver/cyan/rainbow_of_cyan_material": "rainbow_of_cyan/minecraft_poison_attack"
+					"mmt_white_quiver/white": "mmt_white_quiver/white/starter_core"
+					"mmt_white_quiver/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "1EE5E61C2C7EA516"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "1A768D58374D5395"
+				title: "阅读七种色彩模块"
+				type: "checkmark"
+			}]
+			title: "&b七种色彩模块"
+			x: 32.9d
+			y: 34.2d
+		}
+		{
+			dependencies: ["1EE5E61C2C7EA516"]
+			description: [
+				"&e用途：【需要远古净化卷轴】为弹射物触发列表加入一种状态效果。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_quiver"
+				tag: {
+					Damage: 0
+					id: "365695c5-3cbc-515a-b3ae-12c8d485a177"
+					"mmt_white_quiver/cyan": "mmt_white_quiver/cyan/rainbow_of_cyan"
+					"mmt_white_quiver/cyan/rainbow_of_cyan_material": "rainbow_of_cyan/minecraft_poison_attack"
+					"mmt_white_quiver/white": "mmt_white_quiver/white/starter_core"
+					"mmt_white_quiver/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "22C6F37A126C092D"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "6CA00F1EBB599EEF"
+				title: "阅读天青之铭"
+				type: "checkmark"
+			}]
+			title: "天青之铭"
+			x: 30.55d
+			y: 36.9d
+		}
+		{
+			dependencies: ["1EE5E61C2C7EA516"]
+			description: [
+				"&e用途：【需要远古净化卷轴】为弹射物触发列表加入一种状态效果。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_quiver"
+				tag: {
+					Damage: 0
+					id: "7c6d0116-dbfc-58f4-8812-56e7d60fcc3b"
+					"mmt_white_quiver/blue": "mmt_white_quiver/blue/rainbow_of_blue"
+					"mmt_white_quiver/blue/rainbow_of_blue_material": "rainbow_of_blue/minecraft_poison_attack"
+					"mmt_white_quiver/white": "mmt_white_quiver/white/starter_core"
+					"mmt_white_quiver/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "5A6F612635B8D6F5"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "5861113E39158B1F"
+				title: "阅读海蓝之铭"
+				type: "checkmark"
+			}]
+			title: "海蓝之铭"
+			x: 32.9d
+			y: 36.9d
+		}
+		{
+			dependencies: ["1EE5E61C2C7EA516"]
+			description: [
+				"&e用途：【需要远古净化卷轴】为弹射物触发列表加入一种状态效果。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_quiver"
+				tag: {
+					Damage: 0
+					id: "29b29be3-8989-5cab-9583-2a9e1532155c"
+					"mmt_white_quiver/orange": "mmt_white_quiver/orange/rainbow_of_orange"
+					"mmt_white_quiver/orange/rainbow_of_orange_material": "rainbow_of_orange/minecraft_poison_attack"
+					"mmt_white_quiver/white": "mmt_white_quiver/white/starter_core"
+					"mmt_white_quiver/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "428C7D4B71B7117A"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "60DCDBC908013675"
+				title: "阅读炽橙之铭"
+				type: "checkmark"
+			}]
+			title: "炽橙之铭"
+			x: 35.25d
+			y: 36.9d
+		}
+		{
+			dependencies: ["1EE5E61C2C7EA516"]
+			description: [
+				"&e用途：【需要远古净化卷轴】为弹射物触发列表加入一种状态效果。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_quiver"
+				tag: {
+					Damage: 0
+					id: "86402cf4-d369-5f6d-984f-ca5a9528dfda"
+					"mmt_white_quiver/green": "mmt_white_quiver/green/rainbow_of_green"
+					"mmt_white_quiver/green/rainbow_of_green_material": "rainbow_of_green/minecraft_poison_attack"
+					"mmt_white_quiver/white": "mmt_white_quiver/white/starter_core"
+					"mmt_white_quiver/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "3D52E6FDBEF4EBC8"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "4A9D9A64084ABC62"
+				title: "阅读草绿之铭"
+				type: "checkmark"
+			}]
+			title: "草绿之铭"
+			x: 30.55d
+			y: 39.0d
+		}
+		{
+			dependencies: ["1EE5E61C2C7EA516"]
+			description: [
+				"&e用途：【需要远古净化卷轴】为弹射物触发列表加入一种状态效果。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_quiver"
+				tag: {
+					Damage: 0
+					id: "ca1b5c93-aea0-586d-a08a-8485cb1bcc12"
+					"mmt_white_quiver/red": "mmt_white_quiver/red/rainbow_of_red"
+					"mmt_white_quiver/red/rainbow_of_red_material": "rainbow_of_red/minecraft_poison_attack"
+					"mmt_white_quiver/white": "mmt_white_quiver/white/starter_core"
+					"mmt_white_quiver/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "47DF8D2F2DA5595C"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "75FC2BC2BD515965"
+				title: "阅读血红之铭"
+				type: "checkmark"
+			}]
+			title: "血红之铭"
+			x: 32.9d
+			y: 39.0d
+		}
+		{
+			dependencies: ["1EE5E61C2C7EA516"]
+			description: [
+				"&e用途：【需要远古净化卷轴】为弹射物触发列表加入一种状态效果。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_quiver"
+				tag: {
+					Damage: 0
+					id: "ac364e2f-2e43-5e6d-8224-f031a3dcbb72"
+					"mmt_white_quiver/white": "mmt_white_quiver/white/starter_core"
+					"mmt_white_quiver/white/starter_core_material": "starter_core/iron"
+					"mmt_white_quiver/yellow": "mmt_white_quiver/yellow/rainbow_of_yellow"
+					"mmt_white_quiver/yellow/rainbow_of_yellow_material": "rainbow_of_yellow/minecraft_poison_attack"
+				}
+			}
+			id: "5A8D15EEB3D7AABA"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "069C061155C300D2"
+				title: "阅读辉黄之铭"
+				type: "checkmark"
+			}]
+			title: "辉黄之铭"
+			x: 35.25d
+			y: 39.0d
+		}
+		{
+			dependencies: ["1EE5E61C2C7EA516"]
+			description: [
+				"&e用途：【需要远古净化卷轴】为弹射物触发列表加入一种状态效果。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_quiver"
+				tag: {
+					Damage: 0
+					id: "1845bff8-bd9e-55b1-8eaf-f6a4fd0f12f5"
+					"mmt_white_quiver/purple": "mmt_white_quiver/purple/rainbow_of_purple"
+					"mmt_white_quiver/purple/rainbow_of_purple_material": "rainbow_of_purple/minecraft_poison_attack"
+					"mmt_white_quiver/white": "mmt_white_quiver/white/starter_core"
+					"mmt_white_quiver/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "3BBA8305E50EF55E"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "4FFE490452988FD2"
+				title: "阅读霞紫之铭"
+				type: "checkmark"
+			}]
+			title: "霞紫之铭"
+			x: 30.55d
+			y: 41.1d
+		}
+		{
+			dependencies: ["2F1701F4FEC10C11"]
+			description: [
+				"&e用途：汇总“纯白”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_quiver"
+				tag: {
+					Damage: 0
+					id: "29164c57-a823-5e3a-9004-d4a30d335f86"
+					"mmt_white_quiver/white": "mmt_white_quiver/white/rainbow_of_white"
+					"mmt_white_quiver/white/rainbow_of_white_material": "rainbow_of_white/bone"
+					"mmt_white_quiver/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "130377D76FC461BF"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "2F95108B7B719946"
+				title: "阅读纯白"
+				type: "checkmark"
+			}]
+			title: "&b纯白"
+			x: 41.55d
+			y: 34.2d
+		}
+		{
+			dependencies: ["130377D76FC461BF"]
+			description: [
+				"&e用途：【需要远古净化卷轴】弹射物伤害有基础概率附加色彩槽中的负面状态。"
+				"&b适合：安装在“纯白”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_quiver"
+				tag: {
+					Damage: 0
+					id: "583db464-197b-57a0-9bba-258ec6d7b61f"
+					"mmt_white_quiver/white": "mmt_white_quiver/white/rainbow_of_white"
+					"mmt_white_quiver/white/rainbow_of_white_material": "rainbow_of_white/bone"
+					"mmt_white_quiver/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "6E87F07499D56DCC"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "0BA534F76D27145C"
+				title: "阅读纯白箭袋"
+				type: "checkmark"
+			}]
+			title: "纯白箭袋"
+			x: 41.55d
+			y: 36.9d
+		}
+		{
+			dependencies: ["439778E0ACC0CD94"]
+			description: [
+				"&e用途：查看纯白书袋的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_bag"
+				tag: {
+					Damage: 0
+					id: "bc87af8c-4c52-5925-b6b5-2e05e5bb8b84"
+					"mmt_white_bag/white": "mmt_white_bag/white/starter_core"
+					"mmt_white_bag/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "7F96A3228791845A"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "6023FFB2F4EE7D3A"
+				title: "阅读纯白书袋"
+				type: "checkmark"
+			}]
+			title: "&a纯白书袋"
+			x: 55.95d
+			y: 30.2d
+		}
+		{
+			dependencies: ["7F96A3228791845A"]
+			description: [
+				"&e用途：汇总“七种色彩模块”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_bag"
+				tag: {
+					Damage: 0
+					id: "61e26366-f242-51bf-b682-3537a42f6ed0"
+					"mmt_white_bag/cyan": "mmt_white_bag/cyan/rainbow_of_cyan"
+					"mmt_white_bag/cyan/rainbow_of_cyan_material": "rainbow_of_cyan/minecraft_poison_attack"
+					"mmt_white_bag/white": "mmt_white_bag/white/starter_core"
+					"mmt_white_bag/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "612E8D83F3E608A2"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "22C48A5832CE54D8"
+				title: "阅读七种色彩模块"
+				type: "checkmark"
+			}]
+			title: "&b七种色彩模块"
+			x: 52.2d
+			y: 34.2d
+		}
+		{
+			dependencies: ["612E8D83F3E608A2"]
+			description: [
+				"&e用途：【需要远古净化卷轴】为法术等特殊伤害的触发列表加入一种状态效果。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_bag"
+				tag: {
+					Damage: 0
+					id: "ffb1e7e2-b41c-5161-9ac2-c4f7b36c053a"
+					"mmt_white_bag/cyan": "mmt_white_bag/cyan/rainbow_of_cyan"
+					"mmt_white_bag/cyan/rainbow_of_cyan_material": "rainbow_of_cyan/minecraft_poison_attack"
+					"mmt_white_bag/white": "mmt_white_bag/white/starter_core"
+					"mmt_white_bag/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "4049CADF45E69ED9"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "3474411F29CD487F"
+				title: "阅读天青之铭"
+				type: "checkmark"
+			}]
+			title: "天青之铭"
+			x: 49.85d
+			y: 36.9d
+		}
+		{
+			dependencies: ["612E8D83F3E608A2"]
+			description: [
+				"&e用途：【需要远古净化卷轴】为法术等特殊伤害的触发列表加入一种状态效果。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_bag"
+				tag: {
+					Damage: 0
+					id: "4562cc0f-c513-5ab2-8697-d80b5b876496"
+					"mmt_white_bag/blue": "mmt_white_bag/blue/rainbow_of_blue"
+					"mmt_white_bag/blue/rainbow_of_blue_material": "rainbow_of_blue/minecraft_poison_attack"
+					"mmt_white_bag/white": "mmt_white_bag/white/starter_core"
+					"mmt_white_bag/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "2EA28AAFD9E564DB"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "795B7C9F0DD34048"
+				title: "阅读海蓝之铭"
+				type: "checkmark"
+			}]
+			title: "海蓝之铭"
+			x: 52.2d
+			y: 36.9d
+		}
+		{
+			dependencies: ["612E8D83F3E608A2"]
+			description: [
+				"&e用途：【需要远古净化卷轴】为法术等特殊伤害的触发列表加入一种状态效果。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_bag"
+				tag: {
+					Damage: 0
+					id: "95dc4543-c441-5b9d-82bd-47a4ea8dc296"
+					"mmt_white_bag/orange": "mmt_white_bag/orange/rainbow_of_orange"
+					"mmt_white_bag/orange/rainbow_of_orange_material": "rainbow_of_orange/minecraft_poison_attack"
+					"mmt_white_bag/white": "mmt_white_bag/white/starter_core"
+					"mmt_white_bag/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "7B8726FD783DE147"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "5B5314708BED1392"
+				title: "阅读炽橙之铭"
+				type: "checkmark"
+			}]
+			title: "炽橙之铭"
+			x: 54.55d
+			y: 36.9d
+		}
+		{
+			dependencies: ["612E8D83F3E608A2"]
+			description: [
+				"&e用途：【需要远古净化卷轴】为法术等特殊伤害的触发列表加入一种状态效果。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_bag"
+				tag: {
+					Damage: 0
+					id: "f8fc3484-2c92-5570-9cc9-7a11c33a7dc5"
+					"mmt_white_bag/green": "mmt_white_bag/green/rainbow_of_green"
+					"mmt_white_bag/green/rainbow_of_green_material": "rainbow_of_green/minecraft_poison_attack"
+					"mmt_white_bag/white": "mmt_white_bag/white/starter_core"
+					"mmt_white_bag/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "4A3990CF8370E5AC"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "2C3DE574941A8D5D"
+				title: "阅读草绿之铭"
+				type: "checkmark"
+			}]
+			title: "草绿之铭"
+			x: 49.85d
+			y: 39.0d
+		}
+		{
+			dependencies: ["612E8D83F3E608A2"]
+			description: [
+				"&e用途：【需要远古净化卷轴】为法术等特殊伤害的触发列表加入一种状态效果。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_bag"
+				tag: {
+					Damage: 0
+					id: "77bb753c-09ef-5253-b735-35d7da32cd16"
+					"mmt_white_bag/red": "mmt_white_bag/red/rainbow_of_red"
+					"mmt_white_bag/red/rainbow_of_red_material": "rainbow_of_red/minecraft_poison_attack"
+					"mmt_white_bag/white": "mmt_white_bag/white/starter_core"
+					"mmt_white_bag/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "6E375864D1D8D6D3"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "61C58FC861178A5E"
+				title: "阅读血红之铭"
+				type: "checkmark"
+			}]
+			title: "血红之铭"
+			x: 52.2d
+			y: 39.0d
+		}
+		{
+			dependencies: ["612E8D83F3E608A2"]
+			description: [
+				"&e用途：【需要远古净化卷轴】为法术等特殊伤害的触发列表加入一种状态效果。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_bag"
+				tag: {
+					Damage: 0
+					id: "d38be1b1-ff68-5bb8-8627-409dc4ebc1e7"
+					"mmt_white_bag/white": "mmt_white_bag/white/starter_core"
+					"mmt_white_bag/white/starter_core_material": "starter_core/iron"
+					"mmt_white_bag/yellow": "mmt_white_bag/yellow/rainbow_of_yellow"
+					"mmt_white_bag/yellow/rainbow_of_yellow_material": "rainbow_of_yellow/minecraft_poison_attack"
+				}
+			}
+			id: "1C10A594BCC37090"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "030275C48D5E5AB9"
+				title: "阅读辉黄之铭"
+				type: "checkmark"
+			}]
+			title: "辉黄之铭"
+			x: 54.55d
+			y: 39.0d
+		}
+		{
+			dependencies: ["612E8D83F3E608A2"]
+			description: [
+				"&e用途：【需要远古净化卷轴】为法术等特殊伤害的触发列表加入一种状态效果。"
+				"&b适合：安装在“七种色彩模块”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_bag"
+				tag: {
+					Damage: 0
+					id: "8708eaeb-1d1b-5c80-895a-0e8907f25e82"
+					"mmt_white_bag/purple": "mmt_white_bag/purple/rainbow_of_purple"
+					"mmt_white_bag/purple/rainbow_of_purple_material": "rainbow_of_purple/minecraft_poison_attack"
+					"mmt_white_bag/white": "mmt_white_bag/white/starter_core"
+					"mmt_white_bag/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "4D7C81A62B2FE36A"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "798E1A4F176ECB4D"
+				title: "阅读霞紫之铭"
+				type: "checkmark"
+			}]
+			title: "霞紫之铭"
+			x: 49.85d
+			y: 41.1d
+		}
+		{
+			dependencies: ["7F96A3228791845A"]
+			description: [
+				"&e用途：汇总“纯白”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_bag"
+				tag: {
+					Damage: 0
+					id: "1166ca91-ff26-56ba-92f4-3870e335c31d"
+					"mmt_white_bag/white": "mmt_white_bag/white/rainbow_of_white"
+					"mmt_white_bag/white/rainbow_of_white_material": "rainbow_of_white/bone"
+					"mmt_white_bag/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "5EA156AA61DACC20"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "78BC83FEB58C86EE"
+				title: "阅读纯白"
+				type: "checkmark"
+			}]
+			title: "&b纯白"
+			x: 60.85d
+			y: 34.2d
+		}
+		{
+			dependencies: ["5EA156AA61DACC20"]
+			description: [
+				"&e用途：【需要远古净化卷轴】非近战、非弹射物伤害有基础概率附加色彩槽中的负面状态。"
+				"&b适合：安装在“纯白”槽位。"
+				"&d需要：远古净化。"
+				"{\"text\":\"查看卷轴：远古净化\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"55D1E2CD63E32F1E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_white_bag"
+				tag: {
+					Damage: 0
+					id: "39afa9ae-fd57-567b-9e57-065c6dac86cc"
+					"mmt_white_bag/white": "mmt_white_bag/white/rainbow_of_white"
+					"mmt_white_bag/white/rainbow_of_white_material": "rainbow_of_white/bone"
+					"mmt_white_bag/white/starter_core_material": "starter_core/iron"
+				}
+			}
+			id: "1D75EDE4410CEFD7"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "46F16D628D131EBE"
+				title: "阅读纯白书袋"
+				type: "checkmark"
+			}]
+			title: "纯白书袋"
+			x: 60.85d
+			y: 36.9d
+		}
+	]
+	title: "护甲与饰品"
+}

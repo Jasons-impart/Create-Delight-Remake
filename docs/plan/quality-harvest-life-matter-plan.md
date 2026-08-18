@@ -20,7 +20,7 @@
 
 品质自动化拆成两部分：
 
-1. 生命质回收：由带品质物品提取获得，品质越高回收越多。
+1. 生命质回收：由带品质且属于生命质来源白名单的原料提取获得，品质越高回收越多。
 2. 品质收割自动化：改进后的 Create 收割机或动态结构机械手在收割成熟作物时消耗生命质，并按作物环境与地块品质进行品质判定。
 
 换句话说：
@@ -36,8 +36,8 @@
 
 中期：
 
-- 玩家使用品质吸收器，将带品质物品提取为 `createdelight:life_matter`。
-- 玩家制作生命质萃取仓，将带品质物品自动消耗并回收为 `createdelight:life_matter`。
+- 玩家使用品质吸收器，将来源白名单内的带品质原料提取为 `createdelight:life_matter`。
+- 玩家制作生命质萃取仓，将来源白名单内的带品质原料自动消耗并回收为 `createdelight:life_matter`。
 - 玩家制作 `生命质校准器 I`，把它放入移动结构或随车库存。
 - Create 收割机或动态结构机械手检测到校准器和生命质后，开始消耗生命质尝试产出品质原材料。
 
@@ -72,9 +72,9 @@
 | 金品质物品 | 品质吸收器提取 | 中量生命质 |
 | 钻石品质物品 | 品质吸收器提取 | 大量生命质 |
 
-生命质不再由普通有机物、堆肥或 `createaddition:biomass` 直接产出。品质收割可以形成“品质物品 -> 生命质 -> 品质收割”的循环，但循环需要先获得品质物品，且每次机器收割仍消耗生命质。
+生命质不再由普通有机物、堆肥或 `createaddition:biomass` 直接产出。品质收割可以形成“品质原料 -> 生命质 -> 品质收割”的循环，但循环需要先获得来源白名单内的品质原料，且每次机器收割仍消耗生命质。
 
-自动回收第一版使用 MBD2 单方块机器 `createdelight:life_matter_extractor`（显示名：生命质萃取仓）承载。它每 200 tick 从 `item_input_slot` 寻找一批带品质物品，按品质等级向 `item_output_slot` 产出生命质，并消耗这些物品本体。单次最多处理 8 个物品，钻石品质批处理最多输出 48 个生命质，降低动态结构持续输出造成的堵塞风险：
+自动回收第一版使用 MBD2 单方块机器 `createdelight:life_matter_extractor`（显示名：生命质萃取仓）承载。它每 200 tick 从 `item_input_slot` 寻找一批来源白名单内的带品质原料，按品质等级向 `item_output_slot` 产出生命质，并消耗这些物品本体。单次最多处理 8 个物品，钻石品质批处理最多输出 48 个生命质，降低动态结构持续输出造成的堵塞风险：
 
 | 输入品质 | 自动萃取产出 |
 |---|---:|
@@ -83,6 +83,17 @@
 | 钻石品质 | 6 个生命质 |
 
 手动品质吸收器仍保留“移除品质、保留物品”的定位；自动机器则消耗物品本体，避免全自动链路把高品质原材料免费降级成普通原材料副产物。
+
+### 生命质回收来源白名单
+
+生命质回收入口使用独立的明确物品标签，不复用范围更宽的 `#quality_food:material_whitelist`：
+
+| 标签 | 含义 |
+|---|---|
+| `#createdelightcore:life_matter_sources` | 可由品质吸收器或生命质萃取仓回收的直接品质原料 |
+| `#createdelight:life_matter_sources` | 与上面的 CDC 标签保持同步的整合包桥接标签 |
+
+来源按“原料身份”划分，不按一次收割掉落数量划分。因此葡萄、番茄、菌类、浆果等一次可产出多个物品时，只要仍是直接原料，就可以进入来源标签。种子、面粉、面团、料理、容器和加工中间品不进入来源标签；下游物品即使继承品质，也不会通过两个回收入口产生生命质。
 
 ## 收割机升级件
 
@@ -108,6 +119,7 @@ CDC 当前读取 `createdelightcore:*` 标签；整合包侧可以同时维护�
 | `#createdelightcore:quality_harvest_calibrators/tier_1` | 生命质消耗 2，品质上限为铁品质，机器倍率 0.25 |
 | `#createdelightcore:quality_harvest_calibrators/tier_2` | 生命质消耗 3，品质上限为金品质，机器倍率 0.45 |
 | `#createdelightcore:quality_harvest_calibrators/tier_3` | 生命质消耗 5，品质上限为钻石品质，机器倍率 0.70 |
+| `#createdelightcore:life_matter_sources` | 可被品质吸收器和生命质萃取仓回收的直接品质原料 |
 | `#createdelightcore:life_matter` | 可被品控收割消耗的生命质物品 |
 
 如果同一移动结构库存中存在多个升级件，CDC 采用最高 tier。生命质消耗仍按最高 tier 执行，避免玩家用低级耗材触发高级倍率。
@@ -306,7 +318,7 @@ Create 动态结构的整车库存适合作为物流空间，但不适合作为�
 KubeJS 侧：
 
 - 在 `startup_scripts/registry_item.js` 注册生命质和默认校准器物品。
-- 在服务端 tags 脚本中维护 `#createdelightcore:life_matter` 与 `#createdelightcore:quality_harvest_calibrators/...` 标签；可同步维护 `#createdelight:*` 桥接标签。
+- 在服务端 tags 脚本中维护 `#createdelightcore:life_matter`、`#createdelightcore:life_matter_sources` 与 `#createdelightcore:quality_harvest_calibrators/...` 标签；可同步维护 `#createdelight:*` 桥接标签。
 - 在 `server_scripts/Quality Food/absorber.js` 中维护品质物品到生命质的提取逻辑。
 - 在 `server_scripts/mbd2/life_matter_extractor.js` 中维护生命质萃取仓的自动提取逻辑；由于需要读取品质 NBT，不使用静态配方。
 - 在任务线中说明生命质可自动化，但品质只在品控收割时生成。
@@ -335,8 +347,8 @@ CDC 侧：
 1. 新增 `createdelight:life_matter`。
 2. 新增 `生命质校准器 I`。
 3. 给生命质和校准器维护标签，CDC 通过标签识别能力。
-4. 让品质吸收器把带品质物品提取为生命质，不提供普通静态配方。
-5. 接入生命质萃取仓，允许玩家把品质物品自动消耗为生命质。
+4. 让品质吸收器只把来源白名单内的带品质原料提取为生命质，不提供普通静态配方。
+5. 接入生命质萃取仓，只允许玩家把来源白名单内的品质原料自动消耗为生命质。
 6. 让 Create 收割机和动态结构机械手在检测到校准器标签和生命质标签时，对普通成熟作物消耗生命质并尝试产出最高铁/金/钻石品质。
 
 后续改进：

@@ -90,6 +90,14 @@ ItemEvents.tooltip(e => {
 })
 
 ItemEvents.tooltip(e => {
+    e.addAdvancedToAll((item, advanced, text) => {
+        if (!item.hasTag("createdelightcore:life_matter_sources"))
+            return
+        text.add(Text.translatable("tooltip.createdelight.life_matter_source"))
+    })
+})
+
+ItemEvents.tooltip(e => {
     e.add(
         'createdelightcore:sponsor_medal',
         Text.translatable('item.createdelightcore.sponsor_medal.desc')

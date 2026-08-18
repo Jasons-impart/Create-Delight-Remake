@@ -1684,11 +1684,6 @@
     "name": "SQLite JDBC (Fabric/Forge)",
     "version": "3.36.0.3+20211227-all"
   },
-  "Stamp Album-1.20.1-forge-1.1.1.jar": {
-    "modId": "stamp album",
-    "name": "Stamp Album",
-    "version": "1.20.1-forge-1.1.1"
-  },
   "Steam_Rails-1.7.2+forge-mc1.20.1.jar": {
     "modId": "steam_rails",
     "name": "Create: Steam 'n' Rails",
@@ -1749,10 +1744,10 @@
     "name": "Tetra Immersion",
     "version": "0.1.4"
   },
-  "tetra_insight-0.1.5.jar": {
+  "tetra_insight-0.1.6.jar": {
     "modId": "tetra_insight",
     "name": "Tetra Insight",
-    "version": "0.1.5"
+    "version": "0.1.6"
   },
   "tetracelium-1.20.1-1.3.2.jar": {
     "modId": "tetracelium",
