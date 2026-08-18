@@ -1114,6 +1114,11 @@
     "name": "Just Enough Threads [JEI Startup Optimize]",
     "version": "0.5.0+1.20.1"
   },
+  "jei_plus_plus-1.0.3-1.20.1.jar": {
+    "modId": "jei_plus_plus",
+    "name": "JEI++(JEI Plus)",
+    "version": "1.0.3-1.20.1"
+  },
   "jupiter-2.3.7-1.20.1-forge.jar": {
     "modId": "jupiter",
     "name": "Jupiter",
