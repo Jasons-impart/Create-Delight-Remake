@@ -13,8 +13,9 @@ const ORDER_SUBMISSION_WIDGETS = {
     statusText: "status_text"
 }
 
-const ORDER_SUBMISSION_PROCESS_TICKS = 15 * 60 * 20
+const ORDER_SUBMISSION_PROCESS_TICKS = 90 * 20
 const ORDER_SUBMISSION_PACKAGE_BUFFER_CAPACITY = 32
+const ORDER_SUBMISSION_MILESTONES = [25, 50, 75]
 
 const ORDER_SUBMISSION_LANG = {
     submit: "gui.createdelight.order_submission_port.submit",
@@ -36,6 +37,9 @@ const ORDER_SUBMISSION_LANG = {
     buffered: "gui.createdelight.order_submission_port.status.buffered",
     bufferFull: "gui.createdelight.order_submission_port.status.buffer_full",
     incompleteBuffered: "gui.createdelight.order_submission_port.status.incomplete_buffered",
+    progress: "gui.createdelight.order_submission_port.status.progress",
+    progressMilestone: "gui.createdelight.order_submission_port.status.progress_milestone",
+    milestoneReached: "message.createdelight.order_submission_port.milestone_reached",
     returningPackages: "gui.createdelight.order_submission_port.status.returning_packages",
     submitTip1: "tooltip.createdelight.order_submission_port.submit.1",
     submitTip2: "tooltip.createdelight.order_submission_port.submit.2",
@@ -50,7 +54,9 @@ const ORDER_SUBMISSION_DATA = {
     inputFingerprint: "inputFingerprint",
     outputSignal: "outputSignal",
     packageBuffer: "packageBuffer",
-    returningPackages: "returningPackages"
+    returningPackages: "returningPackages",
+    milestoneOrderFingerprint: "milestoneOrderFingerprint",
+    milestoneStage: "milestoneStage"
 }
 
 function orderSubmissionTranslate(key) {
@@ -66,6 +72,10 @@ function orderSubmissionTranslateArgs(key, args) {
         return Component.translate(key, args[0], args[1])
     if (args.length == 3)
         return Component.translate(key, args[0], args[1], args[2])
+    if (args.length == 4)
+        return Component.translate(key, args[0], args[1], args[2], args[3])
+    if (args.length == 5)
+        return Component.translate(key, args[0], args[1], args[2], args[3], args[4])
     return Component.translate(key, args)
 }
 
@@ -125,8 +135,13 @@ function setOrderSubmissionProcessStatus(machine, statusWidget) {
                 [getOrderSubmissionPendingPackageReturnCount(machine)])
         else if (buffered >= ORDER_SUBMISSION_PACKAGE_BUFFER_CAPACITY)
             setOrderSubmissionStatus(statusWidget, ORDER_SUBMISSION_LANG.bufferFull, [buffered, ORDER_SUBMISSION_PACKAGE_BUFFER_CAPACITY])
-        else if (buffered > 0)
-            setOrderSubmissionStatus(statusWidget, ORDER_SUBMISSION_LANG.buffered, [buffered, ORDER_SUBMISSION_PACKAGE_BUFFER_CAPACITY])
+        else if (buffered > 0) {
+            let analysis = getOrderSubmissionProgress(machine)
+            if (analysis != null)
+                setOrderSubmissionProgressStatus(statusWidget, analysis)
+            else
+                setOrderSubmissionStatus(statusWidget, ORDER_SUBMISSION_LANG.buffered, [buffered, ORDER_SUBMISSION_PACKAGE_BUFFER_CAPACITY])
+        }
         else
             setOrderSubmissionStatus(statusWidget, ORDER_SUBMISSION_LANG.ready)
         return
@@ -415,6 +430,101 @@ function createOrderSubmissionPackageTransfer(packages) {
     return transfer
 }
 
+function getOrderSubmissionProgress(machine) {
+    let orderInput = getOrderSubmissionTraitStorage(machine, ORDER_SUBMISSION_TRAITS.orderInput)
+    let orderRef = getFirstOrderSubmissionStack(orderInput, stack => isOrderSubmissionOrderStack(stack))
+    if (orderRef == null)
+        return null
+    let orderInfo = getOrderSubmissionOrderInfo(orderRef.stack)
+    let packages = getOrderSubmissionBufferedPackages(machine)
+    if (orderInfo == null || packages.length <= 0)
+        return null
+    let analysis = global.Order.analyzePackages(orderInfo, createOrderSubmissionPackageTransfer(packages))
+    analysis.milestone = machine.customData.getInt(ORDER_SUBMISSION_DATA.milestoneStage)
+    return analysis
+}
+
+function clearOrderSubmissionMilestone(machine) {
+    if (machine == null)
+        return
+    machine.customData.putString(ORDER_SUBMISSION_DATA.milestoneOrderFingerprint, "")
+    machine.customData.putInt(ORDER_SUBMISSION_DATA.milestoneStage, 0)
+}
+
+function getOrderSubmissionMilestoneForProgress(progress) {
+    let percent = Math.floor(Math.max(0, Math.min(1, Number(progress) || 0)) * 100)
+    let stage = 0
+    ORDER_SUBMISSION_MILESTONES.forEach(milestone => {
+        if (percent >= milestone)
+            stage = milestone
+    })
+    return stage
+}
+
+function notifyOrderSubmissionMilestone(machine, milestone) {
+    if (machine == null || machine.level == null)
+        return
+    let player = machine.level.getNearestPlayer(
+        machine.pos.x + 0.5,
+        machine.pos.y + 0.5,
+        machine.pos.z + 0.5,
+        8,
+        false
+    )
+    if (player != null)
+        player.tell(Text.translate(ORDER_SUBMISSION_LANG.milestoneReached, [milestone]))
+}
+
+function updateOrderSubmissionMilestones(machine) {
+    if (machine == null || isOrderSubmissionProcessing(machine) || isOrderSubmissionReturningPackages(machine))
+        return
+
+    let orderInput = getOrderSubmissionTraitStorage(machine, ORDER_SUBMISSION_TRAITS.orderInput)
+    let orderRef = getFirstOrderSubmissionStack(orderInput, stack => isOrderSubmissionOrderStack(stack))
+    if (orderRef == null) {
+        clearOrderSubmissionMilestone(machine)
+        return
+    }
+
+    let fingerprint = getOrderSubmissionStackFingerprint(orderRef.stack)
+    let storedFingerprint = machine.customData.getString(ORDER_SUBMISSION_DATA.milestoneOrderFingerprint)
+    if (storedFingerprint != fingerprint) {
+        machine.customData.putString(ORDER_SUBMISSION_DATA.milestoneOrderFingerprint, fingerprint)
+        machine.customData.putInt(ORDER_SUBMISSION_DATA.milestoneStage, 0)
+    }
+
+    let analysis = getOrderSubmissionProgress(machine)
+    if (analysis == null)
+        return
+    let previousStage = machine.customData.getInt(ORDER_SUBMISSION_DATA.milestoneStage)
+    let nextStage = getOrderSubmissionMilestoneForProgress(analysis.progress)
+    if (nextStage <= previousStage)
+        return
+
+    ORDER_SUBMISSION_MILESTONES.forEach(milestone => {
+        if (milestone > previousStage && milestone <= nextStage)
+            notifyOrderSubmissionMilestone(machine, milestone)
+    })
+    machine.customData.putInt(ORDER_SUBMISSION_DATA.milestoneStage, nextStage)
+}
+
+function setOrderSubmissionProgressStatus(statusWidget, analysis) {
+    if (analysis == null)
+        return
+    let args = [
+        Math.floor(Math.max(0, Math.min(1, analysis.progress)) * 100),
+        analysis.matched,
+        analysis.required,
+        analysis.qualityRejected
+    ]
+    let milestone = analysis.milestone == null ? 0 : Number(analysis.milestone)
+    if (milestone > 0) {
+        args.push(milestone)
+        setOrderSubmissionStatus(statusWidget, ORDER_SUBMISSION_LANG.progressMilestone, args)
+    } else
+        setOrderSubmissionStatus(statusWidget, ORDER_SUBMISSION_LANG.progress, args)
+}
+
 function getOrderSubmissionStacks(storage, predicate) {
     let stacks = []
     if (storage == null)
@@ -518,6 +628,7 @@ function returnOrderSubmissionInputs(machine, orderRef, packageRefs, statusWidge
     extractOrderSubmissionStacks(packageInput, packageStacks)
     insertOrderSubmissionStacks(orderReturn, rawOrderStacks.map(ref => ref.stack))
     insertOrderSubmissionStacks(packageReturn, allPackageStacks.map(ref => ref.stack))
+    clearOrderSubmissionMilestone(machine)
     setOrderSubmissionStatus(statusWidget, ORDER_SUBMISSION_LANG.returned)
     return true
 }
@@ -545,6 +656,12 @@ function validateOrderSubmissionInputs(machine, statusWidget, returnInvalidInput
 
     let packageTransfer = createOrderSubmissionPackageTransfer(packages)
     let orderInfo = getOrderSubmissionOrderInfo(orderRef.stack)
+    let analysis = global.Order.analyzePackages(orderInfo, packageTransfer)
+    analysis.milestone = machine.customData.getInt(ORDER_SUBMISSION_DATA.milestoneStage)
+    if (!analysis.complete) {
+        setOrderSubmissionProgressStatus(statusWidget, analysis)
+        return null
+    }
     let score = global.Order.checkAllPackages([orderInfo], packageTransfer)[0]
     if (score <= 0) {
         setOrderSubmissionStatus(statusWidget, ORDER_SUBMISSION_LANG.incompleteBuffered,
@@ -580,6 +697,7 @@ function startOrderSubmissionProcess(machine, statusWidget, returnBufferedWithou
     }
 
     ingestOrderSubmissionPackages(machine)
+    updateOrderSubmissionMilestones(machine)
     let orderInput = getOrderSubmissionTraitStorage(machine, ORDER_SUBMISSION_TRAITS.orderInput)
     let orderRef = getFirstOrderSubmissionStack(orderInput, stack => isOrderSubmissionOrderStack(stack))
     if (orderRef == null && returnBufferedWithoutOrder && startOrderSubmissionPackageReturn(machine, statusWidget))
@@ -640,6 +758,7 @@ function finishOrderSubmissionProcess(machine, statusWidget) {
 
     validation.orderInput.extractItem(validation.orderRef.slot, 1, false, false)
     clearOrderSubmissionBufferedPackages(machine)
+    clearOrderSubmissionMilestone(machine)
     insertOrderSubmissionStacks(rewardOutput, rewardBundles)
     clearOrderSubmissionProcess(machine)
     updateOrderSubmissionOutputSignal(machine)
@@ -685,11 +804,13 @@ function handleOrderSubmissionPulse(machine) {
 
 MBDMachineEvents.onLoad(ORDER_SUBMISSION_PORT, e => {
     setOrderSubmissionStorageFilters(e.event.machine)
+    updateOrderSubmissionMilestones(e.event.machine)
     updateOrderSubmissionOutputSignal(e.event.machine)
 })
 
 MBDMachineEvents.onPlaced(ORDER_SUBMISSION_PORT, e => {
     setOrderSubmissionStorageFilters(e.event.machine)
+    updateOrderSubmissionMilestones(e.event.machine)
     updateOrderSubmissionOutputSignal(e.event.machine)
 })
 
@@ -708,6 +829,8 @@ MBDMachineEvents.onTick(ORDER_SUBMISSION_PORT, e => {
         ingestOrderSubmissionPackages(machine)
     if (machine.level.time % 20 != 0)
         return
+    if (!isOrderSubmissionProcessing(machine))
+        updateOrderSubmissionMilestones(machine)
     if (isOrderSubmissionProcessing(machine))
         finishOrderSubmissionProcess(machine, null)
     updateOrderSubmissionOutputSignal(machine)
@@ -720,6 +843,7 @@ MBDMachineEvents.onRemoved(ORDER_SUBMISSION_PORT, e => {
 MBDMachineEvents.onUI(ORDER_SUBMISSION_PORT, e => {
     const { machine, root } = e.event
     setOrderSubmissionStorageFilters(machine)
+    updateOrderSubmissionMilestones(machine)
     updateOrderSubmissionOutputSignal(machine)
     configureOrderSubmissionTooltips(root)
 

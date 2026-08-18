@@ -263,44 +263,52 @@ ServerEvents.recipes(e => {
     })
     .id("createdelight:order_deliverer_item")
 
-    e.recipes.kubejs.shaped("createdelight:order_builder", [
-        "ABA",
+    let orderBoardCertificate = global.Order.reputation.getPermitIngredient("order_board")
+    let supplyCommissionCertificate = global.Order.reputation.getPermitIngredient("supply_commission_table")
+    let orderRequesterCertificate = global.Order.reputation.getPermitIngredient("order_requester")
+    let orderSubmissionCertificate = global.Order.reputation.getPermitIngredient("order_submission_port")
+
+    e.recipes.kubejs.shaped("createdelightcore:supply_commission_table", [
+        "FBA",
         "CDC",
         "AEA"
     ], {
         A: "create:brass_sheet",
-        B: "createdelight:order_seal",
-        C: "create:cogwheel",
-        D: "create:brass_casing",
-        E: "createdelight:unopened_order"
-    }).id("createdelight:order_builder")
-
-    e.recipes.kubejs.shaped("createdelightcore:order_parser", [
-        "ABA",
-        "CDC",
-        "AEA"
-    ], {
-        A: "create:iron_sheet",
         B: "create:clipboard",
-        C: "create:electron_tube",
-        D: "create:brass_casing",
-        E: "lightmanscurrency:trading_core"
-    }).id("createdelight:order_parser")
+        C: "create:sturdy_sheet",
+        D: "minecraft:cartography_table",
+        E: "lightmanscurrency:trading_core",
+        F: supplyCommissionCertificate
+    }).keepIngredient(supplyCommissionCertificate).id("createdelightcore:supply_commission_table")
 
     e.recipes.kubejs.shaped("createdelightcore:order_requester", [
-        "ABA",
+        "FBA",
         "CDC",
         "AEA"
     ], {
         A: "create:brass_sheet",
         B: "create:stock_link",
         C: "create:packager",
-        D: "createdelightcore:order_parser",
-        E: "create:redstone_link"
-    }).id("createdelight:order_requester")
+        D: "create:clipboard",
+        E: "create:redstone_link",
+        F: orderRequesterCertificate
+    }).keepIngredient(orderRequesterCertificate).id("createdelight:order_requester")
+
+    e.recipes.kubejs.shaped("createdelightcore:order_board", [
+        "FBA",
+        "CDC",
+        "AEA"
+    ], {
+        A: "create:brass_sheet",
+        B: "create:clipboard",
+        C: "minecraft:item_frame",
+        D: "create:stock_link",
+        E: "lightmanscurrency:trading_core",
+        F: orderBoardCertificate
+    }).keepIngredient(orderBoardCertificate).id("createdelight:order_board")
 
     e.recipes.kubejs.shaped("createdelight:order_submission_port", [
-        "ABA",
+        "FBA",
         "CDC",
         "AEA"
     ], {
@@ -308,8 +316,9 @@ ServerEvents.recipes(e => {
         B: "create:packager",
         C: "create:brass_funnel",
         D: "createdelight:order_deliverer_item",
-        E: "lightmanscurrency:trading_core"
-    }).id("createdelight:order_submission_port")
+        E: "lightmanscurrency:trading_core",
+        F: orderSubmissionCertificate
+    }).keepIngredient(orderSubmissionCertificate).id("createdelight:order_submission_port")
     // e.recipes.kubejs.shapeless(
     //     "createdelight:contract_executor", 
     //     [

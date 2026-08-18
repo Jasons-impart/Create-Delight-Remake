@@ -23,12 +23,12 @@ Order.customerRarityRanks = {
 }
 
 Order.gradeProfiles = {
-    1: { key: "trial", minTotal: 32, maxTotal: 96, minEntries: 1, maxEntries: 1, qualityBonus: -1, maxCustomerRarity: 0 },
-    2: { key: "regular", minTotal: 64, maxTotal: 160, minEntries: 1, maxEntries: 2, qualityBonus: 0, maxCustomerRarity: 1 },
-    3: { key: "guild", minTotal: 128, maxTotal: 320, minEntries: 2, maxEntries: 3, qualityBonus: 0, maxCustomerRarity: 2 },
-    4: { key: "professional", minTotal: 192, maxTotal: 512, minEntries: 2, maxEntries: 4, qualityBonus: 0, maxCustomerRarity: 2 },
-    5: { key: "major", minTotal: 320, maxTotal: 768, minEntries: 3, maxEntries: 4, qualityBonus: 1, maxCustomerRarity: 3 },
-    6: { key: "festival", minTotal: 512, maxTotal: 1024, minEntries: 3, maxEntries: 5, qualityBonus: 1, maxCustomerRarity: 3 }
+    1: { key: "trial", minTotal: 32, maxTotal: 96, minEntries: 1, maxEntries: 1, qualityBonus: -1, maxCustomerRarity: 0, baseMoney: 100 },
+    2: { key: "regular", minTotal: 64, maxTotal: 160, minEntries: 1, maxEntries: 2, qualityBonus: 0, maxCustomerRarity: 1, baseMoney: 200 },
+    3: { key: "guild", minTotal: 128, maxTotal: 320, minEntries: 2, maxEntries: 3, qualityBonus: 0, maxCustomerRarity: 2, baseMoney: 400 },
+    4: { key: "professional", minTotal: 192, maxTotal: 512, minEntries: 2, maxEntries: 4, qualityBonus: 0, maxCustomerRarity: 2, baseMoney: 700 },
+    5: { key: "major", minTotal: 320, maxTotal: 768, minEntries: 3, maxEntries: 4, qualityBonus: 1, maxCustomerRarity: 3, baseMoney: 1100 },
+    6: { key: "festival", minTotal: 512, maxTotal: 1024, minEntries: 3, maxEntries: 5, qualityBonus: 1, maxCustomerRarity: 3, baseMoney: 1700 }
 }
 
 Order.gradeWeightsByReputation = {
@@ -66,11 +66,6 @@ Order.orderClauses = {
         minGrade: 2,
         spec: { countMultiplier: 0.55, entryCountMultiplier: 1.5, moneyMultiplier: 1.1, reputationMultiplier: 1.15, minEntries: 2 }
     },
-    thin_margin_volume: {
-        category: "scale",
-        minGrade: 2,
-        spec: { countMultiplier: 2, moneyMultiplier: 0.75, reputationMultiplier: 1.1 }
-    },
     small_premium: {
         category: "scale",
         minGrade: 2,
@@ -79,7 +74,7 @@ Order.orderClauses = {
     bulk_purchase: {
         category: "scale",
         minGrade: 3,
-        spec: { countMultiplier: 2.5, moneyMultiplier: 1.15, reputationMultiplier: 1.25 }
+        spec: { countMultiplier: 2, moneyMultiplier: 0.9, reputationMultiplier: 1.15 }
     },
     quality_inspection: {
         category: "inspection",
@@ -93,6 +88,11 @@ Order.orderClauses = {
     cash_settlement: {
         category: "settlement",
         spec: { moneyMultiplier: 1.35, reputationMultiplier: 0.5, rewardMultiplier: 0.25 }
+    },
+    urgent_delivery: {
+        category: "time",
+        minGrade: 3,
+        spec: { timeRewardBonus: 0.35, timeRewardDecayTicks: 2 * 24000 }
     }
 }
 
@@ -105,16 +105,49 @@ Order.getCustomerUnlockLevel = function (customer) {
     return unlockLevel
 }
 
+Order.toTextValue = function (value) {
+    if (value == null)
+        return ""
+    if (value.getAsString != null)
+        return `${value.getAsString()}`
+    return `${value}`
+}
+
 Order.toArray = function (value) {
     if (value == null)
         return []
-    if (Array.isArray(value))
-        return value
-    if (typeof value == "string")
-        return [value]
     let result = []
-    if (value.forEach != null) {
-        value.forEach(v => result.push(`${v}`))
+    try {
+        if (value.size != null && value.get != null) {
+            let size = Math.max(0, Number(value.size()) || 0)
+            for (let index = 0; index < size; index++)
+                result.push(this.toTextValue(value.get(index)))
+            return result
+        }
+    } catch (ignored) {}
+    if (Array.isArray(value)) {
+        for (let index = 0; index < value.length; index++)
+            result.push(this.toTextValue(value[index]))
+        return result
+    }
+    return [this.toTextValue(value)]
+}
+
+Order.toObjectArray = function (value) {
+    if (value == null)
+        return []
+    let result = []
+    try {
+        if (value.size != null && value.get != null) {
+            let size = Math.max(0, Number(value.size()) || 0)
+            for (let index = 0; index < size; index++)
+                result.push(value.get(index))
+            return result
+        }
+    } catch (ignored) {}
+    if (Array.isArray(value)) {
+        for (let index = 0; index < value.length; index++)
+            result.push(value[index])
         return result
     }
     return [value]
@@ -129,6 +162,15 @@ Order.mergeSpec = function (base, addition) {
         result.customerGroups = this.toArray(result.customerGroups).concat(this.toArray(addition.customerGroups))
     if (addition.categoryGroups != null)
         result.categoryGroups = this.toArray(result.categoryGroups).concat(this.toArray(addition.categoryGroups))
+    if (addition.requiredCategories != null) {
+        let requiredCategories = this.toArray(result.requiredCategories).map(value => `${value}`)
+        this.toArray(addition.requiredCategories).forEach(value => {
+            let category = `${value}`
+            if (requiredCategories.indexOf(category) < 0)
+                requiredCategories.push(category)
+        })
+        result.requiredCategories = requiredCategories
+    }
 
     if (addition.customerWeightBonus != null)
         result.customerWeightBonus = Object.assign(result.customerWeightBonus || {}, addition.customerWeightBonus)
@@ -147,6 +189,14 @@ Order.mergeSpec = function (base, addition) {
         result.reputationMultiplier = (result.reputationMultiplier == null ? 1 : result.reputationMultiplier) * addition.reputationMultiplier
     if (addition.rewardMultiplier != null)
         result.rewardMultiplier = (result.rewardMultiplier == null ? 1 : result.rewardMultiplier) * addition.rewardMultiplier
+    if (addition.timeRewardBonus != null)
+        result.timeRewardBonus = Math.max(0, Number(addition.timeRewardBonus) || 0)
+    if (addition.timeRewardDecayTicks != null)
+        result.timeRewardDecayTicks = Math.max(1, Math.round(Number(addition.timeRewardDecayTicks) || 1))
+    if (addition.marketMultiplierFloor != null)
+        result.marketMultiplierFloor = Math.max(1, Math.min(2, Number(addition.marketMultiplierFloor) || 1))
+    if (addition.marketGapSelection === true)
+        result.marketGapSelection = true
     if (addition.minGrade != null)
         result.minGrade = Math.max(result.minGrade == null ? 1 : result.minGrade, addition.minGrade)
     if (addition.maxGrade != null)
@@ -162,7 +212,9 @@ Order.mergeSpec = function (base, addition) {
 Order.getClauseKey = function (stack) {
     if (stack == null || !stack.is("createdelight:order_clause"))
         return null
-    return stack.nbt == null || stack.nbt.OrderClause == null ? null : `${stack.nbt.OrderClause}`
+    return stack.nbt == null || stack.nbt.OrderClause == null
+        ? null
+        : `${stack.nbt.OrderClause}`
 }
 
 Order.getClause = function (stackOrKey) {
@@ -175,8 +227,10 @@ Order.validateDraftClause = function (draft, clauseKey) {
     if (clause == null)
         return "unknown"
 
-    let existing = this.toArray(draft == null ? null : draft.Clauses).map(value => `${value}`)
-    if (existing.indexOf(`${clauseKey}`) >= 0)
+    clauseKey = `${clauseKey}`
+    let existing = this.toArray(draft.Clauses)
+        .map(value => `${value}`)
+    if (existing.indexOf(clauseKey) >= 0)
         return "duplicate"
     if (existing.length >= 2)
         return "slots"
@@ -196,6 +250,9 @@ Order.validateDraftClause = function (draft, clauseKey) {
     }
     if (minGrade > maxGrade)
         return "grade"
+    let draftGrade = draft == null || draft.Grade == null ? 0 : Math.round(Number(draft.Grade) || 0)
+    if (draftGrade > 0 && (draftGrade < minGrade || draftGrade > maxGrade))
+        return "grade"
     if (existing.length + 1 > 1 && maxGrade <= 2)
         return "slots"
     return null
@@ -214,8 +271,8 @@ Order.applyDraftClause = function (orderStack, clauseStack) {
     if (this.validateDraftClause(draft, clauseKey) != null)
         return false
 
-    draft.Revision = 2
     draft.Clauses = this.toArray(draft.Clauses).map(value => `${value}`).concat([clauseKey])
+    this.clearDraftPreview(draft)
     nbt.OrderDraft = draft
     orderStack.nbt = nbt
     return true
@@ -230,8 +287,17 @@ Order.createSpecFromDraft = function (draft) {
     let customerSeal = draft.customerSeal == null ? null : `${draft.customerSeal}`
     let categorySeal = draft.categorySeal == null ? null : `${draft.categorySeal}`
     let clauses = this.toArray(draft.Clauses).map(value => `${value}`)
-    if (customerSeal == null && categorySeal == null && clauses.length == 0)
+    let draftGrade = draft.Grade == null ? 0 : Number(draft.Grade)
+    let boardKind = draft.BoardKind == null ? null : `${draft.BoardKind}`
+    let requiredCategories = this.toArray(draft.requiredCategories).map(value => `${value}`)
+    let boardMarketMultiplier = Number(draft.BoardMarketMultiplier)
+    if (draft.requiredCategory != null && requiredCategories.indexOf(`${draft.requiredCategory}`) < 0)
+        requiredCategories.push(`${draft.requiredCategory}`)
+    if (customerSeal == null && categorySeal == null && clauses.length == 0
+        && requiredCategories.length == 0 && draftGrade <= 0)
         return null
+
+    spec = this.mergeSpec(spec, { requiredCategories: requiredCategories })
 
     for (let itemId in this.orderDraftSeals) {
         let seal = this.orderDraftSeals[itemId]
@@ -257,8 +323,12 @@ Order.createSpecFromDraft = function (draft) {
     let sealCount = (customerSeal != null ? 1 : 0) + (categorySeal != null ? 1 : 0)
     spec.selectionPrecision = sealCount
     spec.modifiers = clauses
-    if (draft.Grade != null && Number(draft.Grade) > 0)
-        spec.grade = Number(draft.Grade)
+    if (boardKind == "adapted" && requiredCategories.length > 0)
+        spec.fixedEntries = true
+    if (boardKind == "opportunity" && isFinite(boardMarketMultiplier) && boardMarketMultiplier > 1)
+        spec.marketMultiplierFloor = Math.max(1, Math.min(2, boardMarketMultiplier))
+    if (draftGrade > 0)
+        spec.grade = draftGrade
     spec.source = "draft"
     return spec
 }
@@ -277,8 +347,6 @@ Order.applyDraftSeal = function (orderStack, sealStack) {
 
     let nbt = orderStack.nbt || {}
     let draft = nbt.OrderDraft || {}
-    draft.Revision = 1
-
     if (seal.type == "customer")
         draft.customerSeal = seal.key
     else if (seal.type == "category")
@@ -286,6 +354,131 @@ Order.applyDraftSeal = function (orderStack, sealStack) {
     else
         return false
 
+    this.clearDraftPreview(draft)
+    nbt.OrderDraft = draft
+    orderStack.nbt = nbt
+    return true
+}
+
+Order.removeDraftField = function (draft, key) {
+    if (draft == null)
+        return
+    if (draft.remove != null)
+        draft.remove(key)
+    else
+        delete draft[key]
+}
+
+Order.draftSeedModulus = 4294967296
+
+Order.normalizeDraftSeed = function (value) {
+    let number = Math.floor(Number(value) || 0)
+    number %= this.draftSeedModulus
+    return number < 0 ? number + this.draftSeedModulus : number
+}
+
+Order.createSeededRandom = function (seed) {
+    let state = this.normalizeDraftSeed(seed)
+    let modulus = this.draftSeedModulus
+    return {
+        nextFloat: function (minimum, maximum) {
+            state = (state * 1664525 + 1013904223) % modulus
+            let value = state / modulus
+            if (minimum == null)
+                return value
+            if (maximum == null)
+                return value * Number(minimum)
+            return Number(minimum) + (Number(maximum) - Number(minimum)) * value
+        }
+    }
+}
+
+Order.createDraftSeed = function (player) {
+    let entropy = Math.floor(Utils.random.nextFloat() * this.draftSeedModulus)
+    let time = this.normalizeDraftSeed(this.getTimeRewardGameTime(player))
+    let ownerText = `${player.uuid}`
+    let owner = 0
+    for (let index = 0; index < ownerText.length; index++)
+        owner = (owner * 65599 + ownerText.charCodeAt(index)) % this.draftSeedModulus
+    return this.normalizeDraftSeed(
+        this.normalizeDraftSeed(entropy)
+        + this.normalizeDraftSeed(time * 1664525)
+        + owner
+    )
+}
+
+Order.getDraftGenerationSeed = function (draft, attempt) {
+    let base = this.normalizeDraftSeed(draft.GenerationSeed)
+    let index = this.normalizeDraftSeed(draft.GenerationIndex)
+    let retry = this.normalizeDraftSeed(attempt)
+    return this.normalizeDraftSeed(
+        base
+        + this.normalizeDraftSeed(index * 1664525)
+        + this.normalizeDraftSeed(retry * 1013904223)
+    )
+}
+
+Order.clearDraftPreview = function (draft) {
+    if (draft == null)
+        return false
+    let changed = draft.PreviewOrder != null
+        || draft.PreviewAttempt != null
+        || draft.PreviewSeed != null
+        || draft.PreviewDataVersion != null
+    this.removeDraftField(draft, "PreviewOrder")
+    this.removeDraftField(draft, "PreviewAttempt")
+    this.removeDraftField(draft, "PreviewSeed")
+    this.removeDraftField(draft, "PreviewDataVersion")
+    if (changed) {
+        this.removeDraftField(draft, "GenerationSeed")
+        this.removeDraftField(draft, "GenerationIndex")
+    }
+    return changed
+}
+
+Order.ensureDraftSeed = function (player, draft) {
+    if (draft.GenerationSeed == null)
+        draft.GenerationSeed = this.createDraftSeed(player)
+    else
+        draft.GenerationSeed = this.normalizeDraftSeed(draft.GenerationSeed)
+    draft.GenerationIndex = Math.max(0, Math.floor(Number(draft.GenerationIndex) || 0))
+}
+
+Order.generateDraftOrder = function (player, draft) {
+    let spec = this.createSpecFromDraft(draft)
+    let attempt = 0
+    while (attempt <= 20) {
+        let seed = this.getDraftGenerationSeed(draft, attempt)
+        let order = this.create(player, spec, this.createSeededRandom(seed))
+        if (order != null && order.entries != null && order.entries.length > 0)
+            return order
+        attempt++
+    }
+    return null
+}
+
+Order.resetDraftDirections = function (orderStack) {
+    if (orderStack == null || !orderStack.is("createdelight:unopened_order"))
+        return false
+
+    let nbt = orderStack.nbt || {}
+    let draft = nbt.OrderDraft
+    if (draft == null)
+        return false
+
+    let requiredCategories = this.toArray(draft.requiredCategories)
+    let hasDirection = draft.customerSeal != null || draft.categorySeal != null
+        || draft.requiredCategory != null || requiredCategories.length > 0 || draft.BoardKind != null
+    if (!hasDirection)
+        return false
+
+    this.removeDraftField(draft, "customerSeal")
+    this.removeDraftField(draft, "categorySeal")
+    this.removeDraftField(draft, "requiredCategory")
+    this.removeDraftField(draft, "requiredCategories")
+    this.removeDraftField(draft, "BoardKind")
+    this.removeDraftField(draft, "BoardMarketMultiplier")
+    this.clearDraftPreview(draft)
     nbt.OrderDraft = draft
     orderStack.nbt = nbt
     return true
@@ -295,20 +488,81 @@ Order.openDraft = function (player, draftStack) {
     if (player == null || draftStack == null || !draftStack.is("createdelight:unopened_order"))
         return null
 
-    let draft = draftStack.nbt == null ? null : draftStack.nbt.OrderDraft
-    let spec = this.createSpecFromDraft(draft)
+    this.ensureDataLoaded()
+    let nbt = draftStack.nbt || {}
+    let draft = nbt.OrderDraft || {}
+    this.clearDraftPreview(draft)
+    this.ensureDraftSeed(player, draft)
+    nbt.OrderDraft = draft
+    draftStack.nbt = nbt
+
+    let generatedOrder = this.generateDraftOrder(player, draft)
+    if (generatedOrder == null || this.toObjectArray(generatedOrder.entries).length == 0)
+        return null
+    let orderStack = Item.of("createdelight:order", 1, { createdelightOrderInfo: generatedOrder })
+    let orderInfo = orderStack.nbt.createdelightOrderInfo
+    orderInfo.acceptedGameTime = this.getTimeRewardGameTime(player)
+    orderInfo.ownerName = `${player.username}`
+    orderInfo.ownerUUID = `${player.uuid}`
+    orderStack.nbt.createdelightOrderInfo = orderInfo
+
     draftStack.shrink(1)
-
-    let ret = this.create(player, spec)
-    let attempts = 0
-    while (ret.entries.length == 0 && attempts < 20) {
-        ret = this.create(player, spec)
-        attempts++
+    if (!draftStack.isEmpty()) {
+        draft.GenerationIndex = Math.max(0, Math.floor(Number(draft.GenerationIndex) || 0)) + 1
+        nbt.OrderDraft = draft
+        draftStack.nbt = nbt
     }
-
-    let orderStack = Item.of("createdelight:order", 1, { createdelightOrderInfo: ret })
     player.give(orderStack)
     return orderStack
+}
+
+Order.timeRewardConfig = {
+    initialBonus: 0.25,
+    decayTicks: 3 * 24000
+}
+
+Order.getTimeRewardGameTime = function (playerOrLevel) {
+    let level = playerOrLevel == null ? null : (playerOrLevel.level || playerOrLevel)
+    if (level == null)
+        return 0
+    let value = level.time
+    if (typeof value == "function")
+        value = value()
+    value = Number(value)
+    return isFinite(value) ? Math.max(0, value) : 0
+}
+
+Order.getTimeRewardModifier = function (order, playerOrLevel) {
+    let generationSpec = order == null ? null : order.generationSpec
+    let customBonus = generationSpec == null ? NaN : Number(generationSpec.timeRewardBonus)
+    let customDecayTicks = generationSpec == null ? NaN : Number(generationSpec.timeRewardDecayTicks)
+    let hasCustomPolicy = isFinite(customBonus) && customBonus >= 0
+        && isFinite(customDecayTicks) && customDecayTicks > 0
+    let initialBonus = hasCustomPolicy ? customBonus : Math.max(0, Number(this.timeRewardConfig.initialBonus) || 0)
+    let decayTicks = hasCustomPolicy ? customDecayTicks : Math.max(1, Number(this.timeRewardConfig.decayTicks) || 1)
+    let acceptedGameTime = order == null ? NaN : Number(order.acceptedGameTime)
+    let currentGameTime = this.getTimeRewardGameTime(playerOrLevel)
+    if (!isFinite(acceptedGameTime) || acceptedGameTime < 0 || currentGameTime < acceptedGameTime) {
+        return {
+            multiplier: 1,
+            bonus: 0,
+            elapsedTicks: 0,
+            remainingTicks: 0
+        }
+    }
+
+    let elapsedTicks = Math.max(0, currentGameTime - acceptedGameTime)
+    let remainingRatio = Math.max(0, 1 - elapsedTicks / decayTicks)
+    let bonus = initialBonus * remainingRatio
+    return {
+        multiplier: 1 + bonus,
+        bonus: bonus,
+        elapsedTicks: elapsedTicks,
+        remainingTicks: Math.max(0, decayTicks - elapsedTicks),
+        configuredBonus: initialBonus,
+        decayTicks: decayTicks,
+        customPolicy: hasCustomPolicy
+    }
 }
 
 Order.marketSaturation = {}
@@ -381,7 +635,15 @@ Order.marketSaturation.getModifier = function (player, order) {
     Order.ensureDataLoaded()
     let config = Order.marketSaturationConfig
     if (player == null || order == null || order.entries == null || order.entries.length == 0)
-        return { multiplier: 1, penalty: 0, categoryPressure: 0, customerPressure: 0 }
+        return this.applyPolicy(order, {
+            multiplier: 1,
+            bonus: 0,
+            consumedBonus: 0,
+            rawConsumption: 0,
+            saturated: false,
+            categoryPressure: 0,
+            customerPressure: 0
+        })
 
     let data = this.decay(this.read(player), this.getDay(player))
     let categoryPressure = 0
@@ -391,21 +653,47 @@ Order.marketSaturation.getModifier = function (player, order) {
     categoryPressure /= Math.max(1, order.entries.length)
 
     let customerPressure = data.customers[order.type] || 0
-    let penalty = Math.min(config.maxPenalty, categoryPressure * config.categoryPenalty + customerPressure * config.customerPenalty)
-    return {
-        multiplier: Math.max(0, 1 - penalty),
-        penalty: penalty,
+    let maxBonus = Math.max(0, Number(config.maxBonus))
+    let rawConsumption = categoryPressure * config.categoryPenalty + customerPressure * config.customerPenalty
+    let consumedBonus = Math.min(maxBonus, Math.max(0, rawConsumption))
+    let availableBonus = Math.max(0, maxBonus - consumedBonus)
+    return this.applyPolicy(order, {
+        multiplier: 1 + availableBonus,
+        bonus: availableBonus,
+        consumedBonus: consumedBonus,
+        rawConsumption: rawConsumption,
+        saturated: rawConsumption >= maxBonus - 0.0001,
         categoryPressure: categoryPressure,
         customerPressure: customerPressure
-    }
+    })
 }
 
-Order.marketSaturation.recordCompletion = function (player, order) {
+Order.marketSaturation.applyPolicy = function (order, result) {
+    if (result == null)
+        return result
+    let floor = order == null || order.generationSpec == null
+        ? NaN
+        : Number(order.generationSpec.marketMultiplierFloor)
+    if (!isFinite(floor) || floor <= 1)
+        return result
+
+    floor = Math.max(1, Math.min(2, floor))
+    result.marketMultiplierFloor = floor
+    if (Number(result.multiplier) + 0.0001 < floor) {
+        result.multiplier = floor
+        result.bonus = floor - 1
+        result.floorApplied = true
+    }
+    return result
+}
+
+Order.marketSaturation.recordCompletion = function (player, order, completionScale) {
     Order.ensureDataLoaded()
     let config = Order.marketSaturationConfig
     if (player == null || order == null || order.entries == null)
         return null
 
+    let scaleFactor = completionScale == null ? 1 : Math.max(0, Math.min(1, Number(completionScale) || 0))
     let day = this.getDay(player)
     let data = this.decay(this.read(player), day)
     let activeCategories = {}
@@ -413,8 +701,8 @@ Order.marketSaturation.recordCompletion = function (player, order) {
         activeCategories[entry.id] = true
     })
 
-    let categoryRecovery = config.categoryCrossRecovery == null ? 1 : config.categoryCrossRecovery
-    let customerRecovery = config.customerCrossRecovery == null ? 1 : config.customerCrossRecovery
+    let categoryRecovery = config.categoryCrossRecovery
+    let customerRecovery = config.customerCrossRecovery
     for (let id in data.categories) {
         if (activeCategories[id])
             continue
@@ -437,13 +725,13 @@ Order.marketSaturation.recordCompletion = function (player, order) {
         categoryScales[entry.id] = (categoryScales[entry.id] || 0) + entry.count / Math.max(1, baseCount * 4)
     })
 
-    let categoryScaleMax = config.categoryCompletionScaleMax == null ? 2 : config.categoryCompletionScaleMax
+    let categoryScaleMax = config.categoryCompletionScaleMax
     for (let id in categoryScales) {
         let scale = Math.max(1, Math.min(categoryScaleMax, categoryScales[id]))
-        data.categories[id] = (data.categories[id] || 0) + config.categoryCompletionGain * scale
+        data.categories[id] = (data.categories[id] || 0) + config.categoryCompletionGain * scale * scaleFactor
     }
     if (order.type != null)
-        data.customers[order.type] = (data.customers[order.type] || 0) + config.customerCompletionGain
+        data.customers[order.type] = (data.customers[order.type] || 0) + config.customerCompletionGain * scaleFactor
 
     this.write(player, data)
     return data
@@ -495,12 +783,85 @@ Order.getEntryWeightMultiplier = function (entryKey, spec) {
     return multiplier
 }
 
-Order.chooseGrade = function (reputationLevel, spec) {
-    if (spec != null && spec.grade != null)
-        return Math.max(1, Math.min(6, Math.round(Number(spec.grade))))
+Order.marketSaturation.pickUnderSuppliedCategory = function (player, grade, spec, requiredCategories, rng) {
+    Order.ensureDataLoaded()
+    if (player == null)
+        return null
 
+    let reputationLevel = Order.reputation.getLevel(player)
+    let gradeProfile = Order.gradeProfiles[grade] || Order.gradeProfiles[1]
+    let required = Order.toArray(requiredCategories).map(value => `${value}`)
+    let data = this.decay(this.read(player), this.getDay(player))
+    let candidates = {}
+
+    for (let customerKey in Order.customerProperties) {
+        if (!Object.prototype.hasOwnProperty.call(Order.customerProperties, customerKey))
+            continue
+        let customer = Order.customerProperties[customerKey]
+        if (customer.max_count < required.length + 1)
+            continue
+        if (required.some(category => customer.entries[category] == null))
+            continue
+        let unlockLevel = Order.getCustomerUnlockLevel(customer)
+        if (reputationLevel < unlockLevel)
+            continue
+        let rarityRank = Order.customerRarityRanks[customer.rarity] == null
+            ? 0 : Order.customerRarityRanks[customer.rarity]
+        if (rarityRank > gradeProfile.maxCustomerRarity)
+            continue
+
+        let customerWeight = Math.max(0, Number(customer.chance) || 0)
+        customerWeight *= 1 + Math.max(0, reputationLevel - unlockLevel) * 0.15
+        customerWeight *= Order.getCustomerWeightMultiplier(customerKey, spec)
+        if (customerWeight <= 0)
+            continue
+
+        for (let category in customer.entries) {
+            if (!Object.prototype.hasOwnProperty.call(customer.entries, category)
+                || required.indexOf(category) >= 0 || Order.orderProperties[category] == null)
+                continue
+            let entryValue = customer.entries[category]
+            let entryWeight = Array.isArray(entryValue) ? Number(entryValue[0]) : Number(entryValue)
+            entryWeight = Math.max(0, entryWeight || 0) * Order.getEntryWeightMultiplier(category, spec)
+            if (entryWeight <= 0)
+                continue
+            if (candidates[category] == null) {
+                candidates[category] = {
+                    key: category,
+                    pressure: Math.max(0, Number(data.categories[category]) || 0),
+                    weight: 0
+                }
+            }
+            candidates[category].weight += customerWeight * entryWeight
+        }
+    }
+
+    let values = Object.keys(candidates).map(key => candidates[key])
+    if (values.length == 0)
+        return null
+    let minimumPressure = values.reduce((minimum, value) => Math.min(minimum, value.pressure), Infinity)
+    let scarce = values.filter(value => value.pressure <= minimumPressure + 0.05)
+    let totalWeight = 0
+    scarce.forEach(value => totalWeight += Math.max(0, value.weight))
+    if (totalWeight <= 0)
+        return scarce[0].key
+
+    let random = rng == null ? Utils.random : rng
+    let roll = random.nextFloat() * totalWeight
+    for (let i = 0; i < scarce.length; i++) {
+        roll -= Math.max(0, scarce[i].weight)
+        if (roll <= 0)
+            return scarce[i].key
+    }
+    return scarce[scarce.length - 1].key
+}
+
+Order.chooseGrade = function (reputationLevel, spec, rng) {
     let minGrade = spec != null && spec.minGrade != null ? Math.max(1, Math.round(spec.minGrade)) : 1
     let maxGrade = spec != null && spec.maxGrade != null ? Math.min(6, Math.round(spec.maxGrade)) : 6
+    if (spec != null && spec.grade != null)
+        return Math.max(minGrade, Math.min(maxGrade, Math.round(Number(spec.grade))))
+
     let weights = this.gradeWeightsByReputation[reputationLevel] || this.gradeWeightsByReputation[1]
     let filtered = weights.filter(value => value[0] >= minGrade && value[0] <= maxGrade)
     if (filtered.length == 0)
@@ -508,7 +869,8 @@ Order.chooseGrade = function (reputationLevel, spec) {
 
     let total = 0
     filtered.forEach(value => total += value[1])
-    let random = Utils.random.nextFloat() * total
+    let randomSource = rng == null ? Utils.random : rng
+    let random = randomSource.nextFloat() * total
     for (let i = 0; i < filtered.length; i++) {
         random -= filtered[i][1]
         if (random <= 0)
@@ -522,20 +884,38 @@ Order.chooseGrade = function (reputationLevel, spec) {
  * @param {Internal.Player} player
  * @param {Object=} spec
  */
-Order.create = function (player, spec) {
+Order.create = function (player, spec, rng) {
     this.ensureDataLoaded()
+    let random = rng == null ? Utils.random : rng
     let level = this.reputation.getLevel(player);
-    let grade = this.chooseGrade(level, spec)
+    let grade = this.chooseGrade(level, spec, random)
     let gradeProfile = this.gradeProfiles[grade]
     let order = {
         entries: [],
         orderGrade: grade,
         modifiers: spec == null ? [] : this.toArray(spec.modifiers),
         generatedReputationLevel: level,
+        acceptedGameTime: this.getTimeRewardGameTime(player),
         ownerName: `${player.username}`,
         ownerUUID: `${player.uuid}`
     };
     let selected;
+    let requiredCategories = spec == null ? [] : this.toArray(spec.requiredCategories)
+        .filter((value, index, values) => values.indexOf(value) == index)
+    let marketGapCategory = null
+    if (spec != null && spec.marketGapSelection === true) {
+        marketGapCategory = this.marketSaturation.pickUnderSuppliedCategory(
+            player,
+            grade,
+            spec,
+            requiredCategories,
+            random
+        )
+        if (marketGapCategory != null && requiredCategories.indexOf(marketGapCategory) < 0)
+            requiredCategories.push(marketGapCategory)
+    }
+    if (requiredCategories.some(value => this.orderProperties[value] == null))
+        return order
 
     // --- 根据 chance 加权随机选择客户类型 ---
     let weightedList = [];
@@ -544,6 +924,8 @@ Order.create = function (player, spec) {
     for (let key in Order.customerProperties) {
         if (!Object.prototype.hasOwnProperty.call(Order.customerProperties, key)) continue;
         let element = Order.customerProperties[key];
+        if (element.max_count < requiredCategories.length) continue;
+        if (requiredCategories.some(category => element.entries[category] == null)) continue;
         let unlockLevel = Order.getCustomerUnlockLevel(element);
         if (level < unlockLevel) continue;
         let rarityRank = Order.customerRarityRanks[element.rarity] == null ? 0 : Order.customerRarityRanks[element.rarity]
@@ -558,7 +940,7 @@ Order.create = function (player, spec) {
     }
 
     if (weightedList.length > 0) {
-        let r = Utils.random.nextFloat() * totalWeight;
+        let r = random.nextFloat() * totalWeight;
         for (let i = 0; i < weightedList.length; i++) {
             r -= weightedList[i].weight;
             if (r <= 0) {
@@ -596,22 +978,39 @@ Order.create = function (player, spec) {
     let entryCountMultiplier = spec != null && spec.entryCountMultiplier != null ? spec.entryCountMultiplier : 1;
     let profileMinEntries = gradeProfile.minEntries
     let profileMaxEntries = Math.min(gradeProfile.maxEntries, selected.max_count, entriesList.length)
-    let baseEntryCount = Math.floor(Utils.random.nextFloat(profileMinEntries, profileMaxEntries + 1))
-    let targetEntryCount = Math.max(1, Math.round(baseEntryCount * entryCountMultiplier))
-    if (spec != null && spec.minEntries != null)
-        targetEntryCount = Math.max(targetEntryCount, Math.round(spec.minEntries))
-    if (spec != null && spec.maxEntries != null)
-        targetEntryCount = Math.min(targetEntryCount, Math.round(spec.maxEntries))
-    targetEntryCount = Math.max(1, Math.min(targetEntryCount, selected.max_count, entriesList.length))
+    let targetEntryCount
+    if (spec != null && spec.fixedEntries === true && requiredCategories.length > 0) {
+        targetEntryCount = requiredCategories.length
+    } else {
+        let baseEntryCount = Math.floor(random.nextFloat(profileMinEntries, profileMaxEntries + 1))
+        targetEntryCount = Math.max(1, Math.round(baseEntryCount * entryCountMultiplier))
+        if (spec != null && spec.minEntries != null)
+            targetEntryCount = Math.max(targetEntryCount, Math.round(spec.minEntries))
+        if (spec != null && spec.maxEntries != null)
+            targetEntryCount = Math.min(targetEntryCount, Math.round(spec.maxEntries))
+        targetEntryCount = Math.max(1, Math.min(targetEntryCount, selected.max_count, entriesList.length))
+    }
 
     let selectedEntries = []
-    let availableEntries = entriesList.slice()
+    let missingRequiredCategory = false
+    requiredCategories.forEach(category => {
+        let requiredEntry = entriesList.find(entry => entry.key == category)
+        if (requiredEntry != null)
+            selectedEntries.push(requiredEntry)
+        else
+            missingRequiredCategory = true
+    })
+    if (missingRequiredCategory)
+        return order
+    let availableEntries = entriesList.filter(entry => requiredCategories.indexOf(entry.key) < 0)
+    targetEntryCount = Math.max(targetEntryCount, selectedEntries.length)
+    targetEntryCount = Math.min(targetEntryCount, selected.max_count, entriesList.length)
     while (selectedEntries.length < targetEntryCount && availableEntries.length > 0) {
         let availableWeight = 0
         availableEntries.forEach(value => availableWeight += Math.max(0, value.weight))
         if (availableWeight <= 0)
             break
-        let r = Utils.random.nextFloat() * availableWeight;
+        let r = random.nextFloat() * availableWeight;
         let chosenEntry;
         let chosenIndex = -1
         for (let i = 0; i < availableEntries.length; i++) {
@@ -628,13 +1027,13 @@ Order.create = function (player, spec) {
         availableEntries.splice(chosenIndex, 1)
     }
 
-    let targetTotal = Utils.random.nextFloat(gradeProfile.minTotal, gradeProfile.maxTotal) * countMultiplier
+    let targetTotal = random.nextFloat(gradeProfile.minTotal, gradeProfile.maxTotal) * countMultiplier
     let targetUnits = Math.max(selectedEntries.length, Math.round(targetTotal / 4))
     let allocationWeights = []
     let allocationWeightTotal = 0
     selectedEntries.forEach(chosenEntry => {
         let property = Order.orderProperties[chosenEntry.key]
-        let weight = Math.max(1, property == null ? 16 : property.base_count) * Utils.random.nextFloat(0.8, 1.2)
+        let weight = Math.max(1, property == null ? 16 : property.base_count) * random.nextFloat(0.8, 1.2)
         allocationWeights.push(weight)
         allocationWeightTotal += weight
     })
@@ -664,10 +1063,19 @@ Order.create = function (player, spec) {
             source: spec.source || "direct",
             customerGroups: this.toArray(spec.customerGroups),
             categoryGroups: this.toArray(spec.categoryGroups),
+            requiredCategories: requiredCategories,
+            fixedEntries: spec.fixedEntries === true,
             selectionPrecision: spec.selectionPrecision || 0,
             modifiers: this.toArray(spec.modifiers),
-            orderGrade: grade
+            orderGrade: grade,
+            marketGapCategory: marketGapCategory
         }
+        if (spec.timeRewardBonus != null && isFinite(Number(spec.timeRewardBonus)))
+            order.generationSpec.timeRewardBonus = Math.max(0, Number(spec.timeRewardBonus))
+        if (spec.timeRewardDecayTicks != null && isFinite(Number(spec.timeRewardDecayTicks)))
+            order.generationSpec.timeRewardDecayTicks = Math.max(1, Math.round(Number(spec.timeRewardDecayTicks)))
+        if (spec.marketMultiplierFloor != null && isFinite(Number(spec.marketMultiplierFloor)))
+            order.generationSpec.marketMultiplierFloor = Math.max(1, Math.min(2, Number(spec.marketMultiplierFloor)))
     }
 
     if (spec != null || moneyMultiplier != 1 || reputationMultiplier != 1 || rewardMultiplier != 1) {
@@ -711,6 +1119,77 @@ Order.convertPackageToItemHandler = function (items) {
             console.error(`[Order] Package conversion overflowed with ${remainder.id} x${remainder.count}`)
     })
     return transfer
+}
+
+/**
+ * 只读分析单张订单的包裹履约进度，不消耗原包裹，也不计算最终 Score。
+ * 最终完成与结算仍以 checkAllPackages 为唯一权威。
+ * @param {{type: string, entries: [{ id: string, count: number, minQuality: number }]}} order
+ * @param {ItemStackTransfer} items
+ */
+Order.analyzePackages = function (order, items) {
+    let transfer = Order.convertPackageToItemHandler(items)
+    let result = {
+        matched: 0,
+        required: 0,
+        remaining: 0,
+        qualityRejected: 0,
+        progress: 0,
+        complete: false,
+        entries: []
+    }
+    if (order == null || order.entries == null)
+        return result
+
+    let seenEntryIds = {}
+    order.entries.forEach(requiredEntry => {
+        let id = `${requiredEntry.id}`
+        seenEntryIds[id] = (seenEntryIds[id] || 0) + 1
+        let required = Math.max(0, Number(requiredEntry.count) || 0)
+        let remaining = required
+        let rejected = 0
+        let minQuality = Math.max(1, Number(requiredEntry.minQuality) || 1)
+
+        for (let slot = 0; slot < transfer.getSlots(); slot++) {
+            let stack = transfer.getStackInSlot(slot)
+            if (stack.isEmpty() || !stack.hasTag("createdelight:order/" + id))
+                continue
+
+            let foodQuality = Order.getGoodsOrderProperty(stack, id) || 1
+            if (foodQuality < minQuality) {
+                rejected += stack.getCount()
+                continue
+            }
+
+            let take = Math.min(remaining, stack.getCount())
+            if (take <= 0)
+                continue
+            stack.shrink(take)
+            remaining -= take
+            if (remaining <= 0)
+                break
+        }
+
+        let matched = required - remaining
+        result.required += required
+        result.matched += matched
+        result.remaining += remaining
+        result.qualityRejected += rejected
+        result.entries.push({
+            id: id,
+            key: seenEntryIds[id] == 1 ? id : `${id}#${seenEntryIds[id]}`,
+            required: required,
+            matched: matched,
+            remaining: remaining,
+            minQuality: minQuality,
+            qualityRejected: rejected,
+            progress: required <= 0 ? 1 : matched / required
+        })
+    })
+
+    result.progress = result.required <= 0 ? 0 : Math.min(1, result.matched / result.required)
+    result.complete = result.required > 0 && result.remaining <= 0
+    return result
 }
 
 /**
@@ -847,15 +1326,26 @@ Order.calculateMoneyReward = function(order) {
     let chanceBonus = 1 / origin.chance
     let goodsBonus = 0
     order.entries.forEach(entry => {
+        let property = this.orderProperties[entry.id]
+        if (property == null)
+            return
         let qualityMultiplier = 1 + 0.2 * (entry.minQuality - 1)
-        goodsBonus += qualityMultiplier * entry.count / this.orderProperties[entry.id].base_count
+        let rewardWeight = Math.max(0.1, Number(property.reward_weight) || 1)
+        goodsBonus += qualityMultiplier * entry.count / Math.max(1, property.base_count) * rewardWeight
     })
+    let grade = Math.max(1, Math.min(6, Number(order.orderGrade || order.generationSpec?.orderGrade) || 1))
+    let gradeProfile = this.gradeProfiles[grade] || this.gradeProfiles[1]
+    let gradeBaseMoney = Math.max(0, Number(gradeProfile.baseMoney) || 0)
     let multiplier = order.rewardMultipliers != null && order.rewardMultipliers.money != null
         ? order.rewardMultipliers.money
         : 1
     if (order.marketSaturation != null && order.marketSaturation.multiplier > 0)
         multiplier /= order.marketSaturation.multiplier
-    return rarityBonus * chanceBonus * goodsBonus * multiplier
+    // Consumers keep the historical API contract and multiply this value by
+    // the customer's reward_money. Normalize the fixed grade fee here so it
+    // is paid exactly once, while order/clause multipliers only affect work.
+    return gradeBaseMoney / Math.max(1, origin.reward_money)
+        + rarityBonus * chanceBonus * goodsBonus * multiplier
 }
 
 /**
@@ -871,32 +1361,15 @@ Order.getGoodsOrderProperty = function (item, type) {
     return quality > 0 ? quality : undefined
 }
 /**
- * @deprecated
- * @param {string} type 
- * @param {number} count 
+ * 创建订单商会凭证。交易匹配只依赖 TicketColor 与 TicketID，
+ * 不写入自定义名称，避免额外 display NBT 破坏 LC 的严格匹配。
+ * @param {number} count
  * @returns {Internal.ItemStack}
  */
-Order.getRewardContract = function (type, count) {
-    let reward = Item.of('lightmanscurrency:ticket', count, `{ 
-        TicketColor: ${Order.ticketColorMapping[type]}, 
+Order.getGuildVoucher = function (count) {
+    return Item.of('lightmanscurrency:ticket', Math.max(1, Number(count) || 1), `{
+        TicketColor: ${Order.guildVoucherColor},
         TicketID: -10 }`)
-    reward.setHoverName(Component.translate("item.createdelight.name." + type).italic(false))
-    return reward
-}
-
-Order.addOrderToAuction = function() {
-    let data = new global.CDStartupJavaClasses.$AuctionTradeData({})
-    data.auctionItems.add(Item.of("createdelight:unopened_order"))
-    data.setMinBidDifferent(global.MoneyUtil.coinValueFromItemOrValue("createdeco:copper_coin", 1))
-    data.setStartingBid(global.MoneyUtil.coinValueFromItemOrValue("createdelightcore:gold_coin", 1).multiplyValue(Utils.random.nextFloat(0.5, 2)))
-    data.setDuration(1000 * 60 * 60 * 1)
-    let auctionHouse = global.CDStartupJavaClasses.$TraderDataCache.TYPE.get(false).getAuctionHouse()
-    if (auctionHouse == null) {
-        console.error("Unable to add order auction: auction house not found")
-        return false
-    }
-    auctionHouse.addTrade(data, null, false)
-    return true
 }
 
 Order.reputation = {}
@@ -917,8 +1390,15 @@ Order.reputation.getRawValue = function(player) {
 }
 
 Order.reputation.setRawValue = function(player, value) {
+    let beforeLevel = this.getLevelByValue(this.getRawValue(player))
     let safeValue = Math.max(0, Math.floor(value))
     player.persistentData.putInt(this.key, safeValue)
+    this.ensureCertificate(player)
+    let afterLevel = this.getLevelByValue(safeValue)
+    if (afterLevel > beforeLevel) {
+        this.notifyMachineUnlocks(player, beforeLevel, afterLevel)
+        this.notifyTradeUnlocks(player, beforeLevel, afterLevel)
+    }
     return safeValue
 }
 
@@ -1061,6 +1541,95 @@ Order.reputation.awardForOrder = function(level, order, qualityScore) {
  */
 Order.reputation.getLevel = function(player) {
     return this.getLevelByValue(this.getRawValue(player))
+}
+
+Order.reputation.certificateItem = "createdelight:order_reputation_certificate"
+Order.reputation.certificateIssuedKey = "order_reputation_certificate_issued"
+Order.reputation.machinePermits = [
+    { key: "order_board", level: 2, item: "createdelightcore:order_board", nameKey: "block.createdelightcore.order_board", roleKey: "tooltip.createdelight.order_machine.role.order_board" },
+    { key: "supply_commission_table", level: 4, item: "createdelightcore:supply_commission_table", nameKey: "block.createdelightcore.supply_commission_table", roleKey: "tooltip.createdelight.order_machine.role.supply_commission_table", guideKey: "tooltip.createdelight.order_machine.guide.supply_commission_table" },
+    { key: "order_requester", level: 5, item: "createdelightcore:order_requester", nameKey: "block.createdelightcore.order_requester", roleKey: "tooltip.createdelight.order_machine.role.order_requester" },
+    { key: "order_submission_port", level: 6, item: "createdelight:order_submission_port", nameKey: "block.createdelight.order_submission_port", roleKey: "tooltip.createdelight.order_machine.role.order_submission_port" }
+]
+
+Order.reputation.createCertificateNbt = function(player) {
+    let level = this.getLevel(player)
+    let permits = {}
+    this.machinePermits.forEach(permit => {
+        if (level >= permit.level)
+            permits[permit.key] = 1
+    })
+    return {
+        OrderReputationLevel: level,
+        OrderCertificateOwner: `${player.uuid}`,
+        OrderMachinePermits: permits
+    }
+}
+
+Order.reputation.createCertificate = function(player) {
+    return Item.of(this.certificateItem, 1, this.createCertificateNbt(player))
+}
+
+Order.reputation.isOwnedCertificate = function(player, stack) {
+    return player != null
+        && stack != null
+        && stack.is(this.certificateItem)
+        && stack.nbt != null
+        && `${stack.nbt.OrderCertificateOwner}` == `${player.uuid}`
+}
+
+Order.reputation.findCertificate = function(player) {
+    let found = null
+    player.inventory.allItems.forEach(stack => {
+        if (found == null && this.isOwnedCertificate(player, stack))
+            found = stack
+    })
+    return found
+}
+
+Order.reputation.refreshCertificate = function(player, stack) {
+    if (!this.isOwnedCertificate(player, stack))
+        return false
+    stack.nbt = this.createCertificateNbt(player)
+    player.getInventory().setChanged()
+    return true
+}
+
+Order.reputation.ensureCertificate = function(player) {
+    if (player == null || this.getLevel(player) < 2)
+        return null
+
+    let existing = this.findCertificate(player)
+    if (existing != null) {
+        this.refreshCertificate(player, existing)
+        return existing
+    }
+    if (player.persistentData.getBoolean(this.certificateIssuedKey))
+        return null
+
+    let certificate = this.createCertificate(player)
+    player.give(certificate)
+    player.persistentData.putBoolean(this.certificateIssuedKey, true)
+    player.tell(Text.translate("message.createdelight.order_reputation_certificate.issued", this.getLevel(player)))
+    return certificate
+}
+
+Order.reputation.getPermitIngredient = function(key) {
+    let permits = {}
+    permits[key] = 1
+    return Item.of(this.certificateItem, 1, { OrderMachinePermits: permits }).weakNBT()
+}
+
+Order.reputation.notifyMachineUnlocks = function(player, beforeLevel, afterLevel) {
+    this.machinePermits.forEach(permit => {
+        if (permit.level > beforeLevel && permit.level <= afterLevel) {
+            player.tell(Text.translate(
+                "message.createdelight.order_reputation_certificate.permit_unlocked",
+                permit.level,
+                Text.translate(permit.nameKey)
+            ))
+        }
+    })
 }
 
 // ItemEvents.rightClicked("minecraft:stick", e => {

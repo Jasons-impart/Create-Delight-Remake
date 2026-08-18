@@ -443,6 +443,13 @@ StartupEvents.registry("item", e => {
     // 订单交付器
     e.create("createdelight:order_deliverer_item")
         .translationKey("item.createdelight.order_deliverer_item")
+    // 订单商会声望凭证：由服务端按玩家当前声望写入许可 NBT，配方使用时不会消耗。
+    e.create("createdelight:order_reputation_certificate")
+        .unstackable()
+        .rarity("uncommon")
+        .glow(true)
+        .texture("minecraft:item/paper")
+        .translationKey("item.createdelight.order_reputation_certificate")
     // 测试剑
     // e.create("createdelight:sigma_man_sword", "sword")
     //     .tier("netherite")
