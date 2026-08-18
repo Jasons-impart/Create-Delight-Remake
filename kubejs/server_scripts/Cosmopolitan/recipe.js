@@ -224,8 +224,8 @@ ServerEvents.recipes(e => {
     {
         let iner = "bakeries:cut_cake_base"
         create.sequenced_assembly('cosmopolitan:jelly_roll', iner, [
-            create.pressing(iner, iner),
             create.filling(iner, [iner, Fluid.of("cosmopolitan:berry_syrup", 250)]),
+            create.pressing(iner, iner),
         ])
             .loops(1)
             .transitionalItem(iner)
@@ -241,8 +241,8 @@ ServerEvents.recipes(e => {
     {
         let iner = "bakeries:cut_cake_base"
         create.sequenced_assembly('cosmopolitan:chocolate_roll', iner, [
-            create.pressing(iner, iner),
             create.filling(iner, [iner, Fluid.of("create:chocolate", 250)]),
+            create.pressing(iner, iner),
         ])
             .loops(1)
             .transitionalItem(iner)
