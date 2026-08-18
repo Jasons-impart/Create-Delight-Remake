@@ -1,0 +1,2568 @@
+{
+	autofocus_id: "1C23480EDBBC9067"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "Tetra_Ranged_Defense"
+	group: "57E934AC8166BC73"
+	icon: {
+		Count: 1
+		id: "tetra:modular_bow"
+		tag: {
+			Damage: 0
+			"bow/basic_string_material": "basic_string/string"
+			"bow/stave": "bow/straight_stave"
+			"bow/straight_stave_material": "straight_stave/stick"
+			"bow/string": "bow/basic_string"
+			id: "dbe13b10-43c2-5780-90ec-4eec5c8402a6"
+		}
+	}
+	id: "30A3CAC66DFE7283"
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"&e用途：查询两类弓、弩、盾牌与工具腰带。"
+				"&b阅读：同名模块按完整模块 ID 分别展示。"
+				"&a提示：材料方向与改进就地写在模块页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_bow"
+				tag: {
+					Damage: 0
+					"bow/basic_string_material": "basic_string/string"
+					"bow/stave": "bow/straight_stave"
+					"bow/straight_stave_material": "straight_stave/stick"
+					"bow/string": "bow/basic_string"
+					id: "dbe13b10-43c2-5780-90ec-4eec5c8402a6"
+				}
+			}
+			id: "1C23480EDBBC9067"
+			shape: "hexagon"
+			size: 3.0d
+			tasks: [{
+				id: "789FD091D777CA4C"
+				title: "阅读远程、防御与携行"
+				type: "checkmark"
+			}]
+			title: "&6远程、防御与携行"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1C23480EDBBC9067"]
+			description: [
+				"&e用途：查看Tetra 模块化弓的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_bow"
+				tag: {
+					Damage: 0
+					"bow/basic_string_material": "basic_string/string"
+					"bow/stave": "bow/straight_stave"
+					"bow/straight_stave_material": "straight_stave/stick"
+					"bow/string": "bow/basic_string"
+					id: "629c91ee-c87c-5450-8725-56ba32ba14a8"
+				}
+			}
+			id: "0A0BE76EF3C07F31"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "5C2A852627F49532"
+				title: "阅读Tetra 模块化弓"
+				type: "checkmark"
+			}]
+			title: "&aTetra 模块化弓"
+			x: -19.3d
+			y: -5.0d
+		}
+		{
+			dependencies: ["0A0BE76EF3C07F31"]
+			description: [
+				"&e用途：汇总“弓体”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_bow"
+				tag: {
+					Damage: 0
+					"bow/basic_string_material": "basic_string/string"
+					"bow/riser": "bow/adjustable_strength"
+					"bow/stave": "bow/straight_stave"
+					"bow/straight_stave_material": "straight_stave/stick"
+					"bow/string": "bow/basic_string"
+					id: "4870f31e-a523-5edd-bc9f-b17cd4b44e4a"
+				}
+			}
+			id: "378267FB8243B396"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "2338FF7D78F6C7E5"
+				title: "阅读弓体"
+				type: "checkmark"
+			}]
+			title: "&b弓体"
+			x: -24.2d
+			y: -9.0d
+		}
+		{
+			dependencies: ["378267FB8243B396"]
+			description: [
+				"&e用途：让弓臂调节器改变这一槽位的功能定位。"
+				"&b适合：安装在“弓体”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_bow"
+				tag: {
+					Damage: 0
+					"bow/basic_string_material": "basic_string/string"
+					"bow/riser": "bow/adjustable_strength"
+					"bow/stave": "bow/straight_stave"
+					"bow/straight_stave_material": "straight_stave/stick"
+					"bow/string": "bow/basic_string"
+					id: "a91f7520-1ee7-5323-affd-0c1e6c30180b"
+				}
+			}
+			id: "07BBE1285AC6965C"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "16FF38C46B8CAE64"
+				title: "阅读弓臂调节器"
+				type: "checkmark"
+			}]
+			title: "弓臂调节器"
+			x: -25.38d
+			y: -11.7d
+		}
+		{
+			dependencies: ["378267FB8243B396"]
+			description: [
+				"&e用途：扩展箭台允许一次射出多支箭。"
+				"&b适合：安装在“弓体”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_bow"
+				tag: {
+					Damage: 0
+					"bow/basic_string_material": "basic_string/string"
+					"bow/extended_rest_material": "extended_rest/oak"
+					"bow/riser": "bow/extended_rest"
+					"bow/stave": "bow/straight_stave"
+					"bow/straight_stave_material": "straight_stave/stick"
+					"bow/string": "bow/basic_string"
+					id: "5a71f730-81aa-5cfd-91fc-48f379f47044"
+				}
+			}
+			id: "342997BF466ECE72"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "62313FA5836FD4DB"
+				title: "阅读扩展箭台"
+				type: "checkmark"
+			}]
+			title: "扩展箭台"
+			x: -23.03d
+			y: -11.7d
+		}
+		{
+			dependencies: ["378267FB8243B396"]
+			description: [
+				"&e用途：瞄具能够在使用弓时看得更远。"
+				"&b适合：安装在“弓体”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_bow"
+				tag: {
+					Damage: 0
+					"bow/basic_string_material": "basic_string/string"
+					"bow/riser": "bow/sights"
+					"bow/sights_material": "sights/oak"
+					"bow/stave": "bow/straight_stave"
+					"bow/straight_stave_material": "straight_stave/stick"
+					"bow/string": "bow/basic_string"
+					id: "c512659f-b026-51b4-9a7d-2e29aa117524"
+				}
+			}
+			id: "3F780B58AC2A504B"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "407CBF3A5167B921"
+				title: "阅读瞄具"
+				type: "checkmark"
+			}]
+			title: "瞄具"
+			x: -25.38d
+			y: -13.8d
+		}
+		{
+			dependencies: ["378267FB8243B396"]
+			description: [
+				"&e用途：稳定器增加射出弹射物的初速度。"
+				"&b适合：安装在“弓体”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_bow"
+				tag: {
+					Damage: 0
+					"bow/basic_string_material": "basic_string/string"
+					"bow/riser": "bow/stabilizer"
+					"bow/stabilizer_material": "stabilizer/oak"
+					"bow/stave": "bow/straight_stave"
+					"bow/straight_stave_material": "straight_stave/stick"
+					"bow/string": "bow/basic_string"
+					id: "fb0cd1e4-9c39-5b39-8a70-56627c7f3179"
+				}
+			}
+			id: "6767E9A6FED33FFA"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "4C575CF4684EDC6B"
+				title: "阅读稳定器"
+				type: "checkmark"
+			}]
+			title: "稳定器"
+			x: -23.03d
+			y: -13.8d
+		}
+		{
+			dependencies: ["0A0BE76EF3C07F31"]
+			description: [
+				"&e用途：汇总“弓材”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_bow"
+				tag: {
+					Damage: 0
+					"bow/basic_string_material": "basic_string/string"
+					"bow/more_mod_tetra/apollo_bow_material": "apollo_bow/oak"
+					"bow/stave": "bow/more_mod_tetra/apollo_bow"
+					"bow/straight_stave_material": "straight_stave/stick"
+					"bow/string": "bow/basic_string"
+					id: "19a2d9ac-862a-5faf-8eff-8ea5db2658a8"
+				}
+			}
+			id: "69ADB309395F2613"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "70F5A685A762EFA6"
+				title: "阅读弓材"
+				type: "checkmark"
+			}]
+			title: "&b弓材"
+			x: -15.55d
+			y: -9.0d
+		}
+		{
+			dependencies: ["69ADB309395F2613"]
+			description: [
+				"&e用途：光之弓的拉弦速度较快，并拥有可随材质属性提升的[光芒]、[多重射击]属性。"
+				"&b适合：安装在“弓材”槽位。"
+				"&d需要：精灵制弓术。"
+				"{\"text\":\"查看卷轴：精灵制弓术\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"7BA9E0B0916844DA\"}}"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_bow"
+				tag: {
+					Damage: 0
+					"bow/basic_string_material": "basic_string/string"
+					"bow/more_mod_tetra/apollo_bow_material": "apollo_bow/oak"
+					"bow/stave": "bow/more_mod_tetra/apollo_bow"
+					"bow/straight_stave_material": "straight_stave/stick"
+					"bow/string": "bow/basic_string"
+					id: "f77b15a2-a554-5839-b0d0-ecfda3ca89ba"
+				}
+			}
+			id: "30F8CF280DB6337B"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "6E8E4056736F4042"
+				title: "阅读光之弓"
+				type: "checkmark"
+			}]
+			title: "光之弓"
+			x: -17.9d
+			y: -11.7d
+		}
+		{
+			dependencies: ["69ADB309395F2613"]
+			description: [
+				"&e用途：可以进行近战的长弓，属性低于一般弓箭，但是可以进行特殊的弓刃改装。"
+				"&b适合：安装在“弓材”槽位。"
+				"&d需要：战国武器。"
+				"{\"text\":\"查看卷轴：战国武器\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"179BA0BFF189DE74\"}}"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_bow"
+				tag: {
+					Damage: 0
+					"bow/basic_string_material": "basic_string/string"
+					"bow/more_mod_tetra/blade_bow_material": "blade_bow/oak"
+					"bow/stave": "bow/more_mod_tetra/blade_bow"
+					"bow/straight_stave_material": "straight_stave/stick"
+					"bow/string": "bow/basic_string"
+					id: "29c2a36d-7257-5576-b89a-f9b7f85c1a23"
+				}
+			}
+			id: "711AFA0C3DE81170"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "01469A5CF9027800"
+				title: "阅读刃弓"
+				type: "checkmark"
+			}]
+			title: "刃弓"
+			x: -15.55d
+			y: -11.7d
+		}
+		{
+			dependencies: ["69ADB309395F2613"]
+			description: [
+				"&e用途：一根反曲弓弓材。"
+				"&b适合：安装在“弓材”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_bow"
+				tag: {
+					Damage: 0
+					"bow/basic_string_material": "basic_string/string"
+					"bow/recurve_stave_material": "recurve_stave/oak"
+					"bow/stave": "bow/recurve_stave"
+					"bow/straight_stave_material": "straight_stave/stick"
+					"bow/string": "bow/basic_string"
+					id: "f9dac366-57e1-5d41-848e-2ddae0916cc5"
+				}
+			}
+			id: "2F0273A056A93245"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "21495457494725E2"
+				title: "阅读反曲弓弓材"
+				type: "checkmark"
+			}]
+			title: "反曲弓弓材"
+			x: -13.2d
+			y: -11.7d
+		}
+		{
+			dependencies: ["69ADB309395F2613"]
+			description: [
+				"&e用途：天之麻迦古弓拥有极强的箭矢力量，且自带的退魔、箭矢速度提升能力会随材质属性提升。"
+				"&b适合：安装在“弓材”槽位。"
+				"&d需要：精灵制弓术。"
+				"{\"text\":\"查看卷轴：精灵制弓术\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"7BA9E0B0916844DA\"}}"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_bow"
+				tag: {
+					Damage: 0
+					"bow/basic_string_material": "basic_string/string"
+					"bow/more_mod_tetra/ama_no_mahagaki_no_yumi_material": "ama_no_mahagaki_no_yumi/oak"
+					"bow/stave": "bow/more_mod_tetra/ama_no_mahagaki_no_yumi"
+					"bow/straight_stave_material": "straight_stave/stick"
+					"bow/string": "bow/basic_string"
+					id: "47fd8b03-34e3-5669-9e65-29c4ab88b03d"
+				}
+			}
+			id: "03662E776502BA86"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "1544656D729AC0D6"
+				title: "阅读天之麻迦古弓"
+				type: "checkmark"
+			}]
+			title: "天之麻迦古弓"
+			x: -17.9d
+			y: -13.8d
+		}
+		{
+			dependencies: ["69ADB309395F2613"]
+			description: [
+				"&e用途：射日弓的拉弦速度与箭矢力量较普通部件均有提升，并拥有可随材质属性提升的[射日]属性。"
+				"&b适合：安装在“弓材”槽位。"
+				"&d需要：精灵制弓术。"
+				"{\"text\":\"查看卷轴：精灵制弓术\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"7BA9E0B0916844DA\"}}"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_bow"
+				tag: {
+					Damage: 0
+					"bow/basic_string_material": "basic_string/string"
+					"bow/more_mod_tetra/sun_shooting_bow_material": "sun_shooting_bow/oak"
+					"bow/stave": "bow/more_mod_tetra/sun_shooting_bow"
+					"bow/straight_stave_material": "straight_stave/stick"
+					"bow/string": "bow/basic_string"
+					id: "9ad9b8b1-8c34-5a56-87f5-da56a293c2ef"
+				}
+			}
+			id: "3C717DF5601818BA"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "04319EF98B5EF881"
+				title: "阅读射日弓"
+				type: "checkmark"
+			}]
+			title: "射日弓"
+			x: -15.55d
+			y: -13.8d
+		}
+		{
+			dependencies: ["69ADB309395F2613"]
+			description: [
+				"&e用途：一个层压弓臂。"
+				"&b适合：安装在“弓材”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_bow"
+				tag: {
+					Damage: 0
+					"bow/basic_string_material": "basic_string/string"
+					"bow/laminated_stave_material": "laminated_stave/oak"
+					"bow/stave": "bow/laminated_stave"
+					"bow/straight_stave_material": "straight_stave/stick"
+					"bow/string": "bow/basic_string"
+					id: "22601ba3-a7ca-5f90-9658-7de415ed809d"
+				}
+			}
+			id: "39B89423DB035787"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "5E396A1ACEE5C40B"
+				title: "阅读层压臂"
+				type: "checkmark"
+			}]
+			title: "层压臂"
+			x: -13.2d
+			y: -13.8d
+		}
+		{
+			dependencies: ["69ADB309395F2613"]
+			description: [
+				"&e用途：一根直拉弓弓材。"
+				"&b适合：安装在“弓材”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_bow"
+				tag: {
+					Damage: 0
+					"bow/basic_string_material": "basic_string/string"
+					"bow/stave": "bow/straight_stave"
+					"bow/straight_stave_material": "straight_stave/oak"
+					"bow/string": "bow/basic_string"
+					id: "5d535ada-e814-5f28-8d29-3310a626016c"
+				}
+			}
+			id: "7A9AEA5DD4559DF8"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "23EE2F101DD537E1"
+				title: "阅读直拉弓弓材"
+				type: "checkmark"
+			}]
+			title: "直拉弓弓材"
+			x: -17.9d
+			y: -15.9d
+		}
+		{
+			dependencies: ["69ADB309395F2613"]
+			description: [
+				"&e用途：一根长弓弓材。"
+				"&b适合：安装在“弓材”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_bow"
+				tag: {
+					Damage: 0
+					"bow/basic_string_material": "basic_string/string"
+					"bow/long_stave_material": "long_stave/oak"
+					"bow/stave": "bow/long_stave"
+					"bow/straight_stave_material": "straight_stave/stick"
+					"bow/string": "bow/basic_string"
+					id: "2d18461d-9eaa-5918-8dd6-8b3ed56ffb03"
+				}
+			}
+			id: "2AB7E20A739D7D5F"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "18925BF441757A0D"
+				title: "阅读长弓弓材"
+				type: "checkmark"
+			}]
+			title: "长弓弓材"
+			x: -15.55d
+			y: -15.9d
+		}
+		{
+			dependencies: ["0A0BE76EF3C07F31"]
+			description: [
+				"&e用途：汇总“弓弦”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_bow"
+				tag: {
+					Damage: 0
+					"bow/basic_string_material": "basic_string/string"
+					"bow/stave": "bow/straight_stave"
+					"bow/straight_stave_material": "straight_stave/stick"
+					"bow/string": "bow/basic_string"
+					id: "0a845a5e-aa49-5745-8ff4-5bb61bffe711"
+				}
+			}
+			id: "5B77AABA0C277C60"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "3A7B9B8DECA85304"
+				title: "阅读弓弦"
+				type: "checkmark"
+			}]
+			title: "&b弓弦"
+			x: -24.2d
+			y: -18.7d
+		}
+		{
+			dependencies: ["5B77AABA0C277C60"]
+			description: [
+				"&e用途：一根普通弓弦。"
+				"&b适合：安装在“弓弦”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_bow"
+				tag: {
+					Damage: 0
+					"bow/basic_string_material": "basic_string/string"
+					"bow/stave": "bow/straight_stave"
+					"bow/straight_stave_material": "straight_stave/stick"
+					"bow/string": "bow/basic_string"
+					id: "f6db2639-8273-5279-93f8-7eda0a46c936"
+				}
+			}
+			id: "1D381D27F65E5EE0"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "53D4EC92A152E491"
+				title: "阅读普通弓弦"
+				type: "checkmark"
+			}]
+			title: "普通弓弦"
+			x: -24.2d
+			y: -21.4d
+		}
+		{
+			dependencies: ["1C23480EDBBC9067"]
+			description: [
+				"&e用途：查看MMT 模块化弓的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bow"
+				tag: {
+					Damage: 0
+					id: "66e94365-691d-5d14-8785-6e4c9ae8fd14"
+					"modular_mmt_bow/basic_string_material": "basic_string/string"
+					"modular_mmt_bow/stave": "modular_mmt_bow/straight_stave"
+					"modular_mmt_bow/straight_stave_material": "straight_stave/stick"
+					"modular_mmt_bow/string": "modular_mmt_bow/basic_string"
+				}
+			}
+			id: "773F936D08EF7E09"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "30D3B6FE27726E0F"
+				title: "阅读MMT 模块化弓"
+				type: "checkmark"
+			}]
+			title: "&aMMT 模块化弓"
+			x: 0.0d
+			y: -5.0d
+		}
+		{
+			dependencies: ["773F936D08EF7E09"]
+			description: [
+				"&e用途：汇总“弓体”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bow"
+				tag: {
+					Damage: 0
+					id: "cc1a4cd0-1ffe-5edd-8978-d822f34f5f71"
+					"modular_mmt_bow/basic_string_material": "basic_string/string"
+					"modular_mmt_bow/riser": "modular_mmt_bow/adjustable_strength"
+					"modular_mmt_bow/stave": "modular_mmt_bow/straight_stave"
+					"modular_mmt_bow/straight_stave_material": "straight_stave/stick"
+					"modular_mmt_bow/string": "modular_mmt_bow/basic_string"
+				}
+			}
+			id: "67FE6996B7AD04ED"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "5770E8BF3AD2445A"
+				title: "阅读弓体"
+				type: "checkmark"
+			}]
+			title: "&b弓体"
+			x: -4.9d
+			y: -9.0d
+		}
+		{
+			dependencies: ["67FE6996B7AD04ED"]
+			description: [
+				"&e用途：让弓臂调节器改变这一槽位的功能定位。"
+				"&b适合：安装在“弓体”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bow"
+				tag: {
+					Damage: 0
+					id: "1cb69959-b58b-5dfb-8804-1fd4acd7cbc0"
+					"modular_mmt_bow/basic_string_material": "basic_string/string"
+					"modular_mmt_bow/riser": "modular_mmt_bow/adjustable_strength"
+					"modular_mmt_bow/stave": "modular_mmt_bow/straight_stave"
+					"modular_mmt_bow/straight_stave_material": "straight_stave/stick"
+					"modular_mmt_bow/string": "modular_mmt_bow/basic_string"
+				}
+			}
+			id: "4BEF2DE5B4C44744"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "7C9AF350E7ABB6D4"
+				title: "阅读弓臂调节器"
+				type: "checkmark"
+			}]
+			title: "弓臂调节器"
+			x: -6.08d
+			y: -11.7d
+		}
+		{
+			dependencies: ["67FE6996B7AD04ED"]
+			description: [
+				"&e用途：扩展箭台允许一次射出多支箭。"
+				"&b适合：安装在“弓体”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bow"
+				tag: {
+					Damage: 0
+					id: "df21857c-d7d7-5982-8ff8-15926c3a6fb5"
+					"modular_mmt_bow/basic_string_material": "basic_string/string"
+					"modular_mmt_bow/extended_rest_material": "extended_rest/oak"
+					"modular_mmt_bow/riser": "modular_mmt_bow/extended_rest"
+					"modular_mmt_bow/stave": "modular_mmt_bow/straight_stave"
+					"modular_mmt_bow/straight_stave_material": "straight_stave/stick"
+					"modular_mmt_bow/string": "modular_mmt_bow/basic_string"
+				}
+			}
+			id: "09D5DADFD2738B03"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "7E0BE904FBFA0CB4"
+				title: "阅读扩展箭台"
+				type: "checkmark"
+			}]
+			title: "扩展箭台"
+			x: -3.73d
+			y: -11.7d
+		}
+		{
+			dependencies: ["67FE6996B7AD04ED"]
+			description: [
+				"&e用途：瞄具能够在使用弓时看得更远。"
+				"&b适合：安装在“弓体”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bow"
+				tag: {
+					Damage: 0
+					id: "69d233ad-fc31-5b44-abec-6d08ce9529ca"
+					"modular_mmt_bow/basic_string_material": "basic_string/string"
+					"modular_mmt_bow/riser": "modular_mmt_bow/sights"
+					"modular_mmt_bow/sights_material": "sights/oak"
+					"modular_mmt_bow/stave": "modular_mmt_bow/straight_stave"
+					"modular_mmt_bow/straight_stave_material": "straight_stave/stick"
+					"modular_mmt_bow/string": "modular_mmt_bow/basic_string"
+				}
+			}
+			id: "1EA47A62EE71F55C"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "7602E5B2DF7498F8"
+				title: "阅读瞄具"
+				type: "checkmark"
+			}]
+			title: "瞄具"
+			x: -6.08d
+			y: -13.8d
+		}
+		{
+			dependencies: ["67FE6996B7AD04ED"]
+			description: [
+				"&e用途：稳定器增加射出弹射物的初速度。"
+				"&b适合：安装在“弓体”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bow"
+				tag: {
+					Damage: 0
+					id: "cd74715d-f0b6-5429-a837-6efd51ca7ad1"
+					"modular_mmt_bow/basic_string_material": "basic_string/string"
+					"modular_mmt_bow/riser": "modular_mmt_bow/stabilizer"
+					"modular_mmt_bow/stabilizer_material": "stabilizer/oak"
+					"modular_mmt_bow/stave": "modular_mmt_bow/straight_stave"
+					"modular_mmt_bow/straight_stave_material": "straight_stave/stick"
+					"modular_mmt_bow/string": "modular_mmt_bow/basic_string"
+				}
+			}
+			id: "21ABAF3A8943F36B"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "65564CA5A97030C5"
+				title: "阅读稳定器"
+				type: "checkmark"
+			}]
+			title: "稳定器"
+			x: -3.73d
+			y: -13.8d
+		}
+		{
+			dependencies: ["773F936D08EF7E09"]
+			description: [
+				"&e用途：汇总“弓材”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bow"
+				tag: {
+					Damage: 0
+					id: "15631897-634b-5228-99ab-57e3d2094de5"
+					"modular_mmt_bow/basic_string_material": "basic_string/string"
+					"modular_mmt_bow/more_mod_tetra/apollo_bow_material": "apollo_bow/oak"
+					"modular_mmt_bow/stave": "modular_mmt_bow/more_mod_tetra/apollo_bow"
+					"modular_mmt_bow/straight_stave_material": "straight_stave/stick"
+					"modular_mmt_bow/string": "modular_mmt_bow/basic_string"
+				}
+			}
+			id: "3CA5F4A088A089D9"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "387A73919E614D66"
+				title: "阅读弓材"
+				type: "checkmark"
+			}]
+			title: "&b弓材"
+			x: 3.75d
+			y: -9.0d
+		}
+		{
+			dependencies: ["3CA5F4A088A089D9"]
+			description: [
+				"&e用途：光之弓的拉弦速度较快，并拥有可随材质属性提升的[光芒]、[多重射击]属性。"
+				"&b适合：安装在“弓材”槽位。"
+				"&d需要：精灵制弓术。"
+				"{\"text\":\"查看卷轴：精灵制弓术\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"7BA9E0B0916844DA\"}}"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bow"
+				tag: {
+					Damage: 0
+					id: "118706fb-63ff-5264-8a79-8cc54be84329"
+					"modular_mmt_bow/basic_string_material": "basic_string/string"
+					"modular_mmt_bow/more_mod_tetra/apollo_bow_material": "apollo_bow/oak"
+					"modular_mmt_bow/stave": "modular_mmt_bow/more_mod_tetra/apollo_bow"
+					"modular_mmt_bow/straight_stave_material": "straight_stave/stick"
+					"modular_mmt_bow/string": "modular_mmt_bow/basic_string"
+				}
+			}
+			id: "4C2F4C719B39639E"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "541D10F341B19A5D"
+				title: "阅读光之弓"
+				type: "checkmark"
+			}]
+			title: "光之弓"
+			x: 1.4d
+			y: -11.7d
+		}
+		{
+			dependencies: ["3CA5F4A088A089D9"]
+			description: [
+				"&e用途：可以进行近战的长弓，属性低于一般弓箭，但是可以进行特殊的弓刃改装。"
+				"&b适合：安装在“弓材”槽位。"
+				"&d需要：战国武器。"
+				"{\"text\":\"查看卷轴：战国武器\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"179BA0BFF189DE74\"}}"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bow"
+				tag: {
+					Damage: 0
+					id: "1a13acd8-27ba-5db7-8049-c313083af2ed"
+					"modular_mmt_bow/basic_string_material": "basic_string/string"
+					"modular_mmt_bow/more_mod_tetra/blade_bow_material": "blade_bow/oak"
+					"modular_mmt_bow/stave": "modular_mmt_bow/more_mod_tetra/blade_bow"
+					"modular_mmt_bow/straight_stave_material": "straight_stave/stick"
+					"modular_mmt_bow/string": "modular_mmt_bow/basic_string"
+				}
+			}
+			id: "0587B0DDD7CF7149"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "021FFA44ED8D2A1A"
+				title: "阅读刃弓"
+				type: "checkmark"
+			}]
+			title: "刃弓"
+			x: 3.75d
+			y: -11.7d
+		}
+		{
+			dependencies: ["3CA5F4A088A089D9"]
+			description: [
+				"&e用途：一根反曲弓弓材。"
+				"&b适合：安装在“弓材”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bow"
+				tag: {
+					Damage: 0
+					id: "0baea574-515c-5b24-80f4-cfcad6992a18"
+					"modular_mmt_bow/basic_string_material": "basic_string/string"
+					"modular_mmt_bow/recurve_stave_material": "recurve_stave/oak"
+					"modular_mmt_bow/stave": "modular_mmt_bow/recurve_stave"
+					"modular_mmt_bow/straight_stave_material": "straight_stave/stick"
+					"modular_mmt_bow/string": "modular_mmt_bow/basic_string"
+				}
+			}
+			id: "6607E12381CB0462"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "105AD00DEA5175A4"
+				title: "阅读反曲弓弓材"
+				type: "checkmark"
+			}]
+			title: "反曲弓弓材"
+			x: 6.1d
+			y: -11.7d
+		}
+		{
+			dependencies: ["3CA5F4A088A089D9"]
+			description: [
+				"&e用途：天之麻迦古弓拥有极强的箭矢力量，且自带的退魔、箭矢速度提升能力会随材质属性提升。"
+				"&b适合：安装在“弓材”槽位。"
+				"&d需要：精灵制弓术。"
+				"{\"text\":\"查看卷轴：精灵制弓术\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"7BA9E0B0916844DA\"}}"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bow"
+				tag: {
+					Damage: 0
+					id: "e58cdecd-0e6f-5711-8f06-3630922263d0"
+					"modular_mmt_bow/basic_string_material": "basic_string/string"
+					"modular_mmt_bow/more_mod_tetra/ama_no_mahagaki_no_yumi_material": "ama_no_mahagaki_no_yumi/oak"
+					"modular_mmt_bow/stave": "modular_mmt_bow/more_mod_tetra/ama_no_mahagaki_no_yumi"
+					"modular_mmt_bow/straight_stave_material": "straight_stave/stick"
+					"modular_mmt_bow/string": "modular_mmt_bow/basic_string"
+				}
+			}
+			id: "27CB13CB72938F31"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "08C0F94436588F1B"
+				title: "阅读天之麻迦古弓"
+				type: "checkmark"
+			}]
+			title: "天之麻迦古弓"
+			x: 1.4d
+			y: -13.8d
+		}
+		{
+			dependencies: ["3CA5F4A088A089D9"]
+			description: [
+				"&e用途：射日弓的拉弦速度与箭矢力量较普通部件均有提升，并拥有可随材质属性提升的[射日]属性。"
+				"&b适合：安装在“弓材”槽位。"
+				"&d需要：精灵制弓术。"
+				"{\"text\":\"查看卷轴：精灵制弓术\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"7BA9E0B0916844DA\"}}"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bow"
+				tag: {
+					Damage: 0
+					id: "79567df2-c2ed-58d3-a955-9c99b500b808"
+					"modular_mmt_bow/basic_string_material": "basic_string/string"
+					"modular_mmt_bow/more_mod_tetra/sun_shooting_bow_material": "sun_shooting_bow/oak"
+					"modular_mmt_bow/stave": "modular_mmt_bow/more_mod_tetra/sun_shooting_bow"
+					"modular_mmt_bow/straight_stave_material": "straight_stave/stick"
+					"modular_mmt_bow/string": "modular_mmt_bow/basic_string"
+				}
+			}
+			id: "274BFC03C0301801"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "0379D5556DEC92C0"
+				title: "阅读射日弓"
+				type: "checkmark"
+			}]
+			title: "射日弓"
+			x: 3.75d
+			y: -13.8d
+		}
+		{
+			dependencies: ["3CA5F4A088A089D9"]
+			description: [
+				"&e用途：一个层压弓臂。"
+				"&b适合：安装在“弓材”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bow"
+				tag: {
+					Damage: 0
+					id: "26844771-bf49-5670-abcd-480a8eb8ea1e"
+					"modular_mmt_bow/basic_string_material": "basic_string/string"
+					"modular_mmt_bow/laminated_stave_material": "laminated_stave/oak"
+					"modular_mmt_bow/stave": "modular_mmt_bow/laminated_stave"
+					"modular_mmt_bow/straight_stave_material": "straight_stave/stick"
+					"modular_mmt_bow/string": "modular_mmt_bow/basic_string"
+				}
+			}
+			id: "6C66E2F46BDE988C"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "26A3688F549B9785"
+				title: "阅读层压臂"
+				type: "checkmark"
+			}]
+			title: "层压臂"
+			x: 6.1d
+			y: -13.8d
+		}
+		{
+			dependencies: ["3CA5F4A088A089D9"]
+			description: [
+				"&e用途：一根直拉弓弓材。"
+				"&b适合：安装在“弓材”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bow"
+				tag: {
+					Damage: 0
+					id: "6a76650f-e48d-5255-b5f0-463ec8b36942"
+					"modular_mmt_bow/basic_string_material": "basic_string/string"
+					"modular_mmt_bow/stave": "modular_mmt_bow/straight_stave"
+					"modular_mmt_bow/straight_stave_material": "straight_stave/oak"
+					"modular_mmt_bow/string": "modular_mmt_bow/basic_string"
+				}
+			}
+			id: "0787FB233470D4F6"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "43FC4EB1BF0AD1C3"
+				title: "阅读直拉弓弓材"
+				type: "checkmark"
+			}]
+			title: "直拉弓弓材"
+			x: 1.4d
+			y: -15.9d
+		}
+		{
+			dependencies: ["3CA5F4A088A089D9"]
+			description: [
+				"&e用途：一根长弓弓材。"
+				"&b适合：安装在“弓材”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bow"
+				tag: {
+					Damage: 0
+					id: "5077d0d0-3ce0-5370-a0bc-4067e58f7ebe"
+					"modular_mmt_bow/basic_string_material": "basic_string/string"
+					"modular_mmt_bow/long_stave_material": "long_stave/oak"
+					"modular_mmt_bow/stave": "modular_mmt_bow/long_stave"
+					"modular_mmt_bow/straight_stave_material": "straight_stave/stick"
+					"modular_mmt_bow/string": "modular_mmt_bow/basic_string"
+				}
+			}
+			id: "03A752AE170E718C"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "11A39D5C73352E25"
+				title: "阅读长弓弓材"
+				type: "checkmark"
+			}]
+			title: "长弓弓材"
+			x: 3.75d
+			y: -15.9d
+		}
+		{
+			dependencies: ["773F936D08EF7E09"]
+			description: [
+				"&e用途：汇总“弓弦”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bow"
+				tag: {
+					Damage: 0
+					id: "7362767a-ea1e-5ed5-ad12-a6e8510a96d2"
+					"modular_mmt_bow/basic_string_material": "basic_string/string"
+					"modular_mmt_bow/stave": "modular_mmt_bow/straight_stave"
+					"modular_mmt_bow/straight_stave_material": "straight_stave/stick"
+					"modular_mmt_bow/string": "modular_mmt_bow/basic_string"
+				}
+			}
+			id: "3BB173BC9B0FF365"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "7586BD24FD9EA1D4"
+				title: "阅读弓弦"
+				type: "checkmark"
+			}]
+			title: "&b弓弦"
+			x: -4.9d
+			y: -18.7d
+		}
+		{
+			dependencies: ["3BB173BC9B0FF365"]
+			description: [
+				"&e用途：一根普通弓弦。"
+				"&b适合：安装在“弓弦”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_bow"
+				tag: {
+					Damage: 0
+					id: "038218d0-e345-5ca5-8384-baf101a50185"
+					"modular_mmt_bow/basic_string_material": "basic_string/string"
+					"modular_mmt_bow/stave": "modular_mmt_bow/straight_stave"
+					"modular_mmt_bow/straight_stave_material": "straight_stave/stick"
+					"modular_mmt_bow/string": "modular_mmt_bow/basic_string"
+				}
+			}
+			id: "4122F2608857A451"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "33499065F77BB3F0"
+				title: "阅读普通弓弦"
+				type: "checkmark"
+			}]
+			title: "普通弓弦"
+			x: -4.9d
+			y: -21.4d
+		}
+		{
+			dependencies: ["1C23480EDBBC9067"]
+			description: [
+				"&e用途：查看模块化弩的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_crossbow"
+				tag: {
+					Damage: 0
+					"crossbow/attachment_0": "crossbow/stirrup"
+					"crossbow/attachment_1": "crossbow/stirrup"
+					"crossbow/basic_stave_material": "basic_stave/stick"
+					"crossbow/basic_stock_material": "basic_stock/stick"
+					"crossbow/basic_string_material": "basic_string/string"
+					"crossbow/stave": "crossbow/basic_stave"
+					"crossbow/stirrup_material": "stirrup/iron"
+					"crossbow/stock": "crossbow/basic_stock"
+					"crossbow/string": "crossbow/basic_string"
+					id: "ce3a448e-4ccb-5f10-af5d-a73c70d235a0"
+				}
+			}
+			id: "5E09E41753953ADA"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "68C1DF574AC393E9"
+				title: "阅读模块化弩"
+				type: "checkmark"
+			}]
+			title: "&a模块化弩"
+			x: 19.3d
+			y: -5.0d
+		}
+		{
+			dependencies: ["5E09E41753953ADA"]
+			description: [
+				"&e用途：汇总“附件”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_crossbow"
+				tag: {
+					Damage: 0
+					"crossbow/attachment_0": "crossbow/more_mod_tetra/accelerator"
+					"crossbow/attachment_1": "crossbow/more_mod_tetra/accelerator"
+					"crossbow/basic_stave_material": "basic_stave/stick"
+					"crossbow/basic_stock_material": "basic_stock/stick"
+					"crossbow/basic_string_material": "basic_string/string"
+					"crossbow/more_mod_tetra/accelerator_material": "accelerator/iron"
+					"crossbow/stave": "crossbow/basic_stave"
+					"crossbow/stirrup_material": "stirrup/iron"
+					"crossbow/stock": "crossbow/basic_stock"
+					"crossbow/string": "crossbow/basic_string"
+					id: "c48d05dd-af6f-5d32-b86e-8eeb5eb716af"
+				}
+			}
+			id: "0CE1E8FBB2F1548D"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "627C50F1C62291C4"
+				title: "阅读附件"
+				type: "checkmark"
+			}]
+			title: "&b附件"
+			x: 14.4d
+			y: -9.0d
+		}
+		{
+			dependencies: ["0CE1E8FBB2F1548D"]
+			description: [
+				"&e用途：弩箭加速器可以为弩射出的箭矢提升飞行速度。"
+				"&b适合：安装在“附件”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_crossbow"
+				tag: {
+					Damage: 0
+					"crossbow/attachment_0": "crossbow/more_mod_tetra/accelerator"
+					"crossbow/attachment_1": "crossbow/more_mod_tetra/accelerator"
+					"crossbow/basic_stave_material": "basic_stave/stick"
+					"crossbow/basic_stock_material": "basic_stock/stick"
+					"crossbow/basic_string_material": "basic_string/string"
+					"crossbow/more_mod_tetra/accelerator_material": "accelerator/iron"
+					"crossbow/stave": "crossbow/basic_stave"
+					"crossbow/stirrup_material": "stirrup/iron"
+					"crossbow/stock": "crossbow/basic_stock"
+					"crossbow/string": "crossbow/basic_string"
+					id: "7c6231f2-7975-5c43-97b6-4e59520457d5"
+				}
+			}
+			id: "1AC172FA9E6C79A9"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "31FC66F2AE98DBAA"
+				title: "阅读弩箭加速器"
+				type: "checkmark"
+			}]
+			title: "弩箭加速器"
+			x: 13.22d
+			y: -11.7d
+		}
+		{
+			dependencies: ["0CE1E8FBB2F1548D"]
+			description: [
+				"&e用途：散射弩箭台可以为弩提供多重射击能力。"
+				"&b适合：安装在“附件”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_crossbow"
+				tag: {
+					Damage: 0
+					"crossbow/attachment_0": "crossbow/more_mod_tetra/diffusion_rest"
+					"crossbow/attachment_1": "crossbow/more_mod_tetra/diffusion_rest"
+					"crossbow/basic_stave_material": "basic_stave/stick"
+					"crossbow/basic_stock_material": "basic_stock/stick"
+					"crossbow/basic_string_material": "basic_string/string"
+					"crossbow/more_mod_tetra/diffusion_rest_material": "diffusion_rest/iron"
+					"crossbow/stave": "crossbow/basic_stave"
+					"crossbow/stirrup_material": "stirrup/iron"
+					"crossbow/stock": "crossbow/basic_stock"
+					"crossbow/string": "crossbow/basic_string"
+					id: "a448edae-676e-57cc-86e6-046cea22b7bc"
+				}
+			}
+			id: "12724E3FC7775208"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "51B08CCAAF76A09B"
+				title: "阅读散射弩箭台"
+				type: "checkmark"
+			}]
+			title: "散射弩箭台"
+			x: 15.57d
+			y: -11.7d
+		}
+		{
+			dependencies: ["0CE1E8FBB2F1548D"]
+			description: [
+				"&e用途：一个安装在弩前端的踏环。"
+				"&b适合：安装在“附件”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_crossbow"
+				tag: {
+					Damage: 0
+					"crossbow/attachment_0": "crossbow/stirrup"
+					"crossbow/attachment_1": "crossbow/stirrup"
+					"crossbow/basic_stave_material": "basic_stave/stick"
+					"crossbow/basic_stock_material": "basic_stock/stick"
+					"crossbow/basic_string_material": "basic_string/string"
+					"crossbow/stave": "crossbow/basic_stave"
+					"crossbow/stirrup_material": "stirrup/iron"
+					"crossbow/stock": "crossbow/basic_stock"
+					"crossbow/string": "crossbow/basic_string"
+					id: "8642f258-f3bb-5755-8734-5225fd9563a1"
+				}
+			}
+			id: "2551A3C37DBAC694"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "35514CA9865F369A"
+				title: "阅读踏环"
+				type: "checkmark"
+			}]
+			title: "踏环"
+			x: 13.22d
+			y: -13.8d
+		}
+		{
+			dependencies: ["5E09E41753953ADA"]
+			description: [
+				"&e用途：汇总“弓材”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_crossbow"
+				tag: {
+					Damage: 0
+					"crossbow/attachment_0": "crossbow/stirrup"
+					"crossbow/attachment_1": "crossbow/stirrup"
+					"crossbow/basic_stave_material": "basic_stave/stick"
+					"crossbow/basic_stock_material": "basic_stock/stick"
+					"crossbow/basic_string_material": "basic_string/string"
+					"crossbow/more_mod_tetra/apollo_crossbow_material": "apollo_crossbow/oak"
+					"crossbow/stave": "crossbow/more_mod_tetra/apollo_crossbow"
+					"crossbow/stirrup_material": "stirrup/iron"
+					"crossbow/stock": "crossbow/basic_stock"
+					"crossbow/string": "crossbow/basic_string"
+					id: "5d2ceac8-b2ce-5074-9abc-ae21cb890a9b"
+				}
+			}
+			id: "637B9EC227C75DD9"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "69D88A264CB667D2"
+				title: "阅读弓材"
+				type: "checkmark"
+			}]
+			title: "&b弓材"
+			x: 23.05d
+			y: -9.0d
+		}
+		{
+			dependencies: ["637B9EC227C75DD9"]
+			description: [
+				"&e用途：光之弩的拉弦速度较快，并拥有可随材质属性提升的[光芒]、[多重射击]属性。"
+				"&b适合：安装在“弓材”槽位。"
+				"&d需要：精灵制弓术。"
+				"{\"text\":\"查看卷轴：精灵制弓术\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"7BA9E0B0916844DA\"}}"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_crossbow"
+				tag: {
+					Damage: 0
+					"crossbow/attachment_0": "crossbow/stirrup"
+					"crossbow/attachment_1": "crossbow/stirrup"
+					"crossbow/basic_stave_material": "basic_stave/stick"
+					"crossbow/basic_stock_material": "basic_stock/stick"
+					"crossbow/basic_string_material": "basic_string/string"
+					"crossbow/more_mod_tetra/apollo_crossbow_material": "apollo_crossbow/oak"
+					"crossbow/stave": "crossbow/more_mod_tetra/apollo_crossbow"
+					"crossbow/stirrup_material": "stirrup/iron"
+					"crossbow/stock": "crossbow/basic_stock"
+					"crossbow/string": "crossbow/basic_string"
+					id: "d6173ddd-8c03-5034-8746-f0527f7a1ed6"
+				}
+			}
+			id: "2DC57ECCB84ACAF7"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "03491B710141C167"
+				title: "阅读光之弩"
+				type: "checkmark"
+			}]
+			title: "光之弩"
+			x: 20.7d
+			y: -11.7d
+		}
+		{
+			dependencies: ["637B9EC227C75DD9"]
+			description: [
+				"&e用途：调整远程射击表现。"
+				"&b适合：安装在“弓材”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_crossbow"
+				tag: {
+					Damage: 0
+					"crossbow/attachment_0": "crossbow/stirrup"
+					"crossbow/attachment_1": "crossbow/stirrup"
+					"crossbow/basic_stave_material": "basic_stave/stick"
+					"crossbow/basic_stock_material": "basic_stock/stick"
+					"crossbow/basic_string_material": "basic_string/string"
+					"crossbow/more_mod_tetra/recurve_stave_material": "recurve_stave/oak"
+					"crossbow/stave": "crossbow/more_mod_tetra/recurve_stave"
+					"crossbow/stirrup_material": "stirrup/iron"
+					"crossbow/stock": "crossbow/basic_stock"
+					"crossbow/string": "crossbow/basic_string"
+					id: "e4874894-a770-5e8b-b343-784a73cd3424"
+				}
+			}
+			id: "22ACD90FEBD062CB"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "0ECB0BC6C5430963"
+				title: "阅读反曲弩臂"
+				type: "checkmark"
+			}]
+			title: "反曲弩臂"
+			x: 23.05d
+			y: -11.7d
+		}
+		{
+			dependencies: ["637B9EC227C75DD9"]
+			description: [
+				"&e用途：天之麻迦古弩拥有极强的箭矢力量，且自带的穿透、退魔、箭矢速度提升能力会随材质属性提升。"
+				"&b适合：安装在“弓材”槽位。"
+				"&d需要：精灵制弓术。"
+				"{\"text\":\"查看卷轴：精灵制弓术\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"7BA9E0B0916844DA\"}}"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_crossbow"
+				tag: {
+					Damage: 0
+					"crossbow/attachment_0": "crossbow/stirrup"
+					"crossbow/attachment_1": "crossbow/stirrup"
+					"crossbow/basic_stave_material": "basic_stave/stick"
+					"crossbow/basic_stock_material": "basic_stock/stick"
+					"crossbow/basic_string_material": "basic_string/string"
+					"crossbow/more_mod_tetra/ama_no_mahagaki_no_yumi_material": "ama_no_mahagaki_no_yumi/oak"
+					"crossbow/stave": "crossbow/more_mod_tetra/ama_no_mahagaki_no_yumi"
+					"crossbow/stirrup_material": "stirrup/iron"
+					"crossbow/stock": "crossbow/basic_stock"
+					"crossbow/string": "crossbow/basic_string"
+					id: "9dc15ef4-d197-5c8d-885d-5c61e9bdb2bc"
+				}
+			}
+			id: "31C0FEEA6E1B2333"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "0000E865FBFA087A"
+				title: "阅读天之麻迦古弩"
+				type: "checkmark"
+			}]
+			title: "天之麻迦古弩"
+			x: 25.4d
+			y: -11.7d
+		}
+		{
+			dependencies: ["637B9EC227C75DD9"]
+			description: [
+				"&e用途：射日弩的拉弦速度与箭矢力量较普通部件均有提升，并拥有可随材质属性提升的[射日]属性。"
+				"&b适合：安装在“弓材”槽位。"
+				"&d需要：精灵制弓术。"
+				"{\"text\":\"查看卷轴：精灵制弓术\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"7BA9E0B0916844DA\"}}"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_crossbow"
+				tag: {
+					Damage: 0
+					"crossbow/attachment_0": "crossbow/stirrup"
+					"crossbow/attachment_1": "crossbow/stirrup"
+					"crossbow/basic_stave_material": "basic_stave/stick"
+					"crossbow/basic_stock_material": "basic_stock/stick"
+					"crossbow/basic_string_material": "basic_string/string"
+					"crossbow/more_mod_tetra/sun_shooting_crossbow_material": "sun_shooting_crossbow/oak"
+					"crossbow/stave": "crossbow/more_mod_tetra/sun_shooting_crossbow"
+					"crossbow/stirrup_material": "stirrup/iron"
+					"crossbow/stock": "crossbow/basic_stock"
+					"crossbow/string": "crossbow/basic_string"
+					id: "ba5d7d5e-1535-510b-ba9a-13029a09baa1"
+				}
+			}
+			id: "4DF5F8C0EE835385"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "6BC05AECA9E49AA0"
+				title: "阅读射日弩"
+				type: "checkmark"
+			}]
+			title: "射日弩"
+			x: 20.7d
+			y: -13.8d
+		}
+		{
+			dependencies: ["637B9EC227C75DD9"]
+			description: [
+				"&e用途：一个基础的弓材。"
+				"&b适合：安装在“弓材”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_crossbow"
+				tag: {
+					Damage: 0
+					"crossbow/attachment_0": "crossbow/stirrup"
+					"crossbow/attachment_1": "crossbow/stirrup"
+					"crossbow/basic_stave_material": "basic_stave/oak"
+					"crossbow/basic_stock_material": "basic_stock/stick"
+					"crossbow/basic_string_material": "basic_string/string"
+					"crossbow/stave": "crossbow/basic_stave"
+					"crossbow/stirrup_material": "stirrup/iron"
+					"crossbow/stock": "crossbow/basic_stock"
+					"crossbow/string": "crossbow/basic_string"
+					id: "fce1361b-9f70-596b-b2f9-8dcc51832db6"
+				}
+			}
+			id: "60AAC8D0326C7270"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "6B6C38ADA748E70B"
+				title: "阅读直拉弓弓材"
+				type: "checkmark"
+			}]
+			title: "直拉弓弓材"
+			x: 23.05d
+			y: -13.8d
+		}
+		{
+			dependencies: ["637B9EC227C75DD9"]
+			description: [
+				"&e用途：调整远程射击表现。"
+				"&b适合：安装在“弓材”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_crossbow"
+				tag: {
+					Damage: 0
+					"crossbow/attachment_0": "crossbow/stirrup"
+					"crossbow/attachment_1": "crossbow/stirrup"
+					"crossbow/basic_stave_material": "basic_stave/stick"
+					"crossbow/basic_stock_material": "basic_stock/stick"
+					"crossbow/basic_string_material": "basic_string/string"
+					"crossbow/more_mod_tetra/long_stave_material": "long_stave/oak"
+					"crossbow/stave": "crossbow/more_mod_tetra/long_stave"
+					"crossbow/stirrup_material": "stirrup/iron"
+					"crossbow/stock": "crossbow/basic_stock"
+					"crossbow/string": "crossbow/basic_string"
+					id: "37bb814f-1724-5d79-ab3a-a954b2ccc43e"
+				}
+			}
+			id: "01272760845582F9"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "2F8084D7836DBF2F"
+				title: "阅读长弩臂"
+				type: "checkmark"
+			}]
+			title: "长弩臂"
+			x: 25.4d
+			y: -13.8d
+		}
+		{
+			dependencies: ["5E09E41753953ADA"]
+			description: [
+				"&e用途：汇总“弩身”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_crossbow"
+				tag: {
+					Damage: 0
+					"crossbow/attachment_0": "crossbow/stirrup"
+					"crossbow/attachment_1": "crossbow/stirrup"
+					"crossbow/basic_stave_material": "basic_stave/stick"
+					"crossbow/basic_stock_material": "basic_stock/oak"
+					"crossbow/basic_string_material": "basic_string/string"
+					"crossbow/stave": "crossbow/basic_stave"
+					"crossbow/stirrup_material": "stirrup/iron"
+					"crossbow/stock": "crossbow/basic_stock"
+					"crossbow/string": "crossbow/basic_string"
+					id: "8ae5bb69-1bb1-5cbf-a929-f6c22a22b0c6"
+				}
+			}
+			id: "7325DF2E393482D0"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "0B0FA971083285F8"
+				title: "阅读弩身"
+				type: "checkmark"
+			}]
+			title: "&b弩身"
+			x: 14.4d
+			y: -18.7d
+		}
+		{
+			dependencies: ["7325DF2E393482D0"]
+			description: [
+				"&e用途：一个基础的弩身。"
+				"&b适合：安装在“弩身”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_crossbow"
+				tag: {
+					Damage: 0
+					"crossbow/attachment_0": "crossbow/stirrup"
+					"crossbow/attachment_1": "crossbow/stirrup"
+					"crossbow/basic_stave_material": "basic_stave/stick"
+					"crossbow/basic_stock_material": "basic_stock/oak"
+					"crossbow/basic_string_material": "basic_string/string"
+					"crossbow/stave": "crossbow/basic_stave"
+					"crossbow/stirrup_material": "stirrup/iron"
+					"crossbow/stock": "crossbow/basic_stock"
+					"crossbow/string": "crossbow/basic_string"
+					id: "c032d15c-c16c-53dd-a091-5275a503b56b"
+				}
+			}
+			id: "5F7198167A88C4BF"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "04AF69B2A1427935"
+				title: "阅读基础弩身"
+				type: "checkmark"
+			}]
+			title: "基础弩身"
+			x: 13.22d
+			y: -21.4d
+		}
+		{
+			dependencies: ["7325DF2E393482D0"]
+			description: [
+				"&e用途：狙击弩座拥有更强的拉弓力量，且可以使用平面稳定器进行额外改进，获取箭矢无视重力的能力并提升…。"
+				"&b适合：安装在“弩身”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_crossbow"
+				tag: {
+					Damage: 0
+					"crossbow/attachment_0": "crossbow/stirrup"
+					"crossbow/attachment_1": "crossbow/stirrup"
+					"crossbow/basic_stave_material": "basic_stave/stick"
+					"crossbow/basic_stock_material": "basic_stock/stick"
+					"crossbow/basic_string_material": "basic_string/string"
+					"crossbow/more_mod_tetra/snipe_stock_material": "snipe_stock/oak"
+					"crossbow/stave": "crossbow/basic_stave"
+					"crossbow/stirrup_material": "stirrup/iron"
+					"crossbow/stock": "crossbow/more_mod_tetra/snipe_stock"
+					"crossbow/string": "crossbow/basic_string"
+					id: "aa5e31ee-7f30-56a5-a35d-3f7d6b1761cc"
+				}
+			}
+			id: "7D3DF0794651FEDE"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "1D141383A78EFE71"
+				title: "阅读狙击弩座"
+				type: "checkmark"
+			}]
+			title: "狙击弩座"
+			x: 15.57d
+			y: -21.4d
+		}
+		{
+			dependencies: ["7325DF2E393482D0"]
+			description: [
+				"&e用途：连发弩座比普通弩座有着更快的拉弓速度，且可以使用快卸销进行额外改进提升拉弓速度。"
+				"&b适合：安装在“弩身”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_crossbow"
+				tag: {
+					Damage: 0
+					"crossbow/attachment_0": "crossbow/stirrup"
+					"crossbow/attachment_1": "crossbow/stirrup"
+					"crossbow/basic_stave_material": "basic_stave/stick"
+					"crossbow/basic_stock_material": "basic_stock/stick"
+					"crossbow/basic_string_material": "basic_string/string"
+					"crossbow/more_mod_tetra/submachine_stock_material": "submachine_stock/oak"
+					"crossbow/stave": "crossbow/basic_stave"
+					"crossbow/stirrup_material": "stirrup/iron"
+					"crossbow/stock": "crossbow/more_mod_tetra/submachine_stock"
+					"crossbow/string": "crossbow/basic_string"
+					id: "b08c34ae-bba8-5efe-8c73-abe784cc89b0"
+				}
+			}
+			id: "318401DECDE7EB69"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "4ADE4137A1F5F316"
+				title: "阅读连发弩座"
+				type: "checkmark"
+			}]
+			title: "连发弩座"
+			x: 13.22d
+			y: -23.5d
+		}
+		{
+			dependencies: ["5E09E41753953ADA"]
+			description: [
+				"&e用途：汇总“弓弦”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_crossbow"
+				tag: {
+					Damage: 0
+					"crossbow/attachment_0": "crossbow/stirrup"
+					"crossbow/attachment_1": "crossbow/stirrup"
+					"crossbow/basic_stave_material": "basic_stave/stick"
+					"crossbow/basic_stock_material": "basic_stock/stick"
+					"crossbow/basic_string_material": "basic_string/string"
+					"crossbow/stave": "crossbow/basic_stave"
+					"crossbow/stirrup_material": "stirrup/iron"
+					"crossbow/stock": "crossbow/basic_stock"
+					"crossbow/string": "crossbow/basic_string"
+					id: "5882b63c-09ae-5c76-9fb9-d7e217bdad45"
+				}
+			}
+			id: "5036F63A87C678EE"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "545F119C81C6B52A"
+				title: "阅读弓弦"
+				type: "checkmark"
+			}]
+			title: "&b弓弦"
+			x: 23.05d
+			y: -18.7d
+		}
+		{
+			dependencies: ["5036F63A87C678EE"]
+			description: [
+				"&e用途：一根普通弓弦。"
+				"&b适合：安装在“弓弦”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_crossbow"
+				tag: {
+					Damage: 0
+					"crossbow/attachment_0": "crossbow/stirrup"
+					"crossbow/attachment_1": "crossbow/stirrup"
+					"crossbow/basic_stave_material": "basic_stave/stick"
+					"crossbow/basic_stock_material": "basic_stock/stick"
+					"crossbow/basic_string_material": "basic_string/string"
+					"crossbow/stave": "crossbow/basic_stave"
+					"crossbow/stirrup_material": "stirrup/iron"
+					"crossbow/stock": "crossbow/basic_stock"
+					"crossbow/string": "crossbow/basic_string"
+					id: "a21e7884-3547-5124-9dd1-ac2a0c26e70a"
+				}
+			}
+			id: "0896B768979B1BE4"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "2DE48A2581E3B2C3"
+				title: "阅读普通弓弦"
+				type: "checkmark"
+			}]
+			title: "普通弓弦"
+			x: 23.05d
+			y: -21.4d
+		}
+		{
+			dependencies: ["1C23480EDBBC9067"]
+			description: [
+				"&e用途：查看模块化盾牌的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_shield"
+				tag: {
+					Damage: 0
+					id: "1b3c2669-7691-5db5-a648-3343dbbe94e5"
+					"shield/basic_grip_material": "basic_grip/iron"
+					"shield/boss": "shield/sturdy_boss"
+					"shield/grip": "shield/basic_grip"
+					"shield/plate": "shield/tower"
+					"shield/sturdy_boss_material": "sturdy_boss/iron"
+					"shield/tower_material": "tower/knightmetal"
+				}
+			}
+			id: "4065ECCC3B46A4D3"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "09F48C12A5B00800"
+				title: "阅读模块化盾牌"
+				type: "checkmark"
+			}]
+			title: "&a模块化盾牌"
+			x: -8.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["4065ECCC3B46A4D3"]
+			description: [
+				"&e用途：汇总“盾心”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_shield"
+				tag: {
+					Damage: 0
+					id: "f132b9a3-b5c6-5054-b4f9-8f37b504486d"
+					"shield/basic_grip_material": "basic_grip/iron"
+					"shield/boss": "shield/sturdy_boss"
+					"shield/grip": "shield/basic_grip"
+					"shield/plate": "shield/tower"
+					"shield/sturdy_boss_material": "sturdy_boss/iron"
+					"shield/tower_material": "tower/knightmetal"
+				}
+			}
+			id: "4FA3458D70BC2025"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "24596A85D43F1CAE"
+				title: "阅读盾心"
+				type: "checkmark"
+			}]
+			title: "&b盾心"
+			x: -12.25d
+			y: 9.0d
+		}
+		{
+			dependencies: ["4FA3458D70BC2025"]
+			description: [
+				"&e用途：一个坚固的盾心，允许用盾猛击其他生物。"
+				"&b适合：安装在“盾心”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_shield"
+				tag: {
+					Damage: 0
+					id: "23fce7d9-dd28-5656-923f-aaa463fe9e7d"
+					"shield/basic_grip_material": "basic_grip/iron"
+					"shield/boss": "shield/sturdy_boss"
+					"shield/grip": "shield/basic_grip"
+					"shield/plate": "shield/tower"
+					"shield/sturdy_boss_material": "sturdy_boss/iron"
+					"shield/tower_material": "tower/knightmetal"
+				}
+			}
+			id: "7654AE20404D4167"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "0DD15505EF593B75"
+				title: "阅读坚固盾心"
+				type: "checkmark"
+			}]
+			title: "坚固盾心"
+			x: -13.43d
+			y: 11.7d
+		}
+		{
+			dependencies: ["4FA3458D70BC2025"]
+			description: [
+				"&e用途：一个尖刺，防御近战攻击时有概率伤害攻击者。"
+				"&b适合：安装在“盾心”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_shield"
+				tag: {
+					Damage: 0
+					id: "ed039f7c-e830-56da-a70a-fd6c27167550"
+					"shield/basic_grip_material": "basic_grip/iron"
+					"shield/boss": "shield/spike"
+					"shield/grip": "shield/basic_grip"
+					"shield/plate": "shield/tower"
+					"shield/spike_material": "spike/iron"
+					"shield/sturdy_boss_material": "sturdy_boss/iron"
+					"shield/tower_material": "tower/knightmetal"
+				}
+			}
+			id: "7F861DCE392BF465"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "6D95FDBE66F946D5"
+				title: "阅读尖刺"
+				type: "checkmark"
+			}]
+			title: "尖刺"
+			x: -11.07d
+			y: 11.7d
+		}
+		{
+			dependencies: ["4065ECCC3B46A4D3"]
+			description: [
+				"&e用途：汇总“握把”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_shield"
+				tag: {
+					Damage: 0
+					id: "d56137ef-9aec-5e46-8116-b2054b221303"
+					"shield/basic_grip_material": "basic_grip/oak"
+					"shield/boss": "shield/sturdy_boss"
+					"shield/grip": "shield/basic_grip"
+					"shield/plate": "shield/tower"
+					"shield/sturdy_boss_material": "sturdy_boss/iron"
+					"shield/tower_material": "tower/knightmetal"
+				}
+			}
+			id: "546AFB626244EA88"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "61DBD1DC6120569C"
+				title: "阅读握把"
+				type: "checkmark"
+			}]
+			title: "&b握把"
+			x: -4.75d
+			y: 9.0d
+		}
+		{
+			dependencies: ["546AFB626244EA88"]
+			description: [
+				"&e用途：一个基础握把。"
+				"&b适合：安装在“握把”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_shield"
+				tag: {
+					Damage: 0
+					id: "39b4ab18-6b0c-5559-ba8f-0b48d10a59b3"
+					"shield/basic_grip_material": "basic_grip/oak"
+					"shield/boss": "shield/sturdy_boss"
+					"shield/grip": "shield/basic_grip"
+					"shield/plate": "shield/tower"
+					"shield/sturdy_boss_material": "sturdy_boss/iron"
+					"shield/tower_material": "tower/knightmetal"
+				}
+			}
+			id: "310320E9CF1F685F"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "57BCF6682B6253A1"
+				title: "阅读基础握把"
+				type: "checkmark"
+			}]
+			title: "基础握把"
+			x: -5.92d
+			y: 11.7d
+		}
+		{
+			dependencies: ["546AFB626244EA88"]
+			description: [
+				"&e用途：使用绑带举盾。"
+				"&b适合：安装在“握把”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_shield"
+				tag: {
+					Damage: 0
+					id: "c09fb21d-e8b2-53e4-958b-474c9b83d278"
+					"shield/basic_grip_material": "basic_grip/iron"
+					"shield/boss": "shield/sturdy_boss"
+					"shield/grip": "shield/straps"
+					"shield/plate": "shield/tower"
+					"shield/straps_material": "straps/string"
+					"shield/sturdy_boss_material": "sturdy_boss/iron"
+					"shield/tower_material": "tower/knightmetal"
+				}
+			}
+			id: "09B2BB8F078389B8"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "3854A5855D17B4FB"
+				title: "阅读绑带"
+				type: "checkmark"
+			}]
+			title: "绑带"
+			x: -3.58d
+			y: 11.7d
+		}
+		{
+			dependencies: ["4065ECCC3B46A4D3"]
+			description: [
+				"&e用途：汇总“盾面”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_shield"
+				tag: {
+					Damage: 0
+					id: "bd967050-1bda-5104-abf0-8ac2d8bc77dd"
+					"shield/basic_grip_material": "basic_grip/iron"
+					"shield/boss": "shield/sturdy_boss"
+					"shield/grip": "shield/basic_grip"
+					"shield/plate": "shield/tower"
+					"shield/sturdy_boss_material": "sturdy_boss/iron"
+					"shield/tower_material": "tower/oak"
+				}
+			}
+			id: "2FE226342C2D5DF1"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "018F64917DE41CD3"
+				title: "阅读盾面"
+				type: "checkmark"
+			}]
+			title: "&b盾面"
+			x: -12.25d
+			y: 16.6d
+		}
+		{
+			dependencies: ["2FE226342C2D5DF1"]
+			description: [
+				"&e用途：一面可以不冷却一直防御下去的塔盾。"
+				"&b适合：安装在“盾面”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_shield"
+				tag: {
+					Damage: 0
+					id: "7b3ab88b-632a-5521-b2d9-6f642025b3d9"
+					"shield/basic_grip_material": "basic_grip/iron"
+					"shield/boss": "shield/sturdy_boss"
+					"shield/grip": "shield/basic_grip"
+					"shield/plate": "shield/tower"
+					"shield/sturdy_boss_material": "sturdy_boss/iron"
+					"shield/tower_material": "tower/oak"
+				}
+			}
+			id: "2F4E71E553F0F7AF"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "4060E7E17D651D77"
+				title: "阅读塔盾盾面"
+				type: "checkmark"
+			}]
+			title: "塔盾盾面"
+			x: -13.43d
+			y: 19.3d
+		}
+		{
+			dependencies: ["2FE226342C2D5DF1"]
+			description: [
+				"&e用途：小圆盾是小型盾牌。"
+				"&b适合：安装在“盾面”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_shield"
+				tag: {
+					Damage: 0
+					id: "e1280276-e6c2-54d9-a530-ec5366348b8f"
+					"shield/basic_grip_material": "basic_grip/iron"
+					"shield/boss": "shield/sturdy_boss"
+					"shield/buckler_material": "buckler/oak"
+					"shield/grip": "shield/basic_grip"
+					"shield/plate": "shield/buckler"
+					"shield/sturdy_boss_material": "sturdy_boss/iron"
+					"shield/tower_material": "tower/knightmetal"
+				}
+			}
+			id: "1AEF15311062E1AD"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "26DD4B00C54FA8CC"
+				title: "阅读小圆盾盾面"
+				type: "checkmark"
+			}]
+			title: "小圆盾盾面"
+			x: -11.07d
+			y: 19.3d
+		}
+		{
+			dependencies: ["2FE226342C2D5DF1"]
+			description: [
+				"&e用途：熨斗形盾是中等尺寸的盾，在进入冷却前只能进行有限时间的防御。"
+				"&b适合：安装在“盾面”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_shield"
+				tag: {
+					Damage: 0
+					id: "76ea232c-ab84-5af9-a41f-cbce11ac0530"
+					"shield/basic_grip_material": "basic_grip/iron"
+					"shield/boss": "shield/sturdy_boss"
+					"shield/grip": "shield/basic_grip"
+					"shield/heater_material": "heater/oak"
+					"shield/plate": "shield/heater"
+					"shield/sturdy_boss_material": "sturdy_boss/iron"
+					"shield/tower_material": "tower/knightmetal"
+				}
+			}
+			id: "26B70D673171CA69"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "5E745789749962BF"
+				title: "阅读熨斗形盾盾面"
+				type: "checkmark"
+			}]
+			title: "熨斗形盾盾面"
+			x: -13.43d
+			y: 21.4d
+		}
+		{
+			dependencies: ["1C23480EDBBC9067"]
+			description: [
+				"&e用途：查看工具腰带的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_toolbelt"
+				tag: {
+					Damage: 0
+					id: "ede38afd-93c6-5ae1-8cc8-34746461077c"
+					"toolbelt/belt": "toolbelt/belt"
+					"toolbelt/belt_material": "belt/leather"
+					"toolbelt/strap": "toolbelt/strap"
+					"toolbelt/strap_material": "strap/leather"
+				}
+			}
+			id: "02AF2E48B7C38BB7"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "7A5B491C2FE407EB"
+				title: "阅读工具腰带"
+				type: "checkmark"
+			}]
+			title: "&a工具腰带"
+			x: 8.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["02AF2E48B7C38BB7"]
+			description: [
+				"&e用途：汇总“腰带”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_toolbelt"
+				tag: {
+					Damage: 0
+					id: "63797c50-2832-5340-97fd-11744c0f7c81"
+					"toolbelt/belt": "toolbelt/belt"
+					"toolbelt/belt_material": "belt/leather"
+					"toolbelt/strap": "toolbelt/strap"
+					"toolbelt/strap_material": "strap/leather"
+				}
+			}
+			id: "25D3935993A2691F"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "76BA84F064B175D2"
+				title: "阅读腰带"
+				type: "checkmark"
+			}]
+			title: "&b腰带"
+			x: 4.75d
+			y: 9.0d
+		}
+		{
+			dependencies: ["25D3935993A2691F"]
+			description: [
+				"&e用途：让工具腰带改变这一槽位的功能定位。"
+				"&b适合：安装在“腰带”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_toolbelt"
+				tag: {
+					Damage: 0
+					id: "badba0bc-61aa-578b-a9d3-7236e6019edc"
+					"toolbelt/belt": "toolbelt/belt"
+					"toolbelt/belt_material": "belt/leather"
+					"toolbelt/strap": "toolbelt/strap"
+					"toolbelt/strap_material": "strap/leather"
+				}
+			}
+			id: "784FD801AF012ABF"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "40DAD4A7B15AC0EB"
+				title: "阅读工具腰带"
+				type: "checkmark"
+			}]
+			title: "工具腰带"
+			x: 3.58d
+			y: 11.7d
+		}
+		{
+			dependencies: ["25D3935993A2691F"]
+			description: [
+				"&e用途：一种可以储存少量物品的羊毛腰带。"
+				"&b适合：安装在“腰带”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_toolbelt"
+				tag: {
+					Damage: 0
+					id: "95016255-6e3f-5947-a6b2-4922dd2ef81a"
+					"toolbelt/belt": "toolbelt/belt_wool"
+					"toolbelt/belt_material": "belt/leather"
+					"toolbelt/belt_wool_material": "belt_wool/wool"
+					"toolbelt/strap": "toolbelt/strap"
+					"toolbelt/strap_material": "strap/leather"
+				}
+			}
+			id: "064218D574A353D7"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "024D853C01654184"
+				title: "阅读羊毛饰带"
+				type: "checkmark"
+			}]
+			title: "羊毛饰带"
+			x: 5.92d
+			y: 11.7d
+		}
+		{
+			dependencies: ["02AF2E48B7C38BB7"]
+			description: [
+				"&e用途：汇总“功能模块”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_toolbelt"
+				tag: {
+					Damage: 0
+					id: "ee997ee4-4439-581f-822e-61cc05c0c854"
+					"toolbelt/belt": "toolbelt/belt"
+					"toolbelt/belt_material": "belt/leather"
+					"toolbelt/slot1": "toolbelt/booster_slot1"
+					"toolbelt/slot2": "toolbelt/booster_slot2"
+					"toolbelt/slot3": "toolbelt/booster_slot3"
+					"toolbelt/strap": "toolbelt/strap"
+					"toolbelt/strap_material": "strap/leather"
+				}
+			}
+			id: "7AD023035D706FCA"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "7E524B3858262314"
+				title: "阅读功能模块"
+				type: "checkmark"
+			}]
+			title: "&b功能模块"
+			x: 12.25d
+			y: 9.0d
+		}
+		{
+			dependencies: ["7AD023035D706FCA"]
+			description: [
+				"&e用途：一个助推单元，能够跳跃很远的距离，甚至短时间进行飞行。"
+				"&b适合：安装在“功能模块”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_toolbelt"
+				tag: {
+					Damage: 0
+					id: "4b6cfe47-31f4-5f8f-aa72-7742238f0b01"
+					"toolbelt/belt": "toolbelt/belt"
+					"toolbelt/belt_material": "belt/leather"
+					"toolbelt/slot1": "toolbelt/booster_slot1"
+					"toolbelt/slot2": "toolbelt/booster_slot2"
+					"toolbelt/slot3": "toolbelt/booster_slot3"
+					"toolbelt/strap": "toolbelt/strap"
+					"toolbelt/strap_material": "strap/leather"
+				}
+			}
+			id: "25EDFB0729058372"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "5A2B7E02F0D0B6D9"
+				title: "阅读助推器"
+				type: "checkmark"
+			}]
+			title: "助推器"
+			x: 11.07d
+			y: 11.7d
+		}
+		{
+			dependencies: ["7AD023035D706FCA"]
+			description: [
+				"&e用途：可以将实用核心一类的物品镶嵌到此处，令其在腰带上也能生效。"
+				"&b适合：安装在“功能模块”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_toolbelt"
+				tag: {
+					Damage: 0
+					id: "f096be12-f98e-5888-8564-e0be3c32322a"
+					"toolbelt/belt": "toolbelt/belt"
+					"toolbelt/belt_material": "belt/leather"
+					"toolbelt/practical_core_slot1_material": "practical_core/amethyst_radar"
+					"toolbelt/practical_core_slot2_material": "practical_core/amethyst_radar"
+					"toolbelt/practical_core_slot3_material": "practical_core/amethyst_radar"
+					"toolbelt/slot1": "toolbelt/practical_core_slot1"
+					"toolbelt/slot2": "toolbelt/practical_core_slot2"
+					"toolbelt/slot3": "toolbelt/practical_core_slot3"
+					"toolbelt/strap": "toolbelt/strap"
+					"toolbelt/strap_material": "strap/leather"
+				}
+			}
+			id: "0A27D4556E4EF1E5"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "0A56BEC6E42D2B0B"
+				title: "阅读实用核心"
+				type: "checkmark"
+			}]
+			title: "实用核心"
+			x: 13.43d
+			y: 11.7d
+		}
+		{
+			dependencies: ["7AD023035D706FCA"]
+			description: [
+				"&e用途：一个稍加施工的稳定器，可以从附近的信标或管道汲取能量，并使腰带穿戴者能在空中悬停。"
+				"&b适合：安装在“功能模块”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_toolbelt"
+				tag: {
+					Damage: 0
+					id: "23008c8c-8b02-5177-b31c-ff822d1ce68a"
+					"toolbelt/belt": "toolbelt/belt"
+					"toolbelt/belt_material": "belt/leather"
+					"toolbelt/slot1": "toolbelt/suspender_slot1"
+					"toolbelt/slot2": "toolbelt/suspender_slot2"
+					"toolbelt/slot3": "toolbelt/suspender_slot3"
+					"toolbelt/strap": "toolbelt/strap"
+					"toolbelt/strap_material": "strap/leather"
+				}
+			}
+			id: "039B39FCB372534B"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "6F948B3D779D19F3"
+				title: "阅读悬浮器"
+				type: "checkmark"
+			}]
+			title: "悬浮器"
+			x: 11.07d
+			y: 13.8d
+		}
+		{
+			dependencies: ["02AF2E48B7C38BB7"]
+			description: [
+				"&e用途：汇总“镶嵌”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_toolbelt"
+				tag: {
+					Damage: 0
+					id: "53a276e4-a324-5a05-ae32-ce3da22c3093"
+					"toolbelt/belt": "toolbelt/belt_socket"
+					"toolbelt/belt_material": "belt/leather"
+					"toolbelt/strap": "toolbelt/strap"
+					"toolbelt/strap_material": "strap/leather"
+				}
+			}
+			id: "676D98A75164FDC0"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "4515AD1F4B3A8464"
+				title: "阅读镶嵌"
+				type: "checkmark"
+			}]
+			title: "&b镶嵌"
+			x: 4.75d
+			y: 16.6d
+		}
+		{
+			dependencies: ["676D98A75164FDC0"]
+			description: [
+				"&e用途：拥有更多完整度的腰带，可以兼容魂匠升级，但需要锻造钢板才能制作。"
+				"&b适合：安装在“镶嵌”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_toolbelt"
+				tag: {
+					Damage: 0
+					id: "80d958bf-e5b2-5f60-a687-19d9ee2bcba4"
+					"toolbelt/belt": "toolbelt/belt_socket"
+					"toolbelt/belt_material": "belt/leather"
+					"toolbelt/strap": "toolbelt/strap"
+					"toolbelt/strap_material": "strap/leather"
+				}
+			}
+			id: "01DDD367D76FF5E6"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "480ABFEB2CEF31FA"
+				title: "阅读精制腰带"
+				type: "checkmark"
+			}]
+			title: "精制腰带"
+			x: 4.75d
+			y: 19.3d
+		}
+	]
+	title: "远程、防御与携行"
+}

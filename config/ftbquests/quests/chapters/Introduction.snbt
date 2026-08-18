@@ -548,7 +548,7 @@
 			]
 			shape: "pentagon"
 			size: 2.0d
-			subtitle: "{ \"text\": \"锻造之艺，就在其中\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"4B6A861104F42DC2\" } }"
+			subtitle: "{ \"text\": \"锻造之艺，就在其中\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"214BED3560F53D72\" } }"
 			tasks: [{
 				id: "77549F0D9F837A05"
 				title: "锻造大师"
@@ -951,20 +951,17 @@
 				"7429D7F92D04A8BB"
 			]
 			description: [
-				"在此介绍本包编写的&e订单系统&r。"
-				"首先，你要制作一个&e订单交付器&r，并将其放置在&e白色桌布&r上。然后，沿着本方块的&e东南西北四个方向放置桌布（最多可延申8格）&r，如下图所示。"
+				"&e订单交付器&r会在每天上午检查桌布上的订单。"
+				"把交付器放在&e白色桌布&r上，再从东、南、西、北四个方向继续铺桌布；每个方向最多 8 格。"
 				""
 				"{image:createdelight:textures/gui/order_deliverer_usage_1.png width:256 height:133 align:center}"
 				"{@pagebreak}"
-				"如何执行一个订单："
-				"首先将一个未开封的订单打开（未开封的订单目前从拍卖行获取）。放置一个&e开封后的订单&r在一个桌布上。此时其&e所在以及后方任意格桌布&r都可以&e放置任意数量&r的包裹。其会将其本体以及后方的所有桌布上的&e包裹的内容作为订单交付的物品&r，直到遇上&e另一个含有订单&r的桌布。"
-				"如果没有看懂的话，可以看下面的图："
+				"把&e开封后的订单&r放在一块桌布上，再把货物包裹放在这块桌布及其后方。遇到下一张订单时，后面的包裹会归给下一张订单。"
 				""
 				"{image:createdelight:textures/gui/order_deliverer_usage_2.png width:256 height:133 align:center}"
 				""
-				"上图列举了几种&e划分订单所用包裹&r的行为。"
 				"{@pagebreak}"
-				"在每天的某个时间点，订单会被交付，并在&e订单所在桌布处生成一个包括奖励的包裹&r，同时&4清除所有用于交付订单的包裹&r。"
+				"货物满足要求后，交付器会收走订单和货物，并在订单所在的桌布上留下奖励包裹。货物不足时，订单和包裹会保留。"
 			]
 			hide_until_deps_complete: true
 			id: "2397448B73CC8363"
@@ -1000,12 +997,13 @@
 			]
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "JEI启动！搜索甜点！制作！交付！赚钱！"
+			subtitle: "摆好桌布，放入订单和货物包裹"
 			tasks: [{
 				id: "5E11D8D40492013B"
 				item: "createdelight:order_deliverer_item"
 				type: "item"
 			}]
+			title: "订单交付器"
 			x: -6.0d
 			y: 6.0d
 		}

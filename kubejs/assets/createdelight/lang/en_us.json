@@ -8,6 +8,7 @@
   "effect.createdelight.dragon_breath_resistance.description": "Reduces ice, fire, and lightning dragon breath damage by 20% per level, up to 60%.",
   "effect.createdelight.solar_guard": "Solar Guard",
   "effect.createdelight.solar_guard.description": "Shows the shield charges stored by Tetra solar materials.",
+  "tooltip.createdelight.life_matter_source": "§7When it has quality, this designated raw material can be converted into Life Matter with a §bQuality Absorber§7 or automatically reclaimed by a §bLife Matter Extractor§7.",
 
   "tetra.material.feature.dragonfire": "dragonfire",
   "tetra.material.feature.dragonfire.tooltip": "",

@@ -1,0 +1,3433 @@
+{
+	autofocus_id: "7EA7517D5106A83E"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "Tetra_Scrolls"
+	group: "57E934AC8166BC73"
+	icon: {
+		Count: 1
+		id: "tetra:scroll_rolled"
+		tag: {
+			BlockEntityTag: {
+				data: [{
+					glyphs: [
+						3
+						8
+						1
+						4
+					]
+					intricate: 1b
+					key: "shared/titan_convergence_calamity"
+					material: 3
+					ribbon: "8B3FD6"
+					schematics: [
+						"tetra:shared/the_legend_scroll_of_strife_titan"
+						"tetra:shared/the_legend_scroll_of_death_titan"
+						"tetra:shared/the_legend_scroll_of_trickery_titan"
+					]
+				}]
+			}
+		}
+	}
+	id: "0A5DF050CC9DC44A"
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"&e用途：逐张查询当前可获取卷轴及其解锁内容。"
+				"&b使用：将卷轴放在锻造区附近供工作台读取。"
+				"&a提示：每个图标都写入真实卷轴数据、缎带与图案。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 1b
+							key: "shared/titan_convergence_calamity"
+							material: 3
+							ribbon: "8B3FD6"
+							schematics: [
+								"tetra:shared/the_legend_scroll_of_strife_titan"
+								"tetra:shared/the_legend_scroll_of_death_titan"
+								"tetra:shared/the_legend_scroll_of_trickery_titan"
+							]
+						}]
+					}
+				}
+			}
+			id: "7EA7517D5106A83E"
+			shape: "hexagon"
+			size: 3.0d
+			tasks: [{
+				id: "7EEF362526D835F8"
+				title: "阅读卷轴与锻造技艺"
+				type: "checkmark"
+			}]
+			title: "&6卷轴与锻造技艺"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7EA7517D5106A83E"]
+			description: ["&e用途：汇总原版 Tetra中的实际卷轴。"]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "axe_efficiency"
+							material: 0
+							ribbon: "2bffee"
+							schematics: ["tetra:axe_efficiency"]
+						}]
+					}
+				}
+			}
+			id: "10D31E2604B15260"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "325A9E41202516F6"
+				title: "阅读原版 Tetra"
+				type: "checkmark"
+			}]
+			title: "&a原版 Tetra"
+			x: -20.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["10D31E2604B15260"]
+			description: ["&e用途：汇总效率专著中的当前可获取卷轴。"]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "axe_efficiency"
+							material: 0
+							ribbon: "2bffee"
+							schematics: ["tetra:axe_efficiency"]
+						}]
+					}
+				}
+			}
+			id: "6A503198CCA9F1A5"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "779BD217297D9E7B"
+				title: "阅读效率专著"
+				type: "checkmark"
+			}]
+			title: "&b效率专著"
+			x: -30.9d
+			y: -9.0d
+		}
+		{
+			dependencies: ["6A503198CCA9F1A5"]
+			description: [
+				"&7使用斧工具制作或修复组件有时可能会消耗更少的材料"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "axe_efficiency"
+							material: 0
+							ribbon: "2bffee"
+							schematics: ["tetra:axe_efficiency"]
+						}]
+					}
+				}
+			}
+			id: "26A4D63C6CFE1B81"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "7E3043440E18E8D3"
+				title: "阅读斧效率"
+				type: "checkmark"
+			}]
+			title: "斧效率"
+			x: -32.07d
+			y: -11.7d
+		}
+		{
+			dependencies: ["6A503198CCA9F1A5"]
+			description: [
+				"&7使用切割刀制作或修复组件有时可能会消耗更少的材料"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "cut_efficiency"
+							material: 0
+							ribbon: "2bffee"
+							schematics: ["tetra:cut_efficiency"]
+						}]
+					}
+				}
+			}
+			id: "6FECD7D27610D0BE"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "72EF6A60265688B2"
+				title: "阅读刀效率"
+				type: "checkmark"
+			}]
+			title: "刀效率"
+			x: -29.72d
+			y: -11.7d
+		}
+		{
+			dependencies: ["6A503198CCA9F1A5"]
+			description: [
+				"&7使用锻造锤工具制作或修复组件有时可能会消耗更少的材料"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "hammer_efficiency"
+							material: 0
+							ribbon: "2bffee"
+							schematics: ["tetra:hammer_efficiency"]
+						}]
+					}
+				}
+			}
+			id: "353D5E2C5C15F205"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "4748C24898F354BD"
+				title: "阅读锤效率"
+				type: "checkmark"
+			}]
+			title: "锤效率"
+			x: -32.07d
+			y: -13.8d
+		}
+		{
+			dependencies: ["10D31E2604B15260"]
+			description: ["&e用途：汇总材料专长中的当前可获取卷轴。"]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "bone_expertise"
+							material: 0
+							ribbon: "ff6666"
+							schematics: ["tetra:bone_expertise"]
+						}]
+					}
+				}
+			}
+			id: "1E3B0362CB984020"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "1E757DE676382346"
+				title: "阅读材料专长"
+				type: "checkmark"
+			}]
+			title: "&b材料专长"
+			x: -20.0d
+			y: -9.0d
+		}
+		{
+			dependencies: ["1E3B0362CB984020"]
+			description: [
+				"&7由骨制作的主组件额外增加伤害和效率值"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "bone_expertise"
+							material: 0
+							ribbon: "ff6666"
+							schematics: ["tetra:bone_expertise"]
+						}]
+					}
+				}
+			}
+			id: "3B82942F16866F9E"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "48590562DE55790E"
+				title: "阅读骨专长"
+				type: "checkmark"
+			}]
+			title: "骨专长"
+			x: -22.35d
+			y: -11.7d
+		}
+		{
+			dependencies: ["1E3B0362CB984020"]
+			description: [
+				"&7由羊毛制作的主组件额外增加伤害和效率值"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "fabric_expertise"
+							material: 0
+							ribbon: "ff6666"
+							schematics: ["tetra:fabric_expertise"]
+						}]
+					}
+				}
+			}
+			id: "66D418504EF81E61"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "5EC449127E9D175D"
+				title: "阅读羊毛专长"
+				type: "checkmark"
+			}]
+			title: "羊毛专长"
+			x: -20.0d
+			y: -11.7d
+		}
+		{
+			dependencies: ["1E3B0362CB984020"]
+			description: [
+				"&7由纤维制作的主组件额外增加伤害和效率值"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "fibre_expertise"
+							material: 0
+							ribbon: "ff6666"
+							schematics: ["tetra:fibre_expertise"]
+						}]
+					}
+				}
+			}
+			id: "215D22BAAAA60CDD"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "52A59B7E12AC608D"
+				title: "阅读纤维专长"
+				type: "checkmark"
+			}]
+			title: "纤维专长"
+			x: -17.65d
+			y: -11.7d
+		}
+		{
+			dependencies: ["1E3B0362CB984020"]
+			description: [
+				"&7由宝石制作的主组件额外增加伤害和效率值"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "gem_expertise"
+							material: 0
+							ribbon: "ff6666"
+							schematics: ["tetra:gem_expertise"]
+						}]
+					}
+				}
+			}
+			id: "4F797FE42DBE46A1"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "76E45462D843B895"
+				title: "阅读宝石专长"
+				type: "checkmark"
+			}]
+			title: "宝石专长"
+			x: -22.35d
+			y: -13.8d
+		}
+		{
+			dependencies: ["1E3B0362CB984020"]
+			description: [
+				"&7由金属制作的主组件额外增加伤害和效率值"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "metal_expertise"
+							material: 0
+							ribbon: "ff6666"
+							schematics: ["tetra:metal_expertise"]
+						}]
+					}
+				}
+			}
+			id: "2A85785B19BE7077"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "06E68ED9805608E0"
+				title: "阅读金属专长"
+				type: "checkmark"
+			}]
+			title: "金属专长"
+			x: -20.0d
+			y: -13.8d
+		}
+		{
+			dependencies: ["1E3B0362CB984020"]
+			description: [
+				"&7由鳞制作的主组件额外增加伤害和效率值"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "scale_expertise"
+							material: 0
+							ribbon: "ff6666"
+							schematics: ["tetra:scale_expertise"]
+						}]
+					}
+				}
+			}
+			id: "0CFE4DDE0221DB74"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "74DAA43FCE533D7E"
+				title: "阅读鳞专长"
+				type: "checkmark"
+			}]
+			title: "鳞专长"
+			x: -17.65d
+			y: -13.8d
+		}
+		{
+			dependencies: ["1E3B0362CB984020"]
+			description: [
+				"&7由皮革制作的主组件额外增加伤害和效率值"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "skin_expertise"
+							material: 0
+							ribbon: "ff6666"
+							schematics: ["tetra:skin_expertise"]
+						}]
+					}
+				}
+			}
+			id: "4E39C374419B494A"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "700E46C57C0784F5"
+				title: "阅读皮革专长"
+				type: "checkmark"
+			}]
+			title: "皮革专长"
+			x: -22.35d
+			y: -15.9d
+		}
+		{
+			dependencies: ["1E3B0362CB984020"]
+			description: [
+				"&7由石制作的主组件额外增加伤害和效率值"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "stone_expertise"
+							material: 0
+							ribbon: "ff6666"
+							schematics: ["tetra:stone_expertise"]
+						}]
+					}
+				}
+			}
+			id: "143C6C1C8332F791"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "7E928D6139795357"
+				title: "阅读石专长"
+				type: "checkmark"
+			}]
+			title: "石专长"
+			x: -20.0d
+			y: -15.9d
+		}
+		{
+			dependencies: ["1E3B0362CB984020"]
+			description: [
+				"&7由木制作的主组件额外增加伤害和效率值"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "wood_expertise"
+							material: 0
+							ribbon: "ff6666"
+							schematics: ["tetra:wood_expertise"]
+						}]
+					}
+				}
+			}
+			id: "47FD08AAA49F3777"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "4C333B9EC2C3CBB8"
+				title: "阅读木专长"
+				type: "checkmark"
+			}]
+			title: "木专长"
+			x: -17.65d
+			y: -15.9d
+		}
+		{
+			dependencies: ["10D31E2604B15260"]
+			description: ["&e用途：汇总原版特殊图纸中的当前可获取卷轴。"]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							function: "tetra:scroll"
+							glyphs: [
+								8
+								9
+								10
+								5
+							]
+							intricate: 0b
+							key: "sword/howling"
+							material: 1
+							ribbon: "faf396"
+							schematics: ["tetra:sword/howling"]
+						}]
+					}
+				}
+			}
+			id: "5683FDFC7F4FFDE6"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "32A5B75A93D18E92"
+				title: "阅读原版特殊图纸"
+				type: "checkmark"
+			}]
+			title: "&b原版特殊图纸"
+			x: -9.1d
+			y: -9.0d
+		}
+		{
+			dependencies: ["5683FDFC7F4FFDE6"]
+			description: [
+				"&7特殊的图表和文字详述了如何修改剑的某些部分，这样当挥舞剑的时候，"
+				"&7剑会在持剑者周围产生一个湍流场，从而能够使弹射物偏转"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							function: "tetra:scroll"
+							glyphs: [
+								8
+								9
+								10
+								5
+							]
+							intricate: 0b
+							key: "sword/howling"
+							material: 1
+							ribbon: "faf396"
+							schematics: ["tetra:sword/howling"]
+						}]
+					}
+				}
+			}
+			id: "10F7CC82172D4D3B"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "4DC89C699225DFB9"
+				title: "阅读风啸剑刃"
+				type: "checkmark"
+			}]
+			title: "风啸剑刃"
+			x: -10.27d
+			y: -11.7d
+		}
+		{
+			dependencies: ["5683FDFC7F4FFDE6"]
+			description: [
+				"&7一种曾经普及性很高的剑的变体，但自从那种剑的护手制作工艺失传后，"
+				"&7它便演变成了现在的这一加长版本。"
+				"&7只要卡准时机，你便能用它阻挡来袭的弹射物"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							function: "tetra:scroll"
+							glyphs: [
+								3
+								2
+								2
+								1
+							]
+							intricate: 0b
+							key: "sword/sturdy_guard"
+							material: 1
+							ribbon: "bcb8b5"
+							schematics: ["tetra:sword/sturdy_guard"]
+						}]
+					}
+				}
+			}
+			id: "1486866769FDAF5B"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "194054106C65B5A6"
+				title: "阅读坚固守卫"
+				type: "checkmark"
+			}]
+			title: "坚固守卫"
+			x: -7.92d
+			y: -11.7d
+		}
+		{
+			dependencies: ["5683FDFC7F4FFDE6"]
+			description: [
+				"&7描述如何制作轻巧的飞刀"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							function: "tetra:scroll"
+							glyphs: [
+								4
+								1
+								0
+								5
+							]
+							intricate: 0b
+							key: "sword/throwing_knife"
+							material: 1
+							ribbon: "b8ced9"
+							schematics: ["tetra:sword/throwing_knife"]
+						}]
+					}
+				}
+			}
+			id: "0C089D74635DEE0E"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "69479195FB2FEB5E"
+				title: "阅读飞刀"
+				type: "checkmark"
+			}]
+			title: "飞刀"
+			x: -10.27d
+			y: -13.8d
+		}
+		{
+			dependencies: ["10D31E2604B15260"]
+			description: [
+				"&7一张附魔卷轴，可以提升组件的魔法容量"
+				"&a内容：镀金 I–V 共用这一张卷轴。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								12
+								12
+								12
+								12
+							]
+							intricate: 1b
+							key: "hone/gild_5"
+							material: 2
+							ribbon: "f2b313"
+							schematics: [
+								"tetra:hone/gild_1"
+								"tetra:hone/gild_2"
+								"tetra:hone/gild_3"
+								"tetra:hone/gild_4"
+								"tetra:hone/gild_5"
+							]
+						}]
+					}
+				}
+			}
+			id: "02DE36732BE6314B"
+			shape: "pentagon"
+			size: 2.0d
+			tasks: [{
+				id: "4B23891907CEACF5"
+				title: "阅读镀金卷轴（I–V）"
+				type: "checkmark"
+			}]
+			title: "镀金卷轴（I–V）"
+			x: -25.9d
+			y: -23.6d
+		}
+		{
+			dependencies: ["10D31E2604B15260"]
+			description: ["&e用途：汇总战争铸造中的当前可获取卷轴。"]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							details: "warforge"
+							function: "tetra:scroll"
+							glyphs: [
+								6
+								7
+								11
+								7
+							]
+							intricate: 0b
+							key: "warforge/adze"
+							material: 2
+							ribbon: "8559b3"
+							schematics: ["tetra:warforge/adze"]
+						}]
+					}
+				}
+			}
+			id: "40EF0CD299B3D511"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "31B70A48B659465D"
+				title: "阅读战争铸造"
+				type: "checkmark"
+			}]
+			title: "&b战争铸造"
+			x: -15.0d
+			y: -23.6d
+		}
+		{
+			dependencies: ["40EF0CD299B3D511"]
+			description: [
+				"&7它记录了各种强化扁斧的战斗能力的方案，能够在加工台中改进扁斧"
+				"&b使用：放置在锻造区附近后打开加工台。"
+				"{\"text\":\"返回对应工具头\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2D89C3B0D39E00EF\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							details: "warforge"
+							function: "tetra:scroll"
+							glyphs: [
+								6
+								7
+								11
+								7
+							]
+							intricate: 0b
+							key: "warforge/adze"
+							material: 2
+							ribbon: "8559b3"
+							schematics: ["tetra:warforge/adze"]
+						}]
+					}
+				}
+			}
+			id: "1A65900BEA05FCC5"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "77390E79185FD97A"
+				title: "阅读战争扁斧"
+				type: "checkmark"
+			}]
+			title: "战争扁斧"
+			x: -17.35d
+			y: -26.3d
+		}
+		{
+			dependencies: ["40EF0CD299B3D511"]
+			description: [
+				"&7它记录了各种强化斧头的战斗能力的方案，能够在加工台中改进斧头"
+				"&b使用：放置在锻造区附近后打开加工台。"
+				"{\"text\":\"返回对应工具头\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"00E39243E8CBA8C9\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							details: "warforge"
+							function: "tetra:scroll"
+							glyphs: [
+								5
+								10
+								8
+								9
+							]
+							intricate: 0b
+							key: "warforge/axe"
+							material: 2
+							ribbon: "b35973"
+							schematics: ["tetra:warforge/axe"]
+						}]
+					}
+				}
+			}
+			id: "5148787F9C7A76E0"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "0D94B84517F6D867"
+				title: "阅读战斧"
+				type: "checkmark"
+			}]
+			title: "战斧"
+			x: -15.0d
+			y: -26.3d
+		}
+		{
+			dependencies: ["40EF0CD299B3D511"]
+			description: [
+				"&7它记录了各种强化工具尾部的战斗能力的方案，能够在加工台中改进工具尾部"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							details: "warforge"
+							function: "tetra:scroll"
+							glyphs: [
+								11
+								5
+								8
+								9
+							]
+							intricate: 0b
+							key: "warforge/butt"
+							material: 2
+							ribbon: "b33636"
+							schematics: ["tetra:warforge/butt"]
+						}]
+					}
+				}
+			}
+			id: "3F1B7CF855F4B4CC"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "1D0650167939BD32"
+				title: "阅读钝尾"
+				type: "checkmark"
+			}]
+			title: "钝尾"
+			x: -12.65d
+			y: -26.3d
+		}
+		{
+			dependencies: ["40EF0CD299B3D511"]
+			description: [
+				"&7它记录了各种强化爪子的战斗能力的方案，能够在加工台中改进爪子"
+				"&b使用：放置在锻造区附近后打开加工台。"
+				"{\"text\":\"返回对应工具头\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"38A3B176616107B5\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							details: "warforge"
+							function: "tetra:scroll"
+							glyphs: [
+								8
+								10
+								5
+								11
+							]
+							intricate: 0b
+							key: "warforge/claw"
+							material: 2
+							ribbon: "1d262f"
+							schematics: ["tetra:warforge/claw"]
+						}]
+					}
+				}
+			}
+			id: "265AE0FA7109E131"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "5B98E0E64F5FDFD9"
+				title: "阅读爪"
+				type: "checkmark"
+			}]
+			title: "爪"
+			x: -17.35d
+			y: -28.4d
+		}
+		{
+			dependencies: ["40EF0CD299B3D511"]
+			description: [
+				"&7它记录了各种强化锤子的战斗能力的方案，能够在加工台中改进锤子"
+				"&b使用：放置在锻造区附近后打开加工台。"
+				"{\"text\":\"返回对应工具头\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"3EA3AB106E6F998E\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							details: "warforge"
+							function: "tetra:scroll"
+							glyphs: [
+								9
+								8
+								11
+								10
+							]
+							intricate: 0b
+							key: "warforge/hammer"
+							material: 2
+							ribbon: "3d4299"
+							schematics: ["tetra:warforge/hammer"]
+						}]
+					}
+				}
+			}
+			id: "2FFEB4006BB8ED1D"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "4D1D372C73918D1E"
+				title: "阅读战锤"
+				type: "checkmark"
+			}]
+			title: "战锤"
+			x: -15.0d
+			y: -28.4d
+		}
+		{
+			dependencies: ["40EF0CD299B3D511"]
+			description: [
+				"&7它记录了各种强化锄的战斗能力的方案，能够在加工台中改进锄"
+				"&b使用：放置在锻造区附近后打开加工台。"
+				"{\"text\":\"返回对应工具头\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"491AD37CFDC94FC5\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							details: "warforge"
+							function: "tetra:scroll"
+							glyphs: [
+								10
+								7
+								9
+								5
+							]
+							intricate: 0b
+							key: "warforge/hoe"
+							material: 2
+							ribbon: "93b350"
+							schematics: ["tetra:warforge/hoe"]
+						}]
+					}
+				}
+			}
+			id: "383D4E60C6BDB47A"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "345C9330A732BECE"
+				title: "阅读勾刀"
+				type: "checkmark"
+			}]
+			title: "勾刀"
+			x: -12.65d
+			y: -28.4d
+		}
+		{
+			dependencies: ["40EF0CD299B3D511"]
+			description: [
+				"&7它记录了各种强化镐子的战斗能力的方案，能够在加工台中改进镐子"
+				"&b使用：放置在锻造区附近后打开加工台。"
+				"{\"text\":\"返回对应工具头\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0F335FC3AF830EC6\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							details: "warforge"
+							function: "tetra:scroll"
+							glyphs: [
+								6
+								11
+								8
+								7
+							]
+							intricate: 0b
+							key: "warforge/pickaxe"
+							material: 2
+							ribbon: "508cb3"
+							schematics: ["tetra:warforge/pickaxe"]
+						}]
+					}
+				}
+			}
+			id: "20BD4E23A2641C3B"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "2C1AB0D187C1C8EE"
+				title: "阅读战镐"
+				type: "checkmark"
+			}]
+			title: "战镐"
+			x: -17.35d
+			y: -30.5d
+		}
+		{
+			dependencies: ["40EF0CD299B3D511"]
+			description: [
+				"&7它记录了各种强化镰刀的战斗能力的方案，能够在加工台中改进镰刀"
+				"&b使用：放置在锻造区附近后打开加工台。"
+				"{\"text\":\"返回对应工具头\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"1DFCAED1D2BF8D69\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							details: "warforge"
+							function: "tetra:scroll"
+							glyphs: [
+								5
+								9
+								6
+								10
+							]
+							intricate: 0b
+							key: "warforge/sickle"
+							material: 2
+							ribbon: "d99e4c"
+							schematics: ["tetra:warforge/sickle"]
+						}]
+					}
+				}
+			}
+			id: "7D633F81CD5DAA41"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "1E55EFF5D67054A4"
+				title: "阅读战争镰刀"
+				type: "checkmark"
+			}]
+			title: "战争镰刀"
+			x: -15.0d
+			y: -30.5d
+		}
+		{
+			dependencies: ["7EA7517D5106A83E"]
+			description: ["&e用途：汇总MMT 锻造技艺中的实际卷轴。"]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "mmt_curios/ancient_purification"
+							material: 2
+							ribbon: "78b35a"
+							schematics: ["createdelight:mmt_curios/ancient_purification"]
+						}]
+					}
+				}
+			}
+			id: "7AB6899FEB6EB0BB"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "77C25D9804EAD947"
+				title: "阅读MMT 锻造技艺"
+				type: "checkmark"
+			}]
+			title: "&aMMT 锻造技艺"
+			x: 20.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["7AB6899FEB6EB0BB"]
+			description: ["&e用途：汇总饰品阶段卷轴中的当前可获取卷轴。"]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "mmt_curios/ancient_purification"
+							material: 2
+							ribbon: "78b35a"
+							schematics: ["createdelight:mmt_curios/ancient_purification"]
+						}]
+					}
+				}
+			}
+			id: "67531E07A879B0FF"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "42CE9D3835E0CB08"
+				title: "阅读饰品阶段卷轴"
+				type: "checkmark"
+			}]
+			title: "&b饰品阶段卷轴"
+			x: 7.03d
+			y: -9.0d
+		}
+		{
+			dependencies: ["67531E07A879B0FF"]
+			description: [
+				"&7融合远古金属、辐射样本与秘术宝石的状态调律图谱，"
+				"&7可解锁神威十字坠饰与四套纯白光谱装备。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "mmt_curios/ancient_purification"
+							material: 2
+							ribbon: "78b35a"
+							schematics: ["createdelight:mmt_curios/ancient_purification"]
+						}]
+					}
+				}
+			}
+			id: "55D1E2CD63E32F1E"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "49E30FD011DDDF4B"
+				title: "阅读远古净化"
+				type: "checkmark"
+			}]
+			title: "远古净化"
+			x: 4.68d
+			y: -11.7d
+		}
+		{
+			dependencies: ["67531E07A879B0FF"]
+			description: [
+				"&7以终结龙锭与奇点编写的终局图谱，可解锁复仇者徽章与王者之冠。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "mmt_curios/astral_dominion"
+							material: 2
+							ribbon: "d08cff"
+							schematics: ["createdelight:mmt_curios/astral_dominion"]
+						}]
+					}
+				}
+			}
+			id: "70BB8E19BB4E73B1"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "47C5B7877E69E26C"
+				title: "阅读星界统御"
+				type: "checkmark"
+			}]
+			title: "星界统御"
+			x: 7.03d
+			y: -11.7d
+		}
+		{
+			dependencies: ["67531E07A879B0FF"]
+			description: [
+				"&7以深渊与咒魂遗物记录的不死构造，可解锁模块化不死图腾核心与外壳。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "mmt_curios/deep_relic"
+							material: 2
+							ribbon: "315d83"
+							schematics: ["createdelight:mmt_curios/deep_relic"]
+						}]
+					}
+				}
+			}
+			id: "16B6ECC56BE8A659"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "4D34215C6E04E71E"
+				title: "阅读深渊遗物"
+				type: "checkmark"
+			}]
+			title: "深渊遗物"
+			x: 9.38d
+			y: -11.7d
+		}
+		{
+			dependencies: ["67531E07A879B0FF"]
+			description: [
+				"&7以蜂王浆与蜜晶记录的守护工艺，可解锁生命、护盾与抗性饰品模块。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "mmt_curios/hive_guard"
+							material: 2
+							ribbon: "f4bf45"
+							schematics: ["createdelight:mmt_curios/hive_guard"]
+						}]
+					}
+				}
+			}
+			id: "721B61FDF7A96289"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "00DDA131C5B28DD1"
+				title: "阅读蜂巢守护"
+				type: "checkmark"
+			}]
+			title: "蜂巢守护"
+			x: 4.68d
+			y: -13.8d
+		}
+		{
+			dependencies: ["67531E07A879B0FF"]
+			description: [
+				"&7以虚空核心与月球电路编写的奥术图谱，"
+				"&7可解锁施法、冷却、奥术项链与巫师王冠模块。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "mmt_curios/lunar_arcane"
+							material: 2
+							ribbon: "9aa8ff"
+							schematics: ["createdelight:mmt_curios/lunar_arcane"]
+						}]
+					}
+				}
+			}
+			id: "3EF0F7EF83739997"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "7B06550922C2832F"
+				title: "阅读月相奥术"
+				type: "checkmark"
+			}]
+			title: "月相奥术"
+			x: 7.03d
+			y: -13.8d
+		}
+		{
+			dependencies: ["67531E07A879B0FF"]
+			description: [
+				"&7由遥感核心校准的精密饰品图谱，可解锁磁力戒指与弹射物追迹核心。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "mmt_curios/magnetic_precision"
+							material: 2
+							ribbon: "e64f9b"
+							schematics: ["createdelight:mmt_curios/magnetic_precision"]
+						}]
+					}
+				}
+			}
+			id: "5B4CB8D40A179585"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "6F1572C7766F4692"
+				title: "阅读磁场精密"
+				type: "checkmark"
+			}]
+			title: "磁场精密"
+			x: 9.38d
+			y: -13.8d
+		}
+		{
+			dependencies: ["67531E07A879B0FF"]
+			description: [
+				"&7记录火星重型锻造工艺，可解锁护心镜、生命核心与穿甲坠饰模块。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "mmt_curios/mars_guard"
+							material: 2
+							ribbon: "c85b48"
+							schematics: ["createdelight:mmt_curios/mars_guard"]
+						}]
+					}
+				}
+			}
+			id: "2B1949EAEA5799F7"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "5EB4C3823D99734E"
+				title: "阅读重装守御"
+				type: "checkmark"
+			}]
+			title: "重装守御"
+			x: 4.68d
+			y: -15.9d
+		}
+		{
+			dependencies: ["67531E07A879B0FF"]
+			description: [
+				"&7融合末影龙遗物与星际电路的徽记图谱，可解锁战士、游侠、巫师与骑士徽章。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "mmt_curios/path_emblems"
+							material: 2
+							ribbon: "b78cff"
+							schematics: ["createdelight:mmt_curios/path_emblems"]
+						}]
+					}
+				}
+			}
+			id: "6FDA30E1584BF2AD"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "22F6FE3CA85687EE"
+				title: "阅读流派徽记"
+				type: "checkmark"
+			}]
+			title: "流派徽记"
+			x: 7.03d
+			y: -15.9d
+		}
+		{
+			dependencies: ["67531E07A879B0FF"]
+			description: [
+				"&7记录斯库拉风暴中淬炼出的饰品战技，可解锁暴击、疾风与战斗手套模块。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "mmt_curios/storm_combat"
+							material: 2
+							ribbon: "62d9ff"
+							schematics: ["createdelight:mmt_curios/storm_combat"]
+						}]
+					}
+				}
+			}
+			id: "6ABDD3C44A9FD0CC"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "4BC3C0F30C9F1403"
+				title: "阅读雷鸣战技"
+				type: "checkmark"
+			}]
+			title: "雷鸣战技"
+			x: 9.38d
+			y: -15.9d
+		}
+		{
+			dependencies: ["7AB6899FEB6EB0BB"]
+			description: ["&e用途：汇总通用锻造卷轴中的当前可获取卷轴。"]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "bow/mmt_bow_improvements"
+							material: 2
+							ribbon: "33ff33"
+							schematics: ["tetra:bow/mmt_bow_improvements"]
+						}]
+					}
+				}
+			}
+			id: "3712127D8E89724F"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "0C2F4E3B86312D9C"
+				title: "阅读通用锻造卷轴"
+				type: "checkmark"
+			}]
+			title: "&b通用锻造卷轴"
+			x: 18.83d
+			y: -9.0d
+		}
+		{
+			dependencies: ["3712127D8E89724F"]
+			description: [
+				"&7上面记载了善用弓箭的神秘种族所常用的弓弩改进技术，"
+				"&7可以用于获取许多原版tetra难以获取但十分实用的属性。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "bow/mmt_bow_improvements"
+							material: 2
+							ribbon: "33ff33"
+							schematics: ["tetra:bow/mmt_bow_improvements"]
+						}]
+					}
+				}
+			}
+			id: "7BA9E0B0916844DA"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "4B9C317BEACBEFBA"
+				title: "阅读精灵制弓术"
+				type: "checkmark"
+			}]
+			title: "精灵制弓术"
+			x: 16.48d
+			y: -11.7d
+		}
+		{
+			dependencies: ["3712127D8E89724F"]
+			description: [
+				"&7上面记载了用龙血淬炼武器的技巧，并记录了将龙血与龙骨材质部件结合的方法。"
+				"&7两个操作都可以令工具拥有对巨龙更强的杀伤力。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "iceandfire/mmt_iceandfire_dragon_scroll"
+							material: 1
+							ribbon: "b2b2b2"
+							schematics: ["tetra:iceandfire/mmt_iceandfire_dragon_scroll"]
+						}]
+					}
+				}
+			}
+			id: "2B7A43D2994E46C6"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "0B129DE00C26B9C7"
+				title: "阅读龙血淬炼法"
+				type: "checkmark"
+			}]
+			title: "龙血淬炼法"
+			x: 18.83d
+			y: -11.7d
+		}
+		{
+			dependencies: ["3712127D8E89724F"]
+			description: [
+				"&7以平面稳定器为原型制作的卷轴，可以为工具在锻造时提供高质量II效果"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							details: "mmt_high_quality_scroll"
+							effects: ["tetra:mmt_high_quality_scroll"]
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "mmt_high_quality_scroll"
+							material: 0
+							ribbon: "cccccc"
+							schematics: ["tetra:mmt_high_quality_scroll"]
+						}]
+					}
+				}
+			}
+			id: "7D401B2E469F7AAB"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "4CF44008EDD4DFEE"
+				title: "阅读高质量II"
+				type: "checkmark"
+			}]
+			title: "高质量II"
+			x: 21.18d
+			y: -11.7d
+		}
+		{
+			dependencies: ["3712127D8E89724F"]
+			description: [
+				"&7以平面稳定器为原型制作的卷轴，可以为工具在锻造时提供高质量I效果，"
+				"&7两张高质量I卷轴可合成高质量II。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							details: "mmt_quality_scroll"
+							effects: ["tetra:mmt_quality_scroll"]
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "mmt_quality_scroll"
+							material: 0
+							ribbon: "b2b2b2"
+							schematics: ["tetra:mmt_quality_scroll"]
+						}]
+					}
+				}
+			}
+			id: "7E6A881983C4D323"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "42D6262BD3941750"
+				title: "阅读高质量I"
+				type: "checkmark"
+			}]
+			title: "高质量I"
+			x: 16.48d
+			y: -13.8d
+		}
+		{
+			dependencies: ["3712127D8E89724F"]
+			description: [
+				"&7上面记载了许多可以提升完整度的打磨，其似乎是来自另一个工具制造体系。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "shared/mmt_more_improvements"
+							material: 2
+							ribbon: "000000"
+							schematics: ["tetra:shared/mmt_more_improvements"]
+						}]
+					}
+				}
+			}
+			id: "615447B999DD847A"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "37A6EE0EBE84A9C1"
+				title: "阅读魂匠巧工"
+				type: "checkmark"
+			}]
+			title: "魂匠巧工"
+			x: 18.83d
+			y: -13.8d
+		}
+		{
+			dependencies: ["3712127D8E89724F"]
+			description: [
+				"&7上面记载了降低盾牌冷却的特殊打磨，且为3种盾牌分别提供了奇特的专属打磨。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "shield/mmt_shield_skill"
+							material: 2
+							ribbon: "ffffff"
+							schematics: ["tetra:shield/mmt_shield_skill"]
+						}]
+					}
+				}
+			}
+			id: "41E31FA22128254A"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "23A33872CD8254EC"
+				title: "阅读骑士盾术"
+				type: "checkmark"
+			}]
+			title: "骑士盾术"
+			x: 21.18d
+			y: -13.8d
+		}
+		{
+			dependencies: ["3712127D8E89724F"]
+			description: [
+				"&7记载了太刀、苦无。"
+				"&7胁差、薙刀、刃弓的制作方法。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "sword/mmt_katana"
+							material: 2
+							ribbon: "ffffff"
+							schematics: ["tetra:sword/mmt_katana"]
+						}]
+					}
+				}
+			}
+			id: "179BA0BFF189DE74"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "502B5B9A4894B137"
+				title: "阅读战国武器"
+				type: "checkmark"
+			}]
+			title: "战国武器"
+			x: 16.48d
+			y: -15.9d
+		}
+		{
+			dependencies: ["7AB6899FEB6EB0BB"]
+			description: ["&e用途：汇总法杖卷轴中的当前可获取卷轴。"]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "single/more_mod_tetra_iron_spell_aqua_staff"
+							material: 2
+							ribbon: "559BFB"
+							schematics: ["tetra:single/more_mod_tetra_iron_spell_aqua_staff"]
+						}]
+					}
+				}
+			}
+			id: "21BB51B8E57F1282"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "5AB42B47F1C756B1"
+				title: "阅读法杖卷轴"
+				type: "checkmark"
+			}]
+			title: "&b法杖卷轴"
+			x: 31.8d
+			y: -9.0d
+		}
+		{
+			dependencies: ["21BB51B8E57F1282"]
+			description: [
+				"&7上面记载了可以提升源流法强的特殊打磨，"
+				"&7但这种打磨与其他学派的特殊打磨冲突。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+				"{\"text\":\"返回模块化法杖\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"614F0E01A8C91444\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "single/more_mod_tetra_iron_spell_aqua_staff"
+							material: 2
+							ribbon: "559BFB"
+							schematics: ["tetra:single/more_mod_tetra_iron_spell_aqua_staff"]
+						}]
+					}
+				}
+			}
+			id: "19BBCD6D8CCA771B"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "79F441F81808A417"
+				title: "阅读源流注魔"
+				type: "checkmark"
+			}]
+			title: "源流注魔"
+			x: 28.27d
+			y: -11.7d
+		}
+		{
+			dependencies: ["21BB51B8E57F1282"]
+			description: [
+				"&7上面记载了可以提升血腥法强的特殊打磨，"
+				"&7但这种打磨与其他学派的特殊打磨冲突。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+				"{\"text\":\"返回模块化法杖\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"614F0E01A8C91444\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "single/more_mod_tetra_iron_spell_blood_staff"
+							material: 2
+							ribbon: "E77369"
+							schematics: ["tetra:single/more_mod_tetra_iron_spell_blood_staff"]
+						}]
+					}
+				}
+			}
+			id: "69A17222EF21D95B"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "2A71A61720307374"
+				title: "阅读血腥注魔"
+				type: "checkmark"
+			}]
+			title: "血腥注魔"
+			x: 30.62d
+			y: -11.7d
+		}
+		{
+			dependencies: ["21BB51B8E57F1282"]
+			description: [
+				"&7上面记载了可以提升远古法强的特殊打磨，"
+				"&7但这种打磨与其他学派的特殊打磨冲突。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+				"{\"text\":\"返回模块化法杖\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"614F0E01A8C91444\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "single/more_mod_tetra_iron_spell_eldritch_staff"
+							material: 2
+							ribbon: "05707A"
+							schematics: ["tetra:single/more_mod_tetra_iron_spell_eldritch_staff"]
+						}]
+					}
+				}
+			}
+			id: "7B528F3D13410FD2"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "5CCA4FC464BC9D4C"
+				title: "阅读邪术注魔"
+				type: "checkmark"
+			}]
+			title: "邪术注魔"
+			x: 32.98d
+			y: -11.7d
+		}
+		{
+			dependencies: ["21BB51B8E57F1282"]
+			description: [
+				"&7上面记载了可以提升末影法强的特殊打磨，"
+				"&7但这种打磨与其他学派的特殊打磨冲突。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+				"{\"text\":\"返回模块化法杖\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"614F0E01A8C91444\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "single/more_mod_tetra_iron_spell_ender_staff"
+							material: 2
+							ribbon: "B05BE3"
+							schematics: ["tetra:single/more_mod_tetra_iron_spell_ender_staff"]
+						}]
+					}
+				}
+			}
+			id: "4D03542D36003B77"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "0CE2CC37447C30DF"
+				title: "阅读末影注魔"
+				type: "checkmark"
+			}]
+			title: "末影注魔"
+			x: 35.33d
+			y: -11.7d
+		}
+		{
+			dependencies: ["21BB51B8E57F1282"]
+			description: [
+				"&7上面记载了可以提升唤魔法强的特殊打磨，"
+				"&7但这种打磨与其他学派的特殊打磨冲突。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+				"{\"text\":\"返回模块化法杖\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"614F0E01A8C91444\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "single/more_mod_tetra_iron_spell_evocation_staff"
+							material: 2
+							ribbon: "55EA62"
+							schematics: ["tetra:single/more_mod_tetra_iron_spell_evocation_staff"]
+						}]
+					}
+				}
+			}
+			id: "6EE0981796CE30C0"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "5FC6CA39F91961FE"
+				title: "阅读唤魔注魔"
+				type: "checkmark"
+			}]
+			title: "唤魔注魔"
+			x: 28.27d
+			y: -13.8d
+		}
+		{
+			dependencies: ["21BB51B8E57F1282"]
+			description: [
+				"&7上面记载了可以提升炽焰法强的特殊打磨，"
+				"&7但这种打磨与其他学派的特殊打磨冲突。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+				"{\"text\":\"返回模块化法杖\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"614F0E01A8C91444\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "single/more_mod_tetra_iron_spell_fire_staff"
+							material: 2
+							ribbon: "f94f00"
+							schematics: ["tetra:single/more_mod_tetra_iron_spell_fire_staff"]
+						}]
+					}
+				}
+			}
+			id: "33EF7E809A0B687D"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "14214BECAE4BC386"
+				title: "阅读炽焰注魔"
+				type: "checkmark"
+			}]
+			title: "炽焰注魔"
+			x: 30.62d
+			y: -13.8d
+		}
+		{
+			dependencies: ["21BB51B8E57F1282"]
+			description: [
+				"&7上面记载了可以提升神圣法强的特殊打磨，"
+				"&7但这种打磨与其他学派的特殊打磨冲突。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+				"{\"text\":\"返回模块化法杖\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"614F0E01A8C91444\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "single/more_mod_tetra_iron_spell_holy_staff"
+							material: 2
+							ribbon: "F0EF92"
+							schematics: ["tetra:single/more_mod_tetra_iron_spell_holy_staff"]
+						}]
+					}
+				}
+			}
+			id: "66A8CF7C449F1E77"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "1B11EA031F9BEAD1"
+				title: "阅读神圣注魔"
+				type: "checkmark"
+			}]
+			title: "神圣注魔"
+			x: 32.98d
+			y: -13.8d
+		}
+		{
+			dependencies: ["21BB51B8E57F1282"]
+			description: [
+				"&7上面记载了可以提升冰霜法强的特殊打磨，"
+				"&7但这种打磨与其他学派的特殊打磨冲突。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+				"{\"text\":\"返回模块化法杖\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"614F0E01A8C91444\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "single/more_mod_tetra_iron_spell_ice_staff"
+							material: 2
+							ribbon: "75F1EC"
+							schematics: ["tetra:single/more_mod_tetra_iron_spell_ice_staff"]
+						}]
+					}
+				}
+			}
+			id: "0554905D6075A8F6"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "1445FEBAB80C1EBD"
+				title: "阅读冰霜注魔"
+				type: "checkmark"
+			}]
+			title: "冰霜注魔"
+			x: 35.33d
+			y: -13.8d
+		}
+		{
+			dependencies: ["21BB51B8E57F1282"]
+			description: [
+				"&7上面记载了可以提升雷霆法强的特殊打磨，"
+				"&7但这种打磨与其他学派的特殊打磨冲突。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+				"{\"text\":\"返回模块化法杖\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"614F0E01A8C91444\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "single/more_mod_tetra_iron_spell_lightning_staff"
+							material: 2
+							ribbon: "8273E0"
+							schematics: ["tetra:single/more_mod_tetra_iron_spell_lightning_staff"]
+						}]
+					}
+				}
+			}
+			id: "6426C3DFB545D09C"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "3B020062C15565B9"
+				title: "阅读雷霆注魔"
+				type: "checkmark"
+			}]
+			title: "雷霆注魔"
+			x: 28.27d
+			y: -15.9d
+		}
+		{
+			dependencies: ["21BB51B8E57F1282"]
+			description: [
+				"&7上面记载了可以提升自然法强的特殊打磨，"
+				"&7但这种打磨与其他学派的特殊打磨冲突。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+				"{\"text\":\"返回模块化法杖\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"614F0E01A8C91444\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "single/more_mod_tetra_iron_spell_nature_staff"
+							material: 2
+							ribbon: "B0F869"
+							schematics: ["tetra:single/more_mod_tetra_iron_spell_nature_staff"]
+						}]
+					}
+				}
+			}
+			id: "681B5D324DCA9EB8"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "5C848374B04912D8"
+				title: "阅读自然注魔"
+				type: "checkmark"
+			}]
+			title: "自然注魔"
+			x: 30.62d
+			y: -15.9d
+		}
+		{
+			dependencies: ["21BB51B8E57F1282"]
+			description: [
+				"&7上面记载了法杖专属的特殊打磨，从其未写完的部分来看，"
+				"&7应该还可以针对不同法术流派进行特化。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+				"{\"text\":\"返回模块化法杖\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"614F0E01A8C91444\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "single/more_mod_tetra_iron_spell_staff"
+							material: 1
+							ribbon: "5595d6"
+							schematics: ["tetra:single/more_mod_tetra_iron_spell_staff"]
+						}]
+					}
+				}
+			}
+			id: "0431C284C7AE2F5B"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "72D912B6E76B869B"
+				title: "阅读奥术注魔"
+				type: "checkmark"
+			}]
+			title: "奥术注魔"
+			x: 32.98d
+			y: -15.9d
+		}
+		{
+			dependencies: ["7EA7517D5106A83E"]
+			description: ["&e用途：汇总泰坦与颂歌中的实际卷轴。"]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "shared/the_legend_scroll_of_law_titan"
+							material: 2
+							ribbon: "37F3FF"
+							schematics: ["tetra:shared/the_legend_scroll_of_law_titan"]
+						}]
+					}
+				}
+			}
+			id: "5C509F50D79BC3F4"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "06FC5C120C0F627C"
+				title: "阅读泰坦与颂歌"
+				type: "checkmark"
+			}]
+			title: "&a泰坦与颂歌"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["5C509F50D79BC3F4"]
+			description: ["&e用途：汇总命运组的三张泰坦卷轴。"]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "shared/the_legend_scroll_of_passage_titan"
+							material: 2
+							ribbon: "ff0000"
+							schematics: ["tetra:shared/the_legend_scroll_of_passage_titan"]
+						}]
+					}
+				}
+			}
+			id: "4F8DA294A7118B1F"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "0DA829E0C101275B"
+				title: "阅读泰坦卷轴·命运"
+				type: "checkmark"
+			}]
+			title: "&b泰坦卷轴·命运"
+			x: -18.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["4F8DA294A7118B1F"]
+			description: [
+				"&4「命运的三子」愿万径之门爱佑其身，赐予门径的理想"
+				"&7记录百界通路的锻造卷轴，可将击杀战利品送往绑定容器，"
+				"&7并提高持有者的移动与攻击速度。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "shared/the_legend_scroll_of_passage_titan"
+							material: 2
+							ribbon: "ff0000"
+							schematics: ["tetra:shared/the_legend_scroll_of_passage_titan"]
+						}]
+					}
+				}
+			}
+			id: "2E36C1313B224D87"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "21446D256716499E"
+				title: "阅读其十二·门径祝福"
+				type: "checkmark"
+			}]
+			title: "其十二·门径祝福"
+			x: -20.5d
+			y: 13.0d
+		}
+		{
+			dependencies: ["4F8DA294A7118B1F"]
+			description: [
+				"&b「执棋的君主」愿公正之秤爱佑其身，赐予律法的光辉"
+				"&7工匠自异世中与神明相弈的君王身影中获得灵感后所作之卷轴，"
+				"&7其记录了一种可以令工具根据攻击目标生命值获得增益的特殊改进。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "shared/the_legend_scroll_of_law_titan"
+							material: 2
+							ribbon: "37F3FF"
+							schematics: ["tetra:shared/the_legend_scroll_of_law_titan"]
+						}]
+					}
+				}
+			}
+			id: "758EC003D3193890"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "1B05496591FA42A7"
+				title: "阅读其十一·律法裁定"
+				type: "checkmark"
+			}]
+			title: "其十一·律法裁定"
+			x: -18.0d
+			y: 13.0d
+		}
+		{
+			dependencies: ["4F8DA294A7118B1F"]
+			description: [
+				"&d「隐秘的陌客」愿永夜之帷爱佑其身，赐予岁月的奇迹"
+				"&7一本异世中记载了万般故事的奇异书籍为原型的锻造卷轴，"
+				"&7可以为工具新增记录生命值并增伤的特殊改进。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "shared/the_legend_scroll_of_time_titan"
+							material: 2
+							ribbon: "ff33ff"
+							schematics: ["tetra:shared/the_legend_scroll_of_time_titan"]
+						}]
+					}
+				}
+			}
+			id: "776A202D5B526C55"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "18466C3F90016962"
+				title: "阅读其十·岁月铭记"
+				type: "checkmark"
+			}]
+			title: "其十·岁月铭记"
+			x: -15.5d
+			y: 13.0d
+		}
+		{
+			dependencies: [
+				"2E36C1313B224D87"
+				"758EC003D3193890"
+				"776A202D5B526C55"
+			]
+			description: [
+				"&7由门径、律法与岁月三章汇聚而成，是真我之诗的命运篇章。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 1b
+							key: "shared/titan_convergence_fate"
+							material: 3
+							ribbon: "B03060"
+							schematics: [
+								"tetra:shared/the_legend_scroll_of_passage_titan"
+								"tetra:shared/the_legend_scroll_of_law_titan"
+								"tetra:shared/the_legend_scroll_of_time_titan"
+							]
+						}]
+					}
+				}
+			}
+			id: "05B3BECB25D1BB30"
+			shape: "pentagon"
+			size: 1.9d
+			tasks: [{
+				id: "4355E58B7DD5759B"
+				title: "阅读命运三火种汇卷"
+				type: "checkmark"
+			}]
+			title: "命运三火种汇卷"
+			x: -18.0d
+			y: 18.0d
+		}
+		{
+			dependencies: ["5C509F50D79BC3F4"]
+			description: ["&e用途：汇总基石组的三张泰坦卷轴。"]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "shared/the_legend_scroll_of_sky_titan"
+							material: 2
+							ribbon: "00FF00"
+							schematics: ["tetra:shared/the_legend_scroll_of_sky_titan"]
+						}]
+					}
+				}
+			}
+			id: "1005E02CAB564BF6"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "1DB928E6732F6F2F"
+				title: "阅读泰坦卷轴·基石"
+				type: "checkmark"
+			}]
+			title: "&b泰坦卷轴·基石"
+			x: -6.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["1005E02CAB564BF6"]
+			description: [
+				"&a「摇光的医师」愿晨昏之眼爱佑其身，赐予天空的自由"
+				"&7异世天空之城所洒落晨曦中出现的密卷，可以为工具赋予治愈持有者的力量。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "shared/the_legend_scroll_of_sky_titan"
+							material: 2
+							ribbon: "00FF00"
+							schematics: ["tetra:shared/the_legend_scroll_of_sky_titan"]
+						}]
+					}
+				}
+			}
+			id: "5189B1EFA5BB4C8C"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "74874B8475E751CA"
+				title: "阅读其一·天空指引"
+				type: "checkmark"
+			}]
+			title: "其一·天空指引"
+			x: -8.5d
+			y: 13.0d
+		}
+		{
+			dependencies: ["1005E02CAB564BF6"]
+			description: [
+				"&e「腾飞的荒龙」愿磐岩之脊爱佑其身，赐予大地的坚韧"
+				"&7异世渺无边际的太古之地，腾飞的苍龙降下庇护之力，被后人记录成卷。"
+				"&7其中记载了可以为工具持有者提供伤害吸收的改进方法。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "shared/the_legend_scroll_of_earth_titan"
+							material: 2
+							ribbon: "ffff66"
+							schematics: ["tetra:shared/the_legend_scroll_of_earth_titan"]
+						}]
+					}
+				}
+			}
+			id: "4DAA32BB861F82AB"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "0C8A66FA80EE3910"
+				title: "阅读其二·大地庇护"
+				type: "checkmark"
+			}]
+			title: "其二·大地庇护"
+			x: -6.0d
+			y: 13.0d
+		}
+		{
+			dependencies: ["1005E02CAB564BF6"]
+			description: [
+				"&9「奏浪的剑骑」愿满溢之杯爱佑其身，赐予海洋的纯真"
+				"&7异世工匠途径海妖城邦后，聆听海妖之歌有感而写下的卷轴。"
+				"&7其中记载了可以为攻击目标附加多种负面效果的改进方法。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "shared/the_legend_scroll_of_ocean_titan"
+							material: 2
+							ribbon: "3333ff"
+							schematics: ["tetra:shared/the_legend_scroll_of_ocean_titan"]
+						}]
+					}
+				}
+			}
+			id: "38BEEEF140E6A07D"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "10A39C5B4A11A432"
+				title: "阅读其三·海洋回涛"
+				type: "checkmark"
+			}]
+			title: "其三·海洋回涛"
+			x: -3.5d
+			y: 13.0d
+		}
+		{
+			dependencies: [
+				"5189B1EFA5BB4C8C"
+				"4DAA32BB861F82AB"
+				"38BEEEF140E6A07D"
+			]
+			description: [
+				"&7由大地、海洋与天空三章汇聚而成，是真我之诗的基石篇章。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 1b
+							key: "shared/titan_convergence_foundation"
+							material: 3
+							ribbon: "D8B44A"
+							schematics: [
+								"tetra:shared/the_legend_scroll_of_earth_titan"
+								"tetra:shared/the_legend_scroll_of_ocean_titan"
+								"tetra:shared/the_legend_scroll_of_sky_titan"
+							]
+						}]
+					}
+				}
+			}
+			id: "76C19BDB8EDAFE1A"
+			shape: "pentagon"
+			size: 1.9d
+			tasks: [{
+				id: "1BEFA95E6AB53174"
+				title: "阅读基石三火种汇卷"
+				type: "checkmark"
+			}]
+			title: "基石三火种汇卷"
+			x: -6.0d
+			y: 18.0d
+		}
+		{
+			dependencies: ["5C509F50D79BC3F4"]
+			description: ["&e用途：汇总创世组的三张泰坦卷轴。"]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "shared/the_legend_scroll_of_romance_titan"
+							material: 2
+							ribbon: "62FF62"
+							schematics: ["tetra:shared/the_legend_scroll_of_romance_titan"]
+						}]
+					}
+				}
+			}
+			id: "376E03C861B066A7"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "6E99613DCE1BD228"
+				title: "阅读泰坦卷轴·创世"
+				type: "checkmark"
+			}]
+			title: "&b泰坦卷轴·创世"
+			x: 6.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["376E03C861B066A7"]
+			description: [
+				"&e「黄金的织者」愿黄金之茧爱佑其身，赐予浪漫的渴求"
+				"&7异世的织者将光阴织成金丝，其中散落的一缕被无名工匠所获，"
+				"&7制成可以削减敌人无敌帧的锻造书卷。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "shared/the_legend_scroll_of_romance_titan"
+							material: 2
+							ribbon: "62FF62"
+							schematics: ["tetra:shared/the_legend_scroll_of_romance_titan"]
+						}]
+					}
+				}
+			}
+			id: "3FC12639256FB454"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "762F8B874D3197BD"
+				title: "阅读其四·浪漫相伴"
+				type: "checkmark"
+			}]
+			title: "其四·浪漫相伴"
+			x: 3.5d
+			y: 13.0d
+		}
+		{
+			dependencies: ["376E03C861B066A7"]
+			description: [
+				"&6「无名的英雄」愿全世之座爱佑其身，赐予负世的意志"
+				"&7异世的盗火者身负三千万转轮回之火种，再度燃起徒劳的火焰。"
+				"&7卷中记载了可根据击杀数提升伤害的特殊改进。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "shared/the_legend_scroll_of_worldbearing_titan"
+							material: 2
+							ribbon: "39E5FF"
+							schematics: ["tetra:shared/the_legend_scroll_of_worldbearing_titan"]
+						}]
+					}
+				}
+			}
+			id: "2B217BFD6C87D754"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "57CA6641EC4B790B"
+				title: "阅读其五·负世伟业"
+				type: "checkmark"
+			}]
+			title: "其五·负世伟业"
+			x: 6.0d
+			y: 13.0d
+		}
+		{
+			dependencies: ["376E03C861B066A7"]
+			description: [
+				"&a「殁世的学士」愿裂分之枝爱佑其身，赐予理性的智识"
+				"&7来自被黑潮吞没的异世书院。"
+				"&7幸免于难的锻造卷轴中记载了提升经验值获取数额的特殊改进。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "shared/the_legend_scroll_of_reason_titan"
+							material: 2
+							ribbon: "00FF55"
+							schematics: ["tetra:shared/the_legend_scroll_of_reason_titan"]
+						}]
+					}
+				}
+			}
+			id: "514C38DF148B04F1"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "1883139B271D78F0"
+				title: "阅读其六·理性启迪"
+				type: "checkmark"
+			}]
+			title: "其六·理性启迪"
+			x: 8.5d
+			y: 13.0d
+		}
+		{
+			dependencies: [
+				"3FC12639256FB454"
+				"2B217BFD6C87D754"
+				"514C38DF148B04F1"
+			]
+			description: [
+				"&7由负世、理性与浪漫三章汇聚而成，是真我之诗的创世篇章。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 1b
+							key: "shared/titan_convergence_creation"
+							material: 3
+							ribbon: "39E5FF"
+							schematics: [
+								"tetra:shared/the_legend_scroll_of_worldbearing_titan"
+								"tetra:shared/the_legend_scroll_of_reason_titan"
+								"tetra:shared/the_legend_scroll_of_romance_titan"
+							]
+						}]
+					}
+				}
+			}
+			id: "6EB17BF71B09E401"
+			shape: "pentagon"
+			size: 1.9d
+			tasks: [{
+				id: "61FC790C938C8FC9"
+				title: "阅读创世三火种汇卷"
+				type: "checkmark"
+			}]
+			title: "创世三火种汇卷"
+			x: 6.0d
+			y: 18.0d
+		}
+		{
+			dependencies: ["5C509F50D79BC3F4"]
+			description: ["&e用途：汇总灾祸组的三张泰坦卷轴。"]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "shared/the_legend_scroll_of_trickery_titan"
+							material: 2
+							ribbon: "4400CD"
+							schematics: ["tetra:shared/the_legend_scroll_of_trickery_titan"]
+						}]
+					}
+				}
+			}
+			id: "7989BF3D99229880"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "69E9B9821E76B9AC"
+				title: "阅读泰坦卷轴·灾祸"
+				type: "checkmark"
+			}]
+			title: "&b泰坦卷轴·灾祸"
+			x: 18.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["7989BF3D99229880"]
+			description: [
+				"&1「捷足的羁客」愿翻飞之币爱佑其身，赐予诡计的决绝"
+				"&7以异世飞贼的行窃心得调律工具，使持有者获得幸运、机动与更灵巧的攻击；"
+				"&7不再直接复制完整生物战利品表。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "shared/the_legend_scroll_of_trickery_titan"
+							material: 2
+							ribbon: "4400CD"
+							schematics: ["tetra:shared/the_legend_scroll_of_trickery_titan"]
+						}]
+					}
+				}
+			}
+			id: "276D7CEBF07EFBCB"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "1460518A22FD4053"
+				title: "阅读其七·诡计赐福"
+				type: "checkmark"
+			}]
+			title: "其七·诡计赐福"
+			x: 15.5d
+			y: 13.0d
+		}
+		{
+			dependencies: ["7989BF3D99229880"]
+			description: [
+				"&6「亡国的王储」愿天谴之矛爱佑其身，赐予纷争的赤诚"
+				"&7来自异世中纷争之城邦的铸造技艺，"
+				"&7可根据其上记录的方法对[长剑/重剑/佩剑/太刀/凸缘钉头锤/刃弓]等工具部件进行改造。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "shared/the_legend_scroll_of_strife_titan"
+							material: 2
+							ribbon: "FFD800"
+							schematics: ["tetra:shared/the_legend_scroll_of_strife_titan"]
+						}]
+					}
+				}
+			}
+			id: "5BF51D149B0E5FFE"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "310FAD46E7DEDCDC"
+				title: "阅读其八·纷争铸造"
+				type: "checkmark"
+			}]
+			title: "其八·纷争铸造"
+			x: 18.0d
+			y: 13.0d
+		}
+		{
+			dependencies: ["7989BF3D99229880"]
+			description: [
+				"&5「死荫的侍女」愿灰黯之手爱佑其身，赐予死亡的慈爱"
+				"&7原型卷轴由异世的冥河之女以黯涛之水所书。"
+				"&7可以为工具新增保护持有者短时间不受死亡侵扰的特殊改进。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "shared/the_legend_scroll_of_death_titan"
+							material: 2
+							ribbon: "9933ff"
+							schematics: ["tetra:shared/the_legend_scroll_of_death_titan"]
+						}]
+					}
+				}
+			}
+			id: "0B7259A95526ADFF"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "2FA37651C182C995"
+				title: "阅读其九·死亡祝佑"
+				type: "checkmark"
+			}]
+			title: "其九·死亡祝佑"
+			x: 20.5d
+			y: 13.0d
+		}
+		{
+			dependencies: [
+				"276D7CEBF07EFBCB"
+				"5BF51D149B0E5FFE"
+				"0B7259A95526ADFF"
+			]
+			description: [
+				"&7由纷争、死亡与诡计三章汇聚而成，是真我之诗的灾祸篇章。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 1b
+							key: "shared/titan_convergence_calamity"
+							material: 3
+							ribbon: "8B3FD6"
+							schematics: [
+								"tetra:shared/the_legend_scroll_of_strife_titan"
+								"tetra:shared/the_legend_scroll_of_death_titan"
+								"tetra:shared/the_legend_scroll_of_trickery_titan"
+							]
+						}]
+					}
+				}
+			}
+			id: "546A54CB25DDAB5B"
+			shape: "pentagon"
+			size: 1.9d
+			tasks: [{
+				id: "128C92EF4B2BADDD"
+				title: "阅读灾祸三火种汇卷"
+				type: "checkmark"
+			}]
+			title: "灾祸三火种汇卷"
+			x: 18.0d
+			y: 18.0d
+		}
+		{
+			dependencies: [
+				"05B3BECB25D1BB30"
+				"76C19BDB8EDAFE1A"
+				"6EB17BF71B09E401"
+				"546A54CB25DDAB5B"
+			]
+			description: [
+				"&d我们于此赞颂，翁法罗斯的新生"
+				"&7永世之乐土显化于卷轴之中，"
+				"&7可赋予工具在其余十二泰坦改进基础上二次提升的能力。"
+				"&d需要：先完成四张三火种汇卷。"
+				"&b使用：放置在锻造区附近后打开加工台。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								3
+								8
+								1
+								4
+							]
+							intricate: 0b
+							key: "shared/the_legend_scroll_of_cyrene_titan"
+							material: 2
+							ribbon: "FF66FF"
+							schematics: ["tetra:shared/the_legend_scroll_of_cyrene_titan"]
+						}]
+					}
+				}
+			}
+			id: "3546D5CA69D12FE0"
+			shape: "hexagon"
+			size: 2.25d
+			tasks: [{
+				id: "5860557E0B45E885"
+				title: "阅读其十三·真我之诗"
+				type: "checkmark"
+			}]
+			title: "其十三·真我之诗"
+			x: 0.0d
+			y: 23.0d
+		}
+	]
+	title: "卷轴与锻造技艺"
+}

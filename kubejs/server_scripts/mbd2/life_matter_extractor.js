@@ -13,6 +13,8 @@ MBDMachineEvents.onTick("createdelight:life_matter_extractor", e => {
         let item = input.getStackInSlot(index)
         if (item.empty)
             continue
+        if (!item.hasTag("createdelightcore:life_matter_sources"))
+            continue
 
         let quality = global.CDServerJavaClasses.$QualityUtils.getQuality(item)
         if (quality.level() <= 0)
