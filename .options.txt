@@ -42,8 +42,8 @@ ao:true
 prioritizeChunkUpdates:0
 biomeBlendRadius:2
 renderClouds:"true"
-resourcePacks:["vanilla","tacz_resources","mod_resources","Moonlight Mods Dynamic Assets","file/Squareful v3.15forMC1.20.1.zip","file/Squareful-Create_Delight_Remake.zip","file/BC Particle Enhancement (1.20.1) (1.0).zip","file/create-functional-storage-1.20.1-v1.0.0.zip","file/XK Highlight Block.zip","netherexp:jne_emissive","netherexp:jne_retextures","file/Torchmaster Remaster.zip","file/LCVP_CreateStyle_v1.7.zip","eclipticseasons.extra_snow","generated/fragmentum_layer"]
-incompatibleResourcePacks:["file/Torchmaster Remaster.zip","file/LCVP_CreateStyle_v1.7.zip"]
+resourcePacks:["vanilla","tacz_resources","mod_resources","Moonlight Mods Dynamic Assets","file/Squareful方纹v26.3.0.zip","file/Squareful-Create_Delight_Remake.zip","file/BC Particle Enhancement (1.20.1) (1.0).zip","file/create-functional-storage-1.20.1-v1.0.0.zip","file/XK Highlight Block.zip","netherexp:jne_emissive","netherexp:jne_retextures","file/Torchmaster Remaster.zip","file/LCVP_CreateStyle_v1.7.zip","eclipticseasons.extra_snow","generated/fragmentum_layer"]
+incompatibleResourcePacks:["file/Squareful方纹v26.3.0.zip","file/Torchmaster Remaster.zip","file/LCVP_CreateStyle_v1.7.zip"]
 lastServer:
 lang:zh_cn
 soundDevice:""
