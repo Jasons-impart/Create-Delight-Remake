@@ -110,6 +110,12 @@ Historical project knowledge: non-obvious bugs, release pitfalls, and workflow d
 
 **Lesson**: Enumerate `data/northstar/recipes/crushing/*zinc*_ore.json` from the active Northstar jar and override every matching ID in KubeJS.
 
+## 2026-08-19 - MBD2 Incomplete Multiblock Null Checks
+
+**Problem**: Issue #2174 showed that an incomplete MBD2 butchery room can return null for its hook or butcher block entity, so its 20-tick callback repeatedly throws when reading `insertedItem`.
+
+**Lesson**: MBD2 scripts must null-check every `getBlockEntity(...)` result before accessing structure-part fields in `onTick`, `onRemoved`, or `onRecipeWorking`, and return safely until the multiblock is complete.
+
 ---
 
 When adding entries, include Problem and Lesson, keep each item short, and remove entries that become common knowledge.
