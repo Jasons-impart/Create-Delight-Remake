@@ -11,6 +11,8 @@
 
 按一个明确目的汇总一行，不要求每个配方、配置或 JSON 单独立项；同一目标新增文件时更新该行的路径与验证状态即可。
 
+| MBD2 屠宰室未成形时部件空值 | 模组兼容 | 屠宰室多方块未成形或失效时，挂肉钩和案板的 `Level#getBlockEntity` 可能返回 `null`；三个 MBD2 回调继续读取 `insertedItem` 会重复报错。 | `kubejs/server_scripts/mbd2/butchery_room.js` 集中获取两个部件并在任一为空时让 `onTick`、`onRemoved`、`onRecipeWorking` 安全返回。 | `node --check` 与 `git diff --check` 通过；关联 [PR #2176](https://github.com/Jasons-impart/Create-Delight-Remake/pull/2176)，尚未完成游戏内拆机/结构失效回归。 | ButcherCraft 或 MBD2 调整部件坐标、方块实体类型或事件语义时复核；确认上游提供统一安全访问后可移除重复防护。 | 已修复，待游戏内回归 |
+
 | 修复 | 类型 | 问题或根因 | 补丁位置 | 验证与跟踪 | 复核/移除条件 | 状态 |
 |---|---|---|---|---|---|---|
 | Tetra Insight 识别 More Mod Tetra 效果适用路径 | 模组兼容 | `ItemEffect` 本身不携带护甲、手持或 Curios 适用类型；MMT `2.4.15` 的 576 个效果分散在手持、护甲、弓、Curios 与可选联动消费者中，部分注册项还存在无运行时引用或读取错字段，不能仅按名称或 GUI 注册推断。 | Tetra Insight 增加客户端资源规则加载、Curios/死亡/治疗范围与触发支持；CDR 在 `kubejs/assets/more_mod_tetra/tetra_insight/effect_applicability/` 保存 576 个 JSON，并用 `scripts/generate-mmt-effect-applicability.py` 从精确反编译 JAR 重建。 | MMT 注册表与 JSON 文件名 576/576 一致，共 711 条独立路径；UTF-8、scope、trigger、stacking 与非空 paths 校验通过；Tetra Insight `test build` 通过。9 个无可靠消费者的效果保留 `unknown`；CDR 客户端资源重载尚未执行，当前运行 JAR 仍需另行同步。 | MMT 升级、`EffectGuiStats` 注册表或 helper/事件消费者变化时重新反编译并生成；上游修复错字段或补齐消费者后替换对应 `unknown`；Tetra Insight 原生覆盖这些规则后可移除 CDR JSON。 | 静态兼容完成，待新 JAR 部署与客户端资源重载回归 |
