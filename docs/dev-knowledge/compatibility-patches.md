@@ -11,7 +11,7 @@
 
 按一个明确目的汇总一行，不要求每个配方、配置或 JSON 单独立项；同一目标新增文件时更新该行的路径与验证状态即可。
 
-| MBD2 屠宰室未成形时部件空值 | 模组兼容 | 屠宰室多方块未成形或失效时，挂肉钩和案板的 `Level#getBlockEntity` 可能返回 `null`；三个 MBD2 回调继续读取 `insertedItem` 会重复报错。 | `kubejs/server_scripts/mbd2/butchery_room.js` 集中获取两个部件并在任一为空时让 `onTick`、`onRemoved`、`onRecipeWorking` 安全返回。 | `node --check` 与 `git diff --check` 通过；关联 [PR #2176](https://github.com/Jasons-impart/Create-Delight-Remake/pull/2176)，尚未完成游戏内拆机/结构失效回归。 | ButcherCraft 或 MBD2 调整部件坐标、方块实体类型或事件语义时复核；确认上游提供统一安全访问后可移除重复防护。 | 已修复，待游戏内回归 |
+| MBD2 屠宰室未成形时部件空值 | 模组兼容 | 屠宰室多方块未成形或失效时，挂肉钩和案板的 `Level#getBlockEntity` 可能返回 `null`；三个 MBD2 回调继续读取 `insertedItem` 会重复报错。初版修复使用 Rhino 不支持的对象属性简写，加载时又报 `invalid object initializer`。 | `kubejs/server_scripts/mbd2/butchery_room.js` 集中获取两个部件并在任一为空时让 `onTick`、`onRemoved`、`onRecipeWorking` 安全返回；返回对象使用显式属性映射。 | `node --check` 与 `git diff --check` 通过；Node 不能验证 KubeJS/Rhino 的语法兼容性。关联 [PR #2176](https://github.com/Jasons-impart/Create-Delight-Remake/pull/2176)，尚未完成游戏内拆机/结构失效回归。 | ButcherCraft 或 MBD2 调整部件坐标、方块实体类型或事件语义时复核；更新 KubeJS/Rhino 或修改此 helper 时，重载服务器脚本确认无解析错误。 | 已静态修复，待游戏内回归 |
 
 | 修复 | 类型 | 问题或根因 | 补丁位置 | 验证与跟踪 | 复核/移除条件 | 状态 |
 |---|---|---|---|---|---|---|
