@@ -543,5 +543,17 @@
             "crabbersdelight:cooked_crab"
         ],
         "resultItems": "youkaishomecoming:steamed_crab"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:yellow_tea_leaves"
+        ],
+        "resultItems": "youkaishomecoming:white_tea_leaves"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:yellow_tea_bag"
+        ],
+        "resultItems": "youkaishomecoming:white_tea_bag"
     }
 ]
