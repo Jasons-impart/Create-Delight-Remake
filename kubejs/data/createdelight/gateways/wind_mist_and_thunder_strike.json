@@ -1,0 +1,658 @@
+{
+	"size": "large",
+	"color": "#00FFFF",
+	"waves": [
+		{
+			"entities": [
+                {
+					"entity": "cataclysm:deepling",
+					"count": 4
+				},
+                {
+					"entity": "cataclysm:deepling_brute",
+					"count": 4
+				},
+                {
+					"entity": "cataclysm:deepling_angler",
+					"count": 4
+				},
+                {
+					"entity": "cataclysm:deepling_priest",
+					"count": 4
+				},
+                {
+					"entity": "cataclysm:deepling_warlock",
+					"count": 4
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 2.4
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 12
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.6
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				}
+			],
+			"rewards": [
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "minecraft:fishing_rod", 
+                        "count": 1 ,
+						"tag": {
+  						    "Enchantments": [
+                                {
+                                    "id": "minecraft:mending",
+                                     "lvl": 1
+								},
+                                {
+                                    "id": "minecraft:unbreaking",
+                                     "lvl": 6
+								},							
+                                {
+                                    "id": "minecraft:lure",
+                                     "lvl": 6
+								},
+								{
+                                    "id": "minecraft:luck_of_the_sea",
+                                     "lvl": 6
+								}
+							]
+						}
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:abyssal_sacrifice", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:athame", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "minecraft:nautilus_shell", 
+                        "count": 8   
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:coral_bardiche", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:coral_spear", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "minecraft:heart_of_the_sea", 
+                        "count": 1
+				    }
+                }
+			],
+			"max_wave_time": 1600,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "cataclysm:coral_golem",
+					"count": 4
+				},
+                {
+					"entity": "cataclysm:coralssus",
+					"count": 2
+				},
+                {
+					"entity": "cataclysm:amethyst_crab",
+					"count": 4
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 2.0
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 12
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.2
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "cataclysm:coral_golem",
+					"rolls": 12
+				},
+				{
+					"type": "gateways:entity_loot",
+					"entity": "cataclysm:coralssus",
+					"rolls": 12
+				},
+				{
+					"type": "gateways:entity_loot",
+					"entity": "cataclysm:amethyst_crab",
+					"rolls": 12
+				},
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:bloom_stone_pauldrons", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:blessed_amethyst_crab_meat", 
+                        "count": 16
+				    }
+                }
+			],
+			"max_wave_time": 1600,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "cataclysm:elite_draugr",
+					"count": 6
+				},
+                {
+					"entity": "cataclysm:royal_draugr",
+					"count": 6
+				},
+                {
+					"entity": "cataclysm:draugr",
+					"count": 8
+				},
+                {
+					"entity": "cataclysm:aptrgangr",
+					"count": 2
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.8
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 12
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.2
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "cataclysm:elite_draugr",
+					"rolls": 12
+				},
+				{
+					"type": "gateways:entity_loot",
+					"entity": "cataclysm:aptrgangr",
+					"rolls": 12
+				},
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:strange_key", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:soul_render", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:the_annihilator", 
+                        "count": 1
+				    }
+                }
+			],
+			"max_wave_time": 2000,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "cataclysm:cindaria",
+					"count": 4
+				},
+                {
+					"entity": "cataclysm:drowned_host",
+					"count": 4
+				},
+                {
+					"entity": "cataclysm:urchinkin",
+					"count": 4
+				},
+                {
+					"entity": "cataclysm:hippocamtus",
+					"count": 2
+				},
+                {
+					"entity": "cataclysm:clawdian",
+					"count": 2
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.8
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 12
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.4
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "cataclysm:clawdian",
+					"rolls": 24
+				},
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:azure_sea_shield", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "more_mod_tetra:storm_ingot", 
+                        "count": 16
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "youkaishomecoming:wind_priestesses", 
+                        "count": 4
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "more_mod_tetra:storm_core", 
+                        "count": 1
+				    }
+                }
+			],
+			"max_wave_time": 2000,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "cataclysm:maledictus",
+					"count": 1
+				},
+                {
+					"entity": "cataclysm:aptrgangr",
+					"count": 2
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 2.0
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 12
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": -0.1
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "cataclysm:maledictus",
+					"rolls": 12
+				},
+			    {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:cursium_helmet", 
+                        "count": 1
+                    }
+                },
+			    {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:cursium_chestplate", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:cursium_leggings", 
+                        "count": 1
+				    }
+                },
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:cursium_boots", 
+                        "count": 1
+				    }
+                },
+				                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:cursed_bow", 
+                        "count": 1
+					}
+                },
+				                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:music_disc_maledictus", 
+                        "count": 1
+					}
+                }
+			],
+			"max_wave_time": 6000,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "cataclysm:scylla",
+					"count": 1
+				},
+                {
+					"entity": "cataclysm:clawdian",
+					"count": 2
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 2.0
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 12
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.1
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "cataclysm:scylla",
+					"rolls": 12
+				},
+			    {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "more_mod_tetra:storm_ingot", 
+                        "count": 32
+                    }
+                },
+			    {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:ceraunus", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:astrape", 
+                        "count": 1
+				    }
+                },
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:cursium_boots", 
+                        "count": 1
+				    }
+                },
+				                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:music_disc_scylla", 
+                        "count": 1
+					}
+                }
+			],
+			"max_wave_time": 6000,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "cataclysm:scylla",
+					"count": 1
+				},
+                {
+					"entity": "cataclysm:maledictus",
+					"count": 1
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.0
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 12
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": -0.1
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "gateways:gate_pearl", 
+                        "count": 2,
+                        "nbt" : {"gateway":"createdelight:wind_mist_and_thunder_strike"}}
+				}
+			],
+			"max_wave_time": 10000,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "cataclysm:the_leviathan",
+					"count": 1
+				},
+                {
+					"entity": "cataclysm:deepling_priest",
+					"count": 2
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 2.0
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 12
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.1
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "more_mod_tetra:abyssal_ingot", 
+                        "count": 32
+				    }
+                },
+			    {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:tidal_claws", 
+                        "count": 1
+                    }
+                },
+			    {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:abyssal_egg", 
+                        "count": 1
+                    }
+                },
+			    {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:music_disc_the_leviathan", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:crystallized_coral", 
+                        "count": 1
+				    }
+                },
+			    {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "youkaishomecoming:han_palace", 
+                        "count": 4
+					}
+                },
+				                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "minecraft:heart_of_the_sea", 
+                        "count": 1
+					}
+                }
+			],
+			"max_wave_time": 6000,
+			"setup_time": 100
+		}
+    ],
+	"failures": [
+        {
+        "type": "gateways:explosion",
+        "strength": 5,
+        "fire": true,
+        "block_damage": false
+    }]
+}

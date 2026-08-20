@@ -295,7 +295,7 @@
 					    }
 				}
 			],
-			"max_wave_time": 600,
+			"max_wave_time": 1200,
 			"setup_time": 60
 		}
     ],

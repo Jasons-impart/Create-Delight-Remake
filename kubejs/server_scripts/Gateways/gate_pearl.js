@@ -140,7 +140,7 @@ ServerEvents.recipes(e => {
         create.deploying(incomplete, [incomplete, "alexscaves:magic_conch"]).keepHeldItem()
     ]).transitionalItem(incomplete).loops(4)
     .id("createdelight:sequenced_assembly/the_legacy_of_the_abyss")
-        ////添加配方：不再有梦合成
+    ////添加配方：不再有梦合成
     create.sequenced_assembly([
         Item.of(Item.of('gateways:gate_pearl', '{gateway:"createdelight:dream_no_more"}'))
     ], "minecraft:ender_pearl", [
@@ -152,4 +152,40 @@ ServerEvents.recipes(e => {
         create.deploying(incomplete, [incomplete, "dungeonsdelight:monster_cake"]).keepHeldItem()
     ]).transitionalItem(incomplete).loops(6)
     .id("createdelight:sequenced_assembly/dream_no_more")
+    ////添加配方：炽锋之誓合成
+    create.sequenced_assembly([
+        Item.of('gateways:gate_pearl', '{gateway:"createdelight:oath_of_fierce_blade_ouel"}')
+    ], "minecraft:fire_charge", [
+        create.deploying(incomplete, [incomplete, "iceandfire:dragonsteel_fire_ingot"]),
+        create.deploying(incomplete, [incomplete, "minecraft:netherite_block"]),
+        vintageimprovements.vibrating(incomplete, incomplete),
+        create.deploying(incomplete, [incomplete, "more_mod_tetra:ignitium_core"]),
+        create.deploying(incomplete, [incomplete, "blackknightarmor:dragon_fire_ingot"]),
+        create.deploying(incomplete, [incomplete, "cataclysm:monstrous_horn"])
+    ]).transitionalItem(incomplete).loops(6)
+    .id("createdelight:sequenced_assembly/oath_of_fierce_blade_ouel")
+    ////添加配方：沧海桑田合成
+    create.sequenced_assembly([
+        Item.of('gateways:gate_pearl', '{gateway:"createdelight:shattered_past"}')
+    ], "alexsmobs:void_worm_eye", [
+        create.deploying(incomplete, [incomplete, "cataclysm:witherite_ingot"]),
+        create.deploying(incomplete, [incomplete, "cataclysm:ancient_metal_ingot"]),
+        vintageimprovements.vibrating(incomplete, incomplete),
+        create.deploying(incomplete, [incomplete, "minecraft:nether_star"]),
+        create.deploying(incomplete, [incomplete, "minecraft:dragon_breath"]),
+        create.deploying(incomplete, [incomplete, "cataclysm:sandstorm_in_a_bottle"]).keepHeldItem()
+    ]).transitionalItem(incomplete).loops(8)
+    .id("createdelight:sequenced_assembly/shattered_past")
+    ////添加配方：风溟雷殛合成
+    create.sequenced_assembly([
+        Item.of('gateways:gate_pearl', '{gateway:"createdelight:wind_mist_and_thunder_strike"}')
+    ], "alexscaves:pearl", [
+        create.deploying(incomplete, [incomplete, "more_mod_tetra:abyssal_ingot"]),
+        create.deploying(incomplete, [incomplete, "cataclysm:cursium_ingot"]),
+        create.deploying(incomplete, [incomplete, "more_mod_tetra:storm_ingot"]),
+        vintageimprovements.vibrating(incomplete, incomplete),
+        create.deploying(incomplete, [incomplete, "cataclysm:blessed_amethyst_crab_meat"]),
+        create.deploying(incomplete, [incomplete, "minecraft:conduit"]).keepHeldItem()
+    ]).transitionalItem(incomplete).loops(8)
+    .id("createdelight:sequenced_assembly/wind_mist_and_thunder_strike")
 })
