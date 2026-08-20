@@ -81,6 +81,7 @@
     "block.createdelight.cryo_fuel": "凛冰燃料",
     "block.createdelight.green_soylent": "“绿色食品”",
     "block.createdelight.radpop_fluid": "核子可乐",
+
     "createdelight.a_place_of_melting": "§2熔蚀之地",
     "createdelight.fire_dragon_eyes": "§4火龙试炼",
     "createdelight.ghast_trial": "恶魂试炼",
@@ -93,7 +94,11 @@
     "createdelight.the_ancient_end": "§2远古终焉",
     "createdelight.the_gate_of_eternal_cold": "§9永寒悚怖之门",
     "createdelight.the_legacy_of_the_abyss": "§1自噬之潮",
-    "createdelight.dream_no_more": "§6不再有梦",
+    "createdelight.dream_no_more": "§4不再有梦",
+    "createdelight.oath_of_fierce_blade_ouel": "§6炽锋之誓",
+    "createdelight.wind_mist_and_thunder_strike": "§9风溟雷殛",
+    "createdelight.shattered_past": "§8沧海桑田",
+
     "fluid.createdelight.adzuki_milkshake": "红豆奶昔",
     "fluid.createdelight.aegis_wine": "神佑白葡萄酒",
     "fluid.createdelight.affogato_fluid": "阿芙佳朵",
