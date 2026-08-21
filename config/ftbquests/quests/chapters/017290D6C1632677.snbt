@@ -265,6 +265,7 @@
 			size: 3.0d
 			subtitle: "入此门者，当舍弃一切希望"
 			tasks: [{
+				consume_items: true
 				id: "42F6EE3778437719"
 				item: {
 					Count: 1
