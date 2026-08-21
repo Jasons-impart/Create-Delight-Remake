@@ -598,6 +598,7 @@
 			y: -3.0d
 		}
 		{
+			dependencies: ["31628FC783AE3161"]
 			description: ["        本章节试炼难度较低，推荐获得成型的太空时期前的装备后再挑战，例如下界合金装备等。"]
 			icon: "alexscaves:hazmat_block"
 			id: "4EA5D70C56931162"

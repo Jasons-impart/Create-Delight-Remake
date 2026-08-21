@@ -507,7 +507,8 @@
 				"       祝你游戏愉快，万事顺意~"
 			]
 			hide_dependency_lines: true
-			hide_until_deps_complete: false
+			hide_until_deps_complete: true
+			hide_until_deps_visible: true
 			icon: "alexsmobs:void_worm_eye"
 			id: "1DD9F7C0F4BD2170"
 			rewards: [
@@ -818,6 +819,7 @@
 				type: "random"
 			}]
 			shape: "square"
+			subtitle: "通关本章试炼解锁"
 			tasks: [{
 				consume_items: true
 				count: 8L

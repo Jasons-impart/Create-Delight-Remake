@@ -161,7 +161,7 @@ ServerEvents.recipes(e => {
         vintageimprovements.vibrating(incomplete, incomplete),
         create.deploying(incomplete, [incomplete, "more_mod_tetra:ignitium_core"]),
         create.deploying(incomplete, [incomplete, "blackknightarmor:dragon_fire_ingot"]),
-        create.deploying(incomplete, [incomplete, "cataclysm:monstrous_horn"])
+        create.deploying(incomplete, [incomplete, "cataclysm:monstrous_horn"]).keepHeldItem()
     ]).transitionalItem(incomplete).loops(6)
     .id("createdelight:sequenced_assembly/oath_of_fierce_blade_ouel")
     ////添加配方：沧海桑田合成
