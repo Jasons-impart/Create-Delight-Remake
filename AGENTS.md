@@ -66,9 +66,14 @@ CD-master-dev/
 
 ## CONVENTIONS
 
+**Player-facing text**:
+- UI、tooltip、JEI、聊天提示、任务和物品说明只描述当前规则、条件、结果和操作；不得展示版本改动、迁移说明、设计理由或开发自述。
+- 任务文案优先回答“要做什么、怎么做、会得到什么”；只保留玩家必须识别的物品、方块和规则名，避免使用 Score、闭环、临时缺口、候选小类、市场机会等内部术语或平衡分析。
+
 **Git Workflow**:
 - Branch from `main`: `git checkout main && git pull && git checkout -b feat/xxx`
 - Run `scripts/install-git-hooks.ps1` after clone to install local `.git/hooks` shims that call tracked `scripts/.githooks`; agents should confirm this before Git update workflows.
+- 阅读、检索和核对 GitHub 上的 Issue、PR、评论、提交、Release、Actions 等信息必须使用 `gh` CLI，不要通过浏览器读取；只有用户明确要求浏览器操作时才例外。
 - Commit format: `[类型] 描述 (#PR号)` - types: `fix`, `feat`, `mod`, `dev`, `conf`
 - Commit messages must include a body; prefer Markdown-style structure in the body, such as short paragraphs, bullet lists, affected scope, and verification notes.
 - PR title/body use Chinese by default because reviewers and release notes are Chinese-first.

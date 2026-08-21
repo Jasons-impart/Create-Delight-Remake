@@ -84,7 +84,10 @@ ServerEvents.recipes(e => {
         "farmersdelight:cutting/cooked_crab",
         "youkaishomecoming:crab_meat",
         "farmersdelight:cutting/cooked_crab_using_deployer",
-        "youkaishomecoming:crab_meat_using_deployer"
+        "youkaishomecoming:crab_meat_using_deployer",
+        "youkaishomecoming:yellow_tea_bag",
+        "youkaishomecoming:yellow_tea_leaves_from_yellow_tea_bag",
+        "youkaishomecoming:yellow_tea_leaves_from_green_tea_leaves_drying"
     ])
     remove_recipes_type(e, [
         "youkaishomecoming:moka_pot",

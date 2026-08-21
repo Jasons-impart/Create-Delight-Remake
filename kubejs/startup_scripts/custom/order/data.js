@@ -29,27 +29,24 @@ function cdOrderDataToJs(value) {
 CDOrderDataTarget.reloadData = function () {
     let bridge = global.CDStartupJavaClasses.$OrderDataKubeBridge
     let snapshot = cdOrderDataToJs(bridge.all())
-    this.dataVersion = Number(snapshot.version || 0)
-    this.orderProperties = snapshot.orderProperties || {}
-    this.customerGroupPrefixes = snapshot.customerGroupPrefixes || {}
-    this.categoryGroups = snapshot.categoryGroups || {}
-    this.orderDraftSeals = snapshot.orderDraftSeals || {}
-    this.marketSaturationConfig = snapshot.marketSaturationConfig || {}
-    this.customerProperties = snapshot.customerProperties || {}
+    this.dataVersion = Number(snapshot.version)
+    this.orderProperties = snapshot.orderProperties
+    this.customerGroupPrefixes = snapshot.customerGroupPrefixes
+    this.categoryGroups = snapshot.categoryGroups
+    this.orderDraftSeals = snapshot.orderDraftSeals
+    this.marketSaturationConfig = snapshot.marketSaturationConfig
+    this.customerProperties = snapshot.customerProperties
+    this.supplyCatalog = Object.values(snapshot.supplyCatalog)
     return this
 }
 
 CDOrderDataTarget.ensureDataLoaded = function () {
-    let currentVersion = Number(global.CDStartupJavaClasses.$OrderDataKubeBridge.version() || 0)
-    if (this.orderProperties == null || Object.keys(this.orderProperties).length == 0
-        || this.customerProperties == null || Object.keys(this.customerProperties).length == 0
-        || Number(this.dataVersion || 0) != currentVersion)
+    let currentVersion = Number(global.CDStartupJavaClasses.$OrderDataKubeBridge.version())
+    if (this.dataVersion != currentVersion)
         this.reloadData()
     return this
 }
 
 CDOrderDataTarget.reloadData()
 
-CDOrderDataTarget.ticketColorMapping = {
-    human_contract: 14464140
-}
+CDOrderDataTarget.guildVoucherColor = 14464140

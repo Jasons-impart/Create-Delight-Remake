@@ -1,15 +1,7 @@
-ServerEvents.tick(e => {    
-    if (e.server.getLevel("minecraft:overworld").dayTime() % 12000 == 0) {
-        let count = Utils.random.nextInt(1, 4)
-        for (let i = 0; i < count; i++)
-            global.Order.addOrderToAuction()
-    }
-})
-
 const ORDER_MARKET_SYNC_PACKET = "createdelight_order_market_saturation"
 
 global.syncOrderMarketSaturation = function(player) {
-    if (player == null || global.Order == null || global.Order.marketSaturation == null)
+    if (player == null)
         return
 
     global.Order.ensureDataLoaded()
@@ -22,6 +14,7 @@ global.syncOrderMarketSaturation = function(player) {
 }
 
 PlayerEvents.loggedIn(e => {
+    global.Order.reputation.ensureCertificate(e.player)
     global.syncOrderMarketSaturation(e.player)
 })
 
@@ -34,6 +27,16 @@ PlayerEvents.tick(e => {
 ItemEvents.rightClicked("createdelight:unopened_order", e => {
     let draftStack = e.player.getItemInHand(e.hand)
     let otherStack = `${e.hand}` == "MAIN_HAND" ? e.player.offHandItem : e.player.mainHandItem
+
+    if (e.player.isShiftKeyDown() && otherStack.empty) {
+        if (global.Order.resetDraftDirections(draftStack)) {
+            e.player.tell(Text.translate("message.createdelight.order_draft_directions_cleared"))
+        } else {
+            e.player.tell(Text.translate("message.createdelight.order_draft_direction_clear_failed"))
+        }
+        e.cancel()
+        return
+    }
 
     if (otherStack.is("createdelight:order_seal")) {
         if (!global.Order.applyDraftSeal(draftStack, otherStack)) {
@@ -93,5 +96,35 @@ ItemEvents.rightClicked("createdelight:order_clause", e => {
     if (!e.player.isCreative())
         clauseStack.shrink(1)
     e.player.tell(Text.translate("message.createdelight.order_draft_clause_applied"))
+    e.cancel()
+})
+
+ItemEvents.rightClicked("createdelight:order_reputation_certificate", e => {
+    let certificate = e.player.getItemInHand(e.hand)
+    if (!global.Order.reputation.isOwnedCertificate(e.player, certificate)) {
+        let hasOwner = certificate.nbt != null && certificate.nbt.OrderCertificateOwner != null
+        if (!hasOwner && global.Order.reputation.getLevel(e.player) >= 2) {
+            certificate.nbt = global.Order.reputation.createCertificateNbt(e.player)
+            e.player.persistentData.putBoolean(global.Order.reputation.certificateIssuedKey, true)
+            e.player.getInventory().setChanged()
+            e.player.tell(Text.translate(
+                "message.createdelight.order_reputation_certificate.refreshed",
+                global.Order.reputation.getLevel(e.player)
+            ))
+            e.player.swing()
+            e.cancel()
+            return
+        }
+        e.player.tell(Text.translate("message.createdelight.order_reputation_certificate.not_owner"))
+        e.cancel()
+        return
+    }
+
+    global.Order.reputation.refreshCertificate(e.player, certificate)
+    e.player.tell(Text.translate(
+        "message.createdelight.order_reputation_certificate.refreshed",
+        global.Order.reputation.getLevel(e.player)
+    ))
+    e.player.swing()
     e.cancel()
 })

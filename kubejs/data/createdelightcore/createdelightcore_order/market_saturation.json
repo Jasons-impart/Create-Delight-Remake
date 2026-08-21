@@ -3,7 +3,7 @@
   "decay_per_day": 0.72,
   "category_penalty": 0.08,
   "customer_penalty": 0.05,
-  "max_penalty": 0.35,
+  "max_bonus": 0.35,
   "category_completion_gain": 0.35,
   "category_completion_scale_max": 2,
   "customer_completion_gain": 0.4,

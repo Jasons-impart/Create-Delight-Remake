@@ -8,6 +8,7 @@
 
 ## 前置依赖
 - Git，用于克隆仓库和提交变更。
+- GitHub CLI (`gh`)，用于通过命令行读取和操作 GitHub 的 Issue、PR、Release 与 Actions；安装失败不阻塞其他环境配置。
 - Java 17，游戏、Forge 服务端和 CDC 模组构建都使用 Java 17。
 - Python 3，`scripts/sync-packwiz-assets.ps1` 会用它启动本地静态文件服务。
 - Node.js 20 或更高版本，用于通过 `npx` 启动 Minecraft MCP 的 stdio 桥接器。
@@ -24,11 +25,44 @@
   cd Create-Delight-Remake
   ```
 - 如果已经普通克隆完成，不要删除重来，继续后续步骤。
+- 默认尝试安装 `gh`；如果安装失败或本机没有 `winget`，记录警告并继续后续配置：
+  ```powershell
+  if (-not (Get-Command gh -ErrorAction SilentlyContinue)) {
+      if (Get-Command winget -ErrorAction SilentlyContinue) {
+          winget install --id GitHub.cli --exact --accept-source-agreements --accept-package-agreements
+          if ($LASTEXITCODE -ne 0) {
+              Write-Warning "GitHub CLI installation failed; continuing without gh."
+          }
+      }
+      else {
+          Write-Warning "winget was not found; continuing without gh."
+      }
+  }
+  if (Get-Command gh -ErrorAction SilentlyContinue) {
+      gh --version
+  }
+  else {
+      Write-Warning "gh is unavailable; GitHub CLI steps will be skipped."
+  }
+  ```
 - 在仓库根目录执行依赖检查：
   ```powershell
   git --version
   java -version
   python --version
+  ```
+- 如果 `gh` 可用，首次使用时完成 GitHub 登录并确认认证状态；如果不可用则跳过，不阻塞其他配置：
+  ```powershell
+  if (Get-Command gh -ErrorAction SilentlyContinue) {
+      gh auth status
+      if ($LASTEXITCODE -ne 0) {
+          gh auth login
+          gh auth status
+      }
+  }
+  else {
+      Write-Warning "gh is unavailable; skipping GitHub authentication."
+  }
   ```
 - 安装仓库 Git hooks；脚本会在 `.git/hooks` 写入本地 shim 并保留已有 hook，后续 `pull`、`rebase` 或切换分支涉及 Packwiz 资产变更时，会自动同步本地 `mods/`、`resourcepacks/`、`shaderpacks/`：
   ```powershell
@@ -84,6 +118,8 @@
 ## 常见阻塞
 - `Java 17 was not found`：安装 Java 17，设置 `JAVA_HOME`，或更新 `variables.txt` 的 `JAVA=`。
 - `Python was not found`：安装 Python 3，并确保 `python` 或 `py -3` 可用。
+- `gh was not found`：可执行 `winget install --id GitHub.cli --exact` 并重新打开 PowerShell 7；这不会阻塞其他环境配置。
+- `gh` 未认证：执行 `gh auth login`，完成 GitHub 登录后再重试需要 GitHub CLI 的操作。
 - 下载 packwiz、installer 或 CurseForge 文件失败：检查 GitHub / CurseForge / CDN 访问，必要时配置代理后重试。
 
 ## 把 repo 变成可启动客户端实例

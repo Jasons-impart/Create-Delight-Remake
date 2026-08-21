@@ -690,3 +690,17 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: `TOOLBELT_SLOT` 实际为 `22×22`、高亮为 `24×24`；把二者按同一整数中心定位会让物品相对槽位偏移一像素，动画路径再取整还会在高帧率下表现为逐像素卡顿。
 - **Fix/Lesson**: 以普通槽左上角为浮点 Pose 锚点，高亮放在 `(-1,-1)`、`GuiGameElement` 放在 `(3,3)`；径向展开使用浮点平移和缓动曲线，不要先把圆周坐标取整。
+
+## FTB Quests 新 ID 应限制在正 signed-long 范围
+
+**Date**: 2026-08-13
+
+- **Problem**: 离线生成的 16 位十六进制任务 ID 若最高位为 `8-F`，运行中的 FTB Quests 会将其自动重编号，却不会同步修正文档中手写的 `autofocus_id` 和 `change_page` 目标，导致章节入口或跨章跳转失效。
+- **Fix/Lesson**: 新 ID 应限制在 `0000000000000001` 至 `7FFFFFFFFFFFFFFF`；任务重载后重新读取实际 SNBT，并校验根节点、`autofocus_id` 与全部跨章引用。
+
+## CDC 读取 KubeJS 玩家持久数据不能猜测 NBT 子键
+
+**Date**: 2026-08-17
+
+- **Problem**: KubeJS 的 `player.persistentData` 在玩家存档中由 `KubeJSPersistentData` 管理；CDC 若从 Forge persistent data 猜测 `kubejs:persistent_data` 子键，会始终读到默认值，使订单声望被误判为 1 级。
+- **Fix/Lesson**: Java 侧通过玩家对象的 `kjs$getPersistentData()` 读取 KubeJS 权威数据，并仅在方法不可用时回退到 Forge persistent data；新增跨层状态读取时应先核对真实存档与现有桥接方法。

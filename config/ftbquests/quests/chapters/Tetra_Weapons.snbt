@@ -1,0 +1,3598 @@
+{
+	autofocus_id: "67AD3AB43ED298A0"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "Tetra_Weapons"
+	group: "57E934AC8166BC73"
+	icon: {
+		Count: 1
+		id: "tetra:modular_sword"
+		tag: {
+			Damage: 0
+			id: "b08e5e43-2c69-5219-b0be-58677f9f816d"
+			"sword/basic_blade_material": "basic_blade/tin"
+			"sword/basic_hilt_material": "basic_hilt/stick"
+			"sword/blade": "sword/basic_blade"
+			"sword/decorative_pommel_material": "decorative_pommel/tin"
+			"sword/guard": "sword/makeshift_guard"
+			"sword/hilt": "sword/basic_hilt"
+			"sword/makeshift_guard_material": "makeshift_guard/tin"
+			"sword/pommel": "sword/decorative_pommel"
+		}
+	}
+	id: "733D8D6D133580DF"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"&e用途：查询剑、单头工具、双头工具与当前可用法杖。"
+				"&b阅读：物品连接槽位，槽位连接具体模块。"
+				"&a提示：缺失依赖与失效模块不会显示。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "b08e5e43-2c69-5219-b0be-58677f9f816d"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/basic_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "67AD3AB43ED298A0"
+			shape: "hexagon"
+			size: 3.0d
+			tasks: [{
+				id: "252DEAB66E41955B"
+				title: "阅读近战武器与工具"
+				type: "checkmark"
+			}]
+			title: "&6近战武器与工具"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["67AD3AB43ED298A0"]
+			description: [
+				"&e用途：查看模块化剑的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "925542cc-9417-52d7-8936-ba8a3f0bca48"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/basic_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "184B9F233262EE9D"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "592F825D2EB1966C"
+				title: "阅读模块化剑"
+				type: "checkmark"
+			}]
+			title: "&a模块化剑"
+			x: -9.65d
+			y: -5.0d
+		}
+		{
+			dependencies: ["184B9F233262EE9D"]
+			description: [
+				"&e用途：汇总“剑刃”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "ab2eb08e-849f-5da3-ab34-56c83c0e4c0a"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/more_mod_tetra/mmt_ceremonial_sword"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/more_mod_tetra/mmt_ceremonial_sword_material": "mmt_ceremonial_sword/oak"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "56581EA4D362850F"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "276FCEB9AF25AFEE"
+				title: "阅读剑刃"
+				type: "checkmark"
+			}]
+			title: "&b剑刃"
+			x: -14.55d
+			y: -9.0d
+		}
+		{
+			dependencies: ["56581EA4D362850F"]
+			description: [
+				"&e用途：可提供少量护甲值，面对无胸甲部位护甲的敌人时造成的伤害将提升。"
+				"&b适合：安装在“剑刃”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "16769713-ef0d-54a9-a708-da76aa2eb946"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/more_mod_tetra/mmt_ceremonial_sword"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/more_mod_tetra/mmt_ceremonial_sword_material": "mmt_ceremonial_sword/oak"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "34686EAD8EB7860B"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "568E8D940B0F9FEC"
+				title: "阅读佩刀"
+				type: "checkmark"
+			}]
+			title: "佩刀"
+			x: -18.08d
+			y: -11.7d
+		}
+		{
+			dependencies: ["56581EA4D362850F"]
+			description: [
+				"&e用途：一把能轻易切开岩石的沉重的剑刃。"
+				"&b适合：安装在“剑刃”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "34e87277-2509-5d1b-acb0-01e1ba98f899"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/stonecutter"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "297D3EBCB07EE273"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "4CBBDE51AA27CEDE"
+				title: "阅读切石器"
+				type: "checkmark"
+			}]
+			title: "切石器"
+			x: -15.73d
+			y: -11.7d
+		}
+		{
+			dependencies: ["56581EA4D362850F"]
+			description: [
+				"&e用途：一把能够切割石头的重型刀刃。"
+				"&b适合：安装在“剑刃”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "c312979d-2404-5b02-8ee8-be316e903de6"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/unbound_stonecutter"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/decorative_pommel"
+					"sword/unbound_stonecutter_material": "unbound_stonecutter/iron"
+				}
+			}
+			id: "3B701E7269CEAA5E"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "7C3ED7F8486359B0"
+				title: "阅读切石器"
+				type: "checkmark"
+			}]
+			title: "切石器"
+			x: -13.38d
+			y: -11.7d
+		}
+		{
+			dependencies: ["56581EA4D362850F"]
+			description: [
+				"&e用途：拥有多种烹饪模组刀类标签的工具，击杀原版生物会掉落额外的食材。"
+				"&b适合：安装在“剑刃”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "9dcf709b-c0d9-5928-951e-a6be990c79ba"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/more_mod_tetra/cooking_knife"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/more_mod_tetra/cooking_knife_material": "cooking_knife/oak"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "77290DC43B689682"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "69DE927F69A833E0"
+				title: "阅读厨刀"
+				type: "checkmark"
+			}]
+			title: "厨刀"
+			x: -11.03d
+			y: -11.7d
+		}
+		{
+			dependencies: ["56581EA4D362850F"]
+			description: [
+				"&e用途：攻速较快但攻击较低。"
+				"&b适合：安装在“剑刃”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "d1b43938-c6d6-5f87-913d-aa4dfed5b033"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/more_mod_tetra/mmt_twin_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/more_mod_tetra/mmt_twin_blade_material": "mmt_twin_blade/oak"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "2BCC8F3DFE001719"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "3812E17182A5D59E"
+				title: "阅读双剑"
+				type: "checkmark"
+			}]
+			title: "双剑"
+			x: -18.08d
+			y: -13.8d
+		}
+		{
+			dependencies: ["56581EA4D362850F"]
+			description: [
+				"&e用途：具有一定弧度的利刃，可以在战斗中不断削减敌人的最大生命值。"
+				"&b适合：安装在“剑刃”槽位。"
+				"&d需要：战国武器。"
+				"{\"text\":\"查看卷轴：战国武器\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"179BA0BFF189DE74\"}}"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "9ab3d000-fc61-578d-a8e1-63f5ef04eb70"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/more_mod_tetra/mmt_katana"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/more_mod_tetra/mmt_katana_material": "mmt_katana/oak"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "7E1B33C0877F38CF"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "2C73430F277E3AB2"
+				title: "阅读太刀"
+				type: "checkmark"
+			}]
+			title: "太刀"
+			x: -15.73d
+			y: -13.8d
+		}
+		{
+			dependencies: ["56581EA4D362850F"]
+			description: [
+				"&e用途：一把刀片，可用于制作，在切菜板上切割物品，并从草中收获稻草。"
+				"&b适合：安装在“剑刃”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "c9c1e823-5694-5652-af91-561d7941dbd9"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/knife"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/knife_material": "knife/flint"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "1B2F5087AB725954"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "1C9C20DB410A1733"
+				title: "阅读小刀"
+				type: "checkmark"
+			}]
+			title: "小刀"
+			x: -13.38d
+			y: -13.8d
+		}
+		{
+			dependencies: ["56581EA4D362850F"]
+			description: [
+				"&e用途：提供采掘或加工能力。"
+				"&b适合：安装在“剑刃”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "444fd3f0-a28b-5ca9-b4ed-f598199f78d9"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/machete"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/machete_material": "machete/oak"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "4EFA57552E032C46"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "12B59EB8347AE555"
+				title: "阅读弯刀"
+				type: "checkmark"
+			}]
+			title: "弯刀"
+			x: -11.03d
+			y: -13.8d
+		}
+		{
+			dependencies: ["56581EA4D362850F"]
+			description: [
+				"&e用途：具有平均伤害、攻击速度和完整性使用的普通剑刃。"
+				"&b适合：安装在“剑刃”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "7263598a-d352-5d2b-9993-36248fcac898"
+					"sword/basic_blade_material": "basic_blade/oak"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/basic_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "2E86041505F88C8A"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "503A174C14FFB0F5"
+				title: "阅读普通剑刃"
+				type: "checkmark"
+			}]
+			title: "普通剑刃"
+			x: -18.08d
+			y: -15.9d
+		}
+		{
+			dependencies: ["56581EA4D362850F"]
+			description: [
+				"&e用途：更短、更轻的剑刃。"
+				"&b适合：安装在“剑刃”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "5105e8c3-6a2e-5ce5-968b-1173e53bd109"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/short_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/decorative_pommel"
+					"sword/short_blade_material": "short_blade/oak"
+				}
+			}
+			id: "061E2D7E5A90D0BF"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "229E5719D3CC296C"
+				title: "阅读短剑刃"
+				type: "checkmark"
+			}]
+			title: "短剑刃"
+			x: -15.73d
+			y: -15.9d
+		}
+		{
+			dependencies: ["56581EA4D362850F"]
+			description: [
+				"&e用途：可以右键进行副手攻击的短刀，与太刀具有特殊的双连携打磨。"
+				"&b适合：安装在“剑刃”槽位。"
+				"&d需要：战国武器。"
+				"{\"text\":\"查看卷轴：战国武器\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"179BA0BFF189DE74\"}}"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "1d3dc59b-bd79-56dd-84a8-52604c44d10c"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/more_mod_tetra/wakizashi"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/more_mod_tetra/wakizashi_material": "wakizashi/oak"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "37E8CADE740D6622"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "01B84B5A51DE1D5D"
+				title: "阅读胁差"
+				type: "checkmark"
+			}]
+			title: "胁差"
+			x: -13.38d
+			y: -15.9d
+		}
+		{
+			dependencies: ["56581EA4D362850F"]
+			description: [
+				"&e用途：可以进行投掷的短刃，也可以进行暗杀。"
+				"&b适合：安装在“剑刃”槽位。"
+				"&d需要：战国武器。"
+				"{\"text\":\"查看卷轴：战国武器\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"179BA0BFF189DE74\"}}"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "02eee5fc-1032-5dc3-b91c-856bc26a93c4"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/more_mod_tetra/kunai"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/more_mod_tetra/kunai_material": "kunai/iron"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "28D8CA557E29F3FA"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "6ACE07C79A276097"
+				title: "阅读苦无"
+				type: "checkmark"
+			}]
+			title: "苦无"
+			x: -11.03d
+			y: -15.9d
+		}
+		{
+			dependencies: ["56581EA4D362850F"]
+			description: [
+				"&e用途：初始攻击力较低，面对无护甲敌人时造成的伤害将提升。"
+				"&b适合：安装在“剑刃”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "289ac0e2-51cf-5119-9850-850d53f338ed"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/more_mod_tetra/mmt_rapier"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/more_mod_tetra/mmt_rapier_material": "mmt_rapier/oak"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "1D356F99F81D632D"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "44B5975337EAD545"
+				title: "阅读西洋剑"
+				type: "checkmark"
+			}]
+			title: "西洋剑"
+			x: -18.08d
+			y: -18.0d
+		}
+		{
+			dependencies: ["56581EA4D362850F"]
+			description: [
+				"&e用途：重型剑刃牺牲了攻击速度以增加伤害，总能在完全蓄力时发动横扫。"
+				"&b适合：安装在“剑刃”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "e7b67ef7-48a7-5b93-97db-5f0790a4ea86"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/heavy_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/heavy_blade_material": "heavy_blade/iron"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "1EF21A8362A4C822"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "0D5757B83531C4AD"
+				title: "阅读重型剑刃"
+				type: "checkmark"
+			}]
+			title: "重型剑刃"
+			x: -15.73d
+			y: -18.0d
+		}
+		{
+			dependencies: ["56581EA4D362850F"]
+			description: [
+				"&e用途：原型为中国古代的镇煞斩煞用的道教法器，对亡灵具有额外伤害加成，且可以用矿物制作的钱币进行升级。"
+				"&b适合：安装在“剑刃”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "c5a170af-c994-5198-bec3-47658a583202"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/more_mod_tetra/mmt_coin_sword"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/more_mod_tetra/mmt_coin_sword_material": "mmt_coin_sword/iron"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "43CCA02E6BEA47D3"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "70CF107C605E532C"
+				title: "阅读铜钱剑"
+				type: "checkmark"
+			}]
+			title: "铜钱剑"
+			x: -13.38d
+			y: -18.0d
+		}
+		{
+			dependencies: ["56581EA4D362850F"]
+			description: [
+				"&e用途：一个平衡良好的刀片，非常适合投掷。"
+				"&b适合：安装在“剑刃”槽位。"
+				"&d需要：飞刀。"
+				"{\"text\":\"查看卷轴：飞刀\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0C089D74635DEE0E\"}}"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "a4d38fc3-7c65-5090-8919-fe243bce20a3"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/throwing_knife"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/decorative_pommel"
+					"sword/throwing_knife_material": "throwing_knife/iron"
+				}
+			}
+			id: "4939288978AA37C4"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "7B38D51E51067F56"
+				title: "阅读飞刀"
+				type: "checkmark"
+			}]
+			title: "飞刀"
+			x: -11.03d
+			y: -18.0d
+		}
+		{
+			dependencies: ["184B9F233262EE9D"]
+			description: [
+				"&e用途：汇总“附层”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "dc2a7813-7ef3-5809-bc1f-cf32b37a3c6f"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/basic_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/fuller": "sword/reinforced_fuller"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/decorative_pommel"
+					"sword/reinforced_fuller_material": "reinforced_fuller/iron"
+				}
+			}
+			id: "3FB436A498FB568F"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "53416670D485B2FA"
+				title: "阅读附层"
+				type: "checkmark"
+			}]
+			title: "&b附层"
+			x: -3.57d
+			y: -9.0d
+		}
+		{
+			dependencies: ["3FB436A498FB568F"]
+			description: [
+				"&e用途：附加强化附层可以提供额外的完整度并能够降低物品损坏的几率，但是剑会更重，攻击速度更慢。"
+				"&b适合：安装在“附层”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "8f8f3292-4c23-5845-986a-5b77c724d347"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/basic_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/fuller": "sword/reinforced_fuller"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/decorative_pommel"
+					"sword/reinforced_fuller_material": "reinforced_fuller/iron"
+				}
+			}
+			id: "4327D9F4CE405CED"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "6D22C3E36EA70D19"
+				title: "阅读强化附层"
+				type: "checkmark"
+			}]
+			title: "强化附层"
+			x: -4.75d
+			y: -11.7d
+		}
+		{
+			dependencies: ["3FB436A498FB568F"]
+			description: [
+				"&e用途：用特殊材料对工具进行涂装。"
+				"&b适合：安装在“附层”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "556b1546-24b0-58b8-91cb-5819d270e67f"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/basic_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/fuller": "sword/more_mod_tetra/material_fuller"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/more_mod_tetra/material_fuller_material": "material_fuller/alexscaves_bioluminesscence"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "05750DB756999074"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "45367FFD3347F994"
+				title: "阅读涂层"
+				type: "checkmark"
+			}]
+			title: "涂层"
+			x: -2.4d
+			y: -11.7d
+		}
+		{
+			dependencies: ["3FB436A498FB568F"]
+			description: [
+				"&e用途：一套完整的附件，当剑被挥动时，咆哮之风会包围着持剑者，有时它会偏转来袭的弹射物。"
+				"&b适合：安装在“附层”槽位。"
+				"&d需要：风啸剑刃。"
+				"{\"text\":\"查看卷轴：风啸剑刃\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"10F7CC82172D4D3B\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "6490ef25-97bc-5184-af2a-18ffba406bb3"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/basic_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/fuller": "sword/howling"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/howling_material": "howling/iron"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "557B2311D1730F5B"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "2B273568500A0207"
+				title: "阅读风啸者"
+				type: "checkmark"
+			}]
+			title: "风啸者"
+			x: -4.75d
+			y: -13.8d
+		}
+		{
+			dependencies: ["184B9F233262EE9D"]
+			description: [
+				"&e用途：汇总“护手”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "0c65ccc4-beea-564d-8b56-28ef33b68144"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/basic_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/sturdy_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/decorative_pommel"
+					"sword/sturdy_guard_material": "sturdy_guard/iron"
+				}
+			}
+			id: "1ED97E978FC59917"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "6E908E19008DB5D1"
+				title: "阅读护手"
+				type: "checkmark"
+			}]
+			title: "&b护手"
+			x: -3.57d
+			y: -18.7d
+		}
+		{
+			dependencies: ["1ED97E978FC59917"]
+			description: [
+				"&e用途：一个能在合适时机阻挡攻击的守卫。"
+				"&b适合：安装在“护手”槽位。"
+				"&d需要：坚固守卫。"
+				"{\"text\":\"查看卷轴：坚固守卫\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"1486866769FDAF5B\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "d8d21369-ff33-506c-82be-47a87eaab466"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/basic_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/sturdy_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/decorative_pommel"
+					"sword/sturdy_guard_material": "sturdy_guard/iron"
+				}
+			}
+			id: "5C7BA1417314D5A0"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "71268D46A25B7708"
+				title: "阅读坚固守卫"
+				type: "checkmark"
+			}]
+			title: "坚固守卫"
+			x: -5.92d
+			y: -21.4d
+		}
+		{
+			dependencies: ["1ED97E978FC59917"]
+			description: [
+				"&e用途：保护挥剑手的宽护手。"
+				"&b适合：安装在“护手”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "9615cdaa-0a9e-5f23-b467-8309057d4da4"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/basic_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/wide_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/decorative_pommel"
+					"sword/wide_guard_material": "wide_guard/iron"
+				}
+			}
+			id: "7D65272F4691229E"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "206D61347A5C177A"
+				title: "阅读宽护手"
+				type: "checkmark"
+			}]
+			title: "宽护手"
+			x: -3.57d
+			y: -21.4d
+		}
+		{
+			dependencies: ["1ED97E978FC59917"]
+			description: [
+				"&e用途：用纤维加强剑刃和剑柄之间的连接。"
+				"&b适合：安装在“护手”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "2fd6b4b9-56a9-543c-9d77-83554fe88808"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/binding_material": "sword_binding/string"
+					"sword/blade": "sword/basic_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/binding"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "3590F8812D0E8ED4"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "6B7EA729130ED688"
+				title: "阅读绑定"
+				type: "checkmark"
+			}]
+			title: "绑定"
+			x: -1.22d
+			y: -21.4d
+		}
+		{
+			dependencies: ["1ED97E978FC59917"]
+			description: [
+				"&e用途：一个装饰性的剑格，它纯粹是装饰性的，仅影响物品的外观。"
+				"&b适合：安装在“护手”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "dcfb0947-b6fe-5483-8429-6fbc92d0cec0"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/basic_blade"
+					"sword/decorative_guard_material": "decorative_guard/iron"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/decorative_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "74305D1EA38FBFCD"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "205407D76231FE01"
+				title: "阅读装饰性的剑格"
+				type: "checkmark"
+			}]
+			title: "装饰性的剑格"
+			x: -5.92d
+			y: -23.5d
+		}
+		{
+			dependencies: ["1ED97E978FC59917"]
+			description: [
+				"&e用途：在剑柄上附加圆环，能够有效提升控制力。"
+				"&b适合：安装在“护手”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "387d7f83-547f-526f-9136-ef38fcc62f9d"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/basic_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/forefinger_ring_material": "forefinger_ring/oak"
+					"sword/guard": "sword/forefinger_ring"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "7238B09790F538D9"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "3D78B18765B79244"
+				title: "阅读食指圆环"
+				type: "checkmark"
+			}]
+			title: "食指圆环"
+			x: -3.57d
+			y: -23.5d
+		}
+		{
+			dependencies: ["184B9F233262EE9D"]
+			description: [
+				"&e用途：汇总“剑柄”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "6d19766a-ec9e-5e94-b94b-79e47a0117fe"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/oak"
+					"sword/blade": "sword/basic_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "6DE1537EF603312F"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "1C96EF57EF291147"
+				title: "阅读剑柄"
+				type: "checkmark"
+			}]
+			title: "&b剑柄"
+			x: -14.55d
+			y: -22.9d
+		}
+		{
+			dependencies: ["6DE1537EF603312F"]
+			description: [
+				"&e用途：一个简易剑柄。"
+				"&b适合：安装在“剑柄”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "6f911290-00b5-565b-8ccc-7ee40778b1b7"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/oak"
+					"sword/blade": "sword/basic_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "7B6DD206D20AD334"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "209B40EE12F33841"
+				title: "阅读简易剑柄"
+				type: "checkmark"
+			}]
+			title: "简易剑柄"
+			x: -14.55d
+			y: -25.6d
+		}
+		{
+			dependencies: ["184B9F233262EE9D"]
+			description: [
+				"&e用途：汇总“剑柄圆头”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "c1d9168c-e4eb-5058-898d-e955b2bcf416"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/basic_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/more_mod_tetra/sword_stem_handguard_material": "sword_stem_handguard/oak"
+					"sword/pommel": "sword/more_mod_tetra/sword_stem_handguard"
+				}
+			}
+			id: "7974A6593D18FA89"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "248F9A4D8E995DF8"
+				title: "阅读剑柄圆头"
+				type: "checkmark"
+			}]
+			title: "&b剑柄圆头"
+			x: -3.57d
+			y: -28.4d
+		}
+		{
+			dependencies: ["7974A6593D18FA89"]
+			description: [
+				"&e用途：原型为西洋剑的护手，可以赋予玩家决斗属性，但会降低横扫范围。"
+				"&b适合：安装在“剑柄圆头”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "e1c08a2c-42df-5b52-8a88-a4c0c4b94f3c"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/basic_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/more_mod_tetra/sword_stem_handguard_material": "sword_stem_handguard/oak"
+					"sword/pommel": "sword/more_mod_tetra/sword_stem_handguard"
+				}
+			}
+			id: "7F02DC3317797901"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "03997F03A8E2FDA9"
+				title: "阅读剑茎护手"
+				type: "checkmark"
+			}]
+			title: "剑茎护手"
+			x: -4.75d
+			y: -31.1d
+		}
+		{
+			dependencies: ["7974A6593D18FA89"]
+			description: [
+				"&e用途：为剑柄添加握环，增加剑的攻击范围。"
+				"&b适合：安装在“剑柄圆头”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "ae11a9f9-1681-5066-947a-eec5d4f38898"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/basic_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/grip_loop_material": "grip_loop/oak"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/grip_loop"
+				}
+			}
+			id: "3FB6748F0C0E3095"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "74D712F9D09D9ECF"
+				title: "阅读握环"
+				type: "checkmark"
+			}]
+			title: "握环"
+			x: -2.4d
+			y: -31.1d
+		}
+		{
+			dependencies: ["7974A6593D18FA89"]
+			description: [
+				"&e用途：附在剑柄尾部的配重。"
+				"&b适合：安装在“剑柄圆头”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "af4af952-a0cc-57db-b584-8292a09e01af"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/basic_blade"
+					"sword/counterweight_material": "counterweight/oak"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/counterweight"
+				}
+			}
+			id: "47A479C14CBB0B92"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "56391EA68DDB3B58"
+				title: "阅读配重"
+				type: "checkmark"
+			}]
+			title: "配重"
+			x: -4.75d
+			y: -33.2d
+		}
+		{
+			dependencies: ["184B9F233262EE9D"]
+			description: [
+				"&e用途：汇总“镶嵌”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "77cc4971-5b28-55f9-99d7-29cf55dfd95c"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/basic_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/perk_socket_0"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/perk_socket_0_material": "sword_perk_socket_0/abyssal_core"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "264964357977C5F1"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "454AFFF882249A48"
+				title: "阅读镶嵌"
+				type: "checkmark"
+			}]
+			title: "&b镶嵌"
+			x: -14.55d
+			y: -30.5d
+		}
+		{
+			dependencies: ["264964357977C5F1"]
+			description: [
+				"&e用途：一颗精美镶嵌的宝石。"
+				"&b适合：安装在“镶嵌”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "d5014f16-4a26-57a3-bd51-d7f8ce3bf3e5"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/basic_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/perk_socket_0"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/perk_socket_0_material": "sword_perk_socket_0/abyssal_core"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "64AE37050534D9E8"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "5B20B4D4D6BCDFE4"
+				title: "阅读镶嵌"
+				type: "checkmark"
+			}]
+			title: "镶嵌"
+			x: -15.73d
+			y: -33.2d
+		}
+		{
+			dependencies: ["264964357977C5F1"]
+			description: [
+				"&e用途：一颗宝石，被装进了剑刃与剑柄的连接处。"
+				"&b适合：安装在“镶嵌”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "f8e7ab97-43ce-5d29-b99c-ecc232c2913e"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/basic_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/socket"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/pommel": "sword/decorative_pommel"
+					"sword/socket_material": "sword_socket/abyssal_core"
+				}
+			}
+			id: "648898675A3B13C6"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "086A85397487E0FB"
+				title: "阅读镶嵌"
+				type: "checkmark"
+			}]
+			title: "镶嵌"
+			x: -13.38d
+			y: -33.2d
+		}
+		{
+			dependencies: ["67AD3AB43ED298A0"]
+			description: [
+				"&e用途：查看单头工具的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_single"
+				tag: {
+					Damage: 0
+					id: "04b188b8-6045-5646-9f11-d36c63a7a4d6"
+					"single/basic_handle_material": "basic_handle/stick"
+					"single/basic_shovel_material": "basic_shovel/tin"
+					"single/binding": "single/binding"
+					"single/binding_material": "single_binding/prismarine"
+					"single/handle": "single/basic_handle"
+					"single/head": "single/basic_shovel"
+				}
+			}
+			id: "407D5F62675F8B9F"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "59C602AF7224EEA0"
+				title: "阅读单头工具"
+				type: "checkmark"
+			}]
+			title: "&a单头工具"
+			x: 11.98d
+			y: -5.0d
+		}
+		{
+			dependencies: ["407D5F62675F8B9F"]
+			description: [
+				"&e用途：汇总“绑定”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_single"
+				tag: {
+					Damage: 0
+					id: "e2627d9b-21e9-5172-bf68-ee2b5fd315e2"
+					"single/basic_handle_material": "basic_handle/stick"
+					"single/basic_shovel_material": "basic_shovel/tin"
+					"single/binding": "single/binding"
+					"single/binding_material": "single_binding/string"
+					"single/handle": "single/basic_handle"
+					"single/head": "single/basic_shovel"
+				}
+			}
+			id: "71593E9F3C3B5ED3"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "6A068C36756E8736"
+				title: "阅读绑定"
+				type: "checkmark"
+			}]
+			title: "&b绑定"
+			x: 8.23d
+			y: -9.0d
+		}
+		{
+			dependencies: ["71593E9F3C3B5ED3"]
+			description: [
+				"&e用途：用纤维加强工具头部和手柄之间的连接。"
+				"&b适合：安装在“绑定”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_single"
+				tag: {
+					Damage: 0
+					id: "77db20e4-3766-56c5-bb9e-7d28d7ba89e2"
+					"single/basic_handle_material": "basic_handle/stick"
+					"single/basic_shovel_material": "basic_shovel/tin"
+					"single/binding": "single/binding"
+					"single/binding_material": "single_binding/string"
+					"single/handle": "single/basic_handle"
+					"single/head": "single/basic_shovel"
+				}
+			}
+			id: "512324962B987313"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "77F870E9B6DB2969"
+				title: "阅读绑定"
+				type: "checkmark"
+			}]
+			title: "绑定"
+			x: 8.23d
+			y: -11.7d
+		}
+		{
+			dependencies: ["407D5F62675F8B9F"]
+			description: [
+				"&e用途：汇总“手柄”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_single"
+				tag: {
+					Damage: 0
+					id: "f812e799-ac52-5700-90d6-126f6162bdf0"
+					"single/basic_handle_material": "basic_handle/oak"
+					"single/basic_shovel_material": "basic_shovel/tin"
+					"single/binding": "single/binding"
+					"single/binding_material": "single_binding/prismarine"
+					"single/handle": "single/basic_handle"
+					"single/head": "single/basic_shovel"
+				}
+			}
+			id: "201E9D6E7D937716"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "7C667308C8C0544E"
+				title: "阅读手柄"
+				type: "checkmark"
+			}]
+			title: "&b手柄"
+			x: 16.88d
+			y: -9.0d
+		}
+		{
+			dependencies: ["201E9D6E7D937716"]
+			description: [
+				"&e用途：一个基础的手柄。"
+				"&b适合：安装在“手柄”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_single"
+				tag: {
+					Damage: 0
+					id: "fee5da65-31a3-59fe-9fe9-5fd068990bf0"
+					"single/basic_handle_material": "basic_handle/oak"
+					"single/basic_shovel_material": "basic_shovel/tin"
+					"single/binding": "single/binding"
+					"single/binding_material": "single_binding/prismarine"
+					"single/handle": "single/basic_handle"
+					"single/head": "single/basic_shovel"
+				}
+			}
+			id: "15F6E927B750D947"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "7F3DFF1AA84E06BF"
+				title: "阅读基础手柄"
+				type: "checkmark"
+			}]
+			title: "基础手柄"
+			x: 15.7d
+			y: -11.7d
+		}
+		{
+			dependencies: ["201E9D6E7D937716"]
+			description: [
+				"&e用途：轻手柄提供更少的完整度，但使物品能够被投掷出去。"
+				"&b适合：安装在“手柄”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_single"
+				tag: {
+					Damage: 0
+					id: "cb7f9b1d-9f10-5a72-9428-cfb7d0aeef7e"
+					"single/basic_handle_material": "basic_handle/stick"
+					"single/basic_shovel_material": "basic_shovel/tin"
+					"single/binding": "single/binding"
+					"single/binding_material": "single_binding/prismarine"
+					"single/handle": "single/light_handle"
+					"single/head": "single/basic_shovel"
+					"single/light_handle_material": "light_handle/oak"
+				}
+			}
+			id: "391DAFA662900370"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "421230571B174996"
+				title: "阅读轻手柄"
+				type: "checkmark"
+			}]
+			title: "轻手柄"
+			x: 18.05d
+			y: -11.7d
+		}
+		{
+			dependencies: ["201E9D6E7D937716"]
+			description: [
+				"&e用途：长手柄提供更远的攻击范围。"
+				"&b适合：安装在“手柄”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_single"
+				tag: {
+					Damage: 0
+					id: "95d989b7-413c-59ea-809f-17b21fe72f1a"
+					"single/basic_handle_material": "basic_handle/stick"
+					"single/basic_shovel_material": "basic_shovel/tin"
+					"single/binding": "single/binding"
+					"single/binding_material": "single_binding/prismarine"
+					"single/handle": "single/long_handle"
+					"single/head": "single/basic_shovel"
+					"single/long_handle_material": "long_handle/oak"
+				}
+			}
+			id: "6B9FD0351091638C"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "3E69FAACCC7040E0"
+				title: "阅读长手柄"
+				type: "checkmark"
+			}]
+			title: "长手柄"
+			x: 15.7d
+			y: -13.8d
+		}
+		{
+			dependencies: ["407D5F62675F8B9F"]
+			description: [
+				"&e用途：汇总“头部”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_single"
+				tag: {
+					Damage: 0
+					id: "eabc7ef1-4dd9-58d9-b3c9-1fa469b8a481"
+					"single/basic_handle_material": "basic_handle/stick"
+					"single/basic_shovel_material": "basic_shovel/tin"
+					"single/binding": "single/binding"
+					"single/binding_material": "single_binding/prismarine"
+					"single/handle": "single/basic_handle"
+					"single/head": "single/trident"
+				}
+			}
+			id: "286032FC14D00F7F"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "45D77FD63A376DAB"
+				title: "阅读头部"
+				type: "checkmark"
+			}]
+			title: "&b头部"
+			x: 8.23d
+			y: -16.6d
+		}
+		{
+			dependencies: ["286032FC14D00F7F"]
+			description: [
+				"&e用途：一个三叉戟头。"
+				"&b适合：安装在“头部”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_single"
+				tag: {
+					Damage: 0
+					id: "53f96c52-7c53-5b77-baff-d2b7d5227c48"
+					"single/basic_handle_material": "basic_handle/stick"
+					"single/basic_shovel_material": "basic_shovel/tin"
+					"single/binding": "single/binding"
+					"single/binding_material": "single_binding/prismarine"
+					"single/handle": "single/basic_handle"
+					"single/head": "single/trident"
+				}
+			}
+			id: "6339D70F95D2A827"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "48A3ACD5C291E35B"
+				title: "阅读三叉戟"
+				type: "checkmark"
+			}]
+			title: "三叉戟"
+			x: 5.88d
+			y: -19.3d
+		}
+		{
+			dependencies: ["286032FC14D00F7F"]
+			description: [
+				"&e用途：沉重的钝器，可以根据目标的护甲装备数量与护甲值提升伤害。"
+				"&b适合：安装在“头部”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_single"
+				tag: {
+					Damage: 0
+					id: "3d5026e8-7606-5b08-9595-e3b2134c18ed"
+					"single/basic_handle_material": "basic_handle/stick"
+					"single/basic_shovel_material": "basic_shovel/tin"
+					"single/binding": "single/binding"
+					"single/binding_material": "single_binding/prismarine"
+					"single/handle": "single/basic_handle"
+					"single/head": "single/more_mod_tetra/mmt_flanged_mace"
+					"single/more_mod_tetra/mmt_flanged_mace_material": "mmt_flanged_mace/oak"
+				}
+			}
+			id: "75C182D1637F72D4"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "5AEF096EB8402731"
+				title: "阅读凸缘钉头锤"
+				type: "checkmark"
+			}]
+			title: "凸缘钉头锤"
+			x: 8.23d
+			y: -19.3d
+		}
+		{
+			dependencies: ["286032FC14D00F7F"]
+			description: [
+				"&e用途：一个类似矛头的重型工具头部。"
+				"&b适合：安装在“头部”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_single"
+				tag: {
+					Damage: 0
+					id: "d0602635-2a98-5ecb-8732-14d64e688932"
+					"single/basic_handle_material": "basic_handle/stick"
+					"single/basic_shovel_material": "basic_shovel/tin"
+					"single/binding": "single/binding"
+					"single/binding_material": "single_binding/prismarine"
+					"single/handle": "single/basic_handle"
+					"single/head": "single/earthpiercer"
+				}
+			}
+			id: "33B0090D3056F5B1"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "0BA4D6407F79ED95"
+				title: "阅读凿地器"
+				type: "checkmark"
+			}]
+			title: "凿地器"
+			x: 10.58d
+			y: -19.3d
+		}
+		{
+			dependencies: ["286032FC14D00F7F"]
+			description: [
+				"&e用途：一种功能类似于镐子的类似矛头的重型工具头。"
+				"&b适合：安装在“头部”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_single"
+				tag: {
+					Damage: 0
+					id: "af8a1d05-1a6a-511c-89b1-4741bd5f6b67"
+					"single/basic_handle_material": "basic_handle/stick"
+					"single/basic_shovel_material": "basic_shovel/tin"
+					"single/binding": "single/binding"
+					"single/binding_material": "single_binding/prismarine"
+					"single/handle": "single/basic_handle"
+					"single/head": "single/unbound_earthpiercer"
+					"single/unbound_earthpiercer_material": "unbound_earthpiercer/iron"
+				}
+			}
+			id: "5181A1AF3EDF90D0"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "475196B2C288E625"
+				title: "阅读凿地器"
+				type: "checkmark"
+			}]
+			title: "凿地器"
+			x: 5.88d
+			y: -21.4d
+		}
+		{
+			dependencies: ["286032FC14D00F7F"]
+			description: [
+				"&e用途：自带随硬度与密度提升的工业防护属性，且可以作为模组扳手使用。"
+				"&b适合：安装在“头部”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_single"
+				tag: {
+					Damage: 0
+					id: "735866be-8108-55bb-ae76-1a9707720f58"
+					"single/basic_handle_material": "basic_handle/stick"
+					"single/basic_shovel_material": "basic_shovel/tin"
+					"single/binding": "single/binding"
+					"single/binding_material": "single_binding/prismarine"
+					"single/handle": "single/basic_handle"
+					"single/head": "single/more_mod_tetra/wrench"
+					"single/more_mod_tetra/wrench_material": "wrench/oak"
+				}
+			}
+			id: "0C561B2AEFD337B9"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "0EF027D5664C37E1"
+				title: "阅读扳手"
+				type: "checkmark"
+			}]
+			title: "扳手"
+			x: 8.23d
+			y: -21.4d
+		}
+		{
+			dependencies: ["286032FC14D00F7F"]
+			description: [
+				"&e用途：一个可以造成伤害的矛头。"
+				"&b适合：安装在“头部”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_single"
+				tag: {
+					Damage: 0
+					id: "d97ad381-ead6-5ac5-b45d-0127f74784d7"
+					"single/basic_handle_material": "basic_handle/stick"
+					"single/basic_shovel_material": "basic_shovel/tin"
+					"single/binding": "single/binding"
+					"single/binding_material": "single_binding/prismarine"
+					"single/handle": "single/basic_handle"
+					"single/head": "single/spearhead"
+					"single/spearhead_material": "spearhead/oak"
+				}
+			}
+			id: "2993573ED9B0C2D4"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "198A02BF2C8809FD"
+				title: "阅读矛头"
+				type: "checkmark"
+			}]
+			title: "矛头"
+			x: 10.58d
+			y: -21.4d
+		}
+		{
+			dependencies: ["286032FC14D00F7F"]
+			description: [
+				"&e用途：拥有较远的攻击距离和较大的横扫范围。"
+				"&b适合：安装在“头部”槽位。"
+				"&d需要：战国武器。"
+				"{\"text\":\"查看卷轴：战国武器\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"179BA0BFF189DE74\"}}"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_single"
+				tag: {
+					Damage: 0
+					id: "9eaca5b6-de00-5dcb-bca8-dfe66eba56c8"
+					"single/basic_handle_material": "basic_handle/stick"
+					"single/basic_shovel_material": "basic_shovel/tin"
+					"single/binding": "single/binding"
+					"single/binding_material": "single_binding/prismarine"
+					"single/handle": "single/basic_handle"
+					"single/head": "single/more_mod_tetra/naginata"
+					"single/more_mod_tetra/naginata_material": "naginata/oak"
+				}
+			}
+			id: "2CDF4533AC252825"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "3B84E16F692332B2"
+				title: "阅读薙刀"
+				type: "checkmark"
+			}]
+			title: "薙刀"
+			x: 5.88d
+			y: -23.5d
+		}
+		{
+			dependencies: ["286032FC14D00F7F"]
+			description: [
+				"&e用途：一个主要用于掘土的锹头，但也可以用来制作草径。"
+				"&b适合：安装在“头部”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_single"
+				tag: {
+					Damage: 0
+					id: "be1fb260-7a8a-518d-b3fb-4ea72d1dcdc9"
+					"single/basic_handle_material": "basic_handle/stick"
+					"single/basic_shovel_material": "basic_shovel/iron"
+					"single/binding": "single/binding"
+					"single/binding_material": "single_binding/prismarine"
+					"single/handle": "single/basic_handle"
+					"single/head": "single/basic_shovel"
+				}
+			}
+			id: "583A9AB5BC31514B"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "10D8BA576A583973"
+				title: "阅读锹头"
+				type: "checkmark"
+			}]
+			title: "锹头"
+			x: 8.23d
+			y: -23.5d
+		}
+		{
+			dependencies: ["407D5F62675F8B9F"]
+			description: [
+				"&e用途：汇总“镶嵌”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_single"
+				tag: {
+					Damage: 0
+					id: "5f3e91a9-ba58-5662-9351-cc25ce27bc4b"
+					"single/basic_handle_material": "basic_handle/stick"
+					"single/basic_shovel_material": "basic_shovel/tin"
+					"single/binding": "single/perk_socket_0"
+					"single/binding_material": "single_binding/prismarine"
+					"single/handle": "single/basic_handle"
+					"single/head": "single/basic_shovel"
+					"single/perk_socket_0_material": "single_perk_socket_0/abyssal_core"
+				}
+			}
+			id: "3F45E8AF360B845F"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "5FDC248EAC3ABBA9"
+				title: "阅读镶嵌"
+				type: "checkmark"
+			}]
+			title: "&b镶嵌"
+			x: 16.88d
+			y: -18.7d
+		}
+		{
+			dependencies: ["3F45E8AF360B845F"]
+			description: [
+				"&e用途：华丽镶嵌的宝石。"
+				"&b适合：安装在“镶嵌”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_single"
+				tag: {
+					Damage: 0
+					id: "9d3493ea-ecc5-5a9c-813d-8455d7f96ff8"
+					"single/basic_handle_material": "basic_handle/stick"
+					"single/basic_shovel_material": "basic_shovel/tin"
+					"single/binding": "single/perk_socket_0"
+					"single/binding_material": "single_binding/prismarine"
+					"single/handle": "single/basic_handle"
+					"single/head": "single/basic_shovel"
+					"single/perk_socket_0_material": "single_perk_socket_0/abyssal_core"
+				}
+			}
+			id: "13B9CCB6185E01E6"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "16F3EE066BBA1067"
+				title: "阅读镶嵌"
+				type: "checkmark"
+			}]
+			title: "镶嵌"
+			x: 15.7d
+			y: -21.4d
+		}
+		{
+			dependencies: ["3F45E8AF360B845F"]
+			description: [
+				"&e用途：一颗宝石，被装进了头部与手柄的连接处。"
+				"&b适合：安装在“镶嵌”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_single"
+				tag: {
+					Damage: 0
+					id: "afbb0d75-8453-5366-9c18-3d9140aa2a07"
+					"single/basic_handle_material": "basic_handle/stick"
+					"single/basic_shovel_material": "basic_shovel/tin"
+					"single/binding": "single/socket"
+					"single/binding_material": "single_binding/prismarine"
+					"single/handle": "single/basic_handle"
+					"single/head": "single/basic_shovel"
+					"single/socket_material": "single_socket/abyssal_core"
+				}
+			}
+			id: "7648144DE1C11075"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "61B31A61228B5091"
+				title: "阅读镶嵌"
+				type: "checkmark"
+			}]
+			title: "镶嵌"
+			x: 18.05d
+			y: -21.4d
+		}
+		{
+			dependencies: ["67AD3AB43ED298A0"]
+			description: [
+				"&e用途：查看双头工具的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/basic_hammer_material": "basic_hammer/iron"
+					"double/basic_handle_material": "basic_handle/stick"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/basic_hammer_left"
+					"double/head_right": "double/basic_hammer_right"
+					id: "9ebfe75b-b72c-59f7-baf1-25c0147339b3"
+				}
+			}
+			id: "60F3CE2F6DBE0D1F"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "0F0DB1D17E4B0F23"
+				title: "阅读双头工具"
+				type: "checkmark"
+			}]
+			title: "&a双头工具"
+			x: -8.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["60F3CE2F6DBE0D1F"]
+			description: [
+				"&e用途：汇总“绑定”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/basic_hammer_material": "basic_hammer/iron"
+					"double/basic_handle_material": "basic_handle/stick"
+					"double/binding": "double/binding"
+					"double/binding_material": "double_binding/string"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/basic_hammer_left"
+					"double/head_right": "double/basic_hammer_right"
+					id: "3122f7e3-d46a-5695-950d-ea2765912504"
+				}
+			}
+			id: "7590E3A20E995025"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "2705C8D78EF07748"
+				title: "阅读绑定"
+				type: "checkmark"
+			}]
+			title: "&b绑定"
+			x: -12.25d
+			y: 9.0d
+		}
+		{
+			dependencies: ["7590E3A20E995025"]
+			description: [
+				"&e用途：用紧密的纤维加强工具头部。"
+				"&b适合：安装在“绑定”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/basic_hammer_material": "basic_hammer/iron"
+					"double/basic_handle_material": "basic_handle/stick"
+					"double/binding": "double/binding"
+					"double/binding_material": "double_binding/string"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/basic_hammer_left"
+					"double/head_right": "double/basic_hammer_right"
+					id: "9ae6d0a9-73a0-5f33-bbed-f9952b4a9302"
+				}
+			}
+			id: "3D30C9007ED67B07"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "2BC773FE2D23747D"
+				title: "阅读绑定"
+				type: "checkmark"
+			}]
+			title: "绑定"
+			x: -12.25d
+			y: 11.7d
+		}
+		{
+			dependencies: ["60F3CE2F6DBE0D1F"]
+			description: [
+				"&e用途：汇总“手柄”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/basic_hammer_material": "basic_hammer/iron"
+					"double/basic_handle_material": "basic_handle/oak"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/basic_hammer_left"
+					"double/head_right": "double/basic_hammer_right"
+					id: "0fadd3a0-f336-56de-aad2-3ec8fb19d8b2"
+				}
+			}
+			id: "3FB7597DDDD13BD4"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "6FA0BB979E38A78A"
+				title: "阅读手柄"
+				type: "checkmark"
+			}]
+			title: "&b手柄"
+			x: -3.6d
+			y: 9.0d
+		}
+		{
+			dependencies: ["3FB7597DDDD13BD4"]
+			description: [
+				"&e用途：基础工具手柄。"
+				"&b适合：安装在“手柄”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/basic_hammer_material": "basic_hammer/iron"
+					"double/basic_handle_material": "basic_handle/oak"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/basic_hammer_left"
+					"double/head_right": "double/basic_hammer_right"
+					id: "cbecf54b-5eee-5451-bda0-2d95b1e7c5e3"
+				}
+			}
+			id: "35E48FF1C3A1F594"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "3AB162900D20163E"
+				title: "阅读基础手柄"
+				type: "checkmark"
+			}]
+			title: "基础手柄"
+			x: -3.6d
+			y: 11.7d
+		}
+		{
+			dependencies: ["60F3CE2F6DBE0D1F"]
+			description: [
+				"&e用途：汇总“头部”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/basic_hammer_material": "basic_hammer/iron"
+					"double/basic_handle_material": "basic_handle/stick"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/basic_hammer_left"
+					"double/head_right": "double/extractor_right"
+					id: "a510b4e4-1bc3-5697-ab24-ef96ea4e0c54"
+				}
+			}
+			id: "3C922AF5ABD87B4A"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "20AD1E6EA4A5A0EF"
+				title: "阅读头部"
+				type: "checkmark"
+			}]
+			title: "&b头部"
+			x: -12.25d
+			y: 16.6d
+		}
+		{
+			dependencies: ["3C922AF5ABD87B4A"]
+			description: [
+				"&e用途：一个被再利用的地底提取器，能让工具一次破坏多个方块。"
+				"&b适合：安装在“头部”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/basic_hammer_material": "basic_hammer/iron"
+					"double/basic_handle_material": "basic_handle/stick"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/basic_hammer_left"
+					"double/head_right": "double/extractor_right"
+					id: "f839bd36-b1a4-58d9-961d-385991345e50"
+				}
+			}
+			id: "4108E34BF67C230F"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "2CE94FA9736B2B05"
+				title: "阅读工具尾部"
+				type: "checkmark"
+			}]
+			title: "工具尾部"
+			x: -14.6d
+			y: 19.3d
+		}
+		{
+			dependencies: ["3C922AF5ABD87B4A"]
+			description: [
+				"&e用途：一个弯曲的斧刃，可以被用于采掘、挖掘和伐木。"
+				"&b适合：安装在“头部”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+				"{\"text\":\"查看战争铸造卷轴\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"1A65900BEA05FCC5\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/adze_left_material": "adze/iron"
+					"double/adze_right_material": "adze/iron"
+					"double/basic_hammer_material": "basic_hammer/iron"
+					"double/basic_handle_material": "basic_handle/stick"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/adze_left"
+					"double/head_right": "double/adze_right"
+					id: "b8aa9cb4-9fb6-50eb-852a-84b17f248caa"
+				}
+			}
+			id: "2D89C3B0D39E00EF"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "2DBF54A5652AE7C8"
+				title: "阅读扁斧"
+				type: "checkmark"
+			}]
+			title: "扁斧"
+			x: -12.25d
+			y: 19.3d
+		}
+		{
+			dependencies: ["3C922AF5ABD87B4A"]
+			description: [
+				"&e用途：一个可用于砍伐木板和原木一类东西的普通斧头，但也可以用来从原木下剥下书皮，以及用木头合成物…。"
+				"&b适合：安装在“头部”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+				"{\"text\":\"查看战争铸造卷轴\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5148787F9C7A76E0\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/basic_axe_left_material": "basic_axe/oak"
+					"double/basic_axe_right_material": "basic_axe/oak"
+					"double/basic_hammer_material": "basic_hammer/iron"
+					"double/basic_handle_material": "basic_handle/stick"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/basic_axe_left"
+					"double/head_right": "double/basic_axe_right"
+					id: "e68c3cd6-1c1c-56bf-b9a4-363fb6baf308"
+				}
+			}
+			id: "00E39243E8CBA8C9"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "79D076A088E06FB3"
+				title: "阅读斧头"
+				type: "checkmark"
+			}]
+			title: "斧头"
+			x: -9.9d
+			y: 19.3d
+		}
+		{
+			dependencies: ["3C922AF5ABD87B4A"]
+			description: [
+				"&e用途：一个自由制作的提取器附件，拥有增强的功率，但缺乏古代提取器的一些安全措施和特色。"
+				"&b适合：安装在“头部”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/basic_hammer_material": "basic_hammer/iron"
+					"double/basic_handle_material": "basic_handle/stick"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/basic_hammer_left"
+					"double/head_right": "double/unbound_extractor_right"
+					id: "62c4d44a-bfec-5161-859f-0f95502237e8"
+				}
+			}
+			id: "58A9F52F1533F412"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "4B879B053471FA9B"
+				title: "阅读未绑定的提取器"
+				type: "checkmark"
+			}]
+			title: "未绑定的提取器"
+			x: -14.6d
+			y: 21.4d
+		}
+		{
+			dependencies: ["3C922AF5ABD87B4A"]
+			description: [
+				"&e用途：一个轻微弯曲的羊角头，可以用来撬开东西，并且可以快速破坏绝大多数木类方块。"
+				"&b适合：安装在“头部”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+				"{\"text\":\"查看战争铸造卷轴\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"265AE0FA7109E131\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/basic_hammer_material": "basic_hammer/iron"
+					"double/basic_handle_material": "basic_handle/stick"
+					"double/claw_left_material": "claw/iron"
+					"double/claw_right_material": "claw/iron"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/claw_left"
+					"double/head_right": "double/claw_right"
+					id: "ecdd2c17-2a9c-5d06-8124-8a3683490c20"
+				}
+			}
+			id: "38A3B176616107B5"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "2BFB46C14EBF7B2D"
+				title: "阅读羊角头"
+				type: "checkmark"
+			}]
+			title: "羊角头"
+			x: -12.25d
+			y: 21.4d
+		}
+		{
+			dependencies: ["3C922AF5ABD87B4A"]
+			description: [
+				"&e用途：一个普通的锄头，可以用来锄地。"
+				"&b适合：安装在“头部”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+				"{\"text\":\"查看战争铸造卷轴\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"383D4E60C6BDB47A\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/basic_hammer_material": "basic_hammer/iron"
+					"double/basic_handle_material": "basic_handle/stick"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/hoe_left"
+					"double/head_right": "double/hoe_right"
+					"double/hoe_left_material": "hoe/iron"
+					"double/hoe_right_material": "hoe/iron"
+					id: "d8ef408e-6b36-515c-8428-759fe6d9d9bf"
+				}
+			}
+			id: "491AD37CFDC94FC5"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "53BC893C6EB0087E"
+				title: "阅读锄头"
+				type: "checkmark"
+			}]
+			title: "锄头"
+			x: -9.9d
+			y: 21.4d
+		}
+		{
+			dependencies: ["3C922AF5ABD87B4A"]
+			description: [
+				"&e用途：锤子有助于合成组件物品，有时也可用于回收。"
+				"&b适合：安装在“头部”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+				"{\"text\":\"查看战争铸造卷轴\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2FFEB4006BB8ED1D\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/basic_hammer_left_material": "basic_hammer/oak"
+					"double/basic_hammer_material": "basic_hammer/iron"
+					"double/basic_hammer_right_material": "basic_hammer/oak"
+					"double/basic_handle_material": "basic_handle/stick"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/basic_hammer_left"
+					"double/head_right": "double/basic_hammer_right"
+					id: "07e948f6-0da8-5dbf-9e8a-d3c9fb9f8f18"
+				}
+			}
+			id: "3EA3AB106E6F998E"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "5012C08456C04B70"
+				title: "阅读锤头"
+				type: "checkmark"
+			}]
+			title: "锤头"
+			x: -14.6d
+			y: 23.5d
+		}
+		{
+			dependencies: ["3C922AF5ABD87B4A"]
+			description: [
+				"&e用途：一个可用于挖掘的普通镐头。"
+				"&b适合：安装在“头部”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+				"{\"text\":\"查看战争铸造卷轴\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"20BD4E23A2641C3B\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/basic_hammer_material": "basic_hammer/iron"
+					"double/basic_handle_material": "basic_handle/stick"
+					"double/basic_pickaxe_left_material": "basic_pickaxe/iron"
+					"double/basic_pickaxe_right_material": "basic_pickaxe/iron"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/basic_pickaxe_left"
+					"double/head_right": "double/basic_pickaxe_right"
+					id: "e31ff159-5b96-5bad-a270-cd8726abd036"
+				}
+			}
+			id: "0F335FC3AF830EC6"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "707C3B8D8CF3F96C"
+				title: "阅读镐头"
+				type: "checkmark"
+			}]
+			title: "镐头"
+			x: -12.25d
+			y: 23.5d
+		}
+		{
+			dependencies: ["3C922AF5ABD87B4A"]
+			description: [
+				"&e用途：一个轻微弯曲的镰刀，可以用来切割范围内的方块。"
+				"&b适合：安装在“头部”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+				"{\"text\":\"查看战争铸造卷轴\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"7D633F81CD5DAA41\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/basic_hammer_material": "basic_hammer/iron"
+					"double/basic_handle_material": "basic_handle/stick"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/sickle_left"
+					"double/head_right": "double/sickle_right"
+					"double/sickle_left_material": "sickle/iron"
+					"double/sickle_right_material": "sickle/iron"
+					id: "f2d7c024-271b-57f9-b14b-d4be3664bbef"
+				}
+			}
+			id: "1DFCAED1D2BF8D69"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "7512C15C29C41299"
+				title: "阅读镰刀"
+				type: "checkmark"
+			}]
+			title: "镰刀"
+			x: -9.9d
+			y: 23.5d
+		}
+		{
+			dependencies: ["60F3CE2F6DBE0D1F"]
+			description: [
+				"&e用途：汇总“镶嵌”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/basic_hammer_material": "basic_hammer/iron"
+					"double/basic_handle_material": "basic_handle/stick"
+					"double/binding": "double/perk_socket_0"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/basic_hammer_left"
+					"double/head_right": "double/basic_hammer_right"
+					"double/perk_socket_0_material": "double_perk_socket_0/abyssal_core"
+					id: "895598c2-883f-555e-9940-8b13ca488e42"
+				}
+			}
+			id: "37C99DE0A1214A18"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "379BED6DFBC62384"
+				title: "阅读镶嵌"
+				type: "checkmark"
+			}]
+			title: "&b镶嵌"
+			x: -3.6d
+			y: 16.6d
+		}
+		{
+			dependencies: ["37C99DE0A1214A18"]
+			description: [
+				"&e用途：一个装饰精美的宝石。"
+				"&b适合：安装在“镶嵌”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/basic_hammer_material": "basic_hammer/iron"
+					"double/basic_handle_material": "basic_handle/stick"
+					"double/binding": "double/perk_socket_0"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/basic_hammer_left"
+					"double/head_right": "double/basic_hammer_right"
+					"double/perk_socket_0_material": "double_perk_socket_0/abyssal_core"
+					id: "864e3bd9-c7d0-57fa-bd26-85b4ceb1e9dd"
+				}
+			}
+			id: "21A6F755777FE28E"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "3A1FC903ACA2B22F"
+				title: "阅读镶嵌"
+				type: "checkmark"
+			}]
+			title: "镶嵌"
+			x: -4.77d
+			y: 19.3d
+		}
+		{
+			dependencies: ["37C99DE0A1214A18"]
+			description: [
+				"&e用途：一颗宝石，被装进了工具的顶端。"
+				"&b适合：安装在“镶嵌”槽位。"
+				"&d需要：默认可用，或随对应图纸解锁。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/basic_hammer_material": "basic_hammer/iron"
+					"double/basic_handle_material": "basic_handle/stick"
+					"double/binding": "double/socket"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/basic_hammer_left"
+					"double/head_right": "double/basic_hammer_right"
+					"double/socket_material": "double_socket/abyssal_core"
+					id: "6a04fca7-fa3e-5769-98fe-4f47a75b0630"
+				}
+			}
+			id: "206AF684F409A74B"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "1EBD0E20BAAA7621"
+				title: "阅读镶嵌"
+				type: "checkmark"
+			}]
+			title: "镶嵌"
+			x: -2.42d
+			y: 19.3d
+		}
+		{
+			dependencies: ["67AD3AB43ED298A0"]
+			description: [
+				"&e用途：查看模块化法杖的槽位与模块。"
+				"&b顺序：先选槽位，再比较同槽位中的命名模块。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_iron_staff"
+				tag: {
+					Damage: 0
+					id: "239ee3d1-2cf0-5339-9dcc-24c088ac015c"
+					"mmt_iron_staff/core": "mmt_iron_staff/core/spell_core"
+					"mmt_iron_staff/core/spell_core_material": "spell_core/iron_spell_arcane_essence"
+					"mmt_iron_staff/handle": "mmt_iron_staff/handle/base_handle"
+					"mmt_iron_staff/handle/base_handle_material": "base_handle/oak"
+					"mmt_iron_staff/head": "mmt_iron_staff/head/base_head"
+					"mmt_iron_staff/head/base_head_material": "base_head/amethyst"
+				}
+			}
+			id: "614F0E01A8C91444"
+			shape: "square"
+			size: 2.5d
+			tasks: [{
+				id: "18A071639BF1437A"
+				title: "阅读模块化法杖"
+				type: "checkmark"
+			}]
+			title: "&a模块化法杖"
+			x: 9.65d
+			y: 5.0d
+		}
+		{
+			dependencies: ["614F0E01A8C91444"]
+			description: [
+				"&e用途：汇总“施法核心”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_iron_staff"
+				tag: {
+					Damage: 0
+					id: "949a1d8d-1faa-5c1a-8133-4862c18bcfed"
+					"mmt_iron_staff/core": "mmt_iron_staff/core/spell_core"
+					"mmt_iron_staff/core/spell_core_material": "spell_core/iron_spell_arcane_essence"
+					"mmt_iron_staff/handle": "mmt_iron_staff/handle/base_handle"
+					"mmt_iron_staff/handle/base_handle_material": "base_handle/oak"
+					"mmt_iron_staff/head": "mmt_iron_staff/head/base_head"
+					"mmt_iron_staff/head/base_head_material": "base_head/amethyst"
+				}
+			}
+			id: "3244AEB824727F64"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "18100AF16B47B58E"
+				title: "阅读施法核心"
+				type: "checkmark"
+			}]
+			title: "&b施法核心"
+			x: 5.9d
+			y: 9.0d
+		}
+		{
+			dependencies: ["3244AEB824727F64"]
+			description: [
+				"&e用途：施法核心。"
+				"&b适合：安装在“施法核心”槽位。"
+				"&d需要：奥术注魔。"
+				"{\"text\":\"查看卷轴：奥术注魔\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0431C284C7AE2F5B\"}}"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_iron_staff"
+				tag: {
+					Damage: 0
+					id: "66b54ae4-f91f-5942-9fce-d58e0c2a5bd2"
+					"mmt_iron_staff/core": "mmt_iron_staff/core/spell_core"
+					"mmt_iron_staff/core/spell_core_material": "spell_core/iron_spell_arcane_essence"
+					"mmt_iron_staff/handle": "mmt_iron_staff/handle/base_handle"
+					"mmt_iron_staff/handle/base_handle_material": "base_handle/oak"
+					"mmt_iron_staff/head": "mmt_iron_staff/head/base_head"
+					"mmt_iron_staff/head/base_head_material": "base_head/amethyst"
+				}
+			}
+			id: "414735ED0517B45E"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "135628A044C4442F"
+				title: "阅读施法核心"
+				type: "checkmark"
+			}]
+			title: "施法核心"
+			x: 5.9d
+			y: 11.7d
+		}
+		{
+			dependencies: ["614F0E01A8C91444"]
+			description: [
+				"&e用途：汇总“杖底镶嵌”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_iron_staff"
+				tag: {
+					Damage: 0
+					id: "f7befd16-0596-5122-95a0-a7255bfd4224"
+					"mmt_iron_staff/core": "mmt_iron_staff/core/spell_core"
+					"mmt_iron_staff/core/spell_core_material": "spell_core/iron_spell_arcane_essence"
+					"mmt_iron_staff/crystals": "mmt_iron_staff/crystals/base_crystals"
+					"mmt_iron_staff/crystals/base_crystals_material": "base_crystals/amethyst"
+					"mmt_iron_staff/handle": "mmt_iron_staff/handle/base_handle"
+					"mmt_iron_staff/handle/base_handle_material": "base_handle/oak"
+					"mmt_iron_staff/head": "mmt_iron_staff/head/base_head"
+					"mmt_iron_staff/head/base_head_material": "base_head/amethyst"
+				}
+			}
+			id: "3434D0C066A01FFF"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "24E882DA9982CDA7"
+				title: "阅读杖底镶嵌"
+				type: "checkmark"
+			}]
+			title: "&b杖底镶嵌"
+			x: 13.4d
+			y: 9.0d
+		}
+		{
+			dependencies: ["3434D0C066A01FFF"]
+			description: [
+				"&e用途：水晶镶饰。"
+				"&b适合：安装在“杖底镶嵌”槽位。"
+				"&d需要：奥术注魔。"
+				"{\"text\":\"查看卷轴：奥术注魔\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0431C284C7AE2F5B\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_iron_staff"
+				tag: {
+					Damage: 0
+					id: "29be5c4a-6832-5f34-8f8c-c91f316359f4"
+					"mmt_iron_staff/core": "mmt_iron_staff/core/spell_core"
+					"mmt_iron_staff/core/spell_core_material": "spell_core/iron_spell_arcane_essence"
+					"mmt_iron_staff/crystals": "mmt_iron_staff/crystals/base_crystals"
+					"mmt_iron_staff/crystals/base_crystals_material": "base_crystals/amethyst"
+					"mmt_iron_staff/handle": "mmt_iron_staff/handle/base_handle"
+					"mmt_iron_staff/handle/base_handle_material": "base_handle/oak"
+					"mmt_iron_staff/head": "mmt_iron_staff/head/base_head"
+					"mmt_iron_staff/head/base_head_material": "base_head/amethyst"
+				}
+			}
+			id: "478E54ABFCD65A6B"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "4EE9F9C6840C24D4"
+				title: "阅读水晶镶饰"
+				type: "checkmark"
+			}]
+			title: "水晶镶饰"
+			x: 13.4d
+			y: 11.7d
+		}
+		{
+			dependencies: ["614F0E01A8C91444"]
+			description: [
+				"&e用途：汇总“法杖杖柄”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_iron_staff"
+				tag: {
+					Damage: 0
+					id: "f92fa5a7-1bad-5a2c-bc04-80417cf42d99"
+					"mmt_iron_staff/core": "mmt_iron_staff/core/spell_core"
+					"mmt_iron_staff/core/spell_core_material": "spell_core/iron_spell_arcane_essence"
+					"mmt_iron_staff/handle": "mmt_iron_staff/handle/resonance_handle"
+					"mmt_iron_staff/handle/base_handle_material": "base_handle/oak"
+					"mmt_iron_staff/handle/resonance_handle_material": "resonance_handle/bone"
+					"mmt_iron_staff/head": "mmt_iron_staff/head/base_head"
+					"mmt_iron_staff/head/base_head_material": "base_head/amethyst"
+				}
+			}
+			id: "610741598ABB0016"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "0C45646F9AD684C0"
+				title: "阅读法杖杖柄"
+				type: "checkmark"
+			}]
+			title: "&b法杖杖柄"
+			x: 5.9d
+			y: 16.6d
+		}
+		{
+			dependencies: ["610741598ABB0016"]
+			description: [
+				"&e用途：共鸣杖柄。"
+				"&b适合：安装在“法杖杖柄”槽位。"
+				"&d需要：奥术注魔。"
+				"{\"text\":\"查看卷轴：奥术注魔\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0431C284C7AE2F5B\"}}"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_iron_staff"
+				tag: {
+					Damage: 0
+					id: "a7a6c8d4-c053-5180-9c0f-1864c4d1fc77"
+					"mmt_iron_staff/core": "mmt_iron_staff/core/spell_core"
+					"mmt_iron_staff/core/spell_core_material": "spell_core/iron_spell_arcane_essence"
+					"mmt_iron_staff/handle": "mmt_iron_staff/handle/resonance_handle"
+					"mmt_iron_staff/handle/base_handle_material": "base_handle/oak"
+					"mmt_iron_staff/handle/resonance_handle_material": "resonance_handle/bone"
+					"mmt_iron_staff/head": "mmt_iron_staff/head/base_head"
+					"mmt_iron_staff/head/base_head_material": "base_head/amethyst"
+				}
+			}
+			id: "1B75B62CA671A1FC"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "7E076F76F0249CDF"
+				title: "阅读共鸣杖柄"
+				type: "checkmark"
+			}]
+			title: "共鸣杖柄"
+			x: 4.73d
+			y: 19.3d
+		}
+		{
+			dependencies: ["610741598ABB0016"]
+			description: [
+				"&e用途：常规杖柄。"
+				"&b适合：安装在“法杖杖柄”槽位。"
+				"&d需要：奥术注魔。"
+				"{\"text\":\"查看卷轴：奥术注魔\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0431C284C7AE2F5B\"}}"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_iron_staff"
+				tag: {
+					Damage: 0
+					id: "599a74fb-eac8-5827-8cf2-479c724ee764"
+					"mmt_iron_staff/core": "mmt_iron_staff/core/spell_core"
+					"mmt_iron_staff/core/spell_core_material": "spell_core/iron_spell_arcane_essence"
+					"mmt_iron_staff/handle": "mmt_iron_staff/handle/base_handle"
+					"mmt_iron_staff/handle/base_handle_material": "base_handle/bone"
+					"mmt_iron_staff/head": "mmt_iron_staff/head/base_head"
+					"mmt_iron_staff/head/base_head_material": "base_head/amethyst"
+				}
+			}
+			id: "5FB6743F20736C8B"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "0EAAF4BFCDF5C71A"
+				title: "阅读常规杖柄"
+				type: "checkmark"
+			}]
+			title: "常规杖柄"
+			x: 7.08d
+			y: 19.3d
+		}
+		{
+			dependencies: ["610741598ABB0016"]
+			description: [
+				"&e用途：蕴魔杖柄。"
+				"&b适合：安装在“法杖杖柄”槽位。"
+				"&d需要：奥术注魔。"
+				"{\"text\":\"查看卷轴：奥术注魔\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0431C284C7AE2F5B\"}}"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_iron_staff"
+				tag: {
+					Damage: 0
+					id: "8e1519d6-7c68-578f-82ed-aae6e60930bf"
+					"mmt_iron_staff/core": "mmt_iron_staff/core/spell_core"
+					"mmt_iron_staff/core/spell_core_material": "spell_core/iron_spell_arcane_essence"
+					"mmt_iron_staff/handle": "mmt_iron_staff/handle/mana_handle"
+					"mmt_iron_staff/handle/base_handle_material": "base_handle/oak"
+					"mmt_iron_staff/handle/mana_handle_material": "mana_handle/bone"
+					"mmt_iron_staff/head": "mmt_iron_staff/head/base_head"
+					"mmt_iron_staff/head/base_head_material": "base_head/amethyst"
+				}
+			}
+			id: "00951F65B81F623B"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "274107CD39EC8BE7"
+				title: "阅读蕴魔杖柄"
+				type: "checkmark"
+			}]
+			title: "蕴魔杖柄"
+			x: 4.73d
+			y: 21.4d
+		}
+		{
+			dependencies: ["614F0E01A8C91444"]
+			description: [
+				"&e用途：汇总“法杖杖顶”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_iron_staff"
+				tag: {
+					Damage: 0
+					id: "4d549fae-69a1-5efa-8044-8f3c3af5ef87"
+					"mmt_iron_staff/core": "mmt_iron_staff/core/spell_core"
+					"mmt_iron_staff/core/spell_core_material": "spell_core/iron_spell_arcane_essence"
+					"mmt_iron_staff/handle": "mmt_iron_staff/handle/base_handle"
+					"mmt_iron_staff/handle/base_handle_material": "base_handle/oak"
+					"mmt_iron_staff/head": "mmt_iron_staff/head/conjurers_head"
+					"mmt_iron_staff/head/base_head_material": "base_head/amethyst"
+					"mmt_iron_staff/head/conjurers_head_material": "conjurers_head/bone"
+				}
+			}
+			id: "04CB876F2F392D4E"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "75E4684F1AFBFC3C"
+				title: "阅读法杖杖顶"
+				type: "checkmark"
+			}]
+			title: "&b法杖杖顶"
+			x: 13.4d
+			y: 16.6d
+		}
+		{
+			dependencies: ["04CB876F2F392D4E"]
+			description: [
+				"&e用途：召唤师杖顶。"
+				"&b适合：安装在“法杖杖顶”槽位。"
+				"&d需要：奥术注魔。"
+				"{\"text\":\"查看卷轴：奥术注魔\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0431C284C7AE2F5B\"}}"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_iron_staff"
+				tag: {
+					Damage: 0
+					id: "cea3224a-0821-5d5d-9c08-c35965354b2f"
+					"mmt_iron_staff/core": "mmt_iron_staff/core/spell_core"
+					"mmt_iron_staff/core/spell_core_material": "spell_core/iron_spell_arcane_essence"
+					"mmt_iron_staff/handle": "mmt_iron_staff/handle/base_handle"
+					"mmt_iron_staff/handle/base_handle_material": "base_handle/oak"
+					"mmt_iron_staff/head": "mmt_iron_staff/head/conjurers_head"
+					"mmt_iron_staff/head/base_head_material": "base_head/amethyst"
+					"mmt_iron_staff/head/conjurers_head_material": "conjurers_head/bone"
+				}
+			}
+			id: "3D43068462F0B430"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "477EBD6F4CEEC503"
+				title: "阅读召唤师杖顶"
+				type: "checkmark"
+			}]
+			title: "召唤师杖顶"
+			x: 12.22d
+			y: 19.3d
+		}
+		{
+			dependencies: ["04CB876F2F392D4E"]
+			description: [
+				"&e用途：咒法杖顶。"
+				"&b适合：安装在“法杖杖顶”槽位。"
+				"&d需要：奥术注魔。"
+				"{\"text\":\"查看卷轴：奥术注魔\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0431C284C7AE2F5B\"}}"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_iron_staff"
+				tag: {
+					Damage: 0
+					id: "1b6bfd27-d379-5938-9a44-25700ee29325"
+					"mmt_iron_staff/core": "mmt_iron_staff/core/spell_core"
+					"mmt_iron_staff/core/spell_core_material": "spell_core/iron_spell_arcane_essence"
+					"mmt_iron_staff/handle": "mmt_iron_staff/handle/base_handle"
+					"mmt_iron_staff/handle/base_handle_material": "base_handle/oak"
+					"mmt_iron_staff/head": "mmt_iron_staff/head/spell_head"
+					"mmt_iron_staff/head/base_head_material": "base_head/amethyst"
+					"mmt_iron_staff/head/spell_head_material": "spell_head/bone"
+				}
+			}
+			id: "5774CF914D62E9B0"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "4D3B7348566F5A76"
+				title: "阅读咒法杖顶"
+				type: "checkmark"
+			}]
+			title: "咒法杖顶"
+			x: 14.58d
+			y: 19.3d
+		}
+		{
+			dependencies: ["04CB876F2F392D4E"]
+			description: [
+				"&e用途：常规杖顶。"
+				"&b适合：安装在“法杖杖顶”槽位。"
+				"&d需要：奥术注魔。"
+				"{\"text\":\"查看卷轴：奥术注魔\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0431C284C7AE2F5B\"}}"
+				"&a改进：在工作台中查看可用打磨、附层或镶嵌。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_iron_staff"
+				tag: {
+					Damage: 0
+					id: "afd6f2f1-cbf2-594a-a245-e6e87a88c610"
+					"mmt_iron_staff/core": "mmt_iron_staff/core/spell_core"
+					"mmt_iron_staff/core/spell_core_material": "spell_core/iron_spell_arcane_essence"
+					"mmt_iron_staff/handle": "mmt_iron_staff/handle/base_handle"
+					"mmt_iron_staff/handle/base_handle_material": "base_handle/oak"
+					"mmt_iron_staff/head": "mmt_iron_staff/head/base_head"
+					"mmt_iron_staff/head/base_head_material": "base_head/bone"
+				}
+			}
+			id: "27DE94ADDA67C5DE"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "2B8ACFDEB5E4CCD9"
+				title: "阅读常规杖顶"
+				type: "checkmark"
+			}]
+			title: "常规杖顶"
+			x: 12.22d
+			y: 21.4d
+		}
+		{
+			dependencies: ["614F0E01A8C91444"]
+			description: [
+				"&e用途：汇总“杖体铭刻”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_iron_staff"
+				tag: {
+					Damage: 0
+					id: "ed17ffcf-4e36-556f-9858-565136e5ce78"
+					"mmt_iron_staff/core": "mmt_iron_staff/core/spell_core"
+					"mmt_iron_staff/core/spell_core_material": "spell_core/iron_spell_arcane_essence"
+					"mmt_iron_staff/handle": "mmt_iron_staff/handle/base_handle"
+					"mmt_iron_staff/handle/base_handle_material": "base_handle/oak"
+					"mmt_iron_staff/head": "mmt_iron_staff/head/base_head"
+					"mmt_iron_staff/head/base_head_material": "base_head/amethyst"
+					"mmt_iron_staff/inscription": "mmt_iron_staff/inscription/runes_inscription"
+					"mmt_iron_staff/inscription/runes_inscription_material": "runes_inscription/aqua_rune_socket"
+				}
+			}
+			id: "038E933716D9DB8B"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "63CB9B2D55ED44F3"
+				title: "阅读杖体铭刻"
+				type: "checkmark"
+			}]
+			title: "&b杖体铭刻"
+			x: 5.9d
+			y: 26.3d
+		}
+		{
+			dependencies: ["038E933716D9DB8B"]
+			description: [
+				"&e用途：符文铭刻。"
+				"&b适合：安装在“杖体铭刻”槽位。"
+				"&d需要：奥术注魔。"
+				"{\"text\":\"查看卷轴：奥术注魔\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0431C284C7AE2F5B\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_iron_staff"
+				tag: {
+					Damage: 0
+					id: "d15a7d81-6b1f-560c-ad0f-2749dc40a002"
+					"mmt_iron_staff/core": "mmt_iron_staff/core/spell_core"
+					"mmt_iron_staff/core/spell_core_material": "spell_core/iron_spell_arcane_essence"
+					"mmt_iron_staff/handle": "mmt_iron_staff/handle/base_handle"
+					"mmt_iron_staff/handle/base_handle_material": "base_handle/oak"
+					"mmt_iron_staff/head": "mmt_iron_staff/head/base_head"
+					"mmt_iron_staff/head/base_head_material": "base_head/amethyst"
+					"mmt_iron_staff/inscription": "mmt_iron_staff/inscription/runes_inscription"
+					"mmt_iron_staff/inscription/runes_inscription_material": "runes_inscription/aqua_rune_socket"
+				}
+			}
+			id: "3C5C95196FC73CE1"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "065AC5624D464657"
+				title: "阅读符文铭刻"
+				type: "checkmark"
+			}]
+			title: "符文铭刻"
+			x: 4.73d
+			y: 29.0d
+		}
+		{
+			dependencies: ["038E933716D9DB8B"]
+			description: [
+				"&e用途：素材魔纹铭刻。"
+				"&b适合：安装在“杖体铭刻”槽位。"
+				"&d需要：奥术注魔。"
+				"{\"text\":\"查看卷轴：奥术注魔\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0431C284C7AE2F5B\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_iron_staff"
+				tag: {
+					Damage: 0
+					id: "8456f982-b1f0-5759-b734-ed2b741a50bb"
+					"mmt_iron_staff/core": "mmt_iron_staff/core/spell_core"
+					"mmt_iron_staff/core/spell_core_material": "spell_core/iron_spell_arcane_essence"
+					"mmt_iron_staff/handle": "mmt_iron_staff/handle/base_handle"
+					"mmt_iron_staff/handle/base_handle_material": "base_handle/oak"
+					"mmt_iron_staff/head": "mmt_iron_staff/head/base_head"
+					"mmt_iron_staff/head/base_head_material": "base_head/amethyst"
+					"mmt_iron_staff/inscription": "mmt_iron_staff/inscription/materials_inscription"
+					"mmt_iron_staff/inscription/materials_inscription_material": "materials_inscription/bone"
+				}
+			}
+			id: "3644E71B1250AE65"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "40DAD6BDF37278DA"
+				title: "阅读素材魔纹铭刻"
+				type: "checkmark"
+			}]
+			title: "素材魔纹铭刻"
+			x: 7.08d
+			y: 29.0d
+		}
+		{
+			dependencies: ["614F0E01A8C91444"]
+			description: [
+				"&e用途：汇总“镶嵌”槽位的当前可用模块。"
+				"&b选择：按用途与手感挑选，不按材料数值拆页。"
+			]
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_iron_staff"
+				tag: {
+					Damage: 0
+					id: "95fadd08-faae-540c-868d-93eeae0cb3b4"
+					"mmt_iron_staff/core": "mmt_iron_staff/core/spell_core"
+					"mmt_iron_staff/core/spell_core_material": "spell_core/iron_spell_arcane_essence"
+					"mmt_iron_staff/crystals": "mmt_iron_staff/crystals/staff_socket"
+					"mmt_iron_staff/crystals/staff_socket_material": "staff_socket/abyssal_core"
+					"mmt_iron_staff/handle": "mmt_iron_staff/handle/base_handle"
+					"mmt_iron_staff/handle/base_handle_material": "base_handle/oak"
+					"mmt_iron_staff/head": "mmt_iron_staff/head/base_head"
+					"mmt_iron_staff/head/base_head_material": "base_head/amethyst"
+				}
+			}
+			id: "6A427B480484384E"
+			shape: "diamond"
+			size: 2.0d
+			tasks: [{
+				id: "4C7AC4AB18C82D82"
+				title: "阅读镶嵌"
+				type: "checkmark"
+			}]
+			title: "&b镶嵌"
+			x: 13.4d
+			y: 26.3d
+		}
+		{
+			dependencies: ["6A427B480484384E"]
+			description: [
+				"&e用途：镶嵌。"
+				"&b适合：安装在“镶嵌”槽位。"
+				"&d需要：奥术注魔。"
+				"{\"text\":\"查看卷轴：奥术注魔\",\"underlined\":true,\"color\":\"aqua\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0431C284C7AE2F5B\"}}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "more_mod_tetra:modular_mmt_iron_staff"
+				tag: {
+					Damage: 0
+					id: "98d4d471-9b62-5485-b7eb-5282a19cdb9d"
+					"mmt_iron_staff/core": "mmt_iron_staff/core/spell_core"
+					"mmt_iron_staff/core/spell_core_material": "spell_core/iron_spell_arcane_essence"
+					"mmt_iron_staff/crystals": "mmt_iron_staff/crystals/staff_socket"
+					"mmt_iron_staff/crystals/staff_socket_material": "staff_socket/abyssal_core"
+					"mmt_iron_staff/handle": "mmt_iron_staff/handle/base_handle"
+					"mmt_iron_staff/handle/base_handle_material": "base_handle/oak"
+					"mmt_iron_staff/head": "mmt_iron_staff/head/base_head"
+					"mmt_iron_staff/head/base_head_material": "base_head/amethyst"
+				}
+			}
+			id: "355F268A3037A14B"
+			shape: "circle"
+			size: 1.75d
+			tasks: [{
+				id: "1A5FD686EE7C39A5"
+				title: "阅读镶嵌"
+				type: "checkmark"
+			}]
+			title: "镶嵌"
+			x: 13.4d
+			y: 29.0d
+		}
+		{
+			dependencies: ["2BCC8F3DFE001719"]
+			description: [
+				"&e用途：开启双剑的连续攻击强化。"
+				"&b适合：双剑专属连续打磨路线。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "f6caf6cc-e211-518b-be3d-6bda9019b64a"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/more_mod_tetra/mmt_twin_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/more_mod_tetra/mmt_twin_blade_material": "mmt_twin_blade/oak"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "0DDD3CC9D5CF72B4"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "6C3E8D411DE2DB35"
+				title: "阅读星爆气流斩"
+				type: "checkmark"
+			}]
+			title: "&d星爆气流斩"
+			x: -20.58d
+			y: -13.8d
+		}
+		{
+			dependencies: ["0DDD3CC9D5CF72B4"]
+			description: [
+				"&e用途：继续提高双剑剑技熟练度。"
+				"&b适合：双剑专属连续打磨路线。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "1076fa42-bff1-5332-8156-73ab033c0f93"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/more_mod_tetra/mmt_twin_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/more_mod_tetra/mmt_twin_blade_material": "mmt_twin_blade/oak"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "0224BE2CE5FCE22A"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "7D73DB22E1D42AD7"
+				title: "阅读日蚀"
+				type: "checkmark"
+			}]
+			title: "&d日蚀"
+			x: -23.08d
+			y: -13.8d
+		}
+		{
+			dependencies: ["0224BE2CE5FCE22A"]
+			description: [
+				"&e用途：进入双剑终式强化阶段。"
+				"&b适合：双剑专属连续打磨路线。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "28b4a81d-949d-5904-9928-6fa41a0efb64"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/more_mod_tetra/mmt_twin_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/more_mod_tetra/mmt_twin_blade_material": "mmt_twin_blade/oak"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "6E93AA504FC9FD63"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "4BD01161F028DCBB"
+				title: "阅读日蚀星爆气流斩"
+				type: "checkmark"
+			}]
+			title: "&d日蚀星爆气流斩"
+			x: -20.58d
+			y: -16.3d
+		}
+		{
+			dependencies: ["6E93AA504FC9FD63"]
+			description: [
+				"&e用途：完成双剑专属剑技的最终打磨。"
+				"&b适合：双剑专属连续打磨路线。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					id: "f3099ab8-70ba-50fa-a35c-920f42d3aef3"
+					"sword/basic_blade_material": "basic_blade/tin"
+					"sword/basic_hilt_material": "basic_hilt/stick"
+					"sword/blade": "sword/more_mod_tetra/mmt_twin_blade"
+					"sword/decorative_pommel_material": "decorative_pommel/tin"
+					"sword/guard": "sword/makeshift_guard"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/makeshift_guard_material": "makeshift_guard/tin"
+					"sword/more_mod_tetra/mmt_twin_blade_material": "mmt_twin_blade/oak"
+					"sword/pommel": "sword/decorative_pommel"
+				}
+			}
+			id: "4099008596F32C52"
+			shape: "pentagon"
+			size: 1.75d
+			tasks: [{
+				id: "53EAC53A21D4EE91"
+				title: "阅读完美阶段"
+				type: "checkmark"
+			}]
+			title: "&d完美阶段"
+			x: -23.08d
+			y: -16.3d
+		}
+		{
+			dependencies: ["3EA3AB106E6F998E"]
+			description: [
+				"&e用途：提供七级锻造能力。"
+				"&b适合：制作需要更高锤级的后期部件。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/basic_hammer_left_material": "basic_hammer/iceandfire_fire_dragonsteel"
+					"double/basic_hammer_material": "basic_hammer/iron"
+					"double/basic_hammer_right_material": "basic_hammer/iceandfire_fire_dragonsteel"
+					"double/basic_handle_material": "basic_handle/stick"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/basic_hammer_left"
+					"double/head_right": "double/basic_hammer_right"
+					id: "8f24b411-7b40-583f-86c3-eb547700e0d5"
+				}
+			}
+			id: "2832C4A43B0CF7A7"
+			shape: "octagon"
+			size: 1.75d
+			tasks: [{
+				id: "69817A327D226099"
+				title: "阅读龙炎钢锤头"
+				type: "checkmark"
+			}]
+			title: "&d龙炎钢锤头"
+			x: -17.3d
+			y: 21.0d
+		}
+		{
+			dependencies: ["3EA3AB106E6F998E"]
+			description: [
+				"&e用途：提供八级锻造能力。"
+				"&b适合：制作需要更高锤级的后期部件。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/basic_hammer_left_material": "basic_hammer/end_dragon_ingot"
+					"double/basic_hammer_material": "basic_hammer/iron"
+					"double/basic_hammer_right_material": "basic_hammer/end_dragon_ingot"
+					"double/basic_handle_material": "basic_handle/stick"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/basic_hammer_left"
+					"double/head_right": "double/basic_hammer_right"
+					id: "969eff99-c1d4-53f8-9aba-815d3bcca8b8"
+				}
+			}
+			id: "79CF36DF5E276A20"
+			shape: "octagon"
+			size: 1.75d
+			tasks: [{
+				id: "6976042891A8D84A"
+				title: "阅读终结龙锤头"
+				type: "checkmark"
+			}]
+			title: "&d终结龙锤头"
+			x: -17.3d
+			y: 23.5d
+		}
+		{
+			dependencies: ["3EA3AB106E6F998E"]
+			description: [
+				"&e用途：提供八级锻造能力。"
+				"&b适合：制作需要更高锤级的后期部件。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/basic_hammer_left_material": "basic_hammer/dreadsteel_ingot"
+					"double/basic_hammer_material": "basic_hammer/iron"
+					"double/basic_hammer_right_material": "basic_hammer/dreadsteel_ingot"
+					"double/basic_handle_material": "basic_handle/stick"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/basic_hammer_left"
+					"double/head_right": "double/basic_hammer_right"
+					id: "ba972fac-f45d-5d77-92ef-627169a76cae"
+				}
+			}
+			id: "5BF31F11A0167554"
+			shape: "octagon"
+			size: 1.75d
+			tasks: [{
+				id: "211B75160FD59760"
+				title: "阅读悚怖钢锤头"
+				type: "checkmark"
+			}]
+			title: "&d悚怖钢锤头"
+			x: -17.3d
+			y: 26.0d
+		}
+	]
+	title: "近战武器与工具"
+}

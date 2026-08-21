@@ -86,6 +86,7 @@ global.CDServerJavaClasses = {
     $Registries: Java.loadClass("net.minecraft.core.registries.Registries"),
     $ResourceLocation: Java.loadClass("net.minecraft.resources.ResourceLocation"),
     $SelectorWidget: Java.loadClass("com.lowdragmc.lowdraglib.gui.widget.SelectorWidget"),
+    $ServerQuestFile: Java.loadClass("dev.ftb.mods.ftbquests.quest.ServerQuestFile"),
     $RocketDestination: Java.loadClass("com.lightning.northstar.contraption.rocket.RocketDestination"),
     $ServerPlayer: Java.loadClass("net.minecraft.server.level.ServerPlayer"),
     $ShaftBlock: Java.loadClass("com.simibubi.create.content.kinetics.simpleRelays.ShaftBlock"),

@@ -18,6 +18,21 @@ MoneyUtil.insertPlayerMoney = function (player, moneyValue) {
     global.CDLightmansCurrencyApi.MoneyAPI.getApi().GetPlayersMoneyHandler(player).insertMoney(moneyValue, false)
 }
 
+MoneyUtil.playerCanAfford = function (player, value) {
+    let coinValue = MoneyUtil.coinValueFromBase(value)
+    let handler = global.CDLightmansCurrencyApi.MoneyAPI.getApi().GetPlayersMoneyHandler(player)
+    return handler.getStoredMoney().containsValue(coinValue)
+}
+
+MoneyUtil.extractPlayerMoney = function (player, value) {
+    let coinValue = MoneyUtil.coinValueFromBase(value)
+    let handler = global.CDLightmansCurrencyApi.MoneyAPI.getApi().GetPlayersMoneyHandler(player)
+    if (!handler.getStoredMoney().containsValue(coinValue))
+        return false
+    let extracted = handler.extractMoney(coinValue, false)
+    return extracted != null && extracted.containsValue(coinValue)
+}
+
 MoneyUtil.getItemId = function (item) {
     return global.CDLightmansCurrencyApi.ForgeRegistries.ITEMS.getKey(item).toString()
 }
