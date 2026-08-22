@@ -6,7 +6,11 @@
       "required": false
     },
     {
-      "id": "vintageimprovements:vacuum_chamber",
+      "id": "create_enchantment_industry:blaze_forger",
+      "required": false
+    },
+    {
+      "id": "create_enchantment_industry:blaze_enchanter",
       "required": false
     }
   ]
