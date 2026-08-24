@@ -14,10 +14,10 @@ description: 将通用机械四件套（Mekanism / Generators / Tools / Addition
 - KubeJS 插件只用 CurseForge 的 KubeJS Mekanism UNOFFICIAL（官方无 1.20.1 版）；首启即冒烟 `event.recipes.mekanism*`，报错立即移除并全量回退 `event.custom()`，不修非官方插件源码。
 - 内容移除（数字矿机、地震仪等）一律 `remove_recipes_id` + `StartupEvents.modifyCreativeTab(...).remove(...)`（无效再 `JEIEvents.hideItems`）；禁止用 Mek 配置禁用机器。
 - 矿务配置写 `defaultconfigs/Mekanism/world.toml`（tracked source）：锡/铀 `shouldGenerate = false`；铅默认密度；锇 perChunk 压至默认 1/3~1/2。不做种子矿脉结构。
-- 材料统一映射：Mek bronze/steel/tin 产物标签统一到 `createdelightcore:bronze_ingot` / `createmetallurgy:steel_ingot` / `createdelightcore:tin_ingot`，删除 Mek 自产双轨配方；四级控制电路按 plan 文档 §二 重铺。
+- 材料统一映射：Mek bronze/steel/tin 产物标签统一到 `createdelightcore:bronze_ingot` / `createdelight:forged_steel_ingot` / `createdelightcore:tin_ingot`，删除 Mek 自产双轨配方；四级控制电路按 plan 文档 §二 重铺。
 - 新配方命名空间一律 `createdelight`；删除配方只用 `remove_recipes_*` 工具函数族；新脚本放 `server_scripts/Mekanism/`（目录名含空格时 shell 加引号）。
-- 机器合成 = 通用机械基座模式：7 步序列组装产 `createdelight:mek_chassis`（过渡物 `incomplete_mek_chassis_0..6` 注册于 `registry_item.js`，需重启）；基座 + 特征件一步出机器；大机器走 MBD2 装配线；Factory 变体 = 基础机器 + 工厂转换件。
-- 升级模块 = 低价基片 `createdelight:upgrade_chip_base` + 终步部署分化；单价必须低（单机可叠 8 个）。
+- 机器合成 = 每台机器独立序列组装：起手件用 Mek 原版语义件（钢制机壳/熔炉/电解芯/能量板），步骤注入电路与包内门槛材料；不新增通用中间物（基座/基片方案已否决）；过渡物 `createdelight:incomplete_<机器名>` 注册于 `startup_scripts/registry_item_mekanism.js`（需重启）；大机器走 MBD2 装配线。
+- 升级模块 = 七类各自独立短序列（锇锭起手 + 基础电路 + 终步分化材料）；单价必须低（单机可叠 8 个）。
 - 装备红线：MekaSuit 逐模块按 plan §四 消耗包内材料；MekaTool 锁 `#more_mod_tetra:over_core`；Mek 全装备数值纳入 OED 审查。
 - 五系融合机器用 MBD2 化学槽部件实现（`multiblocked2` 已内置 `integration/mekanism`），不写 Java；先做一台最小模板机验证集成类，再复制设计。
 - Mek 机器 FE 消耗保留默认，只调门槛与产线归属；custom JSON 化学配料字段名以 `/kubejs hand` 实测为准。

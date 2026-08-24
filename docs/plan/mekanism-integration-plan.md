@@ -70,61 +70,56 @@
 |---|---|---|
 | `mekanism:basic_control_circuit` | 锇锭 + 红石 + 铜线（包内无红石合金，用红石） | Create 前中期 |
 | `mekanism:advanced_control_circuit` | 基础电路 + `createdelightcore:bronze_ingot` ×2 + 电子管 | 电子管产线 |
-| `mekanism:elite_control_circuit` | 进阶电路 + `createmetallurgy:steel_ingot` ×2 + 精密构件 | 精密构件产线 |
+| `mekanism:elite_control_circuit` | 进阶电路 + `createdelight:forged_steel_ingot` ×2 + 精密构件 | 精密构件产线 |
 | `mekanism:ultimate_control_circuit` | 精英电路 + 精炼黑曜石 + 超导连接器 | 超导时代 |
 
 ### 合金统一
 
 - 青铜：删 Mek 铜锡灌注，统一 `createdelightcore:bronze_ingot`（Create 铜锌线为唯一真源）。
-- 钢：删 Mek 铁碳灌注；电冶金分离器改产钢粉（须过 Create 熔铸成 `createmetallurgy:steel_ingot`）。
+- 钢：删 Mek 铁碳灌注；电冶金分离器改产钢粉（须过 Create 熔铸成 `createdelight:forged_steel_ingot`）。
 - 精炼黑曜石/萤石：保留 Mek 工艺，黑曜石来源挂包内资源再生链，玻璃外壳用 Create 玻璃。
 
-## 三、通用机械基座与机器装配
+## 三、机器装配（每台机器独立序列组装）
 
-### 基座序列组装（产物 `createdelight:mek_chassis`）
+不做通用基座/基片等新中间物（已否决）；每台机器一条独立机械手序列链，起手件沿用 Mek 原版语义件，步骤注入电路与包内门槛材料。过渡物 `createdelight:incomplete_<机器名>`（`create:sequenced_assembly` 类型）注册于 `startup_scripts/registry_item_mekanism.js`（注册改动需重启）。
 
-| 步 | 动作 | 材料 | 时长 |
-|---|---|---|---|
-| 1 | 部署 | `createmetallurgy:steel_ingot` ×2 | 10s |
-| 2 | 部署 | `createdelightcore:bronze_ingot` | 10s |
-| 3 | 灌注 | 熔融玻璃 100mB | 12s |
-| 4 | 部署 | `mekanism:basic_control_circuit` | 12s |
-| 5 | 部署 | 电子管（Create） | 15s |
-| 6 | 灌注 | 润滑油 50mB | 10s |
-| 7 | 部署 | `#forge:spring/between_500_2_1000` 任一 | 15s |
-
-过渡物 `incomplete_mek_chassis` / `incomplete_upgrade_chip_base`（单一过渡物，`create:sequenced_assembly` 类型）注册于 `startup_scripts/registry_item_mekanism.js`（注册改动需重启）。
-
-### 机器 = 基座 + 特征件
-
-| 组 | 机器 | 特征件 |
+| 机器 | 起手件 | 部署步骤 |
 |---|---|---|
-| 粉碎系 | crusher / enrichment_chamber / energized_smelter | 钨磨头 / 锇板 / 红石灯 |
-| 化学初级 | purification_chamber / chemical_injection_chamber | 铜板+氧储罐 / 聚乙烯管 |
-| 灌注系 | metallurgic_infuser | 石墨锭 |
-| 电化学 | electrolytic_separator | 电极桶（铅板+铜线） |
-| 溶解链 | chemical_dissolution_chamber / chemical_washer / chemical_crystallizer | 硫酸罐 / 塑料滤网 / 冰晶石模具 |
-| 氧化/反应 | chemical_oxidizer / pressurized_reaction_chamber / isotopic_centrifuge | 风扇+过滤网 / 耐压壳（锻造钢板）/ 超导连接器 |
-| 生活杂项 | nutritional_liquifier / electric_pump / fluidic_plenisher / chargepad / personal_chest | 低门槛直合成，不走基座 |
-| 自动化 | formulaic_assemblicator / configurator / robit | 序列组件 / 超导线 / 齿轮+红石 |
+| crusher 粉碎机 | 钢制机壳 | 基础电路 → 钨锭 → 红石 |
+| enrichment_chamber 富集仓 | 钢制机壳 | 基础电路 → 锇锭 → 铁锭 |
+| energized_smelter 充能冶炼炉 | 钢制机壳 | 基础电路 → 玻璃 |
+| purification_chamber 净化仓 | 钢制机壳 | 基础电路 → 铜板 → 聚乙烯板 |
+| chemical_injection_chamber 化学注入仓 | 钢制机壳 | 进阶电路 → 聚乙烯板 → 锻造钢锭 |
+| metallurgic_infuser 冶金灌注器 | 熔炉 | 锇锭 → 红石 → 碳板 |
+| electrolytic_separator 电解分离器 | 电解芯 | 铅锭 → 铁锭 → 红石 |
+| chemical_dissolution_chamber 化学溶解仓（5x） | 钢制机壳 | 锻造钢板（CDC）→ 精英电路 → 基础化学品罐 → 精炼黑曜石 |
+| chemical_washer 化学清洗仓 | 钢制机壳 | 精英电路 → 纸 → 聚乙烯板 |
+| chemical_crystallizer 化学结晶仓 | 钢制机壳 | 精英电路 → 精炼黑曜石 → 基础化学品罐 |
+| chemical_oxidizer 化学氧化器 | 钢制机壳 | 进阶电路 → Create 螺旋桨 → 红石 |
+| pressurized_reaction_chamber 承压反应仓 | 钢制机壳 | 精英电路 → 锻造钢板（CDC）→ 聚乙烯板 |
+| isotopic_centrifuge 同位素离心机 | 基础化学品罐 | 终极电路 → 铅锭 → 超导连接器 |
+| formulaic_assemblicator 公式装配器 | 钢制机壳 | 进阶电路 → 通用压印模板 → 电子管 |
+| configurator 配置器 | 能量板 | 超导线 → 基础电路 |
+| robit 罗比特 | 能量板 | 精密构件 → 精炼黑曜石 → 进阶电路 |
 
-### 大机器（MBD2 装配线）
+生活杂项（nutritional_liquifier / electric_pump / fluidic_plenisher / chargepad / personal_chest）保留原版直合成，不走序列。
+
+### 大机器（MBD2 装配线，P2）
 
 | 机器 | 装配线 | 关键材料 |
 |---|---|---|
-| 溶解三件套 | 二级 | 基座 + 锻造钢板 ×4 + 精英电路 |
-| 裂变堆 controller/port/casing | 三级 | 基座 ×4 + `createdelight:fission_fuel_assembly` + 终极电路 |
-| 聚变堆 controller/frame/port | 三级 + 点火仪式 | 基座 ×8 + 超导连接器 ×4 + `northstar:advanced_circuit` |
-| SPS casing/port | 三级 | 基座 ×6 + 钚锭 + 精炼黑曜石 |
-| 涡轮/锅炉 | 二级 | 基座 + 钢 + `mekanism:structural_glass`（Create 玻璃合成） |
+| 裂变堆 controller/port/casing | 三级 | 锻造钢板 ×4 + `createdelight:fission_fuel_assembly` + 终极电路 |
+| 聚变堆 controller/frame/port | 三级 + 点火仪式 | 超导连接器 ×4 + `northstar:advanced_circuit` |
+| SPS casing/port | 三级 | 钚锭 + 精炼黑曜石 |
+| 涡轮/锅炉 | 二级 | 锻造钢 + `mekanism:structural_glass`（Create 玻璃合成） |
 
-Factory 变体 = 基础机器 + 工厂转换件（基片 ×2 + 对应等级电路），不做独立序列。
+Factory 变体走 Mek 原版工厂升级机制，不做独立序列。
 
 ## 四、升级模块与装备
 
-### 通用升级基片 `createdelight:upgrade_chip_base`
+### 升级模块独立短序列
 
-硅晶圆 → 部署基础电路 → 基片（2 步，成本 ≈ 1.5 张基础电路）。
+七类模块各自独立：锇锭起手 → 部署基础电路 → 部署终步分化材料（速度=红石 / 能量=金锭 / 气体=聚乙烯板 / 过滤=纸 / 消音=白毛毡 / 锚定=锁链 / 造石=黑曜石粉）；单价刻意低（单机可叠 8 个）。过渡物 `incomplete_upgrade_<名>`。
 
 | 模块 | 终步材料 | 高阶组合 |
 |---|---|---|
