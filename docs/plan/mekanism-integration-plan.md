@@ -68,7 +68,7 @@
 
 | 等级 | 新配方 | 门槛 |
 |---|---|---|
-| `mekanism:basic_control_circuit` | 锇板 + 红石合金 + 铜线 | Create 前中期 |
+| `mekanism:basic_control_circuit` | 锇锭 + 红石 + 铜线（包内无红石合金，用红石） | Create 前中期 |
 | `mekanism:advanced_control_circuit` | 基础电路 + `createdelightcore:bronze_ingot` ×2 + 电子管 | 电子管产线 |
 | `mekanism:elite_control_circuit` | 进阶电路 + `createmetallurgy:steel_ingot` ×2 + 精密构件 | 精密构件产线 |
 | `mekanism:ultimate_control_circuit` | 精英电路 + 精炼黑曜石 + 超导连接器 | 超导时代 |
@@ -93,7 +93,7 @@
 | 6 | 灌注 | 润滑油 50mB | 10s |
 | 7 | 部署 | `#forge:spring/between_500_2_1000` 任一 | 15s |
 
-过渡物 `incomplete_mek_chassis_0..6` 注册于 `registry_item.js`（注册改动需重启）。
+过渡物 `incomplete_mek_chassis` / `incomplete_upgrade_chip_base`（单一过渡物，`create:sequenced_assembly` 类型）注册于 `startup_scripts/registry_item_mekanism.js`（注册改动需重启）。
 
 ### 机器 = 基座 + 特征件
 
@@ -128,30 +128,33 @@ Factory 变体 = 基础机器 + 工厂转换件（基片 ×2 + 对应等级电�
 
 | 模块 | 终步材料 | 高阶组合 |
 |---|---|---|
-| speed_upgrade | 红石合金 | 4 基础+锇板→加压；4 加压+精英电路→极限 |
-| energy_upgrade | 金锭 | 4+精炼萤石→高级；4 高级+终极电路→终极 |
-| gas_upgrade | 聚乙烯管 | 单档 |
-| filter_upgrade | 纸+铁活版门 | 单档 |
-| muffling_upgrade | 毛毡+铁锭 | 单档 |
-| anchor_upgrade | 锚 | 单档 |
-| stone_generator_upgrade | 圆石+黑曜石粉 | 单档 |
+| speed_upgrade | 红石 | 见下方注记 |
+| energy_upgrade | 金锭 | 见下方注记 |
+| gas_upgrade | 聚乙烯板 | 单档 |
+| filter_upgrade | 纸 | 单档 |
+| muffling_upgrade | 白毛毡 | 单档 |
+| anchor_upgrade | 锁链 | 单档 |
+| stone_generator_upgrade | 黑曜石粉 | 单档 |
+
+注：升级行为由 Mek Java 侧实现，KubeJS 无法新增更高等级的升级件；原设计"高阶组合"（加压/极限速度等）移入 P4 评估是否由 CDC 注册自定义升级物品。
 
 ### MekaSuit 逐模块门槛
 
 | 模块（`module_` 前缀） | 追加消耗 |
 |---|---|
-| jetpack_unit | `northstar:lunar_sapphire_shard` |
-| electrolytic_breathing_unit | 坚固氧气罐（northstar） |
-| gravitational_modulating_unit | `alexscaves:occult_gem` |
-| locomotive_boosting_unit | 泰坦火种卷轴（MMT） |
-| hydraulic_propulsion_unit | `#forge:spring/between_500_2_1000` |
-| solar_recharging_unit | CNA 太阳能板 |
-| radiation_shielding_unit | 铅板 ×8 |
-| attack_amplification_unit | `forge:bloods` 任一 250mB |
-| vision_enhancement_unit | 荧石粉+望远镜 |
-| magnetic_attraction_unit | `alexscaves:magnetron` |
-| MekaSuit 本体 ×4 | BKA 主题锭 ×4 + 槽位核心 |
-| MekaTool | `#more_mod_tetra:over_core` + 锻造钢 + 龙血 |
+| jetpack_unit | `northstar:lunar_sapphire_shard`（替换 mekanism:jetpack） |
+| electrolytic_breathing_unit | `createdelight:sturdy_oxygen_tank`（替换电解芯） |
+| gravitational_modulating_unit | `alexscaves:occult_gem`（替换下界之星） |
+| locomotive_boosting_unit | `northstar:advanced_circuit`（替换钻石护腿） |
+| hydraulic_propulsion_unit | `#forge:spring/between_500_2_1000`（替换自由跑鞋） |
+| radiation_shielding_unit | 原版即铅块门槛，不改（铅的刚需出口） |
+| attack_amplification_unit | `iceandfire:dragonbone`（替换铁剑；龙血流体无法入合成台） |
+| vision_enhancement_unit | 望远镜（替换绿宝石） |
+| magnetic_attraction_unit | `alexscaves:magnetron`（替换铁栏杆） |
+| MekaSuit 本体 ×4 | 外壳换锻造钢、精炼萤石换 `alexscaves:occult_gem`（BKA 主题锭待首启核实 ID 后替换） |
+| MekaTool | `#more_mod_tetra:over_core`（替换原子分解器）+ 锻造钢；龙血仪式延后至 P2 血系机器 |
+
+注：1.20.1 无 solar_recharging 模块（P1 落地时从 JAR 核实），原表该行作废；泰坦火种卷轴 ID 未核实前以 `northstar:advanced_circuit` 顶替速度模块门槛。
 
 Tools 线：锇/青铜/钢工具保留（材料 sink）；精炼黑曜石/萤石套挂聚变时代门槛；全装备数值入 OED 审查。MekaSuit 模块全枚举以游戏内注册表转储为准（P1 时补全本表）。
 
