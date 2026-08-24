@@ -99,6 +99,11 @@
     "name": "AppleSkin",
     "version": "2.5.1"
   },
+  "Applied-Mekanistics-1.4.3.jar": {
+    "modId": "applied-mekanistics",
+    "name": "Applied Mekanistics",
+    "version": "1.4.3"
+  },
   "appliedcreate-1.20.1-1.1.6.jar": {
     "modId": "appliedcreate",
     "name": "Applied Create",
@@ -399,10 +404,10 @@
     "name": "Create Delight Core",
     "version": "1.20.1-dev"
   },
-  "create-enchantment-industry-2.5.0b.jar": {
+  "create-enchantment-industry-2.5.2.jar": {
     "modId": "create-enchantment-industry",
     "name": "Create: Enchantment Industry",
-    "version": "2.5.0b"
+    "version": "2.5.2"
   },
   "create-integrated-farming-1.3.0-1.20.1.jar": {
     "modId": "create-integrated-farming",
@@ -1134,6 +1139,11 @@
     "name": "Just Enough Breeding (JEBr)",
     "version": "1.20.1-3.0.1"
   },
+  "JustEnoughMekanismMultiblocks-1.20.1-4.10.jar": {
+    "modId": "justenoughmekanismmultiblocks",
+    "name": "Just Enough Mekanism Multiblocks",
+    "version": "1.20.1-4.10"
+  },
   "kaleidoscopedoll-1.3.1-forge+mc1.20.1.jar": {
     "modId": "kaleidoscopedoll",
     "name": "Kaleidoscope Doll",
@@ -1263,6 +1273,31 @@
     "modId": "megacells-forge",
     "name": "MEGA Cells",
     "version": "2.4.6-1.20.1"
+  },
+  "Mekanism-1.20.1-10.4.16.80.jar": {
+    "modId": "mekanism",
+    "name": "Mekanism",
+    "version": "1.20.1-10.4.16.80"
+  },
+  "MekanismAdditions-1.20.1-10.4.16.80.jar": {
+    "modId": "mekanismadditions",
+    "name": "Mekanism Additions",
+    "version": "1.20.1-10.4.16.80"
+  },
+  "mekanismcurios-1.20.1-1.2.1.jar": {
+    "modId": "mekanismcurios",
+    "name": "Mekanism Curios",
+    "version": "1.20.1-1.2.1"
+  },
+  "MekanismGenerators-1.20.1-10.4.16.80.jar": {
+    "modId": "mekanismgenerators",
+    "name": "Mekanism Generators",
+    "version": "1.20.1-10.4.16.80"
+  },
+  "MekanismTools-1.20.1-10.4.16.80.jar": {
+    "modId": "mekanismtools",
+    "name": "Mekanism Tools",
+    "version": "1.20.1-10.4.16.80"
   },
   "melody_forge_1.0.3_MC_1.20.1-1.20.4.jar": {
     "modId": "melody_forge",

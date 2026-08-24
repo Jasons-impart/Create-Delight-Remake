@@ -715,12 +715,17 @@ function buildTechPools(tableId, tier) {
                 ["createaddition:electrum_ingot", 8, [1, 3]],
                 ["createaddition:capacitor", 7, [1, 2]],
                 ["createdieselgenerators:engine_piston", 6, [1, 2]],
-                ["create_new_age:overcharged_iron", 3, [1, 2]]
+                ["create_new_age:overcharged_iron", 3, [1, 2]],
+                ["mekanism:ingot_osmium", 10, [1, 3]],
+                ["mekanism:basic_control_circuit", 5]
             ],
         }
 
         if (tier === 2) {
             componentPool.entries.push(["create:precision_mechanism", 6])
+            componentPool.entries.push(["mekanism:advanced_control_circuit", 4])
+            componentPool.entries.push(["mekanism:fluorite_gem", 6, [1, 4]])
+            componentPool.entries.push(["alexscaves:uranium", 3])
         }
 
         techPools.push(componentPool)
