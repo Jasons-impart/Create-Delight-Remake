@@ -1,0 +1,22 @@
+# 通用机械世界生成（首启默认；键名对应 Mekanism 10.4 WorldConfig）
+# 锡/铀与包内既有体系统一，关闭生成；锇按贵金属档压密度；铅/盐/萤石保留默认。
+
+[world_generation]
+
+	[world_generation.tin]
+		shouldGenerate = false
+
+	[world_generation.uranium]
+		shouldGenerate = false
+
+	[world_generation.osmium.upper]
+		# 山地上层矿脉，默认 65；压密度至 20
+		perChunk = 20
+
+	[world_generation.osmium.middle]
+		# 中层矿脉，默认 6
+		perChunk = 3
+
+	[world_generation.osmium.small]
+		# 深层小矿脉，默认 8
+		perChunk = 4

@@ -399,10 +399,10 @@
     "name": "Create Delight Core",
     "version": "1.20.1-dev"
   },
-  "create-enchantment-industry-2.5.0b.jar": {
+  "create-enchantment-industry-2.5.2.jar": {
     "modId": "create-enchantment-industry",
     "name": "Create: Enchantment Industry",
-    "version": "2.5.0b"
+    "version": "2.5.2"
   },
   "create-integrated-farming-1.3.0-1.20.1.jar": {
     "modId": "create-integrated-farming",
@@ -1179,6 +1179,11 @@
     "name": "KubeJS",
     "version": "2001.6.5-build.24"
   },
+  "kubejs-mekanism-forge-2001.1.5.1-build.2.jar": {
+    "modId": "kubejs-mekanism-forge",
+    "name": "KubeJS Mekanism UNOFFICIAL",
+    "version": "2001.1.5.1-build.2"
+  },
   "kubejsdelight-1.20.1-1.1.5.jar": {
     "modId": "kubejsdelight",
     "name": "KubeJS Delight",
@@ -1263,6 +1268,26 @@
     "modId": "megacells-forge",
     "name": "MEGA Cells",
     "version": "2.4.6-1.20.1"
+  },
+  "Mekanism-1.20.1-10.4.16.80.jar": {
+    "modId": "mekanism",
+    "name": "Mekanism",
+    "version": "1.20.1-10.4.16.80"
+  },
+  "MekanismAdditions-1.20.1-10.4.16.80.jar": {
+    "modId": "mekanismadditions",
+    "name": "Mekanism Additions",
+    "version": "1.20.1-10.4.16.80"
+  },
+  "MekanismGenerators-1.20.1-10.4.16.80.jar": {
+    "modId": "mekanismgenerators",
+    "name": "Mekanism Generators",
+    "version": "1.20.1-10.4.16.80"
+  },
+  "MekanismTools-1.20.1-10.4.16.80.jar": {
+    "modId": "mekanismtools",
+    "name": "Mekanism Tools",
+    "version": "1.20.1-10.4.16.80"
   },
   "melody_forge_1.0.3_MC_1.20.1-1.20.4.jar": {
     "modId": "melody_forge",
