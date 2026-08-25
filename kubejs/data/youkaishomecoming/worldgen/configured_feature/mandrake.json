@@ -27,20 +27,17 @@
                 "fluids": "minecraft:empty"
               },
               {
-                "type": "minecraft:matching_blocks",
-                "blocks": "minecraft:grass_block",
-                "offset": [
-                  0,
-                  -1,
-                  0
-                ]
+                "type": "minecraft:would_survive",
+                "state": {
+                  "Name": "youkaishomecoming:wild_mandrake"
+                }
               }
             ]
           }
         }
       ]
     },
-    "tries": 24,
+    "tries": 12,
     "xz_spread": 5,
     "y_spread": 3
   }
