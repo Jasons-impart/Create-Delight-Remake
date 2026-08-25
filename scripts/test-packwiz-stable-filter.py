@@ -7,6 +7,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+import zipfile
 from pathlib import Path
 
 
@@ -47,6 +48,13 @@ class PackwizStableFilterTests(unittest.TestCase):
             f'name = "{name}"\nfilename = "{filename}"\nside = "{side}"\n{stable_line}',
             encoding="utf-8",
         )
+
+    def write_manual_jar(self, filename, mod_id, version):
+        jar = self.root / "packwiz-files" / "mods" / filename
+        jar.parent.mkdir(parents=True, exist_ok=True)
+        mods_toml = f'[[mods]]\nmodId = "{mod_id}"\nversion = "{version}"\n'
+        with zipfile.ZipFile(jar, "w") as archive:
+            archive.writestr("META-INF/mods.toml", mods_toml)
 
     def prune(self, target, stable=False):
         command = [
@@ -126,6 +134,30 @@ class PackwizStableFilterTests(unittest.TestCase):
         self.assertEqual(
             {"modId": "example-forge", "name": "Example", "version": "1.20.1-2.3.4"},
             CRASH_ASSISTANT_MODLIST.mod_record("Example-forge-1.20.1-2.3.4.jar", "Example"),
+        )
+
+    def test_crash_assistant_modlist_prefers_forge_jar_metadata(self):
+        filename = "taczaddon-1.20.1-1.1.8-hotfix2-for-new-soph.jar"
+        self.write_metadata("mods", "taczaddon", filename, "both")
+        self.write_manual_jar(filename, "taczaddon", "1.1.8")
+
+        modlist = CRASH_ASSISTANT_MODLIST.client_mod_baseline(self.root)
+
+        self.assertEqual(
+            {"modId": "taczaddon", "name": "taczaddon", "version": "1.1.8"},
+            modlist[filename],
+        )
+
+    def test_crash_assistant_modlist_falls_back_for_unresolved_jar_metadata(self):
+        filename = "beefix-1.20-1.0.7.jar"
+        self.write_metadata("mods", "beefix", filename, "both")
+        self.write_manual_jar(filename, "beefix", "${file.jarVersion}")
+
+        modlist = CRASH_ASSISTANT_MODLIST.client_mod_baseline(self.root)
+
+        self.assertEqual(
+            {"modId": "beefix", "name": "beefix", "version": "1.20-1.0.7"},
+            modlist[filename],
         )
 
     def test_formal_server_patch_removes_stable_disabled_metadata_and_payloads(self):

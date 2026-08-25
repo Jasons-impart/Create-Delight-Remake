@@ -704,3 +704,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: KubeJS 的 `player.persistentData` 在玩家存档中由 `KubeJSPersistentData` 管理；CDC 若从 Forge persistent data 猜测 `kubejs:persistent_data` 子键，会始终读到默认值，使订单声望被误判为 1 级。
 - **Fix/Lesson**: Java 侧通过玩家对象的 `kjs$getPersistentData()` 读取 KubeJS 权威数据，并仅在方法不可用时回退到 Forge persistent data；新增跨层状态读取时应先核对真实存档与现有桥接方法。
+
+## Crash Assistant 基线不能只从手动 JAR 文件名推断版本
+
+**Date**: 2026-08-26
+
+- **Problem**: `packwiz-files/mods/` 中为兼容性或分发目的重命名的 JAR，文件名版本可能包含 Minecraft、loader 或内部构建后缀；Crash Assistant 若只按文件名生成基线，就会把 Forge `mods.toml` 中的真实版本误报为模组升级。
+- **Fix/Lesson**: `scripts/generate-crash-assistant-modlist.py` 对本地手动 JAR 优先读取 `META-INF/mods.toml` / `META-INF/neoforge.mods.toml`，遇到缺少载荷、损坏元数据或 `${...}` 未解析占位符时才回退到文件名解析；新增手动 JAR 时同时检查 Forge 内部版本与 Packwiz 文件名是否一致。
