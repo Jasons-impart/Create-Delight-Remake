@@ -80,18 +80,18 @@
 		{
 			dependencies: ["7DC98E34AECFBB5C"]
 			description: [
-				"{image:createdelight:textures/gui/how_to_filter_vein_1.png width:256 height:136 align:center}"
+				"{image:createdelightcore:textures/gui/how_to_filter_vein_1.png width:256 height:136 align:center}"
 				"1.在&e区块内&r放置采样钻机，然后在采样钻机上放置一个&e有气压的背罐&r。"
 				"2.右击采样钻机进行采样，采样完成后，使用&e矿脉地图册&r右击采样钻机。"
 				"{@pagebreak}"
-				"{image:createdelight:textures/gui/how_to_filter_vein_2.png width:210 height:130 align:center}"
+				"{image:createdelightcore:textures/gui/how_to_filter_vein_2.png width:210 height:130 align:center}"
 				"此为矿物地图册的界面。"
 				"左侧列出的矿脉地图册，在&e点击&r时会列出所选矿脉的坐标，开采余量等信息。"
 				"右侧列出的矿脉类型，对于每个选项："
 				"在点击右侧的&e单选框&r后会将选中的矿脉&e过滤&r掉，使探矿仪不再寻找该种矿脉。"
 				"&e直接点击选项&r会&e选中&r矿脉，使得探矿仪只会寻找该矿脉。"
 				"{@pagebreak}"
-				"{image:createdelight:textures/gui/how_to_filter_vein_3_1.png width:120 height:25 align:center}"
+				"{image:createdelightcore:textures/gui/how_to_filter_vein_3_1.png width:120 height:25 align:center}"
 				"如上图，将\"水\"矿脉&e过滤&r掉后，即使处于水矿脉中，也不再显示矿脉。之后只要&e跟随探矿仪&r，再将&e找到的矿脉&r过滤掉即可找到所有矿脉。"
 			]
 			icon: "createoreexcavation:vein_atlas"

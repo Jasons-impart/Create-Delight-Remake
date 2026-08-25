@@ -13,7 +13,7 @@ except ModuleNotFoundError as error:
     raise RuntimeError("Python 3.11 or newer is required for TOML support") from error
 
 
-ASSET_DIRS = ("mods", "resourcepacks", "shaderpacks")
+ASSET_DIRS = ("mods", "resourcepacks", "shaderpacks", "tacz")
 SERVER_EXCLUDED_FILES = (
     "ModList0.4a.md",
     "README.md",
@@ -165,7 +165,7 @@ def remove_client_mod_payloads(patch, stable=False):
 
 
 def move_packwiz_payloads(patch):
-    extensions = {"mods": ".jar", "resourcepacks": ".zip", "shaderpacks": ".zip"}
+    extensions = {"mods": ".jar", "resourcepacks": ".zip", "shaderpacks": ".zip", "tacz": ".zip"}
     for asset_dir, extension in extensions.items():
         source_dir = patch / "packwiz-files" / asset_dir
         if not source_dir.is_dir():

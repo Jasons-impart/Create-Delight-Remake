@@ -1,16 +1,19 @@
 ---
 name: packwiz-assets
-description: Manage Create-Delight Remake Packwiz assets. Use when adding, updating, removing, syncing, validating, or packaging mods/resourcepacks/shaderpacks, packwiz-files payloads, CurseForge/manual-download metadata, or the Create Delight Core packaged jar.
+description: Manage Create-Delight Remake Packwiz assets. Use when adding, updating, removing, syncing, validating, or packaging mods/resourcepacks/shaderpacks/TACZ gun packs, packwiz-files payloads, CurseForge/manual-download metadata, or the Create Delight Core packaged jar.
 ---
 
 # Packwiz Assets
 
-Use this workflow for modpack asset operations that touch `mods/`, `resourcepacks/`, `shaderpacks/`, `packwiz-files/`, `pack.toml`, `index.toml`, or the packaged CDC jar.
+Use this workflow for modpack asset operations that touch `mods/`, `resourcepacks/`, `shaderpacks/`, `tacz/`, `packwiz-files/`, `pack.toml`, `index.toml`, or the packaged CDC jar.
 
 ## Rules
 
 - `mods/`, `resourcepacks/`, and `shaderpacks/` contain `.pw.toml` metadata only; do not track runtime jars there.
 - CF-restricted, manual-download, and custom payloads belong in `packwiz-files/{mods,resourcepacks,shaderpacks}/` with matching raw-URL metadata.
+- `tacz/` contains TACZ gun-pack `.pw.toml` metadata. Its downloaded `.zip` payloads are runtime files and are ignored by Git; committed source payloads live in `packwiz-files/tacz/`.
+- TACZ gun packs are ZIP archives whose root is the pack content (`assets/`, `data/`, `gunpack.meta.json`, etc.); do not add an extra enclosing directory when packaging them.
+- When adding a new `packwiz-files/<category>/`, update both the parent and child `.gitignore`; the parent whitelist alone does not make payload files trackable.
 - For a `packwiz-files` mod that also exists on CurseForge, keep its `[release.curseforge]` project/file hint accurate. Client export must convert these hints to `metadata:curseforge` before best-effort detection; a failed hinted conversion is a release error, not permission to bundle the JAR under `overrides/mods`.
 - Add a known CurseForge asset through `scripts/add-packwiz-target.ps1`; update an existing CurseForge asset through `scripts/update-packwiz-target.ps1`; use `scripts/update-packwiz-meta.ps1 -FullReconcile` only for category-wide local-asset reconciliation. Avoid manual metadata edits unless repairing generated output.
 - Do not run `scripts/update-packwiz-meta.ps1 -FullReconcile` on short-lived feature/PR branches because it derives `packwiz-files` raw URLs from the current branch and can rewrite unrelated `.pw.toml` files to branch URLs that disappear after merge.
@@ -26,11 +29,13 @@ Use this workflow for modpack asset operations that touch `mods/`, `resourcepack
 
 1. For one known CurseForge project/file, run `./scripts/add-packwiz-target.ps1 -CurseForgeUrl <project-or-file-URL> -Category mods|resourcepacks|shaderpacks -Side client|server|both`. It identifies the requested project's metadata even when Packwiz also generates temporary dependency entries, refuses to overwrite an existing target, and synchronizes local runtime assets by default. Resourcepack and shaderpack probes ignore the pack's mod-loader filter.
 2. For an existing CurseForge metadata file, run `./scripts/update-packwiz-target.ps1 -Category mods|resourcepacks|shaderpacks -Slug <metadata-name>`, or use `-Path <relative .pw.toml path>`.
-3. Put custom/restricted payloads under the matching `packwiz-files/<category>/` directory. To inventory local JARs, reconcile many changed assets, or repair metadata drift, run `./scripts/update-packwiz-meta.ps1 -Category mods|resourcepacks|shaderpacks -FullReconcile` only on `main` or a long-lived LTS/release-maintenance branch. Non-mod reconciliation removes loader filtering, strips trailing parenthesized version suffixes when searching CurseForge, and defaults new metadata to `side = "client"`.
+3. Put custom/restricted payloads under the matching `packwiz-files/<category>/` directory. TACZ gun packs use the dedicated `scripts/update-tacz-packwiz-meta.ps1` conversion script because their source directories must be packaged as root-content ZIPs. To inventory local JARs, reconcile many changed assets, or repair metadata drift, run `./scripts/update-packwiz-meta.ps1 -Category mods|resourcepacks|shaderpacks -FullReconcile` only on `main` or a long-lived LTS/release-maintenance branch. Non-mod reconciliation removes loader filtering, strips trailing parenthesized version suffixes when searching CurseForge, and defaults new metadata to `side = "client"`.
 4. For slow overseas services, run `./scripts/sync-packwiz-assets.ps1 -Proxy "http://127.0.0.1:7890"`, or set `PACKWIZ_PROXY` so Git hooks and the repo sync workflow inherit the proxy. The sync script applies it to tool downloads and Packwiz installer requests.
-5. Inspect the generated `.pw.toml` plus `packwiz-files` changes before staging, especially that existing `side = "client"` or `side = "server"` entries were not reset to `both`.
+5. Inspect the generated `.pw.toml` plus `packwiz-files` changes before staging, especially that existing `side = "client"` or `side = "server"` entries were not reset to `both`. TACZ packs normally use `side = "both"`.
 6. Run `./scripts/sync-packwiz-assets.ps1` when local runtime files must match metadata. Repeated hook/workflow calls for the same revision are skipped after a successful sync; use `-Force` to repair local runtime files.
 7. When a resource pack should be enabled for new clients by default, add its exact `file/<filename>` entry to `.options.txt` `resourcePacks`; release packaging renames this tracked file to `options.txt`. Verify its `pack.mcmeta` format before adding it to `incompatibleResourcePacks`.
+
+Packwiz's side pruning, local sync, release patch builder, server export, and CurseForge export all include `tacz/`. Keep that root in sync when changing the asset workflow; otherwise TACZ metadata may refresh locally but be omitted from CI artifacts.
 
 When old and new runtime JARs coexist, `update-packwiz-meta.ps1` selects the preferred newer filename and updates the existing metadata entry instead of creating a duplicate. Missing runtime JARs do not remove metadata by default; remove the `.pw.toml` explicitly, or use `-AllowRemovals` only when bulk removal is intentional and the runtime directory is complete.
 

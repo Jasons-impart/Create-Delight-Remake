@@ -14,7 +14,7 @@
 	images: [
 		{
 			height: 8.0d
-			image: "createdelight:textures/gui/youkai_homecoming.png"
+			image: "createdelightcore:textures/gui/youkai_homecoming.png"
 			rotation: 0.0d
 			width: 10.0d
 			x: 7.0d

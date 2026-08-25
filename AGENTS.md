@@ -18,7 +18,7 @@ CD-master-dev/
 ├── CDC-mod-src/      # Create Delight Core git submodule (Java mod source; not packaged)
 ├── config/           # 50+ mod configs
 ├── defaultconfigs/   # First-run defaults copied to config/
-├── tacz/             # TACZ gun data: armorer packs & gun config
+├── tacz/             # TACZ gun-pack Packwiz metadata & gun config
 ├── hotai/            # hotai mod data
 ├── mods/             # Packwiz metadata only (*.pw.toml); no tracked JARs
 ├── packwiz-files/    # Manually-managed mod JARs (CF-restricted, custom)
@@ -44,7 +44,7 @@ CD-master-dev/
 | Version info | `modpack.toml` | ONLY source - don't duplicate |
 | Dev environment setup | `GettingStarted.md` | Self-contained pre-clone bootstrap |
 | Release workflow | `.github/workflows/release.yml` | Use `/release` skill |
-| Packwiz asset workflow | `mods/`, `packwiz-files/` | Use `/packwiz-assets` skill |
+| Packwiz asset workflow | `mods/`, `resourcepacks/`, `shaderpacks/`, `tacz/`, `packwiz-files/` | Use `/packwiz-assets` skill |
 | Minecraft MCP testing/repair | `.agents/skills/minecraft-mcp/SKILL.md` | Use `/minecraft-mcp`; keep source work in `D:\learnmod` |
 | Content/how-to knowledge | `docs/dev-knowledge/` | Use `/dev-knowledge` skill |
 | Design plans | `docs/plan/` | Use `/dev-knowledge` for routing |
@@ -89,12 +89,13 @@ CD-master-dev/
 - Releases: `release*` branches
 
 **Mod Management (Packwiz)**:
-- `mods/`, `resourcepacks/`, `shaderpacks/` contain `.pw.toml` metadata; no `mods/*.jar` files are tracked
-- CF-restricted/custom JARs/zip live in `packwiz-files/{mods,resourcepacks,shaderpacks}/`
+- `mods/`, `resourcepacks/`, `shaderpacks/`, and `tacz/` contain `.pw.toml` metadata; downloaded runtime files are not tracked
+- CF-restricted/custom JARs/zip live in `packwiz-files/{mods,resourcepacks,shaderpacks,tacz}/`
+- TACZ gun-pack ZIP payloads must keep `assets/`, `data/`, and pack metadata at the archive root; use `scripts/update-tacz-packwiz-meta.ps1` for conversion
 - For add/update/remove/sync/CDC artifact details, use `.agents/skills/packwiz-assets/SKILL.md` because the workflow is procedural and changes together.
 - `scripts/update-packwiz-meta.ps1 -FullReconcile` is category-wide local-asset reconciliation, not the default for one known CurseForge asset; use `scripts/add-packwiz-target.ps1` to add one and `scripts/update-packwiz-target.ps1` to update one.
 - Do not run `scripts/update-packwiz-meta.ps1 -FullReconcile` on short-lived feature branches: it may rewrite `packwiz-files` raw URLs to the current branch. Use it on `main` or a long-lived LTS/release-maintenance branch, or explicitly preserve `main` raw URLs.
-- After any pull/rebase/merge, compare pre-update target commit..new HEAD; if `mods|resourcepacks|shaderpacks/**/*.pw.toml` or `packwiz-files/**` changed, run `scripts/sync-packwiz-assets.ps1` because runtime JARs are local.
+- After any pull/rebase/merge, compare pre-update target commit..new HEAD; if `mods|resourcepacks|shaderpacks|tacz/**/*.pw.toml` or `packwiz-files/**` changed, run `scripts/sync-packwiz-assets.ps1` because runtime payloads are local.
 - `pack.toml`/`index.toml` are generated from `modpack.toml`; don't commit them
 - `CDC-mod-src/` is a git submodule and must stay out of Packwiz artifacts because packages ship pack files, not Java source trees
 - GitHub Pages mod classification data (`docs/mods-data.js`) is expensive to refresh; do not update it during ordinary mod changes unless the user explicitly asks for a manual refresh.

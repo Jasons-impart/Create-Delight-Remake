@@ -40,7 +40,7 @@ Difficulty.getPlayerCurrentProcess = function () {
 Difficulty.tierThreshold = [0, 100, 200, 300, 450, 600]
 
 RenderJSEvents.onGuiPreRender(e => {
-    let location = "createdelight:textures/gui/difficulty_progress_bar"
+    let location = "createdelightcore:textures/gui/difficulty_progress_bar"
     let textureWidth = 8, textureHeight = 32
     let windowWidth = e.window.guiScaledWidth
     let windowHeight = e.window.guiScaledHeight

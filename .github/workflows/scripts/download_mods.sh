@@ -24,7 +24,7 @@ cp .packwizignore "$PACK_DIR/" 2>/dev/null || true
 python3 scripts/generate-packwiz-files.py --source modpack.toml --output-dir "$PACK_DIR"
 
 # Copy .pw.toml metadata
-find mods resourcepacks shaderpacks -name '*.pw.toml' 2>/dev/null | while read -r f; do
+find mods resourcepacks shaderpacks tacz -name '*.pw.toml' 2>/dev/null | while read -r f; do
   mkdir -p "$PACK_DIR/$(dirname "$f")"
   cp "$f" "$PACK_DIR/$f"
 done

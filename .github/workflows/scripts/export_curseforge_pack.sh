@@ -19,7 +19,7 @@ script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 repo_root="$(cd "$script_dir/../../.." && pwd)"
 
 restore_urls() {
-  find mods resourcepacks shaderpacks -name '*.pw.toml' -exec \
+  find mods resourcepacks shaderpacks tacz -name '*.pw.toml' -exec \
     sed -i "s|${local_prefix}|${raw_prefix}|g" {} + 2>/dev/null || true
 }
 
@@ -48,8 +48,8 @@ bash "$script_dir/normalize_packwiz_files_for_curseforge.sh"
 
 mkdir -p "$(dirname "$output")"
 
-if grep -RIlE --include='*.pw.toml' "$raw_prefix_regex" mods resourcepacks shaderpacks >/dev/null 2>&1; then
-  find mods resourcepacks shaderpacks -name '*.pw.toml' -exec \
+if grep -RIlE --include='*.pw.toml' "$raw_prefix_regex" mods resourcepacks shaderpacks tacz >/dev/null 2>&1; then
+  find mods resourcepacks shaderpacks tacz -name '*.pw.toml' -exec \
     sed -E -i "s|${raw_prefix_regex}|${local_prefix}|g" {} +
 
   python3 -m http.server "$port" --directory "." &

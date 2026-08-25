@@ -11,7 +11,7 @@ except ModuleNotFoundError:
 
 
 VALID_SIDES = {"both", "client", "server"}
-DEFAULT_ROOTS = ("mods", "resourcepacks", "shaderpacks")
+DEFAULT_ROOTS = ("mods", "resourcepacks", "shaderpacks", "tacz")
 
 
 def read_toml(path):

@@ -4,6 +4,7 @@
 import argparse
 import json
 import re
+import zipfile
 from pathlib import Path
 
 try:
@@ -42,16 +43,88 @@ def is_stable_enabled(metadata):
 VERSIONED_JAR_PATTERN = re.compile(
     r"^(?P<mod_id>.+?)[-_](?P<version>\d[0-9A-Za-z.+_-]*)\.jar$", re.IGNORECASE
 )
+MOD_METADATA_PATHS = ("META-INF/mods.toml", "META-INF/neoforge.mods.toml")
+UNRESOLVED_VALUE_PATTERN = re.compile(r"\$\{[^}]+\}")
 
 
-def mod_record(filename, display_name):
-    """Return Crash Assistant metadata inferred from a Packwiz JAR filename.
+def _parse_mod_metadata(text):
+    if tomllib is not None:
+        try:
+            metadata = tomllib.loads(text)
+        except tomllib.TOMLDecodeError:
+            metadata = None
+        if isinstance(metadata, dict):
+            for mod in metadata.get("mods", []):
+                if not isinstance(mod, dict):
+                    continue
+                mod_id = str(mod.get("modId", "")).strip()
+                version = str(mod.get("version", "")).strip()
+                if mod_id and version:
+                    return mod_id, version
+        return None
 
-    Packwiz metadata does not expose Forge's runtime mod id or version.  The
-    stable filename prefix and trailing numeric version segment let the startup
-    script pair a removed JAR with its upgraded replacement without storing
-    download fingerprints (which would enable recovery actions).
+    mods_block = re.search(r"(?ms)^\s*\[\[mods\]\].*?(?=^\s*\[\[|\Z)", text)
+    if not mods_block:
+        return None
+    block = mods_block.group(0)
+    values = {}
+    for key in ("modId", "version"):
+        match = re.search(
+            rf"(?m)^\s*{re.escape(key)}\s*=\s*(?:\"([^\"]*)\"|'([^']*)')",
+            block,
+        )
+        if match:
+            values[key] = next(value for value in match.groups() if value is not None)
+    mod_id = values.get("modId", "").strip()
+    version = values.get("version", "").strip()
+    if mod_id and version:
+        return mod_id, version
+    return None
+
+
+def read_jar_mod_metadata(repo_root, filename):
+    """Read a tracked manual JAR's Forge/NeoForge mod id and version."""
+    jar_path = repo_root / "packwiz-files" / "mods" / filename
+    if not jar_path.is_file():
+        return None
+    try:
+        with zipfile.ZipFile(jar_path) as archive:
+            for metadata_path in MOD_METADATA_PATHS:
+                try:
+                    text = archive.read(metadata_path).decode("utf-8")
+                except KeyError:
+                    continue
+                parsed = _parse_mod_metadata(text)
+                if parsed is None:
+                    continue
+                mod_id, version = parsed
+                if UNRESOLVED_VALUE_PATTERN.search(mod_id) or UNRESOLVED_VALUE_PATTERN.search(version):
+                    continue
+                return {"modId": mod_id.lower(), "version": version}
+    except (OSError, UnicodeDecodeError, ValueError, zipfile.BadZipFile):
+        return None
+    return None
+
+
+def mod_record(filename, display_name, repo_root=None):
+    """Return Crash Assistant metadata inferred from JAR metadata or filename.
+
+    Tracked manual JARs expose Forge's runtime mod id and version in
+    ``META-INF/mods.toml``.  Use that metadata when available so renamed
+    payloads do not look like version changes.  Packwiz metadata-only entries
+    and malformed or unresolved JAR metadata fall back to the stable filename
+    prefix and trailing numeric version segment.
     """
+    jar_metadata = read_jar_mod_metadata(repo_root, filename) if repo_root is not None else None
+    if jar_metadata is not None:
+        mod_id = jar_metadata["modId"]
+        version = jar_metadata["version"]
+        return {
+            "modId": mod_id,
+            "name": display_name,
+            "version": version,
+        }
+
     match = VERSIONED_JAR_PATTERN.match(filename)
     if match:
         mod_id = match.group("mod_id").lower()
@@ -79,7 +152,11 @@ def client_mod_baseline(repo_root, stable=False):
             raise RuntimeError(f"Missing filename in {metadata_path.relative_to(repo_root)}")
         if filename in records:
             raise RuntimeError(f"Duplicate client mod filename: {filename}")
-        records[filename] = mod_record(filename, str(metadata.get("name", filename)))
+        records[filename] = mod_record(
+            filename,
+            str(metadata.get("name", filename)),
+            repo_root=repo_root,
+        )
     if not records:
         raise RuntimeError("No client-compatible mods/**/*.pw.toml files found.")
     return dict(sorted(records.items(), key=lambda item: item[0].casefold()))

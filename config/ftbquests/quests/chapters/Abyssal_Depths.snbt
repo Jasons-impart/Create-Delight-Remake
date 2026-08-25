@@ -521,7 +521,7 @@
 			dependencies: ["6064CB76A7832C2A"]
 			description: [
 				"使用20个铜块，1个奥秘引擎，6个深海玻璃搭建。搭建后，会产生一个潜水艇载具实体。"
-				"{image:createdelight:textures/gui/submarine.png width:100 height:100 align:center}"
+				"{image:createdelightcore:textures/gui/submarine.png width:100 height:100 align:center}"
 			]
 			id: "3EBE8C557492A57D"
 			size: 1.5d

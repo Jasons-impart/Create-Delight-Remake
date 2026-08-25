@@ -15,7 +15,7 @@
 		Count: 1
 		id: "ftbquests:custom_icon"
 		tag: {
-			Icon: "createdelight:textures/gui/packicon64.png"
+			Icon: "createdelightcore:textures/gui/packicon64.png"
 		}
 	}
 	lock_message: ""

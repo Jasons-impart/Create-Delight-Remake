@@ -172,7 +172,7 @@
   "blackknightarmor-1.0.3-20260322-1620-reobf.jar": {
     "modId": "blackknightarmor",
     "name": "Black Knight Armor Mod",
-    "version": "1.0.3-20260322-1620-reobf"
+    "version": "1.0.3"
   },
   "blueprint-1.20.1-7.1.3.jar": {
     "modId": "blueprint",
@@ -395,9 +395,9 @@
     "version": "unknown"
   },
   "Create-Delight-Core-1.20.1-dev.jar": {
-    "modId": "create-delight-core",
+    "modId": "createdelightcore",
     "name": "Create Delight Core",
-    "version": "1.20.1-dev"
+    "version": "2.2.16j"
   },
   "create-enchantment-industry-2.5.2.jar": {
     "modId": "create-enchantment-industry",
@@ -490,9 +490,9 @@
     "version": "1.0.0-forge-1.20.1"
   },
   "create_structures_arise-176.49.48 Forge 1.20.1.jar": {
-    "modId": "create_structures_arise-176.49.48 forge 1.20.1",
+    "modId": "create_structures_arise",
     "name": "Create: Structures Arise",
-    "version": "unknown"
+    "version": "176.49.48"
   },
   "createaddition-1.20.1-1.3.3.jar": {
     "modId": "createaddition",
@@ -672,7 +672,7 @@
   "damage_trace-1.20.1-0.1.0.jar": {
     "modId": "damage_trace",
     "name": "Damage Trace",
-    "version": "1.20.1-0.1.0"
+    "version": "0.1.0"
   },
   "displaydelight-1.7.0.jar": {
     "modId": "displaydelight",
@@ -765,9 +765,9 @@
     "version": "1.20.1-1.0.0"
   },
   "entityculling-forge-1.10.5-mc1.20.1.jar": {
-    "modId": "entityculling-forge",
+    "modId": "entityculling",
     "name": "Entity Culling Fabric/Forge",
-    "version": "1.10.5-mc1.20.1"
+    "version": "1.10.5"
   },
   "EuphoriaPatcher-1.9.3-r5.8.1-forge.jar": {
     "modId": "euphoriapatcher",
@@ -812,7 +812,7 @@
   "fastboot-1.20.x-1.2.jar": {
     "modId": "fastboot",
     "name": "FastBoot",
-    "version": "1.20.x-1.2"
+    "version": "1.2"
   },
   "fastrecipesearch-1.20.1-26.1-forge.jar": {
     "modId": "fastrecipesearch",
@@ -912,7 +912,7 @@
   "ftbquestlocalizer-1.20.1-forge-3.2.3.jar": {
     "modId": "ftbquestlocalizer",
     "name": "FTB Quest Localizer",
-    "version": "1.20.1-forge-3.2.3"
+    "version": "3.2.3"
   },
   "ftbxaerocompat-forge-1.1.3.jar": {
     "modId": "ftbxaerocompat-forge",
@@ -955,9 +955,9 @@
     "version": "20.1.15"
   },
   "Harium-mc1.20.1-2.0-pactched-v5.jar": {
-    "modId": "harium-mc1.20.1",
+    "modId": "harium",
     "name": "Harium (Update 2.0)",
-    "version": "2.0-pactched-v5"
+    "version": "2.0"
   },
   "hotai-1.0.jar": {
     "modId": "hotai",
@@ -1147,7 +1147,7 @@
   "kinetic_pixel-1.0.3-forge-1.20.1.jar": {
     "modId": "kinetic_pixel",
     "name": "Create Firearms Patch (kinetic pixel)",
-    "version": "1.0.3-forge-1.20.1"
+    "version": "1.0.3"
   },
   "Kiwi-1.20.1-Forge-11.10.3.jar": {
     "modId": "kiwi",
@@ -1240,9 +1240,9 @@
     "version": "1.20.1-1.5.5"
   },
   "luncheon-meat-s-delight-1.0.3-forge-1.20.1.jar": {
-    "modId": "luncheon-meat-s-delight",
+    "modId": "luncheonmeatsdelight",
     "name": "Luncheon Meat 'S Delight",
-    "version": "1.0.3-forge-1.20.1"
+    "version": "1.20.1-1.0.3"
   },
   "man_of_many_planes-0.2.0+1.20.1-forge.jar": {
     "modId": "man_of_many_planes",
@@ -1275,9 +1275,9 @@
     "version": "1.9.2+1.20.1"
   },
   "minecraft-mcp-1.20.1-forge-v0.2.1.jar": {
-    "modId": "minecraft-mcp",
+    "modId": "mcpmod",
     "name": "ModDev MCP",
-    "version": "1.20.1-forge-v0.2.1"
+    "version": "0.2.1"
   },
   "MineMenu-1.20.1-1.12.3.jar": {
     "modId": "minemenu",
@@ -1362,7 +1362,7 @@
   "nebulusbetterportals-1.0.8-forge-1.20.1.jar": {
     "modId": "nebulusbetterportals",
     "name": "Nebulus better portals",
-    "version": "1.0.8-forge-1.20.1"
+    "version": "1.0.8"
   },
   "neruina-3.3.3+1.20.1-forge.jar": {
     "modId": "neruina",
@@ -1580,7 +1580,7 @@
     "version": "1.20.1-0.3.2"
   },
   "servercore-forge-1.5.2+1.20.1.jar": {
-    "modId": "servercore-forge",
+    "modId": "servercore",
     "name": "ServerCore",
     "version": "1.5.2+1.20.1"
   },
@@ -1610,9 +1610,9 @@
     "version": "1.20.1-0.4.0a"
   },
   "skinlayers3d-forge-1.11.2-mc1.20.1.jar": {
-    "modId": "skinlayers3d-forge",
+    "modId": "skinlayers3d",
     "name": "3d-Skin-Layers",
-    "version": "1.11.2-mc1.20.1"
+    "version": "1.11.2"
   },
   "smrb-1.0.0.jar": {
     "modId": "smrb",
@@ -1712,7 +1712,7 @@
   "taczaddon-1.20.1-1.1.8-hotfix2-for-new-soph.jar": {
     "modId": "taczaddon",
     "name": "TaCZ addon",
-    "version": "1.20.1-1.1.8-hotfix2-for-new-soph"
+    "version": "1.1.8"
   },
   "tectonic-3.0.17-forge-1.20.1.jar": {
     "modId": "tectonic",
@@ -1790,9 +1790,9 @@
     "version": "20.1.9"
   },
   "totw_modded-forge-1.20.1-1.0.6.jar": {
-    "modId": "totw_modded-forge",
+    "modId": "totw_modded",
     "name": "Towers of the Wild Modded",
-    "version": "1.20.1-1.0.6"
+    "version": "1.0.6"
   },
   "Towns-and-Towers-1.12-Fabric+Forge.jar": {
     "modId": "towns-and-towers",
@@ -1857,7 +1857,7 @@
   "vvaddon-1.20.1-alpha3.0.1.jar": {
     "modId": "vvaddon",
     "name": "VVAddon",
-    "version": "1.20.1-alpha3.0.1"
+    "version": "3.0.1"
   },
   "watut-forge-1.20.1-1.2.3.jar": {
     "modId": "watut-forge",

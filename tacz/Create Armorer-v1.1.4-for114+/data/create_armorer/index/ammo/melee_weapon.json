@@ -1,7 +1,0 @@
-{
-  "name": "create_armorer.ammo.melee_weapon.name",
-  "display": "create_armorer:melee_weapon_display",
-  "tooltip": "create_armorer.ammo.melee_weapon.tooltip",
-  "stack_size": 1
-}
-    
