@@ -830,7 +830,7 @@
 			dependencies: ["55C42BCE0E399B3D"]
 			description: [
 				"对于只想要一个大箱子的人来说，使用&4存储总线&r连接容器（箱子/保险箱/抽屉），然后再接上&4发电机&r并连上&4合成终端&r，就可以使用合成终端统一访问存储总线连接的所有容器。"
-				"{image:createdelight:textures/gui/simple_network_example.png width:98 height:90 align:center}"
+				"{image:createdelightcore:textures/gui/simple_network_example.png width:98 height:90 align:center}"
 				"{@pagebreak}"
 			]
 			icon: "minecraft:chest"
@@ -954,11 +954,11 @@
 				"&e订单交付器&r会在每天上午检查桌布上的订单。"
 				"把交付器放在&e白色桌布&r上，再从东、南、西、北四个方向继续铺桌布；每个方向最多 8 格。"
 				""
-				"{image:createdelight:textures/gui/order_deliverer_usage_1.png width:256 height:133 align:center}"
+				"{image:createdelightcore:textures/gui/order_deliverer_usage_1.png width:256 height:133 align:center}"
 				"{@pagebreak}"
 				"把&e开封后的订单&r放在一块桌布上，再把货物包裹放在这块桌布及其后方。遇到下一张订单时，后面的包裹会归给下一张订单。"
 				""
-				"{image:createdelight:textures/gui/order_deliverer_usage_2.png width:256 height:133 align:center}"
+				"{image:createdelightcore:textures/gui/order_deliverer_usage_2.png width:256 height:133 align:center}"
 				""
 				"{@pagebreak}"
 				"货物满足要求后，交付器会收走订单和货物，并在订单所在的桌布上留下奖励包裹。货物不足时，订单和包裹会保留。"

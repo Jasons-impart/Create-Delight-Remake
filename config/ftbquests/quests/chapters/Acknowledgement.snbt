@@ -44,7 +44,7 @@
 		}
 		{
 			height: 2.8d
-			image: "createdelight:textures/gui/windy_create.png"
+			image: "createdelightcore:textures/gui/windy_create.png"
 			order: 2
 			rotation: 0.0d
 			width: 5.5d
@@ -53,7 +53,7 @@
 		}
 		{
 			height: 4.0d
-			image: "createdelight:textures/gui/qd_windy.png"
+			image: "createdelightcore:textures/gui/qd_windy.png"
 			rotation: 0.0d
 			width: 4.0d
 			x: 12.0d
@@ -178,7 +178,7 @@
 		}
 		{
 			height: 1.0d
-			image: "createdelight:textures/gui/ceneralcimera117.png"
+			image: "createdelightcore:textures/gui/ceneralcimera117.png"
 			order: 3
 			rotation: 0.0d
 			width: 1.0d
@@ -187,7 +187,7 @@
 		}
 		{
 			height: 1.8d
-			image: "createdelight:textures/gui/ceneralcimera117_s_video.png"
+			image: "createdelightcore:textures/gui/ceneralcimera117_s_video.png"
 			order: 6
 			rotation: 0.0d
 			width: 3.4d
@@ -447,7 +447,7 @@
 		}
 		{
 			height: 1.0d
-			image: "createdelight:textures/gui/qd_windy_word.png"
+			image: "createdelightcore:textures/gui/qd_windy_word.png"
 			order: 4
 			rotation: 0.0d
 			width: 4.0d
@@ -465,7 +465,7 @@
 		}
 		{
 			height: 2.5d
-			image: "createdelight:textures/gui/mochenccc.png"
+			image: "createdelightcore:textures/gui/mochenccc.png"
 			order: 1
 			rotation: 0.0d
 			width: 4.5d
@@ -517,7 +517,7 @@
 		}
 		{
 			height: 2.5d
-			image: "createdelight:textures/gui/mochenccc_.png"
+			image: "createdelightcore:textures/gui/mochenccc_.png"
 			order: 1
 			rotation: 0.0d
 			width: 4.5d
@@ -611,7 +611,7 @@
 		}
 		{
 			height: 3.0d
-			image: "createdelight:textures/gui/minecraft_csgo.png"
+			image: "createdelightcore:textures/gui/minecraft_csgo.png"
 			order: 4
 			rotation: 0.0d
 			width: 9.0d
@@ -620,7 +620,7 @@
 		}
 		{
 			height: 4.0d
-			image: "createdelight:textures/gui/soridlu.png"
+			image: "createdelightcore:textures/gui/soridlu.png"
 			order: 1
 			rotation: 0.0d
 			width: 4.0d
@@ -715,7 +715,7 @@
 		}
 		{
 			height: 6.0d
-			image: "createdelight:textures/gui/y00_cool.png"
+			image: "createdelightcore:textures/gui/y00_cool.png"
 			order: -1
 			rotation: 0.0d
 			width: 6.0d
@@ -802,7 +802,7 @@
 		}
 		{
 			height: 2.1d
-			image: "createdelight:textures/gui/yanming_1.png"
+			image: "createdelightcore:textures/gui/yanming_1.png"
 			order: 5
 			rotation: 0.0d
 			width: 2.1d
@@ -847,7 +847,7 @@
 		}
 		{
 			height: 2.1d
-			image: "createdelight:textures/gui/yanming_2.png"
+			image: "createdelightcore:textures/gui/yanming_2.png"
 			order: 5
 			rotation: 0.0d
 			width: 2.1d
@@ -856,7 +856,7 @@
 		}
 		{
 			height: 3.4d
-			image: "createdelight:textures/gui/yanming_3.png"
+			image: "createdelightcore:textures/gui/yanming_3.png"
 			order: 3
 			rotation: 0.0d
 			width: 5.3d
@@ -866,7 +866,7 @@
 		{
 			height: 3.0d
 			hover: ["不要因为喜欢mc而选建筑学……）"]
-			image: "createdelight:textures/gui/yanming.png"
+			image: "createdelightcore:textures/gui/yanming.png"
 			order: 6
 			rotation: 0.0d
 			width: 3.0d
@@ -953,7 +953,7 @@
 		}
 		{
 			height: 4.0d
-			image: "createdelight:textures/gui/song_5007.png"
+			image: "createdelightcore:textures/gui/song_5007.png"
 			rotation: 0.0d
 			width: 4.0d
 			x: 12.0d
@@ -977,7 +977,7 @@
 		}
 		{
 			height: 2.5d
-			image: "createdelight:textures/gui/the_legend_of_2900.png"
+			image: "createdelightcore:textures/gui/the_legend_of_2900.png"
 			order: 1
 			rotation: 0.0d
 			width: 4.5d
@@ -994,7 +994,7 @@
 		}
 		{
 			height: 2.5d
-			image: "createdelight:textures/gui/mechanomania.png"
+			image: "createdelightcore:textures/gui/mechanomania.png"
 			order: 1
 			rotation: 0.0d
 			width: 4.5d
@@ -1029,7 +1029,7 @@
 		}
 		{
 			height: 4.4d
-			image: "createdelight:textures/gui/an_sir.png"
+			image: "createdelightcore:textures/gui/an_sir.png"
 			order: 5
 			rotation: 0.0d
 			width: 4.4d
@@ -1047,7 +1047,7 @@
 		}
 		{
 			height: 3.0d
-			image: "createdelight:textures/gui/an_sir_bilibili.png"
+			image: "createdelightcore:textures/gui/an_sir_bilibili.png"
 			order: 1
 			rotation: 0.0d
 			width: 5.0d
@@ -1056,7 +1056,7 @@
 		}
 		{
 			height: 3.0d
-			image: "createdelight:textures/gui/an_sir_create_delight_remake.png"
+			image: "createdelightcore:textures/gui/an_sir_create_delight_remake.png"
 			order: 1
 			rotation: 0.0d
 			width: 5.0d
@@ -1081,7 +1081,7 @@
 		}
 		{
 			height: 9.0d
-			image: "createdelight:textures/gui/an_sir_jie_li.png"
+			image: "createdelightcore:textures/gui/an_sir_jie_li.png"
 			order: 2
 			rotation: 0.0d
 			width: 6.0d
@@ -1099,7 +1099,7 @@
 		}
 		{
 			height: 4.0d
-			image: "createdelight:textures/gui/wrench.png"
+			image: "createdelightcore:textures/gui/wrench.png"
 			order: 14
 			rotation: -70.0d
 			width: 4.0d
@@ -1108,7 +1108,7 @@
 		}
 		{
 			height: 4.0d
-			image: "createdelight:textures/gui/schematic.png"
+			image: "createdelightcore:textures/gui/schematic.png"
 			order: 14
 			rotation: 0.0d
 			width: 4.0d
@@ -1185,7 +1185,7 @@
 		}
 		{
 			height: 1.9d
-			image: "createdelight:textures/gui/an_sir_dou_yin.png"
+			image: "createdelightcore:textures/gui/an_sir_dou_yin.png"
 			order: 1
 			rotation: 0.0d
 			width: 5.7d
@@ -1211,7 +1211,7 @@
 		{
 			height: 0.0d
 			hover: ["AUTO_CONTRIBUTORS_START"]
-			image: "createdelight:textures/gui/qd_windy.png"
+			image: "createdelightcore:textures/gui/qd_windy.png"
 			rotation: 0.0d
 			width: 0.0d
 			x: 0.0d
@@ -1219,7 +1219,7 @@
 		}
 		{
 			height: 4.0d
-			image: "createdelight:textures/gui/qd_windy.png"
+			image: "createdelightcore:textures/gui/qd_windy.png"
 			rotation: 0.0d
 			width: 4.0d
 			x: -5.0d
@@ -1236,7 +1236,7 @@
 		}
 		{
 			height: 4.0d
-			image: "createdelight:textures/gui/qd_windy.png"
+			image: "createdelightcore:textures/gui/qd_windy.png"
 			rotation: 0.0d
 			width: 4.0d
 			x: 0.0d
@@ -1253,7 +1253,7 @@
 		}
 		{
 			height: 4.0d
-			image: "createdelight:textures/gui/qd_windy.png"
+			image: "createdelightcore:textures/gui/qd_windy.png"
 			rotation: 0.0d
 			width: 4.0d
 			x: 5.0d
@@ -1270,7 +1270,7 @@
 		}
 		{
 			height: 4.0d
-			image: "createdelight:textures/gui/qd_windy.png"
+			image: "createdelightcore:textures/gui/qd_windy.png"
 			rotation: 0.0d
 			width: 4.0d
 			x: 10.0d
@@ -1287,7 +1287,7 @@
 		}
 		{
 			height: 4.0d
-			image: "createdelight:textures/gui/qd_windy.png"
+			image: "createdelightcore:textures/gui/qd_windy.png"
 			rotation: 0.0d
 			width: 4.0d
 			x: 15.0d
@@ -1304,7 +1304,7 @@
 		}
 		{
 			height: 4.0d
-			image: "createdelight:textures/gui/qd_windy.png"
+			image: "createdelightcore:textures/gui/qd_windy.png"
 			rotation: 0.0d
 			width: 4.0d
 			x: 20.0d
@@ -1321,7 +1321,7 @@
 		}
 		{
 			height: 4.0d
-			image: "createdelight:textures/gui/qd_windy.png"
+			image: "createdelightcore:textures/gui/qd_windy.png"
 			rotation: 0.0d
 			width: 4.0d
 			x: 25.0d
@@ -1338,7 +1338,7 @@
 		}
 		{
 			height: 4.0d
-			image: "createdelight:textures/gui/qd_windy.png"
+			image: "createdelightcore:textures/gui/qd_windy.png"
 			rotation: 0.0d
 			width: 4.0d
 			x: 30.0d
@@ -1355,7 +1355,7 @@
 		}
 		{
 			height: 4.0d
-			image: "createdelight:textures/gui/qd_windy.png"
+			image: "createdelightcore:textures/gui/qd_windy.png"
 			rotation: 0.0d
 			width: 4.0d
 			x: 35.0d
@@ -1372,7 +1372,7 @@
 		}
 		{
 			height: 4.0d
-			image: "createdelight:textures/gui/qd_windy.png"
+			image: "createdelightcore:textures/gui/qd_windy.png"
 			rotation: 0.0d
 			width: 4.0d
 			x: 40.0d
@@ -1390,7 +1390,7 @@
 		{
 			height: 0.0d
 			hover: ["AUTO_CONTRIBUTORS_END"]
-			image: "createdelight:textures/gui/qd_windy.png"
+			image: "createdelightcore:textures/gui/qd_windy.png"
 			rotation: 0.0d
 			width: 0.0d
 			x: 0.0d

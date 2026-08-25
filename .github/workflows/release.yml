@@ -128,8 +128,8 @@ jobs:
           bash .github/workflows/scripts/export_curseforge_pack.sh ../lite-release.zip 8083
           unzip -o ../lite-release.zip -d ../lite-release
           ls ..
-          git checkout -- mods resourcepacks shaderpacks
-          git clean -fd -- mods resourcepacks shaderpacks
+          git checkout -- mods resourcepacks shaderpacks tacz
+          git clean -fd -- mods resourcepacks shaderpacks tacz
       - name: 下载所有客户端文件本体
         run: bash .github/workflows/scripts/download_mods.sh 8082 client
       - name: 生成带mod本体的懒人包
@@ -211,6 +211,7 @@ jobs:
                   sync-packwiz-assets.bat update-packwiz-meta.bat index.html
             find . -name "AGENTS.md" -type f -delete
             find mods -name "*.pw.toml" -exec rm {} +
+            find tacz -name "*.pw.toml" -exec rm {} +
             rm -f modpack.toml pack.toml index.toml .packwizignore packwiz \
                   packwiz.json packwiz-installer.jar
       - name: 【版本】服务端启动bat脚本改为CRLF & 替换版本号

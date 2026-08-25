@@ -3978,7 +3978,7 @@
 			description: [
 				"&e锤子&r为tetra中独有且最重要的一项工具"
 				"它是tetra体系中加工各种工具的基础"
-				"{image:createdelight:textures/gui/woodenhammercrafting.png width:200 height:100 align:center}"
+				"{image:createdelightcore:textures/gui/woodenhammercrafting.png width:200 height:100 align:center}"
 			]
 			icon: {
 				Count: 1

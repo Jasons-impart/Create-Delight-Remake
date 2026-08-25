@@ -42,6 +42,7 @@
 !/scripts/
 !/shaderpacks/
 !/tacz/
+/tacz/*.zip
 
 # Agent knowledge base (compatible with OpenCode + Codex)
 !/AGENTS.md

@@ -11,7 +11,7 @@ import xml.etree.ElementTree as ET
 CONTRIB_ROCKS_URL = "https://contrib.rocks/image?repo=Jasons-impart/Create-Delight-Remake"
 SNBT_PATH = "config/ftbquests/quests/chapters/Acknowledgement.snbt"
 ASSETS_DIR = "kubejs/assets/createdelight/textures/gui/contributors"
-PLACEHOLDER_IMAGE = "createdelight:textures/gui/qd_windy.png"
+PLACEHOLDER_IMAGE = "createdelightcore:textures/gui/qd_windy.png"
 FRAME_IMAGE = "vintageimprovements:block/andesite_frame"
 
 # Grid Configuration
@@ -174,7 +174,7 @@ def update_snbt(snippet):
     start_marker = """		{
 			height: 0.0d
 			hover: ["AUTO_CONTRIBUTORS_START"]
-			image: "createdelight:textures/gui/qd_windy.png"
+			image: "createdelightcore:textures/gui/qd_windy.png"
 			rotation: 0.0d
 			width: 0.0d
 			x: 0.0d
@@ -184,7 +184,7 @@ def update_snbt(snippet):
     end_marker = """		{
 			height: 0.0d
 			hover: ["AUTO_CONTRIBUTORS_END"]
-			image: "createdelight:textures/gui/qd_windy.png"
+			image: "createdelightcore:textures/gui/qd_windy.png"
 			rotation: 0.0d
 			width: 0.0d
 			x: 0.0d
@@ -202,7 +202,7 @@ def update_snbt(snippet):
     else:
         target_str = """		{
 			height: 4.0d
-			image: "createdelight:textures/gui/qd_windy.png"
+			image: "createdelightcore:textures/gui/qd_windy.png"
 			rotation: 0.0d
 			width: 4.0d
 			x: 12.0d

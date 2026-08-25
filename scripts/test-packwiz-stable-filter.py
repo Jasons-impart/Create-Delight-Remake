@@ -34,6 +34,7 @@ class PackwizStableFilterTests(unittest.TestCase):
         self.write_metadata("mods", "common-stable", "common-stable.jar", "both")
         self.write_metadata("resourcepacks", "test-pack", "test-pack.zip", "both", stable=False)
         self.write_metadata("shaderpacks", "test-shader", "test-shader.zip", "both", stable=False)
+        self.write_metadata("tacz", "test-gun", "test-gun.zip", "both", stable=False)
 
     def tearDown(self):
         self.tempdir.cleanup()
@@ -66,6 +67,7 @@ class PackwizStableFilterTests(unittest.TestCase):
         shutil.copytree(self.root / "mods", target / "mods")
         shutil.copytree(self.root / "resourcepacks", target / "resourcepacks")
         shutil.copytree(self.root / "shaderpacks", target / "shaderpacks")
+        shutil.copytree(self.root / "tacz", target / "tacz")
 
         self.prune(target)
 
@@ -74,12 +76,14 @@ class PackwizStableFilterTests(unittest.TestCase):
         self.assertFalse((target / "mods/server-test.pw.toml").exists())
         self.assertTrue((target / "resourcepacks/test-pack.pw.toml").is_file())
         self.assertTrue((target / "shaderpacks/test-shader.pw.toml").is_file())
+        self.assertTrue((target / "tacz/test-gun.pw.toml").is_file())
 
     def test_formal_release_prunes_stable_disabled_assets(self):
         target = self.root / "formal-release"
         shutil.copytree(self.root / "mods", target / "mods")
         shutil.copytree(self.root / "resourcepacks", target / "resourcepacks")
         shutil.copytree(self.root / "shaderpacks", target / "shaderpacks")
+        shutil.copytree(self.root / "tacz", target / "tacz")
 
         self.prune(target, stable=True)
 
@@ -88,6 +92,7 @@ class PackwizStableFilterTests(unittest.TestCase):
         self.assertFalse((target / "mods/server-test.pw.toml").exists())
         self.assertFalse((target / "resourcepacks/test-pack.pw.toml").exists())
         self.assertFalse((target / "shaderpacks/test-shader.pw.toml").exists())
+        self.assertFalse((target / "tacz/test-gun.pw.toml").exists())
 
     def test_crash_assistant_modlist_and_patch_selection_follow_stable_mode(self):
         test_modlist = CRASH_ASSISTANT_MODLIST.client_mod_baseline(self.root)
@@ -103,12 +108,17 @@ class PackwizStableFilterTests(unittest.TestCase):
         )
 
     def test_patch_selection_follow_stable_mode(self):
-        for asset_dir in ("mods", "resourcepacks", "shaderpacks"):
+        for asset_dir in ("mods", "resourcepacks", "shaderpacks", "tacz"):
             test_names = {entry[1] for entry in PATCH.metadata_entries(self.root, asset_dir)}
             formal_names = {entry[1] for entry in PATCH.metadata_entries(self.root, asset_dir, stable=True)}
             self.assertGreater(len(test_names), len(formal_names))
             self.assertNotIn(
-                {"mods": "client-test.jar", "resourcepacks": "test-pack.zip", "shaderpacks": "test-shader.zip"}[asset_dir],
+                {
+                    "mods": "client-test.jar",
+                    "resourcepacks": "test-pack.zip",
+                    "shaderpacks": "test-shader.zip",
+                    "tacz": "test-gun.zip",
+                }[asset_dir],
                 formal_names,
             )
 
@@ -124,6 +134,7 @@ class PackwizStableFilterTests(unittest.TestCase):
             ("mods", "client-test.pw.toml", "client-test.jar"),
             ("resourcepacks", "test-pack.pw.toml", "test-pack.zip"),
             ("shaderpacks", "test-shader.pw.toml", "test-shader.zip"),
+            ("tacz", "test-gun.pw.toml", "test-gun.zip"),
         ):
             source_metadata = self.root / asset_dir / metadata_name
             target_metadata = patch / asset_dir / metadata_name
@@ -151,10 +162,32 @@ class PackwizStableFilterTests(unittest.TestCase):
             ("mods", "client-test.pw.toml", "client-test.jar"),
             ("resourcepacks", "test-pack.pw.toml", "test-pack.zip"),
             ("shaderpacks", "test-shader.pw.toml", "test-shader.zip"),
+            ("tacz", "test-gun.pw.toml", "test-gun.zip"),
         ):
             self.assertFalse((patch / asset_dir / filename).exists())
             self.assertFalse((patch / "packwiz-files" / asset_dir / filename).exists())
             self.assertFalse(any((patch / asset_dir).glob("*.pw.toml")))
+
+    def test_server_patch_moves_tacz_payload_into_runtime_root(self):
+        patch = self.root / "tacz-patch"
+        payload = patch / "packwiz-files" / "tacz" / "test-gun.zip"
+        payload.parent.mkdir(parents=True, exist_ok=True)
+        payload.write_bytes(b"test")
+
+        subprocess.run(
+            [
+                sys.executable,
+                str(REPO_ROOT / "scripts/build-release-patch.py"),
+                "server",
+                "--patch",
+                str(patch),
+            ],
+            cwd=self.root,
+            check=True,
+        )
+
+        self.assertEqual(b"test", (patch / "tacz/test-gun.zip").read_bytes())
+        self.assertFalse((patch / "packwiz-files").exists())
 
 
 if __name__ == "__main__":

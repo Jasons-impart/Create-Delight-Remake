@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [string[]]$MetadataRoots = @("mods", "resourcepacks", "shaderpacks"),
+    [string[]]$MetadataRoots = @("mods", "resourcepacks", "shaderpacks", "tacz"),
     [ValidateSet("client", "server", "all")]
     [string]$Side = "client",
     [string]$PackwizUrl = "https://github.com/Jasons-impart/packwiz/releases/latest/download/packwiz.exe",
@@ -88,7 +88,7 @@ function Test-PackwizGitChanges {
         return $false
     }
 
-    $changedPaths = @(& git -C $RepoRoot diff --name-only $oldCommit $newCommit -- mods resourcepacks shaderpacks packwiz-files 2>$null)
+    $changedPaths = @(& git -C $RepoRoot diff --name-only $oldCommit $newCommit -- mods resourcepacks shaderpacks tacz packwiz-files 2>$null)
     if ($LASTEXITCODE -ne 0) {
         Write-Warning "[$Name] Could not diff $oldCommit..$newCommit; skipping Packwiz sync."
         return $false
@@ -98,7 +98,7 @@ function Test-PackwizGitChanges {
         $changedPaths |
             Where-Object {
                 $_ -like "packwiz-files/*" -or
-                $_ -match "^(mods|resourcepacks|shaderpacks)/.+\.pw\.toml$"
+                $_ -match "^(mods|resourcepacks|shaderpacks|tacz)/.+\.pw\.toml$"
             } |
             Select-Object -Unique
     )
