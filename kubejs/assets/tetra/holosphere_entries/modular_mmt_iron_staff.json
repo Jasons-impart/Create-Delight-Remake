@@ -1,0 +1,9 @@
+{
+  "item": "more_mod_tetra:modular_mmt_iron_staff",
+  "icon": {
+    "textureLocation": "tetra:textures/gui/mmt_extra_holo.png",
+    "textureX": 128,
+    "textureY": 128
+  },
+  "position": 27
+}
