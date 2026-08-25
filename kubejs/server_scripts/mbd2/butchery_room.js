@@ -43,7 +43,7 @@ function getButcheryRoomParts(machine) {
   /**@type {Internal.ButcherBlockBlockEntity} */
   let butcherBlock = machine.level.getBlockEntity(pos.relative(facing.opposite).above())
   if (meatHook == null || butcherBlock == null) return null
-  return { meatHook, butcherBlock }
+  return { meatHook: meatHook, butcherBlock: butcherBlock }
 }
 
 MBDMachineEvents.onTick("createdelight:butchery_room", e => {
