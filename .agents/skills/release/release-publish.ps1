@@ -199,8 +199,9 @@ if (-not $PreviousVersion) {
 }
 
 # Validate PreviousVersion format (now that it may be auto-detected)
-if ($PreviousVersion -notmatch '^v\d+\.\d+\.\d+\.\d+$') {
-    Fail "PreviousVersion format invalid: '$PreviousVersion'. Expected format: v0.4.7.15"
+# Allow "-test" suffix so a test release can diff against the previous test tag (used for notes/compare link only; patches are stable-only)
+if ($PreviousVersion -notmatch '^v\d+\.\d+\.\d+\.\d+(-test)?$') {
+    Fail "PreviousVersion format invalid: '$PreviousVersion'. Expected format: v0.4.7.15 or v0.4.7.15-test"
 }
 
 # Verify PreviousVersion tag exists
