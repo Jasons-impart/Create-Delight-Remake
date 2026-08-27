@@ -47,3 +47,7 @@
 # Agent knowledge base (compatible with OpenCode + Codex)
 !/AGENTS.md
 !/lessons-learned.md
+
+# Python runtime artifacts (e.g. scripts/__pycache__/)
+__pycache__/
+*.py[cod]
