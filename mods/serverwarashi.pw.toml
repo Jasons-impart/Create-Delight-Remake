@@ -1,0 +1,13 @@
+name = "ServerWarashi"
+filename = "serverwarashi-1.20.1-2.0.4.1-all.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "a846e922dc6e0298ad6c51e623ecff63cb00b624"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8721142
+project-id = 1359418
