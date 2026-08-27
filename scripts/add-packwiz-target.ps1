@@ -3,7 +3,7 @@ param(
     [Parameter(Mandatory = $true)]
     [string]$CurseForgeUrl,
 
-    [ValidateSet("mods", "resourcepacks", "shaderpacks")]
+    [ValidateSet("mods", "resourcepacks", "shaderpacks", "tacz")]
     [string]$Category = "mods",
 
     [Parameter(Mandatory = $true)]

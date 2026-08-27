@@ -27,9 +27,9 @@ Use this workflow for modpack asset operations that touch `mods/`, `resourcepack
 
 ## Add Or Update Assets
 
-1. For one known CurseForge project/file, run `./scripts/add-packwiz-target.ps1 -CurseForgeUrl <project-or-file-URL> -Category mods|resourcepacks|shaderpacks -Side client|server|both`. It identifies the requested project's metadata even when Packwiz also generates temporary dependency entries, refuses to overwrite an existing target, and synchronizes local runtime assets by default. Resourcepack and shaderpack probes ignore the pack's mod-loader filter.
-2. For an existing CurseForge metadata file, run `./scripts/update-packwiz-target.ps1 -Category mods|resourcepacks|shaderpacks -Slug <metadata-name>`, or use `-Path <relative .pw.toml path>`.
-3. Put custom/restricted payloads under the matching `packwiz-files/<category>/` directory. TACZ gun packs use the dedicated `scripts/update-tacz-packwiz-meta.ps1` conversion script because their source directories must be packaged as root-content ZIPs. To inventory local JARs, reconcile many changed assets, or repair metadata drift, run `./scripts/update-packwiz-meta.ps1 -Category mods|resourcepacks|shaderpacks -FullReconcile` only on `main` or a long-lived LTS/release-maintenance branch. Non-mod reconciliation removes loader filtering, strips trailing parenthesized version suffixes when searching CurseForge, and defaults new metadata to `side = "client"`.
+1. For one known CurseForge project/file, run `./scripts/add-packwiz-target.ps1 -CurseForgeUrl <project-or-file-URL> -Category mods|resourcepacks|shaderpacks|tacz -Side client|server|both`. It identifies the requested project's metadata even when Packwiz also generates temporary dependency entries, refuses to overwrite an existing target, and synchronizes local runtime assets by default. Resourcepack and shaderpack probes ignore the pack's mod-loader filter.
+2. For an existing CurseForge metadata file, run `./scripts/update-packwiz-target.ps1 -Category mods|resourcepacks|shaderpacks|tacz -Slug <metadata-name>`, or use `-Path <relative .pw.toml path>`.
+3. Put custom/restricted payloads under the matching `packwiz-files/<category>/` directory. TACZ gun packs use the dedicated `scripts/update-tacz-packwiz-meta.ps1` conversion script because their source directories must be packaged as root-content ZIPs. To inventory local JARs, reconcile many changed assets, or repair metadata drift, run `./scripts/update-packwiz-meta.ps1 -Category mods|resourcepacks|shaderpacks|tacz -FullReconcile` only on `main` or a long-lived LTS/release-maintenance branch. Non-mod reconciliation removes loader filtering, strips trailing parenthesized version suffixes when searching CurseForge, and defaults new metadata to `side = "client"`; the `tacz` category defaults to `side = "both"`.
 4. For slow overseas services, run `./scripts/sync-packwiz-assets.ps1 -Proxy "http://127.0.0.1:7890"`, or set `PACKWIZ_PROXY` so Git hooks and the repo sync workflow inherit the proxy. The sync script applies it to tool downloads and Packwiz installer requests.
 5. Inspect the generated `.pw.toml` plus `packwiz-files` changes before staging, especially that existing `side = "client"` or `side = "server"` entries were not reset to `both`. TACZ packs normally use `side = "both"`.
 6. Run `./scripts/sync-packwiz-assets.ps1` when local runtime files must match metadata. Repeated hook/workflow calls for the same revision are skipped after a successful sync; use `-Force` to repair local runtime files.
@@ -42,7 +42,7 @@ When old and new runtime JARs coexist, `update-packwiz-meta.ps1` selects the pre
 ### 短期 PR 分支上的 CurseForge 定向更新
 
 1. 不要在仓库根目录直接运行 `packwiz update`，因为 `pack.toml` 和 `index.toml` 是生成文件且通常不存在。
-2. 运行 `./scripts/update-packwiz-target.ps1 -Category mods|resourcepacks|shaderpacks -Slug <metadata-name>`，或用 `-Path <relative .pw.toml path>` 精确指定目标。
+2. 运行 `./scripts/update-packwiz-target.ps1 -Category mods|resourcepacks|shaderpacks|tacz -Slug <metadata-name>`，或用 `-Path <relative .pw.toml path>` 精确指定目标。
 3. 该脚本会生成临时 pack、只回写目标 `.pw.toml`、保留原始 `side`，并默认运行 `scripts/sync-packwiz-assets.ps1`；仅在明确不需要同步运行态文件时使用 `-SkipSync`，需要无网络预检时使用 `-DryRun`。
 4. 检查 diff，确认没有生成文件、无关元数据改动，且没有把 `client` 或 `server` 退回 `both`。
 

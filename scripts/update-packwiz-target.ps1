@@ -1,7 +1,7 @@
 [CmdletBinding(DefaultParameterSetName = "BySlug")]
 param(
     [Parameter(ParameterSetName = "BySlug")]
-    [ValidateSet("mods", "resourcepacks", "shaderpacks")]
+    [ValidateSet("mods", "resourcepacks", "shaderpacks", "tacz")]
     [string]$Category = "mods",
 
     [Parameter(ParameterSetName = "BySlug", Mandatory = $true)]
