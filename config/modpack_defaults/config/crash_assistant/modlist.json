@@ -1714,6 +1714,11 @@
     "name": "TaCZ addon",
     "version": "1.1.8"
   },
+  "taczjs-forge-1.4.2+mc1.20.1.jar": {
+    "modId": "taczjs-forge",
+    "name": "TaCZ JS",
+    "version": "1.4.2+mc1.20.1"
+  },
   "tectonic-3.0.17-forge-1.20.1.jar": {
     "modId": "tectonic",
     "name": "Tectonic",

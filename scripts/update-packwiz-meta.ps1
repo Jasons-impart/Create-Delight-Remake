@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [ValidateSet("mods", "resourcepacks", "shaderpacks")]
+    [ValidateSet("mods", "resourcepacks", "shaderpacks", "tacz")]
     [string]$Category = "mods",
     [string]$PackwizUrl = "https://github.com/Jasons-impart/packwiz/releases/latest/download/packwiz.exe",
     [string]$InstallerUrl = "https://github.com/packwiz/packwiz-installer/releases/latest/download/packwiz-installer.jar",
@@ -345,6 +345,7 @@ function Get-CategoryDisplayName {
         "mods" { return "mod" }
         "resourcepacks" { return "resource pack" }
         "shaderpacks" { return "shaderpack" }
+        "tacz" { return "TACZ gun pack" }
         default { return "asset" }
     }
 }
@@ -356,6 +357,7 @@ function Get-CurseForgeCategorySlug {
         "mods" { return "mc-mods" }
         "resourcepacks" { return "texture-packs" }
         "shaderpacks" { return "shaders" }
+        "tacz" { return "customization" }
         default { return $null }
     }
 }
@@ -469,7 +471,7 @@ function Normalize-PwSide {
 function Get-DefaultPwSideForCategory {
     param([string]$Value)
 
-    if ($Value -eq "mods") { return "both" }
+    if ($Value -eq "mods" -or $Value -eq "tacz") { return "both" }
     return "client"
 }
 
