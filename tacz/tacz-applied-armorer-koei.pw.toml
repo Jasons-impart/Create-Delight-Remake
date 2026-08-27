@@ -1,0 +1,13 @@
+name = "[TaCZ]Applied Armorer"
+filename = "Applied Armorer-v1.1.4.1-for114+.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "975baa6f8d696a6d49136c01bf7291b76d0ca5bf"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6085143
+project-id = 1111441

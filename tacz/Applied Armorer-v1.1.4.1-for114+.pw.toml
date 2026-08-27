@@ -1,8 +1,0 @@
-name = "Applied Armorer-v1.1.4.1-for114+"
-filename = "Applied Armorer-v1.1.4.1-for114+.zip"
-side = "both"
-
-[download]
-url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/tacz/Applied%20Armorer-v1.1.4.1-for114%2B.zip"
-hash-format = "sha256"
-hash = "8921edc1ad2930af75112b2169248504e7b193ccc40808de5bf0ed34ad47c021"

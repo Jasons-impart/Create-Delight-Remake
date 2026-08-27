@@ -1,8 +1,0 @@
-name = "Create Armorer-v1.1.4-for114+"
-filename = "Create Armorer-v1.1.4-for114+.zip"
-side = "both"
-
-[download]
-url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/tacz/Create%20Armorer-v1.1.4-for114%2B.zip"
-hash-format = "sha256"
-hash = "99ebf6e91100ac420879c887c14752c53067555a13c2a41208b3b2722c25b739"
