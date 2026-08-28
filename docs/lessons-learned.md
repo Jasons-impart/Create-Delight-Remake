@@ -711,3 +711,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: `packwiz-files/mods/` 中为兼容性或分发目的重命名的 JAR，文件名版本可能包含 Minecraft、loader 或内部构建后缀；Crash Assistant 若只按文件名生成基线，就会把 Forge `mods.toml` 中的真实版本误报为模组升级。
 - **Fix/Lesson**: `scripts/generate-crash-assistant-modlist.py` 对本地手动 JAR 优先读取 `META-INF/mods.toml` / `META-INF/neoforge.mods.toml`，遇到缺少载荷、损坏元数据或 `${...}` 未解析占位符时才回退到文件名解析；新增手动 JAR 时同时检查 Forge 内部版本与 Packwiz 文件名是否一致。
+
+## CF manifest 条目不带安装路径，非 mods 内容必须走 overrides
+
+**Date**: 2026-08-28
+
+- **Problem**: `tacz/` 下的 Armorer 枪包改用 `mode = "metadata:curseforge"` 后，`packwiz curseforge export` 把它们写入 CF manifest 的 `files[]`（export 只看 `[update.curseforge]` 是否存在，对文件路径和分类无过滤无警告）；而 CF 格式（manifestVersion 1）文件条目只有 projectID/fileID/required，不含安装位置，启动器按项目 classId 固定映射落位——HMCL 只分流资源包/数据包/光影包，其余一律装进 mods。v0.5.0.8-test 起 Client 包导入后枪包被下载到 `mods/` 而非 `.minecraft/tacz/`，TaCZ 扫描不到，枪包不生效。
+- **Fix/Lesson**: 非 mods 目录的 CF 托管内容必须用直链 URL 元数据（`https://edge.forgecdn.net/files/<file-id/1000>/<file-id%1000>/<文件名>`，空格用 %20）并移除 `[update.curseforge]` 段，export 才会把文件下载后打进 `overrides/<原目录>`，由安装器解压到实例根目录；CF 格式中这是唯一保证任意位置正确落位的通道（官方文档也只描述 manifest 引用 + overrides 两种机制）。

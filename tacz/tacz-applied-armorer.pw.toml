@@ -2,12 +2,9 @@ name = "[TaCZ]Applied Armorer"
 filename = "Applied Armorer-v1.1.4.1-for114+.zip"
 side = "both"
 
+# 不使用 metadata:curseforge：curseforge export 会把这类文件写入 CF manifest files[]，
+# 而启动器会把非资源包/光影包条目装进 mods 目录而非 tacz，导致枪包不生效。
 [download]
+url = "https://edge.forgecdn.net/files/6085/143/Applied%20Armorer-v1.1.4.1-for114+.zip"
 hash-format = "sha1"
 hash = "975baa6f8d696a6d49136c01bf7291b76d0ca5bf"
-mode = "metadata:curseforge"
-
-[update]
-[update.curseforge]
-file-id = 6085143
-project-id = 1111441
