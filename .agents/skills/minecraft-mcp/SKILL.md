@@ -1,41 +1,43 @@
 ---
 name: minecraft-mcp
-description: 连接、诊断、测试、操作、修复、构建和部署 minecraft-mod-mcp（mcpmod）及其 Forge 1.20.1 模组，并通过运行时帮助探索 FTB Library、KubeJS 等模组指令。用于 CDRdev 中的 MCP 端口冲突、Mod not connected、截图/键鼠/命令调用、玩家或世界数据异常、生产环境反射映射失效、测试 JAR 替换与真实游戏回归。
+description: 连接、诊断、测试、操作、修复、构建和部署 minecraft-mod-mcp（mcpmod）及其 Forge 1.20.1 模组，并通过运行时帮助探索 FTB Library、KubeJS 等模组指令。用于整合包开发环境中的 MCP 端口冲突、Mod not connected、截图/键鼠/命令调用、玩家或世界数据异常、生产环境反射映射失效、测试 JAR 替换与真实游戏回归。
 ---
 
 # Minecraft MCP
 
-使用 Minecraft MCP 观察和控制 CDRdev 客户端，并在外部 fork 中维护模组源码。
+使用 Minecraft MCP 观察和控制整合包客户端，并在各自的 fork 中维护模组源码。
 
 ## 边界
 
-- 把 `D:\game\.minecraft\versions\CDRdev` 仅用于运行验证和 Packwiz 资产管理。
-- 把干净源码放在 `D:\learnmod\minecraft-mod-mcp-SSWTLZZ69`；保留已有脏目录 `D:\learnmod\minecraft-mod-mcp`，不要覆盖或清理其中改动。
-- 使用上游 `langyo/minecraft-mod-mcp`，fork 为 `SSWTLZZ69/minecraft-mod-mcp`。
-- 未经用户明确要求，不创建 PR；可以在用户要求 fork/修复时提交并推送 fork 分支。
+- 运行验证和 Packwiz 资产管理统一在本整合包仓库的本地检出目录（即本 skill 所在仓库）进行；不同开发者的检出路径不同，命令一律以仓库根目录为工作目录，不要硬编码绝对路径。
+- minecraft-mod-mcp 源码克隆放在每个开发者自己的本地工作目录，下文用 `<mcp-src>` 指代该路径；从上游 `langyo/minecraft-mod-mcp` 克隆，如需修复可 fork 到自己的 GitHub 账号。不要覆盖或清理本地的脏改动目录。
+- 未经用户明确要求，不创建 PR；可以在用户要求 fork/修复时提交并推送自己的 fork 分支。
 - 修改 `mods/`、`packwiz-files/` 或 Packwiz 元数据前，先使用 `/packwiz-assets`。
 - 把 `mods/*.jar` 视为本机运行文件；测试替换不能成为 Git 跟踪内容。
+- MCP 连接配置不入仓库：各开发者在用户级 `~/.zcode/cli/config.json` 的 `mcp.servers` 自行添加 `minecraft_mcp`（Windows 用 `"command": "cmd", "args": ["/c", "npx", "-y", "minecraft-mod-mcp"]`；macOS/Linux 直接用 `"command": "npx"`）。`.zcode/config.json` 只随仓库共享 Stop hooks。
 
 ## 连接诊断
 
-1. 从可用工具中查找 `mcp__minecraft_mcp__*`。
+1. 从可用工具中查找 `mcp__minecraft_mcp__*`；若不存在，确认用户级 `~/.zcode/cli/config.json` 已按"边界"一节添加 `minecraft_mcp` 并重启会话。
 2. 调用 `get_minecraft_status` 和 `ping`；以 `connected: true` 与 `pong` 判断连接，不要只看 `processAlive`。
-3. HMCL 外部启动的 CDRdev 可能显示 `processAlive: false`，这不代表模组断连。
-4. 检查模组和日志：
+3. HMCL 外部启动的客户端可能显示 `processAlive: false`，这不代表模组断连。
+4. 架构与发现机制：游戏内模组只提供 `/api/*` REST 端点（不做 MCP 握手）；ZCode 通过 stdio 桥接 `minecraft-mod-mcp` 连接，桥接从 `9876` 向下扫描到 `9000`，用 `GET /api/status` 自动发现游戏。
+5. 若游戏运行中桥接仍报 `No Minecraft mod detected`，先 `curl http://127.0.0.1:9876/api/status` 验证；返回 502/非 200 时检查系统代理（`HTTP_PROXY`/`HTTPS_PROXY`）是否劫持了 localhost，必要时设置 `NO_PROXY=127.0.0.1,localhost` 后重启会话。
+6. 检查模组和日志：
 
 ```powershell
 Get-ChildItem -LiteralPath mods -Force | Where-Object Name -Match 'minecraft.*mcp|mcp.*minecraft'
 rg -n -i 'mcpmod|MCP-MOD|Address already in use' logs\latest.log
 ```
 
-5. 检查默认端口及占用者：
+7. 检查默认端口及占用者：
 
 ```powershell
 Get-NetTCPConnection -LocalPort 9876 -ErrorAction SilentlyContinue |
   Select-Object State, LocalAddress, LocalPort, OwningProcess
 ```
 
-6. 不要因为端口冲突直接结束 Blender 或 Minecraft；先确认 PID、进程名和用户当前状态。
+8. 不要因为端口冲突直接结束 Blender 或 Minecraft；先确认 PID、进程名和用户当前状态。
 
 ## 安全调用
 
@@ -134,7 +136,7 @@ packages/mods/1.20.1/forge/src/main/java/xyz/langyo/minecraft/mcp/mod/
 在目标模块构建：
 
 ```powershell
-Set-Location D:\learnmod\minecraft-mod-mcp-SSWTLZZ69\packages\mods\1.20.1\forge
+Set-Location <mcp-src>\packages\mods\1.20.1\forge
 .\gradlew.bat clean build --no-daemon --console=plain
 ```
 
@@ -143,7 +145,7 @@ Set-Location D:\learnmod\minecraft-mod-mcp-SSWTLZZ69\packages\mods\1.20.1\forge
 - 构建后检查 `build/libs/`、SHA-256、JAR 内适配器类以及 `git diff --check`。
 - 部署前确认 Minecraft 已正常退出。
 - 备份旧运行 JAR，再以相同运行文件名复制修复版；复制后核对 SHA-256。
-- 检查 CDRdev `git status --short`，不要把已有用户改动归因于本次测试。
+- 检查整合包仓库 `git status --short`，不要把已有用户改动归因于本次测试。
 - 若要正式纳入整合包，转入 `/packwiz-assets` 的 `packwiz-files` 与元数据流程；不要提交 `mods/*.jar`。
 
 ## 回归与交付
