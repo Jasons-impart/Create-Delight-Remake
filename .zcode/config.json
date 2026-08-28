@@ -1,0 +1,39 @@
+{
+  "hooks": {
+    "enabled": true,
+    "events": {
+      "Stop": [
+        {
+          "hooks": [
+            {
+              "type": "process",
+              "command": "pwsh",
+              "args": [
+                "-NoLogo",
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${CLAUDE_PROJECT_DIR}/scripts/validate-knowledge-base.ps1"
+              ],
+              "timeoutMs": 30000
+            },
+            {
+              "type": "process",
+              "command": "pwsh",
+              "args": [
+                "-NoLogo",
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${CLAUDE_PROJECT_DIR}/scripts/write-knowledge-candidate-report.ps1"
+              ],
+              "timeoutMs": 30000
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
