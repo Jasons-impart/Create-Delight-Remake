@@ -3,11 +3,6 @@ filename = "Create Armorer-v1.1.4-for114+.zip"
 side = "both"
 
 [download]
+url = "https://edge.forgecdn.net/files/6069/250/Create%20Armorer-v1.1.4-for114+.zip"
 hash-format = "sha1"
 hash = "7b314f3596e0032112cfef641d87ca9fcb6738ff"
-mode = "metadata:curseforge"
-
-[update]
-[update.curseforge]
-file-id = 6069250
-project-id = 1092101
