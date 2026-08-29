@@ -183,7 +183,6 @@ ServerEvents.tags("item", e => {
         "collectorsreap:portobello",
         "collectorsreap:portobello_colony",
         "frycooks_delight:canola",
-        "frycooks_delight:canola_seeds",
         "createdelight:adzuki_beans_seed",
         "festival_delicacies:chinese_cabbage",
         "festival_delicacies:greenonion",

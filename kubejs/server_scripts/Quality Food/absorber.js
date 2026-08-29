@@ -6,8 +6,6 @@ ItemEvents.rightClicked("createdelight:quality_absorber", e => {
     let items = player.getCapability(ForgeCapabilities.ITEM_HANDLER).orElse(null)
     let amount = 0
     items.allItems.forEach(item => {
-        if (!item.hasTag("createdelightcore:life_matter_sources"))
-            return
 
         let quality = global.CDServerJavaClasses.$QualityUtils.getQuality(item)
         if (quality.level() > 0) {

@@ -45,6 +45,10 @@
 !/tacz/
 /tacz/*.zip
 
+# FancyMenu 本地图片资源（幻灯片与标题图），不入库
+config/fancymenu/slideshows/create_delight/images/
+config/fancymenu/assets/minecraft_title.png
+
 # Agent knowledge base (compatible with OpenCode + Codex)
 !/AGENTS.md
 !/lessons-learned.md
