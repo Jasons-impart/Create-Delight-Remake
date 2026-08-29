@@ -25442,7 +25442,7 @@ metafile = true
 
 [[files]]
 file = "mods/zstdnet.pw.toml"
-hash = "d5961bf35b1e3c8855561cb72c9ff39ae9e9b207e08559ef0c31d3f722c87cdd"
+hash = "9707e97a10572891e74faaaf27efdc090a26b2b1bb3b5816862faa7c40cddaa7"
 metafile = true
 
 [[files]]
