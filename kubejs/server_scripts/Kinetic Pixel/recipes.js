@@ -349,13 +349,13 @@ ServerEvents.recipes(e => {
         .transitionalItem(iner)
         .id("createdelight:sequenced_assembly/packaged_ammo")
 
-    create.cutting(Item.of('tacz:ammo', 2, '{AmmoId:"create_armorer:slap"}'), 'createdelight:packaged_ammo')
+    create.cutting(Item.of('tacz:ammo', 30, '{AmmoId:"create_armorer:slap"}'), 'createdelight:packaged_ammo')
         .id("createdelight:cutting/slap")
-    create.cutting(Item.of('tacz:ammo', 2, '{AmmoId:"create_armorer:rbapb"}'), 'createdelight:packaged_ammo')
+    create.cutting(Item.of('tacz:ammo', 30, '{AmmoId:"create_armorer:rbapb"}'), 'createdelight:packaged_ammo')
         .id("createdelight:cutting/rbapb")
-    create.cutting(Item.of('tacz:ammo', 2, '{AmmoId:"create_armorer:gas_pistol_ammo"}'), 'createdelight:packaged_ammo')
+    create.cutting(Item.of('tacz:ammo', 60, '{AmmoId:"create_armorer:gas_pistol_ammo"}'), 'createdelight:packaged_ammo')
         .id("createdelight:cutting/gas_pistol_ammo")
-    create.cutting(Item.of('tacz:ammo', 1, '{AmmoId:"tacz:12g"}'), 'createdelight:packaged_ammo')
+    create.cutting(Item.of('tacz:ammo', 15, '{AmmoId:"tacz:12g"}'), 'createdelight:packaged_ammo')
         .id("createdelight:cutting/12g")
 
     create.sequenced_assembly(Item.of('tacz:attachment', '{AttachmentId:"create_armorer:muzzle_refit_bigger_cylinder"}'), "create:fluid_pipe",
