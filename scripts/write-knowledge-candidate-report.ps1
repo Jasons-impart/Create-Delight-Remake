@@ -140,10 +140,28 @@ if (Test-Path -LiteralPath $StatePath) {
     }
 }
 
-$hasCurrentChanges = (@($dirtyFiles + $stagedFiles + $untrackedFiles).Count -gt 0)
+# 检查自上次报告以来未报告过的提交。已知基线（lastReportedHead 是 HEAD 祖先）时全量回溯
+# lastReportedHead..HEAD，避免窗口截断导致中间提交漏记；基线缺失或不再是祖先（如 rebase）时
+# 只回看最近 -RecentCommits 个提交，避免一次性扫入大量历史。
 $recentFiles = @()
-if (-not $hasCurrentChanges -and $head -and $head -ne $lastReportedHead) {
-    $recentFiles = Invoke-Git -GitArgs @("diff-tree", "--no-commit-id", "--name-only", "-r", "HEAD")
+$scannedCommits = @()
+if ($head) {
+    $lastReportedHeadIsAncestor = $false
+    if (-not [string]::IsNullOrWhiteSpace($lastReportedHead)) {
+        & git -C $Root merge-base --is-ancestor $lastReportedHead $head 2>$null
+        $lastReportedHeadIsAncestor = ($LASTEXITCODE -eq 0)
+    }
+    if ($lastReportedHeadIsAncestor) {
+        $commitShas = @(Invoke-Git -GitArgs @("rev-list", "$lastReportedHead..$head"))
+    } elseif ($RecentCommits -gt 0) {
+        $commitShas = @(Invoke-Git -GitArgs @("rev-list", "--max-count=$RecentCommits", $head))
+    } else {
+        $commitShas = @()
+    }
+    foreach ($commit in $commitShas) {
+        $scannedCommits += $commit
+        $recentFiles += @(Invoke-Git -GitArgs @("diff-tree", "--no-commit-id", "--name-only", "-r", $commit))
+    }
 }
 
 $allFiles = New-Object System.Collections.Generic.List[string]
@@ -245,7 +263,13 @@ $lines = New-Object System.Collections.Generic.List[string]
 $lines.Add("# Knowledge Candidate Report") | Out-Null
 $lines.Add("") | Out-Null
 $lines.Add("- Generated: $timestamp") | Out-Null
-$lines.Add("- Scope: working tree, index, and HEAD commit") | Out-Null
+$lines.Add("- Scope: working tree, index, and unreported recent commits") | Out-Null
+if ($scannedCommits.Count -gt 0) {
+    foreach ($commit in $scannedCommits) {
+        $subject = (Invoke-Git -GitArgs @("show", "-s", "--format=%h %s", $commit) | Select-Object -First 1)
+        $lines.Add("- Scanned commit: $subject") | Out-Null
+    }
+}
 $lines.Add("- Mode: report only; no knowledge files were edited") | Out-Null
 $lines.Add("- Decision: $decisionStatus") | Out-Null
 $lines.Add("") | Out-Null
@@ -298,6 +322,21 @@ $lines.Add('After applying or rejecting it, run `scripts/resolve-knowledge-candi
 
 Set-Content -LiteralPath $OutputPath -Value $lines -Encoding UTF8
 
+# 报告同时按时间戳归档，避免下一轮报告覆盖后候选历史丢失；只保留最新 50 份。
+# 没有 signals 也没有 process notes 的空报告不归档，避免逐渐填满历史配额。
+if ($signals.Count -gt 0 -or -not [string]::IsNullOrWhiteSpace($processNotes)) {
+    $archiveDir = Join-Path (Split-Path -Parent $OutputPath) "knowledge-candidate-history"
+    if (-not (Test-Path -LiteralPath $archiveDir)) {
+        New-Item -ItemType Directory -Path $archiveDir -Force | Out-Null
+    }
+    $archiveName = "knowledge-candidate-" + (Get-Date -Format "yyyyMMdd-HHmmss") + ".md"
+    Set-Content -LiteralPath (Join-Path $archiveDir $archiveName) -Value $lines -Encoding UTF8
+    $existingArchives = @(Get-ChildItem -LiteralPath $archiveDir -Filter "knowledge-candidate-*.md" | Sort-Object Name -Descending)
+    if ($existingArchives.Count -gt 50) {
+        $existingArchives | Select-Object -Skip 50 | Remove-Item -Force
+    }
+}
+
 if ($head) {
     $stateObject = [ordered]@{
         lastReportedHead = $head
@@ -307,3 +346,6 @@ if ($head) {
 }
 
 Write-Host "Knowledge candidate report written to $(Resolve-Path -LiteralPath $OutputPath)"
+if ([string]::IsNullOrWhiteSpace($processNotes)) {
+    Write-Host "Reminder: if this task discovered non-obvious knowledge that is not visible in the diff (dead ends, root causes, constraints), append it with scripts/add-knowledge-note.ps1 and re-run this report so it lands in Process Notes."
+}

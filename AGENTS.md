@@ -117,3 +117,4 @@ CD-master-dev/
 - Client-only mods → set `side = "client"` in the corresponding `mods/*.pw.toml`
 - Server-only mods → set `side = "server"` in the corresponding `mods/*.pw.toml`
 - Language files validated by `.vscode/probe.lang-schema.json`
+- **任务中发现非显而易见的失败、绕路、根因或约束时，立即用 `scripts/add-knowledge-note.ps1` 记临时 note**；Stop hook 的候选报告只扫描 diff，看不到这些过程信息（细节见 knowledge-check skill）。

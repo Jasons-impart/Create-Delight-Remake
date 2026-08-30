@@ -9,6 +9,10 @@ description: 开发知识路由、知识库整理、实现记录、代码位置�
 
 本 skill 是知识存放路由的唯一来源；`knowledge-check` 应引用这里的存放表，而不是重复维护一份规则。
 
+## 任务中随手记录
+
+任务进行中遇到非显而易见的失败、绕路、根因或约束时，不要等任务结束再回忆：立即用 `scripts/add-knowledge-note.ps1` 追加临时 note（写入 `tmp-opencode/knowledge-notes.md`）。Stop hook 的候选报告只扫描 diff，看不到这类过程信息；note 会被报告读入 Process Notes 并路由到 knowledge-check。任务结束落库或否决后，运行 `scripts/resolve-knowledge-candidate.ps1` 清掉临时 note，避免重复出现。
+
 ## 存放表
 
 | 知识类型 | 目标位置 | 使用场景 |
