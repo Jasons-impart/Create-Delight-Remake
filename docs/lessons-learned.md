@@ -718,3 +718,11 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: `tacz/` 下的 Armorer 枪包改用 `mode = "metadata:curseforge"` 后，`packwiz curseforge export` 把它们写入 CF manifest 的 `files[]`（export 只看 `[update.curseforge]` 是否存在，对文件路径和分类无过滤无警告）；而 CF 格式（manifestVersion 1）文件条目只有 projectID/fileID/required，不含安装位置，启动器按项目 classId 固定映射落位——HMCL 只分流资源包/数据包/光影包，其余一律装进 mods。v0.5.0.8-test 起 Client 包导入后枪包被下载到 `mods/` 而非 `.minecraft/tacz/`，TaCZ 扫描不到，枪包不生效。
 - **Fix/Lesson**: 非 mods 目录的 CF 托管内容必须用直链 URL 元数据（`https://edge.forgecdn.net/files/<file-id/1000>/<file-id%1000>/<文件名>`，空格用 %20）并移除 `[update.curseforge]` 段，export 才会把文件下载后打进 `overrides/<原目录>`，由安装器解压到实例根目录；CF 格式中这是唯一保证任意位置正确落位的通道（官方文档也只描述 manifest 引用 + overrides 两种机制）。
+
+## 资源体积清理不能按"同名贴图已存在"误删字体专用贴图
+
+**Date**: 2026-08-30
+
+- **Problem**: `93a5cb79` 把硬币物品贴图迁入 `createdelightcore/textures/item/` 后，`cf7daad5`（压缩客户端体积）将 `kubejs/assets/createdelight/textures/gui/*_coin.png` 当作孤儿资源删除——但这些是 `createdelight:coin_font` 位图字体专用字形贴图，与物品贴图同文件名、不同用途/内容。删除后字体 provider 全部被拒（`FileNotFoundException`），货币符号 `\uAA01`-`\uAA05` 渲染成缺字符，且只出现在资源加载 WARN 日志里，游戏内不易察觉。
+- **Fix/Lesson**: 清理"未使用"贴图前必须全库检索引用方（`font/*.json` 的 `file` 路径、模型、CIT 等），字体 `textures/gui/` 下的贴图即使与物品贴图同名也不可删；恢复方式为 `git restore --source=<删除commit>^ -- <路径>`（PowerShell 的 `>` 重定向会损坏二进制，不能用）。
+
