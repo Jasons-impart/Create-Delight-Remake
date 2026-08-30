@@ -72,7 +72,6 @@ ServerEvents.recipes(e => {
     ])
 
     e.replaceInput({ mod: "createmetallurgy", not: "createmetallurgy:alloying/obdurium" }, "create:andesite_alloy", "createdeco:industrial_iron_ingot")
-    e.replaceInput({ id: "createmetallurgy:alloying/obdurium" }, "create:andesite_alloy", "createmetallurgy:steel_ingot")
     e.replaceInput({ output: "createmetallurgy:coke" }, "#forge:ores/coal", "#minecraft:coals")
     kubejs.shapeless("createmetallurgy:refractory_mortar", ["minecraft:water_bucket", "6x #minecraft:sand", "2x minecraft:clay_ball"])
         .replaceIngredient("minecraft:water_bucket", "minecraft:bucket")
@@ -109,7 +108,7 @@ ServerEvents.recipes(e => {
         .id("createdelight:alloying/molten_brass")
     createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_obdurium", 150),
         [
-            Fluid.of("createmetallurgy:molten_steel", 90),
+            Fluid.of("createdelightcore:molten_andesite", 90),
             Fluid.of("createmetallurgy:molten_tungsten", 60)
         ])
         .heatRequirement("superheated")

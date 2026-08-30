@@ -843,6 +843,11 @@
 		}
 		{
 			dependencies: ["4A3D2C33E49D1ACB"]
+			description: [
+				"火棉是制作子弹的重要原料。"
+				""
+				"硫酸可在主世界制取：粉碎银矿石或煤可获得硫，用大气收集器采集氧气，硫与氧气加压得到氧化硫，氧化硫再与水反应即得硫酸。"
+			]
 			icon: {
 				Count: 1
 				id: "tacz:ammo_box"
@@ -851,20 +856,27 @@
 				}
 			}
 			id: "2F27A7E899601927"
-			tasks: [{
-				icon: {
-					Count: 1
-					id: "tacz:ammo_box"
-					tag: {
-						Creative: 1b
+			tasks: [
+				{
+					icon: {
+						Count: 1
+						id: "tacz:ammo_box"
+						tag: {
+							Creative: 1b
+						}
 					}
+					id: "33D6EF8BEB6E466E"
+					stat: "minecraft:play_time"
+					title: "子弹制作"
+					type: "stat"
+					value: 1
 				}
-				id: "33D6EF8BEB6E466E"
-				stat: "minecraft:play_time"
-				title: "子弹制作"
-				type: "stat"
-				value: 1
-			}]
+				{
+					id: "6CC2D83F7D137D5F"
+					item: "createdelight:guncotton"
+					type: "item"
+				}
+			]
 			x: -2.5d
 			y: 6.0d
 		}

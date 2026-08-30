@@ -115,6 +115,15 @@ ServerEvents.tags("item", e => {
         "vintageimprovements:sulfur_chunk",
         'vintageimprovements:sulfur',
     ])
+    // 硫磺粒重新加入硫粉 tag，供氧化硫加压配方使用（须在 removeAllTagsFrom 之后）
+    e.add("forge:dusts/sulfur", "vintageimprovements:sulfur_chunk")
+})
+
+ServerEvents.tags("fluid", e => {
+    // 三氧化硫已并入氧化硫（vintageimprovements:sulfur_dioxide），清空其流体 tag
+    e.removeAll("forge:sulfur_trioxide")
+    // JEI 官方隐藏 tag：VirtualFluid 无物品形态、无配方，注册表驱动收录后靠此 tag 隐藏
+    e.add("c:hidden_from_recipe_viewers", "vintageimprovements:sulfur_trioxide")
 })
 
 ServerEvents.tags("minecraft:block", e => {

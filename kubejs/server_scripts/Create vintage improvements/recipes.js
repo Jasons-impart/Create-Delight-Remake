@@ -19,16 +19,6 @@ ServerEvents.recipes(e => {
         "vintageimprovements:sequenced_assembly/recipe_card",
         "vintageimprovements:pressurizing/sulfur_trioxide_alt"
     ])
-    vintageimprovements.pressurizing(
-        Fluid.of("vintageimprovements:sulfur_trioxide", 500),
-        [
-            Fluid.of("vintageimprovements:sulfur_dioxide", 500),
-            "vintageimprovements:vanadium_nugget"
-        ])
-        .processingTime(200)
-        .secondaryFluidOutput(0)
-        .superheated()
-        .id("createdelight:pressurizing/sulfur_trioxide")
     e.recipes.createmetallurgy.grinding(
         [
             '2x create:polished_rose_quartz',
