@@ -1,0 +1,23 @@
+# 统一换行策略：文本文件一律 LF 入库、LF 检出，不依赖本机 core.autocrlf 设置，
+# 避免游戏/工具重写配置文件或跨平台协作时产生纯换行符假改动。
+* text=auto eol=lf
+
+# Windows 脚本保持 CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Shell 脚本强制 LF
+*.sh text eol=lf
+
+# 二进制文件不做任何转换
+*.png binary
+*.gif binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.jar binary
+*.zip binary
+*.nbt binary
+*.ogg binary
+*.badiff binary
