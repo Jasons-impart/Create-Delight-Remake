@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "paths": [
+    {
+      "scopes": [
+        "curios"
+      ],
+      "triggers": [
+        "ability"
+      ],
+      "stacking": "curios_sum"
+    },
+    {
+      "scopes": [
+        "curios"
+      ],
+      "triggers": [
+        "attack"
+      ],
+      "stacking": "curios_sum"
+    }
+  ]
+}

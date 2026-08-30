@@ -1,0 +1,181 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#createdelight:order/jello",
+      "required": false
+    },
+    {
+      "id": "#createdelight:order/ice_cream",
+      "required": false
+    },
+    {
+      "id": "#createdelight:order/cookie",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:cocoa_fudge",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:pickled_pickles",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:jerky",
+      "required": false
+    },
+    {
+      "id": "corn_delight:caramel_popcorn",
+      "required": false
+    },
+    {
+      "id": "casualness_delight:roast_gluten",
+      "required": false
+    },
+    {
+      "id": "casualness_delight:chicken_bobo_chicken",
+      "required": false
+    },
+    {
+      "id": "casualness_delight:cabbage_bobo_chicken",
+      "required": false
+    },
+    {
+      "id": "casualness_delight:potato_bobo_chicken",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:kinako_dango",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:mitarashi_dango",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:assorted_dango",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:peach_yatsuhashi",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:hawberry_stick",
+      "required": false
+    },
+    {
+      "id": "cavedelight:honey_glazed_dino_nugget",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:chocolate_nut_granola_bar",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:fruity_granola_bar",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:deluxe_granola_bar",
+      "required": false
+    },
+    {
+      "id": "corn_delight:popcorn",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:popcorn",
+      "required": false
+    },
+    {
+      "id": "create_bic_bit:roasted_sunflower_seeds",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:candied_tangerine",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:dried_persimmon",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:roasted_peanut",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:honey_roasted_peanut",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:arbutus_berry_gummy",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:bastion_gummy",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:berry_syrup_gummy",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:blisterberry_gummy",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:carrot_gummy",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:droopfruit_gummy",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:emerald_candy",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:enchanted_fruit_gummy",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:kabloom_gummy",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:mendosteen_gummy",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:slime_cone",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:strawberry_tanghulu",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:tuber_chip_bag",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:tuber_chips",
+      "required": false
+    },
+    {
+      "id": "miners_delight:crunchy_bar",
+      "required": false
+    },
+    {
+      "id": "miners_delight:golden_nutritional_bar",
+      "required": false
+    },
+    {
+      "id": "miners_delight:nutritional_bar",
+      "required": false
+    }
+  ]
+}

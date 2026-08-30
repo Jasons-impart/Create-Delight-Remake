@@ -1,6 +1,6 @@
 name = "Colorwheel"
 filename = "colorwheel-forge-1.2.1+mc1.20.1.jar"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"

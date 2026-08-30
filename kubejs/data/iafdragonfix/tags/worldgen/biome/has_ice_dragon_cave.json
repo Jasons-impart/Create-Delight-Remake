@@ -1,0 +1,9 @@
+{
+  "replace": true,
+  "values": [
+    "northstar:martian_peaks",
+    "northstar:martian_highlands",
+    "northstar:europan_ice_plains",
+    "northstar:europan_ridge_fields"
+  ]
+}

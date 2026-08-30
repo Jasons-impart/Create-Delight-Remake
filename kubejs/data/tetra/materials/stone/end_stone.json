@@ -1,7 +1,7 @@
 {
   "key": "end_stone",
   "category": "stone",
-  "primary":5.0,
+  "primary": 5.0,
   "secondary": 3.0,
   "tertiary": 0,
   "durability": 537,
@@ -20,8 +20,11 @@
     "default"
   ],
   "material": {
-    "items": ["minecraft:end_stone"]
+    "items": [
+      "minecraft:end_stone"
+    ]
   },
   "requiredTools": {
-    "hammer_dig": 3    }
+    "hammer_dig": 3
+  }
 }

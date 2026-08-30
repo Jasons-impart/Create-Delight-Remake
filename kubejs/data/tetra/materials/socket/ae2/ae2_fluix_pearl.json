@@ -1,0 +1,30 @@
+{
+  "replace": true,
+  "key": "ae2_fluix_pearl",
+  "category": "socket",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 100,
+  "integrityCost": 1,
+  "integrityGain": 0,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "effects": {
+    "more_mod_tetra:industrial_protection": 2
+  },
+  "tints": {
+    "glyph": "b06fdd",
+    "texture": "b06fdd"
+  },
+  "textures": [
+    "default"
+  ],
+  "material": {
+    "items": [
+      "ae2:fluix_pearl"
+    ]
+  }
+}

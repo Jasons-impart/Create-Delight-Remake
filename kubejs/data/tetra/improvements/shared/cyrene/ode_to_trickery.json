@@ -1,0 +1,17 @@
+[
+  {
+    "key": "ode_to_trickery",
+    "level": 0,
+    "aspects": {
+      "honed": 1
+    },
+    "attributes": {
+      "*generic.attack_speed": 0.03,
+      "*generic.attack_damage": 0.03,
+      "*tetra:draw_speed": -0.03,
+      "*tetra:draw_strength": 0.03,
+      "generic.luck": 1
+    },
+    "effects": {}
+  }
+]

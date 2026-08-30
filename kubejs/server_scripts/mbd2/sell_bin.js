@@ -1,9 +1,47 @@
 
-const $ClientboundSetTitleTextPacket = Java.loadClass("net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket")
-const $ClientboundSetSubtitleTextPacket = Java.loadClass("net.minecraft.network.protocol.game.ClientboundSetSubtitleTextPacket")
-const $CoinValue = Java.loadClass("io.github.lightman314.lightmanscurrency.api.money.value.builtin.CoinValue")
-const $MoneyAPI = Java.loadClass("io.github.lightman314.lightmanscurrency.api.money.MoneyAPI")
-let MoneyUtil = global.MoneyUtil
+var queuedSellBinMessages = {}
+var pendingSellBinMessages = {}
+
+function queueSellBinMessage(player, values, tradeList) {
+    if (!(player instanceof global.CDServerJavaClasses.$ServerPlayer)) return
+
+    let playerId = player.uuid.toString()
+    if (queuedSellBinMessages[playerId] == null) {
+        queuedSellBinMessages[playerId] = {value: 0, trades: []}
+    }
+
+    queuedSellBinMessages[playerId].value += values
+    tradeList.forEach(trade => {
+        queuedSellBinMessages[playerId].trades.push(trade)
+    })
+}
+
+function sendSellBinMessage(server, playerId, message) {
+    if (message == null || message.value <= 0) return
+
+    let player = server.getPlayerList().getPlayer(global.CDServerJavaClasses.$UUID.fromString(playerId))
+    if (player == null) return
+    player.connection.send(new global.CDServerJavaClasses.$ClientboundSetTitleTextPacket(Component.translate("message.createdelight.sell_bin_hint").color(Color.GOLD)))
+    player.connection.send(new global.CDServerJavaClasses.$ClientboundSetSubtitleTextPacket(global.MoneyUtil.convertBaseValueToString(message.value).color(Color.GOLD)))
+    player.sendData("kubejs_player_playsound", {soundEvent: "iceandfire:gold_pile_step"})
+    player.tell(Component.of("§f             §6出货单  §r"));
+    player.tell(Component.of("§e-----------------------"))
+    message.trades.forEach(trade => {
+        player.tell(trade)
+    })
+    let total = Component.translate("message.createdelight.sell_bin_total", global.MoneyUtil.convertBaseValueToString(message.value))
+    player.tell(total)
+    player.tell(Component.of("§e-----------------------"))
+}
+
+ServerEvents.tick(e => {
+    let messages = pendingSellBinMessages
+    pendingSellBinMessages = queuedSellBinMessages
+    queuedSellBinMessages = {}
+    Object.keys(messages).forEach(playerId => {
+        sendSellBinMessage(e.server, playerId, messages[playerId])
+    })
+})
 
 MBDMachineEvents.onTick("createdelight:sell_bin", e => {
     const {machine} = e.event
@@ -19,10 +57,10 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
         let slotValue = 0
         let trade = Component.of("")
         
-        let baseValue = MoneyUtil.calculateFoodValue(itemSlot)
+        let baseValue = global.MoneyUtil.calculateFoodValue(itemSlot)
 
         if (baseValue > 0) {
-            let Quality = $QualityUtils.getQuality(itemSlot)
+            let Quality = global.CDServerJavaClasses.$QualityUtils.getQuality(itemSlot)
             let Qlevel = Quality.level()
             slotValue = itemSlot.count * baseValue
             trade = Component.of(itemSlot.hoverName)
@@ -40,7 +78,7 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
         }
         values = values + slotValue
         if(slotValue > 1 && slotValue != 0) {
-            trade.append(MoneyUtil.convertBaseValueToString(slotValue))
+            trade.append(global.MoneyUtil.convertBaseValueToString(slotValue))
             tradeList.push(trade)
             itemSlot.shrink(itemSlot.count)
         } 
@@ -50,26 +88,13 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
         //     itemSlot.shrink(itemSlot.count)
         // }
     })
-    let coinValue = $CoinValue["fromNumber(java.lang.String,long)"]("main", values)
+    let coinValue = global.MoneyUtil.coinValueFromBase(values)
     if (!coinValue.empty) {
         if (player != null) {
-            if (player instanceof $ServerPlayer) {
-                let severPlayer = player
-                severPlayer.connection.send(new $ClientboundSetTitleTextPacket(Component.translate("message.createdelight.sell_bin_hint").color(Color.GOLD)))
-                severPlayer.connection.send(new $ClientboundSetSubtitleTextPacket( MoneyUtil.convertBaseValueToString(values).color(Color.GOLD)))
-            }
-            player.sendData("kubejs_player_playsound", {soundEvent: "iceandfire:gold_pile_step"})
-            player.tell(Component.of("§f             §6出货单  §r"));
-            player.tell(Component.of("§e-----------------------"))
-            tradeList.forEach(trade => {
-                player.tell(trade)
-            })
-            let total = Component.translate("message.createdelight.sell_bin_total", MoneyUtil.convertBaseValueToString(values))
-            player.tell(total)
-            player.tell(Component.of("§e-----------------------"))
-            $MoneyAPI.getApi().GetPlayersMoneyHandler(player).insertMoney(coinValue, false)
+            queueSellBinMessage(player, values, tradeList)
+            global.MoneyUtil.insertPlayerMoney(player, coinValue)
         } else {
-            MoneyUtil.convertBaseValueToItems(values).forEach(coin => {
+            global.MoneyUtil.convertBaseValueToItems(values).forEach(coin => {
                 itemSlots.insertItem(coin, false)
             })
         }

@@ -1,0 +1,1 @@
+global.difficultyCache = 0

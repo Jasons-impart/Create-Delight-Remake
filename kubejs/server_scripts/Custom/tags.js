@@ -1,5 +1,5 @@
 ServerEvents.tags("minecraft:block", e => {
-    e.add("createdelightcore:fan_processing_catalysts/freezing", ["create_connected:fan_freezing_catalyst"])
+    e.add("create_dragons_plus:passive_block_freezers", ["create_connected:fan_freezing_catalyst"])
 })
 ServerEvents.tags("minecraft:fluid", e => {
     e.add("forge:egg_yolk", [
@@ -16,7 +16,6 @@ ServerEvents.tags("minecraft:item", e => {
         'quark:egg_parrot_red_blue',
         'iceandfire:myrmex_desert_egg',
         'iceandfire:myrmex_jungle_egg',
-        'endertrigon:baby_dragon_egg',
     ])
     e.remove("forge:moss", [
         'minecraft:moss_carpet'

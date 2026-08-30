@@ -1,0 +1,8 @@
+name = "tacz_default_gun"
+filename = "tacz_default_gun.zip"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/tacz/tacz_default_gun.zip"
+hash-format = "sha256"
+hash = "56dc31e89370c00f17741db46df42ae8b0f954063b2baaaf331eca802564c13c"

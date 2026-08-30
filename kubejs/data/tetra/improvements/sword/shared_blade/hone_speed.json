@@ -1,0 +1,56 @@
+[
+  {
+    "key": "blade_hone/speed",
+    "level": 1,
+    "aspects": {
+      "honed": 1
+    },
+    "attributes": {
+      "**generic.attack_speed": 0.02
+    }
+  },
+  {
+    "key": "blade_hone/speed",
+    "level": 2,
+    "integrity": -1,
+    "aspects": {
+      "honed": 2
+    },
+    "attributes": {
+      "**generic.attack_speed": 0.04
+    }
+  },
+  {
+    "key": "blade_hone/speed",
+    "level": 3,
+    "integrity": -1,
+    "aspects": {
+      "honed": 3
+    },
+    "attributes": {
+      "**generic.attack_speed": 0.06
+    }
+  },
+  {
+    "key": "blade_hone/speed",
+    "level": 4,
+    "integrity": -2,
+    "aspects": {
+      "honed": 4
+    },
+    "attributes": {
+      "**generic.attack_speed": 0.08
+    }
+  },
+  {
+    "key": "blade_hone/speed",
+    "level": 5,
+    "integrity": -2,
+    "aspects": {
+      "honed": 5
+    },
+    "attributes": {
+      "**generic.attack_speed": 0.1
+    }
+  }
+]

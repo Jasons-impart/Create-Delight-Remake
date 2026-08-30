@@ -1,0 +1,39 @@
+{
+  "replace": true,
+  "key": "terrasteel_ingot",
+  "category": "metal",
+  "primary": 7.2,
+  "secondary": 5.5,
+  "tertiary": 2,
+  "durability": 2050,
+  "integrityCost": 2,
+  "integrityGain": 7,
+  "magicCapacity": 800,
+  "toolLevel": "minecraft:netherite",
+  "toolEfficiency": 8,
+  "effects": {
+    "more_mod_tetra:terra_ray": 2,
+    "more_mod_tetra:mana_regeneration": 10,
+    "more_mod_tetra:mana_repair": 2
+  },
+  "tints": {
+    "glyph": "00ff00",
+    "texture": "00ff00"
+  },
+  "textures": [
+    "metal",
+    "default"
+  ],
+  "material": {
+    "tag": "createdelight:disabled_mmt_fragile_materials"
+  },
+  "requiredTools": {
+    "hammer_dig": "minecraft:stone"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "botania"
+    }
+  ]
+}

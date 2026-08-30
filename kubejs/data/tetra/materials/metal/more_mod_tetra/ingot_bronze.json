@@ -1,0 +1,28 @@
+﻿{
+    "key":  "ingot_bronze",
+    "category":  "metal",
+    "primary":  6.0,
+    "secondary":  2.1,
+    "tertiary":  2.1,
+    "durability":  1050,
+    "integrityCost":  2,
+    "integrityGain":  6,
+    "magicCapacity":  120,
+    "toolLevel":  "minecraft:iron",
+    "toolEfficiency":  9,
+    "tints":  {
+                  "glyph":  "f3cd77",
+                  "texture":  "f3cd77"
+              },
+    "textures":  [
+                     "metal",
+                     "default"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "requiredTools":  {
+                          "hammer_dig":  "minecraft:stone"
+                      },
+    "replace":  true
+}

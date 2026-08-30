@@ -1,0 +1,44 @@
+{
+  "slots": [
+    "mmt_necklace/pendant"
+  ],
+  "materialSlotCount": 1,
+  "requirement": {
+    "type": "tetra:locked",
+    "key": "createdelight:mmt_curios/hive_guard"
+  },
+  "displayType": "major",
+  "glyph": {
+    "textureX": 176,
+    "textureY": 48
+  },
+  "translation": {
+    "primaryAttributes": {
+      "generic.max_health": 3
+    },
+    "secondaryAttributes": {
+      "generic.max_health": 2
+    },
+    "tertiaryAttributes": {
+      "generic.max_health": 1
+    },
+    "durability": 1,
+    "integrity": 1,
+    "magicCapacity": 1
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:bone/",
+        "tetra:metal/",
+        "tetra:stone/",
+        "tetra:wood/",
+        "tetra:gem/"
+      ],
+      "countFactor": 1,
+      "moduleKey": "mmt_necklace/pendant/heart",
+      "moduleVariant": "heart/"
+    }
+  ],
+  "replace": true
+}

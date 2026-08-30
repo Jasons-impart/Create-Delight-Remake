@@ -7,6 +7,44 @@ ServerEvents.tags("item", e => {
     ])
 })
 
+const solidPopsicleMoldDemolding = {
+    "ratatouille:melon_popsicle_mold_solid": "farmersdelight:melon_popsicle",
+    "createdelight:empty_popsicle_mold_solid": "createdelight:empty_popsicle",
+    "createdelight:chorus_fruit_popsicle_mold_solid": "ends_delight:chorus_fruit_popsicle",
+    "createdelight:berry_popsicle_mold_solid": "cosmopolitan:berry_popsicle",
+    "createdelight:milk_popsicle_mold_solid": "youkaishomecoming:milk_popsicle",
+    "createdelight:hamimelon_popsicle_mold_solid": "fruitsdelight:hamimelon_popsicle",
+    "createdelight:lime_popsicle_mold_solid": "collectorsreap:lime_popsicle",
+    "createdelight:kiwi_popsicle_mold_solid": "fruitsdelight:kiwi_popsicle",
+    "createdelight:green_tongue_mold_solid": "casualness_delight:green_tongue",
+    "createdelight:tear_popsicle_mold_solid": "mynethersdelight:tear_popsicle",
+    "createdelight:big_popsicle_mold_solid": "youkaishomecoming:big_popsicle",
+    "createdelight:corn_popsicle_mold_solid": "corn_delight:corn_popsicle",
+}
+
+function giveOrDropPopsicleDemolding(player, item) {
+    if (!player.getInventory().add(item)) {
+        player.drop(item, false)
+    }
+}
+
+Object.entries(solidPopsicleMoldDemolding).forEach(([mold, popsicle]) => {
+    ItemEvents.rightClicked(mold, e => {
+        const {player} = e
+        if (player == null || !player.isPlayer())
+            return
+
+        let handStack = player.getItemInHand(e.hand)
+        let amount = player.isCrouching() ? handStack.count : 1
+        handStack.shrink(amount)
+
+        giveOrDropPopsicleDemolding(player, Item.of(popsicle, amount))
+        giveOrDropPopsicleDemolding(player, Item.of("ratatouille:popsicle_mold", amount))
+        player.swing()
+        e.cancel()
+    })
+})
+
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "ratatouille:freezing/melon_popsicle_mold_solid",
@@ -21,7 +59,8 @@ ServerEvents.recipes(e => {
         "fruitsdelight:kiwi_popsicle",
         "casualness_delight:crafting_shaped/green_tongue",
         "abnormals_delight:neapolitan/melon_popsicle",
-        "youkaishomecoming:big_popsicle"
+        "youkaishomecoming:big_popsicle",
+        "corn_delight:corn_popsicle"
     ])
 
     //各种冰棍冰冻制作
@@ -33,7 +72,8 @@ ServerEvents.recipes(e => {
         ['fruitsdelight:hamimelon_popsicle', Fluid.of("fruitsdelight:hamimelon_juice", 100)],
         ['collectorsreap:lime_popsicle', Fluid.of("create_central_kitchen:limeade", 100)],
         ['fruitsdelight:kiwi_popsicle', Fluid.of("fruitsdelight:kiwi_juice", 100)],
-        ['casualness_delight:green_tongue', Fluid.of("createdelightcore:slime")],
+        ['casualness_delight:green_tongue', Fluid.of("createdelightcore:slime", 100)],
+        ['corn_delight:corn_popsicle', Fluid.of("create_central_kitchen:creamy_corn_drink", 100)],
     ]
     popsicle_recipe_list.forEach(popsicle => {
         let iner = "ratatouille:popsicle_mold"
@@ -87,7 +127,8 @@ let popsicle_list = [
     'collectorsreap:lime_popsicle',
     'fruitsdelight:kiwi_popsicle',
     'casualness_delight:green_tongue',
-    'youkaishomecoming:big_popsicle'
+    'youkaishomecoming:big_popsicle',
+    'corn_delight:corn_popsicle',
 ]
 popsicle_list.forEach(popsicle => {
     ItemEvents.foodEaten(popsicle, e => {

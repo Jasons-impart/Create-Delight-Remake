@@ -1,0 +1,91 @@
+{
+    "slots": [
+        "modular_mmt_bow/stave"
+    ],
+    "type": "tetra:basic_major_module",
+    "improvements": [
+        "tetra:bow/",
+        "tetra:sword/basic_blade/",
+        "tetra:bow/recurve_stave/",
+        "tetra:bow/shared_stave/",
+        "tetra:bow/shared/",
+        "tetra:shared/",
+        "tetra:bow/blade_bow/"
+    ],
+    "variants": [
+        {
+            "materials": [
+                "tetra:wood/",
+                "tetra:stone/",
+                "tetra:metal/",
+                "tetra:gem/",
+                "tetra:bone/",
+                "tetra:rod/stick"
+            ],
+            "key": "blade_bow/",
+            "attributes": {
+                "tetra:draw_speed": 1.2,
+                "generic.attack_speed": -1.4,
+                "generic.attack_damage": 0.1
+            },
+            "aspects": {
+                "edged_weapon": 2,
+                "bow": 2,
+                "breakable": 2
+            },
+            "tags": [
+                "forge:bow"
+            ],
+            "effects": {
+                "spread": [
+                    0,
+                    100
+                ]
+            },
+            "durability": 200,
+            "integrity": -1,
+            "extract": {
+                "primaryAttributes": {
+                    "generic.attack_damage": 0.3,
+                    "tetra:draw_speed": 0.1,
+                    "tetra:draw_strength": 0.92
+                },
+                "tertiaryAttributes": {
+                    "tetra:draw_speed": -0.075,
+                    "tetra:draw_strength": 0.7
+                },
+                "durability": 0.7,
+                "integrity": -0.5,
+                "magicCapacity": 1.1,
+                "glyph": {
+                    "textureLocation": "tetra:textures/gui/wizard_glyphs.png",
+                    "textureX": 80,
+                    "textureY": 64
+                },
+                "availableTextures": [
+                    ""
+                ],
+                "models": [
+                    {
+                        "location": "more_mod_tetra:item/module/bow/more_mod_tetra/blade_bow1"
+                    },
+                    {
+                        "type": "tetra:filtered_grid_texture",
+                        "location": "more_mod_tetra:item/module/bow/more_mod_tetra/blade_bow1",
+                        "filter": "draw_0"
+                    },
+                    {
+                        "type": "tetra:filtered_grid_texture",
+                        "location": "more_mod_tetra:item/module/bow/more_mod_tetra/blade_bow1",
+                        "filter": "draw_1"
+                    },
+                    {
+                        "type": "tetra:filtered_grid_texture",
+                        "location": "more_mod_tetra:item/module/bow/more_mod_tetra/blade_bow1",
+                        "filter": "draw_2"
+                    }
+                ]
+            }
+        }
+    ]
+}

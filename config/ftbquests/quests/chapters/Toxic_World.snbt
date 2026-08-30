@@ -10,8 +10,10 @@
 	quests: [
 		{
 			dependencies: ["0BAC02A069A5B123"]
-			description: ["毒化世界是个以废土为主题的群系。这个黑暗且又危险的群系，遍地布满了有毒的酸液池和会喷毒气的地热喷口，此外还有带有辐射性的铀矿石也在此生成。由于这个群系的辐射性很强，所以这里的生物都是因受过辐射而变异的生物。玩家若是在没有穿戴防化服的情况下进入该世界，可能会受到致命的“辐照”效果。"]
-			hide_until_deps_complete: true
+			description: [
+				"毒化洞穴是个以废土为主题的群系。这个黑暗且危险的群系遍布有毒的酸液池、会喷出毒气的地热喷口和带有辐射性的铀矿石；其中的生物也大多因辐射而产生变异。玩家若未穿戴防化服便进入此处，可能会受到致命的“辐照”效果。"
+				"&4进入方法：解锁并登陆金星后，在金星地下深处寻找毒化洞穴。"
+			]
 			id: "24CCC43BD4994237"
 			size: 2.0d
 			subtitle: "我超，核！"
@@ -19,10 +21,10 @@
 				advancement: "alexscaves:alexscaves/discover_toxic_caves"
 				criterion: ""
 				id: "6D3908F689FC6AAE"
-				title: "前往毒化世界"
+				title: "抵达毒化洞穴"
 				type: "advancement"
 			}]
-			title: "毒化世界"
+			title: "毒化洞穴"
 			x: 0.0d
 			y: 0.0d
 		}
@@ -352,7 +354,7 @@
 				}
 				{
 					id: "3AAE4E993BB83D68"
-					item: "alexscaves:slam"
+					item: "luncheonmeatsdelight:luncheon_meat_can"
 					type: "item"
 				}
 				{

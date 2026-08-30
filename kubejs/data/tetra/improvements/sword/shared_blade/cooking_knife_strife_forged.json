@@ -1,0 +1,17 @@
+[
+  {
+    "key": "cooking_knife_strife_forged",
+    "level": 0,
+    "integrity": -1,
+    "aspects": {
+      "honed": 1
+    },
+    "attributes": {
+      "**generic.attack_speed": 0.1,
+      "**generic.attack_damage": 0.1
+    },
+    "effects": {
+      "more_mod_tetra:beheading": 30
+    }
+  }
+]

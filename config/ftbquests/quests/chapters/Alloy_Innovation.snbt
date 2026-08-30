@@ -100,7 +100,7 @@
 				type: "item"
 			}]
 			size: 1.0d
-			subtitle: "&4黑奴控制器"
+			subtitle: "我作证，烈焰人是&c自愿&r打工的"
 			tasks: [{
 				id: "2B10D1A86D127809"
 				item: "create:empty_blaze_burner"
@@ -283,14 +283,14 @@
 		}
 		{
 			dependencies: ["4B6A896ECC72EA02"]
-			icon: "createfluidstuffs:multi_fluid_tank"
+			icon: "fluidlogistics:multi_fluid_tank"
 			id: "043C01E333AD7139"
 			shape: "gear"
 			size: 2.0d
 			subtitle: "&4超级超级超级好用&r的多流体储存罐！（最多八种流体）"
 			tasks: [{
 				id: "3F3576DB3D33FC4B"
-				item: "createfluidstuffs:multi_fluid_tank"
+				item: "fluidlogistics:multi_fluid_tank"
 				type: "item"
 			}]
 			x: 10.0d
@@ -298,11 +298,15 @@
 		}
 		{
 			dependencies: ["271924B430C340EC"]
-			description: ["你可以直接使用&e空烈焰人燃烧室&r和&e爆弹椒&r制作&4烈焰人燃烧室&r。&n&l&4注意安全&r！&e烟药竹&r成熟之后&4会爆炸&r！"]
+			description: [
+				"你可以直接使用&e空烈焰人燃烧室&r和&e爆弹椒&r制作&c烈焰人燃烧室&r。&n&l&c注意安全&r！&e烟药竹&r成熟之后&c会爆炸&r！"
+				""
+				"如果害怕被炸伤，可以用&e动力臂&r自动化采收爆弹椒（详情见&e烟药竹&r的&e思索&r）"
+			]
 			id: "33623A848B5FF55A"
 			optional: true
 			shape: "square"
-			subtitle: "&e什么&r？&e不想去&r找&4下界要塞&r？&e找不到&4下界要塞&r？"
+			subtitle: "&e什么&r？&e不想去&r找&c下界要塞&r？&e找不到&c下界要塞&r？"
 			tasks: [
 				{
 					id: "7B385B9EE1537E56"
@@ -335,8 +339,8 @@
 				item: "create:polished_rose_quartz"
 				type: "item"
 			}]
-			x: 12.0d
-			y: 1.5d
+			x: 12.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["10D661738D4296E5"]
@@ -1344,7 +1348,7 @@
 			dependencies: ["601E073214DCC16C"]
 			description: [""]
 			id: "5AC294F788C1D1E8"
-			subtitle: "什么，可以横向运输，我怎么会做这种梦"
+			subtitle: "什么，可以横向运输，我怎么会做这种梦？"
 			tasks: [{
 				id: "01BB00D45FB01183"
 				item: "create_fantasizing:transporter"
@@ -1352,6 +1356,74 @@
 			}]
 			x: 18.5d
 			y: -3.5d
+		}
+		{
+			dependencies: ["32AAEC0414A9ECA6"]
+			description: [
+				"动力注液枪可以通过与动力臂相似的配置方法设定&c流体交互点&r（例如工作盆）以进行&e流体转移&r功能"
+				"需注意，动力注液枪本身不具备流体缓存，只是会代理其吸附的方块的流体信息"
+				"将&e熔岩流体移液至熄灭的烈焰人燃烧室中&r，使其进入一般燃烧状态"
+				"动力注液枪不能直接对流体储罐等流体容器中的流体直接进行移液，需要在其上放置&c多流体存取端口&r来辅助交互"
+				"动力注液枪可以通过绑定&c多流体存取端口&r来实现流体的智能分液"
+				"动力注液枪可以如注液器一般使用其代理的流体对物品进行&e注液&r"
+			]
+			id: "1F34610FBFE53749"
+			size: 1.5d
+			subtitle: "动力臂的流体版"
+			tasks: [{
+				id: "1FE1F198D1A25F7F"
+				item: "fluidlogistics:mechanical_fluid_gun"
+				type: "item"
+			}]
+			x: 16.5d
+			y: -6.0d
+		}
+		{
+			dependencies: ["32AAEC0414A9ECA6"]
+			dependency_requirement: "all_started"
+			description: ["相较于动力泵，流体泵的泵液功率&e更高&r、输送液体距离&e更远&r，同时造价&e更昂贵&r、消耗应力&e更高&r"]
+			id: "17EC64B407A44FD5"
+			subtitle: "更快更给力"
+			tasks: [{
+				id: "711D23BE2CB19160"
+				item: "fluidlogistics:fluid_pump"
+				type: "item"
+			}]
+			x: 16.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["4F7F4970E26CBD75"]
+			description: [
+				"多流体存取端口可以放置在任意的&e流体容器&r（如多流体流体储罐）上，&b动力泵&r等器件可通过它与流体容器交互"
+				""
+				"手持类似于&b玻璃瓶或者桶&r的容器与多流体存取端口交互，可以便捷地向相连的流体容器输入或输出流体"
+				""
+				"多流体存取端口可以被指定为&e动力注液枪&r的交互点，以实现动力注液枪与流体储罐之间的流体交互"
+			]
+			id: "50BA4C5ABE721F8D"
+			ignore_reward_blocking: true
+			subtitle: "一个三向的可过滤交互接口！"
+			tasks: [{
+				id: "412E52F97F923C3B"
+				item: "fluidlogistics:multi_fluid_access_port"
+				type: "item"
+			}]
+			x: 11.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["1F34610FBFE53749"]
+			description: ["用于便捷配置&c动力臂&r、&c动力注液枪&r与&c弹射置物台&r的工具&c"]
+			id: "2FFD64E4EE3366FA"
+			subtitle: "挥舞指读棒"
+			tasks: [{
+				id: "3CD0D11EE867369E"
+				item: "fluidlogistics:hand_pointer"
+				type: "item"
+			}]
+			x: 16.5d
+			y: -7.5d
 		}
 		{
 			dependencies: ["575185F2DB0AD44C"]
@@ -1667,13 +1739,10 @@
 				type: "item"
 			}]
 			x: 13.0d
-			y: 2.25d
+			y: 2.5d
 		}
 		{
-			dependencies: [
-				"3EB042CCCB8D54FA"
-				"1499DD7E2925CBAA"
-			]
+			dependencies: ["3EB042CCCB8D54FA"]
 			id: "57CA7AEC66490057"
 			subtitle: "更轻松的动力合成自动化！"
 			tasks: [{
@@ -1743,7 +1812,7 @@
 		}
 		{
 			dependencies: ["4B6A896ECC72EA02"]
-			description: ["在夜晚就可以通过它来看星星。左键点击某个望远镜视野内的星球，然后点击左侧的+号就可以制作一张记录。"]
+			description: ["在能看见天空的地方使用望远镜，选中视野里的星球并按住即可打印一张天文观测记录。打印记录需要消耗纸；有大气的维度通常需要夜晚才能使用望远镜。"]
 			id: "40BDFCC7A3B77F26"
 			shape: "hexagon"
 			size: 2.0d
@@ -1758,9 +1827,9 @@
 		}
 		{
 			dependencies: ["32AAEC0414A9ECA6"]
-			icon: "art_of_forging:nano_insectoid"
+			icon: "alexscaves:enigmatic_engine"
 			id: "52C424A4D57F21DE"
-			subtitle: "使用构件，木屑，熔融金属与纳米昆虫可以复制大部分机器，详情查看加压配方"
+			subtitle: "使用构件，木屑，熔融金属与谜之引擎可以复制大部分机器，详情查看加压配方"
 			tasks: [
 				{
 					id: "64754F4501F21D0D"
@@ -1769,7 +1838,7 @@
 				}
 				{
 					id: "48C0592B3ED7BE3D"
-					item: "art_of_forging:nano_insectoid"
+					item: "alexscaves:enigmatic_engine"
 					type: "item"
 				}
 			]
@@ -1946,6 +2015,33 @@
 			title: "枪械制作！"
 			x: 22.0d
 			y: -6.0d
+		}
+		{
+			dependencies: ["32AAEC0414A9ECA6"]
+			id: "1FFDF5874BEEFB2F"
+			subtitle: "无应力运输流体吗？有点意思"
+			tasks: [{
+				id: "51FB8336B5955055"
+				item: "fluidlogistics:fluid_transporter"
+				type: "item"
+			}]
+			x: 17.5d
+			y: -3.5d
+		}
+		{
+			dependencies: [
+				"043C01E333AD7139"
+				"2CBBADBE62382C1B"
+			]
+			id: "6FB2DDB3AAB1E973"
+			subtitle: "固液双修这一块"
+			tasks: [{
+				id: "77FCEF3657440B04"
+				item: "fluidlogistics:smart_hopper"
+				type: "item"
+			}]
+			x: 11.5d
+			y: 2.0d
 		}
 	]
 	title: "&9体系渐成 "

@@ -2,21 +2,36 @@ ItemEvents.rightClicked("createdelight:quality_absorber", e => {
     const {player} = e
     if (player == null || !player.isPlayer())
         return
+
     let items = player.getCapability(ForgeCapabilities.ITEM_HANDLER).orElse(null)
     let amount = 0
     items.allItems.forEach(item => {
-        let quality = $QualityUtils.getQuality(item)
+
+        let quality = global.CDServerJavaClasses.$QualityUtils.getQuality(item)
         if (quality.level() > 0) {
-            amount += Math.pow(2, quality.level() - 1) * item.count
-            item.nbt.remove($QualityUtils.QUALITY_TAG)
+            amount += getLifeMatterExtractionValue(quality.level()) * item.count
+            item.nbt.remove(global.CDServerJavaClasses.$QualityUtils.QUALITY_TAG)
             if (item.nbt.empty)
                 item.removeTag()
         }
     })
+
     if (amount == 0)
         return
-    let money = $CoinValue.fromNumber("main", amount)
-    $MoneyAPI.getApi().GetPlayersMoneyHandler(player).insertMoney(money, false)
-    player.tell(Component.of("将物品栏中的所有品质去除物品，并将其转化为了").append(money.getText()))
 
+    player.give(Item.of("createdelight:life_matter", amount))
+    player.tell(Component.of(`将物品栏中的指定品质原材料提取为 ${amount} 个生命质。`))
 })
+
+function getLifeMatterExtractionValue(qualityLevel) {
+    switch (qualityLevel) {
+        case 1:
+            return 1
+        case 2:
+            return 3
+        case 3:
+            return 8
+        default:
+            return 0
+    }
+}

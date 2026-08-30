@@ -13,7 +13,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 5.0
+					"value": 5.5
 				},
 				{
 					"attribute": "generic.armor",
@@ -23,7 +23,7 @@
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 4.0
+					"value": 8.0
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -71,6 +71,11 @@
 			],
 			"modifiers": [
 				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 4.5
+				},
+				{
 					"attribute": "generic.armor",
 					"operation": "ADDITION",
 					"value": 4
@@ -78,7 +83,7 @@
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": -0.5
+					"value": -0.2
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -123,7 +128,7 @@
 					    }
 				}
 			],
-			"max_wave_time": 1200,
+			"max_wave_time": 1600,
 			"setup_time": 150
 		},
 		{
@@ -138,7 +143,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 16.5
+					"value": 14.0
 				},
                 {
 					"attribute": "generic.armor",
@@ -154,6 +159,11 @@
 					"attribute": "generic.movement_speed",
 					"operation": "MULTIPLY_TOTAL",
 					"value": 0.4
+				},			
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": -0.2
 				}
 			],
 			"rewards": [
@@ -184,7 +194,7 @@
                     }
 				}
 			],
-			"max_wave_time": 1200,
+			"max_wave_time": 2400,
 			"setup_time": 100
 		},
 		{
@@ -285,7 +295,7 @@
 					    }
 				}
 			],
-			"max_wave_time": 600,
+			"max_wave_time": 1200,
 			"setup_time": 60
 		}
     ],

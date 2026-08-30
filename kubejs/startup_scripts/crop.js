@@ -49,4 +49,28 @@ StartupEvents.registry("block", e => {
         .renderType("cutout")
         .translationKey("block.createdelight.artemisia_argyi")
 
+    e.create("createdelight:graycotton", "crop")
+        .age(3, age => {
+            age.shape(0, 0, 0, 0, 16, 2, 16)
+            age.shape(1, 0, 0, 0, 16, 6, 16)
+            age.shape(2, 0, 0, 0, 16, 10, 16)
+            age.shape(3, 0, 0, 0, 16, 14, 16)
+        })
+        .growTick((tickevent) => 3)
+        .bonemeal(info => info.random.nextInt(2))
+        .dropSeed(true)
+        .crop("kinetic_pixel:graycotton", 1)
+        .crop("kinetic_pixel:graycotton", 0.5)
+        .crop("createdelight:graycotton_seed", 0.35)
+        .texture(0, "kinetic_pixel:block/graycotton1")
+        .texture(1, "kinetic_pixel:block/graycotton3")
+        .texture(2, "kinetic_pixel:block/graycotton4")
+        .texture(3, "kinetic_pixel:block/graycotton5")
+        .item(seed => {
+            seed.texture("kinetic_pixel:item/graycottonseed")
+            seed.translationKey("item.createdelight.graycotton_seed")
+        })
+        .renderType("cutout")
+        .translationKey("block.createdelight.graycotton")
+
 })

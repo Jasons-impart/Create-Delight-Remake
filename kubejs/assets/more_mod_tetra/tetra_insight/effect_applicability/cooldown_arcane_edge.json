@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "paths": [
+    {
+      "scopes": [
+        "main_hand"
+      ],
+      "triggers": [
+        "attack"
+      ],
+      "stacking": "item"
+    }
+  ]
+}

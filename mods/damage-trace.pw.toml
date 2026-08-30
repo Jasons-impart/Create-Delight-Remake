@@ -1,0 +1,9 @@
+name = "Damage Trace"
+filename = "damage_trace-1.20.1-0.1.0.jar"
+side = "both"
+release = false
+
+[download]
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/damage_trace-1.20.1-0.1.0.jar"
+hash-format = "sha256"
+hash = "c4abad522f8eb27b5da721e27198237ecbb69c73b544953fd70dd4d92344aae7"

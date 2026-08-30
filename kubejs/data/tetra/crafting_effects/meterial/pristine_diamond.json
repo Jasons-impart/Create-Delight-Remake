@@ -10,7 +10,9 @@
       {
         "type": "tetra:material",
         "material": {
-          "items": [ "tetra:pristine_diamond" ]
+          "items": [
+            "tetra:pristine_diamond"
+          ]
         }
       }
     ]
@@ -18,7 +20,9 @@
   "outcomes": [
     {
       "type": "tetra:remove_improvements",
-      "improvements": [ "arrested" ]
+      "improvements": [
+        "arrested"
+      ]
     },
     {
       "type": "tetra:apply_improvements",

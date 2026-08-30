@@ -44,14 +44,11 @@ ServerEvents.recipes(e => {
         "9x culturaldelights:corn_kernels",
         "corn_delight:corn_kernel_bag"
     ).id("createdelight:corn_kernels")
-    threshing(e,
-        "culturaldelights:corn_cob",
-        [
-            "4x culturaldelights:corn_kernels",
-            "farmersdelight:straw",
-            Item.of("3x culturaldelights:corn_kernels").withChance(0.5)
-        ], 400
-    )
+    threshing(e, "culturaldelights:corn_cob", [
+        "4x culturaldelights:corn_kernels",
+        Item.of("4x culturaldelights:corn_kernels").withChance(0.5),
+        'createaddition:biomass'
+    ], 400)
     e.recipes.create.milling(
         [
             "2x createdelight:corn_flour",

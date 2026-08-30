@@ -1,0 +1,36 @@
+{
+  "replace": true,
+  "key": "alexscaves_bioluminesscence",
+  "category": "fuller_material",
+  "hidden": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 0,
+  "integrityCost": 0,
+  "integrityGain": 4,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "attributes": {
+    "**generic.attack_damage": 0.015
+  },
+  "effects": {
+    "more_mod_tetra:attack_glowing_buff": 10
+  },
+  "tints": {
+    "glyph": "b0e8fc",
+    "texture": "b0e8fc"
+  },
+  "textures": [
+    "default"
+  ],
+  "material": {
+    "items": [
+      "alexscaves:bioluminesscence"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": 1
+  }
+}

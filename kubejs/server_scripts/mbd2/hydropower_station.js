@@ -1,5 +1,3 @@
-const $MBDKineticMachineBlockEntity = Java.loadClass("com.lowdragmc.mbd2.integration.create.machine.MBDKineticMachineBlockEntity")
-
 MBDMachineEvents.onStructureFormed("createdelight:hydropower_station", e => {
   const{machine} = e.event
   /** @type {Internal.MBDMultiblockMachine} */

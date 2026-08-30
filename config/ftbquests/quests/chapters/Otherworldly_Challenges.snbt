@@ -7,14 +7,6 @@
 	id: "2F14272613261E70"
 	images: [
 		{
-			height: 3.0d
-			image: "enhanced_boss_bars:textures/gui/boss_bars/wither_storm.png"
-			rotation: 0.0d
-			width: 15.0d
-			x: 2.0d
-			y: 13.5d
-		}
-		{
 			height: 4.0d
 			image: "iceandfire:item/dragon_skull_fire"
 			rotation: 0.0d
@@ -135,15 +127,6 @@
 			width: 2.0d
 			x: 18.0d
 			y: -7.5d
-		}
-		{
-			height: 6.0d
-			image: "minecraft:textures/painting/wither.png"
-			order: -1
-			rotation: 0.0d
-			width: 6.0d
-			x: 2.0d
-			y: 16.0d
 		}
 		{
 			height: 3.0d
@@ -287,178 +270,10 @@
 			x: 2.0d
 			y: -6.5d
 		}
-		{
-			height: 3.0d
-			image: "tetra:item/module/modles/pale_steel_needle/pale_steel_needle"
-			rotation: -180.0d
-			width: 3.0d
-			x: 14.0d
-			y: 4.0d
-		}
-		{
-			height: 4.0d
-			image: "tetra:item/module/single/head/pale_steel_needle/pale_steel_needle"
-			rotation: 0.0d
-			width: 4.0d
-			x: 13.0d
-			y: 3.0d
-		}
-		{
-			height: 3.0d
-			image: "tetra:item/module/modles/pale_steel_needle/pale_steel_needle"
-			rotation: 0.0d
-			width: 3.0d
-			x: 11.5d
-			y: 2.5d
-		}
-		{
-			height: 3.0d
-			image: "alexsmobs:item/void_worm_eye"
-			order: -1
-			rotation: 0.0d
-			width: 3.0d
-			x: 13.0d
-			y: 3.0d
-		}
 	]
 	order_index: 9
 	quest_links: [ ]
 	quests: [
-		{
-			dependencies: ["75605D2B058F2DA5"]
-			description: [
-				"         漆黑的冰霜蔓延到尸骨之上，在世界上那最寒冷的边境，埋葬着一股极其强大的邪恶力量...... "
-				"                                                  ——《异兽手记·竦怖军团》"
-			]
-			icon: {
-				Count: 1
-				id: "gateways:gate_pearl"
-				tag: {
-					gateway: "createdelight:the_gate_of_eternal_cold"
-				}
-			}
-			id: "752E66805BBFEC51"
-			rewards: [
-				{
-					count: 4
-					id: "408F4D8E4A3DC3F9"
-					item: "dreadsteel:dreadsteel_ingot"
-					type: "item"
-				}
-				{
-					count: 2
-					id: "2B8B4009B2FD138D"
-					item: "createdelight:dread_heart"
-					type: "item"
-				}
-				{
-					id: "40E213BB9803E42F"
-					item: {
-						Count: 1
-						id: "gateways:gate_pearl"
-						tag: {
-							gateway: "createdelight:the_gate_of_eternal_cold"
-						}
-					}
-					type: "item"
-				}
-			]
-			shape: "square"
-			size: 2.0d
-			subtitle: "撕裂的维度皆被冻结.....无声无息....."
-			tasks: [{
-				consume_items: false
-				id: "0F69834EF0A45187"
-				item: {
-					Count: 1
-					id: "gateways:gate_pearl"
-					tag: {
-						gateway: "createdelight:the_gate_of_eternal_cold"
-					}
-				}
-				match_nbt: true
-				type: "item"
-			}]
-			title: "&1凛冬之寒"
-			x: 2.0d
-			y: -14.0d
-		}
-		{
-			dependencies: ["58C8AFFF5BDFF59C"]
-			description: ["         我们的创造打开了次元的裂缝，来自异界的扭曲生物蜂拥而至。它们以灵魂为食，用锋利的存在将生命的本质穿刺、撕裂、抽离。在这场试炼中，你将直面灵魂被枯萎化的恐惧——不是肉体的死亡，而是存在本身的缓慢凋零。你的灵魂将成为战场。异界生物会用它们独有的方式刺穿灵核，抽取生命力，将你的意志一点点风干成尘埃。每一次呼吸都可能让灵魂更加脆弱，每一次抵抗都可能加速腐朽。你能坚持多久，才会像那些被撕裂的灵魂一样，成为它们中的一员？（本试炼挑战建议打造一把裁决剑，最后的凋零生命值很高，最好通过裁决剑来打，同时凋零伤害并不算很高，如果没有好用的远程武器，可以考虑带飞行装备）"]
-			icon: {
-				Count: 1
-				id: "gateways:gate_pearl"
-				tag: {
-					gateway: "createdelight:piercing_withering_trial"
-				}
-			}
-			id: "6DC960C9CBFEEAE9"
-			rewards: [
-				{
-					id: "12D539EA04083668"
-					item: "minecraft:nether_star"
-					type: "item"
-				}
-				{
-					count: 2
-					id: "42B1448B3D9C1EE3"
-					item: {
-						Count: 1
-						id: "gateways:gate_pearl"
-						tag: {
-							gateway: "createdelight:piercing_withering_trial"
-						}
-					}
-					type: "item"
-				}
-				{
-					count: 2
-					id: "0327A14ABFADFEA1"
-					item: "art_of_forging:devils_soul_gem"
-					type: "item"
-				}
-				{
-					id: "581683A2875961F6"
-					item: "art_of_forging:sigil_of_eden"
-					type: "item"
-				}
-				{
-					id: "3F4407F7AB5982B9"
-					item: "art_of_forging:fang_charm"
-					type: "item"
-				}
-			]
-			shape: "square"
-			size: 2.0d
-			subtitle: "&4当异界之物&r&kaaaa&r&4撕裂现实，灵魂便&r&kaaaa&r&4如花朵般被&r&kaaaa&r&4刺穿、凋零"
-			tasks: [
-				{
-					id: "1DD719232C694C72"
-					item: {
-						Count: 1
-						id: "gateways:gate_pearl"
-						tag: {
-							gateway: "createdelight:piercing_withering_trial"
-						}
-					}
-					match_nbt: true
-					type: "item"
-				}
-				{
-					checkItem: false
-					entity: "minecraft:wither_skeleton"
-					icon: "minecraft:wither_rose"
-					id: "698D4B35B0E483C1"
-					nbt: { }
-					type: "questsadditions:killnbt"
-					value: 12L
-				}
-			]
-			title: "&4刺骨&r&k111&r&4穿心&r&k111&r&4..."
-			x: 2.0d
-			y: 14.0d
-		}
 		{
 			dependencies: ["4C520BFAB5B97C59"]
 			description: ["“真正的远方不在脚下，而在维度之间的裂隙之中。”"]
@@ -514,32 +329,6 @@
 			title: "离地而居"
 			x: 2.0d
 			y: 3.0d
-		}
-		{
-			dependencies: ["421576F1BE1DF7D9"]
-			description: [
-				"它们被规则的力量束缚在此处，注定在寒风中消逝......"
-				"（本试炼怪物极多，并且伤害较高，推荐千夜寒与村雨交替使用，时刻注意血量，最重要的是一定要在间隙清理龙尸，防止找不到刷出的怪物和影响试炼挑战）"
-			]
-			icon: "ad_astra:glacio_globe"
-			id: "75605D2B058F2DA5"
-			rewards: [{
-				id: "3AE7DC7A6DB39307"
-				item: "youkaishomecoming:big_popsicle"
-				type: "item"
-			}]
-			shape: "square"
-			subtitle: "悚怖生物只可在&6霜原星&r召唤！"
-			tasks: [{
-				dimension: "ad_astra:glacio"
-				icon: "ad_astra:glacio_globe"
-				id: "513C79094CBC7FB5"
-				title: "霜原星"
-				type: "dimension"
-			}]
-			title: "无垠之牢！"
-			x: 2.0d
-			y: -12.0d
 		}
 		{
 			dependencies: ["03950A91DF592F72"]
@@ -626,7 +415,7 @@
 			dependencies: ["5981A5D70F26A7A5"]
 			description: [
 				"         火龙是存在于于火星和水星的一种飞龙，以他们卓越的喷火能力和飞行能力以及他们尽人皆知的血腥声望和相关文化著称。除此之外，他们一生中还会经历五个成长阶段，在此期间他们会逐渐变得更大、更强、更可怕。"
-				"         冰龙是存在于霜原星的一种飞龙，拥有不亚于火龙的知名度和与火龙完全对立的寒冰吐息。拥有同时掌控天空，陆地和海洋的能力。"
+				"         冰龙是盘踞于火星山峰与高地的一种飞龙，拥有不亚于火龙的知名度和与火龙完全对立的寒冰吐息。拥有同时掌控天空，陆地和海洋的能力。"
 				"          电龙是漫游于金星上空的一种飞龙，拥有掌握雷霆和黑夜的强大力量，强横的闪电龙息能将一切化为飞灰，是传说中的强大存在。"
 				"          如今的他们被神秘的力量囚禁在太空之中。"
 				"          那么，代价是什么呢？"
@@ -702,8 +491,6 @@
 		}
 		{
 			dependencies: [
-				"752E66805BBFEC51"
-				"6DC960C9CBFEEAE9"
 				"604734C6B3F31B97"
 				"6F25C6A7F38F43E0"
 				"46108940883CF8E5"
@@ -712,12 +499,16 @@
 				"771EC4A267899414"
 			]
 			description: [
-				"       嗨!看到这里说明你已经把gateway通关了，恭喜!!!"
+				"嗨!看到这里说明你已经把gateway通关了，恭喜!!!"
 				"{@pagebreak}"
-				"         虽然不知道你觉得我的关卡如何，但是我还是很开心你能全程体验下来。随着时间的积累，感觉身边的人越来越多，仿佛我加入制作组还是昨天啊......回头想来，我还是那么没用啊，很多东西都学不会，执行力如此低下，学习也是如此吧，和他人的交往也有些让我身心俱疲......不管怎么说吧，继续加油了，我或许还有时间去继续忙碌，去和朋友们打好关系，做出更好的挑战！再见了，陌生人，之后再见ヾ(￣▽￣)Bye~Bye~！-from cawyyds"
+				"       虽然不知道你觉得我的关卡如何，但是我还是很开心你能全程体验下来。随着时间的积累，感觉身边的人越来越多，仿佛我加入制作组还是昨天啊......回头想来，我还是那么没用啊，很多东西都学不会，执行力如此低下，学习也是如此吧，和他人的交往也有些让我身心俱疲......不管怎么说吧，继续加油了，我或许还有时间去继续忙碌，去和朋友们打好关系，做出更好的挑战！再见了，陌生人，之后再见ヾ(￣▽￣)Bye~Bye~！-from cawyyds"
+				""
+				"{@pagebreak}"
+				"       祝你游戏愉快，万事顺意~"
 			]
 			hide_dependency_lines: true
-			hide_until_deps_complete: false
+			hide_until_deps_complete: true
+			hide_until_deps_visible: true
 			icon: "alexsmobs:void_worm_eye"
 			id: "1DD9F7C0F4BD2170"
 			rewards: [
@@ -1028,9 +819,10 @@
 				type: "random"
 			}]
 			shape: "square"
+			subtitle: "通关本章试炼解锁"
 			tasks: [{
 				consume_items: true
-				count: 2L
+				count: 8L
 				id: "517B20A85A578CFE"
 				item: "createdelight:otherworld_note"
 				type: "item"
@@ -1054,9 +846,10 @@
 				type: "random"
 			}]
 			shape: "square"
+			subtitle: "碰碰运气"
 			tasks: [{
 				consume_items: true
-				count: 4L
+				count: 16L
 				id: "15B0A412BCE89168"
 				item: "createdelight:otherworld_note"
 				type: "item"
@@ -1070,19 +863,25 @@
 			dependencies: [
 				"1B98A52DE4C3C6C3"
 				"1DD9F7C0F4BD2170"
+				"13C4DBA50880B401"
+				"283562A687949192"
+				"07D6031FFAB64D87"
+				"1133057B391B2009"
+				"0F1628F16807D8BD"
 			]
-			description: ["         我们制作了“锚点”......真是不可名状之物，“虚空”的深处竟然有如此多的裂隙......我必须离开这里，资料已经足够让我们定向获得复杂的传送门裂隙，可恶......"]
+			description: ["         我们制作了“锚点”......真是不可名状之物，“虚空”的深处竟然有如此多的裂隙......我必须离开这里，资料已经足够让我们定向获得复杂的传送门裂隙....."]
 			id: "05A7FB61F7778E1A"
 			rewards: [{
 				exclude_from_claim_all: true
-				id: "67E99604C5AA2463"
+				id: "687E3C4D5C9385C9"
 				table_id: 2954034298782133295L
-				type: "random"
+				type: "choice"
 			}]
 			shape: "square"
+			subtitle: "完成第三章解锁"
 			tasks: [{
 				consume_items: true
-				count: 8L
+				count: 32L
 				id: "447A36CEE7F41E36"
 				item: "createdelight:otherworld_note"
 				type: "item"
@@ -1125,11 +924,8 @@
 		}
 		{
 			can_repeat: true
-			dependencies: [
-				"4245E55901A10324"
-				"752E66805BBFEC51"
-			]
-			description: ["         这些悚怖生物并不是来自霜原星，它们应该来自于更纯碎的空间......比如悚域？但是这里似乎已经变成他们的坚牢，就像霜原星上的悚怖生物一样，他们的灵魂紧紧束缚在这其中。话说，这些裂隙似乎也有控制生物在一定范围的能力，这是否会有关联呢？或许说这些裂隙并不是时间之间的通道，而是独立的世界？"]
+			dependencies: ["4245E55901A10324"]
+			description: ["         这些悚怖生物并不是来自火星，它们应该来自于更纯粹的空间......比如悚域？但是这里似乎已经变成他们的坚牢，就像火星山峰中的悚怖生物一样，他们的灵魂紧紧束缚在这其中。话说，这些裂隙似乎也有控制生物在一定范围的能力，这是否会有关联呢？或许说这些裂隙并不是世界之间的通道，而是独立的世界？"]
 			icon: {
 				Count: 1
 				id: "iceandfire:dread_knight_sword"
@@ -1279,10 +1075,7 @@
 		}
 		{
 			can_repeat: true
-			dependencies: [
-				"4245E55901A10324"
-				"6DC960C9CBFEEAE9"
-			]
+			dependencies: ["4245E55901A10324"]
 			description: ["         在它们面前生命是多么脆弱......从这些现象表明，灵魂似乎是独立于肉体而存在，但是灵魂离去肉体仍然可以存在，肉体失去灵魂却会立刻死亡。我认为，灵魂的本质是意识与情感的载体，更是一种现实存在的实体，由灵体和灵识组成，灵识依附于灵体，就像灵魂与肉体......"]
 			icon: "minecraft:nether_star"
 			id: "2FE60E36A39610AF"
@@ -1297,7 +1090,7 @@
 				{
 					consume_items: true
 					id: "6D90B28B0E1E2BF9"
-					item: "art_of_forging:fang_charm"
+					item: "minecraft:totem_of_undying"
 					type: "item"
 				}
 				{
@@ -1309,13 +1102,13 @@
 				{
 					consume_items: true
 					id: "0FA3ADFAA1610A1A"
-					item: "art_of_forging:sigil_of_eden"
+					item: "alexscaves:immortal_embryo"
 					type: "item"
 				}
 				{
 					consume_items: true
 					id: "613AF56A73DBE820"
-					item: "art_of_forging:devils_soul_gem"
+					item: "alexscaves:pure_darkness"
 					type: "item"
 				}
 				{
@@ -1697,7 +1490,7 @@
 				}
 				{
 					id: "397231B0C6EB765E"
-					item: "alexscaves:slam"
+					item: "luncheonmeatsdelight:luncheon_meat_can"
 					type: "item"
 				}
 				{
@@ -2406,58 +2199,8 @@
 			y: -1.0d
 		}
 		{
-			dependencies: ["604734C6B3F31B97"]
-			description: [
-				"    试炼者需踏入这片被虫潮笼罩的战场，没有退路，唯有迎战。异常的感染让虫子们失去意识，仅能战斗，坚持到最后一刻，即使敌人无穷无尽！"
-				"    (虽然叫做不再有梦，但是最后给的织针......这八年咋过来的，此任务致敬传奇游戏空洞骑士及其续作丝之歌，如有问题，立刻改正)"
-				"    提示：本试炼怪物种类复杂且多，建议使用吸血+裁决的搭配，最后的boos和蚊鬼需要使用远程，建议有了外骨骼再挑战"
-			]
-			id: "0E2D578692E751C0"
-			rewards: [
-				{
-					id: "0999C4C13B2C5AB6"
-					item: "tetra:pale_steel_needle"
-					type: "item"
-				}
-				{
-					id: "71FA486FF6AE8060"
-					item: "dungeonsdelight:monster_cake"
-					type: "item"
-				}
-				{
-					id: "02E41FEBCAE27FAB"
-					item: {
-						Count: 1
-						id: "gateways:gate_pearl"
-						tag: {
-							gateway: "createdelight:dream_no_more"
-						}
-					}
-					type: "item"
-				}
-			]
-			shape: "square"
-			subtitle: "活了这么久，知道的却这么少，或许我应该心怀感激？我忘记了所有悲剧，所见皆是奇迹。"
-			tasks: [{
-				id: "0F7F13945EFAF2D5"
-				item: {
-					Count: 1
-					id: "gateways:gate_pearl"
-					tag: {
-						gateway: "createdelight:dream_no_more"
-					}
-				}
-				type: "item"
-			}]
-			x: 13.0d
-			y: 3.0d
-		}
-		{
 			can_repeat: true
-			dependencies: [
-				"4245E55901A10324"
-				"0E2D578692E751C0"
-			]
+			dependencies: ["4245E55901A10324"]
 			description: [
 				"    感染最初在梦中显现，利用种种欲望，在虫子的脑海中植入虚假的希望。最终，感染将主导他们的思想，破坏其精神，控制其意志。因此&k辐光&r能够控制完全被感染的虫子，让它们成为统一的一员。于是，它们回归只有原始本能的状态，变得疯狂，更加无畏和具有攻击性。进一步，他们还可能失去自我保护意识。"
 				"                      ——空洞骑士 丝之歌中文维基"
@@ -2523,6 +2266,482 @@
 			title: "You are the Vessel"
 			x: 13.0d
 			y: 0.5d
+		}
+		{
+			dependencies: ["5981A5D70F26A7A5"]
+			description: [
+				"        本章节试炼难度极大提升，十分建议获得成型的龙钢/灾变的装备后再尝试挑战，武器同理，推荐完成所有打磨路线。"
+				"        并且由于试炼会增加生物的盔甲值，滕炎锭是一种极其不错的材料，它的效果能够削减怪物的盔甲值，打出更多有效伤害。"
+			]
+			hide_until_deps_complete: true
+			hide_until_deps_visible: true
+			icon: "alexscaves:hazmat_warning_block"
+			id: "107ADEA0CB866FDC"
+			shape: "square"
+			tasks: [{
+				id: "53D50B74EA0FA021"
+				title: "警告"
+				type: "checkmark"
+			}]
+			title: "提醒"
+			x: 2.0d
+			y: 1.5d
+		}
+		{
+			can_repeat: true
+			dependencies: ["4245E55901A10324"]
+			icon: {
+				Count: 1
+				id: "cataclysm:cursium_helmet"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "2C82CB37754B6558"
+			rewards: [{
+				count: 12
+				id: "3DBB0883D512D754"
+				item: "createdelight:otherworld_note"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [
+				{
+					consume_items: true
+					id: "1A288BAF768799B7"
+					item: "cataclysm:soul_render"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "4EDA52168931BC99"
+					item: "cataclysm:the_annihilator"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "7844A7BA282A2A86"
+					item: {
+						Count: 1
+						id: "cataclysm:coral_spear"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "0F57739A94AF1D34"
+					item: {
+						Count: 1
+						id: "cataclysm:coral_bardiche"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "461240E4E5706D02"
+					item: {
+						Count: 1
+						id: "minecraft:fishing_rod"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "2681C6E399E3BC52"
+					item: {
+						Count: 1
+						id: "cataclysm:athame"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "107490F7664628DE"
+					item: {
+						Count: 1
+						id: "cataclysm:azure_sea_shield"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "07BF7A934BA75AE3"
+					item: "cataclysm:music_disc_scylla"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "03287CEF315662A7"
+					item: "cataclysm:music_disc_maledictus"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "034ACC189D21E6DE"
+					item: "cataclysm:music_disc_the_leviathan"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "1519E84D285BDC27"
+					item: {
+						Count: 1
+						id: "cataclysm:cursed_bow"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "56E246F8BAFCB613"
+					item: {
+						Count: 1
+						id: "cataclysm:cursium_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "34E1D8BDF1A9D360"
+					item: {
+						Count: 1
+						id: "cataclysm:cursium_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "08FED66044C56012"
+					item: {
+						Count: 1
+						id: "cataclysm:cursium_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "438583E09F8BB8C9"
+					item: {
+						Count: 1
+						id: "cataclysm:cursium_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "风溟雷殛"
+			x: 15.0d
+			y: 0.5d
+		}
+		{
+			can_repeat: true
+			dependencies: ["4245E55901A10324"]
+			icon: "cataclysm:the_incinerator"
+			id: "4917A71C63856986"
+			rewards: [{
+				count: 12
+				id: "390C916600BCC0C1"
+				item: "createdelight:otherworld_note"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [
+				{
+					consume_items: true
+					id: "6485F922FBAA479D"
+					item: "cataclysm:music_disc_ignis"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "4B702E82CD5D063A"
+					item: "cataclysm:music_disc_netherite_monstrosity"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "4DF7BB4DC2B3A56C"
+					item: "cataclysm:bulwark_of_the_flame"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "6F3C9DF231D1585C"
+					item: "cataclysm:the_incinerator"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "5F9A7FD107476787"
+					item: {
+						Count: 1
+						id: "cataclysm:infernal_forge"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "678607353FC44DE2"
+					item: {
+						Count: 1
+						id: "cataclysm:monstrous_helm"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 2L
+					id: "5E35BA73FD68B0B6"
+					item: "cataclysm:the_immolator"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "2FB4F9E79A389B08"
+					item: "cataclysm:gauntlet_of_bulwark"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "7C60CFE15856EE4E"
+					item: {
+						Count: 1
+						id: "cataclysm:ignitium_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "4990283202F24148"
+					item: {
+						Count: 1
+						id: "cataclysm:ignitium_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "04668C500E505BBD"
+					item: {
+						Count: 1
+						id: "cataclysm:ignitium_elytra_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "2C2304527A0DC8D5"
+					item: {
+						Count: 1
+						id: "cataclysm:ignitium_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "风溟雷殛"
+			x: 13.0d
+			y: 2.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["4245E55901A10324"]
+			icon: "cataclysm:remnant_skull"
+			id: "3E15DC3E59373E46"
+			rewards: [{
+				count: 12
+				id: "3A8D92F7C240216C"
+				item: "createdelight:otherworld_note"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [
+				{
+					consume_items: true
+					id: "13B636C90F4F2301"
+					item: "cataclysm:music_disc_ender_guardian"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "47A2E77AB98002C4"
+					item: "cataclysm:music_disc_ancient_remnant"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "644E12D11045B518"
+					item: "cataclysm:music_disc_the_harbinger"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "2CF505DF87B7DDA0"
+					item: {
+						Count: 1
+						id: "cataclysm:void_forge"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "73908369146965E5"
+					item: "cataclysm:void_core"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "1E22F9948FD01A35"
+					item: "cataclysm:wither_assault_shoulder_weapon"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "4E0E415BEA34848A"
+					item: "cataclysm:kobolediator_skull"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "570DE93D869A6C3A"
+					item: "cataclysm:sticky_gloves"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "780F49CEF946EED0"
+					item: {
+						Count: 1
+						id: "cataclysm:bone_reptile_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "76A4719BDA8C9A16"
+					item: {
+						Count: 1
+						id: "cataclysm:bone_reptile_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "18ED1CBD33D93B62"
+					item: {
+						Count: 1
+						id: "cataclysm:ancient_spear"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "30579C49E7AA4DA1"
+					item: "cataclysm:remnant_skull"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "108DB13DA362A8E1"
+					item: "cataclysm:sandstorm_in_a_bottle"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "443A027FA1FA1954"
+					item: "cataclysm:gauntlet_of_guard"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "144EC201FC81D25B"
+					item: "cataclysm:mechanical_fusion_anvil"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "40DD035B47AFB560"
+					item: {
+						Count: 1
+						id: "cataclysm:laser_gatling"
+						tag: {
+							Charged: 0b
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "36329EC61F308013"
+					item: "cataclysm:meat_shredder"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "3D34ABBAB51E4BBC"
+					item: "cataclysm:void_assault_shoulder_weapon"
+					type: "item"
+				}
+			]
+			title: "沧海桑田"
+			x: 15.0d
+			y: 2.0d
 		}
 	]
 	subtitle: ["泪如灰落，绣如星宿"]

@@ -1,0 +1,19 @@
+{
+  "type": "integrated_api:generic_structure",
+  "start_pool": "cataclysm:burning_arena/burning_arena1",
+  "size": 10,
+  "biomes": "#cataclysm:has_structure/burning_arena_biomes",
+  "step": "surface_structures",
+  "terrain_adaptation": "beard_thin",
+  "rotation_fixed": true,
+  "start_height": {
+    "absolute": 31
+  },
+  "use_expansion_hack": false,
+  "spawn_overrides": {
+    "monster": {
+      "bounding_box": "piece",
+      "spawns": []
+    }
+  }
+}

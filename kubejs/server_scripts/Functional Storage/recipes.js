@@ -42,7 +42,7 @@ ServerEvents.recipes((event) => {
   fs_upgrade(
     "functionalstorage:gold_upgrade",
     "functionalstorage:diamond_upgrade",
-    "#forge:gems/diamond",
+    "minecraft:diamond",
     "#forge:storage_blocks/diamond",
     "#forge:chests/wooden"
   );

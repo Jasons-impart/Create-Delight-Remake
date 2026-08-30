@@ -1,0 +1,90 @@
+{
+    "slots": [
+        "bow/stave"
+    ],
+    "type": "tetra:basic_major_module",
+    "improvements": [
+        "tetra:bow/straight_stave/",
+        "tetra:bow/shared_stave/",
+        "tetra:bow/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": [
+                "tetra:wood/",
+                "tetra:stone/",
+                "tetra:metal/",
+                "tetra:gem/",
+                "tetra:bone/",
+                "tetra:rod/stick"
+            ],
+            "key": "sun_shooting_bow/",
+            "attributes": {
+                "tetra:draw_speed": 0.76,
+                "tetra:draw_strength": 2.5
+            },
+            "aspects": {
+                "bow": 2,
+                "breakable": 2
+            },
+            "effects": {
+                "spread": [
+                    0,
+                    99
+                ],
+                "more_mod_tetra:shooting_sun": 1
+            },
+            "durability": 371,
+            "extract": {
+                "primaryAttributes": {
+                    "tetra:draw_speed": 0.16,
+                    "tetra:draw_strength": 1.9
+                },
+                "tertiaryAttributes": {
+                    "tetra:draw_speed": -0.3,
+                    "tetra:draw_strength": 1.3
+                },
+                "primaryEffects": {
+                    "more_mod_tetra:shooting_sun": 4,
+                    "velocity": 5
+                },
+                "tertiaryEffects": {
+                    "more_mod_tetra:shooting_sun": 2,
+                    "velocity": 4
+                },
+                "durability": 1,
+                "integrity": -1,
+                "magicCapacity": 1,
+                "glyph": {
+                    "textureLocation": "tetra:textures/gui/wizard_glyphs.png",
+                    "textureX": 80,
+                    "textureY": 192
+                },
+                "availableTextures": [
+                    ""
+                ],
+                "models": [
+                    {
+                        "location": "more_mod_tetra:item/module/bow/more_mod_tetra/sun_shooting_bow"
+                    },
+                    {
+                        "type": "tetra:filtered_grid_texture",
+                        "location": "more_mod_tetra:item/module/bow/more_mod_tetra/sun_shooting_bow",
+                        "filter": "draw_0"
+                    },
+                    {
+                        "type": "tetra:filtered_grid_texture",
+                        "location": "more_mod_tetra:item/module/bow/more_mod_tetra/sun_shooting_bow",
+                        "filter": "draw_1"
+                    },
+                    {
+                        "type": "tetra:filtered_grid_texture",
+                        "location": "more_mod_tetra:item/module/bow/more_mod_tetra/sun_shooting_bow",
+                        "filter": "draw_2"
+                    }
+                ]
+            }
+        }
+    ]
+}

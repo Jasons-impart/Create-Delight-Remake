@@ -2,29 +2,31 @@
 
 Create-Delight Remake (齿轮盛宴) - A deep-modded Minecraft 1.20.1 Forge modpack focused on Create + Farmer's Delight with 5000+ custom recipes via KubeJS.
 
-**Core Stack**: Minecraft 1.20.1 | Forge 47.4.10 | KubeJS | Packwiz
+**Core Stack**: Minecraft 1.20.1 | Forge 47.4.16 | KubeJS | Packwiz
 
 > Module-specific details: `kubejs/AGENTS.md`, `CDC-mod-src/AGENTS.md`
-> Historical lessons: `lessons-learned.md`
-> Skills: `.agents/skills/` (OpenCode + Codex compatible)
+> Development knowledge: `docs/dev-knowledge/` (use `/dev-knowledge` for routing)
+> Historical lessons: `docs/lessons-learned.md`
+> Skills: `.agents/skills/` (OpenCode + Codex compatible; procedural workflows live here)
+> Skill routing: knowledge storage/design plan/how-to questions → `/dev-knowledge`; after implementation or non-obvious fixes → `/knowledge-check`
 
 ## STRUCTURE
 
 ```
 CD-master-dev/
 ├── kubejs/           # KubeJS scripts - MAIN DEV AREA (see kubejs/AGENTS.md)
-├── CDC-mod-src/      # Custom Java mod (see CDC-mod-src/AGENTS.md)
+├── CDC-mod-src/      # Create Delight Core git submodule (Java mod source; not packaged)
 ├── config/           # 50+ mod configs
 ├── defaultconfigs/   # First-run defaults copied to config/
-├── tacz/             # TACZ gun data: armorer packs & gun config
-├── hotai/            # HotAI mod data
-├── mods/             # Packwiz metadata (*.pw.toml), NOT mod JARs
+├── tacz/             # TACZ gun-pack Packwiz metadata & gun config
+├── hotai/            # hotai mod data
+├── mods/             # Packwiz metadata only (*.pw.toml); no tracked JARs
 ├── packwiz-files/    # Manually-managed mod JARs (CF-restricted, custom)
 ├── scripts/          # Utility scripts (sync, update-packwiz-meta)
 ├── .codex/           # Codex project hooks
 ├── docs/             # Project documentation and analysis notes
 ├── .github/          # CI/CD workflows
-└── pack.toml         # Pack metadata (ONLY version source)
+└── modpack.toml      # Pack metadata (ONLY version source)
 ```
 
 ## WHERE TO LOOK
@@ -38,10 +40,16 @@ CD-master-dev/
 | Custom loot/functions | `kubejs/data/` | Datapack overlay |
 | Mod configs | `config/{mod-name}.toml` | 50+ files |
 | FTB Quests | `config/ftbquests/quests/` | .snbt format |
-| Java mod dev | `CDC-mod-src/src/main/java/` | Forge mod project |
-| Version info | `pack.toml` | ONLY source - don't duplicate |
+| Java mod dev | `CDC-mod-src/src/main/java/` | Git submodule; commit source changes in Create-Delight-Core |
+| Version info | `modpack.toml` | ONLY source - don't duplicate |
+| Dev environment setup | `GettingStarted.md` | Self-contained pre-clone bootstrap |
 | Release workflow | `.github/workflows/release.yml` | Use `/release` skill |
-| Historical pitfalls | `lessons-learned.md` | Do not duplicate in AGENTS |
+| Packwiz asset workflow | `mods/`, `resourcepacks/`, `shaderpacks/`, `tacz/`, `packwiz-files/` | Use `/packwiz-assets` skill |
+| Minecraft MCP testing/repair | `.agents/skills/minecraft-mcp/SKILL.md` | Use `/minecraft-mcp`; keep source work in `D:\learnmod` |
+| Content/how-to knowledge | `docs/dev-knowledge/` | Use `/dev-knowledge` skill |
+| Design plans | `docs/plan/` | Use `/dev-knowledge` for routing |
+| Knowledge maintenance | `.agents/skills/knowledge-check/SKILL.md` | Use `/knowledge-check` skill |
+| Historical pitfalls | `docs/lessons-learned.md` | Do not duplicate in AGENTS |
 
 ## GLOSSARY
 
@@ -58,78 +66,54 @@ CD-master-dev/
 
 ## CONVENTIONS
 
+**Player-facing text**:
+- UI、tooltip、JEI、聊天提示、任务和物品说明只描述当前规则、条件、结果和操作；不得展示版本改动、迁移说明、设计理由或开发自述。
+- 任务文案优先回答“要做什么、怎么做、会得到什么”；只保留玩家必须识别的物品、方块和规则名，避免使用 Score、闭环、临时缺口、候选小类、市场机会等内部术语或平衡分析。
+
 **Git Workflow**:
 - Branch from `main`: `git checkout main && git pull && git checkout -b feat/xxx`
+- Run `scripts/install-git-hooks.ps1` after clone to install local `.git/hooks` shims that call tracked `scripts/.githooks`; agents should confirm this before Git update workflows.
+- 阅读、检索和核对 GitHub 上的 Issue、PR、评论、提交、Release、Actions 等信息必须使用 `gh` CLI，不要通过浏览器读取；只有用户明确要求浏览器操作时才例外。
 - Commit format: `[类型] 描述 (#PR号)` - types: `fix`, `feat`, `mod`, `dev`, `conf`
+- Commit messages must include a body; prefer Markdown-style structure in the body, such as short paragraphs, bullet lists, affected scope, and verification notes.
+- PR title/body use Chinese by default because reviewers and release notes are Chinese-first.
+- For multiline PR bodies from PowerShell, use a here-string or `--body-file`; `\n` is literal and renders broken Markdown on GitHub.
+- ❌ Never commit directly on `main`; create a feature branch and merge through PR because remote `main` is protected.
+- ❌ Never merge PRs yourself (`gh pr merge`, GitHub web/API merge, or auto-merge). Create PRs and wait for the user to manually merge unless the user explicitly asks you in the current conversation to merge a specific PR.
 - ❌ Never commit on merged feature branches
 - ❌ Never force push to main
 
 **Version Management**:
-- Version ONLY in `pack.toml` - CI auto-updates other configs
+- Version ONLY in `modpack.toml` - CI auto-updates other configs
 - Test builds: `test-*` branches → version appended with `-test-build-{n}`
 - Releases: `release*` branches
 
 **Mod Management (Packwiz)**:
-- `mods/`, `resourcepacks/`, `shaderpacks/` contain only `.pw.toml` metadata, NOT JARs/zip
-- CF-restricted/custom JARs/zip live in `packwiz-files/{mods,resourcepacks,shaderpacks}/`
-- `.pw.toml` for packwiz-files assets reference GitHub raw URLs pointing to `packwiz-files/`
-- To add/update/remove mods: use `scripts/update-packwiz-meta.ps1` (NOT manual JAR placement)
-- To sync all mod JARs locally for development: use `scripts/sync-packwiz-assets.ps1`
+- `mods/`, `resourcepacks/`, `shaderpacks/`, and `tacz/` contain `.pw.toml` metadata; downloaded runtime files are not tracked
+- CF-restricted/custom JARs/zip live in `packwiz-files/{mods,resourcepacks,shaderpacks,tacz}/`
+- TACZ gun-pack ZIP payloads must keep `assets/`, `data/`, and pack metadata at the archive root; use `scripts/update-tacz-packwiz-meta.ps1` for conversion
+- For add/update/remove/sync/CDC artifact details, use `.agents/skills/packwiz-assets/SKILL.md` because the workflow is procedural and changes together.
+- `scripts/update-packwiz-meta.ps1 -FullReconcile` is category-wide local-asset reconciliation, not the default for one known CurseForge asset; use `scripts/add-packwiz-target.ps1` to add one and `scripts/update-packwiz-target.ps1` to update one.
+- Do not run `scripts/update-packwiz-meta.ps1 -FullReconcile` on short-lived feature branches: it may rewrite `packwiz-files` raw URLs to the current branch. Use it on `main` or a long-lived LTS/release-maintenance branch, or explicitly preserve `main` raw URLs.
+- After any pull/rebase/merge, compare pre-update target commit..new HEAD; if `mods|resourcepacks|shaderpacks|tacz/**/*.pw.toml` or `packwiz-files/**` changed, run `scripts/sync-packwiz-assets.ps1` because runtime payloads are local.
+- `pack.toml`/`index.toml` are generated from `modpack.toml`; don't commit them
+- `CDC-mod-src/` is a git submodule and must stay out of Packwiz artifacts because packages ship pack files, not Java source trees
+- GitHub Pages mod classification data (`docs/mods-data.js`) is expensive to refresh; do not update it during ordinary mod changes unless the user explicitly asks for a manual refresh.
 
 ## ANTI-PATTERNS
 
 - ❌ `rm -rf`, `del /S /Q` on config/, kubejs/, mods/, hotai/, PCL/
 - ❌ Batch delete `*.json`, `*.snbt` in core dirs
-- ❌ Overwrite `index.toml`, `ModList*.md`
+- ❌ Overwrite `ModList*.md`
 - ❌ `e.remove()` or `e.removeById()` - use `remove_recipes_id(e, [...])`
 - ❌ Duplicate version in other files
 - ❌ Treat runtime dirs (`logs/`, `crash-reports/`, `saves/`, `screenshots/`, `simplebackups/`, `tmp-*`) as source
 
-## COMMANDS
-
-```bash
-# Packwiz
-packwiz refresh                 # Update index
-packwiz curseforge export       # Build modpack
-
-# Update packwiz metadata after manually changing mod JARs
-./update-packwiz-meta.bat       # Windows wrapper
-./scripts/update-packwiz-meta.ps1 -Proxy "http://127.0.0.1:7890"  # Direct PS1
-
-# Sync all mod JARs locally for development
-./scripts/sync-packwiz-assets.ps1
-
-# KubeJS hot reload (in-game)
-/kubejs reload server_scripts
-/reload                         # Reload tags/loot
-
-# CDC mod build
-cd CDC-mod-src && ./gradlew build --no-daemon
-# Output: build/libs/CDC-mod-src-*.jar (use non-all version)
-```
-
-## KNOWLEDGE BASE MAINTENANCE
-
-These rules ensure this knowledge base stays effective. Violating them degrades agent performance.
-
-- **Root AGENTS.md ≤150 lines** — If over limit, prune stale entries or move content to subdirectory files
-- **Subdirectory AGENTS.md ≤80 lines** — Keep focused on that domain only
-- **No duplication** — Each fact exists in exactly ONE file. Others reference it. Duplicate information = conflicting information
-- **Concise > verbose** — One sentence per fact. No prose. Agents ignore buried instructions
-- **Include the Why** — Non-obvious rules must explain the reason (agents follow rules better when they understand the failure mode)
-- **Stale > harmful** — Outdated instructions are worse than no instructions. Update when architecture changes, prune aggressively
-- **Iterate, don't upfront** — Add rules only when agent makes a repeated mistake. Remove rules agent always follows correctly
-- **Lessons go to `lessons-learned.md`** — Never inline long historical entries in AGENTS.md
-- **After fixing a non-obvious bug** — Add entry to `lessons-learned.md` (use `/knowledge-check` skill for guidance)
-- **Validation** — Codex `Stop` hook runs `scripts/validate-knowledge-base.ps1` to catch line-limit and stale-path failures
-- **Candidate report** — Codex `Stop` hook writes `tmp-opencode/knowledge-candidate-report.md`; it is advisory only and never edits knowledge files
-- **Process notes** — When a task hits a non-obvious failure or workaround, append a temporary note with `scripts/add-knowledge-note.ps1`; the candidate report routes it for `/knowledge-check`
-- **Candidate decision** — Apply/reject candidate reports with `scripts/resolve-knowledge-candidate.ps1`; process-note candidates need user acceptance unless knowledge maintenance was explicitly requested
-
 ## NOTES
 
-- **AGENTS.md 是本地开发知识库，已加入 .gitignore，不需要推送到远程仓库**
+- **AGENTS.local.md 存放个人/机器特有配置，默认忽略，不提交**
 - **`.agents/skills/` 存放技能文件，OpenCode 和 Codex 都能自动发现**
-- Client-only mods → add to `.clientonlymodlist` (server startup required)
-- Server-only mods → add to `.serveronlymodlist`
+- Default client options source is `.options.txt`; release packaging renames it to `options.txt`, so do not rely on ignored runtime `options.txt` for pack defaults.
+- Client-only mods → set `side = "client"` in the corresponding `mods/*.pw.toml`
+- Server-only mods → set `side = "server"` in the corresponding `mods/*.pw.toml`
 - Language files validated by `.vscode/probe.lang-schema.json`

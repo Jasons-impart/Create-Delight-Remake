@@ -1,0 +1,49 @@
+{
+  "type": "tetra:default",
+  "key": "tetra.stats.attributeslib_crit_damage",
+  "contexts": [
+    "tetra:workbench",
+    "tetra:holosphere"
+  ],
+  "min": 0,
+  "max": 300,
+  "stat": {
+    "type": "tetra:multiply",
+    "factor": 100,
+    "stats": [
+      {
+        "type": "tetra:attribute",
+        "attribute": "attributeslib:crit_damage",
+        "ignoreBase": true
+      }
+    ]
+  },
+  "label": {
+    "type": "tetra:basic",
+    "format": "percentage_decimal",
+    "diff_format": "percentage_decimal"
+  },
+  "tooltip": {
+    "type": "tetra:default",
+    "key": "tetra.stats.attributeslib_crit_damage.tooltip",
+    "stats": [
+      {
+        "type": "tetra:multiply",
+        "factor": 100,
+        "stats": [
+          {
+            "type": "tetra:attribute",
+            "attribute": "attributeslib:crit_damage",
+            "ignoreBase": true
+          }
+        ]
+      }
+    ],
+    "formatters": [
+      {
+        "type": "tetra:basic",
+        "format": "single_decimal"
+      }
+    ]
+  }
+}

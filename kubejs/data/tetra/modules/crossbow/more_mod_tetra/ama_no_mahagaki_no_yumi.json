@@ -1,0 +1,66 @@
+{
+    "slots": [
+        "crossbow/stave"
+    ],
+    "type": "tetra:basic_major_module",
+    "improvements": [
+        "tetra:crossbow/stave/",
+        "tetra:crossbow/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": [
+                "tetra:wood/",
+                "tetra:rod/stick",
+                "tetra:metal/"
+            ],
+            "key": "ama_no_mahagaki_no_yumi/",
+            "attributes": {
+                "tetra:draw_speed": 1.3,
+                "tetra:draw_strength": 5
+            },
+            "aspects": {
+                "crossbow": 2,
+                "breakable": 2
+            },
+            "durability": 537,
+            "extract": {
+                "primaryAttributes": {
+                    "tetra:draw_speed": 0.26,
+                    "tetra:draw_strength": 2.5
+                },
+                "tertiaryAttributes": {
+                    "tetra:draw_speed": -0.15,
+                    "tetra:draw_strength": 2
+                },
+                "primaryEffects": {
+                    "more_mod_tetra:defeat_demons": 6,
+                    "velocity": 2,
+                    "piercing": 0.5
+                },
+                "tertiaryEffects": {
+                    "more_mod_tetra:defeat_demons": 2.5,
+                    "velocity": 4,
+                    "piercing": 0.5
+                },
+                "durability": 1,
+                "integrity": -1,
+                "magicCapacity": 1,
+                "glyph": {
+                    "textureLocation": "tetra:textures/gui/wizard_glyphs.png",
+                    "textureX": 80,
+                    "textureY": 176
+                },
+                "availableTextures": [
+                    ""
+                ],
+                "models": [
+                    {
+                        "location": "more_mod_tetra:item/module/crossbow/more_mod_tetra/ama_no_mahagaki_no_yumi"
+                    }
+                ]
+            }
+        }
+    ]
+}

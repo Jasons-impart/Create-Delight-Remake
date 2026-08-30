@@ -6,7 +6,10 @@
       "forge:attack_range": 0.5
     },
     "effects": {
-      "reaching": [ 6, 0.25 ]
+      "reaching": [
+        6,
+        0.25
+      ]
     },
     "models": [
       {

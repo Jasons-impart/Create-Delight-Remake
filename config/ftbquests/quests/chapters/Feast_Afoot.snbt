@@ -38,28 +38,6 @@
 			y: 3.5d
 		}
 		{
-			dependencies: ["67A7A1B0700FFCA3"]
-			id: "2AD38E54F361CFD2"
-			shape: "rsquare"
-			subtitle: "至此踏入本包种田之旅"
-			tasks: [{
-				id: "723AEC0D38887C6D"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "minecraft:hoes"
-					}
-				}
-				title: "任意锄"
-				type: "item"
-			}]
-			title: "终极奉献"
-			x: -0.5d
-			y: 1.0d
-		}
-		{
-			dependencies: ["2AD38E54F361CFD2"]
 			icon: "eclipticseasons:calendar"
 			id: "2AA39C8B473231E0"
 			rewards: [{
@@ -75,7 +53,7 @@
 				type: "checkmark"
 			}]
 			title: "季节更迭"
-			x: -2.5d
+			x: -6.0d
 			y: -1.0d
 		}
 		{
@@ -98,8 +76,8 @@
 				}
 				type: "item"
 			}]
-			x: -1.0d
-			y: -1.0d
+			x: -9.0d
+			y: -2.75d
 		}
 		{
 			dependencies: ["2AA39C8B473231E0"]
@@ -115,8 +93,8 @@
 				item: "eclipticseasons:growth_detector"
 				type: "item"
 			}]
-			x: -4.0d
-			y: -1.0d
+			x: -7.5d
+			y: -2.75d
 		}
 		{
 			dependencies: ["2AA39C8B473231E0"]
@@ -143,8 +121,8 @@
 				type: "stat"
 				value: 1
 			}]
-			x: -4.0d
-			y: -2.5d
+			x: -6.0d
+			y: -2.75d
 		}
 		{
 			dependencies: ["2AA39C8B473231E0"]
@@ -171,15 +149,16 @@
 				value: 1
 			}]
 			title: "季节系统与地区"
-			x: -2.5d
-			y: -2.5d
+			x: -4.5d
+			y: -2.75d
 		}
 		{
 			dependencies: ["2AA39C8B473231E0"]
 			description: [
 				"&e品质系统&r是本整合包对于&e食物等阶的划分系统&r，品质越高，食物提供的&e饱食度&r和&e效果强度&r&4越高&r、&e效果持续时间&r也会&4延长&r"
 				"&a&n&l如何制作品质食物&r：需要&e对应品质&r的食物原料进行制作。所用的平均品质越高，产出的食物品质也会越高。"
-				"&a&n&l如何生产品质食物原料&r：只有&4沃土（以及各种变种）&r种植作物可有&e概率产出高一级品质种子&r，种植后可产出对应品质作物。作物生长速度越快，使用的沃土越高级，产出高品质的作物概率越高。作物的生长速度使用生长检测器查看。需要注意的是：&4仅可手工&r收割，所有&4非手动操作的收割均不可产生品质。"
+				"&a&n&l如何生产品质食物原料&r：只有&4沃土（以及各种变种）&r种植作物可有&e概率产出高一级品质种子&r，种植后可产出对应品质作物。作物生长速度越快，使用的沃土越高级，产出高品质作物的概率越高。作物的生长速度可使用生长检测器查看。"
+				"&a&n&l手动与自动收割&r：普通机械收割默认不会产生品质；进入黄铜时代后，可以用&e生命质、生命质校准器与品控收割控制器&r，让 Create 收割机和动态结构机械手获得品质判定资格。"
 				"&r&a&n&l关于品质的作物&r：每一个级别都能够一定程度的无视季节与湿度的影响。如果要量化的话，铁的效果是1，金的效果是2，钻石的效果是4。"
 			]
 			id: "6BC7D3231848B305"
@@ -213,8 +192,8 @@
 				type: "stat"
 				value: 1
 			}]
-			x: -1.0d
-			y: -2.5d
+			x: -1.5d
+			y: -1.0d
 		}
 		{
 			dependencies: ["0F16A415E991AC8E"]
@@ -230,8 +209,27 @@
 				item: "eclipticseasons:calendar"
 				type: "item"
 			}]
-			x: -2.0d
-			y: -4.0d
+			x: -3.75d
+			y: -4.25d
+		}
+		{
+			dependencies: ["25007076169CFA2B"]
+			icon: "eclipticseasons:season_sensor"
+			id: "54E0D9D3F08A24C1"
+			rewards: [{
+				id: "63CB0A55E8DF3402"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "可检测&e自然季节&r或&e季节信号&r，并用红石输出检测结果"
+			tasks: [{
+				id: "3E2996530294A49D"
+				item: "eclipticseasons:season_sensor"
+				type: "item"
+			}]
+			title: "季节传感器"
+			x: -3.25d
+			y: -5.75d
 		}
 		{
 			dependencies: ["0F16A415E991AC8E"]
@@ -241,14 +239,14 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "右键&e悬挂告示牌&r可生成&e季节任务告示&r，提交季节&e对应作物&r（&4需全部放在物品栏中&r）可&e获得心髓&r；右键&e温室之心室&r则会启动季节仪式"
+			subtitle: "查看&e季节任务告示&r并提交季节&e对应作物&r（&4需全部放在物品栏中&r）可&e获得心髓&r；右键&e温室之心室&r则会启动季节仪式"
 			tasks: [{
 				id: "19B401FDD97EE863"
 				item: "eclipticseasons:seasonal_prayer_scroll"
 				type: "item"
 			}]
-			x: -3.0d
-			y: -4.0d
+			x: -5.25d
+			y: -4.25d
 		}
 		{
 			dependencies: ["7AC491B4D20A3909"]
@@ -264,8 +262,8 @@
 				item: "eclipticseasons:hygrometer"
 				type: "item"
 			}]
-			x: -4.0d
-			y: -4.0d
+			x: -6.75d
+			y: -4.25d
 		}
 		{
 			dependencies: ["1453031D685ED650"]
@@ -276,7 +274,7 @@
 				type: "item"
 			}]
 			shape: "square"
-			subtitle: "&e加湿器&r使用时&4消耗水增加&91级湿度\\n&e除湿机&r使用时&4消耗应力降低&91级湿度"
+			subtitle: "本包的&e加湿器&r消耗水增加&91级湿度\\n本包的&e除湿机&r消耗应力降低&91级湿度"
 			tasks: [
 				{
 					id: "28DF13DE7B5E6C83"
@@ -290,8 +288,39 @@
 				}
 			]
 			title: "湿度调节"
-			x: -4.0d
-			y: -5.5d
+			x: -5.5d
+			y: -7.5d
+		}
+		{
+			dependencies: ["1453031D685ED650"]
+			description: [
+				"&e恒湿水箱&r可提高温室湿度，&e温室除湿器&r悬挂时可降低温室湿度。"
+				"它们是节气自带的低门槛湿度方案；需要接入机械动力自动化时，再使用本包的&e加湿器&r与&e除湿机&r。"
+			]
+			icon: "eclipticseasons:humidity_tank"
+			id: "5A80D9503D63E5C7"
+			rewards: [{
+				id: "5F37AA7483AFD796"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "节气自带的温室湿度调节方块，可与本包机械路线共存"
+			tasks: [
+				{
+					id: "7514F7C26D00A559"
+					item: "eclipticseasons:humidity_tank"
+					type: "item"
+				}
+				{
+					id: "4C34B7E70638659D"
+					item: "eclipticseasons:dehumidifier"
+					type: "item"
+				}
+			]
+			title: "节气湿度方块"
+			x: -7.0d
+			y: -7.5d
 		}
 		{
 			dependencies: ["6BC7D3231848B305"]
@@ -302,8 +331,8 @@
 				item: "createdelight:sell_bin"
 				type: "item"
 			}]
-			x: -1.0d
-			y: -4.0d
+			x: -2.5d
+			y: -2.75d
 		}
 		{
 			dependencies: [
@@ -317,7 +346,7 @@
 				"&l&b生效条件&r：只有在&e温室&r中湿度调节与季节调节才会生效"
 				"&l&b季节仪式&r：使用&e祈年令&r右键&e温室之心室&r会按所在地&6实际农业季节&r启动仪式，&4仪式不能在室内进行&r"
 				"&l&b季节调节&r：使用&e已完成的温室之心&r模拟对应季节，作用范围以温室之心为中心半径&e16格&r以内的&c方形&r空间"
-				"&l&b湿度调节&r：使用&e加湿器&r或&e除湿机&r进行加湿或除湿，作用范围以加湿器&e下方&c非空气&r方块为中心半径&e4格&r以内的&c方形&r空间"
+				"&l&b湿度调节&r：节气的&e恒湿水箱&r/&e温室除湿器&r可直接调节湿度；本包的&e加湿器&r/&e除湿机&r则用于机械自动化，作用范围以机器&e下方&c非空气&r方块为中心半径&e4格&r以内的&c方形&r空间"
 			]
 			id: "1453031D685ED650"
 			rewards: [{
@@ -336,8 +365,8 @@
 				type: "stat"
 				value: 1
 			}]
-			x: -2.5d
-			y: -5.5d
+			x: -5.0d
+			y: -5.75d
 		}
 		{
 			dependencies: ["1453031D685ED650"]
@@ -361,8 +390,8 @@
 				type: "item"
 			}]
 			title: "温室搭建机"
-			x: -5.0d
-			y: -7.0d
+			x: -4.0d
+			y: -7.5d
 		}
 		{
 			dependencies: [
@@ -373,10 +402,10 @@
 			]
 			dependency_requirement: "one_completed"
 			description: [
-				"要获取最初的几个温室心髓的话，可以看看节气的季节任务告示系统。"
+				"要获取最初的几个温室心髓的话，可以看看节气的季节任务告示系统，或留意流浪商人的交易。"
 				"温室之心室是&e祈年令&r与&e温室心髓&r的承载容器，也是后续季节调节系统的核心入口。"
 				"若直接对温室之心室使用对应&e心髓&r，则会跳过仪式，直接得到完成态温室之心。"
-				"当温室之心所在地区&e处于对应的实际季节&r时，它会发出红石信号。为什么叫实际季节？前文中对于地区的介绍有相关内容。"
+				"当温室之心所在地区&e处于对应的实际季节&r时，它会发出红石信号；需要更灵活地检测自然季节或季节信号时，可使用&e季节传感器&r。"
 			]
 			id: "020BFCFD744B65AE"
 			rewards: [{
@@ -393,8 +422,8 @@
 				type: "item"
 			}]
 			title: "季节调节"
-			x: -1.0d
-			y: -7.5d
+			x: 1.5d
+			y: -8.0d
 		}
 		{
 			dependencies: ["020BFCFD744B65AE"]
@@ -423,8 +452,8 @@
 				value: 1
 			}]
 			title: "祈年仪式"
-			x: -1.0d
-			y: -10.5d
+			x: 1.5d
+			y: -12.5d
 		}
 		{
 			dependencies: ["020BFCFD744B65AE"]
@@ -434,14 +463,14 @@
 				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
-			subtitle: "通过完成&e祈年令&r中的&a春季任务&r获得"
+			subtitle: "通过完成&a春季任务&r或流浪商人交易获得"
 			tasks: [{
 				id: "7D568D13B23DB183"
 				item: "eclipticseasons:spring_greenhouse_essence"
 				type: "item"
 			}]
-			x: -3.0d
-			y: -7.5d
+			x: -1.5d
+			y: -9.75d
 		}
 		{
 			dependencies: ["020BFCFD744B65AE"]
@@ -451,14 +480,14 @@
 				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
-			subtitle: "通过完成&4祈年令&r中的&e夏季任务&r获得"
+			subtitle: "通过完成&e夏季任务&r或流浪商人交易获得"
 			tasks: [{
 				id: "28D31DB3E98AF6D5"
 				item: "eclipticseasons:summer_greenhouse_essence"
 				type: "item"
 			}]
-			x: -2.5d
-			y: -9.0d
+			x: 0.0d
+			y: -10.75d
 		}
 		{
 			dependencies: ["020BFCFD744B65AE"]
@@ -468,14 +497,14 @@
 				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
-			subtitle: "通过完成&4祈年令&r中的&6秋季任务&r获得"
+			subtitle: "通过完成&6秋季任务&r或流浪商人交易获得"
 			tasks: [{
 				id: "5305C83415E52A4C"
 				item: "eclipticseasons:autumn_greenhouse_essence"
 				type: "item"
 			}]
-			x: 0.5d
-			y: -9.0d
+			x: 3.0d
+			y: -10.75d
 		}
 		{
 			dependencies: ["2F5888A5C4047E87"]
@@ -495,8 +524,8 @@
 				to_observe: "eclipticseasons:spring_greenhouse_core"
 				type: "observation"
 			}]
-			x: -4.5d
-			y: -7.5d
+			x: -3.0d
+			y: -9.75d
 		}
 		{
 			dependencies: ["3B6F81873856912B"]
@@ -516,8 +545,8 @@
 				to_observe: "eclipticseasons:summer_greenhouse_core"
 				type: "observation"
 			}]
-			x: -4.0d
-			y: -9.0d
+			x: -1.0d
+			y: -12.0d
 		}
 		{
 			dependencies: ["2834AC4EEB6F9992"]
@@ -537,8 +566,8 @@
 				to_observe: "eclipticseasons:autumn_greenhouse_core"
 				type: "observation"
 			}]
-			x: 2.0d
-			y: -9.0d
+			x: 4.0d
+			y: -12.0d
 		}
 		{
 			dependencies: ["2F7B2AE556D0109D"]
@@ -558,11 +587,10 @@
 				to_observe: "eclipticseasons:winter_greenhouse_core"
 				type: "observation"
 			}]
-			x: 2.5d
-			y: -7.5d
+			x: 6.0d
+			y: -9.75d
 		}
 		{
-			dependencies: ["2AD38E54F361CFD2"]
 			icon: "farmersdelight:rich_soil"
 			id: "1FAE95DDB868B787"
 			subtitle: "使用各种沃土可产出高品质作物"
@@ -571,7 +599,7 @@
 				title: "肥沃的土壤可以收获硕果"
 				type: "checkmark"
 			}]
-			x: 1.0d
+			x: 4.5d
 			y: -1.0d
 		}
 		{
@@ -583,8 +611,8 @@
 				item: "farmersdelight:rich_soil"
 				type: "item"
 			}]
-			x: 0.0d
-			y: -5.5d
+			x: 3.0d
+			y: -5.75d
 		}
 		{
 			dependencies: ["771664DD2542ABFA"]
@@ -601,8 +629,8 @@
 				item: "mynethersdelight:resurgent_soil"
 				type: "item"
 			}]
-			x: 1.0d
-			y: -5.5d
+			x: 4.5d
+			y: -5.75d
 		}
 		{
 			dependencies: ["226DB249DC0C5959"]
@@ -613,8 +641,8 @@
 				item: "createdelightcore:luna_soil"
 				type: "item"
 			}]
-			x: 2.5d
-			y: -5.5d
+			x: 6.0d
+			y: -5.75d
 		}
 		{
 			dependencies: ["4FC5D1EC503E6579"]
@@ -624,8 +652,8 @@
 				item: "farmersdelight:organic_compost"
 				type: "item"
 			}]
-			x: 0.0d
-			y: -4.0d
+			x: 3.0d
+			y: -4.25d
 		}
 		{
 			dependencies: ["4FC5D1EC503E6579"]
@@ -635,8 +663,8 @@
 				item: "mynethersdelight:letios_compost"
 				type: "item"
 			}]
-			x: 1.0d
-			y: -4.0d
+			x: 4.5d
+			y: -4.25d
 		}
 		{
 			dependencies: ["020BFCFD744B65AE"]
@@ -646,14 +674,14 @@
 				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
-			subtitle: "通过完成&4祈年令&r中的&9冬季任务&r获得"
+			subtitle: "通过完成&9冬季任务&r或流浪商人交易获得"
 			tasks: [{
 				id: "41241F8E1A40B48D"
 				item: "eclipticseasons:winter_greenhouse_essence"
 				type: "item"
 			}]
-			x: 1.0d
-			y: -7.5d
+			x: 4.5d
+			y: -9.75d
 		}
 		{
 			dependencies: ["6B41CA0DD006F78C"]
@@ -1463,8 +1491,8 @@
 				item: "farmersdelight:straw"
 				type: "item"
 			}]
-			x: 1.0d
-			y: -2.5d
+			x: 4.5d
+			y: -2.75d
 		}
 		{
 			dependencies: ["4FC5D1EC503E6579"]
@@ -1494,8 +1522,8 @@
 				item: "farmersdelight:rope"
 				type: "item"
 			}]
-			x: 2.5d
-			y: -2.5d
+			x: 6.25d
+			y: -2.75d
 		}
 		{
 			dependencies: ["4466CFB87B81D79F"]
@@ -1520,11 +1548,12 @@
 				item: "farmersdelight:safety_net"
 				type: "item"
 			}]
-			x: 2.5d
-			y: -1.0d
+			x: 8.0d
+			y: -2.75d
 		}
 		{
 			dependencies: ["67A7A1B0700FFCA3"]
+			description: ["本包的腌制罐有类似于&e工作盆&r的“开口”机制，可方便地导出产物"]
 			id: "2D31949080435F1A"
 			shape: "rsquare"
 			subtitle: "我们来腌制点东西"
@@ -1795,8 +1824,8 @@
 				}
 			]
 			title: "多样炉灶"
-			x: 5.5d
-			y: 0.0d
+			x: 6.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["10FDC3EC0D8AF9CD"]
@@ -1941,12 +1970,12 @@
 		{
 			dependencies: ["6BC7D3231848B305"]
 			description: [
-				"当你在某些情况下不想要品质物品时，可以使用这些物品来&e移除物品的品质&r。"
-				"前者使用后能&e移除物品栏内所有带有品质物品的品质&r，并且返还一些钱币，后者向其中&e输入带有品质的物品&r并通入应力即可消除物品的品质。"
+				"&e品质吸收器&r只处理物品栏内指定的品质原材料：保留物品本体、移除品质，并按铁/金/钻品质分别返还 &b1/3/8&r 个生命质。其他品质食物和加工品不会被处理。"
+				"&e动力砂轮&r只负责自动移除品质并保留普通物品，不会产出生命质。需要回收生命质时，应使用品质吸收器或后续的生命质萃取仓。"
 			]
 			id: "4F7E45FFFC164354"
 			min_required_tasks: 1
-			subtitle: "玩家移除与自动化移除"
+			subtitle: "保留物品，或回收它承载的品质"
 			tasks: [
 				{
 					id: "4F9904ABB52639B5"
@@ -1959,9 +1988,84 @@
 					type: "item"
 				}
 			]
-			title: "移除物品的品质"
-			x: 0.0d
-			y: -2.5d
+			title: "品质回收与降级"
+			x: -0.5d
+			y: -2.75d
+		}
+		{
+			dependencies: ["4F7E45FFFC164354"]
+			description: [
+				"&e生命质萃取仓&r是品质原材料回收的自动化方案。它会&e消耗指定品质原材料本体&r，并按铁/金/钻品质分别产出 &b1/3/6&r 个生命质。加工品即使带有品质，也不会被机器处理。"
+				"机器每 &e200 tick&r 尝试处理一次，每批最多处理 &e8&r 个物品。自动萃取的钻石品质收益低于手动吸收器，换取的是可持续接入物流的能力。"
+			]
+			id: "17190E279A38F102"
+			shape: "gear"
+			tasks: [{
+				id: "362F89591FFC8AB7"
+				item: "createdelight:life_matter_extractor"
+				type: "item"
+			}]
+			title: "自动萃取生命质"
+			x: -1.5d
+			y: -4.25d
+		}
+		{
+			dependencies: ["4F7E45FFFC164354"]
+			description: [
+				"把&e品控收割控制器&r安装在 Create 动态结构上，再用生命质校准器右键安装档位，并用生命质右键补充内部储量。控制器最多储存 &e512&r 个生命质。"
+				"控制器存在时，收割机会只使用控制器内的校准器与生命质，不再误吃动态结构普通库存里的生命质。空手蹲下右键可取出校准器，比较器可读取剩余生命质比例。"
+				"装有控制器的 Create 收割机与动态结构机械手会在每次成熟作物收割时消耗生命质并进行品质判定；固定式机械手不属于这条品控收割链。"
+				"在农场停靠点放置&e生命质注入器&r，并让输出方向对准前方约 3 格内的车载控制器。注入器每 5 tick 最多补充 16 个生命质，红石信号可以暂停注入。"
+			]
+			id: "2FB93D4CB36D134D"
+			shape: "rsquare"
+			size: 1.25d
+			tasks: [
+				{
+					id: "0F11DFBF970A028D"
+					item: "createdelightcore:quality_harvest_controller"
+					type: "item"
+				}
+				{
+					id: "04F69D780C474679"
+					item: "createdelight:quality_harvest_calibrator_tier_1"
+					type: "item"
+				}
+				{
+					id: "30571D4274734E42"
+					item: "createdelightcore:life_matter_injector"
+					type: "item"
+				}
+			]
+			title: "车载品控与停靠补给"
+			x: 0.25d
+			y: -4.25d
+		}
+		{
+			dependencies: ["2FB93D4CB36D134D"]
+			description: [
+				"生命质校准器决定每次收割的消耗、品质上限与机器品质倍率。控制器中一次只能安装一个校准器；兼容模式下若库存中存在多个档位，则以最高档为准。"
+				"&fI 级&r：消耗 &e2&r，最高铁品质，倍率 0.25；&6II 级&r：消耗 &e3&r，最高金品质，倍率 0.45；&bIII 级&r：消耗 &e5&r，最高钻石品质，倍率 0.70。"
+				"&6II 级&r需要将 I 级校准器反复安装精密构件与普通基因种子、注入灵质并压制定型；&bIII 级&r则必须围绕 II 级校准器进行 5×5 动力合成。"
+				"高档校准器需要更好的农田、季节与湿度环境才能发挥价值；它们提高的是机器参与品质判定的能力，并不保证每次收割都产出品质。"
+			]
+			id: "0C1B13DC67D309E4"
+			shape: "gear"
+			tasks: [
+				{
+					id: "059D237966634E04"
+					item: "createdelight:quality_harvest_calibrator_tier_2"
+					type: "item"
+				}
+				{
+					id: "70F8F82FCE4FB3D7"
+					item: "createdelight:quality_harvest_calibrator_tier_3"
+					type: "item"
+				}
+			]
+			title: "提升自动收割的品质上限"
+			x: 0.25d
+			y: -6.0d
 		}
 		{
 			dependencies: ["4FC5D1EC503E6579"]
@@ -1972,8 +2076,99 @@
 				item: "createdelightcore:phantom_compost"
 				type: "item"
 			}]
-			x: 2.5d
-			y: -4.0d
+			x: 6.0d
+			y: -4.25d
+		}
+		{
+			dependencies: ["67A7A1B0700FFCA3"]
+			id: "33C679A615377ADF"
+			subtitle: "锄地吧少年"
+			tasks: [{
+				id: "0929FB89418F90B7"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "minecraft:hoes"
+					}
+				}
+				title: "Any #minecraft:hoes"
+				type: "item"
+			}]
+			title: "任意锄头"
+			x: -0.5d
+			y: 1.0d
+		}
+		{
+			id: "4B42215B77F980EC"
+			subtitle: "卖鸡小子雷德（？"
+			tasks: [{
+				id: "0372444D8128727B"
+				item: "create_integrated_farming:roost"
+				type: "item"
+			}]
+			x: 6.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["4B42215B77F980EC"]
+			id: "31B589E54E598F32"
+			subtitle: "上好的鸡蛋，买些吧"
+			tasks: [{
+				id: "40E58FBD14DB2617"
+				item: "create_integrated_farming:chicken_roost"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["3CA964B6CCE41A2D"]
+			id: "1EF2F7A903A847C7"
+			shape: "rsquare"
+			subtitle: "可持续性的竭泽而渔"
+			tasks: [{
+				id: "6EE67B4585EDFE79"
+				item: "create_integrated_farming:fishing_net"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["7F49D3F72AC85F8D"]
+			id: "2EE4D90FD7E54C3B"
+			subtitle: "让烈焰人帮你掌勺"
+			tasks: [{
+				id: "0904E2AC60CB07B3"
+				item: {
+					Count: 1
+					id: "itemfilters:or"
+					tag: {
+						display: {
+							Name: "{\"text\":\"烹饪指南\",\"italic\":false}"
+						}
+						items: [
+							{
+								Count: 1b
+								id: "create_central_kitchen:cooking_guide"
+							}
+							{
+								Count: 1b
+								id: "create_central_kitchen:miners_cooking_guide"
+							}
+							{
+								Count: 1b
+								id: "centralvintage:pickling_guide"
+							}
+						]
+					}
+				}
+				type: "item"
+			}]
+			title: "烹饪指南"
+			x: 10.5d
+			y: 2.0d
 		}
 	]
 	title: "&5盛宴准备时！"

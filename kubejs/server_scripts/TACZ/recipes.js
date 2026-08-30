@@ -4,6 +4,7 @@ ServerEvents.recipes(e => {
         "tacz:gun_smith_table",
         "tacz:target"
     ])
+    remove_recipes_mod(e, ["applied_armorer", "create_armorer"])
     e.recipes.kubejs.shaped(
         'tacz:target',
         [

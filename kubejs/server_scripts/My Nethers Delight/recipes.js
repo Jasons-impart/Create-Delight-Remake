@@ -95,9 +95,9 @@ ServerEvents.recipes(e => {
        1.0, 100,
        "minecraft:bowl"
     ).id("createdelight:crafting/sizzling_pudding")
-    cutting_2(e, "mynethersdelight:ghasta_with_cream", [
-        ["mynethersdelight:ghasta_with_cream", 1, 0.9],
-        ["mynethersdelight:ghasta", 1]
+    cutting(e, "mynethersdelight:ghasta_with_cream", [
+        Item.of("mynethersdelight:ghasta_with_cream").withChance(0.9),
+        "mynethersdelight:ghasta"
     ])
 {
     let iner = 'mynethersdelight:boiled_egg'
@@ -164,6 +164,7 @@ ServerEvents.recipes(e => {
             '3x bakeries:flour'
         ], 600, "heated"
     ).id("createdelight:crafting/ghast_sourdough")
+    cutting(e, "mynethersdelight:bread_loaf", '5x bakeries:sliced_toast')
     create.cutting(
         '5x bakeries:sliced_toast',
         'mynethersdelight:bread_loaf'

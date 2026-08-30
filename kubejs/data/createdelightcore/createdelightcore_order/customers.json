@@ -1,0 +1,374 @@
+{
+  "dwarven_bakery": {
+    "entries": {
+      "bread": [
+        3,
+        2
+      ],
+      "sausage": [
+        2,
+        1
+      ],
+      "meat_dish": [
+        2,
+        2
+      ]
+    },
+    "max_count": 3,
+    "base_continue_rate": 0.4,
+    "rarity": "COMMON",
+    "chance": 0.9,
+    "reward": "createdelight:orders/dwarven_bakery",
+    "reward_count": 1,
+    "reward_money": 500
+  },
+  "dwarven_brewery": {
+    "entries": {
+      "western_wine": [
+        3,
+        2
+      ],
+      "meat_dish": [
+        2,
+        2
+      ],
+      "barbecue": [
+        2,
+        1
+      ]
+    },
+    "max_count": 3,
+    "base_continue_rate": 0.4,
+    "rarity": "UNCOMMON",
+    "chance": 0.85,
+    "reward": "createdelight:orders/dwarven_brewery",
+    "reward_count": 1,
+    "reward_money": 500
+  },
+  "dwarven_snack_hall": {
+    "entries": {
+      "cookie": [
+        2,
+        1
+      ],
+      "juice": [
+        2,
+        1
+      ],
+      "fried_food": [
+        1,
+        1
+      ]
+    },
+    "max_count": 3,
+    "base_continue_rate": 0.5,
+    "rarity": "COMMON",
+    "chance": 0.8,
+    "reward": "createdelight:orders/dwarven_snack_hall",
+    "reward_count": 1,
+    "reward_money": 500
+  },
+  "dwarven_feast_hall": {
+    "entries": {
+      "meat_dish": [
+        3,
+        2
+      ],
+      "bread": [
+        2,
+        1
+      ],
+      "staple_food": [
+        2,
+        2
+      ]
+    },
+    "max_count": 3,
+    "base_continue_rate": 0.4,
+    "rarity": "UNCOMMON",
+    "chance": 0.85,
+    "reward": "createdelight:orders/dwarven_feast_hall",
+    "reward_count": 1,
+    "reward_money": 500
+  },
+  "elven_tea_house": {
+    "entries": {
+      "tea": [
+        3,
+        2
+      ],
+      "fruit": [
+        2,
+        1
+      ],
+      "salad": [
+        2,
+        1
+      ]
+    },
+    "max_count": 3,
+    "base_continue_rate": 0.5,
+    "rarity": "UNCOMMON",
+    "chance": 0.8,
+    "reward": "createdelight:orders/elven_tea_house",
+    "reward_count": 1,
+    "reward_money": 500
+  },
+  "elven_patisserie": {
+    "entries": {
+      "dessert": [
+        3,
+        2
+      ],
+      "jam": [
+        2,
+        1
+      ],
+      "jello": [
+        2,
+        1
+      ]
+    },
+    "max_count": 3,
+    "base_continue_rate": 0.5,
+    "rarity": "UNCOMMON",
+    "chance": 0.75,
+    "reward": "createdelight:orders/elven_patisserie",
+    "reward_count": 1,
+    "reward_money": 500
+  },
+  "elven_sushi_bar": {
+    "entries": {
+      "sushi": [
+        3,
+        2
+      ],
+      "rice": [
+        2,
+        2
+      ],
+      "mixed_dish": [
+        2,
+        1
+      ]
+    },
+    "max_count": 3,
+    "base_continue_rate": 0.4,
+    "rarity": "RARE",
+    "chance": 0.7,
+    "reward": "createdelight:orders/elven_sushi_bar",
+    "reward_count": 1,
+    "reward_money": 500
+  },
+  "elven_juice_corner": {
+    "entries": {
+      "juice": [
+        3,
+        2
+      ],
+      "popsicle": [
+        2,
+        1
+      ],
+      "gummy": [
+        2,
+        1
+      ]
+    },
+    "max_count": 3,
+    "base_continue_rate": 0.5,
+    "rarity": "COMMON",
+    "chance": 0.8,
+    "reward": "createdelight:orders/elven_juice_corner",
+    "reward_count": 1,
+    "reward_money": 500
+  },
+  "monster_feast_hall": {
+    "entries": {
+      "monster": [
+        3,
+        2
+      ],
+      "fried_food": [
+        2,
+        1
+      ],
+      "ice_cream": [
+        1,
+        1
+      ]
+    },
+    "max_count": 3,
+    "base_continue_rate": 0.3,
+    "rarity": "RARE",
+    "chance": 0.7,
+    "reward": "createdelight:orders/monster_feast_hall",
+    "reward_count": 1,
+    "reward_money": 500
+  },
+  "monster_lab": {
+    "entries": {
+      "meat_dish": [
+        3,
+        2
+      ],
+      "sauce": [
+        2,
+        1
+      ],
+      "snack": [
+        2,
+        1
+      ]
+    },
+    "max_count": 3,
+    "base_continue_rate": 0.4,
+    "rarity": "RARE",
+    "chance": 0.75,
+    "reward": "createdelight:orders/monster_lab",
+    "reward_count": 1,
+    "reward_money": 500
+  },
+  "monster_canteen": {
+    "entries": {
+      "milkshake": [
+        3,
+        2
+      ],
+      "popsicle": [
+        2,
+        1
+      ],
+      "jello": [
+        2,
+        1
+      ]
+    },
+    "max_count": 3,
+    "base_continue_rate": 0.4,
+    "rarity": "UNCOMMON",
+    "chance": 0.7,
+    "reward": "createdelight:orders/monster_canteen",
+    "reward_count": 1,
+    "reward_money": 500
+  },
+  "monster_grill": {
+    "entries": {
+      "barbecue": [
+        3,
+        2
+      ],
+      "fried_food": [
+        2,
+        1
+      ],
+      "sausage": [
+        2,
+        1
+      ]
+    },
+    "max_count": 3,
+    "base_continue_rate": 0.3,
+    "rarity": "RARE",
+    "chance": 0.75,
+    "reward": "createdelight:orders/monster_grill",
+    "reward_count": 1,
+    "reward_money": 500
+  },
+  "human_cafe": {
+    "entries": {
+      "coffee": [
+        3,
+        2
+      ],
+      "cake": [
+        2,
+        1
+      ],
+      "sandwich": [
+        2,
+        1
+      ],
+      "juice": [
+        1,
+        1
+      ]
+    },
+    "max_count": 4,
+    "base_continue_rate": 0.4,
+    "rarity": "COMMON",
+    "chance": 0.85,
+    "reward": "createdelight:orders/human_cafe",
+    "reward_count": 1,
+    "reward_money": 500
+  },
+  "human_fast_food": {
+    "entries": {
+      "fast_food": [
+        3,
+        2
+      ],
+      "burger": [
+        2,
+        1
+      ],
+      "wrap": [
+        2,
+        1
+      ]
+    },
+    "max_count": 3,
+    "base_continue_rate": 0.4,
+    "rarity": "COMMON",
+    "chance": 0.85,
+    "reward": "createdelight:orders/human_fast_food",
+    "reward_count": 1,
+    "reward_money": 500
+  },
+  "human_bakery": {
+    "entries": {
+      "bread": [
+        3,
+        2
+      ],
+      "pie": [
+        2,
+        1
+      ],
+      "dessert": [
+        2,
+        1
+      ]
+    },
+    "max_count": 3,
+    "base_continue_rate": 0.4,
+    "rarity": "UNCOMMON",
+    "chance": 0.8,
+    "reward": "createdelight:orders/human_bakery",
+    "reward_count": 1,
+    "reward_money": 500
+  },
+  "human_tea_house": {
+    "entries": {
+      "tea": [
+        3,
+        2
+      ],
+      "milk_tea": [
+        2,
+        1
+      ],
+      "cookie": [
+        2,
+        1
+      ]
+    },
+    "max_count": 3,
+    "base_continue_rate": 0.5,
+    "rarity": "UNCOMMON",
+    "chance": 0.8,
+    "reward": "createdelight:orders/human_tea_house",
+    "reward_count": 1,
+    "reward_money": 500
+  }
+}

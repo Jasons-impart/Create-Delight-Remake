@@ -1,0 +1,8 @@
+name = "TaCZ addon"
+filename = "taczaddon-1.20.1-1.1.8-hotfix2-for-new-soph.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/taczaddon-1.20.1-1.1.8-hotfix2-for-new-soph.jar"
+hash-format = "sha256"
+hash = "edd2605f359285248901cd22077f67a960f163628b093b40c81b39e694926c04"

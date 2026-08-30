@@ -1,0 +1,38 @@
+﻿{
+    "key":  "electrum_ingot",
+    "category":  "metal",
+    "primary":  5.8,
+    "secondary":  2.9,
+    "tertiary":  4,
+    "durability":  410,
+    "integrityCost":  2,
+    "integrityGain":  5,
+    "magicCapacity":  208,
+    "toolLevel":  "minecraft:iron",
+    "toolEfficiency":  9,
+    "tints":  {
+                  "glyph":  "FFB114",
+                  "texture":  "FFB114"
+              },
+    "textures":  [
+                     "metal",
+                     "default"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "effects":  {
+                    "more_mod_tetra:defeat_demons":  10
+                },
+    "requiredTools":  {
+                          "hammer_dig":  "minecraft:stone"
+                      },
+    "contexts":  {
+                     "armor":  {
+                                   "effects":  {
+                                                   "more_mod_tetra:undead_protection":  6
+                                               }
+                               }
+                 },
+    "replace":  true
+}

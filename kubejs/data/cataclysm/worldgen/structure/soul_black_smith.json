@@ -1,0 +1,13 @@
+{
+  "type": "integrated_api:generic_structure",
+  "start_pool": "cataclysm:soul_black_smith/start_pool",
+  "size": 3,
+  "biomes": "#cataclysm:has_structure/soul_black_smith_biomes",
+  "step": "underground_structures",
+  "terrain_adaptation": "beard_box",
+  "start_height": {
+    "absolute": -32
+  },
+  "use_expansion_hack": false,
+  "spawn_overrides": {}
+}

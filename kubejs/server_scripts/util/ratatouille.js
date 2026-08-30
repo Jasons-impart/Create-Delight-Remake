@@ -8,21 +8,30 @@
 function freezing(event, ingredients, results, time) {
   time = time || 200
   event.recipes.ratatouille.freezing(results, ingredients).id(`createdelightcore:freezing/${results.split(":")[1]}`)
-  event.recipes.createdelightcore.fan_freezing(results, ingredients).id(`createdelightcore:fan_freezing/${ingredients.split(":")[1]}`)
+  dragonPlusFreezing(event, results, ingredients, `createdelightcore:fan_freezing/${ingredients.split(":")[1]}`)
   event.custom({type: "refurbished_furniture:freezer_solidifying", category: "blocks", ingredient:{item: ingredients}, result:{item: results}, time: time}).id(`refurbished_furniture:freezer_solidifying/${results.split(":")[1]}`)
+}
+
+function dragonPlusFreezing(event, results, ingredients, id) {
+  const ingredient = typeof ingredients === "string" ? { item: ingredients } : ingredients.toJson()
+  event.custom({
+    type: "create_dragons_plus:freezing",
+    ingredients: [ingredient],
+    results: [{ item: results }]
+  }).id(id)
 }
 /**
  * @param { Internal.RecipesEventJS } event 
  * @param { InputItem_ } input 
- * @param { OutputItem_[] } outputs // [output, count] | [output, count, chance]
+ * @param { OutputItem_[] } outputs // [0]主产物，[1]主产物（概率增产）, [2]副产物
  * @param { number } time // defult 200 ticks
  */
 function threshing(event, input, outputs, time) {
-  const [first, second] = outputs
+  time = time || 200
   event.recipes.ratatouille.threshing(outputs, input)
     .id(`createdelight:threshing/${input.split(":")[1]}`).processingTime(time)
-  event.recipes.farmersdelight.cutting(input, "#forge:tools/knives", [first, second])
-    .id(`createdelight:cutting/${input.split(":")[1]}`)
+  let cutting_outputs = [outputs[0], outputs[2]]
+  cutting(event, input, cutting_outputs)
 }
 /**
  * 

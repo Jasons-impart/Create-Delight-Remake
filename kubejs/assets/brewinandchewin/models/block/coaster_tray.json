@@ -1,0 +1,23 @@
+{
+  "credit": "Made with Blockbench",
+  "render_type": "minecraft:cutout",
+  "parent": "block/block",
+  "textures": {
+    "tray_bottom": "brewinandchewin:block/coaster_tray_bottom",
+    "tray_top": "brewinandchewin:block/coaster_tray"
+  },
+  "elements": [
+    {
+      "from": [1, 0, 1],
+      "to": [15, 1, 15],
+      "faces": {
+        "north": {"uv": [1, 12, 15, 13], "texture": "#tray_bottom"},
+        "east": {"uv": [1, 12, 15, 13], "texture": "#tray_bottom"},
+        "south": {"uv": [1, 12, 15, 13], "texture": "#tray_bottom"},
+        "west": {"uv": [1, 12, 15, 13], "texture": "#tray_bottom"},
+        "up": {"uv": [1, 1, 15, 15], "texture": "#tray_top"},
+        "down": {"uv": [1, 1, 15, 15], "texture": "#tray_bottom", "cullface": "down"}
+      }
+    }
+  ]
+}

@@ -7,13 +7,13 @@ let Difficulty = {}
  * @returns {number}
  */
 Difficulty.getPlayerRawValue = function(player) {
-    return $CrossPlatformStuff.INSTANCE.getPlayerDifficultyData(player).get().difficultyLevel
+    return global.CDServerJavaClasses.$CrossPlatformStuff.INSTANCE.getPlayerDifficultyData(player).get().difficultyLevel
 }
 
 Difficulty.setPlayerRawValue = function(player, number) {
     // Client.tell(number)
     global.difficultyCache = number
-    return $CrossPlatformStuff.INSTANCE.getPlayerDifficultyData(player).get().setDifficultyLevel(number)
+    return global.CDServerJavaClasses.$CrossPlatformStuff.INSTANCE.getPlayerDifficultyData(player).get().setDifficultyLevel(number)
 }
 
 Difficulty.getPlayerTier = function(player) {

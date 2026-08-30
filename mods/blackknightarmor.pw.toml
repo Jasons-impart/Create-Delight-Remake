@@ -1,0 +1,8 @@
+name = "Black Knight Armor Mod"
+filename = "blackknightarmor-1.0.3-20260322-1620-reobf.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/blackknightarmor-1.0.3-20260322-1620-reobf.jar"
+hash-format = "sha256"
+hash = "1f6eb5f06a0e41240de4c6d0e74f461ee8ed66a2c72b5fa800fe95fc743a4f08"

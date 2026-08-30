@@ -4255,6 +4255,440 @@
           ]
         }
       ]
+    },
+    {
+      "Type": "lightmanscurrency:item_trader",
+      "ID": "order_guild_trader",
+      "Name": "订单商会",
+      "OwnerName": "JSI宇宙第一无敌公司",
+      "Trades": [
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:unopened_order",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 3
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:order_seal",
+            "Count": 1,
+            "Tag": "{OrderSeal:\"human\"}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:order_seal",
+            "Count": 1,
+            "Tag": "{OrderSeal:\"elven\"}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:order_seal",
+            "Count": 1,
+            "Tag": "{OrderSeal:\"dwarven\"}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:order_seal",
+            "Count": 1,
+            "Tag": "{OrderSeal:\"monster\"}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:order_seal",
+            "Count": 1,
+            "Tag": "{OrderSeal:\"drink\"}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:order_seal",
+            "Count": 1,
+            "Tag": "{OrderSeal:\"dessert\"}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:order_seal",
+            "Count": 1,
+            "Tag": "{OrderSeal:\"staple\"}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:order_seal",
+            "Count": 1,
+            "Tag": "{OrderSeal:\"feast\"}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 4
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:order_clause",
+            "Count": 1,
+            "Tag": "{OrderClause:\"specialty_supply\"}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 4
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ]
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:order_clause",
+            "Count": 1,
+            "Tag": "{OrderClause:\"banquet_assortment\"}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ]
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:order_clause",
+            "Count": 1,
+            "Tag": "{OrderClause:\"small_premium\"}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 6
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ]
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:order_clause",
+            "Count": 1,
+            "Tag": "{OrderClause:\"bulk_purchase\"}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 8
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ]
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:order_clause",
+            "Count": 1,
+            "Tag": "{OrderClause:\"quality_inspection\"}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 7
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ]
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:order_clause",
+            "Count": 1,
+            "Tag": "{OrderClause:\"reputation_priority\"}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 6
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ]
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:order_clause",
+            "Count": 1,
+            "Tag": "{OrderClause:\"cash_settlement\"}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 6
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ]
+        },
+        {
+          "TradeType": "BARTER",
+          "SellItem": {
+            "ID": "createdelight:order_seal",
+            "Count": 1,
+            "Tag": "{OrderSeal:\"human\"}"
+          },
+          "BarterItem": {
+            "ID": "lightmanscurrency:ticket",
+            "Count": 1,
+            "Tag": "{TicketColor:14464140,TicketID:-10}"
+          }
+        },
+        {
+          "TradeType": "BARTER",
+          "SellItem": {
+            "ID": "createdelight:order_seal",
+            "Count": 1,
+            "Tag": "{OrderSeal:\"elven\"}"
+          },
+          "BarterItem": {
+            "ID": "lightmanscurrency:ticket",
+            "Count": 1,
+            "Tag": "{TicketColor:14464140,TicketID:-10}"
+          }
+        },
+        {
+          "TradeType": "BARTER",
+          "SellItem": {
+            "ID": "createdelight:order_seal",
+            "Count": 1,
+            "Tag": "{OrderSeal:\"dwarven\"}"
+          },
+          "BarterItem": {
+            "ID": "lightmanscurrency:ticket",
+            "Count": 1,
+            "Tag": "{TicketColor:14464140,TicketID:-10}"
+          }
+        },
+        {
+          "TradeType": "BARTER",
+          "SellItem": {
+            "ID": "createdelight:order_seal",
+            "Count": 1,
+            "Tag": "{OrderSeal:\"monster\"}"
+          },
+          "BarterItem": {
+            "ID": "lightmanscurrency:ticket",
+            "Count": 1,
+            "Tag": "{TicketColor:14464140,TicketID:-10}"
+          }
+        },
+        {
+          "TradeType": "BARTER",
+          "SellItem": {
+            "ID": "createdelight:order_seal",
+            "Count": 1,
+            "Tag": "{OrderSeal:\"drink\"}"
+          },
+          "BarterItem": {
+            "ID": "lightmanscurrency:ticket",
+            "Count": 1,
+            "Tag": "{TicketColor:14464140,TicketID:-10}"
+          }
+        },
+        {
+          "TradeType": "BARTER",
+          "SellItem": {
+            "ID": "createdelight:order_seal",
+            "Count": 1,
+            "Tag": "{OrderSeal:\"dessert\"}"
+          },
+          "BarterItem": {
+            "ID": "lightmanscurrency:ticket",
+            "Count": 1,
+            "Tag": "{TicketColor:14464140,TicketID:-10}"
+          }
+        },
+        {
+          "TradeType": "BARTER",
+          "SellItem": {
+            "ID": "createdelight:order_seal",
+            "Count": 1,
+            "Tag": "{OrderSeal:\"staple\"}"
+          },
+          "BarterItem": {
+            "ID": "lightmanscurrency:ticket",
+            "Count": 1,
+            "Tag": "{TicketColor:14464140,TicketID:-10}"
+          }
+        },
+        {
+          "TradeType": "BARTER",
+          "SellItem": {
+            "ID": "createdelight:order_seal",
+            "Count": 1,
+            "Tag": "{OrderSeal:\"feast\"}"
+          },
+          "BarterItem": {
+            "ID": "lightmanscurrency:ticket",
+            "Count": 2,
+            "Tag": "{TicketColor:14464140,TicketID:-10}"
+          }
+        }
+      ]
     }
   ],
   "Auctions": []

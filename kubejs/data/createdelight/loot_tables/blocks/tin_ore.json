@@ -47,7 +47,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "createdelight:raw_tin"
+              "name": "createdelightcore:raw_tin"
             }
           ]
         }

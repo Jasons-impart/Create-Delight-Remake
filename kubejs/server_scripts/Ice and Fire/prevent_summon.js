@@ -1,4 +1,8 @@
 EntityEvents.spawned(e => {
+    let dread_dimensions = [
+        "northstar:mars",
+        "northstar:europa",
+    ]
     let dread_monster = [
         "iceandfire:dread_beast",
         "iceandfire:dread_ghoul",
@@ -11,12 +15,12 @@ EntityEvents.spawned(e => {
     ]
     // 悚怖怪生成
     if (dread_monster.indexOf(e.entity.type) != -1) {
-        if (e.level.dimension != "northstar:mars") {
+        if (dread_dimensions.indexOf(e.level.dimension) == -1) {
             e.cancel()
         }
     }
     if (e.entity.type == "iceandfire:siren" || e.entity.type == "iceandfire:sea_serpent")
-        if (e.level.dimension != "createdelight:abyssal_chasm_dimension") {
+        if (e.level.dimension != "northstar:europa") {
             e.cancel()
         }
 })

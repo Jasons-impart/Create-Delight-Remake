@@ -1,8 +1,0 @@
-name = "Create: Wizardry"
-filename = "create_wizardry-1.20.1-0.4.2.jar"
-side = "both"
-
-[download]
-url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/create_wizardry-1.20.1-0.4.2.jar"
-hash-format = "sha256"
-hash = "961c6fb4dc19892052f9af625679849c222bbc8813a9a610e1e201e63ce965d9"

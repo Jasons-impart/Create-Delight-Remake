@@ -17,7 +17,6 @@ ServerEvents.recipes(e => {
         "createcafe:filling/starfruit_tea_filling",
         "createcafe:filling/dragonfruit_tea_filling",
         "createcafe:filling/papaya_tea_filling",
-        "createcafe:filling/coconut_tea_filling",
         "createcafe:filling/grapefruit_tea_filling",
         "createcafe:filling/mana_tea_filling",
         "createcafe:filling/pomelo_tea_filling",
@@ -30,98 +29,121 @@ ServerEvents.recipes(e => {
         "createcafe:filling/coffee/mint_iced_coffee_filling",
         "createcafe:filling/coffee/vanilla_iced_coffee_filling",
         "createcafe:filling/coffee/strawberry_iced_coffee_filling",
+        "createcafe:filling/coffee/coconut_iced_coffee_filling",
         "createcafe:sequenced_assembly/oreo_assembling",
         "createcafe:milling/oreo_milling",
         "createcafe:crushing/oreo_crushing",
         "createcafe:mixing/raw_boba_to_boba_mixing",
-        
+        "createcafe:mixing/coffee/coffee_mixing",
+        "createcafe:filling/coffee/iced_coffee_filling",
+        "createdelight:milling/coffee_beans"
     ])
-    create.mixing(Fluid.of("createdelight:base_syrup", 125), "minecraft:sugar")
-    .heated()
-    .id("createdelight:mixing/sugar_melting")
-    vintageimprovements.vacuumizing("minecraft:sugar", Fluid.of("createdelight:base_syrup", 125)).id("createdelight:vacuumizing/melted_sugar_vacuumizing")
-    create.compacting("createdelightcore:base_syrup", Fluid.of("createdelight:base_syrup", 1000)).id("createdelight:compacting/base_syrup")
-    create.compacting("createdelightcore:strawberry_syrup", Fluid.of("createdelight:strawberry_syrup", 1000)).id("createdelight:compacting/strawberry_syrup")
-    create.compacting("createdelightcore:banana_syrup", Fluid.of("createdelight:banana_syrup", 1000)).id("createdelight:compacting/banana_syrup")
-    create.compacting("createdelightcore:vanilla_syrup", Fluid.of("createdelight:vanilla_syrup", 1000)).id("createdelight:compacting/vanilla_syrup")
-    create.compacting("createdelightcore:mint_syrup", Fluid.of("createdelight:mint_syrup", 1000)).id("createdelight:compacting/mint_syrup")
+    create.mixing(Fluid.of("createdelightcore:base_syrup", 125), "minecraft:sugar").heated().id("createdelight:mixing/sugar_melting")
+    vintageimprovements.vacuumizing("minecraft:sugar", Fluid.of("createdelightcore:base_syrup", 25)).id("createdelight:vacuumizing/melted_sugar_vacuumizing")
+    create.compacting("createdelightcore:base_syrup", Fluid.of("createdelightcore:base_syrup", 1000)).id("createdelight:compacting/base_syrup")
+    create.compacting("createdelightcore:strawberry_syrup", Fluid.of("createdelightcore:strawberry_syrup", 1000)).id("createdelight:compacting/strawberry_syrup")
+    create.compacting("createdelightcore:banana_syrup", Fluid.of("createdelightcore:banana_syrup", 1000)).id("createdelight:compacting/banana_syrup")
+    create.compacting("createdelightcore:vanilla_syrup", Fluid.of("createdelightcore:vanilla_syrup", 1000)).id("createdelight:compacting/vanilla_syrup")
+    create.compacting("createdelightcore:mint_syrup", Fluid.of("createdelightcore:mint_syrup", 1000)).id("createdelight:compacting/mint_syrup")
+    create.compacting("createdelightcore:coconut_syrup", Fluid.of("createdelightcore:coconut_syrup", 1000)).id("createdelight:compacting/coconut_syrup")
     create.mixing(
-        Fluid.of("createdelight:vanilla_syrup", 250),
+        Fluid.of("createdelightcore:vanilla_syrup", 250),
         [
-            Fluid.of("createdelight:base_syrup", 250),
+            Fluid.of("createdelightcore:base_syrup", 250),
             "#neapolitan:vanilla"
         ]
     ).heated().id("createdelight:mixing/syrups/vanilla_syrup_mixing2")
     create.mixing(
-        Fluid.of("createdelight:banana_syrup", 250),
+        Fluid.of("createdelightcore:banana_syrup", 250),
         [
-            Fluid.of("createdelight:base_syrup", 250),
+            Fluid.of("createdelightcore:base_syrup", 250),
             '#forge:fruits/banana'
         ]
     ).heated().id("createdelight:mixing/syrups/banana_syrup_mixing")
     create.mixing(
-        Fluid.of("createdelight:strawberry_syrup", 250),
+        Fluid.of("createdelightcore:strawberry_syrup", 250),
         [
-            Fluid.of("createdelight:base_syrup", 250),
+            Fluid.of("createdelightcore:base_syrup", 250),
             "#forge:fruits/strawberry"
         ]
     ).heated().id("createdelight:mixing/syrups/strawberry_syrup_mixing")
     create.mixing(
-        Fluid.of("createdelight:mint_syrup", 250),
+        Fluid.of("createdelightcore:mint_syrup", 250),
         [
-            Fluid.of("createdelight:base_syrup", 250),
+            Fluid.of("createdelightcore:base_syrup", 250),
             '#neapolitan:mint_leaves'
         ]
     ).heated().id("createdelight:mixing/syrups/mint_syrup_mixing")
     create.mixing(
+        Fluid.of("createdelightcore:coconut_syrup", 250),
+        [
+            Fluid.of("createdelightcore:base_syrup", 250),
+            '#forge:fruits/coconut'
+        ]
+    ).heated().id("createdelight:mixing/syrups/coconut_syrup_mixing")
+    create.mixing(
         "createcafe:boba",
         [
             "createcafe:raw_boba",
-            Fluid.of("createdelight:base_syrup", 250)
+            Fluid.of("createdelightcore:base_syrup", 250)
         ]
     ).heated().id("createdelight:mixing/raw_boba_to_boba_mixing")
     create.mixing(
         Fluid.of("createdelight:filling", 1000),
         [
-            Fluid.of("createdelight:base_syrup", 1000),
+            Fluid.of("createdelightcore:base_syrup", 1000),
             'bakeries:foamed_cream'
         ]
     ).heated().id("createdelight:mixing/oreo_filling_mixing")
     create.mixing(
         Fluid.of("createdelight:filling", 1000),
         [
-            Fluid.of("createdelight:base_syrup", 1000),
+            Fluid.of("createdelightcore:base_syrup", 1000),
             Fluid.of('cosmopolitan:cream', 250)
         ]
     ).heated().id("createdelight:mixing/oreo_filling_mixing_2")
     create.filling(
+        'createcafe:iced_coffee',
+        [
+            'createcafe:iced_coffee_cup_ice',
+            Fluid.of("createdelight:americano_fluid", 500)
+        ]
+    ).id("createdelight:filling/iced_coffee")
+    create.filling(
         'createcafe:vanilla_iced_coffee',
         [
             'createcafe:iced_coffee',
-            Fluid.of("createdelight:vanilla_syrup", 250)
+            Fluid.of("createdelightcore:vanilla_syrup", 250)
         ]
     ).id("createdelight:filling/coffee/vanilla_iced_coffee_filling")
     create.filling(
         'createcafe:strawberry_iced_coffee',
         [
             'createcafe:iced_coffee',
-            Fluid.of("createdelight:strawberry_syrup", 250)
+            Fluid.of("createdelightcore:strawberry_syrup", 250)
         ]
     ).id("createdelight:filling/coffee/strawberry_iced_coffee_filling")
     create.filling(
         'createcafe:mint_iced_coffee',
         [
             'createcafe:iced_coffee',
-            Fluid.of("createdelight:mint_syrup", 250)
+            Fluid.of("createdelightcore:mint_syrup", 250)
         ]
     ).id("createdelight:filling/coffee/mint_iced_coffee_filling")
     create.filling(
         'createcafe:banana_iced_coffee',
         [
             'createcafe:iced_coffee',
-            Fluid.of("createdelight:banana_syrup", 250)
+            Fluid.of("createdelightcore:banana_syrup", 250)
         ]
     ).id("createdelight:filling/coffee/banana_iced_coffee_filling")
+    create.filling(
+        "createcafe:coconut_iced_coffee",
+        [
+            "createcafe:iced_coffee",
+            Fluid.of("createdelightcore:coconut_syrup", 250)
+        ]
+    ).id("createdelight:filling/coffee/coconut_iced_coffee_filling")
     {
         let iner = 'createcafe:oreo_incomplete'
         create.sequenced_assembly('createcafe:oreo', 'createcafe:oreo_half', 
@@ -152,4 +174,9 @@ ServerEvents.recipes(e => {
         "createcafe:oreo_crushed",
         "createcafe:oreo_half"
     ).id("createdelight:crushing/oreo_half_crushing")
+    threshing(e, "createcafe:coffee_fruit", [
+        '2x createcafe:coffee_beans',
+        Item.of('2x createcafe:coffee_beans').withChance(0.5),
+        "createaddition:biomass"
+    ])
 })

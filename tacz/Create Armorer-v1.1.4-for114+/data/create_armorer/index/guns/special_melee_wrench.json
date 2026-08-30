@@ -1,8 +1,0 @@
-{
-    "name": "create_armorer.gun.special_melee_wrench",
-    "display": "create_armorer:special_melee_wrench_display",
-    "data": "create_armorer:special_melee_wrench_data",
-    "tooltip": "create_armorer.tooltip.special_melee_wrench",
-    "type": "rpg",
-    "sort": 350
-}

@@ -1,0 +1,32 @@
+﻿{
+    "key":  "wither_ingot",
+    "category":  "metal",
+    "primary":  6.4,
+    "secondary":  1.1,
+    "tertiary":  4.5,
+    "durability":  1024,
+    "integrityCost":  2,
+    "integrityGain":  6,
+    "magicCapacity":  100,
+    "toolLevel":  "minecraft:diamond",
+    "toolEfficiency":  7,
+    "tints":  {
+                  "glyph":  "202020",
+                  "texture":  "202020"
+              },
+    "textures":  [
+                     "heavy",
+                     "metal"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "effects":  {
+                    "more_mod_tetra:wither_edge":  15,
+                    "more_mod_tetra:wither_proficiency":  5
+                },
+    "requiredTools":  {
+                          "hammer_dig":  "minecraft:stone"
+                      },
+    "replace":  true
+}

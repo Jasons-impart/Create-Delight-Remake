@@ -1,0 +1,37 @@
+{
+  "slots": [
+    "mmt_crown/top"
+  ],
+  "materialSlotCount": 1,
+  "displayType": "major",
+  "glyph": {
+    "textureX": 176,
+    "textureY": 48
+  },
+  "translation": {
+    "primaryAttributes": {
+      "generic.luck": 1
+    },
+    "secondaryAttributes": {
+      "generic.luck": 1
+    },
+    "durability": 1,
+    "integrity": 1,
+    "magicCapacity": 1
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:gem/"
+      ],
+      "countFactor": 1,
+      "moduleKey": "mmt_crown/top/gem",
+      "moduleVariant": "gem/"
+    }
+  ],
+  "requirement": {
+    "type": "tetra:locked",
+    "key": "createdelight:mmt_curios/lunar_arcane"
+  },
+  "replace": true
+}

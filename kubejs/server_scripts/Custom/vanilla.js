@@ -4,6 +4,9 @@ ServerEvents.recipes(e => {
             "minecraft:enchanted_golden_apple"
         ]
     )
+    remove_recipes_id(e, [
+        "cosmopolitan:farmersdelight/sugar_from_molasses_bottle",
+    ])
     const {vintageimprovements, create, createmetallurgy, create_new_age} = e.recipes
     vintageimprovements.pressurizing("minecraft:glowstone_dust", "minecraft:glow_berries")
     .heated()
@@ -52,16 +55,16 @@ ServerEvents.recipes(e => {
     .transitionalItem(iner_1)
     .id("minecraft:enchanted_golden_apple")
 
-    create.compacting(Fluid.of("createdelight:unrefined_sugar", 500),
+    create.compacting(Fluid.of("cosmopolitan:molasses", 500),
      ["minecraft:sugar_cane", Fluid.water(250)])
-    .id("createdelight:compacting/unrefined_sugar_from_sugar_cane")
-    create.compacting(Fluid.of("createdelight:unrefined_sugar", 500),
-     ["2x minecraft:beetroot", Fluid.water(250)])
-    .id("createdelight:compacting/unrefined_sugar_from_beetroot")
-    create.compacting(Fluid.of("createdelight:unrefined_sugar", 500),
+    .id("createdelight:compacting/molasses_from_sugar_cane")
+    create.compacting(Fluid.of("cosmopolitan:molasses", 500),
+     ["minecraft:beetroot", Fluid.water(250)])
+    .id("createdelight:compacting/molasses_from_beetroot")
+    create.compacting(Fluid.of("cosmopolitan:molasses", 500),
      ["3x alexscaves:licoroot_vine", Fluid.water(250)])
-    .id("createdelight:compacting/unrefined_sugar_from_licoroot_vine")
-    vintageimprovements.pressurizing([Fluid.of("createdelight:base_syrup", 100), Fluid.water(100)], Fluid.of("createdelight:unrefined_sugar", 200))
+    .id("createdelight:compacting/molasses_from_licoroot_vine")
+    vintageimprovements.pressurizing([Fluid.of("createdelightcore:base_syrup", 500), Fluid.water(500)], Fluid.of("cosmopolitan:molasses", 1000))
     .secondaryFluidOutput(1)
     .heated()
     .id("createdelight:pressurizing/melted_sugar")

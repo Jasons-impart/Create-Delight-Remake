@@ -3,9 +3,33 @@
 	loot_size: 1
 	order_index: 16
 	rewards: [
-		{ item: "art_of_forging:ancient_axe" }
-		{ item: "art_of_forging:ancient_blade" }
-		{ item: "art_of_forging:ancient_flail" }
+		{
+			item: {
+				Count: 1
+				id: "blackknightarmor:frost_beast_axe"
+				tag: {
+					Damage: 0
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1
+				id: "blackknightarmor:black_knight_sword"
+				tag: {
+					Damage: 0
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1
+				id: "blackknightarmor:lava_great_sword"
+				tag: {
+					Damage: 0
+				}
+			}
+		}
 	]
 	title: "远古恶意"
 }

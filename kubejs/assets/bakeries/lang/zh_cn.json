@@ -297,5 +297,6 @@
 
   "player.bakeries.tips.flour_sieve.1": "你在干什么?",
   "player.bakeries.tips.flour_sieve.2": "筛不了的啦!",
-  "player.bakeries.tips.flour_sieve.3": "我没这个能力知道吧？"
+  "player.bakeries.tips.flour_sieve.3": "我没这个能力知道吧？",
+  "tip.bakeries.pizza_tomato": "你需要先放置番茄酱"
 }

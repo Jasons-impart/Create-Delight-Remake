@@ -1,0 +1,4 @@
+interface:
+  display_name: "Minecraft MCP"
+  short_description: "连接、测试、修复并回归 Minecraft MCP 模组"
+  default_prompt: "Use $minecraft-mcp to diagnose and safely test the Minecraft MCP integration in CDRdev."

@@ -1,8 +1,6 @@
 ServerEvents.tags("block", e => {
     e.add("quality_food:quality_blocks",
         'brewinandchewin:flaxen_cheese_wheel',
-        'vintagedelight:cheese_pizza', 
-        'vintagedelight:meat_pizza', 
         'youkaishomecoming:chest_of_heart_throbbing_surprise', 
         'youkaishomecoming:flesh_feast', 
         'youkaishomecoming:red_velvet_cake', 
@@ -32,7 +30,7 @@ ServerEvents.tags("block", e => {
         'oceanic_delight:sponge_cake', 
         'oceanic_delight:stuffed_pufferfish', 
         'oceanic_delight:paella_plate', 
-        'silentsdelight:sculk_catalyst_pie'
+        'silentsdelight:sculk_catalyst_pie',
     )
     Ingredient.of([
         "@vintagedelight",
@@ -73,7 +71,9 @@ ServerEvents.tags("block", e => {
         "nethervinery:crimson_grape_bush",
         "nethervinery:warped_grape_bush",
         "minecraft:cocoa",
+        "minecraft:sugar_cane",
         "farmersdelight:budding_tomatoes",
+        "farmersdelight:tomatoes",
         'fruitsdelight:bayberry_leaves',
         'fruitsdelight:kiwi_leaves',
         'fruitsdelight:fig_leaves',
@@ -97,6 +97,8 @@ ServerEvents.tags("block", e => {
         "nethervinery:warped_grape_bush",
         "collectorsreap:pomegranate_bush",
         "collectorsreap:lime_bush",
+        "culturaldelights:corn",
+        "culturaldelights:corn_upper",
         "fruitsdelight:lemon_tree",
         "fruitsdelight:blueberry_bush",
         "fruitsdelight:cranberry_bush",
@@ -114,13 +116,168 @@ ServerEvents.tags("block", e => {
 })
 
 ServerEvents.tags("item", e => {
+    e.add("createdelightcore:life_matter", [
+        "createdelight:life_matter"
+    ])
+    e.add("createdelight:life_matter", [
+        "createdelight:life_matter"
+    ])
+
+    // 按“直接收割得到、仍可作为基础食材/原料”的身份维护；不要复用 quality_food:material_whitelist。
+    // 多产出原料可以加入；种子、粉类、面团、料理、容器和加工中间品不加入。
+    const lifeMatterSources = [
+        "minecraft:wheat",
+        "minecraft:carrot",
+        "minecraft:potato",
+        "minecraft:beetroot",
+        "minecraft:sugar_cane",
+        "minecraft:cocoa_beans",
+        "minecraft:sweet_berries",
+        "minecraft:apple",
+        "minecraft:brown_mushroom",
+        "minecraft:red_mushroom",
+        "minecraft:crimson_fungus",
+        "minecraft:warped_fungus",
+        "farmersdelight:cabbage",
+        "farmersdelight:onion",
+        "farmersdelight:rice",
+        "farmersdelight:tomato",
+        "farmersdelight:brown_mushroom_colony",
+        "farmersdelight:red_mushroom_colony",
+        "mynethersdelight:crimson_fungus_colony",
+        "mynethersdelight:warped_fungus_colony",
+        "mynethersdelight:bullet_pepper",
+        "culturaldelights:corn_cob",
+        "neapolitan:banana",
+        "neapolitan:mint_leaves",
+        "neapolitan:vanilla_pods",
+        "neapolitan:strawberries",
+        "neapolitan:white_strawberries",
+        "vinery:red_grape",
+        "vinery:white_grape",
+        "vinery:savanna_grapes_red",
+        "vinery:savanna_grapes_white",
+        "vinery:taiga_grapes_red",
+        "vinery:taiga_grapes_white",
+        "vinery:jungle_grapes_red",
+        "vinery:jungle_grapes_white",
+        "nethervinery:crimson_grape",
+        "nethervinery:warped_grape",
+        "fruitsdelight:bayberry",
+        "fruitsdelight:blueberry",
+        "fruitsdelight:cranberry",
+        "fruitsdelight:durian",
+        "fruitsdelight:fig",
+        "fruitsdelight:hawberry",
+        "fruitsdelight:kiwi",
+        "fruitsdelight:lemon",
+        "fruitsdelight:lychee",
+        "fruitsdelight:mango",
+        "fruitsdelight:mangosteen",
+        "fruitsdelight:orange",
+        "fruitsdelight:peach",
+        "fruitsdelight:pear",
+        "fruitsdelight:persimmon",
+        "collectorsreap:pomegranate",
+        "collectorsreap:lime",
+        "collectorsreap:portobello",
+        "collectorsreap:portobello_colony",
+        "frycooks_delight:canola",
+        "createdelight:adzuki_beans_seed",
+        "festival_delicacies:chinese_cabbage",
+        "festival_delicacies:greenonion",
+        "festival_delicacies:eggplant",
+        "festival_delicacies:garlic_chive",
+        "festival_delicacies:fennel",
+        "festival_delicacies:jujube",
+        "festival_delicacies:olive",
+        "festival_delicacies:walnut",
+        "trailandtales_delight:pitcher_plant",
+        "trailandtales_delight:lantern_fruit",
+        "oceanic_delight:sea_grape",
+        "youkaishomecoming:mandrake_root",
+        "youkaishomecoming:pods",
+        "youkaishomecoming:udumbara_flower",
+        "createcafe:coffee_fruit",
+        "vintagedelight:cucumber",
+        "miners_delight:cave_carrot",
+        "cosmopolitan:arbutus_berries",
+        "cosmopolitan:wildberry",
+        "youkaishomecoming:soybean"
+    ]
+    e.add("createdelightcore:life_matter_sources", lifeMatterSources)
+    e.add("createdelight:life_matter_sources", lifeMatterSources)
+
+    const qualityHarvestCalibrators = [
+        "createdelight:quality_harvest_calibrator_tier_1",
+        "createdelight:quality_harvest_calibrator_tier_2",
+        "createdelight:quality_harvest_calibrator_tier_3"
+    ]
+    e.add("createdelightcore:quality_harvest_calibrators", qualityHarvestCalibrators)
+    e.add("createdelight:quality_harvest_calibrators", qualityHarvestCalibrators)
+    e.add("createdelightcore:quality_harvest_calibrators/tier_1", [
+        "createdelight:quality_harvest_calibrator_tier_1"
+    ])
+    e.add("createdelight:quality_harvest_calibrators/tier_1", [
+        "createdelight:quality_harvest_calibrator_tier_1"
+    ])
+    e.add("createdelightcore:quality_harvest_calibrators/tier_2", [
+        "createdelight:quality_harvest_calibrator_tier_2"
+    ])
+    e.add("createdelight:quality_harvest_calibrators/tier_2", [
+        "createdelight:quality_harvest_calibrator_tier_2"
+    ])
+    e.add("createdelightcore:quality_harvest_calibrators/tier_3", [
+        "createdelight:quality_harvest_calibrator_tier_3"
+    ])
+    e.add("createdelight:quality_harvest_calibrators/tier_3", [
+        "createdelight:quality_harvest_calibrator_tier_3"
+    ])
+
     e.remove("quality_food:material_whitelist", 
         "#farmersdelight:wild_crops"
     )
+    const iceCreamScoops = []
+    Ingredient.of(["@alexscaves", "@createdelightcore"]).stacks.forEach(item => {
+        if (item.id.endsWith("_ice_cream_scoop")) {
+            iceCreamScoops.push(item.id)
+        }
+    })
+    const vineryQualityFoods = []
+    const vineryQualityFoodIds = [
+        "vinery:mead",
+        "vinery:creepers_crush",
+        "vinery:jo_special_mixture",
+        "vinery:eiswein",
+        "vinery:villagers_fright",
+        "vinery:bottle_mojang_noir"
+    ]
+    const vineryQualityFoodSuffixes = [
+        "_wine",
+        "_grapejuice",
+        "_juice",
+        "_cider",
+        "_fizz",
+        "_nectar",
+        "_grenache",
+        "_pinot"
+    ]
+    Ingredient.of(["@vinery", "@nethervinery"]).stacks.forEach(item => {
+        if (vineryQualityFoodIds.includes(item.id) || vineryQualityFoodSuffixes.some(suffix => item.id.endsWith(suffix))) {
+            vineryQualityFoods.push(item.id)
+        }
+    })
+    e.add("quality_food:material_whitelist", iceCreamScoops)
+    e.add("quality_food:material_whitelist", vineryQualityFoods)
     e.add("quality_food:material_whitelist", [
         'create:dough',
+        'bakeries:pizza_flatbread',
         'farmersdelight:brown_mushroom_colony',
+        'farmersrespite:coffee_berries',
         'farmersrespite:coffee_beans',
+        'farmersrespite:green_tea_leaves',
+        'farmersrespite:yellow_tea_leaves',
+        'farmersrespite:black_tea_leaves',
         'farmersdelight:red_mushroom_colony', 
         'mynethersdelight:crimson_fungus_colony', 
         'mynethersdelight:warped_fungus_colony', 
@@ -140,7 +297,6 @@ ServerEvents.tags("item", e => {
         'createdelight:board_noodles', 
         'createdelight:wafer_dough',
         'createdelight:vermicelli', 
-        'createdelight:raw_cheese_pizza', 
         'bakeries:sweet_dough', 
         'bakeries:whole_wheat_dough', 
         'bakeries:bagel_dough', 

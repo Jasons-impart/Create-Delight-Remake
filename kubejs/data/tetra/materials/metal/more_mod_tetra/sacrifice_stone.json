@@ -1,0 +1,31 @@
+﻿{
+    "key":  "sacrifice_stone",
+    "category":  "metal",
+    "primary":  6.5,
+    "secondary":  3.4,
+    "tertiary":  0,
+    "durability":  1861,
+    "integrityCost":  2,
+    "integrityGain":  4,
+    "magicCapacity":  80,
+    "toolLevel":  "minecraft:diamond",
+    "toolEfficiency":  8,
+    "tints":  {
+                  "glyph":  "202020",
+                  "texture":  "202020"
+              },
+    "textures":  [
+                     "crude",
+                     "default"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "effects":  {
+                    "more_mod_tetra:stand_tall":  1
+                },
+    "requiredTools":  {
+                          "hammer_dig":  "minecraft:stone"
+                      },
+    "replace":  true
+}

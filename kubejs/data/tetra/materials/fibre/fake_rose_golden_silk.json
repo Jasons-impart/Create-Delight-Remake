@@ -1,0 +1,35 @@
+﻿{
+    "key":  "fake_rose_golden_silk",
+    "category":  "fibre",
+    "primary":  3.1,
+    "secondary":  1.1,
+    "tertiary":  4,
+    "durability":  100,
+    "integrityCost":  1,
+    "integrityGain":  8.5,
+    "magicCapacity":  400,
+    "toolLevel":  0,
+    "toolEfficiency":  0,
+    "tints":  {
+                  "glyph":  "f4cbb9",
+                  "texture":  "f4cbb9"
+              },
+    "textures":  [
+                     "shiny",
+                     "metal",
+                     "default"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "attributes":  {
+                       "**tetra:draw_speed":  -0.1
+                   },
+    "effects":  {
+                    "more_mod_tetra:fake_enhanced":  1
+                },
+    "requiredTools":  {
+                          "cut":  "minecraft:wood"
+                      },
+    "replace":  true
+}

@@ -1,0 +1,49 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "type": "tetra:scroll",
+      "key": "shared/the_legend_scroll_of_worldbearing_titan",
+      "intricate": false,
+      "material": 2,
+      "ribbon": "39E5FF"
+    },
+    {
+      "type": "tetra:scroll",
+      "key": "shared/the_legend_scroll_of_reason_titan",
+      "intricate": false,
+      "material": 2,
+      "ribbon": "00FF55"
+    },
+    {
+      "type": "tetra:scroll",
+      "key": "shared/the_legend_scroll_of_romance_titan",
+      "intricate": false,
+      "material": 2,
+      "ribbon": "62FF62"
+    }
+  ],
+  "result": {
+    "item": "tetra:scroll_rolled",
+    "count": 1,
+    "nbt": {
+      "BlockEntityTag": {
+        "data": [
+          {
+            "key": "shared/titan_convergence_creation",
+            "schematics": [
+              "tetra:shared/the_legend_scroll_of_worldbearing_titan",
+              "tetra:shared/the_legend_scroll_of_reason_titan",
+              "tetra:shared/the_legend_scroll_of_romance_titan"
+            ],
+            "intricate": true,
+            "material": 3,
+            "ribbon": "39E5FF",
+            "glyphs": [3, 8, 1, 4]
+          }
+        ]
+      }
+    }
+  }
+}

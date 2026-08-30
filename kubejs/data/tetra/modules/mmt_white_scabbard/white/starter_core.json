@@ -1,0 +1,36 @@
+{
+  "type": "tetra:basic_major_module",
+  "slots": [
+    "mmt_white_scabbard/white"
+  ],
+  "improvements": [],
+  "variants": [
+    {
+      "materials": [
+        "tetra:metal/"
+      ],
+      "key": "starter_core/",
+      "integrity": 1,
+      "effects": {
+        "more_mod_tetra:curios_materials_effect_invalidation": 1
+      },
+      "attributes": {
+        "generic.attack_damage": 0.25
+      },
+      "extract": {
+        "glyph": {
+          "textureX": 176,
+          "textureY": 48
+        }
+      },
+      "availableTextures": [
+        ""
+      ],
+      "models": [
+        {
+          "location": "more_mod_tetra:item/tetra_white_scabbard"
+        }
+      ]
+    }
+  ]
+}

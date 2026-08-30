@@ -1,30 +1,41 @@
-
-const $SequencedAssemblyItem = Java.loadClass("com.simibubi.create.content.processing.sequenced.SequencedAssemblyItem")
-
-let MoneyUtil = global.MoneyUtil
-
 ItemEvents.tooltip(e => {
     clearAddShiftTooltip(e, [
         'dreadsteel:kit_default',
         'dreadsteel:kit_white',
         'dreadsteel:kit_black',
         'dreadsteel:kit_bronze',
-        'art_of_forging:encoded_canister',
+        'createaddition:capacitor',
     ])
     addShiftTooltip(e, [
         "ratatouille:frozen_block",
+        "ratatouille:chocolate_mold_solid",
+        "createdelightcore:black_chocolate_mold_solid",
+        "createdelightcore:white_chocolate_mold_solid",
+        "createdelightcore:ruby_chocolate_mold_solid",
+        "ratatouille:melon_popsicle_mold_solid",
+        "createdelight:empty_popsicle_mold_solid",
+        "createdelight:chorus_fruit_popsicle_mold_solid",
+        "createdelight:berry_popsicle_mold_solid",
+        "createdelight:milk_popsicle_mold_solid",
+        "createdelight:hamimelon_popsicle_mold_solid",
+        "createdelight:lime_popsicle_mold_solid",
+        "createdelight:kiwi_popsicle_mold_solid",
+        "createdelight:green_tongue_mold_solid",
+        "createdelight:tear_popsicle_mold_solid",
+        "createdelight:big_popsicle_mold_solid",
+        "createdelight:corn_popsicle_mold_solid",
         "ratatouille:mechanical_demolder",
         "createdieselgenerators:distillation_controller",
         "createmetallurgy:wolframite_ore",
-        "art_of_forging:devils_soul_gem",
-        "art_of_forging:eerie_shard",
-        "art_of_forging:heart_of_ender",
-        "art_of_forging:potent_mixture",
-        "art_of_forging:shards_of_malice",
-        "art_of_forging:fragment_of_eden",
-        "art_of_forging:dragon_soul",
-        "art_of_forging:soul_ember",
-        "art_of_forging:nano_insectoid",
+        "alexscaves:pure_darkness",
+        "minecraft:echo_shard",
+        "alexsmobs:void_worm_eye",
+        "minecraft:fire_charge",
+        "alexscaves:pure_darkness",
+        "alexscaves:immortal_embryo",
+        "createdelight:dread_heart",
+        "minecraft:soul_lantern",
+        "alexscaves:enigmatic_engine",
         'createdelight:dread_heart',
         'createdelight:prospector',
         'vintagedelight:cheese_curds',
@@ -33,7 +44,21 @@ ItemEvents.tooltip(e => {
         'bakeries:cake_roll',
         'createdelight:unactivated_crystalline_flower',
         "createdelight:fission_reactor",
-        'eclipticseasons:growth_detector'
+        'eclipticseasons:growth_detector',
+        'iceandfire:fire_lily',
+        'iceandfire:frost_lily',
+        'iceandfire:lightning_lily',
+        'createdelightcore:fire_lily_cluster',
+        'createdelightcore:frost_lily_cluster',
+        'createdelightcore:lightning_lily_cluster',
+        'createdelight:quality_absorber',
+        'createdelight:life_matter_extractor',
+        'createdelight:life_matter',
+        'createdelight:quality_harvest_calibrator_tier_1',
+        'createdelight:quality_harvest_calibrator_tier_2',
+        'createdelight:quality_harvest_calibrator_tier_3',
+        'createdelightcore:quality_harvest_controller',
+        'createdelightcore:life_matter_injector',
     ])
     clearAddCtrlTooltip(e, [
 
@@ -52,7 +77,6 @@ ItemEvents.tooltip(e => {
         'bakeries:mould_toast',
         'bakeries:mould_cheese_cocoa_toast',
         'bakeries:mould_pound_cake',
-        'kinetic_pixel:graycottonseed',
     ])
     clearAddShiftCtrlTooltip(e, [
         'brewinandchewin:keg'
@@ -63,6 +87,21 @@ ItemEvents.tooltip(e => {
         'create_jetpack:jetpack',
         'create_jetpack:netherite_jetpack',
     ])
+})
+
+ItemEvents.tooltip(e => {
+    e.addAdvancedToAll((item, advanced, text) => {
+        if (!item.hasTag("createdelightcore:life_matter_sources"))
+            return
+        text.add(Text.translatable("tooltip.createdelight.life_matter_source"))
+    })
+})
+
+ItemEvents.tooltip(e => {
+    e.add(
+        'createdelightcore:sponsor_medal',
+        Text.translatable('item.createdelightcore.sponsor_medal.desc')
+    )
 })
 let tooltips = [
     ["createfluidstuffs:multi_fluid_tank", "§6来自海上机械师的神奇储罐", "§6From the Sea of Mechanical Engineers"],
@@ -118,10 +157,6 @@ ItemEvents.tooltip(e => {
 //         })
 //     })
 // })
-const $QualityUtils = Java.loadClass("de.cadentem.quality_food.util.QualityUtils")
-const $QualityConfig = Java.loadClass("de.cadentem.quality_food.config.QualityConfig")
-
-let difficultyLoots = global.difficultyLoots
 function getDifficultyTierName(tierIndex) {
     return Text.translatable(`difficulty.createdelight.tier.${tierIndex}`)
 }
@@ -135,15 +170,15 @@ ItemEvents.tooltip(e => {
         if (value > 0) {
             if (!e.shift) {
                 if (value < 1) {
-                    text.add(Component.translate("tooltip.createdelight.single_price", (Math.round(value * 10) / 10).toString()).append(MoneyUtil.convertBaseValueToString(-1)))
+                    text.add(Component.translate("tooltip.createdelight.single_price", (Math.round(value * 10) / 10).toString()).append(global.MoneyUtil.convertBaseValueToString(-1)))
                 } else {
-                    text.add(Component.translate("tooltip.createdelight.single_price", MoneyUtil.convertBaseValueToString(value)))
+                    text.add(Component.translate("tooltip.createdelight.single_price", global.MoneyUtil.convertBaseValueToString(value)))
                 }
             } else {
                 if (value * itemStack.count < 1) {
-                    text.add(Component.translate("tooltip.createdelight.total_price", (Math.round(value * itemStack.count * 10) / 10).toString()).append(MoneyUtil.convertBaseValueToString(-1)))
+                    text.add(Component.translate("tooltip.createdelight.total_price", (Math.round(value * itemStack.count * 10) / 10).toString()).append(global.MoneyUtil.convertBaseValueToString(-1)))
                 } else {
-                    text.add(Component.translate("tooltip.createdelight.total_price", MoneyUtil.convertBaseValueToString(value * itemStack.count)))
+                    text.add(Component.translate("tooltip.createdelight.total_price", global.MoneyUtil.convertBaseValueToString(value * itemStack.count)))
                 }
             }
         }
@@ -153,16 +188,16 @@ ItemEvents.tooltip(e => {
             text.add(1, Text.translatable("tooltip.createdelight.hold_ctrl_to_see_more_info"))
         } else {
             text.add(1, Text.translatable("tooltip.createdelight.hold_ctrl"))
-            text.add(2, Text.translatable(`tooltip.createdelight.ctrl_${item.getId().split(":")[1]}`, MoneyUtil.convertBaseValueToString(1)))
+            text.add(2, Text.translatable(`tooltip.createdelight.ctrl_${item.getId().split(":")[1]}`, global.MoneyUtil.convertBaseValueToString(1)))
         }
     })
     e.addAdvancedToAll((item, advanced, text) => {
-        if (item.hasNBT() && item.nbt.contains("SequencedAssembly") && !(item.item instanceof $SequencedAssemblyItem)) {
+        if (item.hasNBT() && item.nbt.contains("SequencedAssembly") && !(item.item instanceof global.CDClientJavaClasses.$SequencedAssemblyItem)) {
             text.add(Text.translatable("tooltip.createdelight.sequenced_assembly_explanation"))
         }
     })
-    for (const key in difficultyLoots) {
-        let element = difficultyLoots[key]
+    for (const key in global.difficultyLoots) {
+        let element = global.difficultyLoots[key]
         element.forEach(val => {
             let entitys = val.entity.split(":")
             e.addAdvanced(key, (item, advanced, text) => {

@@ -1,5 +1,3 @@
-const $FoodList = Java.loadClass("com.tarinoita.solsweetpotato.tracking.FoodList")
-
 let SOLUtil = {}
 /**
  * 
@@ -7,5 +5,5 @@ let SOLUtil = {}
  * @returns {number}
  */
 SOLUtil.getFoodDiversity = function(player) {
-    return $FoodList.get(player).foodDiversity()
+    return global.CDServerJavaClasses.$FoodList.get(player).foodDiversity()
 }

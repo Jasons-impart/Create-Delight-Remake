@@ -1,0 +1,37 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#createdelight:order/burger",
+      "required": false
+    },
+    {
+      "id": "create_bic_bit:wrapped_fries",
+      "required": false
+    },
+    {
+      "id": "create_bic_bit:wrapped_ketchup_topped_fries",
+      "required": false
+    },
+    {
+      "id": "create_bic_bit:wrapped_mayonnaise_topped_fries",
+      "required": false
+    },
+    {
+      "id": "create_bic_bit:wrapped_mayonnaise_ketchup_topped_fries",
+      "required": false
+    },
+    {
+      "id": "create_deepfried:yuca_fries",
+      "required": false
+    },
+    {
+      "id": "casualness_delight:fried_chicken_chip",
+      "required": false
+    },
+    {
+      "id": "frycooks_delight:fried_chicken_leg",
+      "required": false
+    }
+  ]
+}

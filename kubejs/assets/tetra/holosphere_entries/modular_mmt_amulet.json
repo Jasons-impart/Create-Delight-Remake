@@ -1,0 +1,9 @@
+{
+  "item": "more_mod_tetra:modular_mmt_amulet",
+  "icon": {
+    "textureLocation": "tetra:textures/gui/mmt_extra_holo.png",
+    "textureX": 2,
+    "textureY": 2
+  },
+  "position": 12
+}

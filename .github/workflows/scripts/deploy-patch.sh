@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "Applying Patch..."
 BASE_DIR=$(dirname "$(readlink -f "$0")")
+cd "$BASE_DIR"
 
 # files to be deleted
 if [ -f "$BASE_DIR/deleted_files.txt" ]; then

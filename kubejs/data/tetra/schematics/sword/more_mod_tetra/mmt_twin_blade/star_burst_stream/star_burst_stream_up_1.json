@@ -1,0 +1,32 @@
+{
+  "slots": ["sword/blade"],
+  "rarity": "hone",
+  "displayType": "improvement",
+  "materialSlotCount": 0,
+  "hone": true,
+  "glyph": {
+    "textureLocation": "tetra:textures/gui/wizard_glyphs.png",
+    "textureX": 96,
+    "textureY": 96
+  },
+  "requirement": {
+    "type": "tetra:and",
+    "requirements": [
+      {
+        "type": "tetra:not",
+        "requirement": {
+          "type": "tetra:improvement",
+          "improvement": "star_burst_stream_up"
+        }
+      },
+      {
+        "type": "tetra:module",
+        "module": "sword/more_mod_tetra/mmt_twin_blade"
+      }
+    ]
+  },
+  "outcomes": [{
+    "experienceFactor": 1,
+    "improvements": { "star_burst_stream_up": 1 }
+  }]
+}

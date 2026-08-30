@@ -74,7 +74,6 @@ StartupEvents.registry("fluid", e => {
     //simpleFluid("createdelight:dragon_breath_soda", 0xdb9bc3, true, false, false)
     simpleFluid("createdelight:vinegar", 0x570000, true, false)
     simpleFluid("createdelight:radon", 0XA0FFDA, true, false)
-    simpleFluid("createdelight:unrefined_sugar", 0XBCB998)
     simpleFluid("createdelight:yeast", 0x9B897E, false)
     simpleFluid("createdelight:ancient_coffee", 0X58321E, true, false, false)
     simpleFluid("createdelight:torchflower_tea", 0XF3B727, true, false, false)
@@ -96,7 +95,10 @@ StartupEvents.registry("fluid", e => {
     simpleFluid("createdelight:summer_cordial", 0xf4b12e, true, false, false)
     simpleFluid("createdelight:autumn_tea", 0xf46d44, true, false, false)
     simpleFluid("createdelight:winter_glogg", 0xa9275e, true, false, false)
+    simpleFluid("createdelight:chorus_sauce", 0xc357c2, false, false, false)
     simpleFluid("createdelight:cryo_fuel", 0x87CEFA)
+    simpleFluid("createdelight:green_soylent", 0xa5c266)
+    textureFluid("createdelight:radpop_fluid")
     textureFluid("createdelight:lubricating_oil")
     textureFluid("createdelight:ice_lubricating_oil")
     textureFluid("createdelight:cake_batter")
@@ -104,19 +106,13 @@ StartupEvents.registry("fluid", e => {
     textureFluid("createdelight:egg_yolk")
     textureFluid("createdelight:artificial_egg_yolk")
     textureFluid("createdelight:egg_tart_fluid")
-    textureFluid("createdelight:lush_confiture_jelly", false, false)
-    textureFluid("createdelight:lush_confiture_jello", false, false)
-    textureFluid("createdelight:base_syrup", false, false)
-    textureFluid("createdelight:strawberry_syrup", false, false)
-    textureFluid("createdelight:vanilla_syrup", false, false)
-    textureFluid("createdelight:mint_syrup", false, false)
-    textureFluid("createdelight:banana_syrup", false, false)
     textureFluid("createdelight:filling", false, false)
 
     let bloods = [
         "fire_dragon",
         "ice_dragon",
-        "lightning_dragon"
+        "lightning_dragon",
+        "end_dragon",
     ]
     bloods.forEach(blood => {
         textureFluid(`createdelight:${blood}_blood`)
@@ -124,7 +120,6 @@ StartupEvents.registry("fluid", e => {
             .createAttributes()
             .tickDelay(10)
     })
-
 
     let vinery_fluid_list = [
         ["apple_juice", 0xeed4a7],

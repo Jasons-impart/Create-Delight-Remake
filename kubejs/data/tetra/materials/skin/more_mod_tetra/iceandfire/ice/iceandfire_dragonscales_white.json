@@ -1,0 +1,47 @@
+{
+  "key": "iceandfire_dragonscales_white",
+  "category": "dragon_scales",
+  "replace": true,
+  "primary": 3,
+  "secondary": 2.5,
+  "tertiary": 6,
+  "durability": 900,
+  "integrityCost": 1,
+  "integrityGain": 6,
+  "magicCapacity": 500,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "attributes": {
+    "**generic.attack_damage": 0.1,
+    "**tetra:draw_damage": 0.1,
+    "**tetra:ability_damage": 0.1
+  },
+  "tints": {
+    "glyph": "f2f2f2",
+    "texture": "f2f2f2"
+  },
+  "textures": [
+    "default"
+  ],
+  "effects": {
+    "armorPenetration": 10,
+    "more_mod_tetra:ice_dragon_blood_coating": 10
+  },
+  "requiredTools": {
+    "cut": "minecraft:gold"
+  },
+  "material": {
+    "items": [
+      "iceandfire:dragonscales_white",
+      "iceandfire:dragonscales_silver",
+      "iceandfire:dragonscales_sapphire",
+      "iceandfire:dragonscales_blue"
+    ]
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ]
+}

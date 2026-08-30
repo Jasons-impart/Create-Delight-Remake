@@ -1,0 +1,41 @@
+{
+  "slots": [
+    "mmt_ring/base_ring"
+  ],
+  "materialSlotCount": 1,
+  "requirement": {
+    "type": "tetra:locked",
+    "key": "createdelight:mmt_curios/hive_guard"
+  },
+  "displayType": "major",
+  "glyph": {
+    "textureX": 176,
+    "textureY": 48
+  },
+  "translation": {
+    "primaryAttributes": {
+      "generic.armor": 1
+    },
+    "secondaryAttributes": {
+      "*generic.attack_speed": -1
+    },
+    "durability": 1,
+    "integrity": 1,
+    "magicCapacity": 1
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:bone/",
+        "tetra:metal/",
+        "tetra:stone/",
+        "tetra:wood/",
+        "tetra:gem/"
+      ],
+      "countFactor": 1,
+      "moduleKey": "mmt_ring/base_ring/guard_ring",
+      "moduleVariant": "guard_ring/"
+    }
+  ],
+  "replace": true
+}

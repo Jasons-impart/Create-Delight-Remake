@@ -1,0 +1,57 @@
+{
+  "replace": true,
+  "preview": "revealable",
+  "slots": [
+    "single/handle"
+  ],
+  "rarity": "temporary",
+  "displayType": "improvement",
+  "materialSlotCount": 1,
+  "glyph": {
+    "textureLocation": "tetra:textures/gui/wizard_glyphs.png",
+    "textureX": 0,
+    "textureY": 0
+  },
+  "requirement": {
+    "type": "tetra:and",
+    "requirements": [
+      {
+        "type": "tetra:not",
+        "requirement": {
+          "type": "tetra:improvement",
+          "improvement": "activation"
+        }
+      },
+      {
+        "type": "tetra:or",
+        "requirements": [
+          {
+            "type": "tetra:module",
+            "variant": "light_handle/prismarine"
+          },
+          {
+            "type": "tetra:module",
+            "variant": "basic_handle/prismarine"
+          },
+          {
+            "type": "tetra:module",
+            "variant": "long_handle/prismarine"
+          }
+        ]
+      }
+    ]
+  },
+  "outcomes": [
+    {
+      "improvements": {
+        "activation": 0
+      },
+      "material": {
+        "items": [
+          "minecraft:heart_of_the_sea"
+        ],
+        "count": 1
+      }
+    }
+  ]
+}

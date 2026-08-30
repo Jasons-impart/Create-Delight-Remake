@@ -1,0 +1,8 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "move.drive": { "animation_length": 0, "bones": {} },
+    "misc.idle": { "animation_length": 0, "bones": {} }
+  },
+  "geckolib_format_version": 2
+}

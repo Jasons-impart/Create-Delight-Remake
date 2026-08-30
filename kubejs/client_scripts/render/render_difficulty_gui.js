@@ -1,14 +1,22 @@
 let Difficulty = {}
 
-const improvedMobs$CapabilityProvider = Java.loadClass("io.github.flemmli97.improvedmobs.forge.capability.CapabilityProvider")
-
 /**
  * 
  * @param {Internal.LocalPlayer} player
  * @returns {number}
  */
 Difficulty.getPlayerRawValue = function () {
-    return global.difficultyCache
+    let value = global.difficultyCache
+    if (value == null)
+        return 0
+    if (typeof value == "number")
+        return value
+    if (value.getAsInt != null)
+        return value.getAsInt()
+    if (value.intValue != null)
+        return value.intValue()
+    value = Number(value)
+    return isNaN(value) ? 0 : value
 }
 
 Difficulty.getPlayerTier = function () {
@@ -22,17 +30,17 @@ Difficulty.getPlayerTier = function () {
 Difficulty.getPlayerCurrentProcess = function () {
     let tier = Difficulty.getPlayerTier()
     let rawValue = Difficulty.getPlayerRawValue()
-    if (tier != this.tierThreshold.length) {
+    if (tier > 0 && tier != this.tierThreshold.length) {
         return (rawValue - this.tierThreshold[tier - 1]) / (this.tierThreshold[tier] - this.tierThreshold[tier - 1])
     }
     else
-        return 1
+        return tier == this.tierThreshold.length ? 1 : 0
 }
 
 Difficulty.tierThreshold = [0, 100, 200, 300, 450, 600]
 
 RenderJSEvents.onGuiPreRender(e => {
-    let location = "createdelight:textures/gui/difficulty_progress_bar"
+    let location = "createdelightcore:textures/gui/difficulty_progress_bar"
     let textureWidth = 8, textureHeight = 32
     let windowWidth = e.window.guiScaledWidth
     let windowHeight = e.window.guiScaledHeight
@@ -59,7 +67,7 @@ RenderJSEvents.onGuiPreRender(e => {
         e.drawTexture(`${location}.png`, -textureWidth / 2, 0, textureWidth, textureHeight, 0, textureHeight, textureWidth, textureHeight)
         e.popPose()
     }
-    if (tier != Difficulty.tierThreshold.length) {
+    if (tier > 0 && tier != Difficulty.tierThreshold.length) {
         e.guiGraphics.setColor(tierColor[tier - 1][0] / 255, tierColor[tier - 1][1] / 255, tierColor[tier - 1][2] / 255, 1)
         e.pushPose()
         e.drawTexture(`${location}.png`, -textureWidth / 2, 0, textureWidth, textureHeight, 0, textureHeight, textureWidth, textureHeight * process)

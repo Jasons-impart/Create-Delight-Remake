@@ -1,0 +1,40 @@
+{
+  "replace": true,
+  "key": "gaia_ingot",
+  "category": "metal",
+  "primary": 9.2,
+  "secondary": 1.5,
+  "tertiary": 1,
+  "durability": 3050,
+  "integrityCost": 1,
+  "integrityGain": 10,
+  "magicCapacity": 900,
+  "toolLevel": "minecraft:netherite",
+  "toolEfficiency": 10,
+  "effects": {
+    "more_mod_tetra:will_of_gaia": 1,
+    "more_mod_tetra:mana_regeneration": 20,
+    "more_mod_tetra:mana_repair": 5,
+    "more_mod_tetra:diamond_guard": 5
+  },
+  "tints": {
+    "glyph": "def7e3",
+    "texture": "def7e3"
+  },
+  "textures": [
+    "metal",
+    "default"
+  ],
+  "material": {
+    "tag": "createdelight:disabled_mmt_fragile_materials"
+  },
+  "requiredTools": {
+    "hammer_dig": "minecraft:iron"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "botania"
+    }
+  ]
+}

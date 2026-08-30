@@ -13,7 +13,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 2.5
+					"value": 4.0
 				},
 				{
 					"attribute": "generic.attack_damage",
@@ -45,7 +45,7 @@
 					    }
 				}
 			],
-			"max_wave_time": 1200,
+			"max_wave_time": 2200,
 			"setup_time": 100
 		},
 		{
@@ -59,7 +59,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 2.0
+					"value": 3.5
 				},
 				{
 					"attribute": "generic.armor",
@@ -121,7 +121,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 3.0
+					"value": 4.0
 				},
 				{
 					"attribute": "generic.attack_damage",
@@ -165,7 +165,7 @@
 					    }
 				}
 			],
-			"max_wave_time": 1200,
+			"max_wave_time": 2200,
 			"setup_time": 100
 		},
 		{
@@ -179,7 +179,7 @@
                 {
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 2.5
+					"value": 4.5
 				},
 				{
 					"attribute": "generic.attack_damage",
@@ -220,7 +220,7 @@
                         "nbt" : {"gateway":"createdelight:magnetic_storm_field"}}
 				}
 			],
-			"max_wave_time": 1200,
+			"max_wave_time": 2200,
 			"setup_time": 100
 		},
 		{
@@ -235,7 +235,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 24.0
+					"value":36.0
 				},
 				{
 					"attribute": "generic.attack_damage",
@@ -276,7 +276,7 @@
                     }
 				}
 			],
-			"max_wave_time": 1200,
+			"max_wave_time": 3600,
 			"setup_time": 100
 		}
     ],

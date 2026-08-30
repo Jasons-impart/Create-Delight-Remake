@@ -391,7 +391,7 @@ ServerEvents.recipes(e => {
     ).id("createdelight:bracelet_broken_watch")
     custom_inscribe(
         Item.of('tacz:attachment', '{AttachmentId:"applied_armorer:bracelet_koeis_armband"}'),
-        "art_of_forging:life_fiber",
+        "tetra:dragon_sinew",
         Item.of('tacz:attachment', '{AttachmentId:"applied_armorer:bracelet_niklas"}').strongNBT(),
         "alexscaves:dark_tatters"
     ).id("createdelight:bracelet_koeis_armband")

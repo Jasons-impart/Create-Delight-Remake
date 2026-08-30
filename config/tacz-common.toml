@@ -10,6 +10,9 @@
 	CreativePlayerConsumeAmmo = true
 	#Auto reload all the guns in player inventory, useful for pvp servers
 	AutoReloadWhenRespawn = false
+	#The silencer default fire sound range (block)
+	#Range: > 0
+	DefaultGunSilenceSoundDistance = 16
 
 [ammo]
 	#Warning: Ammo with explosive properties can break blocks
@@ -29,6 +32,10 @@
 	IgniteBlock = true
 	#Whether a ammo can ignite the entity
 	IgniteEntity = true
+	#Global bullet speed modifier, the init speed of the bullet will be multiplied by this value, default is 2.0
+	#This is to compensate the side effects introduced while fixing the shooter variable input issue
+	#Range: 0.01 ~ 20.0
+	GlobalBulletSpeedModifier = 2.0
 
 [other]
 	#Deprecated: now move to .minecraft/tacz/tacz-pre.toml or <your version>/tacz/tacz-pre.toml

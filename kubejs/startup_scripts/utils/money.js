@@ -1,9 +1,64 @@
-const $MoneyAPI = Java.loadClass("io.github.lightman314.lightmanscurrency.api.money.MoneyAPI")
-const $CoinAPI = Java.loadClass("io.github.lightman314.lightmanscurrency.api.money.coins.CoinAPI")
-const $ChainData = Java.loadClass("io.github.lightman314.lightmanscurrency.api.money.coins.data.ChainData")
-// QualityUtils、QualityConfig、CoinValue 已在system.js里引用
+// priority: 1050
 
 let MoneyUtil = {}
+
+MoneyUtil.getMoneyChain = function () {
+    return global.CDLightmansCurrencyApi.CDConfig.moneyChain
+}
+
+MoneyUtil.coinValueFromBase = function (value) {
+    return global.CDLightmansCurrencyApi.CoinValue["fromNumber(java.lang.String,long)"](MoneyUtil.getMoneyChain(), value)
+}
+
+MoneyUtil.coinValueFromItemOrValue = function (item, value) {
+    return global.CDLightmansCurrencyApi.CoinValue.fromItemOrValue(Item.of(item).item, value)
+}
+
+MoneyUtil.insertPlayerMoney = function (player, moneyValue) {
+    global.CDLightmansCurrencyApi.MoneyAPI.getApi().GetPlayersMoneyHandler(player).insertMoney(moneyValue, false)
+}
+
+MoneyUtil.playerCanAfford = function (player, value) {
+    let coinValue = MoneyUtil.coinValueFromBase(value)
+    let handler = global.CDLightmansCurrencyApi.MoneyAPI.getApi().GetPlayersMoneyHandler(player)
+    return handler.getStoredMoney().containsValue(coinValue)
+}
+
+MoneyUtil.extractPlayerMoney = function (player, value) {
+    let coinValue = MoneyUtil.coinValueFromBase(value)
+    let handler = global.CDLightmansCurrencyApi.MoneyAPI.getApi().GetPlayersMoneyHandler(player)
+    if (!handler.getStoredMoney().containsValue(coinValue))
+        return false
+    let extracted = handler.extractMoney(coinValue, false)
+    return extracted != null && extracted.containsValue(coinValue)
+}
+
+MoneyUtil.getItemId = function (item) {
+    return global.CDLightmansCurrencyApi.ForgeRegistries.ITEMS.getKey(item).toString()
+}
+
+MoneyUtil.getCoinName = function (item) {
+    return global.CDLightmansCurrencyApi.ForgeRegistries.ITEMS.getKey(item).getPath().replace("_coin", "")
+}
+
+MoneyUtil.addCoreCoinDownExchangeRecipes = function (e) {
+    let chain = global.CDLightmansCurrencyApi.CoinAPI.getApi().ChainData(MoneyUtil.getMoneyChain())
+    if (chain == null) return
+
+    chain.getCoreChain().forEach(entry => {
+        let lowerExchange = entry.getLowerExchange()
+        if (lowerExchange == null) return
+
+        let input = entry.getCoin()
+        let output = lowerExchange.getFirst().getCoin()
+        let count = Number(lowerExchange.getSecond())
+
+        e.recipes.minecraft.crafting_shapeless(
+            Item.of(MoneyUtil.getItemId(output), count),
+            [MoneyUtil.getItemId(input)]
+        ).id(`createdelight:${MoneyUtil.getCoinName(input)}_2_${MoneyUtil.getCoinName(output)}`)
+    })
+}
 
 /**
  * 将数字的值转化为含有货币的列表
@@ -12,7 +67,7 @@ let MoneyUtil = {}
  */
 MoneyUtil.convertBaseValueToItems = function (value) {
     /** @type {Internal.CoinValue} */
-    let coinValue = $CoinValue.fromNumber("main", value)
+    let coinValue = MoneyUtil.coinValueFromBase(value)
     if (coinValue.getAsItemList)
         return coinValue.getAsItemList()
     return ["minecraft:air"]
@@ -82,9 +137,9 @@ MoneyUtil.calculateFoodValue = function (itemStack) {
 
     // 3. 统一处理所有有价值物品的品质（Quality）倍率修正
     if (baseValue > 0) {
-        let quality = $QualityUtils.getQuality(itemStack)
+        let quality = global.CDStartupJavaClasses.$QualityUtils.getQuality(itemStack)
         if (quality.level() !== 0) {
-            let multiplier = Math.round(Math.sqrt(2 / $QualityConfig.getChance(quality)))
+            let multiplier = Math.round(Math.sqrt(2 / global.CDStartupJavaClasses.$QualityConfig.getChance(quality)))
             return baseValue * multiplier
         }
     }

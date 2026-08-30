@@ -1,0 +1,162 @@
+{
+  "type": "northstar:europa",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "northstar:europa",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "northstar:europan_ice_plains",
+          "parameters": {
+            "temperature": [
+              -2,
+              -0.5
+            ],
+            "humidity": [
+              -1,
+              0.35
+            ],
+            "continentalness": [
+              -1,
+              0.2
+            ],
+            "erosion": [
+              -0.35,
+              1
+            ],
+            "weirdness": [
+              -1,
+              0.45
+            ],
+            "depth": [
+              -0.2,
+              2
+            ],
+            "offset": 0
+          }
+        },
+        {
+          "biome": "northstar:europan_ridge_fields",
+          "parameters": {
+            "temperature": [
+              -2,
+              -0.75
+            ],
+            "humidity": [
+              -0.35,
+              1
+            ],
+            "continentalness": [
+              0.2,
+              1
+            ],
+            "erosion": [
+              -1,
+              -0.35
+            ],
+            "weirdness": [
+              -1,
+              0.8
+            ],
+            "depth": [
+              -0.2,
+              2
+            ],
+            "offset": 0
+          }
+        },
+        {
+          "biome": "northstar:europan_subsurface_ocean",
+          "parameters": {
+            "temperature": [
+              -2,
+              0
+            ],
+            "humidity": [
+              -1,
+              1
+            ],
+            "continentalness": [
+              -1,
+              -0.55
+            ],
+            "erosion": [
+              -1,
+              1
+            ],
+            "weirdness": [
+              -1,
+              0.15
+            ],
+            "depth": [
+              0.6,
+              1.4
+            ],
+            "offset": 0
+          }
+        },
+        {
+          "biome": "alexscaves:abyssal_chasm",
+          "parameters": {
+            "temperature": [
+              -2,
+              0
+            ],
+            "humidity": [
+              -1,
+              1
+            ],
+            "continentalness": [
+              -1,
+              -0.55
+            ],
+            "erosion": [
+              -1,
+              1
+            ],
+            "weirdness": [
+              0.15,
+              1
+            ],
+            "depth": [
+              0.6,
+              1.4
+            ],
+            "offset": 0
+          }
+        },
+        {
+          "biome": "northstar:europan_blue_ice_chasms",
+          "parameters": {
+            "temperature": [
+              -2,
+              -1
+            ],
+            "humidity": [
+              0.35,
+              1
+            ],
+            "continentalness": [
+              -0.2,
+              1
+            ],
+            "erosion": [
+              -1,
+              1
+            ],
+            "weirdness": [
+              0.45,
+              1
+            ],
+            "depth": [
+              1.5,
+              2
+            ],
+            "offset": 0
+          }
+        }
+      ]
+    }
+  }
+}

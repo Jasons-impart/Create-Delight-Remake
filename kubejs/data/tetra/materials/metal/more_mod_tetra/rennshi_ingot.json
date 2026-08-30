@@ -1,0 +1,31 @@
+﻿{
+    "key":  "rennshi_ingot",
+    "category":  "metal",
+    "primary":  2.8,
+    "secondary":  2.5,
+    "tertiary":  7,
+    "durability":  524,
+    "integrityCost":  2,
+    "integrityGain":  5,
+    "magicCapacity":  50,
+    "toolLevel":  "minecraft:iron",
+    "toolEfficiency":  7,
+    "tints":  {
+                  "glyph":  "f2cb91",
+                  "texture":  "f2cb91"
+              },
+    "textures":  [
+                     "heavy",
+                     "metal"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "effects":  {
+                    "more_mod_tetra:fiery_palpitation":  3
+                },
+    "requiredTools":  {
+                          "hammer_dig":  "minecraft:stone"
+                      },
+    "replace":  true
+}

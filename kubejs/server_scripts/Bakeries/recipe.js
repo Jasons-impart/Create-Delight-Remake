@@ -512,18 +512,18 @@ ServerEvents.recipes(e => {
     //其他
     vintageimprovements.vacuumizing(
         [
-            Fluid.water(150),
+            Fluid.water(25),
             "bakeries:brown_sugar_cube"
         ],
-        Fluid.of("createdelight:unrefined_sugar", 200)
+        Fluid.of("cosmopolitan:molasses", 50)
     )
         .secondaryFluidOutput(0)
         .heated()
         .id("createdelight:vacuumizing/brown_sugar_cube")
     //面包切割
-    cutting_2(e, 'bakeries:toast', [['bakeries:sliced_toast', 4]])
-    cutting_2(e, 'bakeries:cheese_cocoa_toast', [['bakeries:sliced_cheese_cocoa_toast', 4]])
-    cutting_2(e, 'bakeries:country_bread', [['bakeries:country_bread_slice', 6]])
+    cutting(e, 'bakeries:toast', '4x bakeries:sliced_toast')
+    cutting(e, 'bakeries:cheese_cocoa_toast', '4x bakeries:sliced_cheese_cocoa_toast')
+    cutting(e, 'bakeries:country_bread', '6x bakeries:country_bread_slice')
     create.cutting(
         '4x bakeries:sliced_toast',
         'bakeries:toast'
@@ -542,7 +542,7 @@ ServerEvents.recipes(e => {
 
     baking(e, "bakeries:paper_cup_cake_paste", "bakeries:cup_cake", 1, "food", 100)
 
-    cutting_1(e, "ratatouille:cake_base", [["bakeries:cut_cake_base", 2]])
+    cutting(e, "ratatouille:cake_base", "2x bakeries:cut_cake_base")
     create.filling("bakeries:soak_coffee_cut_cake_base", ["bakeries:cut_cake_base", Fluid.of("createdelight:espresso_fluid", 250)])
         .id("createdelight:filling/soak_coffee_cut_cake_base")
     create.compacting("bakeries:foamed_cream", [Fluid.of("cosmopolitan:cream", 250)])
@@ -554,7 +554,7 @@ ServerEvents.recipes(e => {
     //     .id("createdelight:filling/crispy_dough")
     create.cutting("8x bakeries:scone_dough", 'createdelight:puff_pastry')
         .id("createdelight:cutting/scone_dough")
-    cutting(e, 'bakeries:pound_cake', [['bakeries:sliced_pound_cake', 4]])
+    cutting(e, 'bakeries:pound_cake', '4x bakeries:sliced_pound_cake')
     e.custom({
         "type": "bakeries:dough_crafting_table",
         "count": 8,
@@ -600,18 +600,6 @@ ServerEvents.recipes(e => {
             .loops(1)
             .transitionalItem(iner)
             .id("createdelight:sequence_assembly/cream_cake")
-    }
-    {
-        let iner = 'bakeries:cut_cake_base'
-        create.sequenced_assembly('bakeries:cream_cake', iner, [
-            create.deploying(iner, [iner, '#forge:cream']),
-            create.deploying(iner, [iner, "bakeries:cut_cake_base"]),
-            create.deploying(iner, [iner, '#forge:cream']),
-            create.deploying(iner, [iner, "#alexscaves:sweet_berries"])
-        ])
-            .loops(1)
-            .transitionalItem(iner)
-            .id("createdelight:sequence_assembly/cream_cake_2")
     }
     {
         let iner = 'bakeries:soak_coffee_cut_cake_base'
@@ -679,16 +667,24 @@ ServerEvents.recipes(e => {
     ]).id("createdelight:filling/bagel_filled_sauce")
     create.pressing("bakeries:flat_croissant", "bakeries:croissant")
         .id("createdelight:pressing/flat_croissant")
+    kubejs.shapeless(
+        "bakeries:dirty_choco_croissant",
+        [
+            "bakeries:croissant",
+            "#forge:cream",
+            "ratatouille:cocoa_powder"
+        ]
+    ).id("createdelight:shapeless/dirty_choco_croissant_manual_only")
     create.sequenced_assembly("bakeries:dirty_choco_croissant", "bakeries:croissant", [
         create.deploying("bakeries:croissant", ["bakeries:croissant", "#forge:cream"]),
-        create.deploying("bakeries:croissant", ["bakeries:croissant", "bakeries:cocoa_powder"])
+        create.deploying("bakeries:croissant", ["bakeries:croissant", "ratatouille:cocoa_powder"])
     ])
         .loops(1)
         .transitionalItem("bakeries:croissant")
         .id("createdelight:sequence_assembly/dirty_choco_croissant")
     create.sequenced_assembly("bakeries:dirty_choco_croissant", "bakeries:croissant", [
         create.filling("bakeries:croissant", ["bakeries:croissant", Fluid.of("cosmopolitan:cream", 250)]),
-        create.deploying("bakeries:croissant", ["bakeries:croissant", "bakeries:cocoa_powder"])
+        create.deploying("bakeries:croissant", ["bakeries:croissant", "ratatouille:cocoa_powder"])
     ])
         .loops(1)
         .transitionalItem("bakeries:croissant")

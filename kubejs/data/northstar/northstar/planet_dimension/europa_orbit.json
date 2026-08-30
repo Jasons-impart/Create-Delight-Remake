@@ -1,0 +1,19 @@
+{
+  "atmosphere": {
+    "collection_rate": 0.0,
+    "daytime_star_brightness": 1.0,
+    "fluid": "minecraft:empty",
+    "fluid_nbt": {},
+    "pressure_pa": 0.0
+  },
+  "averageTemperature": -270.0,
+  "dimension": "northstar:europa_orbit",
+  "dimension_below": "northstar:europa",
+  "gravity": 0.0,
+  "heat_gradient": 0.0,
+  "is_orbit": true,
+  "name": "orbit",
+  "planet": "northstar:europa",
+  "temperature": -270.0,
+  "wind_multiplier": 0.0
+}

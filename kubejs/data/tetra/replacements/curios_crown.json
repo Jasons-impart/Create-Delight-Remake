@@ -1,0 +1,17 @@
+[
+  {
+    "predicate": {
+      "items": [
+        "more_mod_tetra:curios_crown"
+      ]
+    },
+    "item": "more_mod_tetra:modular_mmt_crown",
+    "modules": {
+      "relic/casing": [
+        "mmt_crown/crown_ring/starter_crown",
+        "starter_crown/iron"
+      ]
+    },
+    "improvements": {}
+  }
+]

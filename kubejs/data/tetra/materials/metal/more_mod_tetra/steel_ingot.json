@@ -1,0 +1,28 @@
+﻿{
+    "key":  "steel_ingot",
+    "category":  "metal",
+    "primary":  6.5,
+    "secondary":  2.3,
+    "tertiary":  2.4,
+    "durability":  1050,
+    "integrityCost":  2,
+    "integrityGain":  7,
+    "magicCapacity":  120,
+    "toolLevel":  "minecraft:iron",
+    "toolEfficiency":  7,
+    "tints":  {
+                  "glyph":  "A8A5A4",
+                  "texture":  "A8A5A4"
+              },
+    "textures":  [
+                     "metal",
+                     "default"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "requiredTools":  {
+                          "hammer_dig":  "minecraft:stone"
+                      },
+    "replace":  true
+}

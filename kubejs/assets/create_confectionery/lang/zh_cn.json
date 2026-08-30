@@ -100,5 +100,11 @@
   "item.create_confectionery.white_chocolate_glazed_marshmallow": "白巧克力包层棉花糖",
   "itemGroup.tabcreate_confectionery_tab": "机械动力：甜食",
   "item_group.create_confectionery.create_confectionery_tab": "机械动力：甜食",
-  "subtitles.the_bright_side": "The bright side"
+  "subtitles.the_bright_side": "The bright side",
+
+  "item.create_confectionery.candy_cane_hoe": "拐杖糖锄",
+  "item.create_confectionery.candy_cane_sword": "拐杖糖剑",
+  "item.create_confectionery.candy_cane_axe": "拐杖糖斧",
+  "item.create_confectionery.candy_cane_shovel": "拐杖糖锹",
+  "item.create_confectionery.candy_cane_pickaxe": "拐杖糖镐"
 }

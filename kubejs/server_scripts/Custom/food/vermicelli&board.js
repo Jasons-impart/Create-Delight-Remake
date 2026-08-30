@@ -46,5 +46,5 @@ ServerEvents.recipes(e => {
         .transitionalItem("bakeries:whole_wheat_dough")
         .loops(2)
         .id("createdelight:recipes/board_noodles")
-    cutting(e, "bakeries:whole_wheat_dough", [["createdelight:board_noodles"]])
+    cutting(e, "bakeries:whole_wheat_dough", "createdelight:board_noodles")
 })

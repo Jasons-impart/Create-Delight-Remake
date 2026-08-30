@@ -20,6 +20,6 @@
   "betterKeepInv": false,
   "doubleJump": false,
   "adrenalineEffect": false,
-  "noRecipeBook": true,
+  "noRecipeBook": false,
   "villagerLoveLessCooldown": false
 }

@@ -43,29 +43,86 @@ function Add-Unique([System.Collections.Generic.List[string]]$List, [string]$Val
     }
 }
 
+function Get-SubmoduleChangedFiles([string]$RelativePath) {
+    $submoduleRoot = Join-Path $Root $RelativePath
+    if (-not (Test-Path -LiteralPath $submoduleRoot)) {
+        return @()
+    }
+
+    $results = New-Object System.Collections.Generic.List[string]
+    $gitArgumentSets = @(
+        @("diff", "--name-only"),
+        @("diff", "--cached", "--name-only"),
+        @("ls-files", "--others", "--exclude-standard")
+    )
+    foreach ($gitArgumentSet in $gitArgumentSets) {
+        $output = & git -C $submoduleRoot @gitArgumentSet 2>$null
+        if ($LASTEXITCODE -ne 0) {
+            continue
+        }
+        foreach ($file in @($output)) {
+            if (-not [string]::IsNullOrWhiteSpace($file)) {
+                Add-Unique $results ("$RelativePath/" + ($file -replace "\\", "/"))
+            }
+        }
+    }
+    return $results.ToArray()
+}
+
+function Test-ModpackBehaviorChangePath([string]$Path) {
+    $normalized = $Path -replace "\\", "/"
+    return $normalized -match '^kubejs/(server_scripts|startup_scripts|client_scripts|config|assets|data)/' -or
+        $normalized -match '^(config|defaultconfigs|hotai)/' -or
+        $normalized -eq 'CDC-mod-src' -or
+        $normalized -match '^CDC-mod-src/src/(main|generated)/'
+}
+
 function ConvertTo-Target([string]$Path) {
     $normalized = $Path -replace "\\", "/"
     if ($normalized -eq "AGENTS.md") { return "AGENTS.md" }
-    if ($normalized -eq "lessons-learned.md") { return "lessons-learned.md" }
-    if ($normalized -like "kubejs/*") { return "kubejs/AGENTS.md" }
-    if ($normalized -like "CDC-mod-src/*") { return "CDC-mod-src/AGENTS.md" }
-    if ($normalized -like ".github/*" -or $normalized -like "scripts/*" -or $normalized -like "mods/*" -or $normalized -like "packwiz-files/*" -or $normalized -eq "pack.toml") { return "AGENTS.md" }
-    if ($normalized -like "config/*" -or $normalized -like "defaultconfigs/*") { return "lessons-learned.md" }
+    if ($normalized -eq "docs/lessons-learned.md") { return "docs/lessons-learned.md" }
+    if ($normalized -like ".agents/skills/*") {
+        $parts = $normalized -split "/"
+        if ($parts.Count -ge 3 -and -not [string]::IsNullOrWhiteSpace($parts[2])) {
+            return ".agents/skills/$($parts[2])/SKILL.md"
+        }
+    }
+    if ($normalized -eq "GettingStarted.md") { return "GettingStarted.md" }
+    if ($normalized -like "hotai/*" -or $normalized -eq "scripts/update-hotai-docs.ps1" -or $normalized -eq "docs/hotai-badiff-details.md") { return "docs/dev-knowledge/hotai/badiff-details.md" }
+    if ($normalized -eq "docs/hotai-patch-map.md") { return "docs/dev-knowledge/hotai/patch-map.md" }
+    if ($normalized -like "docs/hotai/*") {
+        $legacyPath = $normalized.Substring("docs/hotai/".Length)
+        return "docs/dev-knowledge/hotai/$legacyPath"
+    }
+    if ($normalized -like "docs/dev-knowledge/*") { return $normalized }
+    if ($normalized -eq "docs/development.md") { return "docs/dev-knowledge/how-to-index.md" }
+    if ($normalized -like "docs/*design*.md" -or $normalized -like "docs/*plan.md" -or $normalized -like "docs/*strategy.md") { return "docs/dev-knowledge/content-map.md" }
+    if ($normalized -eq ".codex/hooks.json" -or $normalized -like "scripts/*knowledge*" -or $normalized -like "scripts/add-knowledge-note.ps1" -or $normalized -like "scripts/resolve-knowledge-candidate.ps1") { return ".agents/skills/knowledge-check/SKILL.md" }
+    if ($normalized -like "scripts/sync-packwiz-assets.ps1" -or $normalized -like "scripts/add-packwiz-target.ps1" -or $normalized -like "scripts/update-packwiz-meta.ps1" -or $normalized -like "scripts/update-packwiz-target.ps1" -or $normalized -like "scripts/test-packwiz-files-ref.ps1" -or $normalized -like "mods/*" -or $normalized -like "resourcepacks/*" -or $normalized -like "shaderpacks/*" -or $normalized -like "tacz/*" -or $normalized -like "packwiz-files/*") { return ".agents/skills/packwiz-assets/SKILL.md" }
+    if ($normalized -eq "modpack.toml") { return "AGENTS.md" }
+    if ($normalized -like ".github/workflows/release*" -or $normalized -like ".agents/skills/release/*") { return ".agents/skills/release/SKILL.md" }
+    if ($normalized -like ".github/*" -or $normalized -like "scripts/*") { return "AGENTS.md" }
     return ""
 }
 
 function ConvertTo-Reason([string]$Path) {
     $normalized = $Path -replace "\\", "/"
-    if ($normalized -like "kubejs/server_scripts/*") { return "KubeJS recipe or tag pattern may have changed." }
-    if ($normalized -like "kubejs/startup_scripts/*") { return "KubeJS registry/startup behavior may require restart or new conventions." }
-    if ($normalized -like "kubejs/data/*") { return "Datapack/OEI/tag structure may need a routing note." }
-    if ($normalized -like "CDC-mod-src/src/main/java/*") { return "CDC Java package, mixin, registry, or compatibility pattern may have changed." }
-    if ($normalized -like "CDC-mod-src/src/generated/*") { return "Datagen output changed; check whether the generator rule is still accurate." }
-    if ($normalized -like "scripts/*") { return "Project automation changed; root knowledge may need a command or workflow note." }
+    if ($normalized -like ".agents/skills/*") { return "Skill instructions changed; verify trigger wording, workflow scope, and AGENTS duplication." }
+    if ($normalized -eq "GettingStarted.md") { return "Pre-clone development setup entry changed; keep it self-contained because project skills are unavailable before clone." }
+    if ($normalized -like "hotai/*") { return "hotai patch set changed; run scripts/update-hotai-docs.ps1 and update the manual badiff explanation if behavior changed." }
+    if ($normalized -like "docs/dev-knowledge/hotai/*" -or $normalized -like "docs/hotai/*" -or $normalized -like "docs/hotai-*.md") { return "hotai development knowledge changed; keep generated status, manual semantics, and domain summary in their assigned files." }
+    if ($normalized -like "docs/dev-knowledge/*") { return "Development knowledge index changed; verify entries stay short and point to source files." }
+    if ($normalized -eq "scripts/update-hotai-docs.ps1") { return "hotai documentation automation changed; verify validation still checks generated status." }
+    if ($normalized -eq "docs/development.md") { return "Development guide changed; check whether a compact how-to entry should be indexed." }
+    if ($normalized -like "docs/*design*.md" -or $normalized -like "docs/*plan.md" -or $normalized -like "docs/*strategy.md") { return "Design or plan doc changed; update content-map only if implemented behavior or code locations changed." }
+    if (Test-ModpackBehaviorChangePath $normalized) { return "Modpack behavior may be a feature or a bugfix/compat change; classify by intended player result, not by file path." }
+    if ($normalized -eq ".codex/hooks.json" -or $normalized -like "scripts/*knowledge*" -or $normalized -like "scripts/add-knowledge-note.ps1" -or $normalized -like "scripts/resolve-knowledge-candidate.ps1") { return "Knowledge maintenance automation changed; update knowledge-check skill if the prompt or routing changed." }
+    if ($normalized -like "scripts/sync-packwiz-assets.ps1" -or $normalized -like "scripts/add-packwiz-target.ps1" -or $normalized -like "scripts/update-packwiz-meta.ps1" -or $normalized -like "scripts/update-packwiz-target.ps1" -or $normalized -like "scripts/test-packwiz-files-ref.ps1") { return "Packwiz asset automation changed; update packwiz-assets skill if the workflow changed." }
+    if ($normalized -like "scripts/*") { return "Project automation changed; decide whether this is an always-on AGENTS pointer or a task-specific skill workflow." }
     if ($normalized -like ".github/*") { return "CI/release workflow changed; root knowledge may need an update." }
-    if ($normalized -like "config/*" -or $normalized -like "defaultconfigs/*") { return "Config behavior changed; record only non-obvious side effects." }
-    if ($normalized -like "mods/*" -or $normalized -like "packwiz-files/*" -or $normalized -eq "pack.toml") { return "Packwiz/modpack metadata changed; check version or mod-management rules." }
-    if ($normalized -like "*AGENTS.md" -or $normalized -eq "lessons-learned.md") { return "Knowledge base changed; run validation and check for duplicate facts." }
+    if ($normalized -like "mods/*" -or $normalized -like "resourcepacks/*" -or $normalized -like "shaderpacks/*" -or $normalized -like "tacz/*" -or $normalized -like "packwiz-files/*") { return "Packwiz asset metadata changed; record only reusable workflow changes in packwiz-assets skill." }
+    if ($normalized -eq "modpack.toml") { return "Modpack metadata changed; check version rules." }
+    if ($normalized -like "*AGENTS.md" -or $normalized -eq "docs/lessons-learned.md") { return "Knowledge base changed; run validation and check for duplicate facts." }
     return "Changed file may encode a reusable project pattern."
 }
 
@@ -90,23 +147,57 @@ if (-not $hasCurrentChanges -and $head -and $head -ne $lastReportedHead) {
 }
 
 $allFiles = New-Object System.Collections.Generic.List[string]
-foreach ($file in @($dirtyFiles + $stagedFiles + $untrackedFiles + $recentFiles)) {
+$submoduleFiles = Get-SubmoduleChangedFiles "CDC-mod-src"
+foreach ($file in @($dirtyFiles + $stagedFiles + $untrackedFiles + $recentFiles + $submoduleFiles)) {
     Add-Unique $allFiles $file
 }
 
-$knowledgeFiles = @("AGENTS.md", "kubejs/AGENTS.md", "CDC-mod-src/AGENTS.md", "lessons-learned.md")
+$knowledgeFiles = New-Object System.Collections.Generic.List[string]
+foreach ($file in @("AGENTS.md", "kubejs/AGENTS.md", "CDC-mod-src/AGENTS.md", "docs/lessons-learned.md")) {
+    Add-Unique $knowledgeFiles $file
+}
+$skillsDir = Join-Path $Root ".agents/skills"
+if (Test-Path -LiteralPath $skillsDir) {
+    foreach ($skillFile in Get-ChildItem -LiteralPath $skillsDir -Recurse -Filter "SKILL.md") {
+        $relativeSkillPath = $skillFile.FullName.Replace($Root, "").TrimStart("\", "/")
+        Add-Unique $knowledgeFiles ($relativeSkillPath -replace "\\", "/")
+    }
+}
 $changedKnowledge = New-Object System.Collections.Generic.List[string]
 $targets = New-Object System.Collections.Generic.List[string]
 $signals = New-Object System.Collections.Generic.List[string]
+$forms = New-Object System.Collections.Generic.List[string]
 
 foreach ($file in $allFiles) {
     if ($knowledgeFiles -contains ($file -replace "\\", "/")) {
         Add-Unique $changedKnowledge $file
     }
 
-    $target = ConvertTo-Target $file
-    if ($target) {
+    $targetsForFile = if (Test-ModpackBehaviorChangePath $file) {
+        @("docs/dev-knowledge/content-map.md", "docs/dev-knowledge/compatibility-patches.md")
+    } else {
+        @(ConvertTo-Target $file)
+    }
+    foreach ($target in $targetsForFile) {
+        if ([string]::IsNullOrWhiteSpace($target)) {
+            continue
+        }
         Add-Unique $targets $target
+        if ($target -like ".agents/skills/*") {
+            Add-Unique $forms "Skill - procedural workflow, checklist, tool sequence, or task-specific prompt."
+        } elseif ($target -eq "docs/lessons-learned.md") {
+            Add-Unique $forms "Lesson - historical pitfall, root cause, or non-obvious side effect."
+        } elseif ($target -eq "docs/dev-knowledge/content-map.md") {
+            Add-Unique $forms "Content change (feat) map - intended player-facing gameplay, balance, or content change."
+        } elseif ($target -eq "docs/dev-knowledge/compatibility-patches.md") {
+            Add-Unique $forms "Compatibility and bugfix registry - expected-behavior restoration, regression fix, or upstream adaptation with verification and review condition."
+        } elseif ($target -like "docs/dev-knowledge/hotai/*") {
+            Add-Unique $forms "Dev knowledge topic - stable hotai reference or generated patch inventory."
+        } elseif ($target -like "docs/dev-knowledge/*") {
+            Add-Unique $forms "Dev knowledge - content implementation map or lightweight technical how-to index."
+        } elseif ($target -like "*AGENTS.md") {
+            Add-Unique $forms "AGENTS - always-on constraint, routing pointer, or stable convention."
+        }
     }
 
     $reason = ConvertTo-Reason $file
@@ -121,14 +212,14 @@ if ($hasProcessNotes) {
 }
 
 if ($hasProcessNotes -and -not [string]::IsNullOrWhiteSpace($processNotes)) {
-    $recommendation = "Process notes found; review them for lessons-learned.md or the relevant AGENTS.md."
-    Add-Unique $targets "lessons-learned.md"
+    $recommendation = "Process notes found; review them for docs/lessons-learned.md or the relevant AGENTS.md."
+    Add-Unique $targets "docs/lessons-learned.md"
 } elseif ($allFiles.Count -eq 0) {
     $recommendation = "No git changes or recent commit files were found."
 } elseif ($changedKnowledge.Count -gt 0) {
     $recommendation = "Knowledge files changed; validate structure and avoid duplicate facts."
 } elseif ($targets.Count -gt 0) {
-    $recommendation = "Review whether these changes introduced reusable project-specific knowledge."
+    $recommendation = "Review whether these changes introduced reusable project-specific knowledge, and route procedural details to skills instead of AGENTS."
 }
 
 $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss zzz"
@@ -169,6 +260,16 @@ if ($targets.Count -eq 0) {
 } else {
     foreach ($target in $targets) {
         $lines.Add("- $target") | Out-Null
+    }
+}
+$lines.Add("") | Out-Null
+$lines.Add("## Suggested Knowledge Form") | Out-Null
+$lines.Add("") | Out-Null
+if ($forms.Count -eq 0) {
+    $lines.Add("- none") | Out-Null
+} else {
+    foreach ($form in $forms) {
+        $lines.Add("- $form") | Out-Null
     }
 }
 $lines.Add("") | Out-Null

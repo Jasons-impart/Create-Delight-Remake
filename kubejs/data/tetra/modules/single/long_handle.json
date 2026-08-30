@@ -1,0 +1,89 @@
+{
+  "replace": true,
+  "type": "tetra:basic_major_module",
+  "slots": [
+    "single/handle"
+  ],
+  "renderLayer": "lower",
+  "improvements": [
+    "tetra:single/long_handle/",
+    "tetra:single/shared_handle/",
+    "tetra:single/shared/",
+    "tetra:shared/"
+  ],
+  "variants": [
+    {
+      "materials": [
+        "tetra:wood/",
+        "tetra:metal/",
+        "tetra:bone/",
+        "tetra:rod/"
+      ],
+      "key": "long_handle/",
+      "attributes": {
+        "generic.attack_speed": -1.1,
+        "forge:reach_distance": 0.5,
+        "forge:attack_range": 0.5
+      },
+      "aspects": {
+        "block_breaker": 1,
+        "breakable": 2
+      },
+      "extract": {
+        "primaryAttributes": {
+          "forge:reach_distance": 0.1,
+          "forge:attack_range": 0.1
+        },
+        "secondaryAttributes": {
+          "generic.attack_speed": -0.25
+        },
+        "tertiaryAttributes": {
+          "forge:reach_distance": 0.2,
+          "forge:attack_range": 0.2
+        },
+        "durability": 0.25,
+        "integrity": 1,
+        "magicCapacity": 1,
+        "glyph": {
+          "textureX": 16
+        },
+        "availableTextures": [
+          "default",
+          "metal",
+          "bone",
+          "bright"
+        ],
+        "models": [
+          {
+            "location": "tetra:item/module/single/handle/long/"
+          }
+        ]
+      }
+    },
+    {
+      "key": "long_handle/prismarine",
+      "attributes": {
+        "generic.attack_speed": -1.55,
+        "forge:reach_distance": 0.5,
+        "forge:attack_range": 0.5
+      },
+      "aspects": {
+        "block_breaker": 1,
+        "breakable": 2
+      },
+      "durability": 261,
+      "integrity": 4,
+      "magicCapacity": 90,
+      "glyph": {
+        "tint": "prismarine_glyph",
+        "textureX": 16
+      },
+      "models": [
+        {
+          "tint": "prismarine_dark",
+          "location": "tetra:item/module/single/handle/long/default"
+        }
+      ]
+    }
+  ]
+}

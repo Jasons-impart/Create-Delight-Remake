@@ -1,0 +1,8 @@
+{
+  "module": "createdelightcore:kinetic_configuration_module",
+  "target": "create:cogwheel",
+  "charge_cost": 2,
+  "required_tier": 0,
+  "sort_index": 20,
+  "placement": "createdelightcore:block_item"
+}

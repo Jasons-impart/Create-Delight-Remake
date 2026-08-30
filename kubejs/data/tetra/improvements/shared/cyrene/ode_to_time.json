@@ -1,0 +1,18 @@
+[
+  {
+    "key": "ode_to_time",
+    "level": 0,
+    "aspects": {
+      "honed": 1
+    },
+    "attributes": {
+      "*generic.attack_speed": 0.05,
+      "*generic.attack_damage": 0.05,
+      "*tetra:draw_speed": -0.05,
+      "*tetra:draw_strength": 0.05
+    },
+    "effects": {
+      "more_mod_tetra:to_evernights_stars": 10
+    }
+  }
+]

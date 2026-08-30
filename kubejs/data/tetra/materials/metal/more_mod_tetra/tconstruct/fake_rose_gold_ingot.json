@@ -1,0 +1,36 @@
+﻿{
+    "key":  "fake_rose_gold_ingot",
+    "category":  "metal",
+    "primary":  4.2,
+    "secondary":  3.2,
+    "tertiary":  3.5,
+    "durability":  134,
+    "integrityCost":  1,
+    "integrityGain":  9,
+    "magicCapacity":  290,
+    "toolLevel":  "minecraft:iron",
+    "toolEfficiency":  14,
+    "tints":  {
+                  "glyph":  "f4cbb9",
+                  "texture":  "f4cbb9"
+              },
+    "textures":  [
+                     "heavy",
+                     "metal"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "effects":  {
+                    "more_mod_tetra:fake_enhanced":  1,
+                    "more_mod_tetra:fake_silky":  1
+                },
+    "attributes":  {
+                       "**generic.attack_damage":  -0.175,
+                       "**tetra:draw_strength":  -0.175
+                   },
+    "requiredTools":  {
+                          "hammer_dig":  "minecraft:wood"
+                      },
+    "replace":  true
+}

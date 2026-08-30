@@ -1,0 +1,44 @@
+{
+  "slots": [
+    "single/handle",
+    "double/handle",
+    "sword/hilt",
+    "bow/string",
+    "crossbow/stock"
+  ],
+  "materialSlotCount": 1,
+  "rarity": "temporary",
+  "displayType": "improvement",
+  "glyph": {
+    "textureX": 128,
+    "textureY": 240
+  },
+  "requirement": {
+    "type": "tetra:and",
+    "requirements": [
+      {
+        "type": "tetra:locked",
+        "key": "tetra:shared/mmt_more_improvements"
+      },
+      {
+        "type": "tetra:not",
+        "requirement": {
+          "type": "tetra:improvement",
+          "improvement": "skillful"
+        }
+      }
+    ]
+  },
+  "outcomes": [
+    {
+      "experienceCost": 10,
+      "material": {
+        "items": ["minecraft:writable_book"],
+        "count": 1
+      },
+      "improvements": {
+        "skillful": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "paths": [
+    {
+      "scopes": [
+        "main_hand",
+        "off_hand"
+      ],
+      "triggers": [
+        "attack"
+      ],
+      "stacking": "held_max"
+    },
+    {
+      "scopes": [
+        "main_hand",
+        "off_hand"
+      ],
+      "triggers": [
+        "heal"
+      ],
+      "stacking": "held_max"
+    }
+  ]
+}

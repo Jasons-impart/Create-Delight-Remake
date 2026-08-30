@@ -22,6 +22,7 @@ ServerEvents.recipes(e => {
         "create_central_kitchen:crafting/dough_2",
         "create_central_kitchen:crafting/dough_1",
         "farmersdelight:wheat_dough_from_water",
+        "farmersdelight:wheat_dough_from_water_alternative",
         "create:mixing/wheat_dough_egg_create",
         "minecraft:bread",
         "quark:tweaks/crafting/utility/bent/bread",
@@ -47,30 +48,18 @@ ServerEvents.recipes(e => {
     // 脱粒
     threshing(e, "minecraft:wheat", [
         "2x ratatouille:wheat_kernels",
-        "farmersdelight:straw",
-        Item.of("ratatouille:wheat_kernels").withChance(0.5)
-    ], 200)
-    e.custom({
-        type: "farmersdelight:cutting",
-        ingredients: [{ item: "minecraft:wheat" }],
-        result: [{ item: "ratatouille:wheat_kernels", count: 2 }, { item: "farmersdelight:straw", count: 1 }],
-        tool: { type: "farmersdelight:tool_action", action: "blade_cut" }
-    }).id("createdelightcelium:cutting/wheat")
+        Item.of("2x ratatouille:wheat_kernels").withChance(0.5),
+        "farmersdelight:straw"
+    ])
     threshing(e, "vintagedelight:oat", [
         "2x vintagedelight:raw_oats",
-        "farmersdelight:straw",
-        Item.of("2x vintagedelight:raw_oats").withChance(0.5)
+        Item.of("2x vintagedelight:raw_oats").withChance(0.5),
+        "farmersdelight:straw"
     ], 300)
-    e.custom({
-        type: "farmersdelight:cutting",
-        ingredients: [{ item: "vintagedelight:oat" }],
-        result: [{ item: "vintagedelight:raw_oats", count: 2 }, { item: "farmersdelight:straw", count: 1 }],
-        tool: { type: "farmersdelight:tool_action", action: "blade_cut" }
-    }).id("createdelightcelium:cutting/oat")
     threshing(e, "farmersdelight:rice_panicle", [
         "3x farmersdelight:rice",
-        "farmersdelight:straw",
-        Item.of("2x farmersdelight:rice").withChance(0.5)
+        Item.of("3x farmersdelight:rice").withChance(0.5),
+        "farmersdelight:straw"
     ], 400)
     // 蛋液适配
     e.recipes.create.emptying([

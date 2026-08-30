@@ -11,7 +11,8 @@ env:
   VERSION_FILE_PATH: config/fancymenu/assets/version.md
   PACKWIZ_DOWNLOAD_URL: https://github.com/Jasons-impart/packwiz/releases/latest/download/packwiz
   PACKWIZ_INSTALLER_BOOTSTRAP_URL: https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest/download/packwiz-installer-bootstrap.jar
-  PACKWIZ_FILES_RAW_PREFIX: https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/
+  PACKWIZ_FILES_REF: ${{ github.sha }}
+  PACKWIZ_FILES_RAW_PREFIX: https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/${{ github.sha }}/packwiz-files/
   HMCL_DOWNLOAD_URL: https://github.com/HMCL-dev/HMCL/releases/download/v3.13.2/HMCL-3.13.2.jar
   JAVA_DOWNLOAD_URL: https://download.oracle.com/java/17/archive/jdk-17.0.12_windows-x64_bin.msi
   FORGE_DOWNLOAD_URL_PREFIX: https://maven.minecraftforge.net/net/minecraftforge/forge
@@ -26,44 +27,56 @@ jobs:
       modpack_ver: ${{ steps.generate_modpack_version.outputs.VERSION }}
       mc_version: ${{ steps.read-minecraft.outputs.value }}
       forge_version: ${{ steps.read-forge.outputs.value }}
+      is_stable_release: ${{ steps.release_mode.outputs.is_stable_release }}
     steps:
       - name: 仅检出需要的文件
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
-          sparse-checkout: 'pack.toml'
+          sparse-checkout: 'modpack.toml'
       - name: 读取整合包名
         uses: SebRollen/toml-action@v1.2.0
         id: read-modpackname
         with:
-          file: pack.toml
+          file: modpack.toml
           field: 'name'
       - name: 读取整合包版本号
         uses: SebRollen/toml-action@v1.2.0
         id: read-version
         with:
-          file: pack.toml
+          file: modpack.toml
           field: 'version'
       - name: 读取mc版本号
         uses: SebRollen/toml-action@v1.2.0
         id: read-minecraft
         with:
-          file: pack.toml
+          file: modpack.toml
           field: 'versions.minecraft'
       - name: 读取forge版本号
         uses: SebRollen/toml-action@v1.2.0
         id: read-forge
         with:
-          file: pack.toml
+          file: modpack.toml
           field: 'versions.forge'
       - name: 生成整合包版本号
         id: generate_modpack_version
         run: |
           VERSION="${{ steps.read-version.outputs.value }}"
-          if [[ "${{ github.ref_name }}" == *test* ]]; then
+          if [[ "${{ github.ref_type }}" == "tag" && "${{ github.ref_name }}" == *-test ]]; then
+            VERSION="${{ github.ref_name }}"
+          elif [[ "${{ github.ref_name }}" == test-* ]]; then
             VERSION="$VERSION-test-build-${{ github.run_number }}"
           fi
           echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+      - name: 判断发布渠道
+        id: release_mode
+        run: |
+          IS_STABLE_RELEASE=true
+          if [[ "${{ github.ref_type }}" == "tag" && "${{ github.ref_name }}" == *-test ]] || \
+             [[ "${{ github.ref_type }}" == "branch" && "${{ github.ref_name }}" == test-* ]]; then
+            IS_STABLE_RELEASE=false
+          fi
+          echo "is_stable_release=$IS_STABLE_RELEASE" >> $GITHUB_OUTPUT
 
   # 客户端相关任务（并行执行）
   client-tasks:
@@ -74,6 +87,7 @@ jobs:
       MODPACK_VERSION: ${{ needs.common-steps.outputs.modpack_ver }}
       MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
       FORGE_VERSION: ${{ needs.common-steps.outputs.forge_version }}
+      PACKWIZ_STABLE_RELEASE: ${{ needs.common-steps.outputs.is_stable_release }}
     if: >
       startsWith(github.ref_name, 'release') || 
       startsWith(github.ref_name, 'test-release') ||
@@ -85,6 +99,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+          submodules: false
       - name: 安装 Packwiz
         uses: ./.github/actions/setup-packwiz
       - name: 重命名HMCL配置和options
@@ -101,21 +116,30 @@ jobs:
         run: |
           pip install requests
           python .github/workflows/scripts/update_credits.py --mode real --download-images
-      - name: 更新文件索引并生成带mod本体的包
+      - name: 生成 Crash Assistant 模组基线
         run: |
-          mkdir ../click_to_run_release
-          bash .github/workflows/scripts/export_curseforge_pack.sh ../click_to_run_release/modpack.zip 8082
+          if [[ "$PACKWIZ_STABLE_RELEASE" == "true" ]]; then
+            python3 scripts/generate-crash-assistant-modlist.py --stable
+          else
+            python3 scripts/generate-crash-assistant-modlist.py
+          fi
+      - name: 生成不带mod本体的包
+        run: |
+          bash .github/workflows/scripts/export_curseforge_pack.sh ../lite-release.zip 8083
+          unzip -o ../lite-release.zip -d ../lite-release
+          ls ..
+          git checkout -- mods resourcepacks shaderpacks tacz
+          git clean -fd -- mods resourcepacks shaderpacks tacz
+      - name: 下载所有客户端文件本体
+        run: bash .github/workflows/scripts/download_mods.sh 8082 client
+      - name: 生成带mod本体的懒人包
+        run: bash .github/workflows/scripts/build_click_to_run_client.sh ../click_to_run_release
       - name: 下载HMCL启动器与jdk环境
         run: |
           curl -o HMCL.jar -L $HMCL_DOWNLOAD_URL
           curl -o jdk17.msi -L $JAVA_DOWNLOAD_URL
           mv HMCL.jar ../click_to_run_release
           mv jdk17.msi ../click_to_run_release
-      - name: 生成不带mod本体的包
-        run: |
-          bash .github/workflows/scripts/export_curseforge_pack.sh ../lite-release.zip 8083
-          unzip -o ../lite-release.zip -d ../lite-release
-          ls ..
       - name: Workaround actions/upload-artifact#176
         run: echo "artifacts_path=$(realpath ..)" >> $GITHUB_ENV
       - name: 上传懒人包
@@ -143,6 +167,7 @@ jobs:
       MODPACK_VERSION: ${{ needs.common-steps.outputs.modpack_ver }}
       MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
       FORGE_VERSION: ${{ needs.common-steps.outputs.forge_version }}
+      PACKWIZ_STABLE_RELEASE: ${{ needs.common-steps.outputs.is_stable_release }}
     if: >
       startsWith(github.ref_name, 'release') || 
       startsWith(github.ref_name, 'test-release') ||
@@ -153,29 +178,15 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+          submodules: false
       - name: 安装 Packwiz
         uses: ./.github/actions/setup-packwiz
       - name: 更新文件索引
         run: |
+          python3 scripts/generate-packwiz-files.py
           ./packwiz refresh
-      - name: 下载所有mod本体（packwiz-installer）
-        run: bash .github/workflows/scripts/download_mods.sh 8080
-      - name: 删除客户端only模组
-        uses: ./.github/actions/remove-client-only-mods
-        with:
-          base_dir: .
-      - name: 安装服务端only模组
-        run: |
-            mapfile -t urls < .serveronlymodlist
-            for url in "${urls[@]}"; do
-              curl -O -L "$url" --output-dir "mods"
-            done
-      - name: 删除与服务端无关的文件
-        run: |
-            rm -rf resourcepacks shaderpacks packwiz-files
-            rm -f ModList0.4a.md README.md TODOlist.md KubeJSStyleGuide.md DevGuide.md client_jvm_args.example.txt
-            find mods -name "*.pw.toml" -exec rm {} +
-            rm -f pack.toml index.toml .packwizignore packwiz
+      - name: 下载所有服务端文件本体（packwiz-installer）
+        run: bash .github/workflows/scripts/download_mods.sh 8080 server
       - name: 更新整合包配置与版本信息
         uses: ./.github/actions/update-modpack-config
         with:
@@ -192,6 +203,17 @@ jobs:
         run: |
           pip install requests
           python .github/workflows/scripts/update_credits.py --mode real
+      - name: 删除服务端产物无关文件
+        run: |
+            rm -rf resourcepacks shaderpacks packwiz-files CDC-mod-src .agents .codex .github docs scripts
+            rm -f ModList0.4a.md README.md TODOlist.md KubeJSStyleGuide.md GettingStarted.md \
+                  client_jvm_args.example.txt lessons-learned.md .gitignore .gitmodules \
+                  sync-packwiz-assets.bat update-packwiz-meta.bat index.html
+            find . -name "AGENTS.md" -type f -delete
+            find mods -name "*.pw.toml" -exec rm {} +
+            find tacz -name "*.pw.toml" -exec rm {} +
+            rm -f modpack.toml pack.toml index.toml .packwizignore packwiz \
+                  packwiz.json packwiz-installer.jar
       - name: 【版本】服务端启动bat脚本改为CRLF & 替换版本号
         run: |
           set -euo pipefail
@@ -217,11 +239,14 @@ jobs:
   patch-tasks:
     needs: [common-steps, client-tasks]
     runs-on: ubuntu-latest
+    outputs:
+      previous_version: ${{ steps.read-previous-tag.outputs.latest_tag }}
     env:
       MODPACK_NAME: ${{ needs.common-steps.outputs.modpack_name }}
       MODPACK_VERSION: ${{ needs.common-steps.outputs.modpack_ver }}
       MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
       FORGE_VERSION: ${{ needs.common-steps.outputs.forge_version }}
+      PACKWIZ_STABLE_RELEASE: ${{ needs.common-steps.outputs.is_stable_release }}
     if: >
       startsWith(github.ref_name, 'release') || 
       startsWith(github.ref_name, 'test-release') ||
@@ -233,9 +258,11 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
+          submodules: false
       - name: 安装 Packwiz
         uses: ./.github/actions/setup-packwiz
       - name: 获取最近的tag并配置环境变量
+        id: read-previous-tag
         run: |
           set -euo pipefail
           if git describe --tags --exact-match >/dev/null 2>&1; then
@@ -245,70 +272,49 @@ jobs:
           fi
           echo "最近的tag是: $latest_tag"
           echo "LATEST_TAG=$latest_tag" >> $GITHUB_ENV
+          echo "latest_tag=$latest_tag" >> $GITHUB_OUTPUT
       - name: 更新整合包配置与版本信息
         uses: ./.github/actions/update-modpack-config
         with:
           modpack_name: ${{ env.MODPACK_NAME }}
           modpack_version: ${{ env.MODPACK_VERSION }}
           mode: patch
+      - name: 生成 Crash Assistant 模组基线
+        run: |
+          if [[ "$PACKWIZ_STABLE_RELEASE" == "true" ]]; then
+            python3 scripts/generate-crash-assistant-modlist.py --stable
+          else
+            python3 scripts/generate-crash-assistant-modlist.py
+          fi
       - name: 准备补丁文件
-        run: bash .github/workflows/scripts/prepare_patch_diff.sh "$LATEST_TAG"
+        run: |
+          python3 scripts/build-release-patch.py prepare \
+            --base "$LATEST_TAG" \
+            --output patch \
+            --deleted-list deleted_files.txt \
+            --modpack-name "$MODPACK_NAME" \
+            --modpack-version "$MODPACK_VERSION" \
+            --version-file-relative-dir "$VERSION_FILE_RELATIVE_DIR_PATH"
       - name: 移除服务端不需要的文件
         run: |
-          set -euo pipefail
-          # 移除客户端only的mod
-          mapfile -t prefixes < .clientonlymodlist
-          for prefix in "${prefixes[@]}"; do
-            echo "Deleting files with prefix: $prefix"
-            if [ -d "patch/mods" ]; then
-              find patch/mods -name "${prefix}*" -exec rm {} +
-            fi
-            if [ -d "patch/packwiz-files/mods" ]; then
-              find patch/packwiz-files/mods -name "${prefix}*" -exec rm {} +
-            fi
-          done
-          rm -f patch/ModList0.4a.md patch/README.md patch/TODOlist.md \
-                patch/KubeJSStyleGuide.md patch/DevGuide.md patch/pack.toml \
-                patch/index.toml patch/client_jvm_args.example.txt
-          # 将 patch/packwiz-files/ 中的文件移到标准目录
-          if [ -d "patch/packwiz-files/mods" ]; then
-            mv patch/packwiz-files/mods/*.jar patch/mods/ 2>/dev/null || true
+          if [[ "$PACKWIZ_STABLE_RELEASE" == "true" ]]; then
+            python3 scripts/build-release-patch.py server --patch patch --stable
+          else
+            python3 scripts/build-release-patch.py server --patch patch
           fi
-          if [ -d "patch/packwiz-files/resourcepacks" ]; then
-            mkdir -p patch/resourcepacks
-            mv patch/packwiz-files/resourcepacks/*.zip patch/resourcepacks/ 2>/dev/null || true
-          fi
-          if [ -d "patch/packwiz-files/shaderpacks" ]; then
-            mkdir -p patch/shaderpacks
-            mv patch/packwiz-files/shaderpacks/*.zip patch/shaderpacks/ 2>/dev/null || true
-          fi
-          rm -rf patch/packwiz-files
-      - name: 更新配置文件
-        run: |
-          set -euo pipefail
-          mkdir -p patch/config/
-          cp config/bcc-common.toml patch/config/
-          mkdir -p patch/kubejs/config/
-          cp kubejs/config/client.properties patch/kubejs/config/
-          mkdir -p patch/config/GeneralFeedback/
-          cp config/GeneralFeedback/default.json patch/config/GeneralFeedback/
-          mkdir -p "patch/$VERSION_FILE_RELATIVE_DIR_PATH"
-          cat << EOF > "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
-          |||
-          $MODPACK_NAME $MODPACK_VERSION (patch)
-          MIT License Copyright (c) 2025 JSI Production Team
-          |||
-          EOF
       - name: 复制部署脚本
         run: |
           cp .github/workflows/scripts/deploy-patch.sh deploy-patch.sh
           cp .github/workflows/scripts/deploy-patch.bat deploy-patch.bat
       - name: 净化补丁用 CurseForge 元数据
         run: |
-          bash .github/workflows/scripts/download_mods.sh 8081
-          ./packwiz -y curseforge detect
-          ./packwiz refresh
-          bash .github/workflows/scripts/remove_curseforge_payloads_from_patch.sh patch
+          bash .github/workflows/scripts/download_mods.sh 8081 server
+          bash .github/workflows/scripts/normalize_packwiz_files_for_curseforge.sh
+          if [[ "$PACKWIZ_STABLE_RELEASE" == "true" ]]; then
+            python3 scripts/build-release-patch.py purge-curseforge --patch patch --stable
+          else
+            python3 scripts/build-release-patch.py purge-curseforge --patch patch
+          fi
       - name: 上传服务器补丁
         uses: actions/upload-artifact@v4
         with:
@@ -324,9 +330,11 @@ jobs:
           name: "[Dev]${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}-manifest"
       - name: 更新patch中的mod，并加入manifest.json
         run: |
-          bash .github/workflows/scripts/copy_non_curseforge_payloads.sh patch
-          rm -rf patch/packwiz-files
-          mv manifest.json patch
+          if [[ "$PACKWIZ_STABLE_RELEASE" == "true" ]]; then
+            python3 scripts/build-release-patch.py client --patch patch --manifest manifest.json --stable
+          else
+            python3 scripts/build-release-patch.py client --patch patch --manifest manifest.json
+          fi
       - name: 上传客户端补丁
         uses: actions/upload-artifact@v4
         with:
@@ -336,3 +344,118 @@ jobs:
             deploy-patch.sh
             deploy-patch.bat
             patch/
+
+  # 标签构建直接将同一次运行的 artifact 压缩并上传至草稿 Release。
+  # release-publish.ps1 保留发布说明、公开发布与公告 PR 的控制权。
+  release-assets:
+    needs: [common-steps, client-tasks, server-tasks, patch-tasks]
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    if: github.ref_type == 'tag'
+    permissions:
+      contents: write
+    env:
+      MODPACK_NAME: ${{ needs.common-steps.outputs.modpack_name }}
+      MODPACK_VERSION: ${{ needs.common-steps.outputs.modpack_ver }}
+      PREVIOUS_VERSION: ${{ needs.patch-tasks.outputs.previous_version }}
+      IS_STABLE_RELEASE: ${{ needs.common-steps.outputs.is_stable_release }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: 创建或确认草稿 Release
+        shell: bash
+        run: |
+          set -euo pipefail
+          if gh release view "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --json isDraft >/dev/null 2>&1; then
+            is_draft=$(gh release view "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft)
+            if [[ "$is_draft" != "true" ]]; then
+              echo "Release $GITHUB_REF_NAME is already public" >&2
+              exit 1
+            fi
+            exit 0
+          fi
+
+          title="$GITHUB_REF_NAME 正式版"
+          prerelease_args=()
+          if [[ "$IS_STABLE_RELEASE" != "true" ]]; then
+            title="$GITHUB_REF_NAME 测试版"
+            prerelease_args=(--prerelease)
+          fi
+          gh release create "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --title "$title" --draft "${prerelease_args[@]}"
+      - name: 下载客户端包 artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: "[Client]${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}"
+          path: release-artifacts/client
+      - name: 下载服务端包 artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: "Server-${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}"
+          path: release-artifacts/server
+      - name: 下载客户端补丁 artifact
+        if: env.IS_STABLE_RELEASE == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: "[ClientPatch]${{ env.MODPACK_NAME }}-${{ env.PREVIOUS_VERSION }}-to-${{ env.MODPACK_VERSION }}"
+          path: release-artifacts/clientpatch
+      - name: 下载服务端补丁 artifact
+        if: env.IS_STABLE_RELEASE == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: "[ServerPatch]${{ env.MODPACK_NAME }}-${{ env.PREVIOUS_VERSION }}-to-${{ env.MODPACK_VERSION }}"
+          path: release-artifacts/serverpatch
+      - name: 压缩 Release 文件
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p release-assets
+
+          package_directory() {
+            local source_dir="$1"
+            local destination_name="$2"
+            if [[ ! -d "$source_dir" ]]; then
+              echo "Missing artifact directory: $source_dir" >&2
+              exit 1
+            fi
+            (
+              cd "$source_dir"
+              zip -rq "$GITHUB_WORKSPACE/release-assets/$destination_name" .
+            )
+          }
+
+          package_directory release-artifacts/client "Client-${MODPACK_NAME}-${MODPACK_VERSION}.zip"
+          package_directory release-artifacts/server "Server-${MODPACK_NAME}-${MODPACK_VERSION}.zip"
+
+          if [[ "$IS_STABLE_RELEASE" == "true" ]]; then
+            package_directory release-artifacts/clientpatch "ClientPatch-${MODPACK_NAME}-${PREVIOUS_VERSION}-to-${MODPACK_VERSION}.zip"
+            package_directory release-artifacts/serverpatch "ServerPatch-${MODPACK_NAME}-${PREVIOUS_VERSION}-to-${MODPACK_VERSION}.zip"
+          fi
+      - name: 上传 Release 资产至草稿
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          assets=(release-assets/*.zip)
+          expected_count=2
+          if [[ "$IS_STABLE_RELEASE" == "true" ]]; then
+            expected_count=4
+          fi
+          if [[ "${#assets[@]}" -ne "$expected_count" ]]; then
+            echo "Expected $expected_count release archives, got ${#assets[@]}" >&2
+            exit 1
+          fi
+
+          for asset in "${assets[@]}"; do
+            uploaded=false
+            for attempt in {1..5}; do
+              echo "Uploading $(basename "$asset") ($attempt/5)"
+              if timeout 3600 gh release upload "$GITHUB_REF_NAME" "$asset" --repo "$GITHUB_REPOSITORY" --clobber; then
+                uploaded=true
+                break
+              fi
+              sleep 15
+            done
+            if [[ "$uploaded" != "true" ]]; then
+              echo "Failed to upload $(basename "$asset")" >&2
+              exit 1
+            fi
+          done

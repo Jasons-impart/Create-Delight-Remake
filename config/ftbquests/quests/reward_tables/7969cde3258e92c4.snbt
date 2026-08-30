@@ -1,0 +1,10 @@
+{
+	id: "7969CDE3258E92C4"
+	loot_size: 1
+	order_index: 31
+	rewards: [
+		{ item: "create:empty_schematic" }
+		{ item: "fluidlogistics:empty_fluid_schematic" }
+	]
+	title: "空白蓝图"
+}

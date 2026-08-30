@@ -1,0 +1,38 @@
+﻿{
+    "key":  "abyssal_ocean_ingot",
+    "category":  "metal",
+    "primary":  6.3,
+    "secondary":  1.1,
+    "tertiary":  6.5,
+    "durability":  1531,
+    "integrityCost":  2,
+    "integrityGain":  8,
+    "magicCapacity":  300,
+    "toolLevel":  "minecraft:netherite",
+    "toolEfficiency":  9,
+    "tints":  {
+                  "glyph":  "68fffc",
+                  "texture":  "68fffc"
+              },
+    "effects":  {
+                    "more_mod_tetra:abyssal_ocean_echo":  10,
+                    "more_mod_tetra:into_bubbled":  5
+                },
+    "textures":  [
+                     "heavy",
+                     "metal"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "requiredTools":  {
+                          "hammer_dig":  "minecraft:iron"
+                      },
+    "conditions":  [
+                       {
+                           "type":  "forge:mod_loaded",
+                           "modid":  "alexscaves"
+                       }
+                   ],
+    "replace":  true
+}

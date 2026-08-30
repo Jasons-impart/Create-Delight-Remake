@@ -14,10 +14,16 @@
     "glyph": "efd386",
     "texture": "fcf9e7"
   },
-  "textures": ["shiny", "metal"],
+  "textures": [
+    "shiny",
+    "metal"
+  ],
   "material": {
-    "items": ["createmetallurgy:obdurium_ingot"]
+    "items": [
+      "createmetallurgy:obdurium_ingot"
+    ]
   },
   "requiredTools": {
-    "hammer_dig": 5    }
+    "hammer_dig": 5
+  }
 }

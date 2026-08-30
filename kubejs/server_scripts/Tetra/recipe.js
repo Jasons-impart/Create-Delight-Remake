@@ -1,6 +1,6 @@
 ServerEvents.recipes(e => {
     //无暇宝石制作
-    const {vintageimprovements, create, createaddition, createmetallurgy} = e.recipes
+    const {vintageimprovements, kubejs, create, createaddition, createmetallurgy} = e.recipes
     create.sequenced_assembly([Item.of("tetra:pristine_lapis").withChance(0.11), "minecraft:air"], "minecraft:lapis_lazuli", [
         vintageimprovements.laser_cutting("minecraft:lapis_lazuli", "minecraft:lapis_lazuli", 10000, 1000),
         // vintageimprovements.polishing("minecraft:lapis_lazuli", "minecraft:lapis_lazuli")
@@ -95,19 +95,51 @@ ServerEvents.recipes(e => {
         "tetra:pristine_lapis")
         .id("createdelight:cutting/pristine_lapis")
 
-    create.deploying(["tetra:forged_mesh", Item.of("art_of_forging:nano_insectoid").withChance(0.1)], ["createdelight:forged_steel_sheet", "art_of_forging:nano_insectoid"])
-    .keepHeldItem()
-    .id("createdelight:deploying/forged_mesh")
-    createaddition.rolling("art_of_forging:forged_steel_ingot", "2x tetra:forged_beam")
+    // 锻造网属于纯金属加工，不再绑定深渊探索物品
+    vintageimprovements.hammering("tetra:forged_mesh", "createdelight:forged_steel_sheet")
+    .id("createdelight:hammering/forged_mesh")
+    createaddition.rolling("createdelight:forged_steel_ingot", "2x tetra:forged_beam")
     .id("createdelight:rolling/forged_beam")
     create.deploying("2x tetra:forged_bolt", ["tetra:forged_beam", "createdelight:forged_steel_sheet"])
     .id("createdelight:deploying/forged_bolt")
-    vintageimprovements.pressurizing([
-        Item.of("art_of_forging:nano_insectoid").withChance(0.95),
-        "3x tetra:metal_scrap",
-        Item.of("2x tetra:metal_scrap").withChance(0.5),
-        Item.of("2x tetra:metal_scrap").withChance(0.25)], [
-            "art_of_forging:nano_insectoid",
-            "art_of_forging:forged_steel_ingot"
-        ]).id("createdelight:pressurizing/metal_scrap")
+    // 降低原配方过高的回收率，同时保留锻造钢作为金属碎片再生来源
+    create.crushing("2x tetra:metal_scrap", "createdelight:forged_steel_ingot")
+    .id("createdelight:crushing/metal_scrap_from_forged_steel")
+
+    // 参考 Art of Forging 原数据包，恢复 Tetra 锻造遗迹构成方块的制作途径
+    kubejs.shaped("tetra:forged_container", [
+        "AAA",
+        "A A",
+        "AAA"
+    ], {
+        A: "createdelight:forged_steel_ingot"
+    }).id("createdelight:crafting/forged_container")
+
+    kubejs.shaped("3x tetra:forged_pillar", [
+        "A",
+        "A",
+        "A"
+    ], {
+        A: "createdelight:forged_steel_ingot"
+    }).id("createdelight:crafting/forged_pillar")
+
+    kubejs.shaped("2x tetra:forged_platform", [
+        "AAA",
+        "AAA"
+    ], {
+        A: "createdelight:forged_steel_ingot"
+    }).id("createdelight:crafting/forged_platform")
+
+    kubejs.shaped("3x tetra:forged_platform_slab", [
+        "AAA"
+    ], {
+        A: "tetra:forged_platform"
+    }).id("createdelight:crafting/forged_platform_slab")
+
+    kubejs.shaped("4x tetra:forged_wall", [
+        "AA",
+        "AA"
+    ], {
+        A: "createdelight:forged_steel_ingot"
+    }).id("createdelight:crafting/forged_wall")
 })

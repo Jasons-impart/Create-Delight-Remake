@@ -6,6 +6,8 @@ StartupEvents.modifyCreativeTab("vintagedelight:vintage_tab", e => {
     'vintagedelight:sweet_berry_jam_bottle',
     'vintagedelight:glow_berry_jam_bottle',
     'vintagedelight:gearo_berry_mason_jar',
-    'vintagedelight:gearo_berry_jam_bottle'
+    'vintagedelight:gearo_berry_jam_bottle',
+    'vintagedelight:cheese_pizza',
+    'vintagedelight:cheese_pizza_slice'
   ])
 })

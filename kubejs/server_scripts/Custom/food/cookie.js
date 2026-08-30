@@ -24,7 +24,9 @@ ServerEvents.recipes(e => {
         "create_central_kitchen:compacting/sweet_berry_cookie",
         "miners_delight:bat_cookie",
         "cosmopolitan:farmersdelight/paw_cookie",
-        "cosmopolitan:farmersdelight/birch_cookie"
+        "cosmopolitan:farmersdelight/birch_cookie",
+        "cosmopolitan:general/birch_cookie",
+        "cavedelight:star_cookie",
     ])
     let recipes = [
         ["4x createdelight:oatmeal_cookie_dough", "vintagedelight:raw_oats", "vintagedelight:oatmeal_cookie"],
@@ -37,28 +39,62 @@ ServerEvents.recipes(e => {
         ["4x createdelight:sweet_berry_cookie_dough", "minecraft:sweet_berries", "farmersdelight:sweet_berry_cookie"],
         ["4x createdelight:honey_cookie_dough", "minecraft:honeycomb", "farmersdelight:honey_cookie"],
         ["4x createdelight:lime_cookie_dough", "#forge:fruits/lime", "collectorsreap:lime_cookie"],
-        ["4x createdelight:chorus_cookie_dough", '#forge:chorus_fruits', 'ends_delight:chorus_cookie']
+        ["4x createdelight:bat_cookie_dough", "#miners_delight:bat_wing", "miners_delight:bat_cookie"],
+        ["4x createdelight:chorus_cookie_dough", '#forge:chorus_fruits', 'ends_delight:chorus_cookie'],
+        ["4x createdelight:star_cookie_dough", ["alexscaves:tree_star", "alexscaves:pewen_sap"], "cavedelight:star_cookie"]
     ]
     recipes.forEach(([result, input, cookie]) => {
+        let ingredients = input instanceof Array ? input.slice() : [input]
+        ingredients.push("#forge:animal_oil")
+        ingredients.push(Fluid.of("createdelight:cake_batter", 100))
         e.recipes.create.mixing(
             result,
-            [
-                input,
-                "#forge:animal_oil",
-                Fluid.of("createdelight:cake_batter", 100)
-            ]
+            ingredients
         ).id(`createdelight:mixing/${result.split(":")[1]}`)
         baking(e, result.split(" ")[1], cookie, 4, "food", 100)
     });
-    // 蝙蝠曲奇
-    e.recipes.create.filling(
-        "createdelight:bat_cookie_dough",
-        [
-            Fluid.of("createdelight:cake_batter", 100),
-            '#miners_delight:bat_wing'
-        ]
-    ).id("createdelight:filling/bat_cookie_dough")
-    baking(e, "createdelight:bat_cookie_dough", 'miners_delight:bat_cookie', 1, "food", 100)
+    const {$SuspiciousEffectHolder, $MobEffect, $MobEffects, $ForgeRegistries} = global.CDServerJavaClasses
+    function herbalCookieDuration(effect, duration) {
+        if (effect.equals($MobEffects.SATURATION) || duration == 1)
+            return 1
+        return Math.floor(duration / 2)
+    }
+    function herbalCookieData(effect, duration) {
+        const effectId = $MobEffect.getId(effect)
+        const effectKey = String($ForgeRegistries.MOB_EFFECTS.getKey(effect))
+        return {
+            key: effectKey,
+            duration: duration,
+            nbt: {
+                Effects: [{
+                    EffectId: effectId,
+                    "forge:effect_id": effectKey,
+                    EffectDuration: duration
+                }]
+            }
+        }
+    }
+    function herbalCookieStack(item, count, data) {
+        return Item.of(item, count, data.nbt)
+    }
+    Ingredient.of("#minecraft:small_flowers").stacks.forEach(flowerStack => {
+        const effectHolder = $SuspiciousEffectHolder.tryGet(flowerStack.getItem())
+        if (effectHolder == null)
+            return
+        const flower = flowerStack.id
+        const effect = effectHolder.getSuspiciousEffect()
+        const duration = herbalCookieDuration(effect, effectHolder.getEffectDuration())
+        const data = herbalCookieData(effect, duration)
+        e.recipes.create.mixing(
+            herbalCookieStack("createdelight:herbal_cookie_dough", 4, data),
+            [
+                flower,
+                "#forge:animal_oil",
+                Fluid.of("createdelight:cake_batter", 100)
+            ]
+        ).id(`createdelight:mixing/herbal_cookie_dough_from_${flower.split(":")[1]}`)
+    })
+    baking(e, "createdelight:herbal_cookie_dough", "cosmopolitan:herbal_cookie", 4, "food", 100)
     //猫爪曲奇
     e.recipes.create.mixing(
         "4x createdelight:paw_cookie_dough",

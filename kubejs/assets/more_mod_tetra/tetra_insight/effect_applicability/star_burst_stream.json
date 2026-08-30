@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "paths": [
+    {
+      "scopes": [
+        "main_hand",
+        "off_hand"
+      ],
+      "triggers": [
+        "attack"
+      ],
+      "stacking": "held_sum"
+    },
+    {
+      "scopes": [
+        "main_hand",
+        "off_hand"
+      ],
+      "triggers": [
+        "wear_passive"
+      ],
+      "stacking": "held_sum"
+    }
+  ]
+}

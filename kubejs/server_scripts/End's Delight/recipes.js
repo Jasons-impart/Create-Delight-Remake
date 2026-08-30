@@ -2,7 +2,8 @@ ServerEvents.recipes(e => {
     remove_recipes_id(e, [
        "ends_delight:food/chorus_fruit_milk_tea",
        "ends_delight:food/chorus_cookie",
-       "ends_delight:crack_non_hatchable_dragon_egg"
+       "ends_delight:crack_non_hatchable_dragon_egg",
+       "ends_delight:food/raw_ender_sausage"
     ])
     e.recipes.create.mixing(Fluid.of("create_central_kitchen:chorus_fruit_wine", 250), [
         "minecraft:sugar", Ingredient.of("#forge:chorus_fruits", 2)
@@ -55,4 +56,33 @@ ServerEvents.recipes(e => {
     .id("createdelight:cutting/ender_pearl_grain")
     e.recipes.create.compacting("minecraft:ender_pearl", ["4x ends_delight:ender_pearl_grain"])
     .id("createdelight:compacting/ender_pearl")
+    e.recipes.create.mixing(
+        Fluid.of("createdelight:chorus_sauce", 250),
+        [
+            "ends_delight:chorus_succulent",
+            "#forge:chorus_fruits"
+        ]
+    ).heated().id("createdelight:mixing/chorus_sauce")
+    e.recipes.create.filling(
+        "ends_delight:chorus_sauce",
+        [
+            Fluid.of("createdelight:chorus_sauce", 250),
+            "minecraft:bowl"
+        ]
+    ).id("createdelight:filling/chorus_sauce")
+    e.recipes.create.emptying(
+        [
+            Fluid.of("createdelight:chorus_sauce", 250),
+            "minecraft:bowl"
+        ],
+        "ends_delight:chorus_sauce"
+    ).id("createdelight:emptying/chorus_sauce")
+    e.recipes.ratatouille.squeezing(
+        'ends_delight:raw_ender_sausage',
+        [
+            "ratatouille:sausage_casing",
+            Fluid.of("createdelight:chorus_sauce", 250),
+            "#forge:raw_dragon_meat"
+        ]
+    ).id("createdelight:squeezing/ender_sausage")
 })

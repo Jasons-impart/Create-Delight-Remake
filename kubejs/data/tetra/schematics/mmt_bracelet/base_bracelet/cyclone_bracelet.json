@@ -1,0 +1,41 @@
+{
+  "slots": [
+    "mmt_bracelet/base_bracelet"
+  ],
+  "materialSlotCount": 1,
+  "requirement": {
+    "type": "tetra:locked",
+    "key": "createdelight:mmt_curios/storm_combat"
+  },
+  "displayType": "major",
+  "glyph": {
+    "textureX": 176,
+    "textureY": 48
+  },
+  "translation": {
+    "primaryAttributes": {
+      "generic.attack_speed": 5
+    },
+    "secondaryAttributes": {
+      "generic.attack_speed": -1
+    },
+    "durability": 1,
+    "integrity": 1,
+    "magicCapacity": 1
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:bone/",
+        "tetra:metal/",
+        "tetra:stone/",
+        "tetra:wood/",
+        "tetra:gem/"
+      ],
+      "countFactor": 2,
+      "moduleKey": "mmt_bracelet/base_bracelet/cyclone_bracelet",
+      "moduleVariant": "cyclone_bracelet/"
+    }
+  ],
+  "replace": true
+}

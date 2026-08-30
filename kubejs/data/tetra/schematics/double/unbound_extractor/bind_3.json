@@ -1,0 +1,38 @@
+{
+    "replace": true,
+    "slots": ["double/head_right"],
+    "rarity": "temporary",
+    "hone": true,
+    "displayType": "improvement",
+    "requirement": {
+        "type": "tetra:and",
+        "requirements": [
+            {
+                "type": "tetra:locked",
+                "key": "tetra:extractor"
+            },
+            {
+                "type": "tetra:improvement",
+                "improvement": "unbound_extractor/bound",
+                "level": 2
+            }
+        ]
+    },
+    "glyph": {
+        "textureX": 144,
+        "textureY": 240
+    },
+    "materialSlotCount": 1,
+    "outcomes": [
+        {
+            "experienceCost": 3,
+            "material": {
+                "items": ["tetra:planar_stabilizer"],
+                "count": 1
+            },
+            "improvements": {
+                "unbound_extractor/bound": 3
+            }
+        }
+    ]
+}

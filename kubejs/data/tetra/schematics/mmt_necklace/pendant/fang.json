@@ -1,0 +1,37 @@
+{
+  "slots": [
+    "mmt_necklace/pendant"
+  ],
+  "materialSlotCount": 1,
+  "displayType": "major",
+  "glyph": {
+    "textureX": 176,
+    "textureY": 48
+  },
+  "translation": {
+    "primaryAttributes": {
+      "attributeslib:armor_pierce": 1
+    },
+    "secondaryAttributes": {
+      "attributeslib:armor_pierce": 1
+    },
+    "durability": 1,
+    "integrity": 1,
+    "magicCapacity": 1
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:bone/"
+      ],
+      "countFactor": 1,
+      "moduleKey": "mmt_necklace/pendant/fang",
+      "moduleVariant": "fang/"
+    }
+  ],
+  "requirement": {
+    "type": "tetra:locked",
+    "key": "createdelight:mmt_curios/mars_guard"
+  },
+  "replace": true
+}

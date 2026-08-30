@@ -1,7 +1,3 @@
-const $ParticleTypes = Java.loadClass("net.minecraft.core.particles.ParticleTypes")
-const $BlockParticleOption = Java.loadClass("net.minecraft.core.particles.BlockParticleOption")
-const $ItemParticleOption = Java.loadClass("net.minecraft.core.particles.ItemParticleOption")
-
 let PonderUtil = {}
 
 /**
@@ -16,7 +12,7 @@ let PonderUtil = {}
 PonderUtil.spawnItemParticles = function(scene, position, vec3d, item, count, age) {
     scene.effects.emitParticles(
         position,
-        scene.effects.particleEmitterWithinBlockSpace(new $ItemParticleOption($ParticleTypes.ITEM, item), vec3d), count, age)
+        scene.effects.particleEmitterWithinBlockSpace(new global.CDClientJavaClasses.$ItemParticleOption(global.CDClientJavaClasses.$ParticleTypes.ITEM, item), vec3d), count, age)
 }
 /**
  * 

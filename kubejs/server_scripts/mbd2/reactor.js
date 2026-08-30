@@ -1,9 +1,3 @@
-const $ForgeEnergyRecipeCapability = Java.loadClass("com.lowdragmc.mbd2.common.capability.recipe.ForgeEnergyRecipeCapability")
-const $FluidRecipeCapability = Java.loadClass("com.lowdragmc.mbd2.common.capability.recipe.FluidRecipeCapability")
-const $SwitchWidget = Java.loadClass("com.lowdragmc.lowdraglib.gui.widget.SwitchWidget")
-
-
-
 //初始化CustomData
 MBDMachineEvents.onStructureFormed("createdelight:fission_reactor", e => {
     let customData = e.event.machine.customData
@@ -111,17 +105,17 @@ MBDMachineEvents.onAfterRecipeWorking("createdelight:fission_reactor", e => {
         let maxFluidOutput = ReactorUtil.outputFluid(machine)
         // machine.level.recipeManager.getByType("createdelight:fission_react").forEach((id, r) => {
         //     let mbdRecipe = machine.getModifiedRecipe(r)
-        //     mbdRecipe.getOutputContents($ForgeEnergyRecipeCapability.CAP).forEach(con => {
+        //     mbdRecipe.getOutputContents(global.CDServerJavaClasses.$ForgeEnergyRecipeCapability.CAP).forEach(con => {
         //         if (maxEnergyOutput < con.getContent())
         //             maxEnergyOutput = con.getContent()
         //     })
 
-        //     mbdRecipe.getOutputContents($FluidRecipeCapability.CAP).forEach(con => {
+        //     mbdRecipe.getOutputContents(global.CDServerJavaClasses.$FluidRecipeCapability.CAP).forEach(con => {
         //         if (maxFluidOutput < con.getContent().getAmount())
         //             maxFluidOutput = con.getContent().getAmount()
         //     })
 
-        //     mbdRecipe.getInputContents($FluidRecipeCapability.CAP).forEach(con => {
+        //     mbdRecipe.getInputContents(global.CDServerJavaClasses.$FluidRecipeCapability.CAP).forEach(con => {
         //         if(maxFluidInput < con.getContent().getAmount())
         //             maxFluidInput = con.getContent().getAmount()
         //     })

@@ -1,0 +1,8 @@
+{
+  "module": "createdelightcore:fluid_configuration_module",
+  "target": "create:glass_fluid_pipe",
+  "charge_cost": 4,
+  "required_tier": 0,
+  "sort_index": 20,
+  "placement": "createdelightcore:block_item"
+}

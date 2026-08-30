@@ -1,0 +1,13 @@
+name = "Create: Enhanced Schematicannon (Unofficial Fixed Fork)"
+filename = "create_enhanced_schematicannon-1.0.5-fork.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "4fd171fb06494a420622a707160424489d99e69a"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8587216
+project-id = 1576328

@@ -16,14 +16,6 @@
 		}
 		{
 			height: 2.0d
-			image: "minecraft:item/slime_ball"
-			rotation: 0.0d
-			width: 2.0d
-			x: 0.5d
-			y: 4.0d
-		}
-		{
-			height: 2.0d
 			image: "quark:block/ender_watcher"
 			rotation: 0.0d
 			width: 2.0d
@@ -97,14 +89,6 @@
 			y: 4.0d
 		}
 		{
-			height: 2.0d
-			image: "northstar:textures/environment/moon_close.png"
-			rotation: 0.0d
-			width: 2.0d
-			x: 8.0d
-			y: 4.0d
-		}
-		{
 			click: "#5981A5D70F26A7A5"
 			height: 3.0d
 			hover: ["点击跳转下一章节"]
@@ -113,6 +97,30 @@
 			width: 3.0d
 			x: -1.0d
 			y: -3.0d
+		}
+		{
+			height: 3.0d
+			image: "farmersdelight:textures/gui/hanging_signs/canvas.png"
+			rotation: 0.0d
+			width: 3.0d
+			x: 3.5d
+			y: 0.0d
+		}
+		{
+			height: 2.0d
+			image: "alexscaves:item/vesper_wing"
+			rotation: 0.0d
+			width: 2.0d
+			x: 8.0d
+			y: 4.0d
+		}
+		{
+			height: 2.0d
+			image: "ftbchunks:textures/faces/minecraft/slime.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: 0.5d
+			y: 4.0d
 		}
 	]
 	order_index: 8
@@ -509,7 +517,7 @@
 				{
 					count: 2
 					id: "38D5ECC5AC68743F"
-					item: "refurbished_furniture:cooked_vegetable_pizza"
+					item: "createdelightcore:vegetable_pizza"
 					random_bonus: 2
 					type: "item"
 				}
@@ -588,6 +596,21 @@
 			title: "旅途的中点"
 			x: -1.0d
 			y: -3.0d
+		}
+		{
+			dependencies: ["31628FC783AE3161"]
+			description: ["        本章节试炼难度较低，推荐获得成型的太空时期前的装备后再挑战，例如下界合金装备等。"]
+			icon: "alexscaves:hazmat_block"
+			id: "4EA5D70C56931162"
+			shape: "square"
+			tasks: [{
+				id: "3E39DDC2239949C0"
+				title: "提醒"
+				type: "checkmark"
+			}]
+			title: "提醒"
+			x: 3.5d
+			y: 0.5d
 		}
 	]
 	title: "旅途的起始"

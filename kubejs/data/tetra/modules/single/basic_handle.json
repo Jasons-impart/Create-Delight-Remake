@@ -1,0 +1,79 @@
+{
+  "replace": true,
+  "type": "tetra:basic_major_module",
+  "slots": [
+    "single/handle"
+  ],
+  "renderLayer": "lower",
+  "improvements": [
+    "tetra:single/basic_handle/",
+    "tetra:single/shared_handle/",
+    "tetra:single/shared/",
+    "tetra:shared/"
+  ],
+  "variants": [
+    {
+      "materials": [
+        "tetra:wood/",
+        "tetra:metal/",
+        "tetra:bone/",
+        "tetra:rod/"
+      ],
+      "key": "basic_handle/",
+      "attributes": {
+        "generic.attack_speed": -1.1
+      },
+      "aspects": {
+        "block_breaker": 1,
+        "breakable": 2
+      },
+      "durability": 7,
+      "integrity": 1,
+      "extract": {
+        "secondaryAttributes": {
+          "generic.attack_speed": -0.2
+        },
+        "durability": 0.3,
+        "integrity": 1,
+        "magicCapacity": 1,
+        "glyph": {
+          "textureX": 16
+        },
+        "availableTextures": [
+          "default",
+          "metal",
+          "bone",
+          "bright"
+        ],
+        "models": [
+          {
+            "location": "tetra:item/module/single/handle/basic/"
+          }
+        ]
+      }
+    },
+    {
+      "key": "basic_handle/prismarine",
+      "attributes": {
+        "generic.attack_speed": -1.55
+      },
+      "aspects": {
+        "block_breaker": 1,
+        "breakable": 2
+      },
+      "durability": 261,
+      "integrity": 4,
+      "magicCapacity": 90,
+      "glyph": {
+        "tint": "prismarine_glyph",
+        "textureX": 16
+      },
+      "models": [
+        {
+          "tint": "prismarine_dark",
+          "location": "tetra:item/module/single/handle/basic/default"
+        }
+      ]
+    }
+  ]
+}

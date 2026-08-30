@@ -4,7 +4,7 @@ param(
 
     [string]$Problem = "",
     [string]$Fix = "",
-    [string]$Target = "lessons-learned.md",
+    [string]$Target = "docs/lessons-learned.md",
     [string]$Root = "",
     [string]$NotesPath = ""
 )

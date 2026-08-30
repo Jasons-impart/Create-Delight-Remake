@@ -1,0 +1,471 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.creeper.walk": {
+      "loop": true,
+      "animation_length": 0.8,
+      "bones": {
+        "leg4": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                7.5,
+                0,
+                -2
+              ],
+              "easing": "easeInOutSine"
+            },
+            "0.4": {
+              "vector": [
+                -30,
+                0,
+                -2
+              ],
+              "easing": "easeInOutSine"
+            },
+            "0.8": {
+              "vector": [
+                7.5,
+                0,
+                -2
+              ],
+              "easing": "easeInOutSine"
+            }
+          }
+        },
+        "leg3": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                -30,
+                0,
+                2
+              ]
+            },
+            "0.4": {
+              "vector": [
+                7.5,
+                0,
+                2
+              ],
+              "easing": "easeInOutSine"
+            },
+            "0.8": {
+              "vector": [
+                -30,
+                0,
+                2
+              ],
+              "easing": "easeInOutSine"
+            }
+          }
+        },
+        "leg2": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                -10,
+                0,
+                0
+              ]
+            },
+            "0.4": {
+              "vector": [
+                15,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "0.8": {
+              "vector": [
+                -10,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            }
+          }
+        },
+        "leg1": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                7.5,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "0.4": {
+              "vector": [
+                -10,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "0.8": {
+              "vector": [
+                7.5,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            }
+          }
+        },
+        "body": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                5
+              ]
+            },
+            "0.4": {
+              "vector": [
+                0,
+                0,
+                -5
+              ],
+              "easing": "easeInOutSine"
+            },
+            "0.8": {
+              "vector": [
+                0,
+                0,
+                5
+              ],
+              "easing": "easeInOutSine"
+            }
+          }
+        }
+      }
+    },
+    "animation.creeper.idle": {
+      "loop": true,
+      "animation_length": 6,
+      "bones": {
+        "head3": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ]
+            },
+            "2.08": {
+              "vector": [
+                0,
+                0,
+                0
+              ]
+            },
+            "2.4": {
+              "vector": [
+                0,
+                15,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "2.76": {
+              "vector": [
+                0,
+                15,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "3.28": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutBack"
+            },
+            "6.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "head2": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ]
+            },
+            "0.08": {
+              "vector": [
+                0,
+                0,
+                0
+              ]
+            },
+            "0.52": {
+              "vector": [
+                0,
+                -180,
+                0
+              ],
+              "easing": "easeInOutBack"
+            },
+            "1.56": {
+              "vector": [
+                0,
+                -180,
+                0
+              ]
+            },
+            "2.08": {
+              "vector": [
+                0,
+                -360,
+                0
+              ],
+              "easing": "easeInOutBack"
+            }
+          }
+        },
+        "head_1": {
+          "rotation": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ]
+            },
+            "0.52": {
+              "vector": [
+                0,
+                0,
+                0
+              ]
+            },
+            "0.76": {
+              "vector": [
+                0,
+                -45,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "1.56": {
+              "vector": [
+                0,
+                -45,
+                0
+              ]
+            },
+            "2.04": {
+              "vector": [
+                0,
+                17.5,
+                0
+              ],
+              "easing": "easeInOutExpo"
+            },
+            "3.4": {
+              "vector": [
+                0,
+                17.5,
+                0
+              ]
+            },
+            "3.68": {
+              "vector": [
+                0,
+                325.75,
+                0
+              ]
+            },
+            "3.88": {
+              "vector": [
+                0,
+                360,
+                -12.5
+              ],
+              "easing": "easeOutQuart"
+            },
+            "4.08": {
+              "vector": [
+                0,
+                360,
+                -12.5
+              ],
+              "easing": "easeOutQuart"
+            },
+            "4.28": {
+              "vector": [
+                0,
+                360,
+                0
+              ],
+              "easing": "easeInElastic"
+            }
+          },
+          "position": {
+            "3.56": {
+              "vector": [
+                0,
+                0,
+                0
+              ]
+            },
+            "3.88": {
+              "vector": [
+                -1.2,
+                0,
+                0
+              ]
+            },
+            "4.48": {
+              "vector": [
+                -1.2,
+                0,
+                0
+              ]
+            },
+            "4.84": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutBack"
+            }
+          }
+        }
+      }
+    },
+    "animation.creeper.attack": {
+      "animation_length": 0.52,
+      "bones": {
+        "body": {
+          "rotation": {
+            "0.04": {
+              "vector": [
+                0,
+                0,
+                0
+              ]
+            },
+            "0.12": {
+              "vector": [
+                20,
+                0,
+                0
+              ]
+            },
+            "0.24": {
+              "vector": [
+                22,
+                0,
+                0
+              ]
+            },
+            "0.36": {
+              "vector": [
+                5,
+                0,
+                0
+              ]
+            },
+            "0.48": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            }
+          },
+          "position": {
+            "0.0": {
+              "vector": [
+                0,
+                0,
+                0
+              ]
+            },
+            "0.12": {
+              "vector": [
+                0,
+                -1,
+                0
+              ]
+            },
+            "0.24": {
+              "vector": [
+                0,
+                -0.5,
+                -0.5
+              ]
+            },
+            "0.36": {
+              "vector": [
+                0,
+                0,
+                0
+              ]
+            },
+            "0.48": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            }
+          }
+        },
+        "head": {
+          "rotation": {
+            "0.04": {
+              "vector": [
+                0,
+                0,
+                0
+              ]
+            },
+            "0.16": {
+              "vector": [
+                20,
+                0,
+                0
+              ]
+            },
+            "0.28": {
+              "vector": [
+                -7.5,
+                0,
+                0
+              ]
+            },
+            "0.52": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            }
+          }
+        }
+      }
+    }
+  },
+  "geckolib_format_version": 2
+}

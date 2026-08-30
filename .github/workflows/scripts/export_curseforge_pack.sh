@@ -9,13 +9,17 @@ output="${1:?Usage: export_curseforge_pack.sh <output.zip> [port]}"
 port="${2:-8082}"
 
 raw_prefix="${PACKWIZ_FILES_RAW_PREFIX:?PACKWIZ_FILES_RAW_PREFIX is required}"
+raw_prefix_regex='https://raw\.githubusercontent\.com/Jasons-impart/Create-Delight-Remake/[^"[:space:]]*/packwiz-files/'
 local_prefix="http://127.0.0.1:${port}/packwiz-files/"
 server_pid=""
+side_backup=""
+stable_args=()
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+repo_root="$(cd "$script_dir/../../.." && pwd)"
 
 restore_urls() {
-  find mods resourcepacks shaderpacks -name '*.pw.toml' -exec \
+  find mods resourcepacks shaderpacks tacz -name '*.pw.toml' -exec \
     sed -i "s|${local_prefix}|${raw_prefix}|g" {} + 2>/dev/null || true
 }
 
@@ -26,17 +30,27 @@ cleanup() {
     wait "$server_pid" 2>/dev/null || true
   fi
   restore_urls
+  if [ -n "$side_backup" ] && [ -d "$side_backup" ]; then
+    python3 "$repo_root/scripts/packwiz-side.py" restore-metadata --base "$repo_root" --backup-dir "$side_backup" || true
+    rm -rf "$side_backup"
+  fi
   exit "$status"
 }
 trap cleanup EXIT
 
+python3 "$repo_root/scripts/generate-packwiz-files.py" --source "$repo_root/modpack.toml" --output-dir "$repo_root"
+side_backup="$(mktemp -d)"
+if [ "${PACKWIZ_STABLE_RELEASE:-false}" = "true" ]; then
+  stable_args=(--stable)
+fi
+python3 "$repo_root/scripts/packwiz-side.py" prune-metadata --base "$repo_root" --target client --backup-dir "$side_backup" "${stable_args[@]}"
 bash "$script_dir/normalize_packwiz_files_for_curseforge.sh"
 
 mkdir -p "$(dirname "$output")"
 
-if grep -RIl --include='*.pw.toml' "$raw_prefix" mods resourcepacks shaderpacks >/dev/null 2>&1; then
-  find mods resourcepacks shaderpacks -name '*.pw.toml' -exec \
-    sed -i "s|${raw_prefix}|${local_prefix}|g" {} +
+if grep -RIlE --include='*.pw.toml' "$raw_prefix_regex" mods resourcepacks shaderpacks tacz >/dev/null 2>&1; then
+  find mods resourcepacks shaderpacks tacz -name '*.pw.toml' -exec \
+    sed -E -i "s|${raw_prefix_regex}|${local_prefix}|g" {} +
 
   python3 -m http.server "$port" --directory "." &
   server_pid=$!

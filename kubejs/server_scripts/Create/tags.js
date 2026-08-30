@@ -22,6 +22,7 @@ ServerEvents.tags("minecraft:fluid", e => {
         "createdelight:egg_yolk",
         "create:honey",
         "createdelight:vinegar",
+        "vintageimprovements:sulfuric_acid",
         "/.*molten_.*/",
         "netherexp:ectoplasm",
         "the_bumblezone:sugar_water_still",

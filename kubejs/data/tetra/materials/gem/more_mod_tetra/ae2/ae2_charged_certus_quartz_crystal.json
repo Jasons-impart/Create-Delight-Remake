@@ -1,0 +1,38 @@
+﻿{
+    "key":  "ae2_charged_certus_quartz_crystal",
+    "category":  "gem",
+    "primary":  5.5,
+    "secondary":  1.4,
+    "tertiary":  0,
+    "durability":  250,
+    "integrityCost":  2,
+    "integrityGain":  4,
+    "magicCapacity":  150,
+    "toolLevel":  "minecraft:diamond",
+    "toolEfficiency":  6,
+    "tints":  {
+                  "glyph":  "b3daf8",
+                  "texture":  "b3daf8"
+              },
+    "textures":  [
+                     "shiny",
+                     "crude"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "effects":  {
+                    "more_mod_tetra:industrial_protection":  1,
+                    "more_mod_tetra:lightning_combo":  10
+                },
+    "requiredTools":  {
+                          "hammer_dig":  "minecraft:wood"
+                      },
+    "conditions":  [
+                       {
+                           "type":  "forge:mod_loaded",
+                           "modid":  "ae2"
+                       }
+                   ],
+    "replace":  true
+}

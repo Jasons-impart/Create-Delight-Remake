@@ -1,0 +1,31 @@
+﻿{
+    "key":  "fake_alumite_ingot",
+    "category":  "metal",
+    "primary":  4.8,
+    "secondary":  2.1,
+    "tertiary":  1.8,
+    "durability":  1001,
+    "integrityCost":  2,
+    "integrityGain":  5,
+    "magicCapacity":  104,
+    "toolLevel":  "minecraft:iron",
+    "toolEfficiency":  7,
+    "tints":  {
+                  "glyph":  "f4ceec",
+                  "texture":  "f4ceec"
+              },
+    "textures":  [
+                     "heavy",
+                     "metal"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "effects":  {
+                    "more_mod_tetra:the_century_gate":  1
+                },
+    "requiredTools":  {
+                          "hammer_dig":  "minecraft:wood"
+                      },
+    "replace":  true
+}

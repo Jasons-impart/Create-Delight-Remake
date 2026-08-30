@@ -43,7 +43,7 @@
 	#Only Include: Only include providers that specified by defaultFontRuleSet.
 	#Only Exclude: Only exclude providers that specified by defaultFontRuleSet.
 	#Allowed Values: IGNORE_ALL, KEEP_ASCII, KEEP_OTHER, KEEP_ALL, ONLY_INCLUDE, ONLY_EXCLUDE
-	defaultFontBehavior = "KEEP_ALL"
+	defaultFontBehavior = "ONLY_EXCLUDE"
 	#Used when defaultFontBehavior is either ONLY_INCLUDE or ONLY_EXCLUDE.
 	#This specifies a set of regular expressions to match the glyph provider name.
 	#For bitmap providers, this is the texture path without 'textures/'.

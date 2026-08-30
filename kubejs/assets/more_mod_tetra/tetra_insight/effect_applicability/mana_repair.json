@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "paths": [
+    {
+      "scopes": [
+        "armor"
+      ],
+      "triggers": [
+        "wear_passive"
+      ],
+      "stacking": "single_piece"
+    },
+    {
+      "scopes": [
+        "main_hand",
+        "off_hand"
+      ],
+      "triggers": [
+        "wear_passive"
+      ],
+      "stacking": "item"
+    }
+  ]
+}

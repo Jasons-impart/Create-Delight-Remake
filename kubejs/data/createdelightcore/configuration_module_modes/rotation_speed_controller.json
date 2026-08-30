@@ -1,0 +1,8 @@
+{
+  "module": "createdelightcore:control_configuration_module",
+  "target": "create:rotation_speed_controller",
+  "charge_cost": 12,
+  "required_tier": 0,
+  "sort_index": 20,
+  "placement": "createdelightcore:block_item"
+}

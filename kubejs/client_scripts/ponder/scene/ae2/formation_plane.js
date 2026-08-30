@@ -5,7 +5,7 @@ Ponder.registry(e => {
             "成型面板的使用",
             "createdelight:ponder_formation_plane", 
         (builder, util) => {
-            let scene = new $CreateSceneBuilder(builder)
+            let scene = new global.CDClientJavaClasses.$CreateSceneBuilder(builder)
                 scene.showBasePlate()
                 scene.idle(20)
                 scene.world.showSection([0, 1, 0, 6, 1, 6], Direction.DOWN)

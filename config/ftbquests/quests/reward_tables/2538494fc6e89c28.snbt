@@ -118,6 +118,78 @@
 				}
 			}
 		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:dream_no_more"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:a_place_of_melting"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:magnetic_storm_field"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:shattered_past"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:oath_of_fierce_blade_ouel"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:wind_mist_and_thunder_strike"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:the_legacy_of_the_abyss"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:the_ancient_end"
+				}
+			}
+		}
 	]
 	title: "深度提取"
 }

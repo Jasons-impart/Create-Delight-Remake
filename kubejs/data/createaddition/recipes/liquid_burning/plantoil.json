@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "minecraft:barrier"
+  },
+  "key": {
+    "A": {
+      "item": "minecraft:barrier"
+    }
+  },
+  "conditions": [
+    {
+      "type": "forge:false"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A"
+  ]
+}

@@ -1,0 +1,109 @@
+{
+    "slots": [
+        "modular_mmt_bow/riser"
+    ],
+    "type": "tetra:basic_module",
+    "variants": [
+        {
+            "materials": [
+                "tetra:wood/",
+                "tetra:metal/",
+                "tetra:bone/"
+            ],
+            "key": "sights/",
+            "effects": {
+                "zoom": 6,
+                "focus": [
+                    0,
+                    0.5
+                ]
+            },
+            "integrity": -1,
+            "durability": 10,
+            "extract": {
+                "primaryEffects": {
+                    "zoom": 3.4,
+                    "focus": [
+                        0,
+                        -0.02
+                    ]
+                },
+                "tertiaryEffects": {
+                    "zoom": -0.7,
+                    "focus": [
+                        0,
+                        0.08
+                    ]
+                },
+                "durability": 0.2,
+                "glyph": {
+                    "textureX": 120,
+                    "textureY": 112
+                },
+                "availableTextures": [
+                    "default"
+                ],
+                "models": [
+                    {
+                        "location": "tetra:item/module/bow/riser/sight/"
+                    }
+                ]
+            }
+        },
+        {
+            "materials": [
+                "tetra:rod/stick"
+            ],
+            "key": "sights/",
+            "effects": {
+                "zoom": 12,
+                "focus": [
+                    0,
+                    0.8
+                ]
+            },
+            "integrity": -1,
+            "durability": 10,
+            "extract": {
+                "durability": 0.2,
+                "glyph": {
+                    "textureX": 120,
+                    "textureY": 112
+                },
+                "availableTextures": [
+                    "default"
+                ],
+                "models": [
+                    {
+                        "location": "tetra:item/module/bow/riser/sight/"
+                    }
+                ]
+            }
+        },
+        {
+            "key": "sights/echo_shard",
+            "integrity": -2,
+            "durability": 35,
+            "effects": {
+                "zoom": 12,
+                "focus": [
+                    0,
+                    0.75
+                ],
+                "focusEcho": 1,
+                "unstable": 30
+            },
+            "glyph": {
+                "textureX": 120,
+                "textureY": 112,
+                "tint": "28dce8"
+            },
+            "models": [
+                {
+                    "location": "tetra:item/module/bow/riser/sight/default",
+                    "tint": "052931"
+                }
+            ]
+        }
+    ]
+}

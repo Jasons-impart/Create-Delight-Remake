@@ -1,0 +1,588 @@
+{
+	"size": "large",
+	"color": "#808080",
+	"waves": [
+		{
+			"entities": [
+				{
+					"entity": "cataclysm:koboleton",
+					"count": 8
+				},
+                {
+					"entity": "cataclysm:wadjet",
+					"count": 4
+				},
+                {
+					"entity": "cataclysm:kobolediator",
+					"count": 4
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 3.0
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 12
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				}
+			],
+			"rewards": [
+				{
+				"type": "gateways:entity_loot",
+					"entity": "cataclysm:kobolediator",
+					"rolls": 12
+				},
+				{
+				"type": "gateways:entity_loot",
+					"entity": "cataclysm:koboleton",
+					"rolls": 12
+				},
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:ancient_metal_block", 
+                        "count": 4
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:ancient_spear", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:bone_reptile_chestplate", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:bone_reptile_helmet", 
+						"count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:sticky_gloves", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:necklace_of_the_desert", 
+                        "count": 4
+				    }
+                }
+			],
+			"max_wave_time": 2000,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "cataclysm:the_prowler",
+					"count": 4
+				},
+                {
+					"entity": "cataclysm:the_watcher",
+					"count": 8
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 3.0
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 12
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.2
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				}
+			],
+			"rewards": [
+				{
+				"type": "gateways:entity_loot",
+					"entity": "cataclysm:the_prowler",
+					"rolls": 12
+				},
+				{
+				"type": "gateways:entity_loot",
+					"entity": "cataclysm:the_watcher",
+					"rolls": 12
+				},
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:witherite_block", 
+                        "count": 4
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cosmopolitan:boilberry", 
+                        "count": 4
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:wither_assault_shoulder_weapon", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "brewinandchewin:withering_dross", 
+                        "count": 4
+				    }
+                }
+			],
+			"max_wave_time": 2000,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "cataclysm:endermaptera",
+					"count": 4
+				},
+                {
+					"entity": "minecraft:enderman",
+					"count": 8
+				},
+                {
+					"entity": "cataclysm:ender_golem",
+					"count": 1
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 4.0
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 12
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.3
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				}
+			],
+			"rewards": [
+				{
+				"type": "gateways:entity_loot",
+					"entity": "minecraft:enderman",
+					"rolls": 12
+				},
+				{
+				"type": "gateways:entity_loot",
+					"entity": "cataclysm:endermaptera",
+					"rolls": 12
+				},
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:void_core", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:void_scatter_arrow", 
+                        "count": 64
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "displaydelight:edd_enderman_gristle_stew", 
+                        "count": 1
+				    }
+                }
+			],
+			"max_wave_time": 2000,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "cataclysm:the_harbinger",
+					"count": 1
+				},
+                {
+					"entity": "minecraft:wither",
+					"count": 1
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 2.4
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 12
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.1
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				}
+			],
+			"rewards": [
+				{
+				"type": "gateways:entity_loot",
+					"entity": "cataclysm:the_harbinger",
+					"rolls": 12
+				},
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "minecraft:nether_star", 
+                        "count": 4
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:meat_shredder", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:laser_gatling", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:mechanical_fusion_anvil", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:music_disc_the_harbinger", 
+                        "count": 1
+				    }
+                }
+			],
+			"max_wave_time": 5000,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "cataclysm:ender_guardian",
+					"count": 1
+				},
+                {
+					"entity": "minecraft:shulker",
+					"count": 4
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 2.0
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 12
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.1
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				}
+			],
+			"rewards": [
+				{
+				"type": "gateways:entity_loot",
+					"entity": "minecraft:shulker",
+					"rolls": 12
+				},
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:gauntlet_of_guard", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:music_disc_ender_guardian", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:void_assault_shoulder_weapon", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:void_forge", 
+                        "count": 1
+				    }
+                }
+			],
+			"max_wave_time": 4200,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "cataclysm:ancient_ancient_remnant",
+					"count": 1
+				},
+                {
+					"entity": "cataclysm:kobolediator",
+					"count": 2
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 2.4
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 12
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.1
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				}
+			],
+			"rewards": [
+				{
+				"type": "gateways:entity_loot",
+					"entity": "cataclysm:kobolediator",
+					"rolls": 12
+				},
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:ancient_metal_block", 
+                        "count": 4
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:sandstorm_in_a_bottle", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:remnant_skull", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:music_disc_ancient_remnant", 
+                        "count": 1
+				    }
+                }
+			],
+			"max_wave_time": 4000,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "cataclysm:ancient_remnant",
+					"count": 1
+				},
+                {
+					"entity": "cataclysm:wadjet",
+					"count": 2
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 2.0
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 12
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.1
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				}
+			],
+			"rewards": [
+				{
+				"type": "gateways:entity_loot",
+					"entity": "cataclysm:wadjet",
+					"rolls": 12
+				},
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:ancient_metal_block", 
+                        "count": 4
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:wrath_of_the_desert", 
+                        "count": 1
+				    }
+                },
+                {
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "cataclysm:gauntlet_of_maelstrom", 
+                        "count": 1
+				    }
+                }
+			],
+			"max_wave_time": 4000,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "cataclysm:ancient_remnant",
+					"count": 1
+				},
+                {
+					"entity": "cataclysm:ancient_ancient_remnant",
+					"count": 1
+				},
+                {
+					"entity": "cataclysm:ender_guardian",
+					"count": 1
+				},
+                {
+					"entity": "cataclysm:the_harbinger",
+					"count": 1
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.0
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 12
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.1
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "gateways:gate_pearl", 
+                        "count": 2,
+                        "nbt" : {"gateway":"createdelight:shattered_past"}}
+				}
+			],
+			"max_wave_time": 10000,
+			"setup_time": 100
+		}
+	],
+	"failures": [
+        {
+        "type": "gateways:explosion",
+        "strength": 5,
+        "fire": true,
+        "block_damage": false
+    }]
+}

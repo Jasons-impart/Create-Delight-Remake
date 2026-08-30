@@ -47,7 +47,7 @@
 			}]
 			shape: "square"
 			size: 1.5d
-			subtitle: "本包所有村民的货币都被替换为了模组的货币（注意，部分村民的回收收益遭到了大幅削弱）"
+			subtitle: "村民交易使用模组货币；部分回收交易的收益较低"
 			tasks: [{
 				id: "43F5AFB97D1EFE9D"
 				title: "好吧"
@@ -689,7 +689,7 @@
 			dependencies: ["34C9A7E928820147"]
 			description: [
 				"如果没有货币，可以通过悬赏或村民交易获取"
-				"&n注：设计为不支持自动化（如溜槽）输入&r"
+				"出货箱仅接受玩家手动放入食物。"
 			]
 			id: "291FBEC1BF0BE4CF"
 			shape: "square"
@@ -701,6 +701,194 @@
 				type: "item"
 			}]
 			x: -3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["291FBEC1BF0BE4CF"]
+			description: [
+				"订单会列出需要的食物和数量。把符合要求的食物装入包裹，再与订单一起交付。"
+				"完成订单可获得金币和订单声望。使用更高品质的食物，并在允许范围内提供更多种类，可以提高奖励。"
+				"连续完成相近的订单时，额外金币会逐渐减少；改做其他食物或等待一段时间后会恢复。金币不会低于订单的基础奖励。"
+				"完成本任务可领取一张 I 级订单草稿和一枚饮品印章。订单不会过期，货物不足时可以继续补货。"
+			]
+			icon: "createdelight:unopened_order"
+			id: "27EFA4B94982AB04"
+			rewards: [
+				{
+					id: "5DF83CDCB150FC56"
+					item: {
+						Count: 1
+						id: "createdelight:unopened_order"
+						tag: {
+							OrderDraft: {
+								Grade: 1
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "2599A2EBD9B6D0D3"
+					item: {
+						Count: 1
+						id: "createdelight:order_seal"
+						tag: {
+							OrderSeal: "drink"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "hexagon"
+			size: 1.8d
+			subtitle: "按要求交货，获得金币和声望"
+			tasks: [{
+				id: "09515F30590BB2F6"
+				title: "读完订单说明"
+				type: "checkmark"
+			}]
+			title: "订单商会"
+			x: -6.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["27EFA4B94982AB04"]
+			description: [
+				"把订单草稿放在副手，手持印章或条款右键，即可写入；手持草稿普通右键即可开封。"
+				"&e顾客印章&r会影响顾客，例如人类、精灵、矮人或怪物；&e菜单印章&r会影响食物，例如饮品、甜点、主食或宴席。"
+				"&e订单条款&r会改变数量、品质要求或奖励。订单等级越高，通常需要交付更多货物。"
+			]
+			icon: {
+				Count: 1
+				id: "createdelight:order_seal"
+				tag: {
+					OrderSeal: "drink"
+				}
+			}
+			id: "4B72E6D91A03CF58"
+			rewards: [{
+				count: 3
+				id: "65C3A8F2D91B407E"
+				item: {
+					Count: 1
+					id: "createdelight:order_clause"
+					tag: {
+						OrderClause: "newcomer"
+					}
+				}
+				type: "item"
+			}]
+			shape: "square"
+			size: 1.5d
+			subtitle: "用印章影响订单内容"
+			tasks: [
+				{
+					id: "0C8B5A47F2E196D3"
+					item: "createdelight:unopened_order"
+					type: "item"
+				}
+				{
+					id: "61D8A0E4B3C75F29"
+					item: "createdelight:order_seal"
+					type: "item"
+				}
+			]
+			title: "草稿与印章"
+			x: -9.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["4B72E6D91A03CF58"]
+			description: [
+				"订单声望达到&e2级&r后，商会会发给你一张&e声望凭证&r。手持凭证右键，可按当前声望补上机器制造许可。"
+				"&e订单公告板&r每天提供三张草稿。将公告板连接到机动网络后，可以查看并领取其中一张。"
+				"&e适配单&r会选择仓库已有的食物类别；&e拓展单&r会选择相近类别；&e机会单&r会选择其他菜单中的食物。"
+				"凭证用于合成机器且不会消耗。借来的凭证也能合成机器，但只有原主人可以右键更新。"
+			]
+			icon: "createdelightcore:order_board"
+			id: "196D9A36A457CC6E"
+			shape: "square"
+			size: 1.5d
+			subtitle: "声望2级：每天选择一张草稿"
+			tasks: [
+				{
+					id: "44E3DA68429F61E1"
+					item: "createdelight:order_reputation_certificate"
+					type: "item"
+				}
+				{
+					id: "74D0756E9461DBD2"
+					item: "createdelightcore:order_board"
+					type: "item"
+				}
+			]
+			title: "声望2级 · 订单公告板"
+			x: -12.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["196D9A36A457CC6E"]
+			description: [
+				"声望达到&e4级&r后，可以制造&e供货委托台&r。"
+				"第一次获得它可以订购的物品后，才可以在委托台中订购它。放入商会凭证，选择物品并确认；费用会从钱包里扣除。"
+				"等待完成后，从输出槽取走到货包裹。未完成的委托可以撤销，退款以界面显示为准。"
+				"可以在jei中搜索&e”可委托“&r来查看哪些物品可被订购。"
+			]
+			icon: "createdelightcore:supply_commission_table"
+			id: "67A271B7A4D1F4DA"
+			shape: "square"
+			size: 1.5d
+			subtitle: "声望4级：订购获得过的材料"
+			tasks: [{
+				id: "6C92E1AF4B735D08"
+				item: "createdelightcore:supply_commission_table"
+				type: "item"
+			}]
+			title: "声望4级 · 供货委托台"
+			x: -15.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["67A271B7A4D1F4DA"]
+			description: [
+				"声望达到&e5级&r后，可以制造&e订单请求器&r。把正式订单放入请求器，并将请求器连接到机械动力的仓储网络。"
+				"选择每种食物的数量，或设置它们的比例，然后保存。请求器会从仓库取出相应货物并装入包裹。"
+				"给请求器一个红石脉冲，可以再次使用已保存的设置。"
+				"建议使用比例模式。"
+			]
+			icon: "createdelightcore:order_requester"
+			id: "5B3007687F408993"
+			shape: "square"
+			size: 1.5d
+			subtitle: "声望5级：从仓库取出订单货物"
+			tasks: [{
+				id: "26390BA5D2F81E38"
+				item: "createdelightcore:order_requester"
+				type: "item"
+			}]
+			title: "声望5级 · 订单请求器"
+			x: -18.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["5B3007687F408993"]
+			description: [
+				"声望达到&e6级&r后，可以制造&e订单提交口&r。把正式订单和货物包裹送入提交口。"
+				"提交口会检查已经交付的货物。数量不足时可以继续补货；满足要求后，从输出端取走奖励包裹。"
+				"声望凭证只用于合成机器。已经放置的机器可以由任何玩家使用。"
+			]
+			icon: "createdelight:order_submission_port"
+			id: "469FE7C3E5D69E66"
+			shape: "hexagon"
+			size: 1.8d
+			subtitle: "声望6级：检查货物并输出奖励"
+			tasks: [{
+				id: "73AD50F29B6E184C"
+				item: "createdelight:order_submission_port"
+				type: "item"
+			}]
+			title: "声望6级 · 订单提交口"
+			x: -21.0d
 			y: 3.0d
 		}
 	]

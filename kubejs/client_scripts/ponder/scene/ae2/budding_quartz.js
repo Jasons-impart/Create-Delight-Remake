@@ -5,7 +5,7 @@ Ponder.registry(event => {
             "赛特斯石英母岩的生成",
             (builder, util) => {
                 
-                let scene = new $CreateSceneBuilder(builder)
+                let scene = new global.CDClientJavaClasses.$CreateSceneBuilder(builder)
                 scene.configureBasePlate(0, 0, 5)
                 scene.showBasePlate()
                 scene.idle(20)
@@ -44,7 +44,7 @@ Ponder.registry(event => {
             "赛特斯石英母岩的生长",
             
             (builder, util) => {
-                let scene = new $CreateSceneBuilder(builder)
+                let scene = new global.CDClientJavaClasses.$CreateSceneBuilder(builder)
                 scene.configureBasePlate(0, 0, 5)
                 scene.showBasePlate()
                 scene.world.setBlocks([2, 1, 2], "ae2:flawed_budding_quartz")
@@ -107,7 +107,7 @@ Ponder.registry(event => {
             "赛特斯石英母岩的修复",
             
             (builder, util) => {
-                let scene = new $CreateSceneBuilder(builder)
+                let scene = new global.CDClientJavaClasses.$CreateSceneBuilder(builder)
                 scene.configureBasePlate(0, 0, 5)
                 scene.showBasePlate()
                 scene.world.setBlocks([2, 1, 2], "ae2:quartz_block")

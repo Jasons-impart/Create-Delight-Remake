@@ -1,0 +1,13 @@
+name = "Just Enough Threads [JEI Startup Optimize]"
+filename = "jei_optimize-forge-0.5.0+1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "85fb27b004a3148be505e18877e969df95fcc6f7"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8479537
+project-id = 1605658

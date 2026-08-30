@@ -1,0 +1,41 @@
+{
+  "replace": true,
+  "slots": [
+    "single/handle"
+  ],
+  "materialSlotCount": 1,
+  "displayType": "major",
+  "requirement": {
+    "type": "tetra:or",
+    "requirements": [
+      {
+        "type": "tetra:module",
+        "variant": "light_handle/prismarine"
+      },
+      {
+        "type": "tetra:module",
+        "variant": "basic_handle/prismarine"
+      },
+      {
+        "type": "tetra:module",
+        "variant": "long_handle/prismarine"
+      }
+    ]
+  },
+  "glyph": {
+    "textureX": 112,
+    "textureY": 32
+  },
+  "outcomes": [
+    {
+      "material": {
+        "items": [
+          "minecraft:prismarine_shard"
+        ],
+        "count": 4
+      },
+      "moduleKey": "single/long_handle",
+      "moduleVariant": "long_handle/prismarine"
+    }
+  ]
+}

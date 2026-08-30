@@ -1,18 +1,130 @@
-let Order = global.Order
-ServerEvents.tick(e => {    
-    if (e.server.getLevel("minecraft:overworld").dayTime() % 12000 == 0) {
-        let count = Utils.random.nextInt(0, 4)
-        for (let i = 0; i < count; i++)
-            Order.addOrderToAuction()
-    }
+const ORDER_MARKET_SYNC_PACKET = "createdelight_order_market_saturation"
+
+global.syncOrderMarketSaturation = function(player) {
+    if (player == null)
+        return
+
+    global.Order.ensureDataLoaded()
+    let config = global.Order.marketSaturationConfig
+    let raw = player.persistentData.getString(config.storageKey)
+    player.sendData(ORDER_MARKET_SYNC_PACKET, {
+        data: raw == null ? "" : raw,
+        day: global.Order.marketSaturation.getDay(player)
+    })
+}
+
+PlayerEvents.loggedIn(e => {
+    global.Order.reputation.ensureCertificate(e.player)
+    global.syncOrderMarketSaturation(e.player)
+})
+
+PlayerEvents.tick(e => {
+    if (e.level.time % 200 != 0)
+        return
+    global.syncOrderMarketSaturation(e.player)
 })
 
 ItemEvents.rightClicked("createdelight:unopened_order", e => {
-    e.player.getItemInHand(e.hand).shrink(1)
+    let draftStack = e.player.getItemInHand(e.hand)
+    let otherStack = `${e.hand}` == "MAIN_HAND" ? e.player.offHandItem : e.player.mainHandItem
 
-    let ret = Order.create(e.player)
-    while (ret.entries.length == 0) {
-        ret = Order.create(e.player)
+    if (e.player.isShiftKeyDown() && otherStack.empty) {
+        if (global.Order.resetDraftDirections(draftStack)) {
+            e.player.tell(Text.translate("message.createdelight.order_draft_directions_cleared"))
+        } else {
+            e.player.tell(Text.translate("message.createdelight.order_draft_direction_clear_failed"))
+        }
+        e.cancel()
+        return
     }
-    e.player.give(Item.of("createdelight:order", 1, { createdelightOrderInfo: ret }))
+
+    if (otherStack.is("createdelight:order_seal")) {
+        if (!global.Order.applyDraftSeal(draftStack, otherStack)) {
+            e.player.tell(Text.translate("message.createdelight.order_draft_material_failed"))
+            e.cancel()
+            return
+        }
+        if (!e.player.isCreative())
+            otherStack.shrink(1)
+        e.player.tell(Text.translate("message.createdelight.order_draft_sealed"))
+        e.cancel()
+        return
+    }
+
+    if (otherStack.is("createdelight:order_clause")) {
+        if (!global.Order.applyDraftClause(draftStack, otherStack)) {
+            e.player.tell(Text.translate("message.createdelight.order_draft_clause_failed"))
+            e.cancel()
+            return
+        }
+        if (!e.player.isCreative())
+            otherStack.shrink(1)
+        e.player.tell(Text.translate("message.createdelight.order_draft_clause_applied"))
+        e.cancel()
+        return
+    }
+
+    global.Order.openDraft(e.player, draftStack)
+    e.cancel()
+})
+
+ItemEvents.rightClicked("createdelight:order_seal", e => {
+    let sealStack = e.player.getItemInHand(e.hand)
+    let draftStack = `${e.hand}` == "MAIN_HAND" ? e.player.offHandItem : e.player.mainHandItem
+
+    if (!global.Order.applyDraftSeal(draftStack, sealStack))
+        return
+
+    if (!e.player.isCreative())
+        sealStack.shrink(1)
+    e.player.tell(Text.translate("message.createdelight.order_draft_sealed"))
+    e.cancel()
+})
+
+ItemEvents.rightClicked("createdelight:order_clause", e => {
+    let clauseStack = e.player.getItemInHand(e.hand)
+    let draftStack = `${e.hand}` == "MAIN_HAND" ? e.player.offHandItem : e.player.mainHandItem
+
+    if (!draftStack.is("createdelight:unopened_order"))
+        return
+    if (!global.Order.applyDraftClause(draftStack, clauseStack)) {
+        e.player.tell(Text.translate("message.createdelight.order_draft_clause_failed"))
+        e.cancel()
+        return
+    }
+
+    if (!e.player.isCreative())
+        clauseStack.shrink(1)
+    e.player.tell(Text.translate("message.createdelight.order_draft_clause_applied"))
+    e.cancel()
+})
+
+ItemEvents.rightClicked("createdelight:order_reputation_certificate", e => {
+    let certificate = e.player.getItemInHand(e.hand)
+    if (!global.Order.reputation.isOwnedCertificate(e.player, certificate)) {
+        let hasOwner = certificate.nbt != null && certificate.nbt.OrderCertificateOwner != null
+        if (!hasOwner && global.Order.reputation.getLevel(e.player) >= 2) {
+            certificate.nbt = global.Order.reputation.createCertificateNbt(e.player)
+            e.player.persistentData.putBoolean(global.Order.reputation.certificateIssuedKey, true)
+            e.player.getInventory().setChanged()
+            e.player.tell(Text.translate(
+                "message.createdelight.order_reputation_certificate.refreshed",
+                global.Order.reputation.getLevel(e.player)
+            ))
+            e.player.swing()
+            e.cancel()
+            return
+        }
+        e.player.tell(Text.translate("message.createdelight.order_reputation_certificate.not_owner"))
+        e.cancel()
+        return
+    }
+
+    global.Order.reputation.refreshCertificate(e.player, certificate)
+    e.player.tell(Text.translate(
+        "message.createdelight.order_reputation_certificate.refreshed",
+        global.Order.reputation.getLevel(e.player)
+    ))
+    e.player.swing()
+    e.cancel()
 })

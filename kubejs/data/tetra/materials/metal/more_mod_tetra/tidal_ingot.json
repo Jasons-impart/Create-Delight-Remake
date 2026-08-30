@@ -1,0 +1,31 @@
+﻿{
+    "key":  "tidal_ingot",
+    "category":  "metal",
+    "primary":  6.81,
+    "secondary":  5.9,
+    "tertiary":  7.5,
+    "durability":  2631,
+    "integrityCost":  2,
+    "integrityGain":  8,
+    "magicCapacity":  90,
+    "toolLevel":  "minecraft:netherite",
+    "toolEfficiency":  9,
+    "tints":  {
+                  "glyph":  "291aff",
+                  "texture":  "291aff"
+              },
+    "textures":  [
+                     "metal",
+                     "default"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "effects":  {
+                    "more_mod_tetra:let_the_people_rejoice":  10
+                },
+    "requiredTools":  {
+                          "hammer_dig":  "minecraft:iron"
+                      },
+    "replace":  true
+}

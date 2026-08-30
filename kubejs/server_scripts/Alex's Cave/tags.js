@@ -35,7 +35,7 @@ ServerEvents.tags("item", e => {
     ])
     e.add("create:upright_on_belt", [
         "alexscaves:sulfur_bud_small",
-        "alexscaves:sulfur_bud_medium", 
+        "alexscaves:sulfur_bud_medium",
         "alexscaves:sulfur_bud_large",
         "alexscaves:sulfur_cluster",
     ])
@@ -131,17 +131,34 @@ ServerEvents.tags("minecraft:block", e => {
         'alexscaves:vanilla_ice_cream',
         'alexscaves:chocolate_ice_cream',
         'alexscaves:sweetberry_ice_cream',
+        'neapolitan:chocolate_ice_cream_block',
+        'neapolitan:vanilla_ice_cream_block',
         'neapolitan:strawberry_ice_cream_block',
         'neapolitan:banana_ice_cream_block',
-        'neapolitan:banana_ice_cream_block',
+        'neapolitan:mint_ice_cream_block',
         'neapolitan:adzuki_ice_cream_block',
         'collectorsreap:lime_ice_cream_block',
         'collectorsreap:pomegranate_ice_cream_block',
+        'collectorsreap:pink_dragon_fruit_ice_cream_block',
+        'collectorsreap:lucuma_ice_cream_block',
+        'cosmopolitan:apple_ice_cream_block',
+        'cosmopolitan:carrot_ice_cream_block',
+        'cosmopolitan:glow_berry_ice_cream_block',
+        'cosmopolitan:enchanted_fruit_ice_cream_block',
+        'cosmopolitan:chiseled_adzuki_ice_cream_block',
+        'cosmopolitan:chiseled_banana_ice_cream_block',
+        'cosmopolitan:chiseled_mint_ice_cream_block',
+        'cosmopolitan:chiseled_vanilla_ice_cream_block',
+        'cosmopolitan:chiseled_chocolate_ice_cream_block',
+        'cosmopolitan:chiseled_strawberry_ice_cream_block',
+        'seasonals:pumpkin_ice_cream_block',
+        'seasonals:sweet_berry_ice_cream_block',
+        'seasonals:beetroot_ice_cream_block',
     ])
 })
 
 ServerEvents.tags("minecraft:fluid", e => {
-    e.add("forge:molten_neodymium", 
+    e.add("forge:molten_neodymium",
         "createdelightcore:molten_scarlet_neodymium",
         "createdelightcore:molten_azure_neodymium"
     )

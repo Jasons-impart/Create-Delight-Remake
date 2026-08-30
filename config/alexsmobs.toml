@@ -8,7 +8,7 @@
 	#Whether to disable certain aspects of the Lava Vision Potion. Enable if issues with shaders persist.
 	shadersCompat = false
 	#Whether bananas should drop from blocks tagged with #alexsmobs:drops_bananas
-	bananasDropFromLeaves = true
+	bananasDropFromLeaves = false
 	#1 out of this number chance for leaves to drop a banana when broken. Fortune is automatically factored in
 	#Range: > 0
 	bananaChance = 200

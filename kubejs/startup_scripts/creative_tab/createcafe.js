@@ -6,9 +6,6 @@ StartupEvents.modifyCreativeTab("createcafe:create_cafe_fluids", e => {
     "createcafe:blackberry_tea_bucket",
     "createcafe:caramel_syrup_bucket",
     "createcafe:citron_tea_bucket",
-    "createcafe:coconut_iced_coffee",
-    "createcafe:coconut_syrup_bucket",
-    "createcafe:coconut_tea_bucket",
     "createcafe:dragonfruit_tea_bucket",
     "createcafe:gooseberry_tea_bucket",
     "createcafe:grapefruit_tea_bucket",
@@ -45,7 +42,6 @@ StartupEvents.modifyCreativeTab("createcafe:create_cafe_items", e => {
     "createcafe:barberry_milk_tea",
     "createcafe:blackberry_milk_tea",
     "createcafe:citron_milk_tea",
-    "createcafe:coconut_milk_tea",
     "createcafe:dragonfruit_milk_tea",
     "createcafe:gooseberry_milk_tea",
     "createcafe:grapefruit_milk_tea",
@@ -64,6 +60,5 @@ StartupEvents.modifyCreativeTab("createcafe:create_cafe_items", e => {
     "createcafe:tamarind_milk_tea",
     "createcafe:yucca_milk_tea",
     'createcafe:raspberry_iced_coffee',
-    'createcafe:coconut_iced_coffee',
   ]) 
 })

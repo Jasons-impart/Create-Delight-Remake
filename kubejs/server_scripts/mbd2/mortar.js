@@ -1,5 +1,3 @@
-const $ServerPlayer = Java.loadClass("net.minecraft.server.level.ServerPlayer")
-const $MillingRecipe = Java.loadClass("com.simibubi.create.content.kinetics.millstone.MillingRecipe")
 MBDMachineEvents.onRecipeWorking("createdelight:mortar", e => {
     let event = e.event
     const {machine} = event

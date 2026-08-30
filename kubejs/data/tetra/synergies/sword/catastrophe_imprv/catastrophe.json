@@ -1,6 +1,0 @@
-[{
-    "modules": [ "sword/cataclysm_blade" ],
-    "matchSuffixed": false,
-    "improvements": [ "sword/catastrophe_imprv" ],
-    "name": "sword/catastrophe"
-}]

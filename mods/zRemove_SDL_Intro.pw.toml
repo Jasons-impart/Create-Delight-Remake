@@ -1,0 +1,13 @@
+name = "Remove Stardust Labs Intro Message"
+filename = "zRemove_SDL_Intro_v1.2.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/sk4iFZGy/versions/BHr8OLOk/zRemove_SDL_Intro_v1.2.2.jar"
+hash-format = "sha512"
+hash = "2a5b1f3a074d567c6134b918cd711ad64015cf3db0c1dfaf083f66af56004ae2ecda80e63593e1c20dae99f7237b718efde851e1e85f6e1ba604ba87469f60ff"
+
+[update]
+[update.modrinth]
+mod-id = "sk4iFZGy"
+version = "BHr8OLOk"

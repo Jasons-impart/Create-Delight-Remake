@@ -6,7 +6,7 @@
 			"entities": [
 				{
 					"entity": "alexsmobs:enderiophage",
-					"count": 4
+					"count": 3.80
 				},
                 {
                     "entity": "alexsmobs:soul_vulture",
@@ -18,7 +18,7 @@
                 },
 				{
                     "entity": "evoker",
-                    "count": 4
+                    "count": 2
                 }
 			],
 			"modifiers": [
@@ -35,7 +35,7 @@
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.50
+					"value": 2
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -66,12 +66,12 @@
 				{
 					"type": "gateways:stack",
 					"stack": {
-                        "item": "art_of_forging:fang_charm", 
+                        "item": "minecraft:totem_of_undying",
                         "count": 1
 					    }
 				}
 			],
-			"max_wave_time": 1400,
+			"max_wave_time": 2000,
 			"setup_time": 100
 		},
 		{
@@ -107,7 +107,7 @@
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.80
+					"value": 2
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -142,14 +142,14 @@
 				}
 			],
 			
-			"max_wave_time": 1600,
+			"max_wave_time": 2200,
 			"setup_time": 100
 		},
 		{
 			"entities": [
 				{
 					"entity": "alexsmobs:enderiophage",
-					"count": 4
+					"count": 4.20
 				},
                 {
                     "entity": "alexsmobs:soul_vulture",
@@ -173,12 +173,12 @@
 				{
 					"attribute": "generic.armor",
 					"operation": "ADDITION",
-					"value": 5
+					"value": 6
 				},
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.80
+					"value": 2
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -207,12 +207,12 @@
 				{
 					"type": "gateways:stack",
 					"stack": {
-                        "item": "art_of_forging:sigil_of_eden", 
+                        "item": "alexscaves:immortal_embryo",
                         "count": 1
 					    }
 				}
 			],
-			"max_wave_time": 1600,
+			"max_wave_time": 2400,
 			"setup_time": 100
 		},
         {
@@ -242,7 +242,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 4.0
+					"value": 4.20
 				},
 				{
 					"attribute": "generic.armor",
@@ -252,7 +252,7 @@
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.60
+					"value": 1.6
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -276,12 +276,12 @@
 				{
 					"type": "gateways:stack",
 					"stack": {
-                        "item": "art_of_forging:devils_soul_gem", 
+                        "item": "alexscaves:pure_darkness",
                         "count": 1
 					    }
 				}
 			],
-            "max_wave_time": 1800,
+            "max_wave_time": 2600,
 			"setup_time": 100
         },
 		{
@@ -295,7 +295,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 24.0
+					"value": 16.0
 				},
 				{
 					"attribute": "generic.armor",
@@ -305,7 +305,7 @@
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 3.5
+					"value": 4.0
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -332,7 +332,7 @@
 					    }
 				}
 			],
-            "max_wave_time": 2000,
+            "max_wave_time": 6000,
 			"setup_time": 300
         }
      ],

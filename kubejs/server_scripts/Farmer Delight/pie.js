@@ -155,12 +155,8 @@ ServerEvents.recipes(e => {
             ]).id("createdelight:shapeless/" + unbake.split(":")[1] + "_manual_only")
         baking(e, unbake, pie, 1, "food", 200)
     });
-    cutting_2(e, 'casualness_delight:stargazy_pie', [
-        ['casualness_delight:stargazy_pie_slice', 4]
-    ])
-    cutting_2(e, 'casualness_delight:quiche_lorraine', [
-        ['casualness_delight:quiche_lorraine_slice', 4]
-    ])
+    cutting(e, 'casualness_delight:stargazy_pie', '4x casualness_delight:stargazy_pie_slice')
+    cutting(e, 'casualness_delight:quiche_lorraine', '4x casualness_delight:quiche_lorraine_slice')
 
     let chees_pie_recipes = [
         ["minecraft:sweet_berries", 'createdelight:unbake_sweet_berry_cheesecake', 'farmersdelight:sweet_berry_cheesecake'],

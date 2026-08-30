@@ -1,0 +1,36 @@
+{
+  "slots": [
+    "mmt_ring/inlay"
+  ],
+  "materialSlotCount": 1,
+  "displayType": "major",
+  "glyph": {
+    "textureX": 176,
+    "textureY": 48
+  },
+  "translation": {
+    "primaryEffects": {
+      "more_mod_tetra:curios_projectile_tracking": 1
+    },
+    "durability": 1,
+    "integrity": 1,
+    "magicCapacity": 1
+  },
+  "outcomes": [
+    {
+      "material": {
+        "items": [
+          "minecraft:wither_skeleton_skull"
+        ],
+        "count": 1
+      },
+      "moduleKey": "mmt_ring/inlay/tracking",
+      "moduleVariant": "inlay/tracking"
+    }
+  ],
+  "requirement": {
+    "type": "tetra:locked",
+    "key": "createdelight:mmt_curios/magnetic_precision"
+  },
+  "replace": true
+}

@@ -1,0 +1,8 @@
+var javaMajorVersion = PlatformHelp.getCurrentJdkMajorVersion();
+if (javaMajorVersion != 17) {
+    var javaVersionMessage = LanguageProvider.get("custom.cdr_java_version_warning");
+    javaVersionMessage = javaVersionMessage.replace("$JAVA_VERSION$", PlatformHelp.javaVersion);
+    Startup.addBootWarning(javaVersionMessage)
+        .withDontShowAgain("cdr.java_version_warning")
+        .withCustomDontShowAgainCheckboxText(LanguageProvider.get("custom.cdr_dont_show_again_checkbox"));
+}

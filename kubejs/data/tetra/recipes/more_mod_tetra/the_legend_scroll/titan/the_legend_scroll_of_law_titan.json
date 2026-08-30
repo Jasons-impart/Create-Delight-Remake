@@ -1,0 +1,47 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " B ",
+    "CAC",
+    " D "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:writable_book"
+    },
+    "B": {
+      "item": "cataclysm:flame_eye"
+    },
+    "C": {
+      "item": "cataclysm:ignitium_ingot"
+    },
+    "D": {
+      "item": "cataclysm:burning_ashes"
+    }
+  },
+  "result": {
+    "item": "tetra:scroll_rolled",
+    "count": 1,
+    "nbt": {
+      "BlockEntityTag": {
+        "data": [
+          {
+            "key": "shared/the_legend_scroll_of_law_titan",
+            "schematics": [
+              "tetra:shared/the_legend_scroll_of_law_titan"
+            ],
+            "intricate": false,
+            "material": 2,
+            "ribbon": "37F3FF",
+            "glyphs": [
+              3,
+              8,
+              1,
+              4
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

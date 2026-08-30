@@ -1,28 +1,106 @@
 [CmdletBinding()]
 param(
+    [ValidateSet("mods", "resourcepacks", "shaderpacks", "tacz")]
     [string]$Category = "mods",
     [string]$PackwizUrl = "https://github.com/Jasons-impart/packwiz/releases/latest/download/packwiz.exe",
-    [string]$InstallerUrl = "https://github.com/packwiz/packwiz-installer/releases/latest/download/packwiz-installer.jar"
+    [string]$InstallerUrl = "https://github.com/packwiz/packwiz-installer/releases/latest/download/packwiz-installer.jar",
+    [string]$PackwizFilesRef = $env:PACKWIZ_FILES_REF,
+    [string]$PackwizFilesRawPrefix = $env:PACKWIZ_FILES_RAW_PREFIX,
+    [switch]$FullReconcile,
+    [switch]$AllowRemovals
 )
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 $ProgressPreference = "SilentlyContinue"
 
+if (-not $FullReconcile) {
+    throw "This is a category-wide reconciliation. Re-run with -FullReconcile, or use add-packwiz-target.ps1 / update-packwiz-target.ps1 for one CurseForge asset."
+}
+
 $RepoRoot = Split-Path -Parent $PSScriptRoot
 $ToolsRoot = Join-Path $RepoRoot ".cache\packwiz-sync\tools"
 $PackwizExe = Join-Path $ToolsRoot "packwiz.exe"
 $InstallerJarPath = Join-Path $ToolsRoot "packwiz-installer.jar"
-$PackwizFilesModsRoot = Join-Path $RepoRoot "packwiz-files\mods"
-$PackwizFilesRawPrefix = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/"
+$PackwizFilesRoot = Join-Path $RepoRoot "packwiz-files"
+$PackwizFilesCategoryRoot = Join-Path $PackwizFilesRoot $Category
+$PackwizFilesRawUrlPattern = 'https://raw\.githubusercontent\.com/Jasons-impart/Create-Delight-Remake/.+/packwiz-files/'
 $TempDetectRoot = Join-Path $RepoRoot ".cache\packwiz-sync\cf-add"
 $StaticServerScript = Join-Path $PSScriptRoot "packwiz-static-server.py"
+$GeneratePackwizScript = Join-Path $PSScriptRoot "generate-packwiz-files.py"
 $CurseForgeProbeCachePath = Join-Path $RepoRoot ".cache\packwiz-sync\cf-downloadability-cache.json"
 $script:CurseForgeProbeCache = $null
 $script:CurseForgeProbeTools = $null
 
 function Write-Status { param([string]$M) Write-Host "[meta] $M" -ForegroundColor Cyan }
 function Write-Warn   { param([string]$M) Write-Host "[warn] $M" -ForegroundColor Yellow }
+
+function Get-GitRefForPackwizFiles {
+    if (-not [string]::IsNullOrWhiteSpace($PackwizFilesRef)) {
+        return $PackwizFilesRef.Trim()
+    }
+
+    $branch = $null
+    try {
+        $branch = (& git -C $RepoRoot branch --show-current 2>$null)
+        if ($LASTEXITCODE -ne 0) { $branch = $null }
+    }
+    catch {
+        $branch = $null
+    }
+
+    if (-not [string]::IsNullOrWhiteSpace($branch)) {
+        return $branch.Trim()
+    }
+
+    try {
+        $commit = (& git -C $RepoRoot rev-parse HEAD 2>$null)
+        if ($LASTEXITCODE -eq 0 -and -not [string]::IsNullOrWhiteSpace($commit)) {
+            return $commit.Trim()
+        }
+    }
+    catch {}
+
+    return "main"
+}
+
+function Resolve-PackwizFilesRawPrefix {
+    if (-not [string]::IsNullOrWhiteSpace($PackwizFilesRawPrefix)) {
+        return $PackwizFilesRawPrefix.TrimEnd('/') + '/'
+    }
+
+    $ref = Get-GitRefForPackwizFiles
+    $escapedRef = ([Uri]::EscapeDataString($ref)).Replace('%2F', '/')
+    return "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/$escapedRef/packwiz-files/"
+}
+
+function Test-PackwizFilesRawUrl {
+    param([string]$Url)
+
+    return -not [string]::IsNullOrWhiteSpace($Url) -and $Url -match $PackwizFilesRawUrlPattern
+}
+
+function Normalize-PackwizFilesRawPrefixInFile {
+    param([string]$Path)
+
+    $content = Get-Content -LiteralPath $Path -Raw
+    if ($content -notmatch $PackwizFilesRawUrlPattern) {
+        return $false
+    }
+
+    $newContent = [regex]::Replace($content, $PackwizFilesRawUrlPattern, {
+        param($Match)
+        return $PackwizFilesRawPrefix
+    })
+    if ($newContent -eq $content) {
+        return $false
+    }
+
+    Write-Utf8NoBomFile -Path $Path -Content $newContent
+    return $true
+}
+
+$PackwizFilesRawPrefix = Resolve-PackwizFilesRawPrefix
 
 function Get-ToolEnsured {
     param([string]$Url, [string]$Path)
@@ -95,14 +173,56 @@ function Get-FreePort {
     }
 }
 
+function Invoke-GeneratePackwizFiles {
+    param([string]$OutputDir = $RepoRoot)
+
+    $pythonExe = Resolve-PythonCommand
+    & $pythonExe $GeneratePackwizScript --source (Join-Path $RepoRoot "modpack.toml") --output-dir $OutputDir
+    if ($LASTEXITCODE -ne 0) {
+        throw "generate-packwiz-files.py exited with code $LASTEXITCODE."
+    }
+}
+
+function Remove-PackwizLoaderVersions {
+    param([string]$PackFilePath)
+
+    $lines = @(Get-Content -LiteralPath $PackFilePath)
+    $updatedLines = [System.Collections.Generic.List[string]]::new()
+    $inVersions = $false
+    $changed = $false
+
+    foreach ($line in $lines) {
+        if ($line -match '^\s*\[([^]]+)\]\s*$') {
+            $inVersions = ($Matches[1] -eq "versions")
+            $updatedLines.Add($line) | Out-Null
+            continue
+        }
+
+        if ($inVersions -and $line -match '^\s*(forge|neoforge|fabric|quilt|liteloader)\s*=') {
+            $changed = $true
+            continue
+        }
+
+        $updatedLines.Add($line) | Out-Null
+    }
+
+    if ($changed) {
+        Write-Utf8NoBomFile -Path $PackFilePath -Content (($updatedLines -join "`n") + "`n")
+    }
+}
+
 function Get-AssetFiles {
-    param([string]$Directory)
+    param(
+        [string]$Directory,
+        [string]$Category = "mods"
+    )
 
     $files = @{}
     if (-not (Test-Path $Directory)) { return $files }
 
     Get-ChildItem -LiteralPath $Directory -File |
         Where-Object { $_.Extension -match '^\.(jar|zip)$' } |
+        Where-Object { -not ($Category -eq "shaderpacks" -and $_.Name -match 'Clrwl') } |
         ForEach-Object {
             $files[$_.Name] = $_.FullName
         }
@@ -110,12 +230,27 @@ function Get-AssetFiles {
     return $files
 }
 
+function Remove-FilenameVersionSuffix {
+    param([string]$Value)
+
+    if (-not $Value) { return "" }
+
+    $result = $Value.Trim()
+    while ($true) {
+        $suffixMatch = [regex]::Match($result, '(?i)\s*[\(\[]\s*(?:mc\s*)?v?\d[^\)\]]*[\)\]]\s*$')
+        if (-not $suffixMatch.Success) { break }
+        $result = $result.Substring(0, $suffixMatch.Index).TrimEnd()
+    }
+
+    return $result
+}
+
 function Derive-BaseName {
     param([string]$Filename)
 
     if (-not $Filename) { return "" }
 
-    $name = [IO.Path]::GetFileNameWithoutExtension($Filename)
+    $name = Remove-FilenameVersionSuffix -Value ([IO.Path]::GetFileNameWithoutExtension($Filename))
     $parts = $name -split '[-_]'
     $baseParts = @()
 
@@ -134,7 +269,7 @@ function Get-SearchStemFromFilename {
 
     if (-not $Filename) { return "" }
 
-    $name = [IO.Path]::GetFileNameWithoutExtension($Filename)
+    $name = Remove-FilenameVersionSuffix -Value ([IO.Path]::GetFileNameWithoutExtension($Filename))
     $parts = $name -split '[-_]'
     $kept = @()
 
@@ -203,6 +338,30 @@ function Join-IdentifierWords {
     return (($words | ForEach-Object { $_.ToLowerInvariant() }) -join $Separator)
 }
 
+function Get-CategoryDisplayName {
+    param([string]$Value)
+
+    switch ($Value) {
+        "mods" { return "mod" }
+        "resourcepacks" { return "resource pack" }
+        "shaderpacks" { return "shaderpack" }
+        "tacz" { return "TACZ gun pack" }
+        default { return "asset" }
+    }
+}
+
+function Get-CurseForgeCategorySlug {
+    param([string]$Value)
+
+    switch ($Value) {
+        "mods" { return "mc-mods" }
+        "resourcepacks" { return "texture-packs" }
+        "shaderpacks" { return "shaders" }
+        "tacz" { return "customization" }
+        default { return $null }
+    }
+}
+
 function Write-Utf8NoBomFile {
     param([string]$Path, [string]$Content)
 
@@ -239,7 +398,10 @@ function Parse-PwToml {
 
     if ($content -match '(?m)^name\s*=\s*"(.+)"')     { $result['Name'] = $Matches[1] }
     if ($content -match '(?m)^filename\s*=\s*"(.+)"') { $result['Filename'] = $Matches[1] }
+    if ($content -match '(?m)^side\s*=\s*"(.+)"')     { $result['Side'] = $Matches[1] }
     if ($content -match '(?m)^url\s*=\s*"(.+)"')      { $result['DownloadUrl'] = $Matches[1] }
+    if ($content -match '(?m)^hash-format\s*=\s*"(.+)"') { $result['HashFormat'] = $Matches[1] }
+    if ($content -match '(?m)^hash\s*=\s*"(.+)"')     { $result['Hash'] = $Matches[1] }
 
     $hasMetadataMode = $content -match 'mode\s*=\s*"metadata:(curseforge|modrinth)"'
     $hasUpdateBlock = $content -match '\[update\.(curseforge|modrinth)\]'
@@ -266,6 +428,7 @@ function Get-PwMetadataState {
             Slug = [IO.Path]::GetFileNameWithoutExtension($pwToml.Name) -replace '\.pw$'
             Filename = $currentFilename
             Name = $name
+            Side = Normalize-PwSide -Side (Get-TomlVal -Data $data -Key 'Side')
             Data = $data
             IsManaged = [bool](Get-TomlVal -Data $data -Key 'IsManaged')
         }
@@ -294,6 +457,38 @@ function Get-TomlVal {
 
     if ($Data -and $Data.ContainsKey($Key)) { return $Data[$Key] }
     return $null
+}
+
+function Normalize-PwSide {
+    param([string]$Side)
+
+    if ([string]::IsNullOrWhiteSpace($Side)) { return "both" }
+    $normalized = $Side.Trim().ToLowerInvariant()
+    if (@("both", "client", "server") -contains $normalized) { return $normalized }
+    return "both"
+}
+
+function Get-DefaultPwSideForCategory {
+    param([string]$Value)
+
+    if ($Value -eq "mods" -or $Value -eq "tacz") { return "both" }
+    return "client"
+}
+
+function Set-PwTomlSide {
+    param(
+        [string]$Content,
+        [string]$Side
+    )
+
+    $sideValue = Normalize-PwSide -Side $Side
+    if ($Content -match '(?m)^side\s*=\s*".*"$') {
+        return [regex]::Replace($Content, '(?m)^side\s*=\s*".*"$', "side = `"$sideValue`"", 1)
+    }
+    if ($Content -match '(?m)^filename\s*=') {
+        return [regex]::Replace($Content, '(?m)^(filename\s*=\s*".*"\s*)$', "`$1`nside = `"$sideValue`"", 1)
+    }
+    return "side = `"$sideValue`"`n$Content"
 }
 
 function Get-CurseForgeMetadataIdentity {
@@ -430,14 +625,13 @@ function New-CurseForgeProbeWorkspace {
 
     New-Item -ItemType Directory -Force -Path $modsRoot | Out-Null
     New-Item -ItemType Directory -Force -Path $installRoot | Out-Null
-    Copy-Item (Join-Path $RepoRoot "pack.toml") (Join-Path $packRoot "pack.toml") -Force
 
     $packwizIgnorePath = Join-Path $RepoRoot ".packwizignore"
     if (Test-Path $packwizIgnorePath) {
         Copy-Item $packwizIgnorePath (Join-Path $packRoot ".packwizignore") -Force
     }
 
-    New-Item -ItemType File -Force -Path (Join-Path $packRoot "index.toml") | Out-Null
+    Invoke-GeneratePackwizFiles -OutputDir $packRoot
 
     return [pscustomobject]@{
         Root = $root
@@ -786,10 +980,17 @@ function Get-CurseForgeCandidates {
 }
 
 function New-DetectionWorkspace {
+    param(
+        [string]$MetadataFolder = "mods",
+        [switch]$IgnoreModLoader
+    )
+
     $workspace = Join-Path $TempDetectRoot ([guid]::NewGuid().Guid)
-    New-Item -ItemType Directory -Force -Path (Join-Path $workspace "mods") | Out-Null
-    Copy-Item (Join-Path $RepoRoot "pack.toml") (Join-Path $workspace "pack.toml") -Force
-    New-Item -ItemType File -Force -Path (Join-Path $workspace "index.toml") | Out-Null
+    New-Item -ItemType Directory -Force -Path (Join-Path $workspace $MetadataFolder) | Out-Null
+    Invoke-GeneratePackwizFiles -OutputDir $workspace
+    if ($IgnoreModLoader) {
+        Remove-PackwizLoaderVersions -PackFilePath (Join-Path $workspace "pack.toml")
+    }
     return $workspace
 }
 
@@ -797,41 +998,50 @@ function Try-ResolveCurseForgeMetadata {
     param(
         [string]$SourcePath,
         [string]$SourceFilename,
-        [string[]]$Candidates
+        [string[]]$Candidates,
+        [string]$Category = "mods"
     )
 
-    $detectWorkspace = New-DetectionWorkspace
-    try {
-        Copy-Item -LiteralPath $SourcePath -Destination (Join-Path $detectWorkspace "mods\$SourceFilename") -Force
-        $detectResult = Invoke-PackwizCommand -WorkingDirectory $detectWorkspace -Arguments @("curseforge", "detect", "--yes")
-        if ($detectResult.ExitCode -eq 0) {
-            $detectedPwTomls = @(Get-ChildItem -LiteralPath (Join-Path $detectWorkspace "mods") -Filter *.pw.toml -File)
-            foreach ($pwToml in $detectedPwTomls) {
-                $data = Parse-PwToml -Path $pwToml.FullName
-                $resolvedFilename = Get-TomlVal -Data $data -Key 'Filename'
-                if ($resolvedFilename -ne $SourceFilename) { continue }
-                if (-not (Get-TomlVal -Data $data -Key 'IsManaged')) { continue }
+    if ($Category -eq "mods") {
+        $detectWorkspace = New-DetectionWorkspace -MetadataFolder "mods"
+        try {
+            Copy-Item -LiteralPath $SourcePath -Destination (Join-Path $detectWorkspace "mods\$SourceFilename") -Force
+            $detectResult = Invoke-PackwizCommand -WorkingDirectory $detectWorkspace -Arguments @("curseforge", "detect", "--yes")
+            if ($detectResult.ExitCode -eq 0) {
+                $detectedPwTomls = @(Get-ChildItem -LiteralPath (Join-Path $detectWorkspace "mods") -Filter *.pw.toml -File)
+                foreach ($pwToml in $detectedPwTomls) {
+                    $data = Parse-PwToml -Path $pwToml.FullName
+                    $resolvedFilename = Get-TomlVal -Data $data -Key 'Filename'
+                    if ($resolvedFilename -ne $SourceFilename) { continue }
+                    if (-not (Get-TomlVal -Data $data -Key 'IsManaged')) { continue }
 
-                return [pscustomobject]@{
-                    IsExactMatch = $true
-                    Candidate = "curseforge-detect"
-                    Name = Get-TomlVal -Data $data -Key 'Name'
-                    MetaFileName = $pwToml.Name
-                    Content = Get-Content -LiteralPath $pwToml.FullName -Raw
-                    ResolvedFilename = $resolvedFilename
+                    return [pscustomobject]@{
+                        IsExactMatch = $true
+                        Candidate = "curseforge-detect"
+                        Name = Get-TomlVal -Data $data -Key 'Name'
+                        MetaFileName = $pwToml.Name
+                        Content = Get-Content -LiteralPath $pwToml.FullName -Raw
+                        ResolvedFilename = $resolvedFilename
+                    }
                 }
             }
         }
-    }
-    finally {
-        Remove-Item -LiteralPath $detectWorkspace -Recurse -Force -ErrorAction SilentlyContinue
+        finally {
+            Remove-Item -LiteralPath $detectWorkspace -Recurse -Force -ErrorAction SilentlyContinue
+        }
     }
 
     $bestMismatch = $null
+    $cfCategory = Get-CurseForgeCategorySlug -Value $Category
     foreach ($candidate in $Candidates) {
-        $workspace = New-DetectionWorkspace
+        $workspace = New-DetectionWorkspace -MetadataFolder $Category -IgnoreModLoader:($Category -ne "mods")
         try {
-            $result = Invoke-PackwizCommand -WorkingDirectory $workspace -Arguments @("curseforge", "add", $candidate, "--yes")
+            $arguments = @("curseforge", "add", $candidate, "--yes", "--meta-folder", $Category)
+            if ($cfCategory) {
+                $arguments += @("--category", $cfCategory)
+            }
+
+            $result = Invoke-PackwizCommand -WorkingDirectory $workspace -Arguments $arguments
             if ($result.ExitCode -ne 0) { continue }
 
             $mainProjectName = $null
@@ -847,7 +1057,7 @@ function Try-ResolveCurseForgeMetadata {
 
             if (-not $mainProjectFilename) { continue }
 
-            $generatedPwTomls = @(Get-ChildItem -LiteralPath (Join-Path $workspace "mods") -Filter *.pw.toml -File)
+            $generatedPwTomls = @(Get-ChildItem -LiteralPath (Join-Path $workspace $Category) -Filter *.pw.toml -File)
             $generatedPwToml = $null
             foreach ($pwToml in $generatedPwTomls) {
                 $pwData = Parse-PwToml -Path $pwToml.FullName
@@ -922,13 +1132,19 @@ function Add-PackwizFilesMetadata {
         [hashtable]$JarMetadata,
         [string]$ModsDirectory,
         [string]$PwTomlPath = $null,
-        [string]$DisplayName = $null
+        [string]$DisplayName = $null,
+        [string]$Side = $null,
+        [string]$ReleaseCurseForgeContent = $null
     )
 
-    New-Item -ItemType Directory -Force -Path $PackwizFilesModsRoot | Out-Null
+    New-Item -ItemType Directory -Force -Path $PackwizFilesCategoryRoot | Out-Null
 
-    $packwizFilePath = Join-Path $PackwizFilesModsRoot $SourceFilename
-    Copy-Item -LiteralPath $SourcePath -Destination $packwizFilePath -Force
+    $packwizFilePath = Join-Path $PackwizFilesCategoryRoot $SourceFilename
+    $sourceFullPath = [IO.Path]::GetFullPath($SourcePath)
+    $packwizFullPath = [IO.Path]::GetFullPath($packwizFilePath)
+    if (-not [string]::Equals($sourceFullPath, $packwizFullPath, [System.StringComparison]::OrdinalIgnoreCase)) {
+        Copy-Item -LiteralPath $SourcePath -Destination $packwizFilePath -Force
+    }
 
     if (-not $DisplayName) {
         $DisplayName = Get-DisplayNameFromSource -Filename $SourceFilename -JarMetadata $JarMetadata
@@ -941,12 +1157,20 @@ function Add-PackwizFilesMetadata {
     $hash = (Get-FileHash -LiteralPath $packwizFilePath -Algorithm SHA256).Hash.ToLowerInvariant()
     $escapedName = Escape-TomlString -Value $DisplayName
     $escapedFilename = Escape-TomlString -Value $SourceFilename
-    $url = $PackwizFilesRawPrefix + "mods/" + [Uri]::EscapeDataString($SourceFilename)
+    $url = $PackwizFilesRawPrefix + $Category + "/" + [Uri]::EscapeDataString($SourceFilename)
+    if (-not $Side -and $PwTomlPath -and (Test-Path $PwTomlPath)) {
+        $existingData = Parse-PwToml -Path $PwTomlPath
+        $Side = Get-TomlVal -Data $existingData -Key 'Side'
+    }
+    if (-not $Side) {
+        $Side = Get-DefaultPwSideForCategory -Value $Category
+    }
+    $sideValue = Normalize-PwSide -Side $Side
 
     $content = @"
 name = "$escapedName"
 filename = "$escapedFilename"
-side = "both"
+side = "$sideValue"
 
 [download]
 url = "$url"
@@ -954,12 +1178,111 @@ hash-format = "sha256"
 hash = "$hash"
 "@
 
+    $releaseIdentity = Get-CurseForgeMetadataIdentity -Content $ReleaseCurseForgeContent
+    if ($releaseIdentity) {
+        $content += @"
+
+[release.curseforge]
+project-id = $($releaseIdentity.ProjectId)
+file-id = $($releaseIdentity.FileId)
+"@
+    }
+
+    $content = $content.TrimEnd() + "`n"
     Write-Utf8NoBomFile -Path $PwTomlPath -Content $content
 
     return [pscustomobject]@{
         Name = $DisplayName
         PwTomlPath = $PwTomlPath
     }
+}
+
+function Set-PackwizFilesReleaseCurseForgeHint {
+    param(
+        [string]$PwTomlPath,
+        [string]$ReleaseCurseForgeContent
+    )
+
+    $releaseIdentity = Get-CurseForgeMetadataIdentity -Content $ReleaseCurseForgeContent
+    if (-not $releaseIdentity) { return $false }
+    if (-not (Test-Path $PwTomlPath)) { return $false }
+
+    $content = Get-Content -LiteralPath $PwTomlPath -Raw
+    $existingIdentity = $null
+    if ($content -match '(?ms)\[release\.curseforge\].*') {
+        $existingIdentity = Get-CurseForgeMetadataIdentity -Content $Matches[0]
+    }
+    if ($existingIdentity -and
+        $existingIdentity.ProjectId -eq $releaseIdentity.ProjectId -and
+        $existingIdentity.FileId -eq $releaseIdentity.FileId) {
+        return $false
+    }
+
+    $trimmedContent = [regex]::Replace($content, '(?ms)\r?\n*\[release\.curseforge\]\s*project-id\s*=\s*\d+\s*file-id\s*=\s*\d+\s*$', '')
+    $newContent = $trimmedContent.TrimEnd() + @"
+
+
+[release.curseforge]
+project-id = $($releaseIdentity.ProjectId)
+file-id = $($releaseIdentity.FileId)
+"@
+    $newContent = $newContent.TrimEnd() + "`n"
+
+    Write-Utf8NoBomFile -Path $PwTomlPath -Content $newContent
+    return $true
+}
+
+function Get-PackwizFilesReleaseCurseForgeContent {
+    param([string]$PwTomlPath)
+
+    if (-not (Test-Path $PwTomlPath)) { return $null }
+
+    $content = Get-Content -LiteralPath $PwTomlPath -Raw
+    if ($content -match '(?ms)\[release\.curseforge\].*') {
+        return $Matches[0]
+    }
+
+    return $null
+}
+
+function Get-LocalMetadataHashRefresh {
+    param(
+        [pscustomobject]$Entry,
+        [hashtable]$SourceFiles,
+        [hashtable]$PackwizFiles
+    )
+
+    if ($Entry.IsManaged) { return $null }
+
+    $filename = $Entry.Filename
+    if (-not $filename) { return $null }
+
+    $downloadUrl = Get-TomlVal -Data $Entry.Data -Key 'DownloadUrl'
+    if (-not (Test-PackwizFilesRawUrl -Url $downloadUrl)) { return $null }
+
+    $hashFormat = Get-TomlVal -Data $Entry.Data -Key 'HashFormat'
+    if ($hashFormat -and $hashFormat -ne "sha256") { return $null }
+
+    $existingHash = Get-TomlVal -Data $Entry.Data -Key 'Hash'
+    if ([string]::IsNullOrWhiteSpace($existingHash)) { return $null }
+    $existingHash = $existingHash.ToLowerInvariant()
+
+    $candidatePaths = @()
+    if ($SourceFiles.ContainsKey($filename)) {
+        $candidatePaths += $SourceFiles[$filename]
+    }
+    if ($PackwizFiles.ContainsKey($filename)) {
+        $candidatePaths += $PackwizFiles[$filename]
+    }
+
+    foreach ($candidatePath in $candidatePaths) {
+        $actualHash = (Get-FileHash -LiteralPath $candidatePath -Algorithm SHA256).Hash.ToLowerInvariant()
+        if ($actualHash -ne $existingHash) {
+            return $candidatePath
+        }
+    }
+
+    return $null
 }
 
 function Remove-PackwizFilesAssetIfOwned {
@@ -970,7 +1293,7 @@ function Remove-PackwizFilesAssetIfOwned {
 
     if (-not $Filename) { return }
 
-    $assetPath = Join-Path $PackwizFilesModsRoot $Filename
+    $assetPath = Join-Path $PackwizFilesCategoryRoot $Filename
     if (-not (Test-Path $assetPath)) { return }
 
     $owners = @()
@@ -997,7 +1320,7 @@ function Get-LocalMetadataSourcePath {
     if (-not $filename) { return $null }
 
     $downloadUrl = Get-TomlVal -Data $Entry.Data -Key 'DownloadUrl'
-    if ($downloadUrl -and $downloadUrl.StartsWith($PackwizFilesRawPrefix, [System.StringComparison]::OrdinalIgnoreCase)) {
+    if (Test-PackwizFilesRawUrl -Url $downloadUrl) {
         if ($PackwizFiles.ContainsKey($filename)) {
             return $PackwizFiles[$filename]
         }
@@ -1015,12 +1338,10 @@ function Get-LocalMetadataSourcePath {
 }
 
 try {
-    if ($Category -ne "mods") {
-        throw "This script currently only supports the 'mods' category."
-    }
-
     Get-ToolEnsured -Url $PackwizUrl -Path $PackwizExe
+    Invoke-GeneratePackwizFiles -OutputDir $RepoRoot
 
+    $categoryDisplayName = Get-CategoryDisplayName -Value $Category
     $modsDir = Join-Path $RepoRoot $Category
     if (-not (Test-Path $modsDir)) {
         Write-Status "No '$Category' directory found."
@@ -1029,13 +1350,26 @@ try {
 
     Write-Status "Scanning category: $Category"
 
-    $sourceFiles = Get-AssetFiles -Directory $modsDir
-    $packwizFiles = Get-AssetFiles -Directory $PackwizFilesModsRoot
+    $sourceFiles = Get-AssetFiles -Directory $modsDir -Category $Category
+    $packwizFiles = Get-AssetFiles -Directory $PackwizFilesCategoryRoot -Category $Category
     $metadataState = Get-PwMetadataState -ModsDirectory $modsDir
     $pwEntries = @($metadataState.PwEntries)
     $filenameOwners = $metadataState.FilenameOwners
     $referencedFilenames = $metadataState.ReferencedFilenames
     $newFilesByBase = @{}
+
+    $normalizedRawPrefixCount = 0
+    foreach ($pwToml in $metadataState.PwTomls) {
+        if (Normalize-PackwizFilesRawPrefixInFile -Path $pwToml.FullName) {
+            $normalizedRawPrefixCount++
+        }
+    }
+    if ($normalizedRawPrefixCount -gt 0) {
+        $metadataState = Get-PwMetadataState -ModsDirectory $modsDir
+        $pwEntries = @($metadataState.PwEntries)
+        $filenameOwners = $metadataState.FilenameOwners
+        $referencedFilenames = $metadataState.ReferencedFilenames
+    }
 
     foreach ($sourceName in $sourceFiles.Keys) {
         $base = Derive-BaseName -Filename $sourceName
@@ -1046,12 +1380,17 @@ try {
         $newFilesByBase[$base] += $sourceName
     }
 
-    $migratedToCurseForgeCount = 0
+    $releaseHintCount = 0
     foreach ($entry in $pwEntries) {
         if ($entry.IsManaged) { continue }
 
         $currentFilename = $entry.Filename
         if (-not $currentFilename) { continue }
+
+        $downloadUrl = Get-TomlVal -Data $entry.Data -Key 'DownloadUrl'
+        if (-not (Test-PackwizFilesRawUrl -Url $downloadUrl)) {
+            continue
+        }
 
         $sourcePath = Get-LocalMetadataSourcePath -Entry $entry -SourceFiles $sourceFiles -PackwizFiles $packwizFiles
         if (-not $sourcePath) { continue }
@@ -1060,36 +1399,61 @@ try {
         $candidates = @(Get-CurseForgeCandidates -Filename $currentFilename -JarMetadata $jarMetadata)
         if ($candidates.Count -eq 0) { continue }
 
-        $cfMetadata = Try-ResolveCurseForgeMetadata -SourcePath $sourcePath -SourceFilename $currentFilename -Candidates $candidates
-        if (-not $cfMetadata) { continue }
+        $cfMetadata = Try-ResolveCurseForgeMetadata -SourcePath $sourcePath -SourceFilename $currentFilename -Candidates $candidates -Category $Category
+        if (-not ($cfMetadata -and $cfMetadata.IsExactMatch)) { continue }
 
-        if (-not $cfMetadata.IsExactMatch) {
-            Write-Warn "  ! CurseForge project '$($cfMetadata.Name)' was found for '$currentFilename', but it resolved to '$($cfMetadata.ResolvedFilename)'. Keeping packwiz-files metadata."
-            continue
+        if (Set-PackwizFilesReleaseCurseForgeHint -PwTomlPath $entry.PwTomlPath -ReleaseCurseForgeContent $cfMetadata.Content) {
+            Write-Status "  ~ Added release CurseForge hint: $($entry.Name)"
+            $releaseHintCount++
         }
+    }
 
-        $downloadability = Get-CurseForgeDownloadability -Content $cfMetadata.Content -MetaFileName $cfMetadata.MetaFileName -Name $cfMetadata.Name
-        if ($downloadability.Status -eq "restricted") {
-            Write-Status "  ~ Keeping packwiz-files (CurseForge requires manual download): $($cfMetadata.Name)"
-            continue
-        }
-        if ($downloadability.Status -ne "downloadable") {
-            Write-Warn "  ! Could not verify third-party download for '$($cfMetadata.Name)'; keeping packwiz-files metadata. $($downloadability.Reason)"
-            continue
-        }
+    $migratedToCurseForgeCount = 0
+    if ($Category -eq "mods") {
+        foreach ($entry in $pwEntries) {
+            if ($entry.IsManaged) { continue }
 
-        Write-Utf8NoBomFile -Path $entry.PwTomlPath -Content $cfMetadata.Content
+            $currentFilename = $entry.Filename
+            if (-not $currentFilename) { continue }
 
-        $downloadUrl = Get-TomlVal -Data $entry.Data -Key 'DownloadUrl'
-        if ($downloadUrl -and $downloadUrl.StartsWith($PackwizFilesRawPrefix, [System.StringComparison]::OrdinalIgnoreCase)) {
-            Remove-PackwizFilesAssetIfOwned -Filename $currentFilename -FilenameOwners $filenameOwners
-            if ($packwizFiles.ContainsKey($currentFilename)) {
-                $packwizFiles.Remove($currentFilename) | Out-Null
+            $sourcePath = Get-LocalMetadataSourcePath -Entry $entry -SourceFiles $sourceFiles -PackwizFiles $packwizFiles
+            if (-not $sourcePath) { continue }
+
+            $jarMetadata = Get-JarMetadata -Path $sourcePath
+            $candidates = @(Get-CurseForgeCandidates -Filename $currentFilename -JarMetadata $jarMetadata)
+            if ($candidates.Count -eq 0) { continue }
+
+            $cfMetadata = Try-ResolveCurseForgeMetadata -SourcePath $sourcePath -SourceFilename $currentFilename -Candidates $candidates -Category $Category
+            if (-not $cfMetadata) { continue }
+
+            if (-not $cfMetadata.IsExactMatch) {
+                Write-Warn "  ! CurseForge project '$($cfMetadata.Name)' was found for '$currentFilename', but it resolved to '$($cfMetadata.ResolvedFilename)'. Keeping packwiz-files metadata."
+                continue
             }
-        }
 
-        Write-Status "  ~ Migrated to CurseForge: $($cfMetadata.Name)"
-        $migratedToCurseForgeCount++
+            $downloadability = Get-CurseForgeDownloadability -Content $cfMetadata.Content -MetaFileName $cfMetadata.MetaFileName -Name $cfMetadata.Name
+            if ($downloadability.Status -eq "restricted") {
+                Write-Status "  ~ Keeping packwiz-files (CurseForge requires manual download): $($cfMetadata.Name)"
+                continue
+            }
+            if ($downloadability.Status -ne "downloadable") {
+                Write-Warn "  ! Could not verify third-party download for '$($cfMetadata.Name)'; keeping packwiz-files metadata. $($downloadability.Reason)"
+                continue
+            }
+
+            Write-Utf8NoBomFile -Path $entry.PwTomlPath -Content (Set-PwTomlSide -Content $cfMetadata.Content -Side $entry.Side)
+
+            $downloadUrl = Get-TomlVal -Data $entry.Data -Key 'DownloadUrl'
+            if (Test-PackwizFilesRawUrl -Url $downloadUrl) {
+                Remove-PackwizFilesAssetIfOwned -Filename $currentFilename -FilenameOwners $filenameOwners
+                if ($packwizFiles.ContainsKey($currentFilename)) {
+                    $packwizFiles.Remove($currentFilename) | Out-Null
+                }
+            }
+
+            Write-Status "  ~ Migrated to CurseForge: $($cfMetadata.Name)"
+            $migratedToCurseForgeCount++
+        }
     }
 
     if ($migratedToCurseForgeCount -gt 0) {
@@ -1105,16 +1469,35 @@ try {
     foreach ($entry in $pwEntries) {
         $currentFilename = $entry.Filename
         if (-not $currentFilename) { continue }
-        if ($sourceFiles.ContainsKey($currentFilename)) { continue }
-
         $base = Derive-BaseName -Filename $currentFilename
         if (-not $base) { continue }
+
+        $newFilename = $null
+        if ($newFilesByBase.ContainsKey($base)) {
+            $newFilename = Get-PreferredFilename -Filenames $newFilesByBase[$base]
+        }
+
+        $hasReplacement = $newFilename -and $newFilename -ne $currentFilename
+        if (-not $hasReplacement) {
+            $hashRefreshSourcePath = Get-LocalMetadataHashRefresh -Entry $entry -SourceFiles $sourceFiles -PackwizFiles $packwizFiles
+            if ($hashRefreshSourcePath) {
+                $localUpdates += [pscustomobject]@{
+                    Entry = $entry
+                    OldFilename = $currentFilename
+                    NewFilename = $currentFilename
+                    SourcePath = $hashRefreshSourcePath
+                }
+                continue
+            }
+            if ($sourceFiles.ContainsKey($currentFilename)) { continue }
+            if ($packwizFiles.ContainsKey($currentFilename)) { continue }
+        }
+
         if (-not $newFilesByBase.ContainsKey($base)) {
             $removals += $entry
             continue
         }
 
-        $newFilename = Get-PreferredFilename -Filenames $newFilesByBase[$base]
         if (-not $newFilename) {
             $removals += $entry
             continue
@@ -1122,16 +1505,18 @@ try {
 
         if ($entry.IsManaged) {
             $managedUpdates += [pscustomobject]@{
-            Entry = $entry
-            OldFilename = $currentFilename
-            NewFilename = $newFilename
-        }
+                Entry = $entry
+                OldFilename = $currentFilename
+                NewFilename = $newFilename
+                SourcePath = $sourceFiles[$newFilename]
+            }
         }
         else {
             $localUpdates += [pscustomobject]@{
                 Entry = $entry
                 OldFilename = $currentFilename
                 NewFilename = $newFilename
+                SourcePath = $sourceFiles[$newFilename]
             }
         }
     }
@@ -1150,8 +1535,8 @@ try {
             Sort-Object { Get-NaturalSortKey -Value $_ }
     )
 
-    $skipRemovals = $false
-    if ($removals.Count -gt 0) {
+    $skipRemovals = -not $AllowRemovals
+    if ($removals.Count -gt 0 -and $AllowRemovals) {
         if ($sourceFiles.Count -eq 0 -and $pwEntries.Count -gt 20) {
             $skipRemovals = $true
         }
@@ -1161,11 +1546,11 @@ try {
     }
 
     if ($skipRemovals) {
-        Write-Warn "  ! Detected $($removals.Count) missing mod file(s); this looks like an unsynced or partial local mods folder, so automatic removals were skipped."
+        Write-Warn "  ! Detected $($removals.Count) missing $categoryDisplayName file(s); automatic removals are disabled. Remove metadata explicitly or rerun with -AllowRemovals."
         $removals = @()
     }
 
-    if ($migratedToCurseForgeCount -eq 0 -and $managedUpdates.Count -eq 0 -and $localUpdates.Count -eq 0 -and $newSources.Count -eq 0 -and $removals.Count -eq 0) {
+    if ($normalizedRawPrefixCount -eq 0 -and $releaseHintCount -eq 0 -and $migratedToCurseForgeCount -eq 0 -and $managedUpdates.Count -eq 0 -and $localUpdates.Count -eq 0 -and $newSources.Count -eq 0 -and $removals.Count -eq 0) {
         Write-Status "No CurseForge metadata changes detected."
         exit 0
     }
@@ -1176,30 +1561,24 @@ try {
     foreach ($update in $managedUpdates) {
         $entry = $update.Entry
         $originalContent = Get-Content -LiteralPath $entry.PwTomlPath -Raw
+        $sourcePath = $update.SourcePath
+        $jarMetadata = Get-JarMetadata -Path $sourcePath
+        $candidates = @(Get-CurseForgeCandidates -Filename $update.NewFilename -JarMetadata $jarMetadata)
+        $cfMetadata = $null
+        if ($candidates.Count -gt 0) {
+            $cfMetadata = Try-ResolveCurseForgeMetadata -SourcePath $sourcePath -SourceFilename $update.NewFilename -Candidates $candidates -Category $Category
+        }
 
-        Write-Status "  ~ packwiz update: $($entry.Slug)"
-        $result = Invoke-PackwizCommand -Arguments @("update", $entry.Slug, "--yes")
-        if ($result.ExitCode -ne 0) {
-            Write-Utf8NoBomFile -Path $entry.PwTomlPath -Content $originalContent
-            Write-Warn "  ! packwiz update failed for $($entry.Slug)"
+        if (-not ($cfMetadata -and $cfMetadata.IsExactMatch)) {
+            $resolvedFilename = if ($cfMetadata) { $cfMetadata.ResolvedFilename } else { "<not found>" }
+            Write-Warn "  ! Could not resolve exact CurseForge metadata for '$($update.NewFilename)' (resolved: '$resolvedFilename'); keeping existing metadata."
             continue
         }
 
-        $updatedData = Parse-PwToml -Path $entry.PwTomlPath
-        $updatedFilename = Get-TomlVal -Data $updatedData -Key 'Filename'
-        if ($updatedFilename -ne $update.NewFilename) {
-            Write-Utf8NoBomFile -Path $entry.PwTomlPath -Content $originalContent
-            Write-Warn "  ! packwiz update for $($entry.Slug) resolved to '$updatedFilename', expected '$($update.NewFilename)'"
-            continue
-        }
-
-        $updatedName = Get-TomlVal -Data $updatedData -Key 'Name'
-        $updatedContent = Get-Content -LiteralPath $entry.PwTomlPath -Raw
-        $downloadability = Get-CurseForgeDownloadability -Content $updatedContent -MetaFileName $entry.PwTomlName -Name $updatedName
+        $updatedName = $cfMetadata.Name
+        $downloadability = Get-CurseForgeDownloadability -Content $cfMetadata.Content -MetaFileName $cfMetadata.MetaFileName -Name $updatedName
         if ($downloadability.Status -eq "restricted") {
-            $sourcePath = $sourceFiles[$update.NewFilename]
-            $jarMetadata = Get-JarMetadata -Path $sourcePath
-            Add-PackwizFilesMetadata -SourcePath $sourcePath -SourceFilename $update.NewFilename -JarMetadata $jarMetadata -ModsDirectory $modsDir -PwTomlPath $entry.PwTomlPath -DisplayName $updatedName | Out-Null
+            Add-PackwizFilesMetadata -SourcePath $sourcePath -SourceFilename $update.NewFilename -JarMetadata $jarMetadata -ModsDirectory $modsDir -PwTomlPath $entry.PwTomlPath -DisplayName $updatedName -ReleaseCurseForgeContent $cfMetadata.Content | Out-Null
             Write-Status "  ~ Updated (packwiz-files): $updatedName"
             $updatedLocalCount++
             continue
@@ -1210,13 +1589,14 @@ try {
             continue
         }
 
-        Write-Status "  ~ Updated (CurseForge): $($updatedData['Name'])"
+        Write-Utf8NoBomFile -Path $entry.PwTomlPath -Content (Set-PwTomlSide -Content $cfMetadata.Content -Side $entry.Side)
+        Write-Status "  ~ Updated (CurseForge): $updatedName"
         $updatedCount++
     }
 
     foreach ($update in $localUpdates) {
         $entry = $update.Entry
-        $sourcePath = $sourceFiles[$update.NewFilename]
+        $sourcePath = $update.SourcePath
         $jarMetadata = Get-JarMetadata -Path $sourcePath
         $displayName = $entry.Name
         if (-not $displayName) {
@@ -1225,15 +1605,17 @@ try {
 
         $candidates = @(Get-CurseForgeCandidates -Filename $update.NewFilename -JarMetadata $jarMetadata)
         $cfMetadata = $null
+        $releaseCurseForgeContent = Get-PackwizFilesReleaseCurseForgeContent -PwTomlPath $entry.PwTomlPath
         if ($candidates.Count -gt 0) {
-            $cfMetadata = Try-ResolveCurseForgeMetadata -SourcePath $sourcePath -SourceFilename $update.NewFilename -Candidates $candidates
+            $cfMetadata = Try-ResolveCurseForgeMetadata -SourcePath $sourcePath -SourceFilename $update.NewFilename -Candidates $candidates -Category $Category
         }
 
         if ($cfMetadata -and $cfMetadata.IsExactMatch) {
+            $releaseCurseForgeContent = $cfMetadata.Content
             $downloadability = Get-CurseForgeDownloadability -Content $cfMetadata.Content -MetaFileName $cfMetadata.MetaFileName -Name $cfMetadata.Name
             if ($downloadability.Status -eq "downloadable") {
                 Remove-PackwizFilesAssetIfOwned -Filename $update.OldFilename -FilenameOwners $filenameOwners
-                Write-Utf8NoBomFile -Path $entry.PwTomlPath -Content $cfMetadata.Content
+                Write-Utf8NoBomFile -Path $entry.PwTomlPath -Content (Set-PwTomlSide -Content $cfMetadata.Content -Side $entry.Side)
                 Write-Status "  ~ Updated (CurseForge): $($cfMetadata.Name)"
                 $updatedCount++
                 continue
@@ -1253,7 +1635,7 @@ try {
         if ($update.OldFilename -ne $update.NewFilename) {
             Remove-PackwizFilesAssetIfOwned -Filename $update.OldFilename -FilenameOwners $filenameOwners
         }
-        Add-PackwizFilesMetadata -SourcePath $sourcePath -SourceFilename $update.NewFilename -JarMetadata $jarMetadata -ModsDirectory $modsDir -PwTomlPath $entry.PwTomlPath -DisplayName $displayName | Out-Null
+        Add-PackwizFilesMetadata -SourcePath $sourcePath -SourceFilename $update.NewFilename -JarMetadata $jarMetadata -ModsDirectory $modsDir -PwTomlPath $entry.PwTomlPath -DisplayName $displayName -ReleaseCurseForgeContent $releaseCurseForgeContent | Out-Null
         Write-Status "  ~ Updated (packwiz-files): $displayName"
         $updatedLocalCount++
     }
@@ -1265,24 +1647,24 @@ try {
         $jarMetadata = Get-JarMetadata -Path $sourcePath
         $candidates = @(Get-CurseForgeCandidates -Filename $sourceName -JarMetadata $jarMetadata)
 
-        Write-Status "  ~ New mod detected: $sourceName"
+        Write-Status "  ~ New $categoryDisplayName detected: $sourceName"
         $cfMetadata = $null
         if ($candidates.Count -gt 0) {
-            $cfMetadata = Try-ResolveCurseForgeMetadata -SourcePath $sourcePath -SourceFilename $sourceName -Candidates $candidates
+            $cfMetadata = Try-ResolveCurseForgeMetadata -SourcePath $sourcePath -SourceFilename $sourceName -Candidates $candidates -Category $Category
         }
 
         if ($cfMetadata -and $cfMetadata.IsExactMatch) {
             $downloadability = Get-CurseForgeDownloadability -Content $cfMetadata.Content -MetaFileName $cfMetadata.MetaFileName -Name $cfMetadata.Name
             if ($downloadability.Status -eq "restricted") {
                 Write-Status "  ~ CurseForge requires manual download, keeping packwiz-files: $($cfMetadata.Name)"
-                $localMetadata = Add-PackwizFilesMetadata -SourcePath $sourcePath -SourceFilename $sourceName -JarMetadata $jarMetadata -ModsDirectory $modsDir
+                $localMetadata = Add-PackwizFilesMetadata -SourcePath $sourcePath -SourceFilename $sourceName -JarMetadata $jarMetadata -ModsDirectory $modsDir -ReleaseCurseForgeContent $cfMetadata.Content
                 Write-Status "  ~ Added (packwiz-files): $($localMetadata.Name)"
                 $addedPackwizFilesCount++
                 continue
             }
             if ($downloadability.Status -ne "downloadable") {
                 Write-Warn "  ! Could not verify third-party download for '$($cfMetadata.Name)'; falling back to packwiz-files. $($downloadability.Reason)"
-                $localMetadata = Add-PackwizFilesMetadata -SourcePath $sourcePath -SourceFilename $sourceName -JarMetadata $jarMetadata -ModsDirectory $modsDir
+                $localMetadata = Add-PackwizFilesMetadata -SourcePath $sourcePath -SourceFilename $sourceName -JarMetadata $jarMetadata -ModsDirectory $modsDir -ReleaseCurseForgeContent $cfMetadata.Content
                 Write-Status "  ~ Added (packwiz-files): $($localMetadata.Name)"
                 $addedPackwizFilesCount++
                 continue
@@ -1296,7 +1678,8 @@ try {
 
             $metaName = Get-UniqueMetaName -PreferredName $preferredMetaName -Directory $modsDir
             $pwTomlPath = Join-Path $modsDir ($metaName + ".pw.toml")
-            Write-Utf8NoBomFile -Path $pwTomlPath -Content $cfMetadata.Content
+            $defaultSide = Get-DefaultPwSideForCategory -Value $Category
+            Write-Utf8NoBomFile -Path $pwTomlPath -Content (Set-PwTomlSide -Content $cfMetadata.Content -Side $defaultSide)
             Write-Status "  ~ Added (CurseForge): $($cfMetadata.Name)"
             $addedCurseForgeCount++
             continue
@@ -1325,7 +1708,7 @@ try {
         $removedCount++
     }
 
-    if ($updatedCount -eq 0 -and $updatedLocalCount -eq 0 -and $addedCurseForgeCount -eq 0 -and $addedPackwizFilesCount -eq 0 -and $removedCount -eq 0) {
+    if ($normalizedRawPrefixCount -eq 0 -and $releaseHintCount -eq 0 -and $migratedToCurseForgeCount -eq 0 -and $updatedCount -eq 0 -and $updatedLocalCount -eq 0 -and $addedCurseForgeCount -eq 0 -and $addedPackwizFilesCount -eq 0 -and $removedCount -eq 0) {
         Write-Status "No CurseForge metadata changes detected."
         exit 0
     }
@@ -1338,6 +1721,12 @@ try {
     }
     if ($migratedToCurseForgeCount -gt 0) {
         Write-Status "Migrated to CurseForge: $migratedToCurseForgeCount"
+    }
+    if ($normalizedRawPrefixCount -gt 0) {
+        Write-Status "Normalized packwiz-files raw URLs: $normalizedRawPrefixCount"
+    }
+    if ($releaseHintCount -gt 0) {
+        Write-Status "Added release CurseForge hints: $releaseHintCount"
     }
     if ($addedCurseForgeCount -gt 0) {
         Write-Status "Added via CurseForge: $addedCurseForgeCount"
@@ -1355,6 +1744,6 @@ try {
         throw "packwiz refresh exited with code $($refreshResult.ExitCode)."
     }
 
-    Write-Status "Done. Mod pw.toml files refreshed from CurseForge or packwiz-files metadata."
+    Write-Status "Done. $Category pw.toml files refreshed from CurseForge or packwiz-files metadata."
 }
 finally {}

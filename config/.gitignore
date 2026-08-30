@@ -1,4 +1,6 @@
 /*
+!/modpack_defaults/
+!/sparsestructures.json5
 # 忽略当前目录下所以文件
 # 反选不忽略的文件夹和文件
 
@@ -29,9 +31,8 @@
 !/collectorsreap-common.toml
 !/curios-client.toml
 !/curios-common.toml
+!/eclipticseasons-client.toml
 !/eclipticseasons-common.toml
-!/endertrigon-common.toml
-!/extraholopage-client.toml
 !/ftbquests
 !/netherexp-common.toml
 !/refurbished_furniture.server.toml
@@ -39,6 +40,7 @@
 !/iceandfire-common.toml
 !/imblocker-client.toml
 !/imblocker.json
+!/jei_optimize-client.toml
 !/improvedmobs
 !/butchercraft-common.toml
 !/pickupnotifier
@@ -63,12 +65,13 @@ xaerominimap_entities.json
 !/farmersrespite-common.toml
 !/colorfulhearts.toml
 !/alexscaves-client.toml
-!/DistantHorizons.toml
 !/itemborders-common.toml
 !/supplementaries-common.toml
 !/supplementaries-client.toml
 !/vvaddon.toml
 !/fml.toml
+!/OED/
+/OED/*.backup-*.toml
 !/alexscaves-general.toml
 !/simplebackups-common.toml
 !/bcc-common.toml
@@ -86,3 +89,7 @@ xaerominimap_entities.json
 !/Obscuria
 !/createlazytick-common.toml
 !/MouseTweaks.cfg
+!/fluidlogistics-common.toml
+!/createredstonelinkgui-client.toml
+!/xaerominimap.txt
+!/oei/

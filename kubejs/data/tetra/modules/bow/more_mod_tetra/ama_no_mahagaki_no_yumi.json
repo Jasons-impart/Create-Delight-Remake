@@ -1,0 +1,89 @@
+{
+    "slots": [
+        "bow/stave"
+    ],
+    "type": "tetra:basic_major_module",
+    "improvements": [
+        "tetra:bow/long_stave/",
+        "tetra:bow/shared_stave/",
+        "tetra:bow/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": [
+                "tetra:wood/",
+                "tetra:stone/",
+                "tetra:metal/",
+                "tetra:gem/",
+                "tetra:bone/",
+                "tetra:rod/stick"
+            ],
+            "key": "ama_no_mahagaki_no_yumi/",
+            "attributes": {
+                "tetra:draw_speed": 1.2,
+                "tetra:draw_strength": 4.5
+            },
+            "aspects": {
+                "bow": 2,
+                "breakable": 2
+            },
+            "effects": {
+                "spread": [
+                    0,
+                    99
+                ],
+                "overbowed": 60
+            },
+            "durability": 537,
+            "extract": {
+                "primaryAttributes": {
+                    "tetra:draw_speed": 0.25,
+                    "tetra:draw_strength": 2.3
+                },
+                "tertiaryAttributes": {
+                    "tetra:draw_speed": -0.16,
+                    "tetra:draw_strength": 1.8
+                },
+                "primaryEffects": {
+                    "more_mod_tetra:defeat_demons": 6.5,
+                    "velocity": 3
+                },
+                "tertiaryEffects": {
+                    "more_mod_tetra:defeat_demons": 3,
+                    "velocity": 6
+                },
+                "durability": 1,
+                "integrity": -1,
+                "magicCapacity": 1,
+                "glyph": {
+                    "textureX": 144,
+                    "textureY": 32
+                },
+                "availableTextures": [
+                    ""
+                ],
+                "models": [
+                    {
+                        "location": "more_mod_tetra:item/module/bow/more_mod_tetra/ama_no_mahagaki_no_yumi"
+                    },
+                    {
+                        "type": "tetra:filtered_grid_texture",
+                        "location": "more_mod_tetra:item/module/bow/more_mod_tetra/ama_no_mahagaki_no_yumi",
+                        "filter": "draw_0"
+                    },
+                    {
+                        "type": "tetra:filtered_grid_texture",
+                        "location": "more_mod_tetra:item/module/bow/more_mod_tetra/ama_no_mahagaki_no_yumi",
+                        "filter": "draw_1"
+                    },
+                    {
+                        "type": "tetra:filtered_grid_texture",
+                        "location": "more_mod_tetra:item/module/bow/more_mod_tetra/ama_no_mahagaki_no_yumi",
+                        "filter": "draw_2"
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,113 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "farmersrespite:green_tea_cookie",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:honey_cookie",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:persimmon_cookie",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:lemon_cookie",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:cranberry_cookie",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:bayberry_cookie",
+      "required": false
+    },
+    {
+      "id": "minecraft:cookie",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:oatmeal_cookie",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:lime_cookie",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:sweet_berry_cookie",
+      "required": false
+    },
+    {
+      "id": "ends_delight:chorus_cookie",
+      "required": false
+    },
+    {
+      "id": "cavedelight:star_cookie",
+      "required": false
+    },
+    {
+      "id": "miners_delight:bat_cookie",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:birch_cookie",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:paw_cookie",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:herbal_cookie",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:arbutus_berry_cookie",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:howling_cookie",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:molasses_cookie",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:cherry_cookie",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:maple_cookie",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:mulberry_cookie",
+      "required": false
+    },
+    {
+      "id": "create_bic_bit:speculaas",
+      "required": false
+    },
+    {
+      "id": "create_bic_bit:stroopwafel",
+      "required": false
+    },
+    {
+      "id": "create_bic_bit:chocolate_glazed_stroopwafel",
+      "required": false
+    },
+    {
+      "id": "create_bic_bit:wrapped_stroopwafel",
+      "required": false
+    },
+    {
+      "id": "create_bic_bit:wrapped_chocolate_glazed_stroopwafel",
+      "required": false
+    }
+  ]
+}

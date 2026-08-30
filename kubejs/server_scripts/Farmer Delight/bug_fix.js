@@ -2,12 +2,10 @@ ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "farmersdelight:cutting/sugar_cane_alt"
     ])
-    cutting(e, 'minecraft:sugar_cane', 
-        [
-            ['minecraft:sugar'],
-            ['minecraft:sugar', 1, 0.25]
-        ]
-    )
+    cutting(e, 'minecraft:sugar_cane', [
+        '2x cosmopolitan:sugarcane_pieces',
+        Item.of('minecraft:sugar').withChance(0.5)
+    ])
     e.recipes.create.filling(
         'farmersdelight:milk_bottle',
         [

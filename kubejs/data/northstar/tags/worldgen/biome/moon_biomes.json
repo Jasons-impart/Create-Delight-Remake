@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "createdelight:lunar_farside_plains",
+    "createdelight:lunar_farside_hills",
+    "createdelight:lunar_farside_crater_fields",
+    "createdelight:lunar_farside_ice_caves"
+  ]
+}

@@ -46,12 +46,24 @@ ItemEvents.modification(e => {
      * @param {number} [duration] 以s为单位,若不填则默认为10s
      * @param {number} [strength] 实际值为strength+1,若不填则默认为0
      * @param {number} [probability] 概率,若不填则默认为1
+     * @param {number} [overwrite] 是否覆盖原有效果，默认1；传入0时保留原有效果并追加
      */
-    let food_effects = function (food, effect, duration, strength, probability) {
+    let food_effects = function (food, effect, duration, strength, probability, overwrite) {
         duration = duration || 10
         strength = strength || 0
         probability = probability || 1
+        overwrite = overwrite === undefined ? 1 : overwrite
         e.modify(food, item => {
+            if (overwrite === 0) {
+                if (item.getFoodProperties() === null) {
+                    console.warn(`[Create Delight] ${item.getId()} is not a food item; cannot append ${effect}`)
+                    return
+                }
+                item.foodProperties = new global.CDStartupJavaClasses.$FoodBuilder(item.getFoodProperties())
+                    .effect(effect, 20 * duration, strength, probability)
+                    .build()
+                return
+            }
             item.foodProperties = food => {
                 food.effect(effect, 20 * duration, strength, probability)
             }
@@ -196,7 +208,6 @@ ItemEvents.modification(e => {
     maxStackSize_change('ends_delight:chorus_fruit_popsicle', 64)
     maxStackSize_change('youkaishomecoming:milk_popsicle', 64)
     maxStackSize_change('youkaishomecoming:big_popsicle', 64)
-    maxStackSize_change('createdelightcore:lush_confiture_jelly_bottle', 16)
     const iceCreamItems = [
         "cosmopolitan:tricolored_ice_cream_sandwich",
         "cosmopolitan:enchanted_fruit_ice_cream",
@@ -258,7 +269,6 @@ ItemEvents.modification(e => {
     food_fastToEat('fruitsdelight:lemon_tart')
 
     // 食物饱食度修改
-    food_hungers("vintagedelight:cheese_pizza_slice", 5, 3.5)
     food_hungers("ratatouille:cake_base", 7, 4.5)
     food_hungers("casualness_delight:cooked_donkey_meat", 6, 4.5)
     food_hungers("casualness_delight:donkey_burger", 10, 6)
@@ -283,9 +293,8 @@ ItemEvents.modification(e => {
     food_hungers("create:sweet_roll", 8, 6)
     food_hungers("alexscaves:fiddlehead", 1, 0.5)
     food_hungers("createcafe:oreo_half", 5, 5)
-    food_hungers("createcafe:oreo_crashed", 5, 2.5)
+    food_hungers("createcafe:oreo_crushed", 5, 2.5)
     food_hungers("createcafe:oreo", 12, 18)
-    food_hungers("createdelightcore:lush_confiture_jelly_bottle", 4, 3)
     food_hungers('createdelight:fugu_roll', 10, 10)
     food_hungers('silentsdelight:sculk_sensor_tendril_roll', 12, 9.8)
     food_hungers('farmersdelight:kelp_roll', 12, 9.8)
@@ -320,6 +329,10 @@ ItemEvents.modification(e => {
     food_hungers('bakeries:egg_tart', 8, 4)
     food_hungers('fruitsdelight:fig_tart', 8.5, 4.5)
     food_hungers('fruitsdelight:lemon_tart', 8, 4)
+    food_hungers('createdelightcore:pizza_slice', 4, 3)
+    food_hungers('collectorsreap:tropical_shaved_ice', 3, 1)
+    food_hungers('fruitsdelight:hamimelon_shaved_ice', 3, 1)
+    food_hungers('neapolitan:strawberry_banana_smoothie', 3, 1)
 
     // 食物效果修改
     food_effects('culturaldelights:pufferfish_roll', "minecraft:poison", 10)
@@ -359,10 +372,11 @@ ItemEvents.modification(e => {
     food_effects("alexscaves:small_peppermint", "neapolitan:berserking", 45)
     food_effects("alexscaves:large_peppermint", "neapolitan:berserking", 120)
     food_effects("alexscaves:fiddlehead", "minecraft:poison", 5, 0, 0.2)
-    food_effects("createdelightcore:lush_confiture_jelly_bottle", "cosmopolitan:tracer", 30)
-    food_effects("createdelightcore:lush_confiture_jelly_bottle", "cosmopolitan:phototaxis", 30)
     food_effects('farmersrespite:rose_hip_pie_slice', "minecraft:regeneration", 5)
     food_effects('trailandtales_delight:cherry_cheese_pie_slice', "minecraft:regeneration", 10)
+    food_effects('cosmopolitan:sunny_ice_cream_sandwich', "collectorsreap:rebound", 80, 1)
+    food_effects('cosmopolitan:sunny_ice_cream_sandwich', "neapolitan:vanilla_scent")
+    food_effects('blackknightarmor:mied_floral_flavor_ice_cream', "createdelight:dragon_breath_resistance", 60)
     //紫颂果食物传送效果
     food_effects("ends_delight:chorus_fruit_milk_tea", "fruitsdelight:chorus", 0.05)
     food_effects("ends_delight:bubble_tea", "fruitsdelight:chorus", 0.05)
@@ -385,6 +399,8 @@ ItemEvents.modification(e => {
     food_effects('collectorsreap:lime_popsicle', "minecraft:fire_resistance", 10)
     food_effects('cosmopolitan:berry_popsicle', "minecraft:fire_resistance", 10)
     food_effects('createdelight:empty_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('cosmopolitan:gamblers_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('corn_delight:corn_popsicle', "minecraft:fire_resistance", 10)
     food_effects('cosmopolitan:berry_popsicle_double', "minecraft:fire_resistance", 20)
     food_effects('cosmopolitan:chorus_fruit_popsicle_double', "minecraft:fire_resistance", 20)
     food_effects('cosmopolitan:lime_popsicle_double', "minecraft:fire_resistance", 20)
@@ -434,6 +450,25 @@ ItemEvents.modification(e => {
     food_effects('youkaishomecoming:salmon_futomaki', "farmersdelight:nourishment", 30, 0, 1)
     remove_effects('youkaishomecoming:rainbow_futomaki', "minecraft:saturation")
     food_effects('youkaishomecoming:rainbow_futomaki', "farmersdelight:nourishment", 30, 0, 1)
+    remove_effects('createcafe:banana_iced_coffee', "minecraft:saturation"),
+    food_effects('createcafe:banana_iced_coffee', "neapolitan:agility", 30)
+    remove_effects('createcafe:caramel_iced_coffee', "minecraft:saturation"),
+    food_effects('createcafe:caramel_iced_coffee', "farmersdelight:nourishment", 30, 0, 1)
+    remove_effects('createcafe:coconut_iced_coffee', "minecraft:water_breathing"),
+    food_effects('createcafe:coconut_iced_coffee', "minecraft:water_breathing", 60, 0, 1)
+
+    // 螃蟹料理：横行霸道
+    food_effects('crabbersdelight:crab_legs', 'youkaishomecoming:craby', 30, 0, 0.05, 0)
+    food_effects('crabbersdelight:crab_cakes', 'youkaishomecoming:craby', 300, 0, 1, 0)
+    food_effects('collectorsreap:chieftain_claw', 'youkaishomecoming:craby', 45, 1, 0.5, 0)
+    food_effects('collectorsreap:chieftain_leg', 'youkaishomecoming:craby', 45, 1, 0.125, 0)
+    food_effects('collectorsreap:chieftain_crab_meat', 'youkaishomecoming:craby', 45, 1, 0.1666, 0)
+    food_effects('collectorsreap:crab_miso', 'youkaishomecoming:craby', 45, 1, 0.5, 0)
+    food_effects('collectorsreap:crab_noodles', 'youkaishomecoming:craby', 300, 0, 1, 0)
+    food_effects('collectorsreap:crab_lasagna', 'youkaishomecoming:craby', 300, 0, 1, 0)
+    food_effects('collectorsreap:buttered_legs', 'youkaishomecoming:craby', 300, 0, 1, 0)
+    food_effects('collectorsreap:sea_wrap', 'youkaishomecoming:craby', 450, 1, 1, 0)
+    food_effects('collectorsreap:land_and_sea_burger', 'youkaishomecoming:craby', 450, 1, 1, 0)
 
     //咖啡效果
     coffee_effect('createcafe:strawberry_iced_coffee', 600, 0, 600)
@@ -441,6 +476,7 @@ ItemEvents.modification(e => {
     coffee_effect('createcafe:mint_iced_coffee', 600, 0, 600)
     coffee_effect('createcafe:caramel_iced_coffee', 600, 0, 600)
     coffee_effect('createcafe:banana_iced_coffee', 600, 0, 600)
+    coffee_effect('createcafe:coconut_iced_coffee', 600, 0, 600)
     coffee_effect('createcafe:iced_coffee', 150, 2, 150)
     coffee_effect('createcafe:iced_coffee_milk', 300, 1, 300)
     coffee_effect('youkaishomecoming:coffee_mochi', 150, 0, 150)
@@ -459,6 +495,9 @@ ItemEvents.modification(e => {
     coffee_effect('createcafe:roasted_coffee_beans', 20, 0, 20)
     coffee_effect('createcafe:coffee_grounds', 30, 0, 30)
     coffee_effect('farmersrespite:coffee_cake_slice', 150, 0, 150)
+    coffee_effect('collectorsreap:limbo_brew', 150, 0, 150)
+    coffee_effect('collectorsreap:long_limbo_brew', 200, 0, 200)
+    coffee_effect('collectorsreap:strong_limbo_brew', 100, 1, 100)
 
     // 红茶效果
     red_tea_effect("farmersrespite:black_tea", 60, 0, 60, 30)
@@ -479,7 +518,10 @@ ItemEvents.modification(e => {
     red_tea_effect('createcafe:avocado_milk_tea', 45, 0, 45, 20)
     red_tea_effect('createcafe:vanilla_milk_tea', 45, 0, 45, 20)
     red_tea_effect('createcafe:oreo_milk_tea', 45, 0, 45, 20)
-    red_tea_effect('createcafe:pomegranate_tea', 45, 0, 45, 20)
+    red_tea_effect('createcafe:pomegranate_milk_tea', 45, 0, 45, 20)
+    red_tea_effect('createcafe:coconut_milk_tea', 45, 0, 45, 20)
+    red_tea_effect('collectorsreap:vernal_purge', 45, 0, 45, 20)
+    red_tea_effect('collectorsreap:strong_vernal_purge', 30, 1, 30, 30)
     e.modify("farmersrespite:black_cod", item => {
         item.foodProperties = food => {
             food.removeEffect("farmersrespite:caffeinated")
@@ -502,7 +544,9 @@ ItemEvents.modification(e => {
     yellow_tea_effect('createcafe:persimmon_milk_tea', 45, 0, 45, 20)
     yellow_tea_effect('createcafe:durian_milk_tea', 45, 0, 45, 20)
     yellow_tea_effect("collectorsreap:yellow_tea_gummy", 20, 2, 20, 10)
-
+    yellow_tea_effect('collectorsreap:sweet_recovery', 60, 0, 60, 30)
+    yellow_tea_effect('collectorsreap:long_sweet_recovery', 90, 0, 90, 45)
+    yellow_tea_effect('collectorsreap:strong_sweet_recovery', 30, 1, 30, 30)
     // 绿茶效果
     green_tea_effect('farmersrespite:green_tea', 60, 1, 60, 30)
     green_tea_effect('farmersrespite:long_green_tea', 90, 1, 90, 45)
@@ -518,7 +562,7 @@ ItemEvents.modification(e => {
     green_tea_effect('createcafe:apple_milk_tea', 45, 0, 45, 20)
     green_tea_effect('createcafe:blood_orange_milk_tea', 45, 0, 45, 20)
     green_tea_effect('createcafe:watermelon_milk_tea', 45, 0, 45, 20)
-    green_tea_effect('createcafe:lime_tea', 45, 0, 45, 20)
+    green_tea_effect('createcafe:lime_milk_tea', 45, 0, 45, 20)
     green_tea_effect('cavedelight:fiddlehead_tea', 45, 0, 45, 20)
     green_tea_effect('farmersrespite:green_tea_cookie', 20, 0, 20, 10)
     green_tea_effect('createdelight:green_tea_cookie_dough', 10, 0)

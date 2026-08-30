@@ -1,0 +1,7 @@
+{
+  "item": "createdelightcore:fluid_configuration_module",
+  "max_charge": 64,
+  "initial_charge": 8,
+  "default_mode": "createdelightcore:fluid_pipe",
+  "fallback_mode": "createdelightcore:fluid_pipe"
+}

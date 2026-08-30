@@ -1,0 +1,56 @@
+[
+  {
+    "key": "plate_hone/speed",
+    "level": 1,
+    "aspects": {
+      "honed": 1
+    },
+    "attributes": {
+      "**tetra:ability_cooldown": -0.03
+    }
+  },
+  {
+    "key": "plate_hone/speed",
+    "level": 2,
+    "integrity": -1,
+    "aspects": {
+      "honed": 2
+    },
+    "attributes": {
+      "**tetra:ability_cooldown": -0.06
+    }
+  },
+  {
+    "key": "plate_hone/speed",
+    "level": 3,
+    "integrity": -1,
+    "aspects": {
+      "honed": 3
+    },
+    "attributes": {
+      "**tetra:ability_cooldown": -0.09
+    }
+  },
+  {
+    "key": "plate_hone/speed",
+    "level": 4,
+    "integrity": -2,
+    "aspects": {
+      "honed": 4
+    },
+    "attributes": {
+      "**tetra:ability_cooldown": -0.12
+    }
+  },
+  {
+    "key": "plate_hone/speed",
+    "level": 5,
+    "integrity": -2,
+    "aspects": {
+      "honed": 5
+    },
+    "attributes": {
+      "**tetra:ability_cooldown": -0.15
+    }
+  }
+]

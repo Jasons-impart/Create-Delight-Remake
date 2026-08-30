@@ -1,0 +1,13 @@
+name = "Mysterious Mountain Lib"
+filename = "mysterious_mountain_lib-1.6.34-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "4fb6e35edf9384fde736cd9ee972468d65f61dce"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7636232
+project-id = 368098

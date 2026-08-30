@@ -1,0 +1,201 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "festival_delicacies:garlic_chive",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:fennel",
+      "required": false
+    },
+    {
+      "id": "fruitsdelight:cranberry",
+      "required": false
+    },
+    {
+      "id": "frycooks_delight:canola",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:bullet_pepper",
+      "required": false
+    },
+    {
+      "id": "oceanic_delight:sea_grape",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:peanut",
+      "required": false
+    },
+    {
+      "id": "supplementaries:flax",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:ghost_pepper",
+      "required": false
+    },
+    {
+      "id": "minecraft:brown_mushroom",
+      "required": false
+    },
+    {
+      "id": "minecraft:red_mushroom",
+      "required": false
+    },
+    {
+      "id": "minecraft:sugar_cane",
+      "required": false
+    },
+    {
+      "id": "minecraft:glow_berries",
+      "required": false
+    },
+    {
+      "id": "minecraft:pitcher_pod",
+      "required": false
+    },
+    {
+      "id": "minecraft:sweet_berries",
+      "required": false
+    },
+    {
+      "id": "minecraft:kelp",
+      "required": false
+    },
+    {
+      "id": "minecraft:carrot",
+      "required": false
+    },
+    {
+      "id": "minecraft:potato",
+      "required": false
+    },
+    {
+      "id": "minecraft:beetroot",
+      "required": false
+    },
+    {
+      "id": "minecraft:wheat",
+      "required": false
+    },
+    {
+      "id": "alexscaves:fiddlehead",
+      "required": false
+    },
+    {
+      "id": "createcafe:coffee_fruit",
+      "required": false
+    },
+    {
+      "id": "createdelight:adzuki_beans_seed",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:avocado",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:eggplant",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:corn_cob",
+      "required": false
+    },
+    {
+      "id": "culturaldelights:white_eggplant",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:rice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:tomato",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:onion",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:cabbage_leaf",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:chinese_cabbage",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:chinese_cabbage_leaf",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:garlic",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:greenonion",
+      "required": false
+    },
+    {
+      "id": "festival_delicacies:eggplant",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:pods",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:dark_tea_leaves",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:yellow_tea_leaves",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:udumbara_flower",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:udumbara_seeds",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:mandrake_flower",
+      "required": false
+    },
+    {
+      "id": "corn_delight:corn",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:boilberry",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:chard",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:spinalberry",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:tuber",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:wattleseeds",
+      "required": false
+    },
+    {
+      "id": "vintagedelight:raw_oats",
+      "required": false
+    }
+  ]
+}

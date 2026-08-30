@@ -1,5 +1,3 @@
-let $GrowthDetectorItem = Java.loadClass("com.teamtea.eclipticseasons.common.item.GrowthDetectorItem")
-
 PlayerEvents.tick(e => {
     const { player, level } = e
     const { mainHandItem } = player
@@ -10,7 +8,7 @@ PlayerEvents.tick(e => {
             /**@type {Internal.Stream<Internal.TagKey<Internal.Item>>} */
             let tags = block.item.getTags()
             if (!tags.anyMatch(tag => tag.location().toString().startsWith("eclipticseasons"))) return
-            let chance = $GrowthDetectorItem.getGrowChance(level, pos, block.blockState)
+            let chance = global.CDServerJavaClasses.$GrowthDetectorItem.getGrowChance(level, pos, block.blockState)
             let r, g
 
             if (chance <= 0.5) {

@@ -1,0 +1,13 @@
+name = "IAF dragon fix"
+filename = "iafdragonfix-2.0.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "2e6092a436b4e6c6920458e8e5458590196aeaca"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8248445
+project-id = 1567863

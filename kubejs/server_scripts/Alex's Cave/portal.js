@@ -9,7 +9,7 @@ BlockEvents.rightClicked(e => {
     if(player.mainHandItem.id == "minecraft:bone" && block.id == "create:limestone") {
         player.swing()
     } 
-    if(player.mainHandItem.id == "art_of_forging:shards_of_malice" && block.id == "minecraft:packed_mud") {
+    if(player.mainHandItem.id == "alexscaves:pure_darkness" && block.id == "minecraft:packed_mud") {
         player.swing()
     } else {
         return 0

@@ -1,0 +1,34 @@
+{
+  "replace": true,
+  "key": "sun_light_ingot",
+  "category": "metal",
+  "primary": 11,
+  "secondary": 6,
+  "tertiary": 5.5,
+  "durability": 2000,
+  "integrityCost": 3,
+  "integrityGain": 10,
+  "magicCapacity": 140,
+  "toolLevel": "minecraft:netherite",
+  "toolEfficiency": 10.5,
+  "effects": {
+    "createdelight:solar_guard": 1,
+    "unbreaking": 1
+  },
+  "tints": {
+    "glyph": "f0b93d",
+    "texture": "f0b93d"
+  },
+  "textures": [
+    "heavy",
+    "metal"
+  ],
+  "material": {
+    "items": [
+      "blackknightarmor:sun_light_ingot"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": 8
+  }
+}

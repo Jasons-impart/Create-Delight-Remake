@@ -3,7 +3,6 @@
 	default_quest_shape: ""
 	filename: "Oil_fired_Power"
 	group: "14CFC96B5B37F10B"
-	hide_quest_until_deps_complete: true
 	icon: "create_new_age:generator_coil"
 	id: "54356C1067ECB809"
 	order_index: 2
@@ -16,7 +15,6 @@
 	quests: [
 		{
 			dependencies: ["3C02610297BB8C09"]
-			hide_until_deps_complete: true
 			id: "1ADBDFB31928124D"
 			shape: "square"
 			subtitle: "记得管道要连接到&4基岩&r上！"
@@ -192,7 +190,6 @@
 				"3C02610297BB8C09"
 				"1D724B9AB0915D18"
 			]
-			hide_until_deps_complete: true
 			id: "1A10B417B7C082DF"
 			shape: "square"
 			subtitle: "&4毋庸置疑&r的&e魅力&r！"
@@ -406,28 +403,6 @@
 			y: -2.5d
 		}
 		{
-			dependencies: ["4458E27C5252B296"]
-			hide_until_deps_complete: true
-			id: "5E075B9E7A889DF2"
-			secret: true
-			size: 1.0d
-			tasks: [
-				{
-					id: "778BDFA2C9308649"
-					item: "alexscaves:block_of_scarlet_neodymium"
-					type: "item"
-				}
-				{
-					id: "3D5C30DC1309147F"
-					item: "alexscaves:block_of_azure_neodymium"
-					type: "item"
-				}
-			]
-			title: "磁铁维度的特殊产物"
-			x: 1.5d
-			y: 3.5d
-		}
-		{
 			dependencies: ["7BA43E50785D2492"]
 			id: "2034DC15562715B2"
 			shape: "circle"
@@ -554,7 +529,6 @@
 		}
 		{
 			dependencies: ["4458E27C5252B296"]
-			hide_until_deps_complete: true
 			id: "2F0B3291F14AAA89"
 			rewards: [{
 				id: "22635BC82C9D788A"
@@ -605,7 +579,6 @@
 		{
 			dependencies: ["38E346D9F782E7BC"]
 			hide_dependency_lines: true
-			hide_until_deps_complete: true
 			id: "7DA3417CB0E6E7DB"
 			rewards: [{
 				id: "7204F07714B3B84B"
@@ -626,7 +599,6 @@
 				"7DA3417CB0E6E7DB"
 				"35F33D9F772B4551"
 			]
-			hide_until_deps_complete: true
 			id: "39D218E0652E1CE0"
 			rewards: [{
 				count: 3
@@ -696,20 +668,6 @@
 			}]
 			x: 3.0d
 			y: 5.5d
-		}
-		{
-			dependencies: [
-				"65602AA94EEB3AA3"
-				"3C1CBC4F971804DF"
-			]
-			id: "4A2A62D77A29284F"
-			tasks: [{
-				id: "2602A962F988CE72"
-				item: "alexscaves:polymer_plate"
-				type: "item"
-			}]
-			x: 6.5d
-			y: -2.0d
 		}
 		{
 			dependencies: ["2CC8B87D086B3275"]

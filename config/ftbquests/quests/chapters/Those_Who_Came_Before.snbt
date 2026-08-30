@@ -1,5 +1,5 @@
 {
-	autofocus_id: "3821026AD7352739"
+	autofocus_id: "0B417F149D8B4ED5"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "Those_Who_Came_Before"
@@ -18,7 +18,7 @@
 			id: "0880ce26-5935-4c28-b721-50dacdf1d998"
 		}
 	}
-	id: "4B6A861104F42DC2"
+	id: "214BED3560F53D72"
 	images: [
 		{
 			height: 1.17d
@@ -3194,13 +3194,13 @@
 			y: -1.5d
 		}
 	]
-	order_index: 1
+	order_index: 0
 	quest_links: [ ]
 	quests: [
 		{
 			dependencies: [
-				"48DABAA5BA34BE62"
-				"54C4F4CBC1B3E14B"
+				"70988A6AD2A847CC"
+				"15227B34FECD8131"
 			]
 			dependency_requirement: "one_started"
 			description: [
@@ -3208,10 +3208,10 @@
 				"可以用石质的头部替换掉&e木锤&r锤头以获得&e石锤"
 				"也可以在工作台中用合成木锤的方式直接合成&e石锤"
 			]
-			id: "75C7395A84B2E478"
+			id: "5A6D79DE721FDC09"
 			rewards: [{
 				count: 4
-				id: "38EAF3656B644B56"
+				id: "539ABAA53C57393B"
 				item: "minecraft:leather"
 				type: "item"
 			}]
@@ -3220,7 +3220,7 @@
 			tasks: [{
 				advancement: "tetra:upgrades/hammer_2"
 				criterion: ""
-				id: "47E4C1E5FD157B6A"
+				id: "6DDFFF37A49F007A"
 				type: "advancement"
 			}]
 			title: "锤子Ⅱ"
@@ -3228,15 +3228,15 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["31578474F05E7255"]
+			dependencies: ["57CB54C976B1A7F3"]
 			description: [
 				"普通的工作台已经无法满足我对工具改造的需求了，于是我用刚刚做好的锤子对工作台也进行了改造。"
 				"&e（使用锤子右键原版工作台）&r"
 			]
-			id: "3821026AD7352739"
+			id: "0B417F149D8B4ED5"
 			rewards: [{
 				count: 4
-				id: "1053679CA5D8E3CA"
+				id: "17BE1094E5770D56"
 				item: "minecraft:iron_ingot"
 				type: "item"
 			}]
@@ -3246,7 +3246,7 @@
 			tasks: [{
 				advancement: "tetra:upgrades/workbench"
 				criterion: ""
-				id: "434991F6270078B1"
+				id: "0F9C8EB8462A64F8"
 				title: "锤子右键工作台"
 				type: "advancement"
 			}]
@@ -3256,18 +3256,18 @@
 		}
 		{
 			dependencies: [
-				"54C4F4CBC1B3E14B"
-				"75C7395A84B2E478"
+				"15227B34FECD8131"
+				"5A6D79DE721FDC09"
 			]
 			dependency_requirement: "one_completed"
 			description: [
 				"石锤虽然暂且可以胜任早期的打造任务，但是显然不是长久之计。于是我决定升级我的锤子。"
 				"升级锤子时，我不能手搓锤头，因此我需要重新制作一把锤子。我先在加工台上用&e铁锭&r做锤头来替换了锤子的一端，但这把一端是铁、一端是石的锤子，仍然不足以胜任打造钻石部件的任务。于是我将另一端也换成了铁锤头，成功获得了一把铁锤。"
 			]
-			id: "0BAA9261B098316D"
+			id: "6CE10FD43D4FB06A"
 			rewards: [{
 				count: 4
-				id: "1F6D3F6D8877E68A"
+				id: "0D29D3CBA2595116"
 				item: "minecraft:rabbit_hide"
 				type: "item"
 			}]
@@ -3276,7 +3276,7 @@
 			tasks: [{
 				advancement: "tetra:upgrades/hammer_3"
 				criterion: ""
-				id: "72FE65B4F2183317"
+				id: "6E4994A19AC34E1A"
 				title: "制作铁锤"
 				type: "advancement"
 			}]
@@ -3285,15 +3285,15 @@
 			y: 1.5d
 		}
 		{
-			dependencies: ["01FC78875A324DE3"]
+			dependencies: ["16D02C3A2328C706"]
 			description: [
 				"对锻造遗迹的探索少不了&e锤子&r与&e撬棍，也就是&e锤头&r与&e羊角头&r工具"
 				"建议带上精准采集的&6三级(铁锤)&r以上&e锤子与&6一级&r以上&e羊角头&r再去探索锻造遗迹"
 				"锻造遗迹本身不刷怪，但是在某些房间中含有&9流浪者&r刷怪笼，请出发前确保你的战斗补给"
 			]
-			id: "72908B9592992F33"
+			id: "22948EA51ED44E63"
 			rewards: [{
-				id: "548FEB5152692E76"
+				id: "779B6EB632C88FEF"
 				type: "xp"
 				xp: 100
 			}]
@@ -3303,7 +3303,7 @@
 			tasks: [{
 				advancement: "tetra:spelunking/ancient_ruins"
 				criterion: ""
-				id: "171E19D26C841195"
+				id: "5B6D3DAF73A0BA4C"
 				title: "找到锻造遗迹"
 				type: "advancement"
 			}]
@@ -3312,12 +3312,12 @@
 			y: 1.5d
 		}
 		{
-			dependencies: ["72908B9592992F33"]
+			dependencies: ["22948EA51ED44E63"]
 			description: ["遗迹内的方块需要使用锤子采集，采集后会获得金属碎片，想要采集下来则需要附魔精准采集的锤子。"]
 			icon: "tetra:forged_platform"
-			id: "0941D2A2970EB5D1"
+			id: "5555DB0FF8A6282C"
 			tasks: [{
-				id: "1DBB3EAE23C5E5CB"
+				id: "2BA1684444FD1BC2"
 				title: "注意"
 				type: "checkmark"
 			}]
@@ -3326,17 +3326,17 @@
 		}
 		{
 			dependencies: [
-				"72908B9592992F33"
-				"7D85F4D95B6CC9FD"
+				"22948EA51ED44E63"
+				"6993F7FC751ADB38"
 			]
 			description: [
 				"在遗迹中，我循着微光继续前行，最终找到了一个锻造加工台，其正上方悬挂着一把锻造锤，&e锻造台&r的精妙构造和斑驳的纹理无不诉说着岁月的痕迹。想必这一定是锻造师的心血结晶。"
 				"（锻造锤在无&e燃烧室&r加成下为&e五级&r锤等级）"
 			]
 			icon: "tetra:forged_workbench"
-			id: "27BFF02187AC557B"
+			id: "7A9DBC659CF9F16A"
 			rewards: [{
-				id: "17D5677520AFB799"
+				id: "39EFA74EFC240BF0"
 				type: "xp"
 				xp: 1000
 			}]
@@ -3345,7 +3345,7 @@
 			tasks: [
 				{
 					icon: "tetra:hammer_base"
-					id: "32D5A9C9E4E992E8"
+					id: "7DC56C8752CA872B"
 					observe_type: 0
 					timer: 0L
 					to_observe: "tetra:hammer_base"
@@ -3353,7 +3353,7 @@
 				}
 				{
 					icon: "tetra:forged_workbench"
-					id: "264A131323275452"
+					id: "70A196F18D882403"
 					observe_type: 0
 					timer: 0L
 					to_observe: "tetra:forged_workbench"
@@ -3366,23 +3366,23 @@
 		}
 		{
 			dependencies: [
-				"5C346892D97CDD03"
-				"1E0BB246F04014C3"
+				"5E1DB9E0E6D42440"
+				"0277D08366772667"
 			]
 			dependency_requirement: "one_completed"
 			description: [
 				"&e黑石锤&r已经远远无法满足加工的需求了，我们现在需要去寻找失落的&e锻造遗迹&r，"
 				"锻造遗迹中的锻造锤拥有更高的锤等级"
-				"{ \"text\": \"点击此处寻找遗迹\", \"underlined\": \"true\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"01FC78875A324DE3\" } }"
+				"{ \"text\": \"点击此处寻找遗迹\", \"underlined\": \"true\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"16D02C3A2328C706\" } }"
 			]
-			id: "692DB8953E05EAE5"
+			id: "2C45BF71BECF6F56"
 			optional: true
 			shape: "square"
 			subtitle: "（跑龙套的）"
 			tasks: [{
 				advancement: "tetra:upgrades/hammer_5"
 				criterion: ""
-				id: "01A6FA2B7630C275"
+				id: "36E7FDB2A97F5702"
 				type: "advancement"
 			}]
 			title: "黑曜石锤"
@@ -3390,15 +3390,15 @@
 			y: 4.5d
 		}
 		{
-			dependencies: ["56758B34C00AEFF3"]
+			dependencies: ["761964547C5C2C6E"]
 			description: [
 				"可以被&e连接到锻造锤上&r，让用&e锻造锤锻造的主要组件&r略微提高属性（&e高质量&r），为锻造锤同时安装两个平面稳定器可使锻造的主要组件获得&e高质量Ⅱ&r，同时也可以作为弓的部件，安装后箭矢基本上不会受重力影响。"
 				"（&e注意若物品栏中有其他锤子，会优先使用锤子，因而无法享受到高质量效果，需要将锤子放到其他位置&r）"
 			]
-			id: "01D8FB94D56BB2E2"
+			id: "3D81F66FE42EDF81"
 			subtitle: "高质量"
 			tasks: [{
-				id: "1B52F4DF65C456E2"
+				id: "1B002C8D2BDF2E55"
 				item: "tetra:planar_stabilizer"
 				type: "item"
 			}]
@@ -3406,14 +3406,14 @@
 			y: 4.5d
 		}
 		{
-			dependencies: ["72908B9592992F33"]
+			dependencies: ["22948EA51ED44E63"]
 			description: ["遗迹中除了小型的板条箱外，还有一种大型的容器，简单的方式无法将其打开，经过多次尝试后我终于成功将它们打开。需要先用锤子敲掉四个封印，然后用羊角锤撬开每个角。令我意外的是，这个容器的容量非常惊人，竟然有整整三页的存储空间。除了那些板条箱中的物资外，里面还有一本&e锻造师留下的笔记&r，这可得认真看看。"]
 			icon: "tetra:forged_container"
-			id: "5E3FECE8A3CF0983"
+			id: "5CACDF74C673B52A"
 			subtitle: "笔记正在完善中，敬请期待"
 			tasks: [{
 				icon: "tetra:forged_container"
-				id: "43D2F55666F28441"
+				id: "14031F8F0DEDA3AE"
 				observe_type: 0
 				timer: 0L
 				title: "在遗迹中找到锻造容器"
@@ -3426,15 +3426,15 @@
 		}
 		{
 			dependencies: [
-				"5C346892D97CDD03"
-				"692DB8953E05EAE5"
-				"1E0BB246F04014C3"
+				"5E1DB9E0E6D42440"
+				"2C45BF71BECF6F56"
+				"0277D08366772667"
 			]
 			dependency_requirement: "one_completed"
 			description: ["据笔记上所说，下界合金锤便是&5这个世界&r最强的锻造锤了，除此之外还可以通过&e打磨和镶嵌下界之星&r的方式进一步提升它的锻造能力。"]
-			id: "3A31CFC2ECFA2682"
+			id: "108873A7A16C93A3"
 			rewards: [{
-				id: "51B6E985AE16583D"
+				id: "522FCF4811A60BE5"
 				type: "xp_levels"
 				xp_levels: 5
 			}]
@@ -3443,7 +3443,7 @@
 			tasks: [{
 				advancement: "tetra:upgrades/hammer_6"
 				criterion: ""
-				id: "381E1CC339B1997A"
+				id: "41E16E8D6AFF8CBF"
 				title: "打造下界合金锤"
 				type: "advancement"
 			}]
@@ -3452,22 +3452,22 @@
 			y: 6.0d
 		}
 		{
-			dependencies: ["54C4F4CBC1B3E14B"]
+			dependencies: ["15227B34FECD8131"]
 			description: [
 				"&e全息球&r可以直接右键使用，也可以&e放置&r为方块，并为其周围&e5×5&r范围的加工台提供原理图预览"
 				"&8全息球也可以放在加工台里改进，别说我没提醒！"
 				"在&e全息球&r中可以查看各种材料的属性，也可以查看不同材料对应部件的数值与等级"
 				"等级&6越高&r的材料制作的部件等级&6越高&r"
 			]
-			id: "31578474F05E7255"
+			id: "57CB54C976B1A7F3"
 			rewards: [{
-				id: "4B19E52EC1E6EC90"
+				id: "6EF22C89F214545A"
 				item: "minecraft:crafting_table"
 				type: "item"
 			}]
 			subtitle: "不要搞丢了"
 			tasks: [{
-				id: "1635D32BF6CDB1B8"
+				id: "3429C2F55FB054F0"
 				item: {
 					Count: 1
 					id: "tetra:holo"
@@ -3488,18 +3488,18 @@
 			y: -3.0d
 		}
 		{
-			dependencies: ["27BFF02187AC557B"]
+			dependencies: ["7A9DBC659CF9F16A"]
 			description: [
 				"热电池能量不足时会导致锻造锤无法使用，可以更换新的电池或者对热电池进行充电。"
 				"地核提取器下方需有&e直连渗流基岩&r的地核管道（亮着橙色光的管道为可用管道），使用锤子将传输单元&e调整至下图状态&r后，将热力电池放置在传输单元上即可充电"
 			]
 			icon: "tetra:seeping_bedrock"
-			id: "0D47AFE8234E04C6"
+			id: "57F16658F8B7E80A"
 			optional: true
 			tasks: [
 				{
 					icon: "tetra:extractor_pipe"
-					id: "6811C22CA43A795C"
+					id: "5B83ECBFF9F100CE"
 					observe_type: 0
 					timer: 0L
 					to_observe: "tetra:extractor_pipe"
@@ -3507,7 +3507,7 @@
 				}
 				{
 					icon: "tetra:core_extractor"
-					id: "27AA89DE997830B3"
+					id: "3C38809622B6A5F2"
 					observe_type: 0
 					timer: 0L
 					to_observe: "tetra:core_extractor"
@@ -3515,7 +3515,7 @@
 				}
 				{
 					icon: "tetra:transfer_unit"
-					id: "739BFEB155E4895E"
+					id: "090E62CE4639D985"
 					observe_type: 0
 					timer: 0L
 					to_observe: "tetra:transfer_unit"
@@ -3527,12 +3527,12 @@
 			y: 4.5d
 		}
 		{
-			dependencies: ["56758B34C00AEFF3"]
+			dependencies: ["761964547C5C2C6E"]
 			dependency_requirement: "one_completed"
 			description: ["在遗迹中，我还发现了一些酷似电池的物品。这应该就是笔记中提到的热电池，只需将它们&e安装在锻造锤上&r，便能为其提供能量。"]
-			id: "7D85F4D95B6CC9FD"
+			id: "6993F7FC751ADB38"
 			rewards: [{
-				id: "2D6331C9515FDB39"
+				id: "05CABEC9AA03DA4A"
 				item: {
 					Count: 1
 					id: "tetra:thermal_cell"
@@ -3543,7 +3543,7 @@
 				type: "item"
 			}]
 			tasks: [{
-				id: "12374E522C8E74EB"
+				id: "4E8F27853059502E"
 				item: {
 					Count: 1
 					id: "tetra:thermal_cell"
@@ -3558,18 +3558,18 @@
 			y: 3.5d
 		}
 		{
-			dependencies: ["72908B9592992F33"]
+			dependencies: ["22948EA51ED44E63"]
 			dependency_requirement: "one_completed"
 			description: ["在遗迹中的&e大小容器&r中，我发现了许多散发着魔力气息的&e金属碎片&r。但是他们的用途我还暂时不得而知。也许&4锻造师的笔记&r上会提到。"]
-			id: "3629F1DBEEFAF2FF"
+			id: "19BD9F83352F0561"
 			rewards: [{
 				count: 8
-				id: "47AEAE9033BB0521"
+				id: "5A6504FE2ECCF954"
 				item: "tetra:metal_scrap"
 				type: "item"
 			}]
 			tasks: [{
-				id: "72F79831CE4BD424"
+				id: "5A5CA460580E7CE6"
 				item: "tetra:metal_scrap"
 				type: "item"
 			}]
@@ -3578,18 +3578,18 @@
 			y: 1.0d
 		}
 		{
-			dependencies: ["3821026AD7352739"]
+			dependencies: ["0B417F149D8B4ED5"]
 			description: ["在挖矿时，我发现了一种&e闪烁着粒子效果的石头&r，出于好奇，我把它挖开了。这块石头与普通石头不同，我从中找到了一些奇特的矿石。&e用锤子在加工台上将其打碎后&r，发现了一些常见的矿石，偶尔还能获得罕见的宝石，甚至还有几颗毫无瑕疵的极品宝石。也许将这些宝石镶嵌在工具上，会带来更好的效果。"]
-			id: "1AF1B7498D6B8705"
+			id: "4E731D351D54D91E"
 			rewards: [{
 				exclude_from_claim_all: true
-				id: "2A99FD290702E6C9"
+				id: "6AB98E103D8BA605"
 				table_id: 2077532568744688732L
 				type: "random"
 			}]
 			subtitle: "开！主播主播，你的无瑕钻石确实很强，但还是太难获得了，有没有更加简单又强势的宝石推荐一下吗？有的兄弟有的，这么强的宝石当然不止一颗，一共有九颗，都是版本T0.5的超标宝石。"
 			tasks: [{
-				id: "35E66C31CB7BC45B"
+				id: "2122470CF0D19464"
 				item: "tetra:geode"
 				type: "item"
 			}]
@@ -3598,18 +3598,18 @@
 			y: -4.5d
 		}
 		{
-			dependencies: ["3A31CFC2ECFA2682"]
+			dependencies: ["108873A7A16C93A3"]
 			description: [
 				"在使用工具的过程中，我发现了一种提升性能的方式：当&e双头工具&r的&e其中一个&r头部打磨&e五次&r后，&e下一次打磨&r可以&4直接提升工具的&e等级&r。此外，笔记中还提到为工具镶嵌&4下界之星&r可以进一步增强它的性能。通过这一系列操作，最终可以获得锻造等级高达八级的锻造锤。"
 				"在后续解锁更高级的材料后可以打造更加强大的锻造锤。"
-				"{ \"text\": \"龙钢锤\", \"underlined\": \"true\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"111C12092510C3F4\" } }"
-				"{ \"text\": \"终末钢/悚怖钢锤\", \"underlined\": \"true\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"1F7DE13987C20264\" } }"
+				"{ \"text\": \"龙钢锤\", \"underlined\": \"true\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2832C4A43B0CF7A7\" } }"
+				"{ \"text\": \"终结龙/悚怖钢锤\", \"underlined\": \"true\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"79CF36DF5E276A20\" } }"
 			]
 			icon: "minecraft:nether_star"
-			id: "1AA8B7F6B283121A"
+			id: "299E2462A3710039"
 			optional: true
 			rewards: [{
-				id: "6F021D02BD1F0BC4"
+				id: "12EF78D217264A3D"
 				item: "minecraft:nether_star"
 				type: "item"
 			}]
@@ -3617,7 +3617,7 @@
 			size: 1.5d
 			subtitle: "在打磨完全或是镶嵌下界之星中两种方法中达成一个即可打造出七级锤"
 			tasks: [{
-				id: "67CA9F03C6B83A4B"
+				id: "64C3AB864E49B83C"
 				title: "打造出七级锤"
 				type: "checkmark"
 			}]
@@ -3627,16 +3627,16 @@
 		}
 		{
 			dependencies: [
-				"54C4F4CBC1B3E14B"
-				"75C7395A84B2E478"
-				"0BAA9261B098316D"
+				"15227B34FECD8131"
+				"5A6D79DE721FDC09"
+				"6CE10FD43D4FB06A"
 			]
 			dependency_requirement: "one_completed"
 			description: ["在打造钻石部件时，铁锤的硬度也已经不够了。我尝试用钻石制作锤头，但钻石难以成型。而铁锤显然无法打造黑曜石锤。于是我退而求其次，选择用硬度稍低但带有下界魔力的&e黑石&r来制作锤头，希望它能与钻石产生某种特殊反应，没想到居然成功了！"]
-			id: "1E0BB246F04014C3"
+			id: "0277D08366772667"
 			rewards: [{
 				count: 4
-				id: "5996F27088E17FF9"
+				id: "4F9451F577F050DB"
 				item: "minecraft:twisting_vines"
 				type: "item"
 			}]
@@ -3645,7 +3645,7 @@
 			tasks: [{
 				advancement: "tetra:upgrades/hammer_4"
 				criterion: ""
-				id: "25ADD591E90B355A"
+				id: "5C094015C742DF4F"
 				title: "制作黑石锤"
 				type: "advancement"
 			}]
@@ -3655,11 +3655,11 @@
 		}
 		{
 			dependencies: [
-				"1E0BB246F04014C3"
-				"0BAA9261B098316D"
+				"0277D08366772667"
+				"6CE10FD43D4FB06A"
 				"1CB33EA048068637"
-				"54C4F4CBC1B3E14B"
-				"75C7395A84B2E478"
+				"15227B34FECD8131"
+				"5A6D79DE721FDC09"
 			]
 			dependency_requirement: "one_completed"
 			description: [
@@ -3671,10 +3671,10 @@
 			]
 			hide_until_deps_complete: true
 			icon: "tetra:forged_wall"
-			id: "01FC78875A324DE3"
+			id: "16D02C3A2328C706"
 			subtitle: "锻造遗迹"
 			tasks: [{
-				id: "42795E7AEF7135C5"
+				id: "4B5640E32F21C931"
 				type: "checkmark"
 			}]
 			title: "寻找遗迹"
@@ -3682,15 +3682,15 @@
 			y: 1.5d
 		}
 		{
-			dependencies: ["72908B9592992F33"]
+			dependencies: ["22948EA51ED44E63"]
 			description: ["工坊中有许多小型的板条箱，可以很轻松的使用锤子或者羊角锤打开，里面装着许多&e金属碎片和锻造锤配件&r。"]
 			hide_dependency_lines: true
 			icon: "tetra:forged_crate"
-			id: "56758B34C00AEFF3"
+			id: "761964547C5C2C6E"
 			subtitle: "板条箱"
 			tasks: [{
 				icon: "tetra:forged_crate"
-				id: "35F56781AD91C6CE"
+				id: "55F704AB765008DD"
 				observe_type: 0
 				timer: 0L
 				title: "在遗迹中找到锻造板条箱"
@@ -3702,14 +3702,14 @@
 			y: 4.5d
 		}
 		{
-			dependencies: ["27BFF02187AC557B"]
-			id: "332D5E0455DC61E7"
+			dependencies: ["7A9DBC659CF9F16A"]
+			id: "1863FD9872645EA2"
 			optional: true
 			subtitle: "锻造锤在使用过程中可能会出现卡住的情况，使用锤子敲击卡住的锤头即可"
 			tasks: [{
 				advancement: "tetra:spelunking/hammer_jam"
 				criterion: ""
-				id: "4D8444477A6DFD69"
+				id: "5720F34CB41ADE54"
 				type: "advancement"
 			}]
 			title: "卡壳"
@@ -3717,18 +3717,18 @@
 			y: 6.0d
 		}
 		{
-			dependencies: ["3629F1DBEEFAF2FF"]
+			dependencies: ["19BD9F83352F0561"]
 			description: ["依照笔记上的指引，我将&e金属碎片和陨石废液以及熔融下界合金在熔铸炉中熔合，将产物倒入熔铸盆&r，最终铸造出了一种全新的金属。正如笔记中所述，这种金属展现出惊人的强度，远超我所知的任何其他材料。这将开创一个新纪元。"]
-			id: "7861A70169C19A1A"
+			id: "582C8B77BF5BCD41"
 			rewards: [
 				{
 					count: 32
-					id: "76A1B85AA9CB057B"
+					id: "22391B4ABF158D13"
 					item: "tetra:metal_scrap"
 					type: "item"
 				}
 				{
-					id: "7986BEBCAF311885"
+					id: "198C3642FE0C87F6"
 					type: "xp_levels"
 					xp_levels: 5
 				}
@@ -3736,8 +3736,8 @@
 			shape: "gear"
 			size: 2.0d
 			tasks: [{
-				id: "172F2C142B0D0166"
-				item: "art_of_forging:forged_steel_ingot"
+				id: "7BD8367E6A244C1B"
+				item: "northstar:martian_steel_ingot"
 				type: "item"
 			}]
 			title: "新纪元"
@@ -3745,7 +3745,7 @@
 			y: 1.0d
 		}
 		{
-			dependencies: ["01D8FB94D56BB2E2"]
+			dependencies: ["3D81F66FE42EDF81"]
 			description: ["在锻造锤上安装平面稳定器后可使打造的部件获得“&e高质量&r”属性，&e小幅度提升各项性能&r"]
 			icon: {
 				Count: 1
@@ -3757,9 +3757,9 @@
 					}]
 				}
 			}
-			id: "3C21C65039C98D92"
+			id: "20B30D10E08EB159"
 			tasks: [{
-				id: "1A25B9CA82C37B0A"
+				id: "441FA4C794562470"
 				title: "高质量"
 				type: "checkmark"
 			}]
@@ -3767,14 +3767,14 @@
 			y: 4.5d
 		}
 		{
-			dependencies: ["3821026AD7352739"]
+			dependencies: ["0B417F149D8B4ED5"]
 			description: ["&e原版&r的剑与&e农夫乐事&r的小刀可用于改造"]
-			id: "48056E10DEC79964"
+			id: "550A19B72855B474"
 			shape: "rsquare"
 			tasks: [{
 				advancement: "tetra:upgrades/sword_upgrade"
 				criterion: ""
-				id: "400A0D104F00AC5E"
+				id: "4FEE77EA5652A0E2"
 				type: "advancement"
 			}]
 			title: "剑"
@@ -3782,21 +3782,21 @@
 			y: -1.5d
 		}
 		{
-			dependencies: ["3821026AD7352739"]
+			dependencies: ["0B417F149D8B4ED5"]
 			description: [
 				"打造工具的时候，经常要用到不同的工具，为了方便随时随地可以拿取工具，我做了一个架子用来放置常用的工具"
 				"在加工物品时消耗的工具顺序为&a背包内&r>&a工具架&r>&a锻造锤"
 			]
-			id: "49F8C50AE9B68585"
+			id: "65E6A1004A7DA27C"
 			rewards: [{
 				count: 4
-				id: "0B6FC779E66C6F30"
+				id: "4F8A0D75503A37AE"
 				item: "minecraft:iron_ingot"
 				type: "item"
 			}]
 			subtitle: "在以加工台为中心的5x5方形区域内放置工具架，放在工具架上的工具可直接在加工台上取用"
 			tasks: [{
-				id: "73910FEC80C8262F"
+				id: "72284E9C0902A143"
 				item: "tetra:rack"
 				type: "item"
 			}]
@@ -3805,7 +3805,7 @@
 			y: -4.5d
 		}
 		{
-			dependencies: ["3821026AD7352739"]
+			dependencies: ["0B417F149D8B4ED5"]
 			description: ["&e原版&r的盾牌可用于改造"]
 			icon: {
 				Count: 1
@@ -3814,17 +3814,17 @@
 					Damage: 0
 				}
 			}
-			id: "03664386DA7FE6DC"
+			id: "033BB60A13DEFD81"
 			shape: "rsquare"
 			tasks: [
 				{
 					advancement: "tetra:upgrades/shield_upgrade"
 					criterion: ""
-					id: "3A5F987B65784F7E"
+					id: "5CAC1F9A7F7DE439"
 					type: "advancement"
 				}
 				{
-					id: "2ADEC2908A50664E"
+					id: "2A359DF75F809166"
 					item: {
 						Count: 1
 						id: "minecraft:shield"
@@ -3840,21 +3840,21 @@
 			y: -1.5d
 		}
 		{
-			dependencies: ["3821026AD7352739"]
+			dependencies: ["0B417F149D8B4ED5"]
 			description: ["&e原版&r的弓可用于改造"]
-			id: "3F5E3041FB441163"
+			id: "2E8CD8B82C5838AF"
 			shape: "rsquare"
 			tasks: [{
 				advancement: "tetra:upgrades/bow_upgrade"
 				criterion: ""
-				id: "3A7423891F718E34"
+				id: "2E0276B54F810535"
 				type: "advancement"
 			}]
 			x: 4.5d
 			y: -1.5d
 		}
 		{
-			dependencies: ["3821026AD7352739"]
+			dependencies: ["0B417F149D8B4ED5"]
 			description: [
 				"&e原版&r镐、斧、锄等为双头工具，可用于改造。"
 				"Tetra的“扁斧”模块可以同时提供斧、锹的破坏效率和等级，也就意味着为双头工具一端安装扁斧，一端安装镐头便可以打造一把&e全能工具&r。"
@@ -3866,13 +3866,13 @@
 					Damage: 0
 				}
 			}
-			id: "055C7F9D1D6A56BE"
+			id: "0E917414701F0C6C"
 			min_required_tasks: 1
 			shape: "rsquare"
 			tasks: [{
 				advancement: "tetra:upgrades/tool_upgrade"
 				criterion: ""
-				id: "2DC8A805BE45D83D"
+				id: "3008A0DAD5B5D32B"
 				type: "advancement"
 			}]
 			title: "双头工具"
@@ -3880,7 +3880,7 @@
 			y: -1.5d
 		}
 		{
-			dependencies: ["3821026AD7352739"]
+			dependencies: ["0B417F149D8B4ED5"]
 			description: ["&e原版&r的锹为单头工具，可用于改造"]
 			icon: {
 				Count: 1
@@ -3889,7 +3889,7 @@
 					Damage: 0
 				}
 			}
-			id: "6DEC3C0546CBC51E"
+			id: "7BBABE05EF8C8B93"
 			shape: "rsquare"
 			tasks: [{
 				icon: {
@@ -3899,7 +3899,7 @@
 						Damage: 0
 					}
 				}
-				id: "0526A1671CD836FA"
+				id: "78D44D2A8E17C55C"
 				item: {
 					Count: 1
 					id: "itemfilters:tag"
@@ -3915,19 +3915,19 @@
 			y: -1.5d
 		}
 		{
-			dependencies: ["3821026AD7352739"]
+			dependencies: ["0B417F149D8B4ED5"]
 			description: ["模块化腰带"]
-			id: "6B19B1391FB0509C"
+			id: "48F3DF24DC2E2149"
 			shape: "rsquare"
 			tasks: [
 				{
 					advancement: "tetra:upgrades/toolbelt"
 					criterion: ""
-					id: "4E98F97A2AB60256"
+					id: "07B1E68993BB26BB"
 					type: "advancement"
 				}
 				{
-					id: "73A5C8481EE6B759"
+					id: "6BB6416EE4AC1595"
 					item: {
 						Count: 1
 						id: "tetra:modular_toolbelt"
@@ -3961,11 +3961,11 @@
 					id: "be8cf944-febd-4471-93f3-d146036232ec"
 				}
 			}
-			id: "48DABAA5BA34BE62"
+			id: "70988A6AD2A847CC"
 			shape: "gear"
 			size: 1.5d
 			tasks: [{
-				id: "6B9A4AE3FD428E57"
+				id: "3208097EC7AE20C3"
 				type: "checkmark"
 			}]
 			title: "初识锻造"
@@ -3973,12 +3973,12 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["48DABAA5BA34BE62"]
+			dependencies: ["70988A6AD2A847CC"]
 			dependency_requirement: "one_started"
 			description: [
 				"&e锤子&r为tetra中独有且最重要的一项工具"
 				"它是tetra体系中加工各种工具的基础"
-				"{image:createdelight:textures/gui/woodenhammercrafting.png width:200 height:100 align:center}"
+				"{image:createdelightcore:textures/gui/woodenhammercrafting.png width:200 height:100 align:center}"
 			]
 			icon: {
 				Count: 1
@@ -3994,10 +3994,10 @@
 					id: "e71ca8bf-5f56-43b3-a4ef-c3245e80c8bb"
 				}
 			}
-			id: "54C4F4CBC1B3E14B"
+			id: "15227B34FECD8131"
 			rewards: [{
 				count: 8
-				id: "289FFC4695B2B9B0"
+				id: "4503D977B994C415"
 				item: "minecraft:vine"
 				type: "item"
 			}]
@@ -4020,7 +4020,7 @@
 						id: "e71ca8bf-5f56-43b3-a4ef-c3245e80c8bb"
 					}
 				}
-				id: "37F1B2D2CD236322"
+				id: "44EF0352DF71CFBD"
 				type: "advancement"
 			}]
 			title: "基础工艺"
@@ -4028,15 +4028,15 @@
 			y: -1.5d
 		}
 		{
-			dependencies: ["56758B34C00AEFF3"]
+			dependencies: ["761964547C5C2C6E"]
 			description: [
 				"每一个&e燃烧室&r可以提高&e锻造锤&r的一个等级"
 				"也就是说，装有两个&e燃烧室&r的&e锻造锤&r相当于七级锤"
 			]
-			id: "4DC31D255E397C21"
+			id: "33FD5DECA1F87303"
 			subtitle: "燃烧室"
 			tasks: [{
-				id: "0CF014704163E18E"
+				id: "6DA4FB9F66C8A35F"
 				item: "tetra:combustion_chamber"
 				type: "item"
 			}]
@@ -4045,10 +4045,10 @@
 			y: 3.0d
 		}
 		{
-			dependencies: ["56758B34C00AEFF3"]
-			id: "359BA6C41D42AB08"
+			dependencies: ["761964547C5C2C6E"]
+			id: "657C5D95A638CF1B"
 			tasks: [{
-				id: "536709DF718FA996"
+				id: "58805C0F2F8C0DFD"
 				item: "tetra:vent_plate"
 				type: "item"
 			}]
@@ -4056,10 +4056,10 @@
 			y: 4.5d
 		}
 		{
-			dependencies: ["56758B34C00AEFF3"]
-			id: "5F969B33C6F74C4D"
+			dependencies: ["761964547C5C2C6E"]
+			id: "3CDC7D6108B39DBE"
 			tasks: [{
-				id: "6F36D52F15473443"
+				id: "5215D651B4CC103F"
 				item: "tetra:lubricant_dispenser"
 				type: "item"
 			}]
@@ -4067,21 +4067,21 @@
 			y: 6.0d
 		}
 		{
-			dependencies: ["27BFF02187AC557B"]
+			dependencies: ["7A9DBC659CF9F16A"]
 			description: [
 				"锻造锤与锻造加工台需要用&b精准采集&r的锤子才能收入背包"
 				"没有&b精准采集&r？去向村民借一本！"
 			]
-			id: "5C346892D97CDD03"
+			id: "5E1DB9E0E6D42440"
 			subtitle: "锻造锤与锻造加工台"
 			tasks: [
 				{
-					id: "196004EBBC84A6D4"
+					id: "3836568F9E633036"
 					item: "tetra:forged_workbench"
 					type: "item"
 				}
 				{
-					id: "3B2BD590821E77B5"
+					id: "327BA9E80CA79E54"
 					item: "tetra:hammer_base"
 					type: "item"
 				}
@@ -4091,7 +4091,7 @@
 			y: 4.5d
 		}
 		{
-			dependencies: ["48DABAA5BA34BE62"]
+			dependencies: ["70988A6AD2A847CC"]
 			description: [
 				"模块化工具在使用的过程中会累积“&e打磨值&r”（类似经验值，但是&4最多只能存储一次打磨需求的值&r），打磨值满后可在加工台上选择工具的任一&e主要模块&r进行打磨。"
 				"（例如双头工具的主要模块为手柄及其左、右头。）"
@@ -4106,11 +4106,11 @@
 					Damage: 0
 				}
 			}
-			id: "764C6E27E31CD698"
+			id: "776CD960DD534AE1"
 			shape: "hexagon"
 			size: 1.0d
 			tasks: [{
-				id: "330FF678C7C1A533"
+				id: "23F3F082B15B1623"
 				type: "checkmark"
 			}]
 			title: "打磨"

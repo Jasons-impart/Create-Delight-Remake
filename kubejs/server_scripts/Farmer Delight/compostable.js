@@ -6,6 +6,7 @@ ServerEvents.compostableRecipes(e => {
      ['festival_delicacies:garlic_chive_seeds', 0.3],
      ['festival_delicacies:fennel_seeds', 0.3],
      ['createdelight:artemisia_argyi_seed', 0.3],
+     ['createdelight:graycotton_seed', 0.3],
      ['festival_delicacies:chinese_cabbage', 0.65],
      ['festival_delicacies:garlic_chive', 0.65],
      ['festival_delicacies:fennel', 0.65],

@@ -1,6 +1,7 @@
 ServerEvents.tags("minecraft:block", e => {
     e.add("minecraft:dirt", ['createdelightcore:luna_soil', 'createdelightcore:phantom_compost'])
     e.add("minecraft:mushroom_grow_block", ['createdelightcore:luna_soil', 'createdelightcore:phantom_compost'])
+    e.add("minecraft:crops", ['createdelight:graycotton'])
     e.add("createdelightcore:phantom_compost_activators",[
         'createdelightcore:luna_soil',
         'createdelightcore:luna_soil_farmland',
@@ -15,6 +16,10 @@ ServerEvents.tags("minecraft:block", e => {
 })
 
 ServerEvents.tags("minecraft:item", e => {
+    // 锻造钢锭 - 添加到 forge:ingots 标签
+    e.add("forge:ingots", ['createdelight:forged_steel_ingot'])
+    e.add("forge:ingots/forged_steel", ['createdelight:forged_steel_ingot'])
     // 锻造钢板 - 添加到 forge:plates 标签
     e.add("forge:plates", ['createdelight:forged_steel_sheet'])
+    e.add("forge:plates/forged_steel", ['createdelight:forged_steel_sheet'])
 })

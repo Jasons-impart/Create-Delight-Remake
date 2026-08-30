@@ -1,0 +1,31 @@
+﻿{
+    "key":  "fake_pig_iron_ingot",
+    "category":  "metal",
+    "primary":  6.8,
+    "secondary":  5.1,
+    "tertiary":  4.8,
+    "durability":  701,
+    "integrityCost":  2,
+    "integrityGain":  5,
+    "magicCapacity":  104,
+    "toolLevel":  "minecraft:iron",
+    "toolEfficiency":  5,
+    "tints":  {
+                  "glyph":  "EDA6A2",
+                  "texture":  "EDA6A2"
+              },
+    "textures":  [
+                     "heavy",
+                     "metal"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "effects":  {
+                    "more_mod_tetra:fake_tasty":  1
+                },
+    "requiredTools":  {
+                          "hammer_dig":  "minecraft:gold"
+                      },
+    "replace":  true
+}

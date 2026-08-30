@@ -69,39 +69,35 @@ ServerEvents.recipes(e => {
     ifl.forEach(text => {
         let ingot = `iceandfire:dragonsteel_${text}_ingot`
         kubejs.shaped(`iceandfire:dragonsteel_${text}_helmet`, [
-            "ACA",
+            "AAA",
             "B B"
         ], {
             A: ingot,
-            B: `#iceandfire:scales/dragon/${text}`,
-            C: "art_of_forging:nano_insectoid"
+            B: `#iceandfire:scales/dragon/${text}`
         }).id(`createdelight:dragonsteel_${text}_helmet`)
         kubejs.shaped(`iceandfire:dragonsteel_${text}_chestplate`, [
             "B B",
-            "ACA",
+            "AAA",
             "AAA"
         ], {
             A: ingot,
-            B: `#iceandfire:scales/dragon/${text}`,
-            C: "art_of_forging:nano_insectoid"
+            B: `#iceandfire:scales/dragon/${text}`
         }).id(`createdelight:dragonsteel_${text}_chestplate`)
         kubejs.shaped(`iceandfire:dragonsteel_${text}_leggings`, [
-            "ACA",
+            "AAA",
             "A A",
             "B B"
         ], {
             A: ingot,
-            B: `#iceandfire:scales/dragon/${text}`,
-            C: "art_of_forging:nano_insectoid"
+            B: `#iceandfire:scales/dragon/${text}`
         }).id(`createdelight:dragonsteel_${text}_leggings`)
         kubejs.shaped(`iceandfire:dragonsteel_${text}_boots`, [
             "   ",
             "A A",
-            "BCB"
+            "BAB"
         ], {
             A: ingot,
-            B: `#iceandfire:scales/dragon/${text}`,
-            C: "art_of_forging:nano_insectoid"
+            B: `#iceandfire:scales/dragon/${text}`
         }).id(`createdelight:dragonsteel_${text}_boots`)
     })
     kubejs.shaped("2x createdelight:dread_upgrade_smithing_template", [
@@ -113,6 +109,19 @@ ServerEvents.recipes(e => {
         B: "createdelight:dread_heart",
         C: "createdelight:dread_upgrade_smithing_template"
     }).id("createdelight:dread_upgrade_smithing_template")
+    {
+        let iner = "createdelight:forged_steel_ingot"
+        create.sequenced_assembly("dreadsteel:dreadsteel_ingot", "createdelight:forged_steel_ingot", [
+            create.deploying(iner, [iner, "iceandfire:dread_shard"]),
+            create.deploying(iner, [iner, "createdelight:dread_heart"]),
+            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_fire_steel", 90)]),
+            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_ice_steel", 90)]),
+            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_lightning_steel", 90)]),
+        ])
+            .loops(1)
+            .transitionalItem(iner)
+            .id("dreadsteel:sequenced_assembly/dreadsteel_ingot")
+    }
     vintageimprovements.vacuumizing(["butchercraft:chicken_skull_head_item", "iceandfire:cockatrice_eye"],
         ["iceandfire:cockatrice_skull", "butchercraft:eyeball"])
     {

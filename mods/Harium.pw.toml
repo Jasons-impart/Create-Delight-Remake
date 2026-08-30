@@ -1,0 +1,11 @@
+name = "Harium (Update 2.0)"
+filename = "Harium-mc1.20.1-2.0-pactched-v5.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/Harium-mc1.20.1-2.0-pactched-v5.jar"
+hash-format = "sha256"
+hash = "43c3e2d5fdbff4e95ef23d8d7222021615f0a46303610ccfdd95e721b76168ac"
+[release.curseforge]
+project-id = 1413106
+file-id = 8069904

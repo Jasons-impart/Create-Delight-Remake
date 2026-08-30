@@ -55,5 +55,10 @@
   "block.cratedelight.pumpkin_slice_crate": "箱装南瓜片",
   "block.cratedelight.bread_bag": "袋装面包",
 
+  "block.cratedelight.wheat_seeds_bag": "袋装小麦种子",
+  "block.cratedelight.pumpkin_seeds_bag": "袋装南瓜种子",
+  "block.cratedelight.melon_seeds_bag": "袋装西瓜种子",
+  "block.cratedelight.beetroot_seeds_bag": "袋装甜菜根种子",
+
   "itemGroup.cratedelight": "装箱乐事"
 }

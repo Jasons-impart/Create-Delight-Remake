@@ -9,9 +9,10 @@
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["75D1E8A0C4B29F63"]
 			description: [
 				"渊海陷窟是个以海底和深渊为主题的群系。这个位于海洋深处的群系，收不到任何一点来自于地表的光亮，漆黑且又神秘，海洋巨兽的遗骸也散落于此，此外还有一些古文明所遗留下来的研究所。"
-				"&4进入方法：使用&1暗海晶石&4搭建传送门框架，倒入水激活。"
+				"&4进入方法：解锁并登陆木卫二后，在木卫二地下的冰下海中寻找渊海陷窟。"
 				"进入渊海陷窟后请不要攻击里面的中立生物，后面是可以通过交易变为友好生物"
 			]
 			id: "475F0BF3666A12AB"
@@ -520,7 +521,7 @@
 			dependencies: ["6064CB76A7832C2A"]
 			description: [
 				"使用20个铜块，1个奥秘引擎，6个深海玻璃搭建。搭建后，会产生一个潜水艇载具实体。"
-				"{image:createdelight:textures/gui/submarine.png width:100 height:100 align:center}"
+				"{image:createdelightcore:textures/gui/submarine.png width:100 height:100 align:center}"
 			]
 			id: "3EBE8C557492A57D"
 			size: 1.5d

@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "paths": [
+    {
+      "scopes": [
+        "unknown"
+      ],
+      "triggers": [
+        "unknown"
+      ],
+      "stacking": "unknown"
+    }
+  ]
+}

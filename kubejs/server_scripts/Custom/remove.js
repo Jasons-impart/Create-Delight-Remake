@@ -3,6 +3,7 @@ ServerEvents.recipes(e => {
         "create:crafting/materials/rose_quartz",
         "createmetallurgy:belt_grinder",
         "createmetallurgy:sandpaper_belt",
+        "minecraft:dispenser",
         "torchmaster:frozen_pearl",
         "torchmaster:feral_flare_lantern"
     ])

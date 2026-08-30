@@ -1,0 +1,30 @@
+﻿{
+    "key":  "bone_ingot",
+    "category":  "metal",
+    "primary":  5.2,
+    "secondary":  2.3,
+    "tertiary":  3.5,
+    "durability":  260,
+    "integrityCost":  2,
+    "integrityGain":  5,
+    "magicCapacity":  78,
+    "toolLevel":  "minecraft:iron",
+    "toolEfficiency":  6,
+    "tints":  {
+                  "glyph":  "bone_glyph",
+                  "texture":  "bone"
+              },
+    "textures":  [
+                     "metal"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "effects":  {
+                    "more_mod_tetra:growing":  1
+                },
+    "requiredTools":  {
+                          "hammer_dig":  "minecraft:wood"
+                      },
+    "replace":  true
+}

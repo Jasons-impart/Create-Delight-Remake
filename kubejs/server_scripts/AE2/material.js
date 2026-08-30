@@ -235,15 +235,10 @@ ServerEvents.recipes((event) => {
   create.splashing("ae2:fluix_smart_dense_cable", Ingredient.of("#ae2:smart_dense_cable").subtract("ae2:fluix_smart_dense_cable"))
   .id("createdelight:splashing/smart_dense_cable")
 
-  createdelightcore.fan_freezing("ae2:fluix_covered_cable", Ingredient.of("#ae2:covered_cable").subtract("ae2:fluix_covered_cable"))
-  .id("createdelight:fan_freezing/fluix_covered_cable")
-  createdelightcore.fan_freezing("ae2:fluix_glass_cable", Ingredient.of("#ae2:glass_cable").subtract("ae2:fluix_glass_cable"))
-  .id("createdelight:fan_freezing/fluix_glass_cable")
-  createdelightcore.fan_freezing("ae2:fluix_covered_dense_cable", Ingredient.of("#ae2:covered_dense_cable").subtract("ae2:fluix_covered_dense_cable"))
-  .id("createdelight:fan_freezing/fluix_covered_dense_cable")
-  createdelightcore.fan_freezing("ae2:fluix_smart_cable", Ingredient.of("#ae2:smart_cable").subtract("ae2:fluix_smart_cable"))
-  .id("createdelight:fan_freezing/fluix_smart_cable")
-  createdelightcore.fan_freezing("ae2:fluix_smart_dense_cable", Ingredient.of("#ae2:smart_dense_cable").subtract("ae2:fluix_smart_dense_cable"))
-  .id("createdelight:fan_freezing/smart_dense_cable")
+  dragonPlusFreezing(event, "ae2:fluix_covered_cable", Ingredient.of("#ae2:covered_cable").subtract("ae2:fluix_covered_cable"), "createdelight:fan_freezing/fluix_covered_cable")
+  dragonPlusFreezing(event, "ae2:fluix_glass_cable", Ingredient.of("#ae2:glass_cable").subtract("ae2:fluix_glass_cable"), "createdelight:fan_freezing/fluix_glass_cable")
+  dragonPlusFreezing(event, "ae2:fluix_covered_dense_cable", Ingredient.of("#ae2:covered_dense_cable").subtract("ae2:fluix_covered_dense_cable"), "createdelight:fan_freezing/fluix_covered_dense_cable")
+  dragonPlusFreezing(event, "ae2:fluix_smart_cable", Ingredient.of("#ae2:smart_cable").subtract("ae2:fluix_smart_cable"), "createdelight:fan_freezing/fluix_smart_cable")
+  dragonPlusFreezing(event, "ae2:fluix_smart_dense_cable", Ingredient.of("#ae2:smart_dense_cable").subtract("ae2:fluix_smart_dense_cable"), "createdelight:fan_freezing/smart_dense_cable")
 
 });

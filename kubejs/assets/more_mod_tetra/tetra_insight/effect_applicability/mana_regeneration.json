@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "paths": [
+    {
+      "scopes": [
+        "armor"
+      ],
+      "triggers": [
+        "wear_passive"
+      ],
+      "stacking": "armor_sum"
+    },
+    {
+      "scopes": [
+        "main_hand",
+        "off_hand"
+      ],
+      "triggers": [
+        "wear_passive"
+      ],
+      "stacking": "held_max"
+    }
+  ]
+}

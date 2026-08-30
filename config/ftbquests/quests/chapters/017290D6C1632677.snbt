@@ -1,0 +1,832 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "017290D6C1632677"
+	group: "0E7AEC0D0D9C1B1C"
+	icon: {
+		Count: 1
+		id: "gateways:gate_pearl"
+		tag: {
+			gateway: "createdelight:the_gate_of_eternal_cold"
+		}
+	}
+	id: "017290D6C1632677"
+	images: [
+		{
+			height: 3.0d
+			image: "enhanced_boss_bars:textures/gui/boss_bars/wither_storm.png"
+			rotation: 0.0d
+			width: 15.0d
+			x: -12.0d
+			y: -9.0d
+		}
+		{
+			height: 6.0d
+			image: "minecraft:textures/painting/wither.png"
+			order: -1
+			rotation: 0.0d
+			width: 6.0d
+			x: -12.0d
+			y: -6.5d
+		}
+		{
+			height: 4.0d
+			image: "iceandfire:item/armor_silver_helmet"
+			rotation: 0.0d
+			width: 4.0d
+			x: -1.0d
+			y: -5.0d
+		}
+		{
+			height: 4.0d
+			image: "iceandfire:block/dread_stone_face"
+			rotation: 0.0d
+			width: 4.0d
+			x: -1.0d
+			y: -13.5d
+		}
+		{
+			alpha: 120
+			height: 5.0d
+			image: "iceandfire:block/dragon_ice_spikes"
+			rotation: 0.0d
+			width: 5.0d
+			x: -4.0d
+			y: -12.5d
+		}
+		{
+			height: 5.0d
+			image: "iceandfire:block/dreadwood_log_top"
+			order: -1
+			rotation: 0.0d
+			width: 5.0d
+			x: -1.0d
+			y: -13.5d
+		}
+		{
+			alpha: 120
+			height: 5.0d
+			image: "iceandfire:block/dragon_ice_spikes"
+			rotation: 0.0d
+			width: 5.0d
+			x: 1.0d
+			y: -13.0d
+		}
+		{
+			alpha: 120
+			height: 5.0d
+			image: "iceandfire:block/dragon_ice_spikes"
+			order: -2
+			rotation: 0.0d
+			width: 5.0d
+			x: -3.0d
+			y: -14.5d
+		}
+		{
+			alpha: 120
+			height: 5.0d
+			image: "iceandfire:block/dragon_ice_spikes"
+			order: -2
+			rotation: 0.0d
+			width: 5.0d
+			x: 0.5d
+			y: -15.0d
+		}
+		{
+			height: 7.0d
+			image: "tetra:item/module/single/head/pale_steel_needle/pale_steel_needle"
+			rotation: 0.0d
+			width: 7.0d
+			x: 11.0d
+			y: -7.0d
+		}
+		{
+			height: 5.0d
+			image: "tetra:item/module/modles/pale_steel_needle/pale_steel_needle"
+			rotation: 0.0d
+			width: 5.0d
+			x: 8.5d
+			y: -8.5d
+		}
+		{
+			height: 6.0d
+			image: "alexsmobs:item/void_worm_eye"
+			order: -1
+			rotation: 0.0d
+			width: 6.0d
+			x: 11.0d
+			y: -7.0d
+		}
+		{
+			height: 5.0d
+			image: "tetra:item/module/modles/pale_steel_needle/pale_steel_needle"
+			rotation: -180.0d
+			width: 5.0d
+			x: 13.5d
+			y: -5.5d
+		}
+		{
+			height: 7.0d
+			image: "cataclysm:block/void_lantern_block"
+			order: -4
+			rotation: 0.0d
+			width: 7.0d
+			x: 11.0d
+			y: -7.0d
+		}
+		{
+			height: 7.0d
+			image: "cataclysm:item/essence_of_the_storm"
+			rotation: 0.0d
+			width: 7.0d
+			x: -8.0d
+			y: 14.0d
+		}
+		{
+			height: 7.0d
+			image: "cataclysm:item/storm_eye"
+			rotation: 0.0d
+			width: 7.0d
+			x: -8.0d
+			y: 14.0d
+		}
+		{
+			height: 2.0d
+			image: "cataclysm:block/azure_seastone_pillar_top"
+			rotation: 0.0d
+			width: 2.0d
+			x: -8.0d
+			y: 7.5d
+		}
+		{
+			height: 4.0d
+			image: "iceandfire:items/bestiary"
+			rotation: 0.0d
+			width: 4.0d
+			x: -1.0d
+			y: 0.5d
+		}
+		{
+			height: 4.0d
+			image: "more_mod_tetra:item/storm_core"
+			order: -1
+			rotation: 0.0d
+			width: 4.0d
+			x: -8.0d
+			y: 7.5d
+		}
+		{
+			height: 4.0d
+			image: "cataclysm:item/necklace_of_the_desert"
+			rotation: 0.0d
+			width: 4.0d
+			x: 6.0d
+			y: 7.5d
+		}
+		{
+			height: 4.0d
+			image: "cataclysm:item/desert_eye"
+			order: -1
+			rotation: 0.0d
+			width: 4.0d
+			x: 6.0d
+			y: 7.5d
+		}
+		{
+			height: 5.0d
+			image: "cataclysm:item/void_core"
+			rotation: 0.0d
+			width: 5.0d
+			x: 6.0d
+			y: 14.0d
+		}
+		{
+			height: 6.0d
+			image: "cataclysm:block/witherite_block"
+			order: -1
+			rotation: 0.0d
+			width: 6.0d
+			x: 6.0d
+			y: 14.0d
+		}
+		{
+			height: 6.0d
+			image: "cataclysm:item/ancient_metal_nugget"
+			order: 2
+			rotation: 0.0d
+			width: 6.0d
+			x: 8.5d
+			y: 12.0d
+		}
+		{
+			height: 6.0d
+			image: "cataclysm:item/ancient_metal_nugget"
+			order: 2
+			rotation: 0.0d
+			width: 6.0d
+			x: 3.5d
+			y: 16.5d
+		}
+		{
+			height: 6.0d
+			image: "more_mod_tetra:item/ignitium_core"
+			rotation: 0.0d
+			width: 6.0d
+			x: -1.0d
+			y: 9.0d
+		}
+		{
+			alpha: 100
+			height: 6.0d
+			image: "minecraft:block/fire_0"
+			rotation: 0.0d
+			width: 6.0d
+			x: -1.0d
+			y: 9.0d
+		}
+	]
+	order_index: 10
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["1DD9F7C0F4BD2170"]
+			description: ["       部分boos会生成再次召唤的祭坛，无法破坏，请不要在家里挑战！！！"]
+			hide_until_deps_complete: true
+			hide_until_deps_visible: true
+			icon: "blackknightarmor:end_dragon_ingot"
+			id: "333BF6EDDA0D6998"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "469BCFD055DB65B3"
+				table_id: 1777851550221538351L
+				type: "all_table"
+			}]
+			shape: "diamond"
+			size: 3.0d
+			subtitle: "入此门者，当舍弃一切希望"
+			tasks: [{
+				consume_items: true
+				id: "42F6EE3778437719"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "more_mod_tetra:over_core"
+					}
+				}
+				title: "Any #more_mod_tetra:over_core"
+				type: "item"
+			}]
+			title: "命定之门"
+			x: -1.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"58C8AFFF5BDFF59C"
+				"333BF6EDDA0D6998"
+			]
+			description: ["         我们的创造打开了次元的裂缝，来自异界的扭曲生物蜂拥而至。它们以灵魂为食，用锋利的存在将生命的本质穿刺、撕裂、抽离。在这场试炼中，你将直面灵魂被枯萎化的恐惧——不是肉体的死亡，而是存在本身的缓慢凋零。你的灵魂将成为战场。异界生物会用它们独有的方式刺穿灵核，抽取生命力，将你的意志一点点风干成尘埃。每一次呼吸都可能让灵魂更加脆弱，每一次抵抗都可能加速腐朽。你能坚持多久，才会像那些被撕裂的灵魂一样，成为它们中的一员？（本试炼挑战建议打造一把裁决剑，最后的凋零生命值很高，最好通过裁决剑来打，同时凋零伤害并不算很高，如果没有好用的远程武器，可以考虑带飞行装备）"]
+			icon: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:piercing_withering_trial"
+				}
+			}
+			id: "1133057B391B2009"
+			rewards: [
+				{
+					id: "186CA3CA5D9EA2EB"
+					item: "minecraft:nether_star"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "65DB0777EA59AC11"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:piercing_withering_trial"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 2
+					id: "4D688F5DA651D29E"
+					item: "alexscaves:pure_darkness"
+					type: "item"
+				}
+				{
+					id: "4D91B959A613ED91"
+					item: "alexscaves:immortal_embryo"
+					type: "item"
+				}
+				{
+					id: "2C1E35F4EFDFB262"
+					item: "minecraft:totem_of_undying"
+					type: "item"
+				}
+			]
+			shape: "square"
+			size: 2.0d
+			subtitle: "&4当异界之物&r&kaaaa&r&4撕裂现实，灵魂便&r&kaaaa&r&4如花朵般被&r&kaaaa&r&4刺穿、凋零"
+			tasks: [
+				{
+					id: "4202F58219E5422D"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:piercing_withering_trial"
+						}
+					}
+					match_nbt: true
+					type: "item"
+				}
+				{
+					checkItem: false
+					entity: "minecraft:wither_skeleton"
+					icon: "minecraft:wither_rose"
+					id: "792E7F0827271924"
+					nbt: { }
+					type: "questsadditions:killnbt"
+					value: 12L
+				}
+			]
+			title: "&4刺骨&r&k111&r&4穿心&r&k111&r&4..."
+			x: -12.0d
+			y: -8.0d
+		}
+		{
+			dependencies: [
+				"421576F1BE1DF7D9"
+				"333BF6EDDA0D6998"
+			]
+			description: [
+				"它们被规则的力量束缚在此处，注定在寒风中消逝......"
+				"（本试炼怪物极多，并且伤害较高，推荐千夜寒与村雨交替使用，时刻注意血量，最重要的是一定要在间隙清理龙尸，防止找不到刷出的怪物和影响试炼挑战）"
+			]
+			icon: "northstar:mars_sand"
+			id: "150784A5D48732C2"
+			rewards: [{
+				id: "6AF7C6940A47CF2F"
+				item: "youkaishomecoming:big_popsicle"
+				type: "item"
+			}]
+			shape: "rsquare"
+			size: 1.0d
+			subtitle: "悚怖生物可在&6火星&r或&b木卫二&r生成！"
+			tasks: [{
+				dimension: "northstar:mars"
+				icon: "northstar:mars_sand"
+				id: "22B3E32DDC0E16B1"
+				title: "火星"
+				type: "dimension"
+			}]
+			title: "无垠之牢！"
+			x: -1.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["150784A5D48732C2"]
+			description: [
+				"         漆黑的冰霜蔓延到尸骨之上，在世界上那最寒冷的边境，埋葬着一股极其强大的邪恶力量...... "
+				"                                         ——《异兽手记·竦怖军团》"
+			]
+			icon: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:the_gate_of_eternal_cold"
+				}
+			}
+			id: "283562A687949192"
+			rewards: [
+				{
+					count: 4
+					id: "21B4B48B0CEA1682"
+					item: "dreadsteel:dreadsteel_ingot"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "777204A5FAE909D5"
+					item: "createdelight:dread_heart"
+					type: "item"
+				}
+				{
+					id: "29343499F6B63CB1"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:the_gate_of_eternal_cold"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "square"
+			size: 2.0d
+			subtitle: "撕裂的维度皆被冻结.....无声无息....."
+			tasks: [{
+				consume_items: false
+				id: "004938CCC005CF4C"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "createdelight:the_gate_of_eternal_cold"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			title: "&1凛冬之寒"
+			x: -1.0d
+			y: -13.0d
+		}
+		{
+			dependencies: [
+				"604734C6B3F31B97"
+				"333BF6EDDA0D6998"
+			]
+			description: [
+				"    试炼者需踏入这片被虫潮笼罩的战场，没有退路，唯有迎战。异常的感染让虫子们失去意识，仅能战斗，坚持到最后一刻，即使敌人无穷无尽！"
+				"    (虽然叫做不再有梦，但是最后给的织针......这八年咋过来的，此任务致敬传奇游戏空洞骑士及其续作丝之歌，如有问题，立刻改正)"
+				"    提示：本试炼怪物种类复杂且多，建议使用吸血+裁决的搭配，最后的boos和蚊鬼需要使用远程，建议有了外骨骼再挑战"
+			]
+			id: "0F1628F16807D8BD"
+			rewards: [
+				{
+					id: "11BCA867F2AE8E20"
+					item: "tetra:pale_steel_needle"
+					type: "item"
+				}
+				{
+					id: "5E7B67D23DF8C3D2"
+					item: "dungeonsdelight:monster_cake"
+					type: "item"
+				}
+				{
+					id: "5A6B1C1DF08414CA"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:dream_no_more"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "square"
+			size: 2.0d
+			subtitle: "活了这么久，知道的却这么少，或许我应该心怀感激？我忘记了所有悲剧，所见皆是奇迹。"
+			tasks: [{
+				id: "74F6BA5FA92BA39E"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "createdelight:dream_no_more"
+					}
+				}
+				type: "item"
+			}]
+			x: 11.0d
+			y: -8.0d
+		}
+		{
+			dependencies: ["1866421C1715CDCD"]
+			description: [
+				"       利维坦是一只巨大的鱼形生物，长有巨大的胸鳍和腹鳍，以及发达的矛尾。它的身上覆盖着巨大的深紫色鳞片，其中交杂的亮紫色斑点是其深渊之力的体现。它的头部可以开裂成四块，而其真正的口部便隐藏在其中。"
+				"       利维坦的设计灵感来源于《深海迷航》中的利维坦：其触手参考了死神利维坦的头部触手（当然它们也可以抓住玩家），身体参考了暗影利维坦，头部可能参考了雪棘利维坦和鱿鲨。"
+				"       离水无敌：利维坦在未接触水时会进入无敌状态，无法受到正常伤害，此选项可在配置文件中开关（默认是开启的）。注意，你依然可以在岸上攻击水中的利维坦（但要小心它冲到或瞬移到岸上），但若想真正体验战斗的感觉的话建议不要逃课。"
+				"       破盾：利维坦除三种深渊冲击波和维度裂隙之外的大部分技能均可用盾牌抵挡，但只有触手牵引和深渊灵珠才不会触发破盾，其他技能都可以破盾。"
+				""
+				"{@pagebreak}"
+				"       斯库拉，一个古希腊传说中女性海妖的名字，而你登临卫城之巅，面对的那触及风暴，亦或就是风暴本身的女王——也是斯库拉；就胸甲与裙甲而言，斯库拉看上去是一个全身穿满海蓝宝石色盔甲的女人，那盔甲上还锻着黄色的饰纹；"
+				"       她全身上下只有头盔中时常冒出电光的白色眼睛与背后可能是头发的部位可见，除此之外，她的身体两侧还有几只小型的幻影蛇缠在或附在她的周围；手中巨大的霆浪锚戟是她的武器，当然，必要的时候，她也能徒手搓出水箭（沧波棱刺）或雷箭（鸣雷槊）攻击。"
+				"       斯库拉的大部分攻击招式都可以据目标的最大生命值造成一定 百分比伤害；"
+				"       潮湿叠加：斯库拉每个能够施加潮湿效果的技能在命中已持有潮湿效果的目标时，都会使该目标持有的潮湿效果等级 +1（至多 5 级），同时将该效果的持续时间重置；"
+				"       方块破坏：斯库拉在战斗/使用部分技能时可以破坏她碰撞箱接触到的方块（除了脚下踩的）；不过由于大部分都是站桩类技能，她远不如咒翼灵骸能拆家；此外，通过触摸船锚的方式召唤的斯库拉会在登场时就立刻使用一次“坠雷击”技能。"
+				""
+				"{@pagebreak}"
+				"       咒翼灵骸，苦寒之地昔日的传奇战士，后来的暴虐统领，今日的诅咒亡灵。"
+				"       咒翼灵骸看上去是一个只剩骨架的且长有巨大双翼的灵体状态亡灵，双眸为白色，它装备着咒魂盔甲，随使用技能的不同而持有歼灭战锤、断魂战戟、咒魂弓等武器。"
+				"       咒翼灵骸大部分攻击招式都可以据目标的最大生命值造成一定 百分比伤害；"
+				"       怒气：分为 5 层，攻击每成功命中一次目标后 +1 层（未再次命中的情况下，每 5~6 秒内 -1 层）；每持有 1 层，自身攻击力 +20%；招式衍生实体的攻击（被召唤的战戟、被震起的方块、箭矢）即使命中也不会为咒翼灵骸累计怒气；"
+				"       方块破坏：注意！咒翼灵骸在战斗/使用技能期间能够破坏它途径的大部分方块（除了脚下踩的）；永远不要低估他拆自己家的效率。"
+				"       破盾：玩家可以在咒翼灵骸出招时留意它手中渲染的圆环颜色：除“绿环招式”外，咒翼灵骸所有攻击（橙环招式）都能破盾；“红环招式”则可以无视盾牌格挡直接命中目标并造成伤害。"
+				"       咒翼灵骸有着更远的侦测距离，且不会在和平模式下消失；然而，它没有自己的“沉睡”形态；"
+				"       脱战回血：咒翼灵骸周围没有仇恨目标时，它会以回复 10点（） 血量 / 秒的速度快速自愈。"
+			]
+			id: "13C4DBA50880B401"
+			rewards: [{
+				id: "585F166FBAF123F3"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "createdelight:wind_mist_and_thunder_strike"
+					}
+				}
+				type: "item"
+			}]
+			shape: "square"
+			size: 2.0d
+			subtitle: "风雨交加"
+			tasks: [{
+				id: "0CE6596DFE9064CB"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "createdelight:wind_mist_and_thunder_strike"
+					}
+				}
+				type: "item"
+			}]
+			x: -8.0d
+			y: 14.0d
+		}
+		{
+			dependencies: ["333BF6EDDA0D6998"]
+			description: [
+				"        本章节试炼难度极大！！！仅推荐在能够获得较多悚怖钢/终结龙锭或拥有全套的饰品、盔甲、武器、食物/药水（金苹果，咖啡，夜视之类的）后再进行挑战（建议使用烈焰人附魔师/锻造把附魔拉满），其中有些试炼（尤其是灾变）有特殊的要求，建议仔细阅读任务，避免浪费材料！！！下方试炼以各种灾变boos为主题，上方为特殊挑战，上方试炼难度更大。（记得带上我给的背包，这些试炼的奖励很多哦！）"
+				"        特殊提醒：滕炎锭依旧有用，顺带一提，灾变的限伤似乎被&k咒魂&r核心所克制（？）"
+				""
+				"{@pagebreak}"
+				"        希望有人能帮我补上下方的中二小故事，嘿嘿。"
+			]
+			icon: "alexscaves:hazmat_skull_block"
+			id: "5881339CB607FB65"
+			rewards: [
+				{
+					count: 2
+					id: "25E1EACD63CEEF42"
+					item: {
+						Count: 1
+						id: "sophisticatedbackpacks:netherite_backpack"
+						tag: {
+							contentsUuid: [I;
+								-2050886226
+								-1670823701
+								-2060525034
+								-1739685419
+							]
+							inventorySlots: 120
+							renderInfo: {
+								upgradeItems: [
+									{
+										Count: 1b
+										id: "minecraft:air"
+									}
+									{
+										Count: 1b
+										id: "minecraft:air"
+									}
+									{
+										Count: 1b
+										id: "minecraft:air"
+									}
+									{
+										Count: 1b
+										id: "minecraft:air"
+									}
+									{
+										Count: 1b
+										id: "minecraft:air"
+									}
+									{
+										Count: 1b
+										id: "minecraft:air"
+									}
+									{
+										Count: 1b
+										id: "minecraft:air"
+									}
+								]
+							}
+							upgradeSlots: 7
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 2
+					id: "36FB03CA07C44B90"
+					item: "sophisticatedbackpacks:advanced_magnet_upgrade"
+					type: "item"
+				}
+				{
+					count: 6
+					id: "5CA4EE1BBF47538A"
+					item: "sophisticatedbackpacks:stack_upgrade_tier_4"
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "本章节boos介绍内容来自我的世界mod百科"
+			tasks: [{
+				id: "04B224428702A002"
+				title: "提示"
+				type: "checkmark"
+			}]
+			title: "提醒"
+			x: 3.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["333BF6EDDA0D6998"]
+			description: ["       利维坦在未接触水时会进入无敌状态，无法受到正常伤害，为此，利维坦将作为最后一个boos出场。为应对此特性，我们需要在水中击败这些生物，祝你好运。（或者说打完其他怪物后潜入水中/放水后攻击利维坦）"]
+			icon: "minecraft:conduit"
+			id: "1866421C1715CDCD"
+			rewards: [{
+				id: "3E79CFE45D802EF0"
+				item: "industrial_platform:industrial_platform"
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "利维坦"
+			tasks: [{
+				amount: 1000L
+				fluid: "minecraft:water"
+				id: "1AF3518531FBC0CF"
+				type: "fluid"
+			}]
+			title: "海洋的化身"
+			x: -8.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["333BF6EDDA0D6998"]
+			description: [
+				"       远古遗魂需要通过用沙漠项链右击来唤醒，使用刷子考古诅咒金字塔结构中可疑的沙子有概率获得。"
+				"       先驱者需手持并消耗下界之星右键“沉睡”的先驱者以将其唤醒。"
+			]
+			icon: "cataclysm:necklace_of_the_desert"
+			id: "71C778FD673292E1"
+			rewards: [
+				{
+					count: 4
+					id: "7116F6CE8113DA1B"
+					item: "cataclysm:necklace_of_the_desert"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "3E9A1C964AE3A333"
+					item: "minecraft:nether_star"
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "源自凋零的力量"
+			tasks: [
+				{
+					id: "5E2C013FBF893349"
+					item: "cataclysm:necklace_of_the_desert"
+					type: "item"
+				}
+				{
+					id: "5D9130C5990AEFCC"
+					item: { Count: 4, id: "minecraft:nether_star" }
+					type: "item"
+				}
+			]
+			title: "来自远古的嚎叫"
+			x: 6.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["71C778FD673292E1"]
+			description: [
+				"       先驱者，古人制造的机械凋灵，拥有强大的破坏力；"
+				"       先驱者整体类似凋灵，配色主要是灰色、淡灰色、黑色和红色，由凋灵合金锭打造而成，背后有两个既能发射导弹、炮弹，也能射出激光束的炮台，中间的主首巨大而厚重，可发射死亡激光束（看起来很先进，有种现代科技的味道）。"
+				"       先驱者拥有飞行能力，但飞行高度通常比凋灵更低（玩家跳跃时可通过近战攻击先驱者）；"
+				"       仇恨优先锁定玩家，但也会无差别攻击除徘徊者、观测者、其它先驱者外的任何生物；周围存在先驱者时，天空会像存在凋灵时一样变暗；"
+				"       其少数攻击技能可据目标的最大生命值造成极小数值的百分比伤害；"
+				"       生物破坏：先驱者绝大多数攻击都能破坏地形；"
+				"       效果免疫：先驱者免疫火焰伤害和凋零效果；"
+				"       红色凋灵护甲（仅二阶段）："
+				"       反弹命中自身的弹射物（即免疫弓箭等远程伤害）；"
+				"       类似凋灵，先驱者会每秒恢复 1点 生命值，也会吸收被击杀生物的生命值从而治疗自己，恢复 5点 生命值。与凋灵不同的是，先驱者在追逐目标时，即使没有受到伤害也会每秒尝试摧毁以自身为中心 5*5*5 格内的方块，但对不可破坏的方块（例如基岩）无效。"
+				""
+				"{@pagebreak}"
+				"       末影守卫，强大的末地守卫者，一个由紫珀砖块、黑曜石、末地石砖、虚空石制造而成的强力机械巨怪。它的两肩各长着一块虚空石，身上充满花纹，有着一块紫色的眼睛。背后则搭载一块似乎作为动力源使用的虚空石；末影守卫盘踞在废弃堡垒的最深处，用末影与虚空之力惩罚入侵者。"
+				"        末影守卫的基础伤害只有 16点，但它的部分技能都可以据固定倍率提升伤害；同时据目标的最大生命值造成极小数值的百分比伤害；"
+				"        弹射物免疫（仅一阶段）：反弹命中自身的弹射物（即免疫弓箭等远程伤害）；"
+				"        破盾：除 召唤虚空符文、潜影导弹、爆裂冲击以外的任何攻击都会在命中（正在格挡）盾牌时将其禁用；"
+				""
+				"{@pagebreak}"
+				"        远古遗魂，一具巨大的棘龙骨架，沉睡在诅咒金字塔(Cursed Pyramid)的最深处，静待挑战者的来临。"
+				"        属于亡灵生物，受到亡灵杀手魔咒的额外伤害，免疫弹射物伤害，会反弹来袭的箭矢。远古遗魂的血条下方有一个由五个部分组成的怒气值条，当远古遗魂的部分技能未能对目标造成伤害时，远古遗魂会积攒一格怒气值。当怒气值满时，远古遗魂会消耗全部怒气值并释放暴怒冲锋。"
+			]
+			id: "07D6031FFAB64D87"
+			rewards: [{
+				id: "53CBB035EA3D7B9F"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "createdelight:shattered_past"
+					}
+				}
+				type: "item"
+			}]
+			shape: "square"
+			size: 2.0d
+			subtitle: "文明倾毁，往事云烟"
+			tasks: [{
+				id: "563BE0F8AB8B4C7C"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "createdelight:shattered_past"
+					}
+				}
+				type: "item"
+			}]
+			x: 6.0d
+			y: 14.0d
+		}
+		{
+			dependencies: ["333BF6EDDA0D6998"]
+			description: [
+				"       焰魔，烈焰之主宰，至尊之战神。焰魔有着一双红色的眼睛，全身像烈焰人一样浮空并环绕着烟雾。右手拿着一把刻有符文的火焰巨剑，左手拿着一块极其巨大的沉重盾牌，全身覆盖着厚重的腾炎盔甲。"
+				"       焰魔使用剑、火球击中敌人时会先给予目标炽热烙印效果并恢复一定生命值，计算公式为：恢复量=吸血值×目标炽热烙印效果等级。如果目标被焰魔的攻击多次命中，炽热烙印的效果会叠加，这会导致焰魔可以对目标吸更多的血。但焰魔的吸血上限为单次25点血。"
+				""
+				"{@pagebreak}"
+				"       下界合金巨兽，就像它的“亲戚”红石巨兽一样镇守着一座锻造厂，虽说这座锻造厂比烈焰锻造厂小得多，但它依然强大。下界合金巨兽的外观与红石巨兽类似，然而，它通体由下界合金块、下界砖块（部分身体）、岩浆块（背腹）、玄武岩（腿）以及黑石系列方块（手臂、背面的一个区域）构成，同样也“断掉”了一个角；它似乎是以熔岩红石混合驱动的。它有3只散发橙光的眼睛和由岩浆块和下界砖块构成的凸字形下颚，其中第三只眼睛在它的前额。"
+				"       下界合金巨兽的近战攻击可以据目标的最大生命值造成的百分比伤害；"
+				"       弱点部位：下界合金巨兽的头部（绿色碰撞箱）被攻击时会受到 1.5 倍 的伤害（但无法被暴击），且只有这个碰撞箱 不免疫远程攻击；提示：按下 F3+B 可以显示生物碰撞箱；"
+			]
+			id: "0662D25974179497"
+			rewards: [{
+				id: "24C12E893B85D698"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "createdelight:oath_of_fierce_blade_ouel"
+					}
+				}
+				type: "item"
+			}]
+			shape: "square"
+			size: 2.0d
+			subtitle: "这是一场真正的决斗"
+			tasks: [{
+				id: "793AAF66CAD63FB5"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "createdelight:oath_of_fierce_blade_ouel"
+					}
+				}
+				type: "item"
+			}]
+			x: -1.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["333BF6EDDA0D6998"]
+			description: [
+				"&lDPS 限制&r"
+				"       这个被动的机制是防止玩家以过快的攻击频率速杀 Boss 而设计，但相比动态减伤，此机制使得一些高频低伤武器或者技能也能比较正常的发挥，这个机制对具有#cataclysm:bypasses_hurt_time（默认有凋零，中毒，深渊诅咒，深渊灼烧，射出幽灵箭的咒魂弓，沙暴之怒，绞肉锯的右击攻击）标签的伤害类型没有作用，且计算在单次伤害限制之后，护甲之前。"
+				"       此机制可以简单解释为："
+				"       Boss拥有伤害额度，最大为本身单次伤害限制数值，每tick恢复 DPS 限制 / 20；如果此次伤害超过了伤害额度则限制为额度，如果额度已小于等于 0 则限制为 0.1；比如，若焰魔的单次伤害最大限制为 20，DPS 限制为 14，且忽略受击后伤害免疫问题：造成18伤害后 10 tick 再造成 10 伤害，首次伤害后剩余 2，10 tick 后恢复 7，则下一次实际造成9伤害；瞬间造成 8 次 4 伤害，前五次正常造成伤害，后三次因为额度用尽只造成 0.1 伤害。"
+				""
+				"{@pagebreak}"
+				"&l远程保护&r "
+				"       在战斗中，若玩家或任意被小 Boss / Boss 选定为目标的生物与之距离 超出特定格数；则该 Boss / 小 Boss 会完全免疫来自该目标的任何伤害。"
+				"       该机制的目的是为了防止玩家通过超远程打击等手段（在 Boss 未锁定目标仇恨的情况下）消耗 Boss 的血量；尽管大部分情况下这个机制完全可以当不存在。"
+			]
+			icon: "alexscaves:hazmat_skull_block"
+			id: "4DD4BBF6C7189FA1"
+			rewards: [{
+				id: "7D646AE5E8E284F7"
+				type: "xp_levels"
+				xp_levels: 12
+			}]
+			shape: "square"
+			subtitle: "关于灾厄限伤"
+			tasks: [{
+				id: "5B4E839BF9C29969"
+				title: "提示"
+				type: "checkmark"
+			}]
+			title: "小知识"
+			x: -5.5d
+			y: 1.5d
+		}
+	]
+	title: "命定之门"
+}

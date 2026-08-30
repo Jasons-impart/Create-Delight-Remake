@@ -1,0 +1,16 @@
+{
+  "type": "createdelightcore:configuration_module_refill",
+  "category": "misc",
+  "module": {
+    "item": "createdelightcore:logistics_configuration_module"
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "item": "createdelight:logic_component"
+      },
+      "count": 1
+    }
+  ],
+  "charge": 4
+}

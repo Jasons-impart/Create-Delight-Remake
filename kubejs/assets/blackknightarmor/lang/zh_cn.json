@@ -1,0 +1,14 @@
+{
+  "item.blackknightarmor.dark_flame_ingot": "暗炎锭",
+  "item.blackknightarmor.rage_soul_ingot": "怒魂锭",
+  "item.blackknightarmor.sun_light_ingot": "日光锭",
+  "item.blackknightarmor.frost_tooth_ingot": "霜牙锭",
+  "item.blackknightarmor.ghoststeel_ingot": "灵钢锭",
+  "item.blackknightarmor.dragon_fire_ingot": "红莲龙炎锭",
+  "item.blackknightarmor.end_dragon_ingot": "终结龙锭",
+  "item.blackknightarmor.knight_upgrade_smithing_template": "骑士升级锻造模板",
+  "item.blackknightarmor.smithing_template.knight_upgrade.applies_to": "龙钢装备",
+  "item.blackknightarmor.smithing_template.knight_upgrade.ingredients": "主题锭",
+  "item.blackknightarmor.smithing_template.knight_upgrade.base_slot_description": "放入对应的龙钢装备",
+  "item.blackknightarmor.smithing_template.knight_upgrade.additions_slot_description": "放入对应的主题锭"
+}

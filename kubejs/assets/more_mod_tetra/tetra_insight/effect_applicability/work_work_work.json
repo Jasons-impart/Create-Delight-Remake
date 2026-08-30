@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "paths": [
+    {
+      "scopes": [
+        "curios"
+      ],
+      "triggers": [
+        "mine_block"
+      ],
+      "stacking": "curios_max"
+    },
+    {
+      "scopes": [
+        "main_hand",
+        "off_hand"
+      ],
+      "triggers": [
+        "mine_block"
+      ],
+      "stacking": "held_max"
+    }
+  ]
+}

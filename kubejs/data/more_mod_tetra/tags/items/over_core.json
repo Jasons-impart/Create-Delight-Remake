@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "more_mod_tetra:extinction_core",
+    "alexscaves:immortal_embryo",
+    "more_mod_tetra:abyssal_core",
+    "more_mod_tetra:cursium_core",
+    "more_mod_tetra:harbinger_core",
+    "more_mod_tetra:ignitium_core",
+    "more_mod_tetra:storm_core",
+    "more_mod_tetra:fire_dragonsteel_core",
+    "more_mod_tetra:ice_dragonsteel_core",
+    "more_mod_tetra:lightning_dragonsteel_core",
+    "more_mod_tetra:ghost_core"
+  ]
+}

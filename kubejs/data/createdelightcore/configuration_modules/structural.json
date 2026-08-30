@@ -1,0 +1,7 @@
+{
+  "item": "createdelightcore:structural_configuration_module",
+  "max_charge": 64,
+  "initial_charge": 4,
+  "default_mode": "createdelightcore:andesite_casing",
+  "fallback_mode": "createdelightcore:andesite_casing"
+}

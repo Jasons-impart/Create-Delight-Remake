@@ -1,0 +1,11 @@
+{
+  "item.tetra.scroll.shared/the_legend_scroll_of_trickery_titan.description": "§1「捷足的羁客」愿翻飞之币爱佑其身，赐予诡计的决绝\n§7以异世飞贼的行窃心得调律工具，使持有者获得幸运、机动与更灵巧的攻击；不再直接复制完整生物战利品表。",
+  "tetra.improvement.the_legend_scroll_of_trickery_titan_up.description": "工具持有者获得幸运、移动速度与攻击速度加成。",
+  "tetra/schematic/shared/more_mod_tetra/titan/the_legend_scroll_of_trickery_titan_up.description": "继承诡计火种，使工具获得幸运、移动速度与攻击速度加成。",
+  "item.tetra.scroll.shared/the_legend_scroll_of_passage_titan.description": "§4「命运的三子」愿万径之门爱佑其身，赐予门径的理想\n§7记录百界通路的锻造卷轴，可将击杀战利品送往绑定容器，并提高持有者的移动与攻击速度。",
+  "tetra.improvement.the_legend_scroll_of_passage_titan_up.description": "工具可将战利品传送至绑定容器，并提高持有者的移动与攻击速度。",
+  "tetra/schematic/shared/more_mod_tetra/titan/the_legend_scroll_of_passage_titan_up.description": "继承门径火种，获得远程战利品传送与机动能力。",
+  "tetra/schematic/toolbelt/belt_socket.slot1": "锻造钢板",
+  "tetra/schematic/toolbelt/belt_socket.description": "拥有更多完整度的腰带，可以兼容魂匠升级，但需要锻造钢板才能制作。(请不要装配3个储物袋，会崩溃)",
+  "tetra.module.toolbelt/belt_socket.description": "拥有更多完整度的腰带，可以兼容魂匠升级，但需要锻造钢板才能制作。(请不要装配3个储物袋，会崩溃)"
+}

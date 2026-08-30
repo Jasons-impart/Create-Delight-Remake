@@ -140,50 +140,6 @@
             },
             "unitWorth": 250
         },
-        "blacksmith_nano_insectoid": {
-            "type": "item",
-            "content": "art_of_forging:nano_insectoid",
-            "rarity": "EPIC",
-            "weightMult": 0.15,
-            "amount": {
-                "min": 1,
-                "max": 1
-            },
-            "unitWorth": 6000
-        },
-        "blacksmith_encoded_canister": {
-            "type": "item",
-            "content": "art_of_forging:encoded_canister",
-            "rarity": "EPIC",
-            "weightMult": 0.15,
-            "amount": {
-                "min": 1,
-                "max": 1
-            },
-            "unitWorth": 12000
-        },
-        "blacksmith_esoteric_codex": {
-            "type": "item",
-            "content": "art_of_forging:esoteric_codex",
-            "rarity": "EPIC",
-            "weightMult": 0.15,
-            "amount": {
-                "min": 1,
-                "max": 1
-            },
-            "unitWorth": 18000
-        },
-        "blacksmith_curious_artifact": {
-            "type": "item",
-            "content": "art_of_forging:curious_artifact",
-            "rarity": "EPIC",
-            "weightMult": 0.075,
-            "amount": {
-                "min": 1,
-                "max": 1
-            },
-            "unitWorth": 36000
-        },
         "blacksmith_metal_scrap_epic": {
             "type": "item",
             "content": "tetra:metal_scrap",

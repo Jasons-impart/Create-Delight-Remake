@@ -10,7 +10,6 @@ ServerEvents.recipes((event) => {
     "ae2:network/blocks/io_condenser",
     "ae2:tools/matter_cannon",
     "ae2:network/blocks/spatial_anchor",
-    "expatternprovider:ex_drive",
     "ae2:network/blocks/inscribers",
     "expatternprovider:assembler_matrix_crafter",
     "expatternprovider:assembler_matrix_frame",

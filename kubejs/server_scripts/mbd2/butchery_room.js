@@ -1,7 +1,3 @@
-const $ItemRecipeCapability = Java.loadClass("com.lowdragmc.mbd2.common.capability.recipe.ItemRecipeCapability")
-const $MeatHookBlockEntity = Java.loadClass("com.lance5057.butchercraft.workstations.hook.MeatHookBlockEntity")
-const $ButcherBlockBlockEntity = Java.loadClass("com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockBlockEntity")
-
 function cleanString(str) {
   return String(str)
     .trim() // 移除空白
@@ -34,15 +30,25 @@ let carcass_data = [
   ["butchercraft:rabbit_black_head_item", 0],
   ["butchercraft:chicken_carcass", 0]
 ]
-MBDMachineEvents.onTick("createdelight:butchery_room", e => {
-  const {machine} = e.event
-  if (machine.level.time % 20 != 0) return
+
+function getButcheryRoomParts(machine) {
   let pos = machine.pos
   let facing = machine.getFrontFacing().get()
   /**@type {Internal.MeatHookBlockEntity}*/
   let meatHook = machine.level.getBlockEntity(pos.relative(facing.opposite).above().above().above().relative(DirectionUtil.rotation270Direction(facing)))
   /**@type {Internal.ButcherBlockBlockEntity} */
   let butcherBlock = machine.level.getBlockEntity(pos.relative(facing.opposite).above())
+  if (meatHook == null || butcherBlock == null) return null
+  return { meatHook: meatHook, butcherBlock: butcherBlock }
+}
+
+MBDMachineEvents.onTick("createdelight:butchery_room", e => {
+  const {machine} = e.event
+  if (machine.level.time % 20 != 0) return
+  let parts = getButcheryRoomParts(machine)
+  if (parts == null) return
+  let meatHook = parts.meatHook
+  let butcherBlock = parts.butcherBlock
   if(machine.machineStateName != "working") {
     if (meatHook.insertedItem != [] || butcherBlock.insertedItem != []) {
       machine.level.playSound(null, machine.pos.x, machine.pos.y, machine.pos.z, "minecraft:block.slime_block.fall", "blocks", 1, 1)
@@ -53,7 +59,7 @@ MBDMachineEvents.onTick("createdelight:butchery_room", e => {
   if(machine.machineStateName == "working") {
     /**@type {String} */
     let itemIds
-    machine.recipeLogic.getLastRecipe().getInputContents($ItemRecipeCapability.CAP).forEach(con => {
+    machine.recipeLogic.getLastRecipe().getInputContents(global.CDServerJavaClasses.$ItemRecipeCapability.CAP).forEach(con => {
       itemIds = cleanString(con.getContent().toJson().get("ingredient").get("item"))
     })
     let maxStage = carcass_data[carcass_data.findIndex(data => data[0] == itemIds)][1]
@@ -98,12 +104,10 @@ MBDMachineEvents.onTick("createdelight:butchery_room", e => {
 })
 MBDMachineEvents.onRemoved("createdelight:butchery_room", e => {
   const {machine} = e.event
-  let pos = machine.pos
-  let facing = machine.getFrontFacing().get()
-  /**@type {Internal.MeatHookBlockEntity}*/
-  let meatHook = machine.level.getBlockEntity(pos.relative(facing.opposite).above().above().above().relative(DirectionUtil.rotation270Direction(facing)))
-  /**@type {Internal.ButcherBlockBlockEntity} */
-  let butcherBlock = machine.level.getBlockEntity(pos.relative(facing.opposite).above())
+  let parts = getButcheryRoomParts(machine)
+  if (parts == null) return
+  let meatHook = parts.meatHook
+  let butcherBlock = parts.butcherBlock
   if(meatHook.insertedItem != [] || butcherBlock.insertedItem != []) {
     // meatHook.stage = 3
     meatHook.finishRecipe()
@@ -112,16 +116,14 @@ MBDMachineEvents.onRemoved("createdelight:butchery_room", e => {
 })
 MBDMachineEvents.onRecipeWorking("createdelight:butchery_room", e => {
   const {machine} = e.event
-  let pos = machine.pos
-  let facing = machine.getFrontFacing().get()
-  /**@type {Internal.MeatHookBlockEntity}*/
-  let meatHook = machine.level.getBlockEntity(pos.relative(facing.opposite).above().above().above().relative(DirectionUtil.rotation270Direction(facing)))
-  /**@type {Internal.ButcherBlockBlockEntity} */
-  let butcherBlock = machine.level.getBlockEntity(pos.relative(facing.opposite).above())
+  let parts = getButcheryRoomParts(machine)
+  if (parts == null) return
+  let meatHook = parts.meatHook
+  let butcherBlock = parts.butcherBlock
   /**@type {String} */
   let itemIds
   if(meatHook.insertedItem == [] && butcherBlock.insertedItem == []) {
-    machine.recipeLogic.getLastRecipe().getInputContents($ItemRecipeCapability.CAP).forEach(con => {
+    machine.recipeLogic.getLastRecipe().getInputContents(global.CDServerJavaClasses.$ItemRecipeCapability.CAP).forEach(con => {
       itemIds = con.getContent().toJson().get("ingredient").get("item")
     })
   }

@@ -1,6 +1,6 @@
 
 CapabilityEvents.dynamicItem(e => {
-    e.add(item => (item.item instanceof $ModularItem) && TetraUtil.itemHasEffect(item, "createdelight:charge"),
+    e.add(item => (item.item instanceof global.CDStartupJavaClasses.$ModularItem) && TetraUtil.itemHasEffect(item, "createdelight:charge"),
         CapabilityBuilder.ENERGY.customItemStack()
             .canReceive(i => i.nbt.getInt("energy") < 1000000)
             .getEnergyStored(i =>

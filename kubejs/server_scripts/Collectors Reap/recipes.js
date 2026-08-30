@@ -1,11 +1,47 @@
+/**
+ *
+ * @param {Internal.RecipesEventJS_} e
+ * @param {InputItem_} ingredients
+ * @param {OutputItem_} output
+ */
+function make_cannoli(e, ingredients, output) {
+    e.remove({output: output})
+    e.recipes.kubejs.shapeless(
+        output,
+        [
+            "supplementaries:pancake",
+            "bakeries:cheese_cream",
+            "minecraft:sugar",
+            ingredients
+        ]
+    ).id(`createdelight:shapeless/${ingredients.split(":")[1]}`)
+    {
+        let iner = "supplementaries:pancake"
+        e.recipes.create.sequenced_assembly(`2x ${output}`, iner, [
+            e.recipes.create.deploying(iner, [iner, ingredients]),
+            e.recipes.create.deploying(iner, [iner, "bakeries:cheese_cream"]),
+            e.recipes.create.deploying(iner, [iner, "minecraft:sugar"]),
+            e.recipes.create.cutting(iner, iner)
+        ])
+        .loops(1)
+        .transitionalItem(iner)
+        .id(`createdelight:sequenced_assembly/${ingredients.split(":")[1]}`)
+    }
+}
+
 ServerEvents.recipes(e => {
-    const { create, kubejs, farmersdelight} = e.recipes
+
+    const { create, kubejs, farmersdelight, create_new_age} = e.recipes
     remove_recipes_output(e, [
         "collectorsreap:lime_cake",
         "collectorsreap:pomegranate_cake",
         "collectorsreap:lime_cookie",
         "collectorsreap:pink_dragon_fruit_cake",
         "collectorsreap:lucuma_cake",
+        'collectorsreap:panettone',
+    ])
+    remove_recipes_input(e, [
+        'collectorsreap:panettone',
     ])
     remove_recipes_id(e, [
         "collectorsreap:cutting/clam", 
@@ -21,6 +57,12 @@ ServerEvents.recipes(e => {
         "collectorsreap:food/pink_limeade",
         "collectorsreap:food/limeade",
         "collectorsreap:food/mint_limeade",
+        "collectorsreap:food/tropical_shaved_ice",
+        "collectorsreap:brewing/lime_green_tea",
+        "collectorsreap:brewing/pomegranate_black_tea",
+        "collectorsreap:brewing/limbo_brew_from_coffee",
+        "collectorsreap:food/stuffed_pasta_shells",
+        "collectorsreap:food/lucuma_bread",
     ])
     e.replaceInput({id: "collectorsreap:food/buttered_legs"}, "collectorsreap:chieftain_leg", "#forge:crab_leg")
     e.replaceInput({id: "collectorsreap:food/buttered_legs"}, "#forge:milk", "createdelight:butter")
@@ -32,7 +74,7 @@ ServerEvents.recipes(e => {
     make_cake(e, "collectorsreap:pink_dragon_fruit", "collectorsreap:pink_dragon_fruit_cake")
     make_cake(e, "collectorsreap:lucuma", "collectorsreap:lucuma_cake")
     //虎虾剥壳
-    cutting(e, 'collectorsreap:cooked_tiger_prawn', [['oceanic_delight:shrimp_slices']])
+    cutting(e, 'collectorsreap:cooked_tiger_prawn', 'oceanic_delight:shrimp_slices')
     //大饭团
     kubejs.shapeless(
         'collectorsreap:big_rice_ball',
@@ -44,20 +86,10 @@ ServerEvents.recipes(e => {
         ]
     ).id("createdelight:food/big_rice_ball")
     //蛤蜊肉
-    farmersdelight.cutting(
-        'collectorsreap:clam',
-        "#forge:tools/knives",
-        [
-            'collectorsreap:clam_meat',
-            Item.of("collectorsreap:lunar_pearl").withChance(0.1)
-        ]
-    ).id("createdelight:cutting/clam_1")
-    e.custom({
-        type: "farmersdelight:cutting",
-        ingredients: [{ item: "collectorsreap:clam" }],
-        result: [{ item: "collectorsreap:clam_meat" }, { item: "collectorsreap:lunar_pearl", chance: 0.1 }],
-        tool: { type: "farmersdelight:tool_action", action: "blade_cut" }
-    }).id("createdelight:cutting/clam_2")
+    cutting(e, "collectorsreap:clam", [
+        'collectorsreap:clam_meat',
+        Item.of("collectorsreap:lunar_pearl").withChance(0.1)
+    ])
     //蜜饯
     create.filling(
         'collectorsreap:candied_lime',
@@ -110,7 +142,7 @@ ServerEvents.recipes(e => {
             "8x collectorsreap:" + gummy[0] + "_gummy",
             [
                 Fluid.of("createdelightcore:slime", 810),
-                Fluid.of("createdelight:base_syrup", 1000),
+                Fluid.of("createdelightcore:base_syrup", 1000),
                 gummy[1]
             ]
         ).id("createdelight:mixing/" + gummy[0] + "_gummy")
@@ -348,4 +380,117 @@ ServerEvents.recipes(e => {
         ], 'collectorsreap:potato_fritters',
         1.0, 200
     ).id("createdelight:food/potato_fritters")
+    kubejs.shapeless(
+        'collectorsreap:tropical_shaved_ice',
+        [
+            "minecraft:bowl",
+            "youkaishomecoming:ice_cube",
+            "#forge:milk",
+            "#forge:fruits/strawberry",
+            "collectorsreap:pink_dragon_fruit"
+        ]
+    ).id("createdelight:shapeless/tropical_shaved_ice")
+    {
+        let iner = "minecraft:bowl"
+        create.sequenced_assembly('collectorsreap:tropical_shaved_ice', iner, [
+            create.deploying(iner, [iner, "#forge:fruits/strawberry"]),
+            create.deploying(iner, [iner, "collectorsreap:pink_dragon_fruit"]),
+            create.deploying(iner, [iner, "youkaishomecoming:ice_cube"]),
+            create.filling(iner, [iner, FluidIngredients("forge:milk", 250)]),
+        ])
+        .loops(1)
+        .transitionalItem(iner)
+        .id("createdelight:sequenced_assembly/tropical_shaved_ice")
+    }
+    create.mixing(
+        Fluid.of("collectorsreap:lime_green_tea", 500),
+        [
+            Fluid.of("farmersrespite:green_tea", 500),
+            "collectorsreap:lime_slice"
+        ]
+    ).heated().id("createdelight:mixing/lime_green_tea")
+    brewing(e, "farmersrespite:green_tea", ["collectorsreap:lime_slice", "collectorsreap:lime_slice"], "collectorsreap:lime_green_tea", "collectorsreap:lime_green_tea")
+    create.mixing(
+        Fluid.of("collectorsreap:pomegranate_black_tea", 500),
+        [
+            Fluid.of("farmersrespite:black_tea", 500),
+            "#forge:fruits/pomegranate"
+        ]
+    ).heated().id("createdelight:mixing/pomegranate_black_tea")
+    brewing(e, "farmersrespite:black_tea", ["#forge:fruits/pomegranate", "#forge:fruits/pomegranate"], "collectorsreap:pomegranate_black_tea", "collectorsreap:pomegranate_black_tea")
+    create.mixing(
+        Fluid.of("collectorsreap:vernal_purge", 500),
+        [
+            Fluid.of("farmersrespite:black_tea", 500),
+            "collectorsreap:candied_lime"
+        ]
+    ).heated().id("createdelight:mixing/vernal_purge")
+    create.mixing(
+        Fluid.of("collectorsreap:limbo_brew", 500),
+        [
+            Fluid.of("createdelight:americano_fluid", 500),
+            "collectorsreap:pink_dragon_fruit"
+        ]
+    ).heated().id("createdelight:mixing/limbo_brew")
+    create.filling(
+        'collectorsreap:limbo_brew',
+        [
+            "minecraft:glass_bottle",
+            Fluid.of("collectorsreap:limbo_brew", 250)
+        ]
+    ).id("createdelight:filling/limbo_brew")
+    brewing(e, "createdelight:americano_fluid", ["collectorsreap:pink_dragon_fruit", "collectorsreap:pink_dragon_fruit"], "collectorsreap:limbo_brew", "collectorsreap:limbo_brew")
+    create.mixing(
+        Fluid.of("collectorsreap:sweet_recovery", 500),
+        [
+            Fluid.of("farmersrespite:yellow_tea", 500),
+            "collectorsreap:lucuma"
+        ]
+    ).heated().id("createdelight:mixing/sweet_recovery")
+    create.filling(
+        'collectorsreap:sweet_recovery',
+        [
+            "minecraft:glass_bottle",
+            Fluid.of("collectorsreap:sweet_recovery", 250)
+        ]
+    ).id("createdelight:filling/sweet_recovery")
+    {
+        let iner = 'collectorsreap:lucuma'
+        create.sequenced_assembly('createdelight:enchanted_golden_lucuma', iner,
+            [
+                create.filling(iner, [iner, Fluid.of("create_enchantment_industry:experience", 8)]),
+                create.deploying(iner, [iner, "minecraft:gold_ingot"]),
+                create.deploying(iner, [iner, "minecraft:gold_ingot"]),
+                create_new_age.energising(iner, iner, 100000)
+            ]
+        )
+            .loops(4)
+            .transitionalItem(iner)
+            .id("createdelight:crafting/enchanted_golden_lucuma")
+    }
+    farmersdelight.cooking(
+        [
+            "#forge:pasta",
+            "#forge:raw_clam",
+            'farmersdelight:tomato_sauce',
+            "bakeries:cheese_cream",
+            "#forge:mushrooms"
+        ],
+        "collectorsreap:stuffed_pasta_shells",
+        1.0, 200, "minecraft:bowl"
+    ).id("createdelight:cooking/stuffed_pasta_shells")
+    kubejs.shapeless(
+        "collectorsreap:lucuma_bread",
+        [
+            "#forge:bread",
+            "collectorsreap:lucuma"
+        ]
+    ).id("createdelight:shapeless/lucuma_bread")
+    make_cannoli(e, "minecraft:sugar", "collectorsreap:cannoli")
+    make_cannoli(e, "collectorsreap:lucuma", "collectorsreap:lucuma_cannoli")
+    make_cannoli(e, "createcafe:coffee_grounds", "collectorsreap:coffee_cannoli")
+    make_cannoli(e, "#supplementaries:chocolate_bars", "collectorsreap:chocolate_cannoli")
+    make_cannoli(e, "#neapolitan:mint_leaves", "collectorsreap:mint_cannoli")
+    make_cannoli(e, "#forge:fruits/strawberry", "collectorsreap:strawberry_cannoli")
+    make_cannoli(e, "neapolitan:dried_vanilla_pods", "collectorsreap:vanilla_cannoli")
 })

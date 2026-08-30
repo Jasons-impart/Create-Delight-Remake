@@ -1,0 +1,31 @@
+﻿{
+    "key":  "fake_silky_cloth",
+    "category":  "fabric",
+    "primary":  2.1,
+    "secondary":  1.1,
+    "tertiary":  8,
+    "durability":  100,
+    "integrityCost":  1,
+    "integrityGain":  9,
+    "magicCapacity":  300,
+    "toolLevel":  0,
+    "toolEfficiency":  0,
+    "tints":  {
+                  "glyph":  "f4cbb9",
+                  "texture":  "f4cbb9"
+              },
+    "textures":  [
+                     "crude",
+                     "default"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "effects":  {
+                    "more_mod_tetra:fake_enhanced":  1
+                },
+    "requiredTools":  {
+                          "cut":  "minecraft:wood"
+                      },
+    "replace":  true
+}

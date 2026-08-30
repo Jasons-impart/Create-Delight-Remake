@@ -50,7 +50,7 @@ ServerEvents.recipes(e => {
     e.remove({ output: "northstar:titanium_ingot", type: "smelting" })
     e.replaceInput({
         output: [
-            "northstar:jet_engine",
+            "northstar:rocket_thruster",
             "northstar:rocket_combustion_chamber",
             "northstar:rocket_controls",
             "northstar:rocket_station",
@@ -68,7 +68,8 @@ ServerEvents.recipes(e => {
     }, "create:iron_sheet", "createdelight:steel_sheet")
     e.replaceInput({
         output: [
-            "northstar:rocket_station"
+            "northstar:rocket_station",
+            "northstar:space_atlas"
         ]
     }, "northstar:titanium_ingot", "createmetallurgy:steel_ingot")
     e.replaceInput({ output: "northstar:atmospheric_concentrator" }, "northstar:circuit", "create_sa:heat_engine")
@@ -196,7 +197,7 @@ ServerEvents.recipes(e => {
 
     metal_production_line_3(e, [
         "northstar:martian_steel_block",
-        "northstar:martian_steel",
+        "northstar:martian_steel_ingot",
         "northstar:martian_steel_sheet",
         "createdelightcore:molten_martian_steel"
     ], "heated", 100)

@@ -1,0 +1,38 @@
+﻿{
+    "key":  "silver_ingot",
+    "category":  "metal",
+    "primary":  5.5,
+    "secondary":  2.7,
+    "tertiary":  3,
+    "durability":  460,
+    "integrityCost":  2,
+    "integrityGain":  5,
+    "magicCapacity":  108,
+    "toolLevel":  "minecraft:iron",
+    "toolEfficiency":  6,
+    "tints":  {
+                  "glyph":  "E8F2FF",
+                  "texture":  "E8F2FF"
+              },
+    "textures":  [
+                     "metal",
+                     "default"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "effects":  {
+                    "more_mod_tetra:defeat_demons":  15
+                },
+    "requiredTools":  {
+                          "hammer_dig":  "minecraft:stone"
+                      },
+    "contexts":  {
+                     "armor":  {
+                                   "effects":  {
+                                                   "more_mod_tetra:undead_protection":  8
+                                               }
+                               }
+                 },
+    "replace":  true
+}

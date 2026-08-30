@@ -1,5 +1,3 @@
-const $MBDMultiblockMachine = Java.loadClass("com.lowdragmc.mbd2.common.machine.MBDMultiblockMachine")
-const $MBDPartMachine = Java.loadClass("com.lowdragmc.mbd2.common.machine.MBDPartMachine")
 // /**
 //  * 
 //  * @param {Internal.Level} level 

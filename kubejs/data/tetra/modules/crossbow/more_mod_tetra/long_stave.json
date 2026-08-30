@@ -1,0 +1,55 @@
+{
+    "slots": [
+        "crossbow/stave"
+    ],
+    "type": "tetra:basic_major_module",
+    "improvements": [
+        "tetra:crossbow/stave/",
+        "tetra:crossbow/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": [
+                "tetra:wood/",
+                "tetra:rod/stick",
+                "tetra:metal/"
+            ],
+            "key": "long_stave/",
+            "attributes": {
+                "tetra:draw_speed": 1.4,
+                "tetra:draw_strength": 2
+            },
+            "aspects": {
+                "crossbow": 2,
+                "breakable": 2
+            },
+            "durability": 137,
+            "extract": {
+                "primaryAttributes": {
+                    "tetra:draw_speed": 0.27,
+                    "tetra:draw_strength": 1.5
+                },
+                "tertiaryAttributes": {
+                    "tetra:draw_speed": -0.07,
+                    "tetra:draw_strength": 1.05
+                },
+                "durability": 1,
+                "integrity": -1,
+                "magicCapacity": 1,
+                "glyph": {
+                    "textureX": 144,
+                    "textureY": 32
+                },
+                "availableTextures": [
+                    ""
+                ],
+                "models": [
+                    {
+                        "location": "more_mod_tetra:item/module/crossbow/more_mod_tetra/long_stave"
+                    }
+                ]
+            }
+        }
+    ]
+}

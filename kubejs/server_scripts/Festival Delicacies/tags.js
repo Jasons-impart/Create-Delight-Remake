@@ -25,6 +25,9 @@ ServerEvents.tags("minecraft:item", e => {
             'festival_delicacies:garlic'
         ]
     )
+    e.add("forge:vegetables/carrots", [
+        'minecraft:carrot'
+    ])
 })
 
 ServerEvents.tags("minecraft:block", e => {

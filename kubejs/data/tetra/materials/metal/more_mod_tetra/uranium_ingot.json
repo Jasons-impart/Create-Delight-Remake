@@ -1,0 +1,28 @@
+﻿{
+    "key":  "uranium_ingot",
+    "category":  "metal",
+    "primary":  6.2,
+    "secondary":  3.5,
+    "tertiary":  1.4,
+    "durability":  750,
+    "integrityCost":  2,
+    "integrityGain":  6,
+    "magicCapacity":  100,
+    "toolLevel":  "minecraft:iron",
+    "toolEfficiency":  7,
+    "tints":  {
+                  "glyph":  "CAFAC2",
+                  "texture":  "CAFAC2"
+              },
+    "textures":  [
+                     "metal",
+                     "default"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "requiredTools":  {
+                          "hammer_dig":  "minecraft:stone"
+                      },
+    "replace":  true
+}

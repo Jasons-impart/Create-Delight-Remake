@@ -55,8 +55,10 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:sweet_berry_cookie_dough',
     'createdelight:lime_cookie_dough',
     'createdelight:chorus_cookie_dough',
-    'createdelight:bat_cookie_dough',
+    'createdelight:star_cookie_dough',
+    'createdelight:herbal_cookie_dough',
     'createdelight:paw_cookie_dough',
+    'createdelight:bat_cookie_dough',
     // 未烤制玛芬
     'createdelight:unbaked_red_velvet_cupcake',
     'createdelight:unbaked_mixed_berry_muffin',
@@ -68,7 +70,6 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:raw_empanada',
     'createdelight:raw_calamari',
     'createdelight:raw_ghast_calamari',
-    'createdelight:raw_cheese_pizza',
     'createdelight:raw_potato_pancake',
     // 红丝绒蛋糕相关
     'createdelight:red_velvet_cake_mold_filled',
@@ -89,7 +90,7 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:empty_popsicle',
     'createdelight:enchanted_golden_lantern_fruit',
     'createdelight:enchanted_golden_carrot',
-    'createdelight:enchanted_golden_arbutus_berries',
+    'createdelight:enchanted_golden_lucuma',
   ])
 })
 StartupEvents.modifyCreativeTab("createdelightcore:misc", e => {
@@ -100,6 +101,7 @@ StartupEvents.modifyCreativeTab("createdelightcore:misc", e => {
       // 金属锭
       'createdelight:sky_copper_ingot',
       // 金属板
+      'createdelight:forged_steel_ingot',
       'createdelight:forged_steel_sheet',
       'createdelight:steel_sheet',
       'createdelight:andesite_alloy_nugget',
@@ -129,6 +131,7 @@ StartupEvents.modifyCreativeTab("createdelightcore:misc", e => {
       'createdelight:needle',
       'createdelight:dread_upgrade_smithing_template',
       "createdelight:guncotton",
+      "createdelight:graycotton_seed",
       // 构件
       'createdelight:magnetic_mechanism',
       //外壳
@@ -140,6 +143,10 @@ StartupEvents.modifyCreativeTab("createdelightcore:misc", e => {
       'createdelight:waste_paper',
       // 基因种子
       'createdelight:unfinished_leather',
+      'createdelight:life_matter',
+      'createdelight:quality_harvest_calibrator_tier_1',
+      'createdelight:quality_harvest_calibrator_tier_2',
+      'createdelight:quality_harvest_calibrator_tier_3',
       'createdelight:inferior_genetic_seed',
       'createdelight:normal_genetic_seed',
       'createdelight:refined_genetic_seed',
@@ -160,16 +167,18 @@ StartupEvents.modifyCreativeTab("createdelightcore:fluid", e => {
     'createdelight:fire_dragon_blood_bucket',
     'createdelight:ice_dragon_blood_bucket',
     'createdelight:lightning_dragon_blood_bucket',
+    'createdelight:end_dragon_blood_bucket',
     // 工业大生产液体
+    'createdelight:cryo_fuel_bucket',
     'createdelight:fuel_mixtures_bucket',
     'createdelight:sky_solution_bucket',
     'createdelight:spent_liquor_bucket',
-    'createdelight:unrefined_sugar_bucket',
     'createdelight:unfermented_paper_pulp_bucket',
     'createdelight:paper_pulp_bucket',
     'createdelight:light_crude_oil_bucket',
     'createdelight:ethylene_fluid_bucket',
     'createdelight:lubricating_oil_bucket',
+    'createdelight:ice_lubricating_oil_bucket',
     // 气体桶
     'createdelight:radon_bucket',
     // 食物相关流体
@@ -182,6 +191,8 @@ StartupEvents.modifyCreativeTab("createdelightcore:fluid", e => {
     'createdelight:nut_milk_bucket',
     'createdelight:vinegar_bucket',
     'createdelight:yeast_bucket',
+    'createdelight:radpop_fluid_bucket',
+    'createdelight:green_soylent_bucket',
     // 特殊流体
     'createdelight:malice_solution_bucket',
   ])
@@ -192,6 +203,36 @@ StartupEvents.registry("creative_mode_tab", e => {
     .icon(() => Item.of("createdelight:centrifuge_rotor"))
     .content(() => [
       'mbd2:mbd_gadgets',
-      'createdelight:order_deliverer_item'
+      'createdelight:andesite_structure_component',
+      'createdelight:copper_fluid_component',
+      'createdelight:brass_control_component',
+      'createdelight:kinetic_transmission_component',
+      'createdelight:sealed_joint_component',
+      'createdelight:logic_component',
+      'createdelight:order_deliverer_item',
+      'createdelight:order_reputation_certificate',
+      'createdelight:quality_absorber',
+      'createdelight:life_matter_extractor',
+      'createdelight:order',
+      'createdelight:unopened_order',
+      Item.of('createdelight:order_seal', { OrderSeal: 'human' }),
+      Item.of('createdelight:order_seal', { OrderSeal: 'elven' }),
+      Item.of('createdelight:order_seal', { OrderSeal: 'dwarven' }),
+      Item.of('createdelight:order_seal', { OrderSeal: 'monster' }),
+      Item.of('createdelight:order_seal', { OrderSeal: 'drink' }),
+      Item.of('createdelight:order_seal', { OrderSeal: 'dessert' }),
+      Item.of('createdelight:order_seal', { OrderSeal: 'staple' }),
+      Item.of('createdelight:order_seal', { OrderSeal: 'feast' }),
+      Item.of('createdelight:order_clause', { OrderClause: 'newcomer' }),
+      Item.of('createdelight:order_clause', { OrderClause: 'small_trial' }),
+      Item.of('createdelight:order_clause', { OrderClause: 'lenient_acceptance' }),
+      Item.of('createdelight:order_clause', { OrderClause: 'specialty_supply' }),
+      Item.of('createdelight:order_clause', { OrderClause: 'banquet_assortment' }),
+      Item.of('createdelight:order_clause', { OrderClause: 'small_premium' }),
+      Item.of('createdelight:order_clause', { OrderClause: 'bulk_purchase' }),
+      Item.of('createdelight:order_clause', { OrderClause: 'quality_inspection' }),
+      Item.of('createdelight:order_clause', { OrderClause: 'reputation_priority' }),
+      Item.of('createdelight:order_clause', { OrderClause: 'cash_settlement' }),
+      Item.of('createdelight:order_clause', { OrderClause: 'urgent_delivery' })
     ])
 })

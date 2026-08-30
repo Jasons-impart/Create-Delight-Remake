@@ -1,0 +1,39 @@
+{
+  "replace": true,
+  "key": "extrabotany_shadowium_ingot",
+  "category": "metal",
+  "primary": 6.4,
+  "secondary": 4.3,
+  "tertiary": 2.5,
+  "durability": 1850,
+  "integrityCost": 2,
+  "integrityGain": 6,
+  "magicCapacity": 800,
+  "toolLevel": "minecraft:iron",
+  "toolEfficiency": 8,
+  "effects": {
+    "more_mod_tetra:shadow_power": 15,
+    "more_mod_tetra:mana_regeneration": 7,
+    "more_mod_tetra:mana_repair": 2
+  },
+  "tints": {
+    "glyph": "636363",
+    "texture": "636363"
+  },
+  "textures": [
+    "metal",
+    "default"
+  ],
+  "material": {
+    "tag": "createdelight:disabled_mmt_fragile_materials"
+  },
+  "requiredTools": {
+    "hammer_dig": "minecraft:stone"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "extrabotany"
+    }
+  ]
+}

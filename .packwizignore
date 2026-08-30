@@ -11,7 +11,9 @@
 !/.packwizignore
 !/pack.mcmeta
 !/packwiz.json
+!/hmclversion.cfg
 !/icon.png
+!/options.txt
 !/LICENSE
 !/README.en.md
 !/README.zh-CN.md
@@ -19,6 +21,8 @@
 # ═══ Mod 元数据 ═══
 !/mods
 !/mods/*.pw.toml
+/mods/*.jar
+!/mods/Create-Delight-Core-1.20.1-dev.jar
 
 # ═══ 配置文件 ═══
 !/config
@@ -37,15 +41,18 @@
 !/shaderpacks/**
 
 # ═══ 模组附属数据 ═══
+!/hotai
+!/hotai/**
+!/ldlib
+!/ldlib/**
+!/minemenu
+!/minemenu/**
 !/schematics
 !/schematics/**
 !/tacz
 !/tacz/**
+!/PCL
+!/PCL/**
 
-# ═══ 开发/文档 ═══
-!.github
-!.github/**
-!.vscode
-!.vscode/**
-!/docs
-!/docs/**
+# ═══ 开发辅助文件 ═══
+AGENTS.md

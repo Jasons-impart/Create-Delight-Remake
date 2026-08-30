@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "paths": [
+    {
+      "scopes": [
+        "armor"
+      ],
+      "triggers": [
+        "wear_passive"
+      ],
+      "stacking": "armor_sum"
+    }
+  ]
+}

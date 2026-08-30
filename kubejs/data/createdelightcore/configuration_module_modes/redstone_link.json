@@ -1,0 +1,8 @@
+{
+  "module": "createdelightcore:control_configuration_module",
+  "target": "create:redstone_link",
+  "charge_cost": 4,
+  "required_tier": 0,
+  "sort_index": 30,
+  "placement": "createdelightcore:block_item"
+}

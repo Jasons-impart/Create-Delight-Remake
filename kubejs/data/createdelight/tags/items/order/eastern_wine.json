@@ -1,0 +1,57 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "youkaishomecoming:mio",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:mead",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:sparrow_sake",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:kiku",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:hakutsuru",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:kappa_village",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:suigei",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:daiginjo",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:dassai",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:tengu_tango",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:full_moons_eve",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:wind_priestesses",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:rice_wine",
+      "required": false
+    }
+  ]
+}

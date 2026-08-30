@@ -1,0 +1,34 @@
+﻿{
+    "key":  "bokuka_ingot",
+    "category":  "metal",
+    "primary":  8.8,
+    "secondary":  4.2,
+    "tertiary":  3.1,
+    "durability":  1024,
+    "integrityCost":  2,
+    "integrityGain":  6,
+    "magicCapacity":  100,
+    "toolLevel":  "minecraft:diamond",
+    "toolEfficiency":  7,
+    "tints":  {
+                  "glyph":  "717ab8",
+                  "texture":  "717ab8"
+              },
+    "textures":  [
+                     "heavy",
+                     "metal"
+                 ],
+    "material":  {
+                     "tag":  "createdelight:disabled_mmt_fragile_materials"
+                 },
+    "effects":  {
+                    "more_mod_tetra:pure":  [
+                                                6,
+                                                6
+                                            ]
+                },
+    "requiredTools":  {
+                          "hammer_dig":  "minecraft:stone"
+                      },
+    "replace":  true
+}

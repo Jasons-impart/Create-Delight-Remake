@@ -228,6 +228,75 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["7029D6C489D44144"]
+			description: [
+				"本包将许多 Create 及附属模组机器的合成统一为&e标准组件&r。组件配方一次产出 &e2&r 个；除工作台无序合成外，也可在 JEI 中查看对应的搅拌路线。"
+				"&7安山结构组件&r负责基础框架，&e传动组件&r负责旋转与运动机构；&6铜质流体组件&r与&b密封接头组件&r常用于流体设备和活动接口。进入黄铜时代后，&6黄铜控制组件&r负责精密控制，&d逻辑组件&r则用于打包与物流网络设备。"
+				"制作机器时，通常要把&e一种组件放入锻造模板槽&r、&e另一种组件放入基础槽&r，再把机器的特征零件放入附加槽。自动化时也可使用相同材料进行序列装配；具体组合与产量请以 JEI 为准。"
+				"三种附属引擎也能在切石机中拆回组件：热力引擎可选 &e8 个安山结构组件&r或 &e4 个传动组件&r；液压引擎可选 &e8 个铜质流体组件&r或 &e8 个密封接头组件&r；蒸汽引擎可选 &e8 个黄铜控制组件&r或 &e8 个传动组件&r。每次只能选择一种拆解结果。"
+			]
+			id: "3A2F80F9BA7B4FA0"
+			min_required_tasks: 1
+			shape: "gear"
+			size: 1.25d
+			subtitle: "一套零件，装配整条生产线"
+			tasks: [
+				{
+					id: "368630FFA5E64C4A"
+					item: "createdelight:andesite_structure_component"
+					type: "item"
+				}
+				{
+					id: "037F8837AF8C4E98"
+					item: "createdelight:kinetic_transmission_component"
+					type: "item"
+				}
+				{
+					id: "6A3F84FD4AB6D03A"
+					item: "createdelight:copper_fluid_component"
+					type: "item"
+				}
+				{
+					id: "38951C001CE8624C"
+					item: "createdelight:sealed_joint_component"
+					type: "item"
+				}
+				{
+					id: "50BF867A87D61457"
+					item: "createdelight:brass_control_component"
+					type: "item"
+				}
+				{
+					id: "5FB5AFFB0E94E78C"
+					item: "createdelight:logic_component"
+					type: "item"
+				}
+			]
+			title: "机动机器标准组件"
+			x: 10.0d
+			y: -3.5d
+		}
+		{
+			dependencies: ["3A2F80F9BA7B4FA0"]
+			description: [
+				"&e构形模块&r把同一工程领域的常用零件收纳为一种施工工具。手持模块时，按住 Create 的工具箱菜单键（默认 &b左 Alt&r）打开径向轮盘，指向目标后松开按键切换；物品图标、构形量条和提示会显示即将放置的真实方块与费用。"
+				"传动模块覆盖转轴、齿轮和带特征材料的传动箱；结构、流体、控制、物流模块则分别用于机壳底盘、管道泵阀、精密控制和库存网络施工。对支持 Create 放置辅助的目标，模块也会显示原生幽灵预览并沿既有结构预测延伸。"
+				"所有模块最多储存 &b64 点&r。构形量不足时，只要背包内有该模块充填配方所需的标准组件，成功放置后就会自动充填并结算；高价值构形会消耗更多构形量，不再额外扣除机壳、电子管等物品。放下的仍是真实方块，破坏后不返还构形量。"
+				"装备了已启用&b补货升级&r或&e高级补货升级&r的精妙背包时，可在升级卡的过滤栏加入构形模块；背包会调用其中的标准组件，为对应模块补充构形量。"
+			]
+			id: "5E27C3A7395AF7AC"
+			shape: "gear"
+			subtitle: "标准组件驱动的现场施工工具"
+			tasks: [{
+				id: "155DE6EF1F070AA4"
+				item: "createdelightcore:kinetic_configuration_module"
+				type: "item"
+			}]
+			title: "构形模块：传动入口"
+			x: 10.0d
+			y: -5.5d
+		}
+		{
 			dependencies: ["28CB30AB88780BC7"]
 			hide_until_deps_visible: false
 			id: "4D7BB97AA55ACE20"
@@ -657,14 +726,34 @@
 			dependencies: ["510B2EE25982FD73"]
 			id: "3956BF6CE5009F66"
 			rewards: [{
-				id: "77FC11C2EB85F290"
-				item: "create:empty_schematic"
-				type: "item"
+				exclude_from_claim_all: true
+				id: "5E729FC92F8ED737"
+				table_id: 8748750126615270084L
+				type: "choice"
 			}]
 			subtitle: "将空白蓝图放入蓝图桌以打印出可以放置结构虚影的蓝图"
 			tasks: [{
-				id: "46BB39AD997856F2"
-				item: "create:empty_schematic"
+				id: "225D165884A8691D"
+				item: {
+					Count: 1
+					id: "itemfilters:or"
+					tag: {
+						RepairCost: 0
+						display: {
+							Name: "{\"text\":\"空白蓝图\"}"
+						}
+						items: [
+							{
+								Count: 1b
+								id: "create:empty_schematic"
+							}
+							{
+								Count: 1b
+								id: "fluidlogistics:empty_fluid_schematic"
+							}
+						]
+					}
+				}
 				type: "item"
 			}]
 			x: -2.5d
@@ -719,8 +808,27 @@
 			]
 			subtitle: "如标题所示，这就是机械动力的神，浪漫而又实用"
 			tasks: [{
-				id: "562475D62C420631"
-				item: "create:schematicannon"
+				id: "66449000664166AB"
+				item: {
+					Count: 1
+					id: "itemfilters:or"
+					tag: {
+						RepairCost: 0
+						display: {
+							Name: "{\"text\":\"蓝图加农炮\"}"
+						}
+						items: [
+							{
+								Count: 1b
+								id: "create:schematicannon"
+							}
+							{
+								Count: 1b
+								id: "fluidlogistics:copper_schematicannon"
+							}
+						]
+					}
+				}
 				type: "item"
 			}]
 			title: "论机械动力为什么能称之为神"
@@ -1405,8 +1513,8 @@
 				item: "create_enchantment_industry:printer"
 				type: "item"
 			}]
-			x: 13.0d
-			y: -6.5d
+			x: 12.5d
+			y: -6.0d
 		}
 		{
 			dependencies: ["3626C98B27069A0C"]
@@ -1423,8 +1531,8 @@
 				item: "create:hose_pulley"
 				type: "item"
 			}]
-			x: 14.0d
-			y: -6.5d
+			x: 14.5d
+			y: -6.0d
 		}
 		{
 			dependencies: ["223ACB0E32376155"]
@@ -1444,8 +1552,8 @@
 				title: "无限流体"
 				type: "checkmark"
 			}]
-			x: 14.0d
-			y: -8.0d
+			x: 14.5d
+			y: -7.5d
 		}
 		{
 			dependencies: ["7029D6C489D44144"]
@@ -1741,7 +1849,7 @@
 			}]
 			title: "四倍速鼓风机"
 			x: 16.0d
-			y: 3.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["762CD49FCDC889E2"]
@@ -1788,7 +1896,31 @@
 			}]
 			title: "最丐机械动力刷铁机"
 			x: 16.0d
-			y: 4.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["0DC2E7BC4657D633"]
+			dependency_requirement: "all_started"
+			description: [
+				"可以从身后的容器中&c输出液体&r到炼药锅、工作盆中，可以实现注液配方，但无法&c输入液体&r到容器中"
+				"注液效率远超注液器。"
+			]
+			id: "5CBAD075435316D8"
+			subtitle: "流体哗啦啦"
+			tasks: [
+				{
+					id: "765A305554397F18"
+					item: "fluidlogistics:faucet"
+					type: "item"
+				}
+				{
+					id: "2DA4BEA4630CFF72"
+					item: "fluidlogistics:smart_faucet"
+					type: "item"
+				}
+			]
+			x: 12.0d
+			y: -2.5d
 		}
 		{
 			dependencies: [
@@ -1903,6 +2035,63 @@
 			}]
 			x: 15.5d
 			y: 6.0d
+		}
+		{
+			dependencies: ["68D83C4DA9C39673"]
+			description: [
+				"流体舱口可以放置在任意的&e流体容器&r（如流体储罐）上"
+				""
+				"手持类似于&b玻璃瓶或者桶&r的容器与流体舱口交互，可以便捷地向相连的流体容器输入或输出流体"
+				""
+				"流体舱口可以被指定为&e动力注液枪&r的交互点，以实现动力注液枪与流体储罐之间的流体交互"
+			]
+			id: "152E30E536D59B88"
+			subtitle: "一个交互接口！"
+			tasks: [{
+				id: "2E2029440B60EF3A"
+				item: "fluidlogistics:fluid_hatch"
+				type: "item"
+			}]
+			x: 16.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["0DC2E7BC4657D633"]
+			id: "4F5CD040A9980A94"
+			subtitle: "肚量更大的工作盆"
+			tasks: [{
+				id: "6E099170716C4487"
+				item: "fluidlogistics:copper_basin"
+				type: "item"
+			}]
+			x: 15.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["3626C98B27069A0C"]
+			description: ["无限水的一种来源"]
+			id: "179C1F7DCE91C0B4"
+			subtitle: "这玩意我是不是在厨房见过类似的？"
+			tasks: [{
+				id: "664505470BEFB0CE"
+				item: "fluidlogistics:water_containing_copper_casing"
+				type: "item"
+			}]
+			x: 13.5d
+			y: -6.5d
+		}
+		{
+			dependencies: ["5C40F5E0F477394B"]
+			description: ["注：本包中真空收割机的&e工作半径&r为&b4&r，对应&e工作范围&r为以收割机为中心的&b9×9&r方形"]
+			id: "41E23FA7C33D867C"
+			subtitle: "放空大脑的自动收割"
+			tasks: [{
+				id: "7312940A8AE58730"
+				item: "create_integrated_farming:vacuum_harvester"
+				type: "item"
+			}]
+			x: 15.5d
+			y: 5.0d
 		}
 	]
 	title: "&2初识机械"

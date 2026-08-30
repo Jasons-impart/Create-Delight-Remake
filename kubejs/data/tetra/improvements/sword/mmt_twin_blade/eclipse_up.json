@@ -1,0 +1,68 @@
+[
+  {
+    "key": "eclipse_up",
+    "level": 1,
+    "integrity": 0,
+    "aspects": { "honed": 1 },
+    "effects": { "more_mod_tetra:eclipse": 3 }
+  },
+  {
+    "key": "eclipse_up",
+    "level": 2,
+    "integrity": 0,
+    "aspects": { "honed": 2 },
+    "effects": { "more_mod_tetra:eclipse": 6 }
+  },
+  {
+    "key": "eclipse_up",
+    "level": 3,
+    "integrity": 0,
+    "aspects": { "honed": 3 },
+    "effects": { "more_mod_tetra:eclipse": 9 }
+  },
+  {
+    "key": "eclipse_up",
+    "level": 4,
+    "integrity": 0,
+    "aspects": { "honed": 4 },
+    "effects": { "more_mod_tetra:eclipse": 12 }
+  },
+  {
+    "key": "eclipse_up",
+    "level": 5,
+    "integrity": 0,
+    "aspects": { "honed": 5 },
+    "effects": { "more_mod_tetra:eclipse": 15 }
+  },
+  {
+    "key": "eclipse_up",
+    "level": 6,
+    "integrity": 0,
+    "aspects": { "honed": 6 },
+    "effects": { "more_mod_tetra:eclipse": 18 }
+  },
+  {
+    "key": "eclipse_up",
+    "level": 7,
+    "integrity": 0,
+    "aspects": { "honed": 7 },
+    "effects": { "more_mod_tetra:eclipse": 21 }
+  },
+  {
+    "key": "eclipse_up",
+    "level": 8,
+    "integrity": 0,
+    "aspects": { "honed": 8 },
+    "effects": { "more_mod_tetra:eclipse": 24 }
+  },
+  {
+    "key": "eclipse_up",
+    "level": 9,
+    "integrity": -1,
+    "aspects": { "honed": 9 },
+    "effects": {
+      "more_mod_tetra:eclipse": -3,
+      "more_mod_tetra:eclipse_star_burst_stream": 3
+    }
+  }
+]

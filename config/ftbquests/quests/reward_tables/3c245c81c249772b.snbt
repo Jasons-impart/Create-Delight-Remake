@@ -127,7 +127,7 @@
 					gateway: "createdelight:sweettide_brokenpoint"
 				}
 			}
-			weight: 0.1f
+			weight: 0.5f
 		}
 		{
 			item: {
@@ -137,7 +137,7 @@
 					gateway: "createdelight:infinite_and_dark_trials"
 				}
 			}
-			weight: 0.1f
+			weight: 0.5f
 		}
 		{
 			item: {
@@ -158,6 +158,86 @@
 				}
 			}
 			weight: 0.1f
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:dream_no_more"
+				}
+			}
+			weight: 0.1f
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:a_place_of_melting"
+				}
+			}
+			weight: 0.5f
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:magnetic_storm_field"
+				}
+			}
+			weight: 0.5f
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:shattered_past"
+				}
+			}
+			weight: 0.2f
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:oath_of_fierce_blade_ouel"
+				}
+			}
+			weight: 0.2f
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:wind_mist_and_thunder_strike"
+				}
+			}
+			weight: 0.2f
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:the_legacy_of_the_abyss"
+				}
+			}
+			weight: 0.5f
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:the_ancient_end"
+				}
+			}
+			weight: 0.5f
 		}
 	]
 	title: "裂隙提取"

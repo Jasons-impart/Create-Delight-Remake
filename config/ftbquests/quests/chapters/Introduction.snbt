@@ -125,22 +125,29 @@
 		}
 		{
 			dependencies: ["59350A53C2738BD9"]
-			description: ["&4警告！！！&r柴油动力一切燃料都极度危险，请不要让燃料在任何情况下接触到&4任何爆炸&r或者&4任何化学喷雾器喷出的火焰&r！！！"]
-			icon: "createdieselgenerators:diesel_engine"
+			description: [
+				"本包添加了 &n机械动力：懒惰刻&r 以优化机械动力机器的计算开销。"
+				"但由于机械动力和其附属本身代码对性能优化不友好，部分机械动力机器动画可能会&e有延迟&r，或&e执行变慢&r。"
+				"如果介意它带来的问题，可以考虑&e&n禁用该mod&r&r。"
+				""
+				"懒惰刻模组还提供了&b懒惰刻时钟&r来调节机器的状态，可在保持模组启用状态下解决部分机器的问题。"
+			]
+			icon: "createlazytick:clock"
 			id: "20B3ECF56011C11A"
 			rewards: [{
-				id: "70152393AC9F25F1"
-				item: "createdelightcore:copper_coin"
+				id: "79B8C78DC66923FC"
+				item: "createlazytick:clock"
 				type: "item"
 			}]
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "注意柴油动力里的燃料"
+			subtitle: "保产线还是保cpu？"
 			tasks: [{
 				id: "495948214572F723"
-				title: "柴油动力！"
+				title: "懒惰刻"
 				type: "checkmark"
 			}]
+			title: "懒惰刻优化"
 			x: 2.0d
 			y: -8.0d
 		}
@@ -541,7 +548,7 @@
 			]
 			shape: "pentagon"
 			size: 2.0d
-			subtitle: "{ \"text\": \"锻造之艺，就在其中\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"4745D3F50C44D020\" } }"
+			subtitle: "{ \"text\": \"锻造之艺，就在其中\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"214BED3560F53D72\" } }"
 			tasks: [{
 				id: "77549F0D9F837A05"
 				title: "锻造大师"
@@ -605,11 +612,11 @@
 				"&4(相关攻略可以任务书中查询)"
 				""
 			]
-			icon: "art_of_forging:sigil_of_eden"
+			icon: "alexscaves:immortal_embryo"
 			id: "1B04B860E2651AEF"
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "Art of Forging"
+			subtitle: "Forge Heritage"
 			tasks: [{
 				id: "3340C7309B991317"
 				title: "锻造的艺术"
@@ -715,7 +722,7 @@
 				"另外需要注意的一点：&e目前同一ftb队伍下的玩家除了死亡，难度是同升降的。&r"
 				"&etips:如果要查看难度可以使用/improvedmob指令"
 			]
-			icon: "art_of_forging:shards_of_malice"
+			icon: "alexscaves:pure_darkness"
 			id: "28A38E3B4EE9EFEC"
 			shape: "pentagon"
 			size: 2.0d
@@ -823,7 +830,7 @@
 			dependencies: ["55C42BCE0E399B3D"]
 			description: [
 				"对于只想要一个大箱子的人来说，使用&4存储总线&r连接容器（箱子/保险箱/抽屉），然后再接上&4发电机&r并连上&4合成终端&r，就可以使用合成终端统一访问存储总线连接的所有容器。"
-				"{image:createdelight:textures/gui/simple_network_example.png width:98 height:90 align:center}"
+				"{image:createdelightcore:textures/gui/simple_network_example.png width:98 height:90 align:center}"
 				"{@pagebreak}"
 			]
 			icon: "minecraft:chest"
@@ -902,8 +909,10 @@
 			dependencies: ["55C42BCE0E399B3D"]
 			description: [
 				"本包加入了生活调味料以鼓励你品尝更多样的食物："
-				"每吃下一种新的食物都会让你的血量上限向最高数值迈进一步（详见任务送的萝卜图案书）"
-				"保持食物的多样性可以让你获得永久的增益buff（详见任务送的土豆图案书）"
+				"每吃下一种新的食物都会让你的血量上限向最高数值靠近（详见任务送的&b萝卜图案书&r）"
+				"保持食物的多样性可以让你获得永久的增益buff（详见任务送的&b土豆图案书&r）"
+				""
+				"注：在JEI搜索&e\"#没尝过\"&r可以列出所有你&e还没吃&r过的食物，但刚吃完的食物&n不会立刻消失&r"
 			]
 			icon: "farmersdelight:roast_chicken_block"
 			id: "3DE7B60F0534BA9D"
@@ -942,36 +951,59 @@
 				"7429D7F92D04A8BB"
 			]
 			description: [
-				"在此介绍本包编写的&e订单系统&r。"
-				"首先，你要制作一个&e订单交付器&r，并将其放置在&e白色桌布&r上。然后，沿着本方块的&e东南西北四个方向放置桌布（最多可延申8格）&r，如下图所示。"
+				"&e订单交付器&r会在每天上午检查桌布上的订单。"
+				"把交付器放在&e白色桌布&r上，再从东、南、西、北四个方向继续铺桌布；每个方向最多 8 格。"
 				""
-				"{image:createdelight:textures/gui/order_deliverer_usage_1.png width:256 height:133 align:center}"
+				"{image:createdelightcore:textures/gui/order_deliverer_usage_1.png width:256 height:133 align:center}"
 				"{@pagebreak}"
-				"如何执行一个订单："
-				"首先将一个未开封的订单打开（未开封的订单目前从拍卖行获取）。放置一个&e开封后的订单&r在一个桌布上。此时其&e所在以及后方任意格桌布&r都可以&e放置任意数量&r的包裹。其会将其本体以及后方的所有桌布上的&e包裹的内容作为订单交付的物品&r，直到遇上&e另一个含有订单&r的桌布。"
-				"如果没有看懂的话，可以看下面的图："
+				"把&e开封后的订单&r放在一块桌布上，再把货物包裹放在这块桌布及其后方。遇到下一张订单时，后面的包裹会归给下一张订单。"
 				""
-				"{image:createdelight:textures/gui/order_deliverer_usage_2.png width:256 height:133 align:center}"
+				"{image:createdelightcore:textures/gui/order_deliverer_usage_2.png width:256 height:133 align:center}"
 				""
-				"上图列举了几种&e划分订单所用包裹&r的行为。"
 				"{@pagebreak}"
-				"在每天的某个时间点，订单会被交付，并在&e订单所在桌布处生成一个包括奖励的包裹&r，同时&4清除所有用于交付订单的包裹&r。"
+				"货物满足要求后，交付器会收走订单和货物，并在订单所在的桌布上留下奖励包裹。货物不足时，订单和包裹会保留。"
 			]
 			hide_until_deps_complete: true
 			id: "2397448B73CC8363"
-			rewards: [{
-				id: "71DEA704D4AD9CC2"
-				item: "createdelight:unopened_order"
-				type: "item"
-			}]
+			rewards: [
+				{
+					count: 3
+					id: "71DEA704D4AD9CC2"
+					item: "createdelight:unopened_order"
+					type: "item"
+				}
+				{
+					id: "4F8D1D2C58C63E91"
+					item: {
+						Count: 1
+						id: "createdelight:order_seal"
+						tag: {
+							OrderSeal: "drink"
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "6A9F0183E1E7C724"
+					item: {
+						Count: 1
+						id: "createdelight:order_seal"
+						tag: {
+							OrderSeal: "dessert"
+						}
+					}
+					type: "item"
+				}
+			]
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "JEI启动！搜索甜点！制作！交付！赚钱！"
+			subtitle: "摆好桌布，放入订单和货物包裹"
 			tasks: [{
 				id: "5E11D8D40492013B"
 				item: "createdelight:order_deliverer_item"
 				type: "item"
 			}]
+			title: "订单交付器"
 			x: -6.0d
 			y: 6.0d
 		}

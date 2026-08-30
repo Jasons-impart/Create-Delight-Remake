@@ -1,0 +1,53 @@
+{
+    "replace": true,
+    "localizationKey": "double/adze/grind_efficiency_1",
+    "materialSlotCount": 0,
+    "slots": ["double/head_left", "double/head_right"],
+    "keySuffixes": ["_left", "_right"],
+    "hone": true,
+    "rarity": "hone",
+    "displayType": "major",
+    "requirement": {
+        "type": "tetra:and",
+        "requirements": [
+            {
+                "type": "tetra:or",
+                "requirements": [
+                    {
+                        "type": "tetra:module",
+                        "module": "double/adze_right"
+                    },
+                    {
+                        "type": "tetra:module",
+                        "module": "double/adze_left"
+                    }
+                ]
+            },
+            {
+                "type": "tetra:not",
+                "requirement": {
+                    "type": "tetra:improvement",
+                    "improvement": "adze/dig_efficiency"
+                }
+            },
+            {
+                "type": "tetra:improvement",
+                "improvement": "adze/sharpen",
+                "level": {
+                    "min": 1
+                }
+            }
+        ]
+    },
+    "glyph": {
+        "textureX": 176
+    },
+    "outcomes": [
+        {
+            "experienceCost": 0,
+            "improvements": {
+                "adze/dig_efficiency": 1
+            }
+        }
+    ]
+}

@@ -5,12 +5,9 @@
 .DESCRIPTION
     Handles the full release pipeline after PR merge:
     - Tags the target branch and pushes the tag
-    - Waits for GitHub Actions CI to complete
-    - Downloads build artifacts (Client, Server, and optionally Patch)
-    - Re-compresses artifacts into zip files
-    - Copies to bracket-free paths (PowerShell [] glob workaround)
+    - Waits for GitHub Actions CI to build and upload release assets
     - Generates release notes from git log
-    - Creates GitHub Release with artifacts
+    - Updates and publishes the GitHub Release
     - Verifies all assets uploaded
 
 .PARAMETER Version
@@ -38,7 +35,7 @@
     .\release-publish.ps1 -Version v0.4.7.15 -TargetBranch release-v047x
 
 .EXAMPLE
-    .\release-publish.ps1 -Version v0.4.7.15 -TargetBranch release-v047x -PreviousVersion v0.4.7.14 -ReleaseType 测试 -Proxy http://127.0.0.1:7890
+    .\release-publish.ps1 -Version v0.4.7.15-test -TargetBranch release-v047x -PreviousVersion v0.4.7.14 -ReleaseType 测试 -Proxy http://127.0.0.1:7890
 #>
 [CmdletBinding()]
 param(
@@ -52,7 +49,7 @@ param(
     [switch]$WhatIf
 )
 
-$ErrorActionPreference = "Stop"
+$ErrorActionPreference = "Continue"
 
 # --- State for cleanup ---
 $script:OriginalBranch = $null
@@ -82,13 +79,15 @@ function Test-Prerequisites {
     $errors = @()
     
     # Check Version format
-    if ($Version -notmatch '^v\d+\.\d+\.\d+\.\d+$') {
-        $errors += "Version format invalid: '$Version'. Expected format: v0.4.8.10"
+    $expectedVersionPattern = if ($ReleaseType -eq "测试") { '^v\d+\.\d+\.\d+\.\d+-test$' } else { '^v\d+\.\d+\.\d+\.\d+$' }
+    $expectedVersionExample = if ($ReleaseType -eq "测试") { 'v0.4.8.10-test' } else { 'v0.4.8.10' }
+    if ($Version -notmatch $expectedVersionPattern) {
+        $errors += "Version format invalid for $ReleaseType release: '$Version'. Expected format: $expectedVersionExample"
     }
     
-    # Check pack.toml exists
-    if (-not (Test-Path "pack.toml")) {
-        $errors += "pack.toml not found in current directory"
+    # Check modpack.toml exists
+    if (-not (Test-Path "modpack.toml")) {
+        $errors += "modpack.toml not found in current directory"
     }
     
     # Check gh CLI available
@@ -108,19 +107,46 @@ function Test-Prerequisites {
             $errors += "gh CLI not authenticated. Run 'gh auth login' first."
         }
     }
+
+    # gh auth status must run before proxy env vars are set on Windows, but the
+    # remote checks below may still need the configured proxy.
+    if ($Proxy) {
+        $env:HTTPS_PROXY = $Proxy
+        $env:HTTP_PROXY = $Proxy
+        $env:ALL_PROXY = $Proxy
+    }
     
-    # Check TargetBranch exists on remote
-    $remoteBranch = git ls-remote --heads origin $TargetBranch 2>$null
+    # Check TargetBranch exists on remote. If GitHub has a transient TLS failure,
+    # fall back to the fetched remote-tracking ref so reruns can continue.
+    $remoteBranch = $null
+    try {
+        $remoteBranch = git ls-remote --heads origin $TargetBranch 2>$null
+    } catch {
+        $remoteBranch = $null
+    }
+    if (-not $remoteBranch) {
+        git show-ref --verify --quiet "refs/remotes/origin/$TargetBranch"
+        if ($LASTEXITCODE -eq 0) {
+            $remoteBranch = "refs/remotes/origin/$TargetBranch"
+            Write-Host "⚠️ Remote branch check used local origin/$TargetBranch fallback"
+        }
+    }
     if (-not $remoteBranch) {
         $errors += "Target branch '$TargetBranch' not found on remote"
     }
     
-    # Check no existing release for this version
+    # Check no existing published release for this version. Existing drafts are
+    # allowed so an interrupted upload can be resumed idempotently.
     if ($ghAvailable) {
         try {
-            $existingRelease = gh release view $Version --repo Jasons-impart/Create-Delight-Remake --json tagName 2>$null
+            $existingRelease = gh release view $Version --repo Jasons-impart/Create-Delight-Remake --json tagName,isDraft 2>$null
             if ($LASTEXITCODE -eq 0 -and $existingRelease) {
-                $errors += "Release '$Version' already exists on GitHub. Cannot recreate a release."
+                $existingReleaseObj = $existingRelease | ConvertFrom-Json -ErrorAction SilentlyContinue
+                if ($existingReleaseObj -and $existingReleaseObj.isDraft) {
+                    Write-Host "⚠️ Draft release '$Version' already exists; publish will resume uploads"
+                } else {
+                    $errors += "Release '$Version' already exists on GitHub. Cannot recreate a release."
+                }
             }
         } catch {
             # gh release view returns error for non-existent releases, which is expected
@@ -173,8 +199,9 @@ if (-not $PreviousVersion) {
 }
 
 # Validate PreviousVersion format (now that it may be auto-detected)
-if ($PreviousVersion -notmatch '^v\d+\.\d+\.\d+\.\d+$') {
-    Fail "PreviousVersion format invalid: '$PreviousVersion'. Expected format: v0.4.7.15"
+# Allow "-test" suffix so a test release can diff against the previous test tag (used for notes/compare link only; patches are stable-only)
+if ($PreviousVersion -notmatch '^v\d+\.\d+\.\d+\.\d+(-test)?$') {
+    Fail "PreviousVersion format invalid: '$PreviousVersion'. Expected format: v0.4.7.15 or v0.4.7.15-test"
 }
 
 # Verify PreviousVersion tag exists
@@ -193,14 +220,12 @@ if ($WhatIf) {
     Write-Host ""
     Write-Host "   Would:"
     Write-Host "   A. Create tag $Version on $TargetBranch and push"
-    Write-Host "   B. Wait for CI (timeout: $CITimeoutMinutes min)"
-    Write-Host "   C. Download artifacts (Client, Server$(if($ReleaseType -eq '正式'){', ClientPatch, ServerPatch'}))"
-    Write-Host "   D. Compress and prepare for upload"
-    Write-Host "   E. Generate release notes from $PreviousVersion..$Version"
-    Write-Host "   F. Create GitHub release as $(if($ReleaseType -eq '正式'){'stable'}else{'prerelease'})"
-    Write-Host "   G. Verify assets"
+    Write-Host "   B. Wait for CI to prepare and upload release assets (timeout: $CITimeoutMinutes min)"
+    Write-Host "   C. Generate release notes from $PreviousVersion..$Version"
+    Write-Host "   D. Update and publish the draft release"
+    Write-Host "   E. Verify assets"
     if ($ReleaseType -eq "正式") {
-        Write-Host "   H. Create announcement PR to main"
+        Write-Host "   F. Create announcement PR to main"
     }
     exit 0
 }
@@ -244,9 +269,18 @@ if ($dirty) {
 git checkout $TargetBranch
 if ($LASTEXITCODE -ne 0) { Fail "Cannot checkout branch $TargetBranch" }
 
-# Pull latest
-git pull
-if ($LASTEXITCODE -ne 0) { Fail "git pull failed on $TargetBranch" }
+# Pull latest explicitly from the target branch to avoid user-level pull.rebase
+# settings changing release behavior.
+git pull --ff-only origin $TargetBranch
+if ($LASTEXITCODE -ne 0) {
+    $headShaAfterPullFailure = git rev-parse HEAD
+    $originShaAfterPullFailure = git rev-parse "origin/$TargetBranch"
+    if ($headShaAfterPullFailure -eq $originShaAfterPullFailure) {
+        Write-Host "⚠️ git pull failed, but HEAD already matches origin/$TargetBranch; continuing"
+    } else {
+        Fail "git pull failed on $TargetBranch"
+    }
+}
 
 # Pop stash after pull to avoid conflicts with incoming changes
 if ($script:Stashed) {
@@ -263,7 +297,12 @@ if ($LASTEXITCODE -ne 0) { Fail "Cannot determine HEAD commit SHA" }
 Write-Host "   Commit SHA: $commitSha"
 
 # Create tag (idempotent: skip if already exists on correct commit)
+# Missing tags are expected on the first run; do not let ErrorActionPreference=Stop
+# turn git's non-zero exit into a terminating NativeCommandError.
+$oldErrorActionPreference = $ErrorActionPreference
+$ErrorActionPreference = "Continue"
 $existingTagCommit = git rev-list -n 1 $Version 2>$null
+$ErrorActionPreference = $oldErrorActionPreference
 if ($LASTEXITCODE -eq 0 -and $existingTagCommit) {
     if ($existingTagCommit -eq $commitSha) {
         Write-Host "   Tag $Version already exists on current commit, skipping tag creation"
@@ -291,15 +330,15 @@ $stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
 $RunId = $null
 
 # Wait for the workflow run triggered by our tag to appear.
-# Match by workflow name AND head_sha to avoid picking up a previous run.
+# Match by workflow name, tag name, and head SHA to avoid its branch-push run.
 # Use single quotes for --jq to avoid PowerShell string interpolation issues.
 $workflowName = "发布版本"
 while ($stopwatch.Elapsed -lt $timeout) {
     # First get all runs, then filter in PowerShell to avoid jq quoting hell
-    $allRuns = gh run list --repo $repo --limit 10 --json databaseId,status,conclusion,name,headSha 2>$null
+    $allRuns = gh run list --repo $repo --limit 10 --json databaseId,status,conclusion,name,headBranch,headSha 2>$null
     if ($LASTEXITCODE -eq 0 -and $allRuns) {
         $runs = $allRuns | ConvertFrom-Json -ErrorAction SilentlyContinue
-        $matchingRun = $runs | Where-Object { $_.name -eq $workflowName -and $_.headSha -eq $commitSha } | Select-Object -First 1
+        $matchingRun = $runs | Where-Object { $_.name -eq $workflowName -and $_.headBranch -eq $Version -and $_.headSha -eq $commitSha } | Select-Object -First 1
         if ($matchingRun -and $matchingRun.databaseId) {
             $RunId = $matchingRun.databaseId
             break
@@ -320,7 +359,9 @@ $stopwatch.Restart()
 while ($stopwatch.Elapsed -lt $timeout) {
     $statusJson = gh run view $RunId --repo $repo --json status,conclusion 2>$null
     if ($LASTEXITCODE -ne 0) {
-        Fail "Cannot query CI run status"
+        Write-Host "   Cannot query CI run status, retrying..."
+        Start-Sleep -Seconds $CIPollIntervalSeconds
+        continue
     }
     $runStatus = $statusJson | ConvertFrom-Json -ErrorAction SilentlyContinue
     $status = $runStatus.status
@@ -345,9 +386,10 @@ if ($stopwatch.Elapsed -ge $timeout) {
 }
 
 # ============================================================
-# Phase C: Download Artifacts
+# Phase C: CI asset transfer
 # ============================================================
-Write-Host "📥 Phase C: Downloading artifacts"
+Write-Host "📦 Phase C: Release assets are prepared and uploaded by GitHub Actions"
+<# Artifact download, compression, and upload moved to the release-assets CI job.
 
 $tmpDir = Join-Path $env:TEMP "opencode\$Version"
 New-Item -ItemType Directory -Path "$tmpDir\client" -Force | Out-Null
@@ -362,8 +404,16 @@ $serverName = "Server-Create-Delight-Remake-$Version"
 $serverPatchName = "[ServerPatch]Create-Delight-Remake-$PreviousVersion-to-$Version"
 
 # List available artifacts and filter in PowerShell (avoids jq quoting issues)
-$artifactsResponse = gh api "repos/$repo/actions/runs/$RunId/artifacts" 2>$null
-if ($LASTEXITCODE -ne 0) {
+$artifactsResponse = $null
+for ($artifactListAttempt = 1; $artifactListAttempt -le 5; $artifactListAttempt++) {
+    $artifactsResponse = gh api "repos/$repo/actions/runs/$RunId/artifacts" 2>$null
+    if ($LASTEXITCODE -eq 0 -and $artifactsResponse) {
+        break
+    }
+    Write-Host "   Cannot list artifacts, retrying ($artifactListAttempt/5)..."
+    Start-Sleep -Seconds 10
+}
+if (-not $artifactsResponse) {
     Fail "Cannot list artifacts"
 }
 $artifactsObj = $artifactsResponse | ConvertFrom-Json -ErrorAction SilentlyContinue
@@ -373,6 +423,114 @@ if ($artifactsObj -and $artifactsObj.artifacts) {
         $_.name -notmatch 'ClickToUse' -and $_.name -notmatch 'manifest' 
     })
 }
+
+function New-CurlConfigLine {
+    param(
+        [Parameter(Mandatory=$true)][string]$Name,
+        [Parameter(Mandatory=$true)][string]$Value
+    )
+
+    $escaped = $Value.Replace('\', '\\').Replace('"', '\"')
+    return "$Name = `"$escaped`""
+}
+
+function New-CurlHeaderConfig {
+    param([Parameter(Mandatory=$true)][string[]]$Headers)
+
+    $lines = @()
+    foreach ($header in $Headers) {
+        $lines += New-CurlConfigLine -Name "header" -Value $header
+    }
+    return ($lines -join "`n") + "`n"
+}
+
+function Invoke-CurlWithConfigStdin {
+    param(
+        [Parameter(Mandatory=$true)][string[]]$Arguments,
+        [Parameter(Mandatory=$true)][string]$Config
+    )
+
+    $psi = [System.Diagnostics.ProcessStartInfo]::new()
+    $psi.FileName = "curl.exe"
+    $psi.UseShellExecute = $false
+    $psi.RedirectStandardInput = $true
+    foreach ($arg in $Arguments) {
+        [void]$psi.ArgumentList.Add($arg)
+    }
+
+    $proc = [System.Diagnostics.Process]::Start($psi)
+    $proc.StandardInput.Write($Config)
+    if (-not $Config.EndsWith("`n")) {
+        $proc.StandardInput.WriteLine()
+    }
+    $proc.StandardInput.Close()
+    $proc.WaitForExit()
+    return $proc.ExitCode
+}
+
+function Get-CurlProxyArgs {
+    param([ValidateSet("direct","proxy")][string]$Mode)
+
+    if ($Mode -eq "proxy" -and $env:HTTPS_PROXY) {
+        return @("--proxy", $env:HTTPS_PROXY)
+    }
+    return @("--noproxy", "*")
+}
+
+function Get-FastestDownloadMode {
+    param(
+        [Parameter(Mandatory=$true)][string]$ArtifactId,
+        [Parameter(Mandatory=$true)][string]$Token
+    )
+
+    if (-not $env:HTTPS_PROXY) {
+        return "direct"
+    }
+
+    Write-Host "   🔍 Benchmarking artifact download route"
+    $config = New-CurlHeaderConfig -Headers @(
+        "Authorization: Bearer $Token",
+        "Accept: application/vnd.github+json"
+    )
+    $results = @()
+    foreach ($mode in @("proxy", "direct")) {
+        $benchFile = Join-Path $env:TEMP "opencode\$Version\download-benchmark-$ArtifactId-$mode.bin"
+        Remove-Item $benchFile -Force -ErrorAction SilentlyContinue
+        $args = (Get-CurlProxyArgs -Mode $mode) + @(
+            "--config", "-",
+            "--fail",
+            "--location",
+            "--silent",
+            "--show-error",
+            "--range", "0-1048575",
+            "--connect-timeout", "15",
+            "--max-time", "90",
+            "-o", $benchFile,
+            "https://api.github.com/repos/$repo/actions/artifacts/$ArtifactId/zip"
+        )
+        $sw = [System.Diagnostics.Stopwatch]::StartNew()
+        $code = Invoke-CurlWithConfigStdin -Arguments $args -Config $config
+        $sw.Stop()
+        $bytes = if (Test-Path $benchFile) { (Get-Item $benchFile).Length } else { 0 }
+        Remove-Item $benchFile -Force -ErrorAction SilentlyContinue
+        if ($code -eq 0 -and $bytes -gt 0) {
+            $results += [pscustomobject]@{ Mode = $mode; Seconds = $sw.Elapsed.TotalSeconds; Bytes = $bytes }
+            Write-Host "      ${mode}: $([math]::Round($bytes / 1MB, 2)) MB in $([math]::Round($sw.Elapsed.TotalSeconds, 2))s"
+        } else {
+            Write-Host "      ${mode}: failed"
+        }
+    }
+
+    $best = $results | Sort-Object Seconds | Select-Object -First 1
+    if (-not $best) {
+        Write-Host "   ⚠️ Download benchmark failed; using proxy because -Proxy was provided"
+        return "proxy"
+    }
+    Write-Host "   ✅ Download route selected: $($best.Mode)"
+    return $best.Mode
+}
+
+$script:DownloadProxyMode = $null
 
 # Download function with progress display
 function Download-Artifact {
@@ -385,33 +543,88 @@ function Download-Artifact {
     $sizeMB = if ($sizeInBytes) { [math]::Round($sizeInBytes / 1MB, 1) } else { "?" }
 
     Write-Host "   📥 Downloading $Name ($sizeMB MB) -> $DestDir"
+    if (Test-Path $DestDir) {
+        Get-ChildItem -LiteralPath $DestDir -Force | Remove-Item -Recurse -Force
+    } else {
+        New-Item -ItemType Directory -Path $DestDir -Force | Out-Null
+    }
 
-    # Download via gh api for progress, with fallback to gh run download
+    # Download via curl so GitHub's artifact redirect is followed reliably, with fallback to gh run download.
     $artifactId = $found.id
     $zipFile = Join-Path $env:TEMP "opencode\$Version\artifacts\$Name.zip"
     New-Item -ItemType Directory -Path (Split-Path $zipFile) -Force | Out-Null
 
-    try {
-        # Use gh api to download the artifact zip directly
-        # This shows download progress via gh's built-in progress indicator
-        gh api "repos/$repo/actions/artifacts/$artifactId/zip" --output $zipFile 2>$null
-        if ($LASTEXITCODE -eq 0 -and (Test-Path $zipFile) -and ((Get-Item $zipFile).Length -gt 0)) {
-            # Extract the zip to destination
-            Expand-Archive -Path $zipFile -DestinationPath $DestDir -Force
-            Remove-Item $zipFile -Force -ErrorAction SilentlyContinue
-            Write-Host "   ✅ Downloaded $Name ($sizeMB MB)"
-        } else {
-            throw "gh api download returned empty or failed"
+    $downloaded = $false
+    for ($downloadAttempt = 1; $downloadAttempt -le 5; $downloadAttempt++) {
+        try {
+            $token = gh auth token
+            if ($LASTEXITCODE -ne 0 -or -not $token) {
+                throw "Cannot get gh auth token"
+            }
+            if (Test-Path $zipFile) { Remove-Item $zipFile -Force -ErrorAction SilentlyContinue }
+
+            $curlConfig = New-CurlHeaderConfig -Headers @(
+                "Authorization: Bearer $token",
+                "Accept: application/vnd.github+json"
+            )
+
+            if (-not $script:DownloadProxyMode) {
+                $script:DownloadProxyMode = Get-FastestDownloadMode -ArtifactId $artifactId -Token $token
+            }
+
+            $curlArgs = (Get-CurlProxyArgs -Mode $script:DownloadProxyMode) + @(
+                "--config", "-",
+                "--fail",
+                "--location",
+                "--retry", "3",
+                "--retry-delay", "5",
+                "--connect-timeout", "30",
+                "--max-time", "900",
+                "-o", $zipFile,
+                "https://api.github.com/repos/$repo/actions/artifacts/$artifactId/zip"
+            )
+            $curlExitCode = Invoke-CurlWithConfigStdin -Arguments $curlArgs -Config $curlConfig
+
+            if ($curlExitCode -eq 0 -and (Test-Path $zipFile) -and ((Get-Item $zipFile).Length -gt 0)) {
+                # Extract the zip to destination
+                Expand-Archive -LiteralPath $zipFile -DestinationPath $DestDir -Force
+                Remove-Item $zipFile -Force -ErrorAction SilentlyContinue
+                Write-Host "   ✅ Downloaded $Name ($sizeMB MB)"
+                $downloaded = $true
+                break
+            } else {
+                throw "curl artifact download returned empty or failed"
+            }
+        } catch {
+            # Fallback to gh run download, guarded by a timeout because it can hang on Windows.
+            Write-Host "   ⚠️ Direct download failed, falling back to gh run download ($downloadAttempt/5)..."
+            if (Test-Path $zipFile) { Remove-Item $zipFile -Force -ErrorAction SilentlyContinue }
+            if (Test-Path $DestDir) {
+                Get-ChildItem -LiteralPath $DestDir -Force | Remove-Item -Recurse -Force
+            }
+            $stdoutFile = Join-Path $env:TEMP "opencode\$Version\gh-download-$artifactId.out"
+            $stderrFile = Join-Path $env:TEMP "opencode\$Version\gh-download-$artifactId.err"
+            $ghArgs = @("run", "download", $RunId, "--repo", $repo, "-n", $Name, "-D", $DestDir)
+            $proc = Start-Process -FilePath "gh" -ArgumentList $ghArgs -PassThru -WindowStyle Hidden -RedirectStandardOutput $stdoutFile -RedirectStandardError $stderrFile
+            if (-not $proc.WaitForExit(900 * 1000)) {
+                Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue
+                Write-Host "   ⚠️ gh run download timed out: $Name"
+            } elseif ($proc.ExitCode -eq 0) {
+                Remove-Item $stdoutFile, $stderrFile -Force -ErrorAction SilentlyContinue
+                Write-Host "   ✅ Downloaded $Name (via gh run download)"
+                $downloaded = $true
+                break
+            } else {
+                $stderr = Get-Content $stderrFile -Raw -ErrorAction SilentlyContinue
+                if ($stderr) {
+                    Write-Host "   ⚠️ gh run download failed: $stderr"
+                }
+            }
+            Start-Sleep -Seconds 10
         }
-    } catch {
-        # Fallback to gh run download (no size display but reliable)
-        Write-Host "   ⚠️ Direct download failed, falling back to gh run download..."
-        if (Test-Path $zipFile) { Remove-Item $zipFile -Force -ErrorAction SilentlyContinue }
-        gh run download $RunId --repo $repo -n $Name -D $DestDir
-        if ($LASTEXITCODE -ne 0) {
-            Fail "Failed to download artifact: $Name"
-        }
-        Write-Host "   ✅ Downloaded $Name (via gh run download)"
+    }
+    if (-not $downloaded) {
+        Fail "Failed to download artifact: $Name"
     }
 }
 
@@ -427,6 +640,20 @@ if ($ReleaseType -eq "正式") {
 
 Write-Host "✅ All artifacts downloaded"
 
+function Compress-CleanArchive {
+    param(
+        [Parameter(Mandatory=$true)][string]$SourceGlob,
+        [Parameter(Mandatory=$true)][string]$DestinationPath
+    )
+
+    # Compress-Archive -Force can update an existing zip instead of rebuilding it;
+    # repeated release reruns then create duplicate central-directory entries.
+    if (Test-Path -LiteralPath $DestinationPath) {
+        Remove-Item -LiteralPath $DestinationPath -Force
+    }
+    Compress-Archive -Path $SourceGlob -DestinationPath $DestinationPath
+}
+
 # ============================================================
 # Phase D: Compress Artifacts
 # ============================================================
@@ -435,22 +662,22 @@ Write-Host "📦 Phase D: Compressing artifacts"
 # Client
 $clientZip = "$tmpDir\$clientName.zip"
 Write-Host "   📦 Compressing client -> $clientZip"
-Compress-Archive -Path "$tmpDir\client\*" -DestinationPath $clientZip -Force
+Compress-CleanArchive -SourceGlob "$tmpDir\client\*" -DestinationPath $clientZip
 
 # Server
 $serverZip = "$tmpDir\$serverName.zip"
 Write-Host "   📦 Compressing server -> $serverZip"
-Compress-Archive -Path "$tmpDir\server\*" -DestinationPath $serverZip -Force
+Compress-CleanArchive -SourceGlob "$tmpDir\server\*" -DestinationPath $serverZip
 
 # Patches (正式版 only)
 if ($ReleaseType -eq "正式") {
     $clientPatchZip = "$tmpDir\$clientPatchName.zip"
     Write-Host "   📦 Compressing clientpatch -> $clientPatchZip"
-    Compress-Archive -Path "$tmpDir\clientpatch\*" -DestinationPath $clientPatchZip -Force
+    Compress-CleanArchive -SourceGlob "$tmpDir\clientpatch\*" -DestinationPath $clientPatchZip
 
     $serverPatchZip = "$tmpDir\$serverPatchName.zip"
     Write-Host "   📦 Compressing serverpatch -> $serverPatchZip"
-    Compress-Archive -Path "$tmpDir\serverpatch\*" -DestinationPath $serverPatchZip -Force
+    Compress-CleanArchive -SourceGlob "$tmpDir\serverpatch\*" -DestinationPath $serverPatchZip
 }
 
 Write-Host "✅ All artifacts compressed"
@@ -462,26 +689,28 @@ Write-Host "📋 Phase E: Copying to bracket-free paths"
 
 $uploadDir = "$tmpDir\upload"
 New-Item -ItemType Directory -Path $uploadDir -Force | Out-Null
+Get-ChildItem -LiteralPath $uploadDir -Force | Remove-Item -Recurse -Force
 
 # Client: [Client]xxx -> Client-xxx
 $uploadClient = "$uploadDir\Client-Create-Delight-Remake-$Version.zip"
-Copy-Item -LiteralPath $clientZip -Destination $uploadClient
+Copy-Item -LiteralPath $clientZip -Destination $uploadClient -Force
 
 # Server: no brackets but copy for consistency
 $uploadServer = "$uploadDir\Server-Create-Delight-Remake-$Version.zip"
-Copy-Item -LiteralPath $serverZip -Destination $uploadServer
+Copy-Item -LiteralPath $serverZip -Destination $uploadServer -Force
 
 if ($ReleaseType -eq "正式") {
     # ClientPatch: [ClientPatch]xxx -> ClientPatch-xxx
     $uploadClientPatch = "$uploadDir\ClientPatch-Create-Delight-Remake-$PreviousVersion-to-$Version.zip"
-    Copy-Item -LiteralPath $clientPatchZip -Destination $uploadClientPatch
+    Copy-Item -LiteralPath $clientPatchZip -Destination $uploadClientPatch -Force
 
     # ServerPatch: [ServerPatch]xxx -> ServerPatch-xxx
     $uploadServerPatch = "$uploadDir\ServerPatch-Create-Delight-Remake-$PreviousVersion-to-$Version.zip"
-    Copy-Item -LiteralPath $serverPatchZip -Destination $uploadServerPatch
+    Copy-Item -LiteralPath $serverPatchZip -Destination $uploadServerPatch -Force
 }
 
 Write-Host "✅ Bracket-free copies created in $uploadDir"
+#>
 
 # ============================================================
 # Phase F: Generate Release Notes
@@ -498,9 +727,12 @@ $isFirstStable = $false
 $summaryFilePath = ""
 
 if ($subVersionPrefix -and $ReleaseType -eq "正式") {
-    # Check if any existing tag with this sub-version prefix is a stable (non-prerelease) release
+    # Check if any existing tag with this sub-version prefix is a stable (non-prerelease) release.
+    # Fail closed: if GitHub cannot be queried reliably, do not prepend a broad
+    # sub-version summary to avoid publishing stale notes on later stable releases.
     $existingTags = git tag -l "$subVersionPrefix*" 2>$null
     $hasStableRelease = $false
+    $stableCheckHadUnknown = $false
     foreach ($tag in $existingTags) {
         if ($tag -eq $Version) { continue }  # Skip the tag we just created
         $releaseInfo = gh release view $tag --repo $repo --json isPrerelease 2>$null
@@ -511,9 +743,16 @@ if ($subVersionPrefix -and $ReleaseType -eq "正式") {
                 Write-Host "   Found existing stable release: $tag"
                 break
             }
+        } else {
+            $stableCheckHadUnknown = $true
+            Write-Host "   ⚠️ Cannot verify release status for $tag"
         }
     }
-    if (-not $hasStableRelease) {
+    if ($hasStableRelease) {
+        $isFirstStable = $false
+    } elseif ($stableCheckHadUnknown) {
+        Write-Host "   ⚠️ Could not verify all prior $subVersionPrefix releases; skipping first-stable summary"
+    } else {
         $isFirstStable = $true
         Write-Host "   🎉 This is the first stable release of $subVersionPrefix"
     }
@@ -528,15 +767,7 @@ if ($isFirstStable) {
         $summaryContent = Get-Content $summaryFilePath -Raw
         Write-Host "   📄 Found update summary: $summaryFilePath"
     } else {
-        # Try with sub-version prefix pattern: docs/update-summary-v0.4.8.*.md
-        $summaryCandidates = Get-ChildItem -Path "docs" -Filter "update-summary-$subVersionPrefix*.md" -ErrorAction SilentlyContinue
-        if ($summaryCandidates) {
-            $summaryFilePath = $summaryCandidates | Sort-Object Name -Descending | Select-Object -First 1
-            $summaryContent = Get-Content $summaryFilePath.FullName -Raw
-            Write-Host "   📄 Found update summary: $($summaryFilePath.FullName)"
-        } else {
-            Write-Host "   ⚠️ No update summary file found for $subVersionPrefix (expected docs/update-summary-$Version.md)"
-        }
+        Fail "First stable release requires update summary: docs/update-summary-$Version.md"
     }
 }
 
@@ -548,7 +779,7 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 # Filter out version bump commits - only filter the specific format used by prepare script
-$commits = $commits | Where-Object { $_ -notmatch '^\[feat\]\s*v\d[\d.]+\s+(正式版|测试版)版本更新$' }
+$commits = $commits | Where-Object { $_ -notmatch '^\[feat\]\s*v\d[\d.]+(?:-test)?\s+(正式版|测试版)版本更新$' }
 
 # Categorize
 $categories = [ordered]@{
@@ -642,31 +873,220 @@ Write-Host "🚀 Phase G: Creating GitHub Release"
 
 if ($ReleaseType -eq "正式") {
     $title = "$Version 正式版"
-    $notesFile = Join-Path $env:TEMP "opencode\release-notes-$Version.md"
-    New-Item -ItemType Directory -Path (Split-Path $notesFile) -Force | Out-Null
-    [System.IO.File]::WriteAllText($notesFile, $ReleaseNotes, [System.Text.UTF8Encoding]::new($false))
-    gh release create $Version --repo $repo --title $title --notes-file $notesFile `
-        "$uploadClient" `
-        "$uploadClientPatch" `
-        "$uploadServer" `
-        "$uploadServerPatch"
-    Remove-Item $notesFile -Force -ErrorAction SilentlyContinue
 } else {
     $title = "$Version 测试版"
-    $notesFile = Join-Path $env:TEMP "opencode\release-notes-$Version.md"
-    New-Item -ItemType Directory -Path (Split-Path $notesFile) -Force | Out-Null
-    [System.IO.File]::WriteAllText($notesFile, $ReleaseNotes, [System.Text.UTF8Encoding]::new($false))
-    gh release create $Version --repo $repo --title $title --prerelease --notes-file $notesFile `
-        "$uploadClient" `
-        "$uploadServer"
-    Remove-Item $notesFile -Force -ErrorAction SilentlyContinue
 }
 
+$notesFile = Join-Path $env:TEMP "opencode\release-notes-$Version.md"
+New-Item -ItemType Directory -Path (Split-Path $notesFile) -Force | Out-Null
+[System.IO.File]::WriteAllText($notesFile, $ReleaseNotes, [System.Text.UTF8Encoding]::new($false))
+
+# Create the release as a draft without assets, then upload assets one by one.
+# A single `gh release create <assets...>` can hang for large server zips and
+# leaves a partial draft that is harder to resume.
+$releaseViewJson = gh release view $Version --repo $repo --json isDraft 2>$null
+if ($LASTEXITCODE -eq 0 -and $releaseViewJson) {
+    $releaseViewForCreate = $releaseViewJson | ConvertFrom-Json -ErrorAction SilentlyContinue
+    if ($releaseViewForCreate -and -not $releaseViewForCreate.isDraft) {
+        Remove-Item $notesFile -Force -ErrorAction SilentlyContinue
+        Fail "Release $Version already exists and is not a draft"
+    }
+    Write-Host "   Draft release $Version already exists, resuming uploads"
+    gh release edit $Version --repo $repo --title $title --notes-file $notesFile
+    if ($LASTEXITCODE -ne 0) {
+        Remove-Item $notesFile -Force -ErrorAction SilentlyContinue
+        Fail "Failed to update draft release metadata"
+    }
+} else {
+    if ($ReleaseType -eq "正式") {
+        gh release create $Version --repo $repo --title $title --notes-file $notesFile --draft
+    } else {
+        gh release create $Version --repo $repo --title $title --prerelease --notes-file $notesFile --draft
+    }
+    if ($LASTEXITCODE -ne 0) {
+        Remove-Item $notesFile -Force -ErrorAction SilentlyContinue
+        Fail "Failed to create draft GitHub release"
+    }
+}
+
+Remove-Item $notesFile -Force -ErrorAction SilentlyContinue
+Write-Host "✅ Draft release ready: $title"
+
+<# Release asset upload moved to the release-assets CI job.
+function Get-ReleaseForUpload {
+    $releaseListJson = gh api "repos/$repo/releases" --paginate 2>$null
+    if ($LASTEXITCODE -ne 0 -or -not $releaseListJson) {
+        throw "Cannot list releases"
+    }
+    $releaseForUpload = @($releaseListJson | ConvertFrom-Json -ErrorAction Stop) | Where-Object { $_.tag_name -eq $Version } | Select-Object -First 1
+    if (-not $releaseForUpload) {
+        throw "Cannot find draft release for $Version"
+    }
+    return $releaseForUpload
+}
+
+function Remove-ReleaseAssetByName {
+    param(
+        [Parameter(Mandatory=$true)]$Release,
+        [Parameter(Mandatory=$true)][string]$AssetName
+    )
+
+    $existingAssetsJson = gh api "repos/$repo/releases/$($Release.id)/assets" 2>$null
+    if ($LASTEXITCODE -eq 0 -and $existingAssetsJson) {
+        $existingAsset = @($existingAssetsJson | ConvertFrom-Json -ErrorAction SilentlyContinue) | Where-Object { $_.name -eq $AssetName } | Select-Object -First 1
+        if ($existingAsset) {
+            gh api -X DELETE "repos/$repo/releases/assets/$($existingAsset.id)" 2>$null | Out-Null
+        }
+    }
+}
+
+function Invoke-CurlReleaseAssetUpload {
+    param(
+        [Parameter(Mandatory=$true)]$Release,
+        [Parameter(Mandatory=$true)][string]$AssetPath,
+        [Parameter(Mandatory=$true)][string]$AssetName,
+        [Parameter(Mandatory=$true)][string]$Token,
+        [ValidateSet("direct","proxy")][string]$Mode,
+        [int]$TimeoutSeconds = 3600,
+        [string]$ContentType = "application/zip"
+    )
+
+    $curlConfig = New-CurlHeaderConfig -Headers @(
+        "Authorization: Bearer $Token",
+        "Accept: application/vnd.github+json",
+        "Content-Type: $ContentType"
+    )
+    $encodedName = [System.Uri]::EscapeDataString($AssetName)
+    $curlArgs = (Get-CurlProxyArgs -Mode $Mode) + @(
+        "--config", "-",
+        "--fail",
+        "--location",
+        "--retry", "3",
+        "--retry-delay", "5",
+        "--connect-timeout", "30",
+        "--max-time", "$TimeoutSeconds",
+        "--data-binary", "@$AssetPath",
+        "--output", "NUL",
+        "https://uploads.github.com/repos/$repo/releases/$($Release.id)/assets?name=$encodedName"
+    )
+    return Invoke-CurlWithConfigStdin -Arguments $curlArgs -Config $curlConfig
+}
+
+function Get-FastestUploadMode {
+    param(
+        [Parameter(Mandatory=$true)]$Release,
+        [Parameter(Mandatory=$true)][string]$Token
+    )
+
+    if (-not $env:HTTPS_PROXY) {
+        return "direct"
+    }
+
+    Write-Host "   🔍 Benchmarking release upload route"
+    $benchFile = Join-Path $env:TEMP "opencode\$Version\upload-benchmark.bin"
+    $bytes = New-Object byte[] (1MB)
+    [System.IO.File]::WriteAllBytes($benchFile, $bytes)
+    $results = @()
+    try {
+        foreach ($mode in @("direct", "proxy")) {
+            $assetName = "upload-benchmark-$Version-$mode.bin"
+            Remove-ReleaseAssetByName -Release $Release -AssetName $assetName
+            $sw = [System.Diagnostics.Stopwatch]::StartNew()
+            $code = Invoke-CurlReleaseAssetUpload -Release $Release -AssetPath $benchFile -AssetName $assetName -Token $Token -Mode $mode -TimeoutSeconds 120 -ContentType "application/octet-stream"
+            $sw.Stop()
+            if ($code -eq 0) {
+                $results += [pscustomobject]@{ Mode = $mode; Seconds = $sw.Elapsed.TotalSeconds }
+                Write-Host "      ${mode}: 1 MB in $([math]::Round($sw.Elapsed.TotalSeconds, 2))s"
+                Remove-ReleaseAssetByName -Release $Release -AssetName $assetName
+            } else {
+                Write-Host "      ${mode}: failed"
+            }
+        }
+    } finally {
+        Remove-Item $benchFile -Force -ErrorAction SilentlyContinue
+    }
+
+    $best = $results | Sort-Object Seconds | Select-Object -First 1
+    if (-not $best) {
+        Write-Host "   ⚠️ Upload benchmark failed; using direct upload"
+        return "direct"
+    }
+    Write-Host "   ✅ Upload route selected: $($best.Mode)"
+    return $best.Mode
+}
+
+$script:UploadProxyMode = $null
+
+function Upload-ReleaseAsset {
+    param(
+        [Parameter(Mandatory=$true)][string]$AssetPath,
+        [int]$Attempts = 5,
+        [int]$TimeoutSeconds = 3600
+    )
+
+    $assetName = Split-Path $AssetPath -Leaf
+    for ($attempt = 1; $attempt -le $Attempts; $attempt++) {
+        Write-Host "   ⬆️ Uploading $assetName ($attempt/$Attempts)"
+
+        try {
+            $token = gh auth token
+            if ($LASTEXITCODE -ne 0 -or -not $token) {
+                throw "Cannot get gh auth token"
+            }
+
+            $releaseForUpload = Get-ReleaseForUpload
+
+            if (-not $script:UploadProxyMode) {
+                $script:UploadProxyMode = Get-FastestUploadMode -Release $releaseForUpload -Token $token
+            }
+
+            Remove-ReleaseAssetByName -Release $releaseForUpload -AssetName $assetName
+            $curlExitCode = Invoke-CurlReleaseAssetUpload -Release $releaseForUpload -AssetPath $AssetPath -AssetName $assetName -Token $token -Mode $script:UploadProxyMode -TimeoutSeconds $TimeoutSeconds
+            if ($curlExitCode -eq 0) {
+                Write-Host "   ✅ Uploaded $assetName"
+                return
+            }
+            throw "curl upload failed with exit code $curlExitCode"
+        } catch {
+            Write-Host "   ⚠️ curl upload failed: $_"
+        }
+
+        Start-Sleep -Seconds 15
+    }
+
+    Fail "Failed to upload release asset after $Attempts attempts: $assetName"
+}
+
+foreach ($asset in $uploadAssets) {
+    $assetName = Split-Path $asset -Leaf
+    $uploadedBeforeRetry = @()
+    $assetViewJson = gh release view $Version --repo $repo --json assets 2>$null
+    if ($LASTEXITCODE -eq 0 -and $assetViewJson) {
+        $assetView = $assetViewJson | ConvertFrom-Json -ErrorAction SilentlyContinue
+        if ($assetView -and $assetView.assets) {
+            $uploadedBeforeRetry = @($assetView.assets | Where-Object { $_.state -eq "uploaded" } | ForEach-Object { $_.name })
+        }
+    }
+    if ($uploadedBeforeRetry -contains $assetName) {
+        Write-Host "   ✅ Asset already uploaded, skipping $assetName"
+        continue
+    }
+    Upload-ReleaseAsset -AssetPath $asset
+}
+
+Write-Host "✅ Release assets uploaded"
+#>
+
+if ($ReleaseType -eq "正式") {
+    gh release edit $Version --repo $repo --draft=false --prerelease=false
+} else {
+    gh release edit $Version --repo $repo --draft=false --prerelease=true
+}
 if ($LASTEXITCODE -ne 0) {
-    Fail "Failed to create GitHub release"
+    Fail "Failed to publish draft release"
 }
 
-Write-Host "✅ Release created: $title"
+Write-Host "✅ Release published: $title"
 
 # ============================================================
 # Phase H: Verify
@@ -816,4 +1236,3 @@ Write-Host "🔗 $releaseUrl"
 if ($announcementPrUrl) {
     Write-Host "📢 Announcement PR: $announcementPrUrl"
 }
-Write-Host "📁 Temp directory preserved: $tmpDir"

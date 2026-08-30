@@ -1,0 +1,17 @@
+[
+  {
+    "predicate": {
+      "items": [
+        "more_mod_tetra:curios_heart_protecting_mirror"
+      ]
+    },
+    "item": "more_mod_tetra:modular_mmt_heart_protecting_mirror",
+    "modules": {
+      "relic/casing": [
+        "mmt_heart_protecting_mirror/base/starter_base",
+        "starter_base/iron"
+      ]
+    },
+    "improvements": {}
+  }
+]

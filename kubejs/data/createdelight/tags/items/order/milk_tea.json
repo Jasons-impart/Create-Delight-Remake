@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#createdelight:milk_tea",
+      "required": false
+    },
+    {
+      "id": "ends_delight:chorus_fruit_milk_tea",
+      "required": false
+    },
+    {
+      "id": "ends_delight:bubble_tea",
+      "required": false
+    }
+  ]
+}

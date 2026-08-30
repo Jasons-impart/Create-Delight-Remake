@@ -10,22 +10,31 @@
 		{
 			id: "74C003BD7D88167E"
 			linked_quest: "24CCC43BD4994237"
+			size: 2.0d
 			x: 22.5d
 			y: -2.5d
 		}
 		{
 			id: "4C0C1A274518BAD5"
 			linked_quest: "3D02EA3A30EE1933"
+			size: 2.0d
 			x: 10.5d
+			y: -2.5d
+		}
+		{
+			id: "472A56C083FB5D30"
+			linked_quest: "475F0BF3666A12AB"
+			size: 2.0d
+			x: 26.5d
 			y: -2.5d
 		}
 	]
 	quests: [
 		{
 			dependencies: ["1EF771A80F0460CF"]
-			description: ["需要注意的是，每个记录之间的距离需要大于30，否则无法组成星图。"]
+			description: ["把星图和天文观测记录放入天文台，可以把记录中的科研点数写入星图。星图内某个星球的科研点数达到要求后，火箭核心会同时显示该星球已注册的轨道和地表目的地。"]
 			id: "5D413834648E277E"
-			subtitle: "使用它合并三张记录。"
+			subtitle: "把观测记录写入星图"
 			tasks: [{
 				id: "43CDABE68393929D"
 				item: "northstar:astronomy_table"
@@ -36,9 +45,9 @@
 		}
 		{
 			dependencies: ["1EF771A80F0460CF"]
-			description: ["左键点击某个望远镜视野内的星球，然后点击左侧的+号就可以制作一张记录。"]
+			description: ["在能看见天空的地方使用望远镜，选中视野里的星球并按住即可打印一张天文观测记录。打印记录需要消耗纸；同一目标星球、同一观测来源、同一天的记录不能重复写入同一本星图。"]
 			id: "49759BA2FFD9ED2D"
-			subtitle: "记录一个星球的坐标"
+			subtitle: "打印一张天文观测记录"
 			tasks: [{
 				id: "361B8B8E75482FFF"
 				item: "northstar:astronomical_reading"
@@ -52,12 +61,37 @@
 				"49759BA2FFD9ED2D"
 				"5D413834648E277E"
 			]
-			description: ["目前为止你只能前往月球，因为没有星际导航仪。"]
+			description: [
+				"火箭核心只接受星图或返程票。"
+				""
+				"每张天文观测记录默认提供1点科研点数。同一来源的跨天重复记录会按0.9、0.81……递减；从不同星球观测同一目标，则第一张都按完整1点计算。"
+				""
+				"当前数据中：地球需要1点，月球需要2点，火星需要5点，金星和水星各需要6点，木星需要6.5点，木卫二需要1点。星球达标后，该星球的轨道和地表会一起解锁；月球目前只有地表，没有轨道维度。木卫二属于木星系，建议先抵达木星轨道，再从木星系观测并解锁木卫二。"
+			]
+			hide_dependency_lines: true
+			icon: "northstar:space_atlas"
+			id: "6C6B2505ED53D1F2"
+			subtitle: "轨道和地表由同一份星图科研点解锁"
+			tasks: [{
+				id: "5D2B2E81F5C3A7D0"
+				title: "阅读星图解锁规则"
+				type: "checkmark"
+			}]
+			title: "星图解锁规则"
+			x: 3.5d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"49759BA2FFD9ED2D"
+				"5D413834648E277E"
+			]
+			description: ["制作星图后，用天文台把观测记录写入其中。月球需要2点科研点数；达到后把星图放入火箭核心即可选择月球地表。没有星际导航仪时，火箭只能飞往当前星球或它的卫星。"]
 			id: "1F75964D5DF64594"
-			subtitle: "记录一个星球的坐标"
+			subtitle: "用于记录各星球科研点和火箭目的地"
 			tasks: [{
 				id: "05EEF2BA49205DC1"
-				item: "northstar:star_map"
+				item: "northstar:space_atlas"
 				type: "item"
 			}]
 			x: 3.5d
@@ -94,7 +128,7 @@
 			subtitle: "火箭的必备物"
 			tasks: [{
 				id: "638F884BA21A6BD9"
-				item: "northstar:jet_engine"
+				item: "northstar:rocket_thruster"
 				type: "item"
 			}]
 			x: 5.5d
@@ -105,8 +139,9 @@
 				"119E0BF4CFAA0B5F"
 				"25377BD23842CC96"
 			]
+			description: ["月球需要星图内的月球科研点达到2点。当前版本月球只有地表维度，因此解锁月球后目的地列表里不会出现月球轨道。"]
 			id: "089E81F7DCA47A98"
-			subtitle: "前往月球"
+			subtitle: "前往月球地表"
 			tasks: [{
 				advancement: "northstar:one_small_step"
 				criterion: ""
@@ -115,6 +150,58 @@
 			}]
 			x: 10.5d
 			y: 0.0d
+		}
+		{
+			dependencies: ["089E81F7DCA47A98"]
+			description: [
+				"月球背面存在无法由普通望远镜直接观测的异常信号。使用扫描仪前，必须先让星图的地球科研达标并解锁地球轨道。"
+				"轨道遥测扫描仪只能在地球轨道使用，并要求背包中携带星图。"
+				"首次扫描会在极远处锁定并生成一座破损空间站，同时把空间站坐标写入星图。"
+				"火箭站读取这本星图后，会把记录的空间站坐标列为可选目的地，火箭可以直接飞往该位置。"
+			]
+			id: "1F2950ECAD5BEAC8"
+			subtitle: "在地球轨道搜索月背异常信号"
+			tasks: [{
+				id: "6BF2CB71D50411B1"
+				item: "createdelight:orbital_telemetry_scanner"
+				type: "item"
+			}]
+			title: "轨道遥测扫描仪"
+			x: 12.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["1F2950ECAD5BEAC8"]
+			description: [
+				"按扫描仪写入星图的坐标前往破损空间站。站内遥测储存箱保存着残损的月背记录。"
+				"把记录与星图放入天文台，即可让月背异常区成为正式火箭目的地。"
+			]
+			icon: "northstar:astronomical_reading"
+			id: "591CA06C6483B19B"
+			tasks: [{
+				id: "65B3285F63DC4542"
+				title: "取得并写入月背遥测记录"
+				type: "checkmark"
+			}]
+			title: "破损空间站"
+			x: 13.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["591CA06C6483B19B"]
+			description: ["月背异常区的地表仍是低重力真空月面，地下则会逐渐过渡为深暗地层与异寂空谷裂谷。"]
+			icon: "alexscaves:pure_darkness"
+			id: "1F6B56E6DE97C1D7"
+			size: 2.0d
+			tasks: [{
+				dimension: "createdelight:lunar_farside"
+				id: "76C2EE32057A2768"
+				title: "登陆月背异常区"
+				type: "dimension"
+			}]
+			title: "月背·深月裂谷"
+			x: 16.0d
+			y: 3.0d
 		}
 		{
 			dependencies: [
@@ -197,7 +284,7 @@
 				"0A838A84677688BA"
 			]
 			id: "54954EA4980915B0"
-			subtitle: "拥有星系导航仪后才能跨行星飞行"
+			subtitle: "拥有星际导航仪后才能跨行星飞行"
 			tasks: [{
 				id: "13AFACBA70E3AA15"
 				item: "northstar:interplanetary_navigator"
@@ -208,8 +295,9 @@
 		}
 		{
 			dependencies: ["54954EA4980915B0"]
+			description: ["火星需要星图内的火星科研点达到5点。达标后，火星轨道和火星地表会同时出现在火箭核心的目的地列表中；这个任务检查的是登陆火星地表。"]
 			id: "77DBDCB991847E35"
-			subtitle: "前往火星"
+			subtitle: "前往火星地表"
 			tasks: [{
 				advancement: "northstar:one_giant_leap"
 				criterion: ""
@@ -232,12 +320,12 @@
 		}
 		{
 			dependencies: ["2322C47E80F706AA"]
-			description: ["接下来可以前往金星和水星。前往这两个星球需要火箭具备高额的耐热值，虽然使用低级的金属装饰方块仍然能达到目标，但还是推荐使用高级的金属装饰方块。"]
+			description: ["接下来可以前往金星和水星。它们都需要星图内对应星球的科研点达到6点，并且火箭要有足够的隔热防护。虽然使用低级金属装饰方块仍然能堆到目标，但更推荐使用高级金属装饰方块。"]
 			id: "0A78650F17E1E069"
 			subtitle: "用于制作二级宇航服和更高级的金属装饰方块"
 			tasks: [{
 				id: "74C650668673026E"
-				item: "northstar:martian_steel"
+				item: "northstar:martian_steel_ingot"
 				type: "item"
 			}]
 			x: 19.0d
@@ -424,7 +512,7 @@
 			subtitle: "20点耐热值"
 			tasks: [{
 				elapsedTime: 1L
-				icon: "northstar:martian_steel"
+				icon: "northstar:martian_steel_ingot"
 				id: "628CB1DFBE55A98A"
 				title: "火星钢"
 				type: "questsadditions:time"
@@ -501,17 +589,68 @@
 		}
 		{
 			dependencies: ["3A2218D2A3F89F9E"]
+			description: ["金星需要星图内的金星科研点达到6点。达标后，金星轨道和金星地表会同时可选；这个任务检查的是登陆金星地表。"]
 			id: "0BAC02A069A5B123"
-			subtitle: "金星需要非常高的耐热值，建议使用高级的材料制作火箭的壳体"
+			subtitle: "金星需要非常高的隔热防护，建议使用高级材料制作火箭壳体"
 			tasks: [{
 				dimension: "northstar:venus"
 				icon: "northstar:venus_gravel"
 				id: "1590D41C581B6D75"
-				title: "前往金星"
+				title: "前往金星地表"
 				type: "dimension"
 			}]
 			x: 22.5d
 			y: 0.0d
+		}
+		{
+			dependencies: ["3A2218D2A3F89F9E"]
+			description: ["水星需要星图内的水星科研点达到6点。达标后，水星轨道和水星地表会同时可选；这个任务检查的是登陆水星地表。"]
+			id: "62C9A01A68274195"
+			subtitle: "水星同样需要很高的隔热防护"
+			tasks: [{
+				dimension: "northstar:mercury"
+				icon: "northstar:mercury_stone"
+				id: "4C2E1B3581F0440E"
+				title: "前往水星地表"
+				type: "dimension"
+			}]
+			x: 22.5d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"0BAC02A069A5B123"
+				"62C9A01A68274195"
+			]
+			description: ["木星需要星图内的木星科研点达到6.5点。木星本体是气态巨行星，不能登陆；本包新增的木星轨道是进入木星系的中转站，也是观测木卫二的推荐地点。"]
+			id: "4F2B8C9D7E1A6053"
+			subtitle: "进入木星系，准备观测木卫二"
+			tasks: [{
+				dimension: "northstar:jupiter_orbit"
+				icon: "northstar:space_atlas"
+				id: "6A19D0E4B73C82F5"
+				title: "前往木星轨道"
+				type: "dimension"
+			}]
+			title: "木星轨道"
+			x: 24.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["4F2B8C9D7E1A6053"]
+			description: ["木卫二是木星的冰封卫星，需要星图内的木卫二科研点达到1点。解锁后，火箭核心会显示木卫二轨道和木卫二地表；这个任务检查的是登陆地表。这里极度寒冷、没有可呼吸大气，地表以冰雪为主，地下可能出现冰下海与渊海陷窟。"]
+			id: "75D1E8A0C4B29F63"
+			subtitle: "木星的冰封卫星"
+			tasks: [{
+				dimension: "northstar:europa"
+				icon: "minecraft:blue_ice"
+				id: "2BEF6A9530D14C78"
+				title: "前往木卫二地表"
+				type: "dimension"
+			}]
+			title: "木卫二"
+			x: 26.5d
+			y: -0.5d
 		}
 		{
 			dependencies: ["0A78650F17E1E069"]
@@ -536,10 +675,7 @@
 			y: -1.0d
 		}
 		{
-			dependencies: [
-				"4A2A62D77A29284F"
-				"7688588BA71116CE"
-			]
+			dependencies: ["7688588BA71116CE"]
 			id: "0B4050EA824CAB43"
 			tasks: [{
 				id: "49908A1EE870CB73"
@@ -565,8 +701,7 @@
 		}
 		{
 			dependencies: ["40BDFCC7A3B77F26"]
-			description: ["在夜晚就可以通过它来看星星。左键点击某个望远镜视野内的星球，然后点击左侧的+号就可以制作一张记录。"]
-			hide_until_deps_complete: true
+			description: ["望远镜可以观测当前星系内可见的星体。选中视野里的星球并按住，即可消耗纸打印天文观测记录；有大气的维度通常需要夜晚才能使用望远镜。"]
 			icon: "northstar:telescope"
 			id: "1EF771A80F0460CF"
 			shape: "hexagon"
@@ -590,6 +725,192 @@
 			}]
 			x: 5.5d
 			y: 3.5d
+		}
+		{
+			dependencies: ["089E81F7DCA47A98"]
+			description: [
+				"为了让柴油引擎在星球上正常工作，你需要一个密封的&e有氧&r环境。"
+				"使用&b供氧机&r来提供氧气，使用&b大型风扇&r来扩充供氧机的填充范围。"
+				""
+				"另外，外太空里柴油引擎不能接链式传动箱，会因为bug导致应力消失。"
+			]
+			icon: "createdieselgenerators:diesel_engine"
+			id: "3F9754F899053D6F"
+			rewards: [{
+				id: "06119CA65526B84E"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "66BD399E12832AF5"
+					item: "northstar:oxygen_sealer"
+					type: "item"
+				}
+				{
+					id: "2215AB693422A844"
+					item: "northstar:large_fan"
+					type: "item"
+				}
+			]
+			title: "柴油引擎需要氧气！"
+			x: 12.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0A78650F17E1E069"]
+			id: "7D6E59F236540559"
+			subtitle: "可随身携带的无限流体池"
+			tasks: [{
+				id: "38340CC14F2A9DBF"
+				item: "fluidlogistics:infinite_fluid_tank"
+				type: "item"
+			}]
+			x: 20.5d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"089E81F7DCA47A98"
+				"53F8AADD69D02613"
+			]
+			description: [
+				"拥有&e1800mB&r的氧气容量,可提供&b1级抗寒&r（northstar:insulating）"
+				""
+				"注：本包的抗寒机制为，装备栏和饰品栏的抗寒级数总和&e≥4&r即可抵御太空的低温伤害"
+			]
+			hide_dependency_lines: true
+			id: "667FC8409A96DA4F"
+			subtitle: "提供氧气的妙妙工具"
+			tasks: [{
+				id: "7F5842B9A25AE1F4"
+				item: "createdelight:oxygen_tank"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["0A78650F17E1E069"]
+			description: [
+				"拥有&e3600mB&r的氧气容量,可提供&b2级抗寒&r和&c2级耐热&r（northstar:insulating_2 \\& northstar:heat_resistant_2）"
+				""
+				"注：本包的耐热机制为，装备栏和饰品栏的耐热级数总和&e≥4&r即可抵御太空的高温伤害"
+			]
+			id: "2AD583E020458559"
+			subtitle: "更大更强的氧气罐"
+			tasks: [{
+				id: "1E5A5D75F507CCE2"
+				item: "createdelight:sturdy_oxygen_tank"
+				type: "item"
+			}]
+			x: 20.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["089E81F7DCA47A98"]
+			description: [
+				"古代工厂现在仅生成于&b月球&r群系，并埋藏在月球地下约 Y=-30 的深处。探索月球地下时，请留意规模庞大的机械遗迹。"
+				"世界生成改动不会把结构补进已经生成的旧区块；若始终找不到，请前往新的月球区块继续探索。"
+			]
+			icon: "cataclysm:emp"
+			id: "1E148D2AD79A465D"
+			subtitle: "月球地下的机械遗迹"
+			tasks: [{
+				advancement: "cataclysm:find_ancient_factory"
+				criterion: ""
+				id: "3C8D901D87D046EF"
+				title: "找到古代工厂"
+				type: "advancement"
+			}]
+			title: "古代工厂"
+			x: 9.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["77DBDCB991847E35"]
+			description: ["灵魂锻造厂现在生成于&c火星&r群系，并被埋藏在火星地下约 Y=-32 的深处。"]
+			icon: "minecraft:blackstone"
+			id: "264224E79AD8458C"
+			subtitle: "火星地下的灵魂熔炉"
+			tasks: [{
+				advancement: "cataclysm:find_soul_black_smith"
+				criterion: ""
+				id: "3C933CAA2A6A4600"
+				title: "找到灵魂锻造厂"
+				type: "advancement"
+			}]
+			title: "灵魂锻造厂"
+			x: 16.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["0BAC02A069A5B123"]
+			description: ["被诅咒的金字塔现在生成于&e金星&r的金星平原与金星荒地地表。"]
+			icon: "cataclysm:sandstone_poison_dart_trap"
+			id: "4F715326FDD9412E"
+			subtitle: "金星荒原上的诅咒遗迹"
+			tasks: [{
+				advancement: "cataclysm:find_cursed_pyramid"
+				criterion: ""
+				id: "75962AA8144EFF15"
+				title: "找到被诅咒的金字塔"
+				type: "advancement"
+			}]
+			title: "被诅咒的金字塔"
+			x: 22.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["62C9A01A68274195"]
+			description: ["熔岩竞技场现在生成于&6水星&r群系的地表。"]
+			icon: "cataclysm:altar_of_fire"
+			id: "078AB159C7278790"
+			subtitle: "水星地表的燃烧试炼场"
+			tasks: [{
+				advancement: "cataclysm:find_burning_arena"
+				criterion: ""
+				id: "786012C81F2644E2"
+				title: "找到熔岩竞技场"
+				type: "advancement"
+			}]
+			title: "熔岩竞技场"
+			x: 24.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["75D1E8A0C4B29F63"]
+			description: ["苦寒监牢现在生成于&b木卫二&r地表的冰原与山脊地带。"]
+			icon: "cataclysm:door_of_seal"
+			id: "6240D4B23EB3E8A2"
+			subtitle: "木卫二冰原上的封印监牢"
+			tasks: [{
+				advancement: "cataclysm:find_frosted_prison"
+				criterion: ""
+				id: "7CC6C3CC703C4964"
+				title: "找到苦寒监牢"
+				type: "advancement"
+			}]
+			title: "苦寒监牢"
+			x: 28.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["75D1E8A0C4B29F63"]
+			description: ["沉沦之城现在生成于&b木卫二&r的冰下海与渊海陷窟，应在地下海洋区域寻找。"]
+			icon: "cataclysm:stone_tiles"
+			id: "1AB9C234F9274019"
+			subtitle: "木卫二冰下海中的失落城市"
+			tasks: [{
+				advancement: "cataclysm:find_sunken_city"
+				criterion: ""
+				id: "6FB8B094353E4FC9"
+				title: "找到沉沦之城"
+				type: "advancement"
+			}]
+			title: "沉沦之城"
+			x: 28.5d
+			y: -2.0d
 		}
 	]
 	title: "群星之旅"

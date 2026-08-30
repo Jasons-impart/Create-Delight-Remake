@@ -1,0 +1,50 @@
+{
+    "value": [
+        {
+            "materials": [
+                "tetra:stone/",
+                "tetra:metal/",
+                "tetra:gem/",
+                "tetra:bone/"
+            ],
+            "key": "bow_blade/",
+            "level": 0,
+            "durability": 3,
+            "group": "bow_blade",
+            "integrity": -1,
+            "attributes": {
+                "**generic.attack_damage": 0.1
+            },
+            "extract": {
+                "primaryAttributes": {
+                    "generic.attack_damage": 0.5
+                },
+                "durability": 0.5,
+                "availableTextures": [
+                    ""
+                ],
+                "models": [
+                    {
+                        "location": "more_mod_tetra:item/module/bow/more_mod_tetra/bow_blade"
+                    },
+                    {
+                        "type": "tetra:filtered_grid_texture",
+                        "location": "more_mod_tetra:item/module/bow/more_mod_tetra/bow_blade",
+                        "filter": "draw_0"
+                    },
+                    {
+                        "type": "tetra:filtered_grid_texture",
+                        "location": "more_mod_tetra:item/module/bow/more_mod_tetra/bow_blade",
+                        "filter": "draw_1"
+                    },
+                    {
+                        "type": "tetra:filtered_grid_texture",
+                        "location": "more_mod_tetra:item/module/bow/more_mod_tetra/bow_blade",
+                        "filter": "draw_2"
+                    }
+                ]
+            }
+        }
+    ],
+    "Count": 1
+}
