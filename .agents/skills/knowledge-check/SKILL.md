@@ -30,7 +30,7 @@ description: 实现后知识检查、知识库维护、项目经验沉淀。用�
 
 如果存在 `tmp-opencode/knowledge-candidate-report.md`，先读取它再决定；除非当前任务明确要求维护知识库，否则 process note 候选需要用户接受后再落库。
 
-Codex（`.codex/hooks.json`）和 ZCode（`.zcode/config.json` 的 Stop hooks）都会运行 `scripts/validate-knowledge-base.ps1`，并写入 `tmp-opencode/knowledge-candidate-report.md`；该报告只提供建议，不会自动修改知识文件。
+Codex（`.codex/hooks.json`）和 ZCode（`.zcode/config.json` 的 Stop hooks）都会运行 `scripts/validate-knowledge-base.ps1`，并写入 `tmp-opencode/knowledge-candidate-report.md`；该报告只提供建议，不会自动修改知识文件。报告覆盖范围为工作区改动加上自上次报告以来未报告的最近提交（`-RecentCommits`，默认 1），并按时间戳归档到 `tmp-opencode/knowledge-candidate-history/`（保留最近 50 份）；漏记的知识候选可从归档或 git 提交历史回溯补记。
 
 如果任务中途遇到非显而易见的失败或绕路做法，但最终还没决定是否落库，可用 `scripts/add-knowledge-note.ps1` 追加临时 note，让候选报告把它路由到这里。
 
