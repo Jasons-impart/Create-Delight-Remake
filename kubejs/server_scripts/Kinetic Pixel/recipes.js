@@ -4,6 +4,8 @@ ServerEvents.recipes(e => {
         "kinetic_pixel:endercsloot",
         "kinetic_pixel:tableloot",
         "kinetic_pixel:shellloot",
+        "kinetic_pixel:pistonloot",
+        "kinetic_pixel:strikerloot",
         "kinetic_pixel:barrelreuse"
     ])
     remove_recipes_output(e,
@@ -408,6 +410,20 @@ ServerEvents.recipes(e => {
         B: "#forge:nuggets/iron"
     })
     .id("createdelight:muzzle_refit_iron_spike")
+    kubejs.shaped(
+        "kinetic_pixel:strikerexciter",
+        [
+            "AAF",
+            "BSB",
+            " S "
+        ],
+        {
+            A: "#forge:spring/between_500_2_1000",
+            F: "createaddition:iron_rod",
+            B: "create:iron_sheet",
+            S: "create:shaft"
+        }
+    ).id("createdelight:strikerexciter")
     threshing(e,  'kinetic_pixel:graycotton', [
         '2x minecraft:string',
         Item.of('2x minecraft:string').withChance(0.5),
