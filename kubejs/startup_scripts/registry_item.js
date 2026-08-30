@@ -396,6 +396,9 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.incomplete_california")
 
     // 未完成相关
+    // 未成形子弹：序列组装产物，再用动力锯切成不同种类子弹
+    e.create("createdelight:incomplete_bullet", "create:sequenced_assembly")
+        .translationKey("item.createdelight.incomplete_bullet")
     e.create("createdelight:incomplete_layered_magnet", "create:sequenced_assembly")
         .translationKey("item.createdelight.incomplete_layered_magnet")
     e.create("createdelight:incomplete_alternator", "create:sequenced_assembly")
