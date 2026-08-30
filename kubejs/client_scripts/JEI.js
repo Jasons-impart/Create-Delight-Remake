@@ -78,9 +78,3 @@ JEIEvents.hideItems(e => {
     'more_mod_tetra:wither_bone_ingot',
   ])
 })
-JEIEvents.hideFluids(e => {
-  // 三氧化硫已并入氧化硫（fluid.vintageimprovements.sulfur_dioxide）。
-  // 它是 Create VirtualFluid（无方块、无桶装物品），创造标签无条目可移除，故直接在 JEI 隐藏流体。
-  // OEI 为物品域合并，同样覆盖不到该流体。
-  e.hide('vintageimprovements:sulfur_trioxide')
-})
