@@ -76,7 +76,7 @@ ServerEvents.recipes(e => {
             C: "create_sa:steam_engine",
             D: "#minecraft:logs",
             E: "kinetic_pixel:ammunitionbox",
-            F: "kinetic_pixel:pistonexciter"
+            F: "kinetic_pixel:strikerexciter"
         })
         .id("createdelight:pistol_revolver_torque")
     create.mechanical_crafting(
@@ -94,7 +94,7 @@ ServerEvents.recipes(e => {
             D: "#minecraft:logs",
             E: "vintageimprovements:andesite_sheet",
             F: "kinetic_pixel:ammunitionbox",
-            G: "kinetic_pixel:pistonexciter"
+            G: "kinetic_pixel:strikerexciter"
         })
         .id("createdelight:pistol_auto_stress")
     create.mechanical_crafting(
