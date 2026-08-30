@@ -335,61 +335,28 @@ ServerEvents.recipes(e => {
         }
     ).id("createdelight_armorer:extended_mag_ca_3")
 
-    let iner = 'createdelight:incomplete_slap'
-    create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:slap"}').withCount(2), 'create:brass_sheet',
+    // 打包的弹药：序列组装统一制作，再切石分成不同种类子弹
+    let iner = 'vintageimprovements:bronze_sheet'
+    create.sequenced_assembly('createdelight:packaged_ammo', iner,
         [
-            create.cutting(iner, iner),
-            create.pressing(iner, iner),
             create.deploying(iner, [iner, 'createdelight:guncotton']),
-            create.deploying(iner, [iner, 'createmetallurgy:tungsten_nugget'])
-        ]
-    )
-        .loops(1)
-        .transitionalItem(iner)
-        .id("createdelight:slap")
-
-    let iner_1 = 'createdelight:incomplete_rbapb'
-    create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:rbapb"}'), 'create:brass_sheet',
-        [
-            // vintageimprovements.polishing(iner_1, iner_1, 50, 2, true),
-            createmetallurgy.grinding(iner_1, iner_1),
-            create.deploying(iner_1, [iner_1, 'createdelight:guncotton']),
-            create.deploying(iner_1, [iner_1, 'createmetallurgy:tungsten_nugget']),
+            create.deploying(iner, [iner, 'createmetallurgy:tungsten_nugget']),
             create.pressing(iner, iner)
         ]
     )
         .loops(1)
-        .transitionalItem(iner_1)
-        .id("createdelight:rbapb")
-    
-    let iner_3 = 'createdelight:incomplete_gas_pistol_ammo'
-    create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:gas_pistol_ammo"}'), 'create:copper_sheet',
-        [
-            create.cutting(iner, iner),
-            create.pressing(iner, iner),
-            create.deploying(iner_3, [iner_3, 'createdelight:guncotton']),
-            create.deploying(iner_3, [iner_3, '#forge:nuggets/bronze'])
-        ]
-    )
-        .loops(1)
-        .transitionalItem(iner_3)
-        .id("createdelight:gas_pistol_ammo")
+        .transitionalItem(iner)
+        .id("createdelight:sequenced_assembly/packaged_ammo")
 
-    let iner_4 = 'createdelight:incomplete_12g'
-    create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"tacz:12g"}'), 'alexscaves:polymer_plate', 
-        [
-            create.cutting(iner, iner),
-            create.pressing(iner, iner),
-            create.deploying(iner_4, [iner_4, 'createdelight:guncotton']),
-            create.deploying(iner_4, [iner_4, '#forge:nuggets']),
-            create.deploying(iner_4, [iner_4, '#forge:nuggets']),
-            create.pressing(iner_4, iner_4)
-        ]
-    )
-        .loops(1)
-        .transitionalItem(iner_4)
-        .id("createdelight:12g")
-    
+    e.recipes.stonecutting(Item.of('tacz:ammo', 2, '{AmmoId:"create_armorer:slap"}'), 'createdelight:packaged_ammo')
+        .id("createdelight:stonecutting/slap")
+    e.recipes.stonecutting(Item.of('tacz:ammo', 2, '{AmmoId:"create_armorer:rbapb"}'), 'createdelight:packaged_ammo')
+        .id("createdelight:stonecutting/rbapb")
+    e.recipes.stonecutting(Item.of('tacz:ammo', 2, '{AmmoId:"create_armorer:gas_pistol_ammo"}'), 'createdelight:packaged_ammo')
+        .id("createdelight:stonecutting/gas_pistol_ammo")
+    e.recipes.stonecutting(Item.of('tacz:ammo', 1, '{AmmoId:"tacz:12g"}'), 'createdelight:packaged_ammo')
+        .id("createdelight:stonecutting/12g")
+
     create.sequenced_assembly(Item.of('tacz:attachment', '{AttachmentId:"create_armorer:muzzle_refit_bigger_cylinder"}'), "create:fluid_pipe",
         create.deploying("create:fluid_pipe", ["create:fluid_pipe", "create_sa:small_fueling_tank"])
     )

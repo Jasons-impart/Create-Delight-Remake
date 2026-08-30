@@ -78,3 +78,7 @@ JEIEvents.hideItems(e => {
     'more_mod_tetra:wither_bone_ingot',
   ])
 })
+JEIEvents.hideFluids(e => {
+  // 三氧化硫已并入氧化硫（fluid.vintageimprovements.sulfur_dioxide），隐藏不再使用的三氧化硫
+  e.hide('vintageimprovements:sulfur_trioxide')
+})

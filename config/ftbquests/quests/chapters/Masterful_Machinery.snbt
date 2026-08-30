@@ -66,6 +66,27 @@
 		}
 		{
 			dependencies: ["2F27A7E899601927"]
+			description: [
+				"火棉是制作子弹的重要原料。"
+				""
+				"硫酸可在主世界制取：用大气收集器采集氧气；将硫粉与氧气一同加压（加热）得到氧化硫，硫粉单独加压也可得到一半产量的氧化硫；再将氧化硫与水加压即得硫酸。硫粉可从毒化洞穴的硫磺晶簇挖掘获得。"
+				""
+				"得到硫酸后，将它与火药、纸混合搅拌即得火棉；用灰棉花代替纸与火药产量更高。"
+			]
+			icon: "createdelight:guncotton"
+			id: "9E4B7C21A58D30F6"
+			subtitle: "在主世界制取硫酸与火棉"
+			tasks: [{
+				id: "4C81E9A72D5B06F3"
+				item: "createdelight:guncotton"
+				type: "item"
+			}]
+			title: "火棉"
+			x: -4.0d
+			y: 8.5d
+		}
+		{
+			dependencies: ["2F27A7E899601927"]
 			id: "6EB35AD69CE00DFB"
 			tasks: [{
 				id: "2D7DFE9713891322"
