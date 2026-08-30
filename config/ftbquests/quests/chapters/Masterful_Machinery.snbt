@@ -575,7 +575,7 @@
 			size: 1.5d
 			tasks: [{
 				id: "4078E5D27B70DEFB"
-				item: "kinetic_pixel:pistonexciter"
+				item: "kinetic_pixel:strikerexciter"
 				type: "item"
 			}]
 			x: 2.25d
