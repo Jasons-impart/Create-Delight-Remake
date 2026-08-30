@@ -396,6 +396,11 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.incomplete_california")
 
     // 未完成相关
+    // 未成形子弹：序列组装产物，再用动力锯切成不同种类子弹
+    //（普通物品类型即可：组装进度靠 NBT 存储且可正常参与序列组装；
+    //  不用 create:sequenced_assembly 类型可避免物品栏常驻的黑色进度条）
+    e.create("createdelight:incomplete_bullet")
+        .translationKey("item.createdelight.incomplete_bullet")
     e.create("createdelight:incomplete_layered_magnet", "create:sequenced_assembly")
         .translationKey("item.createdelight.incomplete_layered_magnet")
     e.create("createdelight:incomplete_alternator", "create:sequenced_assembly")

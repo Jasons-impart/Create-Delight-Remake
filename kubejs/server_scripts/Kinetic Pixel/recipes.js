@@ -335,10 +335,11 @@ ServerEvents.recipes(e => {
         }
     ).id("createdelight_armorer:extended_mag_ca_3")
 
-    // 打包的弹药：序列组装统一制作，再用机械切割分成不同种类子弹
+    // 未成形子弹：序列组装统一制作，再用动力锯切成不同种类子弹
+    //（动力锯对同一输入的多条切割配方按顺序轮转处理，可用锯的过滤器选择产物）
     //（切石机配方不支持 NBT 输出，tacz:ammo 缺少 AmmoId 会没有模型）
     let iner = 'vintageimprovements:bronze_sheet'
-    create.sequenced_assembly('createdelight:packaged_ammo', iner,
+    create.sequenced_assembly('createdelight:incomplete_bullet', iner,
         [
             create.deploying(iner, [iner, 'createdelight:guncotton']),
             create.deploying(iner, [iner, 'createmetallurgy:tungsten_nugget']),
@@ -347,15 +348,15 @@ ServerEvents.recipes(e => {
     )
         .loops(1)
         .transitionalItem(iner)
-        .id("createdelight:sequenced_assembly/packaged_ammo")
+        .id("createdelight:sequenced_assembly/incomplete_bullet")
 
-    create.cutting(Item.of('tacz:ammo', 30, '{AmmoId:"create_armorer:slap"}'), 'createdelight:packaged_ammo')
-        .id("createdelight:cutting/slap")
-    create.cutting(Item.of('tacz:ammo', 30, '{AmmoId:"create_armorer:rbapb"}'), 'createdelight:packaged_ammo')
-        .id("createdelight:cutting/rbapb")
-    create.cutting(Item.of('tacz:ammo', 60, '{AmmoId:"create_armorer:gas_pistol_ammo"}'), 'createdelight:packaged_ammo')
+    create.cutting(Item.of('tacz:ammo', 3, '{AmmoId:"create_armorer:gas_pistol_ammo"}'), 'createdelight:incomplete_bullet')
         .id("createdelight:cutting/gas_pistol_ammo")
-    create.cutting(Item.of('tacz:ammo', 18, '{AmmoId:"tacz:12g"}'), 'createdelight:packaged_ammo')
+    create.cutting(Item.of('tacz:ammo', 2, '{AmmoId:"create_armorer:rbapb"}'), 'createdelight:incomplete_bullet')
+        .id("createdelight:cutting/rbapb")
+    create.cutting(Item.of('tacz:ammo', 2, '{AmmoId:"create_armorer:slap"}'), 'createdelight:incomplete_bullet')
+        .id("createdelight:cutting/slap")
+    create.cutting(Item.of('tacz:ammo', 1, '{AmmoId:"tacz:12g"}'), 'createdelight:incomplete_bullet')
         .id("createdelight:cutting/12g")
 
     create.sequenced_assembly(Item.of('tacz:attachment', '{AttachmentId:"create_armorer:muzzle_refit_bigger_cylinder"}'), "create:fluid_pipe",
