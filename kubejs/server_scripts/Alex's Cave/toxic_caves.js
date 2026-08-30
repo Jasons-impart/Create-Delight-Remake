@@ -153,18 +153,9 @@ ServerEvents.recipes(e => {
     ], "#forge:sulfuric_acid", 50)
 
     e.recipes.vintageimprovements.pressurizing(
-        Fluid.of("vintageimprovements:sulfur_dioxide", 500),
-        "alexscaves:sulfur_dust"
-    )
-    .processingTime(100)
-    .secondaryFluidOutput(0)
-    .heated()
-    .id("createdelight:pressurizing/compat/sulfur_dioxide_from_dust")
-
-    e.recipes.vintageimprovements.pressurizing(
         Fluid.of("vintageimprovements:sulfur_dioxide", 1000),
         [
-            "alexscaves:sulfur_dust",
+            "#forge:dusts/sulfur",
             Fluid.of("northstar:oxygen", 500)
         ]
     )

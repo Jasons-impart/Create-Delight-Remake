@@ -54,7 +54,7 @@ ServerEvents.recipes(e => {
         .id("createdelight:alloy_electric_furnace/netherite")
     //坚钢锭
     e.recipes.createdelight.alloy_electric_furnace()
-        .inputItems('3x #forge:ingots/steel', '2x #forge:ingots/tungsten')
+        .inputItems('3x create:andesite_alloy', '2x #forge:ingots/tungsten')
         .outputItems('5x #forge:ingots/obdurium')
         .inputFE(4000)
         .id("createdelight:alloy_electric_furnace/obdurium")

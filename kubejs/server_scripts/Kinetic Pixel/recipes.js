@@ -335,7 +335,8 @@ ServerEvents.recipes(e => {
         }
     ).id("createdelight_armorer:extended_mag_ca_3")
 
-    // 打包的弹药：序列组装统一制作，再切石分成不同种类子弹
+    // 打包的弹药：序列组装统一制作，再用机械切割分成不同种类子弹
+    //（切石机配方不支持 NBT 输出，tacz:ammo 缺少 AmmoId 会没有模型）
     let iner = 'vintageimprovements:bronze_sheet'
     create.sequenced_assembly('createdelight:packaged_ammo', iner,
         [
@@ -348,14 +349,14 @@ ServerEvents.recipes(e => {
         .transitionalItem(iner)
         .id("createdelight:sequenced_assembly/packaged_ammo")
 
-    e.recipes.stonecutting(Item.of('tacz:ammo', 2, '{AmmoId:"create_armorer:slap"}'), 'createdelight:packaged_ammo')
-        .id("createdelight:stonecutting/slap")
-    e.recipes.stonecutting(Item.of('tacz:ammo', 2, '{AmmoId:"create_armorer:rbapb"}'), 'createdelight:packaged_ammo')
-        .id("createdelight:stonecutting/rbapb")
-    e.recipes.stonecutting(Item.of('tacz:ammo', 2, '{AmmoId:"create_armorer:gas_pistol_ammo"}'), 'createdelight:packaged_ammo')
-        .id("createdelight:stonecutting/gas_pistol_ammo")
-    e.recipes.stonecutting(Item.of('tacz:ammo', 1, '{AmmoId:"tacz:12g"}'), 'createdelight:packaged_ammo')
-        .id("createdelight:stonecutting/12g")
+    create.cutting(Item.of('tacz:ammo', 2, '{AmmoId:"create_armorer:slap"}'), 'createdelight:packaged_ammo')
+        .id("createdelight:cutting/slap")
+    create.cutting(Item.of('tacz:ammo', 2, '{AmmoId:"create_armorer:rbapb"}'), 'createdelight:packaged_ammo')
+        .id("createdelight:cutting/rbapb")
+    create.cutting(Item.of('tacz:ammo', 2, '{AmmoId:"create_armorer:gas_pistol_ammo"}'), 'createdelight:packaged_ammo')
+        .id("createdelight:cutting/gas_pistol_ammo")
+    create.cutting(Item.of('tacz:ammo', 1, '{AmmoId:"tacz:12g"}'), 'createdelight:packaged_ammo')
+        .id("createdelight:cutting/12g")
 
     create.sequenced_assembly(Item.of('tacz:attachment', '{AttachmentId:"create_armorer:muzzle_refit_bigger_cylinder"}'), "create:fluid_pipe",
         create.deploying("create:fluid_pipe", ["create:fluid_pipe", "create_sa:small_fueling_tank"])
