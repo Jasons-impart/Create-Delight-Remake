@@ -21,7 +21,7 @@ description: 管理 Create-Delight Remake 整合包的正式版或测试版发�
 .\.agents\skills\release\release-plan.ps1 -Version 'v0.5.0.6-test' -ReleaseType '测试' -AsJson
 ```
 
-计划会推导版本、目标分支、上一稳定版本和首个正式版候选。用户明确指定版本、分支或发布类型时，以用户指定为准。
+计划会推导版本、目标分支、上一发布版本和首个正式版候选。上一发布版本按发布类型读取 GitHub Release 元数据：测试版使用最近发布的 Release（包含 prerelease），正式版使用 GitHub 的 `latest release` tag；不要根据 tag 是否带 `-test` 推断正式性。用户明确指定版本、分支或发布类型时，以用户指定为准。
 
 ## Agent 必须完成的判断
 
@@ -60,7 +60,7 @@ description: 管理 Create-Delight Remake 整合包的正式版或测试版发�
     -WhatIf
 ```
 
-`PreviousVersion` 默认自动推导；只有推导错误时才传入覆盖值。确认 dry run 后移除 `-WhatIf`。脚本会发布 4 个正式版产物或 2 个测试版产物，并在正式版时创建公告更新 PR；只报告该 PR，不要合并它。
+`PreviousVersion` 默认按上述 GitHub Release 规则自动推导；只有推导错误时才传入覆盖值。确认 dry run 后移除 `-WhatIf`。脚本会发布 4 个正式版产物或 2 个测试版产物，并在正式版时创建公告更新 PR；只报告该 PR，不要合并它。
 
 ## 不可违反的约束
 
