@@ -17,7 +17,7 @@
     The branch to tag on (e.g. "release-v047x").
 
 .PARAMETER PreviousVersion
-    The previous version for release notes and patch artifact names (e.g. "v0.4.7.14").
+    The previous release tag for release notes and patch artifact names (e.g. "v0.4.7.14").
 
 .PARAMETER ReleaseType
     "正式" for full release, "测试" for prerelease. Default: "正式".
@@ -50,6 +50,7 @@ param(
 )
 
 $ErrorActionPreference = "Continue"
+$GitHubRepo = "Jasons-impart/Create-Delight-Remake"
 
 # --- State for cleanup ---
 $script:OriginalBranch = $null
@@ -73,6 +74,40 @@ function Fail {
     Restore-State
     Write-Error $Message
     exit 1
+}
+
+function Get-LatestPublishedReleaseTag {
+    $releasesJson = gh release list --repo $GitHubRepo --limit 1 --exclude-drafts --json tagName,publishedAt,isPrerelease 2>$null
+    if ($LASTEXITCODE -ne 0 -or -not $releasesJson) {
+        Fail "Cannot query the latest published GitHub release"
+    }
+    try {
+        $releases = @($releasesJson | ConvertFrom-Json -ErrorAction Stop)
+    } catch {
+        Fail "GitHub release list returned invalid JSON"
+    }
+    if ($releases.Count -eq 0 -or -not $releases[0].tagName) {
+        Fail "No published GitHub release was found"
+    }
+    return $releases[0].tagName
+}
+
+function Get-LatestReleaseTag {
+    # gh release view without a tag follows GitHub's latest release semantics:
+    # the latest published non-prerelease release.
+    $releaseJson = gh release view --repo $GitHubRepo --json tagName,publishedAt,isPrerelease 2>$null
+    if ($LASTEXITCODE -ne 0 -or -not $releaseJson) {
+        Fail "Cannot query GitHub's latest release"
+    }
+    try {
+        $release = $releaseJson | ConvertFrom-Json -ErrorAction Stop
+    } catch {
+        Fail "GitHub latest release returned invalid JSON"
+    }
+    if (-not $release.tagName -or $release.isPrerelease) {
+        Fail "GitHub latest release is missing or marked as a prerelease"
+    }
+    return $release.tagName
 }
 
 function Test-Prerequisites {
@@ -169,33 +204,15 @@ if (-not (Test-Prerequisites)) {
     exit 1
 }
 
-# Auto-detect PreviousVersion if not provided (matches CI's patch-tasks logic)
+# Auto-detect PreviousVersion from GitHub release metadata if not provided.
 if (-not $PreviousVersion) {
     Write-Host "🔍 Auto-detecting PreviousVersion..."
-    # After checkout & pull in Phase A, HEAD will have the tag.
-    # Use same logic as CI: if HEAD has exact tag, look at HEAD^; otherwise HEAD.
-    # But we're running before Phase A checkout, so use remote tags.
-    $autoPrev = git describe --tags --abbrev=0 "$Version^" 2>$null
-    if ($LASTEXITCODE -eq 0 -and $autoPrev) {
-        $PreviousVersion = $autoPrev
-        Write-Host "   ✅ Auto-detected PreviousVersion: $PreviousVersion"
+    if ($ReleaseType -eq "测试") {
+        $PreviousVersion = Get-LatestPublishedReleaseTag
     } else {
-        # Fallback: list tags and find the one before $Version
-        $allTags = git tag -l 'v*' --sort=-version:refname 2>$null
-        $found = $false
-        foreach ($tag in $allTags) {
-            if ($tag -eq $Version) { continue }
-            if ($tag -match '^v\d+\.\d+\.\d+\.\d+$') {
-                $PreviousVersion = $tag
-                $found = $true
-                Write-Host "   ✅ Auto-detected PreviousVersion from tag list: $PreviousVersion"
-                break
-            }
-        }
-        if (-not $found) {
-            Fail "Cannot auto-detect PreviousVersion. Please provide -PreviousVersion parameter."
-        }
+        $PreviousVersion = Get-LatestReleaseTag
     }
+    Write-Host "   ✅ Auto-detected PreviousVersion: $PreviousVersion"
 }
 
 # Validate PreviousVersion format (now that it may be auto-detected)
