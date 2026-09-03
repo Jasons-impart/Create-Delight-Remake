@@ -17,6 +17,7 @@ ServerEvents.recipes(e => {
         'youkaishomecoming:oily_bean_curd_from_tofu_campfire',
         'youkaishomecoming:oily_bean_curd_from_tofu_smelting',
         'youkaishomecoming:oily_bean_curd_from_tofu_smoking',
+        'youkaishomecoming:iron_ingot_from_can_smelting',
         'youkaishomecoming:pods_cutting',
         'youkaishomecoming:red_velvet_cake',
         "youkaishomecoming:emptying/blood_bottle_emptying",
