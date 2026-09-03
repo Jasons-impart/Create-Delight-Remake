@@ -458,7 +458,10 @@
 		}
 		{
 			dependencies: ["1EF771A80F0460CF"]
-			description: ["在主世界产生的是氧气"]
+			description: [
+				"在主世界可产生氧气。"
+				"产物从有洞口的侧面输出。"
+			]
 			id: "3C1CBC4F971804DF"
 			subtitle: "通入应力后便可在当前星球收集气体"
 			tasks: [{

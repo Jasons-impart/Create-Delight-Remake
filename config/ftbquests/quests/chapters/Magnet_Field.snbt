@@ -334,7 +334,10 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["089E81F7DCA47A98"]
+			dependencies: [
+				"089E81F7DCA47A98"
+				"287CEBB5775C8F96"
+			]
 			description: [
 				"磁场洞穴以特殊的磁力机制与机械生命为主题。这个黑暗的群系中到处都分布着发微光的赤钕柱和青钕柱，尖锐的方铅岩锥上放置着危险的特斯拉球作为光照，四处都闪烁着红色和蓝色的电弧。玩家还可以看到小块的方铅岩从地面飘向天空，仿佛不受重力影响。"
 				"&4进入方法：解锁并登陆月球后，在月球地下深处寻找磁场洞穴。"
@@ -358,6 +361,24 @@
 			title: "磁场洞穴"
 			x: 2.0d
 			y: 2.0d
+		}
+		{
+			dependencies: [
+				"119E0BF4CFAA0B5F"
+				"25377BD23842CC96"
+			]
+			description: ["月球需要星图内的月球科研点达到2点。当前版本月球只有地表维度，因此解锁月球后目的地列表里不会出现月球轨道。"]
+			id: "287CEBB5775C8F96"
+			size: 1.5d
+			subtitle: "前往月球地表"
+			tasks: [{
+				advancement: "northstar:one_small_step"
+				criterion: ""
+				id: "2BA773A47A017409"
+				type: "advancement"
+			}]
+			x: 0.5d
+			y: 0.5d
 		}
 	]
 	title: "&9磁场空间"
