@@ -1,0 +1,88 @@
+# Use 'Default' for the stated default, or 'True'/'False' to override it.
+# All options in this file are read at startup and require a game restart.
+[debug]
+    # Default: False
+    # Debug use only. Change this only if you fully understand what it does.
+    disable-worldgen-features = "Default"
+
+# Optimizations used while generating new chunks.
+[worldgen]
+
+    # Optimizations for vegetation, ores, lakes, and other placed features.
+    [worldgen.placed-features]
+        # Default: False
+        # Uses direct loops and reusable placement state to avoid temporary streams,
+        # iterators, and block positions. Experimental; modded features may be placed incorrectly
+        # if they rely on details of the vanilla placement path.
+        enabled = "Default"
+        # Default: True
+        # Applies mathematically equivalent local placement and predicate optimizations
+        # without replacing the complete placed-feature pipeline.
+        local-optimizations = "Default"
+        # Default: True
+        # Reuses block-predicate results while disk features such as clay and sand
+        # are placed, trading a small amount of temporary memory for fewer block lookups.
+        memoized-disk-plan = "Default"
+
+    # Page-based block-state storage optimized for chunk generation.
+    [worldgen.arena]
+        # Default: True
+        # Stores section block states in compact page-based palettes and batches terrain
+        # writes directly into them. Mods that directly access vanilla palettes may malfunction.
+        enabled = "Default"
+        # Default: True
+        # Compiles final-density graphs into JVM code that evaluates complete vertical
+        # columns at once. The first use adds compilation work and creates generated JVM classes.
+        density-column-compiler = "Default"
+        # Default: False
+        # Keeps Arena block storage after chunks finish generation instead of converting
+        # it to vanilla storage. Server mods that directly access vanilla palettes may malfunction.
+        server-runtime = "Default"
+
+    # Optimizations used while applying topsoil, beaches, bedrock, and other surface layers.
+    [worldgen.surface]
+        # Default: True
+        # Caches each chunk's quart-biome grid and skips repeated biome zoom lookups in
+        # uniform areas. Uses additional temporary memory while the chunk surface is generated.
+        biome-cache = "Default"
+
+    # Independent world-generation optimizations.
+    [worldgen.misc]
+        # Default: True
+        # Lets compiled density columns read NoiseChunk flat-cache values directly.
+        # When disabled, density functions are evaluated through their standard compute method.
+        flat-cache-access = "Default"
+
+# Dedicated and integrated server optimizations.
+[server]
+
+    # Experimental replacement for the server's loaded-chunk tick loop.
+    [server.fast-chunk-ticking]
+        # Default: False
+        # Reuses arrays, lists, and chunk lookups during chunk ticking, natural spawning,
+        # and weather updates. Experimental; it may affect spawning, weather, or modded tick logic.
+        enabled = "Default"
+
+# Chunk serialization and storage options.
+[chunk-saving]
+    # Default: False
+    # Serializes eligible chunks directly to compressed NBT bytes instead of building
+    # an intermediate NBT object tree. Mods that inspect chunk NBT during saving may be affected.
+    # Compatibility on Minecraft 1.20.1 is very limited. Enabling this option is not recommended
+    # when C2ME or one of its ports is installed.
+    gc-free-worldgen = "True"
+    # Default: True
+    # Reuses one NBT writer and compressor per saving worker thread, releasing buffers
+    # larger than 512 KiB. Reduces allocation churn but retains memory on each worker thread.
+    retain-buffer = "Default"
+
+# Lighting-engine options.
+[lighting]
+
+    # Performance patches for Minecraft's vanilla block-light and sky-light engines.
+    [lighting.ya]
+        # Default: False
+        # Experimental. Patches vanilla light storage and scheduling, making light
+        # calculations about 4.5x faster and light-data reads over 3x faster. On clients, this may
+        # also provide a small improvement to 1% low FPS.
+        enabled = "Default"

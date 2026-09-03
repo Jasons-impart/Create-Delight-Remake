@@ -75,6 +75,7 @@ xaerominimap_entities.json
 !/alexscaves-general.toml
 !/simplebackups-common.toml
 !/bcc-common.toml
+!/byepregen.toml
 !/biome_replacer.properties
 !/NoChatReports
 /NoChatReports/*
