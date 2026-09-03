@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#forge:is_swamp",
+  "features": "festival_delicacies:patch_lotus",
+  "step": "vegetal_decoration"
+}
