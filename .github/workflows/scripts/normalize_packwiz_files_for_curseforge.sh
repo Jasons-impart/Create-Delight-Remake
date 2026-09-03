@@ -174,49 +174,13 @@ resolve_curseforge_metadata_for_asset() {
   return 1
 }
 
+# 禁用mod文件复制用于自动detect，无release.curseforge模组不再参与探测
 copy_packwiz_file_mods_for_detection() {
-  [ -d "mods" ] || return 0
-  [ -d "packwiz-files/mods" ] || return 0
-
-  while IFS= read -r -d '' meta; do
-    grep -Fq 'packwiz-files/mods/' "$meta" || continue
-
-    local filename
-    filename="$(read_filename "$meta")"
-    if [ -z "$filename" ]; then
-      echo "::warning::Cannot read filename from $meta"
-      continue
-    fi
-
-    local src="packwiz-files/mods/$filename"
-    local dest="mods/$filename"
-    if [ ! -f "$src" ]; then
-      echo "::warning::Missing packwiz-files payload for $meta: $src"
-      continue
-    fi
-
-    if [ ! -f "$dest" ]; then
-      cp "$src" "$dest"
-      printf '%s\n' "$dest" >> "$copied_list"
-    fi
-  done < <(find mods -name '*.pw.toml' -print0)
+  return 0
 }
 
 remove_shadowed_direct_metadata() {
-  [ -d "mods" ] || return 0
-
-  while IFS= read -r -d '' meta; do
-    grep -Fq 'packwiz-files/mods/' "$meta" || continue
-
-    local filename
-    filename="$(read_filename "$meta")"
-    [ -n "$filename" ] || continue
-
-    if has_curseforge_metadata "mods" "$filename" "$meta"; then
-      echo "Removing direct packwiz-files metadata shadowed by CurseForge metadata: $meta"
-      rm -f "$meta"
-    fi
-  done < <(find mods -name '*.pw.toml' -print0)
+  return 0
 }
 
 normalize_packwiz_files_for_category() {
@@ -285,16 +249,6 @@ normalize_release_hinted_mods() {
 
 normalize_release_hinted_mods
 copy_packwiz_file_mods_for_detection
-
-if [ -s "$copied_list" ]; then
-  echo "Detecting CurseForge metadata for packwiz-files-backed mods..."
-  if ! ./packwiz -y curseforge detect; then
-    echo "::warning::CurseForge detection failed or found no usable matches; leaving unmatched packwiz-files entries as direct payloads."
-  fi
-  remove_shadowed_direct_metadata
-else
-  echo "No packwiz-files-backed mod JARs found for CurseForge detection."
-fi
 
 normalize_packwiz_files_for_category resourcepacks
 normalize_packwiz_files_for_category shaderpacks
