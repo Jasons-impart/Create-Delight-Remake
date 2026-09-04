@@ -306,6 +306,10 @@ let MaterialWhitelistValueDict = {
     "collectorsreap:lime_popsicle": 6,
     "collectorsreap:urchin": 4,
     "brewinandchewin:unripe_scarlet_cheese_wheel": 32,
+    // Mekanism 采矿价值源（价值经配方链自动传导至粉/锭/电路/塑料）
+    "mekanism:raw_osmium": 3,
+    "mekanism:raw_lead": 3,
+    "mekanism:fluorite_gem": 2,
 }
 
 let FoodIngredientValueDict = {
