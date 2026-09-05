@@ -23,7 +23,7 @@ Use this workflow for modpack asset operations that touch `mods/`, `resourcepack
 - Do not narrow `sync-packwiz-assets.ps1 -MetadataRoots` when syncing a populated live instance: packwiz-installer treats omitted categories as removed from the temporary pack and deletes their local files. Use the default roots for live sync; limit roots only in an isolated disposable directory.
 - Shaderpack files containing `Clrwl` are generated locally and must not be tracked.
 - Set `side = "client"` or `side = "server"` explicitly for client-only or server-only mods.
-- Set top-level `stable = false` for assets allowed in local development and test releases but excluded from formal releases. Formal workflows pass stable-pruning mode for Client, Server, integrity manifests, and release patches; test workflows and ordinary `sync-packwiz-assets.ps1` runs must not.
+- Use top-level `distribution = "development"` for assets that stay in local development only, or `distribution = "testing"` for assets that also enter test packages. Omit it (equivalent to `distribution = "release"`) for player-facing assets. All GitHub Actions exclude development assets; formal releases also exclude testing assets from Client, Server, integrity manifests, and release patches.
 - Do not refresh GitHub Pages mod classification data (`docs/mods-data.js`) as part of normal asset changes; it is an expensive manual task and requires an explicit user request.
 
 ## Add Or Update Assets

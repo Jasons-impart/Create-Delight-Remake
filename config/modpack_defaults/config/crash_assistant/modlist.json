@@ -404,11 +404,6 @@
     "name": "Create Delight Core",
     "version": "2.2.16j"
   },
-  "create-enchantment-industry-2.5.1c.jar": {
-    "modId": "create-enchantment-industry",
-    "name": "Create: Enchantment Industry",
-    "version": "2.5.1c"
-  },
   "create-enchantment-industry-2.5.2.jar": {
     "modId": "create-enchantment-industry",
     "name": "Create: Enchantment Industry",
@@ -844,10 +839,10 @@
     "name": "Flerovium",
     "version": "1.20.1-1.2.19-all"
   },
-  "fluidlogistics-1.2.7.jar": {
+  "fluidlogistics-1.2.9.jar": {
     "modId": "fluidlogistics",
-    "name": "Create: FluidLogistic",
-    "version": "1.2.7"
+    "name": "Create: FluidLogistics",
+    "version": "1.2.9"
   },
   "forge-dungeonsdelight-1.20.1-1.3.0.jar": {
     "modId": "forge-dungeonsdelight",

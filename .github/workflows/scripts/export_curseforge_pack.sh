@@ -13,7 +13,6 @@ raw_prefix_regex='https://raw\.githubusercontent\.com/Jasons-impart/Create-Delig
 local_prefix="http://127.0.0.1:${port}/packwiz-files/"
 server_pid=""
 side_backup=""
-stable_args=()
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 repo_root="$(cd "$script_dir/../../.." && pwd)"
@@ -40,10 +39,11 @@ trap cleanup EXIT
 
 python3 "$repo_root/scripts/generate-packwiz-files.py" --source "$repo_root/modpack.toml" --output-dir "$repo_root"
 side_backup="$(mktemp -d)"
-if [ "${PACKWIZ_STABLE_RELEASE:-false}" = "true" ]; then
-  stable_args=(--stable)
-fi
-python3 "$repo_root/scripts/packwiz-side.py" prune-metadata --base "$repo_root" --target client --backup-dir "$side_backup" "${stable_args[@]}"
+python3 "$repo_root/scripts/packwiz-side.py" prune-metadata \
+  --base "$repo_root" \
+  --target client \
+  --distribution "${PACKWIZ_DISTRIBUTION:-development}" \
+  --backup-dir "$side_backup"
 bash "$script_dir/normalize_packwiz_files_for_curseforge.sh"
 
 mkdir -p "$(dirname "$output")"

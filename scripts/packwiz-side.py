@@ -11,6 +11,7 @@ except ModuleNotFoundError:
 
 
 VALID_SIDES = {"both", "client", "server"}
+VALID_DISTRIBUTIONS = {"development", "testing", "release"}
 DEFAULT_ROOTS = ("mods", "resourcepacks", "shaderpacks", "tacz")
 
 
@@ -51,11 +52,19 @@ def side_for(data):
     return str(data.get("side", "both")).strip().lower()
 
 
-def is_stable_enabled(data):
-    value = data.get("stable", True)
-    if isinstance(value, bool):
-        return value
-    return str(value).strip().lower() not in {"false", "0", "no"}
+def distribution_for(data):
+    return str(data.get("distribution", "release")).strip().lower()
+
+
+def is_allowed_for_distribution(asset_distribution, target_distribution):
+    """Return whether an asset belongs in the selected package channel.
+
+    Development assets stay local, testing assets also enter test packages, and
+    release assets enter every package channel.  The default metadata value is
+    ``release`` so existing Packwiz entries remain player-facing by default.
+    """
+    ranks = {"development": 0, "testing": 1, "release": 2}
+    return ranks[target_distribution] <= ranks[asset_distribution]
 
 
 def is_allowed(side, target):
@@ -91,8 +100,9 @@ def cmd_prune_metadata(args):
     for meta in metadata_files(base, args.roots):
         data = read_toml(meta)
         side = side_for(data)
-        stable_excluded = args.stable and not is_stable_enabled(data)
-        if is_allowed(side, args.target) and not stable_excluded:
+        distribution = distribution_for(data)
+        distribution_excluded = not is_allowed_for_distribution(distribution, args.distribution)
+        if is_allowed(side, args.target) and not distribution_excluded:
             continue
         if backup_dir is not None:
             rel = meta.relative_to(base)
@@ -102,7 +112,11 @@ def cmd_prune_metadata(args):
         meta.unlink()
         count += 1
         if args.verbose:
-            reason = "stable-disabled" if stable_excluded else f"not allowed for {args.target}"
+            reason = (
+                f"not allowed for {args.distribution} distribution"
+                if distribution_excluded
+                else f"not allowed for {args.target}"
+            )
             print(f"removed metadata ({reason}): {meta.relative_to(base).as_posix()}")
     if args.verbose:
         print(f"removed {count} metadata file(s)")
@@ -163,6 +177,10 @@ def cmd_validate(args):
         if "side" not in data:
             print(f"{rel}: missing side", file=sys.stderr)
             failed = True
+        distribution = distribution_for(data)
+        if distribution not in VALID_DISTRIBUTIONS:
+            print(f"{rel}: invalid distribution '{distribution}'", file=sys.stderr)
+            failed = True
     return 1 if failed else 0
 
 
@@ -180,7 +198,12 @@ def main():
     prune.add_argument("--base", default=".")
     prune.add_argument("--roots", nargs="+", default=list(DEFAULT_ROOTS))
     prune.add_argument("--target", choices=["client", "server", "all"], required=True)
-    prune.add_argument("--stable", action="store_true", help="Also remove metadata with stable = false.")
+    prune.add_argument(
+        "--distribution",
+        choices=sorted(VALID_DISTRIBUTIONS),
+        default="development",
+        help="Package channel to retain (default: development/local).",
+    )
     prune.add_argument("--backup-dir")
     prune.add_argument("--verbose", action="store_true")
     prune.set_defaults(func=cmd_prune_metadata)
