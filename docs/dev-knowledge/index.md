@@ -46,8 +46,8 @@
 | `docs/plan/enchantment-three-stage-progression-plan.md` | 内容设计计划 | 神化普通获取、附魔工业精炼与 Quark 古卷最终突破的三级附魔成长、绕过封锁和实施边界。 |
 | `docs/plan/chromatic-compound-endgame-plan.md` | 内容设计计划 | 异彩化合物双路线、光辉石与暗影钢终盘分支的材料链规划。 |
 | `docs/plan/create-processing-multiblock-plan.md` | 技术设计计划 | 基于 Create 加工流程与 MBD2 构建可组合多方块机器的实现规划。 |
-| `docs/plan/one-enough-damage-unified-damage-system.md` | 技术设计计划 | OneEnoughDamage 伤害扫描、逻辑分组、增伤与抗性统一方案。 |
-| `docs/attributeslib-armor-balance-analysis.md` | 技术研究参考 | OED 护甲前伤害阶段、Improved Mobs/Fallen 极端压力、Tetrawear/生命档位，以及 2026-07-22 已采用的 AttributesLib 护甲与保护公式。 |
+| `docs/plan/one-enough-damage-unified-damage-system.md` | 历史技术设计计划 | 已移除的 OneEnoughDamage 伤害扫描、逻辑分组、增伤与抗性统一方案。 |
+| `docs/attributeslib-armor-balance-analysis.md` | 历史技术研究参考 | OED 护甲前伤害阶段、Improved Mobs/Fallen 极端压力、Tetrawear/生命档位，以及 2026-07-22 已采用的 AttributesLib 护甲与保护公式。 |
 | `docs/attributeslib-traveloptics-echoing-strikes-analysis.md` | 技术研究参考 | AttributesLib 多重暴击、Travel Optics 暗影瘴气和 Iron's Spells 回响打击的跨模组伤害放大链、上游变化与修复取舍。 |
 | `docs/plan/player-world-tier-progression-plan.md` | 内容设计计划 | 玩家独立世界等级、永久解锁上限、当前等级选择和晋阶试炼条件规划。 |
 | `docs/plan/mmt-curios-stage-progression-plan.md` | 内容设计计划 | MMT 模块化饰品的阶段开放、流派调律、重复制作和数值边界设计。 |

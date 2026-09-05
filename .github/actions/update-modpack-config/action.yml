@@ -1,5 +1,5 @@
 name: 'Update Modpack Config'
-description: 'Update BCC config, client properties, feedback config, and version file with modpack version info'
+description: 'Update BCC config, client properties, and version file with modpack version info'
 
 inputs:
   modpack_name:
@@ -31,10 +31,7 @@ runs:
         else
           sed -i "s/^title=\(.*\)/title=\1 | 版本${{ inputs.modpack_version }}/" kubejs/config/client.properties
         fi
-        jq --arg v "${{ inputs.modpack_version }}" '.placeholder = "\n§l§4§n(勿删本行) 版本: " + $v' config/GeneralFeedback/default.json > default.json.tmp
-        mv default.json.tmp config/GeneralFeedback/default.json
         grep 'title' kubejs/config/client.properties
-        grep 'placeholder' config/GeneralFeedback/default.json
 
     - name: Disable ProbeJS in release config
       shell: bash

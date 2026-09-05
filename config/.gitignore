@@ -70,8 +70,6 @@ xaerominimap_entities.json
 !/supplementaries-client.toml
 !/vvaddon.toml
 !/fml.toml
-!/OED/
-/OED/*.backup-*.toml
 !/alexscaves-general.toml
 !/simplebackups-common.toml
 !/bcc-common.toml
@@ -83,8 +81,6 @@ xaerominimap_entities.json
 !/iris_shader_folder.properties
 !/advancements_tracker-client.toml
 !/kaleidoscope_doll-common.toml
-!/GeneralFeedback
-!/generalfeedback-common.toml
 !/create_cyber_goggles.toml
 !/tab
 !/Obscuria
