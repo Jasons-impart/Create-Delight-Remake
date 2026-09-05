@@ -1,9 +1,0 @@
-
-["Render Radius"]
-	#displayFeedbackButtonOnPauseScreen
-	displayFeedbackButtonOnPauseScreen = true
-	#displayFeedbackButtonOnInventoryScreen
-	displayFeedbackButtonOnInventoryScreen = false
-	#displayFeedbackButtonOnDeathScreen
-	displayFeedbackButtonOnDeathScreen = false
-
