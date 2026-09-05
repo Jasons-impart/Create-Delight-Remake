@@ -1,0 +1,7 @@
+{
+    "type": "fluid",
+    "id": "create_fantasizing:powder_snow",
+    "amount": 1,
+    "cool_time": 10,
+    "supercooled": false
+}

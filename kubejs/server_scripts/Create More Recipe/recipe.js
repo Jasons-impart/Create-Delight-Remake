@@ -4,7 +4,7 @@ ServerEvents.recipes(e => {
         "cmr:frozen_cake_base",
         "cmr:frozen_cake"
     ])
-    create.compacting("4x cmr:frozen_cake_base", [
+    /* create.compacting("4x cmr:frozen_cake_base", [
         Fluid.of("createdelight:cake_batter", 1000),
         "2x minecraft:snowball"
     ])
@@ -12,7 +12,7 @@ ServerEvents.recipes(e => {
     // .heatRequirement("cooled")
     .id("createdelight:compacting/frozen_cake_base")
     create.filling("cmr:frozen_cake", ["cmr:frozen_cake_base", Fluid.of("netherexp:ectoplasm", 250)])
-    .id("createdelight:filling/frozen_cake")
+    .id("createdelight:filling/frozen_cake") */
     kubejs.shaped("2x cmr:empty_snowman_cooler", [
         " A ",
         "ABA",
