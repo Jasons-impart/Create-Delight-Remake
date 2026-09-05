@@ -1509,10 +1509,10 @@
     "name": "Quality Food",
     "version": "1.20.1-2.4.3-all"
   },
-  "quality_food_fluids-1.20.1-0.1.3.jar": {
+  "quality_food_fluids-1.20.1-0.1.4.jar": {
     "modId": "quality_food_fluids",
     "name": "Quality Food Fluids",
-    "version": "1.20.1-0.1.3"
+    "version": "1.20.1-0.1.4"
   },
   "Quark-4.0-462.jar": {
     "modId": "quark",
@@ -1769,10 +1769,10 @@
     "name": "tetracelium",
     "version": "1.20.1-1.3.2"
   },
-  "tetracompat-1.0.0-all.jar": {
+  "tetracompat-1.0.1-all.jar": {
     "modId": "tetracompat",
     "name": "Tetra Compat",
-    "version": "1.0.0-all"
+    "version": "1.0.1-all"
   },
   "tetratic-combat-expanded-1.20-2.8.3.jar": {
     "modId": "tetratic-combat-expanded",
