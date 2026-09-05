@@ -361,11 +361,23 @@ jobs:
             prerelease_args=(--prerelease)
           fi
           gh release create "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --title "$title" --draft "${prerelease_args[@]}"
+      - name: 检出发布检查脚本
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+          submodules: false
       - name: 下载客户端包 artifact
         uses: actions/download-artifact@v4
         with:
           name: "[Client]${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}"
           path: release-artifacts/client
+      - name: 审计本体分发 mod 的 CurseForge 允许列表
+        if: env.IS_STABLE_RELEASE == 'true'
+        continue-on-error: true
+        run: >
+          python3 .github/workflows/scripts/audit_client_bundled_mods.py
+          --client-dir release-artifacts/client
       - name: 下载服务端包 artifact
         uses: actions/download-artifact@v4
         with:
