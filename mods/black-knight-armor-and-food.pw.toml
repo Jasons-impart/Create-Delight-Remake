@@ -1,0 +1,13 @@
+name = "Ice and Fire: Black Knight Expansion"
+filename = "blackknightarmor-1.0.3-20260321-2102-reobf.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "3fa31fdcc90f94c7ea1582e72d4fb8b1420f1e83"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7793529
+project-id = 1488468

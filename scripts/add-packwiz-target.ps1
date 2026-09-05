@@ -1,7 +1,13 @@
-[CmdletBinding()]
+[CmdletBinding(DefaultParameterSetName = "ByUrl")]
 param(
-    [Parameter(Mandatory = $true)]
+    [Parameter(Mandatory = $true, ParameterSetName = "ByUrl")]
     [string]$CurseForgeUrl,
+
+    [Parameter(Mandatory = $true, ParameterSetName = "ByProjectId")]
+    [uint32]$CurseForgeProjectId,
+
+    [Parameter(ParameterSetName = "ByProjectId")]
+    [uint32]$CurseForgeFileId,
 
     [ValidateSet("mods", "resourcepacks", "shaderpacks", "tacz")]
     [string]$Category = "mods",
@@ -214,12 +220,22 @@ try {
     Ensure-Tool -Url $PackwizUrl -Destination $PackwizExe
 
     Write-Status "Adding the requested CurseForge file in the temporary pack..."
-    $addResult = Invoke-Packwiz -Arguments @(
-        "curseforge", "add", $CurseForgeUrl,
+    $addArguments = @("curseforge", "add")
+    if ($PSCmdlet.ParameterSetName -eq "ByProjectId") {
+        $addArguments += @("--addon-id", $CurseForgeProjectId.ToString())
+        if ($PSBoundParameters.ContainsKey("CurseForgeFileId")) {
+            $addArguments += @("--file-id", $CurseForgeFileId.ToString())
+        }
+    }
+    else {
+        $addArguments += $CurseForgeUrl
+    }
+    $addArguments += @(
         "--meta-folder", $Category,
         "--meta-folder-base", ".",
         "--yes"
-    ) -WorkingDirectory $WorkRoot
+    )
+    $addResult = Invoke-Packwiz -Arguments $addArguments -WorkingDirectory $WorkRoot
 
     $tempCategoryRoot = Join-Path $WorkRoot $Category
     $generatedMetadata = @(Get-ChildItem -LiteralPath $tempCategoryRoot -Filter "*.pw.toml" -File -ErrorAction SilentlyContinue)
