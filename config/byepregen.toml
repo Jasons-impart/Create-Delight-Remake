@@ -1,3 +1,4 @@
+
 # Use 'Default' for the stated default, or 'True'/'False' to override it.
 # All options in this file are read at startup and require a game restart.
 [debug]
@@ -86,3 +87,4 @@
         # calculations about 4.5x faster and light-data reads over 3x faster. On clients, this may
         # also provide a small improvement to 1% low FPS.
         enabled = "Default"
+

@@ -270,6 +270,18 @@ ServerEvents.tags("item", e => {
     e.add("quality_food:material_whitelist", iceCreamScoops)
     e.add("quality_food:material_whitelist", vineryQualityFoods)
     e.add("quality_food:material_whitelist", [
+        // Butchercraft 屠刀产出的尸体由 Quality Food 根据动物潜能赋予品质
+        "butchercraft:chicken_carcass",
+        "butchercraft:cow_carcass",
+        "butchercraft:goat_carcass",
+        "butchercraft:pig_carcass",
+        "butchercraft:sheep_carcass",
+        "butchercraft:black_rabbit_carcass",
+        "butchercraft:brown_rabbit_carcass",
+        "butchercraft:gold_rabbit_carcass",
+        "butchercraft:salt_rabbit_carcass",
+        "butchercraft:splotched_rabbit_carcass",
+        "butchercraft:white_rabbit_carcass",
         'create:dough',
         'bakeries:pizza_flatbread',
         'farmersdelight:brown_mushroom_colony',
