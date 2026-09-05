@@ -212,23 +212,23 @@
           "parameters": {
             "temperature": [
               -1,
-              -0.5
+              0
             ],
             "humidity": [
               -1,
-              -0.5
+              0
             ],
             "continentalness": [
-              2,
+              1.6,
               2
             ],
             "erosion": [
-              0,
+              -0.5,
               2
             ],
             "weirdness": [
-              -1,
-              1
+              -1.2,
+              0.8
             ],
             "depth": [
               1.5,
