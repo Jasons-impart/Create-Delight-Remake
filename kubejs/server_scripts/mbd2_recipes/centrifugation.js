@@ -79,7 +79,7 @@ ServerEvents.recipes(e => {
     .outputItems("ratatouille:cocoa_butter")
     .outputItems("ratatouille:cocoa_solids")
     .outputItems("minecraft:sugar")
-    .outputFluids(Fluid.of("create_central_kitchen:dragon_breath", 250))
+    .outputFluids(Fluid.of("create_dragons_plus:dragon_breath", 250))
     .id("createdelight:big_centrifugation/separation/ruby_chocolate")
   e.recipes.createdelight.big_centrifugation()
     .inputFluids(Fluid.of("create_confectionery:white_chocolate", 250))

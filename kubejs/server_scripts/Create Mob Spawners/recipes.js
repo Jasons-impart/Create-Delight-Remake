@@ -73,7 +73,7 @@ ServerEvents.recipes(e => {
     create.mixing("createdelight:flawless_genetic_seed", [
         "createdelight:pure_genetic_seed",
         "12x #createdelightcore:life_matter",
-        Fluid.of("create_central_kitchen:dragon_breath", 250),
+        Fluid.of("create_dragons_plus:dragon_breath", 250),
         Fluid.of("netherexp:ectoplasm", 500)
     ]).superheated().id("createdelight:mixing/flawless_genetic_seed")
 
