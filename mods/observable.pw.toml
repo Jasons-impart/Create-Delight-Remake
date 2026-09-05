@@ -1,7 +1,7 @@
 name = "Observable"
 filename = "observable-4.4.2.jar"
 side = "both"
-stable = false
+distribution = "testing"
 
 [download]
 hash-format = "sha1"

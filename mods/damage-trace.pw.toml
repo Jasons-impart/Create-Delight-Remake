@@ -1,7 +1,7 @@
 name = "Damage Trace"
 filename = "damage_trace-1.20.1-0.1.0.jar"
 side = "both"
-release = false
+distribution = "development"
 
 [download]
 url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/damage_trace-1.20.1-0.1.0.jar"
