@@ -37,7 +37,7 @@ ServerEvents.recipes(e => {
     e.recipes.create.emptying(["minecraft:glass_bottle", Fluid.of(`create_central_kitchen:chorus_fruit_bubble_tea`, 250)], `ends_delight:bubble_tea`)
         .id(`ends_delight:emptying/bubble_tea`) 
 
-    brewing(e, "create_central_kitchen:dragon_breath", ["minecraft:sugar"], "create_central_kitchen:dragon_breath_soda", 'ends_delight:dragon_breath_soda')
+    brewing(e, "create_dragons_plus:dragon_breath", ["minecraft:sugar"], "create_central_kitchen:dragon_breath_soda", 'ends_delight:dragon_breath_soda')
     e.recipes.farmersdelight.cutting(
         "#forge:dragonegg",
         "#minecraft:axes",
@@ -48,7 +48,7 @@ ServerEvents.recipes(e => {
     ).id("createdelight:cutting/dragon_egg_manual_only")
     
     e.recipes.vintageimprovements.pressurizing("ends_delight:ender_pearl_grain", [
-        Fluid.of("create_central_kitchen:dragon_breath", 5),
+        Fluid.of("create_dragons_plus:dragon_breath", 5),
         "createcafe:raw_boba"
     ])
     .id("createdelight:pressurizing/ender_pearl_grain")

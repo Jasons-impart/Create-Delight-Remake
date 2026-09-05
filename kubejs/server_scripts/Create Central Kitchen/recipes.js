@@ -1,6 +1,8 @@
 ServerEvents.recipes(e => {
   const {create, kubejs} = e.recipes
   remove_recipes_id(e, [
+    "create_central_kitchen:emptying/dragon_breath_emptying",
+    "create_central_kitchen:filling/dragon_breath_filling",
     "create_central_kitchen:mixing/apple_cider",
     "create_central_kitchen:emptying/chocolate_ice_cream",
     "create_central_kitchen:emptying/strawberry_ice_cream",

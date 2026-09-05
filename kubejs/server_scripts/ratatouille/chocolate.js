@@ -107,7 +107,7 @@ ServerEvents.recipes(e => {
     create.mixing(Fluid.of("create_confectionery:ruby_chocolate", 250), [
         "ratatouille:cocoa_solids",
         "ratatouille:cocoa_butter",
-        Fluid.of("create_central_kitchen:dragon_breath", 250),
+        Fluid.of("create_dragons_plus:dragon_breath", 250),
         "minecraft:sugar"
     ]).heated().id("createdelight:ruby_chocolate_recipe")
     create.filling("createdelightcore:ruby_chocolate_mold_filled", [
