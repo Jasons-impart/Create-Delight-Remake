@@ -7,6 +7,9 @@ import re
 import zipfile
 from pathlib import Path
 
+
+VALID_DISTRIBUTIONS = {"development", "testing", "release"}
+
 try:
     import tomllib
 except ModuleNotFoundError:
@@ -33,11 +36,13 @@ def read_toml(path):
     return metadata
 
 
-def is_stable_enabled(metadata):
-    value = metadata.get("stable", True)
-    if isinstance(value, bool):
-        return value
-    return str(value).strip().lower() not in {"false", "0", "no"}
+def distribution_for(metadata):
+    return str(metadata.get("distribution", "release")).strip().lower()
+
+
+def is_allowed_for_distribution(asset_distribution, target_distribution):
+    ranks = {"development": 0, "testing": 1, "release": 2}
+    return ranks[target_distribution] <= ranks[asset_distribution]
 
 
 VERSIONED_JAR_PATTERN = re.compile(
@@ -139,11 +144,11 @@ def mod_record(filename, display_name, repo_root=None):
     }
 
 
-def client_mod_baseline(repo_root, stable=False):
+def client_mod_baseline(repo_root, distribution="development"):
     records = {}
     for metadata_path in sorted((repo_root / "mods").rglob("*.pw.toml")):
         metadata = read_toml(metadata_path)
-        if stable and not is_stable_enabled(metadata):
+        if not is_allowed_for_distribution(distribution_for(metadata), distribution):
             continue
         if str(metadata.get("side", "both")).strip().lower() == "server":
             continue
@@ -185,14 +190,19 @@ def main():
         default="config/modpack_defaults/config/crash_assistant/modlist.json",
         help="Output path, relative to repo root unless absolute.",
     )
-    parser.add_argument("--stable", action="store_true", help="Exclude metadata with stable = false.")
+    parser.add_argument(
+        "--distribution",
+        choices=sorted(VALID_DISTRIBUTIONS),
+        default="development",
+        help="Package channel represented by the generated baseline.",
+    )
     args = parser.parse_args()
 
     repo_root = Path(args.repo_root).resolve()
     output = Path(args.output)
     if not output.is_absolute():
         output = repo_root / output
-    modlist = client_mod_baseline(repo_root, stable=args.stable)
+    modlist = client_mod_baseline(repo_root, distribution=args.distribution)
     write_json_if_changed(output, modlist)
     print(f"client-compatible mods={len(modlist)}")
 

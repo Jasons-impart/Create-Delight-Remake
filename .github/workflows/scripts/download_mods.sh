@@ -11,7 +11,7 @@ set -euo pipefail
 
 PORT="${1:-8080}"
 SIDE="${2:-all}"
-PACKWIZ_STABLE_RELEASE="${PACKWIZ_STABLE_RELEASE:-false}"
+PACKWIZ_DISTRIBUTION="${PACKWIZ_DISTRIBUTION:-development}"
 
 if [ "$SIDE" != "client" ] && [ "$SIDE" != "server" ] && [ "$SIDE" != "all" ]; then
   echo "Invalid SIDE '$SIDE'; expected client, server, or all" >&2
@@ -39,11 +39,10 @@ LOCAL_PREFIX="http://127.0.0.1:$PORT/packwiz-files/"
 RAW_PREFIX_REGEX='https://raw\.githubusercontent\.com/Jasons-impart/Create-Delight-Remake/[^"[:space:]]*/packwiz-files/'
 find "$PACK_DIR" -name '*.pw.toml' -exec sed -E -i "s|${RAW_PREFIX_REGEX}|${LOCAL_PREFIX}|g" {} +
 
-prune_args=(prune-metadata --base "$PACK_DIR" --target "$SIDE")
-if [ "$PACKWIZ_STABLE_RELEASE" = "true" ]; then
-  prune_args+=(--stable)
-fi
-python3 scripts/packwiz-side.py "${prune_args[@]}"
+python3 scripts/packwiz-side.py prune-metadata \
+  --base "$PACK_DIR" \
+  --target "$SIDE" \
+  --distribution "$PACKWIZ_DISTRIBUTION"
 
 # 3. Refresh index in temp directory
 (cd "$PACK_DIR" && "$OLDPWD/packwiz" refresh)
