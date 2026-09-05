@@ -1,6 +1,9 @@
 EntityEvents.drops(event => {
     event.drops.forEach(drop => {
         let item = drop.item
+        if (item.id.startsWith("butchercraft:") && item.id.endsWith("_carcass")) {
+            return
+        }
         let quality = global.CDServerJavaClasses.$QualityUtils.getQuality(item)
         if (quality.level() > 0) {
             item.nbt.remove(global.CDServerJavaClasses.$QualityUtils.QUALITY_TAG)

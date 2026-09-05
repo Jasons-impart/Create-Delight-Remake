@@ -1,0 +1,13 @@
+name = "Collections Of Optimizations"
+filename = "collections_of_optimizations-2.7-all.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "4a5bc5404102b3aef464b9cb7ec89aeb9dfa8efd"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8809227
+project-id = 1630261

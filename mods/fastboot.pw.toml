@@ -3,10 +3,11 @@ filename = "fastboot-1.20.x-1.2.jar"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/fastboot-1.20.x-1.2.jar"
-hash-format = "sha256"
-hash = "66c44b0648a3e3d4115c37593208b85668a97ce012355bad3d33f3cd8142a11f"
+hash-format = "sha1"
+hash = "0820d6611bdf664cc84bf351089e75998a9f1962"
+mode = "metadata:curseforge"
 
-[release.curseforge]
-project-id = 1030285
+[update]
+[update.curseforge]
 file-id = 5696829
+project-id = 1030285
