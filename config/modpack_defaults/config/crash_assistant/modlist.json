@@ -404,10 +404,10 @@
     "name": "Create: Enchantment Industry",
     "version": "2.5.2"
   },
-  "create-integrated-farming-1.3.0-1.20.1.jar": {
+  "create-integrated-farming-1.4.1-1.20.1.jar": {
     "modId": "create-integrated-farming",
     "name": "Create Integrated Farming [Unofficial]",
-    "version": "1.3.0-1.20.1"
+    "version": "1.4.1-1.20.1"
   },
   "create-new-age-1.2.0+forge-mc1.20.1.jar": {
     "modId": "create-new-age",
@@ -1043,11 +1043,6 @@
     "modId": "integrated_villages",
     "name": "Integrated Villages",
     "version": "1.3.2+1.20.1-forge"
-  },
-  "interiors-1.20.1-forge-0.6.0.jar": {
-    "modId": "interiors",
-    "name": "Create: Interiors",
-    "version": "1.20.1-forge-0.6.0"
   },
   "iris_shader_folder-1.3.3-forge.jar": {
     "modId": "iris_shader_folder",
