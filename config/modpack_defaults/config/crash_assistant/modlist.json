@@ -294,6 +294,11 @@
     "name": "Cobweb",
     "version": "1.20.1-1.0.1"
   },
+  "collections_of_optimizations-2.7-all.jar": {
+    "modId": "collections_of_optimizations",
+    "name": "Collections Of Optimizations",
+    "version": "2.7-all"
+  },
   "collectorsreap-1.20.1-1.5.5.jar": {
     "modId": "collectorsreap",
     "name": "Collector's Reap",
@@ -399,15 +404,20 @@
     "name": "Create Delight Core",
     "version": "2.2.16j"
   },
+  "create-enchantment-industry-2.5.1c.jar": {
+    "modId": "create-enchantment-industry",
+    "name": "Create: Enchantment Industry",
+    "version": "2.5.1c"
+  },
   "create-enchantment-industry-2.5.2.jar": {
     "modId": "create-enchantment-industry",
     "name": "Create: Enchantment Industry",
     "version": "2.5.2"
   },
-  "create-integrated-farming-1.3.0-1.20.1.jar": {
+  "create-integrated-farming-1.4.1-1.20.1.jar": {
     "modId": "create-integrated-farming",
     "name": "Create Integrated Farming [Unofficial]",
-    "version": "1.3.0-1.20.1"
+    "version": "1.4.1-1.20.1"
   },
   "create-new-age-1.2.0+forge-mc1.20.1.jar": {
     "modId": "create-new-age",
@@ -812,7 +822,7 @@
   "fastboot-1.20.x-1.2.jar": {
     "modId": "fastboot",
     "name": "FastBoot",
-    "version": "1.2"
+    "version": "1.20.x-1.2"
   },
   "fastrecipesearch-1.20.1-26.1-forge.jar": {
     "modId": "fastrecipesearch",
@@ -1494,10 +1504,10 @@
     "name": "Puzzles Lib",
     "version": "1.20.1-Forge"
   },
-  "quality_food-1.20.1-2.3.3-all.jar": {
+  "quality_food-1.20.1-2.4.3-all.jar": {
     "modId": "quality_food",
     "name": "Quality Food",
-    "version": "1.20.1-2.3.3-all"
+    "version": "1.20.1-2.4.3-all"
   },
   "quality_food_fluids-1.20.1-0.1.3.jar": {
     "modId": "quality_food_fluids",
