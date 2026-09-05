@@ -10,8 +10,7 @@
       "minecraft:net.minecraft.client.gui.screens.ChatScreen",
       "net.mehvahdjukaar.supplementaries.client.screens.TextHolderEditScreen",
       "net.minecraft.client.gui.screens.inventory.AbstractSignEditScreen",
-      "com.simibubi.create.content.equipment.clipboard.ClipboardScreen",
-      "com.sighs.generalfeedback.client.FeedbackScreen"
+      "com.simibubi.create.content.equipment.clipboard.ClipboardScreen"
     ],
     "enableScreenRecovering": false,
     "recoveredScreens": [],

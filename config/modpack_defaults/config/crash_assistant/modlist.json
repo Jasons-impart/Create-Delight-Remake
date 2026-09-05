@@ -949,11 +949,6 @@
     "name": "GeckoLib",
     "version": "1.20.1-4.8.4"
   },
-  "GeneralFeedback-1.0.1.jar": {
-    "modId": "generalfeedback",
-    "name": "General Feedback",
-    "version": "1.0.1"
-  },
   "Glodium-1.20-1.5-forge.jar": {
     "modId": "glodium",
     "name": "Glodium",
@@ -1418,11 +1413,6 @@
     "modId": "oelib-forge",
     "name": "One Enough Lib",
     "version": "1.20.1-0.2.3"
-  },
-  "OneEnoughDamage-1.20.1-1.0.2-hotfix.jar": {
-    "modId": "oneenoughdamage",
-    "name": "One Enough Damage",
-    "version": "1.20.1-1.0.2-hotfix"
   },
   "OneEnoughItem-1.0.7-hotfix.jar": {
     "modId": "oneenoughitem",
