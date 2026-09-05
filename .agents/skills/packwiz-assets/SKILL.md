@@ -38,6 +38,11 @@ Use this workflow for modpack asset operations that touch `mods/`, `resourcepack
 
 Packwiz's side pruning, local sync, release patch builder, server export, and CurseForge export all include `tacz/`. Keep that root in sync when changing the asset workflow; otherwise TACZ metadata may refresh locally but be omitted from CI artifacts.
 
+### CurseForge 允许列表审计
+
+- 最新的 “Approved Non-CurseForge Mods” 列表应通过 Google Sheet 的 XLSX 导出获取：`https://docs.google.com/spreadsheets/d/176Wv-PZUo9hFxy6oC6N8tWdquBLPRtSuLbNK-r0_byM/export?format=xlsx`。XLSX 导出包含全部标签页；带 `gid` 的 CSV 导出只包含单个标签页，不能作为完整核对来源。
+- 正式 tag 的 `release-assets` job 会下载 Client artifact 后运行 `.github/workflows/scripts/audit_client_bundled_mods.py`，扫描 `overrides/mods/*.jar` 并按 JAR 的 `META-INF/mods.toml` 显示名比对允许列表。未找到的项目会产生 Actions warning；列表下载或解析失败也不得阻断发布。
+
 When old and new runtime JARs coexist, `update-packwiz-meta.ps1` selects the preferred newer filename and updates the existing metadata entry instead of creating a duplicate. Missing runtime JARs do not remove metadata by default; remove the `.pw.toml` explicitly, or use `-AllowRemovals` only when bulk removal is intentional and the runtime directory is complete.
 
 ### 短期 PR 分支上的 CurseForge 定向更新
