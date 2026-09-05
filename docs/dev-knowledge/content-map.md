@@ -4,6 +4,8 @@
 
 | 领域 | 玩家可见变化 | 实现概览 | 主要位置 | 相关文档 | 状态 |
 |---|---|---|---|---|---|
+| 烈焰人冷却室流体燃料 | 支持幻想曲细雪普通冷却与低温燃料强冷却 | 将雪傀儡燃料参数转换为 FluidLogistics 的 blaze_cooler_fuels 格式；每 1 mB 细雪提供 10 tick 普通冷却，低温燃料提供 30 tick 强冷却，保留雪傀儡配置 | `kubejs/data/createdelight/blaze_cooler_fuels/`；细雪来源 `kubejs/data/create_fantasizing/snowman_cooler_fuel/powder_snow.json` | — | JSON 校验通过；待游戏内验证；本地 FluidLogistics 1.2.9，Packwiz 仍指向 1.2.7 |
+| 寒霜蛋糕胚 | 新增寒霜蛋糕胚物品，不添加配方 | 注册 `createdelight:frost_cake_base`，保留烈焰蛋糕胚像素轮廓，使用流体包裹寒霜蛋糕胚体的六色深蓝灰调色板制作独立贴图 `kubejs/assets/createdelight/textures/item/frost_cake_base.png`，不再使用整体乘色；提供中英文名称 | `kubejs/startup_scripts/registry_item.js`、`kubejs/assets/createdelight/lang/{zh_cn,en_us}.json` | — | 待重启游戏验证 |
 | 结构稀疏化 | 新生成区块中的结构间距统一提高至 1.5 倍，降低高结构模组数量带来的重复探索；Alex's Caves 结构保持原频率以避免上游已知的生成兼容问题。 | `Sparse Structures` 全局修改结构集间距，以结构 ID 派生盐值减少重叠；配置对 14 个 Alex's Caves 结构集进行单独覆盖。 | `mods/sparse-structures.pw.toml`、`config/sparsestructures.json5` | Issue #2045 | 已核验 Forge 1.20.1 JAR 的默认配置字段并生成完整性清单；需重启，并在新生成区块验证结构分布。 |
 | 荷花世界生成 | 荷花可在所有标记为 Forge 沼泽的群系生成，覆盖原版沼泽、红树林沼泽及 Terralith 的冰沼、兰花沼泽；每个新生成区块都会尝试生成，仍仅适用于 1-3 格水深且水底为泥土标签或黏土的位置。 | KubeJS 数据包覆盖 Festival Delicacies 的荷花 biome modifier 和 placed feature，改用 `#forge:is_swamp` 并将稀有度筛选设为 `chance: 1`。 | `kubejs/data/festival_delicacies/{forge/biome_modifier/lotus,worldgen/placed_feature/patch_lotus}.json` | 无 | JSON 静态校验通过；已在游戏重新进入世界时完成数据包加载，需在新生成区块验证。 |
 | 节气骨粉催熟 | 骨粉不再因作物所处季节或湿度不适宜而催熟失败；自然生长仍受节气与湿度限制。 | 保持节气作物和湿度控制开启，仅关闭 `RestrictBoneMeal`。 | `config/eclipticseasons-common.toml` | 无 | 配置已修改并完成静态核对；需重启或重新加载配置后游戏内验证。 |

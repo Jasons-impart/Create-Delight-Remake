@@ -9,7 +9,9 @@ ServerEvents.recipes(e => {
         "fluidlogistics:fluid_transporter",
         "fluidlogistics:multi_fluid_access_port_h",
         "fluidlogistics:multi_fluid_access_port",
-        "fluidlogistics:fluid_packager"
+        "fluidlogistics:fluid_packager",
+        "fluidlogistics:cooling/snow_block_to_powder_snow",
+        "fluidlogistics:cooling/frost_cake"
     ])
 
     e.replaceInput({id: "fluidlogistics:copper_basin"}, "minecraft:copper_ingot", "create:copper_sheet")
@@ -70,4 +72,13 @@ ServerEvents.recipes(e => {
         A: "create:copper_sheet",
         B: "create:schematicannon"
     }).id("createdelight:copper_schematicannon")
+
+    create.compacting("4x createdelight:frost_cake_base", [
+        Fluid.of("createdelight:cake_batter", 1000),
+        "2x minecraft:snowball"
+    ])
+    .id("createdelight:compacting/frost_cake_base")
+
+    create.filling("fluidlogistics:frost_cake", ["createdelight:frost_cake_base", Fluid.of("netherexp:ectoplasm", 250)])
+    .id("createdelight:filling/frost_cake")
 })

@@ -1,4 +1,7 @@
 StartupEvents.registry("item", e => {
+    e.create("createdelight:frost_cake_base")
+        .translationKey("item.createdelight.frost_cake_base")
+        .texture("createdelight:item/frost_cake_base")
     // 注册碳粉
     e.create("createdelight:carbon_dust")
         .translationKey("item.createdelight.carbon_dust")
