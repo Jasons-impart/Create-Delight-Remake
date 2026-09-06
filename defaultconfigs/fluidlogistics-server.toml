@@ -19,6 +19,13 @@
 	copperBucketEnabled = true
 	phantomChainEnabled = true
 	fluidHatchEnabled = true
+	fluidInventoryAccessPortEnabled = true
+	fluidFactoryGaugeEnabled = false
+	blazeCoolerEnabled = true
+	copperSchematicannonEnabled = true
+	industrialCopperBlockEnabled = true
+	fluidSchematicEnabled = true
+	frostCakeEnabled = true
 
 [blockProperties]
 	#Maximum fluid amount a fluid package can hold (in mB)

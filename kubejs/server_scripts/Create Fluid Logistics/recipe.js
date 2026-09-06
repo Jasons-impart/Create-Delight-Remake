@@ -21,6 +21,17 @@ ServerEvents.recipes(e => {
     e.replaceInput({id: "fluidlogistics:mechanical_crafting/infinite_fluid_tank"}, "create:sturdy_sheet", "createdelight:space_casing")
     e.replaceInput({id: "fluidlogistics:smart_faucet"}, "minecraft:copper_ingot", "fluidlogistics:faucet")
 
+    e.forEachRecipe({id: "fluidlogistics:fluid_inventory_access_port"}, recipe => {
+        recipe.set("result", Item.of("fluidlogistics:fluid_inventory_access_port", 2))
+    })
+
+    kubejs.shapeless("fluidlogistics:blaze_cooler", [
+        "create:blaze_burner",
+        "minecraft:snow_block",
+        "minecraft:snow_block",
+        "minecraft:carved_pumpkin"
+    ]).id("createdelight:crafting/blaze_cooler")
+
     kubejs.shaped("fluidlogistics:mechanical_fluid_gun", [
         "AAB",
         "AC ",

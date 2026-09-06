@@ -1,0 +1,8 @@
+new Schema("fluidlogistics:cooling_mixing")
+    .simpleKey("results", "outputFluidOrItemArray")
+    .simpleKey("ingredients", "inputFluidOrItemArray")
+    .simpleKey("supercooled", "bool", false, true)
+new Schema("fluidlogistics:cooling_compacting")
+    .simpleKey("results", "outputFluidOrItemArray")
+    .simpleKey("ingredients", "inputFluidOrItemArray")
+    .simpleKey("supercooled", "bool", false, true)

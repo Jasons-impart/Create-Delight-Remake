@@ -5,6 +5,21 @@ ServerEvents.recipes(e => {
         "alexscaves:chocolate_ice_cream",
         "alexscaves:sweetberry_ice_cream"
     ])
+    function make_blaze_cooler_ice_cream(e, ingredient, outputFluidIcecream, icecreamscoop) {
+        e.recipes.fluidlogistics.cooling_mixing(
+            Fluid.of(outputFluidIcecream, 750),
+            [
+                ingredient,
+                Fluid.of("cosmopolitan:cream", 500),
+                Fluid.of("createdelightcore:base_syrup", 250)
+            ]
+        ).supercooled(false).id(`createdelight:cooling_mixing/${outputFluidIcecream.split(":")[1]}`)
+        e.recipes.fluidlogistics.cooling_mixing(
+            icecreamscoop,
+            Fluid.of(outputFluidIcecream, 250)
+        ).supercooled(true).id(`createdelight:cooling_mixing/${icecreamscoop.split(":")[1]}`)
+    }
+
     /**
      * 
      * @param {Internal.RecipesEventJS} e 
@@ -18,6 +33,7 @@ ServerEvents.recipes(e => {
      * @param {Internal.ItemStack_} icecreamblock 
      */
     function make_ice_cream(e, ingredient, outputFluidIcecream, outputFluidMilkshake, icecreamscoop, icecream, milkshake, icecreamcone, icecreamblock) {
+        make_blaze_cooler_ice_cream(e, ingredient, outputFluidIcecream, icecreamscoop)
         e.remove({output: Fluid.of(outputFluidIcecream), type: "create:emptying"})
         e.remove({output: Fluid.of(outputFluidIcecream), type: "create:mixing"})
 
