@@ -211,24 +211,24 @@
           "biome": "alexscaves:magnetic_caves",
           "parameters": {
             "temperature": [
-              -1,
-              0
-            ],
-            "humidity": [
-              -1,
-              0
-            ],
-            "continentalness": [
-              1.6,
+              -2,
               2
             ],
+            "humidity": [
+              -2,
+              2
+            ],
+            "continentalness": [
+              0.76,
+              0.78
+            ],
             "erosion": [
-              -0.5,
+              -2,
               2
             ],
             "weirdness": [
-              -1.2,
-              0.8
+              -2,
+              2
             ],
             "depth": [
               1.5,
