@@ -1197,7 +1197,10 @@
 		}
 		{
 			dependencies: ["5A8FA422166974A0"]
-			description: ["更多可超燃的燃料可JEI查询烈焰人燃烧室用法获取"]
+			description: [
+				"烈焰蛋糕可在系统商店购买。"
+				"更多可超燃的燃料可JEI查询烈焰人燃烧室用法获取"
+			]
 			hide_dependency_lines: true
 			hide_until_deps_complete: false
 			id: "70B8B43D6B542EEC"
