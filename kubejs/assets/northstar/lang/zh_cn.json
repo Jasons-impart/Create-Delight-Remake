@@ -172,5 +172,6 @@
     "northstar.recipe.atmospheric_concentrator.rate": "以 %2$s 收集 %1$s",
     "northstar.recipe.heat_shielding": "隔热防护",
     "northstar.recipe.oxygen_filler": "氧气填充",
-    "stat.northstar.rocket_travels": "火箭飞行次数"
+    "stat.northstar.rocket_travels": "火箭飞行次数",
+    "northstar.planet.dimension.farside": "深月裂谷"
 }
