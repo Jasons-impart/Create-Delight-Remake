@@ -2,10 +2,6 @@
   "replace": false,
   "values": [
     {
-      "id": "cmr:snowman_cooler",
-      "required": false
-    },
-    {
       "id": "create_enchantment_industry:blaze_forger",
       "required": false
     },

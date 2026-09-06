@@ -240,9 +240,6 @@ ServerEvents.recipes(e => {
         ]
     ).id("createdelight:sub_recipes/fuel_mixtures")
 
-    e.recipes.create.mixing(Fluid.of("createdelight:ice_lubricating_oil", 500), [Fluid.of("createdelight:lubricating_oil", 250), "northstar:enriched_glowstone_ore"])
-        .heatRequirement("frozen")
-        .id("createdelight:mixing/ice_lubricating_oil")
     e.recipes.create.mixing(Fluid.of("createdelight:ice_lubricating_oil", 500), [Fluid.of("createdelight:lubricating_oil", 250), Fluid.of("createdelight:ice_dragon_blood", 25)])
         .id("createdelight:mixing/ice_lubricating_oil_from_ice_dragon_blood")
 })

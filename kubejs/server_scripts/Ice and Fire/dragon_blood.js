@@ -101,12 +101,6 @@ ServerEvents.recipes(e => {
         Fluid.of("createdelight:fire_dragon_blood", 250)])
     .heatRequirement("superheated")
     .id("createdelight:mixing/fire_dragon_blood_from_nuclear_waste")
-    e.recipes.create.mixing(Fluid.of("createdelight:ice_dragon_blood", 500), [
-        "iceandfire:frost_lily", 
-        Fluid.of("createdelightcore:nuclear_waste", 100), 
-        Fluid.of("createdelight:ice_dragon_blood", 250)])
-    .heatRequirement("frozen")
-    .id("createdelight:mixing/ice_dragon_blood_from_nuclear_waste")
     e.recipes.create.mixing(Fluid.of("createdelight:lightning_dragon_blood", 500), [
         "iceandfire:lightning_lily", 
         Fluid.of("createdelightcore:nuclear_waste", 100), 

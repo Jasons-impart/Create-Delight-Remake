@@ -97,10 +97,6 @@ ServerEvents.recipes(e => {
     ]
   ).id("createdelight:filling/sweet_puff_spinning")
   //巧克力块系列
-  e.recipes.create.compacting(
-   'alexscaves:block_of_chocolate',
-   Fluid.of("create_confectionery:black_chocolate", 100) 
-  ).heatRequirement("cooled").id("createdelight:compacting/block_of_chocolate")
   e.recipes.create.deploying(
     'alexscaves:block_of_frosted_chocolate',
     [

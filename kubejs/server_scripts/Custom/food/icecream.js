@@ -49,14 +49,6 @@ ServerEvents.recipes(e => {
         e.remove({output: icecreamblock, type: "crafting_shaped"})
 
         create.mixing(
-            Fluid.of(outputFluidIcecream, 750),
-            [
-                ingredient,
-                Fluid.of("cosmopolitan:cream", 500),
-                Fluid.of("createdelightcore:base_syrup", 250)
-            ]
-        ).heatRequirement("cooled").id(`createdelight:mixing/${outputFluidIcecream.split(":")[1]}`)
-        create.mixing(
             [
                 Fluid.of(outputFluidIcecream, 250),
                 "minecraft:bowl"
@@ -85,10 +77,6 @@ ServerEvents.recipes(e => {
             milkshake
         ).id(`createdelight:emptying/${outputFluidMilkshake.split(":")[1]}`)
 
-        create.mixing(
-            icecreamscoop,
-            Fluid.of(outputFluidIcecream, 250)
-        ).heatRequirement("frozen").id(`createdelight:mixing/${icecreamscoop.split(":")[1]}`)
         kubejs.shapeless(
             icecreamscoop,
             icecream

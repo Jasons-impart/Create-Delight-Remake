@@ -221,7 +221,6 @@
 				"1DED6F54AFBC85AF"
 				"09FA793E44AADA04"
 				"1D2FDD12B208C5DF"
-				"1D31026B30494798"
 				"1541DE2CFE9A1ABB"
 				"0AF1F566204AE4B0"
 				"196039D48E64CCC0"
@@ -323,19 +322,6 @@
 			}]
 			x: -33.0d
 			y: -19.0d
-		}
-		{
-			hide_until_deps_complete: true
-			id: "1D31026B30494798"
-			size: 2.0d
-			subtitle: "&b这蛋糕真的能吃吗?"
-			tasks: [{
-				id: "3B5C194DC975371B"
-				item: "cmr:frozen_cake"
-				type: "item"
-			}]
-			x: -35.0d
-			y: -12.0d
 		}
 		{
 			hide_until_deps_complete: true

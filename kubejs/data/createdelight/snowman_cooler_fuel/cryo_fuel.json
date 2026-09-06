@@ -1,6 +1,0 @@
-{
-    "fluid": "createdelight:cryo_fuel",
-    "burnTime": 30,
-    "freezing": true,
-    "amountConsumedPerTick": 1
-}
