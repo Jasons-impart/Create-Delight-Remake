@@ -569,10 +569,10 @@
     "name": "Create:LazyTick",
     "version": "2.5.21-6.0.x-forge-1.20.1"
   },
-  "createliquidfuel-2.1.1-1.20.1.jar": {
+  "createliquidfuel-2.2.0-1.20.1.jar": {
     "modId": "createliquidfuel",
-    "name": "Create: Liquid Fuel",
-    "version": "2.1.1-1.20.1"
+    "name": "Create Liquid Fuel",
+    "version": "2.2.0-1.20.1"
   },
   "createmetallurgy-1.0.1-1.20.1.jar": {
     "modId": "createmetallurgy",
