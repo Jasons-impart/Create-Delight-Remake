@@ -77,7 +77,7 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
             }
         }
         values = values + slotValue
-        if(slotValue > 1 && slotValue != 0) {
+        if(slotValue >= 1 && slotValue != 0) {
             trade.append(global.MoneyUtil.convertBaseValueToString(slotValue))
             tradeList.push(trade)
             itemSlot.shrink(itemSlot.count)
