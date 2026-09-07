@@ -84,9 +84,17 @@ ServerEvents.recipes(e => {
         B: "create:schematicannon"
     }).id("createdelight:copper_schematicannon")
 
-    create.compacting("4x createdelight:frost_cake_base", [
+    create.mixing(
+        Fluid.of("createdelight:frost_cake_batter", 1000),
+        [
         Fluid.of("createdelight:cake_batter", 1000),
         "2x minecraft:snowball"
+        ]
+    )
+    .id("createdelight:mixing/frost_cake_batter")
+
+    create.compacting("4x createdelight:frost_cake_base", [
+        Fluid.of("createdelight:frost_cake_batter", 1000)
     ])
     .id("createdelight:compacting/frost_cake_base")
 
