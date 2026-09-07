@@ -181,9 +181,12 @@ StartupEvents.modifyCreativeTab("createdelightcore:fluid", e => {
     'createdelight:ice_lubricating_oil_bucket',
     // 气体桶
     'createdelight:radon_bucket',
-    // 食物相关流体
-    'createdelight:cake_batter_bucket',
-    'createdelight:red_velvet_cake_batter_bucket',
+        // 食物相关流体
+        'createdelight:cake_batter_bucket',
+        'createdelight:blaze_cake_batter_bucket',
+        'createdelight:frost_cake_batter_bucket',
+        'createdelight:experience_cake_batter_bucket',
+        'createdelight:red_velvet_cake_batter_bucket',
     'createdelight:egg_yolk_bucket',
     'createdelight:egg_tart_fluid_bucket',
     'createdelight:artificial_egg_yolk_bucket',

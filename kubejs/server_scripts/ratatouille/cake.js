@@ -71,8 +71,15 @@ ServerEvents.recipes(e => {
         .transitionalItem(iner)
         .loops(1)
         .id("createdelight:crafting/magma_cake")
-    e.recipes.create.compacting("4x create:blaze_cake_base", [
+    e.recipes.create.mixing(
+        Fluid.of("createdelight:blaze_cake_batter", 1000),
+        [
         Fluid.of("createdelight:cake_batter", 1000),
         "2x create:cinder_flour"
-    ]).id("createdelight:compacting/blaze_cake")
+        ]
+    ).id("createdelight:mixing/blaze_cake_batter")
+
+    e.recipes.create.compacting("4x create:blaze_cake_base", [
+        Fluid.of("createdelight:blaze_cake_batter", 1000)
+    ]).id("createdelight:compacting/blaze_cake_base")
 })

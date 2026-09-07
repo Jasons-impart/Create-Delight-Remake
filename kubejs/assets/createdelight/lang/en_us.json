@@ -1,4 +1,13 @@
 {
+  "block.createdelight.blaze_cake_batter": "Blaze Cake Batter",
+  "block.createdelight.frost_cake_batter": "Frost Cake Batter",
+  "block.createdelight.experience_cake_batter": "Enchanted Cake Batter",
+  "fluid.createdelight.blaze_cake_batter": "Blaze Cake Batter",
+  "fluid.createdelight.frost_cake_batter": "Frost Cake Batter",
+  "fluid.createdelight.experience_cake_batter": "Enchanted Cake Batter",
+  "item.createdelight.blaze_cake_batter_bucket": "Blaze Cake Batter Bucket",
+  "item.createdelight.frost_cake_batter_bucket": "Frost Cake Batter Bucket",
+  "item.createdelight.experience_cake_batter_bucket": "Enchanted Cake Batter Bucket",
   "item.createdelight.frost_cake_base": "Frost Cake Base",
   "item.createdelight.unbaked_red_velvet_cupcake": "Unbaked Red Velvet Muffin",
   "block.createdelight.graycotton": "Gray Cotton",
