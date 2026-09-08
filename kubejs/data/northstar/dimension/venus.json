@@ -151,27 +151,27 @@
           "biome": "alexscaves:toxic_caves",
           "parameters": {
             "temperature": [
-              -2,
-              2
+              -1.1,
+              1.4
             ],
             "humidity": [
-              -2,
-              2
+              -0.1,
+              0.1
             ],
             "continentalness": [
-              1.18,
-              1.25
+              1.15,
+              1.5
             ],
             "erosion": [
-              -2,
+              -0.25,
               2
             ],
             "weirdness": [
-              -2,
-              2
+              -1.5,
+              1.5
             ],
             "depth": [
-              1.5,
+              1.7,
               2
             ],
             "offset": 0
