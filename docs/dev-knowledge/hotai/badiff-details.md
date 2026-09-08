@@ -146,21 +146,30 @@ public static boolean tick(SmartBlockEntity entity) {
         tankFluid.setAmount(0);
         return false;
     }
-    if (remainingBurnTime + fuelTime > 10000) return false;
+    int newBurnTime = remainingBurnTime + fuelTime;
+    if (newBurnTime > BlazeBurnerBlockEntity.MAX_HEAT_CAPACITY) return false;
 
     setHeat(fluidSuperHeats ? SEETHING : FADING);
-    setRemainingBurnTime(remainingBurnTime + fuelTime);
+    setRemainingBurnTime(newBurnTime);
     tankFluid.shrink(mbConsuming);
     return true;
 }
 
 public static void tryUpdateFuel(..., ItemStack stack, ..., CallbackInfoReturnable<Boolean> cir) {
+    SmartFluidTank stomach = getStomach(entity);
+    if (stomach == null) {
+        cir.setReturnValue(false);
+        return;
+    }
+
     IFluidHandlerItem handler = stack.getCapability(FLUID_HANDLER_ITEM).orElse(null);
     if (handler == null || handler.getTanks() != 1) {
         cir.setReturnValue(false);
         return;
     }
-    if (!knownFuel(handler.getFluidInTank(0))) {
+    FluidStack fluid = handler.getFluidInTank(0);
+    if (fluid.isEmpty() || !knownFuel(fluid)
+            || (!stomach.isEmpty() && !stomach.getFluid().isFluidEqual(fluid))) {
         cir.setReturnValue(false);
         return;
     }
@@ -171,10 +180,31 @@ public static void tryUpdateFuel(..., ItemStack stack, ..., CallbackInfoReturnab
         return;
     }
 
-    FluidStack drained = handler.drain(min(space, fluidAmount), EXECUTE);
-    stomach.fill(drained, EXECUTE);
-    syncContainerState(stack, handler.getContainer());
+    FluidStack available = handler.drain(min(space, fluid.getAmount()), SIMULATE);
+    int accepted = stomach.fill(available, SIMULATE);
+    if (accepted <= 0) {
+        cir.setReturnValue(false);
+        return;
+    }
+
+    if (!simulate) {
+        FluidStack drained = handler.drain(accepted, EXECUTE);
+        if (stomach.fill(drained, EXECUTE) <= 0) {
+            cir.setReturnValue(false);
+            return;
+        }
+        syncContainerState(stack, handler.getContainer());
+    }
     cir.setReturnValue(true);
+}
+
+private static void syncContainerState(ItemStack original, ItemStack container) {
+    if (container == original || container.isEmpty() || original.getItem() != container.getItem())
+        return;
+
+    original.setCount(container.getCount());
+    original.setTag(container.getTag() == null ? null : container.getTag().copy());
+    original.setDamageValue(container.getDamageValue());
 }
 ```
 
@@ -436,7 +466,7 @@ MMT 原 class 针对 Tetra 6.9 的局部变量名 `multiplier`，返回 `1000d`�
 
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
-| `com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff` | 已还原 | `tick(SmartBlockEntity)` 从 `void` 改为 `boolean`，只有成功消耗液体燃料并增加燃烧时间时返回 true；早退路径全部返回 false。`tryUpdateFuel(...)` 改用 `IFluidHandlerItem`，失败路径显式 `cir.setReturnValue(false)`；检查燃烧室剩余容量，按 `min(space, fluidStack.amount)` 部分抽取容器流体并 `stomach.fill(...)`；新增 `syncContainerState`，把容器扣除后的 count、NBT 和 damage 同步回手持堆叠。 | 修复向液体烈焰人燃烧室倒入流体时可能不扣容器、超容量或错误成功的问题。 |
+| `com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff` | 已还原 | `tick(SmartBlockEntity)` 从 `void` 改为 `boolean`，只有燃烧时间不超过 `MAX_HEAT_CAPACITY` 且成功消耗液体燃料时才更新热量并返回 true；早退路径全部返回 false。`tryUpdateFuel(...)` 改用 `IFluidHandlerItem`，失败路径显式 `cir.setReturnValue(false)`；校验燃料及其与胃袋现有流体的完整 `FluidStack` 相容性，按剩余容量先模拟容器抽取和胃袋接收，再按实际可接收量执行；新增 `syncContainerState`，把容器扣除后的 count、NBT 和 damage 同步回手持堆叠。 | 修复向液体烈焰人燃烧室倒入流体时可能不扣容器、超容量、混入不相容流体或错误成功的问题，并避免容量已满时提前改变热量状态。 |
 | `com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity.badiff` | 已还原 | `tick` 注入点从方法尾部改到第二次调用 `BlazeBurnerBlockEntity.updateBlockState()` 前；注入改为 `cancellable=true`；当 `BurnerStomachHandler.tick(this)` 返回 true 时取消原 tick 后续逻辑。 | 液体燃料成功接管燃烧状态时，不再让原版后续逻辑覆盖热量或燃烧时间。 |
 
 ## Create Addition 补丁
