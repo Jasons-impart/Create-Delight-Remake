@@ -38,7 +38,7 @@ diff 扫描只覆盖代码改动，看不到任务过程中发现的信息。因
 
 - **可复用的项目事实或位置** → 按 `.agents/skills/dev-knowledge/SKILL.md` 的存放表路由。
 - **内容改动（feat）** → `docs/dev-knowledge/content-map.md`，记录新增或有意调整的玩家体验、实现位置和验证状态。
-- **兼容与问题修复（bugfix/compat）** → `docs/dev-knowledge/compatibility-patches.md`，记录问题、上游变化、补丁位置、验证与复核条件。
+- **模组兼容补丁** → `docs/dev-knowledge/compatibility-patches.md`，仅记录由外部模组版本、API、数据或运行时行为差异触发的兼容补丁。
 - **bug、坑点或历史教训** → 优先写入 `docs/lessons-learned.md`。
 - **知识路由或 skill 行为变化** → 更新受影响的 skill。
 - **成组项目技术资料或其生成脚本** → 以 `docs/dev-knowledge/<专题>/README.md` 作为专题入口；内容/兼容台账只保留分类与入口链接，不复制专题事实与操作流程。
@@ -53,7 +53,8 @@ diff 扫描只覆盖代码改动，看不到任务过程中发现的信息。因
 应用 dev-knowledge 存放表后，再检查这些覆盖规则：
 
 - 新增或有意调整配方、平衡、NPC、剧情、任务、物品、机器或系统 → `docs/dev-knowledge/content-map.md`；不因实现位于 KubeJS、配置、hotai、CDC 或 mixin 而改变分类。
-- 恢复预期行为、修复错误或回归、适配上游版本变更 → `docs/dev-knowledge/compatibility-patches.md`；不因补丁目录而将其误归为 feat。
+- 仅当 CDR 与外部模组、或多个外部模组之间存在版本、API、数据或运行时行为差异，且补丁会随上游变化而复核或移除时 → `docs/dev-knowledge/compatibility-patches.md`；普通 CDR 内部 bug 不因“修复错误”、实现位置或调用第三方 API 而自动准入。
+- 纯 CDR 内部修复若未形成可脱离具体实现复用的经验，则不记录；不要把局部空值、容量或自有数据读写修复写入兼容台账。
 - 候选报告会对可能改变玩法的整合包文件同时列出两种台账；依据改动目的选择，不确定时先检查玩家可见结果与问题描述。
 - 与具体补丁无关、未来会反复遇到的根因或非显而易见的 workaround → `docs/lessons-learned.md`。
 - 新的 KubeJS helper/API 参考 → 内容很短时写入 `kubejs/AGENTS.md` 的 UNIQUE STYLES；否则写入 dev-knowledge how-to 或提升为 skill。
