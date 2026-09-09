@@ -46,6 +46,7 @@ ServerEvents.tick(e => {
 MBDMachineEvents.onTick("createdelight:sell_bin", e => {
     const {machine} = e.event
     if ((machine.level.dayTime() % 24000) != 20) return
+    if (!machine.customData.hasUUID("owner")) return
     let player = machine.level.getPlayerByUUID(machine.customData.getUUID("owner"))
     if (player == null) return
     let itemSlots = machine.getCapability(ForgeCapabilities.ITEM_HANDLER).orElse(null)
@@ -76,8 +77,8 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
                     break
             }
         }
-        values = values + slotValue
-        if(slotValue > 1 && slotValue != 0) {
+        if (slotValue >= 1) {
+            values += slotValue
             trade.append(global.MoneyUtil.convertBaseValueToString(slotValue))
             tradeList.push(trade)
             itemSlot.shrink(itemSlot.count)
