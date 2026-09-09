@@ -46,6 +46,7 @@ ServerEvents.tick(e => {
 MBDMachineEvents.onTick("createdelight:sell_bin", e => {
     const {machine} = e.event
     if ((machine.level.dayTime() % 24000) != 20) return
+    if (!machine.customData.hasUUID("owner")) return
     let player = machine.level.getPlayerByUUID(machine.customData.getUUID("owner"))
     if (player == null) return
     let itemSlots = machine.getCapability(ForgeCapabilities.ITEM_HANDLER).orElse(null)
