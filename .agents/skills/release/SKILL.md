@@ -44,13 +44,22 @@ description: 管理 Create-Delight Remake 整合包的正式版或测试版发�
 
 确认 dry run 后移除 `-WhatIf`。脚本会创建版本 PR；它会在稳定版时仅暂存与当前版本匹配的更新摘要文件。
 
-### 2. 人工合并关卡
+### 2. 人工合并与静默监控
 
-必须等待用户手动合并版本 PR。不得自动合并或启用 auto-merge。
+版本 PR 必须仍由用户手动合并；不得自动合并或启用 auto-merge。`release-prepare.ps1` 成功创建 PR 后，立即通过 `automation_update` 在当前对话创建一个 heartbeat 监控，而不是等待用户回来说明已合并。
+
+监控提示必须包含版本、目标分支、发布类型和版本 PR URL，并要求每次运行：
+
+- 用 `gh` 检查该 PR 状态；未合并且仍开启时保持静默，不发送状态消息。
+- PR 合并后，确认目标分支已包含合并提交；在当前对话继续下面的 Publish 流程，先 `-WhatIf`，再正式执行，并等待 CI 和 Release 资产核验。
+- PR 被关闭但未合并、发布失败或需要用户决定时，说明原因并停止或暂停监控。
+- 发布成功后报告 Release 链接和资产，并停止或删除监控，避免重复发布。
+
+heartbeat 使用适合主动跟进的短间隔。除合并、完成、失败或需要用户操作外，不产生消息或通知。
 
 ### 3. Publish
 
-用户确认 PR 已合并后，先预览再正式执行：
+由 heartbeat 检测到 PR 合并后，先预览再正式执行：
 
 ```powershell
 .\.agents\skills\release\release-publish.ps1 `
