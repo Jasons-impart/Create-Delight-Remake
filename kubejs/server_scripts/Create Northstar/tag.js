@@ -53,6 +53,7 @@ const europanAbyssalEntities = [
     "alexscaves:mine_guardian",
     "alexscaves:sea_pig",
     "alexscaves:tripodfish",
+    "alexsmobs:giant_squid",
     "minecraft:dolphin",
     "minecraft:squid"
 ]
@@ -69,6 +70,16 @@ const cataclysmEuropanAquaticEntities = [
     "cataclysm:amethyst_crab",
     "cataclysm:the_leviathan",
     "cataclysm:the_baby_leviathan"
+]
+
+// 补齐模组追加的渊海水生生物；不包括普通怪物，不额外赋予温度抗性。
+const europanAbyssalOxygenEntities = [
+    "alexsmobs:blobfish",
+    "alexsmobs:cachalot_whale",
+    "alexsmobs:comb_jelly",
+    "alexsmobs:frilled_shark",
+    "iceandfire:siren",
+    "iceandfire:sea_serpent"
 ]
 
 const lunarFarsideEntities = [
@@ -146,6 +157,7 @@ ServerEvents.tags("entity_type", e => {
         "#createdelight:can_survive_northstar"
     )
     e.add("northstar:doesnt_require_oxygen", europanAbyssalEntities)
+    e.add("northstar:doesnt_require_oxygen", europanAbyssalOxygenEntities)
     e.add("northstar:doesnt_require_oxygen", cataclysmEuropanAquaticEntities)
     e.add("northstar:doesnt_require_oxygen", lunarFarsideEntities)
     e.add("northstar:doesnt_require_oxygen", cataclysmLunarFactoryEntities)
