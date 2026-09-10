@@ -725,7 +725,7 @@
 			subtitle: "什么叫做机械飞升啊（&e后仰&r）"
 			tasks: [{
 				id: "121589E89F15DAA9"
-				item: "create_enchantment_industry:enchanting_guide"
+				item: "create_enchantment_industry:enchanting_template"
 				type: "item"
 			}]
 			title: "&1附魔工业！！！"
@@ -809,7 +809,7 @@
 			subtitle: "烈焰人使用超越经验可增加一级附魔，&e突破极限！"
 			tasks: [{
 				id: "360698F9348E1A09"
-				item: "create_enchantment_industry:hyper_experience_bottle"
+				item: "create_enchantment_industry:super_experience_nugget"
 				type: "item"
 			}]
 			title: "这是...&1超越附魔？"
