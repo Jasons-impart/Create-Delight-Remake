@@ -88,7 +88,7 @@ ServerEvents.recipes(e => {
         E: "northstar:lunar_sapphire_crystal"
     }).id("createdelight:electrolyzer")
 
-    kubejs.shaped('createdelight:oxygen_tank', [
+    kubejs.shaped('ncc:oxygen_tank', [
         "AAA",
         "BCB",
         "DDD"
@@ -99,14 +99,14 @@ ServerEvents.recipes(e => {
         D: "northstar:titanium_sheet"
     }).id("createdelight:oxygen_tank")
 
-    kubejs.shaped('createdelight:sturdy_oxygen_tank', [
+    kubejs.shaped('ncc:sturdy_oxygen_tank', [
         "AAA",
         "BCB",
         "DDD"
     ], {
         A: "#minecraft:wool",
         B: "create_sa:medium_fueling_tank",
-        C: 'northstar:mars_sand',
+        C: "northstar:venus_gravel",
         D: "northstar:martian_steel_sheet"
     }).id("createdelight:sturdy_oxygen_tank")
 

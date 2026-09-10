@@ -772,32 +772,6 @@ StartupEvents.registry("item", e => {
     knight_upgrade.ingredientSlotDescriptionText = Text.translate("item.blackknightarmor.smithing_template.knight_upgrade.additions_slot_description").blue()
     knight_upgrade.displayName(Component.translate("item.blackknightarmor.knight_upgrade_smithing_template").blue())
 
-    //注册氧气罐
-    e.create("createdelight:oxygen_tank")
-        .translationKey("item.createdelight.oxygen_tank")
-        .tag("northstar:oxygen_sources")
-        .tag("northstar:oxygen_sealing")
-        .tag("northstar:insulating")
-        .tag("curios:back")
-        .tag("curios:body")
-        .tooltip("§b放在饰品栏中，为你提供氧气")
-        .tooltip("§e可提供些许保暖效果")
-        .texture("createdelight:item/oxygen_tank")
-        .unstackable()
-
-    //注册坚固氧气罐
-    e.create("createdelight:sturdy_oxygen_tank")
-        .translationKey("item.createdelight.sturdy_oxygen_tank")
-        .tag("northstar:oxygen_sources_2")
-        .tag("northstar:oxygen_sealing")
-        .tag("northstar:insulating_2")
-        .tag("northstar:heat_resistant_2")
-        .tag("curios:back")
-        .tag("curios:body")
-        .tooltip("§b放在饰品栏中，为你提供更多氧气")
-        .tooltip("§e可提供不错的保暖和耐热效果")
-        .texture("createdelight:item/sturdy_oxygen_tank")
-        .unstackable()
     //注册红丝绒蛋糕相关
     e.create("createdelight:red_velvet_cake_mold_filled")
         .translationKey("item.createdelight.red_velvet_cake_mold_filled")

@@ -1374,10 +1374,10 @@
     "name": "Create: Northstar - Redux",
     "version": "0.6.4+1.20.1"
   },
-  "northstar-curios-compat-1.3.1.jar": {
+  "northstar-curios-compat-1.4.0.jar": {
     "modId": "northstar-curios-compat",
     "name": "Northstar Curios Compat",
-    "version": "1.3.1"
+    "version": "1.4.0"
   },
   "obscure_tooltips-forge-1.20.1-3.10.0.jar": {
     "modId": "obscure_tooltips-forge",

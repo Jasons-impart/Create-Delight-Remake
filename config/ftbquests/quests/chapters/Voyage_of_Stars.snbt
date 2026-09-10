@@ -664,7 +664,7 @@
 				type: "item"
 			}]
 			x: 20.5d
-			y: 2.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["0A838A84677688BA"]
@@ -787,14 +787,14 @@
 			subtitle: "提供氧气的妙妙工具"
 			tasks: [{
 				id: "7F5842B9A25AE1F4"
-				item: "createdelight:oxygen_tank"
+				item: "ncc:oxygen_tank"
 				type: "item"
 			}]
 			x: 12.0d
 			y: 1.0d
 		}
 		{
-			dependencies: ["0A78650F17E1E069"]
+			dependencies: ["0BAC02A069A5B123"]
 			description: [
 				"拥有&e3600mB&r的氧气容量,可提供&b2级抗寒&r和&c2级耐热&r（northstar:insulating_2 \\& northstar:heat_resistant_2）"
 				""
@@ -804,10 +804,10 @@
 			subtitle: "更大更强的氧气罐"
 			tasks: [{
 				id: "1E5A5D75F507CCE2"
-				item: "createdelight:sturdy_oxygen_tank"
+				item: "ncc:sturdy_oxygen_tank"
 				type: "item"
 			}]
-			x: 20.5d
+			x: 24.0d
 			y: 1.0d
 		}
 		{
