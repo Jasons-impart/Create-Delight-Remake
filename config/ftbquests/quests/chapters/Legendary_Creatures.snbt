@@ -153,7 +153,7 @@
 				Count: 1
 				id: "ftbquests:custom_icon"
 				tag: {
-					Icon: "northstar:textures/environment/mars_far_sky.png"
+					Icon: "northstar:textures/planet/solar_system/mars_sky.png"
 				}
 			}
 			id: "1BEE7AD2537F2428"

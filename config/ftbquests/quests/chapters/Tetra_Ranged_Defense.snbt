@@ -474,6 +474,7 @@
 				}
 			}
 			id: "39B89423DB035787"
+			invisible: true
 			shape: "circle"
 			size: 1.75d
 			tasks: [{
@@ -1039,6 +1040,7 @@
 				}
 			}
 			id: "6C66E2F46BDE988C"
+			invisible: true
 			shape: "circle"
 			size: 1.75d
 			tasks: [{
