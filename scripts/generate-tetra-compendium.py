@@ -41,6 +41,13 @@ OUTPUTS = {
     "scrolls": "Tetra_Scrolls.snbt",
 }
 
+# Keep these unfinished entries and their dependents in place, but hidden.
+HIDDEN_QUEST_SEEDS = {
+    "melee:item:mmt_iron_staff",
+    "ranged:module:bow/laminated_stave",
+    "ranged:module:modular_mmt_bow/laminated_stave",
+}
+
 REMOVED_CHAPTERS = (
     "Tetra_Compendium.snbt",
     "Tetra_Armor.snbt",
@@ -689,6 +696,7 @@ class QuestNode:
     description: list[str]
     dependencies: list[str] = field(default_factory=list)
     hide_dependency_lines: bool = False
+    invisible: bool = False
 
     @property
     def id(self) -> str:
@@ -1250,6 +1258,8 @@ class CompendiumGenerator:
             lines.extend(self._stack_snbt(node.icon, 2)[1:-1])
             lines.append("\t}")
         lines.append(f"\tid: {quote(node.id)}")
+        if node.invisible:
+            lines.append("\tinvisible: true")
         lines.append(f"\tshape: {quote(node.shape)}")
         lines.append(f"\tsize: {node.size:.2f}d")
         lines.append("\ttasks: [{")
@@ -1272,6 +1282,15 @@ class CompendiumGenerator:
         root_node: QuestNode,
         nodes: list[QuestNode],
     ) -> str:
+        hidden_ids = {node.id for node in nodes if node.seed in HIDDEN_QUEST_SEEDS}
+        while True:
+            dependent_ids = {node.id for node in nodes if hidden_ids.intersection(node.dependencies)}
+            if dependent_ids.issubset(hidden_ids):
+                break
+            hidden_ids.update(dependent_ids)
+        for node in nodes:
+            if node.id in hidden_ids:
+                node.invisible = True
         chapter_id = stable_id(f"chapter:{key}")
         lines = [
             "{",

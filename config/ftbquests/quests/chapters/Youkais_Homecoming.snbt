@@ -529,7 +529,7 @@
 		}
 		{
 			height: 2.0d
-			image: "farmersdelight:block/basket_side"
+			image: "farmersdelight:block/bamboo_basket_side"
 			rotation: 0.0d
 			width: 2.0d
 			x: 13.5d
