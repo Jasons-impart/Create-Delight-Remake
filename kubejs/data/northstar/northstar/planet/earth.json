@@ -1,0 +1,31 @@
+{
+  "central_body": "northstar:sol",
+  "diameter": 12742.0,
+  "orbit": {
+    "type": "northstar:simple",
+    "duration_days": 365.256,
+    "initial_mean_anomaly_deg": 357.51716,
+    "radius": 1.0
+  },
+  "renderer": {
+    "type": "northstar:conditional_dimension",
+    "dimension": "createdelight:lunar_farside",
+    "then": {
+      "type": "northstar:no_op"
+    },
+    "else": {
+      "type": "northstar:conditional_dimension",
+      "dimension": "northstar:moon",
+      "else": "northstar:solar_system/earth_sky",
+      "then": "northstar:solar_system/earth"
+    }
+  },
+  "required_science": 1.0,
+  "texture": [
+    "northstar:solar_system/earth",
+    {
+      "speed": 1.0,
+      "texture": "northstar:solar_system/earth_clouds"
+    }
+  ]
+}

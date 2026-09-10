@@ -1,0 +1,27 @@
+{
+  "central_body": "northstar:earth",
+  "class": "moon",
+  "diameter": 3474.8,
+  "orbit": {
+    "type": "northstar:simple",
+    "ascending_node_deg": 125.08000000000001,
+    "duration_days": 1.0,
+    "inclination_deg": 5.145,
+    "initial_mean_anomaly_deg": 357.51716,
+    "radius": 0.00257
+  },
+  "renderer": {
+    "type": "northstar:conditional_dimension",
+    "dimension": "createdelight:lunar_farside",
+    "then": {
+      "type": "northstar:no_op"
+    },
+    "else": {
+      "type": "northstar:phase",
+      "texture": "northstar:solar_system/earth/moon_phases"
+    }
+  },
+  "required_science": 2.0,
+  "rotation_period_days": -1.0,
+  "texture": "northstar:solar_system/earth/moon"
+}
