@@ -2739,6 +2739,7 @@
 				}
 			}
 			id: "614F0E01A8C91444"
+			invisible: true
 			shape: "square"
 			size: 2.5d
 			tasks: [{
@@ -2771,6 +2772,7 @@
 				}
 			}
 			id: "3244AEB824727F64"
+			invisible: true
 			shape: "diamond"
 			size: 2.0d
 			tasks: [{
@@ -2807,6 +2809,7 @@
 				}
 			}
 			id: "414735ED0517B45E"
+			invisible: true
 			shape: "circle"
 			size: 1.75d
 			tasks: [{
@@ -2841,6 +2844,7 @@
 				}
 			}
 			id: "3434D0C066A01FFF"
+			invisible: true
 			shape: "diamond"
 			size: 2.0d
 			tasks: [{
@@ -2878,6 +2882,7 @@
 				}
 			}
 			id: "478E54ABFCD65A6B"
+			invisible: true
 			shape: "circle"
 			size: 1.75d
 			tasks: [{
@@ -2911,6 +2916,7 @@
 				}
 			}
 			id: "610741598ABB0016"
+			invisible: true
 			shape: "diamond"
 			size: 2.0d
 			tasks: [{
@@ -2948,6 +2954,7 @@
 				}
 			}
 			id: "1B75B62CA671A1FC"
+			invisible: true
 			shape: "circle"
 			size: 1.75d
 			tasks: [{
@@ -2984,6 +2991,7 @@
 				}
 			}
 			id: "5FB6743F20736C8B"
+			invisible: true
 			shape: "circle"
 			size: 1.75d
 			tasks: [{
@@ -3021,6 +3029,7 @@
 				}
 			}
 			id: "00951F65B81F623B"
+			invisible: true
 			shape: "circle"
 			size: 1.75d
 			tasks: [{
@@ -3054,6 +3063,7 @@
 				}
 			}
 			id: "04CB876F2F392D4E"
+			invisible: true
 			shape: "diamond"
 			size: 2.0d
 			tasks: [{
@@ -3091,6 +3101,7 @@
 				}
 			}
 			id: "3D43068462F0B430"
+			invisible: true
 			shape: "circle"
 			size: 1.75d
 			tasks: [{
@@ -3128,6 +3139,7 @@
 				}
 			}
 			id: "5774CF914D62E9B0"
+			invisible: true
 			shape: "circle"
 			size: 1.75d
 			tasks: [{
@@ -3164,6 +3176,7 @@
 				}
 			}
 			id: "27DE94ADDA67C5DE"
+			invisible: true
 			shape: "circle"
 			size: 1.75d
 			tasks: [{
@@ -3198,6 +3211,7 @@
 				}
 			}
 			id: "038E933716D9DB8B"
+			invisible: true
 			shape: "diamond"
 			size: 2.0d
 			tasks: [{
@@ -3235,6 +3249,7 @@
 				}
 			}
 			id: "3C5C95196FC73CE1"
+			invisible: true
 			shape: "circle"
 			size: 1.75d
 			tasks: [{
@@ -3272,6 +3287,7 @@
 				}
 			}
 			id: "3644E71B1250AE65"
+			invisible: true
 			shape: "circle"
 			size: 1.75d
 			tasks: [{
@@ -3306,6 +3322,7 @@
 				}
 			}
 			id: "6A427B480484384E"
+			invisible: true
 			shape: "diamond"
 			size: 2.0d
 			tasks: [{
@@ -3343,6 +3360,7 @@
 				}
 			}
 			id: "355F268A3037A14B"
+			invisible: true
 			shape: "circle"
 			size: 1.75d
 			tasks: [{
