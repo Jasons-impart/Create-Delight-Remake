@@ -325,8 +325,6 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:end_dragon_blood_bucket',
         'createdelight:ice_lubricating_oil_bucket',
         'createdelight:cryo_fuel_bucket',
-        'createdelight:oxygen_tank',
-        'createdelight:sturdy_oxygen_tank',
         'createdelight:incomplete_bison_burger',
         'createdelight:incomplete_eggplant_burger',
         'createdelight:incomplete_hamburger',

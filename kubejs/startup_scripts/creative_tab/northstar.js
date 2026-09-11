@@ -14,8 +14,6 @@ StartupEvents.modifyCreativeTab("northstar:northstar_items", e => {
         'northstar:moon_deep_titanium_ore'
     ])
     e.add([
-        'createdelight:oxygen_tank',
-        'createdelight:sturdy_oxygen_tank',
         'createdelight:folded_mapping_satellite',
         'createdelight:satellite_navigation_data_card',
     ])
