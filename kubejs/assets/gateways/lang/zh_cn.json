@@ -13,7 +13,7 @@
 
 	"tooltip.gateways.scroll": "[滚轮翻页]",
 	"tooltip.gateways.shift": "[按住Shift以查看波次信息]",
-    "tooltip.gateways.ctrl": "[按住Ctrl以查看最终奖励]",
+    "tooltip.gateways.ctrl": "[按住Ctrl以查看惩罚]",
     "tooltip.gateways.alt": "[按住Alt以查看规则变更]",
     "tooltip.gateways.true": "已启用",
     "tooltip.gateways.false": "禁用",
@@ -61,7 +61,7 @@
 	"failure.gateways.summon": "生成 %s",
 	"failure.gateways.chance": "%s 几率 %s",
 
-	"rule.gateways.default": "[是 %s]",
+	"rule.gateways.default": "[默认是 %s]",
 	"rule.gateways.spawn_range": "生成范围: %s",
 	"rule.gateways.leash_range": "拴绳范围: %s",
 	"rule.gateways.allow_discarding": "允许丢弃: %s",
