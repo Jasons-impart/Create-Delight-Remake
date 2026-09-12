@@ -1,0 +1,30 @@
+{
+    "replace": true,
+    "slots": [ "chest/outer" ],
+    "materialSlotCount": 1,
+    "materialRevealSlot": 0,
+    "rarity": "temporary",
+    "displayType": "major",
+    "glyph": {
+        "textureLocation": "tetrawear:textures/gui/glyphs.png",
+        "textureX": 32
+    },
+    "translation": {
+        "primaryAttributes": {
+            "generic.armor": 2
+        },
+        "durability": 3,
+        "integrity": -3,
+        "magicCapacity": 3
+    },
+    "outcomes": [
+    {
+        "material": {
+            "items": ["minecraft:elytra"],
+            "count": 1
+        },
+        "moduleKey": "armor/chest/elytra",
+        "moduleVariant": "elytra/elytra"
+    }
+    ]
+}
