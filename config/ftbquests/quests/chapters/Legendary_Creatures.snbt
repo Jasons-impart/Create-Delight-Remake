@@ -110,6 +110,7 @@
 		}
 		{
 			dependencies: ["17D9DB61D8A8DC98"]
+			description: ["制作龙血所需的对应百合，可以使用剪刀右键百合簇采集。采收后可用骨粉催熟百合簇，再次采收。"]
 			id: "556B30C5A2ED0D94"
 			tasks: [{
 				id: "67FA75267D4F62AF"
@@ -682,6 +683,7 @@
 		}
 		{
 			dependencies: ["7C9857F0DAD1E04E"]
+			description: ["制作龙血所需的对应百合，可以使用剪刀右键百合簇采集。采收后可用骨粉催熟百合簇，再次采收。"]
 			id: "34E1D8B005ACD4CF"
 			tasks: [{
 				id: "0C7FB94BA4DD0E01"
@@ -744,6 +746,7 @@
 		}
 		{
 			dependencies: ["1D34EBFF1D60EA85"]
+			description: ["制作龙血所需的对应百合，可以使用剪刀右键百合簇采集。采收后可用骨粉催熟百合簇，再次采收。"]
 			id: "0961AD88179B18C4"
 			tasks: [{
 				id: "3FC907D6EA3DAE91"
