@@ -404,10 +404,10 @@
     "name": "Create: Enchantment Industry",
     "version": "2.5.2"
   },
-  "create-integrated-farming-1.4.1-1.20.1.jar": {
+  "create-integrated-farming-1.4.1c-1.20.1.jar": {
     "modId": "create-integrated-farming",
     "name": "Create Integrated Farming [Unofficial]",
-    "version": "1.4.1-1.20.1"
+    "version": "1.4.1c-1.20.1"
   },
   "create-new-age-1.2.0+forge-mc1.20.1.jar": {
     "modId": "create-new-age",
@@ -571,7 +571,7 @@
   },
   "createliquidfuel-2.2.0-1.20.1.jar": {
     "modId": "createliquidfuel",
-    "name": "Create Liquid Fuel",
+    "name": "Create: Liquid Fuel",
     "version": "2.2.0-1.20.1"
   },
   "createmetallurgy-1.0.1-1.20.1.jar": {
