@@ -41,6 +41,8 @@ ServerEvents.recipes(e => {
         "farmersdelight:integration/create/milling/wild_rice",
         "ratatouille:threshing/rice_panicle",
         "vintagedelight:oat_bread",
+        "vintagedelight:bread_from_smoking",
+        "vintagedelight:bread_from_smelting",
         "ratatouille:threshing/wheat_kernels",
         "vintagedelight:oatmeal_cookie",
         "farmersdelight:wheat_dough_from_egg"
