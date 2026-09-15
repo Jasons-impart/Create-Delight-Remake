@@ -76,5 +76,7 @@ JEIEvents.hideItems(e => {
     'more_mod_tetra:wither_ingot',
     'more_mod_tetra:rotten_flesh_ingot',
     'more_mod_tetra:wither_bone_ingot',
+    'more_mod_tetra:abyssal_ingot',
+    'more_mod_tetra:storm_ingot',
   ])
 })
