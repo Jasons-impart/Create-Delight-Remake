@@ -8,6 +8,7 @@
 - 用户选择基于父仓 `main`（`72a5eb1`）与 CDC 最新 `1.20.1`（`7113664`），在原运行目录 `CD-master-dev` 的 `codex/damage-overflow-runtime` 分支工作；不使用独立工作树承担测试。
 - 已增加 Forge 伤害阶段跟踪、事件实际写入观察、MMT 效果贡献调用者、MMT / TetraWear 实际浮点指令观察，以及 AttributesLib 入参检查点。没有启用玩家范围过滤或数值钳制。
 - 完整构建和浮点字节码回归通过；诊断 JAR 已部署至本地 `mods/`，`logNonFiniteDamage = true`。Packwiz 发布载荷未变。原运行 JAR 与配置已备份。
+- 当前临时诊断 JAR SHA-256 为 `23fa21faeaf051a5e94f2b6cdd1ab693b9fc3e3cd824edc7749c0dd0a3f37744`，来自非 `-all` reobf 构建；配置位置为 `config/createdelightcore-common.toml`，备份位于 `tmp-opencode/damage-diagnostics-runtime-backup/`。这是本地交接快照，接手者重新构建后应记录自己的哈希。
 - 操作说明及覆盖边界见 [CDC 诊断交接说明](https://github.com/Jasons-impart/Create-Delight-Core/blob/ea26197/docs/damage-diagnostics.md)。CDR 本轮只交接文档，未更新子模块引用，直接读取当前子模块基线不会包含诊断实现。下一步获取 CDC 诊断分支，在当前实例启动并复现，依据首次非有限观察、实际事件写入及最终异常共同定位来源。
 - 下方 050x 快照保留为调查历史；以本节为当前实施基线。尚未进行真实游戏回归，不能认定根因已经修复。
 
@@ -27,7 +28,7 @@
 | 本地版本快照 | `modpack.toml` 为 `v0.5.0.11-test`；这是调查时快照，版本唯一来源仍为 `modpack.toml` |
 | 父仓基线 | `7146672200a5947d97109963fd20ffa510080862`，分支 `release-v050x` |
 | CDC 源码基线 | `5623ce2d050f320a4ea6a33daea32bd676fc8360` |
-| CDC 产物核对 | 源码 `gradle.properties` 与运行 JAR 内 `META-INF/mods.toml` 均为 `2.2.16j`；`mods/` 与 `packwiz-files/mods/` 的 CDC JAR SHA-256 均为 `de9e0ddad0b13bc34a9f1a7caaa79256d4403af9af0488e9dcef15e5800d9e36`，与 Packwiz 元数据一致；尚未证明 JAR 恰好由该源码提交构建 |
+| 050x 历史产物核对 | 调查时源码 `gradle.properties` 与运行 JAR 内 `META-INF/mods.toml` 均为 `2.2.16j`；当时 `mods/` 与 `packwiz-files/mods/` 的 CDC JAR SHA-256 均为 `de9e0ddad0b13bc34a9f1a7caaa79256d4403af9af0488e9dcef15e5800d9e36`，与当时 Packwiz 元数据一致；尚未证明该历史 JAR 恰好由该源码提交构建 |
 | 截图相关模组 | Alex's Mobs `1.22.9`、TetraWear `1.0.0`、AttributesLib `1.3.7`、Neruina `3.3.3`、Forge `47.4.16` |
 | 原始记录 | 已读取截图；本地 `logs/`、`crash-reports/` 的 `.log` / `.txt` 定向检索未找到匹配调用链，未检索压缩历史日志 |
 | 现场状态 | 尚无该次异常的实体 NBT、完整伤害事件值、加载模组清单和确切配置快照 |
@@ -44,7 +45,7 @@
 | 远端 `release-v050x` | `5da4c58d3545c425a88b9ea264d2fe4c049b366f` | `5623ce2d050f320a4ea6a33daea32bd676fc8360` | `f14e36ccba1c580800413d072d51f9f537e24387` |
 | 远端 `main` | `72a5eb1d84ee0ffa0d9d8213f85feffee22b7656` | `7113664517d5e35c873792a8b10b4db39ec577a8` | `6dc80e6547ce0cbda8537db2238f13baf4d238bc` |
 
-本地运行 JAR 的 Git blob 为 `f14e36ccba1c580800413d072d51f9f537e24387`，与上表 050x 产物相同。Packwiz 下载 URL 虽指向 `main`，但不能用 URL 推断当前实际加载内容；应以文件哈希及分支提交树为准。
+切换 main 前的历史本地运行 JAR 的 Git blob 为 `f14e36ccba1c580800413d072d51f9f537e24387`，与上表 050x 产物相同；不代表当前临时诊断 JAR。Packwiz 下载 URL 虽指向 `main`，但不能用 URL 推断实际加载内容；应以文件哈希及分支提交树为准。
 
 查询时 CDC 远端 `1.20.1` 也为 `7113664`，相对 050x 的 `5623ce2` 领先 5 个提交、没有反向落后：#120 恢复燃烧室流体燃料 JEI、#121 流体包裹兼容、#122 冷却室流体燃料 JEI、#123 CMR 可选依赖、#124 回滚 #121。不能把 5 个提交都当作最终保留的功能；#121/#124 存在回滚关系。
 
@@ -136,7 +137,7 @@ taken = a / (a + (armor/(1+armor/120))*(0.7+0.3*min(1,toughness/10)))
 | `.../compat/mmt/MmtDamageLogContext.java:24` | 记录初始伤害、各贡献、`projectedBeforeMMTExtraCaps` 与 `eventAmountAfterMMT`；投影数值和真实事件数值须分别标注 |
 | `.../mixin/mmt/EffectLevelEventMixin.java:25` | 在 setter / adder 的 RETURN 处记录 fixed / normal / independent 变化；`product()` 只供诊断，不修改真实伤害 |
 | `.../mixin/mmt/MMTEffectRecursionGuardMixin.java:10` | 处理护甲反伤的嵌套递归；不能解决非有限伤害 |
-| `.../mixin/combat/LivingHurtEventMixin.java:13` | 保存事件构造时的原始伤害供回响使用；不是数值防护 |
+| `.../mixin/combat/LivingHurtEventMixin.java` | 保存事件构造时的原始伤害供回响使用；当前诊断分支另包装 `setAmount` 观察实际写入，仍不做数值防护 |
 | `build.gradle` | 原调查基线仅有通用 GameTestServer 配置；当前诊断分支新增 `src/test` 浮点字节码测试，但仍无真实游戏战斗用例 |
 
 复用 MMT 内部贡献追踪器时，不将它升级成所有模组共用的伤害上下文。异常关联诊断应独立、默认关闭并限频；异常退出也要清理上下文，避免上一笔失败攻击污染下一笔日志。
@@ -164,6 +165,8 @@ taken = a / (a + (armor/(1+armor/120))*(0.7+0.3*min(1,toughness/10)))
 ## 5. 实施顺序与方案选择
 
 ### 阶段 A：确认首次溢出位置
+
+诊断实现已完成；本阶段剩余工作是真实启动、复现与按证据补充观测。主要入口为 `compat/combat/diagnostics/DamageDiagnostics`、`DamageArithmeticTransformer`，`CombatMixinPlugin.postApply` 负责算术插桩；`ForgeDamageDiagnosticsMixin`、两个伤害事件 Mixin、`ArmorFormulaDiagnosticsMixin`、`ArmorHoningDiagnosticsMixin` 负责阶段与入参观察。测试入口为 `DamageDiagnosticsTest`。
 
 1. 按用户要求在原运行目录测试，可使用独立测试存档；记录完整模组版本、CDC 源码提交与实际加载 JAR、AttributesLib 配置，不使用另一工作树代替运行目录。
 2. 当前探针从 ForgeHooks 入参开始，已覆盖事件实际 `setAmount` 写入、`ArmorHoning` 和 `getAValue` 入口；MMT 关键方法记录真实浮点运算和效果贡献。使用独立 `logNonFiniteDamage` 开关，默认关闭。必要时再补蟾蜍调用前与未覆盖监听器探针，不能把诊断投影溢出当作真实事件溢出。
