@@ -3,6 +3,6 @@ filename = "Applied Armorer-v1.1.4.1-for114+.zip"
 side = "both"
 
 [download]
-url = "https://edge.forgecdn.net/files/6085/143/Applied%20Armorer-v1.1.4.1-for114+.zip"
-hash-format = "sha1"
-hash = "975baa6f8d696a6d49136c01bf7291b76d0ca5bf"
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/tacz/Applied%20Armorer-v1.1.4.1-for114%2B.zip"
+hash-format = "sha256"
+hash = "f5122fba28ecd287e69095f46758fc83286845fe61bc12e4047df419a47d7df4"
