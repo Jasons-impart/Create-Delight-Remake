@@ -19,7 +19,7 @@
 	quests: [
 		{
 			description: [
-				"qq或微信扫码看整合包相关信息与FAQ文档："
+				"QQ或微信扫码访问整合包官网："
 				""
 				"{image:createdelight:textures/images_for_readme/document_qr_code.png width:100 height:100 align:center}"
 			]
