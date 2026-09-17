@@ -1,16 +1,36 @@
 # 下界捕食攻击非有限伤害兼容修复计划
 
-状态：用户已授权先实施运行时诊断；诊断源码、构建和本地部署完成，游戏启动及复现待验证。适用范围调整与最终数值修复仍待证据和 review。
+状态：第一版已真实启动并记录两次捕食，溢出区间缩小为 Hurt 返回与 Damage 入口之间；补充版诊断已构建部署，待新一轮启动和复现。适用范围调整与最终数值修复仍待证据和 review。
 
-## 当前实施状态（2026-09-16）
+## 当前实施状态（2026-09-17）
 
-- 配套诊断源码与测试见 [CDC PR #126](https://github.com/Jasons-impart/Create-Delight-Core/pull/126)，交接提交 `ea26197`。接手时先核对 PR 最新提交与验证状态。
+- 配套诊断源码与测试见 [CDC PR #126](https://github.com/Jasons-impart/Create-Delight-Core/pull/126)，第一版为 `ea26197`，补充版为 `5fde0d2`。接手时先核对 PR 最新提交与验证状态。
 - 用户选择基于父仓 `main`（`72a5eb1`）与 CDC 最新 `1.20.1`（`7113664`），在原运行目录 `CD-master-dev` 的 `codex/damage-overflow-runtime` 分支工作；不使用独立工作树承担测试。
 - 已增加 Forge 伤害阶段跟踪、事件实际写入观察、MMT 效果贡献调用者、MMT / TetraWear 实际浮点指令观察，以及 AttributesLib 入参检查点。没有启用玩家范围过滤或数值钳制。
 - 完整构建和浮点字节码回归通过；诊断 JAR 已部署至本地 `mods/`，`logNonFiniteDamage = true`。Packwiz 发布载荷未变。原运行 JAR 与配置已备份。
-- 当前临时诊断 JAR SHA-256 为 `23fa21faeaf051a5e94f2b6cdd1ab693b9fc3e3cd824edc7749c0dd0a3f37744`，来自非 `-all` reobf 构建；配置位置为 `config/createdelightcore-common.toml`，备份位于 `tmp-opencode/damage-diagnostics-runtime-backup/`。这是本地交接快照，接手者重新构建后应记录自己的哈希。
-- 操作说明及覆盖边界见 [CDC 诊断交接说明](https://github.com/Jasons-impart/Create-Delight-Core/blob/ea26197/docs/damage-diagnostics.md)。CDR 本轮只交接文档，未更新子模块引用，直接读取当前子模块基线不会包含诊断实现。下一步获取 CDC 诊断分支，在当前实例启动并复现，依据首次非有限观察、实际事件写入及最终异常共同定位来源。
-- 下方 050x 快照保留为调查历史；以本节为当前实施基线。尚未进行真实游戏回归，不能认定根因已经修复。
+- 补充版临时诊断 JAR SHA-256 为 `ecc403739126e4e7f96202d9ed2dba5ecc76565b088b509e8587fa5d7d2b5507`，来自非 `-all` reobf 构建；配置位置为 `config/createdelightcore-common.toml`。原主线备份位于 `tmp-opencode/damage-diagnostics-runtime-backup/`，第一版诊断备份在其 `pipeline-before/` 子目录。接手者重新构建后应记录自己的哈希。
+- 操作说明及覆盖边界见 [CDC 诊断交接说明](https://github.com/Jasons-impart/Create-Delight-Core/blob/5fde0d2/docs/damage-diagnostics.md)。CDR 本轮只交接文档，未更新子模块引用，直接读取当前子模块基线不会包含诊断实现。下一步获取 CDC 诊断分支，在当前实例启动并复现，依据首次非有限观察、实际事件写入及最终异常共同定位来源。
+- 下方 050x 快照保留为调查历史；以本节为当前实施基线。尚未完成原下界异常的复现或最终修复，不能认定根因已经闭环。
+
+### 两次捕食的新证据与补充探针
+
+2026-09-16 22:29:15（Trace #7/#8）和 22:29:25（#9/#10），主世界同一诡异蟾蜍捕食不同绯红蚊。第一版 CDC 探针启动数量为 MMT 10 / TetraWear 1，实际日志一致：
+
+| 位置 | 两次观察值 |
+| --- | --- |
+| Hurt 输入、MMT `MAX + 0` / `0 + 1` / `MAX * 1` | 有限 `Float.MAX_VALUE` |
+| TetraWear / AttributesLib.getAValue 入参 | 有限 `Float.MAX_VALUE` |
+| TetraWear 差值 | `MAX - MAX = 0` |
+| ForgeHooks.onLivingHurt 返回 | `Float.MAX_VALUE`，`0x7f7fffff` |
+| ForgeHooks.onLivingDamage 入参和返回 | `Infinity`，`0x7f800000` |
+
+这两次没有 BigDecimal 异常或独立的 Neruina 暂停异常记录；诊断的 observation stack 不能当作游戏抛错。两次场景不是原下界现场，不能用此结果证明原报告已完全复现。作者本地日志快照保存在 `tmp-opencode/damage-diagnostics-repro-20260916-2229/`，不随 Git 分发。
+
+同次启动导出的 LivingEntity（22:15）有一个强候选：AttributesLib 的 `apoth_sunderingHasEffect` 重定向恒真，空抗性效果时 `apoth_sunderingGetAmplifier` 返回 -1，使原抗性路径仍计算 `damage * 25 / 25`。`Float.MAX_VALUE * 25` 必然溢出，但旧探针未记录这条实际指令，下一次仍要用运算日志验证，不直接把候选宣布为原 BigDecimal 异常的根因。
+
+补充版新增 LivingEntity/Player.actuallyHurt 父作用域和低优先级合并类观察，覆盖两个事件之间的护甲、抗性、附魔保护、吸收，以及同类可达 Mixin/lambda；记录 float/double 运算、D2F、方法返回值与可取得的 Mixin 来源，并覆盖 CombatRules/ALCombatRules。新一轮验证首先检查 `[DamageDiagnostics] Pipeline` 覆盖清单，再找 `FIRST_NONFINITE_OBSERVED` 中具体操作数与指令位置。
+
+Java 17 完整构建、mapped/SRG 实际类、上次导出的合并 LivingEntity 的 ASM 栈校验，以及 JVM fixture 的数值、提前退出、异常与 lambda 回归通过。补充版真实启动和再次捕食仍待执行。另一个开发辅助模组 `damage_trace` 在旧启动中因 `IEventListener[]` 强转 `AtomicReference` 失败而未安装监听器包装，其空日志不能作为没有异常的证据；该问题独立于有效的 CDC 记录，本轮未修改该模组。
 
 ## 1. 目标与范围
 
@@ -32,7 +52,7 @@
 | 截图相关模组 | Alex's Mobs `1.22.9`、TetraWear `1.0.0`、AttributesLib `1.3.7`、Neruina `3.3.3`、Forge `47.4.16` |
 | 原始记录 | 已读取截图；本地 `logs/`、`crash-reports/` 的 `.log` / `.txt` 定向检索未找到匹配调用链，未检索压缩历史日志 |
 | 现场状态 | 尚无该次异常的实体 NBT、完整伤害事件值、加载模组清单和确切配置快照 |
-| 本轮验证 | 静态源码、文档和 JAR 字节码核对；未进行游戏复现 |
+| 初始调查验证 | 当时只做静态源码、文档和 JAR 字节码核对；后续真实测试见顶部更新 |
 
 工作区已有与本问题无关的修改，实施时应保留。不能因本地模组版本号相同，就默认用户现场与当前源码、配置、打包 CDC 完全一致。
 
@@ -166,11 +186,11 @@ taken = a / (a + (armor/(1+armor/120))*(0.7+0.3*min(1,toughness/10)))
 
 ### 阶段 A：确认首次溢出位置
 
-诊断实现已完成；本阶段剩余工作是真实启动、复现与按证据补充观测。主要入口为 `compat/combat/diagnostics/DamageDiagnostics`、`DamageArithmeticTransformer`，`CombatMixinPlugin.postApply` 负责算术插桩；`ForgeDamageDiagnosticsMixin`、两个伤害事件 Mixin、`ArmorFormulaDiagnosticsMixin`、`ArmorHoningDiagnosticsMixin` 负责阶段与入参观察。测试入口为 `DamageDiagnosticsTest`。
+第一版实测发现两个事件之间的缺口；补充版已完成，剩余工作是重新启动、复现与确认首条运算。主要入口为 `compat/combat/diagnostics/DamageDiagnostics`、`DamageArithmeticTransformer`、`DamagePipelineTransformer`，`CombatMixinPlugin.postApply` 负责插桩；`LivingDamagePipelineScopeMixin` 与低优先级算术探针新增跨事件覆盖。测试入口为 `DamageDiagnosticsTest` / `DamagePipelineTest`。
 
 1. 按用户要求在原运行目录测试，可使用独立测试存档；记录完整模组版本、CDC 源码提交与实际加载 JAR、AttributesLib 配置，不使用另一工作树代替运行目录。
 2. 当前探针从 ForgeHooks 入参开始，已覆盖事件实际 `setAmount` 写入、`ArmorHoning` 和 `getAValue` 入口；MMT 关键方法记录真实浮点运算和效果贡献。使用独立 `logNonFiniteDamage` 开关，默认关闭。必要时再补蟾蜍调用前与未覆盖监听器探针，不能把诊断投影溢出当作真实事件溢出。
-3. 当前按 Forge hurt/damage 阶段编号，记录攻击者、目标类型与 UUID、位置、伤害源、伤害值及原始浮点位；异常或绝对值至少 `1E30F` 的记录限频输出。跨阶段攻击关联、事件取消状态及任意监听器完整输入/输出尚未全面覆盖，按复现需要补充。
+3. Forge hurt/damage 子记录现在通过 `parentTrace` 关联到 actuallyHurt 父记录；记录实体、位置、伤害源、数值及浮点位，异常或极大值限频输出。第三方不调用基类的覆写、外部 helper 内部运算、事件取消状态及任意监听器完整输入/输出尚未全面覆盖，按证据补充。
 4. 确认 Forge 实际监听器顺序。同一优先级不能仅凭源码文件顺序推定；事件前后两个总探针也不能单独确定是哪一个监听器修改了数值。
 5. 对首个有限值变为非有限值的操作记录输入、倍率、输出及完整调用位置。若默认属性无法复现，按原始现场配置、属性和其他监听器逐项缩小差异。
 6. 同时区分护甲前入射伤害、护甲后伤害、保护/抗性后伤害和实际生命差，避免以单个入口日志证明击杀或最终减伤结果。
