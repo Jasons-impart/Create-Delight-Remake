@@ -1,6 +1,6 @@
 # 下界捕食攻击非有限伤害兼容修复计划
 
-状态：首版抗性修复在 2026-09-18 实测启动时未应用，捕食仍按旧公式溢出。已改为单入口先修复后插桩，完整构建通过，已在游戏退出后替换原运行 JAR 并核对哈希，待重新启动验证。原下界 BigDecimal 异常仍未完整复现，MMT 适用范围调整未实施。
+状态：单入口修正版抗性补丁已在真实游戏命中，6 条已记录非暴击捕食的后续管线未观察到非有限值；另一次捕食触发 CDC 叠加暴击，MAX 加上半个 MAX 溢出，经 TetraWear/AttributesLib 复现原反馈相同的 BigDecimal 异常与 Neruina 暂停。当前已定位 main 基线的第二个生产点，尚未修改暴击或捕食规则，MMT 适用范围调整未实施。
 
 ## 当前实施状态（2026-09-18）
 
@@ -11,6 +11,18 @@
 - 首版失败 JAR SHA-256 为 `20f1d7fd7ab9f038c577d70a958bad465384227e2bee8b3308714e3b1739a641`。修正组合入口后的新构建 SHA-256 为 `34f029cfb6027d26c213a3aa08255f7d5d4bdb62be79fdab8ab990a22d446d1b`，来自非 `-all` reobf 构建；配置位置为 `config/createdelightcore-common.toml`。原主线备份位于 `tmp-opencode/damage-diagnostics-runtime-backup/`，第一版诊断备份在其 `pipeline-before/`，修复前的完整诊断版备份在 `resistance-before/`。新构建已在游戏退出后替换原运行 JAR，旧包备份在 composition-before/；接手者重新构建后应记录自己的哈希。
 - 操作说明及覆盖边界见 [CDC 修复与诊断说明](https://github.com/Jasons-impart/Create-Delight-Core/blob/codex/damage-overflow-runtime/docs/damage-diagnostics.md)。CDR 本轮只交接文档，未更新子模块引用，直接读取当前子模块基线不会包含修复。下一步获取 CDC 分支最新提交，在当前实例重启并复现，检查修复命中及是否存在后续非有限值。
 - 下方 050x 快照保留为调查历史；以本节为当前实施基线。尚未完成原下界异常的复现或最终修复，不能认定根因已经闭环。
+
+### 2026-09-18 00:34 最新实测：抗性通过，暴击溢出复现异常链
+
+运行 CDC `a095011`，哈希与上节一致。00:31:49 启动成功标记确认抗性修复命中；父 Trace #4、#12、#15、#18、#21、#24 记录先 `25 / 25 = 1` 后 `MAX * 1 = MAX`，Damage 入口仍有限，零吸收计算未出现 NaN，生命减法有限后由原有 clamp 归零。
+
+00:34:29 父 Trace #10 / Hurt #11 首次观察到 `EVENT_FINITE_TO_NONFINITE MAX -> Infinity`，写入者为 CDC `AttributeEventsMixin.createdelightcore$useAdditiveMulticrit`，此前 MMT 运算保持有限。攻击者暴击率返回 0.05、暴伤返回 1.5；结合源码 `modifiedDamage += originalDamage * (critDamage - 1)`，确定首次暴击执行 `MAX + MAX * 0.5` 超出 float 上限。内部加法来自源码与事件/属性证据推导，当前未逐指令观察此方法。
+
+随后 TetraWear.ArmorHoning 与 AttributesLib.getAValue 都收到 Infinity，BigDecimal 构造抛出 `NumberFormatException: Infinite or NaN`，Neruina 暂停攻击者蟾蜍。该次 Hurt 监听器内已抛错，尚未到达抗性阶段。当前 main 样本复现了原反馈的异常类型、消费端调用链和暂停对象；未重跑原 0.5.0.11，不断言其生产者与当前 CDC 相同。
+
+暴击溢出是第二个独立问题，数学结果本身超出 float 范围，不能像抗性一样仅调整运算顺序。下一步应评估特殊捕食极值的定向处理，或暴击输出的局部有限饱和策略；保留事件、减伤、取消与死亡语义，并考虑 MMT/Sundering 等其他增伤。尚未选择或实施新数值政策，不因本轮发现直接增加全局 clamp。
+
+本地完整证据为 `tmp-opencode/damage-diagnostics-repro-20260918-0034/`，不随 Git 分发。以下较早阶段的“尚未复现”描述均为历史状态，以本节为最新结论。
 
 ### 两次捕食的新证据与补充探针
 
