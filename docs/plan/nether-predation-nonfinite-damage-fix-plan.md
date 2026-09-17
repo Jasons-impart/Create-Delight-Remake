@@ -1,6 +1,6 @@
 # 下界捕食攻击非有限伤害兼容修复计划
 
-状态：第一版已真实启动并记录两次捕食，溢出区间缩小为 Hurt 返回与 Damage 入口之间；补充版诊断已构建部署，待新一轮启动和复现。适用范围调整与最终数值修复仍待证据和 review。
+状态：补充版已真实启动，多次捕食已确认抗性处理中的 `Float.MAX_VALUE * 25` 为首次溢出指令；原下界 BigDecimal 异常仍未完整复现。适用范围调整与最终数值修复待 review。
 
 ## 当前实施状态（2026-09-17）
 
@@ -30,7 +30,25 @@
 
 补充版新增 LivingEntity/Player.actuallyHurt 父作用域和低优先级合并类观察，覆盖两个事件之间的护甲、抗性、附魔保护、吸收，以及同类可达 Mixin/lambda；记录 float/double 运算、D2F、方法返回值与可取得的 Mixin 来源，并覆盖 CombatRules/ALCombatRules。新一轮验证首先检查 `[DamageDiagnostics] Pipeline` 覆盖清单，再找 `FIRST_NONFINITE_OBSERVED` 中具体操作数与指令位置。
 
-Java 17 完整构建、mapped/SRG 实际类、上次导出的合并 LivingEntity 的 ASM 栈校验，以及 JVM fixture 的数值、提前退出、异常与 lambda 回归通过。补充版真实启动和再次捕食仍待执行。另一个开发辅助模组 `damage_trace` 在旧启动中因 `IEventListener[]` 强转 `AtomicReference` 失败而未安装监听器包装，其空日志不能作为没有异常的证据；该问题独立于有效的 CDC 记录，本轮未修改该模组。
+Java 17 完整构建、mapped/SRG 实际类、上次导出的合并 LivingEntity 的 ASM 栈校验，以及 JVM fixture 的数值、提前退出、异常与 lambda 回归通过。补充版随后完成真实启动和多次捕食，结果见下节。另一个开发辅助模组 `damage_trace` 在旧启动中因 `IEventListener[]` 强转 `AtomicReference` 失败而未安装监听器包装，其空日志不能作为没有异常的证据；该问题独立于有效的 CDC 记录，本轮未修改该模组。
+
+### 2026-09-17 第二轮结果：抗性乘法已被运行证据确认
+
+补充版已成功启动，新 Pipeline 清单为 LivingEntity 59 / Player 18 / CombatRules 6 / ALCombatRules 46 个探针。23:07:33—23:07:48，父 Trace #1、#4、#7、#10、#13、#16、#19 均在护甲方法返回有限 MAX 之后首次记录：
+
+```text
+LivingEntity.getDamageAfterMagicAbsorb / m_6515_
+LivingEntity.java:1587, insn=39
+3.4028235E38 [0x7f7fffff] * 25.0 [0x41c80000] = Infinity [0x7f800000]
+LivingEntity.java:1589, insn=45
+Infinity [0x7f800000] / 25.0 [0x41c80000] = Infinity [0x7f800000]
+```
+
+此前静态候选已转为本轮捕食的已确认数值生产点：AttributesLib 重定向使无抗性时仍执行该路径，MAX 在中间乘法溢出。MMT/TetraWear 不是这些样本的首个异常生产者。后续吸收计算出现 `Infinity - Infinity = NaN`，吸收值 getter 返回 NaN；原有健康值 clamp 最终使生命为 0，不能以“正常吃掉”判定数值安全。
+
+本轮未出现 `ORIGINAL_EXCEPTION` 或 BigDecimal `NumberFormatException`，仍是主世界样本；原下界截图的异常发生得更早，不能宣称已完整解释。下一步应优先评审抗性算术的定点修复，检查普通数值精度、抗性等级、Sundering、旁路伤害及极值行为，再决定阶段 B/C 是否仍需额外兼容措施。当前只更新诊断结论，不实施规则修改。
+
+本地完整证据快照为 `tmp-opencode/damage-diagnostics-repro-20260917-2307/`（日志及导出类，不随 Git 分发）。日志受限频约束，上述是已记录的独立父 Trace，不代表用户实际捕食总次数。
 
 ## 1. 目标与范围
 
@@ -186,7 +204,7 @@ taken = a / (a + (armor/(1+armor/120))*(0.7+0.3*min(1,toughness/10)))
 
 ### 阶段 A：确认首次溢出位置
 
-第一版实测发现两个事件之间的缺口；补充版已完成，剩余工作是重新启动、复现与确认首条运算。主要入口为 `compat/combat/diagnostics/DamageDiagnostics`、`DamageArithmeticTransformer`、`DamagePipelineTransformer`，`CombatMixinPlugin.postApply` 负责插桩；`LivingDamagePipelineScopeMixin` 与低优先级算术探针新增跨事件覆盖。测试入口为 `DamageDiagnosticsTest` / `DamagePipelineTest`。
+第一版实测发现两个事件之间的缺口；补充版已运行并确认抗性乘法为本轮首个溢出操作，剩余工作是保留原下界现场差异并评审定点修复。主要入口为 `compat/combat/diagnostics/DamageDiagnostics`、`DamageArithmeticTransformer`、`DamagePipelineTransformer`，`CombatMixinPlugin.postApply` 负责插桩；`LivingDamagePipelineScopeMixin` 与低优先级算术探针新增跨事件覆盖。测试入口为 `DamageDiagnosticsTest` / `DamagePipelineTest`。
 
 1. 按用户要求在原运行目录测试，可使用独立测试存档；记录完整模组版本、CDC 源码提交与实际加载 JAR、AttributesLib 配置，不使用另一工作树代替运行目录。
 2. 当前探针从 ForgeHooks 入参开始，已覆盖事件实际 `setAmount` 写入、`ArmorHoning` 和 `getAValue` 入口；MMT 关键方法记录真实浮点运算和效果贡献。使用独立 `logNonFiniteDamage` 开关，默认关闭。必要时再补蟾蜍调用前与未覆盖监听器探针，不能把诊断投影溢出当作真实事件溢出。
