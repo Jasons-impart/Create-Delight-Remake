@@ -1,15 +1,15 @@
 # 下界捕食攻击非有限伤害兼容修复计划
 
-状态：用户已批准先算抗性比例；定点修复已构建部署，诊断继续开启，待重启捕食检查后续运算。此前已确认 `Float.MAX_VALUE * 25` 为首次溢出指令；原下界 BigDecimal 异常仍未完整复现，MMT 适用范围调整未实施。
+状态：首版抗性修复在 2026-09-18 实测启动时未应用，捕食仍按旧公式溢出。已改为单入口先修复后插桩，完整构建通过，待替换运行 JAR 和重新启动验证。原下界 BigDecimal 异常仍未完整复现，MMT 适用范围调整未实施。
 
-## 当前实施状态（2026-09-17）
+## 当前实施状态（2026-09-18）
 
-- 配套源码与测试见 [CDC PR #126](https://github.com/Jasons-impart/Create-Delight-Core/pull/126)，诊断第一版为 `ea26197`，补充版为 `5fde0d2`，抗性修复为 `cc8bdc6`。接手时先核对 PR 最新提交与验证状态。
+- 配套源码与测试见 [CDC PR #126](https://github.com/Jasons-impart/Create-Delight-Core/pull/126)，诊断第一版为 `ea26197`，补充版为 `5fde0d2`，首版抗性修复为 `cc8bdc6`，执行顺序修正为 `a095011`。接手时先核对 PR 最新提交与验证状态。
 - 用户选择基于父仓 `main`（`72a5eb1`）与 CDC 最新 `1.20.1`（`7113664`），在原运行目录 `CD-master-dev` 的 `codex/damage-overflow-runtime` 分支工作；不使用独立工作树承担测试。
 - 已增加 Forge 伤害阶段跟踪、事件实际写入观察、MMT 效果贡献调用者、MMT / TetraWear 实际浮点指令观察，以及 AttributesLib 入参检查点。没有启用玩家范围过滤或数值钳制。
 - 完整构建和浮点字节码回归通过；诊断 JAR 已部署至本地 `mods/`，`logNonFiniteDamage = true`。Packwiz 发布载荷未变。原运行 JAR 与配置已备份。
-- 当前修复版 JAR SHA-256 为 `20f1d7fd7ab9f038c577d70a958bad465384227e2bee8b3308714e3b1739a641`，来自非 `-all` reobf 构建；配置位置为 `config/createdelightcore-common.toml`。原主线备份位于 `tmp-opencode/damage-diagnostics-runtime-backup/`，第一版诊断备份在其 `pipeline-before/`，修复前的完整诊断版备份在 `resistance-before/`。接手者重新构建后应记录自己的哈希。
-- 操作说明及覆盖边界见 [CDC 修复与诊断说明](https://github.com/Jasons-impart/Create-Delight-Core/blob/cc8bdc6/docs/damage-diagnostics.md)。CDR 本轮只交接文档，未更新子模块引用，直接读取当前子模块基线不会包含修复。下一步获取 CDC 分支，在当前实例重启并复现，检查修复命中及是否存在后续非有限值。
+- 首版失败 JAR SHA-256 为 `20f1d7fd7ab9f038c577d70a958bad465384227e2bee8b3308714e3b1739a641`。修正组合入口后的新构建 SHA-256 为 `34f029cfb6027d26c213a3aa08255f7d5d4bdb62be79fdab8ab990a22d446d1b`，来自非 `-all` reobf 构建；配置位置为 `config/createdelightcore-common.toml`。原主线备份位于 `tmp-opencode/damage-diagnostics-runtime-backup/`，第一版诊断备份在其 `pipeline-before/`，修复前的完整诊断版备份在 `resistance-before/`。新构建尚待退出游戏后替换；接手者重新构建后应记录自己的哈希。
+- 操作说明及覆盖边界见 [CDC 修复与诊断说明](https://github.com/Jasons-impart/Create-Delight-Core/blob/codex/damage-overflow-runtime/docs/damage-diagnostics.md)。CDR 本轮只交接文档，未更新子模块引用，直接读取当前子模块基线不会包含修复。下一步获取 CDC 分支最新提交，在当前实例重启并复现，检查修复命中及是否存在后续非有限值。
 - 下方 050x 快照保留为调查历史；以本节为当前实施基线。尚未完成原下界异常的复现或最终修复，不能认定根因已经闭环。
 
 ### 两次捕食的新证据与补充探针
@@ -52,11 +52,19 @@ Infinity [0x7f800000] / 25.0 [0x41c80000] = Infinity [0x7f800000]
 
 ### 已批准并实施：先算抗性比例
 
-用户选择直接将 `damage * factor / 25.0F` 改为 `damage * (factor / 25.0F)`，接受运算顺序改变带来的微小舍入差异。CDC `ResistanceDamageMixin` / `ResistanceDamageTransformer` 精确匹配抗性方法唯一的乘除指令对，移动浮点除法并删除原后置除法；不改变系数、原始伤害副本、旁路标签、Sundering 和后续处理。补丁 priority 2 先执行，priority 1 诊断再观察修复后的真实值；不依赖诊断开关生效。
+用户选择直接将 `damage * factor / 25.0F` 改为 `damage * (factor / 25.0F)`，接受运算顺序改变带来的微小舍入差异。CDC `ResistanceDamageTransformer` 精确匹配抗性方法唯一的乘除指令对，移动浮点除法并删除原后置除法；不改变系数、原始伤害副本、旁路标签、Sundering 和后续处理。当前由 `LivingDamagePipelineArithmeticMixin` 的单个 postApply 调用 `DamagePipelinePreparation`，先修复再安装探针，不依赖两个 marker 的相对优先级或诊断开关。
 
 完整 build、实际 mapped/SRG 与上一轮合并类校验通过，JVM 执行改写 fixture 覆盖 MAX、抗性等级、旁路、Sundering、非有限及异常等级。5000 个普通伤害采样的最大相对舍入差约 `1.59E-7`，不是全输入域上界。无抗性到抗性 V 的 MAX 与零吸收路径保持有限。
 
-已部署当前运行目录，尚待真实重启。验收首先检查 `[CDCore][ResistanceDamage] Applied ratio-first`，再用新绯红蚊捕食确认 `25 / 25 = 1`、`MAX * 1 = MAX`，继续检查 Damage 入参、吸收和生命阶段的首个异常值。Sundering 后续增伤等仍可能放大极值，当前保留诊断并逐项确认，不提前修改其他公式或宣称原下界异常已闭环。
+首版部署后的真实启动失败，详情见下节。新版本验收首先检查 `[CDCore][ResistanceDamage] Applied ratio-first ... before probes`，再用新绯红蚊捕食确认 `25 / 25 = 1`、`MAX * 1 = MAX`，继续检查 Damage 入参、吸收和生命阶段的首个异常值。Sundering 后续增伤等仍可能放大极值，当前保留诊断并逐项确认，不提前修改其他公式或宣称原下界异常已闭环。
+
+### 2026-09-18 第三轮：发现补丁与探针顺序错误
+
+00:09:14 启动先安装 LivingEntity 探针，再应用独立 `ResistanceDamageMixin`，导致 `Expected exactly one resistance damage*factor/25 sequence ... found 0`。非 required Mixin 失败后游戏继续运行。00:13:10—00:13:24 的 7 个独立父 Trace（#1、#4、#7、#10、#13、#16、#19）仍记录旧公式的 `MAX * 25 = Infinity`，没有 `ORIGINAL_EXCEPTION` 或 `NumberFormatException`。这是修复未命中，不是新发现的后续溢出点。
+
+首版用 priority 2/1 推断 postApply 顺序不成立；旧测试单独先修复再插桩，没有覆盖生产入口组合。现删除独立修复 marker，改为同一个入口顺序执行。新增回归复现错误顺序的零匹配，并直接执行生产组合生成的 JVM fixture；完整 build、实际 SRG 和本轮导出类的栈校验通过。真实启动及捕食验证仍待完成。
+
+本地失败证据保存在 `tmp-opencode/damage-diagnostics-repro-20260918-0013/`，不随 Git 分发。进入游戏或目标死亡都不能作为修复命中的判断标准。
 
 ## 1. 目标与范围
 
