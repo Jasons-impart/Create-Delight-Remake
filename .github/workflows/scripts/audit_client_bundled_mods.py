@@ -114,23 +114,40 @@ def main() -> int:
         print(f"Client artifact directory not found: {args.client_dir}", file=sys.stderr)
         return 2
 
+    jars = bundled_mod_jars(args.client_dir)
+    details = [(jar, *jar_mod_details(jar)) for jar in jars]
+    print(f"Bundled mod inventory: {len(jars)} JAR(s)", flush=True)
+    for jar, display_name, mod_id in details:
+        relative = jar.relative_to(args.client_dir.resolve()).as_posix()
+        print(f"BUNDLED | {relative} | {display_name} | {mod_id}", flush=True)
+
     try:
         allowlist, sheet_count = read_allowlist(args.allowlist_url, args.allowlist_xlsx)
     except Exception as error:  # A workflow-level continue-on-error keeps release publishing unblocked.
         print(f"Unable to load CurseForge approved-mod list: {error}", file=sys.stderr)
+        print(f"Audit result: UNVERIFIED; total={len(jars)}; allowlist unavailable")
         return 2
 
-    jars = bundled_mod_jars(args.client_dir)
     print(
         f"::notice::Loaded {len(allowlist)} values from {sheet_count} CurseForge allowlist worksheet(s); "
         f"auditing {len(jars)} bundled mod JAR(s)."
     )
-    for jar, display_name, mod_id in audit(args.client_dir, allowlist):
+    unmatched = 0
+    for jar, display_name, mod_id in details:
         relative = jar.relative_to(args.client_dir.resolve())
+        if normalize(display_name) in allowlist:
+            print(f"APPROVED | {relative.as_posix()} | {display_name} | {mod_id}")
+            continue
+        unmatched += 1
         print(
             f"::warning file={relative.as_posix()}::Bundled mod is not in the CurseForge approved "
             f"non-CurseForge list: {display_name} (mod id: {mod_id})"
         )
+    result = "PASS" if unmatched == 0 else "UNMATCHED"
+    print(
+        f"Audit result: {result}; total={len(jars)}; "
+        f"approved={len(jars) - unmatched}; unmatched={unmatched}"
+    )
     return 0
 
 
