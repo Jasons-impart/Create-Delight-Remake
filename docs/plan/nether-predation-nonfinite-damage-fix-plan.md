@@ -1,6 +1,6 @@
 # 下界捕食攻击非有限伤害兼容修复计划
 
-状态：首版抗性修复在 2026-09-18 实测启动时未应用，捕食仍按旧公式溢出。已改为单入口先修复后插桩，完整构建通过，待替换运行 JAR 和重新启动验证。原下界 BigDecimal 异常仍未完整复现，MMT 适用范围调整未实施。
+状态：首版抗性修复在 2026-09-18 实测启动时未应用，捕食仍按旧公式溢出。已改为单入口先修复后插桩，完整构建通过，已在游戏退出后替换原运行 JAR 并核对哈希，待重新启动验证。原下界 BigDecimal 异常仍未完整复现，MMT 适用范围调整未实施。
 
 ## 当前实施状态（2026-09-18）
 
@@ -8,7 +8,7 @@
 - 用户选择基于父仓 `main`（`72a5eb1`）与 CDC 最新 `1.20.1`（`7113664`），在原运行目录 `CD-master-dev` 的 `codex/damage-overflow-runtime` 分支工作；不使用独立工作树承担测试。
 - 已增加 Forge 伤害阶段跟踪、事件实际写入观察、MMT 效果贡献调用者、MMT / TetraWear 实际浮点指令观察，以及 AttributesLib 入参检查点。没有启用玩家范围过滤或数值钳制。
 - 完整构建和浮点字节码回归通过；诊断 JAR 已部署至本地 `mods/`，`logNonFiniteDamage = true`。Packwiz 发布载荷未变。原运行 JAR 与配置已备份。
-- 首版失败 JAR SHA-256 为 `20f1d7fd7ab9f038c577d70a958bad465384227e2bee8b3308714e3b1739a641`。修正组合入口后的新构建 SHA-256 为 `34f029cfb6027d26c213a3aa08255f7d5d4bdb62be79fdab8ab990a22d446d1b`，来自非 `-all` reobf 构建；配置位置为 `config/createdelightcore-common.toml`。原主线备份位于 `tmp-opencode/damage-diagnostics-runtime-backup/`，第一版诊断备份在其 `pipeline-before/`，修复前的完整诊断版备份在 `resistance-before/`。新构建尚待退出游戏后替换；接手者重新构建后应记录自己的哈希。
+- 首版失败 JAR SHA-256 为 `20f1d7fd7ab9f038c577d70a958bad465384227e2bee8b3308714e3b1739a641`。修正组合入口后的新构建 SHA-256 为 `34f029cfb6027d26c213a3aa08255f7d5d4bdb62be79fdab8ab990a22d446d1b`，来自非 `-all` reobf 构建；配置位置为 `config/createdelightcore-common.toml`。原主线备份位于 `tmp-opencode/damage-diagnostics-runtime-backup/`，第一版诊断备份在其 `pipeline-before/`，修复前的完整诊断版备份在 `resistance-before/`。新构建已在游戏退出后替换原运行 JAR，旧包备份在 composition-before/；接手者重新构建后应记录自己的哈希。
 - 操作说明及覆盖边界见 [CDC 修复与诊断说明](https://github.com/Jasons-impart/Create-Delight-Core/blob/codex/damage-overflow-runtime/docs/damage-diagnostics.md)。CDR 本轮只交接文档，未更新子模块引用，直接读取当前子模块基线不会包含修复。下一步获取 CDC 分支最新提交，在当前实例重启并复现，检查修复命中及是否存在后续非有限值。
 - 下方 050x 快照保留为调查历史；以本节为当前实施基线。尚未完成原下界异常的复现或最终修复，不能认定根因已经闭环。
 
