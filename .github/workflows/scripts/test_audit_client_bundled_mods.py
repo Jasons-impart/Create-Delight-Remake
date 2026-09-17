@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 import importlib.util
+import contextlib
+import io
 import tempfile
 import unittest
+from unittest.mock import patch
 import zipfile
 from pathlib import Path
 
@@ -13,6 +16,35 @@ SPEC.loader.exec_module(AUDIT)
 
 
 class ClientBundledModAuditTests(unittest.TestCase):
+    def test_cli_logs_inventory_and_both_match_results(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.write_mod_jar(root, "allowed.jar", "Allowed Mod", "allowed")
+            self.write_mod_jar(root, "blocked.jar", "Blocked Mod", "blocked")
+            output = io.StringIO()
+            with patch("sys.argv", [str(SCRIPT), "--client-dir", directory]), \
+                    patch.object(AUDIT, "read_allowlist", return_value=({"allowed mod"}, 2)), \
+                    contextlib.redirect_stdout(output):
+                self.assertEqual(AUDIT.main(), 0)
+            log = output.getvalue()
+            self.assertIn("BUNDLED | overrides/mods/allowed.jar | Allowed Mod | allowed", log)
+            self.assertIn("BUNDLED | overrides/mods/blocked.jar | Blocked Mod | blocked", log)
+            self.assertIn("APPROVED | overrides/mods/allowed.jar", log)
+            self.assertIn("::warning file=overrides/mods/blocked.jar", log)
+            self.assertIn("Audit result: UNMATCHED; total=2; approved=1; unmatched=1", log)
+
+    def test_cli_preserves_inventory_when_allowlist_is_unavailable(self):
+        with tempfile.TemporaryDirectory() as directory:
+            self.write_mod_jar(Path(directory), "allowed.jar", "Allowed Mod", "allowed")
+            output = io.StringIO()
+            with patch("sys.argv", [str(SCRIPT), "--client-dir", directory]), \
+                    patch.object(AUDIT, "read_allowlist", side_effect=OSError("offline")), \
+                    contextlib.redirect_stdout(output), contextlib.redirect_stderr(io.StringIO()):
+                self.assertEqual(AUDIT.main(), 2)
+            self.assertIn("BUNDLED | overrides/mods/allowed.jar", output.getvalue())
+            self.assertIn("Audit result: UNVERIFIED", output.getvalue())
+            self.assertNotIn("Audit result: PASS", output.getvalue())
+
     def write_mod_jar(self, root, filename, display_name, mod_id):
         jar = root / "overrides" / "mods" / filename
         jar.parent.mkdir(parents=True, exist_ok=True)
