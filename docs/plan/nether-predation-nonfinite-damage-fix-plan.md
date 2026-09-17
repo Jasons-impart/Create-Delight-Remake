@@ -1,15 +1,15 @@
 # 下界捕食攻击非有限伤害兼容修复计划
 
-状态：补充版已真实启动，多次捕食已确认抗性处理中的 `Float.MAX_VALUE * 25` 为首次溢出指令；原下界 BigDecimal 异常仍未完整复现。适用范围调整与最终数值修复待 review。
+状态：用户已批准先算抗性比例；定点修复已构建部署，诊断继续开启，待重启捕食检查后续运算。此前已确认 `Float.MAX_VALUE * 25` 为首次溢出指令；原下界 BigDecimal 异常仍未完整复现，MMT 适用范围调整未实施。
 
 ## 当前实施状态（2026-09-17）
 
-- 配套诊断源码与测试见 [CDC PR #126](https://github.com/Jasons-impart/Create-Delight-Core/pull/126)，第一版为 `ea26197`，补充版为 `5fde0d2`。接手时先核对 PR 最新提交与验证状态。
+- 配套源码与测试见 [CDC PR #126](https://github.com/Jasons-impart/Create-Delight-Core/pull/126)，诊断第一版为 `ea26197`，补充版为 `5fde0d2`，抗性修复为 `cc8bdc6`。接手时先核对 PR 最新提交与验证状态。
 - 用户选择基于父仓 `main`（`72a5eb1`）与 CDC 最新 `1.20.1`（`7113664`），在原运行目录 `CD-master-dev` 的 `codex/damage-overflow-runtime` 分支工作；不使用独立工作树承担测试。
 - 已增加 Forge 伤害阶段跟踪、事件实际写入观察、MMT 效果贡献调用者、MMT / TetraWear 实际浮点指令观察，以及 AttributesLib 入参检查点。没有启用玩家范围过滤或数值钳制。
 - 完整构建和浮点字节码回归通过；诊断 JAR 已部署至本地 `mods/`，`logNonFiniteDamage = true`。Packwiz 发布载荷未变。原运行 JAR 与配置已备份。
-- 补充版临时诊断 JAR SHA-256 为 `ecc403739126e4e7f96202d9ed2dba5ecc76565b088b509e8587fa5d7d2b5507`，来自非 `-all` reobf 构建；配置位置为 `config/createdelightcore-common.toml`。原主线备份位于 `tmp-opencode/damage-diagnostics-runtime-backup/`，第一版诊断备份在其 `pipeline-before/` 子目录。接手者重新构建后应记录自己的哈希。
-- 操作说明及覆盖边界见 [CDC 诊断交接说明](https://github.com/Jasons-impart/Create-Delight-Core/blob/5fde0d2/docs/damage-diagnostics.md)。CDR 本轮只交接文档，未更新子模块引用，直接读取当前子模块基线不会包含诊断实现。下一步获取 CDC 诊断分支，在当前实例启动并复现，依据首次非有限观察、实际事件写入及最终异常共同定位来源。
+- 当前修复版 JAR SHA-256 为 `20f1d7fd7ab9f038c577d70a958bad465384227e2bee8b3308714e3b1739a641`，来自非 `-all` reobf 构建；配置位置为 `config/createdelightcore-common.toml`。原主线备份位于 `tmp-opencode/damage-diagnostics-runtime-backup/`，第一版诊断备份在其 `pipeline-before/`，修复前的完整诊断版备份在 `resistance-before/`。接手者重新构建后应记录自己的哈希。
+- 操作说明及覆盖边界见 [CDC 修复与诊断说明](https://github.com/Jasons-impart/Create-Delight-Core/blob/cc8bdc6/docs/damage-diagnostics.md)。CDR 本轮只交接文档，未更新子模块引用，直接读取当前子模块基线不会包含修复。下一步获取 CDC 分支，在当前实例重启并复现，检查修复命中及是否存在后续非有限值。
 - 下方 050x 快照保留为调查历史；以本节为当前实施基线。尚未完成原下界异常的复现或最终修复，不能认定根因已经闭环。
 
 ### 两次捕食的新证据与补充探针
@@ -49,6 +49,14 @@ Infinity [0x7f800000] / 25.0 [0x41c80000] = Infinity [0x7f800000]
 本轮未出现 `ORIGINAL_EXCEPTION` 或 BigDecimal `NumberFormatException`，仍是主世界样本；原下界截图的异常发生得更早，不能宣称已完整解释。下一步应优先评审抗性算术的定点修复，检查普通数值精度、抗性等级、Sundering、旁路伤害及极值行为，再决定阶段 B/C 是否仍需额外兼容措施。当前只更新诊断结论，不实施规则修改。
 
 本地完整证据快照为 `tmp-opencode/damage-diagnostics-repro-20260917-2307/`（日志及导出类，不随 Git 分发）。日志受限频约束，上述是已记录的独立父 Trace，不代表用户实际捕食总次数。
+
+### 已批准并实施：先算抗性比例
+
+用户选择直接将 `damage * factor / 25.0F` 改为 `damage * (factor / 25.0F)`，接受运算顺序改变带来的微小舍入差异。CDC `ResistanceDamageMixin` / `ResistanceDamageTransformer` 精确匹配抗性方法唯一的乘除指令对，移动浮点除法并删除原后置除法；不改变系数、原始伤害副本、旁路标签、Sundering 和后续处理。补丁 priority 2 先执行，priority 1 诊断再观察修复后的真实值；不依赖诊断开关生效。
+
+完整 build、实际 mapped/SRG 与上一轮合并类校验通过，JVM 执行改写 fixture 覆盖 MAX、抗性等级、旁路、Sundering、非有限及异常等级。5000 个普通伤害采样的最大相对舍入差约 `1.59E-7`，不是全输入域上界。无抗性到抗性 V 的 MAX 与零吸收路径保持有限。
+
+已部署当前运行目录，尚待真实重启。验收首先检查 `[CDCore][ResistanceDamage] Applied ratio-first`，再用新绯红蚊捕食确认 `25 / 25 = 1`、`MAX * 1 = MAX`，继续检查 Damage 入参、吸收和生命阶段的首个异常值。Sundering 后续增伤等仍可能放大极值，当前保留诊断并逐项确认，不提前修改其他公式或宣称原下界异常已闭环。
 
 ## 1. 目标与范围
 
