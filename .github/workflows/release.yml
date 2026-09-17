@@ -129,6 +129,11 @@ jobs:
           ls ..
           git checkout -- mods resourcepacks shaderpacks tacz
           git clean -fd -- mods resourcepacks shaderpacks tacz
+      - name: 列出客户端内置模组并核对 CurseForge 允许列表
+        continue-on-error: true
+        run: >
+          python3 .github/workflows/scripts/audit_client_bundled_mods.py
+          --client-dir ../lite-release
       - name: 下载所有客户端文件本体
         run: bash .github/workflows/scripts/download_mods.sh 8082 client
       - name: 生成带mod本体的懒人包
@@ -372,12 +377,6 @@ jobs:
         with:
           name: "[Client]${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}"
           path: release-artifacts/client
-      - name: 审计本体分发 mod 的 CurseForge 允许列表
-        if: env.IS_STABLE_RELEASE == 'true'
-        continue-on-error: true
-        run: >
-          python3 .github/workflows/scripts/audit_client_bundled_mods.py
-          --client-dir release-artifacts/client
       - name: 下载服务端包 artifact
         uses: actions/download-artifact@v4
         with:
