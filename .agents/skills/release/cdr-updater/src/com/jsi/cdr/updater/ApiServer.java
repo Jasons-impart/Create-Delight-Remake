@@ -282,7 +282,7 @@ final class ApiServer {
         return "";
     }
 
-    private static final int MAX_BODY = 2 * 1024 * 1024;
+    private static final int MAX_BODY = 32 * 1024 * 1024;
 
     private static String readBody(HttpExchange exchange) throws Exception {
         try (InputStream in = exchange.getRequestBody()) {

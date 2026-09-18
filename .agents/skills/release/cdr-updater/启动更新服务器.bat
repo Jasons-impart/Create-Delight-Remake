@@ -24,6 +24,7 @@ if not exist "%~dp0dist\cdr-updater.jar" (
 echo Using Java: %JAVA_EXE%
 echo Starting update server http://127.0.0.1:8765
 echo First start may download official packs from GitHub.
+echo Use this bat file. Do not double-click cdr-updater.jar.
 "%JAVA_EXE%" -jar "%~dp0dist\cdr-updater.jar" serve --config "%~dp0config.toml"
 if errorlevel 1 echo Update server failed. See errors above.
 pause

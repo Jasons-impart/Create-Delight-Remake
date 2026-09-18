@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
@@ -22,13 +23,17 @@ import javax.swing.WindowConstants;
 import javax.swing.filechooser.FileSystemView;
 import javax.swing.table.DefaultTableModel;
 import java.awt.BorderLayout;
+import java.awt.Desktop;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
+import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
@@ -76,6 +81,10 @@ final class AdminApp {
         log.setEditable(false);
         log.setLineWrap(true);
         log.setWrapStyleWord(true);
+        JProgressBar progress = new JProgressBar(0, 1000);
+        progress.setStringPainted(true);
+        progress.setString("");
+        progress.setVisible(false);
 
         DefaultTableModel serversModel = new DefaultTableModel(new Object[]{"主机", "实例目录", "远程地址", "首次连接", "最近连接", "同步次数"}, 0) {
             @Override
@@ -105,6 +114,9 @@ final class AdminApp {
         JTextField portField = new JTextField(Integer.toString(runtime.config().port));
         JTextField publicUrlField = new JTextField(runtime.config().updateServerUrl);
         JTextField tokenField = new JTextField(runtime.config().accessToken);
+        JTextField adminTokenField = new JTextField(runtime.config().adminToken);
+        JTextField adminUrlField = new JTextField(adminUrl(runtime));
+        adminUrlField.setEditable(false);
 
         AtomicBoolean busy = new AtomicBoolean(false);
         JButton addPrivate = new JButton("添加私货");
@@ -115,7 +127,11 @@ final class AdminApp {
         JButton exportPcl2 = new JButton("导出 PCL2 整合包");
         JButton exportServer = new JButton("导出服务端");
         JButton applyConnection = new JButton("保存连接地址");
-        JButton generateToken = new JButton("随机生成令牌");
+        JButton generateToken = new JButton("随机生成同步令牌");
+        JButton applyAdminToken = new JButton("保存网页令牌");
+        JButton generateAdminToken = new JButton("随机生成网页令牌");
+        JButton openAdminPage = new JButton("打开管理网页");
+        JButton copyAdminUrl = new JButton("复制地址");
         JButton detectWan = new JButton("检测地址");
         JButton openWan = new JButton("开放外网访问");
 
@@ -134,12 +150,13 @@ final class AdminApp {
                     });
                 }
                 Pack.Config config = runtime.config();
-                String adminHost = "0.0.0.0".equals(config.listen) || "::".equals(config.listen) ? "127.0.0.1" : config.listen;
+                adminUrlField.setText(adminUrl(runtime));
                 summary.setText("  监听 " + config.listen + ":" + config.port
                         + "    对外 " + config.updateServerUrl
                         + "    官方版本 " + config.officialVersion
-                        + "    令牌 " + (config.accessToken.isBlank() ? "未设置" : "已启用")
-                        + "    网页 http://" + adminHost + ":" + config.port + "/admin"
+                        + "    同步令牌 " + (config.accessToken.isBlank() ? "未设置" : "已启用")
+                        + "    网页令牌 " + (config.adminToken.isBlank() ? "未设置" : "已启用")
+                        + "    网页 " + adminUrl(runtime)
                         + "    已有 " + records.size() + " 台服务端连接过（客户端连接不记录）");
             } catch (Exception error) {
                 summary.setText("  无法读取连接记录：" + error.getMessage());
@@ -167,7 +184,7 @@ final class AdminApp {
                 JOptionPane.showMessageDialog(frame, "正在处理上一项操作，请稍候。", "忙碌中", JOptionPane.INFORMATION_MESSAGE);
                 return;
             }
-            setEnabled(false, addPrivate, removePrivate, applyVersion, rebuild, refreshTags, exportPcl2, exportServer, applyConnection, generateToken, detectWan, openWan);
+            setEnabled(false, addPrivate, removePrivate, applyVersion, rebuild, refreshTags, exportPcl2, exportServer, applyConnection, generateToken, applyAdminToken, generateAdminToken, detectWan, openWan);
             new Thread(() -> {
                 try {
                     task.run();
@@ -177,6 +194,7 @@ final class AdminApp {
                         portField.setText(Integer.toString(runtime.config().port));
                         publicUrlField.setText(runtime.config().updateServerUrl);
                         tokenField.setText(runtime.config().accessToken);
+                        adminTokenField.setText(runtime.config().adminToken);
                         refreshServers.run();
                         refreshPrivates.run();
                     });
@@ -187,7 +205,7 @@ final class AdminApp {
                     });
                 } finally {
                     busy.set(false);
-                    SwingUtilities.invokeLater(() -> setEnabled(true, addPrivate, removePrivate, applyVersion, rebuild, refreshTags, exportPcl2, exportServer, applyConnection, generateToken, detectWan, openWan));
+                    SwingUtilities.invokeLater(() -> setEnabled(true, addPrivate, removePrivate, applyVersion, rebuild, refreshTags, exportPcl2, exportServer, applyConnection, generateToken, applyAdminToken, generateAdminToken, detectWan, openWan));
                 }
             }, "cdr-admin").start();
         };
@@ -319,15 +337,33 @@ final class AdminApp {
             String token = tokenField.getText().trim();
             if (JOptionPane.showConfirmDialog(frame,
                     "将监听改为 " + bind + ":" + port + "\n对外地址改为 " + url
-                            + "\n访问令牌：" + (token.isBlank() ? "空（不校验）" : "已填写")
-                            + "\n\n已经装好的客户端/服务端不会自动改，需要重新导出，或手动改实例里的 cdr-updater.toml。",
+                            + "\n同步令牌：" + (token.isBlank() ? "空（不校验）" : "已填写")
+                            + "\n\n已经装好的客户端/服务端不会自动改，需要重新导出，或手动改实例里的 cdr-updater.toml。\n网页登录令牌请到「网页管理」页设置。",
                     "保存连接地址", JOptionPane.OK_CANCEL_OPTION) != JOptionPane.OK_OPTION) {
                 return;
             }
-            background.accept(() -> runtime.setConnection(bind, port, url, token, logger));
+            background.accept(() -> runtime.setConnection(bind, port, url, token, runtime.config().adminToken, logger));
+        });
+
+        applyAdminToken.addActionListener(event -> {
+            String adminToken = adminTokenField.getText().trim();
+            if (JOptionPane.showConfirmDialog(frame,
+                    "网页登录地址：" + adminUrl(runtime)
+                            + "\n网页令牌：" + (adminToken.isBlank() ? "空（仅本机可登录网页）" : "已填写")
+                            + "\n\n这是管理网页的登录密码，不会写入导出的整合包，也不能和同步令牌相同。",
+                    "保存网页令牌", JOptionPane.OK_CANCEL_OPTION) != JOptionPane.OK_OPTION) {
+                return;
+            }
+            background.accept(() -> runtime.setAdminToken(adminToken, logger));
         });
 
         generateToken.addActionListener(event -> tokenField.setText(java.util.UUID.randomUUID().toString().replace("-", "")));
+        generateAdminToken.addActionListener(event -> adminTokenField.setText(java.util.UUID.randomUUID().toString().replace("-", "")));
+        openAdminPage.addActionListener(event -> openUrl(frame, adminUrl(runtime)));
+        copyAdminUrl.addActionListener(event -> {
+            copyText(adminUrl(runtime));
+            append(log, "已复制管理网页地址");
+        });
 
         detectWan.addActionListener(event -> background.accept(() -> {
             logger.accept("正在检测本机网卡和外网 IP");
@@ -390,7 +426,7 @@ final class AdminApp {
         gc.gridx = 0;
         gc.gridy = 3;
         gc.weightx = 0;
-        connectionForm.add(new JLabel("访问令牌"), gc);
+        connectionForm.add(new JLabel("同步令牌"), gc);
         gc.gridx = 1;
         gc.weightx = 1;
         connectionForm.add(tokenField, gc);
@@ -403,7 +439,37 @@ final class AdminApp {
         JPanel connectionPanel = new JPanel(new BorderLayout());
         connectionPanel.add(connectionForm, BorderLayout.NORTH);
         connectionPanel.add(connectionButtons, BorderLayout.CENTER);
-        connectionPanel.add(new JLabel("<html>  本机：监听 127.0.0.1，对外 http://127.0.0.1:端口。<br>  局域网：监听 0.0.0.0，对外 http://局域网IP:端口。<br>  外网：点「开放外网访问」，或监听 0.0.0.0、对外填 http://公网IP或域名:端口。路由器需把该 TCP 端口映射到这台电脑，防火墙放行该端口。<br>  访问令牌可选。填了之后，只有带同一令牌的客户端/服务端才能同步。改完后重新导出 PCL2/服务端。旧实例改 cdr-updater.toml 的 update_server 和 update_token。</html>"), BorderLayout.SOUTH);
+        connectionPanel.add(new JLabel("<html>  本机：监听 127.0.0.1，对外 http://127.0.0.1:端口。<br>  局域网：监听 0.0.0.0，对外 http://局域网IP:端口。<br>  外网：点「开放外网访问」，或监听 0.0.0.0、对外填 http://公网IP或域名:端口。路由器需把该 TCP 端口映射到这台电脑，防火墙放行该端口。<br>  同步令牌给客户端/服务端用，会写入导出的整合包。网页登录令牌请到「网页管理」页设置。旧实例改 cdr-updater.toml 的 update_server 和 update_token。</html>"), BorderLayout.SOUTH);
+
+        JPanel webForm = new JPanel(new GridBagLayout());
+        webForm.setBorder(BorderFactory.createEmptyBorder(12, 12, 12, 12));
+        GridBagConstraints wg = new GridBagConstraints();
+        wg.insets = new Insets(4, 4, 4, 4);
+        wg.fill = GridBagConstraints.HORIZONTAL;
+        wg.gridx = 0;
+        wg.gridy = 0;
+        wg.weightx = 0;
+        webForm.add(new JLabel("管理网页地址"), wg);
+        wg.gridx = 1;
+        wg.weightx = 1;
+        webForm.add(adminUrlField, wg);
+        wg.gridx = 0;
+        wg.gridy = 1;
+        wg.weightx = 0;
+        webForm.add(new JLabel("网页令牌"), wg);
+        wg.gridx = 1;
+        wg.weightx = 1;
+        webForm.add(adminTokenField, wg);
+
+        JPanel webButtons = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        webButtons.add(applyAdminToken);
+        webButtons.add(generateAdminToken);
+        webButtons.add(openAdminPage);
+        webButtons.add(copyAdminUrl);
+        JPanel webPanel = new JPanel(new BorderLayout());
+        webPanel.add(webForm, BorderLayout.NORTH);
+        webPanel.add(webButtons, BorderLayout.CENTER);
+        webPanel.add(new JLabel("<html>  这是打开 /admin 时用的登录密码，和「连接地址」里的同步令牌不是同一个，也不会写入导出的整合包。<br>  未设置时只能在这台电脑打开网页。外网访问网页需要先在「连接地址」开放端口，再在这里设置网页令牌。</html>"), BorderLayout.SOUTH);
 
         JPanel privateButtons = new JPanel(new FlowLayout(FlowLayout.LEFT));
         privateButtons.add(addPrivate);
@@ -421,6 +487,7 @@ final class AdminApp {
         tabs.addTab("已连接的服务端", serversPanel);
         tabs.addTab("私货", privatePanel);
         tabs.addTab("连接地址", connectionPanel);
+        tabs.addTab("网页管理", webPanel);
         tabs.addTab("GitHub 版本", versionBar);
 
         JPanel south = new JPanel(new BorderLayout());
@@ -429,8 +496,12 @@ final class AdminApp {
         southButtons.add(exportPcl2);
         southButtons.add(exportServer);
         south.add(southButtons, BorderLayout.NORTH);
-        south.add(new JScrollPane(log), BorderLayout.CENTER);
-        south.setPreferredSize(new java.awt.Dimension(980, 180));
+        JPanel logWrap = new JPanel(new BorderLayout(0, 4));
+        logWrap.setBorder(BorderFactory.createEmptyBorder(0, 8, 8, 8));
+        logWrap.add(progress, BorderLayout.NORTH);
+        logWrap.add(new JScrollPane(log), BorderLayout.CENTER);
+        south.add(logWrap, BorderLayout.CENTER);
+        south.setPreferredSize(new java.awt.Dimension(980, 200));
 
         frame.add(summary, BorderLayout.NORTH);
         frame.add(tabs, BorderLayout.CENTER);
@@ -439,10 +510,14 @@ final class AdminApp {
         Timer timer = new Timer(2000, event -> refreshServers.run());
         timer.setRepeats(true);
         timer.start();
+        Timer progressTimer = new Timer(200, event -> showProgress(progress, runtime.busy()));
+        progressTimer.setRepeats(true);
+        progressTimer.start();
         frame.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosed(WindowEvent event) {
                 timer.stop();
+                progressTimer.stop();
                 if (runtime.http != null) {
                     runtime.http.stop(0);
                 }
@@ -548,6 +623,65 @@ final class AdminApp {
         for (JButton button : buttons) {
             button.setEnabled(enabled);
         }
+    }
+
+    private static void showProgress(JProgressBar bar, boolean busy) {
+        Progress.Snapshot snap = Progress.get();
+        if (snap.active) {
+            bar.setVisible(true);
+            String text = snap.text();
+            if (snap.total > 0) {
+                bar.setIndeterminate(false);
+                bar.setMaximum(1000);
+                bar.setValue((int) Math.min(1000, snap.done * 1000 / snap.total));
+            } else {
+                bar.setIndeterminate(true);
+            }
+            bar.setString(text.isBlank() ? "下载中…" : text);
+            return;
+        }
+        if (busy) {
+            bar.setVisible(true);
+            bar.setIndeterminate(true);
+            bar.setString("处理中…");
+            return;
+        }
+        bar.setIndeterminate(false);
+        bar.setValue(0);
+        bar.setString("");
+        bar.setVisible(false);
+    }
+
+    private static String adminUrl(ServerRuntime runtime) {
+        Pack.Config config = runtime.config();
+        String host = config.listen;
+        if (host == null || host.isBlank() || "0.0.0.0".equals(host) || "::".equals(host)) {
+            host = "127.0.0.1";
+        }
+        int port = config.port;
+        if (runtime.http != null && runtime.http.getAddress() != null) {
+            int bound = runtime.http.getAddress().getPort();
+            if (bound > 0) {
+                port = bound;
+            }
+        }
+        return "http://" + host + ":" + port + "/admin";
+    }
+
+    private static void copyText(String text) {
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(text == null ? "" : text), null);
+    }
+
+    private static void openUrl(JFrame frame, String url) {
+        try {
+            if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
+                Desktop.getDesktop().browse(URI.create(url));
+                return;
+            }
+        } catch (Exception ignored) {
+            // fall through
+        }
+        JOptionPane.showMessageDialog(frame, url, "请手动打开管理网页", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private static String sideLabel(String side) {

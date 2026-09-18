@@ -1,0 +1,7 @@
+# 私货：放到 files/ 下即可，程序按路径和官方端侧自行区分。
+# 不必写 side。如需强制：files/client/、files/server/、files/both/
+
+# 可选覆盖示例（留空则全部自动判定）：
+# [[files]]
+# path = "mods/special.jar"
+# side = "client"

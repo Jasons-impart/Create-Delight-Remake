@@ -36,7 +36,10 @@ final class Sync {
     }
 
     static final class Client {
-        private final HttpClient http = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(20)).build();
+        private final HttpClient http = HttpClient.newBuilder()
+                .version(HttpClient.Version.HTTP_1_1)
+                .connectTimeout(Duration.ofSeconds(20))
+                .build();
         private final String base;
         private final String side;
         private final String token;
@@ -108,16 +111,31 @@ final class Sync {
         }
 
         byte[] download(String sha256) throws Exception {
-            String digest = Fs.sha256Hex(sha256);
-            HttpRequest.Builder builder = HttpRequest.newBuilder(URI.create(base + "api/file/" + digest))
-                    .header("User-Agent", "cdr-updater-client");
-            identity(builder);
-            HttpRequest request = builder.build();
-            HttpResponse<byte[]> response = http.send(request, HttpResponse.BodyHandlers.ofByteArray());
-            if (response.statusCode() >= 400) {
-                throw new IllegalStateException("下载失败 " + response.statusCode());
+            Path tmp = Files.createTempFile("cdr-dl-", ".bin");
+            try {
+                downloadTo(sha256, tmp, 0, line -> {});
+                return Files.readAllBytes(tmp);
+            } finally {
+                Files.deleteIfExists(tmp);
             }
-            return response.body();
+        }
+
+        void downloadTo(String sha256, Path destination, long expected, Consumer<String> log) throws Exception {
+            String digest = Fs.sha256Hex(sha256);
+            String name = destination.getFileName() == null ? digest : destination.getFileName().toString();
+            HttpRequest.Builder builder = HttpRequest.newBuilder(URI.create(base + "api/file/" + digest))
+                    .header("User-Agent", "cdr-updater-client")
+                    .timeout(Duration.ofMinutes(30));
+            identity(builder);
+            Path partial = destination.resolveSibling(destination.getFileName() + ".cdrtmp");
+            try {
+                Net.toFile(http, builder, partial, expected, name, log, true);
+                Files.createDirectories(destination.getParent());
+                Files.move(partial, destination, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+            } catch (Exception error) {
+                Files.deleteIfExists(partial);
+                throw error;
+            }
         }
     }
 
@@ -185,24 +203,45 @@ final class Sync {
         request.put("synced_hashes", syncedHashes);
         Map<String, Object> diff = client.json("POST", "api/diff", request);
         List<Map<String, String>> applied = new ArrayList<>();
-        for (Object item : Json.array(diff.get("download"))) {
+        List<Object> downloads = Json.array(diff.get("download"));
+        int pending = 0;
+        for (Object item : downloads) {
             Map<String, Object> row = Json.object(item);
             String rel = Fs.posix(Json.str(row, "path"));
             if (Fs.unsafePath(rel)) {
-                progress.accept("忽略非法路径 " + rel);
                 continue;
             }
             Map<String, Object> local = localByPath.get(rel);
             String localSha = local == null ? null : Json.str(local, "sha256");
-            if (!Policy.shouldOverwriteLocal(rel, side, localSha, Json.str(row, "sha256"), syncedHashes)) {
-                progress.accept(("server".equals(side) ? "保留管理员改动 " : "保留本地文件 ") + rel);
-                continue;
+            if (Policy.shouldOverwriteLocal(rel, side, localSha, Json.str(row, "sha256"), syncedHashes)) {
+                pending++;
             }
-            progress.accept("下载 " + rel);
-            byte[] payload = client.download(Json.str(row, "sha256"));
-            Fs.write(instanceDir.resolve(rel), payload);
-            syncedHashes.put(rel, Json.str(row, "sha256"));
-            applied.add(Map.of("path", rel, "action", "write"));
+        }
+        try {
+            if (pending > 0) {
+                Progress.begin("同步文件", pending);
+            }
+            for (Object item : downloads) {
+                Map<String, Object> row = Json.object(item);
+                String rel = Fs.posix(Json.str(row, "path"));
+                if (Fs.unsafePath(rel)) {
+                    progress.accept("忽略非法路径 " + rel);
+                    continue;
+                }
+                Map<String, Object> local = localByPath.get(rel);
+                String localSha = local == null ? null : Json.str(local, "sha256");
+                if (!Policy.shouldOverwriteLocal(rel, side, localSha, Json.str(row, "sha256"), syncedHashes)) {
+                    progress.accept(("server".equals(side) ? "保留管理员改动 " : "保留本地文件 ") + rel);
+                    continue;
+                }
+                progress.accept("下载 " + rel);
+                Path dest = instanceDir.resolve(rel);
+                client.downloadTo(Json.str(row, "sha256"), dest, Json.lng(row, "size"), progress);
+                syncedHashes.put(rel, Json.str(row, "sha256"));
+                applied.add(Map.of("path", rel, "action", "write"));
+            }
+        } finally {
+            Progress.end();
         }
         Set<String> managed = Set.copyOf(managedPaths);
         for (Object item : Json.array(diff.get("changes"))) {

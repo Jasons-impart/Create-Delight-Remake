@@ -3,13 +3,17 @@ package com.jsi.cdr.updater;
 import com.sun.net.httpserver.HttpServer;
 
 import java.net.InetSocketAddress;
+import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Base64;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -18,18 +22,39 @@ final class Tests {
 
     static int run() throws Exception {
         failed = 0;
+        bootClassTests();
         policyTests();
         sideSplitTests();
         syncTests();
+        liveRunningServerSyncTests();
         adminTests();
         securityTests();
         adminWebTests();
+        progressTests();
         if (failed == 0) {
             System.out.println("全部测试通过");
         } else {
             System.out.println("失败 " + failed + " 项");
         }
         return failed;
+    }
+
+    private static void bootClassTests() throws Exception {
+        check("Boot 可被 Java 8 加载", classMajor("com/jsi/cdr/updater/Boot.class") == 52);
+        check("Main 仍是 Java 17", classMajor("com/jsi/cdr/updater/Main.class") == 61);
+    }
+
+    private static int classMajor(String resource) throws Exception {
+        try (java.io.InputStream in = Tests.class.getClassLoader().getResourceAsStream(resource)) {
+            if (in == null) {
+                return -1;
+            }
+            byte[] header = in.readNBytes(8);
+            if (header.length < 8) {
+                return -1;
+            }
+            return ((header[6] & 0xff) << 8) | (header[7] & 0xff);
+        }
     }
 
     private static void policyTests() {
@@ -55,6 +80,29 @@ final class Tests {
                 "config/create-stuff-additions.toml", Set.of("config/create-stuff-additions.toml")));
         check("本地没有配置时可写入默认", Policy.shouldOverwriteLocal(
                 "config/create-stuff-additions.toml", "client", null, "official", Map.of()));
+        check("客户端官方模组哈希不同则覆盖", Policy.shouldOverwriteLocal(
+                "mods/create-1.0.jar", "client", "old", "new", Map.of("mods/create-1.0.jar", "old")));
+        check("哈希相同不覆盖", !Policy.shouldOverwriteLocal(
+                "mods/create-1.0.jar", "client", "same", "same", Map.of()));
+        check("远程哈希为空不覆盖", !Policy.shouldOverwriteLocal(
+                "mods/create-1.0.jar", "client", "old", "", Map.of()));
+        check("options.txt 已存在不覆盖", !Policy.shouldOverwriteLocal(
+                "options.txt", "client", "local", "official", Map.of("options.txt", "official")));
+        check("options.txt 缺失可写入", Policy.shouldOverwriteLocal(
+                "options.txt", "client", null, "official", Map.of()));
+        check("eula.txt 已存在不覆盖", !Policy.shouldOverwriteLocal(
+                "eula.txt", "server", "false", "true", Map.of("eula.txt", "true")));
+        check("server.properties 已存在不覆盖", !Policy.shouldOverwriteLocal(
+                "server.properties", "server", "local", "official", Map.of()));
+        check("存档不删除", !Policy.shouldDeleteLocal("saves/New World/level.dat", Set.of("saves/New World/level.dat")));
+        check("logs 不删除", !Policy.shouldDeleteLocal("logs/latest.log", Set.of("logs/latest.log")));
+        check("libraries 不删除", !Policy.shouldDeleteLocal(
+                "libraries/net/minecraftforge/forge.jar", Set.of("libraries/net/minecraftforge/forge.jar")));
+        check("截图不删除", !Policy.shouldDeleteLocal("screenshots/a.png", Set.of("screenshots/a.png")));
+        check("defaultconfigs 不覆盖", !Policy.shouldOverwriteLocal(
+                "defaultconfigs/forge-server.toml", "server", "local", "official", Map.of()));
+        check("状态文件不删除", !Policy.shouldDeleteLocal("cdr-updater-state.json", Set.of("cdr-updater-state.json")));
+        check("非托管路径不删除", !Policy.shouldDeleteLocal("mods/player-extra.jar", Set.of("mods/create-1.0.jar")));
     }
 
     private static void sideSplitTests() throws Exception {
@@ -136,6 +184,8 @@ final class Tests {
                         && Files.readString(outC.resolve("resourcepacks/extra.zip")).equals("resource-pack-bytes"));
                 check("服务端不拉取该资源包", !Files.exists(outS.resolve("resourcepacks/extra.zip")));
                 check("HTML 响应不当成资源包", !Files.exists(outC.resolve("resourcepacks/fake.zip")));
+                Packwiz.pullClientAssets(pwClient, pwServer, outC, tmp.resolve("pw-cache"), line -> {});
+                check("资源已齐后进度结束", !Progress.get().active);
             } finally {
                 files.stop(0);
             }
@@ -155,62 +205,131 @@ final class Tests {
         write(official.resolve("config/server.toml"), "motd=default\n");
         write(official.resolve("kubejs/server_scripts/main.js"), "console.log('v1')\n");
         write(official.resolve("resourcepacks/pack.zip"), "rp");
+        write(official.resolve("shaderpacks/pack.zip"), "sp");
+        write(official.resolve("options.txt"), "lang=en\n");
+        write(official.resolve("libraries/net/minecraftforge/forge.jar"), "lib");
+        write(official.resolve("server.properties"), "motd=official\n");
+        write(official.resolve("eula.txt"), "eula=false\n");
+        write(official.resolve("start.bat"), "java -jar forge.jar\n");
+        write(privateDir.resolve("files/mods/ItemBan-2.2.0.jar"), "itemban");
+        write(privateDir.resolve("files/mods/ItemBan-2.2.0.jar.side"), "server");
+        write(privateDir.resolve("files/mods/maid.jar"), "maid");
         Pack.Config config = config(tmp, official, privateDir);
         Pack.buildRepos(config, line -> {});
-        HttpServer server = ApiServer.start(config);
+        check("仓库构建后进度结束", !Progress.get().active);
+        ServerRuntime runtime = new ServerRuntime(null, config);
+        HttpServer server = ApiServer.start(runtime);
         try {
             String url = "http://127.0.0.1:" + server.getAddress().getPort();
             Path clientInstance = tmp.resolve("client-instance");
             write(clientInstance.resolve("mods/player-extra.jar"), "i-installed-this");
             write(clientInstance.resolve("config/generated-by-mod.toml"), "auto=true\n");
-            Sync.Result clientResult = Sync.apply(clientInstance, "client", new Sync.Client(url), line -> {});
+            write(clientInstance.resolve("saves/New World/level.dat"), "player-world");
+            write(clientInstance.resolve("screenshots/a.png"), "shot");
+            write(clientInstance.resolve("options.txt"), "lang=zh-player\n");
+            Sync.Result clientResult = Sync.apply(clientInstance, "client", new Sync.Client(url, "client", clientInstance), line -> {});
             check("客户端保留玩家模组", Files.readString(clientInstance.resolve("mods/player-extra.jar")).equals("i-installed-this"));
             check("客户端下载官方模组", Files.isRegularFile(clientInstance.resolve("mods/create-1.0.jar")));
             check("客户端包含 JEI", Files.isRegularFile(clientInstance.resolve("mods/jei-1.0.jar")));
             check("客户端包含资源包", Files.isRegularFile(clientInstance.resolve("resourcepacks/pack.zip")));
+            check("客户端包含光影", Files.isRegularFile(clientInstance.resolve("shaderpacks/pack.zip")));
+            check("客户端包含两端私货", Files.readString(clientInstance.resolve("mods/maid.jar")).equals("maid"));
+            check("客户端不含服务端私货 ItemBan", !Files.exists(clientInstance.resolve("mods/ItemBan-2.2.0.jar")));
+            check("客户端不含 libraries", !Files.exists(clientInstance.resolve("libraries/net/minecraftforge/forge.jar")));
+            check("客户端不含 start.bat", !Files.exists(clientInstance.resolve("start.bat")));
             check("客户端不删除玩家模组", clientResult.applied.stream().noneMatch(item -> "mods/player-extra.jar".equals(item.get("path"))));
             check("客户端保留模组生成的配置", Files.readString(clientInstance.resolve("config/generated-by-mod.toml")).equals("auto=true\n"));
+            check("客户端保留存档", Files.readString(clientInstance.resolve("saves/New World/level.dat")).equals("player-world"));
+            check("客户端保留截图", Files.readString(clientInstance.resolve("screenshots/a.png")).equals("shot"));
+            check("客户端不覆盖已有 options.txt", Files.readString(clientInstance.resolve("options.txt")).equals("lang=zh-player\n"));
             write(clientInstance.resolve("config/server.toml"), "motd=client-generated\n");
-            Sync.apply(clientInstance, "client", new Sync.Client(url), line -> {});
+            Sync.apply(clientInstance, "client", new Sync.Client(url, "client", clientInstance), line -> {});
             check("客户端不覆盖模组已生成配置", Files.readString(clientInstance.resolve("config/server.toml")).equals("motd=client-generated\n"));
-            Sync.Check noUpdate = Sync.inspect(clientInstance, "client", new Sync.Client(url));
+            Sync.Check noUpdate = Sync.inspect(clientInstance, "client", new Sync.Client(url, "client", clientInstance));
             check("无改动时不需要更新", !noUpdate.needed);
+            check("客户端同步不记连接", Connections.list(config).isEmpty());
 
             Path serverInstance = tmp.resolve("server-instance");
-            Sync.Client client = new Sync.Client(url);
-            Sync.apply(serverInstance, "server", client, line -> {});
+            Sync.Client serverClient = new Sync.Client(url, "server", serverInstance);
+            Sync.apply(serverInstance, "server", serverClient, line -> {});
             check("服务端不含 JEI", !Files.exists(serverInstance.resolve("mods/jei-1.0.jar")));
             check("服务端不含资源包", !Files.exists(serverInstance.resolve("resourcepacks/pack.zip")));
+            check("服务端不含光影", !Files.exists(serverInstance.resolve("shaderpacks/pack.zip")));
+            check("服务端不含 options.txt", !Files.exists(serverInstance.resolve("options.txt")));
+            check("服务端含 libraries", Files.isRegularFile(serverInstance.resolve("libraries/net/minecraftforge/forge.jar")));
+            check("服务端含 ItemBan 私货", Files.readString(serverInstance.resolve("mods/ItemBan-2.2.0.jar")).equals("itemban"));
+            check("服务端含两端私货", Files.readString(serverInstance.resolve("mods/maid.jar")).equals("maid"));
             Path localConfig = serverInstance.resolve("config/server.toml");
             check("服务端写入默认配置", Files.readString(localConfig).equals("motd=default\n"));
+            check("服务端缺失 eula 可写入", Files.readString(serverInstance.resolve("eula.txt")).equals("eula=false\n"));
             Files.writeString(localConfig, "motd=admin-changed\n");
             write(official.resolve("config/server.toml"), "motd=new-official\n");
             write(official.resolve("kubejs/server_scripts/main.js"), "console.log('v2')\n");
             Pack.buildRepos(config, line -> {});
-            Sync.Result kept = Sync.apply(serverInstance, "server", client, line -> {});
+            Sync.Result kept = Sync.apply(serverInstance, "server", serverClient, line -> {});
             check("管理员改动被保留", Files.readString(localConfig).equals("motd=admin-changed\n"));
             check("记录保留的本地改动", kept.keptLocal.contains("config/server.toml"));
             check("未改脚本仍更新", Files.readString(serverInstance.resolve("kubejs/server_scripts/main.js")).equals("console.log('v2')\n"));
             write(official.resolve("mods/pack-extra.jar"), "extra-v1");
             Pack.buildRepos(config, line -> {});
-            Sync.apply(serverInstance, "server", client, line -> {});
+            Sync.apply(serverInstance, "server", serverClient, line -> {});
             check("服务端下载可管理模组", Files.readString(serverInstance.resolve("mods/pack-extra.jar")).equals("extra-v1"));
             Files.delete(official.resolve("mods/pack-extra.jar"));
             Pack.buildRepos(config, line -> {});
-            Sync.Result removed = Sync.apply(serverInstance, "server", client, line -> {});
+            Sync.Result removed = Sync.apply(serverInstance, "server", serverClient, line -> {});
             check("远程删除后移除本地文件", !Files.exists(serverInstance.resolve("mods/pack-extra.jar")));
             check("删除动作已记录", removed.applied.stream().anyMatch(item ->
                     "mods/pack-extra.jar".equals(item.get("path")) && "delete".equals(item.get("action"))));
             Files.delete(official.resolve("config/server.toml"));
             Pack.buildRepos(config, line -> {});
-            Sync.apply(serverInstance, "server", client, line -> {});
+            Sync.apply(serverInstance, "server", serverClient, line -> {});
             check("远程删除也不改模组配置", Files.exists(localConfig));
+            write(serverInstance.resolve("mods/admin-extra.jar"), "admin-keep");
+            write(serverInstance.resolve("world/level.dat"), "world-bytes");
+            write(serverInstance.resolve("eula.txt"), "eula=true\n");
+            write(serverInstance.resolve("server.properties"), "motd=admin\n");
+            Map<String, Object> serverState = Sync.loadState(serverInstance);
+            List<Object> managed = new ArrayList<>(Json.array(serverState.get("managed_paths")));
+            managed.add("world/level.dat");
+            serverState.put("managed_paths", managed);
+            Files.writeString(serverInstance.resolve("cdr-updater-state.json"), Json.stringify(serverState));
+            Sync.apply(serverInstance, "server", serverClient, line -> {});
+            check("服务端不删除管理员额外模组", Files.readString(serverInstance.resolve("mods/admin-extra.jar")).equals("admin-keep"));
+            check("服务端不删除世界", Files.readString(serverInstance.resolve("world/level.dat")).equals("world-bytes"));
+            check("服务端不覆盖已有 eula", Files.readString(serverInstance.resolve("eula.txt")).equals("eula=true\n"));
+            check("服务端不覆盖已有 server.properties", Files.readString(serverInstance.resolve("server.properties")).equals("motd=admin\n"));
+            Files.delete(serverInstance.resolve("mods/create-1.0.jar"));
+            Sync.apply(serverInstance, "server", serverClient, line -> {});
+            check("服务端缺失文件会补回", Files.readString(serverInstance.resolve("mods/create-1.0.jar")).equals("create-1.0"));
+            write(serverInstance.resolve("mods/create-1.0.jar"), "admin-mod-edit");
+            write(official.resolve("mods/create-1.0.jar"), "create-1.2");
+            Pack.buildRepos(config, line -> {});
+            Sync.apply(serverInstance, "server", serverClient, line -> {});
+            check("服务端管理员改模组不覆盖", Files.readString(serverInstance.resolve("mods/create-1.0.jar")).equals("admin-mod-edit"));
+            check("服务端同步记连接", Connections.list(config).size() == 1);
+
+            Path firstServer = tmp.resolve("server-first-existing");
+            write(firstServer.resolve("kubejs/server_scripts/main.js"), "pre-existing\n");
+            write(firstServer.resolve("mods/create-1.0.jar"), "already-there");
+            Sync.apply(firstServer, "server", new Sync.Client(url, "server", firstServer), line -> {});
+            check("服务端首次已有脚本保留", Files.readString(firstServer.resolve("kubejs/server_scripts/main.js")).equals("pre-existing\n"));
+            check("服务端首次已有模组保留", Files.readString(firstServer.resolve("mods/create-1.0.jar")).equals("already-there"));
+            check("服务端首次仍补缺失文件", Files.isRegularFile(firstServer.resolve("mods/maid.jar")));
 
             write(official.resolve("mods/create-1.0.jar"), "create-1.1");
+            Files.deleteIfExists(official.resolve("mods/jei-1.0.jar"));
+            Files.deleteIfExists(official.resolve("mods/jei-1.0.jar.pw.toml"));
             Pack.buildRepos(config, line -> {});
-            Sync.Check hasUpdate = Sync.inspect(clientInstance, "client", new Sync.Client(url));
+            Sync.Check hasUpdate = Sync.inspect(clientInstance, "client", new Sync.Client(url, "client", clientInstance));
             check("模组文件变化时需要更新", hasUpdate.needed);
             check("模组变化标记正确", hasUpdate.modsChanged);
+            Sync.apply(clientInstance, "client", new Sync.Client(url, "client", clientInstance), line -> {});
+            check("客户端官方模组变化会覆盖", Files.readString(clientInstance.resolve("mods/create-1.0.jar")).equals("create-1.1"));
+            check("客户端远程删除官方 JEI", !Files.exists(clientInstance.resolve("mods/jei-1.0.jar")));
+            check("客户端远程删除仍保留玩家模组", Files.readString(clientInstance.resolve("mods/player-extra.jar")).equals("i-installed-this"));
+            check("客户端远程删除仍保留存档", Files.readString(clientInstance.resolve("saves/New World/level.dat")).equals("player-world"));
+            Sync.Check afterClient = Sync.inspect(clientInstance, "client", new Sync.Client(url, "client", clientInstance));
+            check("客户端再次检查无需更新", !afterClient.needed);
 
             Path dummyJar = tmp.resolve("cdr-updater.jar");
             Files.write(dummyJar, new byte[]{1, 2, 3});
@@ -291,6 +410,27 @@ final class Tests {
             Pack.Config withToken = Pack.Config.load(configFile);
             check("可改访问令牌", "gui-token-1".equals(withToken.accessToken));
             check("实例配置会写入令牌", Pack.instanceToml(withToken, "client").contains("update_token = \"gui-token-1\""));
+            Toml.setTableString(configFile, "server", "admin_token", "web-admin-1");
+            Pack.Config withAdmin = Pack.Config.load(configFile);
+            check("可改网页管理令牌", "web-admin-1".equals(withAdmin.adminToken));
+            check("实例配置不写入网页令牌", !Pack.instanceToml(withAdmin, "client").contains("web-admin-1"));
+            ServerRuntime guiRuntime = new ServerRuntime(null, withAdmin);
+            guiRuntime.setAdminToken("from-gui", line -> {});
+            check("图形化可改网页令牌", "from-gui".equals(guiRuntime.config().adminToken));
+            boolean guiSameRejected = false;
+            try {
+                guiRuntime.setAdminToken("gui-token-1", line -> {});
+            } catch (IllegalArgumentException error) {
+                guiSameRejected = error.getMessage() != null && error.getMessage().contains("不能和客户端");
+            }
+            check("图形化拒绝两令牌相同", guiSameRejected);
+            boolean sameRejected = false;
+            try {
+                Pack.Config.requireDistinctTokens("same-token", "same-token");
+            } catch (IllegalArgumentException error) {
+                sameRejected = error.getMessage() != null && error.getMessage().contains("不能和客户端");
+            }
+            check("网页令牌不能和同步令牌相同", sameRejected);
             boolean needsPublic = false;
             try {
                 Pack.Config.normalizePublicUrl("", "0.0.0.0", 8765);
@@ -477,7 +617,7 @@ final class Tests {
             Path privateDir = tmp.resolve("private");
             Files.createDirectories(privateDir);
             write(official.resolve("mods/create-1.0.jar"), "create-1.0");
-            Pack.Config config = config(tmp, official, privateDir).withAccessToken("web-token");
+            Pack.Config config = config(tmp, official, privateDir).withAccessToken("client-token").withAdminToken("admin-token");
             Pack.buildRepos(config, line -> {});
             ServerRuntime runtime = new ServerRuntime(null, config);
             HttpServer server = ApiServer.start(runtime);
@@ -491,7 +631,10 @@ final class Tests {
                 check("网页风格是暗色面板", page.body().contains("data-theme=\"dark\"") && page.body().contains("--panel"));
                 check("网页含已连接服务端", page.body().contains("已连接的服务端"));
                 check("网页含私货", page.body().contains("添加私货"));
-                check("网页含连接地址", page.body().contains("开放外网访问") && page.body().contains("访问令牌"));
+                check("网页含连接地址", page.body().contains("开放外网访问") && page.body().contains("同步令牌"));
+                check("网页含下载进度条", page.body().contains("id=\"xfer\"") && page.body().contains("id=\"xferFill\""));
+                check("网页登录指向本机窗口", page.body().contains("本机更新服务器窗口") && page.body().contains("网页管理"));
+                check("网页不设置网页令牌", !page.body().contains("id=\"adminToken\"") && !page.body().contains("genAdminTokenBtn"));
                 check("网页含 GitHub 版本", page.body().contains("应用并重新拉取")
                         && page.body().contains("<select id=\"versionTag\">")
                         && !page.body().contains("<datalist"));
@@ -511,25 +654,39 @@ final class Tests {
                         HttpResponse.BodyHandlers.ofString());
                 check("错误令牌不能登录", badLogin.statusCode() == 400);
 
+                HttpResponse<String> clientLogin = http.send(
+                        HttpRequest.newBuilder(java.net.URI.create(url + "/admin/api/login"))
+                                .header("Content-Type", "application/json")
+                                .POST(HttpRequest.BodyPublishers.ofString("{\"token\":\"client-token\"}")).build(),
+                        HttpResponse.BodyHandlers.ofString());
+                check("客户端令牌不能登录网页", clientLogin.statusCode() == 400);
+
                 HttpResponse<String> login = http.send(
                         HttpRequest.newBuilder(java.net.URI.create(url + "/admin/api/login"))
                                 .header("Content-Type", "application/json")
-                                .POST(HttpRequest.BodyPublishers.ofString("{\"token\":\"web-token\"}")).build(),
+                                .POST(HttpRequest.BodyPublishers.ofString("{\"token\":\"admin-token\"}")).build(),
                         HttpResponse.BodyHandlers.ofString());
                 check("正确令牌可以登录网页", login.statusCode() == 200);
 
+                HttpResponse<String> clientHeader = http.send(
+                        HttpRequest.newBuilder(java.net.URI.create(url + "/admin/api/state"))
+                                .header("X-CDR-Token", "client-token").GET().build(),
+                        HttpResponse.BodyHandlers.ofString());
+                check("同步令牌不能读管理接口", clientHeader.statusCode() == 401);
+
                 HttpResponse<String> state = http.send(
                         HttpRequest.newBuilder(java.net.URI.create(url + "/admin/api/state"))
-                                .header("X-CDR-Token", "web-token").GET().build(),
+                                .header("X-CDR-Admin-Token", "admin-token").GET().build(),
                         HttpResponse.BodyHandlers.ofString());
                 check("登录后可读管理状态", state.statusCode() == 200 && state.body().contains("official_version"));
+                check("管理状态含进度", state.body().contains("\"progress\""));
                 check("管理状态含服务端列表", state.body().contains("\"servers\""));
                 check("管理状态含私货列表", state.body().contains("\"privates\""));
 
                 String encoded = Base64.getEncoder().encodeToString("web-private-bytes".getBytes(StandardCharsets.UTF_8));
                 HttpResponse<String> added = http.send(
                         HttpRequest.newBuilder(java.net.URI.create(url + "/admin/api/private"))
-                                .header("X-CDR-Token", "web-token")
+                                .header("X-CDR-Admin-Token", "admin-token")
                                 .header("Content-Type", "application/json")
                                 .POST(HttpRequest.BodyPublishers.ofString(
                                         "{\"dest\":\"mods/web-private.jar\",\"side\":\"server\",\"filename\":\"web-private.jar\",\"data_base64\":\""
@@ -540,7 +697,7 @@ final class Tests {
 
                 HttpResponse<String> removed = http.send(
                         HttpRequest.newBuilder(java.net.URI.create(url + "/admin/api/private/remove"))
-                                .header("X-CDR-Token", "web-token")
+                                .header("X-CDR-Admin-Token", "admin-token")
                                 .header("Content-Type", "application/json")
                                 .POST(HttpRequest.BodyPublishers.ofString("{\"path\":\"mods/web-private.jar\"}")).build(),
                         HttpResponse.BodyHandlers.ofString());
@@ -550,18 +707,51 @@ final class Tests {
                 int port = server.getAddress().getPort();
                 HttpResponse<String> saved = http.send(
                         HttpRequest.newBuilder(java.net.URI.create(url + "/admin/api/connection"))
-                                .header("X-CDR-Token", "web-token")
+                                .header("X-CDR-Admin-Token", "admin-token")
                                 .header("Content-Type", "application/json")
                                 .POST(HttpRequest.BodyPublishers.ofString(
                                         "{\"listen\":\"127.0.0.1\",\"port\":" + port
                                                 + ",\"public_url\":\"http://127.0.0.1:" + port
-                                                + "\",\"access_token\":\"web-token\"}")).build(),
+                                                + "\",\"access_token\":\"client-token\"}")).build(),
                         HttpResponse.BodyHandlers.ofString());
                 check("网页可保存连接地址", saved.statusCode() == 200);
 
+                HttpResponse<String> hijack = http.send(
+                        HttpRequest.newBuilder(java.net.URI.create(url + "/admin/api/connection"))
+                                .header("X-CDR-Admin-Token", "admin-token")
+                                .header("Content-Type", "application/json")
+                                .POST(HttpRequest.BodyPublishers.ofString(
+                                        "{\"listen\":\"127.0.0.1\",\"port\":" + port
+                                                + ",\"public_url\":\"http://127.0.0.1:" + port
+                                                + "\",\"access_token\":\"client-token\",\"admin_token\":\"stolen-token\"}")).build(),
+                        HttpResponse.BodyHandlers.ofString());
+                check("网页不能改网页令牌", hijack.statusCode() == 200);
+                HttpResponse<String> stolenLogin = http.send(
+                        HttpRequest.newBuilder(java.net.URI.create(url + "/admin/api/login"))
+                                .header("Content-Type", "application/json")
+                                .POST(HttpRequest.BodyPublishers.ofString("{\"token\":\"stolen-token\"}")).build(),
+                        HttpResponse.BodyHandlers.ofString());
+                check("网页提交的新令牌无效", stolenLogin.statusCode() == 400);
+                HttpResponse<String> stillAdmin = http.send(
+                        HttpRequest.newBuilder(java.net.URI.create(url + "/admin/api/state"))
+                                .header("X-CDR-Admin-Token", "admin-token").GET().build(),
+                        HttpResponse.BodyHandlers.ofString());
+                check("原网页令牌仍然有效", stillAdmin.statusCode() == 200);
+
+                HttpResponse<String> sameTokens = http.send(
+                        HttpRequest.newBuilder(java.net.URI.create(url + "/admin/api/connection"))
+                                .header("X-CDR-Admin-Token", "admin-token")
+                                .header("Content-Type", "application/json")
+                                .POST(HttpRequest.BodyPublishers.ofString(
+                                        "{\"listen\":\"127.0.0.1\",\"port\":" + port
+                                                + ",\"public_url\":\"http://127.0.0.1:" + port
+                                                + "\",\"access_token\":\"admin-token\"}")).build(),
+                        HttpResponse.BodyHandlers.ofString());
+                check("网页不能把同步令牌改成网页令牌", sameTokens.statusCode() == 400);
+
                 HttpResponse<String> export = http.send(
                         HttpRequest.newBuilder(java.net.URI.create(url + "/admin/api/export"))
-                                .header("X-CDR-Token", "web-token")
+                                .header("X-CDR-Admin-Token", "admin-token")
                                 .POST(HttpRequest.BodyPublishers.noBody()).build(),
                         HttpResponse.BodyHandlers.ofString());
                 check("网页没有导出接口", export.statusCode() == 404);
@@ -571,6 +761,417 @@ final class Tests {
         } finally {
             Fs.deleteTree(tmp);
         }
+    }
+
+    private static void progressTests() throws Exception {
+        Progress.end();
+        Progress.begin("拉取", 2);
+        Progress.ensure("Client.zip", 800);
+        Progress.bytes(400);
+        check("进度百分比", Progress.get().percent() == 50);
+        check("进度文本", Progress.get().text().contains("50%") && Progress.get().text().contains("Client.zip"));
+        check("多文件序号", Progress.get().index == 1 && Progress.get().count == 2);
+        Progress.ensure("Server.zip", 1000);
+        check("下一文件序号", Progress.get().index == 2);
+        check("体积格式", "1.0 MB".equals(Progress.formatSize(1048576)));
+        Progress.end();
+        check("结束后无进度", !Progress.get().active);
+        check("GitHub 会套加速源", Net.downloadUrls("https://github.com/a/b/releases/download/v/f.zip").size() > 1);
+        check("GitHub 优先走加速源", Net.downloadUrls("https://github.com/a/b/releases/download/v/f.zip")
+                .get(0).startsWith("https://ghfast.top/"));
+        check("GitHub 加速源带原地址", Net.downloadUrls("https://github.com/a/b/releases/download/v/f.zip")
+                .get(0).contains("https://github.com/a/b/releases/download/v/f.zip"));
+        check("GitHub 直连放最后", "https://github.com/a/b/releases/download/v/f.zip"
+                .equals(Net.downloadUrls("https://github.com/a/b/releases/download/v/f.zip")
+                        .get(Net.downloadUrls("https://github.com/a/b/releases/download/v/f.zip").size() - 1)));
+        check("CurseForge 不套加速源", Net.downloadUrls("https://edge.forgecdn.net/files/1/2/a.jar").size() == 1);
+        check("已加速不再套一层", Net.downloadUrls("https://ghfast.top/https://github.com/a/b/file.zip").size() == 1);
+        check("重定向仍走加速源", "https://ghfast.top/https://objects.githubusercontent.com/x"
+                .equals(Net.keepProxied("https://ghfast.top/", "https://objects.githubusercontent.com/x")));
+        check("加速地址能还原 GitHub", "https://github.com/a/b/file.zip"
+                .equals(Net.officialGithub("https://ghfast.top/https://github.com/a/b/file.zip")));
+
+        Path tmp = Files.createTempDirectory("cdr-progress");
+        HttpServer server = HttpServer.create(new InetSocketAddress("127.0.0.1", 0), 0);
+        byte[] payload = new byte[180_000];
+        java.util.Arrays.fill(payload, (byte) 7);
+        server.createContext("/blob", exchange -> {
+            exchange.sendResponseHeaders(200, payload.length);
+            exchange.getResponseBody().write(payload);
+            exchange.close();
+        });
+        server.start();
+        try {
+            Path dest = tmp.resolve("blob.bin");
+            java.util.List<String> lines = new java.util.ArrayList<>();
+            HttpRequest.Builder req = HttpRequest.newBuilder(
+                    java.net.URI.create("http://127.0.0.1:" + server.getAddress().getPort() + "/blob"))
+                    .timeout(java.time.Duration.ofSeconds(30));
+            long got = Net.toFile(HttpClient.newHttpClient(), req, dest, payload.length, "blob.bin", lines::add);
+            check("带进度下载完整", got == payload.length && Files.size(dest) == payload.length);
+            check("下载日志有完成", lines.stream().anyMatch(line -> line.contains("下载完成")));
+            check("进度不刷屏", lines.stream().noneMatch(line -> line.contains("%")));
+            check("下载后进度为完成", Progress.get().active && Progress.get().done == payload.length);
+        } finally {
+            server.stop(0);
+            Progress.end();
+            Fs.deleteTree(tmp);
+        }
+
+        Path rangeTmp = Files.createTempDirectory("cdr-range");
+        HttpServer ranged = HttpServer.create(new InetSocketAddress("127.0.0.1", 0), 0);
+        byte[] big = new byte[400_000];
+        java.util.Arrays.fill(big, (byte) 9);
+        java.util.concurrent.ExecutorService pool = java.util.concurrent.Executors.newCachedThreadPool();
+        ranged.setExecutor(pool);
+        ranged.createContext("/ranged", exchange -> {
+            String header = exchange.getRequestHeaders().getFirst("Range");
+            int start = 0;
+            int end = big.length - 1;
+            int code = 200;
+            if (header != null && header.startsWith("bytes=")) {
+                String spec = header.substring(6);
+                int dash = spec.indexOf('-');
+                if (dash >= 0) {
+                    if (dash > 0) {
+                        start = Integer.parseInt(spec.substring(0, dash));
+                    }
+                    if (dash + 1 < spec.length()) {
+                        end = Integer.parseInt(spec.substring(dash + 1));
+                    }
+                }
+                end = Math.min(end, big.length - 1);
+                code = 206;
+                exchange.getResponseHeaders().add("Content-Range", "bytes " + start + "-" + end + "/" + big.length);
+            }
+            int length = end - start + 1;
+            exchange.sendResponseHeaders(code, length);
+            exchange.getResponseBody().write(big, start, length);
+            exchange.close();
+        });
+        ranged.start();
+        try {
+            Path dest = rangeTmp.resolve("ranged.bin");
+            java.util.List<String> lines = new java.util.ArrayList<>();
+            HttpRequest.Builder req = HttpRequest.newBuilder(
+                    java.net.URI.create("http://127.0.0.1:" + ranged.getAddress().getPort() + "/ranged"))
+                    .timeout(java.time.Duration.ofSeconds(30));
+            long got = Net.toFile(HttpClient.newHttpClient(), req, dest, big.length, "ranged.bin", lines::add);
+            check("多线程下载完整", got == big.length && Files.size(dest) == big.length && java.util.Arrays.equals(big, Files.readAllBytes(dest)));
+            check("日志标明多线程", lines.stream().anyMatch(line -> line.contains("16 线程")));
+        } finally {
+            ranged.stop(0);
+            pool.shutdownNow();
+            Progress.end();
+            Fs.deleteTree(rangeTmp);
+        }
+    }
+
+    private static void liveRunningServerSyncTests() throws Exception {
+        String url = "http://127.0.0.1:8765";
+        HttpClient http = HttpClient.newBuilder()
+                .connectTimeout(Duration.ofSeconds(3))
+                .build();
+        HttpResponse<String> statusResp;
+        try {
+            statusResp = http.send(
+                    HttpRequest.newBuilder(URI.create(url + "/api/status"))
+                            .timeout(Duration.ofSeconds(5))
+                            .GET()
+                            .build(),
+                    HttpResponse.BodyHandlers.ofString());
+        } catch (Exception error) {
+            check("运行中的更新服务器可连", false);
+            return;
+        }
+        String token = "";
+        if (statusResp.statusCode() == 401) {
+            token = "111";
+            statusResp = http.send(
+                    HttpRequest.newBuilder(URI.create(url + "/api/status"))
+                            .header("X-CDR-Token", token)
+                            .timeout(Duration.ofSeconds(5))
+                            .GET()
+                            .build(),
+                    HttpResponse.BodyHandlers.ofString());
+        }
+        check("运行中的更新服务器可连", statusResp.statusCode() == 200);
+        if (statusResp.statusCode() != 200) {
+            return;
+        }
+        Map<String, Object> status = Json.object(Json.parse(statusResp.body()));
+        check("运行中的更新服务器版本为当前 tag", "v0.5.0.13-test".equals(Json.str(status, "official_version")));
+
+        Sync.Client probe = new Sync.Client(url, "client", null, token);
+        Map<String, Object> clientManifest = probe.json("GET", "api/manifest?side=client", null);
+        Map<String, Object> serverManifest = new Sync.Client(url, "server", null, token)
+                .json("GET", "api/manifest?side=server", null);
+        Set<String> clientPaths = pathSet(clientManifest);
+        Set<String> serverPaths = pathSet(serverManifest);
+        check("真实客户端清单含资源包", clientPaths.stream().anyMatch(path -> path.startsWith("resourcepacks/")));
+        check("真实服务端清单不含资源包", serverPaths.stream().noneMatch(path -> path.startsWith("resourcepacks/")));
+        check("真实客户端清单含光影", clientPaths.stream().anyMatch(path -> path.startsWith("shaderpacks/")));
+        check("真实服务端清单不含光影", serverPaths.stream().noneMatch(path -> path.startsWith("shaderpacks/")));
+        check("真实客户端清单含 options.txt", clientPaths.contains("options.txt"));
+        check("真实服务端清单不含 options.txt", !serverPaths.contains("options.txt"));
+        check("真实服务端清单含 start.bat/start.sh", serverPaths.contains("start.bat") || serverPaths.contains("start.sh"));
+        check("真实客户端清单不含 start.bat", !clientPaths.contains("start.bat"));
+        check("真实客户端有仅客户端模组", clientPaths.stream().anyMatch(path -> path.startsWith("mods/") && !serverPaths.contains(path)));
+
+        Map<String, Object> clientDiff = probe.json("POST", "api/diff", liveDiffBody(
+                "client",
+                List.of(
+                        fileRow("mods/player-extra.jar", "player-extra"),
+                        fileRow("saves/New World/level.dat", "world"),
+                        fileRow("world/level.dat", "world2"),
+                        fileRow("screenshots/a.png", "shot"),
+                        fileRow("options.txt", "lang=player"),
+                        fileRow("config/generated-by-mod.toml", "auto=true")
+                ),
+                List.of("saves/New World/level.dat", "world/level.dat",
+                        "options.txt", "config/generated-by-mod.toml"),
+                Map.of()
+        ));
+        check("真实客户端 diff 不删玩家模组", noneRemove(clientDiff, "mods/player-extra.jar"));
+        check("真实客户端 diff 不删存档", noneRemove(clientDiff, "saves/New World/level.dat"));
+        check("真实客户端 diff 不删世界", noneRemove(clientDiff, "world/level.dat"));
+        check("真实客户端 diff 不删截图", noneRemove(clientDiff, "screenshots/a.png"));
+        check("真实客户端 diff 保留 options.txt", Json.array(clientDiff.get("kept_local")).contains("options.txt")
+                || noneDownload(clientDiff, "options.txt"));
+        check("真实客户端 diff 保留已有配置", Json.array(clientDiff.get("kept_local")).contains("config/generated-by-mod.toml")
+                || noneDownload(clientDiff, "config/generated-by-mod.toml"));
+        check("真实空客户端会下载官方文件", !Json.array(clientDiff.get("download")).isEmpty());
+
+        String kubejs = serverPaths.stream()
+                .filter(path -> path.startsWith("kubejs/server_scripts/") && path.endsWith(".js"))
+                .findFirst()
+                .orElse("");
+        String serverMod = serverPaths.stream()
+                .filter(path -> path.startsWith("mods/") && path.endsWith(".jar"))
+                .findFirst()
+                .orElse("");
+        Map<String, String> hashes = fileHashes(serverManifest);
+        Map<String, Object> serverDiff = new Sync.Client(url, "server", null, token).json("POST", "api/diff", liveDiffBody(
+                "server",
+                List.of(
+                        fileRow("mods/admin-extra.jar", "admin-keep"),
+                        fileRow("world/level.dat", "world-bytes"),
+                        kubejs.isBlank() ? fileRow("mods/dummy.jar", "x") : fileRow(kubejs, "admin-edit"),
+                        fileRow("eula.txt", "eula=true"),
+                        fileRow("server.properties", "motd=admin")
+                ),
+                List.of("world/level.dat", kubejs, "eula.txt", "server.properties", serverMod),
+                kubejs.isBlank() ? Map.of() : Map.of(kubejs, hashes.getOrDefault(kubejs, "old-official"))
+        ));
+        check("真实服务端 diff 不删额外模组", noneRemove(serverDiff, "mods/admin-extra.jar"));
+        check("真实服务端 diff 不删世界", noneRemove(serverDiff, "world/level.dat"));
+        if (!kubejs.isBlank()) {
+            check("真实服务端 diff 保留管理员脚本", Json.array(serverDiff.get("kept_local")).contains(kubejs));
+        }
+        check("真实服务端缺失官方模组会下载", serverMod.isBlank() || !noneDownload(serverDiff, serverMod));
+
+        Path repoRoot = Path.of("D:\\桌面\\更新器\\cdr-updater\\dist\\data\\repos");
+        Path clientRepo = repoRoot.resolve("client");
+        Path serverRepo = repoRoot.resolve("server");
+        Path work = Path.of("D:\\桌面\\更新器\\cdr-updater\\tmp-live-sync");
+        Path connections = Path.of("D:\\桌面\\更新器\\cdr-updater\\dist\\data\\server-connections.json");
+        byte[] connectionsBackup = Files.isRegularFile(connections) ? Files.readAllBytes(connections) : null;
+        if (!Files.isDirectory(clientRepo) || !Files.isDirectory(serverRepo)) {
+            check("真实仓库可用于同步应用", false);
+            return;
+        }
+        Pack.Config applyConfig = liveConfigHint();
+        HttpServer applyServer = ApiServer.start(applyConfig);
+        String applyUrl = "http://127.0.0.1:" + applyServer.getAddress().getPort();
+        Fs.deleteTree(work);
+        try {
+            Path liveClient = work.resolve("client");
+            Path liveServer = work.resolve("server");
+            System.out.println("正在硬链接真实客户端仓库以测试同步...");
+            hardlinkTree(clientRepo, liveClient);
+            write(liveClient.resolve("mods/player-extra.jar"), "i-installed-this");
+            write(liveClient.resolve("saves/New World/level.dat"), "player-world");
+            write(liveClient.resolve("screenshots/live.png"), "shot");
+            replaceFile(liveClient.resolve("options.txt"), "lang=zh-player\n");
+            write(liveClient.resolve("config/generated-by-live.toml"), "auto=true\n");
+            Sync.Result liveClientFirst = Sync.apply(liveClient, "client", new Sync.Client(applyUrl, "client", liveClient), line -> {});
+            check("真实客户端首次同步完成", liveClientFirst != null);
+            check("真实客户端同步后仍保留玩家模组", Files.readString(liveClient.resolve("mods/player-extra.jar")).equals("i-installed-this"));
+            check("真实客户端同步后仍保留存档", Files.readString(liveClient.resolve("saves/New World/level.dat")).equals("player-world"));
+            check("真实客户端同步后仍保留截图", Files.readString(liveClient.resolve("screenshots/live.png")).equals("shot"));
+            if (Files.isRegularFile(liveClient.resolve("options.txt"))) {
+                check("真实客户端同步后不覆盖 options.txt", Files.readString(liveClient.resolve("options.txt")).equals("lang=zh-player\n"));
+            }
+            check("真实客户端同步后保留生成配置", Files.readString(liveClient.resolve("config/generated-by-live.toml")).equals("auto=true\n"));
+            String clientOnlyMod = clientPaths.stream()
+                    .filter(path -> path.startsWith("mods/") && path.endsWith(".jar") && !serverPaths.contains(path)
+                            && Files.isRegularFile(liveClient.resolve(path)))
+                    .findFirst()
+                    .orElse("");
+            if (!clientOnlyMod.isBlank()) {
+                byte[] original = Files.readAllBytes(liveClient.resolve(clientOnlyMod));
+                replaceFile(liveClient.resolve(clientOnlyMod), "tampered-client-mod");
+                Sync.apply(liveClient, "client", new Sync.Client(applyUrl, "client", liveClient), line -> {});
+                check("真实客户端改官方模组会被覆盖",
+                        java.util.Arrays.equals(original, Files.readAllBytes(liveClient.resolve(clientOnlyMod))));
+            }
+            Sync.Check liveClientInspect = Sync.inspect(liveClient, "client", new Sync.Client(applyUrl, "client", liveClient));
+            check("真实客户端对齐后无需更新", !liveClientInspect.needed);
+
+            System.out.println("正在硬链接真实服务端仓库以测试同步...");
+            hardlinkTree(serverRepo, liveServer);
+            Sync.Client liveServerClient = new Sync.Client(applyUrl, "server", liveServer);
+            Sync.apply(liveServer, "server", liveServerClient, line -> {});
+            write(liveServer.resolve("mods/admin-extra.jar"), "admin-keep");
+            write(liveServer.resolve("world/level.dat"), "world-bytes");
+            if (Files.isRegularFile(liveServer.resolve("eula.txt"))) {
+                replaceFile(liveServer.resolve("eula.txt"), "eula=true\n");
+            } else {
+                write(liveServer.resolve("eula.txt"), "eula=true\n");
+            }
+            if (!kubejs.isBlank() && Files.isRegularFile(liveServer.resolve(kubejs))) {
+                replaceFile(liveServer.resolve(kubejs), "admin-edit\n");
+            }
+            String smallManaged = serverPaths.stream()
+                    .filter(path -> path.startsWith("kubejs/") && path.endsWith(".js") && !path.equals(kubejs)
+                            && Files.isRegularFile(liveServer.resolve(path)))
+                    .findFirst()
+                    .orElse("");
+            byte[] missingOriginal = smallManaged.isBlank() ? null : Files.readAllBytes(liveServer.resolve(smallManaged));
+            if (!smallManaged.isBlank()) {
+                Files.delete(liveServer.resolve(smallManaged));
+            }
+            Sync.Result liveServerSecond = Sync.apply(liveServer, "server", liveServerClient, line -> {});
+            check("真实服务端不删额外模组", Files.readString(liveServer.resolve("mods/admin-extra.jar")).equals("admin-keep"));
+            check("真实服务端不删世界", Files.readString(liveServer.resolve("world/level.dat")).equals("world-bytes"));
+            check("真实服务端不覆盖 eula", Files.readString(liveServer.resolve("eula.txt")).equals("eula=true\n"));
+            if (!kubejs.isBlank() && Files.isRegularFile(liveServer.resolve(kubejs))) {
+                check("真实服务端保留管理员脚本", Files.readString(liveServer.resolve(kubejs)).equals("admin-edit\n"));
+                check("真实服务端记录保留脚本", liveServerSecond.keptLocal.contains(kubejs));
+            }
+            if (!smallManaged.isBlank()) {
+                check("真实服务端缺失文件会补回", Files.isRegularFile(liveServer.resolve(smallManaged))
+                        && java.util.Arrays.equals(missingOriginal, Files.readAllBytes(liveServer.resolve(smallManaged))));
+            }
+            List<Connections.Record> liveRecords = Connections.list(applyConfig);
+            final String liveMark = "tmp-live-sync";
+            check("真实客户端同步仍不记连接", liveRecords.stream().noneMatch(row ->
+                    row.instancePath != null && row.instancePath.replace('/', '\\').contains(liveMark + "\\client")));
+            check("真实服务端同步记连接", liveRecords.stream().anyMatch(row ->
+                    row.instancePath != null && row.instancePath.replace('/', '\\').contains(liveMark)));
+        } finally {
+            applyServer.stop(0);
+            if (connectionsBackup == null) {
+                Files.deleteIfExists(connections);
+            } else {
+                Files.write(connections, connectionsBackup);
+            }
+            Fs.deleteTree(work);
+        }
+    }
+
+    private static Pack.Config liveConfigHint() {
+        Path data = Path.of("D:\\桌面\\更新器\\cdr-updater\\dist\\data");
+        return new Pack.Config(
+                "127.0.0.1",
+                0,
+                data,
+                "Jasons-impart/Create-Delight-Remake",
+                "v0.5.0.13-test",
+                "https://api.github.com",
+                data,
+                data,
+                data.resolve("repos/unified"),
+                data.resolve("repos/client"),
+                data.resolve("repos/server"),
+                data.resolve("objects")
+        );
+    }
+
+    private static Set<String> pathSet(Map<String, Object> manifest) {
+        java.util.LinkedHashSet<String> paths = new java.util.LinkedHashSet<>();
+        for (Object item : Json.array(manifest.get("files"))) {
+            paths.add(Fs.posix(Json.str(Json.object(item), "path")));
+        }
+        return paths;
+    }
+
+    private static Map<String, String> fileHashes(Map<String, Object> manifest) {
+        Map<String, String> hashes = new java.util.LinkedHashMap<>();
+        for (Object item : Json.array(manifest.get("files"))) {
+            Map<String, Object> row = Json.object(item);
+            hashes.put(Fs.posix(Json.str(row, "path")), Json.str(row, "sha256"));
+        }
+        return hashes;
+    }
+
+    private static Map<String, Object> fileRow(String path, String content) throws Exception {
+        Map<String, Object> row = Json.map();
+        row.put("path", path);
+        byte[] bytes = content.getBytes(StandardCharsets.UTF_8);
+        Path tmp = Files.createTempFile("cdr-sync-row-", ".bin");
+        try {
+            Files.write(tmp, bytes);
+            row.put("sha256", Fs.sha256(tmp));
+            row.put("size", bytes.length);
+        } finally {
+            Files.deleteIfExists(tmp);
+        }
+        return row;
+    }
+
+    private static Map<String, Object> liveDiffBody(
+            String side,
+            List<Map<String, Object>> files,
+            List<String> managed,
+            Map<String, String> synced
+    ) {
+        Map<String, Object> request = Json.map();
+        request.put("side", side);
+        request.put("files", files);
+        request.put("previous_version", "v0.5.0.13-test");
+        request.put("managed_paths", managed);
+        request.put("synced_hashes", synced);
+        return request;
+    }
+
+    private static boolean noneRemove(Map<String, Object> diff, String path) {
+        for (Object item : Json.array(diff.get("changes"))) {
+            Map<String, Object> change = Json.object(item);
+            if ("remove".equals(Json.str(change, "action")) && path.equals(Fs.posix(Json.str(change, "path")))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static boolean noneDownload(Map<String, Object> diff, String path) {
+        for (Object item : Json.array(diff.get("download"))) {
+            if (path.equals(Fs.posix(Json.str(Json.object(item), "path")))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static void hardlinkTree(Path source, Path destination) throws Exception {
+        Files.createDirectories(destination);
+        try (var walk = Files.walk(source)) {
+            for (Path path : (Iterable<Path>) walk::iterator) {
+                Path dest = destination.resolve(source.relativize(path).toString());
+                if (Files.isDirectory(path)) {
+                    Files.createDirectories(dest);
+                    continue;
+                }
+                Files.createDirectories(dest.getParent());
+                Files.createLink(dest, path);
+            }
+        }
+    }
+
+    private static void replaceFile(Path path, String content) throws Exception {
+        Files.deleteIfExists(path);
+        write(path, content);
     }
 
     private static Pack.Config config(Path tmp, Path official, Path privateDir) {

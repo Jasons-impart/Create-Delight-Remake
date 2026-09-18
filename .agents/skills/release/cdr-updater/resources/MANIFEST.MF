@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Main-Class: com.jsi.cdr.updater.Main
+Main-Class: com.jsi.cdr.updater.Boot
 Premain-Class: com.jsi.cdr.updater.ServerAgent
 Agent-Class: com.jsi.cdr.updater.ServerAgent
 Can-Redefine-Classes: false

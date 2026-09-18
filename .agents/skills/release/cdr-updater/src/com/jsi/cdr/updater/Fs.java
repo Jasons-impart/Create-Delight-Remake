@@ -157,18 +157,65 @@ final class Fs {
     }
 
     static void extractZip(Path archive, Path destination) throws IOException {
+        extractZip(archive, destination, null);
+    }
+
+    static void extractZip(Path archive, Path destination, java.util.function.Consumer<String> log) throws IOException {
         Path dest = destination.toAbsolutePath().normalize();
         Files.createDirectories(dest);
-        try (ZipInputStream zip = new ZipInputStream(Files.newInputStream(archive))) {
+        long total = Files.size(archive);
+        String name = archive.getFileName() == null ? "zip" : archive.getFileName().toString();
+        Progress.ensure("解压 " + name, total);
+        if (log != null) {
+            log.accept("解压 " + name + (total > 0 ? " (" + Progress.formatSize(total) + ")" : ""));
+        }
+        class CountIn extends java.io.FilterInputStream {
+            private long read;
+            private long lastLog = System.nanoTime();
+
+            CountIn(InputStream in) {
+                super(in);
+            }
+
+            private void note(int n) {
+                if (n > 0) {
+                    read += n;
+                    long now = System.nanoTime();
+                    if (now - lastLog >= 200_000_000L) {
+                        lastLog = now;
+                        Progress.bytes(Math.min(read, total));
+                        Progress.live();
+                    }
+                }
+            }
+
+            @Override
+            public int read() throws IOException {
+                int n = super.read();
+                if (n >= 0) {
+                    note(1);
+                }
+                return n;
+            }
+
+            @Override
+            public int read(byte[] b, int off, int len) throws IOException {
+                int n = super.read(b, off, len);
+                note(n);
+                return n;
+            }
+        }
+        try (CountIn counted = new CountIn(Files.newInputStream(archive));
+             ZipInputStream zip = new ZipInputStream(counted)) {
             ZipEntry entry;
             while ((entry = zip.getNextEntry()) != null) {
-                String name = entry.getName();
-                if (unsafePath(name)) {
-                    throw new IOException("非法压缩路径: " + name);
+                String nameEntry = entry.getName();
+                if (unsafePath(nameEntry)) {
+                    throw new IOException("非法压缩路径: " + nameEntry);
                 }
-                Path target = dest.resolve(name).normalize();
+                Path target = dest.resolve(nameEntry).normalize();
                 if (!target.startsWith(dest)) {
-                    throw new IOException("非法压缩路径: " + name);
+                    throw new IOException("非法压缩路径: " + nameEntry);
                 }
                 if (entry.isDirectory()) {
                     Files.createDirectories(target);
@@ -179,6 +226,12 @@ final class Fs {
                     zip.transferTo(out);
                 }
             }
+        }
+        Progress.bytes(total);
+        Progress.live(true);
+        Progress.finishLive();
+        if (log != null) {
+            log.accept("解压完成 " + name);
         }
     }
 

@@ -90,7 +90,11 @@ public final class Main {
             System.out.println("没有发现不完整的下载包");
         }
         if (rebuild || !Files.isRegularFile(runtime.config().manifestsDir().resolve("meta.json"))) {
-            Pack.buildRepos(runtime.config(), System.out::println);
+            try {
+                Pack.buildRepos(runtime.config(), System.out::println);
+            } finally {
+                Progress.end();
+            }
         }
         runtime.http = ApiServer.start(runtime);
         Pack.Config started = runtime.config();
