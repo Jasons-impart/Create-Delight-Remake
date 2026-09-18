@@ -9,3 +9,5 @@ __pycache__/
 cdr-updater-state.json
 config.toml
 /private/files/
+/dist.zip
+/*.zip
