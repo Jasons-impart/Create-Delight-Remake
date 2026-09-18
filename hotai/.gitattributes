@@ -1,0 +1,2 @@
+# The small binary diff contains no NUL bytes; prevent text/EOL conversion.
+dev/latvian/mods/kubejs/util/Lazy.badiff binary

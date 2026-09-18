@@ -9,6 +9,8 @@
 | [patch-map.md](patch-map.md) | 运行机制、按领域归纳的行为变化、跨目录依赖与维护边界。 | 人工维护；不逐个复制 class 状态。 |
 | [badiff-details.md](badiff-details.md) | 每个 `.badiff` 的方法级语义、历史依据与适用性。 | 人工维护；其中 `HOTAI_STATUS` 区块由脚本生成。 |
 
+恢复与升级前先读 [代码取证与迁移基线](badiff-details.md#补丁代码取证与迁移基线)：`InspectHotaiPatch.java` 可从旧补丁与对应输入提取前后 class；它不是跨版本自动迁移器。Lazy 另有经过无旧补丁重建验证的生成器，其他条目提供实现说明，迁移仍需结合新版 API 验证。
+
 ## 与开发知识的关系
 
 - `content-map.md` 只记录玩家可见的 `hotai` 内容改动，并链接到本目录。

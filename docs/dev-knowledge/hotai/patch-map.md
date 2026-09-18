@@ -19,6 +19,7 @@
 
 | 目标领域 | 补丁文件 | 行为变化 |
 |---|---|---|
+| KubeJS Lazy 并发缓存 | `dev/latvian/mods/kubejs/util/Lazy.badiff` | 为 `get()`、`forget()` 增加实例同步锁，避免并发清缓存时返回 null；由 #2309 移植并针对 build.24 重新生成验证，详见 [补丁明细](badiff-details.md#kubejs-lazy-并发缓存补丁)。 |
 | Create 分液池/流体搜索 | `com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour.badiff`、`FluidDrainingBehaviour.badiff`、`compat/jei/category/ItemDrainCategory.badiff` | 抽液搜索增加可覆写的继续搜索钩子，分液池按源方块数量判断无限流体，而不是按访问过的流体方块数量；同时区分源流体和流动流体。JEI 分液展示在复制物品后重新检查 `FLUID_HANDLER_ITEM`，避免 capability 消失导致异常。 |
 | Create 连接纹理缓存 | `com/simibubi/create/foundation/block/connected/CTSpriteShifter.badiff` | 将连接纹理缓存从 `HashMap` 改为 `ConcurrentHashMap`，降低并发注册/资源重载时的竞态风险。 |
 | Create Liquid Fuel 液体烈焰人燃烧室 | `com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff`、`mixin/MixinBlazeBurnerTileEntity.badiff` | 液体燃料 tick 返回是否已处理并可取消原 tick 后续逻辑；向燃烧室倒入流体时按容量部分抽取、更新容器状态，并在失败路径显式返回 false，避免容器未扣除或溢出。 |
@@ -33,19 +34,20 @@
 | IAF Dragon Fix 地下冰龙穴避海 | `com/iafdragonfix/structure/DragonDenPiece.badiff` | 地下冰龙穴确定中心后检查中心及周围 16 格的 3×3 群系采样；任一点命中 `#createdelight:blocks_ice_dragon_caves` 就跳过生成，避免木卫二龙穴切入地下海，同时保留木卫二陆地区域和火星的地下冰龙穴。补丁必须由 HotAI 将 `.class` 转存为其 `MemoryDiff` 序列化格式，不得使用 `BadiffCli diff` 生成不兼容的 `BadiffFileDiff`。 |
 | Quality Food 方块掉落品质 | `de/cadentem/quality_food/mixin/BlockMixin.badiff` | 只在存在 `DropData` 且方块通过 `Utils.isValidBlock` 时应用方块品质，移除无上下文时对掉落物套品质的 fallback。 |
 
-## 待首次启动转存的可审阅 class
+## MMT 模型与属性兼容
 
 | 目标领域 | 当前文件 | 行为变化与状态 |
 |---|---|---|
-| More Mod Tetra × Tetra 6.17 属性精度 | `net/yiran/rebalancing/core/mixins/AttributeHelperMixin.class` | 将 MMT `AttributeHelperMixin` 的 `@ModifyVariable` 局部变量名从旧 `multiplier` 改为 Tetra 6.17 的 `rounding`，并将旧“乘 `1000` 后取整”所需常量改为等价步长 `0.001d`。该完整 class 用于人工反编译审阅；尚未启动客户端，HotAI 还未把它转存为 `.badiff`，也未完成第二次启动重放。 |
+| More Mod Tetra × Tetra 6.17 属性精度 | `net/yiran/rebalancing/core/mixins/AttributeHelperMixin.badiff` | 将 `@ModifyVariable` 局部变量名从 `multiplier` 改为 `rounding`，常量从 `1000d` 改为等价步长 `0.001d`；已保存 badiff，运行时状态见生成表。 |
+| More Mod Tetra 弓模型 | `com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow.badiff` | 迁移到 `IModuleModel` 和模型类型注册 API，按资源路径筛选三个拉弓阶段，保留其他模型；方法级差异与恢复依据见 [补丁明细](badiff-details.md#mmt-弓模型接口迁移)。 |
 
 ## 静态 JAR 外动态创建的超导连接器类
 
-以下 `.badiff` 的目标 class 不在当前 `mods/*.jar` 中；Forge ModLauncher 会提供空 `ClassNode`，由 `hotai` 应用 diff 后动态创建。静态扫描不能还原其完整源码，运行时状态以启动日志为准。
+以下 `.badiff` 的目标 class 不在当前 `mods/*.jar` 中；Forge ModLauncher 会提供占位 `ClassNode`，由 `hotai` 应用 diff 后动态创建。已按真实占位结构离线还原全部三个类，具体实现和哈希见 [补丁明细](badiff-details.md#超导连接器三个动态类)；是否实际加载仍以启动日志为准。
 
 | 补丁文件 | 备注 |
 |---|---|
-| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff`、`SuperconductingConnectorBlockEntity.badiff`、`SuperconductingConnectorBlockEntity$1.badiff` | 配套注册补丁会引用超导连接器类；当前启动日志已确认前两个 class 被 `hotai` 动态创建。匿名内部类 `$1` 可能按需加载，需在实际使用超导连接器时继续核对日志和游戏内注册结果。 |
+| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff`、`SuperconductingConnectorBlockEntity.badiff`、`SuperconductingConnectorBlockEntity$1.badiff` | 方块提供定向形状和注册绑定；方块实体提供 16 节点、128 格线长和六向偏移；`$1` 是 Direction switch 辅助类。迁移时须与超导注册、线缆规则和配套资源一起更新。 |
 
 ## 维护注意
 
