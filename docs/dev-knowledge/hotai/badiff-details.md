@@ -530,43 +530,6 @@ static {
 
 升级 Tetra 时复核 `ItemModule#getModels`、`IModuleModel#getType/getRenderLayer`、`ModuleModelRegistry.register` 与 `GridTextureModelData`；若上游已兼容，移除此补丁而不是重复注册。验收需包含未拉弓和各拉弓阶段、非 draw 叠加模型、资源重载及服务端启动；本次证明旧补丁可还原，没有证明未知新版 API 可直接使用。
 
-## 补丁代码取证与迁移基线
-
-`scripts/hotai/InspectHotaiPatch.java` 用发行 Hotai 的 `DiffTransformer` 输出 ASM 归一化的 `before/` 与 `after/` class，并打印输入 JAR、补丁和输出 SHA-256。它是已有补丁的代码提取器，不是缺失补丁的生成器，也不把“ASM 可解析”当作完整 JVM/游戏验证。必须配套旧版原始 JAR，不能拿新版 JAR 套旧 diff 后直接作为迁移成果。
-
-动态目标显式用 `empty`：占位类必须设置 `name=目标 internal name`、`version=52`、`superName=java/lang/Object`、默认 `access=0`，其他成员为空。这与 ModLauncher 10.0.9 `ClassTransformer` 的缺类路径一致；只设置 name 会使上述补丁产生不可解析的结果。静态 JAR 缺少类时工具会报错，不能未经核对就改用 empty。
-
-使用下文 Lazy 恢复命令中相同的 JDK 17 与 `$classpath`，在仓库根目录执行：
-
-```powershell
-$target = 'com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow'
-rtk proxy $java --class-path $classpath scripts/hotai/InspectHotaiPatch.java . $target 'mods/more_mod_tetra-2.4.15-all.jar' '.cache/hotai-inspection'
-# 三个动态类分别调用；包含 $1 的名称必须用单引号。
-$target = 'com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1'
-rtk proxy $java --class-path $classpath scripts/hotai/InspectHotaiPatch.java . $target empty '.cache/hotai-inspection'
-```
-
-用 JDK 的 `javap -c -p -classpath .cache/hotai-inspection/after <点分类名>` 核对指令；需要 Java 视图时，用 CFR 0.152 对 before/after 同一 class 分别反编译并比较。反编译器生成的变量名、泛型推断与省略的桥接方法不能代替字节码证据。
-
-本次参考输入 SHA-256：
-
-| 文件 | SHA-256 |
-|---|---|
-| `more_mod_tetra-2.4.15-all.jar` | `003986beff7d63a9d10c63b1b8287af7823b883158409723ca1d4171747771b8` |
-| `createaddition-1.20.1-1.3.3.jar`（接口参考，三个动态类不以它作为 diff 输入） | `9bf3ae15d86ec95d128542caf10e4b5498e49ca02f725b9302d6daecd5eae1db` |
-| `hotai-1.0.jar` | `d2d296f51238b41a625227fba01269b77c13dad5b79859995cd28ba626075914` |
-
-本次输出 class 的 SHA-256（Hotai 转换后的 ASM `ClassWriter(0)` 输出）：
-
-| 类 | 字节数 | SHA-256 |
-|---|---|---|
-| `ModularMMTBow` | 37234 | `348aed62faa3a690d227c4f5c24ce989c2e95efce45e78900389facc0a22175b` |
-| `SuperconductingConnectorBlock` | 3577 | `0d202455dc8a1e64c3871f16112d51af96c268d7ff1105211a779b686fcdd4a3` |
-| `SuperconductingConnectorBlockEntity` | 3554 | `8bc28744ffa3f9bdccc71e5985f10f3f05a38ee9dbc1c916ebf1572c82b6fb02` |
-| `SuperconductingConnectorBlockEntity$1` | 984 | `db8c4f8d2591de21ddcf51728c7423254c21402057c09542414968603ddb01b4` |
-
-在目标模组变化时，先用旧环境还原代码并对照上述语义，将需要的改动移植到新版 API，再通过 Hotai 的归一化输入生成新的 `MemoryDiff`；不能保证新旧补丁字节或哈希相同。当前 30 项均已有生成器或具体实现说明，但只有 Lazy 有独立生成器和无旧补丁重建验证，其余条目的迁移仍需人工适配及测试。
-
 ## TACZ / Kinetic Pixel 补丁
 
 | 文件 | 状态 | 具体改动 | 影响 |
@@ -614,46 +577,52 @@ rtk proxy $java --class-path $classpath scripts/hotai/InspectHotaiPatch.java . $
 
 ## KubeJS Lazy 并发缓存补丁
 
-`dev/latvian/mods/kubejs/util/Lazy.badiff` 来自 [PR #2309](https://github.com/Jasons-impart/Create-Delight-Remake/pull/2309)（原目标为 release-v048x / build.16），在 release-v050x 对 build.24 重新生成并验证。
+目标：KubeJS `2001.6.5-build.24` 的 `dev/latvian/mods/kubejs/util/Lazy.java`；运行文件为 `hotai/dev/latvian/mods/kubejs/util/Lazy.badiff`。修复 [#1736](https://github.com/Jasons-impart/Create-Delight-Remake/issues/1736) 涉及的 get/forget 缓存竞态，采用 [CDC #131](https://github.com/Jasons-impart/Create-Delight-Core/pull/131) 的原子快照逻辑，直接放在 Lazy 内，不依赖 CDC。
 
-- 目标：`mods/kubejs-forge-2001.6.5-build.24.jar`；SHA-256 为 `41719240421262acc0f348dfec92dc3c3654983662de6ae0358737029ad09076`。
-- 语义：仅对 `get()Ljava/lang/Object;` 和 `forget()V` 增加 `ACC_SYNCHRONIZED`，同一实例的读取与清理串行执行，方法体、缓存过期和异常传播不变。
-- 根因：未同步的 `forget()` 可以在 `get()` 检查缓存后将 value 清空，使生成资源读取到 null；[Issue #1736](https://github.com/Jasons-impart/Create-Delight-Remake/issues/1736) 包含 `GeneratedData` 空值和随后 TACZ `GUN_DATA=null` 的故障链，不能据此推定所有饰品丢失原因。
-- 生成器：`scripts/hotai/KubeJSLazyPatch.java` 固定目标 JAR 哈希，以 `ClassNode → ClassWriter(0)` 规范化后生成 `MemoryDiff`，使用实际 HotAI `DiffTransformer` 应用并验证；补丁为 20 字节，SHA-256 为 `8281ccd31169e6a7b6b22e30ccc49bf766830135e95f31e85757f0f2587e8642`，与原 PR 一致，但已独立验证新版目标。
-- 2026-09-18 验证：仅两个同步标志字节变化，HotAI 往返、缓存命中、forget、过期、supplier 异常后重试均通过；8 线程共 200 万次操作，原版 null 19,194 次，补丁版 0 次。原版计数随线程调度变化。
-- 运行时状态：2026-09-18 本地日志在 21:54:28 确认 `Patched class: dev/latvian/mods/kubejs/util/Lazy`，该会话进入并退出单人世界，未出现 `GeneratedData` 或 `GUN_DATA` 错误；重进、`/reload`、TACZ 功能和饰品持久化仍需专项确认。此补丁不会恢复已丢失的物品。
-- 复核条件：升级 KubeJS、HotAI 或 ASM 后重新验证；上游同步同一缓存的读写后评估移除补丁。
+下面是相对原模组的源码级 diff，省略无关方法并统一格式；用于说明应修改的代码，不要求重新编译后与现有二进制逐字节相同。原 `factory`、`expires`、`value`、`cached` 字段保留，后两个不再使用；字段初始化会在原 `(Supplier, long)` 构造器中执行。
 
-使用 JDK 17，类路径包含运行环境的 `hotai-1.0.jar`、ASM / ASM Tree 9.8、ModLauncher 10.0.9 和 SLF4J API 2.0.9 后，执行 `java --class-path <classpath> scripts/hotai/KubeJSLazyPatch.java check .`；将 `check` 改为 `build` 可在全部测试成功后写入补丁。HotAI 加载器不校验 JAR 哈希，维护时必须运行该检查器。
+```diff
+ import java.util.function.Supplier;
++import java.util.concurrent.atomic.AtomicReference;
 
-### 从原始 JAR 恢复补丁
+ public class Lazy<T> implements Supplier<T> {
++    private final AtomicReference<Object[]> createdelight$atomicState =
++        new AtomicReference<>(new Object[0]);
 
-恢复需要本仓库保存的 Java 生成器和上述版本的依赖 JAR，不需要旧 `.badiff` 或完整目标 `.class`。先按 Packwiz 元数据同步运行文件，再从启动器的 libraries 目录取得固定版本依赖；以下命令在仓库根目录执行，仅需调整 Java 和 libraries 路径：
+     public T get() {
+-        if (expires > 0 && System.currentTimeMillis() > expires) {
+-            cached = false;
+-        } else if (cached) {
+-            return value;
++        Object[] observed = createdelight$atomicState.get();
++        if (observed.length != 0 &&
++            (expires <= 0 || System.currentTimeMillis() <= expires)) {
++            return (T) observed[0];
+         }
+-        value = factory.get();
+-        cached = true;
+-        return value;
++        T computed = factory.get();
++        createdelight$atomicState.compareAndSet(observed, new Object[]{computed});
++        return computed;
+     }
 
-```powershell
-$java = 'C:/Program Files/Java/jdk-17/bin/java.exe'
-$libraries = 'E:/minecraft/Client/HMCL/.minecraft/libraries'
-$classpath = @(
-    'mods/hotai-1.0.jar'
-    "$libraries/org/ow2/asm/asm/9.8/asm-9.8.jar"
-    "$libraries/org/ow2/asm/asm-tree/9.8/asm-tree-9.8.jar"
-    "$libraries/cpw/mods/modlauncher/10.0.9/modlauncher-10.0.9.jar"
-    "$libraries/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar"
-) -join [IO.Path]::PathSeparator
-rtk proxy $java --class-path $classpath scripts/hotai/KubeJSLazyPatch.java build .
-if ($LASTEXITCODE -ne 0) { throw 'Patch build failed' }
-rtk proxy $java --class-path $classpath scripts/hotai/KubeJSLazyPatch.java check .
-if ($LASTEXITCODE -ne 0) { throw 'Patch check failed' }
-Get-FileHash -LiteralPath 'hotai/dev/latvian/mods/kubejs/util/Lazy.badiff' -Algorithm SHA256
+     public void forget() {
+-        value = null;
+-        cached = false;
++        createdelight$atomicState.set(new Object[0]);
+     }
 ```
 
-输出必须包含 `PASS`、补丁版 `patched nulls=0`，且文件哈希等于上文的补丁 SHA-256。`build` 会覆盖该补丁，只有全部验证通过才写入；`check` 不修改补丁，验证已有文件与重建结果逐字节一致。保留 `hotai/.gitattributes` 的 `binary` 标记，防止 Git 换行转换破坏这份不含 NUL 的二进制文件。若输入 JAR 哈希不匹配，应先复核新版方法字节码再调整生成器，不能直接绕过检查。
-
-本条目足以重建这一份 Lazy 补丁；其他补丁的文字摘要不等价于可复现的生成器，不能据此承诺整个 `hotai/` 目录都能从文档恢复。
+- 空数组表示未缓存，单元素数组保存值（包括合法 null）。get 返回同一快照的值或本次局部计算结果，避免 forget 在检查后清空 value 导致意外 null。
+- factory 在无缓存锁、无内部等待的情况下执行，只尝试一次 CAS。并发未命中允许重复计算，先成功 CAS 的结果进入缓存；不保证只调用一次 factory。绝对过期时间和异常传播规则保持不变。
+- forget 每次发布新的空数组身份，防止失效前的计算回填缓存；旧调用仍可返回自己的计算结果。避免用整方法同步在外部回调中引入锁顺序风险。
+- 验证记录（2026-09-18）：离线缓存/失效语义及 200 万轮并发测试通过，补丁版意外 null 为 0；受控锁顺序测试中旧同步版死锁、原子版完成。这不是游戏死锁复现。随后日志确认原子版加载，用户重启反馈暂未见问题；首次失败点为 Zeta 事件表扩容越界，游戏重载和长期回归仍待观察。
+- 升级 KubeJS 或 HotAI 时按上述 diff 复核并测试；上游修复后评估移除。以后由 CDC 承载同一修复时移除此 `.badiff`，避免叠加。补丁不会恢复已经丢失的物品。
 
 ## 维护建议
 
-- 对“已还原”条目，更新目标模组后应重新运行 class diff 或至少确认启动日志中仍有对应 `Patched class:`。
+- 对“已还原”条目，更新目标模组后应对照记录的源码改动适配，并验证启动及对应功能；`Patched class:` 只证明类经过转换。
 - 修改 `hotai/**/*.badiff` 后运行 `scripts/update-hotai-docs.ps1` 更新 `HOTAI_STATUS` 区块；`scripts/validate-knowledge-base.ps1` 会用 `-Check` 检查该区块是否过期。
 - 对“当前未还原”条目，优先判断目标模组是否已改名、移除或被替换；如果连续版本都没有启动日志命中，可以考虑清理对应 `.badiff`。
 - 超导连接器相关补丁要和 `kubejs/assets/createaddition/`、`kubejs/server_scripts/Create Addition/` 一起验证；只看 `hotai` class patch 不足以证明玩法完整。
