@@ -1,0 +1,13 @@
+name = "[TaCZ:Accel] Timeless and Classics Zero Guns: Accelerated[Performance Optimisation]"
+filename = "taczaccel-1.2.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "eee49f6e992ba1be6ff6d86a7cd5dfc3afa1b59e"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8617225
+project-id = 1622154
