@@ -1,5 +1,15 @@
 # 下界捕食攻击非有限伤害兼容修复计划
 
+## 最新决策：定向将捕食伤害改为 10,000，保留探针待测
+
+用户已批准将蟾蜍捕食绯红蚊的特殊伤害由 `Float.MAX_VALUE` 改为 `10_000.0F`。CDC 新增 `alexsmobs/WarpedToadPredationDamageMixin`，仅匹配该分支唯一极值；普通攻击、事件与死亡流程保留，不实施暴击局部饱和或玩家范围过滤，既有抗性修复继续保留。
+
+实现提交为 CDC `f7b1111`。Java 17 完整 build、既有诊断与真实 SRG/历史导出类回归通过；核对实际 Alex's Mobs JAR 的唯一目标常量以及生产补丁的 named/SRG 选择器与 10,000 返回值。游戏退出后已备份并部署原运行目录，运行 JAR SHA-256 为 `0e867a19e8bf2408df64e3ed8cc9dbabdf4994bfb9fb82dd1e70ff16425b0bab`，旧 JAR 位于 `tmp-opencode/damage-diagnostics-runtime-backup/predation-before/`，`logNonFiniteDamage = true`。这些是构建/部署验证，不代替真实启动与战斗回归。
+
+10,000 是明确选定的测试值，最高阶段装备和减伤组合下的一击击杀仍须验证。诊断探针与本地开关继续保留，等用户确认修复通过后再移除；有限的蟾蜍→绯红蚊伤害样本也进入既有限流日志，避免新数值低于原极值阈值后失去成功证据。
+
+启动先核对 `[CDCore][PredationDamage] Applied ... 10000` 与抗性修复成功标记，再检查普通捕食 10,000、默认单次暴击 15,000、TetraWear/AttributesLib 与后续数值有限、正常死亡且没有 Neruina 新暂停。保持原运行目录测试，不更新发行载荷或合并 PR。以下为历史调查记录，以本节为最新实施范围。
+
 状态：单入口修正版抗性补丁已在真实游戏命中，6 条已记录非暴击捕食的后续管线未观察到非有限值；另一次捕食触发 CDC 叠加暴击，MAX 加上半个 MAX 溢出，经 TetraWear/AttributesLib 复现原反馈相同的 BigDecimal 异常与 Neruina 暂停。当前已定位 main 基线的第二个生产点，尚未修改暴击或捕食规则，MMT 适用范围调整未实施。
 
 ## 当前实施状态（2026-09-18）
