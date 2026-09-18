@@ -71,7 +71,10 @@ ServerEvents.recipes(e => {
         Item.of("minecraft:coal").withChance(0.6),
         Item.of("create:crushed_raw_iron").withChance(0.5),
         Item.of("create:crushed_raw_zinc").withChance(0.5),
-        Item.of("minecraft:redstone", 4).withChance(0.3)
+        Item.of("minecraft:redstone", 4).withChance(0.3),
+        Item.of("create:crushed_raw_osmium").withChance(0.5),
+        Item.of("create:crushed_raw_lead").withChance(0.4),
+        Item.of("create:crushed_raw_uranium").withChance(0.25)
     ],
         ["createdelight:overworld_metal_ore_cluster"])
         .id("createdelight:crushing/crushed_raw_ore_from_overworld_metal_ore_cluster")
@@ -82,7 +85,9 @@ ServerEvents.recipes(e => {
         Item.of("create:raw_zinc").withChance(0.6),
         Item.of("minecraft:coal").withChance(0.5),
         Item.of("minecraft:raw_copper").withChance(0.25),
-        Item.of("createdelightcore:raw_tin").withChance(0.25)
+        Item.of("createdelightcore:raw_tin").withChance(0.25),
+        Item.of("mekanism:raw_osmium").withChance(0.4),
+        Item.of("mekanism:raw_lead").withChance(0.3)
     ],
         ["createdelight:overworld_metal_ore_cluster"])
         .id("createdelight:vibrating/raw_ore_from_overworld_metal_ore_cluster")
@@ -107,7 +112,8 @@ ServerEvents.recipes(e => {
         Item.of("create:crushed_raw_gold").withChance(0.5),
         Item.of("minecraft:lapis_lazuli", 4).withChance(0.4),
         Item.of("minecraft:emerald").withChance(0.2),
-        Item.of("minecraft:diamond").withChance(0.1)
+        Item.of("minecraft:diamond").withChance(0.1),
+        Item.of("mekanism:fluorite_gem", 2).withChance(0.4)
     ],
         ["createdelight:overworld_noble_metal_ore_cluster"])
         .id("createdelight:crushing/crushed_raw_ore_from_overworld_noble_metal_ore_cluster")
@@ -118,7 +124,8 @@ ServerEvents.recipes(e => {
         Item.of("createoreexcavation:raw_emerald").withChance(0.3),
         Item.of("minecraft:lapis_lazuli", 4).withChance(0.4),
         Item.of("iceandfire:raw_silver").withChance(0.25),
-        Item.of("minecraft:raw_gold").withChance(0.25)
+        Item.of("minecraft:raw_gold").withChance(0.25),
+        Item.of("mekanism:fluorite_gem").withChance(0.35)
     ],
         ["createdelight:overworld_noble_metal_ore_cluster"])
         .id("createdelight:vibrating/raw_ore_from_overworld_noble_metal_ore_cluster")
