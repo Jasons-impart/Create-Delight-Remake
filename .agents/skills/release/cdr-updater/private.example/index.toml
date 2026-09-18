@@ -1,0 +1,14 @@
+# 私货清单。files/ 下的相对路径会覆盖官方同名文件。
+# side: both / client / server
+
+[[files]]
+path = "mods/server-extra.jar"
+side = "server"
+
+[[files]]
+path = "config/private-server.toml"
+side = "server"
+
+[[files]]
+path = "mods/client-extra.jar"
+side = "client"

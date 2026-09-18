@@ -1,0 +1,93 @@
+package com.jsi.cdr.updater;
+
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
+
+final class Pcl2Pack {
+    static Path export(Pack.Config config, Path updaterJar, Path output) throws Exception {
+        if (!Files.isRegularFile(config.manifestsDir().resolve("client.json"))) {
+            Pack.buildRepos(config, System.out::println);
+        }
+        Files.createDirectories(output.getParent());
+        try (ZipOutputStream zip = new ZipOutputStream(Files.newOutputStream(output))) {
+            putText(zip, "manifest.json", Json.stringify(curseForge(config)));
+            putText(zip, "mcbbs.packmeta", Json.stringify(mcbbs(config)));
+            Path clientRoot = config.clientDir;
+            if (Files.exists(clientRoot)) {
+                for (Path file : Fs.files(clientRoot)) {
+                    String rel = Fs.posix(clientRoot, file);
+                    if ("mods/cdr-updater.jar".equals(rel) || "cdr-updater.toml".equals(rel)) {
+                        continue;
+                    }
+                    putFile(zip, "overrides/" + rel, file);
+                }
+            }
+            putFile(zip, "overrides/mods/cdr-updater.jar", updaterJar);
+            putText(zip, "overrides/cdr-updater.toml", Pack.instanceToml(config, "client"));
+        }
+        return output;
+    }
+
+    private static Map<String, Object> curseForge(Pack.Config config) {
+        Map<String, Object> minecraft = Json.map();
+        minecraft.put("version", config.minecraft);
+        Map<String, Object> loader = Json.map();
+        loader.put("id", "forge-" + config.forge);
+        loader.put("primary", true);
+        minecraft.put("modLoaders", List.of(loader));
+        Map<String, Object> manifest = Json.map();
+        manifest.put("minecraft", minecraft);
+        manifest.put("manifestType", "minecraftModpack");
+        manifest.put("manifestVersion", 1);
+        manifest.put("name", config.packName);
+        manifest.put("version", config.officialVersion);
+        manifest.put("author", "JSI");
+        manifest.put("overrides", "overrides");
+        manifest.put("files", Json.list());
+        return manifest;
+    }
+
+    private static Map<String, Object> mcbbs(Pack.Config config) {
+        Map<String, Object> meta = new LinkedHashMap<>();
+        meta.put("manifestType", "minecraftModpack");
+        meta.put("manifestVersion", 2);
+        meta.put("name", config.packName);
+        meta.put("version", config.officialVersion);
+        meta.put("author", "JSI");
+        meta.put("description", "Create Delight Remake 客户端。点 PCL2 开启游戏时会自动检查文件更新。");
+        meta.put("fileApi", "");
+        meta.put("url", "");
+        meta.put("forceUpdate", false);
+        Map<String, Object> game = Json.map();
+        game.put("id", "game");
+        game.put("version", config.minecraft);
+        Map<String, Object> forge = Json.map();
+        forge.put("id", "forge");
+        forge.put("version", config.forge);
+        meta.put("addons", List.of(game, forge));
+        meta.put("files", Json.list());
+        meta.put("libraries", Json.list());
+        meta.put("origin", Json.list());
+        return meta;
+    }
+
+    private static void putText(ZipOutputStream zip, String name, String text) throws Exception {
+        zip.putNextEntry(new ZipEntry(name));
+        zip.write(text.getBytes(StandardCharsets.UTF_8));
+        zip.closeEntry();
+    }
+
+    private static void putFile(ZipOutputStream zip, String name, Path file) throws Exception {
+        zip.putNextEntry(new ZipEntry(name.replace('\\', '/')));
+        try (var in = Files.newInputStream(file)) {
+            in.transferTo(zip);
+        }
+        zip.closeEntry();
+    }
+}
