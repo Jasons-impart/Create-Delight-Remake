@@ -30,7 +30,7 @@
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 29 个 `.badiff`；静态 JAR 命中 25 个，静态未命中但已由当前启动日志确认动态创建 3 个，尚未由当前启动日志确认 1 个。
+当前扫描到 30 个 `.badiff`；静态 JAR 命中 26 个，静态未命中但已由当前启动日志确认动态创建 3 个，尚未由当前启动日志确认 1 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |
 |---|---|---|---|
@@ -41,8 +41,8 @@
 | TACZ-addon | `hotai/com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner.badiff` | `com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner` | 静态命中 `taczaddon-1.20.1-1.1.8-hotfix2-for-new-soph.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/ConnectorType.badiff` | `com/mrh0/createaddition/blocks/connector/ConnectorType` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock` | 运行时已确认动态创建（静态 JAR 无此 class） |
-| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity` | 运行时已确认动态创建（静态 JAR 无此 class） |
+| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/IWireNode.badiff` | `com/mrh0/createaddition/energy/IWireNode` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/network/EnergyNetwork.badiff` | `com/mrh0/createaddition/energy/network/EnergyNetwork` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/WireConnectResult.badiff` | `com/mrh0/createaddition/energy/WireConnectResult` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
@@ -60,6 +60,7 @@
 | TACZ | `hotai/com/tacz/guns/init/ModCreativeTabs.badiff` | `com/tacz/guns/init/ModCreativeTabs` | 静态命中 `tacz-1.20.1-1.1.8-hotfix.jar` |
 | Neapolitan | `hotai/com/teamabnormals/neapolitan/core/Neapolitan.badiff` | `com/teamabnormals/neapolitan/core/Neapolitan` | 静态命中 `neapolitan-1.20.1-5.1.0.jar` |
 | Quality Food | `hotai/de/cadentem/quality_food/mixin/BlockMixin.badiff` | `de/cadentem/quality_food/mixin/BlockMixin` | 静态命中 `quality_food-1.20.1-2.4.3-all.jar` |
+| Unknown | `hotai/dev/latvian/mods/kubejs/util/Lazy.badiff` | `dev/latvian/mods/kubejs/util/Lazy` | 静态命中 `kubejs-forge-2001.6.5-build.24.jar` |
 | Better Compatibility Checker | `hotai/dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin` | 静态命中 `BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar` |
 | Unknown | `hotai/net/yiran/rebalancing/core/mixins/AttributeHelperMixin.badiff` | `net/yiran/rebalancing/core/mixins/AttributeHelperMixin` | 运行时已确认动态创建（静态 JAR 无此 class） |
 | Create New Age | `hotai/org/antarcticgardens/cna/content/ponders/CNAPonders.badiff` | `org/antarcticgardens/cna/content/ponders/CNAPonders` | 静态命中 `create-new-age-1.2.0+forge-mc1.20.1.jar` |
@@ -500,6 +501,45 @@ MMT 原 class 针对 Tetra 6.9 的局部变量名 `multiplier`，返回 `1000d`�
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
 | `org/antarcticgardens/cna/content/ponders/CNAPonders.badiff` | 已还原 | 旧 `org/antarcticgardens/newage/CreateNewAgePonders` 补丁已按当前包和注册 API 重建。补丁移除 `WIRING`、`HEATING`、`REACTOR` 字段及标签注册；移除 `heating`、`heater`、`reactor`、`wires` 场景，涉及热管、热泵、太阳能加热板、斯特林引擎、加热器、核反应堆组件、电气连接器及各类导线；保留 `ELECTRICAL`、`MAGNETS`、`ELECTRICITY_GENERATION`、`MOTOR_EXTENSION`。配套 `energiser.nbt`、`generation.nbt`、`motor.nbt`、`motor_extension.nbt` 已按当前方块 id 和方块实体数据刷新。 | 延续 `e11d47f206c1e9cb28bdf506698c824586f9b00c` 的“删除 CNA 无用 Ponder”意图，并让补丁重新命中当前 Create New Age 版本。 |
+
+## KubeJS Lazy 并发缓存补丁
+
+`dev/latvian/mods/kubejs/util/Lazy.badiff` 来自 [PR #2309](https://github.com/Jasons-impart/Create-Delight-Remake/pull/2309)（原目标为 release-v048x / build.16），在 release-v050x 对 build.24 重新生成并验证。
+
+- 目标：`mods/kubejs-forge-2001.6.5-build.24.jar`；SHA-256 为 `41719240421262acc0f348dfec92dc3c3654983662de6ae0358737029ad09076`。
+- 语义：仅对 `get()Ljava/lang/Object;` 和 `forget()V` 增加 `ACC_SYNCHRONIZED`，同一实例的读取与清理串行执行，方法体、缓存过期和异常传播不变。
+- 根因：未同步的 `forget()` 可以在 `get()` 检查缓存后将 value 清空，使生成资源读取到 null；[Issue #1736](https://github.com/Jasons-impart/Create-Delight-Remake/issues/1736) 包含 `GeneratedData` 空值和随后 TACZ `GUN_DATA=null` 的故障链，不能据此推定所有饰品丢失原因。
+- 生成器：`scripts/hotai/KubeJSLazyPatch.java` 固定目标 JAR 哈希，以 `ClassNode → ClassWriter(0)` 规范化后生成 `MemoryDiff`，使用实际 HotAI `DiffTransformer` 应用并验证；补丁为 20 字节，SHA-256 为 `8281ccd31169e6a7b6b22e30ccc49bf766830135e95f31e85757f0f2587e8642`，与原 PR 一致，但已独立验证新版目标。
+- 2026-09-18 验证：仅两个同步标志字节变化，HotAI 往返、缓存命中、forget、过期、supplier 异常后重试均通过；8 线程共 200 万次操作，原版 null 19,194 次，补丁版 0 次。原版计数随线程调度变化。
+- 运行时状态：2026-09-18 本地日志在 21:54:28 确认 `Patched class: dev/latvian/mods/kubejs/util/Lazy`，该会话进入并退出单人世界，未出现 `GeneratedData` 或 `GUN_DATA` 错误；重进、`/reload`、TACZ 功能和饰品持久化仍需专项确认。此补丁不会恢复已丢失的物品。
+- 复核条件：升级 KubeJS、HotAI 或 ASM 后重新验证；上游同步同一缓存的读写后评估移除补丁。
+
+使用 JDK 17，类路径包含运行环境的 `hotai-1.0.jar`、ASM / ASM Tree 9.8、ModLauncher 10.0.9 和 SLF4J API 2.0.9 后，执行 `java --class-path <classpath> scripts/hotai/KubeJSLazyPatch.java check .`；将 `check` 改为 `build` 可在全部测试成功后写入补丁。HotAI 加载器不校验 JAR 哈希，维护时必须运行该检查器。
+
+### 从原始 JAR 恢复补丁
+
+恢复需要本仓库保存的 Java 生成器和上述版本的依赖 JAR，不需要旧 `.badiff` 或完整目标 `.class`。先按 Packwiz 元数据同步运行文件，再从启动器的 libraries 目录取得固定版本依赖；以下命令在仓库根目录执行，仅需调整 Java 和 libraries 路径：
+
+```powershell
+$java = 'C:/Program Files/Java/jdk-17/bin/java.exe'
+$libraries = 'E:/minecraft/Client/HMCL/.minecraft/libraries'
+$classpath = @(
+    'mods/hotai-1.0.jar'
+    "$libraries/org/ow2/asm/asm/9.8/asm-9.8.jar"
+    "$libraries/org/ow2/asm/asm-tree/9.8/asm-tree-9.8.jar"
+    "$libraries/cpw/mods/modlauncher/10.0.9/modlauncher-10.0.9.jar"
+    "$libraries/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar"
+) -join [IO.Path]::PathSeparator
+rtk proxy $java --class-path $classpath scripts/hotai/KubeJSLazyPatch.java build .
+if ($LASTEXITCODE -ne 0) { throw 'Patch build failed' }
+rtk proxy $java --class-path $classpath scripts/hotai/KubeJSLazyPatch.java check .
+if ($LASTEXITCODE -ne 0) { throw 'Patch check failed' }
+Get-FileHash -LiteralPath 'hotai/dev/latvian/mods/kubejs/util/Lazy.badiff' -Algorithm SHA256
+```
+
+输出必须包含 `PASS`、补丁版 `patched nulls=0`，且文件哈希等于上文的补丁 SHA-256。`build` 会覆盖该补丁，只有全部验证通过才写入；`check` 不修改补丁，验证已有文件与重建结果逐字节一致。保留 `hotai/.gitattributes` 的 `binary` 标记，防止 Git 换行转换破坏这份不含 NUL 的二进制文件。若输入 JAR 哈希不匹配，应先复核新版方法字节码再调整生成器，不能直接绕过检查。
+
+本条目足以重建这一份 Lazy 补丁；其他补丁的文字摘要不等价于可复现的生成器，不能据此承诺整个 `hotai/` 目录都能从文档恢复。
 
 ## 维护建议
 
