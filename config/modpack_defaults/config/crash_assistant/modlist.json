@@ -1489,6 +1489,11 @@
     "name": "Quality Food Fluids",
     "version": "1.20.1-0.1.4"
   },
+  "quantified api-omni-2.2.3.jar": {
+    "modId": "quantified api-omni",
+    "name": "Quantified API",
+    "version": "2.2.3"
+  },
   "Quark-4.0-462.jar": {
     "modId": "quark",
     "name": "Quark",
