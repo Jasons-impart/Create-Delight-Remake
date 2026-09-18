@@ -1489,6 +1489,11 @@
     "name": "Quality Food Fluids",
     "version": "1.20.1-0.1.4"
   },
+  "quantified api-omni-2.2.3.jar": {
+    "modId": "quantified api-omni",
+    "name": "Quantified API",
+    "version": "2.2.3"
+  },
   "Quark-4.0-462.jar": {
     "modId": "quark",
     "name": "Quark",
@@ -1698,6 +1703,11 @@
     "modId": "tacz",
     "name": "[TaCZ] Timeless and Classics Zero Guns",
     "version": "1.20.1-1.1.8-hotfix"
+  },
+  "taczaccel-1.2.0.jar": {
+    "modId": "taczaccel",
+    "name": "[TaCZ:Accel] Timeless and Classics Zero Guns: Accelerated[Performance Optimisation]",
+    "version": "1.2.0"
   },
   "taczaddon-1.20.1-1.1.8-hotfix2-for-new-soph.jar": {
     "modId": "taczaddon",

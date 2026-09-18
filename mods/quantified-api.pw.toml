@@ -1,0 +1,13 @@
+name = "Quantified API"
+filename = "quantified api-omni-2.2.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "0a4f72b0a7685c99724ffcf2cec69ce0e739c185"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8830709
+project-id = 1397967
