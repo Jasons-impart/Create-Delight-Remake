@@ -614,21 +614,24 @@ rtk proxy $java --class-path $classpath scripts/hotai/InspectHotaiPatch.java . $
 
 ## KubeJS Lazy 并发缓存补丁
 
-`dev/latvian/mods/kubejs/util/Lazy.badiff` 来自 [PR #2309](https://github.com/Jasons-impart/Create-Delight-Remake/pull/2309)（原目标为 release-v048x / build.16），在 release-v050x 对 build.24 重新生成并验证。
+`dev/latvian/mods/kubejs/util/Lazy.badiff` 修复 [Issue #1736](https://github.com/Jasons-impart/Create-Delight-Remake/issues/1736) 涉及的缓存竞态。旧同步版由 [PR #2309](https://github.com/Jasons-impart/Create-Delight-Remake/pull/2309) 经 [#2323](https://github.com/Jasons-impart/Create-Delight-Remake/pull/2323) 移植到 release-v050x；当前版本采用 [CDC #131](https://github.com/Jasons-impart/Create-Delight-Core/pull/131) 的原子快照语义，并直接嵌入 Lazy，不依赖 CDC helper 或额外动态 class。
 
 - 目标：`mods/kubejs-forge-2001.6.5-build.24.jar`；SHA-256 为 `41719240421262acc0f348dfec92dc3c3654983662de6ae0358737029ad09076`。
-- 语义：仅对 `get()Ljava/lang/Object;` 和 `forget()V` 增加 `ACC_SYNCHRONIZED`，同一实例的读取与清理串行执行，方法体、缓存过期和异常传播不变。
+- 字节码范围：增加私有 final `AtomicReference<Object[]> createdelight$atomicState`，替换唯一构造器 `(Supplier,long)` 及 `get()Object`、`forget()V` 的方法体；其余 class 内容保持不变，不添加同步标志或 monitor 指令。原 factory/expires 保留；旧私有 cached/value 不再承载缓存。
+- 快照语义：空数组表示未缓存，单元素数组保存值（包括合法 null）；get 先读取一个快照，未命中则在无缓存锁、无内部等待时执行 factory，只尝试一次 CAS，并向当前调用方返回局部计算结果。绝对过期时间和异常传播规则保持；并发 miss 可重复计算，先 CAS 成功者填充缓存，不承诺“恰好一次”。
+- 失效语义：forget 每次都发布新的空数组身份，避免 ABA；失效前的计算可以返回给其原调用方，但不能回填或覆盖失效后的缓存。supplier 抛异常不修改快照。
 - 根因：未同步的 `forget()` 可以在 `get()` 检查缓存后将 value 清空，使生成资源读取到 null；[Issue #1736](https://github.com/Jasons-impart/Create-Delight-Remake/issues/1736) 包含 `GeneratedData` 空值和随后 TACZ `GUN_DATA=null` 的故障链，不能据此推定所有饰品丢失原因。
-- 生成器：`scripts/hotai/KubeJSLazyPatch.java` 固定目标 JAR 哈希，以 `ClassNode → ClassWriter(0)` 规范化后生成 `MemoryDiff`，使用实际 HotAI `DiffTransformer` 应用并验证；补丁为 20 字节，SHA-256 为 `8281ccd31169e6a7b6b22e30ccc49bf766830135e95f31e85757f0f2587e8642`，与原 PR 一致，但已独立验证新版目标。
-- 2026-09-18 验证：仅两个同步标志字节变化，HotAI 往返、缓存命中、forget、过期、supplier 异常后重试均通过；8 线程共 200 万次操作，原版 null 19,194 次，补丁版 0 次。原版计数随线程调度变化。
-- 运行时状态：2026-09-18 本地日志在 21:54:28 确认 `Patched class: dev/latvian/mods/kubejs/util/Lazy`，该会话进入并退出单人世界，未出现 `GeneratedData` 或 `GUN_DATA` 错误；重进、`/reload`、TACZ 功能和饰品持久化仍需专项确认。此补丁不会恢复已丢失的物品。
-- 复核条件：升级 KubeJS、HotAI 或 ASM 后重新验证；上游同步同一缓存的读写后评估移除补丁。
+- 生成器：`scripts/hotai/KubeJSLazyPatch.java` 固定目标 JAR 哈希，以 Java 17 `--release 17 -g:none -proc:none` 编译 `KubeJSLazyAtomicTemplate.java`，仅移植指定字段与三个方法体，再以 `ClassNode → ClassWriter(0)` 规范化生成 `MemoryDiff`。实际 HotAI `DiffTransformer` 的输出必须逐字节等于预期；当前补丁 2,570 字节，SHA-256 为 `dbd3a45b6fa890def83633bd1e7becefac7dd2131bd2cedab98db6f2df577bca`。
+- 2026-09-18 离线验证（JDK 17.0.12）：HotAI 往返、改写范围、平台类加载器隔离运行、缓存命中、合法 null、forget、过期、异常后跨线程重试均通过；覆盖计算中连续失效（有/无新值回填）、并发 miss 和 factory 等待另一线程 forget。8 线程共 200 万轮，原版 null 43,896 次，补丁版 0 次；原版计数随调度变化。
+- 锁顺序证据：受控 `externalLock → Lazy.get()` 与 `Lazy.get() → factory → externalLock` 夹具中，原版和当前原子版均完成，旧整方法同步版被 JVM 确认双线程监视器死锁。夹具并非实际游戏死锁复现；原子缓存不新增此类锁依赖，但不能消除回调本身的锁或等待。
+- 运行时状态：21:54:28 的 `Patched class` 和进退世界日志属于旧同步版，不能作为当前原子版通过的证据。本次原子版尚未完整重启验证；仍需冷启动、退出重进、连续 `/reload`、TACZ、JEI 与饰品持久化回归。此补丁不会恢复已丢失物品。
+- 复核条件：升级 KubeJS、HotAI、ASM 或模板编译 JDK 后重新验证；上游修复后评估移除。以后改由 CDC 承载时移除该 `.badiff`，不要与 CDC 的同目标改写叠加。
 
 使用 JDK 17，类路径包含运行环境的 `hotai-1.0.jar`、ASM / ASM Tree 9.8、ModLauncher 10.0.9 和 SLF4J API 2.0.9 后，执行 `java --class-path <classpath> scripts/hotai/KubeJSLazyPatch.java check .`；将 `check` 改为 `build` 可在全部测试成功后写入补丁。HotAI 加载器不校验 JAR 哈希，维护时必须运行该检查器。
 
 ### 从原始 JAR 恢复补丁
 
-恢复需要本仓库保存的 Java 生成器和上述版本的依赖 JAR，不需要旧 `.badiff` 或完整目标 `.class`。先按 Packwiz 元数据同步运行文件，再从启动器的 libraries 目录取得固定版本依赖；以下命令在仓库根目录执行，仅需调整 Java 和 libraries 路径：
+恢复需要本仓库保存的 `KubeJSLazyPatch.java`、`KubeJSLazyAtomicTemplate.java` 和上述版本依赖 JAR，不需要旧 `.badiff`、CDC 源码或完整目标 `.class`。模板在系统临时目录编译，验证后清理；补丁运行时只引用 JDK 类。先按 Packwiz 元数据同步运行文件，再从启动器的 libraries 目录取得固定版本依赖；以下命令在仓库根目录执行，仅需调整 Java 和 libraries 路径：
 
 ```powershell
 $java = 'C:/Program Files/Java/jdk-17/bin/java.exe'
@@ -647,7 +650,7 @@ if ($LASTEXITCODE -ne 0) { throw 'Patch check failed' }
 Get-FileHash -LiteralPath 'hotai/dev/latvian/mods/kubejs/util/Lazy.badiff' -Algorithm SHA256
 ```
 
-输出必须包含 `PASS`、补丁版 `patched nulls=0`，且文件哈希等于上文的补丁 SHA-256。`build` 会覆盖该补丁，只有全部验证通过才写入；`check` 不修改补丁，验证已有文件与重建结果逐字节一致。保留 `hotai/.gitattributes` 的 `binary` 标记，防止 Git 换行转换破坏这份不含 NUL 的二进制文件。若输入 JAR 哈希不匹配，应先复核新版方法字节码再调整生成器，不能直接绕过检查。
+输出必须包含 `PASS`、补丁版 `patched nulls=0`，且文件哈希等于上文的补丁 SHA-256。旧同步版的死锁输出是预期对照；两个对照线程为 daemon，随独立测试 JVM 退出，不会挂起命令。`build` 仅在全部验证通过后覆盖补丁；`check` 不改仓库文件，验证重建结果逐字节一致。保留 `hotai/.gitattributes` 的 `binary` 标记。输入 JAR 哈希不匹配时应先复核新版字节码，不能绕过检查。
 
 本条目足以重建这一份 Lazy 补丁；其他补丁的文字摘要不等价于可复现的生成器，不能据此承诺整个 `hotai/` 目录都能从文档恢复。
 
