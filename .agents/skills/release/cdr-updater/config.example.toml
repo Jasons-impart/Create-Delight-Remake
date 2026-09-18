@@ -1,0 +1,34 @@
+# CDR 更新器本地配置
+# 主仓库只通过版本号拉取官方 Release，例如 v0.5.0.13-test
+
+[server]
+listen = "0.0.0.0"
+port = 8765
+data_dir = "./data"
+# 写入客户端整合包 cdr-updater.toml 的地址，需改成玩家能访问的更新服务器
+# 外网请填公网 IP 或域名，例如 http://203.0.113.10:8765
+public_url = "http://127.0.0.1:8765"
+# 可选。填写后客户端/服务端同步必须带同一令牌。重新导出 PCL2/服务端后生效。
+# 网页远程管理：http://地址:端口/admin ，登录密码就是这个令牌。网页不含导出功能。
+# access_token = ""
+
+[official]
+github_repo = "Jasons-impart/Create-Delight-Remake"
+version = "v0.5.0.13-test"
+minecraft = "1.20.1"
+forge = "47.4.16"
+pack_name = "Create-Delight-Remake"
+# 可选。默认使用 packwiz 同款官方 API Key，不再访问 www.curseforge.com 网页（会触发人机验证）。
+# 也可设环境变量 CURSEFORGE_API_KEY
+# curseforge_api_key = ""
+# 本地调试可不访问 GitHub，改为指向一个已解压的官方目录：
+# local_dir = "./tests/fixtures/official"
+
+[private]
+overlay_dir = "./private"
+
+[repos]
+unified = "./data/repos/unified"
+client = "./data/repos/client"
+server = "./data/repos/server"
+objects = "./data/objects"

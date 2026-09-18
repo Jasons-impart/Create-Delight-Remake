@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>CDR 更新服务器</title>
+  <style>
+    html[data-theme="dark"], .theme-dark {
+      --bg: #0a0a0a;
+      --panel: #111;
+      --panel-solid: #161616;
+      --panel2: #1c1c1c;
+      --line: rgba(255,255,255,.12);
+      --text: #f4f4f4;
+      --muted: #9a9a9a;
+      --accent: #fff;
+      --accent-ink: #111;
+      --warn: #cfcfcf;
+      --shadow: 0 16px 40px rgba(0,0,0,.45);
+      --header: rgba(8,8,8,.86);
+      --tabs: #0e0e0e;
+      --hover: rgba(255,255,255,.06);
+      --grid: rgba(255,255,255,.04);
+      --log-bg: #000;
+      --code: #e8e8e8;
+      --pill-bg: rgba(255,255,255,.1);
+      --pill-fg: #fff;
+      color-scheme: dark;
+    }
+    html[data-theme="light"], .theme-light {
+      --bg: #f7f7f7;
+      --panel: #fff;
+      --panel-solid: #fff;
+      --panel2: #f2f2f2;
+      --line: rgba(0,0,0,.12);
+      --text: #111;
+      --muted: #666;
+      --accent: #111;
+      --accent-ink: #fff;
+      --warn: #333;
+      --shadow: 0 16px 40px rgba(0,0,0,.08);
+      --header: rgba(255,255,255,.92);
+      --tabs: #f0f0f0;
+      --hover: rgba(0,0,0,.04);
+      --grid: rgba(0,0,0,.05);
+      --log-bg: #f4f4f4;
+      --code: #111;
+      --pill-bg: rgba(0,0,0,.08);
+      --pill-fg: #111;
+      color-scheme: light;
+    }
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+    .wrap, .toast { position: relative; z-index: 1; }
+    #shell {
+      position: relative;
+      min-height: 100vh;
+      background: var(--bg);
+      z-index: 1;
+    }
+    #shell::before {
+      content: "";
+      position: absolute; inset: 0; pointer-events: none; z-index: 0;
+      background-image:
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse at top, #000 40%, transparent 82%);
+    }
+    header {
+      position: relative; z-index: 1;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 14px 24px;
+      border-bottom: 1px solid var(--line);
+      background: var(--header);
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .mark {
+      width: 38px; height: 38px; border-radius: 12px; flex-shrink: 0;
+      display: grid; place-items: center;
+      background: var(--accent); color: var(--accent-ink);
+      font-weight: 800; font-size: 13px; letter-spacing: -.04em;
+    }
+    header h1 { margin: 0; font-size: 18px; letter-spacing: .02em; }
+    header .meta { color: var(--muted); font-size: 12px; margin-top: 2px; }
+    header .right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .who {
+      display: flex; align-items: center; gap: 8px;
+      padding: 6px 10px; border-radius: 999px;
+      background: var(--hover); border: 1px solid var(--line);
+    }
+    .theme-slot { width: 92px; height: 32px; flex-shrink: 0; }
+    .theme-btn {
+      position: fixed; z-index: 10000; margin: 0;
+      border: 1px solid rgba(255,255,255,.12);
+      background: #1c1c1c; color: #f4f4f4;
+      border-radius: 999px; padding: 5px 10px 7px 6px;
+      cursor: pointer; font-size: 13px; font-weight: 600;
+      display: inline-flex; align-items: center; gap: 8px;
+      top: 16px; right: 24px;
+    }
+    .theme-btn[data-mode="light"] {
+      background: #f2f2f2; color: #111; border-color: rgba(0,0,0,.12);
+    }
+    .theme-track {
+      width: 38px; height: 20px; border-radius: 999px; position: relative; flex-shrink: 0;
+      background: #3a3a3a; border: 1px solid rgba(255,255,255,.12);
+    }
+    .theme-btn[data-mode="light"] .theme-track {
+      background: #c8c8c8; border-color: rgba(0,0,0,.12);
+    }
+    .theme-knob {
+      position: absolute; top: 1px; left: 2px;
+      width: 16px; height: 16px; border-radius: 50%;
+      background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.35);
+      transition: transform .28s cubic-bezier(.22, 1, .36, 1);
+    }
+    .theme-btn[data-mode="light"] .theme-knob { transform: translateX(16px); background: #111; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 24px 20px 48px; }
+    body.is-auth .wrap { max-width: 460px; padding-top: 56px; }
+    .tabs {
+      display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px;
+      padding: 6px; border-radius: 14px;
+      background: var(--tabs); border: 1px solid var(--line);
+    }
+    .tabs button {
+      background: transparent; color: var(--muted); border: 0;
+      padding: 9px 14px; border-radius: 10px; cursor: pointer; font-size: 13px;
+    }
+    .tabs button:hover { color: var(--text); background: var(--hover); }
+    .tabs button.active { background: var(--accent); color: var(--accent-ink); }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+    }
+    h2 { margin: 0 0 6px; font-size: 17px; }
+    .lead { color: var(--muted); font-size: 13px; margin: 0 0 16px; line-height: 1.6; }
+    label { display: block; color: var(--muted); font-size: 12px; margin: 12px 0 6px; }
+    input, textarea, select {
+      width: 100%; padding: 10px 12px; border-radius: 10px;
+      border: 1px solid var(--line); background: var(--panel2); color: var(--text);
+      outline: none;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--text);
+      box-shadow: 0 0 0 3px var(--hover);
+    }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 800px) {
+      .row { grid-template-columns: 1fr; }
+      header { padding: 12px 14px; }
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    button.act {
+      background: var(--accent); color: var(--accent-ink); border: 0; padding: 9px 14px;
+      border-radius: 10px; cursor: pointer; font-weight: 600;
+    }
+    button.act:hover { filter: brightness(1.05); }
+    button.act:disabled { opacity: .45; cursor: not-allowed; }
+    button.danger { background: transparent; color: var(--text); border: 1px solid var(--text); }
+    button.ok { background: var(--panel2); color: var(--text); border: 1px solid var(--line); }
+    button.ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 16px; }
+    th, td { text-align: left; padding: 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { color: var(--muted); font-size: 12px; font-weight: 600; letter-spacing: .04em; }
+    tbody tr:hover { background: var(--hover); }
+    td:last-child { width: 88px; }
+    .empty { color: var(--muted); text-align: center; padding: 28px 8px !important; }
+    .id { color: var(--muted); font-family: Consolas, "Cascadia Mono", monospace; font-size: 12px; }
+    .pill {
+      display: inline-flex; align-items: center; padding: 3px 8px; border-radius: 999px;
+      font-size: 12px; font-weight: 700;
+      background: var(--pill-bg); color: var(--pill-fg);
+    }
+    .toast {
+      position: fixed; right: 16px; bottom: 16px;
+      background: var(--panel-solid); color: var(--text); padding: 12px 16px; border-radius: 12px;
+      border: 1px solid var(--line); box-shadow: var(--shadow);
+      display: none; z-index: 5; max-width: 420px;
+    }
+    pre.logs {
+      white-space: pre-wrap; background: var(--log-bg); padding: 14px; border-radius: 12px;
+      max-height: 420px; overflow: auto; font-size: 12px; border: 1px solid var(--line);
+      color: var(--text); margin: 12px 0 0;
+    }
+    code { font-family: Consolas, "Cascadia Mono", monospace; color: var(--code); }
+    .hidden { display: none !important; }
+    section.card[id^="tab-"] { display: none; }
+    section.card[id^="tab-"].tab-visible { display: block; animation: tabIn .28s ease both; }
+    @keyframes tabIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="is-auth">
+  <div id="shell">
+    <header>
+      <div class="brand">
+        <div class="mark">CDR</div>
+        <div>
+          <h1>Create Delight Remake 更新服务器</h1>
+          <div class="meta">网页远程管理 · 不含导出 · <span id="verMeta">加载中</span></div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="who hidden" id="who">
+          <span class="pill" id="tokenPill">令牌</span>
+          <span class="pill hidden" id="busyPill">处理中</span>
+        </div>
+        <span class="theme-slot"></span>
+        <button type="button" class="act ghost hidden" id="logoutBtn">退出</button>
+      </div>
+    </header>
+    <div class="wrap">
+      <div id="login" class="card">
+        <h2>登录管理面板</h2>
+        <p class="lead">使用 <code>config.toml</code> 里的 <code>access_token</code>，或本机窗口「连接地址」里设置的访问令牌。未设置令牌时只能在本机打开。</p>
+        <label>访问令牌</label>
+        <input id="token" type="password" autocomplete="current-password" placeholder="未设置则可留空（仅本机）">
+        <div class="actions">
+          <button type="button" class="act" id="loginBtn">进入面板</button>
+        </div>
+      </div>
+      <div id="app" class="hidden">
+        <div class="tabs">
+          <button class="active" data-tab="servers">已连接的服务端</button>
+          <button data-tab="privates">私货</button>
+          <button data-tab="connection">连接地址</button>
+          <button data-tab="version">GitHub 版本</button>
+          <button data-tab="logs">运行日志</button>
+        </div>
+        <section id="tab-servers" class="card tab-visible">
+          <h2>已连接的服务端</h2>
+          <p class="lead">只记录向这台更新服务器同步过的游戏服务端。客户端连接不会写入列表。</p>
+          <table>
+            <thead>
+              <tr><th>主机</th><th>实例目录</th><th>远程地址</th><th>首次连接</th><th>最近连接</th><th>同步次数</th></tr>
+            </thead>
+            <tbody id="serverTable"></tbody>
+          </table>
+        </section>
+        <section id="tab-privates" class="card">
+          <h2>私货</h2>
+          <p class="lead">上传后会写入私货目录并重新构建仓库。已连接的服务端下次同步才会拿到变更。在游戏服务端里直接删文件会被重新同步回来。</p>
+          <div class="row">
+            <div>
+              <label>选择文件</label>
+              <input id="privateFile" type="file">
+              <label>游戏内路径（可留空，按文件名自动放到 mods/ 等）</label>
+              <input id="privateDest" placeholder="例如 mods/ItemBan-2.2.0-1.20.1-Forge.jar">
+            </div>
+            <div>
+              <label>端侧</label>
+              <select id="privateSide">
+                <option value="auto">自动判定</option>
+                <option value="client">仅客户端</option>
+                <option value="server">仅服务端</option>
+                <option value="both">两端</option>
+              </select>
+              <div class="actions">
+                <button type="button" class="act" id="addPrivateBtn">添加私货</button>
+                <button type="button" class="act ok" id="rebuildBtn">重新构建仓库</button>
+              </div>
+            </div>
+          </div>
+          <table>
+            <thead><tr><th>游戏内路径</th><th>端侧</th><th>本地文件</th><th></th></tr></thead>
+            <tbody id="privateTable"></tbody>
+          </table>
+        </section>
+        <section id="tab-connection" class="card">
+          <h2>连接地址</h2>
+          <p class="lead">客户端和服务端用这里的对外地址连更新服务器。网页不提供整合包导出，装好的实例请自行改 <code>cdr-updater.toml</code>。</p>
+          <div class="row">
+            <div>
+              <label>监听地址</label>
+              <input id="listen" placeholder="0.0.0.0">
+              <label>端口</label>
+              <input id="port" inputmode="numeric" placeholder="8765">
+            </div>
+            <div>
+              <label>对外地址 public_url</label>
+              <input id="publicUrl" placeholder="http://公网IP:8765">
+              <label>访问令牌</label>
+              <input id="accessToken" type="text" autocomplete="off" placeholder="留空则不校验">
+            </div>
+          </div>
+          <div class="actions">
+            <button type="button" class="act" id="saveConnBtn">保存连接地址</button>
+            <button type="button" class="act ok" id="genTokenBtn">随机生成令牌</button>
+            <button type="button" class="act ghost" id="detectWanBtn">检测地址</button>
+            <button type="button" class="act ghost" id="openWanBtn">开放外网访问</button>
+          </div>
+        </section>
+        <section id="tab-version" class="card">
+          <h2>GitHub 版本</h2>
+          <p class="lead">切换官方 Release 标签后会重新从 GitHub 拉取客户端/服务端包。完整服务端包可能超过 800MB。</p>
+          <label>Release 标签</label>
+          <select id="versionTag">
+            <option value="">请先刷新 GitHub 版本</option>
+          </select>
+          <label>手动填写（可选，未出现在列表里时用）</label>
+          <input id="versionCustom" placeholder="例如 v0.5.0.13-test" autocomplete="off">
+          <div class="actions">
+            <button type="button" class="act ghost" id="refreshTagsBtn">刷新 GitHub 版本</button>
+            <button type="button" class="act" id="applyVersionBtn">应用并重新拉取</button>
+          </div>
+        </section>
+        <section id="tab-logs" class="card">
+          <h2>运行日志</h2>
+          <p class="lead">本机窗口和网页操作会写到同一份最近日志。</p>
+          <div class="actions">
+            <button type="button" class="act ghost" id="refreshLogsBtn">刷新</button>
+          </div>
+          <pre class="logs" id="logBox">暂无日志</pre>
+        </section>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="theme-btn" id="themeBtn" data-mode="dark">
+    <span class="theme-track"><span class="theme-knob"></span></span>
+    <span id="themeLabel">暗色</span>
+  </button>
+  <div class="toast" id="toast"></div>
+  <script>
+    const TOKEN_KEY = "cdr-admin-token";
+    let state = null;
+    let timer = null;
+    let tagsLoaded = false;
+
+    function $(id) { return document.getElementById(id); }
+
+    function toast(msg) {
+      const el = $("toast");
+      el.textContent = msg;
+      el.style.display = "block";
+      clearTimeout(el._t);
+      el._t = setTimeout(() => { el.style.display = "none"; }, 3200);
+    }
+
+    function headers(extra) {
+      const h = Object.assign({ "X-CDR-Admin": "1" }, extra || {});
+      const token = sessionStorage.getItem(TOKEN_KEY);
+      if (token) h["X-CDR-Token"] = token;
+      return h;
+    }
+
+    async function api(path, opt) {
+      const res = await fetch("/admin/api/" + path, Object.assign({
+        credentials: "include",
+        headers: headers(opt && opt.json ? { "Content-Type": "application/json" } : null)
+      }, opt || {}));
+      const data = await res.json().catch(() => ({}));
+      if (res.status === 401) {
+        showLogin();
+        throw new Error(data.detail || "请先登录");
+      }
+      if (!res.ok) throw new Error(data.detail || ("请求失败 " + res.status));
+      return data;
+    }
+
+    function showLogin() {
+      document.body.classList.add("is-auth");
+      $("login").classList.remove("hidden");
+      $("app").classList.add("hidden");
+      $("who").classList.add("hidden");
+      $("logoutBtn").classList.add("hidden");
+      sessionStorage.removeItem(TOKEN_KEY);
+      if (timer) { clearInterval(timer); timer = null; }
+    }
+
+    function showApp() {
+      document.body.classList.remove("is-auth");
+      $("login").classList.add("hidden");
+      $("app").classList.remove("hidden");
+      $("who").classList.remove("hidden");
+      $("logoutBtn").classList.remove("hidden");
+    }
+
+    function emptyRow(cols, text) {
+      return `<tr><td class="empty" colspan="${cols}">${text}</td></tr>`;
+    }
+
+    function esc(s) {
+      return String(s == null ? "" : s)
+        .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+
+    function fmtTime(iso) {
+      if (!iso) return "";
+      const d = new Date(iso);
+      if (isNaN(d.getTime())) return esc(iso);
+      const p = n => String(n).padStart(2, "0");
+      return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}:${p(d.getSeconds())}`;
+    }
+
+    function render(data) {
+      state = data;
+      $("verMeta").textContent = (data.official_version || "未知版本") + " · " + (data.github_repo || "");
+      $("tokenPill").textContent = data.token_enabled ? "令牌已启用" : "令牌未设置";
+      $("busyPill").classList.toggle("hidden", !data.busy);
+      document.querySelectorAll("button.act").forEach(btn => {
+        if (btn.id === "loginBtn" || btn.id === "logoutBtn" || btn.id === "themeBtn") return;
+        if (btn.closest("#login")) return;
+        btn.disabled = !!data.busy;
+      });
+      const servers = data.servers || [];
+      $("serverTable").innerHTML = servers.length ? servers.map(row =>
+        `<tr>
+          <td>${esc(row.hostname)}</td>
+          <td class="id">${esc(row.instance_path)}</td>
+          <td class="id">${esc(row.remote)}</td>
+          <td>${fmtTime(row.first_seen)}</td>
+          <td>${fmtTime(row.last_seen)}</td>
+          <td>${esc(row.sync_count)}</td>
+        </tr>`
+      ).join("") : emptyRow(6, "还没有服务端连接过");
+      const privates = data.privates || [];
+      $("privateTable").innerHTML = privates.length ? privates.map(row =>
+        `<tr>
+          <td>${esc(row.path)}</td>
+          <td>${esc(row.side_label || row.side)}</td>
+          <td class="id">${esc(row.source)}</td>
+          <td><button type="button" class="act danger" data-del="${esc(row.path)}">删除</button></td>
+        </tr>`
+      ).join("") : emptyRow(4, "还没有私货");
+      if (document.activeElement !== $("listen")) $("listen").value = data.listen || "";
+      if (document.activeElement !== $("port")) $("port").value = data.port || "";
+      if (document.activeElement !== $("publicUrl")) $("publicUrl").value = data.public_url || "";
+      if (document.activeElement !== $("accessToken")) $("accessToken").value = data.access_token || "";
+      if (!tagsLoaded && data.official_version) {
+        fillTagSelect([$("versionTag").value, data.official_version].filter(Boolean), data.official_version);
+      }
+      const logs = data.logs || [];
+      $("logBox").textContent = logs.length ? logs.join("\n") : "暂无日志";
+    }
+
+    async function refresh() {
+      const data = await api("state");
+      render(data);
+    }
+
+    async function boot() {
+      try {
+        await refresh();
+        showApp();
+        timer = setInterval(() => refresh().catch(() => {}), 2500);
+      } catch (err) {
+        showLogin();
+      }
+    }
+
+    function fillTagSelect(tags, current) {
+      const sel = $("versionTag");
+      const prev = sel.value;
+      const seen = new Set();
+      const list = [];
+      for (const tag of tags || []) {
+        const value = String(tag || "").trim();
+        if (!value || seen.has(value)) continue;
+        seen.add(value);
+        list.push(value);
+      }
+      if (current && !seen.has(current)) list.unshift(current);
+      sel.innerHTML = "";
+      if (!list.length) {
+        const empty = document.createElement("option");
+        empty.value = "";
+        empty.textContent = "请先刷新 GitHub 版本";
+        sel.appendChild(empty);
+        return;
+      }
+      for (const tag of list) {
+        const opt = document.createElement("option");
+        opt.value = tag;
+        opt.textContent = tag;
+        sel.appendChild(opt);
+      }
+      const want = prev || current || "";
+      if (want && list.includes(want)) sel.value = want;
+    }
+
+    async function loadTags(showToast) {
+      const data = await api("tags");
+      fillTagSelect(data.tags || [], data.current || "");
+      tagsLoaded = true;
+      if (showToast) toast("已加载 " + (data.tags || []).length + " 个 GitHub 版本");
+    }
+
+    document.querySelector(".tabs").addEventListener("click", ev => {
+      const btn = ev.target.closest("[data-tab]");
+      if (!btn) return;
+      document.querySelectorAll(".tabs button").forEach(b => b.classList.toggle("active", b === btn));
+      document.querySelectorAll("section.card[id^='tab-']").forEach(sec => {
+        sec.classList.toggle("tab-visible", sec.id === "tab-" + btn.dataset.tab);
+      });
+      if (btn.dataset.tab === "version" && !tagsLoaded) {
+        loadTags(true).catch(err => toast(err.message));
+      }
+    });
+
+    $("loginBtn").onclick = async () => {
+      try {
+        const token = $("token").value.trim();
+        sessionStorage.setItem(TOKEN_KEY, token);
+        await api("login", { method: "POST", json: true, body: JSON.stringify({ token }) });
+        showApp();
+        await refresh();
+        timer = setInterval(() => refresh().catch(() => {}), 2500);
+      } catch (err) {
+        sessionStorage.removeItem(TOKEN_KEY);
+        toast(err.message);
+      }
+    };
+    $("token").addEventListener("keydown", ev => { if (ev.key === "Enter") $("loginBtn").click(); });
+
+    $("logoutBtn").onclick = async () => {
+      try { await api("logout", { method: "POST" }); } catch (_) {}
+      showLogin();
+    };
+
+    $("addPrivateBtn").onclick = async () => {
+      const file = $("privateFile").files[0];
+      if (!file) { toast("请先选择私货文件"); return; }
+      const fd = new FormData();
+      fd.append("file", file);
+      fd.append("dest", $("privateDest").value.trim());
+      fd.append("side", $("privateSide").value);
+      try {
+        toast("正在添加私货并构建仓库…");
+        const res = await fetch("/admin/api/private", {
+          method: "POST", credentials: "include", headers: headers(), body: fd
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data.detail || "添加失败");
+        $("privateFile").value = "";
+        $("privateDest").value = "";
+        toast("私货已添加");
+        await refresh();
+      } catch (err) { toast(err.message); }
+    };
+
+    $("privateTable").onclick = async ev => {
+      const btn = ev.target.closest("[data-del]");
+      if (!btn) return;
+      const path = btn.getAttribute("data-del");
+      if (!confirm("删除私货 " + path + "？\n仓库会重新构建，已连接的服务端下次同步才会拿到变更。")) return;
+      try {
+        await api("private/remove", { method: "POST", json: true, body: JSON.stringify({ path }) });
+        toast("已删除 " + path);
+        await refresh();
+      } catch (err) { toast(err.message); }
+    };
+
+    $("rebuildBtn").onclick = async () => {
+      try {
+        toast("正在重新构建仓库…");
+        await api("rebuild", { method: "POST" });
+        toast("仓库已重新构建");
+        await refresh();
+      } catch (err) { toast(err.message); }
+    };
+
+    $("saveConnBtn").onclick = async () => {
+      try {
+        const body = {
+          listen: $("listen").value.trim(),
+          port: Number($("port").value.trim()),
+          public_url: $("publicUrl").value.trim(),
+          access_token: $("accessToken").value.trim()
+        };
+        const data = await api("connection", { method: "POST", json: true, body: JSON.stringify(body) });
+        if (data.access_token) sessionStorage.setItem(TOKEN_KEY, data.access_token);
+        else sessionStorage.setItem(TOKEN_KEY, "");
+        toast("连接地址已保存");
+        await refresh();
+      } catch (err) { toast(err.message); }
+    };
+
+    $("genTokenBtn").onclick = () => {
+      const bytes = new Uint8Array(24);
+      crypto.getRandomValues(bytes);
+      $("accessToken").value = Array.from(bytes, b => b.toString(16).padStart(2, "0")).join("");
+      toast("已生成令牌，记得点保存");
+    };
+
+    $("detectWanBtn").onclick = async () => {
+      try {
+        const data = await api("detect-wan", { method: "POST" });
+        if (data.suggested_url) $("publicUrl").value = data.suggested_url;
+        toast(data.suggested_url ? ("建议地址 " + data.suggested_url) : "没有检测到可用外网地址");
+        await refresh();
+      } catch (err) { toast(err.message); }
+    };
+
+    $("openWanBtn").onclick = async () => {
+      if (!confirm("监听将改为 0.0.0.0，并按检测到的公网/VPN 地址写入对外地址。路由器仍可能需要做端口映射。")) return;
+      try {
+        const data = await api("open-wan", { method: "POST" });
+        if (data.public_url) $("publicUrl").value = data.public_url;
+        toast("已尝试开放外网访问");
+        await refresh();
+      } catch (err) { toast(err.message); }
+    };
+
+    $("refreshTagsBtn").onclick = () => loadTags(true).catch(err => toast(err.message));
+
+    $("applyVersionBtn").onclick = async () => {
+      const tag = $("versionCustom").value.trim() || $("versionTag").value.trim();
+      if (!tag) { toast("请选择或填写 GitHub Release 标签"); return; }
+      if (!confirm("将官方版本改为 " + tag + " 并重新从 GitHub 拉取？\n完整服务端包可能超过 800MB。")) return;
+      try {
+        toast("正在切换版本，可能需要较长时间…");
+        await api("version", { method: "POST", json: true, body: JSON.stringify({ tag }) });
+        toast("已切换到 " + tag);
+        await refresh();
+      } catch (err) { toast(err.message); }
+    };
+
+    $("refreshLogsBtn").onclick = () => refresh().catch(err => toast(err.message));
+
+    const themeBtn = $("themeBtn");
+    function applyTheme(mode) {
+      document.documentElement.setAttribute("data-theme", mode);
+      themeBtn.dataset.mode = mode;
+      $("themeLabel").textContent = mode === "light" ? "亮色" : "暗色";
+      localStorage.setItem("cdr-admin-theme", mode);
+    }
+    applyTheme(localStorage.getItem("cdr-admin-theme") === "light" ? "light" : "dark");
+    themeBtn.onclick = () => applyTheme(themeBtn.dataset.mode === "dark" ? "light" : "dark");
+
+    boot();
+  </script>
+</body>
+</html>

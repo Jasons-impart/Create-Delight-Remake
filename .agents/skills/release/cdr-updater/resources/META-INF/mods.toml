@@ -1,0 +1,10 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+
+[[mods]]
+modId="cdr_early_updater"
+version="1.0.0"
+displayName="CDR Early Updater"
+displayTest="IGNORE_SERVER_VERSION"
+description="Create Delight Remake 前置更新器。客户端在进入游戏前按文件哈希检查更新，不依赖 PCL2。"

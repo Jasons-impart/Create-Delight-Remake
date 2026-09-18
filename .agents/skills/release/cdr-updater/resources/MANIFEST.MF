@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Main-Class: com.jsi.cdr.updater.Main
+Premain-Class: com.jsi.cdr.updater.ServerAgent
+Agent-Class: com.jsi.cdr.updater.ServerAgent
+Can-Redefine-Classes: false
+Can-Retransform-Classes: false
+Automatic-Module-Name: com.jsi.cdr.updater
+

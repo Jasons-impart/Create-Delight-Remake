@@ -1,0 +1,11 @@
+/out/
+/dist/
+/data/
+/runtime/
+/jpackage-in/
+.pytest_cache/
+__pycache__/
+*.log
+cdr-updater-state.json
+config.toml
+/private/files/
