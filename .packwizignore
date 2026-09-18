@@ -47,6 +47,8 @@
 !/ldlib/**
 !/minemenu
 !/minemenu/**
+!/mcpatch
+!/mcpatch/**
 !/schematics
 !/schematics/**
 !/tacz

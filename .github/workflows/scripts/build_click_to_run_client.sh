@@ -15,7 +15,7 @@ copy_if_exists() {
 
 for path in \
   hmclversion.cfg options.txt icon.png LICENSE \
-  config defaultconfigs kubejs mods resourcepacks shaderpacks schematics tacz PCL
+  config defaultconfigs kubejs mods resourcepacks shaderpacks schematics tacz PCL mcpatch
 do
   copy_if_exists "$path"
 done
