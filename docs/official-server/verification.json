@@ -1,0 +1,173 @@
+{
+  "version": "v0.5.0.13-test",
+  "mods": [
+    {
+      "archive_filename": "BeeFix-1.20-1.0.7.jar",
+      "retained_filename": "BeeFix-1.20-1.0.7.jar",
+      "metadata": "mods/BeeFix.pw.toml",
+      "side": "both",
+      "archive_cf": {
+        "file-id": 4618962,
+        "project-id": 547989
+      },
+      "retained_cf": {
+        "project-id": 547989,
+        "file-id": 4618962
+      },
+      "resolution": "identical_existing_payload"
+    },
+    {
+      "archive_filename": "Create-Better-Storages-Forge-1.20.1-1.0b.Release.jar",
+      "retained_filename": "Create-Better-Storages-Forge-1.20.1-1.0b.Release.jar",
+      "metadata": "mods/Create-Better-Storages.pw.toml",
+      "side": "both",
+      "archive_cf": {
+        "file-id": 6217044,
+        "project-id": 1200903
+      },
+      "retained_cf": {
+        "project-id": 1200903,
+        "file-id": 6217044
+      },
+      "resolution": "identical_existing_payload"
+    },
+    {
+      "archive_filename": "Harium-mc1.20.1-1.0.0.jar",
+      "retained_filename": "Harium-mc1.20.1-2.0-pactched-v5.jar",
+      "metadata": "mods/Harium.pw.toml",
+      "side": "both",
+      "archive_cf": {
+        "file-id": 7765081,
+        "project-id": 1413106
+      },
+      "retained_cf": {
+        "project-id": 1413106,
+        "file-id": 8069904
+      },
+      "resolution": "retain_manifest_version_user_confirmed"
+    },
+    {
+      "archive_filename": "create_structures_arise-176.49.48 Forge 1.20.1.jar",
+      "retained_filename": "create_structures_arise-176.49.48 Forge 1.20.1.jar",
+      "metadata": "mods/create_structures_arise.pw.toml",
+      "side": "both",
+      "archive_cf": {
+        "file-id": 8138503,
+        "project-id": 1010066
+      },
+      "retained_cf": {
+        "project-id": 1010066,
+        "file-id": 8138503
+      },
+      "resolution": "identical_existing_payload"
+    },
+    {
+      "archive_filename": "dsbg-1.0-1.20.1.jar",
+      "retained_filename": "dsbg-1.0-1.20.1.jar",
+      "metadata": "mods/dsbg.pw.toml",
+      "side": "both",
+      "archive_cf": {
+        "file-id": 4907288,
+        "project-id": 942945
+      },
+      "retained_cf": {
+        "project-id": 942945,
+        "file-id": 4907288
+      },
+      "resolution": "identical_existing_payload"
+    },
+    {
+      "archive_filename": "enhanced_boss_bars-1.20.1-1.0.0.jar",
+      "retained_filename": "enhanced_boss_bars-1.20.1-1.0.0.jar",
+      "metadata": "mods/enhanced_boss_bars.pw.toml",
+      "side": "client",
+      "archive_cf": {
+        "file-id": 5529869,
+        "project-id": 1063296
+      },
+      "retained_cf": {
+        "project-id": 1063296,
+        "file-id": 5529869
+      },
+      "resolution": "identical_existing_payload"
+    },
+    {
+      "archive_filename": "ftbquestlocalizer-1.20.1-forge-3.2.3.jar",
+      "retained_filename": "ftbquestlocalizer-1.20.1-forge-3.2.3.jar",
+      "metadata": "mods/ftbquestlocalizer.pw.toml",
+      "side": "both",
+      "archive_cf": {
+        "file-id": 7529230,
+        "project-id": 1071737
+      },
+      "retained_cf": {
+        "project-id": 1071737,
+        "file-id": 7529230
+      },
+      "resolution": "identical_existing_payload"
+    },
+    {
+      "archive_filename": "kinetic_pixel-1.0.3-forge-1.20.1.jar",
+      "retained_filename": "kinetic_pixel-1.0.3-forge-1.20.1.jar",
+      "metadata": "mods/kinetic_pixel.pw.toml",
+      "side": "both",
+      "archive_cf": {
+        "file-id": 5907332,
+        "project-id": 1089858
+      },
+      "retained_cf": {
+        "project-id": 1089858,
+        "file-id": 5907332
+      },
+      "resolution": "identical_existing_payload"
+    },
+    {
+      "archive_filename": "nebulusbetterportals-1.0.8-forge-1.20.1.jar",
+      "retained_filename": "nebulusbetterportals-1.0.8-forge-1.20.1.jar",
+      "metadata": "mods/nebulusbetterportals.pw.toml",
+      "side": "both",
+      "archive_cf": {
+        "file-id": 6435957,
+        "project-id": 1006966
+      },
+      "retained_cf": {
+        "project-id": 1006966,
+        "file-id": 6435957
+      },
+      "resolution": "identical_existing_payload"
+    },
+    {
+      "archive_filename": "skinlayers3d-forge-1.11.1-mc1.20.1.jar",
+      "retained_filename": "skinlayers3d-forge-1.11.2-mc1.20.1.jar",
+      "metadata": "mods/skinlayers3d.pw.toml",
+      "side": "both",
+      "archive_cf": {
+        "file-id": 7857555,
+        "project-id": 521480
+      },
+      "retained_cf": {
+        "project-id": 521480,
+        "file-id": 8274803
+      },
+      "resolution": "retain_manifest_version_user_confirmed"
+    },
+    {
+      "archive_filename": "totw_modded-forge-1.20.1-1.0.6.jar",
+      "retained_filename": "totw_modded-forge-1.20.1-1.0.6.jar",
+      "metadata": "mods/totw_modded.pw.toml",
+      "side": "both",
+      "archive_cf": {
+        "file-id": 6353903,
+        "project-id": 859365
+      },
+      "retained_cf": {
+        "project-id": 859365,
+        "file-id": 6353903
+      },
+      "resolution": "identical_existing_payload"
+    }
+  ],
+  "mcpatch_payload_exact": true,
+  "launcher_agent_args": true,
+  "packwiz_mcpatch_inclusion": true
+}

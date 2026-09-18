@@ -1,0 +1,176 @@
+{
+  "archives": [
+    {
+      "filename": "Client-Create-Delight-Remake-v0.5.0.6-test.zip",
+      "sha256": "276642c804b0f775cfa5d5b8e39b40f0881f59babb93ac3dd575183a498a636f",
+      "files": 7478
+    },
+    {
+      "filename": "cdr-server-20260801.zip",
+      "sha256": "23751ce42b59d755e6d88355f8408a6be301b0052048a417ed33840cfd022fa5",
+      "files": 7491
+    }
+  ],
+  "unchanged": 7475,
+  "changes": [
+    {
+      "archive_path": "manifest.json",
+      "status": "modified",
+      "official": {
+        "size": 35240,
+        "sha256": "215c552d0759814c0a39ebfebeb7804f93b00fffc17955035e6f33005c6d5e4d",
+        "sha1": "60fa5c2fe671bacd5e8260a1e08f1f88d6450094"
+      },
+      "server": {
+        "size": 35238,
+        "sha256": "d830d629645fe6b1c9940d35f11a19681a4d15f042c5004572e311926017c31e",
+        "sha1": "c109b4db2d7ad180ed282bc90b5a879dbf05fd8e"
+      }
+    },
+    {
+      "archive_path": "overrides/PCL/Setup.ini",
+      "status": "modified",
+      "official": {
+        "size": 441,
+        "sha256": "1205e1fffd4c2bee99d541d2b84b9104dc2447c57c7c2416eed42dd7c29aed08",
+        "sha1": "bdcf732ec0d83c9af78e3cee33a79f3cc436230c"
+      },
+      "server": {
+        "size": 479,
+        "sha256": "a46ff35e6622b8403525f6ac837b0c7fce07db149c0d11ab3cd3cd2ca6a58468",
+        "sha1": "ed88016620508a778c079c6739691179cbaf6c82"
+      }
+    },
+    {
+      "archive_path": "overrides/hmclversion.cfg",
+      "status": "modified",
+      "official": {
+        "size": 73,
+        "sha256": "72cde96f5592dbccb417fd2b9d0c01a947fc58f19e45564e9a737e400751cb6e",
+        "sha1": "30c1aeab0da872e590a7238c3558d1e5360dafcb"
+      },
+      "server": {
+        "size": 111,
+        "sha256": "b2998c7b8386f97516aa1f0cf0cf4f34e5a9838a36f540a90d698e7a4e509cea",
+        "sha1": "58613b5bda5e865b7c6b3a076518900dec2d5ecc"
+      }
+    },
+    {
+      "archive_path": "overrides/mcpatch/Mcpatch-0.0.11.jar",
+      "status": "added",
+      "server": {
+        "size": 7794398,
+        "sha256": "1178d81c7b3c60166cb8ffd4401d52890ae1931dec1931d2dea1c058c35a3820",
+        "sha1": "b2ea96ff190ba426388bf6e4cbdb8f78c6a0fd76"
+      }
+    },
+    {
+      "archive_path": "overrides/mcpatch/mcpatch.yml",
+      "status": "added",
+      "server": {
+        "size": 5273,
+        "sha256": "c8e6820559647682fbd06844d80191b4453de36729feef718c955b5e1ce2438b",
+        "sha1": "9e93b75f2d98b2ba7fa68d6bf52215967676c1ef"
+      }
+    },
+    {
+      "archive_path": "overrides/mods/BeeFix-1.20-1.0.7.jar",
+      "status": "added",
+      "server": {
+        "size": 29389,
+        "sha256": "5fa50cfbd0ee3d0472ba8e9162d40e9556ea930a6bbcf93de2ab751365b58566",
+        "sha1": "0eba7daf8b460a78375f9d3944e744ce5060d394"
+      }
+    },
+    {
+      "archive_path": "overrides/mods/Create-Better-Storages-Forge-1.20.1-1.0b.Release.jar",
+      "status": "added",
+      "server": {
+        "size": 955541,
+        "sha256": "0ae969c7b0041989d2cdb1b0ae03e51d92b7b93cccff30077591bc5bd36bc5b2",
+        "sha1": "7d33798500f3a78e47ee2c2f75dde7c0816c6db8"
+      }
+    },
+    {
+      "archive_path": "overrides/mods/Harium-mc1.20.1-1.0.0.jar",
+      "status": "added",
+      "server": {
+        "size": 745258,
+        "sha256": "f138eafd8c7814160c1c966363bc443d7d5b34a19a03828f8a67089a8b642e4b",
+        "sha1": "e598f06cb3d9dc5ef749454e1392ca22015d04e7"
+      }
+    },
+    {
+      "archive_path": "overrides/mods/create_structures_arise-176.49.48 Forge 1.20.1.jar",
+      "status": "added",
+      "server": {
+        "size": 1823172,
+        "sha256": "e1284d1a57a033abf73f1b00e675c2eb8097f6bfcb9fb268fc852fba49625f34",
+        "sha1": "99d07d4eccc65b634ca3f11f87b7d47017f4d4df"
+      }
+    },
+    {
+      "archive_path": "overrides/mods/dsbg-1.0-1.20.1.jar",
+      "status": "added",
+      "server": {
+        "size": 273328,
+        "sha256": "4a3ae0f780f68cfe776e82c99252238f277164e5a29772153f9bfe0af2bc3a2e",
+        "sha1": "349a91654be8df6af5a19b02c7bb47758c09bac4"
+      }
+    },
+    {
+      "archive_path": "overrides/mods/enhanced_boss_bars-1.20.1-1.0.0.jar",
+      "status": "added",
+      "server": {
+        "size": 254629,
+        "sha256": "c86c6e909ec4731efaae4b97bb06d7d5a559794861c5805491ee0da0497c4877",
+        "sha1": "8a709553a1eb98792b5db787dc57d132bc5b3971"
+      }
+    },
+    {
+      "archive_path": "overrides/mods/ftbquestlocalizer-1.20.1-forge-3.2.3.jar",
+      "status": "added",
+      "server": {
+        "size": 36983,
+        "sha256": "ec78d601aaf3d4fd35978b70b4a894c4a396ef5c2d11d35b4bcab05597915026",
+        "sha1": "e1063dfa696ef42410e5b52b1340745a7dd141d5"
+      }
+    },
+    {
+      "archive_path": "overrides/mods/kinetic_pixel-1.0.3-forge-1.20.1.jar",
+      "status": "added",
+      "server": {
+        "size": 1432626,
+        "sha256": "fab2d28565e514dd8c05a7c1b3dd01f5e39dc8e6d4b3f73a3aa84e49ee0c3fc2",
+        "sha1": "52fdf39be2892c8dc185e72b3a48d73b8b22cdb8"
+      }
+    },
+    {
+      "archive_path": "overrides/mods/nebulusbetterportals-1.0.8-forge-1.20.1.jar",
+      "status": "added",
+      "server": {
+        "size": 155679,
+        "sha256": "2ac9e051d600fa797f63bc732d464e0fad0a722d3ae411ab40d76d1e55fc7e7a",
+        "sha1": "7fcf81ead20464d5da1fef8459ea77bffc1a01d3"
+      }
+    },
+    {
+      "archive_path": "overrides/mods/skinlayers3d-forge-1.11.1-mc1.20.1.jar",
+      "status": "added",
+      "server": {
+        "size": 2163998,
+        "sha256": "acedcb6d850a669f7f8e17919a36e87ff6d95461da32098cec730bc293e79d10",
+        "sha1": "b64ccb25ebe4cb7b09d1dd4561dbc519d5f02382"
+      }
+    },
+    {
+      "archive_path": "overrides/mods/totw_modded-forge-1.20.1-1.0.6.jar",
+      "status": "added",
+      "server": {
+        "size": 285837,
+        "sha256": "d8473b6c3652fd2a3b1dedbed9e128920595157c1914da781cf34136efbba2ff",
+        "sha1": "72d92991bd2ee954653b70d4080091e1ca379002"
+      }
+    }
+  ]
+}
