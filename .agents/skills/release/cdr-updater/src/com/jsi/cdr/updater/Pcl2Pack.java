@@ -3,6 +3,7 @@ package com.jsi.cdr.updater;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,14 +16,15 @@ final class Pcl2Pack {
             Pack.buildRepos(config, System.out::println);
         }
         Files.createDirectories(output.getParent());
+        List<Object> curseFiles = curseForgeMods(config);
         try (ZipOutputStream zip = new ZipOutputStream(Files.newOutputStream(output))) {
-            putText(zip, "manifest.json", Json.stringify(curseForge(config)));
+            putText(zip, "manifest.json", Json.stringify(curseForge(config, curseFiles)));
             putText(zip, "mcbbs.packmeta", Json.stringify(mcbbs(config)));
             Path clientRoot = config.clientDir;
             if (Files.exists(clientRoot)) {
                 for (Path file : Fs.files(clientRoot)) {
                     String rel = Fs.posix(clientRoot, file);
-                    if ("mods/cdr-updater.jar".equals(rel) || "cdr-updater.toml".equals(rel)) {
+                    if (!includeOverride(rel)) {
                         continue;
                     }
                     putFile(zip, "overrides/" + rel, file);
@@ -31,10 +33,20 @@ final class Pcl2Pack {
             putFile(zip, "overrides/mods/cdr-updater.jar", updaterJar);
             putText(zip, "overrides/cdr-updater.toml", Pack.instanceToml(config, "client"));
         }
+        System.out.println("PCL2 整合包不内置模组 jar，CurseForge 清单 " + curseFiles.size()
+                + " 个；配置等写入 overrides。没有 CurseForge 编号的模组由更新器在第一次开游戏时补齐。");
         return output;
     }
 
-    private static Map<String, Object> curseForge(Pack.Config config) {
+    static boolean includeOverride(String rel) {
+        String path = Fs.posix(rel);
+        if ("mods/cdr-updater.jar".equals(path) || "cdr-updater.toml".equals(path)) {
+            return false;
+        }
+        return !PackPaths.isModPayload(path);
+    }
+
+    private static Map<String, Object> curseForge(Pack.Config config, List<Object> files) {
         Map<String, Object> minecraft = Json.map();
         minecraft.put("version", config.minecraft);
         Map<String, Object> loader = Json.map();
@@ -49,8 +61,66 @@ final class Pcl2Pack {
         manifest.put("version", config.officialVersion);
         manifest.put("author", "JSI");
         manifest.put("overrides", "overrides");
-        manifest.put("files", Json.list());
+        manifest.put("files", files);
         return manifest;
+    }
+
+    static List<Object> curseForgeMods(Pack.Config config) throws Exception {
+        Map<String, Map<String, Object>> unique = new LinkedHashMap<>();
+        for (Path root : metadataRoots(config)) {
+            collectCurseForgeMods(unique, Packwiz.readAssets(root));
+            collectCurseForgeMods(unique, Packwiz.readCurseForgeManifest(root));
+        }
+        return new ArrayList<>(unique.values());
+    }
+
+    private static void collectCurseForgeMods(Map<String, Map<String, Object>> unique, List<Packwiz.Asset> assets) {
+        if (assets == null) {
+            return;
+        }
+        for (Packwiz.Asset asset : assets) {
+            if (asset == null || asset.projectId <= 0 || asset.fileId <= 0) {
+                continue;
+            }
+            if (!Pack.allowed(asset.side, "client")) {
+                continue;
+            }
+            if (!PackPaths.isModPayload(asset.path)) {
+                continue;
+            }
+            String key = asset.projectId + ":" + asset.fileId;
+            if (unique.containsKey(key)) {
+                continue;
+            }
+            Map<String, Object> row = Json.map();
+            row.put("projectID", asset.projectId);
+            row.put("fileID", asset.fileId);
+            row.put("required", true);
+            unique.put(key, row);
+        }
+    }
+
+    private static List<Path> metadataRoots(Pack.Config config) throws Exception {
+        List<Path> roots = new ArrayList<>();
+        addDir(roots, config.officialDir);
+        Path cache = config.dataDir.resolve("cache").resolve(config.officialVersion);
+        addExtract(roots, cache.resolve("client-raw"));
+        addExtract(roots, cache.resolve("server-raw"));
+        addDir(roots, config.unifiedDir);
+        addDir(roots, config.clientDir);
+        return roots;
+    }
+
+    private static void addDir(List<Path> roots, Path dir) {
+        if (dir != null && Files.isDirectory(dir)) {
+            roots.add(dir);
+        }
+    }
+
+    private static void addExtract(List<Path> roots, Path extract) throws Exception {
+        if (extract != null && Files.isDirectory(extract)) {
+            roots.add(Fs.packRoot(extract));
+        }
     }
 
     private static Map<String, Object> mcbbs(Pack.Config config) {

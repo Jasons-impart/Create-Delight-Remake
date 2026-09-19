@@ -199,10 +199,11 @@ final class Tests {
         Path official = tmp.resolve("official");
         Path privateDir = tmp.resolve("private");
         Files.createDirectories(privateDir);
-        write(official.resolve("mods/create-1.0.jar"), "create-1.0");
-        write(official.resolve("mods/jei-1.0.jar"), "jei-client");
-        write(official.resolve("mods/jei-1.0.jar.pw.toml"), "filename = \"jei-1.0.jar\"\nside = \"client\"\n");
-        write(official.resolve("config/server.toml"), "motd=default\n");
+            write(official.resolve("mods/create-1.0.jar"), "create-1.0");
+            write(official.resolve("mods/jei-1.0.jar"), "jei-client");
+            write(official.resolve("mods/jei-1.0.jar.pw.toml"), "filename = \"jei-1.0.jar\"\nside = \"client\"\n");
+            write(official.resolve("config/server.toml"), "motd=default\n");
+            write(official.resolve("config/keep.toml"), "keep=1\n");
         write(official.resolve("kubejs/server_scripts/main.js"), "console.log('v1')\n");
         write(official.resolve("resourcepacks/pack.zip"), "rp");
         write(official.resolve("shaderpacks/pack.zip"), "sp");
@@ -331,6 +332,8 @@ final class Tests {
             Sync.Check afterClient = Sync.inspect(clientInstance, "client", new Sync.Client(url, "client", clientInstance));
             check("客户端再次检查无需更新", !afterClient.needed);
 
+            write(official.resolve("mods/create-1.0.jar.pw.toml"),
+                    "filename = \"create-1.0.jar\"\nside = \"both\"\n\n[update.curseforge]\nproject-id = 328085\nfile-id = 6123456\n");
             Path dummyJar = tmp.resolve("cdr-updater.jar");
             Files.write(dummyJar, new byte[]{1, 2, 3});
             Path zip = Pcl2Pack.export(config, dummyJar, tmp.resolve("client-pcl2.zip"));
@@ -339,12 +342,21 @@ final class Tests {
                 check("PCL2 zip 含 mcbbs.packmeta", zipped.getEntry("mcbbs.packmeta") != null);
                 check("PCL2 zip 含更新器 jar", zipped.getEntry("overrides/mods/cdr-updater.jar") != null);
                 check("PCL2 zip 含实例配置", zipped.getEntry("overrides/cdr-updater.toml") != null);
-                check("PCL2 zip 文件在 overrides 下", zipped.getEntry("overrides/mods/create-1.0.jar") != null);
+                check("PCL2 zip 含配置文件", zipped.getEntry("overrides/config/keep.toml") != null);
+                check("PCL2 zip 不含模组 jar", zipped.getEntry("overrides/mods/create-1.0.jar") == null);
+                check("PCL2 zip 不含 JEI jar", zipped.getEntry("overrides/mods/jei-1.0.jar") == null);
+                check("PCL2 zip 不含私货模组", zipped.getEntry("overrides/mods/maid.jar") == null);
+                check("PCL2 zip 仍含资源包", zipped.getEntry("overrides/resourcepacks/pack.zip") != null);
                 check("PCL2 zip 不套额外根目录", zipped.getEntry("Create-Delight-Remake/manifest.json") == null);
                 check("zip 不写入 PCL 配置", zipped.getEntry("PCL/Setup.ini") == null);
                 Map<String, Object> manifest = Json.object(Json.parse(new String(zipped.getInputStream(zipped.getEntry("manifest.json")).readAllBytes(), java.nio.charset.StandardCharsets.UTF_8)));
                 check("CurseForge 清单类型正确", "minecraftModpack".equals(Json.str(manifest, "manifestType")));
                 check("CurseForge 覆盖目录为 overrides", "overrides".equals(Json.str(manifest, "overrides")));
+                List<Object> curseFiles = Json.array(manifest.get("files"));
+                check("CurseForge 清单写入带编号的模组", curseFiles.size() == 1);
+                Map<String, Object> createFile = Json.object(curseFiles.get(0));
+                check("CurseForge projectID 正确", Json.lng(createFile, "projectID") == 328085);
+                check("CurseForge fileID 正确", Json.lng(createFile, "fileID") == 6123456);
                 Map<String, Object> packmeta = Json.object(Json.parse(new String(zipped.getInputStream(zipped.getEntry("mcbbs.packmeta")).readAllBytes(), java.nio.charset.StandardCharsets.UTF_8)));
                 check("MCBBS 清单含 game 与 forge", Json.array(packmeta.get("addons")).size() == 2);
             }
