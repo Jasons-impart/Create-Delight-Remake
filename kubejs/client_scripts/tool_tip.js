@@ -104,11 +104,10 @@ ItemEvents.tooltip(e => {
     )
 })
 let tooltips = [
-    ["createfluidstuffs:multi_fluid_tank", "§6来自海上机械师的神奇储罐", "§6From the Sea of Mechanical Engineers"],
     ['alexscaves:cave_map', "§l§4该物品已无实际用处，且不可按照显示的配方合成", "§l§4This item is no longer useful and cannot be crafted using the displayed recipe"],
-    ['alexsmobs:shattered_dimensional_carver', "§4边界存在崩溃问题， 查看§4边境碎块§rJEI了解如何召唤瞻远者", "zzz"],
-    ['createdelight:debug_reload_tool', "蹲下右键重载server脚本， 站立右键重载client脚本", "EMM"],
-    ['createdelight:debug_info_tool', "蹲下右键获取当前结构名称， 站立右键获取指向方块实体信息（未完成）", "EMM"],
+    ['alexsmobs:shattered_dimensional_carver', "§4边界存在崩溃问题， 查看§4边境碎块§rJEI了解如何召唤瞻远者", "§4There is a crash issue with the BORDER. Please Check the §4Fragment of Border's§r JEI entry to learn how to summon the Farseer."],
+    ['createdelight:debug_reload_tool', "蹲下右键重载server脚本， 站立右键重载client脚本", "Sneak and right-click to reload server scripts; stand and right-click to reload client scripts."],
+    ['createdelight:debug_info_tool', "蹲下右键获取当前结构名称， 站立右键获取指向方块实体信息", "Sneak and right-click to get the current structure name; stand and right-click to get information about the targeted BlockEntity."],
     ['cosmopolitan:birch_cookie', "§9清除挖掘疲劳", "§9Clear Mining Fatigue"],
 ]
 tooltips.forEach(([key, zh_cn, en_us]) => {

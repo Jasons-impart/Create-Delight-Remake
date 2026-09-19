@@ -783,12 +783,6 @@ window.CDR_MODS =
     "side": "both"
   },
   {
-    "id": "createfluidstuffs",
-    "name": "Create:Fluid Stuffs",
-    "filename": "createfluidstuffs-1.2.1-all.jar",
-    "side": "both"
-  },
-  {
     "id": "CreateLazyTick",
     "name": "Create:LazyTick",
     "filename": "CreateLazyTick-2.4.9-6.0.x-forge-1.20.1.jar",
