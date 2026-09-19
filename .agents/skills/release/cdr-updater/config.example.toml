@@ -9,8 +9,10 @@ data_dir = "./data"
 # 外网请填公网 IP 或域名，例如 http://203.0.113.10:8765
 public_url = "http://127.0.0.1:8765"
 # 可选。填写后客户端/服务端同步必须带同一令牌。重新导出 PCL2/服务端后生效。
-# 网页远程管理：http://地址:端口/admin ，登录密码就是这个令牌。网页不含导出功能。
 # access_token = ""
+# 在本机窗口「网页管理」里设置。不能和 access_token 相同，也不会写入导出的整合包。
+# 未设置时管理网页只能本机打开。登录地址：http://地址:端口/admin
+# admin_token = ""
 
 [official]
 github_repo = "Jasons-impart/Create-Delight-Remake"

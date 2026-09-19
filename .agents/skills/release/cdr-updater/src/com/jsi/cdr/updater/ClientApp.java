@@ -42,13 +42,17 @@ final class ClientApp {
             log.setEditable(false);
             log.setLineWrap(true);
             log.setWrapStyleWord(true);
-            JProgressBar progress = new JProgressBar();
+            JProgressBar progress = new JProgressBar(0, 1000);
+            progress.setStringPainted(true);
             progress.setIndeterminate(true);
+            progress.setString("正在同步…");
             JLabel status = new JLabel("正在同步文件，完成后会继续进入游戏。");
             frame.add(status, BorderLayout.NORTH);
             frame.add(new JScrollPane(log), BorderLayout.CENTER);
             frame.add(progress, BorderLayout.SOUTH);
             frame.setVisible(true);
+            javax.swing.Timer tick = new javax.swing.Timer(200, event -> paintProgress(progress, true));
+            tick.start();
             new Thread(() -> {
                 try {
                     Sync.Result sync = Sync.apply(instanceDir, "client",
@@ -62,12 +66,15 @@ final class ClientApp {
                         log.append("\n" + sync.changelogText + "\n");
                         status.setText(sync.changed ? "更新完成。" : "已是最新。");
                         progress.setIndeterminate(false);
+                        progress.setValue(1000);
+                        progress.setString(sync.changed ? "更新完成" : "已是最新");
                     });
                     Thread.sleep(800);
                 } catch (Exception exception) {
                     error.set(exception);
                     SwingUtilities.invokeLater(() -> JOptionPane.showMessageDialog(frame, exception.getMessage(), "更新失败", JOptionPane.ERROR_MESSAGE));
                 } finally {
+                    tick.stop();
                     SwingUtilities.invokeLater(frame::dispose);
                     done.countDown();
                 }
@@ -99,8 +106,10 @@ final class ClientApp {
             log.setEditable(false);
             log.setLineWrap(true);
             log.setWrapStyleWord(true);
-            JProgressBar progress = new JProgressBar();
+            JProgressBar progress = new JProgressBar(0, 1000);
+            progress.setStringPainted(true);
             progress.setIndeterminate(false);
+            progress.setString("");
             JButton update = new JButton("检查并更新");
             JButton startGame = new JButton("启动游戏");
             startGame.setEnabled(false);
@@ -149,6 +158,8 @@ final class ClientApp {
             frame.add(new JScrollPane(log), BorderLayout.CENTER);
             JLabel hint = new JLabel("  玩家自行添加的模组、资源包和其他文件不会被删除。");
             frame.add(hint, BorderLayout.SOUTH);
+            javax.swing.Timer tick = new javax.swing.Timer(200, event -> paintProgress(progress, busy.get()));
+            tick.start();
 
             browse.addActionListener(event -> {
                 JFileChooser chooser = new JFileChooser();
@@ -171,7 +182,9 @@ final class ClientApp {
                     return;
                 }
                 update.setEnabled(false);
+                progress.setVisible(true);
                 progress.setIndeterminate(true);
+                progress.setString("正在比对文件…");
                 log.setText("开始与更新服务器比对文件哈希…\n玩家自行添加的模组、资源包和其他文件将被保留。\n");
                 new Thread(() -> {
                     try {
@@ -199,7 +212,7 @@ final class ClientApp {
                         SwingUtilities.invokeLater(() -> {
                             busy.set(false);
                             update.setEnabled(true);
-                            progress.setIndeterminate(false);
+                            paintProgress(progress, false);
                         });
                     }
                 }, "cdr-client-update").start();
@@ -223,5 +236,31 @@ final class ClientApp {
 
             frame.setVisible(true);
         });
+    }
+
+    private static void paintProgress(JProgressBar bar, boolean busy) {
+        Progress.Snapshot snap = Progress.get();
+        if (snap.active) {
+            bar.setVisible(true);
+            String text = snap.text();
+            if (snap.total > 0) {
+                bar.setIndeterminate(false);
+                bar.setMaximum(1000);
+                bar.setValue((int) Math.min(1000, snap.done * 1000 / snap.total));
+            } else {
+                bar.setIndeterminate(true);
+            }
+            bar.setString(text.isBlank() ? "下载中…" : text);
+            return;
+        }
+        if (busy) {
+            bar.setVisible(true);
+            bar.setIndeterminate(true);
+            bar.setString("处理中…");
+            return;
+        }
+        bar.setIndeterminate(false);
+        bar.setValue(0);
+        bar.setString("");
     }
 }

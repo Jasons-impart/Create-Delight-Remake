@@ -21,7 +21,7 @@ import java.util.Map;
 final class AdminWeb {
     private static final String COOKIE = "cdr_admin";
     private static final String LOCAL_SESSION = "local";
-    private static final int JSON_MAX = 2 * 1024 * 1024;
+    private static final int JSON_MAX = 32 * 1024 * 1024;
     private static final int UPLOAD_MAX = 80 * 1024 * 1024;
     private static volatile byte[] pageBytes;
 
@@ -117,12 +117,13 @@ final class AdminWeb {
                     }
                     String publicUrl = Json.str(body, "public_url");
                     String token = body.containsKey("access_token") ? Json.str(body, "access_token") : runtime.config().accessToken;
-                    runtime.setConnection(listen, port, publicUrl, token, runtime.logger());
+                    runtime.setConnection(listen, port, publicUrl, token, runtime.config().adminToken, runtime.logger());
                     Map<String, Object> result = Json.map("ok", true);
                     result.put("listen", runtime.config().listen);
                     result.put("port", runtime.config().port);
                     result.put("public_url", runtime.config().updateServerUrl);
                     result.put("access_token", runtime.config().accessToken);
+                    result.put("token_enabled", !runtime.config().adminToken.isBlank());
                     sendJson(exchange, 200, result);
                 }
                 case "detect-wan" -> {
@@ -209,24 +210,27 @@ final class AdminWeb {
         Pack.Config config = runtime.config();
         Map<String, Object> body = readJson(exchange);
         String provided = Json.str(body, "token");
-        String expected = config.accessToken == null ? "" : config.accessToken;
+        String expected = config.adminToken == null ? "" : config.adminToken;
         if (expected.isBlank()) {
             if (!loopback(exchange)) {
-                throw new IllegalArgumentException("尚未设置访问令牌，远程不能打开管理网页。请先在本机窗口填写令牌。");
+                throw new IllegalArgumentException("尚未设置网页管理令牌，远程不能打开管理网页。请先在本机窗口「网页管理」里设置。");
             }
             setCookie(exchange, LOCAL_SESSION);
             sendJson(exchange, 200, Json.map("ok", true, "local", true));
             return;
         }
+        if (!config.accessToken.isBlank() && tokenEquals(config.accessToken, provided) && !tokenEquals(expected, provided)) {
+            throw new IllegalArgumentException("这是客户端同步令牌。网页请用本机窗口「网页管理」里的令牌。");
+        }
         if (!tokenEquals(expected, provided)) {
-            throw new IllegalArgumentException("访问令牌不正确");
+            throw new IllegalArgumentException("网页管理令牌不正确");
         }
         setCookie(exchange, expected);
         sendJson(exchange, 200, Json.map("ok", true, "local", false));
     }
 
     static boolean authed(Pack.Config config, HttpExchange exchange) {
-        String expected = config.accessToken == null ? "" : config.accessToken;
+        String expected = config.adminToken == null ? "" : config.adminToken;
         String provided = providedToken(exchange);
         if (expected.isBlank()) {
             return loopback(exchange) && (provided.isBlank() || LOCAL_SESSION.equals(provided));
@@ -235,13 +239,9 @@ final class AdminWeb {
     }
 
     private static String providedToken(HttpExchange exchange) {
-        String header = header(exchange, "X-CDR-Token");
+        String header = header(exchange, "X-CDR-Admin-Token");
         if (!header.isBlank()) {
             return header;
-        }
-        String auth = header(exchange, "Authorization");
-        if (auth.regionMatches(true, 0, "Bearer ", 0, 7)) {
-            return auth.substring(7).trim();
         }
         return cookie(exchange, COOKIE);
     }
@@ -284,8 +284,10 @@ final class AdminWeb {
         result.put("port", port);
         result.put("public_url", config.updateServerUrl);
         result.put("access_token", config.accessToken);
-        result.put("token_enabled", !config.accessToken.isBlank());
+        result.put("token_enabled", !config.adminToken.isBlank());
+        result.put("sync_token_enabled", !config.accessToken.isBlank());
         result.put("busy", runtime.busy());
+        result.put("progress", Progress.get().toMap());
         String adminHost = "0.0.0.0".equals(config.listen) || "::".equals(config.listen) ? "127.0.0.1" : config.listen;
         result.put("admin_url", "http://" + adminHost + ":" + port + "/admin");
         try {

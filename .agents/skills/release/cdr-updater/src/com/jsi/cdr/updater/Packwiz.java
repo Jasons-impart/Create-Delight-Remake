@@ -84,7 +84,7 @@ final class Packwiz {
         Path downloadCache = cache.resolve("packwiz");
         Files.createDirectories(downloadCache);
         prefetch(http, assets.values(), log);
-        int pulled = 0;
+        List<Asset> pending = new ArrayList<>();
         for (Asset raw : new ArrayList<>(assets.values())) {
             Asset asset = resolve(http, raw, log);
             if (!Pack.allowed(asset.side, "client")) {
@@ -94,18 +94,32 @@ final class Packwiz {
             if (Files.isRegularFile(destination)) {
                 continue;
             }
-            Path source = locateExisting(asset, clientRoot, serverRoot);
-            if (source == null) {
-                source = download(http, asset, downloadCache, log);
-            }
-            if (source == null) {
-                log.accept("跳过无法下载的客户端资源 " + asset.path);
-                continue;
-            }
-            Fs.copyFile(source, destination);
-            pulled++;
+            pending.add(asset);
         }
-        log.accept("客户端补拉资源包/光影等 " + pulled + " 个");
+        int pulled = 0;
+        try {
+            if (pending.isEmpty()) {
+                log.accept("客户端资源已齐，无需补拉");
+            } else {
+                Progress.begin("拉取客户端资源", pending.size());
+                for (Asset asset : pending) {
+                    Path destination = clientDir.resolve(asset.path);
+                    Path source = locateExisting(asset, clientRoot, serverRoot);
+                    if (source == null) {
+                        source = download(http, asset, downloadCache, log);
+                    }
+                    if (source == null) {
+                        log.accept("跳过无法下载的客户端资源 " + asset.path);
+                        continue;
+                    }
+                    Fs.copyFile(source, destination);
+                    pulled++;
+                }
+                log.accept("客户端补拉资源包/光影等 " + pulled + " 个");
+            }
+        } finally {
+            Progress.end();
+        }
     }
 
     static void pullGithubResourcePacks(Pack.Config config, Path clientDir, Path cache, Consumer<String> log) throws Exception {
@@ -113,27 +127,43 @@ final class Packwiz {
         Path downloadCache = cache.resolve("packwiz");
         Files.createDirectories(downloadCache);
         int pulled = 0;
-        for (String dir : new String[]{"resourcepacks", "shaderpacks"}) {
-            List<Asset> assets = readGithubAssets(http, config, dir);
-            prefetch(http, assets, log);
-            for (Asset asset : assets) {
-                if (!Pack.allowed(asset.side, "client")) {
+        try {
+            for (String dir : new String[]{"resourcepacks", "shaderpacks"}) {
+                List<Asset> assets = readGithubAssets(http, config, dir);
+                prefetch(http, assets, log);
+                List<Asset> pending = new ArrayList<>();
+                for (Asset asset : assets) {
+                    if (!Pack.allowed(asset.side, "client")) {
+                        continue;
+                    }
+                    if (Files.isRegularFile(clientDir.resolve(asset.path))) {
+                        continue;
+                    }
+                    pending.add(asset);
+                }
+                if (pending.isEmpty()) {
                     continue;
                 }
-                Path destination = clientDir.resolve(asset.path);
-                if (Files.isRegularFile(destination)) {
-                    continue;
+                Progress.begin("拉取 GitHub 资源", pending.size());
+                for (Asset asset : pending) {
+                    Path destination = clientDir.resolve(asset.path);
+                    Path source = download(http, asset, downloadCache, log);
+                    if (source == null) {
+                        log.accept("跳过无法下载的 " + asset.path);
+                        continue;
+                    }
+                    Fs.copyFile(source, destination);
+                    pulled++;
                 }
-                Path source = download(http, asset, downloadCache, log);
-                if (source == null) {
-                    log.accept("跳过无法下载的 " + asset.path);
-                    continue;
-                }
-                Fs.copyFile(source, destination);
-                pulled++;
             }
+            if (pulled == 0) {
+                log.accept("GitHub 资源包/光影已齐，无需补拉");
+            } else {
+                log.accept("从 GitHub 元数据为客户端拉取资源包/光影 " + pulled + " 个");
+            }
+        } finally {
+            Progress.end();
         }
-        log.accept("从 GitHub 元数据为客户端拉取资源包/光影 " + pulled + " 个");
     }
 
     static List<Asset> readGithubAssets(HttpClient http, Pack.Config config, String dir) throws Exception {
@@ -296,14 +326,8 @@ final class Packwiz {
         }
         for (String url : urls) {
             try {
-                log.accept("下载客户端资源 " + asset.filename);
-                HttpRequest request = downloadRequest(url).timeout(Duration.ofMinutes(10)).build();
-                HttpResponse<Path> response = http.send(request, HttpResponse.BodyHandlers.ofFile(destination));
-                if (response.statusCode() >= 400) {
-                    log.accept("下载失败 HTTP " + response.statusCode() + " " + url);
-                    Files.deleteIfExists(destination);
-                    continue;
-                }
+                HttpRequest.Builder request = downloadRequest(url).timeout(Duration.ofMinutes(10));
+                Net.toFile(http, request, destination, 0, asset.filename, log);
                 if (!usable(destination, asset)) {
                     log.accept("下载内容无效 " + asset.filename);
                     Files.deleteIfExists(destination);

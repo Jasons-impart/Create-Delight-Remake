@@ -69,6 +69,7 @@ final class ServerRuntime {
                 Pack.purgeIncomplete(config, log);
                 Pack.buildRepos(config, log);
             } finally {
+                Progress.end();
                 busy = false;
             }
         }
@@ -92,6 +93,7 @@ final class ServerRuntime {
                 Pack.purgeIncomplete(config, log);
                 Pack.buildRepos(config, log);
             } finally {
+                Progress.end();
                 busy = false;
             }
         }
@@ -105,6 +107,7 @@ final class ServerRuntime {
                 log.accept("已添加私货 " + config.privateDir.relativize(stored));
                 Pack.buildRepos(config, log);
             } finally {
+                Progress.end();
                 busy = false;
             }
         }
@@ -118,6 +121,7 @@ final class ServerRuntime {
                 log.accept("已删除私货 " + dest);
                 Pack.buildRepos(config, log);
             } finally {
+                Progress.end();
                 busy = false;
             }
         }
@@ -132,6 +136,7 @@ final class ServerRuntime {
                 log.accept("已导出 PCL2 客户端整合包: " + zip.toAbsolutePath());
                 return zip;
             } finally {
+                Progress.end();
                 busy = false;
             }
         }
@@ -143,6 +148,7 @@ final class ServerRuntime {
             try {
                 return ServerPack.export(config, Env.updaterJar(), output, log);
             } finally {
+                Progress.end();
                 busy = false;
             }
         }
@@ -157,20 +163,61 @@ final class ServerRuntime {
                     + port + " 映射到这台电脑。也可以用 Tailscale / 内网穿透。");
         }
         Wan.openFirewall(port, log);
-        setConnection("0.0.0.0", port, report.suggestedUrl, config.accessToken, log);
+        setConnection("0.0.0.0", port, report.suggestedUrl, config.accessToken, config.adminToken, log);
         log.accept("外网客户端/服务端请使用 " + report.suggestedUrl);
         log.accept("若这台电脑在路由器后面，还要在路由器做端口映射：外网 TCP " + port + " → 这台电脑的局域网 IP:" + port);
     }
 
     void setConnection(String listen, int port, String publicUrl, Consumer<String> log) throws Exception {
-        setConnection(listen, port, publicUrl, config.accessToken, log);
+        setConnection(listen, port, publicUrl, config.accessToken, config.adminToken, log);
     }
 
     void setConnection(String listen, int port, String publicUrl, String accessToken, Consumer<String> log) throws Exception {
+        setConnection(listen, port, publicUrl, accessToken, config.adminToken, log);
+    }
+
+    void setAdminToken(String adminToken, Consumer<String> log) throws Exception {
+        String webToken = Pack.Config.normalizeAccessToken(adminToken);
+        Pack.Config.requireDistinctTokens(config.accessToken, webToken);
+        synchronized (lock) {
+            busy = true;
+            Pack.Config previous = config;
+            try {
+                if (configPath != null && Files.isRegularFile(configPath)) {
+                    Toml.setTableString(configPath, "server", "admin_token", webToken);
+                    config = Pack.Config.load(configPath);
+                } else {
+                    config = previous.withAdminToken(webToken);
+                }
+                if (config.adminToken.isBlank()) {
+                    log.accept("未设置网页管理令牌，管理网页只能在本机打开。");
+                } else {
+                    log.accept("已启用网页管理令牌。用本机窗口「网页管理」里的令牌登录 /admin，它不会写入客户端/服务端包。");
+                }
+            } catch (Exception error) {
+                config = previous;
+                if (configPath != null && Files.isRegularFile(configPath)) {
+                    try {
+                        Toml.setTableString(configPath, "server", "admin_token", previous.adminToken);
+                    } catch (Exception ignored) {
+                        // keep original error
+                    }
+                }
+                throw error;
+            } finally {
+                busy = false;
+            }
+        }
+    }
+
+    void setConnection(String listen, int port, String publicUrl, String accessToken, String adminToken,
+                       Consumer<String> log) throws Exception {
         String bind = Pack.Config.normalizeListen(listen);
         int bindPort = Pack.Config.normalizePort(port);
         String url = Pack.Config.normalizePublicUrl(publicUrl, bind, bindPort);
         String token = Pack.Config.normalizeAccessToken(accessToken);
+        String webToken = Pack.Config.normalizeAccessToken(adminToken);
+        Pack.Config.requireDistinctTokens(token, webToken);
         synchronized (lock) {
             busy = true;
             Pack.Config previous = config;
@@ -186,9 +233,10 @@ final class ServerRuntime {
                     Toml.setTableInt(configPath, "server", "port", bindPort);
                     Toml.setTableString(configPath, "server", "public_url", url);
                     Toml.setTableString(configPath, "server", "access_token", token);
+                    Toml.setTableString(configPath, "server", "admin_token", webToken);
                     config = Pack.Config.load(configPath);
                 } else {
-                    config = previous.withConnection(bind, bindPort, url).withAccessToken(token);
+                    config = previous.withConnection(bind, bindPort, url).withAccessToken(token).withAdminToken(webToken);
                 }
                 if (rebind && previousHttp != null) {
                     previousHttp.stop(0);
@@ -198,11 +246,16 @@ final class ServerRuntime {
                 }
                 log.accept("客户端/服务端连接地址: " + config.updateServerUrl);
                 if (config.accessToken.isBlank()) {
-                    log.accept("未设置访问令牌，能访问端口的人都可以拉整合包。");
+                    log.accept("未设置同步令牌，能访问端口的人都可以拉整合包。");
                 } else {
-                    log.accept("已启用访问令牌。重新导出后，新客户端/服务端会带上令牌。");
+                    log.accept("已启用同步令牌。重新导出后，新客户端/服务端会带上令牌。");
                 }
-                log.accept("已写入 config.toml。重新导出 PCL2/服务端后，新包会带上这个地址和令牌。");
+                if (config.adminToken.isBlank()) {
+                    log.accept("未设置网页管理令牌，管理网页只能在本机打开。");
+                } else {
+                    log.accept("已启用网页管理令牌。它不会写入客户端/服务端包。");
+                }
+                log.accept("已写入 config.toml。重新导出 PCL2/服务端后，新包会带上对外地址和同步令牌。");
                 log.accept("已经装好的实例请改 cdr-updater.toml 里的 update_server / update_token，服务端还要改 user_jvm_args.txt 里 javaagent 后面的地址。");
             } catch (Exception error) {
                 config = previous;
@@ -212,6 +265,7 @@ final class ServerRuntime {
                         Toml.setTableInt(configPath, "server", "port", previous.port);
                         Toml.setTableString(configPath, "server", "public_url", previous.updateServerUrl);
                         Toml.setTableString(configPath, "server", "access_token", previous.accessToken);
+                        Toml.setTableString(configPath, "server", "admin_token", previous.adminToken);
                     } catch (Exception ignored) {
                         // keep original error
                     }

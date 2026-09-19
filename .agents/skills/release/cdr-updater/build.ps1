@@ -27,7 +27,10 @@ $Dist = Join-Path $Root "dist"
 if (Test-Path $Out) { Remove-Item $Out -Recurse -Force }
 New-Item -ItemType Directory -Path $Out, $Dist -Force | Out-Null
 
-$sources = Get-ChildItem -Path (Join-Path $Root "src") -Filter *.java -Recurse | ForEach-Object { $_.FullName }
+$sources = Get-ChildItem -Path (Join-Path $Root "src") -Filter *.java -Recurse | Where-Object { $_.Name -ne "Boot.java" } | ForEach-Object { $_.FullName }
+$boot = Join-Path $Root "src\com\jsi\cdr\updater\Boot.java"
+& $Javac -encoding UTF-8 --release 8 -d $Out $boot
+if ($LASTEXITCODE -ne 0) { throw "javac Boot.java failed" }
 & $Javac -encoding UTF-8 --release 17 -d $Out @sources
 if ($LASTEXITCODE -ne 0) { throw "javac failed" }
 

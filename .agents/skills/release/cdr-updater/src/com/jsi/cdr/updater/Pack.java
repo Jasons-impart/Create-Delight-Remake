@@ -46,24 +46,33 @@ final class Pack {
         final String packName;
         final String updateServerUrl;
         final String accessToken;
+        final String adminToken;
 
         Config(String listen, int port, Path dataDir, String githubRepo, String officialVersion, String githubApi,
                Path officialDir, Path privateDir, Path unifiedDir, Path clientDir, Path serverDir, Path objectsDir) {
             this(listen, port, dataDir, githubRepo, officialVersion, githubApi, officialDir, privateDir, unifiedDir,
                     clientDir, serverDir, objectsDir, "1.20.1", "47.4.16", "Create-Delight-Remake",
-                    "http://" + listen + ":" + port, "");
+                    "http://" + listen + ":" + port, "", "");
         }
 
         Config(String listen, int port, Path dataDir, String githubRepo, String officialVersion, String githubApi,
                Path officialDir, Path privateDir, Path unifiedDir, Path clientDir, Path serverDir, Path objectsDir,
                String minecraft, String forge, String packName, String updateServerUrl) {
             this(listen, port, dataDir, githubRepo, officialVersion, githubApi, officialDir, privateDir, unifiedDir,
-                    clientDir, serverDir, objectsDir, minecraft, forge, packName, updateServerUrl, "");
+                    clientDir, serverDir, objectsDir, minecraft, forge, packName, updateServerUrl, "", "");
         }
 
         Config(String listen, int port, Path dataDir, String githubRepo, String officialVersion, String githubApi,
                Path officialDir, Path privateDir, Path unifiedDir, Path clientDir, Path serverDir, Path objectsDir,
                String minecraft, String forge, String packName, String updateServerUrl, String accessToken) {
+            this(listen, port, dataDir, githubRepo, officialVersion, githubApi, officialDir, privateDir, unifiedDir,
+                    clientDir, serverDir, objectsDir, minecraft, forge, packName, updateServerUrl, accessToken, "");
+        }
+
+        Config(String listen, int port, Path dataDir, String githubRepo, String officialVersion, String githubApi,
+               Path officialDir, Path privateDir, Path unifiedDir, Path clientDir, Path serverDir, Path objectsDir,
+               String minecraft, String forge, String packName, String updateServerUrl, String accessToken,
+               String adminToken) {
             this.listen = listen;
             this.port = port;
             this.dataDir = dataDir;
@@ -81,23 +90,31 @@ final class Pack {
             this.packName = packName;
             this.updateServerUrl = updateServerUrl;
             this.accessToken = accessToken == null ? "" : accessToken.trim();
+            this.adminToken = adminToken == null ? "" : adminToken.trim();
         }
 
         Config withOfficialVersion(String version) {
             return new Config(listen, port, dataDir, githubRepo, version, githubApi, officialDir, privateDir,
                     unifiedDir, clientDir, serverDir, objectsDir, minecraft, forge, packName, updateServerUrl,
-                    accessToken);
+                    accessToken, adminToken);
         }
 
         Config withConnection(String listen, int port, String publicUrl) {
             return new Config(listen, port, dataDir, githubRepo, officialVersion, githubApi, officialDir, privateDir,
-                    unifiedDir, clientDir, serverDir, objectsDir, minecraft, forge, packName, publicUrl, accessToken);
+                    unifiedDir, clientDir, serverDir, objectsDir, minecraft, forge, packName, publicUrl, accessToken,
+                    adminToken);
         }
 
         Config withAccessToken(String token) {
             return new Config(listen, port, dataDir, githubRepo, officialVersion, githubApi, officialDir, privateDir,
                     unifiedDir, clientDir, serverDir, objectsDir, minecraft, forge, packName, updateServerUrl,
-                    normalizeAccessToken(token));
+                    normalizeAccessToken(token), adminToken);
+        }
+
+        Config withAdminToken(String token) {
+            return new Config(listen, port, dataDir, githubRepo, officialVersion, githubApi, officialDir, privateDir,
+                    unifiedDir, clientDir, serverDir, objectsDir, minecraft, forge, packName, updateServerUrl,
+                    accessToken, normalizeAccessToken(token));
         }
 
         Path manifestsDir() {
@@ -132,7 +149,8 @@ final class Pack {
                     Toml.str(official, "forge", "47.4.16"),
                     Toml.str(official, "pack_name", Toml.str(official, "name", "Create-Delight-Remake")),
                     Toml.str(server, "public_url", "http://" + listen + ":" + port),
-                    Toml.str(server, "access_token", "")
+                    Toml.str(server, "access_token", ""),
+                    Toml.str(server, "admin_token", "")
             );
             Packwiz.configure(Toml.str(official, "curseforge_api_key", Toml.str(official, "cf_api_key", "")));
             return config;
@@ -165,6 +183,14 @@ final class Pack {
                 throw new IllegalArgumentException("访问令牌最多 128 个字符");
             }
             return value;
+        }
+
+        static void requireDistinctTokens(String accessToken, String adminToken) {
+            String access = accessToken == null ? "" : accessToken.trim();
+            String admin = adminToken == null ? "" : adminToken.trim();
+            if (!access.isBlank() && access.equals(admin)) {
+                throw new IllegalArgumentException("网页管理令牌不能和客户端同步令牌相同");
+            }
         }
 
         static String normalizePublicUrl(String raw, String listen, int port) {
@@ -346,6 +372,14 @@ final class Pack {
     }
 
     static Map<String, Manifests.Manifest> buildRepos(Config config, Consumer<String> log) throws Exception {
+        try {
+            return buildReposInner(config, log);
+        } finally {
+            Progress.end();
+        }
+    }
+
+    private static Map<String, Manifests.Manifest> buildReposInner(Config config, Consumer<String> log) throws Exception {
         if (config.officialVersion.isBlank()) {
             throw new IllegalArgumentException("official.version 未配置，例如 v0.5.0.13-test");
         }
@@ -384,14 +418,20 @@ final class Pack {
             Path serverZip = cache.resolve("Server-" + config.officialVersion + ".zip");
             Map<String, Object> clientAsset = findZipAsset(release, "Client-");
             Map<String, Object> serverAsset = findZipAsset(release, "Server-");
+            Progress.begin("下载官方包", 2);
             downloadAsset(http, clientAsset, clientZip, log);
             downloadAsset(http, serverAsset, serverZip, log);
+            Progress.end();
             Path clientExtract = cache.resolve("client-raw");
             Path serverExtract = cache.resolve("server-raw");
+            if (!extractReady(clientExtract, clientZip, Json.lng(clientAsset, "size"))
+                    || !extractReady(serverExtract, serverZip, Json.lng(serverAsset, "size"))) {
+                Progress.begin("解压官方包", 2);
+            }
             if (!extractReady(clientExtract, clientZip, Json.lng(clientAsset, "size"))) {
                 log.accept("解压官方客户端包");
                 Fs.deleteTree(clientExtract);
-                Fs.extractZip(clientZip, clientExtract);
+                Fs.extractZip(clientZip, clientExtract, log);
                 writeExtractMarker(clientExtract, Files.size(clientZip));
             } else {
                 log.accept("沿用已解压的客户端包");
@@ -399,11 +439,12 @@ final class Pack {
             if (!extractReady(serverExtract, serverZip, Json.lng(serverAsset, "size"))) {
                 log.accept("解压官方服务端包");
                 Fs.deleteTree(serverExtract);
-                Fs.extractZip(serverZip, serverExtract);
+                Fs.extractZip(serverZip, serverExtract, log);
                 writeExtractMarker(serverExtract, Files.size(serverZip));
             } else {
                 log.accept("沿用已解压的服务端包");
             }
+            Progress.end();
             Path clientRoot = Fs.packRoot(clientExtract);
             Path serverRoot = Fs.packRoot(serverExtract);
             log.accept("按 GitHub 客户端/服务端包自动区分文件");
@@ -427,14 +468,18 @@ final class Pack {
         }
         log.accept("私货 " + privateFiles.size() + " 个（程序自行区分：client " + clientPrivate
                 + " / server " + serverPrivate + " / both " + bothPrivate + "）");
+        Progress.begin("构建仓库", 3);
+        Progress.ensure("写入私货", -1);
         applyOverlay(config.clientDir, privateFiles, "client");
         applyOverlay(config.serverDir, privateFiles, "server");
+        Progress.ensure("生成清单", -1);
         Files.createDirectories(config.manifestsDir());
         Manifests.Manifest client = Manifests.build(config.clientDir, config.officialVersion, "client");
         Manifests.Manifest server = Manifests.build(config.serverDir, config.officialVersion, "server");
         Files.writeString(config.manifestsDir().resolve("client.json"), Json.stringify(client.toMap()));
         Files.writeString(config.manifestsDir().resolve("server.json"), Json.stringify(server.toMap()));
         Files.writeString(config.manifestsDir().resolve("side-map.json"), Json.stringify(officialSides));
+        Progress.ensure("校验对象库", -1);
         materialize(config.clientDir, config.objectsDir);
         materialize(config.serverDir, config.objectsDir);
         Map<String, Object> meta = Json.map();
@@ -636,8 +681,12 @@ final class Pack {
 
     private static void downloadAsset(HttpClient http, Map<String, Object> asset, Path destination, Consumer<String> log) throws Exception {
         long expected = Json.lng(asset, "size");
-        if (Files.isRegularFile(destination) && expected > 0 && Files.size(destination) == expected) {
-            log.accept("已缓存 " + Json.str(asset, "name"));
+        String name = Json.str(asset, "name");
+        String sha = assetSha256(asset);
+        if (completeFile(destination, expected, sha)) {
+            log.accept("已缓存 " + name);
+            Progress.ensure(name, expected);
+            Progress.bytes(expected);
             return;
         }
         if (Files.isRegularFile(destination)) {
@@ -645,24 +694,56 @@ final class Pack {
             Files.deleteIfExists(destination);
         }
         Path partial = destination.resolveSibling(destination.getFileName() + ".partial");
-        Files.deleteIfExists(partial);
-        log.accept("下载 " + Json.str(asset, "name") + " (" + Math.round(expected / 1048576.0) + " MB)");
-        Files.createDirectories(destination.getParent());
-        HttpRequest request = HttpRequest.newBuilder(URI.create(Json.str(asset, "browser_download_url")))
-                .header("User-Agent", "cdr-updater")
-                .timeout(Duration.ofHours(2))
-                .build();
-        HttpResponse<Path> response = http.send(request, HttpResponse.BodyHandlers.ofFile(partial));
-        if (response.statusCode() >= 400) {
-            Files.deleteIfExists(partial);
-            throw new IllegalStateException("下载失败: " + response.statusCode());
+        if (completeFile(partial, expected, sha)) {
+            Files.move(partial, destination, StandardCopyOption.REPLACE_EXISTING);
+            log.accept("已缓存 " + name);
+            Progress.ensure(name, expected);
+            Progress.bytes(expected);
+            return;
         }
-        if (expected > 0 && Files.size(partial) != expected) {
-            long got = Files.size(partial);
+        Files.createDirectories(destination.getParent());
+        try (java.nio.file.DirectoryStream<Path> leftovers = Files.newDirectoryStream(partial.getParent(), partial.getFileName() + ".p*")) {
+            for (Path leftover : leftovers) {
+                Files.deleteIfExists(leftover);
+            }
+        } catch (Exception ignored) {
+            // ignore leftover part files
+        }
+        Files.deleteIfExists(partial);
+        HttpRequest.Builder request = HttpRequest.newBuilder(URI.create(Json.str(asset, "browser_download_url")))
+                .header("User-Agent", "cdr-updater")
+                .timeout(Duration.ofHours(2));
+        try {
+            Net.toFile(http, request, partial, expected, name, log, true);
+        } catch (Exception error) {
             Files.deleteIfExists(partial);
-            throw new IllegalStateException("下载不完整 " + Json.str(asset, "name") + "（" + got + "/" + expected + " 字节）");
+            throw error;
+        }
+        if (!completeFile(partial, expected, sha)) {
+            long got = Files.isRegularFile(partial) ? Files.size(partial) : 0;
+            Files.deleteIfExists(partial);
+            throw new IllegalStateException("下载不完整 " + name + "（" + got + "/" + expected + " 字节）");
         }
         Files.move(partial, destination, StandardCopyOption.REPLACE_EXISTING);
+    }
+
+    private static String assetSha256(Map<String, Object> asset) {
+        String digest = Json.str(asset, "digest");
+        int colon = digest.indexOf(':');
+        if (colon >= 0 && digest.regionMatches(true, 0, "sha256", 0, 6)) {
+            return digest.substring(colon + 1).trim();
+        }
+        return "";
+    }
+
+    private static boolean completeFile(Path path, long expected, String sha256) throws Exception {
+        if (!Files.isRegularFile(path) || expected <= 0 || Files.size(path) != expected) {
+            return false;
+        }
+        if (sha256 == null || sha256.isBlank()) {
+            return true;
+        }
+        return sha256.equalsIgnoreCase(Fs.sha256(path));
     }
 
     private static boolean extractReady(Path extract, Path zip, long expected) throws Exception {
