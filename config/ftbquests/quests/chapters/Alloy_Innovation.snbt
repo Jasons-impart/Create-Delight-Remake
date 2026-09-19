@@ -9,12 +9,6 @@
 	order_index: 1
 	quest_links: [
 		{
-			id: "23F7CDA2CF32FD87"
-			linked_quest: "630FA0478B7DAAAA"
-			x: 6.0d
-			y: 1.5d
-		}
-		{
 			id: "604FBA64277A68B6"
 			linked_quest: "7DED9A87C6CB80F0"
 			shape: "hexagon"

@@ -347,6 +347,11 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:incomplete_squid_sandwich',
         'createdelight:incomplete_insect_sandwich',
         'createdelight:folded_mapping_satellite',
-        'createdelight:satellite_navigation_data_card'
+        'createdelight:satellite_navigation_data_card',
+        'createdelight:blaze_cake_batter_bucket',
+        'createdelight:frost_cake_batter_bucket',
+        'createdelight:experience_cake_batter_bucket',
+        'createdelight:frost_cake_base',
+        'createdelight:incomplete_bullet',
     ])
 });
