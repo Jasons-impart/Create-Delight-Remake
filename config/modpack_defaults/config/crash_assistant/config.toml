@@ -14,7 +14,8 @@ ansi_block_pattern = "$PREFIX$$HEADER$\n$CONTENT$"
 [modpack_modlist]
 enabled = true
 modpack_creators = ["SSWTLZZ69", "JasonQ", "AzureCrab", "UltraZett"]
-auto_update = true
+# 基线由生成脚本及发布流程维护，作者启动游戏时也不覆盖。
+auto_update = false
 add_resourcepacks = false
 add_datapacks = false
 add_modloader_jar_name = false

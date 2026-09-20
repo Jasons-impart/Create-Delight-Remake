@@ -62,8 +62,8 @@ When old and new runtime JARs coexist, `update-packwiz-meta.ps1` selects the pre
 
 客户端通过 Crash Assistant 在启动时提醒 Mod 文件变更。以下文件必须保持一致：
 
-- `scripts/generate-crash-assistant-modlist.py`：扫描受管理的 `mods/**/*.pw.toml`，生成客户端可用 JAR 的文件标识和末尾数字版本基线。
-- `config/modpack_defaults/config/crash_assistant/modlist.json`：生成的对象基线，包含从 JAR 文件名推断的 Mod ID、显示名和版本；不要写入 CurseForge/Modrinth 指纹，以维持回退/恢复功能关闭。
+- `scripts/generate-crash-assistant-modlist.py`：扫描受管理的 `mods/**/*.pw.toml`，优先读取手工 JAR 的真实 Mod ID/版本；开发基线使用本地文件名，测试/正式基线优先使用 `[release.curseforge].filename` 指定的实际安装文件名。
+- `config/modpack_defaults/config/crash_assistant/modlist.json`：提交开发基线，发布时重新生成对应渠道基线；不要写入 CurseForge/Modrinth 指纹，以维持回退/恢复功能关闭。
 - `config/modpack_defaults/config/crash_assistant/scripts/startup/20_modlist_changes_warning.jexl`：按可选客户端 Mod 白名单统计新增、移除和更新；无法按运行时 Mod ID 匹配的更新会以文件标识与末尾数字版本段配对，并分段显示详情。
 - `config/modpack_defaults/config/crash_assistant/crash_assistant_localization_overrides/zh_cn.json`：提示的中文文本。
 
@@ -78,12 +78,16 @@ python scripts/generate-crash-assistant-modlist.py
 
 CI 会在 Client 与 Patch 构建前重新生成基线；Patch 也会包含 Crash Assistant 默认配置、基线、启动脚本与本地化文件。Crash Assistant 内置 `too_many_changes_warning` 必须保持 `count = -1`，因为它不支持白名单。
 
+Crash Assistant 1.11.11 按 JAR 文件名判断变更；相同内容经 CurseForge 安装后改名也会告警，补 hash 无效。手工包的本地名与 CurseForge 下载名不同时，在对应 `[release.curseforge]` 中维护 `filename`，与 project/file ID 一起更新；测试/正式基线自动采用它，读取 Mod ID/版本仍使用本地 payload。TaCZ addon 的本地与发布文件名统一为 `taczaddon.jar`。
+
+`modpack_modlist.auto_update` 保持 `false`：上游启用时会在作者名单中的玩家进入主菜单后重写运行时 `config/crash_assistant/modlist.json`。基线统一由脚本/CI 生成，避免作者启动覆盖成开发名或加入平台指纹；不要依靠手改运行时文件修复发布包。
+
 Crash Assistant 的 JEXL 使用严格词法作用域：不要以 `var` 声明与后续 `for (...)` 迭代变量同名；提交前应使用模组 JAR 内置的 JEXL3 编译启动脚本，避免游戏启动时才暴露解析错误。
 
 ## CDC Packaged Jar
 
-1. Prefer published CurseForge metadata when a CDC release exists.
-2. For unpublished builds, keep the filename `packwiz-files/mods/Create-Delight-Core-1.20.1-dev.jar`.
+1. 开发环境统一保留 `packwiz-files/mods/Create-Delight-Core-1.20.1-dev.jar`，便于同名替换；已发布构建通过 `[release.curseforge]` 的 project/file ID 转换发布来源。
+2. 更新已发布 CDC 构建时，同时把 `mods/create-delight-core.pw.toml` 的 `[release.curseforge].filename` 更新为该 CurseForge 文件的真实下载名（例如 `Create-Delight-Core-1.20.1-2.2.16j.jar`）；生成器自动更新测试/正式 Crash Assistant 基线，开发基线仍用 `-dev.jar`。尚未发布的构建不得保留指向旧构建的 release hint。
 3. On short-lived feature branches, update only `mods/create-delight-core.pw.toml` hash for the new jar and keep its raw URL pointing at `main`; do not run the full metadata update script.
 4. If a full metadata update is unavoidable off `main`, first set `PACKWIZ_FILES_RAW_PREFIX=https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/`, then inspect and revert unrelated `.pw.toml` URL rewrites before committing.
 5. Before staging or summarizing CDC artifact changes, fetch `CDC-mod-src` `origin/1.20.1`; if it fast-forwards, include the submodule pointer in the same commit so source matches the packaged jar.

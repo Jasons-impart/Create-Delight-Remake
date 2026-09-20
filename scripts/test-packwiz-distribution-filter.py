@@ -8,6 +8,7 @@ import sys
 import tempfile
 import tomllib
 import unittest
+from unittest.mock import patch
 import zipfile
 from pathlib import Path
 
@@ -201,6 +202,54 @@ class PackwizDistributionFilterTests(unittest.TestCase):
             {"modId": "beefix", "name": "beefix", "version": "1.20-1.0.7"},
             modlist[filename],
         )
+
+    def test_crash_assistant_release_filename_keeps_original_jar_metadata(self):
+        filename = "Create-Delight-Core-1.20.1-dev.jar"
+        installed = "Create-Delight-Core-1.20.1-2.2.16j.jar"
+        self.write_metadata("mods", "cdc", filename, "both")
+        self.write_manual_jar(filename, "createdelightcore", "2.2.16j")
+        metadata = self.root / "mods/cdc.pw.toml"
+        with metadata.open("a", encoding="utf-8") as output:
+            output.write(
+                '[release.curseforge]\nproject-id = 1062344\nfile-id = 8895412\n'
+                f'filename = "{installed}"\n'
+            )
+
+        # Also exercise the Python < 3.11 TOML fallback: a nested filename must
+        # not overwrite the local top-level filename.
+        for parser in (CRASH_ASSISTANT_MODLIST.tomllib, None):
+            with patch.object(CRASH_ASSISTANT_MODLIST, "tomllib", parser):
+                for distribution in ("development", "testing", "release"):
+                    with self.subTest(parser=parser, distribution=distribution):
+                        records = CRASH_ASSISTANT_MODLIST.client_mod_baseline(self.root, distribution)
+                        expected = filename if distribution == "development" else installed
+                        absent = installed if distribution == "development" else filename
+                        self.assertNotIn(absent, records)
+                        self.assertEqual(
+                            {"modId": "createdelightcore", "name": "cdc", "version": "2.2.16j"},
+                            records[expected],
+                        )
+
+    def test_crash_assistant_rejects_release_filename_collision(self):
+        self.write_metadata("mods", "renamed", "renamed-dev.jar", "both")
+        with (self.root / "mods/renamed.pw.toml").open("a", encoding="utf-8") as output:
+            output.write('[release.curseforge]\nfilename = "common-release.jar"\n')
+        with self.assertRaisesRegex(RuntimeError, "Duplicate client mod filename"):
+            CRASH_ASSISTANT_MODLIST.client_mod_baseline(self.root, "testing")
+
+    def test_crash_assistant_rejects_release_filename_path(self):
+        self.write_metadata("mods", "renamed", "renamed-dev.jar", "both")
+        with (self.root / "mods/renamed.pw.toml").open("a", encoding="utf-8") as output:
+            output.write('[release.curseforge]\nfilename = "../outside.jar"\n')
+        with self.assertRaisesRegex(RuntimeError, "Invalid installed mod filename"):
+            CRASH_ASSISTANT_MODLIST.client_mod_baseline(self.root, "release")
+
+    def test_crash_assistant_unversioned_tacz_filename_uses_jar_metadata(self):
+        self.write_metadata("mods", "taczaddon", "taczaddon.jar", "both")
+        self.write_manual_jar("taczaddon.jar", "taczaddon", "1.1.8")
+        for distribution in ("development", "testing", "release"):
+            records = CRASH_ASSISTANT_MODLIST.client_mod_baseline(self.root, distribution)
+            self.assertEqual("1.1.8", records["taczaddon.jar"]["version"])
 
     def test_release_server_patch_removes_testing_metadata_and_payloads(self):
         patch = self.root / "patch"
