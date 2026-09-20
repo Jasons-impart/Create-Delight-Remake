@@ -24,6 +24,8 @@ final class Tests {
         failed = 0;
         bootClassTests();
         policyTests();
+        privateViewsTests();
+        overlayRefreshTests();
         sideSplitTests();
         syncTests();
         liveRunningServerSyncTests();
@@ -103,6 +105,99 @@ final class Tests {
                 "defaultconfigs/forge-server.toml", "server", "local", "official", Map.of()));
         check("状态文件不删除", !Policy.shouldDeleteLocal("cdr-updater-state.json", Set.of("cdr-updater-state.json")));
         check("非托管路径不删除", !Policy.shouldDeleteLocal("mods/player-extra.jar", Set.of("mods/create-1.0.jar")));
+    }
+
+    private static void privateViewsTests() {
+        check("私货目录归类", "mods".equals(PrivateViews.folderOf("mods/a.jar")));
+        check("私货嵌套目录", "config/ItemBan".equals(PrivateViews.folderOf("config/ItemBan/x.json")));
+        check("私货根目录", ".".equals(PrivateViews.folderOf("eula.txt")));
+        check("空路径走默认", "mods/a.jar".equals(PrivateViews.resolveDest("", "a.jar", 1)));
+        check("目录加斜杠", "mods/a.jar".equals(PrivateViews.resolveDest("mods/", "a.jar", 1)));
+        check("完整路径保留", "mods/web-private.jar".equals(PrivateViews.resolveDest("mods/web-private.jar", "upload.bin", 1)));
+        check("多文件用目录", "kubejs/server_scripts/a.js".equals(PrivateViews.resolveDest("kubejs/server_scripts", "a.js", 2)));
+        Pack.PrivateFile a = new Pack.PrivateFile("mods/a.jar", "both", Path.of("a"));
+        Pack.PrivateFile b = new Pack.PrivateFile("mods/b.jar", "server", Path.of("b"));
+        Pack.PrivateFile c = new Pack.PrivateFile("config/x.toml", "both", Path.of("c"));
+        List<PrivateViews.Row> rows = PrivateViews.grouped(List.of(c, b, a), "");
+        check("先按目录分组", rows.get(0).group && "config".equals(rows.get(0).folder) && rows.get(0).count == 1);
+        check("mods 两份一组", rows.stream().anyMatch(row -> row.group && "mods".equals(row.folder) && row.count == 2));
+        check("搜索端侧", PrivateViews.grouped(List.of(a, b, c), "仅服务端").stream()
+                .anyMatch(row -> row.file != null && "mods/b.jar".equals(row.file.path)));
+        List<String> folders = PrivateViews.destFolders(List.of(c));
+        check("推送目录含默认 mods", folders.contains("mods/"));
+        check("推送目录含已有 config", folders.contains("config/"));
+        check("目录名去斜杠", "config/ItemBan".equals(PrivateViews.normalizeFolder("config/ItemBan/")));
+        check("目录名去掉端侧前缀", "kubejs/custom".equals(PrivateViews.normalizeFolder("both/kubejs/custom")));
+    }
+
+    private static void overlayRefreshTests() throws Exception {
+        Path tmp = Files.createTempDirectory("cdr-overlay-refresh");
+        try {
+            Path official = tmp.resolve("official");
+            Path privateDir = tmp.resolve("private");
+            Files.createDirectories(privateDir);
+            write(official.resolve("mods/create-1.0.jar"), "create-1.0");
+            write(official.resolve("config/keep.toml"), "keep=1\n");
+            Pack.Config config = config(tmp, official, privateDir);
+            Pack.buildRepos(config, line -> {});
+            Path marker = config.clientDir.resolve("cdr-keep-marker.txt");
+            Files.writeString(marker, "keep-me");
+
+            List<String> logs = new ArrayList<>();
+            Pack.buildRepos(config, logs::add);
+            check("无改动时增量重建", logs.stream().anyMatch(line -> line.contains("只更新有改动")));
+            check("增量重建不清空仓库", "keep-me".equals(Files.readString(marker)));
+
+            Path extra = tmp.resolve("extra.jar");
+            Files.writeString(extra, "extra-private");
+            Privates.add(config, extra, "mods/extra-private.jar", "both");
+            logs.clear();
+            Pack.buildRepos(config, logs::add);
+            check("添加私货走增量", logs.stream().anyMatch(line -> line.contains("只更新有改动")));
+            check("增量写入新私货", "extra-private".equals(Files.readString(config.clientDir.resolve("mods/extra-private.jar"))));
+            check("添加私货不重建整个仓库", "keep-me".equals(Files.readString(marker)));
+
+            write(official.resolve("config/keep.toml"), "keep=2\n");
+            logs.clear();
+            Pack.buildRepos(config, logs::add);
+            check("官方改动被增量写入", "keep=2\n".equals(Files.readString(config.clientDir.resolve("config/keep.toml"))));
+            check("官方改动不重建整个仓库", "keep-me".equals(Files.readString(marker)));
+
+            Privates.remove(config, "mods/extra-private.jar");
+            logs.clear();
+            Pack.buildRepos(config, logs::add, Set.of("mods/extra-private.jar"));
+            check("删除私货走增量", logs.stream().anyMatch(line -> line.contains("只更新有改动")));
+            check("删除私货后仓库去掉文件", !Files.exists(config.clientDir.resolve("mods/extra-private.jar")));
+            check("删除私货不重建整个仓库", "keep-me".equals(Files.readString(marker)));
+
+            write(tmp.resolve("overlay-create.jar"), "overlay-create");
+            Privates.add(config, tmp.resolve("overlay-create.jar"), "mods/create-1.0.jar", "both");
+            Pack.buildRepos(config, line -> {});
+            check("私货覆盖官方", "overlay-create".equals(Files.readString(config.clientDir.resolve("mods/create-1.0.jar"))));
+            Privates.remove(config, "mods/create-1.0.jar");
+            Pack.buildRepos(config, line -> {}, Set.of("mods/create-1.0.jar"));
+            check("删除覆盖后恢复官方", "create-1.0".equals(Files.readString(config.clientDir.resolve("mods/create-1.0.jar"))));
+
+            String folder = Privates.createFolder(config, "config/ItemBan");
+            check("可新建目录", "config/ItemBan/".equals(folder)
+                    && Files.isDirectory(privateDir.resolve("files/config/ItemBan")));
+            check("新建目录出现在推送列表",
+                    PrivateViews.destFolders(privateDir, Privates.list(config)).contains("config/ItemBan/"));
+
+            write(privateDir.resolve("files/server/mods/side-only.jar"), "side-only");
+            Pack.buildRepos(config, line -> {});
+            check("目录前缀仅服务端不到客户端", !Files.exists(config.clientDir.resolve("mods/side-only.jar")));
+            Privates.setSide(config, "mods/side-only.jar", "both");
+            Pack.buildRepos(config, line -> {});
+            check("改端侧不删文件", Files.isRegularFile(privateDir.resolve("files/mods/side-only.jar"))
+                    && "side-only".equals(Files.readString(privateDir.resolve("files/mods/side-only.jar"))));
+            check("改端侧写出 .side", "both".equals(Files.readString(privateDir.resolve("files/mods/side-only.jar.side")).trim()));
+            check("改端侧离开 server/ 前缀", !Files.exists(privateDir.resolve("files/server/mods/side-only.jar")));
+            check("改成两端后客户端有文件", "side-only".equals(Files.readString(config.clientDir.resolve("mods/side-only.jar"))));
+            check("改成两端后服务端有文件", "side-only".equals(Files.readString(config.serverDir.resolve("mods/side-only.jar"))));
+        } finally {
+            Fs.deleteTree(tmp);
+        }
     }
 
     private static void sideSplitTests() throws Exception {
@@ -643,12 +738,25 @@ final class Tests {
                 check("网页风格是暗色面板", page.body().contains("data-theme=\"dark\"") && page.body().contains("--panel"));
                 check("网页含已连接服务端", page.body().contains("已连接的服务端"));
                 check("网页含私货", page.body().contains("添加私货"));
+                check("网页含私货搜索", page.body().contains("id=\"privateSearch\""));
+                check("网页含推送目录", page.body().contains("id=\"privateDestFolder\"") && page.body().contains("可多选"));
+                check("网页含新建目录", page.body().contains("id=\"privateNewFolder\"") && page.body().contains("id=\"newFolderBtn\""));
+                check("网页可直接改端侧", page.body().contains("data-side-path") && page.body().contains("side-select"));
+                check("网页改动点保存才写入", page.body().contains("点保存后才会写入")
+                        && page.body().contains("id=\"discardBtn\"")
+                        && page.body().contains("不保存"));
+                check("网页用自绘弹窗确认", page.body().contains("id=\"modal\"")
+                        && page.body().contains("id=\"modalOk\"")
+                        && !page.body().contains("window.confirm"));
+                check("网页超长文本省略", page.body().contains("text-overflow: ellipsis")
+                        && page.body().contains("table-layout: fixed"));
                 check("网页含连接地址", page.body().contains("开放外网访问") && page.body().contains("同步令牌"));
                 check("网页含下载进度条", page.body().contains("id=\"xfer\"") && page.body().contains("id=\"xferFill\""));
                 check("网页登录指向本机窗口", page.body().contains("本机更新服务器窗口") && page.body().contains("网页管理"));
                 check("网页不设置网页令牌", !page.body().contains("id=\"adminToken\"") && !page.body().contains("genAdminTokenBtn"));
                 check("网页含 GitHub 版本", page.body().contains("应用并重新拉取")
-                        && page.body().contains("<select id=\"versionTag\">")
+                        && page.body().contains("id=\"versionTag\"")
+                        && page.body().contains("id=\"versionTagDrop\"")
                         && !page.body().contains("<datalist"));
                 check("网页含运行日志", page.body().contains("运行日志"));
                 check("网页不含导出 PCL2", !page.body().contains("导出 PCL2"));
@@ -694,6 +802,17 @@ final class Tests {
                 check("管理状态含进度", state.body().contains("\"progress\""));
                 check("管理状态含服务端列表", state.body().contains("\"servers\""));
                 check("管理状态含私货列表", state.body().contains("\"privates\""));
+                check("管理状态含推送目录", state.body().contains("\"private_folders\""));
+
+                HttpResponse<String> created = http.send(
+                        HttpRequest.newBuilder(java.net.URI.create(url + "/admin/api/private/folder"))
+                                .header("X-CDR-Admin-Token", "admin-token")
+                                .header("Content-Type", "application/json")
+                                .POST(HttpRequest.BodyPublishers.ofString("{\"path\":\"config/ItemBan\"}")).build(),
+                        HttpResponse.BodyHandlers.ofString());
+                check("网页可新建目录", created.statusCode() == 200
+                        && Files.isDirectory(privateDir.resolve("files/config/ItemBan"))
+                        && created.body().contains("config/ItemBan"));
 
                 String encoded = Base64.getEncoder().encodeToString("web-private-bytes".getBytes(StandardCharsets.UTF_8));
                 HttpResponse<String> added = http.send(
@@ -706,6 +825,17 @@ final class Tests {
                         HttpResponse.BodyHandlers.ofString());
                 check("网页可添加私货", added.statusCode() == 200);
                 check("网页添加的私货已落地", Files.isRegularFile(privateDir.resolve("files/mods/web-private.jar")));
+
+                HttpResponse<String> sided = http.send(
+                        HttpRequest.newBuilder(java.net.URI.create(url + "/admin/api/private/side"))
+                                .header("X-CDR-Admin-Token", "admin-token")
+                                .header("Content-Type", "application/json")
+                                .POST(HttpRequest.BodyPublishers.ofString(
+                                        "{\"path\":\"mods/web-private.jar\",\"side\":\"both\"}")).build(),
+                        HttpResponse.BodyHandlers.ofString());
+                check("网页可改端侧", sided.statusCode() == 200
+                        && Files.isRegularFile(privateDir.resolve("files/mods/web-private.jar"))
+                        && "both".equals(Files.readString(privateDir.resolve("files/mods/web-private.jar.side")).trim()));
 
                 HttpResponse<String> removed = http.send(
                         HttpRequest.newBuilder(java.net.URI.create(url + "/admin/api/private/remove"))

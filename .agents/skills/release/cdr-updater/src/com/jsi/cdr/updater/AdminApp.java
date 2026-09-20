@@ -21,10 +21,16 @@ import javax.swing.Timer;
 import javax.swing.UIManager;
 import javax.swing.WindowConstants;
 import javax.swing.filechooser.FileSystemView;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.Desktop;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -40,7 +46,12 @@ import java.nio.file.Path;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -104,6 +115,44 @@ final class AdminApp {
         };
         JTable privateTable = new JTable(privateModel);
         privateTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        privateTable.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
+        privateTable.getColumnModel().getColumn(1).setMinWidth(72);
+        privateTable.getColumnModel().getColumn(1).setMaxWidth(96);
+        privateTable.getColumnModel().getColumn(1).setPreferredWidth(80);
+        List<String> privateRowKeys = new ArrayList<>();
+        Map<String, String> pendingSides = new LinkedHashMap<>();
+        Set<String> pendingDeletes = new LinkedHashSet<>();
+        List<ServerRuntime.PrivateAdd> pendingAdds = new ArrayList<>();
+        List<String> pendingFolders = new ArrayList<>();
+        JTextField privateSearch = new JTextField();
+        privateSearch.putClientProperty("JTextField.placeholderText", "搜索路径、文件名或端侧");
+        Font groupFont = privateTable.getFont().deriveFont(Font.BOLD);
+        privateTable.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
+            @Override
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean selected,
+                                                           boolean focused, int row, int column) {
+                Component cell = super.getTableCellRendererComponent(table, value, selected, focused, row, column);
+                String text = value == null ? "" : String.valueOf(value);
+                setToolTipText(text.isBlank() ? null : text);
+                boolean group = row >= 0 && row < privateRowKeys.size() && privateRowKeys.get(row) == null;
+                String key = row >= 0 && row < privateRowKeys.size() ? privateRowKeys.get(row) : null;
+                boolean pending = key != null && (pendingSides.containsKey(key)
+                        || pendingAdds.stream().anyMatch(item -> key.equals(item.dest())));
+                setFont(group ? groupFont : table.getFont());
+                if (!selected) {
+                    setBackground(group ? new Color(0xF2, 0xF2, 0xF2) : table.getBackground());
+                    if (pending) {
+                        setForeground(new Color(0x66, 0x66, 0x66));
+                    } else {
+                        setForeground(group ? new Color(0x55, 0x55, 0x55) : table.getForeground());
+                    }
+                }
+                if (group && column == 0) {
+                    setBorder(BorderFactory.createEmptyBorder(4, 6, 4, 6));
+                }
+                return cell;
+            }
+        });
 
         JComboBox<String> versions = new JComboBox<>();
         versions.setEditable(true);
@@ -120,10 +169,14 @@ final class AdminApp {
 
         AtomicBoolean busy = new AtomicBoolean(false);
         JButton addPrivate = new JButton("添加私货");
+        JButton newPrivateFolder = new JButton("新建目录");
+        JButton changePrivateSide = new JButton("改端侧");
         JButton removePrivate = new JButton("删除所选");
         JButton refreshTags = new JButton("刷新 GitHub 版本");
         JButton applyVersion = new JButton("应用并重新拉取");
-        JButton rebuild = new JButton("重新构建仓库");
+        JButton rebuild = new JButton("保存");
+        JButton discard = new JButton("不保存");
+        discard.setEnabled(false);
         JButton exportPcl2 = new JButton("导出 PCL2 整合包");
         JButton exportServer = new JButton("导出服务端");
         JButton applyConnection = new JButton("保存连接地址");
@@ -165,14 +218,67 @@ final class AdminApp {
 
         Runnable refreshPrivates = () -> {
             try {
-                privateModel.setRowCount(0);
+                Map<String, Pack.PrivateFile> listed = new LinkedHashMap<>();
                 for (Pack.PrivateFile file : Privates.list(runtime.config())) {
-                    privateModel.addRow(new Object[]{file.path, sideLabel(file.side), file.source.toString()});
+                    listed.put(file.path, file);
                 }
+                for (ServerRuntime.PrivateAdd add : pendingAdds) {
+                    if (pendingDeletes.contains(add.dest())) {
+                        continue;
+                    }
+                    listed.put(add.dest(), new Pack.PrivateFile(add.dest(), add.side(), add.source()));
+                }
+                List<Pack.PrivateFile> files = new ArrayList<>();
+                for (Pack.PrivateFile file : listed.values()) {
+                    if (pendingDeletes.contains(file.path)) {
+                        continue;
+                    }
+                    String side = pendingSides.getOrDefault(file.path, file.side);
+                    files.add(side.equals(file.side) ? file : new Pack.PrivateFile(file.path, side, file.source));
+                }
+                String query = privateSearch.getText();
+                int selected = privateTable.getSelectedRow();
+                String keep = selected >= 0 && selected < privateRowKeys.size() ? privateRowKeys.get(selected) : null;
+                privateModel.setRowCount(0);
+                privateRowKeys.clear();
+                for (PrivateViews.Row row : PrivateViews.grouped(files, query)) {
+                    if (row.group) {
+                        privateModel.addRow(new Object[]{PrivateViews.groupLabel(row.folder, row.count), "", ""});
+                        privateRowKeys.add(null);
+                    } else {
+                        boolean pending = pendingSides.containsKey(row.file.path)
+                                || pendingAdds.stream().anyMatch(item -> row.file.path.equals(item.dest()));
+                        privateModel.addRow(new Object[]{
+                                row.file.path,
+                                PrivateViews.sideLabel(row.file.side) + (pending ? " · 未保存" : ""),
+                                pendingAdds.stream().anyMatch(item -> row.file.path.equals(item.dest()))
+                                        ? "待保存 · " + row.file.source.getFileName()
+                                        : row.file.source.toString()
+                        });
+                        privateRowKeys.add(row.file.path);
+                    }
+                }
+                if (keep != null) {
+                    int index = privateRowKeys.indexOf(keep);
+                    if (index >= 0) {
+                        privateTable.setRowSelectionInterval(index, index);
+                    }
+                }
+                boolean dirty = !pendingSides.isEmpty() || !pendingDeletes.isEmpty()
+                        || !pendingAdds.isEmpty() || !pendingFolders.isEmpty();
+                discard.setEnabled(dirty && !busy.get());
             } catch (Exception error) {
                 append(log, "读取私货失败：" + error.getMessage());
             }
         };
+        privateSearch.getDocument().addDocumentListener(new DocumentListener() {
+            private void changed() {
+                refreshPrivates.run();
+            }
+            @Override public void insertUpdate(DocumentEvent event) { changed(); }
+            @Override public void removeUpdate(DocumentEvent event) { changed(); }
+            @Override public void changedUpdate(DocumentEvent event) { changed(); }
+        });
 
         java.util.function.Consumer<String> logger = line -> {
             runtime.note(line);
@@ -184,7 +290,7 @@ final class AdminApp {
                 JOptionPane.showMessageDialog(frame, "正在处理上一项操作，请稍候。", "忙碌中", JOptionPane.INFORMATION_MESSAGE);
                 return;
             }
-            setEnabled(false, addPrivate, removePrivate, applyVersion, rebuild, refreshTags, exportPcl2, exportServer, applyConnection, generateToken, applyAdminToken, generateAdminToken, detectWan, openWan);
+            setEnabled(false, addPrivate, newPrivateFolder, changePrivateSide, removePrivate, applyVersion, rebuild, discard, refreshTags, exportPcl2, exportServer, applyConnection, generateToken, applyAdminToken, generateAdminToken, detectWan, openWan);
             new Thread(() -> {
                 try {
                     task.run();
@@ -205,30 +311,91 @@ final class AdminApp {
                     });
                 } finally {
                     busy.set(false);
-                    SwingUtilities.invokeLater(() -> setEnabled(true, addPrivate, removePrivate, applyVersion, rebuild, refreshTags, exportPcl2, exportServer, applyConnection, generateToken, applyAdminToken, generateAdminToken, detectWan, openWan));
+                    SwingUtilities.invokeLater(() -> {
+                        setEnabled(true, addPrivate, newPrivateFolder, changePrivateSide, removePrivate, applyVersion, rebuild, refreshTags, exportPcl2, exportServer, applyConnection, generateToken, applyAdminToken, generateAdminToken, detectWan, openWan);
+                        boolean dirty = !pendingSides.isEmpty() || !pendingDeletes.isEmpty()
+                                || !pendingAdds.isEmpty() || !pendingFolders.isEmpty();
+                        discard.setEnabled(dirty);
+                    });
                 }
             }, "cdr-admin").start();
         };
 
         addPrivate.addActionListener(event -> {
             JFileChooser chooser = new JFileChooser();
-            chooser.setDialogTitle("选择要加入私货的文件");
+            chooser.setDialogTitle("选择要加入私货的文件（可多选同一目录）");
             chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+            chooser.setMultiSelectionEnabled(true);
             if (chooser.showOpenDialog(frame) != JFileChooser.APPROVE_OPTION) {
                 return;
             }
-            Path source;
+            File[] selected = chooser.getSelectedFiles();
+            if (selected == null || selected.length == 0) {
+                File one = chooser.getSelectedFile();
+                selected = one == null ? new File[0] : new File[]{one};
+            }
+            List<Path> sources = new ArrayList<>();
             try {
-                source = realPath(chooser.getSelectedFile(), chooser.getCurrentDirectory());
-                if (!Files.isRegularFile(source)) {
-                    throw new IllegalArgumentException("请从磁盘上的真实文件夹选择文件");
+                for (File file : selected) {
+                    Path source = realPath(file, chooser.getCurrentDirectory());
+                    if (!Files.isRegularFile(source)) {
+                        throw new IllegalArgumentException("请从磁盘上的真实文件夹选择文件");
+                    }
+                    sources.add(source);
                 }
             } catch (Exception error) {
                 JOptionPane.showMessageDialog(frame, "无法打开该文件。请从桌面、文档或某个磁盘里的真实文件夹选择，不要选「此电脑」。",
                         "文件无效", JOptionPane.WARNING_MESSAGE);
                 return;
             }
-            JTextField dest = new JTextField(Privates.defaultDest(source));
+            if (sources.isEmpty()) {
+                return;
+            }
+            JComboBox<String> destFolder = new JComboBox<>();
+            destFolder.setEditable(true);
+            try {
+                List<String> folders = new ArrayList<>(PrivateViews.destFolders(runtime.config().privateDir, Privates.list(runtime.config())));
+                for (String folder : pendingFolders) {
+                    if (!folders.contains(folder)) {
+                        folders.add(folder);
+                    }
+                }
+                for (String folder : folders) {
+                    destFolder.addItem(folder);
+                }
+            } catch (Exception ignored) {
+                for (String folder : PrivateViews.DEST_FOLDERS) {
+                    destFolder.addItem(folder);
+                }
+            }
+            String suggested = Privates.defaultDest(sources.get(0));
+            destFolder.setSelectedItem(PrivateViews.folderOf(suggested) + "/");
+            JButton newDir = new JButton("新建目录");
+            newDir.addActionListener(ev -> {
+                String folder = promptNewFolder(frame);
+                if (folder == null) {
+                    return;
+                }
+                if (!pendingFolders.contains(folder)) {
+                    pendingFolders.add(folder);
+                }
+                boolean found = false;
+                for (int i = 0; i < destFolder.getItemCount(); i++) {
+                    if (folder.equals(destFolder.getItemAt(i))) {
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) {
+                    destFolder.addItem(folder);
+                }
+                destFolder.setSelectedItem(folder);
+            });
+            JPanel destRow = new JPanel(new BorderLayout(8, 0));
+            destRow.add(destFolder, BorderLayout.CENTER);
+            destRow.add(newDir, BorderLayout.EAST);
+            JTextField destFile = new JTextField(sources.size() == 1 ? suggested : "");
+            destFile.setToolTipText("单文件可填完整游戏内路径；多文件请留空，只用上面的目录。");
             JComboBox<String> side = new JComboBox<>(new String[]{"自动判定", "仅客户端", "仅服务端", "两端"});
             JPanel form = new JPanel(new GridBagLayout());
             GridBagConstraints c = new GridBagConstraints();
@@ -236,13 +403,25 @@ final class AdminApp {
             c.fill = GridBagConstraints.HORIZONTAL;
             c.gridx = 0;
             c.gridy = 0;
-            form.add(new JLabel("游戏内路径"), c);
+            form.add(new JLabel("已选文件"), c);
             c.gridx = 1;
             c.weightx = 1;
-            form.add(dest, c);
+            form.add(new JLabel(sources.size() == 1
+                    ? sources.get(0).getFileName().toString()
+                    : sources.size() + " 个文件"), c);
             c.gridx = 0;
             c.gridy = 1;
             c.weightx = 0;
+            form.add(new JLabel("推送到目录"), c);
+            c.gridx = 1;
+            form.add(destRow, c);
+            c.gridx = 0;
+            c.gridy = 2;
+            form.add(new JLabel("游戏内路径"), c);
+            c.gridx = 1;
+            form.add(destFile, c);
+            c.gridx = 0;
+            c.gridy = 3;
             form.add(new JLabel("端侧"), c);
             c.gridx = 1;
             form.add(side, c);
@@ -255,21 +434,100 @@ final class AdminApp {
                 case "两端" -> "both";
                 default -> "auto";
             };
-            background.accept(() -> runtime.addPrivate(source, dest.getText().trim(), chosen, logger));
+            String typed = destFile.getText().trim();
+            Object folderItem = destFolder.getEditor().getItem();
+            String folder = folderItem == null ? "" : folderItem.toString().trim();
+            String dest = typed.isBlank() ? folder : typed;
+            List<ServerRuntime.PrivateAdd> items = new ArrayList<>();
+            for (Path source : sources) {
+                items.add(new ServerRuntime.PrivateAdd(source,
+                        Privates.resolveDest(dest, source.getFileName().toString(), sources.size()),
+                        chosen));
+            }
+            for (ServerRuntime.PrivateAdd item : items) {
+                pendingDeletes.remove(item.dest());
+                pendingAdds.removeIf(existing -> item.dest().equals(existing.dest()));
+                pendingAdds.add(item);
+            }
+            refreshPrivates.run();
+            JOptionPane.showMessageDialog(frame, "已加入待保存。点保存后才会写入仓库。", "待保存", JOptionPane.INFORMATION_MESSAGE);
         });
 
         removePrivate.addActionListener(event -> {
             int row = privateTable.getSelectedRow();
-            if (row < 0) {
-                JOptionPane.showMessageDialog(frame, "请先在列表中选择要删除的私货。", "未选择", JOptionPane.WARNING_MESSAGE);
+            if (row < 0 || row >= privateRowKeys.size() || privateRowKeys.get(row) == null) {
+                JOptionPane.showMessageDialog(frame, "请先在列表中选择要删除的私货文件。", "未选择", JOptionPane.WARNING_MESSAGE);
                 return;
             }
-            String path = String.valueOf(privateModel.getValueAt(row, 0));
-            if (JOptionPane.showConfirmDialog(frame, "删除私货 " + path + "？\n仓库会重新构建，已连接的服务端下次同步才会拿到变更。",
+            String path = privateRowKeys.get(row);
+            if (JOptionPane.showConfirmDialog(frame, "删除私货 " + path + "？\n点保存后才会从仓库移除，已连接的服务端下次同步才会拿到变更。",
                     "确认删除", JOptionPane.OK_CANCEL_OPTION) != JOptionPane.OK_OPTION) {
                 return;
             }
-            background.accept(() -> runtime.removePrivate(path, logger));
+            boolean pendingAdd = pendingAdds.removeIf(item -> path.equals(item.dest()));
+            pendingSides.remove(path);
+            if (!pendingAdd) {
+                pendingDeletes.add(path);
+            }
+            refreshPrivates.run();
+        });
+
+        changePrivateSide.addActionListener(event -> {
+            int row = privateTable.getSelectedRow();
+            if (row < 0 || row >= privateRowKeys.size() || privateRowKeys.get(row) == null) {
+                JOptionPane.showMessageDialog(frame, "请先在列表中选择要改端侧的私货文件。", "未选择", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            String path = privateRowKeys.get(row);
+            String[] labels = {"仅客户端", "仅服务端", "两端"};
+            String[] sides = {"client", "server", "both"};
+            String current = String.valueOf(privateModel.getValueAt(row, 1));
+            int preset = 2;
+            for (int i = 0; i < labels.length; i++) {
+                if (labels[i].equals(current)) {
+                    preset = i;
+                    break;
+                }
+            }
+            Object chosen = JOptionPane.showInputDialog(frame, "将 " + path + " 改到哪一端？文件会保留。",
+                    "改端侧", JOptionPane.PLAIN_MESSAGE, null, labels, labels[preset]);
+            if (chosen == null) {
+                return;
+            }
+            String side = "both";
+            for (int i = 0; i < labels.length; i++) {
+                if (labels[i].equals(chosen)) {
+                    side = sides[i];
+                    break;
+                }
+            }
+            String nextSide = side;
+            pendingDeletes.remove(path);
+            boolean updatedAdd = false;
+            for (int i = 0; i < pendingAdds.size(); i++) {
+                ServerRuntime.PrivateAdd item = pendingAdds.get(i);
+                if (path.equals(item.dest())) {
+                    pendingAdds.set(i, new ServerRuntime.PrivateAdd(item.source(), item.dest(), nextSide));
+                    updatedAdd = true;
+                    break;
+                }
+            }
+            if (!updatedAdd) {
+                pendingSides.put(path, nextSide);
+            }
+            refreshPrivates.run();
+        });
+
+        newPrivateFolder.addActionListener(event -> {
+            String folder = promptNewFolder(frame);
+            if (folder == null) {
+                return;
+            }
+            if (!pendingFolders.contains(folder)) {
+                pendingFolders.add(folder);
+            }
+            JOptionPane.showMessageDialog(frame, "已加入待保存：" + folder + "\n点保存后才会创建。",
+                    "待保存", JOptionPane.INFORMATION_MESSAGE);
         });
 
         refreshTags.addActionListener(event -> background.accept(() -> {
@@ -302,9 +560,63 @@ final class AdminApp {
         });
 
         rebuild.addActionListener(event -> background.accept(() -> {
-            logger.accept("开始重新构建仓库");
+            logger.accept("正在保存改动");
+            List<String> folders = List.copyOf(pendingFolders);
+            List<ServerRuntime.PrivateAdd> adds = new ArrayList<>();
+            for (ServerRuntime.PrivateAdd item : pendingAdds) {
+                if (!pendingDeletes.contains(item.dest())) {
+                    adds.add(item);
+                }
+            }
+            Map<String, String> sides = new LinkedHashMap<>(pendingSides);
+            Set<String> deletes = new LinkedHashSet<>(pendingDeletes);
+            for (String folder : folders) {
+                Privates.createFolder(runtime.config(), folder);
+                logger.accept("已创建目录 " + folder);
+            }
+            for (String path : deletes) {
+                boolean replaced = adds.stream().anyMatch(item -> path.equals(item.dest()));
+                if (!replaced) {
+                    runtime.removePrivate(path, logger);
+                }
+            }
+            if (!adds.isEmpty()) {
+                runtime.addPrivates(adds, logger);
+            }
+            for (Map.Entry<String, String> entry : sides.entrySet()) {
+                if (deletes.contains(entry.getKey()) && adds.stream().noneMatch(item -> entry.getKey().equals(item.dest()))) {
+                    continue;
+                }
+                if (adds.stream().anyMatch(item -> entry.getKey().equals(item.dest()))) {
+                    continue;
+                }
+                runtime.setPrivateSide(entry.getKey(), entry.getValue(), logger);
+            }
             runtime.rebuild(logger);
+            pendingFolders.clear();
+            pendingAdds.clear();
+            pendingSides.clear();
+            pendingDeletes.clear();
+            logger.accept("已保存");
         }));
+
+        discard.addActionListener(event -> {
+            boolean dirty = !pendingSides.isEmpty() || !pendingDeletes.isEmpty()
+                    || !pendingAdds.isEmpty() || !pendingFolders.isEmpty();
+            if (!dirty) {
+                JOptionPane.showMessageDialog(frame, "没有待保存的改动。", "不保存", JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
+            if (JOptionPane.showConfirmDialog(frame, "放弃未保存的改动？",
+                    "不保存", JOptionPane.OK_CANCEL_OPTION) != JOptionPane.OK_OPTION) {
+                return;
+            }
+            pendingFolders.clear();
+            pendingAdds.clear();
+            pendingSides.clear();
+            pendingDeletes.clear();
+            refreshPrivates.run();
+        });
 
         exportPcl2.addActionListener(event -> {
             Path chosen = chooseSave(frame, "导出 PCL2 整合包",
@@ -471,13 +783,19 @@ final class AdminApp {
         webPanel.add(webButtons, BorderLayout.CENTER);
         webPanel.add(new JLabel("<html>  这是打开 /admin 时用的登录密码，和「连接地址」里的同步令牌不是同一个，也不会写入导出的整合包。<br>  未设置时只能在这台电脑打开网页。外网访问网页需要先在「连接地址」开放端口，再在这里设置网页令牌。</html>"), BorderLayout.SOUTH);
 
-        JPanel privateButtons = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        privateButtons.add(addPrivate);
-        privateButtons.add(removePrivate);
+        JPanel privateButtons = new JPanel(new BorderLayout(8, 8));
+        privateButtons.setBorder(BorderFactory.createEmptyBorder(8, 8, 0, 8));
+        JPanel privateActions = new JPanel(new FlowLayout(FlowLayout.LEFT, 8, 0));
+        privateActions.add(addPrivate);
+        privateActions.add(newPrivateFolder);
+        privateActions.add(changePrivateSide);
+        privateActions.add(removePrivate);
+        privateButtons.add(privateActions, BorderLayout.WEST);
+        privateButtons.add(privateSearch, BorderLayout.CENTER);
         JPanel privatePanel = new JPanel(new BorderLayout());
         privatePanel.add(privateButtons, BorderLayout.NORTH);
         privatePanel.add(new JScrollPane(privateTable), BorderLayout.CENTER);
-        privatePanel.add(new JLabel("  放到 private/files 下，保持游戏内相对路径。删除后下次同步才会从服务端实例移除。"), BorderLayout.SOUTH);
+        privatePanel.add(new JLabel("  按目录归类。添加、改端侧、删除和新建目录都先留在列表里，点保存后才会写入仓库。"), BorderLayout.SOUTH);
 
         JPanel serversPanel = new JPanel(new BorderLayout());
         serversPanel.add(new JScrollPane(serversTable), BorderLayout.CENTER);
@@ -493,6 +811,7 @@ final class AdminApp {
         JPanel south = new JPanel(new BorderLayout());
         JPanel southButtons = new JPanel(new FlowLayout(FlowLayout.LEFT));
         southButtons.add(rebuild);
+        southButtons.add(discard);
         southButtons.add(exportPcl2);
         southButtons.add(exportServer);
         south.add(southButtons, BorderLayout.NORTH);
@@ -617,6 +936,21 @@ final class AdminApp {
     private static void append(JTextArea log, String line) {
         log.append(line + "\n");
         log.setCaretPosition(log.getDocument().getLength());
+    }
+
+    private static String promptNewFolder(JFrame frame) {
+        String typed = JOptionPane.showInputDialog(frame, "游戏内目录，例如 config/ItemBan 或 kubejs/server_scripts/custom",
+                "新建目录", JOptionPane.PLAIN_MESSAGE);
+        if (typed == null || typed.isBlank()) {
+            return null;
+        }
+        try {
+            String folder = PrivateViews.normalizeFolder(typed);
+            return folder.endsWith("/") ? folder : folder + "/";
+        } catch (Exception error) {
+            JOptionPane.showMessageDialog(frame, error.getMessage(), "无法创建目录", JOptionPane.WARNING_MESSAGE);
+            return null;
+        }
     }
 
     private static void setEnabled(boolean enabled, JButton... buttons) {

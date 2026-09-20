@@ -8,6 +8,7 @@ import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 final class Manifests {
     static final class FileEntry {
@@ -120,6 +121,22 @@ final class Manifests {
             map.put("new_size", newSize);
             return map;
         }
+    }
+
+    static Manifest patch(Manifest current, String officialVersion, Map<String, FileEntry> upserts, Set<String> removes) {
+        Map<String, FileEntry> map = current.byPath();
+        if (removes != null) {
+            for (String path : removes) {
+                map.remove(Fs.posix(path));
+            }
+        }
+        if (upserts != null) {
+            map.putAll(upserts);
+        }
+        List<FileEntry> files = new ArrayList<>(map.values());
+        files.sort(Comparator.comparing(entry -> entry.path));
+        String version = officialVersion == null || officialVersion.isBlank() ? current.officialVersion : officialVersion;
+        return new Manifest(version, current.side, Instant.now().toString(), files);
     }
 
     static Manifest build(Path root, String officialVersion, String side) throws Exception {

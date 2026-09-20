@@ -150,15 +150,49 @@
     input, textarea, select {
       width: 100%; padding: 10px 12px; border-radius: 10px;
       border: 1px solid var(--line); background: var(--panel2); color: var(--text);
-      outline: none;
+      outline: none; text-overflow: ellipsis;
     }
     input:focus, textarea:focus, select:focus {
       border-color: var(--text);
       box-shadow: 0 0 0 3px var(--hover);
     }
     .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 16px;
+      row-gap: 12px;
+      align-items: start;
+    }
+    .field { display: flex; flex-direction: column; min-width: 0; }
+    .field > label {
+      margin: 0 0 6px;
+      min-height: 18px;
+      line-height: 18px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .form-grid input,
+    .form-grid select {
+      height: 42px;
+      min-height: 42px;
+      padding: 0 12px;
+    }
+    .form-grid input[type="file"] {
+      padding: 8px 12px;
+      line-height: 24px;
+    }
+    .field-row { display: flex; gap: 8px; align-items: stretch; min-width: 0; }
+    .field-row input { flex: 1; width: auto; min-width: 0; }
+    .field-row .actions, .field > .actions {
+      display: flex; flex-wrap: nowrap; gap: 8px; margin: 0; align-items: stretch; flex: 1;
+    }
+    .field .actions button.act, .field-row button.act {
+      height: 42px; padding: 0 14px; margin: 0; white-space: nowrap;
+    }
     @media (max-width: 800px) {
-      .row { grid-template-columns: 1fr; }
+      .row, .form-grid { grid-template-columns: 1fr; }
       header { padding: 12px 14px; }
     }
     .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
@@ -171,13 +205,81 @@
     button.danger { background: transparent; color: var(--text); border: 1px solid var(--text); }
     button.ok { background: var(--panel2); color: var(--text); border: 1px solid var(--line); }
     button.ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
-    table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 16px; }
-    th, td { text-align: left; padding: 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    .card { overflow: visible; }
+    .table-wrap { overflow: visible; }
+    table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: 13px; margin-top: 16px; }
+    th, td {
+      text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: middle;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
     th { color: var(--muted); font-size: 12px; font-weight: 600; letter-spacing: .04em; }
     tbody tr:hover { background: var(--hover); }
-    td:last-child { width: 88px; }
-    .empty { color: var(--muted); text-align: center; padding: 28px 8px !important; }
+    tr.file:has(.drop.open) { position: relative; z-index: 12; }
+    tr.file.is-pending td { color: var(--muted); }
+    .toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 12px 0 0; }
+    .toolbar input.search { max-width: 320px; margin: 0; }
+    tr.group td {
+      font-weight: 700; background: var(--panel2); color: var(--muted);
+      letter-spacing: .02em;
+    }
+    tr.file td:first-child { padding-left: 22px; }
+    .empty { color: var(--muted); text-align: center; padding: 28px 8px !important; white-space: normal; }
     .id { color: var(--muted); font-family: Consolas, "Cascadia Mono", monospace; font-size: 12px; }
+    .col-side { width: 158px; overflow: visible; }
+    .col-act { width: 76px; overflow: visible; }
+    td.col-act, td.col-side { padding: 4px 6px; overflow: visible; }
+    .drop { position: relative; width: 100%; }
+    .drop.open { z-index: 12; }
+    .drop-btn {
+      width: 100%; height: 32px; margin: 0;
+      border: 1px solid var(--line); background: var(--panel2); color: var(--text);
+      border-radius: 10px; padding: 0 28px 0 10px;
+      font-size: 12px; font-weight: 600; text-align: left; cursor: pointer;
+      position: relative;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+      transition: border-color .18s ease, background .18s ease;
+    }
+    .drop-btn:hover { border-color: var(--muted); }
+    .drop-btn::after {
+      content: ""; position: absolute; right: 11px; top: 50%;
+      width: 6px; height: 6px;
+      border-right: 1.6px solid var(--muted); border-bottom: 1.6px solid var(--muted);
+      transform: translateY(-70%) rotate(45deg);
+      transition: transform .2s cubic-bezier(.22, 1, .36, 1);
+    }
+    .drop.open .drop-btn { border-color: var(--text); }
+    .drop.open .drop-btn::after { transform: translateY(-20%) rotate(225deg); }
+    .drop-menu {
+      position: absolute; left: 0; right: 0; top: calc(100% + 6px); z-index: 40;
+      padding: 6px; border-radius: 12px;
+      border: 1px solid var(--line); background: var(--panel-solid);
+      box-shadow: var(--shadow);
+      transform: translateY(-8px) scale(.96);
+      transform-origin: top center;
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transition: opacity .18s ease, transform .18s cubic-bezier(.22, 1, .36, 1), visibility .18s;
+    }
+    .drop.open .drop-menu {
+      opacity: 1; visibility: visible; pointer-events: auto;
+      transform: translateY(0) scale(1);
+    }
+    .drop-menu button {
+      display: block; width: 100%; border: 0; background: transparent; color: var(--text);
+      text-align: left; padding: 8px 10px; border-radius: 8px;
+      font-size: 12px; cursor: pointer; transition: background .15s ease, color .15s ease;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .drop-menu button:hover { background: var(--hover); }
+    .drop-menu button.active {
+      background: var(--accent); color: var(--accent-ink); font-weight: 700;
+    }
+    .drop-lg .drop-btn { height: 42px; font-size: 13px; padding-left: 12px; }
+    .drop-scroll .drop-menu {
+      max-height: min(320px, 50vh);
+      overflow-y: auto;
+    }
+    .field { position: relative; z-index: 1; }
+    .field:has(.drop.open) { z-index: 12; }
     .pill {
       display: inline-flex; align-items: center; padding: 3px 8px; border-radius: 999px;
       font-size: 12px; font-weight: 700;
@@ -215,6 +317,71 @@
       background: var(--panel-solid); color: var(--text); padding: 12px 16px; border-radius: 12px;
       border: 1px solid var(--line); box-shadow: var(--shadow);
       display: none; z-index: 5; max-width: 420px;
+    }
+    .modal {
+      position: fixed; inset: 0; z-index: 20000;
+      display: grid; place-items: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .2s ease, visibility .2s;
+    }
+    .modal.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    .modal-backdrop {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,.58);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    html[data-theme="light"] .modal-backdrop {
+      background: rgba(17,17,17,.32);
+    }
+    .modal-card {
+      position: relative; z-index: 1;
+      width: min(420px, 100%);
+      background: var(--panel-solid);
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 24px 22px 18px;
+      transform-origin: center;
+      transform: translateY(14px) scale(.96);
+      opacity: 0;
+      transition: transform .22s cubic-bezier(.22, 1, .36, 1), opacity .2s ease;
+    }
+    .modal.open .modal-card {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    .modal-card::before {
+      content: "";
+      position: absolute; left: 22px; right: 22px; top: 0;
+      height: 2px; border-radius: 0 0 2px 2px;
+      background: var(--accent);
+    }
+    .modal-card h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      letter-spacing: .02em;
+    }
+    .modal-card .lead {
+      margin: 0 0 20px;
+      white-space: pre-wrap;
+    }
+    .modal-card .actions {
+      justify-content: flex-end;
+      margin: 0;
+    }
+    .modal-card .act.danger {
+      background: var(--accent);
+      color: var(--accent-ink);
+      border: 0;
     }
     pre.logs {
       white-space: pre-wrap; background: var(--log-bg); padding: 14px; border-radius: 12px;
@@ -275,41 +442,99 @@
         <section id="tab-servers" class="card tab-visible">
           <h2>已连接的服务端</h2>
           <p class="lead">只记录向这台更新服务器同步过的游戏服务端。客户端连接不会写入列表。</p>
+          <div class="table-wrap">
           <table>
+            <colgroup>
+              <col>
+              <col>
+              <col>
+              <col style="width:9.5em">
+              <col style="width:9.5em">
+              <col style="width:5.5em">
+            </colgroup>
             <thead>
               <tr><th>主机</th><th>实例目录</th><th>远程地址</th><th>首次连接</th><th>最近连接</th><th>同步次数</th></tr>
             </thead>
             <tbody id="serverTable"></tbody>
           </table>
+          </div>
         </section>
         <section id="tab-privates" class="card">
           <h2>私货</h2>
-          <p class="lead">上传后会写入私货目录并重新构建仓库。已连接的服务端下次同步才会拿到变更。在游戏服务端里直接删文件会被重新同步回来。</p>
-          <div class="row">
-            <div>
-              <label>选择文件</label>
-              <input id="privateFile" type="file">
-              <label>游戏内路径（可留空，按文件名自动放到 mods/ 等）</label>
+          <p class="lead">添加、改端侧、删除和新建目录都先留在本页，点保存后才会写入仓库。已连接的服务端下次同步才会拿到变更。</p>
+          <div class="form-grid">
+            <div class="field">
+              <label>选择文件（可多选）</label>
+              <input id="privateFile" type="file" multiple>
+            </div>
+            <div class="field">
+              <label>游戏内路径（可留空；多文件时只作目录）</label>
               <input id="privateDest" placeholder="例如 mods/ItemBan-2.2.0-1.20.1-Forge.jar">
             </div>
-            <div>
+            <div class="field">
+              <label>推送到目录</label>
+              <input type="hidden" id="privateDestFolder" value="mods/">
+              <div class="drop drop-lg drop-scroll" id="privateDestFolderDrop" data-value="mods/">
+                <button type="button" class="drop-btn" title="mods/">mods/</button>
+                <div class="drop-menu">
+                  <button type="button" data-value="mods/" class="active">mods/</button>
+                  <button type="button" data-value="config/">config/</button>
+                  <button type="button" data-value="kubejs/">kubejs/</button>
+                  <button type="button" data-value="kubejs/config/">kubejs/config/</button>
+                  <button type="button" data-value="kubejs/server_scripts/">kubejs/server_scripts/</button>
+                  <button type="button" data-value="kubejs/client_scripts/">kubejs/client_scripts/</button>
+                  <button type="button" data-value="kubejs/startup_scripts/">kubejs/startup_scripts/</button>
+                  <button type="button" data-value="resourcepacks/">resourcepacks/</button>
+                  <button type="button" data-value="shaderpacks/">shaderpacks/</button>
+                  <button type="button" data-value="defaultconfigs/">defaultconfigs/</button>
+                  <button type="button" data-value="libraries/">libraries/</button>
+                </div>
+              </div>
+            </div>
+            <div class="field">
               <label>端侧</label>
-              <select id="privateSide">
-                <option value="auto">自动判定</option>
-                <option value="client">仅客户端</option>
-                <option value="server">仅服务端</option>
-                <option value="both">两端</option>
-              </select>
+              <input type="hidden" id="privateSide" value="auto">
+              <div class="drop drop-lg" id="privateSideDrop" data-value="auto">
+                <button type="button" class="drop-btn">自动判定</button>
+                <div class="drop-menu">
+                  <button type="button" data-value="auto" class="active">自动判定</button>
+                  <button type="button" data-value="client">仅客户端</button>
+                  <button type="button" data-value="server">仅服务端</button>
+                  <button type="button" data-value="both">两端</button>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <label>新建目录</label>
+              <div class="field-row">
+                <input id="privateNewFolder" placeholder="例如 config/ItemBan">
+                <button type="button" class="act" id="newFolderBtn">新建目录</button>
+              </div>
+            </div>
+            <div class="field">
+              <label>操作</label>
               <div class="actions">
                 <button type="button" class="act" id="addPrivateBtn">添加私货</button>
-                <button type="button" class="act ok" id="rebuildBtn">重新构建仓库</button>
+                <button type="button" class="act ok" id="rebuildBtn">保存</button>
+                <button type="button" class="act ghost" id="discardBtn" disabled>不保存</button>
               </div>
             </div>
           </div>
+          <div class="toolbar">
+            <input id="privateSearch" class="search" placeholder="搜索路径、文件名或端侧" autocomplete="off">
+          </div>
+          <div class="table-wrap">
           <table>
+            <colgroup>
+              <col>
+              <col class="col-side">
+              <col>
+              <col class="col-act">
+            </colgroup>
             <thead><tr><th>游戏内路径</th><th>端侧</th><th>本地文件</th><th></th></tr></thead>
             <tbody id="privateTable"></tbody>
           </table>
+          </div>
         </section>
         <section id="tab-connection" class="card">
           <h2>连接地址</h2>
@@ -339,9 +564,11 @@
           <h2>GitHub 版本</h2>
           <p class="lead">切换官方 Release 标签后会重新从 GitHub 拉取客户端/服务端包。完整服务端包可能超过 800MB。</p>
           <label>Release 标签</label>
-          <select id="versionTag">
-            <option value="">请先刷新 GitHub 版本</option>
-          </select>
+          <input type="hidden" id="versionTag" value="">
+          <div class="drop drop-lg drop-scroll" id="versionTagDrop" data-value="">
+            <button type="button" class="drop-btn">请先刷新 GitHub 版本</button>
+            <div class="drop-menu"></div>
+          </div>
           <label>手动填写（可选，未出现在列表里时用）</label>
           <input id="versionCustom" placeholder="例如 v0.5.0.13-test" autocomplete="off">
           <div class="actions">
@@ -365,13 +592,32 @@
     <span id="themeLabel">暗色</span>
   </button>
   <div class="toast" id="toast"></div>
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <h3 id="modalTitle">确认</h3>
+      <p class="lead" id="modalText"></p>
+      <div class="actions">
+        <button type="button" class="act ghost" id="modalCancel">取消</button>
+        <button type="button" class="act" id="modalOk">确定</button>
+      </div>
+    </div>
+  </div>
   <script>
     const TOKEN_KEY = "cdr-admin-token";
     let state = null;
     let timer = null;
     let tagsLoaded = false;
+    const pending = {
+      sides: Object.create(null),
+      deletes: new Set(),
+      adds: [],
+      folders: []
+    };
 
     function $(id) { return document.getElementById(id); }
+
+    let modalResolve = null;
 
     function toast(msg) {
       const el = $("toast");
@@ -379,6 +625,36 @@
       el.style.display = "block";
       clearTimeout(el._t);
       el._t = setTimeout(() => { el.style.display = "none"; }, 3200);
+    }
+
+    function modalOpen() {
+      const el = $("modal");
+      return el && el.classList.contains("open");
+    }
+
+    function ask(title, text, danger) {
+      return new Promise(resolve => {
+        if (modalResolve) modalResolve(false);
+        modalResolve = resolve;
+        $("modalTitle").textContent = title || "确认";
+        $("modalText").textContent = text || "";
+        $("modalOk").classList.toggle("danger", !!danger);
+        const el = $("modal");
+        el.classList.remove("open");
+        void el.offsetWidth;
+        el.classList.add("open");
+        el.setAttribute("aria-hidden", "false");
+        $("modalOk").focus();
+      });
+    }
+
+    function closeModal(ok) {
+      const el = $("modal");
+      el.classList.remove("open");
+      el.setAttribute("aria-hidden", "true");
+      const resolve = modalResolve;
+      modalResolve = null;
+      if (resolve) resolve(!!ok);
     }
 
     function headers(extra) {
@@ -420,9 +696,39 @@
       stopTimer();
       const fast = state && (state.busy || (state.progress && state.progress.active));
       timer = setTimeout(async () => {
+        if (selectOpen()) {
+          if (timer !== null) scheduleRefresh();
+          return;
+        }
         try { await refresh(); } catch (_) {}
         if (timer !== null) scheduleRefresh();
       }, fast ? 400 : 2500);
+    }
+
+    function selectOpen() {
+      return modalOpen() || !!document.querySelector(".drop.open");
+    }
+
+    function closeDrops(except) {
+      document.querySelectorAll(".drop.open").forEach(el => {
+        if (el !== except) el.classList.remove("open");
+      });
+    }
+
+    function sideLabelOf(side) {
+      return ({ client: "仅客户端", server: "仅服务端", both: "两端", auto: "自动判定" })[side] || "两端";
+    }
+
+    function sideDropHtml(path, side) {
+      const current = side === "client" || side === "server" ? side : "both";
+      const safe = esc(path);
+      const opts = [["client", "仅客户端"], ["server", "仅服务端"], ["both", "两端"]]
+        .map(([value, label]) => `<button type="button" data-value="${value}" class="${value === current ? "active" : ""}">${label}</button>`)
+        .join("");
+      return `<div class="drop side-select" data-side-path="${safe}" data-value="${current}">
+        <button type="button" class="drop-btn">${sideLabelOf(current)}</button>
+        <div class="drop-menu">${opts}</div>
+      </div>`;
     }
 
     function showApp() {
@@ -433,13 +739,246 @@
       $("logoutBtn").classList.remove("hidden");
     }
 
-    function emptyRow(cols, text) {
-      return `<tr><td class="empty" colspan="${cols}">${text}</td></tr>`;
+    function folderOf(path) {
+      const rel = String(path || "").replace(/\\/g, "/");
+      const slash = rel.lastIndexOf("/");
+      return slash <= 0 ? "." : rel.slice(0, slash);
+    }
+
+    function dropHidden(drop) {
+      if (!drop || !drop.id || !drop.id.endsWith("Drop")) return null;
+      return $(drop.id.slice(0, -4));
+    }
+
+    function setDropValue(drop, value, label) {
+      const text = String(label || value || "").trim();
+      drop.dataset.value = value || "";
+      const hidden = dropHidden(drop);
+      if (hidden) hidden.value = value || "";
+      const btn = drop.querySelector(".drop-btn");
+      if (btn) {
+        btn.textContent = text || "请选择";
+        btn.title = text || "";
+      }
+      drop.querySelectorAll(".drop-menu [data-value]").forEach(item => {
+        item.classList.toggle("active", item.getAttribute("data-value") === String(value || ""));
+      });
+    }
+
+    function fillDrop(drop, items, current, emptyLabel) {
+      if (!drop || drop.classList.contains("open")) return;
+      const menu = drop.querySelector(".drop-menu");
+      const list = [];
+      const seen = new Set();
+      for (const item of items || []) {
+        const value = String(item || "").trim();
+        if (!value || seen.has(value)) continue;
+        seen.add(value);
+        list.push(value);
+      }
+      if (!list.length) {
+        if (menu) menu.innerHTML = "";
+        setDropValue(drop, "", emptyLabel || "请选择");
+        return;
+      }
+      const want = current && list.includes(current) ? current : list[0];
+      menu.innerHTML = list.map(value =>
+        `<button type="button" data-value="${esc(value)}" class="${value === want ? "active" : ""}" title="${esc(value)}">${esc(value)}</button>`
+      ).join("");
+      setDropValue(drop, want, want);
+    }
+
+    function fillDestFolders(folders, keep) {
+      const drop = $("privateDestFolderDrop");
+      const hidden = $("privateDestFolder");
+      if (!drop || !hidden) return;
+      const seen = new Set();
+      const list = [];
+      for (const folder of folders || []) {
+        let value = String(folder || "").trim().replace(/\\/g, "/");
+        if (!value) continue;
+        if (!value.endsWith("/")) value += "/";
+        if (seen.has(value)) continue;
+        seen.add(value);
+        list.push(value);
+      }
+      for (const folder of pending.folders) {
+        let value = String(folder || "").trim().replace(/\\/g, "/");
+        if (!value) continue;
+        if (!value.endsWith("/")) value += "/";
+        if (seen.has(value)) continue;
+        seen.add(value);
+        list.push(value);
+      }
+      if (!list.length) {
+        list.push("mods/");
+        seen.add("mods/");
+      }
+      let current = keep || hidden.value || "mods/";
+      if (current && !current.endsWith("/")) current += "/";
+      if (current && !seen.has(current)) {
+        seen.add(current);
+        list.push(current);
+      }
+      fillDrop(drop, list, current);
+    }
+
+    function pendingDirty() {
+      return Object.keys(pending.sides).length + pending.deletes.size + pending.adds.length + pending.folders.length;
+    }
+
+    function clearPending() {
+      pending.sides = Object.create(null);
+      pending.deletes = new Set();
+      pending.adds = [];
+      pending.folders = [];
+    }
+
+    function markSaveBtn() {
+      const n = pendingDirty();
+      const btn = $("rebuildBtn");
+      if (btn) btn.textContent = n ? "保存（" + n + "）" : "保存";
+      const discard = $("discardBtn");
+      if (discard) discard.disabled = !n || !!(state && state.busy);
+    }
+
+    function destForFile(dest, filename, fileCount) {
+      const name = String(filename || "upload.bin").split(/[\\/]/).pop();
+      let path = String(dest || "").replace(/\\/g, "/").replace(/^\/+/, "").trim();
+      if (!path) return defaultFolderForName(name) + name;
+      const asFolder = fileCount > 1 || path.endsWith("/");
+      if (asFolder) {
+        path = path.replace(/\/+$/, "");
+        return path ? path + "/" + name : name;
+      }
+      return path;
+    }
+
+    function normalizeFolderInput(dest) {
+      let value = String(dest || "").trim().replace(/\\/g, "/");
+      while (value.startsWith("/")) value = value.slice(1);
+      if (value.startsWith("client/")) value = value.slice(7);
+      else if (value.startsWith("server/")) value = value.slice(7);
+      else if (value.startsWith("both/")) value = value.slice(5);
+      if (!value || value.includes("..")) throw new Error("无效的目录");
+      return value.endsWith("/") ? value : value + "/";
+    }
+
+    function pendingAddOf(path) {
+      return pending.adds.find(item => item.path === path);
+    }
+
+    function queueSide(path, side) {
+      const add = pendingAddOf(path);
+      if (add) {
+        add.side = side;
+        return;
+      }
+      pending.sides[path] = side;
+    }
+
+    function mergedPrivates(serverList) {
+      const rows = [];
+      const seen = new Set();
+      for (const row of serverList || []) {
+        const path = row.path;
+        if (!path || pending.deletes.has(path)) continue;
+        const add = pendingAddOf(path);
+        const side = add ? add.side : (pending.sides[path] || row.side);
+        const pendingMark = add || pending.sides[path] ? true : false;
+        rows.push({
+          path,
+          side,
+          side_label: sideLabelOf(side),
+          source: add ? ("待保存 · " + add.name) : row.source,
+          folder: folderOf(path),
+          pending: pendingMark
+        });
+        seen.add(path);
+      }
+      for (const add of pending.adds) {
+        if (pending.deletes.has(add.path) || seen.has(add.path)) continue;
+        rows.push({
+          path: add.path,
+          side: add.side,
+          side_label: sideLabelOf(add.side),
+          source: "待保存 · " + add.name,
+          folder: folderOf(add.path),
+          pending: true
+        });
+      }
+      return rows;
+    }
+
+    function paintPrivates() {
+      if (!state) return;
+      if (document.querySelector("#privateTable .drop.open")) return;
+      $("privateTable").innerHTML = renderPrivates(mergedPrivates(state.privates || []), $("privateSearch").value);
+      markSaveBtn();
+    }
+
+    function renderPrivates(privates, query) {
+      const needle = String(query || "").trim().toLowerCase();
+      const matched = (privates || []).filter(row => {
+        if (!needle) return true;
+        const path = String(row.path || "").toLowerCase();
+        const side = String(row.side_label || row.side || "").toLowerCase();
+        const source = String(row.source || "").toLowerCase();
+        const folder = String(row.folder || folderOf(row.path)).toLowerCase();
+        return path.includes(needle) || side.includes(needle) || source.includes(needle) || folder.includes(needle);
+      });
+      if (!matched.length) {
+        return emptyRow(4, needle ? "没有匹配的私货" : "还没有私货");
+      }
+      matched.sort((a, b) => {
+        const fa = folderOf(a.path);
+        const fb = folderOf(b.path);
+        return fa === fb ? String(a.path).localeCompare(String(b.path)) : fa.localeCompare(fb);
+      });
+      const parts = [];
+      let current = null;
+      let buffer = [];
+      const flush = () => {
+        if (!current) return;
+        const label = current === "." ? "根目录" : current + "/";
+        parts.push(`<tr class="group"><td colspan="4" title="${esc(label)}">${esc(label)}  (${buffer.length})</td></tr>`);
+        for (const row of buffer) {
+          const path = esc(row.path);
+          const source = esc(row.source);
+          parts.push(`<tr class="file${row.pending ? " is-pending" : ""}">
+            <td title="${path}">${path}</td>
+            <td class="col-side">${sideDropHtml(row.path, row.side)}</td>
+            <td class="id" title="${source}">${source}</td>
+            <td class="col-act"><button type="button" class="act danger" data-del="${path}">删除</button></td>
+          </tr>`);
+        }
+        buffer = [];
+      };
+      for (const row of matched) {
+        const folder = folderOf(row.path);
+        if (folder !== current) {
+          flush();
+          current = folder;
+        }
+        buffer.push(row);
+      }
+      flush();
+      return parts.join("");
+    }
+
+    function defaultFolderForName(name) {
+      const lower = String(name || "").toLowerCase();
+      if (lower.endsWith(".jar")) return "mods/";
+      if (lower.endsWith(".zip")) return "resourcepacks/";
+      if (lower.endsWith(".js")) return "kubejs/server_scripts/";
+      if (lower.endsWith(".toml") || lower.endsWith(".cfg") || lower.endsWith(".json")) return "config/";
+      return "mods/";
     }
 
     function esc(s) {
       return String(s == null ? "" : s)
-        .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
     }
 
     function fmtTime(iso) {
@@ -475,29 +1014,30 @@
       }
       document.querySelectorAll("button.act").forEach(btn => {
         if (btn.id === "loginBtn" || btn.id === "logoutBtn" || btn.id === "themeBtn") return;
-        if (btn.closest("#login")) return;
+        if (btn.closest("#login") || btn.closest("#modal")) return;
         btn.disabled = !!data.busy;
       });
       const servers = data.servers || [];
       $("serverTable").innerHTML = servers.length ? servers.map(row =>
         `<tr>
-          <td>${esc(row.hostname)}</td>
-          <td class="id">${esc(row.instance_path)}</td>
-          <td class="id">${esc(row.remote)}</td>
-          <td>${fmtTime(row.first_seen)}</td>
-          <td>${fmtTime(row.last_seen)}</td>
+          <td title="${esc(row.hostname)}">${esc(row.hostname)}</td>
+          <td class="id" title="${esc(row.instance_path)}">${esc(row.instance_path)}</td>
+          <td class="id" title="${esc(row.remote)}">${esc(row.remote)}</td>
+          <td title="${fmtTime(row.first_seen)}">${fmtTime(row.first_seen)}</td>
+          <td title="${fmtTime(row.last_seen)}">${fmtTime(row.last_seen)}</td>
           <td>${esc(row.sync_count)}</td>
         </tr>`
       ).join("") : emptyRow(6, "还没有服务端连接过");
       const privates = data.privates || [];
-      $("privateTable").innerHTML = privates.length ? privates.map(row =>
-        `<tr>
-          <td>${esc(row.path)}</td>
-          <td>${esc(row.side_label || row.side)}</td>
-          <td class="id">${esc(row.source)}</td>
-          <td><button type="button" class="act danger" data-del="${esc(row.path)}">删除</button></td>
-        </tr>`
-      ).join("") : emptyRow(4, "还没有私货");
+      fillDestFolders(data.private_folders || [], $("privateDestFolder").value);
+      if (!document.querySelector("#privateTable .drop.open")) {
+        $("privateTable").innerHTML = renderPrivates(mergedPrivates(privates), $("privateSearch").value);
+      }
+      markSaveBtn();
+      document.querySelectorAll("#privateTable .drop-btn").forEach(btn => {
+        if (btn.closest(".drop.open")) return;
+        btn.disabled = !!data.busy;
+      });
       if (document.activeElement !== $("listen")) $("listen").value = data.listen || "";
       if (document.activeElement !== $("port")) $("port").value = data.port || "";
       if (document.activeElement !== $("publicUrl")) $("publicUrl").value = data.public_url || "";
@@ -525,8 +1065,10 @@
     }
 
     function fillTagSelect(tags, current) {
-      const sel = $("versionTag");
-      const prev = sel.value;
+      const drop = $("versionTagDrop");
+      const hidden = $("versionTag");
+      if (!drop || !hidden) return;
+      const prev = hidden.value;
       const seen = new Set();
       const list = [];
       for (const tag of tags || []) {
@@ -536,22 +1078,11 @@
         list.push(value);
       }
       if (current && !seen.has(current)) list.unshift(current);
-      sel.innerHTML = "";
       if (!list.length) {
-        const empty = document.createElement("option");
-        empty.value = "";
-        empty.textContent = "请先刷新 GitHub 版本";
-        sel.appendChild(empty);
+        fillDrop(drop, [], "", "请先刷新 GitHub 版本");
         return;
       }
-      for (const tag of list) {
-        const opt = document.createElement("option");
-        opt.value = tag;
-        opt.textContent = tag;
-        sel.appendChild(opt);
-      }
-      const want = prev || current || "";
-      if (want && list.includes(want)) sel.value = want;
+      fillDrop(drop, list, prev || current || "");
     }
 
     async function loadTags(showToast) {
@@ -594,45 +1125,175 @@
     };
 
     $("addPrivateBtn").onclick = async () => {
-      const file = $("privateFile").files[0];
-      if (!file) { toast("请先选择私货文件"); return; }
-      const fd = new FormData();
-      fd.append("file", file);
-      fd.append("dest", $("privateDest").value.trim());
-      fd.append("side", $("privateSide").value);
-      try {
-        toast("正在添加私货并构建仓库…");
-        const res = await fetch("/admin/api/private", {
-          method: "POST", credentials: "include", headers: headers(), body: fd
-        });
-        const data = await res.json().catch(() => ({}));
-        if (!res.ok) throw new Error(data.detail || "添加失败");
-        $("privateFile").value = "";
-        $("privateDest").value = "";
-        toast("私货已添加");
-        await refresh();
-      } catch (err) { toast(err.message); }
+      const files = [...($("privateFile").files || [])];
+      if (!files.length) { toast("请先选择私货文件"); return; }
+      const custom = $("privateDest").value.trim();
+      const folder = $("privateDestFolder").value.trim();
+      let dest = custom || folder;
+      if (files.length > 1 && dest && !dest.endsWith("/")) dest += "/";
+      const side = $("privateSide").value || "auto";
+      for (const file of files) {
+        const path = destForFile(dest, file.name, files.length);
+        pending.deletes.delete(path);
+        pending.adds = pending.adds.filter(item => item.path !== path);
+        delete pending.sides[path];
+        pending.adds.push({ path, side, name: file.name, file });
+      }
+      $("privateFile").value = "";
+      $("privateDest").value = "";
+      paintPrivates();
+      toast(files.length > 1 ? "已加入 " + files.length + " 个待保存文件" : "已加入待保存，点保存后写入");
     };
 
+    $("newFolderBtn").onclick = async () => {
+      const typed = $("privateNewFolder").value.trim();
+      if (!typed) { toast("请填写要创建的目录，例如 config/ItemBan"); return; }
+      let folder;
+      try {
+        folder = normalizeFolderInput(typed);
+      } catch (err) {
+        toast(err.message);
+        return;
+      }
+      if (!pending.folders.includes(folder)) pending.folders.push(folder);
+      $("privateNewFolder").value = "";
+      fillDestFolders((state && state.private_folders) || [], folder);
+      markSaveBtn();
+      toast("已加入待保存，点保存后创建 " + folder);
+    };
+
+    $("privateFile").addEventListener("change", () => {
+      const files = [...($("privateFile").files || [])];
+      if (!files.length) return;
+      const folder = defaultFolderForName(files[0].name);
+      const destDrop = $("privateDestFolderDrop");
+      if (destDrop && [...destDrop.querySelectorAll(".drop-menu [data-value]")].some(opt => opt.getAttribute("data-value") === folder)) {
+        setDropValue(destDrop, folder, folder);
+      }
+      if (files.length === 1 && !$("privateDest").value.trim()) {
+        $("privateDest").placeholder = folder + files[0].name;
+      }
+    });
+
+    $("privateSearch").addEventListener("input", () => {
+      paintPrivates();
+    });
+
     $("privateTable").onclick = async ev => {
+      const option = ev.target.closest(".drop-menu [data-value]");
+      if (option) {
+        const drop = option.closest(".drop");
+        const path = drop.getAttribute("data-side-path");
+        const side = option.getAttribute("data-value");
+        const label = option.textContent.trim();
+        drop.classList.remove("open");
+        if (!path || drop.dataset.value === side) return;
+        queueSide(path, side);
+        setDropValue(drop, side, label);
+        drop.dataset.value = side;
+        const row = drop.closest("tr");
+        if (row) row.classList.add("is-pending");
+        markSaveBtn();
+        toast("已改为" + label + "，点保存后生效");
+        return;
+      }
       const btn = ev.target.closest("[data-del]");
       if (!btn) return;
       const path = btn.getAttribute("data-del");
-      if (!confirm("删除私货 " + path + "？\n仓库会重新构建，已连接的服务端下次同步才会拿到变更。")) return;
+      if (!await ask("删除私货", "删除 " + path + "？\n点保存后才会从仓库移除。", true)) return;
+      const wasAdd = pending.adds.some(item => item.path === path);
+      pending.adds = pending.adds.filter(item => item.path !== path);
+      delete pending.sides[path];
+      if (!wasAdd) pending.deletes.add(path);
+      paintPrivates();
+      toast(wasAdd ? "已去掉待添加的文件" : "已标记删除，点保存后生效");
+    };
+
+    document.addEventListener("click", ev => {
+      const option = ev.target.closest(".drop-menu [data-value]");
+      if (option) {
+        const drop = option.closest(".drop");
+        if (drop && !drop.hasAttribute("data-side-path")) {
+          setDropValue(drop, option.getAttribute("data-value"), option.textContent.trim());
+          drop.classList.remove("open");
+        }
+        return;
+      }
+      const btn = ev.target.closest(".drop-btn");
+      if (btn) {
+        const drop = btn.closest(".drop");
+        const willOpen = !drop.classList.contains("open");
+        closeDrops();
+        if (willOpen) drop.classList.add("open");
+        return;
+      }
+      if (!ev.target.closest(".drop")) closeDrops();
+    });
+    document.addEventListener("keydown", ev => {
+      if (ev.key !== "Escape") return;
+      if (modalOpen()) {
+        closeModal(false);
+        return;
+      }
+      closeDrops();
+    });
+    $("modalOk").onclick = () => closeModal(true);
+    $("modalCancel").onclick = () => closeModal(false);
+    $("modalBackdrop").onclick = () => closeModal(false);
+
+    $("rebuildBtn").onclick = async () => {
+      const folders = pending.folders.slice();
+      const adds = pending.adds.filter(item => !pending.deletes.has(item.path));
+      const sides = { ...pending.sides };
+      const deletes = [...pending.deletes];
       try {
-        await api("private/remove", { method: "POST", json: true, body: JSON.stringify({ path }) });
-        toast("已删除 " + path);
+        toast(pendingDirty() ? "正在保存改动…" : "正在保存…");
+        for (const folder of folders) {
+          await api("private/folder", { method: "POST", json: true, body: JSON.stringify({ path: folder }) });
+          pending.folders = pending.folders.filter(item => item !== folder);
+        }
+        for (const path of deletes) {
+          if (adds.some(item => item.path === path)) continue;
+          await api("private/remove", { method: "POST", json: true, body: JSON.stringify({ path }) });
+          pending.deletes.delete(path);
+        }
+        for (const add of adds) {
+          const fd = new FormData();
+          fd.append("file", add.file);
+          fd.append("dest", add.path);
+          fd.append("side", add.side);
+          const res = await fetch("/admin/api/private", {
+            method: "POST", credentials: "include", headers: headers(), body: fd
+          });
+          const data = await res.json().catch(() => ({}));
+          if (!res.ok) throw new Error(data.detail || "添加失败");
+          pending.adds = pending.adds.filter(item => item !== add);
+          delete pending.sides[add.path];
+        }
+        for (const [path, side] of Object.entries(sides)) {
+          if (deletes.includes(path) && !adds.some(item => item.path === path)) continue;
+          if (adds.some(item => item.path === path)) continue;
+          await api("private/side", { method: "POST", json: true, body: JSON.stringify({ path, side }) });
+          delete pending.sides[path];
+        }
+        await api("rebuild", { method: "POST" });
+        clearPending();
+        markSaveBtn();
+        toast("已保存");
         await refresh();
       } catch (err) { toast(err.message); }
     };
 
-    $("rebuildBtn").onclick = async () => {
-      try {
-        toast("正在重新构建仓库…");
-        await api("rebuild", { method: "POST" });
-        toast("仓库已重新构建");
-        await refresh();
-      } catch (err) { toast(err.message); }
+    $("discardBtn").onclick = async () => {
+      if (!pendingDirty()) {
+        toast("没有待保存的改动");
+        return;
+      }
+      if (!await ask("不保存", "放弃未保存的改动？列表会回到上次保存的状态。", true)) return;
+      clearPending();
+      fillDestFolders((state && state.private_folders) || [], $("privateDestFolder").value);
+      paintPrivates();
+      toast("已放弃未保存的改动");
     };
 
     $("saveConnBtn").onclick = async () => {
@@ -666,7 +1327,7 @@
     };
 
     $("openWanBtn").onclick = async () => {
-      if (!confirm("监听将改为 0.0.0.0，并按检测到的公网/VPN 地址写入对外地址。路由器仍可能需要做端口映射。")) return;
+      if (!await ask("开放外网访问", "监听将改为 0.0.0.0，并按检测到的公网/VPN 地址写入对外地址。\n路由器仍可能需要做端口映射。")) return;
       try {
         const data = await api("open-wan", { method: "POST" });
         if (data.public_url) $("publicUrl").value = data.public_url;
@@ -680,7 +1341,7 @@
     $("applyVersionBtn").onclick = async () => {
       const tag = $("versionCustom").value.trim() || $("versionTag").value.trim();
       if (!tag) { toast("请选择或填写 GitHub Release 标签"); return; }
-      if (!confirm("将官方版本改为 " + tag + " 并重新从 GitHub 拉取？\n完整服务端包可能超过 800MB。")) return;
+      if (!await ask("切换 GitHub 版本", "将官方版本改为 " + tag + " 并重新从 GitHub 拉取？\n完整服务端包可能超过 800MB。")) return;
       try {
         toast("正在切换版本，可能需要较长时间…");
         await api("version", { method: "POST", json: true, body: JSON.stringify({ tag }) });

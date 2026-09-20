@@ -162,6 +162,28 @@ final class AdminWeb {
                     runtime.removePrivate(Json.str(body, "path"), runtime.logger());
                     sendJson(exchange, 200, Json.map("ok", true));
                 }
+                case "private/side" -> {
+                    if (!method(exchange, "POST")) {
+                        return;
+                    }
+                    requireIdle(runtime);
+                    Map<String, Object> body = readJson(exchange);
+                    runtime.setPrivateSide(Json.str(body, "path"), Json.str(body, "side"), runtime.logger());
+                    sendJson(exchange, 200, Json.map("ok", true));
+                }
+                case "private/folder" -> {
+                    if (!method(exchange, "POST")) {
+                        return;
+                    }
+                    Map<String, Object> body = readJson(exchange);
+                    String folder = Privates.createFolder(runtime.config(), Json.str(body, "path"));
+                    runtime.logger().accept("已创建目录 " + folder);
+                    Map<String, Object> result = Json.map("ok", true);
+                    result.put("folder", folder);
+                    result.put("private_folders", PrivateViews.destFolders(runtime.config().privateDir,
+                            Privates.list(runtime.config())));
+                    sendJson(exchange, 200, result);
+                }
                 default -> sendError(exchange, 404, "接口不存在");
             }
         } catch (IllegalArgumentException error) {
@@ -303,16 +325,19 @@ final class AdminWeb {
             servers.add(record.toMap());
         }
         result.put("servers", servers);
+        List<Pack.PrivateFile> privateFiles = Privates.list(config);
         List<Object> privates = Json.list();
-        for (Pack.PrivateFile file : Privates.list(config)) {
+        for (Pack.PrivateFile file : privateFiles) {
             Map<String, Object> row = Json.map();
             row.put("path", file.path);
+            row.put("folder", PrivateViews.folderOf(file.path));
             row.put("side", file.side);
             row.put("side_label", sideLabel(file.side));
             row.put("source", file.source.toString());
             privates.add(row);
         }
         result.put("privates", privates);
+        result.put("private_folders", PrivateViews.destFolders(config.privateDir, privateFiles));
         List<Object> logs = Json.list();
         logs.addAll(runtime.logs());
         result.put("logs", logs);
@@ -338,24 +363,33 @@ final class AdminWeb {
     private static void addPrivate(ServerRuntime runtime, HttpExchange exchange) throws Exception {
         String contentType = header(exchange, "Content-Type").toLowerCase(Locale.ROOT);
         Files.createDirectories(runtime.config().dataDir);
-        Path temp = Files.createTempFile(runtime.config().dataDir, "admin-private-", ".bin");
-        String dest;
-        String side;
+        List<Path> temps = new ArrayList<>();
         try {
+            List<ServerRuntime.PrivateAdd> items = new ArrayList<>();
+            String side;
             if (contentType.startsWith("multipart/form-data")) {
                 byte[] raw = readBytes(exchange, UPLOAD_MAX);
-                Map<String, Part> parts = parseMultipart(raw, header(exchange, "Content-Type"));
-                Part file = parts.get("file");
-                if (file == null || file.data == null || file.data.length == 0) {
+                Multipart parts = parseMultipart(raw, header(exchange, "Content-Type"));
+                if (parts.files.isEmpty()) {
                     throw new IllegalArgumentException("请选择要上传的私货文件");
                 }
-                Files.write(temp, file.data);
-                String filename = file.filename == null || file.filename.isBlank() ? "upload.bin" : Path.of(file.filename).getFileName().toString();
-                dest = textPart(parts, "dest");
-                if (dest.isBlank()) {
-                    dest = Privates.defaultDest(Path.of(filename));
+                String dest = textPart(parts.fields, "dest");
+                side = textPart(parts.fields, "side");
+                if (side == null || side.isBlank()) {
+                    side = "auto";
                 }
-                side = textPart(parts, "side");
+                for (Part file : parts.files) {
+                    if (file.data == null || file.data.length == 0) {
+                        continue;
+                    }
+                    Path temp = Files.createTempFile(runtime.config().dataDir, "admin-private-", ".bin");
+                    temps.add(temp);
+                    Files.write(temp, file.data);
+                    String filename = file.filename == null || file.filename.isBlank()
+                            ? "upload.bin" : Path.of(file.filename).getFileName().toString();
+                    items.add(new ServerRuntime.PrivateAdd(temp,
+                            Privates.resolveDest(dest, filename, parts.files.size()), side));
+                }
             } else {
                 Map<String, Object> body = Json.object(Json.parse(new String(readBytes(exchange, UPLOAD_MAX), StandardCharsets.UTF_8)));
                 String filename = Json.str(body, "filename");
@@ -363,20 +397,25 @@ final class AdminWeb {
                 if (encoded.isBlank()) {
                     throw new IllegalArgumentException("请选择要上传的私货文件");
                 }
-                byte[] data = Base64.getDecoder().decode(encoded);
-                Files.write(temp, data);
-                dest = Json.str(body, "dest");
-                if (dest.isBlank()) {
-                    dest = Privates.defaultDest(Path.of(filename.isBlank() ? "upload.bin" : filename));
-                }
+                Path temp = Files.createTempFile(runtime.config().dataDir, "admin-private-", ".bin");
+                temps.add(temp);
+                Files.write(temp, Base64.getDecoder().decode(encoded));
                 side = Json.str(body, "side");
+                if (side == null || side.isBlank()) {
+                    side = "auto";
+                }
+                items.add(new ServerRuntime.PrivateAdd(temp,
+                        Privates.resolveDest(Json.str(body, "dest"), filename.isBlank() ? "upload.bin" : filename, 1),
+                        side));
             }
-            if (side == null || side.isBlank()) {
-                side = "auto";
+            if (items.isEmpty()) {
+                throw new IllegalArgumentException("请选择要上传的私货文件");
             }
-            runtime.addPrivate(temp, dest, side, runtime.logger());
+            runtime.addPrivates(items, runtime.logger());
         } finally {
-            Files.deleteIfExists(temp);
+            for (Path temp : temps) {
+                Files.deleteIfExists(temp);
+            }
         }
     }
 
@@ -488,7 +527,12 @@ final class AdminWeb {
         }
     }
 
-    private static Map<String, Part> parseMultipart(byte[] body, String contentType) {
+    private static final class Multipart {
+        final Map<String, Part> fields = new LinkedHashMap<>();
+        final List<Part> files = new ArrayList<>();
+    }
+
+    private static Multipart parseMultipart(byte[] body, String contentType) {
         String boundary = boundaryOf(contentType);
         if (boundary == null || boundary.isBlank()) {
             throw new IllegalArgumentException("缺少上传边界");
@@ -500,7 +544,7 @@ final class AdminWeb {
             starts.add(index);
             index = indexOf(body, marker, index + marker.length);
         }
-        Map<String, Part> parts = new LinkedHashMap<>();
+        Multipart parts = new Multipart();
         for (int i = 0; i + 1 < starts.size(); i++) {
             int from = starts.get(i) + marker.length;
             if (from + 1 < body.length && body[from] == '\r' && body[from + 1] == '\n') {
@@ -520,7 +564,12 @@ final class AdminWeb {
                 continue;
             }
             byte[] data = Arrays.copyOfRange(body, headerEnd + 4, Math.max(headerEnd + 4, to));
-            parts.put(name, new Part(disposition(headers, "filename"), data));
+            Part part = new Part(disposition(headers, "filename"), data);
+            if ("file".equals(name) || "files".equals(name)) {
+                parts.files.add(part);
+            } else {
+                parts.fields.put(name, part);
+            }
         }
         return parts;
     }
