@@ -22,17 +22,25 @@ def read_toml(path):
             return tomllib.load(source)
 
     metadata = {}
+    table = metadata
     for raw_line in path.read_text(encoding="utf-8").splitlines():
         line = raw_line.split("#", 1)[0].strip()
-        if not line or line.startswith("["):
+        if not line:
+            continue
+        if line.startswith("[") and line.endswith("]"):
+            table = metadata
+            for part in line[1:-1].split("."):
+                table = table.setdefault(part.strip(), {})
             continue
         if "=" not in line:
             continue
         key, value = (part.strip() for part in line.split("=", 1))
         if value.startswith('"') and value.endswith('"'):
-            metadata[key] = json.loads(value)
+            table[key] = json.loads(value)
         elif value.lower() in {"true", "false"}:
-            metadata[key] = value.lower() == "true"
+            table[key] = value.lower() == "true"
+        elif value.isdecimal():
+            table[key] = int(value)
     return metadata
 
 
@@ -155,9 +163,21 @@ def client_mod_baseline(repo_root, distribution="development"):
         filename = str(metadata.get("filename", "")).strip()
         if not filename:
             raise RuntimeError(f"Missing filename in {metadata_path.relative_to(repo_root)}")
-        if filename in records:
-            raise RuntimeError(f"Duplicate client mod filename: {filename}")
-        records[filename] = mod_record(
+        installed_filename = filename
+        if distribution != "development":
+            # CurseForge launchers install the hosted filename, not our local
+            # Packwiz alias. Keep reading the original payload for mod metadata.
+            release_hint = metadata.get("release", {}).get("curseforge", {})
+            installed_filename = str(release_hint.get("filename", filename)).strip()
+            if (
+                not installed_filename.lower().endswith(".jar")
+                or "/" in installed_filename
+                or "\\" in installed_filename
+            ):
+                raise RuntimeError(f"Invalid installed mod filename in {metadata_path}: {installed_filename!r}")
+        if installed_filename in records:
+            raise RuntimeError(f"Duplicate client mod filename: {installed_filename}")
+        records[installed_filename] = mod_record(
             filename,
             str(metadata.get("name", filename)),
             repo_root=repo_root,

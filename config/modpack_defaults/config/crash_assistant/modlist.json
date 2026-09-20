@@ -1704,7 +1704,7 @@
     "name": "[TaCZ:Accel] Timeless and Classics Zero Guns: Accelerated[Performance Optimisation]",
     "version": "1.2.0"
   },
-  "taczaddon-1.20.1-1.1.8-hotfix2-for-new-soph.jar": {
+  "taczaddon.jar": {
     "modId": "taczaddon",
     "name": "TaCZ addon",
     "version": "1.1.8"
