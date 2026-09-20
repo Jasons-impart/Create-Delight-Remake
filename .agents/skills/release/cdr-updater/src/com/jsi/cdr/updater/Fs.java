@@ -145,6 +145,18 @@ final class Fs {
         Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.COPY_ATTRIBUTES);
     }
 
+    static boolean copyIfChanged(Path source, Path target) throws Exception {
+        if (source == null || !Files.isRegularFile(source)) {
+            return false;
+        }
+        if (Files.isRegularFile(target) && Files.size(source) == Files.size(target)
+                && sha256(source).equals(sha256(target))) {
+            return false;
+        }
+        copyFile(source, target);
+        return true;
+    }
+
     static void write(Path path, byte[] data) throws IOException {
         Files.createDirectories(path.getParent());
         Path tmp = path.resolveSibling(path.getFileName() + ".cdrtmp");

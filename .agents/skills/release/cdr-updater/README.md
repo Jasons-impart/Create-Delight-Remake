@@ -67,6 +67,8 @@ java -jar dist/cdr-updater.jar export-pcl2 --config config.toml
 
 玩家在 PCL2：**下载 → 整合包 → 安装整合包**。不要改启动器、不要改 `Setup.ini`、不要填「启动前执行命令」。
 
+zip 只打配置、KubeJS、资源包和更新器，不内置模组 jar。有 CurseForge 编号的模组写进 `manifest.json`，安装时由 PCL2 拉取；其余模组第一次开游戏时由更新器补齐。
+
 ### 服务端
 
 双击本机窗口「导出服务端」，或：

@@ -66,7 +66,9 @@ final class ServerRuntime {
         synchronized (lock) {
             busy = true;
             try {
-                Pack.purgeIncomplete(config, log);
+                if (!Pack.canRefresh(config)) {
+                    Pack.purgeIncomplete(config, log);
+                }
                 Pack.buildRepos(config, log);
             } finally {
                 Progress.end();
@@ -99,13 +101,23 @@ final class ServerRuntime {
         }
     }
 
+    record PrivateAdd(Path source, String dest, String side) {}
+
     void addPrivate(Path source, String dest, String side, Consumer<String> log) throws Exception {
+        addPrivates(List.of(new PrivateAdd(source, dest, side)), log);
+    }
+
+    void addPrivates(List<PrivateAdd> items, Consumer<String> log) throws Exception {
+        if (items == null || items.isEmpty()) {
+            throw new IllegalArgumentException("请选择要添加的私货文件");
+        }
         synchronized (lock) {
             busy = true;
             try {
-                Path stored = Privates.add(config, source, dest, side);
-                log.accept("已添加私货 " + config.privateDir.relativize(stored));
-                Pack.buildRepos(config, log);
+                for (PrivateAdd item : items) {
+                    Path stored = Privates.add(config, item.source, item.dest, item.side);
+                    log.accept("已添加私货 " + config.privateDir.relativize(stored));
+                }
             } finally {
                 Progress.end();
                 busy = false;
@@ -119,7 +131,19 @@ final class ServerRuntime {
             try {
                 Privates.remove(config, dest);
                 log.accept("已删除私货 " + dest);
-                Pack.buildRepos(config, log);
+            } finally {
+                Progress.end();
+                busy = false;
+            }
+        }
+    }
+
+    void setPrivateSide(String dest, String side, Consumer<String> log) throws Exception {
+        synchronized (lock) {
+            busy = true;
+            try {
+                Path stored = Privates.setSide(config, dest, side);
+                log.accept("已将 " + dest + " 改为 " + PrivateViews.sideLabel(side) + "（" + config.privateDir.relativize(stored) + "）");
             } finally {
                 Progress.end();
                 busy = false;

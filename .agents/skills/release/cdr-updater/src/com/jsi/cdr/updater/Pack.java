@@ -11,8 +11,10 @@ import java.nio.file.StandardCopyOption;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.Consumer;
 
 final class Pack {
@@ -262,12 +264,12 @@ final class Pack {
             Path pwMeta = source.resolveSibling(source.getFileName() + ".pw.toml");
             if (prefixed[0] != null) {
                 side = prefixed[0];
+            } else if (Files.isRegularFile(sideFile)) {
+                side = Sides.normalize(Files.readString(sideFile).trim());
             } else if (declared.containsKey(path) && !declared.get(path).isBlank()) {
                 side = Sides.normalize(declared.get(path));
             } else if (declared.containsKey(rel) && !declared.get(rel).isBlank()) {
                 side = Sides.normalize(declared.get(rel));
-            } else if (Files.isRegularFile(sideFile)) {
-                side = Sides.normalize(Files.readString(sideFile).trim());
             } else if (Files.isRegularFile(pwMeta)) {
                 side = Sides.normalize(Toml.str(Toml.load(pwMeta), "side", "both"));
             } else {
@@ -290,6 +292,349 @@ final class Pack {
             }
             Fs.copyFile(file.source, destination.resolve(file.path));
         }
+    }
+
+    private record OverlayIndex(String side, String sha256) {}
+
+    static boolean canRefresh(Config config) {
+        try {
+            if (config == null || config.officialVersion.isBlank()) {
+                return false;
+            }
+            Path manifests = config.manifestsDir();
+            if (!Files.isRegularFile(manifests.resolve("meta.json"))
+                    || !Files.isRegularFile(manifests.resolve("client.json"))
+                    || !Files.isRegularFile(manifests.resolve("server.json"))
+                    || !Files.isDirectory(config.clientDir)
+                    || !Files.isDirectory(config.serverDir)) {
+                return false;
+            }
+            Map<String, Object> meta = Json.object(Json.parse(Files.readString(manifests.resolve("meta.json"))));
+            if (!config.officialVersion.equals(Json.str(meta, "official_version"))) {
+                return false;
+            }
+            if (config.officialDir != null) {
+                return Files.isDirectory(config.officialDir);
+            }
+            Path cache = config.dataDir.resolve("cache").resolve(config.officialVersion);
+            return Files.isDirectory(cache.resolve("client-raw")) && Files.isDirectory(cache.resolve("server-raw"));
+        } catch (Exception ignored) {
+            return false;
+        }
+    }
+
+    static Map<String, Manifests.Manifest> buildRepos(Config config, Consumer<String> log) throws Exception {
+        return buildRepos(config, log, Set.of());
+    }
+
+    static Map<String, Manifests.Manifest> buildRepos(Config config, Consumer<String> log, Set<String> removedOverlay)
+            throws Exception {
+        try {
+            if (canRefresh(config)) {
+                try {
+                    return refreshReposInner(config, log, removedOverlay);
+                } catch (Exception error) {
+                    log.accept("增量更新失败，改为完整重建: " + error.getMessage());
+                    Progress.end();
+                }
+            }
+            return buildReposInner(config, log);
+        } finally {
+            Progress.end();
+        }
+    }
+
+    private static Map<String, Manifests.Manifest> refreshReposInner(Config config, Consumer<String> log,
+                                                                     Set<String> removedOverlay) throws Exception {
+        log.accept("仓库已存在，只更新有改动的文件");
+        Progress.begin("更新改动", 1);
+        Progress.ensure("比对改动", -1);
+        Map<String, String> officialSides = loadOfficialSides(config);
+        List<PrivateFile> privateFiles = loadPrivate(config.privateDir, officialSides);
+        Map<String, OverlayIndex> previous = loadPrivateIndex(config);
+        Map<String, PrivateFile> current = new LinkedHashMap<>();
+        for (PrivateFile file : privateFiles) {
+            current.put(file.path, file);
+        }
+        Manifests.Manifest clientMan = loadManifest(config, "client");
+        Manifests.Manifest serverMan = loadManifest(config, "server");
+        Map<String, Manifests.FileEntry> clientUpsert = new LinkedHashMap<>();
+        Map<String, Manifests.FileEntry> serverUpsert = new LinkedHashMap<>();
+        Set<String> clientRemove = new LinkedHashSet<>();
+        Set<String> serverRemove = new LinkedHashSet<>();
+        int changed = 0;
+
+        Set<String> gone = new LinkedHashSet<>(previous.keySet());
+        gone.removeAll(current.keySet());
+        if (removedOverlay != null) {
+            for (String path : removedOverlay) {
+                String rel = Fs.posix(path);
+                if (!rel.isBlank() && !current.containsKey(rel)) {
+                    gone.add(rel);
+                }
+            }
+        }
+        for (String path : gone) {
+            OverlayIndex old = previous.get(path);
+            String side = old == null ? "both" : old.side;
+            changed += unapplyOverlay(config, path, side, officialSides, clientUpsert, serverUpsert,
+                    clientRemove, serverRemove, log);
+        }
+
+        for (PrivateFile file : privateFiles) {
+            OverlayIndex old = previous.get(file.path);
+            if (old != null && !old.side.equals(file.side)) {
+                changed += unapplyOverlay(config, file.path, old.side, officialSides, clientUpsert, serverUpsert,
+                        clientRemove, serverRemove, log);
+            }
+            changed += applyPrivate(config, file, clientUpsert, serverUpsert, clientRemove, serverRemove);
+        }
+
+        if (config.officialDir != null) {
+            Map<String, String> newOfficial = sideMapFromTree(config.officialDir);
+            for (String path : officialSides.keySet()) {
+                if (newOfficial.containsKey(path) || current.containsKey(path)) {
+                    continue;
+                }
+                changed += restoreOrDelete(config, path, "client", officialSides, clientUpsert, clientRemove);
+                changed += restoreOrDelete(config, path, "server", officialSides, serverUpsert, serverRemove);
+            }
+            officialSides = newOfficial;
+            for (Path path : Fs.files(config.officialDir)) {
+                String rel = Fs.posix(config.officialDir, path);
+                if (PackPaths.skipUnified(rel) || rel.endsWith(".pw.toml")) {
+                    continue;
+                }
+                String side = officialSides.getOrDefault(rel, PackPaths.defaultSide(rel));
+                PrivateFile overlay = current.get(rel);
+                if (allowed(side, "client") && !covers(overlay, "client")
+                        && Fs.copyIfChanged(path, config.clientDir.resolve(rel))) {
+                    touchEntry(config.clientDir.resolve(rel), rel, config.objectsDir, clientUpsert, clientRemove);
+                    changed++;
+                }
+                if (allowed(side, "server") && !covers(overlay, "server")
+                        && Fs.copyIfChanged(path, config.serverDir.resolve(rel))) {
+                    touchEntry(config.serverDir.resolve(rel), rel, config.objectsDir, serverUpsert, serverRemove);
+                    changed++;
+                }
+            }
+        }
+
+        writePrivateIndex(config, privateFiles);
+        if (changed == 0) {
+            if (!Files.isRegularFile(config.manifestsDir().resolve("official-side-map.json"))) {
+                Files.writeString(config.manifestsDir().resolve("official-side-map.json"), Json.stringify(officialSides));
+            }
+            log.accept("没有文件需要改动");
+            Map<String, Manifests.Manifest> manifests = new LinkedHashMap<>();
+            manifests.put("client", clientMan);
+            manifests.put("server", serverMan);
+            return manifests;
+        }
+
+        Manifests.Manifest client = Manifests.patch(clientMan, config.officialVersion, clientUpsert, clientRemove);
+        Manifests.Manifest server = Manifests.patch(serverMan, config.officialVersion, serverUpsert, serverRemove);
+        String releaseBody = Json.str(loadMeta(config), "release_body");
+        log.accept("已更新 " + changed + " 处，不重新拉取官方包");
+        return writeRepoState(config, client, server, releaseBody, officialSides, privateFiles, log);
+    }
+
+    private static boolean covers(PrivateFile overlay, String target) {
+        return overlay != null && allowed(overlay.side, target);
+    }
+
+    private static int applyPrivate(Config config, PrivateFile file, Map<String, Manifests.FileEntry> clientUpsert,
+                                    Map<String, Manifests.FileEntry> serverUpsert, Set<String> clientRemove,
+                                    Set<String> serverRemove) throws Exception {
+        int changed = 0;
+        if (allowed(file.side, "client")
+                && Fs.copyIfChanged(file.source, config.clientDir.resolve(file.path))) {
+            touchEntry(config.clientDir.resolve(file.path), file.path, config.objectsDir, clientUpsert, clientRemove);
+            changed++;
+        }
+        if (allowed(file.side, "server")
+                && Fs.copyIfChanged(file.source, config.serverDir.resolve(file.path))) {
+            touchEntry(config.serverDir.resolve(file.path), file.path, config.objectsDir, serverUpsert, serverRemove);
+            changed++;
+        }
+        return changed;
+    }
+
+    private static int unapplyOverlay(Config config, String path, String overlaySide, Map<String, String> officialSides,
+                                      Map<String, Manifests.FileEntry> clientUpsert,
+                                      Map<String, Manifests.FileEntry> serverUpsert, Set<String> clientRemove,
+                                      Set<String> serverRemove, Consumer<String> log) throws Exception {
+        int changed = 0;
+        if (allowed(overlaySide, "client")) {
+            int n = restoreOrDelete(config, path, "client", officialSides, clientUpsert, clientRemove);
+            if (n > 0) {
+                log.accept("客户端恢复 " + path);
+            }
+            changed += n;
+        }
+        if (allowed(overlaySide, "server")) {
+            int n = restoreOrDelete(config, path, "server", officialSides, serverUpsert, serverRemove);
+            if (n > 0) {
+                log.accept("服务端恢复 " + path);
+            }
+            changed += n;
+        }
+        return changed;
+    }
+
+    private static int restoreOrDelete(Config config, String rel, String repoSide, Map<String, String> officialSides,
+                                       Map<String, Manifests.FileEntry> upsert, Set<String> remove) throws Exception {
+        Path dest = ("server".equals(repoSide) ? config.serverDir : config.clientDir).resolve(rel);
+        Path official = officialSource(config, rel, repoSide, officialSides);
+        if (official != null && Files.isRegularFile(official)) {
+            if (Fs.copyIfChanged(official, dest)) {
+                touchEntry(dest, rel, config.objectsDir, upsert, remove);
+                return 1;
+            }
+            return 0;
+        }
+        if (Files.deleteIfExists(dest)) {
+            remove.add(rel);
+            upsert.remove(rel);
+            return 1;
+        }
+        return 0;
+    }
+
+    private static Path officialSource(Config config, String rel, String repoSide, Map<String, String> officialSides)
+            throws Exception {
+        String side = officialSides.get(rel);
+        if (side != null && !allowed(side, repoSide)) {
+            return null;
+        }
+        if (config.officialDir != null) {
+            Path path = config.officialDir.resolve(rel);
+            return Files.isRegularFile(path) ? path : null;
+        }
+        Path cache = config.dataDir.resolve("cache").resolve(config.officialVersion);
+        Path extract = cache.resolve("client".equals(repoSide) ? "client-raw" : "server-raw");
+        if (!Files.isDirectory(extract)) {
+            return null;
+        }
+        Path path = Fs.packRoot(extract).resolve(rel);
+        return Files.isRegularFile(path) ? path : null;
+    }
+
+    private static void touchEntry(Path file, String rel, Path objectsDir, Map<String, Manifests.FileEntry> upsert,
+                                   Set<String> remove) throws Exception {
+        materializeFile(file, objectsDir);
+        upsert.put(rel, new Manifests.FileEntry(rel, Fs.sha256(file), Files.size(file), PackPaths.kind(rel)));
+        remove.remove(rel);
+    }
+
+    static void materializeFile(Path file, Path objectsDir) throws Exception {
+        if (!Files.isRegularFile(file)) {
+            return;
+        }
+        String digest = Fs.sha256(file);
+        Path object = objectsDir.resolve(digest.substring(0, 2)).resolve(digest);
+        if (!Files.exists(object)) {
+            Fs.copyFile(file, object);
+        }
+    }
+
+    private static Map<String, OverlayIndex> loadPrivateIndex(Config config) {
+        Map<String, OverlayIndex> result = new LinkedHashMap<>();
+        Path path = config.manifestsDir().resolve("private-index.json");
+        try {
+            if (!Files.isRegularFile(path)) {
+                return result;
+            }
+            Map<String, Object> data = Json.object(Json.parse(Files.readString(path)));
+            for (Map.Entry<String, Object> entry : data.entrySet()) {
+                Map<String, Object> row = Json.object(entry.getValue());
+                result.put(Fs.posix(entry.getKey()), new OverlayIndex(Json.str(row, "side"), Json.str(row, "sha256")));
+            }
+        } catch (Exception ignored) {
+            return result;
+        }
+        return result;
+    }
+
+    private static void writePrivateIndex(Config config, List<PrivateFile> files) throws Exception {
+        Map<String, Object> index = Json.map();
+        if (files != null) {
+            for (PrivateFile file : files) {
+                Map<String, Object> row = Json.map();
+                row.put("side", file.side);
+                row.put("sha256", Fs.sha256(file.source));
+                index.put(file.path, row);
+            }
+        }
+        Files.createDirectories(config.manifestsDir());
+        Files.writeString(config.manifestsDir().resolve("private-index.json"), Json.stringify(index));
+    }
+
+    private static Map<String, String> loadOfficialSides(Config config) throws Exception {
+        Path path = config.manifestsDir().resolve("official-side-map.json");
+        if (Files.isRegularFile(path)) {
+            Map<String, String> sides = new LinkedHashMap<>();
+            Map<String, Object> raw = Json.object(Json.parse(Files.readString(path)));
+            for (Map.Entry<String, Object> entry : raw.entrySet()) {
+                sides.put(Fs.posix(entry.getKey()), String.valueOf(entry.getValue()));
+            }
+            if (!sides.isEmpty()) {
+                return sides;
+            }
+        }
+        if (config.officialDir != null) {
+            return sideMapFromTree(config.officialDir);
+        }
+        Path cache = config.dataDir.resolve("cache").resolve(config.officialVersion);
+        Path clientRoot = Fs.packRoot(cache.resolve("client-raw"));
+        Path serverRoot = Fs.packRoot(cache.resolve("server-raw"));
+        Map<String, Path> clientSources = indexTree(clientRoot);
+        Map<String, Path> serverSources = indexTree(serverRoot);
+        Map<String, String> packwiz = new LinkedHashMap<>();
+        packwiz.putAll(readSideMap(clientRoot));
+        packwiz.putAll(readSideMap(serverRoot));
+        Map<String, String> sides = new LinkedHashMap<>();
+        Set<String> all = new LinkedHashSet<>();
+        all.addAll(clientSources.keySet());
+        all.addAll(serverSources.keySet());
+        for (String rel : all) {
+            if (PackPaths.skipUnified(rel) || rel.endsWith(".pw.toml")) {
+                continue;
+            }
+            sides.put(rel, Sides.official(rel, clientSources.containsKey(rel), serverSources.containsKey(rel),
+                    packwiz.get(rel)));
+        }
+        return sides;
+    }
+
+    private static Map<String, Manifests.Manifest> writeRepoState(Config config, Manifests.Manifest client,
+                                                                 Manifests.Manifest server, String releaseBody,
+                                                                 Map<String, String> officialSides,
+                                                                 List<PrivateFile> privateFiles,
+                                                                 Consumer<String> log) throws Exception {
+        Files.createDirectories(config.manifestsDir());
+        Map<String, String> combined = new LinkedHashMap<>(officialSides);
+        for (PrivateFile file : privateFiles) {
+            combined.put(file.path, file.side);
+        }
+        Files.writeString(config.manifestsDir().resolve("client.json"), Json.stringify(client.toMap()));
+        Files.writeString(config.manifestsDir().resolve("server.json"), Json.stringify(server.toMap()));
+        Files.writeString(config.manifestsDir().resolve("official-side-map.json"), Json.stringify(officialSides));
+        Files.writeString(config.manifestsDir().resolve("side-map.json"), Json.stringify(combined));
+        writePrivateIndex(config, privateFiles);
+        Map<String, Object> meta = Json.map();
+        meta.put("official_version", config.officialVersion);
+        meta.put("release_body", releaseBody == null ? "" : releaseBody);
+        meta.put("client_fingerprint", client.fingerprint());
+        meta.put("server_fingerprint", server.fingerprint());
+        meta.put("client_files", client.files.size());
+        meta.put("server_files", server.files.size());
+        Files.writeString(config.manifestsDir().resolve("meta.json"), Json.stringify(meta));
+        log.accept("客户端仓库 " + client.files.size() + " 个文件，服务端仓库 " + server.files.size() + " 个文件");
+        Map<String, Manifests.Manifest> manifests = new LinkedHashMap<>();
+        manifests.put("client", client);
+        manifests.put("server", server);
+        return manifests;
     }
 
     static Map<String, String> readSideMap(Path packRoot) throws Exception {
@@ -368,14 +713,6 @@ final class Pack {
             if (!Files.exists(object)) {
                 Fs.copyFile(path, object);
             }
-        }
-    }
-
-    static Map<String, Manifests.Manifest> buildRepos(Config config, Consumer<String> log) throws Exception {
-        try {
-            return buildReposInner(config, log);
-        } finally {
-            Progress.end();
         }
     }
 
@@ -464,7 +801,6 @@ final class Pack {
                 case "server" -> serverPrivate++;
                 default -> bothPrivate++;
             }
-            officialSides.put(file.path, file.side);
         }
         log.accept("私货 " + privateFiles.size() + " 个（程序自行区分：client " + clientPrivate
                 + " / server " + serverPrivate + " / both " + bothPrivate + "）");
@@ -473,29 +809,13 @@ final class Pack {
         applyOverlay(config.clientDir, privateFiles, "client");
         applyOverlay(config.serverDir, privateFiles, "server");
         Progress.ensure("生成清单", -1);
-        Files.createDirectories(config.manifestsDir());
         Manifests.Manifest client = Manifests.build(config.clientDir, config.officialVersion, "client");
         Manifests.Manifest server = Manifests.build(config.serverDir, config.officialVersion, "server");
-        Files.writeString(config.manifestsDir().resolve("client.json"), Json.stringify(client.toMap()));
-        Files.writeString(config.manifestsDir().resolve("server.json"), Json.stringify(server.toMap()));
-        Files.writeString(config.manifestsDir().resolve("side-map.json"), Json.stringify(officialSides));
         Progress.ensure("校验对象库", -1);
         materialize(config.clientDir, config.objectsDir);
         materialize(config.serverDir, config.objectsDir);
-        Map<String, Object> meta = Json.map();
-        meta.put("official_version", config.officialVersion);
-        meta.put("release_body", releaseBody);
-        meta.put("client_fingerprint", client.fingerprint());
-        meta.put("server_fingerprint", server.fingerprint());
-        meta.put("client_files", client.files.size());
-        meta.put("server_files", server.files.size());
-        Files.writeString(config.manifestsDir().resolve("meta.json"), Json.stringify(meta));
-        log.accept("客户端仓库 " + client.files.size() + " 个文件，服务端仓库 " + server.files.size() + " 个文件");
         log.accept("本地仓库构建完成");
-        Map<String, Manifests.Manifest> manifests = new LinkedHashMap<>();
-        manifests.put("client", client);
-        manifests.put("server", server);
-        return manifests;
+        return writeRepoState(config, client, server, releaseBody, officialSides, privateFiles, log);
     }
 
     static Map<String, String> ingestReleaseTrees(Path clientRoot, Path serverRoot, Path clientDir, Path serverDir,
