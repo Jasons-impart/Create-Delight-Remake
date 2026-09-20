@@ -143,3 +143,59 @@ ServerEvents.recipes(e => {
         A: "createdelight:forged_steel_ingot"
     }).id("createdelight:crafting/forged_wall")
 })
+
+// 禁用 more_mod_tetra 原版配方
+// 原实现为 kubejs/data/more_mod_tetra/recipes/ 下 42 个 forge:false 桩文件（覆盖 mod 同名配方使其永不加载）
+ServerEvents.recipes(e => {
+    remove_recipes_id(e, [
+        // 基础金属锭
+        "more_mod_tetra:blaze_ingot",
+        "more_mod_tetra:blue_ice_ingot",
+        "more_mod_tetra:bokuka_ingot",
+        "more_mod_tetra:bone_ingot",
+        "more_mod_tetra:dragon_breath_ingot",
+        "more_mod_tetra:electro_charged_ingot",
+        "more_mod_tetra:rennshi_ingot",
+        "more_mod_tetra:rotten_flesh_ingot",
+        "more_mod_tetra:tidal_ingot",
+        "more_mod_tetra:wither_bone_ingot",
+        "more_mod_tetra:wither_ingot",
+        // Alex's Caves 兼容
+        "more_mod_tetra:alexscaves/abyssal_ocean_ingot",
+        // 明日方舟：attainment point
+        "more_mod_tetra:arknights/attainment_point/attainment_point_1",
+        "more_mod_tetra:arknights/attainment_point/attainment_point_2",
+        "more_mod_tetra:arknights/attainment_point/attainment_point_3",
+        "more_mod_tetra:arknights/attainment_point/attainment_point_4",
+        "more_mod_tetra:arknights/attainment_point/attainment_point_5",
+        "more_mod_tetra:arknights/attainment_point/attainment_point_6",
+        "more_mod_tetra:arknights/attainment_point/attainment_point_7",
+        "more_mod_tetra:arknights/attainment_point/attainment_point_8",
+        // 明日方舟：proof of victory
+        "more_mod_tetra:arknights/win/proof_of_victory_frost_nova_1",
+        "more_mod_tetra:arknights/win/proof_of_victory_frost_nova_2",
+        "more_mod_tetra:arknights/win/proof_of_victory_gun_knight_patriot_1",
+        "more_mod_tetra:arknights/win/proof_of_victory_gun_knight_patriot_2",
+        "more_mod_tetra:arknights/win/proof_of_victory_patriot_1",
+        "more_mod_tetra:arknights/win/proof_of_victory_patriot_2",
+        "more_mod_tetra:arknights/win/proof_of_victory_pursuer",
+        "more_mod_tetra:arknights/win/proof_of_victory_rosmontis_1",
+        "more_mod_tetra:arknights/win/proof_of_victory_rosmontis_2",
+        // 灾变兼容（不含 abyssal_core / storm_core，二者为真实配方保留在数据包中）
+        "more_mod_tetra:cataclysm/abyssal_ingot",
+        "more_mod_tetra:cataclysm/monstrous_core",
+        "more_mod_tetra:cataclysm/storm_ingot",
+        // 伪匠魂材料
+        "more_mod_tetra:fake_tconstruct/fake_alumite_ingot",
+        "more_mod_tetra:fake_tconstruct/fake_hepatizon_ingot",
+        "more_mod_tetra:fake_tconstruct/fake_manyullyn_ingot",
+        "more_mod_tetra:fake_tconstruct/fake_pig_iron_ingot",
+        "more_mod_tetra:fake_tconstruct/fake_rose_gold_ingot",
+        "more_mod_tetra:fake_tconstruct/fake_rose_golden_silk",
+        "more_mod_tetra:fake_tconstruct/fake_silky_cloth",
+        // 其他兼容
+        "more_mod_tetra:goety/tetra_dark_wand",
+        "more_mod_tetra:iron/cloth/sound_magic_cloth",
+        "more_mod_tetra:iron/ingot/sound_arcane_ingot"
+    ])
+})
