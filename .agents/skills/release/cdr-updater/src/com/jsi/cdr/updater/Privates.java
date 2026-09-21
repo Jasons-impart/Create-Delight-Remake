@@ -143,12 +143,12 @@ final class Privates {
 
     static String createFolder(Pack.Config config, String dest) throws Exception {
         String rel = PrivateViews.normalizeFolder(dest);
-        Path filesRoot = config.privateDir.resolve("files");
-        Path target = filesRoot.resolve(rel).normalize();
-        if (!target.startsWith(filesRoot.toAbsolutePath().normalize())) {
+        Path filesRoot = config.privateDir.resolve("files").toAbsolutePath().normalize();
+        Path target = ".".equals(rel) ? filesRoot : filesRoot.resolve(rel).normalize();
+        if (!target.startsWith(filesRoot)) {
             throw new IllegalArgumentException("目录不能跳出 files");
         }
         Files.createDirectories(target);
-        return rel.endsWith("/") ? rel : rel + "/";
+        return ".".equals(rel) ? "./" : (rel.endsWith("/") ? rel : rel + "/");
     }
 }

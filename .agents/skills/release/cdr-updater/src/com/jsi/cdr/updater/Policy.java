@@ -22,6 +22,42 @@ final class Policy {
             String remoteSha,
             Map<String, String> syncedHashes
     ) {
+        return shouldOverwriteLocal(path, side, localSha, remoteSha, syncedHashes, false, null, false);
+    }
+
+    static boolean shouldOverwriteLocal(
+            String path,
+            String side,
+            String localSha,
+            String remoteSha,
+            Map<String, String> syncedHashes,
+            boolean overlay
+    ) {
+        return shouldOverwriteLocal(path, side, localSha, remoteSha, syncedHashes, overlay, null, false);
+    }
+
+    static boolean shouldOverwriteLocal(
+            String path,
+            String side,
+            String localSha,
+            String remoteSha,
+            Map<String, String> syncedHashes,
+            boolean overlay,
+            Boolean localHasManagedTag
+    ) {
+        return shouldOverwriteLocal(path, side, localSha, remoteSha, syncedHashes, overlay, localHasManagedTag, false);
+    }
+
+    static boolean shouldOverwriteLocal(
+            String path,
+            String side,
+            String localSha,
+            String remoteSha,
+            Map<String, String> syncedHashes,
+            boolean overlay,
+            Boolean localHasManagedTag,
+            boolean keepLocal
+    ) {
         String rel = Fs.posix(path);
         if (remoteSha == null || remoteSha.isBlank()) {
             return false;
@@ -31,6 +67,19 @@ final class Policy {
         }
         if (localSha.equals(remoteSha)) {
             return false;
+        }
+        if (PackPaths.taggedTemplate(rel)) {
+            if (keepLocal) {
+                return false;
+            }
+            if (!Boolean.TRUE.equals(localHasManagedTag)) {
+                return true;
+            }
+            String previous = syncedHashes == null ? null : syncedHashes.get(rel);
+            return previous != null && localSha.equals(previous);
+        }
+        if (overlay && !PackPaths.protectedLocal(rel)) {
+            return true;
         }
         if (PackPaths.protectedLocal(rel)) {
             return false;

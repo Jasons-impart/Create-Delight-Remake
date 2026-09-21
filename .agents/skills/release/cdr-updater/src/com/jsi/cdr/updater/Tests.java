@@ -22,6 +22,7 @@ final class Tests {
 
     static int run() throws Exception {
         failed = 0;
+        System.setProperty("cdr.updater.test", "true");
         bootClassTests();
         policyTests();
         privateViewsTests();
@@ -94,8 +95,36 @@ final class Tests {
                 "options.txt", "client", null, "official", Map.of()));
         check("eula.txt 已存在不覆盖", !Policy.shouldOverwriteLocal(
                 "eula.txt", "server", "false", "true", Map.of("eula.txt", "true")));
-        check("server.properties 已存在不覆盖", !Policy.shouldOverwriteLocal(
-                "server.properties", "server", "local", "official", Map.of()));
+        check("启动生成的 server.properties 可覆盖", Policy.shouldOverwriteLocal(
+                "server.properties", "server", "vanilla-boot", "official", Map.of()));
+        check("Forge 改写过、标签丢失则覆盖", Policy.shouldOverwriteLocal(
+                "server.properties", "server", "forge-rewrite", "official",
+                Map.of("server.properties", "official"), false, false));
+        check("保留标记的 server.properties 不覆盖", !Policy.shouldOverwriteLocal(
+                "server.properties", "server", "admin-edit", "template",
+                Map.of("server.properties", "template"), false, false, true));
+        check("标签还在且内容相对上次有改动则保留", !Policy.shouldOverwriteLocal(
+                "server.properties", "server", "admin-edit", "template",
+                Map.of("server.properties", "template"), false, true));
+        check("标签还在但内容仍是上次模板则可更新", Policy.shouldOverwriteLocal(
+                "server.properties", "server", "old-template", "new-template",
+                Map.of("server.properties", "old-template"), false, true));
+        check("未改过的 server.properties 可随整合包更新", Policy.shouldOverwriteLocal(
+                "server.properties", "server", "official", "newer", Map.of("server.properties", "official")));
+        check("私货 server.properties 覆盖无标签文件", Policy.shouldOverwriteLocal(
+                "server.properties", "server", "local", "overlay", Map.of(), true, false));
+        check("私货哈希相同不重复推送", !Policy.shouldOverwriteLocal(
+                "server.properties", "server", "overlay", "overlay", Map.of(), true));
+        check("私货不得覆盖已有 TAB 配置", !Policy.shouldOverwriteLocal(
+                "config/tab/config.yml", "server", "s4-header", "overlay-s2", Map.of(), true));
+        check("私货不得覆盖已有 EasyBot 配置", !Policy.shouldOverwriteLocal(
+                "config/easybot/config.json", "server", "s4-token", "overlay-s2", Map.of(), true));
+        check("私货可补齐缺失配置", Policy.shouldOverwriteLocal(
+                "config/tab/config.yml", "server", null, "overlay-s2", Map.of(), true));
+        check("私货模组仍强制覆盖", Policy.shouldOverwriteLocal(
+                "mods/private.jar", "server", "old", "new", Map.of("mods/private.jar", "old"), true));
+        check("管理标签会写入模板", PackPaths.hasManagedTag(PackPaths.withManagedTag("motd=a\n"))
+                && PackPaths.withManagedTag("motd=a\n").contains("motd=a"));
         check("存档不删除", !Policy.shouldDeleteLocal("saves/New World/level.dat", Set.of("saves/New World/level.dat")));
         check("logs 不删除", !Policy.shouldDeleteLocal("logs/latest.log", Set.of("logs/latest.log")));
         check("libraries 不删除", !Policy.shouldDeleteLocal(
@@ -126,6 +155,13 @@ final class Tests {
         List<String> folders = PrivateViews.destFolders(List.of(c));
         check("推送目录含默认 mods", folders.contains("mods/"));
         check("推送目录含已有 config", folders.contains("config/"));
+        check("推送目录含根目录", folders.contains("./") && "根目录".equals(PrivateViews.folderLabel("./")));
+        check("根目录解析成文件名", "eula.txt".equals(PrivateViews.resolveDest("./", "eula.txt", 1)));
+        check("根目录中文选项", "note.txt".equals(PrivateViews.resolveDest("根目录", "note.txt", 2)));
+        check("根目录 jar 不进 mods", "a.jar".equals(PrivateViews.resolveDest("./", "a.jar", 1)));
+        check("根目录规范化", ".".equals(PrivateViews.normalizeFolder("."))
+                && ".".equals(PrivateViews.normalizeFolder("根目录"))
+                && ".".equals(PrivateViews.normalizeFolder("./")));
         check("目录名去斜杠", "config/ItemBan".equals(PrivateViews.normalizeFolder("config/ItemBan/")));
         check("目录名去掉端侧前缀", "kubejs/custom".equals(PrivateViews.normalizeFolder("both/kubejs/custom")));
     }
@@ -195,6 +231,27 @@ final class Tests {
             check("改端侧离开 server/ 前缀", !Files.exists(privateDir.resolve("files/server/mods/side-only.jar")));
             check("改成两端后客户端有文件", "side-only".equals(Files.readString(config.clientDir.resolve("mods/side-only.jar"))));
             check("改成两端后服务端有文件", "side-only".equals(Files.readString(config.serverDir.resolve("mods/side-only.jar"))));
+
+            write(tmp.resolve("root-note.txt"), "root-overlay");
+            Privates.add(config, tmp.resolve("root-note.txt"),
+                    PrivateViews.resolveDest("./", "root-note.txt", 1), "both");
+            Pack.buildRepos(config, line -> {});
+            check("根目录私货写入仓库",
+                    "root-overlay".equals(Files.readString(config.clientDir.resolve("root-note.txt"))));
+            check("根目录私货进客户端清单",
+                    Files.readString(config.manifestsDir().resolve("client.json")).contains("root-note.txt"));
+            check("根目录私货进服务端清单",
+                    Files.readString(config.manifestsDir().resolve("server.json")).contains("root-note.txt"));
+            check("可选择根目录", "./".equals(Privates.createFolder(config, "根目录"))
+                    && PrivateViews.destFolders(privateDir, Privates.list(config)).contains("./"));
+
+            write(privateDir.resolve("files/README.md"), "overlay-readme");
+            Files.deleteIfExists(config.manifestsDir().resolve("client.json"));
+            Pack.buildRepos(config, line -> {});
+            check("私货 README 写入仓库",
+                    "overlay-readme".equals(Files.readString(config.clientDir.resolve("README.md"))));
+            check("私货 README 进清单",
+                    Files.readString(config.manifestsDir().resolve("client.json")).contains("README.md"));
         } finally {
             Fs.deleteTree(tmp);
         }
@@ -347,7 +404,10 @@ final class Tests {
 
             Path serverInstance = tmp.resolve("server-instance");
             Sync.Client serverClient = new Sync.Client(url, "server", serverInstance);
+            write(serverInstance.resolve("server.properties"), "motd=vanilla-boot\n");
             Sync.apply(serverInstance, "server", serverClient, line -> {});
+            check("启动生成的 server.properties 被整合包覆盖",
+                    taggedProps(serverInstance.resolve("server.properties"), "motd=official"));
             check("服务端不含 JEI", !Files.exists(serverInstance.resolve("mods/jei-1.0.jar")));
             check("服务端不含资源包", !Files.exists(serverInstance.resolve("resourcepacks/pack.zip")));
             check("服务端不含光影", !Files.exists(serverInstance.resolve("shaderpacks/pack.zip")));
@@ -393,7 +453,29 @@ final class Tests {
             check("服务端不删除管理员额外模组", Files.readString(serverInstance.resolve("mods/admin-extra.jar")).equals("admin-keep"));
             check("服务端不删除世界", Files.readString(serverInstance.resolve("world/level.dat")).equals("world-bytes"));
             check("服务端不覆盖已有 eula", Files.readString(serverInstance.resolve("eula.txt")).equals("eula=true\n"));
-            check("服务端不覆盖已有 server.properties", Files.readString(serverInstance.resolve("server.properties")).equals("motd=admin\n"));
+            check("Forge 改写的 server.properties 仍被整合包覆盖",
+                    taggedProps(serverInstance.resolve("server.properties"), "motd=official"));
+            write(privateDir.resolve("files/server.properties"), "motd=overlay-push\n");
+            Pack.buildRepos(config, line -> {});
+            Sync.apply(serverInstance, "server", serverClient, line -> {});
+            check("私货 server.properties 推送到服务端",
+                    taggedProps(serverInstance.resolve("server.properties"), "motd=overlay-push"));
+            String taggedEdit = PackPaths.withManagedTag("motd=admin-keep\n");
+            Files.writeString(serverInstance.resolve("server.properties"), taggedEdit);
+            Sync.apply(serverInstance, "server", serverClient, line -> {});
+            check("保留标签的管理员改动不覆盖",
+                    Files.readString(serverInstance.resolve("server.properties")).equals(taggedEdit));
+            check("手动改过会留下保留标记",
+                    Files.isRegularFile(serverInstance.resolve(PackPaths.SERVER_KEEP)));
+            Files.writeString(serverInstance.resolve("server.properties"), "motd=forge-regen\n");
+            Sync.apply(serverInstance, "server", serverClient, line -> {});
+            check("有保留标记后不再套模板",
+                    Files.readString(serverInstance.resolve("server.properties")).equals("motd=forge-regen\n"));
+            Files.deleteIfExists(serverInstance.resolve(PackPaths.SERVER_KEEP));
+            Files.writeString(serverInstance.resolve("server.properties"), "motd=forge-regen\n");
+            Sync.apply(serverInstance, "server", serverClient, line -> {});
+            check("去掉保留标记后标签丢失则套回模板",
+                    taggedProps(serverInstance.resolve("server.properties"), "motd=overlay-push"));
             Files.delete(serverInstance.resolve("mods/create-1.0.jar"));
             Sync.apply(serverInstance, "server", serverClient, line -> {});
             check("服务端缺失文件会补回", Files.readString(serverInstance.resolve("mods/create-1.0.jar")).equals("create-1.0"));
@@ -411,6 +493,18 @@ final class Tests {
             check("服务端首次已有脚本保留", Files.readString(firstServer.resolve("kubejs/server_scripts/main.js")).equals("pre-existing\n"));
             check("服务端首次已有模组保留", Files.readString(firstServer.resolve("mods/create-1.0.jar")).equals("already-there"));
             check("服务端首次仍补缺失文件", Files.isRegularFile(firstServer.resolve("mods/maid.jar")));
+
+            write(privateDir.resolve("files/server/config/tab/config.yml"), "header: overlay-s2\n");
+            write(privateDir.resolve("files/mods/force-overlay.jar"), "overlay-mod-v2");
+            Pack.buildRepos(config, line -> {});
+            Path identityServer = tmp.resolve("server-identity-keep");
+            write(identityServer.resolve("config/tab/config.yml"), "header: s4\n");
+            write(identityServer.resolve("mods/force-overlay.jar"), "overlay-mod-v1");
+            Sync.apply(identityServer, "server", new Sync.Client(url, "server", identityServer), line -> {});
+            check("私货不得把各服 TAB 盖成更新源",
+                    Files.readString(identityServer.resolve("config/tab/config.yml")).equals("header: s4\n"));
+            check("私货模组仍会推送到服务端",
+                    Files.readString(identityServer.resolve("mods/force-overlay.jar")).equals("overlay-mod-v2"));
 
             write(official.resolve("mods/create-1.0.jar"), "create-1.1");
             Files.deleteIfExists(official.resolve("mods/jei-1.0.jar"));
@@ -740,6 +834,7 @@ final class Tests {
                 check("网页含私货", page.body().contains("添加私货"));
                 check("网页含私货搜索", page.body().contains("id=\"privateSearch\""));
                 check("网页含推送目录", page.body().contains("id=\"privateDestFolder\"") && page.body().contains("可多选"));
+                check("网页含根目录", page.body().contains("data-value=\"./\"") && page.body().contains("根目录"));
                 check("网页含新建目录", page.body().contains("id=\"privateNewFolder\"") && page.body().contains("id=\"newFolderBtn\""));
                 check("网页可直接改端侧", page.body().contains("data-side-path") && page.body().contains("side-select"));
                 check("网页改动点保存才写入", page.body().contains("点保存后才会写入")
@@ -1337,6 +1432,11 @@ final class Tests {
     private static void write(Path path, String content) throws Exception {
         Files.createDirectories(path.getParent());
         Files.writeString(path, content);
+    }
+
+    private static boolean taggedProps(Path file, String needle) throws Exception {
+        String text = Files.readString(file);
+        return PackPaths.hasManagedTag(text) && text.contains(needle);
     }
 
     private static void check(String name, boolean ok) {

@@ -14,6 +14,7 @@ import java.util.Set;
 
 final class PrivateViews {
     static final List<String> DEST_FOLDERS = List.of(
+            "./",
             "mods/",
             "config/",
             "kubejs/",
@@ -42,7 +43,11 @@ final class PrivateViews {
         String name = filename == null || filename.isBlank()
                 ? "upload.bin"
                 : Path.of(filename).getFileName().toString();
-        String path = dest == null ? "" : Fs.posix(dest).trim();
+        String raw = dest == null ? "" : dest.trim();
+        if (isRootFolder(raw)) {
+            return name;
+        }
+        String path = Fs.posix(raw);
         while (path.startsWith("/")) {
             path = path.substring(1);
         }
@@ -50,10 +55,16 @@ final class PrivateViews {
             return fileCount > 1 ? folderOf(Privates.defaultDest(Path.of(name))) + "/" + name
                     : Privates.defaultDest(Path.of(name));
         }
-        boolean folder = fileCount > 1 || path.endsWith("/");
+        boolean folder = fileCount > 1 || raw.replace('\\', '/').endsWith("/") || path.endsWith("/");
         if (folder) {
             while (path.endsWith("/")) {
                 path = path.substring(0, path.length() - 1);
+            }
+            while (path.startsWith("./")) {
+                path = path.substring(2);
+            }
+            if (".".equals(path)) {
+                path = "";
             }
             if (fileCount > 1 && looksLikeFile(path)) {
                 path = folderOf(path);
@@ -64,6 +75,57 @@ final class PrivateViews {
             return path.isBlank() ? name : path + "/" + name;
         }
         return path;
+    }
+
+    static boolean isRootFolder(String dest) {
+        if (dest == null) {
+            return false;
+        }
+        String path = dest.trim().replace('\\', '/');
+        if (path.isEmpty()) {
+            return false;
+        }
+        if ("根目录".equals(path)) {
+            return true;
+        }
+        while (path.startsWith("/")) {
+            path = path.substring(1);
+        }
+        while (path.endsWith("/")) {
+            path = path.substring(0, path.length() - 1);
+        }
+        while (path.startsWith("./")) {
+            path = path.substring(2);
+        }
+        return path.isEmpty() || ".".equals(path);
+    }
+
+    static String folderLabel(String folder) {
+        if (folder == null || folder.isBlank()) {
+            return "";
+        }
+        if (isRootFolder(folder) || ".".equals(folder.trim())) {
+            return "根目录";
+        }
+        return folder.endsWith("/") ? folder : folder + "/";
+    }
+
+    static String destFolderValue(String folder) {
+        if (folder == null || folder.isBlank()) {
+            return "";
+        }
+        if (isRootFolder(folder)) {
+            return "./";
+        }
+        String path = folder.trim().replace('\\', '/');
+        if (!path.endsWith("/")) {
+            path += "/";
+        }
+        path = Fs.posix(path);
+        if (path.isBlank() || isRootFolder(path)) {
+            return "./";
+        }
+        return path.endsWith("/") ? path : path + "/";
     }
 
     static List<String> destFolders(List<Pack.PrivateFile> files) {
@@ -99,11 +161,18 @@ final class PrivateViews {
         }
         List<String> list = new ArrayList<>(folders);
         list.sort(Comparator.naturalOrder());
+        if (list.remove("./")) {
+            list.add(0, "./");
+        }
         return list;
     }
 
     static String normalizeFolder(String dest) {
-        String path = dest == null ? "" : Fs.posix(dest).trim();
+        String path = dest == null ? "" : dest.trim();
+        if ("根目录".equals(path) || isRootFolder(path)) {
+            return ".";
+        }
+        path = Fs.posix(path);
         while (path.startsWith("/")) {
             path = path.substring(1);
         }
@@ -117,14 +186,18 @@ final class PrivateViews {
         if (prefixed[0] != null) {
             path = prefixed[1] == null ? "" : prefixed[1];
         }
-        if (path.isBlank()) {
+        if (path.isBlank() || ".".equals(path)) {
             throw new IllegalArgumentException("无效的目录");
         }
         return path;
     }
 
     private static void addFolder(Set<String> folders, String folder) {
-        if (folder == null || folder.isBlank() || ".".equals(folder)) {
+        if (folder == null || folder.isBlank()) {
+            return;
+        }
+        if (isRootFolder(folder) || ".".equals(folder.trim())) {
+            folders.add("./");
             return;
         }
         folders.add(folder.endsWith("/") ? folder : folder + "/");

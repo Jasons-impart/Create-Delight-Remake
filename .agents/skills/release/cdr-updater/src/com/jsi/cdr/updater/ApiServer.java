@@ -156,7 +156,18 @@ final class ApiServer {
 
     private static Map<String, Object> manifest(Pack.Config config, String side) throws Exception {
         side = requireSide(side);
-        return Pack.loadManifest(config, side).toMap();
+        Map<String, Object> body = Pack.loadManifest(config, side).toMap();
+        Set<String> overlay = Pack.overlayPaths(config);
+        if (overlay.isEmpty()) {
+            return body;
+        }
+        for (Object item : Json.array(body.get("files"))) {
+            Map<String, Object> row = Json.object(item);
+            if (overlay.contains(Fs.posix(Json.str(row, "path")))) {
+                row.put("overlay", true);
+            }
+        }
+        return body;
     }
 
     @SuppressWarnings("unchecked")
@@ -178,6 +189,19 @@ final class ApiServer {
         }
         List<Manifests.Change> changes = new ArrayList<>();
         List<Object> kept = Json.list();
+        Map<String, Boolean> localTags = new LinkedHashMap<>();
+        Map<String, Boolean> keepLocal = new LinkedHashMap<>();
+        for (Object item : localFiles) {
+            Map<String, Object> row = Json.object(item);
+            String path = Fs.posix(Json.str(row, "path"));
+            if (row.containsKey("managed_tag")) {
+                localTags.put(path, Json.bool(row, "managed_tag"));
+            }
+            if (row.containsKey("keep_local")) {
+                keepLocal.put(path, Json.bool(row, "keep_local"));
+            }
+        }
+        Set<String> overlay = Pack.overlayPaths(config);
         for (Manifests.Change change : Manifests.diff(localMap, remote)) {
             if ("remove".equals(change.action) && !Policy.shouldDeleteLocal(change.path, managed)) {
                 continue;
@@ -185,7 +209,10 @@ final class ApiServer {
             if ("update".equals(change.action)) {
                 Manifests.FileEntry local = localMap.get(change.path);
                 String localSha = local == null ? null : local.sha256;
-                if (!Policy.shouldOverwriteLocal(change.path, side, localSha, change.newSha256, synced)) {
+                Manifests.FileEntry remoteEntry = remote.byPath().get(change.path);
+                boolean force = overlay.contains(change.path) || (remoteEntry != null && remoteEntry.overlay);
+                if (!Policy.shouldOverwriteLocal(change.path, side, localSha, change.newSha256, synced, force,
+                        localTags.get(change.path), Boolean.TRUE.equals(keepLocal.get(change.path)))) {
                     kept.add(change.path);
                     continue;
                 }
@@ -206,6 +233,10 @@ final class ApiServer {
                 item.put("path", change.path);
                 item.put("sha256", change.newSha256);
                 item.put("size", change.newSize);
+                Manifests.FileEntry remoteEntry = remote.byPath().get(change.path);
+                if (overlay.contains(change.path) || (remoteEntry != null && remoteEntry.overlay)) {
+                    item.put("overlay", true);
+                }
                 download.add(item);
             }
         }
