@@ -20,6 +20,7 @@
 | 目标领域 | 补丁文件 | 行为变化 |
 |---|---|---|
 | KubeJS Lazy 并发缓存 | `dev/latvian/mods/kubejs/util/Lazy.badiff` | 在 build.24 的 Lazy 内直接维护原子快照，避免并发清缓存返回 null；factory 不持缓存锁，forget 阻止旧计算回填，不依赖 CDC helper。语义与 [CDC #131](https://github.com/Jasons-impart/Create-Delight-Core/pull/131) 的原子方案一致，详见 [补丁明细](badiff-details.md#kubejs-lazy-并发缓存补丁)。 |
+| More Mod Tetra 纯白容器效果续期 | `com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer.badiff` | MMT 2.4.15 的妖怪化、半妖怪化、无意识和真隐身统一为普通效果常用的 40 tick 刷新、400 tick 持续，消除原 400/220 tick 组合造成的空档；保留原配置、材料条件和效果自身取消规则。已通过实际 Hotai 转换器离线生成及重放，待游戏内回归。 |
 | Create 分液池/流体搜索 | `com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour.badiff`、`FluidDrainingBehaviour.badiff`、`compat/jei/category/ItemDrainCategory.badiff` | 抽液搜索增加可覆写的继续搜索钩子，分液池按源方块数量判断无限流体，而不是按访问过的流体方块数量；同时区分源流体和流动流体。JEI 分液展示在复制物品后重新检查 `FLUID_HANDLER_ITEM`，避免 capability 消失导致异常。 |
 | Create 连接纹理缓存 | `com/simibubi/create/foundation/block/connected/CTSpriteShifter.badiff` | 将连接纹理缓存从 `HashMap` 改为 `ConcurrentHashMap`，降低并发注册/资源重载时的竞态风险。 |
 | Create Liquid Fuel 液体烈焰人燃烧室 | `com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff`、`mixin/MixinBlazeBurnerTileEntity.badiff` | 液体燃料 tick 返回是否已处理并可取消原 tick 后续逻辑；向燃烧室倒入流体时按容量部分抽取、更新容器状态，并在失败路径显式返回 false，避免容器未扣除或溢出。 |
