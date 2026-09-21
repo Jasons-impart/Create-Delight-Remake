@@ -30,19 +30,20 @@
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 29 个 `.badiff`；静态 JAR 命中 25 个，静态未命中但已由当前启动日志确认动态创建 3 个，尚未由当前启动日志确认 1 个。
+当前扫描到 30 个 `.badiff`；静态 JAR 命中 26 个，静态未命中但已由当前启动日志确认动态创建 3 个，尚未由当前启动日志确认 1 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |
 |---|---|---|---|
-| Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff` | `com/forsteri/createliquidfuel/core/BurnerStomachHandler` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
-| Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity.badiff` | `com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
+| Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff` | `com/forsteri/createliquidfuel/core/BurnerStomachHandler` | 静态命中 `createliquidfuel-2.2.0-1.20.1.jar` |
+| Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity.badiff` | `com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity` | 静态命中 `createliquidfuel-2.2.0-1.20.1.jar` |
 | IAF Dragon Fix | `hotai/com/iafdragonfix/structure/DragonDenPiece.badiff` | `com/iafdragonfix/structure/DragonDenPiece` | 静态命中 `iafdragonfix-2.0.0.jar` |
 | Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow` | 静态命中 `more_mod_tetra-2.4.15-all.jar` |
+| Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer` | 静态命中 `more_mod_tetra-2.4.15-all.jar` |
 | TACZ-addon | `hotai/com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner.badiff` | `com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner` | 静态命中 `taczaddon-1.20.1-1.1.8-hotfix2-for-new-soph.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/ConnectorType.badiff` | `com/mrh0/createaddition/blocks/connector/ConnectorType` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock` | 运行时已确认动态创建（静态 JAR 无此 class） |
-| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity` | 运行时已确认动态创建（静态 JAR 无此 class） |
+| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/IWireNode.badiff` | `com/mrh0/createaddition/energy/IWireNode` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/network/EnergyNetwork.badiff` | `com/mrh0/createaddition/energy/network/EnergyNetwork` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/WireConnectResult.badiff` | `com/mrh0/createaddition/energy/WireConnectResult` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
@@ -66,6 +67,27 @@
 <!-- HOTAI_STATUS:END -->
 
 ## 代码化改动索引
+
+### More Mod Tetra 纯白容器效果续期
+
+目标：`com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer.badiff`，适用于 `more_mod_tetra-2.4.15-all.jar`（SHA-1 `25b2afd928a4e5e067ddd66e2a79546c5f0bacea`）。
+
+`curioTick` 的后半段为妖怪归家的 `youkaified`、`youkaifying`、`unconscious` 和铁魔法的 `true_invisibility` 共用刷新分支。上游每 400 tick 才添加持续 220 tick 的效果，与“持续给予”说明不符；熟肉 `youkaishomecoming:cooked_flesh` 对应其中的妖怪化。
+
+```java
+// curioTick：修改这一处 long 周期常量及四个效果的持续时间常量。
+// before: livingEntity.level().getGameTime() % 400L == 0L
+if (livingEntity.level().getGameTime() % 40L == 0L) {
+    // 四个效果保留各自的模组/材料条件，持续时间由 220 改为 400。
+    livingEntity.addEffect(new MobEffectInstance(effect, 400, 0));
+}
+```
+
+- 四个效果采用普通效果常用的 40 tick 刷新、400 tick 持续；原普通效果分支、配置开关、材料检查和等级均不变。摘下容器后效果按剩余时间自然消失，最多保留约 20 秒；妖怪归家自身的低饥饿值取消妖怪化规则仍生效。
+- 配套 `kubejs/assets/more_mod_tetra/lang/zh_cn.json` 覆盖无意识和真实隐身的 `curios_*.tooltip`，将“每10s给予……11s”的旧说明统一为普通效果的“持续给予……”格式；妖怪化与半妖怪化的上游提示已经使用该格式。
+- 补丁为 705 字节，SHA-256 `f7f62e44aebc7c37e3267842326ca60c2170f9114df8fe65e8fcbb0b4dfff429`；基线由 `ClassReader → ClassNode → ClassWriter(0)` 归一化。
+- 已调用本地 Hotai 1.0 的实际 `BytecodeTransformer` 生成 `MemoryDiff`，再由实际 `DiffTransformer` 离线重放；结果逐字节匹配预期 class，全部方法通过 ASM `BasicVerifier`。撤销一个刷新间隔和四个持续时间常量的改动后，完整 class 与原归一化字节逐字节一致。
+- 当前仅完成离线生成、重放和部署，未启动游戏。重启后需核对 `Patched class: com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer`，并保持足够饥饿值佩戴至少 40 秒，检查效果无空档及摘下后到期；MMT 升级或上游修正该分支时重新生成或移除补丁。
 
 ### Create 流体搜索与 JEI
 
