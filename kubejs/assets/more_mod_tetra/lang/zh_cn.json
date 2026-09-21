@@ -7,5 +7,7 @@
   "tetra/schematic/shared/more_mod_tetra/titan/the_legend_scroll_of_passage_titan_up.description": "继承门径火种，获得远程战利品传送与机动能力。",
   "tetra/schematic/toolbelt/belt_socket.slot1": "锻造钢板",
   "tetra/schematic/toolbelt/belt_socket.description": "拥有更多完整度的腰带，可以兼容魂匠升级，但需要锻造钢板才能制作。(请不要装配3个储物袋，会崩溃)",
-  "tetra.module.toolbelt/belt_socket.description": "拥有更多完整度的腰带，可以兼容魂匠升级，但需要锻造钢板才能制作。(请不要装配3个储物袋，会崩溃)"
+  "tetra.module.toolbelt/belt_socket.description": "拥有更多完整度的腰带，可以兼容魂匠升级，但需要锻造钢板才能制作。(请不要装配3个储物袋，会崩溃)",
+  "more_mod_tetra.effect.curios_youkaishomecoming_unconscious.tooltip": "持续给予工具持有者§e1级§r的§e无意识§r状态效果(不可叠加)",
+  "more_mod_tetra.effect.curios_irons_spellbooks_true_invisibility.tooltip": "持续给予工具持有者§e1级§r的§e真实隐身§r状态效果(不可叠加)"
 }

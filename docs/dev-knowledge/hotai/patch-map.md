@@ -19,6 +19,7 @@
 
 | 目标领域 | 补丁文件 | 行为变化 |
 |---|---|---|
+| More Mod Tetra 纯白容器效果续期 | `com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer.badiff` | MMT 2.4.15 的妖怪化、半妖怪化、无意识和真隐身统一为普通效果常用的 40 tick 刷新、400 tick 持续，消除原 400/220 tick 组合造成的空档；保留原配置、材料条件和效果自身取消规则。已通过实际 Hotai 转换器离线生成及重放，待游戏内回归。 |
 | Create 分液池/流体搜索 | `com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour.badiff`、`FluidDrainingBehaviour.badiff`、`compat/jei/category/ItemDrainCategory.badiff` | 抽液搜索增加可覆写的继续搜索钩子，分液池按源方块数量判断无限流体，而不是按访问过的流体方块数量；同时区分源流体和流动流体。JEI 分液展示在复制物品后重新检查 `FLUID_HANDLER_ITEM`，避免 capability 消失导致异常。 |
 | Create 连接纹理缓存 | `com/simibubi/create/foundation/block/connected/CTSpriteShifter.badiff` | 将连接纹理缓存从 `HashMap` 改为 `ConcurrentHashMap`，降低并发注册/资源重载时的竞态风险。 |
 | Create Liquid Fuel 液体烈焰人燃烧室 | `com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff`、`mixin/MixinBlazeBurnerTileEntity.badiff` | 液体燃料 tick 只在未超过燃烧时间容量且成功消耗燃料后更新热量、返回已处理并取消原 tick 后续逻辑；向燃烧室倒入流体时先模拟抽取与接收，再按实际容量部分执行并同步容器状态，失败路径显式返回 false，避免容器未扣除、混入不相容流体或溢出。 |
