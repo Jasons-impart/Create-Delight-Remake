@@ -284,13 +284,115 @@ final class Pack {
         return loadPrivate(root, Map.of());
     }
 
+    static Set<String> overlayPaths(Config config) {
+        Set<String> paths = new LinkedHashSet<>();
+        if (config == null) {
+            return paths;
+        }
+        try {
+            for (PrivateFile file : loadPrivate(config.privateDir)) {
+                if (file.path != null && !file.path.isBlank()) {
+                    paths.add(file.path);
+                }
+            }
+        } catch (Exception ignored) {
+            // keep meta fallback
+        }
+        try {
+            for (Object item : Json.array(loadMeta(config).get("overlay_paths"))) {
+                String path = Fs.posix(String.valueOf(item));
+                if (!path.isBlank()) {
+                    paths.add(path);
+                }
+            }
+        } catch (Exception ignored) {
+            // overlay flags on the live private files are enough
+        }
+        return paths;
+    }
+
+    private static Manifests.Manifest stampOverlay(Manifests.Manifest manifest, List<PrivateFile> privateFiles) {
+        Set<String> overlay = new LinkedHashSet<>();
+        if (privateFiles != null) {
+            for (PrivateFile file : privateFiles) {
+                if (file.path != null && allowed(file.side, manifest.side)) {
+                    overlay.add(file.path);
+                }
+            }
+        }
+        List<Manifests.FileEntry> files = new ArrayList<>(manifest.files.size());
+        boolean changed = false;
+        for (Manifests.FileEntry entry : manifest.files) {
+            boolean mark = overlay.contains(entry.path);
+            if (entry.overlay != mark) {
+                changed = true;
+                files.add(new Manifests.FileEntry(entry.path, entry.sha256, entry.size, entry.kind, mark));
+            } else {
+                files.add(entry);
+            }
+        }
+        return changed ? new Manifests.Manifest(manifest.officialVersion, manifest.side, manifest.generatedAt, files)
+                : manifest;
+    }
+
     static void applyOverlay(Path destination, List<PrivateFile> files, String side) throws Exception {
         Files.createDirectories(destination);
         for (PrivateFile file : files) {
             if (!(file.side.equals(side) || "both".equals(file.side))) {
                 continue;
             }
-            Fs.copyFile(file.source, destination.resolve(file.path));
+            Path dest = destination.resolve(file.path);
+            Fs.copyFile(file.source, dest);
+            if (PackPaths.taggedTemplate(file.path)) {
+                PackPaths.stampManagedTag(file.source);
+                PackPaths.stampManagedTag(dest);
+            }
+        }
+    }
+
+    private static void publishUpdaterJar(Config config, Consumer<String> log) throws Exception {
+        Path jar = currentUpdaterJar();
+        if (jar == null) {
+            return;
+        }
+        Fs.copyFile(jar, config.clientDir.resolve("mods/cdr-updater.jar"));
+        Fs.copyFile(jar, config.serverDir.resolve("mods/cdr-updater.jar"));
+        log.accept("已把当前更新器写入仓库 mods/cdr-updater.jar");
+    }
+
+    private static int publishUpdaterJar(Config config, Map<String, Manifests.FileEntry> clientUpsert,
+                                         Map<String, Manifests.FileEntry> serverUpsert, Set<String> clientRemove,
+                                         Set<String> serverRemove, Consumer<String> log) throws Exception {
+        Path jar = currentUpdaterJar();
+        if (jar == null) {
+            return 0;
+        }
+        int changed = 0;
+        Path client = config.clientDir.resolve("mods/cdr-updater.jar");
+        Path server = config.serverDir.resolve("mods/cdr-updater.jar");
+        if (Fs.copyIfChanged(jar, client)) {
+            touchEntry(client, "mods/cdr-updater.jar", config.objectsDir, clientUpsert, clientRemove, false);
+            changed++;
+        }
+        if (Fs.copyIfChanged(jar, server)) {
+            touchEntry(server, "mods/cdr-updater.jar", config.objectsDir, serverUpsert, serverRemove, false);
+            changed++;
+        }
+        if (changed > 0) {
+            log.accept("已更新仓库中的 mods/cdr-updater.jar");
+        }
+        return changed;
+    }
+
+    private static Path currentUpdaterJar() {
+        if ("true".equals(System.getProperty("cdr.updater.test"))) {
+            return null;
+        }
+        try {
+            Path jar = Env.updaterJar();
+            return Files.isRegularFile(jar) && jar.getFileName().toString().endsWith(".jar") ? jar : null;
+        } catch (Exception ignored) {
+            return null;
         }
     }
 
@@ -390,6 +492,8 @@ final class Pack {
             changed += applyPrivate(config, file, clientUpsert, serverUpsert, clientRemove, serverRemove);
         }
 
+        changed += publishUpdaterJar(config, clientUpsert, serverUpsert, clientRemove, serverRemove, log);
+
         if (config.officialDir != null) {
             Map<String, String> newOfficial = sideMapFromTree(config.officialDir);
             for (String path : officialSides.keySet()) {
@@ -409,16 +513,18 @@ final class Pack {
                 PrivateFile overlay = current.get(rel);
                 if (allowed(side, "client") && !covers(overlay, "client")
                         && Fs.copyIfChanged(path, config.clientDir.resolve(rel))) {
-                    touchEntry(config.clientDir.resolve(rel), rel, config.objectsDir, clientUpsert, clientRemove);
+                    touchEntry(config.clientDir.resolve(rel), rel, config.objectsDir, clientUpsert, clientRemove, false);
                     changed++;
                 }
                 if (allowed(side, "server") && !covers(overlay, "server")
                         && Fs.copyIfChanged(path, config.serverDir.resolve(rel))) {
-                    touchEntry(config.serverDir.resolve(rel), rel, config.objectsDir, serverUpsert, serverRemove);
+                    touchEntry(config.serverDir.resolve(rel), rel, config.objectsDir, serverUpsert, serverRemove, false);
                     changed++;
                 }
             }
         }
+
+        changed += stampServerTemplate(config, privateFiles, serverUpsert, serverRemove);
 
         writePrivateIndex(config, privateFiles);
         if (changed == 0) {
@@ -449,15 +555,52 @@ final class Pack {
         int changed = 0;
         if (allowed(file.side, "client")
                 && Fs.copyIfChanged(file.source, config.clientDir.resolve(file.path))) {
-            touchEntry(config.clientDir.resolve(file.path), file.path, config.objectsDir, clientUpsert, clientRemove);
+            touchEntry(config.clientDir.resolve(file.path), file.path, config.objectsDir, clientUpsert, clientRemove, true);
             changed++;
         }
-        if (allowed(file.side, "server")
-                && Fs.copyIfChanged(file.source, config.serverDir.resolve(file.path))) {
-            touchEntry(config.serverDir.resolve(file.path), file.path, config.objectsDir, serverUpsert, serverRemove);
-            changed++;
+        if (allowed(file.side, "server")) {
+            if (PackPaths.taggedTemplate(file.path)) {
+                PackPaths.stampManagedTag(file.source);
+            }
+            if (Fs.copyIfChanged(file.source, config.serverDir.resolve(file.path))) {
+                if (PackPaths.taggedTemplate(file.path)) {
+                    PackPaths.stampManagedTag(config.serverDir.resolve(file.path));
+                }
+                touchEntry(config.serverDir.resolve(file.path), file.path, config.objectsDir, serverUpsert, serverRemove, true);
+                changed++;
+            }
         }
         return changed;
+    }
+
+    private static int stampServerTemplate(Config config, List<PrivateFile> privateFiles,
+                                           Map<String, Manifests.FileEntry> serverUpsert,
+                                           Set<String> serverRemove) throws Exception {
+        int changed = 0;
+        if (privateFiles != null) {
+            for (PrivateFile file : privateFiles) {
+                if (PackPaths.taggedTemplate(file.path) && PackPaths.stampManagedTag(file.source)) {
+                    changed++;
+                }
+            }
+        }
+        Path dest = config.serverDir.resolve("server.properties");
+        if (!PackPaths.stampManagedTag(dest)) {
+            return changed;
+        }
+        boolean overlay = false;
+        if (privateFiles != null) {
+            for (PrivateFile file : privateFiles) {
+                if (PackPaths.taggedTemplate(file.path) && allowed(file.side, "server")) {
+                    overlay = true;
+                    break;
+                }
+            }
+        }
+        if (serverUpsert != null) {
+            touchEntry(dest, "server.properties", config.objectsDir, serverUpsert, serverRemove, overlay);
+        }
+        return changed + 1;
     }
 
     private static int unapplyOverlay(Config config, String path, String overlaySide, Map<String, String> officialSides,
@@ -488,7 +631,7 @@ final class Pack {
         Path official = officialSource(config, rel, repoSide, officialSides);
         if (official != null && Files.isRegularFile(official)) {
             if (Fs.copyIfChanged(official, dest)) {
-                touchEntry(dest, rel, config.objectsDir, upsert, remove);
+                touchEntry(dest, rel, config.objectsDir, upsert, remove, false);
                 return 1;
             }
             return 0;
@@ -521,9 +664,9 @@ final class Pack {
     }
 
     private static void touchEntry(Path file, String rel, Path objectsDir, Map<String, Manifests.FileEntry> upsert,
-                                   Set<String> remove) throws Exception {
+                                   Set<String> remove, boolean overlay) throws Exception {
         materializeFile(file, objectsDir);
-        upsert.put(rel, new Manifests.FileEntry(rel, Fs.sha256(file), Files.size(file), PackPaths.kind(rel)));
+        upsert.put(rel, new Manifests.FileEntry(rel, Fs.sha256(file), Files.size(file), PackPaths.kind(rel), overlay));
         remove.remove(rel);
     }
 
@@ -617,11 +760,13 @@ final class Pack {
         for (PrivateFile file : privateFiles) {
             combined.put(file.path, file.side);
         }
+        writePrivateIndex(config, privateFiles);
+        client = stampOverlay(client, privateFiles);
+        server = stampOverlay(server, privateFiles);
         Files.writeString(config.manifestsDir().resolve("client.json"), Json.stringify(client.toMap()));
         Files.writeString(config.manifestsDir().resolve("server.json"), Json.stringify(server.toMap()));
         Files.writeString(config.manifestsDir().resolve("official-side-map.json"), Json.stringify(officialSides));
         Files.writeString(config.manifestsDir().resolve("side-map.json"), Json.stringify(combined));
-        writePrivateIndex(config, privateFiles);
         Map<String, Object> meta = Json.map();
         meta.put("official_version", config.officialVersion);
         meta.put("release_body", releaseBody == null ? "" : releaseBody);
@@ -629,6 +774,11 @@ final class Pack {
         meta.put("server_fingerprint", server.fingerprint());
         meta.put("client_files", client.files.size());
         meta.put("server_files", server.files.size());
+        List<Object> overlayPaths = Json.list();
+        for (PrivateFile file : privateFiles) {
+            overlayPaths.add(file.path);
+        }
+        meta.put("overlay_paths", overlayPaths);
         Files.writeString(config.manifestsDir().resolve("meta.json"), Json.stringify(meta));
         log.accept("客户端仓库 " + client.files.size() + " 个文件，服务端仓库 " + server.files.size() + " 个文件");
         Map<String, Manifests.Manifest> manifests = new LinkedHashMap<>();
@@ -808,9 +958,15 @@ final class Pack {
         Progress.ensure("写入私货", -1);
         applyOverlay(config.clientDir, privateFiles, "client");
         applyOverlay(config.serverDir, privateFiles, "server");
+        publishUpdaterJar(config, log);
+        stampServerTemplate(config, privateFiles, null, null);
         Progress.ensure("生成清单", -1);
-        Manifests.Manifest client = Manifests.build(config.clientDir, config.officialVersion, "client");
-        Manifests.Manifest server = Manifests.build(config.serverDir, config.officialVersion, "server");
+        Set<String> overlayPaths = new LinkedHashSet<>();
+        for (PrivateFile file : privateFiles) {
+            overlayPaths.add(file.path);
+        }
+        Manifests.Manifest client = Manifests.build(config.clientDir, config.officialVersion, "client", overlayPaths);
+        Manifests.Manifest server = Manifests.build(config.serverDir, config.officialVersion, "server", overlayPaths);
         Progress.ensure("校验对象库", -1);
         materialize(config.clientDir, config.objectsDir);
         materialize(config.serverDir, config.objectsDir);

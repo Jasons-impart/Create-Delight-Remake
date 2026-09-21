@@ -29,6 +29,14 @@ final class Json {
         return value == null ? "" : String.valueOf(value);
     }
 
+    static boolean bool(Map<String, Object> object, String key) {
+        Object value = object.get(key);
+        if (value instanceof Boolean flag) {
+            return flag;
+        }
+        return value != null && "true".equalsIgnoreCase(value.toString());
+    }
+
     static long lng(Map<String, Object> object, String key) {
         Object value = object.get(key);
         if (value instanceof Number number) {

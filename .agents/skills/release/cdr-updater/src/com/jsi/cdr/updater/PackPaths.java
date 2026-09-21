@@ -1,5 +1,7 @@
 package com.jsi.cdr.updater;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Locale;
 import java.util.Set;
 
@@ -99,6 +101,49 @@ final class PackPaths {
     static boolean protectedLocal(String rel) {
         String path = Fs.posix(rel);
         return PROTECTED_FILES.contains(path) || startsWithAny(path, PROTECTED_PREFIXES);
+    }
+
+    static final String MANAGED_TAG = "# cdr-updater-managed";
+    static final String SERVER_KEEP = "mods/cdr-server.keep";
+
+    static boolean seededAtRuntime(String rel) {
+        return taggedTemplate(rel);
+    }
+
+    static boolean taggedTemplate(String rel) {
+        return "server.properties".equals(Fs.posix(rel));
+    }
+
+    static boolean hasManagedTag(String text) {
+        return text != null && text.contains(MANAGED_TAG);
+    }
+
+    static String withManagedTag(String text) {
+        String body = text == null ? "" : text;
+        if (!body.isEmpty() && body.charAt(0) == '\uFEFF') {
+            body = body.substring(1);
+        }
+        if (hasManagedTag(body)) {
+            return body;
+        }
+        String nl = body.contains("\r\n") ? "\r\n" : "\n";
+        if (body.isEmpty()) {
+            return MANAGED_TAG + nl;
+        }
+        return MANAGED_TAG + nl + body;
+    }
+
+    static boolean stampManagedTag(Path file) throws Exception {
+        if (file == null || !Files.isRegularFile(file)) {
+            return false;
+        }
+        String text = Files.readString(file);
+        String stamped = withManagedTag(text);
+        if (text.equals(stamped)) {
+            return false;
+        }
+        Files.writeString(file, stamped);
+        return true;
     }
 
     private static boolean startsWithAny(String path, String[] prefixes) {

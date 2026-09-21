@@ -36,6 +36,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
+import java.awt.event.ItemEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
@@ -361,15 +362,15 @@ final class AdminApp {
                     }
                 }
                 for (String folder : folders) {
-                    destFolder.addItem(folder);
+                    destFolder.addItem(PrivateViews.folderLabel(folder));
                 }
             } catch (Exception ignored) {
                 for (String folder : PrivateViews.DEST_FOLDERS) {
-                    destFolder.addItem(folder);
+                    destFolder.addItem(PrivateViews.folderLabel(folder));
                 }
             }
             String suggested = Privates.defaultDest(sources.get(0));
-            destFolder.setSelectedItem(PrivateViews.folderOf(suggested) + "/");
+            destFolder.setSelectedItem(PrivateViews.folderLabel(PrivateViews.folderOf(suggested)));
             JButton newDir = new JButton("新建目录");
             newDir.addActionListener(ev -> {
                 String folder = promptNewFolder(frame);
@@ -379,23 +380,36 @@ final class AdminApp {
                 if (!pendingFolders.contains(folder)) {
                     pendingFolders.add(folder);
                 }
+                String label = PrivateViews.folderLabel(folder);
                 boolean found = false;
                 for (int i = 0; i < destFolder.getItemCount(); i++) {
-                    if (folder.equals(destFolder.getItemAt(i))) {
+                    if (label.equals(destFolder.getItemAt(i))) {
                         found = true;
                         break;
                     }
                 }
                 if (!found) {
-                    destFolder.addItem(folder);
+                    destFolder.addItem(label);
                 }
-                destFolder.setSelectedItem(folder);
+                destFolder.setSelectedItem(label);
             });
             JPanel destRow = new JPanel(new BorderLayout(8, 0));
             destRow.add(destFolder, BorderLayout.CENTER);
             destRow.add(newDir, BorderLayout.EAST);
             JTextField destFile = new JTextField(sources.size() == 1 ? suggested : "");
-            destFile.setToolTipText("单文件可填完整游戏内路径；多文件请留空，只用上面的目录。");
+            destFile.setToolTipText("单文件可填完整游戏内路径；多文件请留空，只用上面的目录。选根目录会推到整合包根目录。");
+            destFolder.addItemListener(sel -> {
+                if (sel.getStateChange() != ItemEvent.SELECTED) {
+                    return;
+                }
+                String folder = PrivateViews.destFolderValue(String.valueOf(destFolder.getSelectedItem()));
+                if (folder.isBlank()) {
+                    return;
+                }
+                if (sources.size() == 1) {
+                    destFile.setText(PrivateViews.resolveDest(folder, sources.get(0).getFileName().toString(), 1));
+                }
+            });
             JComboBox<String> side = new JComboBox<>(new String[]{"自动判定", "仅客户端", "仅服务端", "两端"});
             JPanel form = new JPanel(new GridBagLayout());
             GridBagConstraints c = new GridBagConstraints();
@@ -436,7 +450,7 @@ final class AdminApp {
             };
             String typed = destFile.getText().trim();
             Object folderItem = destFolder.getEditor().getItem();
-            String folder = folderItem == null ? "" : folderItem.toString().trim();
+            String folder = PrivateViews.destFolderValue(folderItem == null ? "" : folderItem.toString().trim());
             String dest = typed.isBlank() ? folder : typed;
             List<ServerRuntime.PrivateAdd> items = new ArrayList<>();
             for (Path source : sources) {
@@ -939,14 +953,14 @@ final class AdminApp {
     }
 
     private static String promptNewFolder(JFrame frame) {
-        String typed = JOptionPane.showInputDialog(frame, "游戏内目录，例如 config/ItemBan 或 kubejs/server_scripts/custom",
+        String typed = JOptionPane.showInputDialog(frame, "游戏内目录，例如 根目录、config/ItemBan 或 kubejs/server_scripts/custom",
                 "新建目录", JOptionPane.PLAIN_MESSAGE);
         if (typed == null || typed.isBlank()) {
             return null;
         }
         try {
             String folder = PrivateViews.normalizeFolder(typed);
-            return folder.endsWith("/") ? folder : folder + "/";
+            return ".".equals(folder) ? "./" : (folder.endsWith("/") ? folder : folder + "/");
         } catch (Exception error) {
             JOptionPane.showMessageDialog(frame, error.getMessage(), "无法创建目录", JOptionPane.WARNING_MESSAGE);
             return null;

@@ -477,6 +477,7 @@
               <div class="drop drop-lg drop-scroll" id="privateDestFolderDrop" data-value="mods/">
                 <button type="button" class="drop-btn" title="mods/">mods/</button>
                 <div class="drop-menu">
+                  <button type="button" data-value="./">根目录</button>
                   <button type="button" data-value="mods/" class="active">mods/</button>
                   <button type="button" data-value="config/">config/</button>
                   <button type="button" data-value="kubejs/">kubejs/</button>
@@ -745,6 +746,25 @@
       return slash <= 0 ? "." : rel.slice(0, slash);
     }
 
+    function isRootDest(value) {
+      let path = String(value || "").trim().replace(/\\/g, "/");
+      while (path.startsWith("/")) path = path.slice(1);
+      while (path.endsWith("/")) path = path.slice(0, -1);
+      while (path.startsWith("./")) path = path.slice(2);
+      return path === "." || path === "根目录";
+    }
+
+    function destLabel(value) {
+      return isRootDest(value) ? "根目录" : String(value || "");
+    }
+
+    function destFolderValue(value) {
+      const raw = String(value || "").trim().replace(/\\/g, "/");
+      if (!raw) return "";
+      if (isRootDest(raw)) return "./";
+      return raw.endsWith("/") ? raw : raw + "/";
+    }
+
     function dropHidden(drop) {
       if (!drop || !drop.id || !drop.id.endsWith("Drop")) return null;
       return $(drop.id.slice(0, -4));
@@ -791,36 +811,43 @@
     function fillDestFolders(folders, keep) {
       const drop = $("privateDestFolderDrop");
       const hidden = $("privateDestFolder");
-      if (!drop || !hidden) return;
+      if (!drop || !hidden || drop.classList.contains("open")) return;
       const seen = new Set();
       const list = [];
-      for (const folder of folders || []) {
-        let value = String(folder || "").trim().replace(/\\/g, "/");
-        if (!value) continue;
-        if (!value.endsWith("/")) value += "/";
-        if (seen.has(value)) continue;
+      const pushFolder = (folder) => {
+        let value = destFolderValue(folder);
+        if (!value || seen.has(value)) return;
         seen.add(value);
         list.push(value);
-      }
-      for (const folder of pending.folders) {
-        let value = String(folder || "").trim().replace(/\\/g, "/");
-        if (!value) continue;
-        if (!value.endsWith("/")) value += "/";
-        if (seen.has(value)) continue;
-        seen.add(value);
-        list.push(value);
+      };
+      for (const folder of folders || []) pushFolder(folder);
+      for (const folder of pending.folders) pushFolder(folder);
+      if (!seen.has("./")) {
+        list.unshift("./");
+        seen.add("./");
+      } else {
+        const rest = list.filter(value => value !== "./");
+        list.length = 0;
+        list.push("./", ...rest);
       }
       if (!list.length) {
         list.push("mods/");
         seen.add("mods/");
       }
-      let current = keep || hidden.value || "mods/";
-      if (current && !current.endsWith("/")) current += "/";
+      let current = destFolderValue(keep || hidden.value || "mods/") || "mods/";
       if (current && !seen.has(current)) {
         seen.add(current);
         list.push(current);
       }
-      fillDrop(drop, list, current);
+      const menu = drop.querySelector(".drop-menu");
+      const want = list.includes(current) ? current : list[0];
+      if (menu) {
+        menu.innerHTML = list.map(value => {
+          const label = destLabel(value);
+          return `<button type="button" data-value="${esc(value)}" class="${value === want ? "active" : ""}" title="${esc(label)}">${esc(label)}</button>`;
+        }).join("");
+      }
+      setDropValue(drop, want, destLabel(want));
     }
 
     function pendingDirty() {
@@ -846,9 +873,14 @@
       const name = String(filename || "upload.bin").split(/[\\/]/).pop();
       let path = String(dest || "").replace(/\\/g, "/").replace(/^\/+/, "").trim();
       if (!path) return defaultFolderForName(name) + name;
+      if (isRootDest(path)) return name;
+      while (path.startsWith("./")) path = path.slice(2);
+      if (path === ".") return name;
       const asFolder = fileCount > 1 || path.endsWith("/");
       if (asFolder) {
         path = path.replace(/\/+$/, "");
+        while (path.startsWith("./")) path = path.slice(2);
+        if (path === ".") path = "";
         return path ? path + "/" + name : name;
       }
       return path;
@@ -857,10 +889,12 @@
     function normalizeFolderInput(dest) {
       let value = String(dest || "").trim().replace(/\\/g, "/");
       while (value.startsWith("/")) value = value.slice(1);
+      if (isRootDest(value)) return "./";
       if (value.startsWith("client/")) value = value.slice(7);
       else if (value.startsWith("server/")) value = value.slice(7);
       else if (value.startsWith("both/")) value = value.slice(5);
       if (!value || value.includes("..")) throw new Error("无效的目录");
+      if (isRootDest(value)) return "./";
       return value.endsWith("/") ? value : value + "/";
     }
 
@@ -972,7 +1006,7 @@
       if (lower.endsWith(".zip")) return "resourcepacks/";
       if (lower.endsWith(".js")) return "kubejs/server_scripts/";
       if (lower.endsWith(".toml") || lower.endsWith(".cfg") || lower.endsWith(".json")) return "config/";
-      return "mods/";
+      return "";
     }
 
     function esc(s) {

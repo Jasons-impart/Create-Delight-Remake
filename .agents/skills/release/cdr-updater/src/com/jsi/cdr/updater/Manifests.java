@@ -16,12 +16,18 @@ final class Manifests {
         final String sha256;
         final long size;
         final String kind;
+        final boolean overlay;
 
         FileEntry(String path, String sha256, long size, String kind) {
+            this(path, sha256, size, kind, false);
+        }
+
+        FileEntry(String path, String sha256, long size, String kind, boolean overlay) {
             this.path = Fs.posix(path);
             this.sha256 = sha256;
             this.size = size;
             this.kind = kind;
+            this.overlay = overlay;
         }
 
         Map<String, Object> toMap() {
@@ -30,13 +36,17 @@ final class Manifests {
             map.put("sha256", sha256);
             map.put("size", size);
             map.put("kind", kind);
+            if (overlay) {
+                map.put("overlay", true);
+            }
             return map;
         }
 
         static FileEntry from(Map<String, Object> map) {
             String path = Fs.posix(Json.str(map, "path"));
             return new FileEntry(path, Json.str(map, "sha256"), Json.lng(map, "size"),
-                    Json.str(map, "kind").isBlank() ? PackPaths.kind(path) : Json.str(map, "kind"));
+                    Json.str(map, "kind").isBlank() ? PackPaths.kind(path) : Json.str(map, "kind"),
+                    Json.bool(map, "overlay"));
         }
     }
 
@@ -140,13 +150,21 @@ final class Manifests {
     }
 
     static Manifest build(Path root, String officialVersion, String side) throws Exception {
+        return build(root, officialVersion, side, Set.of());
+    }
+
+    static Manifest build(Path root, String officialVersion, String side, Set<String> keep) throws Exception {
+        Set<String> overlay = keep == null ? Set.of() : keep;
         List<FileEntry> files = new ArrayList<>();
         for (Path path : Fs.files(root)) {
             String rel = Fs.posix(root, path);
-            if (PackPaths.skipUnified(rel) || rel.endsWith(".pw.toml")) {
+            if (rel.endsWith(".pw.toml")) {
                 continue;
             }
-            files.add(new FileEntry(rel, Fs.sha256(path), Files.size(path), PackPaths.kind(rel)));
+            if (PackPaths.skipUnified(rel) && !overlay.contains(rel)) {
+                continue;
+            }
+            files.add(new FileEntry(rel, Fs.sha256(path), Files.size(path), PackPaths.kind(rel), overlay.contains(rel)));
         }
         return new Manifest(officialVersion, side, Instant.now().toString(), files);
     }

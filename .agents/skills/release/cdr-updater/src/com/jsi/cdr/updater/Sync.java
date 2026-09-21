@@ -168,6 +168,10 @@ final class Sync {
             row.put("path", rel);
             row.put("sha256", Fs.sha256(path));
             row.put("size", Files.size(path));
+            if (PackPaths.taggedTemplate(rel)) {
+                row.put("managed_tag", PackPaths.hasManagedTag(Files.readString(path)));
+                row.put("keep_local", Files.isRegularFile(instanceDir.resolve(PackPaths.SERVER_KEEP)));
+            }
             local.add(row);
         }
         return local;
@@ -213,7 +217,8 @@ final class Sync {
             }
             Map<String, Object> local = localByPath.get(rel);
             String localSha = local == null ? null : Json.str(local, "sha256");
-            if (Policy.shouldOverwriteLocal(rel, side, localSha, Json.str(row, "sha256"), syncedHashes)) {
+            if (Policy.shouldOverwriteLocal(rel, side, localSha, Json.str(row, "sha256"), syncedHashes, overlayFlag(row),
+                    managedTag(instanceDir, rel), keepServerProperties(instanceDir, rel))) {
                 pending++;
             }
         }
@@ -230,8 +235,12 @@ final class Sync {
                 }
                 Map<String, Object> local = localByPath.get(rel);
                 String localSha = local == null ? null : Json.str(local, "sha256");
-                if (!Policy.shouldOverwriteLocal(rel, side, localSha, Json.str(row, "sha256"), syncedHashes)) {
+                if (!Policy.shouldOverwriteLocal(rel, side, localSha, Json.str(row, "sha256"), syncedHashes, overlayFlag(row),
+                        managedTag(instanceDir, rel), keepServerProperties(instanceDir, rel))) {
                     progress.accept(("server".equals(side) ? "保留管理员改动 " : "保留本地文件 ") + rel);
+                    if (PackPaths.taggedTemplate(rel) && Boolean.TRUE.equals(managedTag(instanceDir, rel))) {
+                        markServerPropertiesKeep(instanceDir);
+                    }
                     continue;
                 }
                 progress.accept("下载 " + rel);
@@ -276,6 +285,16 @@ final class Sync {
             Map<String, Object> local = localByPath.get(entry.getKey());
             if (local != null && entry.getValue().equals(Json.str(local, "sha256"))) {
                 syncedHashes.put(entry.getKey(), entry.getValue());
+            }
+        }
+        boolean wroteProperties = applied.stream()
+                .anyMatch(item -> "server.properties".equals(item.get("path")) && "write".equals(item.get("action")));
+        if ("server".equals(side) && !wroteProperties && Boolean.TRUE.equals(managedTag(instanceDir, "server.properties"))) {
+            Map<String, Object> local = localByPath.get("server.properties");
+            String localSha = local == null ? null : Json.str(local, "sha256");
+            String remoteSha = remoteHashes.get("server.properties");
+            if (localSha != null && remoteSha != null && !localSha.equals(remoteSha)) {
+                markServerPropertiesKeep(instanceDir);
             }
         }
         List<String> keptLocal = new ArrayList<>();
@@ -356,7 +375,8 @@ final class Sync {
             String rel = Fs.posix(Json.str(row, "path"));
             Map<String, Object> local = localByPath.get(rel);
             String localSha = local == null ? null : Json.str(local, "sha256");
-            if (Policy.shouldOverwriteLocal(rel, side, localSha, Json.str(row, "sha256"), syncedHashes)) {
+            if (Policy.shouldOverwriteLocal(rel, side, localSha, Json.str(row, "sha256"), syncedHashes, overlayFlag(row),
+                    managedTag(instanceDir, rel), keepServerProperties(instanceDir, rel))) {
                 needed = true;
                 if (PackPaths.isModPayload(rel)) {
                     modsChanged = true;
@@ -379,5 +399,35 @@ final class Sync {
         }
         Map<String, Object> changelog = Json.object(diff.get("changelog"));
         return new Check(needed, modsChanged, Json.str(changelog, "text"), Json.str(diff, "official_version"));
+    }
+
+    private static boolean overlayFlag(Map<String, Object> row) {
+        return Json.bool(row, "overlay");
+    }
+
+    private static Boolean managedTag(Path instanceDir, String rel) {
+        if (!PackPaths.taggedTemplate(rel)) {
+            return null;
+        }
+        try {
+            Path file = instanceDir.resolve(rel);
+            return Files.isRegularFile(file) && PackPaths.hasManagedTag(Files.readString(file));
+        } catch (Exception ignored) {
+            return false;
+        }
+    }
+
+    private static boolean keepServerProperties(Path instanceDir, String rel) {
+        return PackPaths.taggedTemplate(rel) && Files.isRegularFile(instanceDir.resolve(PackPaths.SERVER_KEEP));
+    }
+
+    private static void markServerPropertiesKeep(Path instanceDir) {
+        try {
+            Path keep = instanceDir.resolve(PackPaths.SERVER_KEEP);
+            Files.createDirectories(keep.getParent());
+            Files.writeString(keep, "keep\n");
+        } catch (Exception ignored) {
+            // next boot can still see the managed tag
+        }
     }
 }
