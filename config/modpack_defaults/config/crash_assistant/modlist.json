@@ -84,11 +84,6 @@
     "name": "Amendments",
     "version": "1.20-2.2.5"
   },
-  "apokinetics-1.20.1-1.0.4-forge-1.20.1.jar": {
-    "modId": "apokinetics",
-    "name": "Create: Apokinetics",
-    "version": "1.20.1-1.0.4-forge-1.20.1"
-  },
   "Apotheosis-1.20.1-7.4.8.jar": {
     "modId": "apotheosis",
     "name": "Apotheosis",
@@ -404,10 +399,10 @@
     "name": "Create Delight Core",
     "version": "2.2.16j"
   },
-  "create-enchantment-industry-2.5.2.jar": {
+  "create-enchantment-industry-2.5.4.jar": {
     "modId": "create-enchantment-industry",
     "name": "Create: Enchantment Industry",
-    "version": "2.5.2"
+    "version": "2.5.4"
   },
   "create-integrated-farming-1.4.2-1.20.1.jar": {
     "modId": "create-integrated-farming",
@@ -544,10 +539,10 @@
     "name": "Create: Diesel Generators",
     "version": "1.20.1-1.3.12"
   },
-  "CreateDragonsPlus-1.11.7.jar": {
+  "CreateDragonsPlus-1.11.9.jar": {
     "modId": "createdragonsplus",
     "name": "Create: Dragons Plus",
-    "version": "1.11.7"
+    "version": "1.11.9"
   },
   "createfactorycontroller-1.1.1-forge-1.20.1.jar": {
     "modId": "createfactorycontroller",
@@ -794,25 +789,10 @@
     "name": "Create: Extra Gauges",
     "version": "2.0.7"
   },
-  "fallen_gems_affixes-1.20.1-2.1.2.jar": {
-    "modId": "fallen_gems_affixes",
-    "name": "Fallen Gems & Affixes",
-    "version": "1.20.1-2.1.2"
-  },
-  "fallen_lib-1.4.4.jar": {
-    "modId": "fallen_lib",
-    "name": "Fallen Lib",
-    "version": "1.4.4"
-  },
   "fancymenu_forge_3.9.8_MC_1.20.1.jar": {
     "modId": "fancymenu_forge",
     "name": "FancyMenu",
     "version": "3.9.8_MC_1.20.1"
-  },
-  "farmers_spell-1.0.4-1.20.1-all.jar": {
-    "modId": "farmers_spell",
-    "name": "Farmers Spell",
-    "version": "1.0.4-1.20.1"
   },
   "FarmersDelight-1.20.1-1.3.2.jar": {
     "modId": "farmersdelight",
@@ -849,10 +829,10 @@
     "name": "Flerovium",
     "version": "1.20.1-1.2.19-all"
   },
-  "fluidlogistics-1.2.9.jar": {
+  "fluidlogistics-1.3.0-mc1.20.1.jar": {
     "modId": "fluidlogistics",
     "name": "Create: FluidLogistics",
-    "version": "1.2.9"
+    "version": "1.3.0-mc1.20.1"
   },
   "forge-dungeonsdelight-1.20.1-1.3.0.jar": {
     "modId": "forge-dungeonsdelight",
@@ -1058,16 +1038,6 @@
     "modId": "iris_shader_folder",
     "name": "Iris/Oculus Shader Folder",
     "version": "1.3.3-forge"
-  },
-  "irons_lib-1.20.1-1.0.2.jar": {
-    "modId": "irons_lib",
-    "name": "Iron's Lib",
-    "version": "1.20.1-1.0.2"
-  },
-  "irons_spellbooks-1.20.1-3.15.6.jar": {
-    "modId": "irons_spellbooks",
-    "name": "Iron's Spells 'n Spellbooks",
-    "version": "1.20.1-3.15.6"
   },
   "item-filters-forge-2001.1.0-build.59.jar": {
     "modId": "item-filters-forge",
@@ -1848,11 +1818,6 @@
     "modId": "travelerstitles",
     "name": "Traveler's Titles (Forge/NeoForge)",
     "version": "1.20-Forge-4.0.2"
-  },
-  "traveloptics-6.3.0-1.20.1.jar": {
-    "modId": "traveloptics",
-    "name": "T.O Magic 'n Extras - Iron's Spells Addon",
-    "version": "6.3.0-1.20.1"
   },
   "trueuuid-1.1.2-forge1.20.1.jar": {
     "modId": "trueuuid",
