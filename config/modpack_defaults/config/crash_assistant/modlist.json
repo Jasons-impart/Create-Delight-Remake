@@ -544,10 +544,10 @@
     "name": "Create: Dragons Plus",
     "version": "1.11.9"
   },
-  "createfactorycontroller-1.1.1-forge-1.20.1.jar": {
+  "createfactorycontroller-1.2.1-forge-1.20.1.jar": {
     "modId": "createfactorycontroller",
     "name": "Create: Factory Controller",
-    "version": "1.1.1-forge-1.20.1"
+    "version": "1.2.1-forge-1.20.1"
   },
   "CreateFastSchematicCannon-1.4.1-6.0.x-forge-1.20.1.jar": {
     "modId": "createfastschematiccannon",
