@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>CDR 更新服务器</title>
+  <style>
+    html[data-theme="dark"], .theme-dark {
+      --bg: #0a0a0a;
+      --panel: #111;
+      --panel-solid: #161616;
+      --panel2: #1c1c1c;
+      --line: rgba(255,255,255,.12);
+      --text: #f4f4f4;
+      --muted: #9a9a9a;
+      --accent: #fff;
+      --accent-ink: #111;
+      --warn: #cfcfcf;
+      --shadow: 0 16px 40px rgba(0,0,0,.45);
+      --header: rgba(8,8,8,.86);
+      --tabs: #0e0e0e;
+      --hover: rgba(255,255,255,.06);
+      --grid: rgba(255,255,255,.04);
+      --log-bg: #000;
+      --code: #e8e8e8;
+      --pill-bg: rgba(255,255,255,.1);
+      --pill-fg: #fff;
+      color-scheme: dark;
+    }
+    html[data-theme="light"], .theme-light {
+      --bg: #f7f7f7;
+      --panel: #fff;
+      --panel-solid: #fff;
+      --panel2: #f2f2f2;
+      --line: rgba(0,0,0,.12);
+      --text: #111;
+      --muted: #666;
+      --accent: #111;
+      --accent-ink: #fff;
+      --warn: #333;
+      --shadow: 0 16px 40px rgba(0,0,0,.08);
+      --header: rgba(255,255,255,.92);
+      --tabs: #f0f0f0;
+      --hover: rgba(0,0,0,.04);
+      --grid: rgba(0,0,0,.05);
+      --log-bg: #f4f4f4;
+      --code: #111;
+      --pill-bg: rgba(0,0,0,.08);
+      --pill-fg: #111;
+      color-scheme: light;
+    }
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+    .wrap, .toast { position: relative; z-index: 1; }
+    #shell {
+      position: relative;
+      min-height: 100vh;
+      background: var(--bg);
+      z-index: 1;
+    }
+    #shell::before {
+      content: "";
+      position: absolute; inset: 0; pointer-events: none; z-index: 0;
+      background-image:
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse at top, #000 40%, transparent 82%);
+    }
+    header {
+      position: relative; z-index: 1;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 14px 24px;
+      border-bottom: 1px solid var(--line);
+      background: var(--header);
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .mark {
+      width: 38px; height: 38px; border-radius: 12px; flex-shrink: 0;
+      display: grid; place-items: center;
+      background: var(--accent); color: var(--accent-ink);
+      font-weight: 800; font-size: 13px; letter-spacing: -.04em;
+    }
+    header h1 { margin: 0; font-size: 18px; letter-spacing: .02em; }
+    header .meta { color: var(--muted); font-size: 12px; margin-top: 2px; }
+    header .right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .who {
+      display: flex; align-items: center; gap: 8px;
+      padding: 6px 10px; border-radius: 999px;
+      background: var(--hover); border: 1px solid var(--line);
+    }
+    .theme-slot { width: 92px; height: 32px; flex-shrink: 0; }
+    .theme-btn {
+      position: fixed; z-index: 10000; margin: 0;
+      border: 1px solid rgba(255,255,255,.12);
+      background: #1c1c1c; color: #f4f4f4;
+      border-radius: 999px; padding: 5px 10px 7px 6px;
+      cursor: pointer; font-size: 13px; font-weight: 600;
+      display: inline-flex; align-items: center; gap: 8px;
+      top: 16px; right: 24px;
+    }
+    .theme-btn[data-mode="light"] {
+      background: #f2f2f2; color: #111; border-color: rgba(0,0,0,.12);
+    }
+    .theme-track {
+      width: 38px; height: 20px; border-radius: 999px; position: relative; flex-shrink: 0;
+      background: #3a3a3a; border: 1px solid rgba(255,255,255,.12);
+    }
+    .theme-btn[data-mode="light"] .theme-track {
+      background: #c8c8c8; border-color: rgba(0,0,0,.12);
+    }
+    .theme-knob {
+      position: absolute; top: 1px; left: 2px;
+      width: 16px; height: 16px; border-radius: 50%;
+      background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.35);
+      transition: transform .28s cubic-bezier(.22, 1, .36, 1);
+    }
+    .theme-btn[data-mode="light"] .theme-knob { transform: translateX(16px); background: #111; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 24px 20px 48px; }
+    body.is-auth .wrap { max-width: 460px; padding-top: 56px; }
+    .tabs {
+      display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px;
+      padding: 6px; border-radius: 14px;
+      background: var(--tabs); border: 1px solid var(--line);
+    }
+    .tabs button {
+      background: transparent; color: var(--muted); border: 0;
+      padding: 9px 14px; border-radius: 10px; cursor: pointer; font-size: 13px;
+    }
+    .tabs button:hover { color: var(--text); background: var(--hover); }
+    .tabs button.active { background: var(--accent); color: var(--accent-ink); }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+    }
+    h2 { margin: 0 0 6px; font-size: 17px; }
+    .lead { color: var(--muted); font-size: 13px; margin: 0 0 16px; line-height: 1.6; }
+    label { display: block; color: var(--muted); font-size: 12px; margin: 12px 0 6px; }
+    input, textarea, select {
+      width: 100%; padding: 10px 12px; border-radius: 10px;
+      border: 1px solid var(--line); background: var(--panel2); color: var(--text);
+      outline: none; text-overflow: ellipsis;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--text);
+      box-shadow: 0 0 0 3px var(--hover);
+    }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 16px;
+      row-gap: 12px;
+      align-items: start;
+    }
+    .field { display: flex; flex-direction: column; min-width: 0; }
+    .field > label {
+      margin: 0 0 6px;
+      min-height: 18px;
+      line-height: 18px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .form-grid input,
+    .form-grid select {
+      height: 42px;
+      min-height: 42px;
+      padding: 0 12px;
+    }
+    .form-grid input[type="file"] {
+      padding: 8px 12px;
+      line-height: 24px;
+    }
+    .field-row { display: flex; gap: 8px; align-items: stretch; min-width: 0; }
+    .field-row input { flex: 1; width: auto; min-width: 0; }
+    .field-row .actions, .field > .actions {
+      display: flex; flex-wrap: nowrap; gap: 8px; margin: 0; align-items: stretch; flex: 1;
+    }
+    .field .actions button.act, .field-row button.act {
+      height: 42px; padding: 0 14px; margin: 0; white-space: nowrap;
+    }
+    @media (max-width: 800px) {
+      .row, .form-grid { grid-template-columns: 1fr; }
+      header { padding: 12px 14px; }
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    button.act {
+      background: var(--accent); color: var(--accent-ink); border: 0; padding: 9px 14px;
+      border-radius: 10px; cursor: pointer; font-weight: 600;
+    }
+    button.act:hover { filter: brightness(1.05); }
+    button.act:disabled { opacity: .45; cursor: not-allowed; }
+    button.danger { background: transparent; color: var(--text); border: 1px solid var(--text); }
+    button.ok { background: var(--panel2); color: var(--text); border: 1px solid var(--line); }
+    button.ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+    .card { overflow: visible; }
+    .table-wrap { overflow: visible; }
+    table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: 13px; margin-top: 16px; }
+    th, td {
+      text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: middle;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    th { color: var(--muted); font-size: 12px; font-weight: 600; letter-spacing: .04em; }
+    tbody tr:hover { background: var(--hover); }
+    tr.file:has(.drop.open) { position: relative; z-index: 12; }
+    tr.file.is-pending td { color: var(--muted); }
+    .toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 12px 0 0; }
+    .toolbar input.search { max-width: 320px; margin: 0; }
+    tr.group td {
+      font-weight: 700; background: var(--panel2); color: var(--muted);
+      letter-spacing: .02em;
+    }
+    tr.file td:first-child { padding-left: 22px; }
+    .empty { color: var(--muted); text-align: center; padding: 28px 8px !important; white-space: normal; }
+    .id { color: var(--muted); font-family: Consolas, "Cascadia Mono", monospace; font-size: 12px; }
+    .col-side { width: 158px; overflow: visible; }
+    .col-act { width: 76px; overflow: visible; }
+    td.col-act, td.col-side { padding: 4px 6px; overflow: visible; }
+    .drop { position: relative; width: 100%; }
+    .drop.open { z-index: 12; }
+    .drop-btn {
+      width: 100%; height: 32px; margin: 0;
+      border: 1px solid var(--line); background: var(--panel2); color: var(--text);
+      border-radius: 10px; padding: 0 28px 0 10px;
+      font-size: 12px; font-weight: 600; text-align: left; cursor: pointer;
+      position: relative;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+      transition: border-color .18s ease, background .18s ease;
+    }
+    .drop-btn:hover { border-color: var(--muted); }
+    .drop-btn::after {
+      content: ""; position: absolute; right: 11px; top: 50%;
+      width: 6px; height: 6px;
+      border-right: 1.6px solid var(--muted); border-bottom: 1.6px solid var(--muted);
+      transform: translateY(-70%) rotate(45deg);
+      transition: transform .2s cubic-bezier(.22, 1, .36, 1);
+    }
+    .drop.open .drop-btn { border-color: var(--text); }
+    .drop.open .drop-btn::after { transform: translateY(-20%) rotate(225deg); }
+    .drop-menu {
+      position: absolute; left: 0; right: 0; top: calc(100% + 6px); z-index: 40;
+      padding: 6px; border-radius: 12px;
+      border: 1px solid var(--line); background: var(--panel-solid);
+      box-shadow: var(--shadow);
+      transform: translateY(-8px) scale(.96);
+      transform-origin: top center;
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transition: opacity .18s ease, transform .18s cubic-bezier(.22, 1, .36, 1), visibility .18s;
+    }
+    .drop.open .drop-menu {
+      opacity: 1; visibility: visible; pointer-events: auto;
+      transform: translateY(0) scale(1);
+    }
+    .drop-menu button {
+      display: block; width: 100%; border: 0; background: transparent; color: var(--text);
+      text-align: left; padding: 8px 10px; border-radius: 8px;
+      font-size: 12px; cursor: pointer; transition: background .15s ease, color .15s ease;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .drop-menu button:hover { background: var(--hover); }
+    .drop-menu button.active {
+      background: var(--accent); color: var(--accent-ink); font-weight: 700;
+    }
+    .drop-lg .drop-btn { height: 42px; font-size: 13px; padding-left: 12px; }
+    .drop-scroll .drop-menu {
+      max-height: min(320px, 50vh);
+      overflow-y: auto;
+    }
+    .field { position: relative; z-index: 1; }
+    .field:has(.drop.open) { z-index: 12; }
+    .pill {
+      display: inline-flex; align-items: center; padding: 3px 8px; border-radius: 999px;
+      font-size: 12px; font-weight: 700;
+      background: var(--pill-bg); color: var(--pill-fg);
+    }
+    .xfer {
+      position: relative; z-index: 1;
+      padding: 10px 24px 12px;
+      border-bottom: 1px solid var(--line);
+      background: var(--header);
+    }
+    .xfer-text {
+      font-size: 12px; color: var(--muted); margin-bottom: 6px;
+      font-family: Consolas, "Cascadia Mono", "Microsoft YaHei", monospace;
+    }
+    .xfer-bar {
+      height: 8px; border-radius: 999px; overflow: hidden;
+      background: var(--panel2); border: 1px solid var(--line);
+    }
+    .xfer-bar i {
+      display: block; height: 100%; width: 0;
+      background: var(--accent); border-radius: 999px;
+      transition: width .2s linear;
+    }
+    .xfer.indeterminate .xfer-bar i {
+      width: 32% !important;
+      animation: xferPulse 1.1s ease-in-out infinite;
+    }
+    @keyframes xferPulse {
+      0% { transform: translateX(-120%); }
+      100% { transform: translateX(350%); }
+    }
+    .toast {
+      position: fixed; right: 16px; bottom: 16px;
+      background: var(--panel-solid); color: var(--text); padding: 12px 16px; border-radius: 12px;
+      border: 1px solid var(--line); box-shadow: var(--shadow);
+      display: none; z-index: 5; max-width: 420px;
+    }
+    .modal {
+      position: fixed; inset: 0; z-index: 20000;
+      display: grid; place-items: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .2s ease, visibility .2s;
+    }
+    .modal.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    .modal-backdrop {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,.58);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    html[data-theme="light"] .modal-backdrop {
+      background: rgba(17,17,17,.32);
+    }
+    .modal-card {
+      position: relative; z-index: 1;
+      width: min(420px, 100%);
+      background: var(--panel-solid);
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 24px 22px 18px;
+      transform-origin: center;
+      transform: translateY(14px) scale(.96);
+      opacity: 0;
+      transition: transform .22s cubic-bezier(.22, 1, .36, 1), opacity .2s ease;
+    }
+    .modal.open .modal-card {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    .modal-card::before {
+      content: "";
+      position: absolute; left: 22px; right: 22px; top: 0;
+      height: 2px; border-radius: 0 0 2px 2px;
+      background: var(--accent);
+    }
+    .modal-card h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      letter-spacing: .02em;
+    }
+    .modal-card .lead {
+      margin: 0 0 20px;
+      white-space: pre-wrap;
+    }
+    .modal-card .actions {
+      justify-content: flex-end;
+      margin: 0;
+    }
+    .modal-card .act.danger {
+      background: var(--accent);
+      color: var(--accent-ink);
+      border: 0;
+    }
+    pre.logs {
+      white-space: pre-wrap; background: var(--log-bg); padding: 14px; border-radius: 12px;
+      max-height: 420px; overflow: auto; font-size: 12px; border: 1px solid var(--line);
+      color: var(--text); margin: 12px 0 0;
+    }
+    code { font-family: Consolas, "Cascadia Mono", monospace; color: var(--code); }
+    .hidden { display: none !important; }
+    section.card[id^="tab-"] { display: none; }
+    section.card[id^="tab-"].tab-visible { display: block; animation: tabIn .28s ease both; }
+    @keyframes tabIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="is-auth">
+  <div id="shell">
+    <header>
+      <div class="brand">
+        <div class="mark">CDR</div>
+        <div>
+          <h1>Create Delight Remake 更新服务器</h1>
+          <div class="meta">网页远程管理 · 不含导出 · <span id="verMeta">加载中</span></div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="who hidden" id="who">
+          <span class="pill" id="tokenPill">令牌</span>
+          <span class="pill hidden" id="busyPill">处理中</span>
+        </div>
+        <span class="theme-slot"></span>
+        <button type="button" class="act ghost hidden" id="logoutBtn">退出</button>
+      </div>
+    </header>
+    <div class="xfer hidden" id="xfer">
+      <div class="xfer-text" id="xferLabel">下载中</div>
+      <div class="xfer-bar"><i id="xferFill"></i></div>
+    </div>
+    <div class="wrap">
+      <div id="login" class="card">
+        <h2>登录管理面板</h2>
+        <p class="lead">使用本机更新服务器窗口「网页管理」里设置的令牌。它和客户端同步用的令牌不是同一个。未设置时只能在本机打开。</p>
+        <label>网页管理令牌</label>
+        <input id="token" type="password" autocomplete="current-password" placeholder="未设置则可留空（仅本机）">
+        <div class="actions">
+          <button type="button" class="act" id="loginBtn">进入面板</button>
+        </div>
+      </div>
+      <div id="app" class="hidden">
+        <div class="tabs">
+          <button class="active" data-tab="servers">已连接的服务端</button>
+          <button data-tab="privates">私货</button>
+          <button data-tab="connection">连接地址</button>
+          <button data-tab="version">GitHub 版本</button>
+          <button data-tab="logs">运行日志</button>
+        </div>
+        <section id="tab-servers" class="card tab-visible">
+          <h2>已连接的服务端</h2>
+          <p class="lead">只记录向这台更新服务器同步过的游戏服务端。客户端连接不会写入列表。</p>
+          <div class="table-wrap">
+          <table>
+            <colgroup>
+              <col>
+              <col>
+              <col>
+              <col style="width:9.5em">
+              <col style="width:9.5em">
+              <col style="width:5.5em">
+            </colgroup>
+            <thead>
+              <tr><th>主机</th><th>实例目录</th><th>远程地址</th><th>首次连接</th><th>最近连接</th><th>同步次数</th></tr>
+            </thead>
+            <tbody id="serverTable"></tbody>
+          </table>
+          </div>
+        </section>
+        <section id="tab-privates" class="card">
+          <h2>私货</h2>
+          <p class="lead">添加、改端侧、删除和新建目录都先留在本页，点保存后才会写入仓库。已连接的服务端下次同步才会拿到变更。</p>
+          <div class="form-grid">
+            <div class="field">
+              <label>选择文件（可多选）</label>
+              <input id="privateFile" type="file" multiple>
+            </div>
+            <div class="field">
+              <label>游戏内路径（可留空；多文件时只作目录）</label>
+              <input id="privateDest" placeholder="例如 mods/ItemBan-2.2.0-1.20.1-Forge.jar">
+            </div>
+            <div class="field">
+              <label>推送到目录</label>
+              <input type="hidden" id="privateDestFolder" value="mods/">
+              <div class="drop drop-lg drop-scroll" id="privateDestFolderDrop" data-value="mods/">
+                <button type="button" class="drop-btn" title="mods/">mods/</button>
+                <div class="drop-menu">
+                  <button type="button" data-value="./">根目录</button>
+                  <button type="button" data-value="mods/" class="active">mods/</button>
+                  <button type="button" data-value="config/">config/</button>
+                  <button type="button" data-value="kubejs/">kubejs/</button>
+                  <button type="button" data-value="kubejs/config/">kubejs/config/</button>
+                  <button type="button" data-value="kubejs/server_scripts/">kubejs/server_scripts/</button>
+                  <button type="button" data-value="kubejs/client_scripts/">kubejs/client_scripts/</button>
+                  <button type="button" data-value="kubejs/startup_scripts/">kubejs/startup_scripts/</button>
+                  <button type="button" data-value="resourcepacks/">resourcepacks/</button>
+                  <button type="button" data-value="shaderpacks/">shaderpacks/</button>
+                  <button type="button" data-value="defaultconfigs/">defaultconfigs/</button>
+                  <button type="button" data-value="libraries/">libraries/</button>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <label>端侧</label>
+              <input type="hidden" id="privateSide" value="auto">
+              <div class="drop drop-lg" id="privateSideDrop" data-value="auto">
+                <button type="button" class="drop-btn">自动判定</button>
+                <div class="drop-menu">
+                  <button type="button" data-value="auto" class="active">自动判定</button>
+                  <button type="button" data-value="client">仅客户端</button>
+                  <button type="button" data-value="server">仅服务端</button>
+                  <button type="button" data-value="both">两端</button>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <label>新建目录</label>
+              <div class="field-row">
+                <input id="privateNewFolder" placeholder="例如 config/ItemBan">
+                <button type="button" class="act" id="newFolderBtn">新建目录</button>
+              </div>
+            </div>
+            <div class="field">
+              <label>操作</label>
+              <div class="actions">
+                <button type="button" class="act" id="addPrivateBtn">添加私货</button>
+                <button type="button" class="act ok" id="rebuildBtn">保存</button>
+                <button type="button" class="act ghost" id="discardBtn" disabled>不保存</button>
+              </div>
+            </div>
+          </div>
+          <div class="toolbar">
+            <input id="privateSearch" class="search" placeholder="搜索路径、文件名或端侧" autocomplete="off">
+          </div>
+          <div class="table-wrap">
+          <table>
+            <colgroup>
+              <col>
+              <col class="col-side">
+              <col>
+              <col class="col-act">
+            </colgroup>
+            <thead><tr><th>游戏内路径</th><th>端侧</th><th>本地文件</th><th></th></tr></thead>
+            <tbody id="privateTable"></tbody>
+          </table>
+          </div>
+        </section>
+        <section id="tab-connection" class="card">
+          <h2>连接地址</h2>
+          <p class="lead">客户端和服务端用这里的对外地址和同步令牌。网页登录令牌请在本机窗口「网页管理」里设置。网页不提供整合包导出。</p>
+          <div class="row">
+            <div>
+              <label>监听地址</label>
+              <input id="listen" placeholder="0.0.0.0">
+              <label>端口</label>
+              <input id="port" inputmode="numeric" placeholder="8765">
+              <label>对外地址 public_url</label>
+              <input id="publicUrl" placeholder="http://公网IP:8765">
+            </div>
+            <div>
+              <label>同步令牌 access_token（客户端/服务端）</label>
+              <input id="accessToken" type="text" autocomplete="off" placeholder="留空则同步不校验">
+            </div>
+          </div>
+          <div class="actions">
+            <button type="button" class="act" id="saveConnBtn">保存连接地址</button>
+            <button type="button" class="act ok" id="genTokenBtn">随机生成同步令牌</button>
+            <button type="button" class="act ghost" id="detectWanBtn">检测地址</button>
+            <button type="button" class="act ghost" id="openWanBtn">开放外网访问</button>
+          </div>
+        </section>
+        <section id="tab-version" class="card">
+          <h2>GitHub 版本</h2>
+          <p class="lead">切换官方 Release 标签后会重新从 GitHub 拉取客户端/服务端包。完整服务端包可能超过 800MB。</p>
+          <label>Release 标签</label>
+          <input type="hidden" id="versionTag" value="">
+          <div class="drop drop-lg drop-scroll" id="versionTagDrop" data-value="">
+            <button type="button" class="drop-btn">请先刷新 GitHub 版本</button>
+            <div class="drop-menu"></div>
+          </div>
+          <label>手动填写（可选，未出现在列表里时用）</label>
+          <input id="versionCustom" placeholder="例如 v0.5.0.13-test" autocomplete="off">
+          <div class="actions">
+            <button type="button" class="act ghost" id="refreshTagsBtn">刷新 GitHub 版本</button>
+            <button type="button" class="act" id="applyVersionBtn">应用并重新拉取</button>
+          </div>
+        </section>
+        <section id="tab-logs" class="card">
+          <h2>运行日志</h2>
+          <p class="lead">本机窗口和网页操作会写到同一份最近日志。</p>
+          <div class="actions">
+            <button type="button" class="act ghost" id="refreshLogsBtn">刷新</button>
+          </div>
+          <pre class="logs" id="logBox">暂无日志</pre>
+        </section>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="theme-btn" id="themeBtn" data-mode="dark">
+    <span class="theme-track"><span class="theme-knob"></span></span>
+    <span id="themeLabel">暗色</span>
+  </button>
+  <div class="toast" id="toast"></div>
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <h3 id="modalTitle">确认</h3>
+      <p class="lead" id="modalText"></p>
+      <div class="actions">
+        <button type="button" class="act ghost" id="modalCancel">取消</button>
+        <button type="button" class="act" id="modalOk">确定</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    const TOKEN_KEY = "cdr-admin-token";
+    let state = null;
+    let timer = null;
+    let tagsLoaded = false;
+    const pending = {
+      sides: Object.create(null),
+      deletes: new Set(),
+      adds: [],
+      folders: []
+    };
+
+    function $(id) { return document.getElementById(id); }
+
+    let modalResolve = null;
+
+    function toast(msg) {
+      const el = $("toast");
+      el.textContent = msg;
+      el.style.display = "block";
+      clearTimeout(el._t);
+      el._t = setTimeout(() => { el.style.display = "none"; }, 3200);
+    }
+
+    function modalOpen() {
+      const el = $("modal");
+      return el && el.classList.contains("open");
+    }
+
+    function ask(title, text, danger) {
+      return new Promise(resolve => {
+        if (modalResolve) modalResolve(false);
+        modalResolve = resolve;
+        $("modalTitle").textContent = title || "确认";
+        $("modalText").textContent = text || "";
+        $("modalOk").classList.toggle("danger", !!danger);
+        const el = $("modal");
+        el.classList.remove("open");
+        void el.offsetWidth;
+        el.classList.add("open");
+        el.setAttribute("aria-hidden", "false");
+        $("modalOk").focus();
+      });
+    }
+
+    function closeModal(ok) {
+      const el = $("modal");
+      el.classList.remove("open");
+      el.setAttribute("aria-hidden", "true");
+      const resolve = modalResolve;
+      modalResolve = null;
+      if (resolve) resolve(!!ok);
+    }
+
+    function headers(extra) {
+      const h = Object.assign({ "X-CDR-Admin": "1" }, extra || {});
+      const token = sessionStorage.getItem(TOKEN_KEY);
+      if (token) h["X-CDR-Admin-Token"] = token;
+      return h;
+    }
+
+    async function api(path, opt) {
+      const res = await fetch("/admin/ifgfsgfbijuzoxzq/api/" + path, Object.assign({
+        credentials: "include",
+        headers: headers(opt && opt.json ? { "Content-Type": "application/json" } : null)
+      }, opt || {}));
+      const data = await res.json().catch(() => ({}));
+      if (res.status === 401) {
+        showLogin();
+        throw new Error(data.detail || "请先登录");
+      }
+      if (!res.ok) throw new Error(data.detail || ("请求失败 " + res.status));
+      return data;
+    }
+
+    function showLogin() {
+      document.body.classList.add("is-auth");
+      $("login").classList.remove("hidden");
+      $("app").classList.add("hidden");
+      $("who").classList.add("hidden");
+      $("logoutBtn").classList.add("hidden");
+      sessionStorage.removeItem(TOKEN_KEY);
+      stopTimer();
+    }
+
+    function stopTimer() {
+      if (timer) { clearTimeout(timer); timer = null; }
+    }
+
+    function scheduleRefresh() {
+      stopTimer();
+      const fast = state && (state.busy || (state.progress && state.progress.active));
+      timer = setTimeout(async () => {
+        if (selectOpen()) {
+          if (timer !== null) scheduleRefresh();
+          return;
+        }
+        try { await refresh(); } catch (_) {}
+        if (timer !== null) scheduleRefresh();
+      }, fast ? 400 : 2500);
+    }
+
+    function selectOpen() {
+      return modalOpen() || !!document.querySelector(".drop.open");
+    }
+
+    function closeDrops(except) {
+      document.querySelectorAll(".drop.open").forEach(el => {
+        if (el !== except) el.classList.remove("open");
+      });
+    }
+
+    function sideLabelOf(side) {
+      return ({ client: "仅客户端", server: "仅服务端", both: "两端", auto: "自动判定" })[side] || "两端";
+    }
+
+    function sideDropHtml(path, side) {
+      const current = side === "client" || side === "server" ? side : "both";
+      const safe = esc(path);
+      const opts = [["client", "仅客户端"], ["server", "仅服务端"], ["both", "两端"]]
+        .map(([value, label]) => `<button type="button" data-value="${value}" class="${value === current ? "active" : ""}">${label}</button>`)
+        .join("");
+      return `<div class="drop side-select" data-side-path="${safe}" data-value="${current}">
+        <button type="button" class="drop-btn">${sideLabelOf(current)}</button>
+        <div class="drop-menu">${opts}</div>
+      </div>`;
+    }
+
+    function showApp() {
+      document.body.classList.remove("is-auth");
+      $("login").classList.add("hidden");
+      $("app").classList.remove("hidden");
+      $("who").classList.remove("hidden");
+      $("logoutBtn").classList.remove("hidden");
+    }
+
+    function folderOf(path) {
+      const rel = String(path || "").replace(/\\/g, "/");
+      const slash = rel.lastIndexOf("/");
+      return slash <= 0 ? "." : rel.slice(0, slash);
+    }
+
+    function isRootDest(value) {
+      let path = String(value || "").trim().replace(/\\/g, "/");
+      while (path.startsWith("/")) path = path.slice(1);
+      while (path.endsWith("/")) path = path.slice(0, -1);
+      while (path.startsWith("./")) path = path.slice(2);
+      return path === "." || path === "根目录";
+    }
+
+    function destLabel(value) {
+      return isRootDest(value) ? "根目录" : String(value || "");
+    }
+
+    function destFolderValue(value) {
+      const raw = String(value || "").trim().replace(/\\/g, "/");
+      if (!raw) return "";
+      if (isRootDest(raw)) return "./";
+      return raw.endsWith("/") ? raw : raw + "/";
+    }
+
+    function dropHidden(drop) {
+      if (!drop || !drop.id || !drop.id.endsWith("Drop")) return null;
+      return $(drop.id.slice(0, -4));
+    }
+
+    function setDropValue(drop, value, label) {
+      const text = String(label || value || "").trim();
+      drop.dataset.value = value || "";
+      const hidden = dropHidden(drop);
+      if (hidden) hidden.value = value || "";
+      const btn = drop.querySelector(".drop-btn");
+      if (btn) {
+        btn.textContent = text || "请选择";
+        btn.title = text || "";
+      }
+      drop.querySelectorAll(".drop-menu [data-value]").forEach(item => {
+        item.classList.toggle("active", item.getAttribute("data-value") === String(value || ""));
+      });
+    }
+
+    function fillDrop(drop, items, current, emptyLabel) {
+      if (!drop || drop.classList.contains("open")) return;
+      const menu = drop.querySelector(".drop-menu");
+      const list = [];
+      const seen = new Set();
+      for (const item of items || []) {
+        const value = String(item || "").trim();
+        if (!value || seen.has(value)) continue;
+        seen.add(value);
+        list.push(value);
+      }
+      if (!list.length) {
+        if (menu) menu.innerHTML = "";
+        setDropValue(drop, "", emptyLabel || "请选择");
+        return;
+      }
+      const want = current && list.includes(current) ? current : list[0];
+      menu.innerHTML = list.map(value =>
+        `<button type="button" data-value="${esc(value)}" class="${value === want ? "active" : ""}" title="${esc(value)}">${esc(value)}</button>`
+      ).join("");
+      setDropValue(drop, want, want);
+    }
+
+    function fillDestFolders(folders, keep) {
+      const drop = $("privateDestFolderDrop");
+      const hidden = $("privateDestFolder");
+      if (!drop || !hidden || drop.classList.contains("open")) return;
+      const seen = new Set();
+      const list = [];
+      const pushFolder = (folder) => {
+        let value = destFolderValue(folder);
+        if (!value || seen.has(value)) return;
+        seen.add(value);
+        list.push(value);
+      };
+      for (const folder of folders || []) pushFolder(folder);
+      for (const folder of pending.folders) pushFolder(folder);
+      if (!seen.has("./")) {
+        list.unshift("./");
+        seen.add("./");
+      } else {
+        const rest = list.filter(value => value !== "./");
+        list.length = 0;
+        list.push("./", ...rest);
+      }
+      if (!list.length) {
+        list.push("mods/");
+        seen.add("mods/");
+      }
+      let current = destFolderValue(keep || hidden.value || "mods/") || "mods/";
+      if (current && !seen.has(current)) {
+        seen.add(current);
+        list.push(current);
+      }
+      const menu = drop.querySelector(".drop-menu");
+      const want = list.includes(current) ? current : list[0];
+      if (menu) {
+        menu.innerHTML = list.map(value => {
+          const label = destLabel(value);
+          return `<button type="button" data-value="${esc(value)}" class="${value === want ? "active" : ""}" title="${esc(label)}">${esc(label)}</button>`;
+        }).join("");
+      }
+      setDropValue(drop, want, destLabel(want));
+    }
+
+    function pendingDirty() {
+      return Object.keys(pending.sides).length + pending.deletes.size + pending.adds.length + pending.folders.length;
+    }
+
+    function clearPending() {
+      pending.sides = Object.create(null);
+      pending.deletes = new Set();
+      pending.adds = [];
+      pending.folders = [];
+    }
+
+    function markSaveBtn() {
+      const n = pendingDirty();
+      const btn = $("rebuildBtn");
+      if (btn) btn.textContent = n ? "保存（" + n + "）" : "保存";
+      const discard = $("discardBtn");
+      if (discard) discard.disabled = !n || !!(state && state.busy);
+    }
+
+    function destForFile(dest, filename, fileCount) {
+      const name = String(filename || "upload.bin").split(/[\\/]/).pop();
+      let path = String(dest || "").replace(/\\/g, "/").replace(/^\/+/, "").trim();
+      if (!path) return defaultFolderForName(name) + name;
+      if (isRootDest(path)) return name;
+      while (path.startsWith("./")) path = path.slice(2);
+      if (path === ".") return name;
+      const asFolder = fileCount > 1 || path.endsWith("/");
+      if (asFolder) {
+        path = path.replace(/\/+$/, "");
+        while (path.startsWith("./")) path = path.slice(2);
+        if (path === ".") path = "";
+        return path ? path + "/" + name : name;
+      }
+      return path;
+    }
+
+    function normalizeFolderInput(dest) {
+      let value = String(dest || "").trim().replace(/\\/g, "/");
+      while (value.startsWith("/")) value = value.slice(1);
+      if (isRootDest(value)) return "./";
+      if (value.startsWith("client/")) value = value.slice(7);
+      else if (value.startsWith("server/")) value = value.slice(7);
+      else if (value.startsWith("both/")) value = value.slice(5);
+      if (!value || value.includes("..")) throw new Error("无效的目录");
+      if (isRootDest(value)) return "./";
+      return value.endsWith("/") ? value : value + "/";
+    }
+
+    function pendingAddOf(path) {
+      return pending.adds.find(item => item.path === path);
+    }
+
+    function queueSide(path, side) {
+      const add = pendingAddOf(path);
+      if (add) {
+        add.side = side;
+        return;
+      }
+      pending.sides[path] = side;
+    }
+
+    function mergedPrivates(serverList) {
+      const rows = [];
+      const seen = new Set();
+      for (const row of serverList || []) {
+        const path = row.path;
+        if (!path || pending.deletes.has(path)) continue;
+        const add = pendingAddOf(path);
+        const side = add ? add.side : (pending.sides[path] || row.side);
+        const pendingMark = add || pending.sides[path] ? true : false;
+        rows.push({
+          path,
+          side,
+          side_label: sideLabelOf(side),
+          source: add ? ("待保存 · " + add.name) : row.source,
+          folder: folderOf(path),
+          pending: pendingMark
+        });
+        seen.add(path);
+      }
+      for (const add of pending.adds) {
+        if (pending.deletes.has(add.path) || seen.has(add.path)) continue;
+        rows.push({
+          path: add.path,
+          side: add.side,
+          side_label: sideLabelOf(add.side),
+          source: "待保存 · " + add.name,
+          folder: folderOf(add.path),
+          pending: true
+        });
+      }
+      return rows;
+    }
+
+    function paintPrivates() {
+      if (!state) return;
+      if (document.querySelector("#privateTable .drop.open")) return;
+      $("privateTable").innerHTML = renderPrivates(mergedPrivates(state.privates || []), $("privateSearch").value);
+      markSaveBtn();
+    }
+
+    function renderPrivates(privates, query) {
+      const needle = String(query || "").trim().toLowerCase();
+      const matched = (privates || []).filter(row => {
+        if (!needle) return true;
+        const path = String(row.path || "").toLowerCase();
+        const side = String(row.side_label || row.side || "").toLowerCase();
+        const source = String(row.source || "").toLowerCase();
+        const folder = String(row.folder || folderOf(row.path)).toLowerCase();
+        return path.includes(needle) || side.includes(needle) || source.includes(needle) || folder.includes(needle);
+      });
+      if (!matched.length) {
+        return emptyRow(4, needle ? "没有匹配的私货" : "还没有私货");
+      }
+      matched.sort((a, b) => {
+        const fa = folderOf(a.path);
+        const fb = folderOf(b.path);
+        return fa === fb ? String(a.path).localeCompare(String(b.path)) : fa.localeCompare(fb);
+      });
+      const parts = [];
+      let current = null;
+      let buffer = [];
+      const flush = () => {
+        if (!current) return;
+        const label = current === "." ? "根目录" : current + "/";
+        parts.push(`<tr class="group"><td colspan="4" title="${esc(label)}">${esc(label)}  (${buffer.length})</td></tr>`);
+        for (const row of buffer) {
+          const path = esc(row.path);
+          const source = esc(row.source);
+          parts.push(`<tr class="file${row.pending ? " is-pending" : ""}">
+            <td title="${path}">${path}</td>
+            <td class="col-side">${sideDropHtml(row.path, row.side)}</td>
+            <td class="id" title="${source}">${source}</td>
+            <td class="col-act"><button type="button" class="act danger" data-del="${path}">删除</button></td>
+          </tr>`);
+        }
+        buffer = [];
+      };
+      for (const row of matched) {
+        const folder = folderOf(row.path);
+        if (folder !== current) {
+          flush();
+          current = folder;
+        }
+        buffer.push(row);
+      }
+      flush();
+      return parts.join("");
+    }
+
+    function defaultFolderForName(name) {
+      const lower = String(name || "").toLowerCase();
+      if (lower.endsWith(".jar")) return "mods/";
+      if (lower.endsWith(".zip")) return "resourcepacks/";
+      if (lower.endsWith(".js")) return "kubejs/server_scripts/";
+      if (lower.endsWith(".toml") || lower.endsWith(".cfg") || lower.endsWith(".json")) return "config/";
+      return "";
+    }
+
+    function emptyRow(cols, text) {
+      return `<tr><td colspan="${cols}">${esc(text)}</td></tr>`;
+    }
+
+    function esc(s) {
+      return String(s == null ? "" : s)
+        .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function fmtTime(iso) {
+      if (!iso) return "";
+      const d = new Date(iso);
+      if (isNaN(d.getTime())) return esc(iso);
+      const p = n => String(n).padStart(2, "0");
+      return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}:${p(d.getSeconds())}`;
+    }
+
+    function render(data) {
+      state = data;
+      $("verMeta").textContent = (data.official_version || "未知版本") + " · " + (data.github_repo || "");
+      $("tokenPill").textContent = data.token_enabled ? "网页令牌已启用" : "网页令牌未设置";
+      $("busyPill").classList.toggle("hidden", !data.busy);
+      const p = data.progress || {};
+      const xfer = $("xfer");
+      if (p.active || data.busy) {
+        xfer.classList.remove("hidden");
+        $("xferLabel").textContent = p.active ? (p.text || p.label || "下载中") : "处理中…";
+        const pct = Number(p.percent);
+        if (p.active && pct >= 0) {
+          xfer.classList.remove("indeterminate");
+          $("xferFill").style.width = Math.min(100, pct) + "%";
+        } else {
+          xfer.classList.add("indeterminate");
+          $("xferFill").style.width = "32%";
+        }
+      } else {
+        xfer.classList.add("hidden");
+        xfer.classList.remove("indeterminate");
+        $("xferFill").style.width = "0";
+      }
+      document.querySelectorAll("button.act").forEach(btn => {
+        if (btn.id === "loginBtn" || btn.id === "logoutBtn" || btn.id === "themeBtn") return;
+        if (btn.closest("#login") || btn.closest("#modal")) return;
+        btn.disabled = !!data.busy;
+      });
+      const servers = data.servers || [];
+      $("serverTable").innerHTML = servers.length ? servers.map(row =>
+        `<tr>
+          <td title="${esc(row.hostname)}">${esc(row.hostname)}</td>
+          <td class="id" title="${esc(row.instance_path)}">${esc(row.instance_path)}</td>
+          <td class="id" title="${esc(row.remote)}">${esc(row.remote)}</td>
+          <td title="${fmtTime(row.first_seen)}">${fmtTime(row.first_seen)}</td>
+          <td title="${fmtTime(row.last_seen)}">${fmtTime(row.last_seen)}</td>
+          <td>${esc(row.sync_count)}</td>
+        </tr>`
+      ).join("") : emptyRow(6, "还没有服务端连接过");
+      const privates = data.privates || [];
+      fillDestFolders(data.private_folders || [], $("privateDestFolder").value);
+      if (!document.querySelector("#privateTable .drop.open")) {
+        $("privateTable").innerHTML = renderPrivates(mergedPrivates(privates), $("privateSearch").value);
+      }
+      markSaveBtn();
+      document.querySelectorAll("#privateTable .drop-btn").forEach(btn => {
+        if (btn.closest(".drop.open")) return;
+        btn.disabled = !!data.busy;
+      });
+      if (document.activeElement !== $("listen")) $("listen").value = data.listen || "";
+      if (document.activeElement !== $("port")) $("port").value = data.port || "";
+      if (document.activeElement !== $("publicUrl")) $("publicUrl").value = data.public_url || "";
+      if (document.activeElement !== $("accessToken")) $("accessToken").value = data.access_token || "";
+      if (!tagsLoaded && data.official_version) {
+        fillTagSelect([$("versionTag").value, data.official_version].filter(Boolean), data.official_version);
+      }
+      const logs = data.logs || [];
+      $("logBox").textContent = logs.length ? logs.join("\n") : "暂无日志";
+    }
+
+    async function refresh() {
+      const data = await api("state");
+      render(data);
+    }
+
+    async function boot() {
+      try {
+        await refresh();
+        showApp();
+        scheduleRefresh();
+      } catch (err) {
+        showLogin();
+      }
+    }
+
+    function fillTagSelect(tags, current) {
+      const drop = $("versionTagDrop");
+      const hidden = $("versionTag");
+      if (!drop || !hidden) return;
+      const prev = hidden.value;
+      const seen = new Set();
+      const list = [];
+      for (const tag of tags || []) {
+        const value = String(tag || "").trim();
+        if (!value || seen.has(value)) continue;
+        seen.add(value);
+        list.push(value);
+      }
+      if (current && !seen.has(current)) list.unshift(current);
+      if (!list.length) {
+        fillDrop(drop, [], "", "请先刷新 GitHub 版本");
+        return;
+      }
+      fillDrop(drop, list, prev || current || "");
+    }
+
+    async function loadTags(showToast) {
+      const data = await api("tags");
+      fillTagSelect(data.tags || [], data.current || "");
+      tagsLoaded = true;
+      if (showToast) toast("已加载 " + (data.tags || []).length + " 个 GitHub 版本");
+    }
+
+    document.querySelector(".tabs").addEventListener("click", ev => {
+      const btn = ev.target.closest("[data-tab]");
+      if (!btn) return;
+      document.querySelectorAll(".tabs button").forEach(b => b.classList.toggle("active", b === btn));
+      document.querySelectorAll("section.card[id^='tab-']").forEach(sec => {
+        sec.classList.toggle("tab-visible", sec.id === "tab-" + btn.dataset.tab);
+      });
+      if (btn.dataset.tab === "version" && !tagsLoaded) {
+        loadTags(true).catch(err => toast(err.message));
+      }
+    });
+
+    $("loginBtn").onclick = async () => {
+      try {
+        const token = $("token").value.trim();
+        sessionStorage.setItem(TOKEN_KEY, token);
+        await api("login", { method: "POST", json: true, body: JSON.stringify({ token }) });
+        showApp();
+        await refresh();
+        scheduleRefresh();
+      } catch (err) {
+        sessionStorage.removeItem(TOKEN_KEY);
+        toast(err.message);
+      }
+    };
+    $("token").addEventListener("keydown", ev => { if (ev.key === "Enter") $("loginBtn").click(); });
+
+    $("logoutBtn").onclick = async () => {
+      try { await api("logout", { method: "POST" }); } catch (_) {}
+      showLogin();
+    };
+
+    $("addPrivateBtn").onclick = async () => {
+      const files = [...($("privateFile").files || [])];
+      if (!files.length) { toast("请先选择私货文件"); return; }
+      const custom = $("privateDest").value.trim();
+      const folder = $("privateDestFolder").value.trim();
+      let dest = custom || folder;
+      if (files.length > 1 && dest && !dest.endsWith("/")) dest += "/";
+      const side = $("privateSide").value || "auto";
+      for (const file of files) {
+        const path = destForFile(dest, file.name, files.length);
+        pending.deletes.delete(path);
+        pending.adds = pending.adds.filter(item => item.path !== path);
+        delete pending.sides[path];
+        pending.adds.push({ path, side, name: file.name, file });
+      }
+      $("privateFile").value = "";
+      $("privateDest").value = "";
+      paintPrivates();
+      toast(files.length > 1 ? "已加入 " + files.length + " 个待保存文件" : "已加入待保存，点保存后写入");
+    };
+
+    $("newFolderBtn").onclick = async () => {
+      const typed = $("privateNewFolder").value.trim();
+      if (!typed) { toast("请填写要创建的目录，例如 config/ItemBan"); return; }
+      let folder;
+      try {
+        folder = normalizeFolderInput(typed);
+      } catch (err) {
+        toast(err.message);
+        return;
+      }
+      if (!pending.folders.includes(folder)) pending.folders.push(folder);
+      $("privateNewFolder").value = "";
+      fillDestFolders((state && state.private_folders) || [], folder);
+      markSaveBtn();
+      toast("已加入待保存，点保存后创建 " + folder);
+    };
+
+    $("privateFile").addEventListener("change", () => {
+      const files = [...($("privateFile").files || [])];
+      if (!files.length) return;
+      const folder = defaultFolderForName(files[0].name);
+      const destDrop = $("privateDestFolderDrop");
+      if (destDrop && [...destDrop.querySelectorAll(".drop-menu [data-value]")].some(opt => opt.getAttribute("data-value") === folder)) {
+        setDropValue(destDrop, folder, folder);
+      }
+      if (files.length === 1 && !$("privateDest").value.trim()) {
+        $("privateDest").placeholder = folder + files[0].name;
+      }
+    });
+
+    $("privateSearch").addEventListener("input", () => {
+      paintPrivates();
+    });
+
+    $("privateTable").onclick = async ev => {
+      const option = ev.target.closest(".drop-menu [data-value]");
+      if (option) {
+        const drop = option.closest(".drop");
+        const path = drop.getAttribute("data-side-path");
+        const side = option.getAttribute("data-value");
+        const label = option.textContent.trim();
+        drop.classList.remove("open");
+        if (!path || drop.dataset.value === side) return;
+        queueSide(path, side);
+        setDropValue(drop, side, label);
+        drop.dataset.value = side;
+        const row = drop.closest("tr");
+        if (row) row.classList.add("is-pending");
+        markSaveBtn();
+        toast("已改为" + label + "，点保存后生效");
+        return;
+      }
+      const btn = ev.target.closest("[data-del]");
+      if (!btn) return;
+      const path = btn.getAttribute("data-del");
+      if (!await ask("删除私货", "删除 " + path + "？\n点保存后才会从仓库移除。", true)) return;
+      const wasAdd = pending.adds.some(item => item.path === path);
+      pending.adds = pending.adds.filter(item => item.path !== path);
+      delete pending.sides[path];
+      if (!wasAdd) pending.deletes.add(path);
+      paintPrivates();
+      toast(wasAdd ? "已去掉待添加的文件" : "已标记删除，点保存后生效");
+    };
+
+    document.addEventListener("click", ev => {
+      const option = ev.target.closest(".drop-menu [data-value]");
+      if (option) {
+        const drop = option.closest(".drop");
+        if (drop && !drop.hasAttribute("data-side-path")) {
+          setDropValue(drop, option.getAttribute("data-value"), option.textContent.trim());
+          drop.classList.remove("open");
+        }
+        return;
+      }
+      const btn = ev.target.closest(".drop-btn");
+      if (btn) {
+        const drop = btn.closest(".drop");
+        const willOpen = !drop.classList.contains("open");
+        closeDrops();
+        if (willOpen) drop.classList.add("open");
+        return;
+      }
+      if (!ev.target.closest(".drop")) closeDrops();
+    });
+    document.addEventListener("keydown", ev => {
+      if (ev.key !== "Escape") return;
+      if (modalOpen()) {
+        closeModal(false);
+        return;
+      }
+      closeDrops();
+    });
+    $("modalOk").onclick = () => closeModal(true);
+    $("modalCancel").onclick = () => closeModal(false);
+    $("modalBackdrop").onclick = () => closeModal(false);
+
+    $("rebuildBtn").onclick = async () => {
+      const folders = pending.folders.slice();
+      const adds = pending.adds.filter(item => !pending.deletes.has(item.path));
+      const sides = { ...pending.sides };
+      const deletes = [...pending.deletes];
+      try {
+        toast(pendingDirty() ? "正在保存改动…" : "正在保存…");
+        for (const folder of folders) {
+          await api("private/folder", { method: "POST", json: true, body: JSON.stringify({ path: folder }) });
+          pending.folders = pending.folders.filter(item => item !== folder);
+        }
+        for (const path of deletes) {
+          if (adds.some(item => item.path === path)) continue;
+          await api("private/remove", { method: "POST", json: true, body: JSON.stringify({ path }) });
+          pending.deletes.delete(path);
+        }
+        for (const add of adds) {
+          const fd = new FormData();
+          fd.append("file", add.file);
+          fd.append("dest", add.path);
+          fd.append("side", add.side);
+          const res = await fetch("/admin/ifgfsgfbijuzoxzq/api/private", {
+            method: "POST", credentials: "include", headers: headers(), body: fd
+          });
+          const data = await res.json().catch(() => ({}));
+          if (!res.ok) throw new Error(data.detail || "添加失败");
+          pending.adds = pending.adds.filter(item => item !== add);
+          delete pending.sides[add.path];
+        }
+        for (const [path, side] of Object.entries(sides)) {
+          if (deletes.includes(path) && !adds.some(item => item.path === path)) continue;
+          if (adds.some(item => item.path === path)) continue;
+          await api("private/side", { method: "POST", json: true, body: JSON.stringify({ path, side }) });
+          delete pending.sides[path];
+        }
+        await api("rebuild", { method: "POST" });
+        clearPending();
+        markSaveBtn();
+        toast("已保存");
+        await refresh();
+      } catch (err) { toast(err.message); }
+    };
+
+    $("discardBtn").onclick = async () => {
+      if (!pendingDirty()) {
+        toast("没有待保存的改动");
+        return;
+      }
+      if (!await ask("不保存", "放弃未保存的改动？列表会回到上次保存的状态。", true)) return;
+      clearPending();
+      fillDestFolders((state && state.private_folders) || [], $("privateDestFolder").value);
+      paintPrivates();
+      toast("已放弃未保存的改动");
+    };
+
+    $("saveConnBtn").onclick = async () => {
+      try {
+        const body = {
+          listen: $("listen").value.trim(),
+          port: Number($("port").value.trim()),
+          public_url: $("publicUrl").value.trim(),
+          access_token: $("accessToken").value.trim()
+        };
+        await api("connection", { method: "POST", json: true, body: JSON.stringify(body) });
+        toast("连接地址已保存");
+        await refresh();
+      } catch (err) { toast(err.message); }
+    };
+
+    $("genTokenBtn").onclick = () => {
+      const bytes = new Uint8Array(24);
+      crypto.getRandomValues(bytes);
+      $("accessToken").value = Array.from(bytes, b => b.toString(16).padStart(2, "0")).join("");
+      toast("已生成同步令牌，记得点保存");
+    };
+
+    $("detectWanBtn").onclick = async () => {
+      try {
+        const data = await api("detect-wan", { method: "POST" });
+        if (data.suggested_url) $("publicUrl").value = data.suggested_url;
+        toast(data.suggested_url ? ("建议地址 " + data.suggested_url) : "没有检测到可用外网地址");
+        await refresh();
+      } catch (err) { toast(err.message); }
+    };
+
+    $("openWanBtn").onclick = async () => {
+      if (!await ask("开放外网访问", "监听将改为 0.0.0.0，并按检测到的公网/VPN 地址写入对外地址。\n路由器仍可能需要做端口映射。")) return;
+      try {
+        const data = await api("open-wan", { method: "POST" });
+        if (data.public_url) $("publicUrl").value = data.public_url;
+        toast("已尝试开放外网访问");
+        await refresh();
+      } catch (err) { toast(err.message); }
+    };
+
+    $("refreshTagsBtn").onclick = () => loadTags(true).catch(err => toast(err.message));
+
+    $("applyVersionBtn").onclick = async () => {
+      const tag = $("versionCustom").value.trim() || $("versionTag").value.trim();
+      if (!tag) { toast("请选择或填写 GitHub Release 标签"); return; }
+      if (!await ask("切换 GitHub 版本", "将官方版本改为 " + tag + " 并重新从 GitHub 拉取？\n完整服务端包可能超过 800MB。")) return;
+      try {
+        toast("正在切换版本，可能需要较长时间…");
+        await api("version", { method: "POST", json: true, body: JSON.stringify({ tag }) });
+        toast("已切换到 " + tag);
+        await refresh();
+      } catch (err) { toast(err.message); }
+    };
+
+    $("refreshLogsBtn").onclick = () => refresh().catch(err => toast(err.message));
+
+    const themeBtn = $("themeBtn");
+    function applyTheme(mode) {
+      document.documentElement.setAttribute("data-theme", mode);
+      themeBtn.dataset.mode = mode;
+      $("themeLabel").textContent = mode === "light" ? "亮色" : "暗色";
+      localStorage.setItem("cdr-admin-theme", mode);
+    }
+    applyTheme(localStorage.getItem("cdr-admin-theme") === "light" ? "light" : "dark");
+    themeBtn.onclick = () => applyTheme(themeBtn.dataset.mode === "dark" ? "light" : "dark");
+
+    boot();
+  </script>
+</body>
+</html>
