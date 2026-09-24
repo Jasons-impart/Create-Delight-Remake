@@ -2,6 +2,7 @@ package com.jsi.cdr.updater;
 
 import java.util.Locale;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 final class Progress {
     static final class Snapshot {
@@ -74,11 +75,99 @@ final class Progress {
     private static long speedAtBytes;
     private static int liveWidth;
     private static long lastLiveNanos;
+    private static final ConcurrentHashMap<String, Long> inflight = new ConcurrentHashMap<>();
+    private static final ConcurrentHashMap<String, Long> settled = new ConcurrentHashMap<>();
+    private static final ConcurrentHashMap<String, long[]> scaled = new ConcurrentHashMap<>();
+    private static volatile long planTotal;
+    private static long overallMarkNanos;
+    private static long overallMarkBytes;
+    private static long overallSpeed;
 
     private Progress() {}
 
     static Snapshot get() {
         return current;
+    }
+
+    static synchronized void plan(long totalBytes) {
+        inflight.clear();
+        settled.clear();
+        scaled.clear();
+        planTotal = Math.max(0, totalBytes);
+        overallMarkNanos = System.nanoTime();
+        overallMarkBytes = 0;
+        overallSpeed = 0;
+    }
+
+    static void weigh(String key, long transferTotal, long budget) {
+        if (key == null || key.isBlank() || transferTotal <= 0 || budget < 0) {
+            return;
+        }
+        scaled.put(key, new long[]{transferTotal, budget});
+    }
+
+    static void flight(String key, long transferred) {
+        if (key == null || key.isBlank() || settled.containsKey(key)) {
+            return;
+        }
+        long shown = Math.max(0, transferred);
+        long[] factor = scaled.get(key);
+        if (factor != null && factor[0] > 0) {
+            shown = Math.min(factor[1], shown * factor[1] / factor[0]);
+        }
+        inflight.put(key, shown);
+        noteOverallSpeed();
+    }
+
+    static void settle(String key, long budget) {
+        if (key == null || key.isBlank()) {
+            return;
+        }
+        inflight.remove(key);
+        scaled.remove(key);
+        settled.put(key, Math.max(0, budget));
+        noteOverallSpeed();
+    }
+
+    static Snapshot overall() {
+        if (planTotal <= 0) {
+            return IDLE;
+        }
+        long done = 0;
+        for (Long value : settled.values()) {
+            done += value;
+        }
+        for (Long value : inflight.values()) {
+            done += value;
+        }
+        if (done > planTotal) {
+            done = planTotal;
+        }
+        return new Snapshot(true, "总进度", done, planTotal, 0, 0, overallSpeed);
+    }
+
+    private static void noteOverallSpeed() {
+        long done = 0;
+        for (Long value : settled.values()) {
+            done += value;
+        }
+        for (Long value : inflight.values()) {
+            done += value;
+        }
+        long now = System.nanoTime();
+        long elapsed = now - overallMarkNanos;
+        if (overallMarkNanos == 0) {
+            overallMarkNanos = now;
+            overallMarkBytes = done;
+            return;
+        }
+        if (elapsed >= 400_000_000L && done >= overallMarkBytes) {
+            overallSpeed = (done - overallMarkBytes) * 1_000_000_000L / elapsed;
+        }
+        if (elapsed >= 2_000_000_000L) {
+            overallMarkNanos = now;
+            overallMarkBytes = done;
+        }
     }
 
     static synchronized void begin(String label, int count) {
@@ -158,6 +247,10 @@ final class Progress {
         System.out.println();
         liveWidth = 0;
         lastLiveNanos = 0;
+    }
+
+    static synchronized void note(String label) {
+        current = new Snapshot(true, label == null ? "" : label, 0, -1, 0, 0, 0);
     }
 
     static synchronized void end() {

@@ -69,6 +69,7 @@ func runServe(args []string) error {
 		_, _ = w.Write(body)
 	})
 	mux.HandleFunc("/api/file/", root.file)
+	mux.HandleFunc("/api/pack", root.pack)
 	registerAdmin(mux, cfg, data)
 	addr := cfg.listen + ":" + cfg.port
 	fmt.Println("Go 更新服务器已启动 http://" + addr)

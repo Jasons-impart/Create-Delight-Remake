@@ -57,7 +57,7 @@ public final class LaunchHook {
                         log(instance, "已是最新");
                         return;
                     }
-                    System.out.println("[CDR Updater] 发现文件改动，正在打开更新界面。");
+                    System.out.println("[CDR Updater] 发现文件改动，启动器正在自动同步。");
                     log(instance, "需要更新，连接 " + server);
                     Sync.Result result = ClientApp.updateBlocking(instance, server);
                     boolean early = Boolean.getBoolean("cdr.updater.early");
@@ -176,14 +176,48 @@ public final class LaunchHook {
     }
 
     static Path updaterJar() {
+        Path direct = jarFile(LaunchHook.class.getProtectionDomain().getCodeSource().getLocation());
+        if (direct != null) {
+            return direct;
+        }
         try {
-            var location = LaunchHook.class.getProtectionDomain().getCodeSource().getLocation();
+            java.net.URL resource = LaunchHook.class.getResource("LaunchHook.class");
+            if (resource != null) {
+                String text = resource.toString();
+                int bang = text.indexOf("!/");
+                if (text.startsWith("jar:") && bang > 4) {
+                    return jarFile(java.net.URI.create(text.substring(4, bang)).toURL());
+                }
+            }
+        } catch (Exception ignored) {
+            // fall through
+        }
+        return null;
+    }
+
+    static Path updaterJar(Path instanceDir) {
+        Path found = updaterJar();
+        if (found != null) {
+            return found;
+        }
+        if (instanceDir == null) {
+            return null;
+        }
+        Path mod = instanceDir.resolve("mods").resolve("cdr-updater.jar").toAbsolutePath();
+        return Files.isRegularFile(mod) ? mod : null;
+    }
+
+    private static Path jarFile(java.net.URL location) {
+        if (location == null) {
+            return null;
+        }
+        try {
             Path path = Path.of(location.toURI());
             if (Files.isRegularFile(path) && path.getFileName().toString().toLowerCase().endsWith(".jar")) {
                 return path.toAbsolutePath();
             }
         } catch (Exception ignored) {
-            // fall through
+            // not a plain file URL
         }
         return null;
     }

@@ -17,9 +17,11 @@ import javax.swing.WindowConstants;
 import java.awt.BorderLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.Insets;
 import java.nio.file.Path;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,61 +32,106 @@ final class ClientApp {
         } catch (Exception ignored) {
             // keep default look
         }
-        CountDownLatch done = new CountDownLatch(1);
-        AtomicReference<Sync.Result> result = new AtomicReference<>();
-        AtomicReference<Exception> error = new AtomicReference<>();
+        CountDownLatch uiReady = new CountDownLatch(1);
+        AtomicReference<JFrame> frameRef = new AtomicReference<>();
+        AtomicReference<JTextArea> logRef = new AtomicReference<>();
+        AtomicReference<JProgressBar> progressRef = new AtomicReference<>();
+        AtomicReference<JProgressBar> totalRef = new AtomicReference<>();
+        AtomicReference<JLabel> statusRef = new AtomicReference<>();
+        AtomicReference<javax.swing.Timer> timerRef = new AtomicReference<>();
         SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("Create Delight Remake 更新器");
-            frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
-            frame.setSize(720, 460);
-            frame.setLocationRelativeTo(null);
-            JTextArea log = new JTextArea();
-            log.setEditable(false);
-            log.setLineWrap(true);
-            log.setWrapStyleWord(true);
-            JProgressBar progress = new JProgressBar(0, 1000);
-            progress.setStringPainted(true);
-            progress.setIndeterminate(true);
-            progress.setString("正在同步…");
-            JLabel status = new JLabel("正在同步文件，完成后会继续进入游戏。");
-            frame.add(status, BorderLayout.NORTH);
-            frame.add(new JScrollPane(log), BorderLayout.CENTER);
-            frame.add(progress, BorderLayout.SOUTH);
-            frame.setVisible(true);
-            javax.swing.Timer tick = new javax.swing.Timer(200, event -> paintProgress(progress, true));
-            tick.start();
-            new Thread(() -> {
-                try {
-                    Sync.Result sync = Sync.apply(instanceDir, "client",
-                            new Sync.Client(serverUrl, "client", instanceDir, LaunchHook.updateToken(instanceDir)), line ->
-                            SwingUtilities.invokeLater(() -> {
-                                log.append(line + "\n");
-                                log.setCaretPosition(log.getDocument().getLength());
-                            }));
-                    result.set(sync);
-                    SwingUtilities.invokeLater(() -> {
-                        log.append("\n" + sync.changelogText + "\n");
-                        status.setText(sync.changed ? "更新完成。" : "已是最新。");
-                        progress.setIndeterminate(false);
-                        progress.setValue(1000);
-                        progress.setString(sync.changed ? "更新完成" : "已是最新");
-                    });
-                    Thread.sleep(800);
-                } catch (Exception exception) {
-                    error.set(exception);
-                    SwingUtilities.invokeLater(() -> JOptionPane.showMessageDialog(frame, exception.getMessage(), "更新失败", JOptionPane.ERROR_MESSAGE));
-                } finally {
-                    tick.stop();
-                    SwingUtilities.invokeLater(frame::dispose);
-                    done.countDown();
-                }
-            }, "cdr-client-auto-update").start();
+            try {
+                JFrame frame = new JFrame("Create Delight Remake 更新器");
+                frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+                frame.setSize(720, 500);
+                frame.setLocationRelativeTo(null);
+                JTextArea log = new JTextArea();
+                log.setEditable(false);
+                log.setLineWrap(true);
+                log.setWrapStyleWord(true);
+                JProgressBar progress = new JProgressBar(0, 1000);
+                progress.setStringPainted(true);
+                progress.setIndeterminate(true);
+                progress.setString("正在同步…");
+                JLabel status = new JLabel("正在同步文件，完成后会继续进入游戏。");
+                JProgressBar total = new JProgressBar(0, 1000);
+                total.setStringPainted(true);
+                total.setString("总进度");
+                JPanel bars = new JPanel(new GridLayout(2, 1, 0, 4));
+                bars.setBorder(BorderFactory.createEmptyBorder(4, 8, 8, 8));
+                bars.add(progress);
+                bars.add(total);
+                frame.add(status, BorderLayout.NORTH);
+                frame.add(new JScrollPane(log), BorderLayout.CENTER);
+                frame.add(bars, BorderLayout.SOUTH);
+                frame.setVisible(true);
+                javax.swing.Timer tick = new javax.swing.Timer(200, event -> {
+                    paintProgress(progress, true);
+                    paintTotal(total);
+                });
+                tick.start();
+                frameRef.set(frame);
+                logRef.set(log);
+                progressRef.set(progress);
+                totalRef.set(total);
+                statusRef.set(status);
+                timerRef.set(tick);
+            } finally {
+                uiReady.countDown();
+            }
         });
-        done.await();
-        if (error.get() != null) {
-            throw error.get();
+        uiReady.await(3, TimeUnit.SECONDS);
+        try {
+            Sync.Result sync = runVisibleUpdate(instanceDir, serverUrl, line -> {
+                try {
+                    java.nio.file.Files.writeString(instanceDir.resolve("logs").resolve("cdr-updater.log"),
+                            line + System.lineSeparator(), java.nio.file.StandardOpenOption.CREATE, java.nio.file.StandardOpenOption.APPEND);
+                } catch (Exception ignored) {
+                    // 日志写不进去不影响下载
+                }
+                JTextArea log = logRef.get();
+                if (log == null) {
+                    return;
+                }
+                SwingUtilities.invokeLater(() -> {
+                    log.append(line + "\n");
+                    log.setCaretPosition(log.getDocument().getLength());
+                });
+            });
+            JTextArea log = logRef.get();
+            JProgressBar progress = progressRef.get();
+            JProgressBar total = totalRef.get();
+            JLabel status = statusRef.get();
+            if (log != null && progress != null && status != null) {
+                SwingUtilities.invokeLater(() -> {
+                    log.append("\n" + sync.changelogText + "\n");
+                    status.setText(sync.changed ? "更新完成。" : "已是最新。");
+                    progress.setIndeterminate(false);
+                    progress.setValue(1000);
+                    progress.setString(sync.changed ? "更新完成" : "已是最新");
+                    if (total != null) {
+                        total.setIndeterminate(false);
+                        total.setValue(1000);
+                        total.setString(sync.changed ? "总进度  100%" : "已是最新");
+                    }
+                });
+                Thread.sleep(800);
+            }
+            return sync;
+        } finally {
+            javax.swing.Timer tick = timerRef.get();
+            JFrame frame = frameRef.get();
+            if (tick != null || frame != null) {
+                SwingUtilities.invokeLater(() -> {
+                    if (tick != null) {
+                        tick.stop();
+                    }
+                    if (frame != null) {
+                        frame.dispose();
+                    }
+                });
+            }
         }
-        return result.get();
     }
 
     static void launch() {
@@ -157,8 +204,17 @@ final class ClientApp {
             frame.add(north, BorderLayout.NORTH);
             frame.add(new JScrollPane(log), BorderLayout.CENTER);
             JLabel hint = new JLabel("  玩家自行添加的模组、资源包和其他文件不会被删除。");
-            frame.add(hint, BorderLayout.SOUTH);
-            javax.swing.Timer tick = new javax.swing.Timer(200, event -> paintProgress(progress, busy.get()));
+            JProgressBar total = new JProgressBar(0, 1000);
+            total.setStringPainted(true);
+            total.setString("");
+            JPanel south = new JPanel(new BorderLayout());
+            south.add(total, BorderLayout.NORTH);
+            south.add(hint, BorderLayout.SOUTH);
+            frame.add(south, BorderLayout.SOUTH);
+            javax.swing.Timer tick = new javax.swing.Timer(200, event -> {
+                paintProgress(progress, busy.get());
+                paintTotal(total);
+            });
             tick.start();
 
             browse.addActionListener(event -> {
@@ -238,6 +294,108 @@ final class ClientApp {
         });
     }
 
+    private static Sync.Result runVisibleUpdate(Path instanceDir, String serverUrl, java.util.function.Consumer<String> log) throws Exception {
+        return Sync.apply(instanceDir, "client",
+                new Sync.Client(serverUrl, "client", instanceDir, LaunchHook.updateToken(instanceDir)), log, true);
+    }
+
+    private static int totalFiles(String text) {
+        int at = text.lastIndexOf("需要下载 ");
+        if (at < 0) {
+            return 0;
+        }
+        int end = text.indexOf(" 个文件", at);
+        if (end < 0) {
+            return 0;
+        }
+        try {
+            return Integer.parseInt(text.substring(at + "需要下载 ".length(), end).trim());
+        } catch (NumberFormatException error) {
+            return 0;
+        }
+    }
+
+    private static int doneFiles(String text) {
+        int count = 0;
+        int from = 0;
+        while (true) {
+            int at = text.indexOf("下载完成", from);
+            if (at < 0) {
+                break;
+            }
+            count++;
+            from = at + 4;
+        }
+        from = 0;
+        while (true) {
+            int at = text.indexOf("进程完成", from);
+            if (at < 0) {
+                break;
+            }
+            count++;
+            from = at + 4;
+        }
+        return count;
+    }
+
+    private static final java.util.concurrent.atomic.AtomicReference<javax.swing.JTextArea> packLog = new java.util.concurrent.atomic.AtomicReference<>();
+
+    private static JFrame packFrame;
+    private static javax.swing.Timer packTick;
+
+    static void showPackWindow(String title, int index) {
+        try {
+            javax.swing.SwingUtilities.invokeAndWait(() -> {
+                JFrame frame = new JFrame(title);
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                javax.swing.JTextArea area = new javax.swing.JTextArea(12, 48);
+                area.setEditable(false);
+                area.setLineWrap(true);
+                JProgressBar bar = new JProgressBar();
+                bar.setStringPainted(true);
+                frame.add(new javax.swing.JScrollPane(area), java.awt.BorderLayout.CENTER);
+                frame.add(bar, java.awt.BorderLayout.SOUTH);
+                frame.pack();
+                frame.setLocation(80 + index * 36, 80 + index * 36);
+                frame.setVisible(true);
+                packFrame = frame;
+                packLog.set(area);
+                packTick = new javax.swing.Timer(200, event -> paintProgress(bar, true));
+                packTick.start();
+            });
+        } catch (Exception ignored) {
+            // 窗口打不开时仍把进度写回主进程
+        }
+    }
+
+    static void closePackWindow() {
+        try {
+            javax.swing.SwingUtilities.invokeAndWait(() -> {
+                if (packTick != null) {
+                    packTick.stop();
+                    packTick = null;
+                }
+                if (packFrame != null) {
+                    packFrame.dispose();
+                    packFrame = null;
+                }
+            });
+        } catch (Exception ignored) {
+            // 进程马上退出
+        }
+    }
+
+    static void packLine(String line) {
+        javax.swing.JTextArea area = packLog.get();
+        if (area == null || line == null || line.isBlank()) {
+            return;
+        }
+        javax.swing.SwingUtilities.invokeLater(() -> {
+            area.append(line + "\n");
+            area.setCaretPosition(area.getDocument().getLength());
+        });
+    }
+
     private static void paintProgress(JProgressBar bar, boolean busy) {
         Progress.Snapshot snap = Progress.get();
         if (snap.active) {
@@ -262,5 +420,17 @@ final class ClientApp {
         bar.setIndeterminate(false);
         bar.setValue(0);
         bar.setString("");
+    }
+
+    private static void paintTotal(JProgressBar bar) {
+        Progress.Snapshot snap = Progress.overall();
+        if (!snap.active) {
+            return;
+        }
+        bar.setVisible(true);
+        bar.setIndeterminate(false);
+        bar.setMaximum(1000);
+        bar.setValue((int) Math.min(1000, snap.done * 1000 / snap.total));
+        bar.setString(snap.text());
     }
 }

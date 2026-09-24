@@ -13,7 +13,10 @@ import java.util.List;
  * 会自动改用本机 Java 17 启动真正的更新器。
  */
 public final class Boot {
+    private static boolean quiet;
+
     public static void main(String[] args) {
+        quiet = args != null && args.length > 0 && "fetch-job".equals(args[0]);
         if (javaMajor() >= 17) {
             runMain(args);
             return;
@@ -168,10 +171,12 @@ public final class Boot {
 
     private static void fail(String message) {
         System.err.println(message);
-        try {
-            JOptionPane.showMessageDialog(null, message, "Create Delight Remake 更新器", JOptionPane.ERROR_MESSAGE);
-        } catch (Exception ignored) {
-            // headless
+        if (!quiet) {
+            try {
+                JOptionPane.showMessageDialog(null, message, "Create Delight Remake 更新器", JOptionPane.ERROR_MESSAGE);
+            } catch (Exception ignored) {
+                // headless
+            }
         }
         System.exit(1);
     }
