@@ -73,6 +73,11 @@ final class Net {
 
     static long toFile(HttpClient http, HttpRequest.Builder request, Path destination, long expected,
                        String label, Consumer<String> log, boolean resume) throws Exception {
+        return toFile(http, request, destination, expected, label, log, resume, true);
+    }
+
+    static long toFile(HttpClient http, HttpRequest.Builder request, Path destination, long expected,
+                       String label, Consumer<String> log, boolean resume, boolean parallel) throws Exception {
         HttpRequest built = request.build();
         String url = built.uri().toString();
         Map<String, String> headers = new LinkedHashMap<>();
@@ -103,7 +108,7 @@ final class Net {
             }
             for (String candidate : ordered) {
                 try {
-                    return download(candidate, headers, destination, expected, label, log, allowResume, true, true);
+                    return download(candidate, headers, destination, expected, label, log, allowResume, true, true, true);
                 } catch (NoRange ignored) {
                     Progress.finishLive();
                     Files.deleteIfExists(destination);
@@ -133,7 +138,7 @@ final class Net {
                 String candidate = ordered.get(i);
                 boolean lastTry = i == ordered.size() - 1;
                 try {
-                    return download(candidate, headers, destination, expected, label, log, allowResume, !lastTry, false);
+                    return download(candidate, headers, destination, expected, label, log, allowResume, !lastTry, false, parallel);
                 } catch (SlowDownload error) {
                     Progress.finishLive();
                     Files.deleteIfExists(destination);
@@ -157,7 +162,7 @@ final class Net {
                 String candidate = urls.get(i);
                 boolean lastTry = i == urls.size() - 1;
                 try {
-                    return download(candidate, headers, destination, expected, label, log, allowResume, !lastTry, false);
+                    return download(candidate, headers, destination, expected, label, log, allowResume, !lastTry, false, parallel);
                 } catch (SlowDownload error) {
                     Progress.finishLive();
                     Files.deleteIfExists(destination);
@@ -252,7 +257,7 @@ final class Net {
 
     private static long download(String url, Map<String, String> headers, Path destination, long expected,
                                  String label, Consumer<String> log, boolean resume, boolean maySwitch,
-                                 boolean rangeOnly) throws Exception {
+                                 boolean rangeOnly, boolean parallel) throws Exception {
         long size = expected;
         boolean ranged = false;
         String resolved = url;
@@ -270,12 +275,27 @@ final class Net {
         } finally {
             probe.disconnect();
         }
-        if (ranged && size >= PARALLEL_MIN) {
+        if (parallel && ranged && size >= PARALLEL_MIN) {
+            int lanes = 0;
+            String laneHeader = null;
+            for (Map.Entry<String, String> entry : headers.entrySet()) {
+                if ("x-cdr-lanes".equalsIgnoreCase(entry.getKey())) {
+                    laneHeader = entry.getValue();
+                }
+            }
+            if (laneHeader != null) {
+                try {
+                    lanes = Integer.parseInt(laneHeader.trim());
+                } catch (NumberFormatException ignored) {
+                    lanes = 0;
+                }
+            }
             if (log != null) {
-                log.accept("多线程下载 " + label + " · " + PARALLEL_PARTS + " 线程 · " + host(resolved));
+                int shown = lanes >= 2 ? lanes : PARALLEL_PARTS;
+                log.accept("多线程下载 " + label + " · " + shown + " 线程 · " + host(resolved));
             }
             try {
-                return pullParallel(resolved, headers, destination, size, label, log, maySwitch);
+                return pullParallel(resolved, headers, destination, size, label, log, maySwitch, lanes);
             } catch (NoRange ignored) {
                 Files.deleteIfExists(destination);
                 if (rangeOnly) {
@@ -333,6 +353,7 @@ final class Net {
             }
             Progress.ensure(label, total);
             Progress.bytes(existing);
+            Progress.flight(label, existing);
             Progress.live(true);
             if (log != null && existing > 0) {
                 log.accept("继续下载 " + label + "（" + Progress.formatSize(existing)
@@ -343,19 +364,21 @@ final class Net {
                     : new StandardOpenOption[]{StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE};
             long done = existing;
             StallWatch watch = new StallWatch(maySwitch && (total <= 0 || total >= PARALLEL_MIN));
-            try (InputStream in = new BufferedInputStream(conn.getInputStream(), 64 * 1024);
-                 OutputStream out = new BufferedOutputStream(Files.newOutputStream(destination, options), 64 * 1024)) {
-                byte[] buf = new byte[64 * 1024];
+            try (InputStream in = new BufferedInputStream(conn.getInputStream(), 1024 * 1024);
+                 OutputStream out = new BufferedOutputStream(Files.newOutputStream(destination, options), 1024 * 1024)) {
+                byte[] buf = new byte[1024 * 1024];
                 int n;
                 while ((n = in.read(buf)) >= 0) {
                     out.write(buf, 0, n);
                     done += n;
                     Progress.bytes(done);
+                    Progress.flight(label, done);
                     Progress.live();
                     watch.note(done);
                 }
             }
             Progress.bytes(done);
+            Progress.flight(label, done);
             Progress.live(true);
             Progress.finishLive();
             if (expected > 0 && done != expected) {
@@ -378,7 +401,12 @@ final class Net {
 
     private static long pullParallel(String url, Map<String, String> headers, Path destination, long total,
                                      String label, Consumer<String> log, boolean maySwitch) throws Exception {
-        int pieces = pieceCount(total);
+        return pullParallel(url, headers, destination, total, label, log, maySwitch, 0);
+    }
+
+    private static long pullParallel(String url, Map<String, String> headers, Path destination, long total,
+                                     String label, Consumer<String> log, boolean maySwitch, int lanes) throws Exception {
+        int pieces = lanes >= 2 ? lanes : pieceCount(total);
         long pieceSize = (total + pieces - 1) / pieces;
         if (pieceSize <= 0) {
             return pull(url, headers, destination, total, label, log, false, maySwitch);
@@ -386,6 +414,7 @@ final class Net {
         Files.deleteIfExists(destination);
         Progress.ensure(label, total);
         Progress.bytes(0);
+        Progress.flight(label, 0);
         Progress.live(true);
         ConcurrentLinkedQueue<long[]> queue = new ConcurrentLinkedQueue<>();
         for (int i = 0; i < pieces; i++) {
@@ -395,7 +424,7 @@ final class Net {
             }
             queue.add(new long[]{start, Math.min(total, start + pieceSize) - 1});
         }
-        int workers = Math.min(PARALLEL_PARTS, queue.size());
+        int workers = lanes >= 2 ? Math.min(lanes, queue.size()) : Math.min(PARALLEL_PARTS, queue.size());
         AtomicLong done = new AtomicLong();
         StallWatch watch = new StallWatch(maySwitch);
         ExecutorService pool = Executors.newFixedThreadPool(workers);
@@ -411,7 +440,7 @@ final class Net {
                             throw new InterruptedException();
                         }
                         watch.check();
-                        copyRange(url, headers, channel, piece[0], piece[1], done, watch);
+                        copyRange(url, headers, channel, piece[0], piece[1], done, watch, label);
                     }
                     return null;
                 }));
@@ -436,6 +465,7 @@ final class Net {
             }
             channel.force(false);
             Progress.bytes(total);
+            Progress.flight(label, total);
             Progress.live(true);
             Progress.finishLive();
             if (log != null) {
@@ -448,12 +478,12 @@ final class Net {
     }
 
     private static void copyRange(String url, Map<String, String> headers, FileChannel channel, long start, long end,
-                                  AtomicLong done, StallWatch watch) throws Exception {
+                                  AtomicLong done, StallWatch watch, String label) throws Exception {
         Exception last = null;
         for (int attempt = 1; attempt <= 4; attempt++) {
             watch.check();
             try {
-                copyRangeOnce(url, headers, channel, start, end, done, watch);
+                copyRangeOnce(url, headers, channel, start, end, done, watch, label);
                 return;
             } catch (NoRange | SlowDownload | InterruptedException error) {
                 throw error;
@@ -472,7 +502,7 @@ final class Net {
     }
 
     private static void copyRangeOnce(String url, Map<String, String> headers, FileChannel channel, long start, long end,
-                                      AtomicLong done, StallWatch watch) throws Exception {
+                                      AtomicLong done, StallWatch watch, String label) throws Exception {
         HttpURLConnection conn = connect(url, headers, start, end);
         long want = end - start + 1;
         long got = 0;
@@ -504,6 +534,7 @@ final class Net {
                     got += take;
                     long now = done.addAndGet(take);
                     Progress.bytes(now);
+                    Progress.flight(label, now);
                     Progress.live();
                     watch.note(now);
                     if (got >= want) {

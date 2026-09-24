@@ -130,7 +130,10 @@ final class PackPaths {
         if (body.isEmpty()) {
             return MANAGED_TAG + nl;
         }
-        return MANAGED_TAG + nl + body;
+        if (body.endsWith("\n") || body.endsWith("\r")) {
+            return body + MANAGED_TAG + nl;
+        }
+        return body + nl + MANAGED_TAG + nl;
     }
 
     static boolean stampManagedTag(Path file) throws Exception {

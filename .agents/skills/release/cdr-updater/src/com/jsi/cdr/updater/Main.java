@@ -1,8 +1,10 @@
 package com.jsi.cdr.updater;
 
-import java.awt.GraphicsEnvironment;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public final class Main {
     public static void main(String[] args) throws Exception {
@@ -29,6 +31,7 @@ public final class Main {
             case "export-server" -> exportServer(args);
             case "prepare-env" -> prepareEnv(args);
             case "sync" -> sync(args);
+            case "fetch-job" -> fetchJob();
             case "test" -> {
                 int failed = Tests.run();
                 if (failed != 0) {
@@ -100,16 +103,56 @@ public final class Main {
         Pack.Config started = runtime.config();
         String adminHost = "0.0.0.0".equals(started.listen) || "::".equals(started.listen) ? "127.0.0.1" : started.listen;
         System.out.println("更新服务器已启动 http://" + started.listen + ":" + started.port);
-        System.out.println("网页管理 http://" + adminHost + ":" + started.port + "/admin （不含导出，导出请用本机窗口）");
-        System.out.println("管理界面可增删私货、切换 GitHub 版本；只记录连接过的服务端。");
-        if (GraphicsEnvironment.isHeadless()) {
-            System.out.println("当前环境无图形界面，关闭本窗口将停止更新服务。");
-            Thread.currentThread().join();
-        } else {
-            AdminApp.launchBlocking(runtime);
-        }
+        System.out.println("网页管理 http://" + adminHost + ":" + started.port + "/admin");
+        System.out.println("管理只在网页上进行。关闭本窗口将停止更新服务。");
+        Thread.currentThread().join();
         if (runtime.http != null) {
             runtime.http.stop(0);
+        }
+    }
+
+    private static void fetchJob() throws Exception {
+        String text = new String(System.in.readAllBytes(), java.nio.charset.StandardCharsets.UTF_8);
+        Map<String, Object> job = Json.object(Json.parse(text));
+        if ("pack".equals(Json.str(job, "mode"))) {
+            List<Map<String, Object>> jobs = new ArrayList<>();
+            for (Object item : Json.array(job.get("jobs"))) {
+                jobs.add(Json.object(item));
+            }
+            String label = Json.str(job, "label");
+            ClientApp.showPackWindow(label.isBlank() ? "压缩包下载" : label, (int) Json.lng(job, "index"));
+            int code = 0;
+            try {
+                Sync.Client client = new Sync.Client(Json.str(job, "server"), Json.str(job, "side"),
+                        Path.of(Json.str(job, "instance")), Json.str(job, "token"));
+                client.savePack(Path.of(Json.str(job, "instance")), Json.str(job, "sha256"), Json.lng(job, "size"),
+                        jobs, line -> {
+                            System.out.println(line);
+                            ClientApp.packLine(line);
+                        }, Json.bool(job, "parallel"), label);
+            } catch (Exception error) {
+                System.err.println(error.getMessage());
+                code = 1;
+            } finally {
+                ClientApp.closePackWindow();
+            }
+            System.exit(code);
+        }
+        String url = Json.str(job, "url");
+        Path dest = Path.of(Json.str(job, "dest"));
+        String label = Json.str(job, "label");
+        long size = Json.lng(job, "size");
+        java.net.http.HttpRequest.Builder request = java.net.http.HttpRequest.newBuilder(java.net.URI.create(url))
+                .header("User-Agent", "cdr-updater-client")
+                .timeout(java.time.Duration.ofMinutes(30));
+        Path partial = dest.resolveSibling(dest.getFileName() + ".cdrtmp");
+        try {
+            Net.toFile(java.net.http.HttpClient.newHttpClient(), request, partial, size, label, System.out::println, true);
+            Files.createDirectories(dest.getParent());
+            Files.move(partial, dest, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+        } catch (Exception error) {
+            Files.deleteIfExists(partial);
+            throw error;
         }
     }
 

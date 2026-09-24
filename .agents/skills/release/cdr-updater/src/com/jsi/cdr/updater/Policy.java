@@ -9,7 +9,7 @@ final class Policy {
 
     static boolean shouldDeleteLocal(String path, Set<String> managedPaths) {
         String rel = Fs.posix(path);
-        if (PackPaths.protectedLocal(rel)) {
+        if (isSelf(rel) || PackPaths.protectedLocal(rel)) {
             return false;
         }
         return managed(managedPaths).contains(rel);
@@ -59,7 +59,7 @@ final class Policy {
             boolean keepLocal
     ) {
         String rel = Fs.posix(path);
-        if (remoteSha == null || remoteSha.isBlank()) {
+        if (isSelf(rel) || remoteSha == null || remoteSha.isBlank()) {
             return false;
         }
         if (localSha == null) {
@@ -92,6 +92,10 @@ final class Policy {
             return false;
         }
         return localSha.equals(previous);
+    }
+
+    private static boolean isSelf(String rel) {
+        return "mods/cdr-updater.jar".equals(rel);
     }
 
     private static Set<String> managed(Set<String> managedPaths) {

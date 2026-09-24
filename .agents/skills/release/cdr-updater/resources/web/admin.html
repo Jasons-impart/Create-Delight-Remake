@@ -666,7 +666,7 @@
     }
 
     async function api(path, opt) {
-      const res = await fetch("/admin/api/" + path, Object.assign({
+      const res = await fetch("/admin/ifgfsgfbijuzoxzq/api/" + path, Object.assign({
         credentials: "include",
         headers: headers(opt && opt.json ? { "Content-Type": "application/json" } : null)
       }, opt || {}));
@@ -1009,6 +1009,10 @@
       return "";
     }
 
+    function emptyRow(cols, text) {
+      return `<tr><td colspan="${cols}">${esc(text)}</td></tr>`;
+    }
+
     function esc(s) {
       return String(s == null ? "" : s)
         .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
@@ -1296,7 +1300,7 @@
           fd.append("file", add.file);
           fd.append("dest", add.path);
           fd.append("side", add.side);
-          const res = await fetch("/admin/api/private", {
+          const res = await fetch("/admin/ifgfsgfbijuzoxzq/api/private", {
             method: "POST", credentials: "include", headers: headers(), body: fd
           });
           const data = await res.json().catch(() => ({}));
