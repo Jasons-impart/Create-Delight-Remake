@@ -3,6 +3,7 @@
 global.CDServerJavaClasses = {
     $ACEntityRegistry: Java.loadClass("com.github.alexmodguy.alexscaves.server.entity.ACEntityRegistry"),
     $AABB: Java.loadClass("net.minecraft.world.phys.AABB"),
+    $AdventureConfig: Java.loadClass("dev.shadowsoffire.apotheosis.adventure.AdventureConfig"),
     $ArrayList: Java.loadClass("java.util.ArrayList"),
     $AtlasPlanet: Java.loadClass("com.lightning.northstar.item.atlas.SpaceAtlasContent$AtlasPlanet"),
     $AtlasReading: Java.loadClass("com.lightning.northstar.item.atlas.SpaceAtlasContent$AtlasReading"),
@@ -93,6 +94,7 @@ global.CDServerJavaClasses = {
     $SizedIngredient: Java.loadClass("com.lowdragmc.mbd2.api.recipe.ingredient.SizedIngredient"),
     $SolarHolder: Java.loadClass("com.teamtea.eclipticseasons.common.core.SolarHolders"),
     $SpaceAtlasContent: Java.loadClass("com.lightning.northstar.item.atlas.SpaceAtlasContent"),
+    $StaffLootCategory: Java.loadClass("net.kayn.fallen_gems_affixes.loot.StaffLootCategory"),
     $SuperGlueEntity: Java.loadClass("com.simibubi.create.content.contraptions.glue.SuperGlueEntity"),
     $SuspiciousEffectHolder: Java.loadClass("net.minecraft.world.level.block.SuspiciousEffectHolder"),
     $SwitchWidget: Java.loadClass("com.lowdragmc.lowdraglib.gui.widget.SwitchWidget"),
