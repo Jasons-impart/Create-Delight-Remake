@@ -53,6 +53,7 @@ func (s *store) pack(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "side 只能是 client 或 server", http.StatusBadRequest)
 		return
 	}
+	noteServer(s.data, r, req.Side)
 	files, err := s.manifestFiles(req.Side)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusConflict)
