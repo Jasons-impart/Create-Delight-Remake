@@ -59,6 +59,7 @@ func runServe(args []string) error {
 			http.Error(w, "side 只能是 client 或 server", http.StatusBadRequest)
 			return
 		}
+		noteServer(data, r, side)
 		body, err := root.manifest(side)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusConflict)
