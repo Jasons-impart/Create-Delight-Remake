@@ -3,11 +3,10 @@ filename = "farmers_spell-1.0.5-1.20.1-all.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "e09e54b26c0e94ce2c53dc2dd0e896c50744878c"
-mode = "metadata:curseforge"
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/farmers_spell-1.0.5-1.20.1-all.jar"
+hash-format = "sha256"
+hash = "0576f3df39ab6e928beca64acd817e5ee6d97674b913b1a8131d7b69dd9040cd"
 
-[update]
-[update.curseforge]
-file-id = 8723667
+[release.curseforge]
 project-id = 1631240
+file-id = 8723667
