@@ -5,22 +5,13 @@ ServerEvents.recipes(e => {
      * @param { number } time 
      */
     function deep_frying(output, input, time) {
-        if (input[0] == "#") {
-            e.custom({ type: "casualness_delight:deep_frying", ingredient: { tag: input.slice(1) }, cookingtime: time, result: output })
-                .id(`createdelight:deep_frying/${output.split(":")[1]}`)
-            e.recipes.create.mixing(output, ["butchercraft:lard", input])
-            .heatRequirement("heated").id(`createdelight:animal_frying/${output.split(":")[1]}`)
-            e.recipes.create_bic_bit.deep_frying(output, [Fluid.of("createdieselgenerators:plant_oil", 25), input])
-            .heatRequirement("heated").id(`createdelight:plant_frying/${output.split(":")[1]}`)
-        }
-        else {
-            e.custom({ type: "casualness_delight:deep_frying", ingredient: { item: input }, cookingtime: time, result: output })
-                .id(`createdelight:deep_frying/${output.split(":")[1]}`)
-            e.recipes.create.mixing(output, ["butchercraft:lard", input])
-            .heatRequirement("heated").id(`createdelight:animal_frying/${output.split(":")[1]}`)
-            e.recipes.create_bic_bit.deep_frying(output, [Fluid.of("createdieselgenerators:plant_oil", 25), input])
-            .heatRequirement("heated").id(`createdelight:plant_frying/${output.split(":")[1]}`)
-        }
+        let name = output.split(":")[1]
+        e.recipes.casualness_delight.deep_frying(input, output, time)
+            .id(`createdelight:deep_frying/${name}`)
+        e.recipes.create.mixing(output, ["butchercraft:lard", input])
+            .heatRequirement("heated").id(`createdelight:animal_frying/${name}`)
+        e.recipes.create_bic_bit.deep_frying(output, [Fluid.of("createdieselgenerators:plant_oil", 25), input])
+            .heatRequirement("heated").id(`createdelight:plant_frying/${name}`)
     }
 
     remove_recipes_id(e, [

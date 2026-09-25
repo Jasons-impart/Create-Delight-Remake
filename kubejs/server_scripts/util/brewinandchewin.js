@@ -48,6 +48,10 @@ function frementing_2(event, base, inputs, fluid, output, container, temperature
   temperature = temperature || 3
   amount = amount || 1000
   time = time || 9600
+  let ingrs = []
+  inputs.forEach(input => {
+  ingrs.push(brewinandchewin_fermenting_item_ingredient(input))
+  });
   let frementing_receipe = {
     "type": "brewinandchewin:fermenting",
     "basefluid": {
@@ -56,7 +60,7 @@ function frementing_2(event, base, inputs, fluid, output, container, temperature
     },
     "fermentingtime": time,
     "experience": 1.0,
-    "ingredients": [],
+    "ingredients": ingrs,
     "result": {
       "count": amount,
       "fluid": fluid
@@ -64,24 +68,10 @@ function frementing_2(event, base, inputs, fluid, output, container, temperature
     "recipe_book_tab": "drinks",
     "temperature": temperature
   }
-  inputs.forEach(input => {
-    frementing_receipe.ingredients.push(brewinandchewin_fermenting_item_ingredient(input))
-  });
   event.custom(frementing_receipe).id(`createdelight:fermenting/${output.split(":")[1]}_from_${base.split(":")[1]}`)
   brewinandchewin_cdg_fermenting(event, base, inputs, fluid, output, time, amount)
-  event.custom({
-    "type": "brewinandchewin:keg_pouring",
-    "amount": 250,
-    "filling": true,
-    "container": {
-      "item": container
-    },
-    "fluid": fluid,
-    "output": {
-      "item": output
-    },
-    "strict": false
-  }).id(`createdelight:pouring/${output.split(":")[1]}`)
+  // keg_pouring(fluid, output, amount, filling, container, strict)
+  event.recipes.brewinandchewin.keg_pouring(fluid, output, 250, true, container, false).id(`createdelight:pouring/${output.split(":")[1]}`)
 }
 
 /**
@@ -100,6 +90,10 @@ function frementing_3(event, base, inputs, fluid, output, temperature, time, amo
   time = time || 9600
   recipeBookTab = recipeBookTab || "drinks"
   experience = experience || 1.0
+  let ingrs = []
+  inputs.forEach(input => {
+  ingrs.push(brewinandchewin_fermenting_item_ingredient(input))
+  });
   let frementing_receipe = {
     "type": "brewinandchewin:fermenting",
     "basefluid": {
@@ -108,7 +102,7 @@ function frementing_3(event, base, inputs, fluid, output, temperature, time, amo
     },
     "fermentingtime": time,
     "experience": experience,
-    "ingredients": [],
+    "ingredients": ingrs,
     "result": {
       "count": amount,
       "fluid": fluid
@@ -119,9 +113,6 @@ function frementing_3(event, base, inputs, fluid, output, temperature, time, amo
   if (conditions) {
     frementing_receipe.conditions = conditions
   }
-  inputs.forEach(input => {
-    frementing_receipe.ingredients.push(brewinandchewin_fermenting_item_ingredient(input))
-  });
   event.custom(frementing_receipe).id(`createdelight:fermenting/${output.split(":")[1]}_from_${base.split(":")[1]}`)
   brewinandchewin_cdg_fermenting(event, base, inputs, fluid, output, time, amount, conditions)
 }

@@ -1,6 +1,3 @@
-ItemEvents.rightClicked("minecraft:stick", e => {
-})
-
 function cdTraderUnlockStackMatches(stack, target) {
     if (stack == null || stack.isEmpty())
         return false
@@ -55,7 +52,12 @@ function hasCompletedTradeUnlockQuest(player, questId) {
     let quest = file.getQuest(file.getID(questId))
     if (quest == null)
         return false
-    return file.getOrCreateTeamData(player).isCompleted(quest)
+    // Rhino 对 getOrCreateTeamData(Entity/UUID) 重载二义；须按生效队伍 UUID 查（组队=小队，不是 player.uuid）
+    let teamOptional = global.CDServerJavaClasses.$FTBTeamsAPI.api().getManager().getTeamForPlayerID(player.uuid)
+    if (teamOptional == null || !teamOptional.isPresent())
+        return false
+    let teamData = file.getOrCreateTeamData(teamOptional.get().getId())
+    return teamData != null && teamData.isCompleted(quest)
 }
 
 let tech_list = [

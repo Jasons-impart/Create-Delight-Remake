@@ -1,0 +1,6 @@
+new Schema("dungeonsdelight:monster_cooking")
+    .simpleKey("result", "outputItem")
+    .simpleKey("ingredients", "inputItemArray")
+    .simpleKey("cookingtime", "intNumber", 200)
+    .simpleKey("experience", "doubleNumber", 1.0)
+    .simpleKey("recipe_book_tab", "anyString", "meals")

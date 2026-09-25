@@ -1,0 +1,5 @@
+new Schema("createdelightcore:configuration_module_refill")
+    .simpleKey("module", "inputItem")
+    .simpleKey("ingredients", "inputItemArray")
+    .simpleKey("charge", "intNumber")
+    .simpleKey("category", "anyString", "misc")

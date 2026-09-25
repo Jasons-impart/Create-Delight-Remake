@@ -38,6 +38,7 @@ config/             # KubeJS config files
 ## CONVENTIONS
 
 - Recipe ID namespace: `createdelight`; recipe folders use display names with spaces/apostrophes, so quote paths in shell commands.
+- **自定义配方 schema 注册**：非 KJS 内置的配方类型（如 `bakeries:dough_crafting_table`、`casualness_delight:deep_frying`）需在 `startup_scripts/@recipes/{namespace}.js` 中用 `new Schema("modid:type")` 注册，然后 `e.recipes.{namespace}.{type}(...)` 调用；参数顺序与 `simpleKey`/`complexKey` 声明顺序一致，且 key 声明顺序贴近 KJS 内置 schema 惯例：`result`/`output` 在前，`ingredient(s)`/`input` 在后（对照 `CookingRecipeSchema`、`ShapelessRecipeSchema`），调用侧才能写成 `type(result, input, ...)` 与内置风格一致。尽量用 `e.recipes.*` 而非 `e.custom`，仅当配方含特殊 ingredient type（如 `tetra:scroll`）或复杂嵌套 NBT 时才用 `e.custom`。**不要注册 KJS 已有内置 schema 的配方类型**（如 `ae2:inscriber`、`brewinandchewin:fermenting`、`farmersdelight:cooking`、`youkaishomecoming:kettle`），同名注册会覆盖内置 schema 导致上游 mod 配方解析失败。字段类型必须对齐底层 serializer 的 codec（`youkaishomecoming:drying_rack` 为原版 `SimpleCookingSerializer`，`cookingtime` 用 `intNumber`）；非标准 JSON 形状（如 `farmersrespite:brewing` 的 `{fluid,count}`）用 `complexKey`。注册前对照模组 JAR 的 `data/{ns}/recipes/` 样例核对字段名、类型和默认值。
 - **职责边界**：KubeJS 是内容配置层，仅新增或调整配方、标签、战利品表、简单物品移除/隐藏及其必要的兼容数据；可实现无状态的轻量交互（如单次鼠标右键效果）和纯客户端展示（如 tooltip、JEI 信息），不要在此实现新的游戏机制。
 - **CDC 优先**：自定义方块/物品的行为、机器或菜单、能力与持久化状态、命令、网络包、服务端/客户端联动、实体/方块交互、tick 逻辑、渲染和跨模组运行时兼容，默认在 `CDC-mod-src/` 的 Create Delight Core 中实现。KubeJS 只引用 CDC 提供的稳定数据或 API 来配置内容。
 - **例外处理**：若上游限制使运行时逻辑暂时不能迁入 CDC，必须在 KubeJS 文件中说明原因并关联跟踪 issue；不要新增无迁移计划的事件处理器、Java 反射桥接或客户端网络逻辑。

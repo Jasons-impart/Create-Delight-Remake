@@ -190,12 +190,7 @@ ServerEvents.recipes(e => {
         ]
     )
         .id("createdelight:filling/limeade")
-    brewing(e, "minecraft:water",
-        [
-            "#forge:fruits/lime",
-            "minecraft:sugar"
-        ], "create_central_kitchen:limeade", "collectorsreap:limeade"
-    )
+    brewingAndPouring(e, "minecraft:water", ["#forge:fruits/lime", "minecraft:sugar"], "create_central_kitchen:limeade", "collectorsreap:limeade")
 
     kubejs.shapeless(
         'collectorsreap:berry_limeade',
@@ -248,12 +243,7 @@ ServerEvents.recipes(e => {
         ]
     )
         .id("createdelight:filling/berry_limeade")
-    brewing(e, "create_central_kitchen:limeade", 
-        [
-            '#forge:berries',
-            '#forge:berries'
-        ], "create_central_kitchen:berry_limeade", "collectorsreap:berry_limeade"
-    )
+    brewingAndPouring(e, "create_central_kitchen:limeade", ['#forge:berries', '#forge:berries'], "create_central_kitchen:berry_limeade", "collectorsreap:berry_limeade")
 
     kubejs.shapeless(
         'collectorsreap:pink_limeade',
@@ -306,12 +296,7 @@ ServerEvents.recipes(e => {
         ]
     )
         .id("createdelight:filling/pink_limeade")
-    brewing(e, "create_central_kitchen:limeade", 
-        [
-            '#forge:fruits/pomegranate',
-            '#forge:fruits/pomegranate'
-        ], "create_central_kitchen:pink_limeade", "collectorsreap:pink_limeade"
-    )
+    brewingAndPouring(e, "create_central_kitchen:limeade", ['#forge:fruits/pomegranate', '#forge:fruits/pomegranate'], "create_central_kitchen:pink_limeade", "collectorsreap:pink_limeade")
 
     kubejs.shapeless(
         'collectorsreap:mint_limeade',
@@ -364,12 +349,7 @@ ServerEvents.recipes(e => {
         ]
     )
         .id("createdelight:filling/mint_limeade")
-    brewing(e, "create_central_kitchen:limeade",
-        [
-            "#neapolitan:mint_leaves",
-            "#neapolitan:mint_leaves"
-        ], "create_central_kitchen:mint_limeade", "collectorsreap:mint_limeade"
-    )
+    brewingAndPouring(e, "create_central_kitchen:limeade", ["#neapolitan:mint_leaves", "#neapolitan:mint_leaves"], "create_central_kitchen:mint_limeade", "collectorsreap:mint_limeade")
     //清爽土豆饼
     farmersdelight.cooking(
         [
@@ -409,7 +389,7 @@ ServerEvents.recipes(e => {
             "collectorsreap:lime_slice"
         ]
     ).heated().id("createdelight:mixing/lime_green_tea")
-    brewing(e, "farmersrespite:green_tea", ["collectorsreap:lime_slice", "collectorsreap:lime_slice"], "collectorsreap:lime_green_tea", "collectorsreap:lime_green_tea")
+    brewingAndPouring(e, "farmersrespite:green_tea", ["collectorsreap:lime_slice", "collectorsreap:lime_slice"], "collectorsreap:lime_green_tea", "collectorsreap:lime_green_tea")
     create.mixing(
         Fluid.of("collectorsreap:pomegranate_black_tea", 500),
         [
@@ -417,7 +397,7 @@ ServerEvents.recipes(e => {
             "#forge:fruits/pomegranate"
         ]
     ).heated().id("createdelight:mixing/pomegranate_black_tea")
-    brewing(e, "farmersrespite:black_tea", ["#forge:fruits/pomegranate", "#forge:fruits/pomegranate"], "collectorsreap:pomegranate_black_tea", "collectorsreap:pomegranate_black_tea")
+    brewingAndPouring(e, "farmersrespite:black_tea", ["#forge:fruits/pomegranate", "#forge:fruits/pomegranate"], "collectorsreap:pomegranate_black_tea", "collectorsreap:pomegranate_black_tea")
     create.mixing(
         Fluid.of("collectorsreap:vernal_purge", 500),
         [
@@ -439,7 +419,7 @@ ServerEvents.recipes(e => {
             Fluid.of("collectorsreap:limbo_brew", 250)
         ]
     ).id("createdelight:filling/limbo_brew")
-    brewing(e, "createdelight:americano_fluid", ["collectorsreap:pink_dragon_fruit", "collectorsreap:pink_dragon_fruit"], "collectorsreap:limbo_brew", "collectorsreap:limbo_brew")
+    brewingAndPouring(e, "createdelight:americano_fluid", ["collectorsreap:pink_dragon_fruit", "collectorsreap:pink_dragon_fruit"], "collectorsreap:limbo_brew", "collectorsreap:limbo_brew")
     create.mixing(
         Fluid.of("collectorsreap:sweet_recovery", 500),
         [

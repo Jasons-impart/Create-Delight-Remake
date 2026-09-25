@@ -76,7 +76,8 @@ ServerEvents.recipes(e => {
         "bakeries:tray_yuntui_mooncake",
         "bakeries:compat/raw_yuntui_mooncake",
         "bakeries:yuntui_mooncake",
-        "bakeries:dough_crafting_table/pizza_flatbread"
+        "bakeries:dough_crafting_table/pizza_flatbread",
+        "bakeries:integration/create/sequenced_assembly/toast_dough"
     ])
     remove_recipes_output(e, [
         "vintagedelight:oat_dough",
@@ -555,24 +556,8 @@ ServerEvents.recipes(e => {
     create.cutting("8x bakeries:scone_dough", 'createdelight:puff_pastry')
         .id("createdelight:cutting/scone_dough")
     cutting(e, 'bakeries:pound_cake', '4x bakeries:sliced_pound_cake')
-    e.custom({
-        "type": "bakeries:dough_crafting_table",
-        "count": 8,
-        "ingredient":
-        {
-            "item": "createdelight:puff_pastry"
-        },
-        "result": "bakeries:scone_dough"
-    }).id("createdelight:dough_crafting_table/scone_dough")
-    e.custom({
-        "type": "bakeries:dough_crafting_table",
-        "count": 1,
-        "ingredient":
-        {
-            "item": "ratatouille:salty_dough"
-        },
-        "result": "bakeries:pizza_flatbread"
-    }).id("createdelight:dough_crafting_table/pizza_flatbread")
+    e.recipes.bakeries.dough_crafting_table("bakeries:scone_dough", "createdelight:puff_pastry", 8).id("createdelight:dough_crafting_table/scone_dough")
+    e.recipes.bakeries.dough_crafting_table("bakeries:pizza_flatbread", "ratatouille:salty_dough", 1).id("createdelight:dough_crafting_table/pizza_flatbread")
     create.pressing(
         '2x bakeries:pizza_flatbread',
         'ratatouille:salty_dough',
@@ -745,6 +730,14 @@ ServerEvents.recipes(e => {
         .mode(2)
         .id("createdelight:curving/mould_basque_cake")
 
+    // 面团台配方（原为 kubejs/data/bakeries/recipes/dough_crafting_table/ 下的数据包配方）
+    e.recipes.bakeries.dough_crafting_table("bakeries:bagel_dough", "bakeries:sweet_dough", 2).id("bakeries:dough_crafting_table/bagel_dough")
+    e.recipes.bakeries.dough_crafting_table("bakeries:baguette_dough", "ratatouille:salty_dough", 1).id("bakeries:dough_crafting_table/baguette_dough")
+    e.recipes.bakeries.dough_crafting_table("bakeries:ciabatta_dough", "ratatouille:salty_dough", 2).id("bakeries:dough_crafting_table/ciabatta_dough")
+    e.recipes.bakeries.dough_crafting_table("bakeries:country_bread_dough", "ratatouille:salty_dough", 1).id("bakeries:dough_crafting_table/country_bread_dough")
+    e.recipes.bakeries.dough_crafting_table("bakeries:croissant_dough", "createdelight:puff_pastry", 1).id("bakeries:dough_crafting_table/croissant_dough")
+    e.recipes.bakeries.dough_crafting_table("bakeries:round_bread_dough", "bakeries:sweet_dough", 4).id("bakeries:dough_crafting_table/round_bread_dough")
+    e.recipes.bakeries.dough_crafting_table("bakeries:whole_wheat_bagel_dough", "bakeries:whole_wheat_dough", 2).id("bakeries:dough_crafting_table/whole_wheat_bagel_dough")
 })
 ServerEvents.tags("item", e => {
     e.removeAllTagsFrom('bakeries:cheese_cube')

@@ -170,4 +170,33 @@ ServerEvents.recipes(e => {
     
     create.pressing("createdelight:forged_steel_sheet", "createdelight:forged_steel_ingot")
     .id("createdelight:pressing/forged_steel_sheet")
+
+    // 配置模块充能配方（原为 kubejs/data/createdelightcore/recipes/ 下的数据包配方）
+    e.recipes.createdelightcore.configuration_module_refill(
+        "createdelightcore:control_configuration_module",
+        ["createdelight:brass_control_component"],
+        4
+    ).id("createdelightcore:control_configuration_module_refill")
+    e.recipes.createdelightcore.configuration_module_refill(
+        "createdelightcore:fluid_configuration_module",
+        ["createdelight:copper_fluid_component", "createdelight:sealed_joint_component"],
+        8
+    ).id("createdelightcore:fluid_configuration_module_refill")
+    e.recipes.createdelightcore.configuration_module_refill(
+        "createdelightcore:kinetic_configuration_module",
+        ["createdelight:kinetic_transmission_component"],
+        4
+    ).id("createdelightcore:kinetic_configuration_module_refill")
+    e.recipes.createdelightcore.configuration_module_refill(
+        "createdelightcore:logistics_configuration_module",
+        ["createdelight:logic_component"],
+        4
+    ).id("createdelightcore:logistics_configuration_module_refill")
+    e.recipes.createdelightcore.configuration_module_refill(
+        "createdelightcore:structural_configuration_module",
+        ["createdelight:andesite_structure_component"],
+        4
+    ).id("createdelightcore:structural_configuration_module_refill")
 })
+
+

@@ -1,25 +1,19 @@
 /**
- * 
- * @param { Internal.RecipesEventJS } event 
- * @param { InputItem_ } ingredients 
- * @param { OutputItem_ } results 
- * @param { number } [time] defult 2400 ticks
+ *
+ * @param { Internal.RecipesEventJS } event
+ * @param { InputItem_ } ingredients
+ * @param { OutputItem_ | OutputItem_[] } results
+ * @param { number } [time] default 200 ticks
  */
 function freezing(event, ingredients, results, time) {
   time = time || 200
-  event.recipes.ratatouille.freezing(results, ingredients).id(`createdelightcore:freezing/${results.split(":")[1]}`)
-  dragonPlusFreezing(event, results, ingredients, `createdelightcore:fan_freezing/${ingredients.split(":")[1]}`)
-  event.custom({type: "refurbished_furniture:freezer_solidifying", category: "blocks", ingredient:{item: ingredients}, result:{item: results}, time: time}).id(`refurbished_furniture:freezer_solidifying/${results.split(":")[1]}`)
+  let resultKey = Array.isArray(results) ? results[0] : results
+  let resultName = String(resultKey).split(":")[1]
+  event.recipes.ratatouille.freezing(results, ingredients).id(`createdelightcore:freezing/${resultName}`)
+  event.recipes.create_dragons_plus.freezing(results, ingredients).id(`createdelightcore:fan_freezing/${ingredients.split(":")[1]}`)
+  event.recipes.refurbished_furniture.freezer_solidifying(ingredients, resultKey, "blocks", time).id(`refurbished_furniture:freezer_solidifying/${resultName}`)
 }
 
-function dragonPlusFreezing(event, results, ingredients, id) {
-  const ingredient = typeof ingredients === "string" ? { item: ingredients } : ingredients.toJson()
-  event.custom({
-    type: "create_dragons_plus:freezing",
-    ingredients: [ingredient],
-    results: [{ item: results }]
-  }).id(id)
-}
 /**
  * @param { Internal.RecipesEventJS } event 
  * @param { InputItem_ } input 
@@ -33,20 +27,3 @@ function threshing(event, input, outputs, time) {
   let cutting_outputs = [outputs[0], outputs[2]]
   cutting(event, input, cutting_outputs)
 }
-/**
- * 
- * @param { Internal.RecipesEventJS } event
- * @param { OutputItem_ } output 输出香肠
- * @param { InputItem_ } ingredient 单个输入item
- */
-function addSausageRecipe(event, output, ingredient) {
-  event.recipes.ratatouille.squeezing(
-    output,
-    [
-      "ratatouille:sausage_casing",
-      ingredient,
-      Fluid.of("luncheonmeatsdelight:flesh_mud", 250)
-    ]
-  ).id(`createdelight:squeezing/${output.split(":")[1]}`)
-}
-

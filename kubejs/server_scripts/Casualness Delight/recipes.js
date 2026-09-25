@@ -1,6 +1,9 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-        "casualness_delight:crafting_shaped/raw_spring_roll"
+        "casualness_delight:crafting_shaped/raw_spring_roll",
+        "casualness_delight:cooking/fish_and_chips",
+        "casualness_delight:cooking/raw_cheese_wheel",
+        "casualness_delight:cooking/beef_noodles"
     ])
     // 牛排配约克郡布丁
     e.recipes.kubejs.shapeless("createdelight:yorkshire_pudding_and_beef", [
@@ -26,4 +29,18 @@ ServerEvents.recipes(e => {
             "#forge:vegetables/cabbage"
         ]
     ).id("createdelight:crafting_shaped/raw_spring_roll")
+
+    // 烹饪锅配方（原为 kubejs/data/casualness_delight/recipes/cooking/ 下的数据包配方）
+    e.recipes.farmersdelight.cooking(
+        [
+            "casualness_delight:raw_cabbage_bobo_chicken",
+            "casualness_delight:raw_cabbage_bobo_chicken",
+            "casualness_delight:raw_potato_bobo_chicken",
+            "casualness_delight:raw_potato_bobo_chicken",
+            "casualness_delight:raw_chicken_bobo_chicken",
+            "casualness_delight:raw_chicken_bobo_chicken"
+        ],
+        "casualness_delight:bobo_chicken",
+        0.0, 200, "farmersdelight:tomato_sauce"
+    ).id("casualness_delight:cooking/bobo_chicken")
 })

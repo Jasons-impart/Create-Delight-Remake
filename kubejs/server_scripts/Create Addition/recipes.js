@@ -147,4 +147,19 @@ ServerEvents.recipes(e => {
                 .id(`createdelight:sequenced_assembly/${spool[0].split(':')[1]}`)
             })
 
+
+    // 生物质混合配方（原为 kubejs/data/createaddition/recipes/mixing/ 下的数据包配方）
+    // biomass_from("Nx 原料")，ID 后缀取 split(":")[1]
+    function biomass_from(ingredient) {
+        e.recipes.create.mixing("createaddition:biomass", [ingredient])
+            .id(`createaddition:mixing/biomass_from_${ingredient.split(":")[1]}`)
+    }
+    biomass_from("2x #forge:crops")
+    biomass_from("2x #minecraft:flowers")
+    biomass_from("2x minecraft:honeycomb")
+    biomass_from("3x #minecraft:leaves")
+    biomass_from("2x #createaddition:plant_foods")
+    biomass_from("3x #createaddition:plants")
+    biomass_from("3x #minecraft:saplings")
+    biomass_from("8x minecraft:stick")
 })

@@ -227,4 +227,23 @@ ServerEvents.recipes(e => {
         "brewinandchewin:jerky",
         "#forge:meat/cooked"
     ).processingTime(200).id("createdelight:baking/jerky")
+
+    // 酒桶灌注（原为 kubejs/data/brewinandchewin/recipes/pouring/ 下的数据包配方）
+    // keg_pouring(fluid, output, amount, filling, container, strict)
+    e.recipes.brewinandchewin.keg_pouring(
+        "create:honey", "minecraft:honey_bottle", 250,
+        true, "minecraft:glass_bottle", false
+    ).id("brewinandchewin:pouring/honey_bottle")
+    e.recipes.brewinandchewin.keg_pouring(
+        "create:honey", "create:honey_bucket", 1000,
+        true, "minecraft:bucket", false
+    ).id("brewinandchewin:pouring/honey_bucket")
+    e.recipes.brewinandchewin.keg_pouring(
+        "create_bic_bit:curdled_milk", "brewinandchewin:unripe_flaxen_cheese_wheel", 1000,
+        false, "minecraft:honeycomb", false
+    ).id("brewinandchewin:pouring/unripe_flaxen_cheese_wheel")
+    e.recipes.brewinandchewin.keg_pouring(
+        "create_bic_bit:curdled_milk", "create_bic_bit:curdled_milk_bucket", 1000,
+        true, "minecraft:bucket", false
+    ).id("brewinandchewin:pouring/curdled_milk_bucket")
 })

@@ -241,42 +241,12 @@ ServerEvents.recipes((e) => {
       [['butchercraft:chicken_skull_head_item', 'butchercraft:rabbit_skull_head_item']])
       .id("createdelight:crushing/small_skull_head")
   // 血肠混合料
-  e.custom({
-    type: "minecraft:crafting_shapeless",
-    ingredients: [
-      {
-        tag: "forge:ground_meat/raw",
-      },
-      {
-        tag: "forge:ground_meat/raw",
-      },
-      {
-        tag: "forge:ground_meat/raw",
-      },
-      {
-        tag: "forge:ground_meat/raw",
-      },
-      {
-        tag: "forge:ground_meat/raw",
-      },
-      {
-        tag: "forge:ground_meat/raw",
-      },
-      {
-        item: "butchercraft:fat",
-      },
-      {
-        item: "ratatouille:wheat_kernels",
-      },
-      {
-        item: "butchercraft:blood_fluid_bottle",
-      },
-    ],
-    result: {
-      count: 8,
-      item: "butchercraft:blood_sausage_mix",
-    },
-  }).id("createdelight:blood_sausage_mix");
+  e.shapeless("8x butchercraft:blood_sausage_mix", [
+    Ingredient.of("#forge:ground_meat/raw").withCount(6),
+    "butchercraft:fat",
+    "ratatouille:wheat_kernels",
+    "butchercraft:blood_fluid_bottle",
+  ]).id("butchercraft:blood_sausage_mix");
 
   e.recipes.create
     .mixing("8x butchercraft:blood_sausage_mix", [

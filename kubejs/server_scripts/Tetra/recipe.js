@@ -181,7 +181,7 @@ ServerEvents.recipes(e => {
         "more_mod_tetra:arknights/win/proof_of_victory_pursuer",
         "more_mod_tetra:arknights/win/proof_of_victory_rosmontis_1",
         "more_mod_tetra:arknights/win/proof_of_victory_rosmontis_2",
-        // 灾变兼容（不含 abyssal_core / storm_core，二者为真实配方保留在数据包中）
+        // 灾变兼容禁用项；abyssal_core / storm_core 为真实配方，见本文件下方
         "more_mod_tetra:cataclysm/abyssal_ingot",
         "more_mod_tetra:cataclysm/monstrous_core",
         "more_mod_tetra:cataclysm/storm_ingot",
@@ -198,4 +198,22 @@ ServerEvents.recipes(e => {
         "more_mod_tetra:iron/cloth/sound_magic_cloth",
         "more_mod_tetra:iron/ingot/sound_arcane_ingot"
     ])
+
+    // 灾变核心（原为 kubejs/data/more_mod_tetra/recipes/cataclysm/ 下的数据包配方）
+    e.shaped("more_mod_tetra:abyssal_core", [
+        "#",
+        "A",
+        "#"
+    ], {
+        "#": "cataclysm:abyssal_egg",
+        "A": "minecraft:diamond"
+    }).id("more_mod_tetra:cataclysm/abyssal_core")
+    e.shaped("more_mod_tetra:storm_core", [
+        "###",
+        "#A#",
+        "###"
+    ], {
+        "#": "cataclysm:essence_of_the_storm",
+        "A": "minecraft:diamond"
+    }).id("more_mod_tetra:cataclysm/storm_core")
 })

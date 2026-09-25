@@ -17,12 +17,7 @@ ServerEvents.recipes(e => {
         ]
     )
         .heated().id("createdelight:mixing/flowing_peach_tea")
-    brewing(e, "farmersrespite:yellow_tea",
-        [
-            "fruitsdelight:peach",
-            "fruitsdelight:peach"
-        ], "fruitsdelight:peach_tea", "fruitsdelight:peach_tea"
-    )
+    brewingAndPouring(e, "farmersrespite:yellow_tea", ["fruitsdelight:peach", "fruitsdelight:peach"], "fruitsdelight:peach_tea", "fruitsdelight:peach_tea")
     e.recipes.create.mixing(
         Fluid.of("fruitsdelight:mango_tea", 500),
         [
@@ -31,12 +26,7 @@ ServerEvents.recipes(e => {
         ]
     )
         .heated().id("createdelight:mixing/flowing_mango_tea")
-    brewing(e, "farmersrespite:black_tea",
-        [
-            "fruitsdelight:mango",
-            "fruitsdelight:mango"
-        ], "fruitsdelight:mango_tea", "fruitsdelight:mango_tea"
-    )
+    brewingAndPouring(e, "farmersrespite:black_tea", ["fruitsdelight:mango", "fruitsdelight:mango"], "fruitsdelight:mango_tea", "fruitsdelight:mango_tea")
     e.recipes.create.mixing(
         Fluid.of("fruitsdelight:mangosteen_tea", 500),
         [
@@ -45,12 +35,7 @@ ServerEvents.recipes(e => {
         ]
     )
         .heated().id("createdelight:mixing/flowing_mangosteen_tea")
-    brewing(e, "farmersrespite:green_tea",
-        [
-            "fruitsdelight:mangosteen",
-            "fruitsdelight:mangosteen"
-        ], "fruitsdelight:mangosteen_tea", "fruitsdelight:mangosteen_tea"
-    )
+    brewingAndPouring(e, "farmersrespite:green_tea", ["fruitsdelight:mangosteen", "fruitsdelight:mangosteen"], "fruitsdelight:mangosteen_tea", "fruitsdelight:mangosteen_tea")
     e.recipes.create.mixing(
         Fluid.of("fruitsdelight:lychee_cherry_tea", 1000),
         [
@@ -60,12 +45,7 @@ ServerEvents.recipes(e => {
         ]
     )
         .heated().id("createdelight:mixing/flowing_lychee_cherry_tea")
-    brewing(e, "farmersrespite:green_tea",
-        [
-            "#forge:fruits/lychee",
-            "trailandtales_delight:dried_cherry_petal"
-        ], "fruitsdelight:lychee_cherry_tea", "fruitsdelight:lychee_cherry_tea"
-    )
+    brewingAndPouring(e, "farmersrespite:green_tea", ["#forge:fruits/lychee", "trailandtales_delight:dried_cherry_petal"], "fruitsdelight:lychee_cherry_tea", "fruitsdelight:lychee_cherry_tea")
     e.recipes.create.mixing(
         Fluid.of("fruitsdelight:hawberry_tea", 500),
         [
@@ -74,12 +54,7 @@ ServerEvents.recipes(e => {
         ]
     )
         .heated().id("createdelight:mixing/flowing_hawberry_tea")
-    brewing(e, "farmersrespite:yellow_tea",
-        [
-            "fruitsdelight:hawberry",
-            "fruitsdelight:hawberry"
-        ], "fruitsdelight:hawberry_tea", "fruitsdelight:hawberry_tea"
-    )
+    brewingAndPouring(e, "farmersrespite:yellow_tea", ["fruitsdelight:hawberry", "fruitsdelight:hawberry"], "fruitsdelight:hawberry_tea", "fruitsdelight:hawberry_tea")
     e.recipes.create.mixing(
         Fluid.of("create_central_kitchen:chorus_flower_tea", 500),
         [
@@ -87,12 +62,7 @@ ServerEvents.recipes(e => {
             "ends_delight:dried_chorus_flower"
         ]
     ).heated().id("createdelight:mixing/chorus_flower_tea")
-    brewing(e, "minecraft:water",
-        [
-            "ends_delight:dried_chorus_flower",
-            "ends_delight:dried_chorus_flower"
-        ], "create_central_kitchen:chorus_flower_tea", "ends_delight:chorus_flower_tea"
-    )
+    brewingAndPouring(e, "minecraft:water", ["ends_delight:dried_chorus_flower", "ends_delight:dried_chorus_flower"], "create_central_kitchen:chorus_flower_tea", "ends_delight:chorus_flower_tea")
     e.recipes.create.filling(
         'ends_delight:chorus_flower_tea',
         [
