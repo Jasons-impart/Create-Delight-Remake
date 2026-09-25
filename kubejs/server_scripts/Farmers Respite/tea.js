@@ -38,8 +38,14 @@ ServerEvents.recipes(e => {
             "minecraft:nether_wart"
         ]
     ).heated().id("createdelight:mixing/purulent_tea")
-    brewing(e, "minecraft:water", ["minecraft:dandelion", "minecraft:dandelion"], "farmersrespite:dandelion_tea", 'farmersrespite:dandelion_tea')
-    brewing_2(e, "minecraft:water", ["minecraft:glow_berries", "createcafe:coffee_fruit"], "farmersrespite:gamblers_tea")
+    brewingAndPouring(e, "minecraft:water", ["minecraft:dandelion", "minecraft:dandelion"], "farmersrespite:dandelion_tea", 'farmersrespite:dandelion_tea')
+    e.recipes.farmersrespite.brewing(
+        { fluid: "minecraft:water", count: 1000 },
+        ["minecraft:glow_berries", "createcafe:coffee_fruit"],
+        { fluid: "farmersrespite:gamblers_tea", count: 1000 },
+        200,
+        0.35
+    ).id("createdelight:brewing/gamblers_tea_from_water")
     e.recipes.create.mixing(
         Fluid.of("farmersrespite:dandelion_tea", 500),
         [

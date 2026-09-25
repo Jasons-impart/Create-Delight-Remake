@@ -726,3 +726,37 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: `93a5cb79` 把硬币物品贴图迁入 `createdelightcore/textures/item/` 后，`cf7daad5`（压缩客户端体积）将 `kubejs/assets/createdelight/textures/gui/*_coin.png` 当作孤儿资源删除——但这些是 `createdelight:coin_font` 位图字体专用字形贴图，与物品贴图同文件名、不同用途/内容。删除后字体 provider 全部被拒（`FileNotFoundException`），货币符号 `\uAA01`-`\uAA05` 渲染成缺字符，且只出现在资源加载 WARN 日志里，游戏内不易察觉。
 - **Fix/Lesson**: 清理"未使用"贴图前必须全库检索引用方（`font/*.json` 的 `file` 路径、模型、CIT 等），字体 `textures/gui/` 下的贴图即使与物品贴图同名也不可删；恢复方式为 `git restore --source=<删除commit>^ -- <路径>`（PowerShell 的 `>` 重定向会损坏二进制，不能用）。
 
+## 自定义配方 schema 的 simpleKey 类型必须匹配 serializer codec
+
+**Date**: 2026-09-25
+
+- **Problem**: youkaishomecoming:drying_rack 的 cookingtime 曾注册为 doubleNumber，但该配方实际走原版 SimpleCookingSerializer（DryingRackRecipe extends AbstractCookingRecipe），codec 是 Codec.INT；只因"看起来像数字"就选 double，会与序列化器类型不一致，也和同包 casualness_delight:deep_frying、dungeonsdelight:monster_cooking 的 intNumber 写法不一致。非标准 JSON 形状（如 farmersrespite:brewing 的 base/result 为 {fluid,count} 而非 FluidStack）若误用 simpleKey 则根本表达不了，只能 complexKey。
+- **Fix/Lesson**: 注册自定义 schema 前必须对照真实 serializer，不能只看字段名：优先从模组 JAR 抽 data/{ns}/recipes/ 样例 JSON 核对字段名、类型和默认值，必要时 javap 反编译 Recipe/Serializer 确认 codec。SimpleCookingSerializer 系（AbstractCookingRecipe 子类，如 youkaishomecoming:drying_rack）就是原版烧炼格式（result 物品 ID 字符串、cookingtime INT、experience FLOAT、category 为 CookingBookCategory 小写字符串）；其中 experience 可能只影响 JEI 显示（drying rack 运行时 cookTick 掉落产物不给经验）。非标准嵌套用 complexKey，不要硬塞 simpleKey。
+
+## 自定义 RecipeSchema 的注册规则不能按直觉写键位
+
+**Date**: 2026-09-26
+
+- **Problem**: 注册 brewinandchewin:keg_pouring 等类型时踩过多类坑：可选键排在必填键前导致 Required key must be ahead of optional keys；把产量写进 result 的 8x 前缀而 serializer 只认裸 ID + 独立 count（bakeries:dough_crafting_table）；fluid 有的是裸 ID 字符串、有的是 FluidStack/FluidIngredient；自定义 {count,item|tag} 用 inputItemArray 表达不了；result 还有限制如 count 必须为 1（sandwich_spouting）。
+- **Fix/Lesson**: 1) 必填键全部在前、可选键在后。2) 产量/数量类常为独立字段，不要塞进 Nx 前缀。3) JSON 形态以 mod Serializer 为准（对照样例或 javap）。4) 非标准 ingredient 保持 e.custom 或 dynamicKey+mapOut。5) 约束写进 schema 注释。6) 勿注册 KJS 已内置类型（如 brewinandchewin:fermenting）。7) 调用参数顺序与 simpleKey/complexKey 声明一致。
+
+## JsonIO 生成 datapack 必须在 startup 且避开被过滤的 IO 类
+
+**Date**: 2026-09-26
+
+- **Problem**: SAR 夹心颜色等数据只认 datapack JSON，用 JsonIO.write 生成时：放 server_scripts 会先加载数据包再写文件，首次进档不生效；Java.loadClass java.nio.file.* / java.io.File 被 KubeJS 类过滤拒绝；Path.resolve 在 Rhino 上 String/Path 重载二义（连 java.lang.String 也不行）；顶层 let Platform 会覆盖全局 Platform.isLoaded。
+- **Fix/Lesson**: 生成逻辑放 startup_scripts（datapack 前落盘，改表后重启）；路径用 Platform.getGameFolder() + p['resolve(java.lang.String)'](seg) 按段拼接（跨 Win/Linux/macOS），mkdirs 用 path.toFile().getParentFile().mkdirs()；局部类名勿用 Platform。参考 startup_scripts/Some Assembly Required/spreads.js。
+
+## FTB Quests getOrCreateTeamData 不能在 Rhino 里直接传玩家
+
+**Date**: 2026-09-26
+
+- **Problem**: BaseQuestFile.getOrCreateTeamData 有 UUID/Team/Entity 三重载。传 ServerPlayer 报 ambiguous；传 player.uuid 能跑，但 UUID 参数是队伍 ID，组队时会查个人队伍，导致登录补录白名单永远失败（组队进度在小队 TeamData）。
+- **Fix/Lesson**: 先 FTBTeamsAPI.api().getManager().getTeamForPlayerID(player.uuid) 解析生效队伍，再 getOrCreateTeamData(team.getId())，并对返回值判空（Entity 重载语义相同但 Rhino 调不动）。见 Lightmans Currency/white_list.js。
+
+## 配方 JSON→KJS 迁移要区分禁用桩与真配方
+
+**Date**: 2026-09-26
+
+- **Problem**: kubejs/data 下混有真配方、forge:false 屏障桩、空 {} 覆盖。一概重建或一概删除都会错：漏 remove 会留下原版配方，漏重建会丢内容；迁移时还容易丢独有配方（如 white_tea_leaves 晾晒、scarlet_tea 自定义烹饪）或砍掉无替代项。
+- **Fix/Lesson**: DISABLE/空桩 → remove_recipes_id；真配方 → e.recipes/e.custom 并对齐 Serializer 字段与配方 ID；迁移后做旧 JSON↔新 JS 的 ID/字段对照，并检索任务/脚本引用。bakeries:dough_crafting_table、keg_pouring、sandwich_spouting 等细节见上条 schema 规则。

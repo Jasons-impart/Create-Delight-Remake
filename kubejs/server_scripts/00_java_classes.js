@@ -28,6 +28,7 @@ global.CDServerJavaClasses = {
     $EntityDragonBase: Java.loadClass("com.github.alexthe666.iceandfire.entity.EntityDragonBase"),
     $FluidIngredient: Java.loadClass("com.lowdragmc.mbd2.api.recipe.ingredient.FluidIngredient"),
     $FluidRecipeCapability: Java.loadClass("com.lowdragmc.mbd2.common.capability.recipe.FluidRecipeCapability"),
+    $FTBTeamsAPI: Java.loadClass("dev.ftb.mods.ftbteams.api.FTBTeamsAPI"),
     $FluidStackJS: Java.loadClass("dev.latvian.mods.kubejs.fluid.FluidStackJS"),
     $FoodList: Java.loadClass("com.tarinoita.solsweetpotato.tracking.FoodList"),
     $FoodModelHelper: Java.loadClass("dev.xkmc.youkaishomecoming.content.pot.table.food.FoodModelHelper"),

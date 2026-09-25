@@ -61,7 +61,13 @@ ServerEvents.recipes(e => {
         Fluid.of("minecraft:milk"),
         "ratatouille:cocoa_powder"
     ]).heated().id("createdelight:mixing/hot_cocoa")
-    brewing_2(e, "minecraft:milk", ["ratatouille:cocoa_powder", "minecraft:sugar"], "farmersrespite:hot_cocoa")
+    e.recipes.farmersrespite.brewing(
+        { fluid: "minecraft:milk", count: 1000 },
+        ["ratatouille:cocoa_powder", "minecraft:sugar"],
+        { fluid: "farmersrespite:hot_cocoa", count: 1000 },
+        200,
+        0.35
+    ).id("createdelight:brewing/hot_cocoa_from_milk")
     // 巧克力
     create.mixing(Fluid.of("create:chocolate", 250), [
         "ratatouille:cocoa_solids",

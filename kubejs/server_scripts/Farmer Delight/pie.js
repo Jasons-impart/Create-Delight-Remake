@@ -41,12 +41,8 @@ ServerEvents.recipes(e => {
         "cosmopolitan:farmersdelight/watet_pie"
     ])
     // baking(e, "createdelight:puff_pastry", "farmersdelight:pie_crust", 1, "food", 100)
-    e.custom({
-        type: "bakeries:dough_crafting_table",
-        count: 1,
-        ingredient:{item: "createdelight:puff_pastry"},
-        result: "createdelight:raw_pie_crust"
-    }).id("createdelight:dough_crafting_table/raw_pie_crust")
+    e.recipes.bakeries.dough_crafting_table("createdelight:raw_pie_crust", "createdelight:puff_pastry", 1)
+        .id("createdelight:dough_crafting_table/raw_pie_crust")
     e.recipes.vintageimprovements.curving(
         'createdelight:raw_pie_crust',
         "createdelight:puff_pastry",

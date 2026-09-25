@@ -9,6 +9,8 @@ ServerEvents.recipes(e => {
         "luncheonmeatsdelight:fry_luncheon_meat_smoking",
         "luncheonmeatsdelight:fry_luncheon_meat_campfire",
         "cavedelight:nutrient_bar",
+        "cataclysm:stonecutting/azure_seastone_brick_stair_from_stonecutting",
+        "cavedelight:dino_nugget_platter",
     ])
     remove_recipes_input(e, [
         "cavedelight:pinenut_pie",
@@ -37,7 +39,7 @@ ServerEvents.recipes(e => {
         "2x cavedelight:radgill_slice",
         "crabbersdelight:fish_bones"
     ])
-    brewing(e, 'farmersrespite:green_tea', ['alexscaves:fiddlehead', 'alexscaves:fiddlehead'], 'createdelight:fiddlehead_tea', 'cavedelight:fiddlehead_tea')
+    brewingAndPouring(e, 'farmersrespite:green_tea', ['alexscaves:fiddlehead', 'alexscaves:fiddlehead'], 'createdelight:fiddlehead_tea', 'cavedelight:fiddlehead_tea')
     e.recipes.create.mixing(
         Fluid.of("createdelight:fiddlehead_tea", 500),
         [

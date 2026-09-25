@@ -5,12 +5,8 @@ ServerEvents.recipes(e => {
     "bakeries:raw_egg_tart",
     "bakeries:dough_crafting_table/egg_tart_shell"
   ])
-  e.custom({
-    type: "bakeries:dough_crafting_table",
-    count: 3,
-    ingredient:{item: "createdelight:puff_pastry"},
-    result: "bakeries:egg_tart_shell"
-  }).id("createdelight:dough_crafting_table/egg_tart_shell")
+  e.recipes.bakeries.dough_crafting_table("bakeries:egg_tart_shell", "createdelight:puff_pastry", 3)
+    .id("createdelight:dough_crafting_table/egg_tart_shell")
   create.mixing(
     Fluid.of("createdelight:egg_tart_fluid", 1000),
     [

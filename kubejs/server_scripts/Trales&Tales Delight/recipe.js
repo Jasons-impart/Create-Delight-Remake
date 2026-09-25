@@ -15,26 +15,10 @@ ServerEvents.recipes(e => {
 
     make_cake(e, "trailandtales_delight:cherry_petal", "trailandtales_delight:cherry_cake")
 
-    brewing(e, "createdelight:espresso_fluid", [
-        "trailandtales_delight:baked_pitcher_pod", 
-        "trailandtales_delight:baked_torchflower_seeds"],
-    "createdelight:ancient_coffee",
-    "trailandtales_delight:ancient_coffee")
-    brewing(e, "farmersrespite:yellow_tea", [
-        "minecraft:sugar", 
-        "minecraft:torchflower"],
-    "createdelight:torchflower_tea",
-    "trailandtales_delight:torchflower_tea")
-    brewing(e, "farmersrespite:yellow_tea", [
-        "minecraft:sugar", 
-        "trailandtales_delight:dried_cherry_petal"],
-    "createdelight:cherry_petal_tea",
-    "trailandtales_delight:cherry_petal_tea")
-    brewing(e, "farmersrespite:green_tea", [
-        "minecraft:sugar", 
-        "minecraft:pitcher_plant"],
-    "createdelight:pitcher_plant_tea",
-    "trailandtales_delight:pitcher_plant_tea")
+    brewingAndPouring(e, "createdelight:espresso_fluid", ["trailandtales_delight:baked_pitcher_pod", "trailandtales_delight:baked_torchflower_seeds"], "createdelight:ancient_coffee", "trailandtales_delight:ancient_coffee")
+    brewingAndPouring(e, "farmersrespite:yellow_tea", ["minecraft:sugar", "minecraft:torchflower"], "createdelight:torchflower_tea", "trailandtales_delight:torchflower_tea")
+    brewingAndPouring(e, "farmersrespite:yellow_tea", ["minecraft:sugar", "trailandtales_delight:dried_cherry_petal"], "createdelight:cherry_petal_tea", "trailandtales_delight:cherry_petal_tea")
+    brewingAndPouring(e, "farmersrespite:green_tea", ["minecraft:sugar", "minecraft:pitcher_plant"], "createdelight:pitcher_plant_tea", "trailandtales_delight:pitcher_plant_tea")
     create.mixing(Fluid.of("createdelight:ancient_coffee", 1000), [
         "trailandtales_delight:baked_pitcher_pod", 
         "trailandtales_delight:baked_torchflower_seeds",

@@ -298,41 +298,22 @@ function metal_production_line_5(event, metal) {
 
 }
 /**
- * 
- * @param {Internal.RecipesEventJS_} e 
- * @param {(OutputItem_ | Internal.OutputFluid_)[]} results 
- * @param {Special.EntityType} entity 
- * @param {number} damage 
- * @param {(OutputItem_ | Internal.OutputFluid_)[]} [ingredient] 
- * @param {number} [maxHeatRequirement] 
- * @param {number} [minHeatRequirement] 
+ * @param {Internal.RecipesEventJS_} e
+ * @param {OutputItem_ | Internal.OutputFluid_ | (OutputItem_ | Internal.OutputFluid_)[]} results
+ * @param {Special.EntityType} entity
+ * @param {number} damage
+ * @param {InputItem_ | Internal.InputFluid_ | (InputItem_ | Internal.InputFluid_)[]} [ingredient]
+ * @param {number} [maxHeatRequirement]
+ * @param {number} [minHeatRequirement]
  */
 function entity_melting(e, results, entity, damage, ingredient, maxHeatRequirement, minHeatRequirement) {
-    let input = RecipeUtil.convertInput(ingredient)
-    let output = RecipeUtil.convertInput(results)
-    let ingr = []
-    let res = []
-    input[0].forEach(item => {
-        ingr.push(Ingredient.of(item))
-    })
-    input[1].forEach(item => {
-        ingr.push(item.toJson())
-    })
-    output[0].forEach(item => {
-        res.push(Ingredient.of(item))
-    })
-    output[1].forEach(item => {
-        res.push(item.toJson())
-    })
-    return e.custom({
-        "type": "createmetallurgy:entity_melting",
-        "entity": {
-            "type": entity,
-            "damage": damage
-        },
-        "ingredients": ingr,
-        "maxHeatRequirement": maxHeatRequirement || 50,
-        "minHeatRequirement": minHeatRequirement || 9,
-        "results": res
-    })
+    let ingr = ingredient == null ? [] : (Array.isArray(ingredient) ? ingredient : [ingredient])
+    let res = Array.isArray(results) ? results : [results]
+    return e.recipes.createmetallurgy.entity_melting(
+        { type: entity, damage: damage },
+        ingr,
+        res,
+        maxHeatRequirement || 50,
+        minHeatRequirement || 9
+    )
 }
