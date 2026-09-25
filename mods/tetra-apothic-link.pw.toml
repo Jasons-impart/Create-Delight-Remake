@@ -3,11 +3,9 @@ filename = "tetra_apothic_link-0.1.0.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "c5361a2288b11a3108f109f9eb062d05e219323a"
-mode = "metadata:curseforge"
-
-[update]
-[update.curseforge]
-file-id = 8656223
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/tetra_apothic_link-0.1.0.jar"
+hash-format = "sha256"
+hash = "848cae6b672c56c8c18b4a4758eae22616120a9e7a980a6932c47cbefdc33d8e"
+[release.curseforge]
 project-id = 1653941
+file-id = 8656223
