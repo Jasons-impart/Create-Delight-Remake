@@ -1,0 +1,13 @@
+name = "Tetra Apothic Link"
+filename = "tetra_apothic_link-0.1.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "c5361a2288b11a3108f109f9eb062d05e219323a"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8656223
+project-id = 1653941
