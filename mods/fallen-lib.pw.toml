@@ -1,0 +1,13 @@
+name = "Fallen Lib"
+filename = "fallen_lib-1.4.6.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "fee810c926ca7dd5a642c5219be40ff324720cc8"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8590455
+project-id = 1404737

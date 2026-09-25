@@ -84,6 +84,11 @@
     "name": "Amendments",
     "version": "1.20-2.2.5"
   },
+  "apokinetics-1.20.1-1.0.6-forge.jar": {
+    "modId": "apokinetics",
+    "name": "Create: Apokinetics",
+    "version": "1.20.1-1.0.6-forge"
+  },
   "Apotheosis-1.20.1-7.4.8.jar": {
     "modId": "apotheosis",
     "name": "Apotheosis",
@@ -789,10 +794,25 @@
     "name": "Create: Extra Gauges",
     "version": "2.0.7"
   },
+  "fallen_gems_affixes-1.20.1-2.1.5.jar": {
+    "modId": "fallen_gems_affixes",
+    "name": "Fallen Gems & Affixes",
+    "version": "1.20.1-2.1.5"
+  },
+  "fallen_lib-1.4.6.jar": {
+    "modId": "fallen_lib",
+    "name": "Fallen Lib",
+    "version": "1.4.6"
+  },
   "fancymenu_forge_3.9.8_MC_1.20.1.jar": {
     "modId": "fancymenu_forge",
     "name": "FancyMenu",
     "version": "3.9.8_MC_1.20.1"
+  },
+  "farmers_spell-1.0.5-1.20.1-all.jar": {
+    "modId": "farmers_spell",
+    "name": "Farmer's Spell 'n Spell Book",
+    "version": "1.0.5-1.20.1-all"
   },
   "FarmersDelight-1.20.1-1.3.2.jar": {
     "modId": "farmersdelight",
@@ -1038,6 +1058,16 @@
     "modId": "iris_shader_folder",
     "name": "Iris/Oculus Shader Folder",
     "version": "1.3.3-forge"
+  },
+  "irons_lib-1.20.1-2.1.0.jar": {
+    "modId": "irons_lib",
+    "name": "Iron's Lib",
+    "version": "1.20.1-2.1.0"
+  },
+  "irons_spellbooks-1.20.1-3.16.3.jar": {
+    "modId": "irons_spellbooks",
+    "name": "Iron's Spells 'n Spellbooks",
+    "version": "1.20.1-3.16.3"
   },
   "item-filters-forge-2001.1.0-build.59.jar": {
     "modId": "item-filters-forge",
@@ -1739,6 +1769,11 @@
     "name": "Tetra",
     "version": "1.20.1-6.17.0"
   },
+  "tetra_apothic_link-0.1.1.jar": {
+    "modId": "tetra_apothic_link",
+    "name": "Tetra Apothic Link",
+    "version": "0.1.1"
+  },
   "tetra_insight-0.1.6.jar": {
     "modId": "tetra_insight",
     "name": "Tetra Insight",
@@ -1818,6 +1853,11 @@
     "modId": "travelerstitles",
     "name": "Traveler's Titles (Forge/NeoForge)",
     "version": "1.20-Forge-4.0.2"
+  },
+  "traveloptics-6.3.0-1.20.1.jar": {
+    "modId": "traveloptics",
+    "name": "T.O Magic 'n Extras - Iron's Spells Addon",
+    "version": "6.3.0-1.20.1"
   },
   "trueuuid-1.1.2-forge1.20.1.jar": {
     "modId": "trueuuid",
