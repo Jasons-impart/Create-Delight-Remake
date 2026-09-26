@@ -24,6 +24,9 @@ ItemEvents.modification(e => {
     modify("createdelight:ethylene_fluid_bucket", 25000, "minecraft:bucket")
     modify("createdelight:fuel_mixtures_bucket", 50000, "minecraft:bucket")
     modify("createdelight:lubricating_oil_bucket", 10000, "minecraft:bucket")
+    // 液体燃料桶必须声明 empty bucket 剩余物：BlazeBurnerBlockMixin 对「有流体
+    // capability 且无剩余物」的物品跳过 shrink，缺剩余物会留下 cap 已空的残桶。
+    modify("createdelight:cryo_fuel_bucket", 0, "minecraft:bucket")
     modify("createmetallurgy:coke_block", 18000)
     modify('createaddition:biomass_pellet', 0)
     modify('createaddition:biomass_pellet_block', 0)
