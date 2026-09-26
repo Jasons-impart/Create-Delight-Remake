@@ -9,6 +9,7 @@
 | 1 | 妖怪归家工作站配方与整合包工作站配方兼容整理 | 内容兼容 | 已有大量零散兼容改动，待系统性盘点与对齐 |
 | 2 | 动力砂轮无法正常运行（修复，或迁移到附魔工业机械砂轮） | Bug 修复 / 功能迁移 | 已知异常，根因未定位；迁移为备选方案 |
 | 3 | 杠杆锤锤烂铁砧 | Bug 修复 | 已知异常，根因未定位 |
+| 4 | Supplementaries 与 Butchercraft 肥皂合并（功能 + 内容） | 内容整合 | 两种肥皂并存，已有部分配方牵线，未做实质合并 |
 
 ---
 
@@ -131,6 +132,57 @@
 
 - “锤烂”是否期望行为（设计上铁砧应有损耗）？若是期望损耗，需改为可感知的耐久机制而非直接消失。
 - 是否需要为高频自动锤击提供不可破坏的专用铁砧（多方块或变体）？
+
+---
+
+## 4. Supplementaries 与 Butchercraft 肥皂合并（功能 + 内容）
+
+### 背景
+
+两个模组各有一种“肥皂”，名称相同、用途部分重叠但功能侧重点不同，整合包内并存造成内容重复：
+
+| | Supplementaries 肥皂 | Butchercraft 肥皂 |
+|---|---|---|
+| 物品 ID | `supplementaries:soap` | `butchercraft:soap` |
+| 原生配方 | 水桶 + 4×ash + 猪排 → 6 个 | 猪油 + 骨粉 + 花 → 1 个 |
+| 食用 | 可食用（`SOAP_FOOD`），成就“汰渍洗衣球挑战” | 可食用，食用时 `curePotionEffects` 清除 Butchercraft 可清洗效果 |
+| 世界交互 | 清洗脏玻璃/地图/黑板/活塞/尖刺/药箭等一组 washing 配方；洗掉史莱姆（`ISlimeable`） | 无 |
+| 衍生内容 | `soap_block`（9 合 1 压缩）、`soap_water`、泡泡吹管 | 无衍生方块；是 `SoapableMobEffect` 系（恶臭 `pungent_reek`、脏手、血溅等）的唯一 `getCurativeItems` 清洗物 |
+| 其他引用 | 模组自身 advancements、loot | `kubejs/data/createdelight/loot_tables/orders/dwarven_feast_hall.json` 掉落；成就“你臭了，洗个澡吧。” |
+
+整合包现有牵线（`kubejs/server_scripts/Butchercraft/bug_fix.js`）：
+
+- 移除 `supplementaries:soap` 原生配方，改为 `createdelight:soap`：水桶 + 4×`supplementaries:ash` + `butchercraft:lard` → 1 个 `supplementaries:soap`（把 Butchercraft 猪油接进 Supplementaries 肥皂）。
+- `butchercraft:soap` 自身配方（猪油 + 骨粉 + 花）仍在，两种肥皂继续并存。
+
+### 目标
+
+- 功能合并：一种肥皂同时具备两侧能力——Supplementaries 的清洗/洗史莱姆/洗涤配方/肥皂块等衍生物，以及 Butchercraft 的“食用后清除恶臭等可清洗效果”。
+- 内容合并：玩家只看到一种“肥皂”；合成路径收敛为整合包材料链（猪油/灰烬等）；另一侧物品从 JEI/创造标签/掉落中消失或变为等价替换。
+- 衍生内容保留：`soap_block`、`soap_water`、泡泡等不因合并丢失。
+- 成就与任务文案指向合并后的唯一肥皂，且只描述当前规则。
+
+### 候选方向
+
+| 方案 | 内容 | 取舍 |
+|---|---|---|
+| A. 以 `supplementaries:soap` 为唯一肥皂（推荐） | OEI 把 `butchercraft:soap` 替换为 `supplementaries:soap`；Mixin/事件把 Butchercraft 可清洗效果的 `getCurativeItems` 扩到 Supplementaries 肥皂，并让食用补上 `curePotionEffects`；配方、掉落、成就改指向 | Supplementaries 侧衍生物与洗涤配方无需迁移；需要 CDC/兼容层补食用清洗逻辑 |
+| B. 以 `butchercraft:soap` 为唯一肥皂 | 反向合并洗涤配方与肥皂块 | `soap_block`/washing 配方全部改 ID，成本更高，不推荐 |
+| C. 新造整合包自定义肥皂 | 两模组物品都替换为 `createdelight:soap` | 完全可控但要重做模型/配方/全部引用，仅在 A 被上游限制卡住时考虑 |
+
+### 实施步骤（待展开）
+
+1. 确认合并载体（默认方案 A）：Butchercraft `SoapableMobEffect.getCurativeItems()` 硬编码 `ButchercraftItems.SOAP`，需确认用 Mixin 扩列表是否稳定，以及 Supplementaries 肥皂食用回调能否挂上清除效果。
+2. 统一配方：保留/调整 `createdelight:soap` 为唯一合成入口；移除或改写 `butchercraft:soap` 原生配方；核对产出数量（原生一侧 6 个、一侧 1 个，需定统一产量）。
+3. 内容收敛：OEI replacement（`kubejs/data/oei/replacements/`）合并物品显示与 JEI；隐藏多余的创造标签条目；掉落表（`dwarven_feast_hall` 等）改指唯一肥皂。
+4. 体验收束：两侧成就（吃肥皂、制肥皂/除臭）的触发条件改指合并物品；tooltip/语言文件只保留一份“肥皂”文案。
+5. 回归：食用除恶臭、清洗脏玻璃/地图、洗史莱姆、肥皂块合成与拆解、泡泡吹管、订单掉落五条路径。
+
+### 开放问题
+
+- 合并后产量与配方成本以哪侧为基线（现配方用猪油 + 灰烬，产量 1；Butchercraft 原生产量 1；Supplementaries 原生产量 6）。
+- 食用动画/音效用哪一侧；是否保留“吃肥皂”作为彩蛋成就。
+- Butchercraft 面具防恶臭与肥皂除恶臭的关系是否在合并后仍成立。
 
 ---
 
