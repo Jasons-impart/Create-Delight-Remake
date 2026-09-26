@@ -18,7 +18,7 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 
 <p align="center">
   <a href="https://www.curseforge.com/minecraft/modpacks/create-delight-remake">
-    <img src="kubejs/assets/createdelight/textures/images_for_readme/title.png" alt="Logo" width="1013" height="174">
+    <img src="kubejs/assets/createdelight/textures/images_for_readme/title.png" alt="Logo" width="1013" height="213">
   </a>
 </p>
 
