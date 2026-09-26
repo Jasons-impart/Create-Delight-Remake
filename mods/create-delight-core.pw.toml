@@ -5,9 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/Create-Delight-Core-1.20.1-dev.jar"
 hash-format = "sha256"
-hash = "9ce03a604797c1219ee637948587abc403460749dc64ab8b1ca82ee21d677ed8"
-
-[release.curseforge]
-project-id = 1062344
-file-id = 8895412
-filename = "Create-Delight-Core-1.20.1-2.2.16j.jar"
+hash = "ee25b941a01e49f50da467715fda7998f959808655c2f5709e20908d9c4c8b81"
