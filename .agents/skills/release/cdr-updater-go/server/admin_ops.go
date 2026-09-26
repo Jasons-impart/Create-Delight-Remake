@@ -229,6 +229,22 @@ func saveConnection(r *http.Request) (any, error) {
 		}
 		url = fmt.Sprintf("http://%s:%d", host, body.Port)
 	}
+	token := strings.TrimSpace(body.AccessToken)
+	if token == "" {
+		token = strings.TrimSpace(cfgField(liveDataPath(), "access_token"))
+	}
+	adminToken := strings.TrimSpace(cfgField(liveDataPath(), "admin_token"))
+	if token != "" && adminToken != "" && token == adminToken {
+		return nil, fmt.Errorf("访问令牌不能和管理网页令牌相同")
+	}
+	if listen == "0.0.0.0" || listen == "::" {
+		if adminToken == "" {
+			return nil, fmt.Errorf("对外开放前请先设置管理网页令牌")
+		}
+		if token == "" {
+			return nil, fmt.Errorf("对外开放前请先设置访问令牌")
+		}
+	}
 	if err := setToml("server", "listen", listen); err != nil {
 		return nil, err
 	}
@@ -238,7 +254,7 @@ func saveConnection(r *http.Request) (any, error) {
 	if err := setToml("server", "public_url", url); err != nil {
 		return nil, err
 	}
-	if err := setToml("server", "access_token", strings.TrimSpace(body.AccessToken)); err != nil {
+	if err := setToml("server", "access_token", token); err != nil {
 		return nil, err
 	}
 	liveMu.Lock()
@@ -246,7 +262,7 @@ func saveConnection(r *http.Request) (any, error) {
 	liveCfg.port = fmt.Sprint(body.Port)
 	liveMu.Unlock()
 	note("客户端/服务端连接地址: " + url)
-	return map[string]any{"ok": true, "listen": listen, "port": body.Port, "public_url": url, "access_token": strings.TrimSpace(body.AccessToken)}, nil
+	return map[string]any{"ok": true, "listen": listen, "port": body.Port, "public_url": url, "sync_token_enabled": token != ""}, nil
 }
 
 func detectWan() (any, error) {
@@ -262,6 +278,17 @@ func detectWan() (any, error) {
 }
 
 func openWan() (any, error) {
+	adminToken := strings.TrimSpace(cfgField(liveDataPath(), "admin_token"))
+	accessToken := strings.TrimSpace(cfgField(liveDataPath(), "access_token"))
+	if adminToken == "" {
+		return nil, fmt.Errorf("对外开放前请先设置管理网页令牌")
+	}
+	if accessToken == "" {
+		return nil, fmt.Errorf("对外开放前请先设置访问令牌")
+	}
+	if accessToken == adminToken {
+		return nil, fmt.Errorf("访问令牌不能和管理网页令牌相同")
+	}
 	report, err := detectWan()
 	if err != nil {
 		return nil, err
@@ -311,14 +338,9 @@ func addPrivate(r *http.Request) (any, error) {
 	if rel == "" {
 		rel = header.Filename
 	}
-	rel = filepath.ToSlash(rel)
-	if rel == "" || strings.Contains(rel, "..") {
-		return nil, fmt.Errorf("无效的游戏内路径")
-	}
-	root := filepath.Join(privateRoot(liveDataPath()), "files")
-	target := filepath.Join(root, filepath.FromSlash(rel))
-	if !strings.HasPrefix(filepath.Clean(target), filepath.Clean(root)) {
-		return nil, fmt.Errorf("私货路径不能跳出 files 目录")
+	target, err := privateTarget(rel)
+	if err != nil {
+		return nil, err
 	}
 	if err := os.MkdirAll(filepath.Dir(target), 0o755); err != nil {
 		return nil, err
@@ -351,11 +373,11 @@ func removePrivate(r *http.Request) (any, error) {
 	if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
 		return nil, err
 	}
-	rel := filepath.ToSlash(strings.TrimSpace(body.Path))
-	if rel == "" || strings.Contains(rel, "..") {
+	target, err := privateTarget(body.Path)
+	if err != nil {
 		return nil, fmt.Errorf("请选择要删除的私货")
 	}
-	target := filepath.Join(privateRoot(liveDataPath()), "files", filepath.FromSlash(rel))
+	rel := filepath.ToSlash(strings.TrimSpace(body.Path))
 	if err := os.Remove(target); err != nil {
 		return nil, fmt.Errorf("找不到私货: %s", rel)
 	}
@@ -372,8 +394,11 @@ func setPrivateSide(r *http.Request) (any, error) {
 	if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
 		return nil, err
 	}
+	target, err := privateTarget(body.Path)
+	if err != nil {
+		return nil, err
+	}
 	rel := filepath.ToSlash(strings.TrimSpace(body.Path))
-	target := filepath.Join(privateRoot(liveDataPath()), "files", filepath.FromSlash(rel))
 	if _, err := os.Stat(target); err != nil {
 		return nil, fmt.Errorf("找不到私货: %s", rel)
 	}
@@ -397,15 +422,29 @@ func createPrivateFolder(r *http.Request) (any, error) {
 		return nil, err
 	}
 	rel := filepath.ToSlash(strings.Trim(strings.TrimSpace(body.Path), "/"))
-	if rel == "" || strings.Contains(rel, "..") {
+	target, err := privateTarget(rel)
+	if err != nil {
 		return nil, fmt.Errorf("目录不能跳出 files")
 	}
-	target := filepath.Join(privateRoot(liveDataPath()), "files", filepath.FromSlash(rel))
 	if err := os.MkdirAll(target, 0o755); err != nil {
 		return nil, err
 	}
 	note("已创建目录 " + rel)
 	return map[string]any{"ok": true, "path": rel + "/"}, nil
+}
+
+func privateTarget(rel string) (string, error) {
+	rel = filepath.ToSlash(strings.TrimSpace(rel))
+	if rel == "" || strings.Contains(rel, "..") || strings.HasPrefix(rel, "/") || filepath.IsAbs(filepath.FromSlash(rel)) {
+		return "", fmt.Errorf("无效的游戏内路径")
+	}
+	root := filepath.Join(privateRoot(liveDataPath()), "files")
+	cleanRoot := filepath.Clean(root)
+	target := filepath.Clean(filepath.Join(root, filepath.FromSlash(rel)))
+	if target != cleanRoot && !strings.HasPrefix(target, cleanRoot+string(os.PathSeparator)) {
+		return "", fmt.Errorf("私货路径不能跳出 files 目录")
+	}
+	return target, nil
 }
 
 func setToml(table, key, value string) error {

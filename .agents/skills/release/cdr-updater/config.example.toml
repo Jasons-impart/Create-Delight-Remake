@@ -10,6 +10,8 @@ data_dir = "./data"
 public_url = "http://127.0.0.1:8765"
 # 可选。填写后客户端/服务端同步必须带同一令牌。重新导出 PCL2/服务端后生效。
 # access_token = ""
+# 可选。单独给服务端同步用的令牌；配置后客户端令牌不能读 server 清单，服务端令牌不能读 client 清单。
+# server_access_token = ""
 # 在本机窗口「网页管理」里设置。不能和 access_token 相同，也不会写入导出的整合包。
 # 未设置时管理网页只能本机打开。登录地址：http://地址:端口/admin
 # admin_token = ""

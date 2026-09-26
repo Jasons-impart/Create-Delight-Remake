@@ -50,6 +50,7 @@ func TestPackBundlesRequestedFiles(t *testing.T) {
 	var meta struct {
 		SHA256 string `json:"sha256"`
 		Size   int64  `json:"size"`
+		Lease  string `json:"lease"`
 	}
 	var parsed bool
 	for _, line := range bytes.Split(rec.Body.Bytes(), []byte("\n")) {
@@ -63,6 +64,9 @@ func TestPackBundlesRequestedFiles(t *testing.T) {
 	}
 	if !parsed {
 		t.Fatalf("body %s", rec.Body.String())
+	}
+	if meta.Lease == "" {
+		t.Fatal("missing lease")
 	}
 	object = filepath.Join(dir, "objects", meta.SHA256[:2], meta.SHA256)
 	raw, err := os.ReadFile(object)
@@ -88,7 +92,16 @@ func TestPackBundlesRequestedFiles(t *testing.T) {
 	if string(got) != string(payload) {
 		t.Fatalf("payload %q", got)
 	}
-	discard := httptest.NewRequest(http.MethodPost, "/api/pack", bytes.NewReader([]byte(`{"discard":"`+meta.SHA256+`"}`)))
+	bad := httptest.NewRequest(http.MethodPost, "/api/pack", bytes.NewReader([]byte(`{"discard":"`+meta.SHA256+`"}`)))
+	badRec := httptest.NewRecorder()
+	root.pack(badRec, bad)
+	if badRec.Code != http.StatusBadRequest {
+		t.Fatalf("discard without lease %d %s", badRec.Code, badRec.Body.String())
+	}
+	if _, err = os.Stat(object); err != nil {
+		t.Fatalf("pack should remain without lease: %v", err)
+	}
+	discard := httptest.NewRequest(http.MethodPost, "/api/pack", bytes.NewReader([]byte(`{"discard":"`+meta.SHA256+`","lease":"`+meta.Lease+`"}`)))
 	discarded := httptest.NewRecorder()
 	root.pack(discarded, discard)
 	if discarded.Code != http.StatusOK {

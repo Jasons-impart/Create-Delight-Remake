@@ -50,7 +50,15 @@ final class Privates {
             Files.deleteIfExists(file.source.resolveSibling(file.source.getFileName() + ".pw.toml"));
         }
         if (!found) {
-            Path fallback = config.privateDir.resolve("files").resolve(wanted);
+            Path filesRoot = config.privateDir.resolve("files").toAbsolutePath().normalize();
+            String wantedPath = Fs.posix(wanted);
+            if (wantedPath.isBlank() || wantedPath.contains("..") || Path.of(wantedPath).isAbsolute()) {
+                throw new IllegalArgumentException("找不到私货: " + wanted);
+            }
+            Path fallback = filesRoot.resolve(wantedPath).normalize();
+            if (!fallback.startsWith(filesRoot)) {
+                throw new IllegalArgumentException("找不到私货: " + wanted);
+            }
             if (Files.isRegularFile(fallback)) {
                 Files.delete(fallback);
                 Files.deleteIfExists(fallback.resolveSibling(fallback.getFileName() + ".side"));

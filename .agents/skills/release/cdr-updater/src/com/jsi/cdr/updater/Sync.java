@@ -169,6 +169,11 @@ final class Sync {
             Path partial = destination.resolveSibling(destination.getFileName() + ".cdrtmp");
             try {
                 Net.toFile(http, builder, partial, expected, name, log, true, parallel);
+                String got = Fs.sha256(partial);
+                if (!digest.equalsIgnoreCase(got)) {
+                    Files.deleteIfExists(partial);
+                    throw new IllegalStateException("哈希不一致 " + name);
+                }
                 Files.createDirectories(destination.getParent());
                 replaceInto(partial, destination);
             } catch (Exception error) {
@@ -234,19 +239,22 @@ final class Sync {
             return readPack(side, paths, log);
         }
 
-        void releasePack(String sha, Consumer<String> log) {
-            discardPack(sha, log);
+        void releasePack(String sha, String lease, Consumer<String> log) {
+            discardPack(sha, lease, log);
         }
 
-        List<Map<String, String>> savePack(Path instanceDir, String packSha, long packSize, List<Map<String, Object>> jobs,
+        List<Map<String, String>> savePack(Path instanceDir, String packSha, long packSize, String lease, List<Map<String, Object>> jobs,
                                             Consumer<String> log, boolean parallel, String label) throws Exception {
-            return finishPack(instanceDir, packSha, packSize, jobs, log, parallel, label);
+            return finishPack(instanceDir, packSha, packSize, lease, jobs, log, parallel, label);
         }
 
-        private void discardPack(String sha, Consumer<String> log) {
+        private void discardPack(String sha, String lease, Consumer<String> log) {
             try {
                 Map<String, Object> body = Json.map();
                 body.put("discard", sha);
+                if (lease != null && !lease.isBlank()) {
+                    body.put("lease", lease);
+                }
                 json("POST", "api/pack", body);
             } catch (Exception error) {
                 if (log != null) {
@@ -261,10 +269,11 @@ final class Sync {
                 log.accept(parallel ? "正在服务器上打包，完成后多线程下载这一个压缩包" : "正在服务器上打包，完成后单线程下载这一个压缩包");
             }
             Map<String, Object> meta = requestPack(side, jobs, log);
-            return finishPack(instanceDir, Json.str(meta, "sha256"), Json.lng(meta, "size"), jobs, log, parallel, null);
+            return finishPack(instanceDir, Json.str(meta, "sha256"), Json.lng(meta, "size"), Json.str(meta, "lease"),
+                    jobs, log, parallel, null);
         }
 
-        private List<Map<String, String>> finishPack(Path instanceDir, String packSha, long packSize, List<Map<String, Object>> jobs,
+        private List<Map<String, String>> finishPack(Path instanceDir, String packSha, long packSize, String lease, List<Map<String, Object>> jobs,
                                                       Consumer<String> log, boolean parallel, String label) throws Exception {
             Map<String, Map<String, Object>> byPath = new LinkedHashMap<>();
             for (Map<String, Object> job : jobs) {
@@ -324,7 +333,7 @@ final class Sync {
                     Files.deleteIfExists(zipPath);
                 }
                 if (packSha != null && !packSha.isBlank()) {
-                    discardPack(packSha, log);
+                    discardPack(packSha, lease, log);
                 }
             }
             if (!byPath.isEmpty()) {
@@ -416,9 +425,6 @@ final class Sync {
                 if (localSha != null && !localSha.equals(remoteSha)) {
                     keptLocal.add(rel);
                     progress.accept(("server".equals(side) ? "保留管理员改动 " : "保留玩家改动 ") + rel);
-                }
-                if (PackPaths.taggedTemplate(rel) && Boolean.TRUE.equals(managedTag(instanceDir, rel))) {
-                    markServerPropertiesKeep(instanceDir);
                 }
                 continue;
             }
@@ -675,7 +681,7 @@ final class Sync {
                 try {
                     Map<String, Object> meta = built.get();
                     written.addAll(client.savePack(instanceDir, Json.str(meta, "sha256"), Json.lng(meta, "size"),
-                            small, progress, true, "小文件压缩包"));
+                            Json.str(meta, "lease"), small, progress, true, "小文件压缩包"));
                 } catch (Exception error) {
                     Throwable cause = error instanceof java.util.concurrent.ExecutionException && error.getCause() != null
                             ? error.getCause() : error;
@@ -721,6 +727,7 @@ final class Sync {
                 Map<String, Object> item = new LinkedHashMap<>();
                 item.put("sha256", Json.str(meta, "sha256"));
                 item.put("size", Json.lng(meta, "size"));
+                item.put("lease", Json.str(meta, "lease"));
                 item.put("jobs", group);
                 item.put("label", "压缩包 " + (i + 1) + "/" + groups.size());
                 item.put("index", i);
@@ -728,7 +735,7 @@ final class Sync {
             }
         } catch (Exception error) {
             for (Map<String, Object> item : ready) {
-                client.releasePack(Json.str(item, "sha256"), progress);
+                client.releasePack(Json.str(item, "sha256"), Json.str(item, "lease"), progress);
             }
             Files.deleteIfExists(launchJar);
             throw error;
@@ -806,6 +813,7 @@ final class Sync {
         payload.put("instance", instanceDir.toAbsolutePath().toString());
         payload.put("sha256", Json.str(item, "sha256"));
         payload.put("size", Json.lng(item, "size"));
+        payload.put("lease", Json.str(item, "lease"));
         payload.put("label", label);
         payload.put("index", Json.lng(item, "index"));
         payload.put("parallel", false);
@@ -823,7 +831,7 @@ final class Sync {
         }
         int code = process.waitFor();
         if (code != 0) {
-            client.releasePack(Json.str(item, "sha256"), progress);
+            client.releasePack(Json.str(item, "sha256"), Json.str(item, "lease"), progress);
             throw new IllegalStateException(label + " 下载失败，退出码 " + code);
         }
         progress.accept("进程完成 " + label);

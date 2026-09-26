@@ -240,6 +240,9 @@ final class ServerRuntime {
         int bindPort = Pack.Config.normalizePort(port);
         String url = Pack.Config.normalizePublicUrl(publicUrl, bind, bindPort);
         String token = Pack.Config.normalizeAccessToken(accessToken);
+        if (token.isBlank()) {
+            token = config.accessToken;
+        }
         String webToken = Pack.Config.normalizeAccessToken(adminToken);
         Pack.Config.requireDistinctTokens(token, webToken);
         synchronized (lock) {

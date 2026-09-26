@@ -39,7 +39,7 @@ final class AdminWeb {
                     sendError(exchange, 405, "方法不允许");
                     return;
                 }
-                servePage(exchange);
+                servePage(runtime, exchange);
                 return;
             }
             if (!path.startsWith("/admin/api/")) {
@@ -116,13 +116,16 @@ final class AdminWeb {
                         port = boundPort(runtime);
                     }
                     String publicUrl = Json.str(body, "public_url");
-                    String token = body.containsKey("access_token") ? Json.str(body, "access_token") : runtime.config().accessToken;
+                    String token = body.containsKey("access_token") ? Json.str(body, "access_token") : "";
+                    if (token.isBlank()) {
+                        token = runtime.config().accessToken;
+                    }
                     runtime.setConnection(listen, port, publicUrl, token, runtime.config().adminToken, runtime.logger());
                     Map<String, Object> result = Json.map("ok", true);
                     result.put("listen", runtime.config().listen);
                     result.put("port", runtime.config().port);
                     result.put("public_url", runtime.config().updateServerUrl);
-                    result.put("access_token", runtime.config().accessToken);
+                    result.put("sync_token_enabled", !runtime.config().accessToken.isBlank());
                     result.put("token_enabled", !runtime.config().adminToken.isBlank());
                     sendJson(exchange, 200, result);
                 }
@@ -198,13 +201,63 @@ final class AdminWeb {
         }
     }
 
-    private static void servePage(HttpExchange exchange) throws Exception {
-        byte[] page = page();
+    private static final String LOGIN_GATE = """
+            <!DOCTYPE html>
+            <html lang="zh-CN"><head>
+            <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="referrer" content="no-referrer">
+            <title>CDR 管理登录</title>
+            <style>
+            body{margin:0;min-height:100vh;display:grid;place-items:center;font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#0a0a0a;color:#f4f4f4}
+            .card{width:min(420px,92vw);padding:28px;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:#161616}
+            h1{margin:0 0 8px;font-size:1.25rem}p{margin:0 0 18px;color:#9a9a9a;font-size:.92rem}
+            label{display:block;margin:0 0 6px;font-size:.85rem;color:#9a9a9a}
+            input{width:100%;box-sizing:border-box;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:#0a0a0a;color:#fff}
+            button{margin-top:14px;width:100%;padding:10px 12px;border:0;border-radius:10px;background:#fff;color:#111;font-weight:600;cursor:pointer}
+            .err{margin-top:10px;color:#ffb4b4;font-size:.85rem;min-height:1.2em}
+            </style></head><body>
+            <form class="card" id="f">
+            <h1>CDR 更新服务器</h1>
+            <p>管理面板需先登录。未认证不会下发完整管理页。</p>
+            <label for="token">管理令牌</label>
+            <input id="token" type="password" autocomplete="current-password" autofocus>
+            <button type="submit">进入面板</button>
+            <div class="err" id="err"></div>
+            </form>
+            <script>
+            const apiBase = location.pathname.replace(/\\/?$/, '') + '/api';
+            document.getElementById('f').onsubmit = async (ev) => {
+              ev.preventDefault();
+              const err = document.getElementById('err');
+              err.textContent = '';
+              try {
+                const res = await fetch(apiBase + '/login', {
+                  method: 'POST',
+                  headers: {'Content-Type': 'application/json'},
+                  body: JSON.stringify({token: document.getElementById('token').value.trim()}),
+                  credentials: 'same-origin'
+                });
+                const text = await res.text();
+                if (!res.ok) throw new Error(text || ('HTTP ' + res.status));
+                location.reload();
+              } catch (e) {
+                err.textContent = e.message || String(e);
+              }
+            };
+            </script>
+            </body></html>
+            """;
+
+    private static void servePage(ServerRuntime runtime, HttpExchange exchange) throws Exception {
+        byte[] page = authed(runtime.config(), exchange)
+                ? page()
+                : LOGIN_GATE.getBytes(StandardCharsets.UTF_8);
         exchange.getResponseHeaders().set("Content-Type", "text/html; charset=utf-8");
         exchange.getResponseHeaders().set("Cache-Control", "no-store");
         exchange.getResponseHeaders().set("X-Content-Type-Options", "nosniff");
+        exchange.getResponseHeaders().set("X-Frame-Options", "DENY");
         exchange.getResponseHeaders().set("Content-Security-Policy",
-                "default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'self'");
+                "default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'");
         if ("HEAD".equalsIgnoreCase(exchange.getRequestMethod())) {
             exchange.sendResponseHeaders(200, -1);
             return;
@@ -305,9 +358,11 @@ final class AdminWeb {
         result.put("listen", config.listen);
         result.put("port", port);
         result.put("public_url", config.updateServerUrl);
-        result.put("access_token", config.accessToken);
+        result.put("access_token", "");
+        result.put("server_access_token", "");
         result.put("token_enabled", !config.adminToken.isBlank());
         result.put("sync_token_enabled", !config.accessToken.isBlank());
+        result.put("server_sync_token_enabled", !config.serverAccessToken.isBlank());
         result.put("busy", runtime.busy());
         result.put("progress", Progress.get().toMap());
         String adminHost = "0.0.0.0".equals(config.listen) || "::".equals(config.listen) ? "127.0.0.1" : config.listen;
