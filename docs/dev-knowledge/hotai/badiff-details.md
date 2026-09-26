@@ -30,7 +30,7 @@
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 30 个 `.badiff`；静态 JAR 命中 26 个，静态未命中但已由当前启动日志确认动态创建 3 个，尚未由当前启动日志确认 1 个。
+当前扫描到 31 个 `.badiff`；静态 JAR 命中 27 个，静态未命中但已由当前启动日志确认动态创建 3 个，尚未由当前启动日志确认 1 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |
 |---|---|---|---|
@@ -39,11 +39,11 @@
 | IAF Dragon Fix | `hotai/com/iafdragonfix/structure/DragonDenPiece.badiff` | `com/iafdragonfix/structure/DragonDenPiece` | 静态命中 `iafdragonfix-2.0.0.jar` |
 | Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow` | 静态命中 `more_mod_tetra-2.4.15-all.jar` |
 | Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer` | 静态命中 `more_mod_tetra-2.4.15-all.jar` |
-| TACZ-addon | `hotai/com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner.badiff` | `com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner` | 静态命中 `taczaddon-1.20.1-1.1.8-hotfix2-for-new-soph.jar` |
+| TACZ-addon | `hotai/com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner.badiff` | `com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner` | 静态命中 `taczaddon.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/ConnectorType.badiff` | `com/mrh0/createaddition/blocks/connector/ConnectorType` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock` | 运行时已确认动态创建（静态 JAR 无此 class） |
-| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity` | 运行时已确认动态创建（静态 JAR 无此 class） |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity` | 运行时已确认动态创建（静态 JAR 无此 class） |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/IWireNode.badiff` | `com/mrh0/createaddition/energy/IWireNode` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/network/EnergyNetwork.badiff` | `com/mrh0/createaddition/energy/network/EnergyNetwork` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/WireConnectResult.badiff` | `com/mrh0/createaddition/energy/WireConnectResult` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
@@ -54,6 +54,7 @@
 | Create Addition | `hotai/com/mrh0/createaddition/index/CAPonders.badiff` | `com/mrh0/createaddition/index/CAPonders` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Vintage Improvements | `hotai/com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene.badiff` | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene` | 静态命中 `vintageimprovements-1.20.1-0.3.7.8.jar` |
 | Vintage Improvements | `hotai/com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderTag.badiff` | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderTag` | 静态命中 `vintageimprovements-1.20.1-0.3.7.8.jar` |
+| Bakeries | `hotai/com/renyigesai/bakeries/item/BreadKnifeItem.badiff` | `com/renyigesai/bakeries/item/BreadKnifeItem` | 静态命中 `bakeries-1.20.1-forge-1.2.5.jar` |
 | Create | `hotai/com/simibubi/create/compat/jei/category/ItemDrainCategory.badiff` | `com/simibubi/create/compat/jei/category/ItemDrainCategory` | 静态命中 `create-1.20.1-6.0.8.jar` |
 | Create | `hotai/com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour.badiff` | `com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour` | 静态命中 `create-1.20.1-6.0.8.jar` |
 | Create | `hotai/com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour.badiff` | `com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour` | 静态命中 `create-1.20.1-6.0.8.jar` |
@@ -546,6 +547,18 @@ MMT 原 class 针对 Tetra 6.9 的局部变量名 `multiplier`，返回 `1000d`�
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
 | `de/cadentem/quality_food/mixin/BlockMixin.badiff` | 已还原 | `quality_food$applyQuality` 移除 `dropData == null` 时对掉落物调用 `QualityUtils.applyQuality(stack, null)` 的 fallback；新增 `Utils.isValidBlock(dropData.state())` 判断，只有存在 `DropData` 且来源方块有效时才按方块状态、品质、玩家和耕地信息应用品质。 | 避免无方块上下文的掉落物被 Quality Food 随机套品质；只让白名单/有效方块掉落继承品质。 |
+
+## Bakeries 补丁
+
+| 文件 | 状态 | 具体改动 | 影响 |
+|---|---|---|---|
+| `com/renyigesai/bakeries/item/BreadKnifeItem.badiff` | 已还原 | 对应 `bakeries-1.20.1-forge-1.2.5.jar` 的 `BreadKnifeItem`。`lambda$processStoredItemUsingTool$3` 中对 `CuttingBoardRecipe.rollResults(RandomSource, int)` 的 `invokevirtual` 改为 `invokestatic BreadKnifeItem.rollResults(CuttingBoardRecipe, RandomSource, int)`；新增 private static `rollResults`，按 master 提交 `7c45ac4`（修复面包刀反射获取不到方法）语义改走 `getRollableResults()` + `ChanceResult.rollOutput(rand, fortune)`，跳过 `ItemStack.m_41619_()`（`isEmpty`）的空产物。 | 回避 Farmer's Delight 1.3.x 已移除的两参数 `rollResults`，修复使用面包刀处理掉落物时服务端 tick 崩溃（`NoSuchMethodError`）。产物判定与旧版 `rollResults` 一致，仅换成稳定 API。 |
+
+- 目标 JAR：`mods/bakeries-1.20.1-forge-1.2.5.jar`（Packwiz `file-id = 7395677`）。
+- 基线按 HotaiTransformer 归一化：`ClassReader → ClassNode → ClassWriter(0)`；`.badiff` 由 Hotai 1.0 的 `MemoryDiffs.diff` + `DefaultSerialization` 生成，反序列化重放与目标 class 逐字节一致。
+- ASM `BasicVerifier` 对补丁后 class 全部 21 个方法通过。
+- 历史依据：崩溃报告 `crash-2026-09-26_12.22.06-server.txt`，调用链 `BreadKnifeItem.processStoredItemUsingTool` → `CuttingBoardRecipe.rollResults(RandomSource, int)`；FD 1.3.2 仅有三参数 `rollResults(RandomSource, int, RecipeWrapper)`。上游 master 已在 `7c45ac4` 去掉版本探测/反射，直接本地滚动。
+- 适用性：与 `bakeries-1.20.1-forge-1.2.5` 强绑定。升级 Bakeries 或 Farmer's Delight 后必须重新扫描目标 class；若上游发布已含 `7c45ac4` 的 1.20.1 构建，优先升级并移除本补丁。
 
 ## Create New Age 补丁
 

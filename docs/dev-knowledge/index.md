@@ -51,6 +51,6 @@
 | `docs/attributeslib-traveloptics-echoing-strikes-analysis.md` | 技术研究参考 | AttributesLib 多重暴击、Travel Optics 暗影瘴气和 Iron's Spells 回响打击的跨模组伤害放大链、上游变化与修复取舍。 |
 | `docs/plan/player-world-tier-progression-plan.md` | 内容设计计划 | 玩家独立世界等级、永久解锁上限、当前等级选择和晋阶试炼条件规划。 |
 | `docs/plan/mmt-curios-stage-progression-plan.md` | 内容设计计划 | MMT 模块化饰品的阶段开放、流派调律、重复制作和数值边界设计。 |
-| `docs/plan/workstation-compat-and-machine-fixes-plan.md` | 内容设计计划 | 妖怪归家工作站配方兼容整理、动力砂轮修复/迁移附魔工业机械砂轮、杠杆锤误毁铁砧修复。 |
+| `docs/plan/workstation-compat-and-machine-fixes-plan.md` | 内容设计计划 | 妖怪归家工作站配方兼容整理、动力砂轮修复/迁移附魔工业机械砂轮、杠杆锤误毁铁砧修复、Supplementaries 与 Butchercraft 肥皂合并。 |
 | `docs/tetra-design-reference-2026-06-22.md` | 设计参考 | Tetra/MMT 数值、材料和模块参考。 |
 | `docs/announcement.md` | 发布素材 | 稳定版本公告片段，不作为开发知识入口。 |
