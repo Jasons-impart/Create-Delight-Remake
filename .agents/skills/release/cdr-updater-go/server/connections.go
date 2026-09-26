@@ -14,6 +14,13 @@ import (
 	"unicode/utf16"
 )
 
+const (
+	maxConnHostname = 128
+	maxConnID       = 128
+	maxConnPath     = 512
+	maxConnRecords  = 500
+)
+
 var connectionsMu sync.Mutex
 
 type serverRecord struct {
@@ -43,14 +50,15 @@ func noteServer(data string, r *http.Request, side string) {
 		doc.Servers = []serverRecord{}
 	}
 	remote := remoteHost(r.RemoteAddr)
-	id := strings.TrimSpace(r.Header.Get("X-CDR-Instance-Id"))
-	hostname := strings.TrimSpace(r.Header.Get("X-CDR-Hostname"))
-	instancePath := decodeInstancePath(r.Header.Get("X-CDR-Instance-Path"))
+	id := truncateRunes(strings.TrimSpace(r.Header.Get("X-CDR-Instance-Id")), maxConnID)
+	hostname := truncateRunes(strings.TrimSpace(r.Header.Get("X-CDR-Hostname")), maxConnHostname)
+	instancePath := truncateRunes(decodeInstancePath(r.Header.Get("X-CDR-Instance-Path")), maxConnPath)
 	if id == "" {
 		id = "ip:" + remote
 		if instancePath != "" {
 			id += ":" + javaHash(instancePath)
 		}
+		id = truncateRunes(id, maxConnID)
 	}
 	now := time.Now().UTC().Format(time.RFC3339Nano)
 	found := false
@@ -77,6 +85,15 @@ func noteServer(data string, r *http.Request, side string) {
 		break
 	}
 	if !found {
+		if len(doc.Servers) >= maxConnRecords {
+			oldest := 0
+			for i := 1; i < len(doc.Servers); i++ {
+				if doc.Servers[i].LastSeen < doc.Servers[oldest].LastSeen {
+					oldest = i
+				}
+			}
+			doc.Servers = append(doc.Servers[:oldest], doc.Servers[oldest+1:]...)
+		}
 		doc.Servers = append(doc.Servers, serverRecord{
 			ID: id, Hostname: hostname, InstancePath: instancePath, Remote: remote,
 			FirstSeen: now, LastSeen: now, SyncCount: 1,
@@ -90,6 +107,17 @@ func noteServer(data string, r *http.Request, side string) {
 		return
 	}
 	_ = os.WriteFile(path, buf, 0o644)
+}
+
+func truncateRunes(text string, max int) string {
+	if max <= 0 {
+		return ""
+	}
+	runes := []rune(text)
+	if len(runes) <= max {
+		return text
+	}
+	return string(runes[:max])
 }
 
 func remoteHost(addr string) string {

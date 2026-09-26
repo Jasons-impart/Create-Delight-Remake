@@ -11,6 +11,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Executors;
@@ -24,22 +25,46 @@ final class ApiServer {
         Pack.Config config = runtime.config();
         HttpServer server = HttpServer.create(new InetSocketAddress(config.listen, config.port), 0);
         server.createContext("/api/status", exchange -> {
-            if (!allow(exchange, runtime.config(), "GET")) {
+            if (!allow(exchange, runtime.config(), null, "GET")) {
                 return;
             }
+            exchange.getResponseHeaders().set("Cache-Control", "no-store");
             handle(exchange, () -> status(runtime.config()));
         });
         server.createContext("/api/manifest", exchange -> {
-            if (!allow(exchange, runtime.config(), "GET")) {
+            String side = query(exchange, "side");
+            if (!allow(exchange, runtime.config(), side, "GET")) {
                 return;
             }
-            handle(exchange, () -> manifest(runtime.config(), query(exchange, "side")));
+            recordServer(runtime, exchange, side);
+            exchange.getResponseHeaders().set("Cache-Control", "no-store");
+            handle(exchange, () -> manifest(runtime.config(), side));
         });
         server.createContext("/api/diff", exchange -> {
-            if (!allow(exchange, runtime.config(), "POST")) {
+            if (!"POST".equalsIgnoreCase(nullToEmpty(exchange.getRequestMethod()))) {
+                sendError(exchange, 405, "方法不允许");
+                exchange.close();
                 return;
             }
-            handle(exchange, () -> diff(runtime, exchange, readBody(exchange)));
+            try {
+                String raw = readBody(exchange);
+                Map<String, Object> request = Json.object(Json.parse(raw.isBlank() ? "{}" : raw));
+                String side = requireSide(Json.str(request, "side"));
+                if (!tokenOk(runtime.config(), exchange, side)) {
+                    sendError(exchange, 401, "需要访问令牌");
+                    exchange.close();
+                    return;
+                }
+                exchange.getResponseHeaders().set("Cache-Control", "no-store");
+                handle(exchange, () -> diff(runtime, exchange, request));
+            } catch (IllegalArgumentException error) {
+                sendError(exchange, 400, error.getMessage());
+                exchange.close();
+            } catch (Exception error) {
+                System.err.println("[CDR Updater] HTTP 500: " + error.getMessage());
+                sendError(exchange, 500, "服务器内部错误");
+                exchange.close();
+            }
         });
         server.createContext("/api/file/", exchange -> file(runtime.config(), exchange));
         server.createContext("/admin", exchange -> AdminWeb.handle(runtime, exchange));
@@ -76,7 +101,7 @@ final class ApiServer {
         }
     }
 
-    private static boolean allow(HttpExchange exchange, Pack.Config config, String... methods) {
+    private static boolean allow(HttpExchange exchange, Pack.Config config, String side, String... methods) {
         try {
             String method = exchange.getRequestMethod() == null ? "" : exchange.getRequestMethod().toUpperCase();
             boolean ok = false;
@@ -91,7 +116,7 @@ final class ApiServer {
                 exchange.close();
                 return false;
             }
-            if (!tokenOk(config, exchange)) {
+            if (!tokenOk(config, exchange, side)) {
                 sendError(exchange, 401, "需要访问令牌");
                 exchange.close();
                 return false;
@@ -105,10 +130,12 @@ final class ApiServer {
     }
 
     static boolean tokenOk(Pack.Config config, HttpExchange exchange) {
-        String expected = config.accessToken;
-        if (expected == null || expected.isBlank()) {
-            return true;
-        }
+        return tokenOk(config, exchange, null);
+    }
+
+    static boolean tokenOk(Pack.Config config, HttpExchange exchange, String side) {
+        String clientToken = config.accessToken == null ? "" : config.accessToken;
+        String serverToken = config.serverAccessToken == null ? "" : config.serverAccessToken;
         String provided = header(exchange, "X-CDR-Token");
         if (provided.isBlank()) {
             String auth = header(exchange, "Authorization");
@@ -116,6 +143,30 @@ final class ApiServer {
                 provided = auth.substring(7).trim();
             }
         }
+        if ("server".equals(side)) {
+            String expected = serverToken.isBlank() ? clientToken : serverToken;
+            if (expected.isBlank()) {
+                return true;
+            }
+            return tokenEquals(expected, provided);
+        }
+        if ("client".equals(side)) {
+            if (clientToken.isBlank()) {
+                return true;
+            }
+            if (!serverToken.isBlank() && tokenEquals(serverToken, provided)) {
+                return false;
+            }
+            return tokenEquals(clientToken, provided);
+        }
+        if (clientToken.isBlank() && serverToken.isBlank()) {
+            return true;
+        }
+        return (!clientToken.isBlank() && tokenEquals(clientToken, provided))
+                || (!serverToken.isBlank() && tokenEquals(serverToken, provided));
+    }
+
+    private static boolean tokenEquals(String expected, String provided) {
         return java.security.MessageDigest.isEqual(
                 expected.getBytes(StandardCharsets.UTF_8),
                 provided.getBytes(StandardCharsets.UTF_8));
@@ -171,9 +222,9 @@ final class ApiServer {
     }
 
     @SuppressWarnings("unchecked")
-    private static Map<String, Object> diff(ServerRuntime runtime, HttpExchange exchange, String raw) throws Exception {
+    private static Map<String, Object> diff(ServerRuntime runtime, HttpExchange exchange,
+                                            Map<String, Object> request) throws Exception {
         Pack.Config config = runtime.config();
-        Map<String, Object> request = Json.object(Json.parse(raw.isBlank() ? "{}" : raw));
         String side = requireSide(Json.str(request, "side"));
         recordServer(runtime, exchange, side);
         Manifests.Manifest remote = Pack.loadManifest(config, side);
@@ -256,11 +307,25 @@ final class ApiServer {
 
     private static void file(Pack.Config config, HttpExchange exchange) {
         try {
-            if (!allow(exchange, config, "GET")) {
+            String method = nullToEmpty(exchange.getRequestMethod()).toUpperCase(Locale.ROOT);
+            if (!"GET".equals(method) && !"HEAD".equals(method)) {
+                sendError(exchange, 405, "方法不允许");
                 return;
             }
-            String path = exchange.getRequestURI().getPath();
-            String digest = path.substring("/api/file/".length());
+            if (!tokenOk(config, exchange, null)) {
+                sendError(exchange, 401, "需要访问令牌");
+                return;
+            }
+            String rawPath = exchange.getRequestURI().getRawPath();
+            if (rawPath == null) {
+                rawPath = "";
+            }
+            // Validate the undecoded path so %00 / overlong encodings cannot strip into a valid digest.
+            if (!rawPath.matches("(?i)^/api/file/[0-9a-f]{64}$")) {
+                sendError(exchange, 400, "无效文件哈希");
+                return;
+            }
+            String digest = rawPath.substring("/api/file/".length()).toLowerCase(Locale.ROOT);
             Path object = Pack.objectPath(config, digest);
             if (!Files.isRegularFile(object)) {
                 sendError(exchange, 404, "文件对象不存在");
@@ -268,9 +333,64 @@ final class ApiServer {
             }
             long size = Files.size(object);
             exchange.getResponseHeaders().set("Content-Type", "application/octet-stream");
-            exchange.sendResponseHeaders(200, size);
-            try (java.io.InputStream in = Files.newInputStream(object)) {
-                in.transferTo(exchange.getResponseBody());
+            exchange.getResponseHeaders().set("Accept-Ranges", "bytes");
+            exchange.getResponseHeaders().set("ETag", "\"" + digest + "\"");
+            exchange.getResponseHeaders().set("Cache-Control", "public, max-age=31536000, immutable");
+
+            long start = 0;
+            long end = size > 0 ? size - 1 : -1;
+            int status = 200;
+            String rangeHeader = header(exchange, "Range");
+            if (!rangeHeader.isBlank()) {
+                if (size <= 0) {
+                    exchange.getResponseHeaders().set("Content-Range", "bytes */0");
+                    exchange.sendResponseHeaders(416, -1);
+                    return;
+                }
+                long[] span = parseSingleRange(rangeHeader, size);
+                if (span == null) {
+                    exchange.getResponseHeaders().set("Content-Range", "bytes */" + size);
+                    exchange.sendResponseHeaders(416, -1);
+                    return;
+                }
+                if (span.length == 2) {
+                    start = span[0];
+                    end = span[1];
+                    status = 206;
+                    exchange.getResponseHeaders().set("Content-Range", "bytes " + start + "-" + end + "/" + size);
+                }
+                // span.length == 0 → ignore Range, full 200
+            }
+
+            long len = size <= 0 ? 0 : (end >= start ? (end - start + 1) : 0);
+            if ("HEAD".equals(method)) {
+                exchange.sendResponseHeaders(status, -1);
+                return;
+            }
+            exchange.sendResponseHeaders(status, len);
+            if (len <= 0) {
+                return;
+            }
+            try (java.io.InputStream in = Files.newInputStream(object);
+                 java.io.OutputStream out = exchange.getResponseBody()) {
+                long toSkip = start;
+                while (toSkip > 0) {
+                    long skipped = in.skip(toSkip);
+                    if (skipped <= 0) {
+                        break;
+                    }
+                    toSkip -= skipped;
+                }
+                byte[] buffer = new byte[64 * 1024];
+                long remaining = len;
+                while (remaining > 0) {
+                    int read = in.read(buffer, 0, (int) Math.min(buffer.length, remaining));
+                    if (read < 0) {
+                        break;
+                    }
+                    out.write(buffer, 0, read);
+                    remaining -= read;
+                }
             }
         } catch (IllegalArgumentException error) {
             sendError(exchange, 400, error.getMessage());
@@ -280,6 +400,55 @@ final class ApiServer {
         } finally {
             exchange.close();
         }
+    }
+
+    /** null = 416; empty = ignore Range (full 200); length-2 = 206 partial */
+    private static long[] parseSingleRange(String header, long size) {
+        String value = header.trim();
+        if (!value.regionMatches(true, 0, "bytes=", 0, 6)) {
+            return new long[0];
+        }
+        String spec = value.substring(6).trim();
+        if (spec.contains(",")) {
+            return new long[0];
+        }
+        int dash = spec.indexOf('-');
+        if (dash < 0) {
+            return null;
+        }
+        String left = spec.substring(0, dash).trim();
+        String right = spec.substring(dash + 1).trim();
+        try {
+            if (left.isEmpty()) {
+                if (right.isEmpty()) {
+                    return null;
+                }
+                long suffix = Long.parseLong(right);
+                if (suffix <= 0) {
+                    return null;
+                }
+                long start = Math.max(0, size - suffix);
+                return new long[]{start, size - 1};
+            }
+            long start = Long.parseLong(left);
+            if (start < 0 || start >= size) {
+                return null;
+            }
+            long end = right.isEmpty() ? size - 1 : Long.parseLong(right);
+            if (end < start) {
+                return null;
+            }
+            if (end >= size) {
+                end = size - 1;
+            }
+            return new long[]{start, end};
+        } catch (NumberFormatException error) {
+            return new long[0];
+        }
+    }
+
+    private static String nullToEmpty(String value) {
+        return value == null ? "" : value;
     }
 
     private static String requireSide(String side) {

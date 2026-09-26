@@ -1,6 +1,7 @@
 package main
 
 import (
+	"crypto/subtle"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -32,6 +33,10 @@ func runServe(args []string) error {
 			http.Error(w, "方法不允许", http.StatusMethodNotAllowed)
 			return
 		}
+		if !playerAllowed(r, data) {
+			http.Error(w, "需要访问令牌", http.StatusUnauthorized)
+			return
+		}
 		meta, err := os.ReadFile(filepath.Join(data, "manifests", "meta.json"))
 		if err != nil {
 			http.Error(w, "更新仓库尚未构建", http.StatusConflict)
@@ -59,6 +64,10 @@ func runServe(args []string) error {
 			http.Error(w, "side 只能是 client 或 server", http.StatusBadRequest)
 			return
 		}
+		if !playerAllowedSide(r, data, side) {
+			http.Error(w, "需要访问令牌", http.StatusUnauthorized)
+			return
+		}
 		noteServer(data, r, side)
 		body, err := root.manifest(side)
 		if err != nil {
@@ -69,7 +78,13 @@ func runServe(args []string) error {
 		w.WriteHeader(http.StatusOK)
 		_, _ = w.Write(body)
 	})
-	mux.HandleFunc("/api/file/", root.file)
+	mux.HandleFunc("/api/file/", func(w http.ResponseWriter, r *http.Request) {
+		if !playerAllowed(r, data) {
+			http.Error(w, "需要访问令牌", http.StatusUnauthorized)
+			return
+		}
+		root.file(w, r)
+	})
 	mux.HandleFunc("/api/pack", root.pack)
 	registerAdmin(mux, cfg, data)
 	addr := cfg.listen + ":" + cfg.port
@@ -103,6 +118,57 @@ func readServerConfig(path string) serverConfig {
 		}
 	}
 	return cfg
+}
+
+func playerAllowed(r *http.Request, data string) bool {
+	return playerAllowedSide(r, data, "")
+}
+
+func playerAllowedSide(r *http.Request, data, side string) bool {
+	clientToken := strings.TrimSpace(cfgField(data, "access_token"))
+	serverToken := strings.TrimSpace(cfgField(data, "server_access_token"))
+	got := presentedPlayerToken(r)
+	switch side {
+	case "server":
+		expected := clientToken
+		if serverToken != "" {
+			expected = serverToken
+		}
+		if expected == "" {
+			return true
+		}
+		return subtle.ConstantTimeCompare([]byte(got), []byte(expected)) == 1
+	case "client":
+		if clientToken == "" {
+			return true
+		}
+		if serverToken != "" && subtle.ConstantTimeCompare([]byte(got), []byte(serverToken)) == 1 {
+			return false
+		}
+		return subtle.ConstantTimeCompare([]byte(got), []byte(clientToken)) == 1
+	default:
+		if clientToken == "" && serverToken == "" {
+			return true
+		}
+		if clientToken != "" && subtle.ConstantTimeCompare([]byte(got), []byte(clientToken)) == 1 {
+			return true
+		}
+		if serverToken != "" && subtle.ConstantTimeCompare([]byte(got), []byte(serverToken)) == 1 {
+			return true
+		}
+		return false
+	}
+}
+
+func presentedPlayerToken(r *http.Request) string {
+	got := strings.TrimSpace(r.Header.Get("X-CDR-Token"))
+	if got == "" {
+		auth := strings.TrimSpace(r.Header.Get("Authorization"))
+		if len(auth) >= 7 && strings.EqualFold(auth[:7], "Bearer ") {
+			got = strings.TrimSpace(auth[7:])
+		}
+	}
+	return got
 }
 
 type store struct {
@@ -167,9 +233,15 @@ func (s *store) file(w http.ResponseWriter, r *http.Request) {
 	}
 	digest := strings.TrimPrefix(r.URL.Path, "/api/file/")
 	digest = strings.ToLower(strings.TrimSpace(digest))
-	if len(digest) != 64 || strings.Contains(digest, "/") || strings.Contains(digest, ".") {
+	if len(digest) != 64 || strings.ContainsAny(digest, "/.\\") {
 		http.Error(w, "无效文件哈希", http.StatusBadRequest)
 		return
+	}
+	for _, ch := range digest {
+		if (ch < '0' || ch > '9') && (ch < 'a' || ch > 'f') {
+			http.Error(w, "无效文件哈希", http.StatusBadRequest)
+			return
+		}
 	}
 	object := filepath.Join(s.data, "objects", digest[:2], digest)
 	f, err := os.Open(object)

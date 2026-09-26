@@ -828,34 +828,41 @@ final class Tests {
                 HttpResponse<String> page = http.send(
                         HttpRequest.newBuilder(java.net.URI.create(url + "/admin")).GET().build(),
                         HttpResponse.BodyHandlers.ofString());
-                check("管理网页可打开", page.statusCode() == 200 && page.body().contains("网页远程管理"));
-                check("网页风格是暗色面板", page.body().contains("data-theme=\"dark\"") && page.body().contains("--panel"));
-                check("网页含已连接服务端", page.body().contains("已连接的服务端"));
-                check("网页含私货", page.body().contains("添加私货"));
-                check("网页含私货搜索", page.body().contains("id=\"privateSearch\""));
-                check("网页含推送目录", page.body().contains("id=\"privateDestFolder\"") && page.body().contains("可多选"));
-                check("网页含根目录", page.body().contains("data-value=\"./\"") && page.body().contains("根目录"));
-                check("网页含新建目录", page.body().contains("id=\"privateNewFolder\"") && page.body().contains("id=\"newFolderBtn\""));
-                check("网页可直接改端侧", page.body().contains("data-side-path") && page.body().contains("side-select"));
-                check("网页改动点保存才写入", page.body().contains("点保存后才会写入")
-                        && page.body().contains("id=\"discardBtn\"")
-                        && page.body().contains("不保存"));
-                check("网页用自绘弹窗确认", page.body().contains("id=\"modal\"")
-                        && page.body().contains("id=\"modalOk\"")
-                        && !page.body().contains("window.confirm"));
-                check("网页超长文本省略", page.body().contains("text-overflow: ellipsis")
-                        && page.body().contains("table-layout: fixed"));
-                check("网页含连接地址", page.body().contains("开放外网访问") && page.body().contains("同步令牌"));
-                check("网页含下载进度条", page.body().contains("id=\"xfer\"") && page.body().contains("id=\"xferFill\""));
-                check("网页登录指向本机窗口", page.body().contains("本机更新服务器窗口") && page.body().contains("网页管理"));
-                check("网页不设置网页令牌", !page.body().contains("id=\"adminToken\"") && !page.body().contains("genAdminTokenBtn"));
-                check("网页含 GitHub 版本", page.body().contains("应用并重新拉取")
-                        && page.body().contains("id=\"versionTag\"")
-                        && page.body().contains("id=\"versionTagDrop\"")
-                        && !page.body().contains("<datalist"));
-                check("网页含运行日志", page.body().contains("运行日志"));
-                check("网页不含导出 PCL2", !page.body().contains("导出 PCL2"));
-                check("网页不含导出服务端", !page.body().contains("导出服务端"));
+                check("未登录只下发登录壳", page.statusCode() == 200
+                        && page.body().contains("管理面板需先登录")
+                        && !page.body().contains("id=\"privateSearch\""));
+                HttpResponse<String> fullPage = http.send(
+                        HttpRequest.newBuilder(java.net.URI.create(url + "/admin"))
+                                .header("X-CDR-Admin-Token", "admin-token").GET().build(),
+                        HttpResponse.BodyHandlers.ofString());
+                check("管理网页可打开", fullPage.statusCode() == 200 && fullPage.body().contains("网页远程管理"));
+                check("网页风格是暗色面板", fullPage.body().contains("data-theme=\"dark\"") && fullPage.body().contains("--panel"));
+                check("网页含已连接服务端", fullPage.body().contains("已连接的服务端"));
+                check("网页含私货", fullPage.body().contains("添加私货"));
+                check("网页含私货搜索", fullPage.body().contains("id=\"privateSearch\""));
+                check("网页含推送目录", fullPage.body().contains("id=\"privateDestFolder\"") && fullPage.body().contains("可多选"));
+                check("网页含根目录", fullPage.body().contains("data-value=\"./\"") && fullPage.body().contains("根目录"));
+                check("网页含新建目录", fullPage.body().contains("id=\"privateNewFolder\"") && fullPage.body().contains("id=\"newFolderBtn\""));
+                check("网页可直接改端侧", fullPage.body().contains("data-side-path") && fullPage.body().contains("side-select"));
+                check("网页改动点保存才写入", fullPage.body().contains("点保存后才会写入")
+                        && fullPage.body().contains("id=\"discardBtn\"")
+                        && fullPage.body().contains("不保存"));
+                check("网页用自绘弹窗确认", fullPage.body().contains("id=\"modal\"")
+                        && fullPage.body().contains("id=\"modalOk\"")
+                        && !fullPage.body().contains("window.confirm"));
+                check("网页超长文本省略", fullPage.body().contains("text-overflow: ellipsis")
+                        && fullPage.body().contains("table-layout: fixed"));
+                check("网页含连接地址", fullPage.body().contains("开放外网访问") && fullPage.body().contains("同步令牌"));
+                check("网页含下载进度条", fullPage.body().contains("id=\"xfer\"") && fullPage.body().contains("id=\"xferFill\""));
+                check("网页登录指向本机窗口", fullPage.body().contains("本机更新服务器窗口") && fullPage.body().contains("网页管理"));
+                check("网页不设置网页令牌", !fullPage.body().contains("id=\"adminToken\"") && !fullPage.body().contains("genAdminTokenBtn"));
+                check("网页含 GitHub 版本", fullPage.body().contains("应用并重新拉取")
+                        && fullPage.body().contains("id=\"versionTag\"")
+                        && fullPage.body().contains("id=\"versionTagDrop\"")
+                        && !fullPage.body().contains("<datalist"));
+                check("网页含运行日志", fullPage.body().contains("运行日志"));
+                check("网页不含导出 PCL2", !fullPage.body().contains("导出 PCL2"));
+                check("网页不含导出服务端", !fullPage.body().contains("导出服务端"));
 
                 HttpResponse<String> denied = http.send(
                         HttpRequest.newBuilder(java.net.URI.create(url + "/admin/api/state")).GET().build(),
@@ -894,6 +901,7 @@ final class Tests {
                                 .header("X-CDR-Admin-Token", "admin-token").GET().build(),
                         HttpResponse.BodyHandlers.ofString());
                 check("登录后可读管理状态", state.statusCode() == 200 && state.body().contains("official_version"));
+                check("管理状态不回显同步令牌", !state.body().contains("client-token"));
                 check("管理状态含进度", state.body().contains("\"progress\""));
                 check("管理状态含服务端列表", state.body().contains("\"servers\""));
                 check("管理状态含私货列表", state.body().contains("\"privates\""));
@@ -1118,7 +1126,7 @@ final class Tests {
                             .build(),
                     HttpResponse.BodyHandlers.ofString());
         } catch (Exception error) {
-            check("运行中的更新服务器可连", false);
+            System.out.println("跳过 运行中的更新服务器可连（本机 8765 未启动）");
             return;
         }
         String token = "";

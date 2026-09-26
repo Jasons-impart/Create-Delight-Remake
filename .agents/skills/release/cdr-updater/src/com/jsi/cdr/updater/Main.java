@@ -126,7 +126,7 @@ public final class Main {
                 Sync.Client client = new Sync.Client(Json.str(job, "server"), Json.str(job, "side"),
                         Path.of(Json.str(job, "instance")), Json.str(job, "token"));
                 client.savePack(Path.of(Json.str(job, "instance")), Json.str(job, "sha256"), Json.lng(job, "size"),
-                        jobs, line -> {
+                        Json.str(job, "lease"), jobs, line -> {
                             System.out.println(line);
                             ClientApp.packLine(line);
                         }, Json.bool(job, "parallel"), label);
@@ -141,13 +141,25 @@ public final class Main {
         String url = Json.str(job, "url");
         Path dest = Path.of(Json.str(job, "dest"));
         String label = Json.str(job, "label");
+        String expectSha = Json.str(job, "sha256");
+        String token = Json.str(job, "token");
         long size = Json.lng(job, "size");
         java.net.http.HttpRequest.Builder request = java.net.http.HttpRequest.newBuilder(java.net.URI.create(url))
                 .header("User-Agent", "cdr-updater-client")
                 .timeout(java.time.Duration.ofMinutes(30));
+        if (!token.isBlank()) {
+            request.header("X-CDR-Token", token);
+        }
         Path partial = dest.resolveSibling(dest.getFileName() + ".cdrtmp");
         try {
             Net.toFile(java.net.http.HttpClient.newHttpClient(), request, partial, size, label, System.out::println, true);
+            if (!expectSha.isBlank()) {
+                String got = Fs.sha256(partial);
+                if (!Fs.sha256Hex(expectSha).equalsIgnoreCase(got)) {
+                    Files.deleteIfExists(partial);
+                    throw new IllegalStateException("哈希不一致 " + label);
+                }
+            }
             Files.createDirectories(dest.getParent());
             Files.move(partial, dest, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
         } catch (Exception error) {

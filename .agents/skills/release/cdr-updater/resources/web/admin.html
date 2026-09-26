@@ -551,7 +551,7 @@
             </div>
             <div>
               <label>同步令牌 access_token（客户端/服务端）</label>
-              <input id="accessToken" type="text" autocomplete="off" placeholder="留空则同步不校验">
+              <input id="accessToken" type="text" autocomplete="off" placeholder="留空则保持原令牌不变">
             </div>
           </div>
           <div class="actions">
@@ -1079,7 +1079,10 @@
       if (document.activeElement !== $("listen")) $("listen").value = data.listen || "";
       if (document.activeElement !== $("port")) $("port").value = data.port || "";
       if (document.activeElement !== $("publicUrl")) $("publicUrl").value = data.public_url || "";
-      if (document.activeElement !== $("accessToken")) $("accessToken").value = data.access_token || "";
+      if (document.activeElement !== $("accessToken")) {
+        $("accessToken").value = data.access_token || "";
+        $("accessToken").placeholder = data.sync_token_enabled ? "已设置（留空保持不变）" : "未设置；填写后点保存启用";
+      }
       if (!tagsLoaded && data.official_version) {
         fillTagSelect([$("versionTag").value, data.official_version].filter(Boolean), data.official_version);
       }

@@ -3,6 +3,7 @@ package main
 import (
 	"archive/zip"
 	"compress/flate"
+	"crypto/rand"
 	"crypto/sha256"
 	"encoding/hex"
 	"encoding/json"
@@ -27,6 +28,7 @@ func (s *store) pack(w http.ResponseWriter, r *http.Request) {
 		Side    string   `json:"side"`
 		Paths   []string `json:"paths"`
 		Discard string   `json:"discard"`
+		Lease   string   `json:"lease"`
 	}
 	if r.Method == http.MethodGet {
 		req.Side = r.URL.Query().Get("side")
@@ -38,8 +40,17 @@ func (s *store) pack(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	if req.Discard != "" {
+		if !playerAllowed(r, s.data) {
+			http.Error(w, "需要访问令牌", http.StatusUnauthorized)
+			return
+		}
+		lease := strings.TrimSpace(req.Lease)
+		if lease == "" {
+			http.Error(w, "discard 需要 lease", http.StatusBadRequest)
+			return
+		}
 		packBuild.Lock()
-		err := s.discardPack(req.Discard)
+		err := s.discardPack(req.Discard, lease)
 		packBuild.Unlock()
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusBadRequest)
@@ -51,6 +62,10 @@ func (s *store) pack(w http.ResponseWriter, r *http.Request) {
 	}
 	if req.Side != "client" && req.Side != "server" {
 		http.Error(w, "side 只能是 client 或 server", http.StatusBadRequest)
+		return
+	}
+	if !playerAllowedSide(r, s.data, req.Side) {
+		http.Error(w, "需要访问令牌", http.StatusUnauthorized)
 		return
 	}
 	noteServer(s.data, r, req.Side)
@@ -94,7 +109,7 @@ func (s *store) pack(w http.ResponseWriter, r *http.Request) {
 	defer packBuild.Unlock()
 	w.WriteHeader(http.StatusOK)
 	enc := json.NewEncoder(w)
-	sum, size, err := s.ensurePack(selected, func(done, total int) {
+	sum, size, lease, err := s.ensurePack(selected, func(done, total int) {
 		_ = enc.Encode(map[string]any{"event": "progress", "done": done, "total": total})
 		if flusher != nil {
 			flusher.Flush()
@@ -107,13 +122,13 @@ func (s *store) pack(w http.ResponseWriter, r *http.Request) {
 		}
 		return
 	}
-	_ = enc.Encode(map[string]any{"event": "done", "sha256": sum, "size": size})
+	_ = enc.Encode(map[string]any{"event": "done", "sha256": sum, "size": size, "lease": lease})
 	if flusher != nil {
 		flusher.Flush()
 	}
 }
 
-func (s *store) ensurePack(files []packItem, report func(done, total int)) (string, int64, error) {
+func (s *store) ensurePack(files []packItem, report func(done, total int)) (string, int64, string, error) {
 	keyHash := sha256.New()
 	for _, file := range files {
 		_, _ = io.WriteString(keyHash, file.Path)
@@ -123,32 +138,34 @@ func (s *store) ensurePack(files []packItem, report func(done, total int)) (stri
 	}
 	key := hex.EncodeToString(keyHash.Sum(nil))
 	metaPath := filepath.Join(s.data, "packs", key+".json")
+	lease, err := newPackLease()
+	if err != nil {
+		return "", 0, "", err
+	}
 	if buf, err := os.ReadFile(metaPath); err == nil {
 		var meta packMeta
 		if json.Unmarshal(buf, &meta) == nil && len(meta.SHA256) == 64 {
 			object := filepath.Join(s.data, "objects", meta.SHA256[:2], meta.SHA256)
 			if info, err := os.Stat(object); err == nil && !info.IsDir() {
-				if meta.Holders < 1 {
-					meta.Holders = 1
-				} else {
-					meta.Holders++
-				}
+				migratePackLeases(&meta)
+				meta.Leases = append(meta.Leases, lease)
+				meta.Holders = len(meta.Leases)
 				if err = writePackMeta(metaPath, meta); err != nil {
-					return "", 0, err
+					return "", 0, "", err
 				}
 				if report != nil {
 					report(len(files), len(files))
 				}
-				return meta.SHA256, info.Size(), nil
+				return meta.SHA256, info.Size(), lease, nil
 			}
 		}
 	}
 	if err := os.MkdirAll(filepath.Join(s.data, "packs"), 0o755); err != nil {
-		return "", 0, err
+		return "", 0, "", err
 	}
 	tmp, err := os.CreateTemp(filepath.Join(s.data, "packs"), "build-*.zip")
 	if err != nil {
-		return "", 0, err
+		return "", 0, "", err
 	}
 	tmpName := tmp.Name()
 	defer os.Remove(tmpName)
@@ -162,7 +179,7 @@ func (s *store) ensurePack(files []packItem, report func(done, total int)) (stri
 		if err != nil {
 			_ = zw.Close()
 			_ = tmp.Close()
-			return "", 0, err
+			return "", 0, "", err
 		}
 		hdr := &zip.FileHeader{Name: file.Path, Method: zip.Deflate}
 		hdr.SetMode(0o644)
@@ -171,13 +188,13 @@ func (s *store) ensurePack(files []packItem, report func(done, total int)) (stri
 			_ = in.Close()
 			_ = zw.Close()
 			_ = tmp.Close()
-			return "", 0, err
+			return "", 0, "", err
 		}
 		if _, err = io.Copy(out, in); err != nil {
 			_ = in.Close()
 			_ = zw.Close()
 			_ = tmp.Close()
-			return "", 0, err
+			return "", 0, "", err
 		}
 		_ = in.Close()
 		if report != nil && (i == 0 || i+1 == total || (i+1)%20 == 0) {
@@ -186,39 +203,40 @@ func (s *store) ensurePack(files []packItem, report func(done, total int)) (stri
 	}
 	if err = zw.Close(); err != nil {
 		_ = tmp.Close()
-		return "", 0, err
+		return "", 0, "", err
 	}
 	if err = tmp.Close(); err != nil {
-		return "", 0, err
+		return "", 0, "", err
 	}
 	digest, err := hashFile(tmpName)
 	if err != nil {
-		return "", 0, err
+		return "", 0, "", err
 	}
 	info, err := os.Stat(tmpName)
 	if err != nil {
-		return "", 0, err
+		return "", 0, "", err
 	}
 	size := info.Size()
 	object := filepath.Join(s.data, "objects", digest[:2], digest)
 	if err = os.MkdirAll(filepath.Dir(object), 0o755); err != nil {
-		return "", 0, err
+		return "", 0, "", err
 	}
 	if _, err = os.Stat(object); err != nil {
 		if err = os.Rename(tmpName, object); err != nil {
-			return "", 0, err
+			return "", 0, "", err
 		}
 	}
-	if err = writePackMeta(metaPath, packMeta{SHA256: digest, Size: size, Holders: 1}); err != nil {
-		return "", 0, err
+	if err = writePackMeta(metaPath, packMeta{SHA256: digest, Size: size, Holders: 1, Leases: []string{lease}}); err != nil {
+		return "", 0, "", err
 	}
-	return digest, size, nil
+	return digest, size, lease, nil
 }
 
 type packMeta struct {
-	SHA256  string `json:"sha256"`
-	Size    int64  `json:"size"`
-	Holders int    `json:"holders"`
+	SHA256  string   `json:"sha256"`
+	Size    int64    `json:"size"`
+	Holders int      `json:"holders"`
+	Leases  []string `json:"leases"`
 }
 
 func writePackMeta(path string, meta packMeta) error {
@@ -229,8 +247,25 @@ func writePackMeta(path string, meta packMeta) error {
 	return os.WriteFile(path, buf, 0o644)
 }
 
-func (s *store) discardPack(sum string) error {
+func newPackLease() (string, error) {
+	var raw [32]byte
+	if _, err := rand.Read(raw[:]); err != nil {
+		return "", err
+	}
+	return hex.EncodeToString(raw[:]), nil
+}
+
+func migratePackLeases(meta *packMeta) {
+	if len(meta.Leases) > 0 {
+		meta.Holders = len(meta.Leases)
+		return
+	}
+	meta.Holders = 0
+}
+
+func (s *store) discardPack(sum, lease string) error {
 	sum = strings.ToLower(strings.TrimSpace(sum))
+	lease = strings.TrimSpace(lease)
 	if len(sum) != 64 || strings.ContainsAny(sum, "/.\\") {
 		return errPackHash
 	}
@@ -238,6 +273,9 @@ func (s *store) discardPack(sum string) error {
 		if (ch < '0' || ch > '9') && (ch < 'a' || ch > 'f') {
 			return errPackHash
 		}
+	}
+	if lease == "" || len(lease) > 128 {
+		return packError("无效 lease")
 	}
 	keepObject := false
 	for _, side := range []string{"client", "server"} {
@@ -260,6 +298,7 @@ func (s *store) discardPack(sum string) error {
 	}
 	holdersLeft := 0
 	var drop []string
+	matched := false
 	for _, entry := range entries {
 		name := entry.Name()
 		if entry.IsDir() || !strings.HasSuffix(name, ".json") {
@@ -274,15 +313,33 @@ func (s *store) discardPack(sum string) error {
 		if json.Unmarshal(buf, &meta) != nil || meta.SHA256 != sum {
 			continue
 		}
-		meta.Holders--
-		if meta.Holders > 0 {
-			holdersLeft += meta.Holders
+		migratePackLeases(&meta)
+		before := len(meta.Leases)
+		filtered := make([]string, 0, len(meta.Leases))
+		for _, item := range meta.Leases {
+			if item == lease {
+				continue
+			}
+			filtered = append(filtered, item)
+		}
+		meta.Leases = filtered
+		if len(meta.Leases) == before {
+			holdersLeft += len(meta.Leases)
+			continue
+		}
+		matched = true
+		meta.Holders = len(meta.Leases)
+		if len(meta.Leases) > 0 {
+			holdersLeft += len(meta.Leases)
 			if err = writePackMeta(path, meta); err != nil {
 				return err
 			}
 			continue
 		}
 		drop = append(drop, path)
+	}
+	if !matched {
+		return packError("lease 无效或不匹配")
 	}
 	if holdersLeft == 0 && !keepObject && len(drop) > 0 {
 		_ = os.Remove(filepath.Join(s.data, "objects", sum[:2], sum))

@@ -9,7 +9,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Base64;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -20,9 +19,6 @@ import java.util.function.Consumer;
 final class Packwiz {
     private static final Map<String, String> CF_NAMES = new LinkedHashMap<>();
     private static final Map<Long, CfFile> CF_FILES = new LinkedHashMap<>();
-    private static final String PACKWIZ_API_KEY = new String(Base64.getDecoder().decode(
-            "JDJhJDEwJHNBWVhqblU1N0EzSmpzcmJYM3JVdk92UWk2NHBLS3BnQ2VpbGc1TUM1UGNKL0RYTmlGWWxh"),
-            StandardCharsets.UTF_8);
     private static String configuredApiKey = "";
 
     private Packwiz() {}
@@ -439,7 +435,7 @@ final class Packwiz {
 
     static String apiKey() {
         String env = firstNonBlank(System.getenv("CURSEFORGE_API_KEY"), System.getenv("CF_API_KEY"), configuredApiKey);
-        return env == null || env.isBlank() ? PACKWIZ_API_KEY : env;
+        return env == null ? "" : env.trim();
     }
 
     static String officialFileUrl(long projectId, long fileId) {

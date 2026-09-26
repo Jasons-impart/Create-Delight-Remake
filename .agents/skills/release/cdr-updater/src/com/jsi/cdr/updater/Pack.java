@@ -49,32 +49,42 @@ final class Pack {
         final String updateServerUrl;
         final String accessToken;
         final String adminToken;
+        final String serverAccessToken;
 
         Config(String listen, int port, Path dataDir, String githubRepo, String officialVersion, String githubApi,
                Path officialDir, Path privateDir, Path unifiedDir, Path clientDir, Path serverDir, Path objectsDir) {
             this(listen, port, dataDir, githubRepo, officialVersion, githubApi, officialDir, privateDir, unifiedDir,
                     clientDir, serverDir, objectsDir, "1.20.1", "47.4.16", "Create-Delight-Remake",
-                    "http://" + listen + ":" + port, "", "");
+                    "http://" + listen + ":" + port, "", "", "");
         }
 
         Config(String listen, int port, Path dataDir, String githubRepo, String officialVersion, String githubApi,
                Path officialDir, Path privateDir, Path unifiedDir, Path clientDir, Path serverDir, Path objectsDir,
                String minecraft, String forge, String packName, String updateServerUrl) {
             this(listen, port, dataDir, githubRepo, officialVersion, githubApi, officialDir, privateDir, unifiedDir,
-                    clientDir, serverDir, objectsDir, minecraft, forge, packName, updateServerUrl, "", "");
+                    clientDir, serverDir, objectsDir, minecraft, forge, packName, updateServerUrl, "", "", "");
         }
 
         Config(String listen, int port, Path dataDir, String githubRepo, String officialVersion, String githubApi,
                Path officialDir, Path privateDir, Path unifiedDir, Path clientDir, Path serverDir, Path objectsDir,
                String minecraft, String forge, String packName, String updateServerUrl, String accessToken) {
             this(listen, port, dataDir, githubRepo, officialVersion, githubApi, officialDir, privateDir, unifiedDir,
-                    clientDir, serverDir, objectsDir, minecraft, forge, packName, updateServerUrl, accessToken, "");
+                    clientDir, serverDir, objectsDir, minecraft, forge, packName, updateServerUrl, accessToken, "", "");
         }
 
         Config(String listen, int port, Path dataDir, String githubRepo, String officialVersion, String githubApi,
                Path officialDir, Path privateDir, Path unifiedDir, Path clientDir, Path serverDir, Path objectsDir,
                String minecraft, String forge, String packName, String updateServerUrl, String accessToken,
                String adminToken) {
+            this(listen, port, dataDir, githubRepo, officialVersion, githubApi, officialDir, privateDir, unifiedDir,
+                    clientDir, serverDir, objectsDir, minecraft, forge, packName, updateServerUrl, accessToken,
+                    adminToken, "");
+        }
+
+        Config(String listen, int port, Path dataDir, String githubRepo, String officialVersion, String githubApi,
+               Path officialDir, Path privateDir, Path unifiedDir, Path clientDir, Path serverDir, Path objectsDir,
+               String minecraft, String forge, String packName, String updateServerUrl, String accessToken,
+               String adminToken, String serverAccessToken) {
             this.listen = listen;
             this.port = port;
             this.dataDir = dataDir;
@@ -93,30 +103,37 @@ final class Pack {
             this.updateServerUrl = updateServerUrl;
             this.accessToken = accessToken == null ? "" : accessToken.trim();
             this.adminToken = adminToken == null ? "" : adminToken.trim();
+            this.serverAccessToken = serverAccessToken == null ? "" : serverAccessToken.trim();
         }
 
         Config withOfficialVersion(String version) {
             return new Config(listen, port, dataDir, githubRepo, version, githubApi, officialDir, privateDir,
                     unifiedDir, clientDir, serverDir, objectsDir, minecraft, forge, packName, updateServerUrl,
-                    accessToken, adminToken);
+                    accessToken, adminToken, serverAccessToken);
         }
 
         Config withConnection(String listen, int port, String publicUrl) {
             return new Config(listen, port, dataDir, githubRepo, officialVersion, githubApi, officialDir, privateDir,
                     unifiedDir, clientDir, serverDir, objectsDir, minecraft, forge, packName, publicUrl, accessToken,
-                    adminToken);
+                    adminToken, serverAccessToken);
         }
 
         Config withAccessToken(String token) {
             return new Config(listen, port, dataDir, githubRepo, officialVersion, githubApi, officialDir, privateDir,
                     unifiedDir, clientDir, serverDir, objectsDir, minecraft, forge, packName, updateServerUrl,
-                    normalizeAccessToken(token), adminToken);
+                    normalizeAccessToken(token), adminToken, serverAccessToken);
         }
 
         Config withAdminToken(String token) {
             return new Config(listen, port, dataDir, githubRepo, officialVersion, githubApi, officialDir, privateDir,
                     unifiedDir, clientDir, serverDir, objectsDir, minecraft, forge, packName, updateServerUrl,
-                    accessToken, normalizeAccessToken(token));
+                    accessToken, normalizeAccessToken(token), serverAccessToken);
+        }
+
+        Config withServerAccessToken(String token) {
+            return new Config(listen, port, dataDir, githubRepo, officialVersion, githubApi, officialDir, privateDir,
+                    unifiedDir, clientDir, serverDir, objectsDir, minecraft, forge, packName, updateServerUrl,
+                    accessToken, adminToken, normalizeAccessToken(token));
         }
 
         Path manifestsDir() {
@@ -152,7 +169,8 @@ final class Pack {
                     Toml.str(official, "pack_name", Toml.str(official, "name", "Create-Delight-Remake")),
                     Toml.str(server, "public_url", "http://" + listen + ":" + port),
                     Toml.str(server, "access_token", ""),
-                    Toml.str(server, "admin_token", "")
+                    Toml.str(server, "admin_token", ""),
+                    Toml.str(server, "server_access_token", "")
             );
             Packwiz.configure(Toml.str(official, "curseforge_api_key", Toml.str(official, "cf_api_key", "")));
             return config;

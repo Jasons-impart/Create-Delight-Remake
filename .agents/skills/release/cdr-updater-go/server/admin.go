@@ -18,20 +18,23 @@ import (
 //go:embed web/admin.html
 var adminPage []byte
 
+const adminPrefix = "/admin/ifgfsgfbijuzoxzq"
+
 func registerAdmin(mux *http.ServeMux, cfg serverConfig, data string) {
-	mux.HandleFunc("/admin", func(w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc(adminPrefix, func(w http.ResponseWriter, r *http.Request) {
 		serveAdminPage(w, r)
 	})
-	mux.HandleFunc("/admin/", func(w http.ResponseWriter, r *http.Request) {
-		if r.URL.Path == "/admin/" || r.URL.Path == "/admin/index.html" {
+	mux.HandleFunc(adminPrefix+"/", func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path == adminPrefix+"/" || r.URL.Path == adminPrefix+"/index.html" {
 			serveAdminPage(w, r)
 			return
 		}
-		if !strings.HasPrefix(r.URL.Path, "/admin/api/") {
+		apiPrefix := adminPrefix + "/api/"
+		if !strings.HasPrefix(r.URL.Path, apiPrefix) {
 			http.NotFound(w, r)
 			return
 		}
-		action := strings.TrimPrefix(r.URL.Path, "/admin/api/")
+		action := strings.TrimPrefix(r.URL.Path, apiPrefix)
 		action = strings.TrimSuffix(action, "/")
 		w.Header().Set("Cache-Control", "no-store")
 		switch action {
@@ -58,10 +61,10 @@ func registerAdmin(mux *http.ServeMux, cfg serverConfig, data string) {
 			if token == "" {
 				token = "local"
 			}
-			http.SetCookie(w, &http.Cookie{Name: "cdr_admin", Value: token, Path: "/admin/ifgfsgfbijuzoxzq", HttpOnly: true, SameSite: http.SameSiteLaxMode})
+			http.SetCookie(w, &http.Cookie{Name: "cdr_admin", Value: token, Path: adminPrefix, HttpOnly: true, SameSite: http.SameSiteLaxMode})
 			writeHTTPJSON(w, map[string]any{"ok": true})
 		case "logout":
-			http.SetCookie(w, &http.Cookie{Name: "cdr_admin", Value: "", Path: "/admin/ifgfsgfbijuzoxzq", MaxAge: -1})
+			http.SetCookie(w, &http.Cookie{Name: "cdr_admin", Value: "", Path: adminPrefix, MaxAge: -1})
 			writeHTTPJSON(w, map[string]any{"ok": true})
 		case "state":
 			if r.Method != http.MethodGet {
@@ -115,11 +118,63 @@ func serveAdminPage(w http.ResponseWriter, r *http.Request) {
 	}
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	w.Header().Set("Cache-Control", "no-store")
+	w.Header().Set("X-Content-Type-Options", "nosniff")
+	w.Header().Set("X-Frame-Options", "DENY")
+	w.Header().Set("Content-Security-Policy", "default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'")
+	body := adminPage
+	if !adminAllowed(r) {
+		body = adminLoginGate
+	}
 	w.WriteHeader(http.StatusOK)
 	if r.Method != http.MethodHead {
-		_, _ = w.Write(adminPage)
+		_, _ = w.Write(body)
 	}
 }
+
+var adminLoginGate = []byte(`<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>CDR 管理登录</title>
+<style>
+body{margin:0;min-height:100vh;display:grid;place-items:center;font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#0a0a0a;color:#f4f4f4}
+.card{width:min(420px,92vw);padding:28px;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:#161616}
+h1{margin:0 0 8px;font-size:1.25rem}p{margin:0 0 18px;color:#9a9a9a;font-size:.92rem}
+label{display:block;margin:0 0 6px;font-size:.85rem;color:#9a9a9a}
+input{width:100%;box-sizing:border-box;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:#0a0a0a;color:#fff}
+button{margin-top:14px;width:100%;padding:10px 12px;border:0;border-radius:10px;background:#fff;color:#111;font-weight:600;cursor:pointer}
+.err{margin-top:10px;color:#ffb4b4;font-size:.85rem;min-height:1.2em}
+</style></head><body>
+<form class="card" id="f">
+<h1>CDR 更新服务器</h1>
+<p>管理面板需先登录。未认证不会下发完整管理页。</p>
+<label for="token">管理令牌</label>
+<input id="token" type="password" autocomplete="current-password" autofocus>
+<button type="submit">进入面板</button>
+<div class="err" id="err"></div>
+</form>
+<script>
+const apiBase = location.pathname.replace(/\/?$/, '') + '/api';
+document.getElementById('f').onsubmit = async (ev) => {
+  ev.preventDefault();
+  const err = document.getElementById('err');
+  err.textContent = '';
+  try {
+    const res = await fetch(apiBase + '/login', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({token: document.getElementById('token').value.trim()}),
+      credentials: 'same-origin'
+    });
+    const text = await res.text();
+    if (!res.ok) throw new Error(text || ('HTTP ' + res.status));
+    location.reload();
+  } catch (e) {
+    err.textContent = e.message || String(e);
+  }
+};
+</script>
+</body></html>`)
 
 func adminLoopback(r *http.Request) bool {
 	host, _, err := net.SplitHostPort(r.RemoteAddr)
@@ -178,12 +233,14 @@ func adminState(data string) map[string]any {
 		"listen":             live.listen,
 		"port":               live.port,
 		"public_url":         cfgField(data, "public_url"),
-		"access_token":       cfgField(data, "access_token"),
+		"access_token":       "",
+		"server_access_token": "",
 		"token_enabled":      cfgField(data, "admin_token") != "",
 		"sync_token_enabled": cfgField(data, "access_token") != "",
+		"server_sync_token_enabled": cfgField(data, "server_access_token") != "",
 		"busy":               busy,
 		"progress":           progressSnapshot(),
-		"admin_url":          "http://" + host + ":" + live.port + "/admin/ifgfsgfbijuzoxzq",
+		"admin_url":          "http://" + host + ":" + live.port + adminPrefix,
 		"client_fingerprint": meta["client_fingerprint"],
 		"server_fingerprint": meta["server_fingerprint"],
 		"servers":            loadServers(data),
