@@ -87,7 +87,7 @@ if (livingEntity.level().getGameTime() % 40L == 0L) {
 - 配套 `kubejs/assets/more_mod_tetra/lang/zh_cn.json` 覆盖无意识和真实隐身的 `curios_*.tooltip`，将“每10s给予……11s”的旧说明统一为普通效果的“持续给予……”格式；妖怪化与半妖怪化的上游提示已经使用该格式。
 - 补丁为 705 字节，SHA-256 `f7f62e44aebc7c37e3267842326ca60c2170f9114df8fe65e8fcbb0b4dfff429`；基线由 `ClassReader → ClassNode → ClassWriter(0)` 归一化。
 - 已调用本地 Hotai 1.0 的实际 `BytecodeTransformer` 生成 `MemoryDiff`，再由实际 `DiffTransformer` 离线重放；结果逐字节匹配预期 class，全部方法通过 ASM `BasicVerifier`。撤销一个刷新间隔和四个持续时间常量的改动后，完整 class 与原归一化字节逐字节一致。
-- 当前仅完成离线生成、重放和部署，未启动游戏。重启后需核对 `Patched class: com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer`，并保持足够饥饿值佩戴至少 40 秒，检查效果无空档及摘下后到期；MMT 升级或上游修正该分支时重新生成或移除补丁。
+- 已完成游戏内回归：效果持续无空档，摘下后正常到期。MMT 升级或上游修正该分支时重新生成或移除补丁。
 
 ### Create 流体搜索与 JEI
 
