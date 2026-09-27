@@ -1229,5 +1229,8 @@
     "message.createdelight.satellite.scanning": "正在扫描%s的 %s, %s 附近地表……",
     "message.createdelight.satellite.no_safe_landing": "目标附近 128 格内没有找到非虚空、非液体且无明显致命方块的地表坐标。",
     "message.createdelight.satellite.waypoint_placement_failed": "已找到着陆点，但无法在那里部署火箭航点。",
-    "message.createdelight.satellite.waypoint_written": "请求 %s, %s；安全着陆点 %s, %s, %s 已写入星图。卫星剩余能源：%s"
+    "message.createdelight.satellite.waypoint_written": "请求 %s, %s；安全着陆点 %s, %s, %s 已写入星图。卫星剩余能源：%s",
+    "menu.createdelight.quit_hover": "期待下次再见捏(*╹▽╹*)",
+    "menu.createdelight.single_player_hover": "进入齿轮盛宴的世界",
+    "menu.createdelight.mutil_player_hover": "进入朋友的世界一起玩耍"
 }

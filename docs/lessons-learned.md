@@ -760,3 +760,59 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: kubejs/data 下混有真配方、forge:false 屏障桩、空 {} 覆盖。一概重建或一概删除都会错：漏 remove 会留下原版配方，漏重建会丢内容；迁移时还容易丢独有配方（如 white_tea_leaves 晾晒、scarlet_tea 自定义烹饪）或砍掉无替代项。
 - **Fix/Lesson**: DISABLE/空桩 → remove_recipes_id；真配方 → e.recipes/e.custom 并对齐 Serializer 字段与配方 ID；迁移后做旧 JSON↔新 JS 的 ID/字段对照，并检索任务/脚本引用。bakeries:dough_crafting_table、keg_pouring、sandwich_spouting 等细节见上条 schema 规则。
+
+## FancyMenu 装饰覆盖层字段会每帧重求值，随机占位符直写会闪烁
+
+**Date**: 2026-09-27
+
+- **Problem**: `show_decoration_overlay` 与灯带布尔字段每帧重求值；`random_number` 每次重掷导致灯带闪烁，`randomtext`+`interval` 到期换值导致彩蛋秒没。日期门控看似"只读一次"只是因为日期本身不变。
+- **Fix/Lesson**: 稳定开关走变量——`set_variable` 写入随机结果，覆盖层用 `getvariable` 读；变量值在两次写入之间不变。细节见 `docs/dev-knowledge/fancymenu/`。
+
+## FancyMenu 打开界面动作在首帧之后执行，不能用来做当次显示的随机
+
+**Date**: 2026-09-27
+
+- **Problem**: `open_screen` 动作脚本在首帧渲染后才跑，首帧用旧变量值，随后新掷骰覆盖（多半是 none），表现为彩蛋闪一下消失。
+- **Fix/Lesson**: 掷骰挂在 `close_screen` 动作（`close_screen_executable_block_identifier`），下次打开时变量已就位；首次启动进主菜单为空属预期。
+
+## FancyMenu 手写 loading_requirement 不被解析，空容器等于条件永远通过
+
+**Date**: 2026-09-27
+
+- **Problem**: 按字节码反推的 requirement 序列化写进布局后，编辑器里加载要求为空，布局条件失效但布局仍显示（节日灯带改回 9 月也不消失）。
+- **Fix/Lesson**: 布局/元素加载条件只用 FancyMenu 编辑器 UI 添加并存盘，不要手写；日期门控改用 `switch_case`+`calc` 占位符实现（`docs/dev-knowledge/fancymenu/`）。
+
+## MBD2 输出品质必须在扣料前抓取输入样本
+
+**Date**: 2026-09-26
+
+- **Problem**: MBD2 `onRecipeFinish` 在 consume 模式先 `handleRecipeIO(IN)` 扣料再 `handleRecipeIO(OUT)` 产出；非 consume 模式开跑即扣料，OUT 阶段输入槽已空，现读输入拿不到品质。`handleRecipeInner` 的 simulate 路径用 `storage.copy()`，也不能在 simulate 里 take 缓存。
+- **Fix/Lesson**: 在 `handleRecipeInner` 的 `!simulate` IN 路径按机器（WeakHashMap）缓存输入品质样本，OUT 插入前写入产物；chercraft 屠宰台/挂肉钩则在 `dropLoot` 的 forEach 前从 `getInsertedItem` 继承品质。
+
+## CreateCyberGoggles 燃烧室 tooltip 套到冷却室会显示错误读数
+
+**Date**: 2026-09-26
+
+- **Problem**: CCG 的 `BlazeBurnerBlockEntityMixin` 对所有 `BlazeBurnerBlockEntity`（含继承的 FluidLogistics 冷却室）显示「燃烧室状态」，且 `GoggleTooltipUtil.burner` 把上限 `sipush 500`（tick）当 500 秒写死；冷却室实际上限 500 tick = 25 秒。后续又踩：`remainingBurnTime` 只被设为单次 `cool_time`（细雪 10 tick）导致秒数立刻归零；液体燃料把它顶在 10000 tick 上限导致客户端数字冻住；tooltip 行被 CCG 左侧图标列遮挡。
+- **Fix/Lesson**: CDC 用 `BlazeCoolerGoggleTooltipMixin` / `BlazeBurnerGoggleTooltipMixin` 在 `addToGoggleTooltip` 接管，按燃料罐流体换算总时长（`remainingBurnTime + tankAmount/fuel.amount*coolTime`）；新增 `GoggleBurnTimeTicker` 按客户端 gameTime 本地递减，服务端原值变化时重置基线；缩进复用 CCG `getIndents(font,4)` 公式而非写死空格。可选依赖经 `compat/createliquidfuel/BlazeBurnerFuels` 隔离并 Throwable 降级。
+
+## 游戏运行中覆盖 CDC jar 会导致新包不可见并进服崩溃
+
+**Date**: 2026-09-26
+
+- **Problem**: 运行中替换 Create-Delight-Core jar 后 ModuleClassLoader 的包列表仍按旧 jar 扫描结果解析，新增包（如 `compat.fluidlogistics`）不可见，`OnDatapackSyncEvent` 构造 `SyncFuelMapsPacket` 时 `NoClassDefFoundError`。
+- **Fix/Lesson**: 网络包构造对可选兼容类做 Throwable 降级为空 Map；部署 jar 前必须关闭游戏。排查进服崩溃先分清是热替换残留还是代码回归。
+
+## ExtendedAE 偶发启动 NPE 是配置竞态，与 hotai 无关
+
+**Date**: 2026-09-26
+
+- **Problem**: ExtendedAE 1.20-1.4.18 的 `EAERegistryHandler.initPackageList` 在 `FMLCommonSetupEvent` 直接 forEach `EPPConfig.tapeWhitelist`，而该静态字段由 `ModConfigEvent.onLoad` 填充，存在竞态偶发 NPE。
+- **Fix/Lesson**: 无需改整合包，第二次启动即过。排查启动崩溃时先与当次 hotai/CDC 回归区分；复现频繁可给上游提空值保护。
+
+## KubeJS 液体燃料桶必须登记 craftingRemainingItem
+
+**Date**: 2026-09-26
+
+- **Problem**: `BlazeBurnerBlockMixin` 对「有 FLUID_HANDLER_ITEM 且无 crafting remainder」跳过 shrink；`FluidBucketWrapper.drain` 后 wrapper.container 变成空桶，但原 stack 仍是填充桶不被消耗，留下 cap 清空的残桶。`cryo_fuel_bucket` 曾漏登记。
+- **Fix/Lesson**: 新增 KubeJS 液体燃料桶时必须同步设 `craftingRemainingItem=minecraft:bucket`（见 `kubejs/startup_scripts/modifier_burntime.js`）。
