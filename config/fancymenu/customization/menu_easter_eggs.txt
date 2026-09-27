@@ -1,0 +1,126 @@
+type = fancymenu_layout
+
+layout-meta {
+  identifier = title_screen
+  render_custom_elements_behind_vanilla = false
+  last_edited_time = 1790455000000
+  is_enabled = true
+  randommode = false
+  randomgroup = 1
+  randomonlyfirsttime = false
+  layout_index = 2
+  [loading_requirement_container_meta:7e4a1c90-2b5d-4c18-9a6e-3f8d0c5b7a00-1790455000000] = [groups:][instances:]
+}
+
+decoration_overlay {
+  overlay_type = snowfall
+  instance_identifier = d1e2f3a4-0001-4b5c-8d9e-0f1a2b3c4d01-1790455000001
+  show_decoration_overlay = {"placeholder":"switch_case","values":{"value":"{"placeholder":"getvariable","values":{"name":"deco_pick"}}","cases":"snow:true","default":"false"}}
+  snow_intensity = 1.0
+  snow_scale = 1.0
+  snow_speed = 1.0
+  snow_accumulation = true
+  snow_color_hex = #FFFFFF
+}
+
+decoration_overlay {
+  overlay_type = rainfall
+  instance_identifier = d1e2f3a4-0002-4b5c-8d9e-0f1a2b3c4d02-1790455000002
+  show_decoration_overlay = {"placeholder":"switch_case","values":{"value":"{"placeholder":"getvariable","values":{"name":"deco_pick"}}","cases":"rain:true","default":"false"}}
+  rain_intensity = 1.0
+  rain_scale = 1.0
+  rain_thunder_brightness = 1.0
+  rain_puddles = true
+  rain_drips = true
+  rain_thunder = false
+  rain_color_hex = #CFE7FF
+}
+
+decoration_overlay {
+  overlay_type = fireflies
+  instance_identifier = d1e2f3a4-0003-4b5c-8d9e-0f1a2b3c4d03-1790455000003
+  show_decoration_overlay = {"placeholder":"switch_case","values":{"value":"{"placeholder":"getvariable","values":{"name":"deco_pick"}}","cases":"fireflies:true","default":"false"}}
+  firefly_group_density = 1.0
+  firefly_group_amount = 1.0
+  firefly_group_size = 1.0
+  firefly_scale = 1.0
+  firefly_follow_mouse = true
+  firefly_landing = true
+  firefly_color_hex = #FFE08A
+}
+
+decoration_overlay {
+  overlay_type = string_lights
+  instance_identifier = d1e2f3a4-0004-4b5c-8d9e-0f1a2b3c4d04-1790455000004
+  show_decoration_overlay = {"placeholder":"switch_case","values":{"value":"{"placeholder":"getvariable","values":{"name":"deco_pick"}}","cases":"string_lights:true","default":"false"}}
+  string_lights_scale = 1.0
+  string_lights_wind_strength = 1.0
+  string_lights_flicker_speed = 1.0
+  string_lights_left_center_to_top_center = true
+  string_lights_right_center_to_top_center = true
+  string_lights_bottom_left_to_top_center = false
+  string_lights_bottom_right_to_top_center = false
+  string_lights_top_left_to_top_right = true
+  string_lights_bottom_left_to_bottom_right = false
+  string_lights_loose_left_top = false
+  string_lights_loose_right_top = false
+  string_lights_left_center_to_top_center_christmas_mode = false
+  string_lights_right_center_to_top_center_christmas_mode = false
+  string_lights_bottom_left_to_top_center_christmas_mode = false
+  string_lights_bottom_right_to_top_center_christmas_mode = false
+  string_lights_top_left_to_top_right_christmas_mode = false
+  string_lights_bottom_left_to_bottom_right_christmas_mode = false
+  string_lights_loose_left_top_christmas_mode = false
+  string_lights_loose_right_top_christmas_mode = false
+  string_lights_left_center_to_top_center_color_hex = #FFD27A
+  string_lights_right_center_to_top_center_color_hex = #FFD27A
+  string_lights_bottom_left_to_top_center_color_hex = #FFD27A
+  string_lights_bottom_right_to_top_center_color_hex = #FFD27A
+  string_lights_top_left_to_top_right_color_hex = #FFD27A
+  string_lights_bottom_left_to_bottom_right_color_hex = #FFD27A
+  string_lights_loose_left_top_color_hex = #FFD27A
+  string_lights_loose_right_top_color_hex = #FFD27A
+}
+
+decoration_overlay {
+  overlay_type = confetti
+  instance_identifier = d1e2f3a4-0005-4b5c-8d9e-0f1a2b3c4d05-1790455000005
+  show_decoration_overlay = {"placeholder":"switch_case","values":{"value":"{"placeholder":"getvariable","values":{"name":"deco_pick"}}","cases":"confetti:true","default":"false"}}
+  confetti_scale = 1.0
+  confetti_fall_speed = 1.0
+  confetti_burst_density = 1.0
+  confetti_burst_amount = 1.0
+  confetti_particle_cap = 500
+  confetti_color_mix_mode = true
+  confetti_mouse_click_mode = false
+  confetti_color_hex = #FFFFFF
+}
+
+decoration_overlay {
+  overlay_type = leaves
+  instance_identifier = d1e2f3a4-0006-4b5c-8d9e-0f1a2b3c4d06-1790455000006
+  show_decoration_overlay = {"placeholder":"switch_case","values":{"value":"{"placeholder":"getvariable","values":{"name":"deco_pick"}}","cases":"leaves:true","default":"false"}}
+  leaves_density = 1.0
+  leaves_wind_intensity = 1.0
+  leaves_wind_blows = true
+  leaves_fall_speed = 1.0
+  leaves_scale = 1.0
+  leaves_color_start_hex = #7BA84F
+  leaves_color_end_hex = #D58A3B
+}
+
+decoration_overlay {
+  overlay_type = fireworks
+  instance_identifier = d1e2f3a4-0007-4b5c-8d9e-0f1a2b3c4d07-1790455000007
+  show_decoration_overlay = {"placeholder":"switch_case","values":{"value":"{"placeholder":"getvariable","values":{"name":"deco_pick"}}","cases":"fireworks:true","default":"false"}}
+  fireworks_scale = 1.0
+  fireworks_explosion_size = 1.0
+  fireworks_amount = 1.0
+  fireworks_show_rockets = true
+}
+
+layout_action_executable_blocks {
+  close_screen_executable_block_identifier = c0ffee01-0001-4a0b-9c0d-0e1f2a3b4c01-1790455000000
+  [executable_block:c0ffee01-0001-4a0b-9c0d-0e1f2a3b4c01-1790455000000][type:generic] = [executables:c0ffee02-0002-4a0b-9c0d-0e1f2a3b4c02-1790455000000]
+  [executable_action_instance:c0ffee02-0002-4a0b-9c0d-0e1f2a3b4c02-1790455000000][action_type:set_variable] = deco_pick:{"placeholder":"switch_case","values":{"value":"{"placeholder":"random_number","values":{"min":"1","max":"35"}}","cases":"29:snow,30:rain,31:fireflies,32:string_lights,33:confetti,34:leaves,35:fireworks","default":"none"}}
+}

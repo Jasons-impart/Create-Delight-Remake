@@ -291,5 +291,8 @@
   "fluid.createdelight.flawless_cataclysm_genetic_culture": "Flawless Cataclysm Minion Genetic Culture",
   "dimension.createdelight.lunar_farside": "Lunar Farside Anomaly",
   "createdelight.planets.lunar_farside.name": "Lunar Farside Anomaly",
-  "northstar.planet.dimension.farside": " - Deep Lunar Rift"
+  "northstar.planet.dimension.farside": " - Deep Lunar Rift",
+  "menu.createdelight.quit_hover": "Looking forward to seeing you next time(*╹▽╹*)~",
+  "menu.createdelight.single_player_hover": "Enter the world of Create Delight",
+  "menu.createdelight.mutil_player_hover": "Enter a friend's world and play together"
 }

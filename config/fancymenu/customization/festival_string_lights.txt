@@ -1,0 +1,46 @@
+type = fancymenu_layout
+
+layout-meta {
+  identifier = title_screen
+  render_custom_elements_behind_vanilla = false
+  last_edited_time = 1790452000000
+  is_enabled = true
+  randommode = false
+  randomgroup = 1
+  randomonlyfirsttime = false
+  layout_index = 3
+  [loading_requirement_container_meta:3c8e1a50-7b2d-4c19-a6e0-9f4d2b7c5e00-1790452000000] = [groups:][instances:]
+}
+
+decoration_overlay {
+  overlay_type = string_lights
+  instance_identifier = 5a9c2e71-0d4b-4f38-9c1a-6e8b3d0f2a00-1790452000000
+  show_decoration_overlay = {"placeholder":"switch_case","values":{"value":"{"placeholder":"calc","values":{"expression":"({"placeholder":"realtimemonth"}*100)+{"placeholder":"realtimeday"}","decimal":"false"}}","cases":"1220:true,1221:true,1222:true,1223:true,1224:true,1225:true,1226:true,1227:true,1228:true,1229:true,1230:true,1231:true,101:true,102:true,103:true,104:true,105:true,125:true,126:true,127:true,128:true,129:true,130:true,131:true,201:true,202:true,203:true,204:true,205:true,206:true,207:true,208:true,209:true,210:true,211:true,212:true,213:true,214:true,215:true,216:true,217:true,218:true,219:true,220:true","default":"false"}}
+  string_lights_scale = 1.0
+  string_lights_wind_strength = 1.0
+  string_lights_flicker_speed = 1.0
+  string_lights_left_center_to_top_center = true
+  string_lights_right_center_to_top_center = true
+  string_lights_bottom_left_to_top_center = {"placeholder":"switch_case","values":{"value":"{"placeholder":"randomtext","values":{"source":"minimal\nhang_both\ndiagonal_both\ngarland\nhang_garland\ndiag_garland\nfull\nleft_asym\nright_asym\nstar","interval":"3600"}}","cases":"diagonal_both:true,diag_garland:true,full:true,left_asym:true,star:true","default":"false"}}
+  string_lights_bottom_right_to_top_center = {"placeholder":"switch_case","values":{"value":"{"placeholder":"randomtext","values":{"source":"minimal\nhang_both\ndiagonal_both\ngarland\nhang_garland\ndiag_garland\nfull\nleft_asym\nright_asym\nstar","interval":"3600"}}","cases":"diagonal_both:true,diag_garland:true,full:true,right_asym:true,star:true","default":"false"}}
+  string_lights_top_left_to_top_right = true
+  string_lights_bottom_left_to_bottom_right = {"placeholder":"switch_case","values":{"value":"{"placeholder":"randomtext","values":{"source":"minimal\nhang_both\ndiagonal_both\ngarland\nhang_garland\ndiag_garland\nfull\nleft_asym\nright_asym\nstar","interval":"3600"}}","cases":"garland:true,hang_garland:true,diag_garland:true,full:true","default":"false"}}
+  string_lights_loose_left_top = {"placeholder":"switch_case","values":{"value":"{"placeholder":"randomtext","values":{"source":"minimal\nhang_both\ndiagonal_both\ngarland\nhang_garland\ndiag_garland\nfull\nleft_asym\nright_asym\nstar","interval":"3600"}}","cases":"hang_both:true,hang_garland:true,full:true,left_asym:true,star:true","default":"false"}}
+  string_lights_loose_right_top = {"placeholder":"switch_case","values":{"value":"{"placeholder":"randomtext","values":{"source":"minimal\nhang_both\ndiagonal_both\ngarland\nhang_garland\ndiag_garland\nfull\nleft_asym\nright_asym\nstar","interval":"3600"}}","cases":"hang_both:true,hang_garland:true,full:true,right_asym:true,star:true","default":"false"}}
+  string_lights_left_center_to_top_center_christmas_mode = true
+  string_lights_right_center_to_top_center_christmas_mode = true
+  string_lights_bottom_left_to_top_center_christmas_mode = true
+  string_lights_bottom_right_to_top_center_christmas_mode = true
+  string_lights_top_left_to_top_right_christmas_mode = true
+  string_lights_bottom_left_to_bottom_right_christmas_mode = true
+  string_lights_loose_left_top_christmas_mode = true
+  string_lights_loose_right_top_christmas_mode = true
+  string_lights_left_center_to_top_center_color_hex = #FFD27A
+  string_lights_right_center_to_top_center_color_hex = #FFD27A
+  string_lights_bottom_left_to_top_center_color_hex = #FFD27A
+  string_lights_bottom_right_to_top_center_color_hex = #FFD27A
+  string_lights_top_left_to_top_right_color_hex = #FFD27A
+  string_lights_bottom_left_to_bottom_right_color_hex = #FFD27A
+  string_lights_loose_left_top_color_hex = #FFD27A
+  string_lights_loose_right_top_color_hex = #FFD27A
+}

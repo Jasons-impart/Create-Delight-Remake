@@ -52,7 +52,7 @@ function Test-DevKnowledgeChineseMarkdown([string]$RelativePath) {
 
     $inFrontMatter = $false
     $inCodeFence = $false
-    $lines = Get-Content -LiteralPath $path
+    $lines = Get-Content -LiteralPath $path -Encoding UTF8
 
     for ($i = 0; $i -lt $lines.Count; $i++) {
         $lineNumber = $i + 1
