@@ -804,6 +804,11 @@
     "name": "Fallen Lib",
     "version": "1.4.6"
   },
+  "fancy-entity-renderer-forge-1.20.1-0.4.6.jar": {
+    "modId": "fancy-entity-renderer-forge",
+    "name": "Fancy Entity Renderer",
+    "version": "1.20.1-0.4.6"
+  },
   "fancymenu_forge_3.9.8_MC_1.20.1.jar": {
     "modId": "fancymenu_forge",
     "name": "FancyMenu",
