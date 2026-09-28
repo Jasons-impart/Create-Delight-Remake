@@ -22,7 +22,7 @@ final class AdminWeb {
     private static final String COOKIE = "cdr_admin";
     private static final String LOCAL_SESSION = "local";
     private static final int JSON_MAX = 32 * 1024 * 1024;
-    private static final int UPLOAD_MAX = 80 * 1024 * 1024;
+    private static final int UPLOAD_MAX = 200 * 1024 * 1024;
     private static volatile byte[] pageBytes;
 
     private AdminWeb() {}
