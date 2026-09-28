@@ -435,6 +435,7 @@
         <div class="tabs">
           <button class="active" data-tab="servers">已连接的服务端</button>
           <button data-tab="privates">私货</button>
+          <button data-tab="official">官方包</button>
           <button data-tab="connection">连接地址</button>
           <button data-tab="version">GitHub 版本</button>
           <button data-tab="logs">运行日志</button>
@@ -537,6 +538,29 @@
           </table>
           </div>
         </section>
+        <section id="tab-official" class="card">
+          <h2>官方包</h2>
+          <p class="lead">从官方包里排除不需要下发的文件。排除、改端侧都先留在本页，点保存后才会写入仓库。有同名私货时私货优先保留。</p>
+          <div class="toolbar">
+            <input id="officialSearch" class="search" placeholder="搜索路径、分类或端侧" autocomplete="off">
+            <div class="actions" style="margin-left:auto">
+              <button type="button" class="act ok" id="officialSaveBtn">保存</button>
+              <button type="button" class="act ghost" id="officialDiscardBtn" disabled>不保存</button>
+            </div>
+          </div>
+          <div class="table-wrap">
+          <table>
+            <colgroup>
+              <col>
+              <col class="col-side">
+              <col class="col-side">
+              <col class="col-act">
+            </colgroup>
+            <thead><tr><th>游戏内路径</th><th>官方端侧</th><th>排除端侧</th><th></th></tr></thead>
+            <tbody id="officialTable"></tbody>
+          </table>
+          </div>
+        </section>
         <section id="tab-connection" class="card">
           <h2>连接地址</h2>
           <p class="lead">客户端和服务端用这里的对外地址和同步令牌。网页登录令牌请在本机窗口「网页管理」里设置。网页不提供整合包导出。</p>
@@ -615,6 +639,11 @@
       adds: [],
       folders: []
     };
+    // path -> { excluded: bool, side: string } overlay on server official_files
+    const officialPending = Object.create(null);
+    const OFFICIAL_RENDER_LIMIT = 400;
+    let officialSearchTimer = 0;
+    let officialMergedCache = null;
 
     function $(id) { return document.getElementById(id); }
 
@@ -867,6 +896,163 @@
       if (btn) btn.textContent = n ? "保存（" + n + "）" : "保存";
       const discard = $("discardBtn");
       if (discard) discard.disabled = !n || !!(state && state.busy);
+      markOfficialSaveBtn();
+    }
+
+    function officialDirty() {
+      return Object.keys(officialPending).length;
+    }
+
+    function clearOfficialPending() {
+      for (const key of Object.keys(officialPending)) delete officialPending[key];
+      officialMergedCache = null;
+    }
+
+    function markOfficialSaveBtn() {
+      const n = officialDirty();
+      const btn = $("officialSaveBtn");
+      if (btn) {
+        btn.textContent = n ? "保存（" + n + "）" : "保存";
+        btn.disabled = !!(state && state.busy);
+      }
+      const discard = $("officialDiscardBtn");
+      if (discard) discard.disabled = !n || !!(state && state.busy);
+    }
+
+    function mergedOfficial(serverList) {
+      return (serverList || []).map(row => {
+        const path = row.path;
+        const overlay = officialPending[path];
+        const excluded = overlay ? !!overlay.excluded : !!row.excluded;
+        const excludeSide = overlay
+          ? (overlay.side || "both")
+          : (row.exclude_side || "both");
+        return {
+          path,
+          side: row.side || "both",
+          side_label: sideLabelOf(row.side || "both"),
+          category: row.category || categoryOfPath(path),
+          kind: row.kind || "",
+          excluded,
+          exclude_side: excluded ? excludeSide : "",
+          pending: !!overlay
+        };
+      });
+    }
+
+    function cachedMergedOfficial() {
+      const src = state.official_files || [];
+      const pendingKey = Object.keys(officialPending).map(k => k + "=" + JSON.stringify(officialPending[k])).join("\0");
+      const rev = src.length + ":" + pendingKey;
+      if (officialMergedCache && officialMergedCache.rev === rev) {
+        return officialMergedCache.rows;
+      }
+      const rows = mergedOfficial(src);
+      rows.sort((a, b) => {
+        const ca = String(a.category || "");
+        const cb = String(b.category || "");
+        return ca === cb ? String(a.path).localeCompare(String(b.path)) : ca.localeCompare(cb);
+      });
+      officialMergedCache = { rev, rows };
+      return rows;
+    }
+
+    function categoryOfPath(path) {
+      const rel = String(path || "").replace(/\\/g, "/");
+      const slash = rel.indexOf("/");
+      return slash <= 0 ? "根目录" : rel.slice(0, slash);
+    }
+
+    function paintOfficial() {
+      if (!state) return;
+      if (document.querySelector("#officialTable .drop.open")) return;
+      $("officialTable").innerHTML = renderOfficial(cachedMergedOfficial(), $("officialSearch").value);
+      markOfficialSaveBtn();
+    }
+
+    function schedulePaintOfficial() {
+      clearTimeout(officialSearchTimer);
+      officialSearchTimer = setTimeout(() => {
+        requestAnimationFrame(() => paintOfficial());
+      }, 200);
+    }
+
+    function excludeSideDropHtml(path, side, excluded) {
+      if (!excluded) return "<span class=\"id\">—</span>";
+      const current = side === "client" || side === "server" ? side : "both";
+      const safe = esc(path);
+      const opts = [["client", "仅客户端"], ["server", "仅服务端"], ["both", "两端"]]
+        .map(([value, label]) => `<button type="button" data-value="${value}" class="${value === current ? "active" : ""}">${label}</button>`)
+        .join("");
+      return `<div class="drop side-select" data-exclude-path="${safe}" data-value="${current}">
+        <button type="button" class="drop-btn">${sideLabelOf(current)}</button>
+        <div class="drop-menu">${opts}</div>
+      </div>`;
+    }
+
+    function renderOfficial(files, query) {
+      const needle = String(query || "").trim().toLowerCase();
+      const matched = (files || []).filter(row => {
+        if (!needle) return true;
+        const path = String(row.path || "").toLowerCase();
+        const side = String(row.side_label || row.side || "").toLowerCase();
+        const cat = String(row.category || "").toLowerCase();
+        const status = row.excluded ? "已排除 exclude" : "保留 keep";
+        return path.includes(needle) || side.includes(needle) || cat.includes(needle) || status.includes(needle);
+      });
+      if (!matched.length) {
+        return emptyRow(4, needle ? "没有匹配的官方文件" : "还没有官方包清单，请先构建一次仓库");
+      }
+      const total = matched.length;
+      const shown = matched.slice(0, OFFICIAL_RENDER_LIMIT);
+      const parts = [];
+      let current = null;
+      let buffer = [];
+      const flush = () => {
+        if (!current) return;
+        const label = current === "根目录" ? "根目录" : current + "/";
+        parts.push(`<tr class="group"><td colspan="4" title="${esc(label)}">${esc(label)}  (${buffer.length})</td></tr>`);
+        for (const row of buffer) {
+          const path = esc(row.path);
+          const act = row.excluded
+            ? `<button type="button" class="act" data-official-keep="${path}">恢复</button>`
+            : `<button type="button" class="act danger" data-official-exclude="${path}">排除</button>`;
+          parts.push(`<tr class="file${row.pending ? " is-pending" : ""}${row.excluded ? " is-excluded" : ""}">
+            <td title="${path}">${path}</td>
+            <td class="col-side">${esc(sideLabelOf(row.side))}</td>
+            <td class="col-side">${excludeSideDropHtml(row.path, row.exclude_side || "both", row.excluded)}</td>
+            <td class="col-act">${act}</td>
+          </tr>`);
+        }
+        buffer = [];
+      };
+      for (const row of shown) {
+        const cat = row.category || categoryOfPath(row.path);
+        if (cat !== current) {
+          flush();
+          current = cat;
+        }
+        buffer.push(row);
+      }
+      flush();
+      if (total > OFFICIAL_RENDER_LIMIT) {
+        parts.push(`<tr class="group"><td colspan="4">已显示 ${OFFICIAL_RENDER_LIMIT} / ${total}，请继续输入关键字缩小范围</td></tr>`);
+      }
+      return parts.join("");
+    }
+
+    function collectOfficialExcludes() {
+      const map = Object.create(null);
+      for (const row of state.official_files || []) {
+        if (row.excluded) {
+          map[row.path] = row.exclude_side || "both";
+        }
+      }
+      for (const [path, overlay] of Object.entries(officialPending)) {
+        if (overlay.excluded) map[path] = overlay.side || "both";
+        else delete map[path];
+      }
+      return Object.entries(map).map(([path, side]) => ({ path, side }));
     }
 
     function destForFile(dest, filename, fileCount) {
@@ -1071,8 +1257,12 @@
       if (!document.querySelector("#privateTable .drop.open")) {
         $("privateTable").innerHTML = renderPrivates(mergedPrivates(privates), $("privateSearch").value);
       }
+      if (!document.querySelector("#officialTable .drop.open")) {
+        officialMergedCache = null;
+        $("officialTable").innerHTML = renderOfficial(cachedMergedOfficial(), $("officialSearch").value);
+      }
       markSaveBtn();
-      document.querySelectorAll("#privateTable .drop-btn").forEach(btn => {
+      document.querySelectorAll("#privateTable .drop-btn, #officialTable .drop-btn").forEach(btn => {
         if (btn.closest(".drop.open")) return;
         btn.disabled = !!data.busy;
       });
@@ -1219,6 +1409,84 @@
     $("privateSearch").addEventListener("input", () => {
       paintPrivates();
     });
+
+    $("officialSearch").addEventListener("input", () => {
+      schedulePaintOfficial();
+    });
+
+    $("officialTable").onclick = async ev => {
+      const option = ev.target.closest(".drop-menu [data-value]");
+      if (option) {
+        const drop = option.closest(".drop");
+        const path = drop.getAttribute("data-exclude-path");
+        const side = option.getAttribute("data-value");
+        const label = option.textContent.trim();
+        drop.classList.remove("open");
+        if (!path || drop.dataset.value === side) return;
+        const base = (state.official_files || []).find(row => row.path === path);
+        officialPending[path] = { excluded: true, side };
+        if (base && base.excluded && (base.exclude_side || "both") === side) {
+          delete officialPending[path];
+        }
+        setDropValue(drop, side, label);
+        drop.dataset.value = side;
+        const row = drop.closest("tr");
+        if (row) row.classList.add("is-pending");
+        markOfficialSaveBtn();
+        toast("已改为" + label + "，点保存后生效");
+        return;
+      }
+      const excludeBtn = ev.target.closest("[data-official-exclude]");
+      if (excludeBtn) {
+        const path = excludeBtn.getAttribute("data-official-exclude");
+        const base = (state.official_files || []).find(row => row.path === path);
+        const side = (base && (base.side === "client" || base.side === "server")) ? base.side : "both";
+        if (base && base.excluded) {
+          delete officialPending[path];
+        } else {
+          officialPending[path] = { excluded: true, side };
+        }
+        paintOfficial();
+        toast("已标记排除，点保存后生效");
+        return;
+      }
+      const keepBtn = ev.target.closest("[data-official-keep]");
+      if (keepBtn) {
+        const path = keepBtn.getAttribute("data-official-keep");
+        const base = (state.official_files || []).find(row => row.path === path);
+        if (base && !base.excluded) {
+          delete officialPending[path];
+        } else {
+          officialPending[path] = { excluded: false, side: "both" };
+        }
+        paintOfficial();
+        toast("已标记恢复，点保存后生效");
+      }
+    };
+
+    $("officialSaveBtn").onclick = async () => {
+      try {
+        toast(officialDirty() ? "正在保存官方包调整…" : "正在保存…");
+        const excludes = collectOfficialExcludes();
+        await api("official-adjust", { method: "POST", json: true, body: JSON.stringify({ excludes }) });
+        await api("rebuild", { method: "POST" });
+        clearOfficialPending();
+        markOfficialSaveBtn();
+        toast("已保存");
+        await refresh();
+      } catch (err) { toast(err.message); }
+    };
+
+    $("officialDiscardBtn").onclick = async () => {
+      if (!officialDirty()) {
+        toast("没有待保存的改动");
+        return;
+      }
+      if (!await ask("不保存", "放弃未保存的官方包调整？", true)) return;
+      clearOfficialPending();
+      paintOfficial();
+      toast("已放弃未保存的改动");
+    };
 
     $("privateTable").onclick = async ev => {
       const option = ev.target.closest(".drop-menu [data-value]");

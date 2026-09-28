@@ -125,8 +125,29 @@ final class AdminApp {
         Set<String> pendingDeletes = new LinkedHashSet<>();
         List<ServerRuntime.PrivateAdd> pendingAdds = new ArrayList<>();
         List<String> pendingFolders = new ArrayList<>();
+        Map<String, String> pendingOfficialExclude = new LinkedHashMap<>(); // path -> side; absent+tombstone via pendingOfficialKeep
+        Set<String> pendingOfficialKeep = new LinkedHashSet<>();
+        List<String> officialRowKeys = new ArrayList<>();
         JTextField privateSearch = new JTextField();
         privateSearch.putClientProperty("JTextField.placeholderText", "搜索路径、文件名或端侧");
+        DefaultTableModel officialModel = new DefaultTableModel(new Object[]{"游戏内路径", "官方端侧", "状态"}, 0) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        JTable officialTable = new JTable(officialModel);
+        officialTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        officialTable.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
+        officialTable.getColumnModel().getColumn(1).setMinWidth(72);
+        officialTable.getColumnModel().getColumn(1).setMaxWidth(96);
+        officialTable.getColumnModel().getColumn(2).setMinWidth(120);
+        officialTable.getColumnModel().getColumn(2).setPreferredWidth(140);
+        JTextField officialSearch = new JTextField();
+        officialSearch.putClientProperty("JTextField.placeholderText", "搜索路径、分类或端侧");
+        JButton excludeOfficial = new JButton("排除所选");
+        JButton restoreOfficial = new JButton("恢复所选");
+        JButton changeOfficialSide = new JButton("改排除端侧");
         Font groupFont = privateTable.getFont().deriveFont(Font.BOLD);
         privateTable.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
             @Override
@@ -266,7 +287,8 @@ final class AdminApp {
                     }
                 }
                 boolean dirty = !pendingSides.isEmpty() || !pendingDeletes.isEmpty()
-                        || !pendingAdds.isEmpty() || !pendingFolders.isEmpty();
+                        || !pendingAdds.isEmpty() || !pendingFolders.isEmpty()
+                        || !pendingOfficialExclude.isEmpty() || !pendingOfficialKeep.isEmpty();
                 discard.setEnabled(dirty && !busy.get());
             } catch (Exception error) {
                 append(log, "读取私货失败：" + error.getMessage());
@@ -275,6 +297,96 @@ final class AdminApp {
         privateSearch.getDocument().addDocumentListener(new DocumentListener() {
             private void changed() {
                 refreshPrivates.run();
+            }
+            @Override public void insertUpdate(DocumentEvent event) { changed(); }
+            @Override public void removeUpdate(DocumentEvent event) { changed(); }
+            @Override public void changedUpdate(DocumentEvent event) { changed(); }
+        });
+
+        Runnable refreshOfficial = () -> {
+            try {
+                List<Map<String, Object>> rows = OfficialAdjust.listOfficialRows(runtime.config());
+                String query = officialSearch.getText() == null ? "" : officialSearch.getText().trim().toLowerCase();
+                int selected = officialTable.getSelectedRow();
+                String keep = selected >= 0 && selected < officialRowKeys.size() ? officialRowKeys.get(selected) : null;
+                officialModel.setRowCount(0);
+                officialRowKeys.clear();
+                String currentCat = null;
+                List<Map<String, Object>> buffer = new ArrayList<>();
+                for (Map<String, Object> row : rows) {
+                    String path = String.valueOf(row.get("path"));
+                    boolean excluded = pendingOfficialKeep.contains(path)
+                            ? false
+                            : (pendingOfficialExclude.containsKey(path) || Boolean.TRUE.equals(row.get("excluded")));
+                    String excludeSide = pendingOfficialExclude.getOrDefault(path,
+                            String.valueOf(row.getOrDefault("exclude_side", "both")));
+                    if (excludeSide == null || excludeSide.isBlank() || "null".equals(excludeSide)) {
+                        excludeSide = "both";
+                    }
+                    String cat = String.valueOf(row.getOrDefault("category", OfficialAdjust.categoryOf(path)));
+                    String sideLabel = PrivateViews.sideLabel(String.valueOf(row.getOrDefault("side", "both")));
+                    String status = excluded
+                            ? ("已排除 · " + PrivateViews.sideLabel(excludeSide))
+                            : "保留";
+                    boolean pending = pendingOfficialExclude.containsKey(path) || pendingOfficialKeep.contains(path);
+                    if (pending) {
+                        status = status + " · 未保存";
+                    }
+                    if (!query.isBlank()) {
+                        String hay = (path + " " + cat + " " + sideLabel + " " + status).toLowerCase();
+                        if (!hay.contains(query)) {
+                            continue;
+                        }
+                    }
+                    if (currentCat == null) {
+                        currentCat = cat;
+                    } else if (!currentCat.equals(cat)) {
+                        String label = "根目录".equals(currentCat) ? "根目录" : currentCat + "/";
+                        officialModel.addRow(new Object[]{label + "  (" + buffer.size() + ")", "", ""});
+                        officialRowKeys.add(null);
+                        for (Map<String, Object> item : buffer) {
+                            officialModel.addRow(new Object[]{
+                                    item.get("path"), item.get("sideLabel"), item.get("status")
+                            });
+                            officialRowKeys.add(String.valueOf(item.get("path")));
+                        }
+                        buffer.clear();
+                        currentCat = cat;
+                    }
+                    Map<String, Object> item = new LinkedHashMap<>();
+                    item.put("path", path);
+                    item.put("sideLabel", sideLabel);
+                    item.put("status", status);
+                    buffer.add(item);
+                }
+                if (currentCat != null) {
+                    String label = "根目录".equals(currentCat) ? "根目录" : currentCat + "/";
+                    officialModel.addRow(new Object[]{label + "  (" + buffer.size() + ")", "", ""});
+                    officialRowKeys.add(null);
+                    for (Map<String, Object> item : buffer) {
+                        officialModel.addRow(new Object[]{
+                                item.get("path"), item.get("sideLabel"), item.get("status")
+                        });
+                        officialRowKeys.add(String.valueOf(item.get("path")));
+                    }
+                }
+                if (keep != null) {
+                    int index = officialRowKeys.indexOf(keep);
+                    if (index >= 0) {
+                        officialTable.setRowSelectionInterval(index, index);
+                    }
+                }
+                boolean dirty = !pendingSides.isEmpty() || !pendingDeletes.isEmpty()
+                        || !pendingAdds.isEmpty() || !pendingFolders.isEmpty()
+                        || !pendingOfficialExclude.isEmpty() || !pendingOfficialKeep.isEmpty();
+                discard.setEnabled(dirty && !busy.get());
+            } catch (Exception error) {
+                append(log, "读取官方包列表失败：" + error.getMessage());
+            }
+        };
+        officialSearch.getDocument().addDocumentListener(new DocumentListener() {
+            private void changed() {
+                refreshOfficial.run();
             }
             @Override public void insertUpdate(DocumentEvent event) { changed(); }
             @Override public void removeUpdate(DocumentEvent event) { changed(); }
@@ -291,7 +403,7 @@ final class AdminApp {
                 JOptionPane.showMessageDialog(frame, "正在处理上一项操作，请稍候。", "忙碌中", JOptionPane.INFORMATION_MESSAGE);
                 return;
             }
-            setEnabled(false, addPrivate, newPrivateFolder, changePrivateSide, removePrivate, applyVersion, rebuild, discard, refreshTags, exportPcl2, exportServer, applyConnection, generateToken, applyAdminToken, generateAdminToken, detectWan, openWan);
+            setEnabled(false, addPrivate, newPrivateFolder, changePrivateSide, removePrivate, excludeOfficial, restoreOfficial, changeOfficialSide, applyVersion, rebuild, discard, refreshTags, exportPcl2, exportServer, applyConnection, generateToken, applyAdminToken, generateAdminToken, detectWan, openWan);
             new Thread(() -> {
                 try {
                     task.run();
@@ -304,6 +416,7 @@ final class AdminApp {
                         adminTokenField.setText(runtime.config().adminToken);
                         refreshServers.run();
                         refreshPrivates.run();
+                        refreshOfficial.run();
                     });
                 } catch (Exception error) {
                     SwingUtilities.invokeLater(() -> {
@@ -313,9 +426,10 @@ final class AdminApp {
                 } finally {
                     busy.set(false);
                     SwingUtilities.invokeLater(() -> {
-                        setEnabled(true, addPrivate, newPrivateFolder, changePrivateSide, removePrivate, applyVersion, rebuild, refreshTags, exportPcl2, exportServer, applyConnection, generateToken, applyAdminToken, generateAdminToken, detectWan, openWan);
+                        setEnabled(true, addPrivate, newPrivateFolder, changePrivateSide, removePrivate, excludeOfficial, restoreOfficial, changeOfficialSide, applyVersion, rebuild, refreshTags, exportPcl2, exportServer, applyConnection, generateToken, applyAdminToken, generateAdminToken, detectWan, openWan);
                         boolean dirty = !pendingSides.isEmpty() || !pendingDeletes.isEmpty()
-                                || !pendingAdds.isEmpty() || !pendingFolders.isEmpty();
+                                || !pendingAdds.isEmpty() || !pendingFolders.isEmpty()
+                                || !pendingOfficialExclude.isEmpty() || !pendingOfficialKeep.isEmpty();
                         discard.setEnabled(dirty);
                     });
                 }
@@ -606,17 +720,44 @@ final class AdminApp {
                 }
                 runtime.setPrivateSide(entry.getKey(), entry.getValue(), logger);
             }
+            List<Map<String, Object>> officialRows = OfficialAdjust.listOfficialRows(runtime.config());
+            Map<String, String> excludes = new LinkedHashMap<>();
+            for (Map<String, Object> row : officialRows) {
+                String path = String.valueOf(row.get("path"));
+                if (pendingOfficialKeep.contains(path)) {
+                    continue;
+                }
+                if (pendingOfficialExclude.containsKey(path) || Boolean.TRUE.equals(row.get("excluded"))) {
+                    String side = pendingOfficialExclude.getOrDefault(path,
+                            String.valueOf(row.getOrDefault("exclude_side", "both")));
+                    if (side == null || side.isBlank() || "null".equals(side)) {
+                        side = "both";
+                    }
+                    excludes.put(path, side);
+                }
+            }
+            for (Map.Entry<String, String> entry : pendingOfficialExclude.entrySet()) {
+                excludes.put(entry.getKey(), entry.getValue());
+            }
+            List<OfficialAdjust.Rule> rules = new ArrayList<>();
+            for (Map.Entry<String, String> entry : excludes.entrySet()) {
+                rules.add(new OfficialAdjust.Rule(entry.getKey(), entry.getValue()));
+            }
+            runtime.saveOfficialAdjust(rules, logger);
             runtime.rebuild(logger);
             pendingFolders.clear();
             pendingAdds.clear();
             pendingSides.clear();
             pendingDeletes.clear();
+            pendingOfficialExclude.clear();
+            pendingOfficialKeep.clear();
             logger.accept("已保存");
         }));
 
         discard.addActionListener(event -> {
             boolean dirty = !pendingSides.isEmpty() || !pendingDeletes.isEmpty()
-                    || !pendingAdds.isEmpty() || !pendingFolders.isEmpty();
+                    || !pendingAdds.isEmpty() || !pendingFolders.isEmpty()
+                    || !pendingOfficialExclude.isEmpty() || !pendingOfficialKeep.isEmpty();
             if (!dirty) {
                 JOptionPane.showMessageDialog(frame, "没有待保存的改动。", "不保存", JOptionPane.INFORMATION_MESSAGE);
                 return;
@@ -629,7 +770,55 @@ final class AdminApp {
             pendingAdds.clear();
             pendingSides.clear();
             pendingDeletes.clear();
+            pendingOfficialExclude.clear();
+            pendingOfficialKeep.clear();
             refreshPrivates.run();
+            refreshOfficial.run();
+        });
+
+        excludeOfficial.addActionListener(event -> {
+            int row = officialTable.getSelectedRow();
+            if (row < 0 || row >= officialRowKeys.size() || officialRowKeys.get(row) == null) {
+                JOptionPane.showMessageDialog(frame, "请先在列表中选择要排除的官方文件。", "未选择", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            String path = officialRowKeys.get(row);
+            pendingOfficialKeep.remove(path);
+            pendingOfficialExclude.putIfAbsent(path, "both");
+            refreshOfficial.run();
+        });
+
+        restoreOfficial.addActionListener(event -> {
+            int row = officialTable.getSelectedRow();
+            if (row < 0 || row >= officialRowKeys.size() || officialRowKeys.get(row) == null) {
+                JOptionPane.showMessageDialog(frame, "请先在列表中选择要恢复的官方文件。", "未选择", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            String path = officialRowKeys.get(row);
+            pendingOfficialExclude.remove(path);
+            pendingOfficialKeep.add(path);
+            refreshOfficial.run();
+        });
+
+        changeOfficialSide.addActionListener(event -> {
+            int row = officialTable.getSelectedRow();
+            if (row < 0 || row >= officialRowKeys.size() || officialRowKeys.get(row) == null) {
+                JOptionPane.showMessageDialog(frame, "请先在列表中选择要改排除端侧的文件。", "未选择", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            String path = officialRowKeys.get(row);
+            String current = pendingOfficialExclude.getOrDefault(path, "both");
+            String[] options = {"仅客户端", "仅服务端", "两端"};
+            String[] values = {"client", "server", "both"};
+            int pick = JOptionPane.showOptionDialog(frame, "排除端侧：", "改排除端侧",
+                    JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options,
+                    options[current.equals("client") ? 0 : current.equals("server") ? 1 : 2]);
+            if (pick < 0) {
+                return;
+            }
+            pendingOfficialKeep.remove(path);
+            pendingOfficialExclude.put(path, values[pick]);
+            refreshOfficial.run();
         });
 
         exportPcl2.addActionListener(event -> {
@@ -811,6 +1000,19 @@ final class AdminApp {
         privatePanel.add(new JScrollPane(privateTable), BorderLayout.CENTER);
         privatePanel.add(new JLabel("  按目录归类。添加、改端侧、删除和新建目录都先留在列表里，点保存后才会写入仓库。"), BorderLayout.SOUTH);
 
+        JPanel officialButtons = new JPanel(new BorderLayout(8, 8));
+        officialButtons.setBorder(BorderFactory.createEmptyBorder(8, 8, 0, 8));
+        JPanel officialActions = new JPanel(new FlowLayout(FlowLayout.LEFT, 8, 0));
+        officialActions.add(excludeOfficial);
+        officialActions.add(restoreOfficial);
+        officialActions.add(changeOfficialSide);
+        officialButtons.add(officialActions, BorderLayout.WEST);
+        officialButtons.add(officialSearch, BorderLayout.CENTER);
+        JPanel officialPanel = new JPanel(new BorderLayout());
+        officialPanel.add(officialButtons, BorderLayout.NORTH);
+        officialPanel.add(new JScrollPane(officialTable), BorderLayout.CENTER);
+        officialPanel.add(new JLabel("  按分类归类。排除/恢复先留在列表里，点保存后才会从官方包仓库移除或恢复。有同名私货时私货优先。"), BorderLayout.SOUTH);
+
         JPanel serversPanel = new JPanel(new BorderLayout());
         serversPanel.add(new JScrollPane(serversTable), BorderLayout.CENTER);
         serversPanel.add(new JLabel("  只记录 side=server 的同步。同一台服务端按实例 ID 去重。"), BorderLayout.SOUTH);
@@ -818,6 +1020,7 @@ final class AdminApp {
         JTabbedPane tabs = new JTabbedPane();
         tabs.addTab("已连接的服务端", serversPanel);
         tabs.addTab("私货", privatePanel);
+        tabs.addTab("官方包", officialPanel);
         tabs.addTab("连接地址", connectionPanel);
         tabs.addTab("网页管理", webPanel);
         tabs.addTab("GitHub 版本", versionBar);
@@ -859,6 +1062,7 @@ final class AdminApp {
 
         refreshServers.run();
         refreshPrivates.run();
+        refreshOfficial.run();
         append(log, "更新服务器已启动。关闭本窗口将停止服务。");
         return frame;
     }

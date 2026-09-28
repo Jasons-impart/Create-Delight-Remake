@@ -10,6 +10,7 @@ import (
 	"net/url"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 	"sync"
 	"time"
@@ -152,8 +153,9 @@ type githubAsset struct {
 }
 
 func fetchGithubAsset(job githubAsset, sem chan struct{}) error {
+	mirrors := rankGithubMirrors(job.URL)
 	var last error
-	for _, mirror := range githubMirrors {
+	for _, mirror := range mirrors {
 		if job.meter != nil {
 			job.meter.reset()
 		}
@@ -183,6 +185,98 @@ func fetchGithubAsset(job githubAsset, sem chan struct{}) error {
 		last = fmt.Errorf("无法下载 %s", job.Name)
 	}
 	return last
+}
+
+func rankGithubMirrors(rawURL string) []string {
+	type result struct {
+		mirror string
+		bps    int64
+		ok     bool
+	}
+	ch := make(chan result, len(githubMirrors))
+	note(fmt.Sprintf("正在测速 %d 个下载源…", len(githubMirrors)))
+	var wg sync.WaitGroup
+	for _, mirror := range githubMirrors {
+		wg.Add(1)
+		go func(mirror string) {
+			defer wg.Done()
+			url := rawURL
+			if mirror != "" {
+				url = mirror + rawURL
+			}
+			bps, ok := probeGithubSpeed(url)
+			ch <- result{mirror: mirror, bps: bps, ok: ok}
+		}(mirror)
+	}
+	wg.Wait()
+	close(ch)
+	var samples []result
+	for sample := range ch {
+		samples = append(samples, sample)
+	}
+	sort.SliceStable(samples, func(i, j int) bool {
+		if samples[i].ok != samples[j].ok {
+			return samples[i].ok
+		}
+		return samples[i].bps > samples[j].bps
+	})
+	out := make([]string, 0, len(samples))
+	for _, sample := range samples {
+		out = append(out, sample.mirror)
+	}
+	for _, sample := range samples {
+		if sample.ok {
+			url := rawURL
+			if sample.mirror != "" {
+				url = sample.mirror + rawURL
+			}
+			note(fmt.Sprintf("测速完成，首选 %s（%s/s）", hostOf(url), formatSize(sample.bps)))
+			return out
+		}
+	}
+	note("测速均失败，按原顺序尝试")
+	return append([]string(nil), githubMirrors...)
+}
+
+func probeGithubSpeed(rawURL string) (int64, bool) {
+	ctx, cancel := context.WithTimeout(context.Background(), 8*time.Second)
+	defer cancel()
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, rawURL, nil)
+	if err != nil {
+		return 0, false
+	}
+	req.Header.Set("User-Agent", "cdr-updater")
+	req.Header.Set("Range", "bytes=0-262143")
+	req.Header.Set("Accept-Encoding", "identity")
+	start := time.Now()
+	resp, err := (&http.Client{Transport: githubTransport}).Do(req)
+	if err != nil {
+		return 0, false
+	}
+	defer resp.Body.Close()
+	if resp.StatusCode >= 400 {
+		return 0, false
+	}
+	buf := make([]byte, 32*1024)
+	var got int64
+	for got < 256*1024 {
+		n, readErr := resp.Body.Read(buf)
+		if n > 0 {
+			got += int64(n)
+		}
+		if readErr != nil {
+			break
+		}
+	}
+	elapsed := time.Since(start)
+	if got <= 0 || elapsed <= 0 {
+		return 0, false
+	}
+	bps := got * int64(time.Second) / int64(elapsed)
+	if bps <= 0 {
+		bps = got
+	}
+	return bps, true
 }
 
 func downloadGithub(rawURL, prefix, dest string, size int64, sem chan struct{}, meter *assetMeter) error {

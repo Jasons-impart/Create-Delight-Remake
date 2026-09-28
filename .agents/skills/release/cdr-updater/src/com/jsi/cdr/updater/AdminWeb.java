@@ -33,7 +33,11 @@ final class AdminWeb {
             if (path == null) {
                 path = "";
             }
-            if ("/admin".equals(path) || "/admin/".equals(path) || "/admin/index.html".equals(path)) {
+            final String adminRoot = "/admin/ifgfsgfbijuzoxzq";
+            boolean isPage = "/admin".equals(path) || "/admin/".equals(path) || "/admin/index.html".equals(path)
+                    || adminRoot.equals(path) || (adminRoot + "/").equals(path)
+                    || (adminRoot + "/index.html").equals(path);
+            if (isPage) {
                 if (!"GET".equalsIgnoreCase(exchange.getRequestMethod())
                         && !"HEAD".equalsIgnoreCase(exchange.getRequestMethod())) {
                     sendError(exchange, 405, "方法不允许");
@@ -42,11 +46,17 @@ final class AdminWeb {
                 servePage(runtime, exchange);
                 return;
             }
-            if (!path.startsWith("/admin/api/")) {
+            String apiPrefix = null;
+            if (path.startsWith(adminRoot + "/api/")) {
+                apiPrefix = adminRoot + "/api/";
+            } else if (path.startsWith("/admin/api/")) {
+                apiPrefix = "/admin/api/";
+            }
+            if (apiPrefix == null) {
                 sendError(exchange, 404, "页面不存在");
                 return;
             }
-            String action = path.substring("/admin/api/".length());
+            String action = path.substring(apiPrefix.length());
             if (action.endsWith("/")) {
                 action = action.substring(0, action.length() - 1);
             }
@@ -186,6 +196,24 @@ final class AdminWeb {
                     result.put("private_folders", PrivateViews.destFolders(runtime.config().privateDir,
                             Privates.list(runtime.config())));
                     sendJson(exchange, 200, result);
+                }
+                case "official-adjust" -> {
+                    if ("GET".equalsIgnoreCase(exchange.getRequestMethod())) {
+                        List<Map<String, Object>> rows = OfficialAdjust.listOfficialRows(runtime.config());
+                        Map<String, Object> result = Json.map();
+                        result.put("files", rows);
+                        result.put("categories", OfficialAdjust.categories(rows));
+                        sendJson(exchange, 200, result);
+                        return;
+                    }
+                    if (!method(exchange, "POST")) {
+                        return;
+                    }
+                    requireIdle(runtime);
+                    Map<String, Object> body = readJson(exchange);
+                    List<OfficialAdjust.Rule> rules = OfficialAdjust.parseRules(body.get("excludes"));
+                    runtime.saveOfficialAdjust(rules, runtime.logger());
+                    sendJson(exchange, 200, Json.map("ok", true, "count", rules.size()));
                 }
                 default -> sendError(exchange, 404, "接口不存在");
             }
@@ -393,6 +421,9 @@ final class AdminWeb {
         }
         result.put("privates", privates);
         result.put("private_folders", PrivateViews.destFolders(config.privateDir, privateFiles));
+        List<Map<String, Object>> officialFiles = OfficialAdjust.listOfficialRows(config);
+        result.put("official_files", officialFiles);
+        result.put("official_categories", OfficialAdjust.categories(officialFiles));
         List<Object> logs = Json.list();
         logs.addAll(runtime.logs());
         result.put("logs", logs);

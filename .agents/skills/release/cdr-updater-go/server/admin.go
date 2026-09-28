@@ -105,6 +105,17 @@ func registerAdmin(mux *http.ServeMux, cfg serverConfig, data string) {
 			adminPost(w, r, func() (any, error) { return setPrivateSide(r) })
 		case "private/folder":
 			adminPost(w, r, func() (any, error) { return createPrivateFolder(r) })
+		case "official-adjust":
+			if r.Method == http.MethodGet {
+				if !adminAllowed(r) {
+					writeAdminError(w, http.StatusUnauthorized, "请先登录管理网页")
+					return
+				}
+				rows := listOfficialFiles(data)
+				writeHTTPJSON(w, map[string]any{"files": rows, "categories": officialCategories(rows)})
+				return
+			}
+			adminPost(w, r, func() (any, error) { return saveOfficialAdjust(r) })
 		default:
 			writeAdminError(w, http.StatusNotFound, "页面不存在")
 		}
@@ -227,6 +238,7 @@ func adminState(data string) map[string]any {
 		host = "127.0.0.1"
 	}
 	busy, logs := adminActivity()
+	officialFiles := listOfficialFiles(data)
 	return map[string]any{
 		"official_version":   version,
 		"github_repo":        cfgField(data, "github_repo"),
@@ -246,6 +258,8 @@ func adminState(data string) map[string]any {
 		"servers":            loadServers(data),
 		"privates":           listPrivates(privateRoot(data)),
 		"private_folders":    privateFolders(privateRoot(data)),
+		"official_files":     officialFiles,
+		"official_categories": officialCategories(officialFiles),
 		"logs":               logs,
 	}
 }
