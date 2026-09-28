@@ -1,0 +1,6 @@
+﻿/target/
+/data/
+/private/files/
+config.toml
+*.exe
+*.pdb
