@@ -156,6 +156,8 @@
 | 利维坦 | 土卫二地下 Boss，深海和渊海材料门槛 |
 | 末影守卫 | 末地后期 Boss，终极龙心和终局门槛 |
 
+Boss 挑战线与「Boss 掉落 → Tetra 改装材料 → 武器/盔甲改装成长」的构想另见 `docs/plan/cataclysm-boss-challenge-line-tetra-mod-plan.md`；任务书指引与文案大修见 `docs/plan/quest-line-overhaul-and-guidance-plan.md`；食物/魔法线结合与终章汇合的开放问题见 `docs/plan/line-integration-and-finale-plan.md`；Tetra 先民文明哨站/故都两段式布局见 `docs/plan/tetra-civilization-ruins-layout-plan.md`。
+
 | Alex's Caves 洞穴 | 归属 |
 |---|---|
 | 异寂空谷 / Forlorn Hollows | 月背异常区 / 深月裂谷，作为月球后置隐藏火箭目的地或副本入口 |
