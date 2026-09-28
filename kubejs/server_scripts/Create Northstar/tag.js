@@ -78,6 +78,8 @@ const europanAbyssalOxygenEntities = [
     "alexsmobs:cachalot_whale",
     "alexsmobs:comb_jelly",
     "alexsmobs:frilled_shark",
+    "collectorsreap:clam",
+    "collectorsreap:urchin",
     "iceandfire:siren",
     "iceandfire:sea_serpent"
 ]
