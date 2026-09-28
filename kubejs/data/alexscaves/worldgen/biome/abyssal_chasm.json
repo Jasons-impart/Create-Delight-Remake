@@ -93,37 +93,8 @@
     ]
   ],
   "spawn_costs": {
-    "alexscaves:deep_one": { "charge": 0.7, "energy_budget": 0.15 },
-    "alexscaves:deep_one_knight": { "charge": 0.7, "energy_budget": 0.15 },
-    "alexscaves:deep_one_mage": { "charge": 0.7, "energy_budget": 0.15 },
-    "alexscaves:gossamer_worm": { "charge": 0.7, "energy_budget": 0.15 },
-    "alexscaves:hullbreaker": { "charge": 0.7, "energy_budget": 0.15 },
-    "alexscaves:lanternfish": { "charge": 0.7, "energy_budget": 0.15 },
-    "alexscaves:sea_pig": { "charge": 0.7, "energy_budget": 0.15 },
-    "alexscaves:tripodfish": { "charge": 0.7, "energy_budget": 0.15 },
-    "alexsmobs:blobfish": { "charge": 0.7, "energy_budget": 0.15 },
-    "alexsmobs:cachalot_whale": { "charge": 0.7, "energy_budget": 0.15 },
-    "alexsmobs:comb_jelly": { "charge": 0.7, "energy_budget": 0.15 },
-    "alexsmobs:frilled_shark": { "charge": 0.7, "energy_budget": 0.15 },
-    "alexsmobs:giant_squid": { "charge": 0.7, "energy_budget": 0.15 },
-    "cataclysm:amethyst_crab": { "charge": 0.7, "energy_budget": 0.15 },
-    "cataclysm:coral_golem": { "charge": 0.7, "energy_budget": 0.15 },
-    "cataclysm:deepling": { "charge": 0.7, "energy_budget": 0.15 },
-    "cataclysm:deepling_angler": { "charge": 0.7, "energy_budget": 0.15 },
-    "cataclysm:deepling_brute": { "charge": 0.7, "energy_budget": 0.15 },
-    "cataclysm:deepling_priest": { "charge": 0.7, "energy_budget": 0.15 },
-    "cataclysm:deepling_warlock": { "charge": 0.7, "energy_budget": 0.15 },
-    "cataclysm:lionfish": { "charge": 0.7, "energy_budget": 0.15 },
-    "minecraft:creeper": { "charge": 0.7, "energy_budget": 0.15 },
-    "minecraft:dolphin": { "charge": 0.7, "energy_budget": 0.15 },
-    "minecraft:drowned": { "charge": 0.7, "energy_budget": 0.15 },
-    "minecraft:skeleton": { "charge": 0.7, "energy_budget": 0.15 },
-    "minecraft:slime": { "charge": 0.7, "energy_budget": 0.15 },
-    "minecraft:spider": { "charge": 0.7, "energy_budget": 0.15 },
-    "minecraft:squid": { "charge": 0.7, "energy_budget": 0.15 },
-    "minecraft:witch": { "charge": 0.7, "energy_budget": 0.15 },
-    "minecraft:zombie": { "charge": 0.7, "energy_budget": 0.15 },
-    "minecraft:zombie_villager": { "charge": 0.7, "energy_budget": 0.15 }
+    "alexscaves:gossamer_worm": { "charge": 0.25, "energy_budget": 1.0 },
+    "alexscaves:hullbreaker": { "charge": 0.5, "energy_budget": 1.0 }
   },
   "spawners": {
     "ambient": [],
@@ -148,57 +119,15 @@
         "maxCount": 1,
         "minCount": 1,
         "weight": 8
-      },
-      {
-        "type": "minecraft:spider",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
-      },
-      {
-        "type": "minecraft:zombie",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 95
-      },
-      {
-        "type": "minecraft:zombie_villager",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 5
-      },
-      {
-        "type": "minecraft:skeleton",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
-      },
-      {
-        "type": "minecraft:creeper",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
-      },
-      {
-        "type": "minecraft:slime",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
-      },
-      {
-        "type": "minecraft:witch",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 5
-      },
-      {
-        "type": "minecraft:drowned",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 2
       }
     ],
     "underground_water_creature": [
+      {
+        "type": "alexscaves:gossamer_worm",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 100
+      },
       {
         "type": "alexscaves:hullbreaker",
         "maxCount": 1,
