@@ -448,6 +448,14 @@ func privateTarget(rel string) (string, error) {
 }
 
 func setToml(table, key, value string) error {
+	return writeToml(table, key, value, false)
+}
+
+func upsertToml(table, key, value string) error {
+	return writeToml(table, key, value, true)
+}
+
+func writeToml(table, key, value string, create bool) error {
 	liveMu.Lock()
 	path := liveConfigPath
 	liveMu.Unlock()
@@ -458,23 +466,54 @@ func setToml(table, key, value string) error {
 	lines := strings.Split(string(buf), "\n")
 	current := ""
 	found := false
+	tableIdx := -1
+	rendered := key + " = \"" + strings.ReplaceAll(value, "\"", "") + "\""
+	if key == "port" {
+		rendered = key + " = " + value
+	}
 	for i, line := range lines {
 		trim := strings.TrimSpace(line)
 		if strings.HasPrefix(trim, "[") && strings.HasSuffix(trim, "]") {
 			current = strings.Trim(trim, "[]")
+			if current == table {
+				tableIdx = i
+			}
 			continue
 		}
 		if current == table && strings.HasPrefix(trim, key) {
-			lines[i] = key + " = \"" + strings.ReplaceAll(value, "\"", "") + "\""
-			if key == "port" {
-				lines[i] = key + " = " + value
+			rest := strings.TrimSpace(strings.TrimPrefix(trim, key))
+			if !strings.HasPrefix(rest, "=") {
+				continue
 			}
+			lines[i] = rendered
 			found = true
 			break
 		}
 	}
 	if !found {
-		return fmt.Errorf("配置里没有 %s.%s", table, key)
+		if !create {
+			return fmt.Errorf("配置里没有 %s.%s", table, key)
+		}
+		if tableIdx >= 0 {
+			insert := tableIdx + 1
+			for insert < len(lines) {
+				trim := strings.TrimSpace(lines[insert])
+				if strings.HasPrefix(trim, "[") && strings.HasSuffix(trim, "]") {
+					break
+				}
+				insert++
+			}
+			out := make([]string, 0, len(lines)+1)
+			out = append(out, lines[:insert]...)
+			out = append(out, rendered)
+			out = append(out, lines[insert:]...)
+			lines = out
+		} else {
+			if len(lines) > 0 && strings.TrimSpace(lines[len(lines)-1]) != "" {
+				lines = append(lines, "")
+			}
+			lines = append(lines, "["+table+"]", rendered)
+		}
 	}
 	return os.WriteFile(path, []byte(strings.Join(lines, "\n")), 0o644)
 }

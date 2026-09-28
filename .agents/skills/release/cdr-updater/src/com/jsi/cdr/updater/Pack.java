@@ -172,7 +172,7 @@ final class Pack {
                     Toml.str(server, "admin_token", ""),
                     Toml.str(server, "server_access_token", "")
             );
-            Packwiz.configure(Toml.str(official, "curseforge_api_key", Toml.str(official, "cf_api_key", "")));
+            Packwiz.configure("");
             return config;
         }
 
@@ -471,6 +471,9 @@ final class Pack {
         Progress.ensure("比对改动", -1);
         Map<String, String> officialSides = loadOfficialSides(config);
         List<PrivateFile> privateFiles = loadPrivate(config.privateDir, officialSides);
+        List<OfficialAdjust.Rule> officialRules = OfficialAdjust.load(config);
+        Set<String> excludeClient = OfficialAdjust.excludedPaths(officialRules, "client");
+        Set<String> excludeServer = OfficialAdjust.excludedPaths(officialRules, "server");
         Map<String, OverlayIndex> previous = loadPrivateIndex(config);
         Map<String, PrivateFile> current = new LinkedHashMap<>();
         for (PrivateFile file : privateFiles) {
@@ -497,15 +500,15 @@ final class Pack {
         for (String path : gone) {
             OverlayIndex old = previous.get(path);
             String side = old == null ? "both" : old.side;
-            changed += unapplyOverlay(config, path, side, officialSides, clientUpsert, serverUpsert,
-                    clientRemove, serverRemove, log);
+            changed += unapplyOverlay(config, path, side, officialSides, excludeClient, excludeServer,
+                    clientUpsert, serverUpsert, clientRemove, serverRemove, log);
         }
 
         for (PrivateFile file : privateFiles) {
             OverlayIndex old = previous.get(file.path);
             if (old != null && !old.side.equals(file.side)) {
-                changed += unapplyOverlay(config, file.path, old.side, officialSides, clientUpsert, serverUpsert,
-                        clientRemove, serverRemove, log);
+                changed += unapplyOverlay(config, file.path, old.side, officialSides, excludeClient, excludeServer,
+                        clientUpsert, serverUpsert, clientRemove, serverRemove, log);
             }
             changed += applyPrivate(config, file, clientUpsert, serverUpsert, clientRemove, serverRemove);
         }
@@ -518,8 +521,12 @@ final class Pack {
                 if (newOfficial.containsKey(path) || current.containsKey(path)) {
                     continue;
                 }
-                changed += restoreOrDelete(config, path, "client", officialSides, clientUpsert, clientRemove);
-                changed += restoreOrDelete(config, path, "server", officialSides, serverUpsert, serverRemove);
+                if (!excludeClient.contains(path)) {
+                    changed += restoreOrDelete(config, path, "client", officialSides, clientUpsert, clientRemove);
+                }
+                if (!excludeServer.contains(path)) {
+                    changed += restoreOrDelete(config, path, "server", officialSides, serverUpsert, serverRemove);
+                }
             }
             officialSides = newOfficial;
             for (Path path : Fs.files(config.officialDir)) {
@@ -529,18 +536,21 @@ final class Pack {
                 }
                 String side = officialSides.getOrDefault(rel, PackPaths.defaultSide(rel));
                 PrivateFile overlay = current.get(rel);
-                if (allowed(side, "client") && !covers(overlay, "client")
+                if (allowed(side, "client") && !covers(overlay, "client") && !excludeClient.contains(rel)
                         && Fs.copyIfChanged(path, config.clientDir.resolve(rel))) {
                     touchEntry(config.clientDir.resolve(rel), rel, config.objectsDir, clientUpsert, clientRemove, false);
                     changed++;
                 }
-                if (allowed(side, "server") && !covers(overlay, "server")
+                if (allowed(side, "server") && !covers(overlay, "server") && !excludeServer.contains(rel)
                         && Fs.copyIfChanged(path, config.serverDir.resolve(rel))) {
                     touchEntry(config.serverDir.resolve(rel), rel, config.objectsDir, serverUpsert, serverRemove, false);
                     changed++;
                 }
             }
         }
+
+        changed += OfficialAdjust.applyIncremental(config, officialRules, current.keySet(), clientUpsert, serverUpsert,
+                clientRemove, serverRemove, officialSides, log);
 
         changed += stampServerTemplate(config, privateFiles, serverUpsert, serverRemove);
 
@@ -622,23 +632,48 @@ final class Pack {
     }
 
     private static int unapplyOverlay(Config config, String path, String overlaySide, Map<String, String> officialSides,
+                                      Set<String> excludeClient, Set<String> excludeServer,
                                       Map<String, Manifests.FileEntry> clientUpsert,
                                       Map<String, Manifests.FileEntry> serverUpsert, Set<String> clientRemove,
                                       Set<String> serverRemove, Consumer<String> log) throws Exception {
         int changed = 0;
         if (allowed(overlaySide, "client")) {
-            int n = restoreOrDelete(config, path, "client", officialSides, clientUpsert, clientRemove);
-            if (n > 0) {
-                log.accept("客户端恢复 " + path);
+            if (excludeClient.contains(path)) {
+                Path dest = config.clientDir.resolve(path);
+                if (Files.deleteIfExists(dest)) {
+                    clientRemove.add(path);
+                    clientUpsert.remove(path);
+                    changed++;
+                } else {
+                    clientRemove.add(path);
+                    clientUpsert.remove(path);
+                }
+            } else {
+                int n = restoreOrDelete(config, path, "client", officialSides, clientUpsert, clientRemove);
+                if (n > 0) {
+                    log.accept("客户端恢复 " + path);
+                }
+                changed += n;
             }
-            changed += n;
         }
         if (allowed(overlaySide, "server")) {
-            int n = restoreOrDelete(config, path, "server", officialSides, serverUpsert, serverRemove);
-            if (n > 0) {
-                log.accept("服务端恢复 " + path);
+            if (excludeServer.contains(path)) {
+                Path dest = config.serverDir.resolve(path);
+                if (Files.deleteIfExists(dest)) {
+                    serverRemove.add(path);
+                    serverUpsert.remove(path);
+                    changed++;
+                } else {
+                    serverRemove.add(path);
+                    serverUpsert.remove(path);
+                }
+            } else {
+                int n = restoreOrDelete(config, path, "server", officialSides, serverUpsert, serverRemove);
+                if (n > 0) {
+                    log.accept("服务端恢复 " + path);
+                }
+                changed += n;
             }
-            changed += n;
         }
         return changed;
     }
@@ -657,6 +692,21 @@ final class Pack {
         if (Files.deleteIfExists(dest)) {
             remove.add(rel);
             upsert.remove(rel);
+            return 1;
+        }
+        return 0;
+    }
+
+    /** 供官方包调整恢复已取消排除的文件（官方源不存在则不动）。 */
+    static int restoreOfficialFile(Config config, String rel, String repoSide, Map<String, String> officialSides,
+                                   Map<String, Manifests.FileEntry> upsert, Set<String> remove) throws Exception {
+        Path dest = ("server".equals(repoSide) ? config.serverDir : config.clientDir).resolve(rel);
+        Path official = officialSource(config, rel, repoSide, officialSides);
+        if (official == null || !Files.isRegularFile(official)) {
+            return 0;
+        }
+        if (Fs.copyIfChanged(official, dest)) {
+            touchEntry(dest, rel, config.objectsDir, upsert, remove, false);
             return 1;
         }
         return 0;
@@ -976,6 +1026,13 @@ final class Pack {
         Progress.ensure("写入私货", -1);
         applyOverlay(config.clientDir, privateFiles, "client");
         applyOverlay(config.serverDir, privateFiles, "server");
+        List<OfficialAdjust.Rule> officialRules = OfficialAdjust.load(config);
+        Set<String> privatePaths = new LinkedHashSet<>();
+        for (PrivateFile file : privateFiles) {
+            privatePaths.add(file.path);
+        }
+        Progress.ensure("官方包调整", -1);
+        OfficialAdjust.apply(config, officialRules, privatePaths, log);
         publishUpdaterJar(config, log);
         stampServerTemplate(config, privateFiles, null, null);
         Progress.ensure("生成清单", -1);

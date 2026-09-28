@@ -50,6 +50,8 @@ final class Net {
     private static final long IDLE_NS = 20_000_000_000L;
     private static final long PARALLEL_MIN = 256 * 1024;
     private static final int PARALLEL_PARTS = 16;
+    private static final int PROBE_BYTES = 256 * 1024;
+    private static final int PROBE_TIMEOUT_MS = 8_000;
     private static HttpClient client;
 
     private Net() {}
@@ -95,16 +97,18 @@ final class Net {
         }
         deletePartFiles(destination);
         List<String> urls = downloadUrls(url);
+        if (urls.size() > 1) {
+            urls = rankBySpeed(urls, headers, log);
+        }
         Exception last = null;
         boolean allowResume = resume && existing > 0;
         boolean githubBig = isGithubDownload(url) && (expected <= 0 || expected >= PARALLEL_MIN);
         if (githubBig) {
-            List<String> ordered = new ArrayList<>();
-            ordered.add(officialGithub(url));
-            for (String candidate : urls) {
-                if (!ordered.contains(candidate)) {
-                    ordered.add(candidate);
-                }
+            List<String> ordered = new ArrayList<>(urls);
+            String official = officialGithub(url);
+            if (!ordered.contains(official)) {
+                // keep ranked order; only inject official if probe never saw it
+                ordered.add(official);
             }
             for (String candidate : ordered) {
                 try {
@@ -186,6 +190,106 @@ final class Net {
             throw last;
         }
         throw new IllegalStateException("下载失败 " + label);
+    }
+
+    /** Probe every candidate in parallel and return fastest-first (failed probes last). */
+    static List<String> rankBySpeed(List<String> urls, Map<String, String> headers, Consumer<String> log) {
+        if (urls == null || urls.size() <= 1) {
+            return urls == null ? List.of() : new ArrayList<>(urls);
+        }
+        if (log != null) {
+            log.accept("正在测速 " + urls.size() + " 个下载源…");
+        }
+        Map<String, String> hdr = headers == null ? Map.of() : headers;
+        int threads = Math.min(8, urls.size());
+        ExecutorService pool = Executors.newFixedThreadPool(threads);
+        try {
+            List<Future<ProbeResult>> futures = new ArrayList<>(urls.size());
+            for (String candidate : urls) {
+                futures.add(pool.submit(() -> probeSpeed(candidate, hdr)));
+            }
+            List<ProbeResult> samples = new ArrayList<>(urls.size());
+            for (int i = 0; i < futures.size(); i++) {
+                try {
+                    samples.add(futures.get(i).get());
+                } catch (Exception error) {
+                    samples.add(new ProbeResult(urls.get(i), 0, false));
+                }
+            }
+            samples.sort((a, b) -> {
+                if (a.ok != b.ok) {
+                    return a.ok ? -1 : 1;
+                }
+                return Long.compare(b.bps, a.bps);
+            });
+            LinkedHashMap<String, Boolean> unique = new LinkedHashMap<>();
+            for (ProbeResult sample : samples) {
+                if (sample.url != null && !sample.url.isBlank()) {
+                    unique.put(sample.url, Boolean.TRUE);
+                }
+            }
+            List<String> ranked = new ArrayList<>(unique.keySet());
+            ProbeResult best = null;
+            for (ProbeResult sample : samples) {
+                if (sample.ok) {
+                    best = sample;
+                    break;
+                }
+            }
+            if (log != null) {
+                if (best != null) {
+                    log.accept("测速完成，首选 " + host(best.url) + "（"
+                            + Progress.formatSize(best.bps) + "/s）");
+                } else {
+                    log.accept("测速均失败，按原顺序尝试");
+                    return new ArrayList<>(urls);
+                }
+            }
+            return ranked.isEmpty() ? new ArrayList<>(urls) : ranked;
+        } finally {
+            pool.shutdownNow();
+        }
+    }
+
+    private static final class ProbeResult {
+        final String url;
+        final long bps;
+        final boolean ok;
+
+        ProbeResult(String url, long bps, boolean ok) {
+            this.url = url;
+            this.bps = bps;
+            this.ok = ok;
+        }
+    }
+
+    private static ProbeResult probeSpeed(String url, Map<String, String> headers) {
+        long startNs = System.nanoTime();
+        HttpURLConnection conn = null;
+        try {
+            conn = connectTimed(url, headers, 0, PROBE_BYTES - 1, PROBE_TIMEOUT_MS);
+            int code = conn.getResponseCode();
+            if (code >= 400) {
+                return new ProbeResult(url, 0, false);
+            }
+            long got = 0;
+            try (InputStream in = conn.getInputStream()) {
+                byte[] buf = new byte[16 * 1024];
+                int n;
+                while (got < PROBE_BYTES && (n = in.read(buf)) >= 0) {
+                    got += n;
+                }
+            }
+            long elapsed = Math.max(1_000_000L, System.nanoTime() - startNs);
+            long bps = got <= 0 ? 0 : got * 1_000_000_000L / elapsed;
+            return new ProbeResult(url, bps, got > 0);
+        } catch (Exception ignored) {
+            return new ProbeResult(url, 0, false);
+        } finally {
+            if (conn != null) {
+                conn.disconnect();
+            }
+        }
     }
 
     static List<String> downloadUrls(String url) {
@@ -559,10 +663,15 @@ final class Net {
 
     private static HttpURLConnection connect(String url, Map<String, String> headers, long start, long endInclusive)
             throws IOException {
+        return connectTimed(url, headers, start, endInclusive, 0);
+    }
+
+    private static HttpURLConnection connectTimed(String url, Map<String, String> headers, long start, long endInclusive,
+                                                  int timeoutMs) throws IOException {
         String current = url;
         String prefix = proxyPrefix(current);
         for (int hop = 0; hop < 10; hop++) {
-            HttpURLConnection conn = openRaw(current, headers, start, endInclusive, useDirect(current));
+            HttpURLConnection conn = openRaw(current, headers, start, endInclusive, useDirect(current), timeoutMs);
             int code = conn.getResponseCode();
             if (code != 301 && code != 302 && code != 303 && code != 307 && code != 308) {
                 return conn;
@@ -586,6 +695,11 @@ final class Net {
 
     private static HttpURLConnection openRaw(String url, Map<String, String> headers, long start, long endInclusive,
                                              boolean direct) throws IOException {
+        return openRaw(url, headers, start, endInclusive, direct, 0);
+    }
+
+    private static HttpURLConnection openRaw(String url, Map<String, String> headers, long start, long endInclusive,
+                                             boolean direct, int timeoutMs) throws IOException {
         URI uri = URI.create(url);
         Proxy proxy = Proxy.NO_PROXY;
         if (!direct) {
@@ -600,8 +714,10 @@ final class Net {
         }
         HttpURLConnection conn = (HttpURLConnection) uri.toURL().openConnection(proxy);
         conn.setInstanceFollowRedirects(false);
-        conn.setConnectTimeout(8_000);
-        conn.setReadTimeout(20_000);
+        int connectMs = timeoutMs > 0 ? timeoutMs : 8_000;
+        int readMs = timeoutMs > 0 ? timeoutMs : 20_000;
+        conn.setConnectTimeout(connectMs);
+        conn.setReadTimeout(readMs);
         conn.setUseCaches(false);
         conn.setRequestMethod("GET");
         headers.forEach(conn::setRequestProperty);

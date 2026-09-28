@@ -187,6 +187,10 @@ final class Toml {
         Files.writeString(file, String.join("\n", all));
     }
 
+    static String quote(String value) {
+        return "\"" + escape(value == null ? "" : value) + "\"";
+    }
+
     private static String escape(String value) {
         return value.replace("\\", "\\\\").replace("\"", "\\\"");
     }

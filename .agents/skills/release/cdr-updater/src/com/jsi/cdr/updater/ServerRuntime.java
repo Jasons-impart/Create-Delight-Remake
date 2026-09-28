@@ -151,6 +151,19 @@ final class ServerRuntime {
         }
     }
 
+    void saveOfficialAdjust(List<OfficialAdjust.Rule> rules, Consumer<String> log) throws Exception {
+        synchronized (lock) {
+            busy = true;
+            try {
+                OfficialAdjust.save(config, rules == null ? List.of() : rules);
+                log.accept("已保存官方包调整规则 " + (rules == null ? 0 : rules.size()) + " 条");
+            } finally {
+                Progress.end();
+                busy = false;
+            }
+        }
+    }
+
     Path exportPcl2(Path output, Consumer<String> log) throws Exception {
         synchronized (lock) {
             busy = true;

@@ -22,9 +22,6 @@ version = "v0.5.0.13-test"
 minecraft = "1.20.1"
 forge = "47.4.16"
 pack_name = "Create-Delight-Remake"
-# 可选。默认使用 packwiz 同款官方 API Key，不再访问 www.curseforge.com 网页（会触发人机验证）。
-# 也可设环境变量 CURSEFORGE_API_KEY
-# curseforge_api_key = ""
 # 本地调试可不访问 GitHub，改为指向一个已解压的官方目录：
 # local_dir = "./tests/fixtures/official"
 
