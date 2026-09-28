@@ -270,19 +270,37 @@ fn pull_listed(admin: &super::admin::Admin, config: &Path, client_root: &Path, s
         let index = offset as i64 + 1;
         admin.progress_file(index, count, "补拉缺失文件", rel, -1);
         let cached = download_cache.join(rel.replace('/', "__"));
+        let legacy = download_cache.join(Path::new(rel).file_name().unwrap_or_default());
+        // Older builds cached by bare filename; reuse those before re-downloading.
+        if !usable_download(&cached, hash_format, hash) && usable_download(&legacy, hash_format, hash) {
+            if let Some(parent) = cached.parent() {
+                let _ = fs::create_dir_all(parent);
+            }
+            let _ = copy_file(&legacy, &cached);
+        }
         if !usable_download(&cached, hash_format, hash) {
             let mut ok = false;
+            let mut last_error = String::from("未知错误");
             let ranked = rank_urls(admin, urls.clone(), &key);
             for url in &ranked {
                 let _ = fs::remove_file(&cached);
-                if stream_download(admin, url, &cached, rel, -1, &key, index, count).is_ok() && usable_download(&cached, hash_format, hash) {
-                    ok = true;
-                    break;
+                match stream_download(admin, url, &cached, rel, -1, &key, index, count) {
+                    Ok(()) if usable_download(&cached, hash_format, hash) => {
+                        ok = true;
+                        break;
+                    }
+                    Ok(()) => {
+                        last_error = "下载完成但校验失败".into();
+                        let _ = fs::remove_file(&cached);
+                    }
+                    Err(error) => {
+                        last_error = error;
+                        let _ = fs::remove_file(&cached);
+                    }
                 }
-                let _ = fs::remove_file(&cached);
             }
             if !ok {
-                admin.note(format!("跳过无法下载的客户端资源 {rel}"));
+                admin.note(format!("跳过无法下载的客户端资源 {rel}（{last_error}）"));
                 continue;
             }
         } else {
@@ -298,7 +316,19 @@ fn pull_listed(admin: &super::admin::Admin, config: &Path, client_root: &Path, s
 }
 
 fn collect_manifest(root: &Path, jobs: &mut Vec<Listed>) {
-    let path = root.join("manifest.json");
+    // CurseForge client zips keep manifest.json next to overrides/, while pack_root()
+    // points at overrides/ for game files — same lookup as the Java Packwiz helper.
+    let path = if root.join("manifest.json").is_file() {
+        root.join("manifest.json")
+    } else if root
+        .parent()
+        .map(|parent| parent.join("manifest.json").is_file())
+        .unwrap_or(false)
+    {
+        root.parent().unwrap().join("manifest.json")
+    } else {
+        return;
+    };
     let Ok(text) = fs::read_to_string(path) else { return };
     let Ok(doc) = serde_json::from_str::<serde_json::Value>(&text) else { return };
     let Some(files) = doc.get("files").and_then(|value| value.as_array()) else { return };

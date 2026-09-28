@@ -310,7 +310,20 @@ final class Packwiz {
     }
 
     private static Path download(HttpClient http, Asset asset, Path cache, Consumer<String> log) throws Exception {
-        Path destination = cache.resolve(safeName(asset.filename.isBlank() ? "file-" + asset.fileId : asset.filename));
+        String bare = safeName(asset.filename.isBlank() ? "file-" + asset.fileId : asset.filename);
+        Path destination = cache.resolve(bare);
+        // Rust builds cache as path with '/' → '__'; reuse that before re-downloading.
+        if (!usable(destination, asset) && asset.path != null && !asset.path.isBlank()) {
+            Path prefixed = cache.resolve(safeName(asset.path.replace('/', '_')));
+            Path doublePrefixed = cache.resolve(asset.path.replace('\\', '/').replace("/", "__"));
+            if (usable(prefixed, asset)) {
+                Files.createDirectories(destination.getParent() == null ? cache : destination.getParent());
+                Fs.copyFile(prefixed, destination);
+            } else if (usable(doublePrefixed, asset)) {
+                Files.createDirectories(destination.getParent() == null ? cache : destination.getParent());
+                Fs.copyFile(doublePrefixed, destination);
+            }
+        }
         if (usable(destination, asset)) {
             return destination;
         }

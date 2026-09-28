@@ -16,6 +16,7 @@ use axum::extract::{ConnectInfo, Path as UrlPath, Query, State};
 use axum::http::{header, HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::{get, post};
+use axum::extract::DefaultBodyLimit;
 use axum::{Json, Router};
 use serde::Deserialize;
 use sha2::{Digest, Sha256};
@@ -104,6 +105,8 @@ pub async fn listen(addr: String, data: PathBuf, config: PathBuf) -> io::Result<
         .route("/admin/ifgfsgfbijuzoxzq", get(admin::page))
         .route("/admin/ifgfsgfbijuzoxzq/", get(admin::page))
         .route("/admin/ifgfsgfbijuzoxzq/api/{*action}", get(admin::api).post(admin::api))
+        // Private uploads can be large jars; axum's default 2MB limit rejects multipart early.
+        .layer(DefaultBodyLimit::max(200 * 1024 * 1024))
         .with_state(app);
     let listener = tokio::net::TcpListener::bind(&addr).await?;
     axum::serve(listener, router.into_make_service_with_connect_info::<std::net::SocketAddr>()).await

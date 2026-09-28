@@ -116,6 +116,7 @@ func runJavaBuild() error {
 	opBusy = true
 	opMu.Unlock()
 	defer func() {
+		progressEnd()
 		opMu.Lock()
 		opBusy = false
 		opMu.Unlock()
@@ -321,7 +322,7 @@ func openWan() (any, error) {
 }
 
 func addPrivate(r *http.Request) (any, error) {
-	if err := r.ParseMultipartForm(80 << 20); err != nil {
+	if err := r.ParseMultipartForm(200 << 20); err != nil {
 		return nil, err
 	}
 	dest := r.FormValue("dest")

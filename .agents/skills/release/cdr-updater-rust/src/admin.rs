@@ -428,6 +428,19 @@ async fn rebuild(app: &App) -> Result<Value, (StatusCode, String)> {
     Ok(json!({"ok": true}))
 }
 
+struct BusyGuard {
+    admin: Arc<Admin>,
+}
+
+impl Drop for BusyGuard {
+    fn drop(&mut self) {
+        self.admin.progress_end();
+        if let Ok(mut inner) = self.admin.inner.lock() {
+            inner.busy = false;
+        }
+    }
+}
+
 async fn run_build(app: &App) -> Result<(), (StatusCode, String)> {
     {
         let mut inner = app.admin.inner.lock().expect("admin");
@@ -438,11 +451,21 @@ async fn run_build(app: &App) -> Result<(), (StatusCode, String)> {
     }
     let config = app.config.clone();
     let admin = Arc::clone(&app.admin);
-    let result = tokio::task::spawn_blocking(move || java_build(&config, &admin)).await;
-    app.admin.progress_end();
-    app.admin.inner.lock().expect("admin").busy = false;
-    result.map_err(|error| (StatusCode::CONFLICT, error.to_string()))?.map_err(|error| (StatusCode::CONFLICT, error))?;
-    Ok(())
+    // Detach clear from the HTTP request lifetime: if the browser / nginx cancels
+    // mid-build, axum drops this future; keeping BusyGuard on the detached task
+    // prevents「处理中」from sticking after logs already said done.
+    let job = tokio::spawn(async move {
+        let _busy_guard = BusyGuard {
+            admin: Arc::clone(&admin),
+        };
+        tokio::task::spawn_blocking(move || java_build(&config, &admin)).await
+    });
+    let result = job
+        .await
+        .map_err(|error| (StatusCode::CONFLICT, error.to_string()))?
+        .map_err(|error| (StatusCode::CONFLICT, error.to_string()))?
+        .map_err(|error| (StatusCode::CONFLICT, error))?;
+    Ok(result)
 }
 
 fn java_build(config: &Path, admin: &Admin) -> Result<(), String> {
