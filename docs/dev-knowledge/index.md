@@ -46,6 +46,7 @@
 | `docs/plan/enchantment-three-stage-progression-plan.md` | 内容设计计划 | 神化普通获取、附魔工业精炼与 Quark 古卷最终突破的三级附魔成长、绕过封锁和实施边界。 |
 | `docs/plan/chromatic-compound-endgame-plan.md` | 内容设计计划 | 异彩化合物双路线、光辉石与暗影钢终盘分支的材料链规划。 |
 | `docs/plan/create-processing-multiblock-plan.md` | 技术设计计划 | 基于 Create 加工流程与 MBD2 构建可组合多方块机器的实现规划。 |
+| `docs/plan/exploration-ruins-and-scavenging-plan.md` | 内容设计计划 | 野外探索性价比、仿造玩家遗迹（核电站废墟等）与星球放置原则规划。 |
 | `docs/plan/one-enough-damage-unified-damage-system.md` | 历史技术设计计划 | 已移除的 OneEnoughDamage 伤害扫描、逻辑分组、增伤与抗性统一方案。 |
 | `docs/attributeslib-armor-balance-analysis.md` | 历史技术研究参考 | OED 护甲前伤害阶段、Improved Mobs/Fallen 极端压力、Tetrawear/生命档位，以及 2026-07-22 已采用的 AttributesLib 护甲与保护公式。 |
 | `docs/attributeslib-traveloptics-echoing-strikes-analysis.md` | 技术研究参考 | AttributesLib 多重暴击、Travel Optics 暗影瘴气和 Iron's Spells 回响打击的跨模组伤害放大链、上游变化与修复取舍。 |
