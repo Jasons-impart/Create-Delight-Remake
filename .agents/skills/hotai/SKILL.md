@@ -14,6 +14,8 @@ description: 维护、分析、迁移或验证 Create-Delight Remake 的 `hotai/
 | `docs/dev-knowledge/hotai/README.md` | 专题入口、文档边界及与开发知识的关系。 |
 | `docs/dev-knowledge/hotai/patch-map.md` | 运行机制、按领域归纳的行为变化、跨目录依赖和维护注意。 |
 | `docs/dev-knowledge/hotai/badiff-details.md` | 每个 `.badiff` 的方法级语义、历史依据和适用性；`HOTAI_STATUS` 区块由脚本生成。 |
+| `docs/dev-knowledge/hotai/空指针补丁-仓库位置与核心解析.md` | 本批空指针补丁路径、根因与修补语义。 |
+| `docs/dev-knowledge/hotai/空指针补丁-全部代码解释.md` | 生成器、HotAI 套补丁路径与各方法指令级解释。 |
 | `docs/dev-knowledge/content-map.md` | 仅记录玩家可见的内容调整，并链接专题入口。 |
 | `docs/dev-knowledge/compatibility-patches.md` | 仅记录修复、回归恢复或上游适配；不要因文件位于 `hotai/` 而自动归类。 |
 
