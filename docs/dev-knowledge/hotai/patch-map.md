@@ -33,6 +33,10 @@
 | Better Compatibility Checker 状态 ping mixin | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | 将匿名内部类捕获的 `ServerData` 改为反射查找，并兼容混淆/反混淆方法名；注入点改到响应处理尾部，降低字段名变化造成的 mixin 失败。 |
 | IAF Dragon Fix 地下冰龙穴避海 | `com/iafdragonfix/structure/DragonDenPiece.badiff` | 地下冰龙穴确定中心后检查中心及周围 16 格的 3×3 群系采样；任一点命中 `#createdelight:blocks_ice_dragon_caves` 就跳过生成，避免木卫二龙穴切入地下海，同时保留木卫二陆地区域和火星的地下冰龙穴。补丁必须由 HotAI 将 `.class` 转存为其 `MemoryDiff` 序列化格式，不得使用 `BadiffCli diff` 生成不兼容的 `BadiffFileDiff`。 |
 | Quality Food 方块掉落品质 | `de/cadentem/quality_food/mixin/BlockMixin.badiff` | 只在存在 `DropData` 且方块通过 `Utils.isValidBlock` 时应用方块品质，移除无上下文时对掉落物套品质的 fallback。 |
+| Quality Food 空品质序列化崩溃 | `de/cadentem/quality_food/capability/LevelData.badiff`、`BlockData.badiff` | `Quality.NONE` 比较拦不住 `null`，HashMap 会存入空品质；序列化调用 `.ordinal()` 时空指针。补丁在写入时把 `null` 当移除，读取空值回退 `NONE`，序列化跳过空条目。 |
+| KubeJS 动态数据包空字节 | `dev/latvian/mods/kubejs/script/data/GeneratedData.badiff` | `GeneratedData.get()` 对 `Lazy` 可能返回的 `null` 字节数组直接构造 `ByteArrayInputStream`。补丁在为空时改用空数组，避免数据包重载空指针。 |
+| TACZ 网络缓存空 Map | `com/tacz/guns/resource/CommonAssetsManager.badiff`、`resource/manager/CommonDataManager.badiff` | `apply()` 前 `networkCache` 仍为 `null`，`ImmutableMap.put` 拒绝空值。补丁跳过空缓存，并让 `getNetworkCache()` 在未就绪时返回空 Map。 |
+| TACZ-addon 精致背包空包装 | `com/mafuyu404/taczaddon/compat/SophisticatedBackpacksCompatInner.badiff` | `addBackpackItems` / `getItemsFromBackpackBLock` 在包装器或列表为空时仍继续取物品。补丁在空值时直接返回，避免背包兼容空指针。 |
 | Bakeries 面包刀 × FD 1.3.x 切割结果 | `com/renyigesai/bakeries/item/BreadKnifeItem.badiff` | 面包刀处理掉落物时不再调用 FD 已移除的 `CuttingBoardRecipe.rollResults(RandomSource, int)`，改为本地 `getRollableResults()` + `ChanceResult.rollOutput()`，修复 `NoSuchMethodError` 服务端崩溃。语义对齐上游 master `7c45ac4`。 |
 
 ## 待首次启动转存的可审阅 class
