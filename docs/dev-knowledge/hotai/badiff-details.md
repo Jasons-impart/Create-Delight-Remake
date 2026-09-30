@@ -541,7 +541,7 @@ MMT 原 class 针对 Tetra 6.9 的局部变量名 `multiplier`，返回 `1000d`�
 
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
-| `com/iafdragonfix/structure/DragonDenPiece.badiff` | 首次转换启动已确认 | `generateCave(...)` 仅在龙种为 `ICE_CAVE` 时创建 `#createdelight:blocks_ice_dragon_caves` 群系标签，并在实际地下中心的 X/Z 各偏移 `-16/0/16` 组成的 3×3 点阵读取群系；任一点命中标签就提前返回。配套标签包含 `northstar:europan_subsurface_ocean` 与 `alexscaves:abyssal_chasm`。首次错误补丁由 `BadiffCli diff` 生成 `BadiffFileDiff`，与 HotAI 使用 `DefaultSerialization` 读取的 `MemoryDiff` 格式不兼容，触发 `Not all bytes consumed from byte[]`；现有文件由 HotAI 官方 `.class` 转存流程生成。 | 木卫二地下冰龙穴仍可在冰原和山脊区域生成，但不会以地下海或渊海陷窟为中心、也不会跨入其近邻 16 格范围；火星冰龙穴及所有地表龙巢不受影响。首次转换启动已记录 `Patched class` 并成功进入木卫二；仍需第二次启动确认 badiff 重放，以及在新生成区块验证结构分布。 |
+| `com/iafdragonfix/structure/DragonDenPiece.badiff` | 首次转换启动已确认 | `generateCave(...)` 仅在龙种为 `ICE_CAVE` 时创建 `#createdelight:blocks_ice_dragon_caves` 群系标签，并在实际地下中心的 X/Z 各偏移 `-16/0/16` 组成的 3×3 点阵读取群系；任一点命中标签就提前返回。配套标签包含 `northstar:europan_subsurface_ocean` 与 `alexscaves:abyssal_chasm`。首次错误补丁由 `BadiffCli diff` 生成 `BadiffFileDiff`，与 HotAI 使用 `DefaultSerialization` 读取的 `MemoryDiff` 格式不兼容，触发 `Not all bytes consumed from byte[]`；现有文件由 HotAI 官方 `.class` 转存流程生成。 | 木卫二地下冰龙穴仍可在冰原和山脊区域生成，但不会以地下海或渊海陷窟为中心、也不会跨入其近邻 16 格范围；火星冰龙穴及所有地表龙巢不受影响。首次转换启动已记录 `Patched class` 并成功进入木卫二；已游戏内验证第二次启动 badiff 重放与新生成区块结构分布。 |
 
 ## Quality Food 补丁
 
