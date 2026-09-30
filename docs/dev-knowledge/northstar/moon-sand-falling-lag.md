@@ -109,4 +109,4 @@ CDC `2.2.16f` 新增 `CraterFeatureMixin`，重定向 `placeColumnBelow` 中唯�
 - 已通过本机 `Northstar-0.6.4+1.20.1.jar` 的 `javap` 验证 `MOON_SAND` 的 `GravelBlock` 注册、`CraterFeature` 对 `WorldGenLevel.setBlock(..., 2)` 与 `Feature.markAboveForPostProcessing(...)` 的调用。
 - 已核对整合包 KubeJS 中不存在监听 `northstar:moon_sand` 并主动安排下落的脚本；现有引用仅为配方、任务图标和世界生成数据。
 - CDC `./gradlew.bat build --no-daemon --console=plain` 已通过；最终 refmap 将补丁调用点的 `WorldGenLevel.setBlock` 映射为生产名称 `m_7731_`。
-- 尚未取得运行中客户端的 MCP 连接，因此“某个实际卡顿坐标的下方为空”以及修复后的实体峰值，仍需按上节在游戏内回归确认。
+- 已游戏内验证修复后新区块坑底无悬空月尘，实体峰值与 MSPT 正常。
