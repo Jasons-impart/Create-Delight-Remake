@@ -816,3 +816,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: `BlazeBurnerBlockMixin` 对「有 FLUID_HANDLER_ITEM 且无 crafting remainder」跳过 shrink；`FluidBucketWrapper.drain` 后 wrapper.container 变成空桶，但原 stack 仍是填充桶不被消耗，留下 cap 清空的残桶。`cryo_fuel_bucket` 曾漏登记。
 - **Fix/Lesson**: 新增 KubeJS 液体燃料桶时必须同步设 `craftingRemainingItem=minecraft:bucket`（见 `kubejs/startup_scripts/modifier_burntime.js`）。
+
+## 群系标签误用数据包 JSON
+
+**Date**: 2026-10-02
+
+- **Problem**: 给红树林沼泽补充 `forge:is_swamp` 标签时，误把世界生成群系标签视为需要数据包语义的例外，新增了 `kubejs/data/forge/tags/worldgen/biome/is_swamp.json`。旧实现虽已由用户验证生成通过，但绕过了用 KubeJS 统一维护群系标签的要求。
+- **Fix/Lesson**: 本次补充迁移到 `kubejs/server_scripts/Festival Delicacies/tags.js` 并移除旧 JSON；后续遵循 [KubeJS 标签约定](../kubejs/AGENTS.md#conventions)，不要因标签用于世界生成就改用数据包添加群系成员。

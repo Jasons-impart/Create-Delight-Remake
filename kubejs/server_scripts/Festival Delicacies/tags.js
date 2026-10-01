@@ -40,3 +40,7 @@ ServerEvents.tags("minecraft:block", e => {
         "festival_delicacies:greenonion"
     ])
 })
+
+ServerEvents.tags("minecraft:worldgen/biome", e => {
+    e.add("forge:is_swamp", "minecraft:mangrove_swamp")
+})
