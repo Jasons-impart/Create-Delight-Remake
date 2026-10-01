@@ -4,6 +4,7 @@
 
 | 领域 | 玩家可见变化 | 实现概览 | 主要位置 | 相关文档 | 状态 |
 |---|---|---|---|---|---|
+| 家具模组 JEI 工作方块 | 工作台、浅色冰柜、浅色炉灶、煎锅、橡木切菜板、白色烤架、浅色微波炉和浅色烤面包机显示于对应配方的触媒栏；切菜板覆盖切片与组合两个分类 | 当前 KubeJS 与 MoreJS 未提供 JEI 触媒注册事件，CDC 在 Refurbished Furniture 已加载时通过公开分类 TYPE 注册八个方块、九个分类 | `CDC-mod-src/src/main/java/io/github/jasonsimpart/createdelightcore/compat/jei/CDJEI.java` | — | CDC 构建与本地 JAR 同步通过；用户已游戏内验证 |
 | 氧气罐迁移至 NCC | 氧气罐与坚固氧气罐使用 NCC 物品，保留原合成材料和任务进度结构 | 移除旧物品注册、创造标签引用、翻译、模型与贴图；原配方仅替换产物，任务物品改为 `ncc:oxygen_tank` 和 `ncc:sturdy_oxygen_tank` | `kubejs/server_scripts/Create Northstar/recipe.js`、`kubejs/startup_scripts/registry_item.js`、`config/ftbquests/quests/chapters/Voyage_of_Stars.snbt` | 无 | 脚本语法与静态引用检查通过；需重启游戏验证合成和任务识别 |
 | CMR 整包移除 | 整合包不再提供雪傀儡冷却器、方块注液器与锻压机；FluidLogistics 的冰霜蛋糕与烈焰人冷却室分别接替原食物体验和已有冷却配方 | 移除 CMR Packwiz 元数据和本地 JAR，清理 KubeJS 配方、翻译、燃料、战利品、冷源标签与流体枪目标；将旧冰霜蛋糕的食物属性、食用冰冻效果和蛋糕任务迁移至 `fluidlogistics:frost_cake`；CDC 原兼容实现保留为可选兼容 | `mods/`、`kubejs/`、`config/ftbquests/quests/chapters/Mouse_Chef.snbt`、`config/jei/recipe-category-sort-order.ini` | `compatibility-patches.md` | CDC 构建、Packwiz 同步和脚本语法检查通过；需在游戏内验证冰霜蛋糕的食用效果与任务识别，旧存档中的 CMR 方块和物品可能在卸载后丢失 |
 | 流体容器迁移 | Create Fluid Stuffs 的安山桶、安山罐和多流体储罐不再提供；任务改为引导 FluidLogistics 铜桶的 4000 mB 存取能力。 | 移除旧模组及其配方、创造标签和提示，任务、JEI 排序与 FluidLogistics 创造标签改用现有铜桶和寒霜蛋糕胚。 | `mods/createfluidstuffs.pw.toml`、`kubejs/{server_scripts,startup_scripts,client_scripts}/`、`config/ftbquests/quests/chapters/Junior_Engineer.snbt`、`config/jei/recipe-category-sort-order.ini` | 无 | Packwiz 同步与 KubeJS 语法检查通过；需重启后在任务书、JEI 和创造标签验证。 |
