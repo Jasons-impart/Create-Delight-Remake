@@ -1,0 +1,6 @@
+{
+  "id": "createdelight:dyeing_catalysts",
+  "type": "regex",
+  "name": "染色触媒",
+  "regex": "^create_connected:.*_fan_dyeing_catalyst$"
+}

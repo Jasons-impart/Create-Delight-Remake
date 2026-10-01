@@ -69,6 +69,7 @@ config/             # KubeJS config files
 - `make_cake(e, input, output)` - Cake deploying recipe
 
 **Other Utils**:
+- `util/dragons_plus.js`: `dragonsPlus(event)` returns the current event's Dragon+ recipe namespace; use `dragonsPlus(e).ending(results, inputs)` / `.freezing(results, inputs)` across server scripts instead of caching an event-bound namespace globally.
 - `util/metallurgy.js`, `util/ratatouille.js`, `util/loot.js`, `util/trade.js` - metallurgy, Ratatouille integration, loot tables and villager trades
 - `mbd2_recipes/proxy_recipe/centrifugation.js` - Centrifugation helper
 

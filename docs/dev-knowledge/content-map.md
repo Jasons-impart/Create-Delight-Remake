@@ -57,6 +57,12 @@
 | 主菜单装饰彩蛋 | 标题界面偶发出现一种氛围装饰（下雪、雨幕、萤火虫、串灯、彩纸、树叶、烟花之一），约 20% 概率，停留期间稳定显示，离开后为下次重新抽取 | 单布局 7 个 decoration_overlay，布尔字段 manual 模式读变量；close_screen 动作 set_variable 掷骰写入 deco_pick | config/fancymenu/customization/menu_easter_eggs.txt | docs/dev-knowledge/fancymenu/README.md | 已实现并游戏内验证；首次启动后第一次进主菜单为空 |
 | 节日灯带 | 圣诞、元旦、春节窗口内标题界面显示金色灯带，固定 3 根加随机精选组合，christmas_mode 全开 | 单布局 manual 占位符：calc(月×100+日) switch_case 白名单做日期门控，randomtext+interval 选 10 种灯带组合之一 | config/fancymenu/customization/festival_string_lights.txt | docs/dev-knowledge/fancymenu/README.md | 已实现并游戏内验证；日期改动需 Reload 后生效 |
 
+## 龙+末影加工
+
+| 领域 | 玩家可见变化 | 实现概览 | 主要位置 | 相关文档 | 状态 |
+|---|---|---|---|---|---|
+| 生珍珠末影加工 | 鼓风机配合末影龙头将 1 个生珍珠加工为 1 个末影珍珠粒，必定产出 | 注册 `create_dragons_plus:ending` schema；输入 `createcafe:raw_boba`，输出 `ends_delight:ender_pearl_grain`，保留模组原配方 | `kubejs/startup_scripts/@recipes/create_dragons_plus.js`、`kubejs/server_scripts/Create Dragons Plus/ending.js` | 无 | 已实现，待游戏内验证 |
+
 ## 条目模板
 
 | 领域 | 玩家可见变化 | 实现概览 | 主要位置 | 相关文档 | 状态 |

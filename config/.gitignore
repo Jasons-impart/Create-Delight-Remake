@@ -12,6 +12,9 @@
 !/fancymenu
 !/iceandfire
 !/jei
+!/jei_plus_plus/
+/jei_plus_plus/*
+!/jei_plus_plus/stack_groups/
 !/modernui
 !/openloader
 # !/sound_physics_remastered
