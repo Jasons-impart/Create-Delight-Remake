@@ -1,5 +1,8 @@
 ServerEvents.tags("minecraft:block", e => {
-    e.add("create_dragons_plus:passive_block_freezers", ["create_connected:fan_freezing_catalyst"])
+    e.add("create_dragons_plus:passive_block_freezers", [
+        "create_connected:fan_freezing_catalyst",
+        "fluidlogistics:blaze_cooler"
+    ])
 })
 ServerEvents.tags("minecraft:fluid", e => {
     e.add("forge:egg_yolk", [

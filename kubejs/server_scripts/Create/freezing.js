@@ -1,4 +1,5 @@
 ServerEvents.recipes(e => {
+    freezing(e, "minecraft:snow_block", "minecraft:ice")
     freezing(e, "create:blaze_burner", "fluidlogistics:blaze_cooler")
     freezing(e, "create:blaze_cake", [
         "create:powdered_obsidian",
