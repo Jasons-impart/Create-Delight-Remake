@@ -1,6 +1,11 @@
 ServerEvents.recipes(e => {
     const { createmetallurgy, create, minecraft, vintageimprovements, kubejs } = e.recipes
 
+    remove_recipes_type(e, [
+        "fluidlogistics:bulk_cooling",
+        "fluidlogistics:inactive_bulk_cooling"
+    ])
+
     remove_recipes_id(e, [
         "fluidlogistics:multi_fluid_tank",
         "fluidlogistics:horizontal_multi_fluid_tank",

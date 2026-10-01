@@ -76,7 +76,6 @@ config/             # KubeJS config files
 ## COMMANDS
 
 ```bash
-# Hot reload (in-game)
 /kubejs reload server_scripts   # Reload recipes
 /reload                         # Reload tags/loot
 ```
