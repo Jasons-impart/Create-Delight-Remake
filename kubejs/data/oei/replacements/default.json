@@ -561,5 +561,11 @@
             "create_dragons_plus:fluid_hatch"
         ],
         "resultItems": "fluidlogistics:fluid_hatch"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:cucumber_seeds"
+        ],
+        "resultItems": "vintagedelight:cucumber_seeds"
     }
 ]
