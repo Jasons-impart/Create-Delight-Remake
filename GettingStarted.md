@@ -11,6 +11,7 @@
 - GitHub CLI (`gh`)，用于通过命令行读取和操作 GitHub 的 Issue、PR、Release 与 Actions；安装失败不阻塞其他环境配置。
 - Java 17，游戏、Forge 服务端和 CDC 模组构建都使用 Java 17。
 - Python 3，`scripts/sync-packwiz-assets.ps1` 会用它启动本地静态文件服务。
+  - Codex/ZCode 的知识 Stop 钩子也由 Python 启动：优先使用 `pwsh`，Windows 未安装 PowerShell 7 时回退到系统 `powershell`，无需为钩子额外安装 PowerShell 7。
 - Node.js 20 或更高版本，用于通过 `npx` 启动 Minecraft MCP 的 stdio 桥接器。
 - 支持 CurseForge 整合包或本地实例导入的启动器，例如 HMCL。
 - 能访问 CurseForge、GitHub raw 和对应 CDN；如果网络失败，先配置代理后重试。
