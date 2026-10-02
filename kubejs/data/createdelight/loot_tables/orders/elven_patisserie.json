@@ -24,7 +24,7 @@
         { "type": "minecraft:item", "name": "eclipticseasons:growth_detector", "weight": 4 },
         { "type": "minecraft:item", "name": "eclipticseasons:hygrometer", "weight": 4 },
         { "type": "minecraft:item", "name": "eclipticseasons:seasonal_prayer_scroll", "weight": 2 },
-        { "type": "minecraft:item", "name": "createdelight:sprinkler", "weight": 2 },
+        { "type": "minecraft:item", "name": "createdelightcore:sprinkler", "weight": 2 },
         { "type": "minecraft:loot_table", "name": "createdelight:orders/random_doll", "weight": 1 }
       ]
     }

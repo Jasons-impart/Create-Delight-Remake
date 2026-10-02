@@ -23,7 +23,7 @@
       "rolls": 1,
       "entries": [
         { "type": "minecraft:item", "name": "vinery:apple_press", "weight": 4 },
-        { "type": "minecraft:item", "name": "createdelight:dryer", "weight": 3 },
+        { "type": "minecraft:item", "name": "createdelightcore:dryer", "weight": 3 },
         { "type": "minecraft:item", "name": "eclipticseasons:growth_detector", "weight": 3 },
         { "type": "minecraft:item", "name": "eclipticseasons:seasonal_prayer_scroll", "weight": 1 },
         { "type": "minecraft:loot_table", "name": "createdelight:orders/random_doll", "weight": 1 }

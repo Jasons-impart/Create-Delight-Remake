@@ -64,8 +64,6 @@ ItemEvents.tooltip(e => {
 
     ])
     addCtrlTooltip(e, [
-        "createdelight:sprinkler",
-        'createdelight:dryer',
         'createdelight:order_deliverer_item',
         'createdelight:contract_executor',
         'createdelight:mechanical_craft_encoder',
