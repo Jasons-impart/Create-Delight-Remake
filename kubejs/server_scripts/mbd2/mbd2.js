@@ -153,25 +153,6 @@ ServerEvents.recipes(e => {
         F: "create:sturdy_sheet"
     })
         .id("createdelight:mechanical_crafting/alloy_electric_furnace")
-    e.recipes.kubejs.shaped("createdelight:dryer", [
-        "ABA",
-        "ACA",
-        "ADA"
-    ], {
-        A: "create:copper_bars",
-        B: "create:shaft",
-        C: "minecraft:magma_block",
-        D: "create:nozzle"
-    }).id("createdelight:dryer")
-    
-    e.recipes.kubejs.shaped("createdelight:sprinkler", [
-        " A ",
-        "ABA",
-        " A "
-    ], {
-        A: "create:fluid_pipe",
-        B: "create:fluid_tank"
-    }).id("createdelight:sprinkler")
     e.recipes.kubejs.shaped("createdelight:greenhouse_builder", [
         "ABA",
         "CDC",

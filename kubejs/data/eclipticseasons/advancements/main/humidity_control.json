@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "createdelight:sprinkler"
+              "createdelightcore:sprinkler"
             ]
           }
         ]
@@ -18,7 +18,7 @@
         "items": [
           {
             "items": [
-              "createdelight:dryer"
+              "createdelightcore:dryer"
             ]
           }
         ]
@@ -34,7 +34,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "createdelight:sprinkler"
+      "item": "createdelightcore:sprinkler"
     },
     "show_toast": false,
     "title": {

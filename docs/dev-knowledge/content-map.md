@@ -4,6 +4,7 @@
 
 | 领域 | 玩家可见变化 | 实现概览 | 主要位置 | 相关文档 | 状态 |
 |---|---|---|---|---|---|
+| 加湿器、除湿器迁入 CDC | 加湿器储水 1000 mB，每 100 tick 消耗 500 mB 水提高 1 级湿度；除湿器从上下接入动力，转速绝对值严格大于 8 RPM 时降低 1 级湿度，应力系数 1。 | 原 MBD2 机器和 KubeJS 事件、合成配方已移除；CDC 原生方块、方块实体、流体能力、动力、渲染、提示和数据生成负责实现。加湿中心为下方 10 格内首个非空气方块，除湿中心为机器自身，半径均为 4；停机或拆除只清理自己拥有的湿度提供器。 | `CDC-mod-src/src/main/java/io/github/jasonsimpart/createdelightcore/content/humidity/`、`registry/CDBlocks.java`、`registry/CDBlockEntities.java`、`data/recipe/CDCraftingRecipeProvider.java` | — | 已完成资源生成、编译与构建；用户于 2026-10-02 使用运行实例 CDC 2.2.16k 完成游戏内验证，已按测试 JAR 同步 Packwiz 打包文件与 SHA-256。旧方块、物品 ID 提供 MissingMappings 映射，但旧 MBD2 方块实体储水和运行进度未转换，旧存档应先备份验证。 |
 | 家具模组 JEI 工作方块 | 工作台、浅色冰柜、浅色炉灶、煎锅、橡木切菜板、白色烤架、浅色微波炉和浅色烤面包机显示于对应配方的触媒栏；切菜板覆盖切片与组合两个分类 | 当前 KubeJS 与 MoreJS 未提供 JEI 触媒注册事件，CDC 在 Refurbished Furniture 已加载时通过公开分类 TYPE 注册八个方块、九个分类 | `CDC-mod-src/src/main/java/io/github/jasonsimpart/createdelightcore/compat/jei/CDJEI.java` | — | CDC 构建与本地 JAR 同步通过；用户已游戏内验证 |
 | 氧气罐迁移至 NCC | 氧气罐与坚固氧气罐使用 NCC 物品，保留原合成材料和任务进度结构 | 移除旧物品注册、创造标签引用、翻译、模型与贴图；原配方仅替换产物，任务物品改为 `ncc:oxygen_tank` 和 `ncc:sturdy_oxygen_tank` | `kubejs/server_scripts/Create Northstar/recipe.js`、`kubejs/startup_scripts/registry_item.js`、`config/ftbquests/quests/chapters/Voyage_of_Stars.snbt` | 无 | 脚本语法与静态引用检查通过；已游戏内验证（用户于 2026-10-02 在回归清单确认）。 |
 | CMR 整包移除 | 整合包不再提供雪傀儡冷却器、方块注液器与锻压机；FluidLogistics 的冰霜蛋糕与烈焰人冷却室分别接替原食物体验和已有冷却配方 | 移除 CMR Packwiz 元数据和本地 JAR，清理 KubeJS 配方、翻译、燃料、战利品、冷源标签与流体枪目标；将旧冰霜蛋糕的食物属性、食用冰冻效果和蛋糕任务迁移至 `fluidlogistics:frost_cake`；CDC 原兼容实现保留为可选兼容 | `mods/`、`kubejs/`、`config/ftbquests/quests/chapters/Mouse_Chef.snbt`、`config/jei/recipe-category-sort-order.ini` | `compatibility-patches.md` | CDC 构建、Packwiz 同步和脚本语法检查通过；已游戏内验证（用户于 2026-10-02 在回归清单确认）。旧存档中的 CMR 方块和物品可能在卸载后丢失。 |
@@ -64,7 +65,7 @@
 
 | 领域 | 玩家可见变化 | 实现概览 | 主要位置 | 相关文档 | 状态 |
 |---|---|---|---|---|---|
-| 生珍珠末影加工 | 鼓风机配合末影龙头将 1 个生珍珠加工为 1 个末影珍珠粒，必定产出 | 注册 `create_dragons_plus:ending` schema；输入 `createcafe:raw_boba`，输出 `ends_delight:ender_pearl_grain`，保留模组原配方 | `kubejs/startup_scripts/@recipes/create_dragons_plus.js`、`kubejs/server_scripts/Create Dragons Plus/ending.js` | 无 | 已实现，待游戏内验证 |
+| 生珍珠末影加工 | 鼓风机配合末影龙头将 1 个生珍珠加工为 1 个末影珍珠粒，必定产出 | 注册 `create_dragons_plus:ending` schema；输入 `createcafe:raw_boba`，输出 `ends_delight:ender_pearl_grain`，保留模组原配方 | `kubejs/startup_scripts/@recipes/create_dragons_plus.js`、`kubejs/server_scripts/Create Dragons Plus/ending.js` | 无 | 已实现；已游戏内验证（用户于 2026-10-02 确认）。 |
 
 ## 条目模板
 

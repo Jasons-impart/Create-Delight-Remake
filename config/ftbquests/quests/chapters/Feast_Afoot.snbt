@@ -278,12 +278,12 @@
 			tasks: [
 				{
 					id: "28DF13DE7B5E6C83"
-					item: "createdelight:sprinkler"
+					item: "createdelightcore:sprinkler"
 					type: "item"
 				}
 				{
 					id: "77143C7B0618D87C"
-					item: "createdelight:dryer"
+					item: "createdelightcore:dryer"
 					type: "item"
 				}
 			]
@@ -346,7 +346,7 @@
 				"&l&b生效条件&r：只有在&e温室&r中湿度调节与季节调节才会生效"
 				"&l&b季节仪式&r：使用&e祈年令&r右键&e温室之心室&r会按所在地&6实际农业季节&r启动仪式，&4仪式不能在室内进行&r"
 				"&l&b季节调节&r：使用&e已完成的温室之心&r模拟对应季节，作用范围以温室之心为中心半径&e16格&r以内的&c方形&r空间"
-				"&l&b湿度调节&r：节气的&e恒湿水箱&r/&e温室除湿器&r可直接调节湿度；本包的&e加湿器&r/&e除湿机&r则用于机械自动化，作用范围以机器&e下方&c非空气&r方块为中心半径&e4格&r以内的&c方形&r空间"
+				"&l&b湿度调节&r：节气的&e恒湿水箱&r/&e温室除湿器&r可直接调节湿度；本包的&e加湿器&r每&e100 tick&r消耗&e500 mB水&r，以正下方&e10格内首个非空气方块&r为中心；&e除湿器&r从顶部或底部接入动力，转速绝对值&e大于8 RPM&r时生效，以&e自身&r为中心。两者作用半径均为&e4格&r"
 			]
 			id: "1453031D685ED650"
 			rewards: [{

@@ -25,7 +25,7 @@
         { "type": "minecraft:item", "name": "youkaishomecoming:raw_tuna", "weight": 5, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 3 } }] },
         { "type": "minecraft:item", "name": "youkaishomecoming:otoro", "weight": 2 },
         { "type": "minecraft:item", "name": "farmersrespite:black_cod", "weight": 4 },
-        { "type": "minecraft:item", "name": "createdelight:dryer", "weight": 3 },
+        { "type": "minecraft:item", "name": "createdelightcore:dryer", "weight": 3 },
         { "type": "minecraft:loot_table", "name": "createdelight:orders/random_doll", "weight": 1 }
       ]
     }
