@@ -36,6 +36,13 @@ release-v048x ──→ feat/branch-048x ──PR──→ release-v048x  ✅ 1 
 
 > **向多个分支发 PR 时，每个目标分支必须有独立的、基于该目标分支创建的特性分支。** 绝不能复用同一个特性分支。
 
+## 知识 Stop 钩子需兼容 Windows PowerShell
+
+- **日期**：2026-10-02。
+- **输出协议**：ZCode 的 Stop 钩子还要求 stdout 是合法 JSON；退出码为 0 但打印普通日志仍会失败。启动器将子进程日志转至 stderr，成功时 stdout 仅输出 `{}`；回归必须同时检查退出码与实际 stdout 的 JSON 解析。
+- **根因**：直接调用 `pwsh` 会在只安装 Windows PowerShell 的机器上失败；回退后，PowerShell 5.1 又会把 Git 换行警告转换成 `NativeCommandError`，触发全局 `ErrorActionPreference = Stop`。默认文本编码还可能令中文知识检查失真。
+- **正确做法**：Codex 与 ZCode 共用 `scripts/run-knowledge-hook.py`，优先 PowerShell 7、Windows 回退系统 PowerShell。报告脚本仅在 Git 调用局部允许 stderr 警告，并继续检查退出码；知识文件显式使用 UTF-8，含中文的钩子脚本使用 UTF-8 BOM，避免 PowerShell 5.1 按系统代码页解析脚本。启动器保留实际脚本退出码，不把失败伪装成成功。
+
 ## 多行补丁不要经原生命令参数转发
 
 - 本次通过 PowerShell → RTK → 原生命令传递多行补丁时，曾出现执行成功但 Java 字符串双引号丢失；语言键、文本和注册 ID 因而变成非法表达式。

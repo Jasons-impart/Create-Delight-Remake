@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$Root = "",
     [string]$OutputPath = "",
     [string]$StatePath = "",
@@ -30,7 +30,10 @@ if ([string]::IsNullOrWhiteSpace($DecisionPath)) {
 }
 
 function Invoke-Git([string[]]$GitArgs) {
-    $output = & git -C $Root @GitArgs 2>$null
+    $output = & {
+        $ErrorActionPreference = "Continue"
+        & git -C $Root @GitArgs 2>$null
+    }
     if ($LASTEXITCODE -ne 0) {
         return @()
     }
@@ -56,7 +59,10 @@ function Get-SubmoduleChangedFiles([string]$RelativePath) {
         @("ls-files", "--others", "--exclude-standard")
     )
     foreach ($gitArgumentSet in $gitArgumentSets) {
-        $output = & git -C $submoduleRoot @gitArgumentSet 2>$null
+        $output = & {
+            $ErrorActionPreference = "Continue"
+            & git -C $submoduleRoot @gitArgumentSet 2>$null
+        }
         if ($LASTEXITCODE -ne 0) {
             continue
         }
@@ -133,7 +139,7 @@ $head = (Invoke-Git -GitArgs @("rev-parse", "HEAD") | Select-Object -First 1)
 $lastReportedHead = ""
 if (Test-Path -LiteralPath $StatePath) {
     try {
-        $state = Get-Content -Raw -LiteralPath $StatePath | ConvertFrom-Json
+        $state = Get-Content -Raw -LiteralPath $StatePath -Encoding UTF8 | ConvertFrom-Json
         $lastReportedHead = [string]$state.lastReportedHead
     } catch {
         $lastReportedHead = ""
@@ -148,7 +154,10 @@ $scannedCommits = @()
 if ($head) {
     $lastReportedHeadIsAncestor = $false
     if (-not [string]::IsNullOrWhiteSpace($lastReportedHead)) {
-        & git -C $Root merge-base --is-ancestor $lastReportedHead $head 2>$null
+        & {
+            $ErrorActionPreference = "Continue"
+            & git -C $Root merge-base --is-ancestor $lastReportedHead $head 2>$null
+        }
         $lastReportedHeadIsAncestor = ($LASTEXITCODE -eq 0)
     }
     if ($lastReportedHeadIsAncestor) {
@@ -226,7 +235,7 @@ $recommendation = "No candidate knowledge update detected."
 $hasProcessNotes = Test-Path -LiteralPath $NotesPath
 $processNotes = ""
 if ($hasProcessNotes) {
-    $processNotes = (Get-Content -Raw -LiteralPath $NotesPath).Trim()
+    $processNotes = (Get-Content -Raw -LiteralPath $NotesPath -Encoding UTF8).Trim()
 }
 
 if ($hasProcessNotes -and -not [string]::IsNullOrWhiteSpace($processNotes)) {

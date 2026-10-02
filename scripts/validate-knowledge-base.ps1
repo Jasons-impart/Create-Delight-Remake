@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$Root = "",
     [switch]$StrictWarnings,
     [switch]$CheckHotaiRuntimeStatus
@@ -41,7 +41,7 @@ function Get-FileText([string]$RelativePath) {
     if (-not (Test-Path -LiteralPath $path)) {
         return ""
     }
-    return Get-Content -Raw -LiteralPath $path
+    return Get-Content -Raw -LiteralPath $path -Encoding UTF8
 }
 
 function Test-DevKnowledgeChineseMarkdown([string]$RelativePath) {
@@ -206,7 +206,7 @@ foreach ($antiPattern in $antiPatterns) {
 
 $lessonsPath = Join-Path $Root "docs/lessons-learned.md"
 if (Test-Path -LiteralPath $lessonsPath) {
-    $lessonsText = Get-Content -Raw -LiteralPath $lessonsPath
+    $lessonsText = Get-Content -Raw -LiteralPath $lessonsPath -Encoding UTF8
     $sections = [regex]::Split($lessonsText, "(?m)^##\s+").Where({ $_.Trim().Length -gt 0 })
     foreach ($section in $sections) {
         $firstLine = ($section -split "`r?`n", 2)[0].Trim()
