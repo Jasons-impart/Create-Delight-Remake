@@ -385,10 +385,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 ## KubeJS foodProperties edits should be applied once per item
 
-**Date**: 2026-07-07
+**Date**: 2026-07-07 (updated 2026-09-26)
 
-- **Problem**: After updating from KubeJS build.16 to build.26, `item.foodProperties = food => { ... }` could enter the new `FoodBuilder.of` conversion path and build from an empty builder, so any food property not rewritten by the callback—including hunger, saturation, effects, and fast/always-edible flags—could disappear.
-- **Fix/Lesson**: Restore the pre-build.26 direct food-property helpers and keep later intentional food ID/effect/property changes separate. Build.24 is currently being tested as the least disruptive rollback, but it still contains the `FoodProperties` type wrapper; do not call it a confirmed fix until a full restart regression passes. An effect-only workaround is not sufficient because the regression affects the whole `FoodProperties` object.
+- **Problem**: KubeJS `2001.6.5-build.24` 及以上（含 build.26）注册了 `FoodProperties` 类型包装器（上游 commit `34ebb816`），使 `item.foodProperties = food => { ... }` 经 `FoodBuilder.of` 从**空** builder 构建。回调未写入的饥饿、饱和度、meat、`alwaysEdible`、`fastToEat` 与已有效果全部丢失；同一物品多次 `e.modify` 时最终只剩最后一次回调写入的字段。
+- **Fix/Lesson**: 必须回退到 **build.16**——它是最后一个不含 `FoodProperties` 类型包装器的版本；回退到 build.24 无效，实测同样触发回归。已上报上游 [kube-mods/kubejs#1171](https://github.com/kube-mods/kubejs/issues/1171)（open）。若未来需要升级，替代写法是在回调里显式重写全部字段，或用 `new Java.loadClass("dev.latvian.mods.kubejs.item.FoodBuilder")(item.getFoodProperties())` 构造器追加后 `.build()` 赋值 FoodProperties 对象（该路径不经 `FoodBuilder.of`）。
 
 ## Optional compat mixins should use LoadingModList
 
