@@ -42,28 +42,4 @@ StartupEvents.registry("block", (e) => {
     .tagBlock("minecraft:wither_immune")
     .tagBlock("minecraft:dragon_immune")
     .requiresTool(true);
-  // 动物.zip
-  let zip = [
-    "cow",
-    "sheep",
-    "pig",
-    "chicken",
-    "goat",
-    "black_rabbit",
-    "brown_rabbit",
-    "splotched_rabbit",
-    "gold_rabbit",
-    "white_rabbit",
-  ];
-  zip.forEach((n) => {
-    e.create(`createdelight:${n}_zip`)
-      .model("createdelight:block/zip")
-      .translationKey(`block.createdelight.${n}_zip`)
-      .soundType("powder_snow")
-      .hardness(10)
-      .resistance(10)
-      .tagBlock(`minecraft:mineable/pickaxe`)
-      .tagBlock(`minecraft:needs_iron_tool`)
-      .requiresTool(false);
-  });
 });
