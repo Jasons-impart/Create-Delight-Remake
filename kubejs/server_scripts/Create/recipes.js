@@ -427,7 +427,7 @@ ServerEvents.recipes(e => {
     let iner_3 = "ratatouille:sausage_casing"
     e.recipes.create.sequenced_assembly('minecraft:ink_sac', 'ratatouille:sausage_casing',
         [
-            e.recipes.create.filling(iner_3, [iner_3, Fluid.of("create_enchantment_industry:ink", 500)]),
+            e.recipes.create.filling(iner_3, [iner_3, Fluid.of("create_dragons_plus:black_dye", 500)]),
             e.recipes.create.deploying(iner_3, [iner_3, "#forge:slimeballs"]),
         ]
     )
