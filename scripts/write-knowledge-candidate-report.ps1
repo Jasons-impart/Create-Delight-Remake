@@ -114,8 +114,8 @@ function ConvertTo-Reason([string]$Path) {
     if ($normalized -like "docs/dev-knowledge/*") { return "Development knowledge index changed; verify entries stay short and point to source files." }
     if ($normalized -eq "scripts/update-hotai-docs.ps1") { return "hotai documentation automation changed; verify validation still checks generated status." }
     if ($normalized -eq "docs/development.md") { return "Development guide changed; check whether a compact how-to entry should be indexed." }
-    if ($normalized -like "docs/*design*.md" -or $normalized -like "docs/*plan.md" -or $normalized -like "docs/*strategy.md") { return "Design or plan doc changed; update content-map only if implemented behavior or code locations changed." }
-    if (Test-ModpackBehaviorChangePath $normalized) { return "Modpack behavior may be a feature or a bugfix/compat change; classify by intended player result, not by file path." }
+    if ($normalized -like "docs/*design*.md" -or $normalized -like "docs/*plan.md" -or $normalized -like "docs/*strategy.md") { return "Design or plan doc changed; apply dev-knowledge admission rules before updating content-map. Removal alone does not warrant a new entry." }
+    if (Test-ModpackBehaviorChangePath $normalized) { return "Path-only candidate: inspect final behavior using dev-knowledge admission rules. Pure removal adds no content-map entry; update an existing stale entry only if needed. Neither ledger may need an update." }
     if ($normalized -eq ".codex/hooks.json" -or $normalized -like "scripts/*knowledge*" -or $normalized -like "scripts/add-knowledge-note.ps1" -or $normalized -like "scripts/resolve-knowledge-candidate.ps1") { return "Knowledge maintenance automation changed; update knowledge-check skill if the prompt or routing changed." }
     if ($normalized -like "scripts/sync-packwiz-assets.ps1" -or $normalized -like "scripts/add-packwiz-target.ps1" -or $normalized -like "scripts/update-packwiz-meta.ps1" -or $normalized -like "scripts/update-packwiz-target.ps1" -or $normalized -like "scripts/test-packwiz-files-ref.ps1") { return "Packwiz asset automation changed; update packwiz-assets skill if the workflow changed." }
     if ($normalized -like "scripts/*") { return "Project automation changed; decide whether this is an always-on AGENTS pointer or a task-specific skill workflow." }
@@ -206,9 +206,9 @@ foreach ($file in $allFiles) {
         } elseif ($target -eq "docs/lessons-learned.md") {
             Add-Unique $forms "Lesson - historical pitfall, root cause, or non-obvious side effect."
         } elseif ($target -eq "docs/dev-knowledge/content-map.md") {
-            Add-Unique $forms "Content change (feat) map - intended player-facing gameplay, balance, or content change."
+            Add-Unique $forms "Content map candidate - apply dev-knowledge admission rules; pure removal adds no entry."
         } elseif ($target -eq "docs/dev-knowledge/compatibility-patches.md") {
-            Add-Unique $forms "Compatibility and bugfix registry - expected-behavior restoration, regression fix, or upstream adaptation with verification and review condition."
+            Add-Unique $forms "Compatibility candidate - external mod defects or cross-mod incompatibility only; pure removal and ordinary internal fixes do not qualify."
         } elseif ($target -like "docs/dev-knowledge/hotai/*") {
             Add-Unique $forms "Dev knowledge topic - stable hotai reference or generated patch inventory."
         } elseif ($target -like "docs/dev-knowledge/*") {
@@ -230,7 +230,7 @@ if ($hasProcessNotes) {
 }
 
 if ($hasProcessNotes -and -not [string]::IsNullOrWhiteSpace($processNotes)) {
-    $recommendation = "Process notes found; review them for docs/lessons-learned.md or the relevant AGENTS.md."
+    $recommendation = "Process notes found; apply dev-knowledge routing, including skills for workflow corrections. Notes do not automatically require a ledger entry."
     Add-Unique $targets "docs/lessons-learned.md"
 } elseif ($allFiles.Count -eq 0) {
     $recommendation = "No git changes or recent commit files were found."
@@ -276,6 +276,10 @@ $lines.Add("") | Out-Null
 $lines.Add("## Recommendation") | Out-Null
 $lines.Add("") | Out-Null
 $lines.Add($recommendation) | Out-Null
+$lines.Add("") | Out-Null
+$lines.Add("## Admission Check") | Out-Null
+$lines.Add("") | Out-Null
+$lines.Add("Targets below are path-based candidates, not admission decisions. Read .agents/skills/dev-knowledge/SKILL.md before editing a ledger. Pure removal or rollback does not add a content-map entry; only correct an existing stale entry when needed. No knowledge update is a valid outcome. Passing structural validation does not prove admission.") | Out-Null
 $lines.Add("") | Out-Null
 $lines.Add("## Suggested Targets") | Out-Null
 $lines.Add("") | Out-Null
