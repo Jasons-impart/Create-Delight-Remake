@@ -30,14 +30,16 @@ description: 实现后知识检查、知识库维护、项目经验沉淀。用�
 
 如果存在 `tmp-opencode/knowledge-candidate-report.md`，先读取它再决定；除非当前任务明确要求维护知识库，否则 process note 候选需要用户接受后再落库。
 
-Codex（`.codex/hooks.json`）和 ZCode（`.zcode/config.json` 的 Stop hooks）都会运行 `scripts/validate-knowledge-base.ps1`，并写入 `tmp-opencode/knowledge-candidate-report.md`；该报告只提供建议，不会自动修改知识文件。报告覆盖范围为工作区改动加上自上次报告以来的全部未报告提交；仅当上次报告基线缺失或不再是 HEAD 祖先（如 rebase）时，才回看最近 `-RecentCommits` 个提交（默认 1）。有候选的报告会按时间戳归档到 `tmp-opencode/knowledge-candidate-history/`（保留最近 50 份，空报告不归档）；漏记的知识候选可从归档或 git 提交历史回溯补记。
+Codex（`.codex/hooks.json`）和 ZCode（`.zcode/config.json` 的 Stop hooks）都会运行 `scripts/validate-knowledge-base.ps1` 校验结构，再由 `scripts/write-knowledge-candidate-report.ps1` 写入 `tmp-opencode/knowledge-candidate-report.md`；该报告只提供建议，不会自动修改知识文件。报告覆盖范围为工作区改动加上自上次报告以来的全部未报告提交；仅当上次报告基线缺失或不再是 HEAD 祖先（如 rebase）时，才回看最近 `-RecentCommits` 个提交（默认 1）。有候选的报告会按时间戳归档到 `tmp-opencode/knowledge-candidate-history/`（保留最近 50 份，空报告不归档）；漏记的知识候选可从归档或 git 提交历史回溯补记。
 
 diff 扫描只覆盖代码改动，看不到任务过程中发现的信息。因此任务进行中遇到非显而易见的失败、绕路、根因或约束时，立即用 `scripts/add-knowledge-note.ps1` 追加临时 note，不要等任务结束再回忆；候选报告会读取这些 note 并把它路由到这里。
+
+先按 `dev-knowledge` 的“内容地图条目”判断是否准入，再选落点。候选报告仅按路径提示检查范围，不能代替语义判断，也不要求必须选一个台账；结构校验通过同样不代表内容准入。
 
 通常值得记录的知识分为：
 
 - **可复用的项目事实或位置** → 按 `.agents/skills/dev-knowledge/SKILL.md` 的存放表路由。
-- **内容改动（feat）** → `docs/dev-knowledge/content-map.md`，记录新增或有意调整的玩家体验、实现位置和验证状态。
+- **内容改动（feat）** → 按 `dev-knowledge` 的内容地图准入规则判断；纯移除不新增条目。
 - **模组兼容补丁** → `docs/dev-knowledge/compatibility-patches.md`，记录外部模组缺陷，或由外部模组版本、API、数据和运行时行为差异触发的兼容补丁；由 CDR 承载的 workaround 同样准入。
 - **bug、坑点或历史教训** → 优先写入 `docs/lessons-learned.md`。
 - **知识路由或 skill 行为变化** → 更新受影响的 skill。
@@ -52,10 +54,10 @@ diff 扫描只覆盖代码改动，看不到任务过程中发现的信息。因
 
 应用 dev-knowledge 存放表后，再检查这些覆盖规则：
 
-- 新增或有意调整配方、平衡、NPC、剧情、任务、物品、机器或系统 → `docs/dev-knowledge/content-map.md`；不因实现位于 KubeJS、配置、hotai、CDC 或 mixin 而改变分类。
+- 配方、平衡、任务、物品、机器或系统改动 → 先执行 `dev-knowledge` 的内容地图准入判断；只有准入后才写入 `content-map.md`，不要按 KubeJS、配置、hotai、CDC 等路径直接入账。
 - 仅当根因是外部模组缺陷，或 CDR 与外部模组、多个外部模组之间存在版本、API、数据或运行时行为差异，且补丁会随上游变化而复核或移除时 → `docs/dev-knowledge/compatibility-patches.md`；由 CDR 承载的 workaround 同样准入，普通 CDR 内部 bug 不因“修复错误”、实现位置或调用第三方 API 而自动准入。
 - 纯 CDR 内部修复若未形成可脱离具体实现复用的经验，则不记录；不要把局部空值、容量或自有数据读写修复写入兼容台账。
-- 候选报告会对可能改变玩法的整合包文件同时列出两种台账；依据改动目的选择，不确定时先检查玩家可见结果与问题描述。
+- 候选报告列出的两种台账均为待核对位置，可两者都不更新。纯移除且无原条目需维护时输出 `Knowledge: no update needed`；不能改投兼容台账来记录删除历史。
 - 与具体补丁无关、未来会反复遇到的根因或非显而易见的 workaround → `docs/lessons-learned.md`。
 - 新的 KubeJS helper/API 参考 → 内容很短时写入 `kubejs/AGENTS.md` 的 UNIQUE STYLES；否则写入 dev-knowledge how-to 或提升为 skill。
 - `hotai/` 补丁、`docs/dev-knowledge/hotai/` 专题资料或 `scripts/update-hotai-docs.ps1` → 使用 `/hotai` skill；逐文件语义和生成状态写入 `docs/dev-knowledge/hotai/`，玩家体验与兼容修复仍按目的分别登记到对应台账。
