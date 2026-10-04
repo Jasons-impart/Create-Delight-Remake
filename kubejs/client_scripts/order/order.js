@@ -149,6 +149,13 @@ ItemEvents.tooltip(e => {
         let entries = global.Order.toObjectArray(info.entries)
         let type = info.type
         let customer = getOrderClientValue(global.Order.customerProperties, type)
+        // 数据尚未就绪（首次进服、数据为空）时兜底，避免 tooltip 直接抛错
+        if (customer == null)
+            customer = {}
+        if (customer.rarity == null)
+            customer.rarity = "COMMON"
+        if (customer.reward_money == null)
+            customer.reward_money = 0
         let reward = customer.reward
         if (reward == null)
             reward = [`createdelight:orders/${info.type}`, 1]
