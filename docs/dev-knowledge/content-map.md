@@ -4,7 +4,6 @@
 
 | 领域 | 玩家可见变化 | 实现概览 | 主要位置 | 相关文档 | 状态 |
 |---|---|---|---|---|---|
-| 动物屠宰 zip 移除 | 不再提供牛、羊、猪、鸡、山羊及五种兔子的屠宰 zip 方块和物品；普通肉类加工与屠宰室配方保留。 | 删除 10 种方块注册、创造标签引用、序列组装及拆包配方和共用模型贴图。 | `kubejs/startup_scripts/registry_block.js`、`kubejs/startup_scripts/creative_tab/`、`kubejs/server_scripts/Butchercraft/recipes.js`、`kubejs/assets/createdelight/` | [Issue #2388](https://github.com/Jasons-impart/Create-Delight-Remake/issues/2388) | 已完成静态引用与脚本语法检查；需完整重启游戏验证，旧存档中的 zip 方块和物品无迁移。 |
 | 月背天空 | 月球背面不显示地球和月亮天体，其他维度沿用原有天体显示。 | 覆盖 Northstar 地球与月亮的天体数据，用 `conditional_dimension` 在 `createdelight:lunar_farside` 选择 `no_op`，其他维度保留上游 renderer；背面自身的 `no_op` 仅隐藏背面天体，不能隐藏观察者看到的其他天体。 | `kubejs/data/northstar/northstar/planet/earth.json`、`kubejs/data/northstar/northstar/planet/the_moon.json` | 无 | 已核对 Northstar 0.6.4 条件渲染实现及上游数据；静态校验通过，用户游戏内回归确认月背不再显示地球和月亮。其他维度显示保留经静态核对，尚未报告实机回归。升级 Northstar 时复核两份完整天体覆盖。 |
 | 渊海生物缺氧适应 | 渊海陷窟迁入木卫二后，原生与模组追加的渊海水生生物免疫 Northstar 缺氧伤害，普通怪物不新增豁免。 | 沿用已有实体标签组，并以独立的 `europanAbyssalOxygenEntities` 补齐遗漏物种；仅补缺氧免疫，不额外改变温度抗性。 | `kubejs/server_scripts/Create Northstar/tag.js`、`kubejs/data/alexscaves/worldgen/biome/abyssal_chasm.json` | 无 | 原生刷怪表与生成势能表的水生实体标签覆盖已静态核对；需 `/reload` 或重启后在游戏内验证。 |
 | 结构稀疏化 | 新生成区块中的结构间距统一提高至 1.5 倍，降低高结构模组数量带来的重复探索；Alex's Caves 结构保持原频率以避免上游已知的生成兼容问题。 | `Sparse Structures` 全局修改结构集间距，以结构 ID 派生盐值减少重叠；配置对 14 个 Alex's Caves 结构集进行单独覆盖。 | `mods/sparse-structures.pw.toml`、`config/sparsestructures.json5` | Issue #2045 | 已核验 Forge 1.20.1 JAR 的默认配置字段并生成完整性清单；需重启，并在新生成区块验证结构分布。 |
