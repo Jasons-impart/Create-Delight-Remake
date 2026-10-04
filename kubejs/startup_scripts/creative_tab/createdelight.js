@@ -2,17 +2,6 @@
 StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
   //食物
   e.add([
-    // 压缩包（bushi）
-    'createdelight:cow_zip',
-    'createdelight:sheep_zip',
-    'createdelight:chicken_zip',
-    'createdelight:pig_zip',
-    'createdelight:goat_zip',
-    'createdelight:white_rabbit_zip',
-    'createdelight:black_rabbit_zip',
-    'createdelight:brown_rabbit_zip',
-    'createdelight:splotched_rabbit_zip',
-    'createdelight:gold_rabbit_zip',
     // 原材料
     'createdelight:corn_flour',
     'createdelight:butter',
