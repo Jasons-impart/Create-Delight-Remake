@@ -1417,96 +1417,6 @@
         {
           "TradeType": "SALE",
           "SellItem": {
-            "ID": "tetra:scroll_rolled",
-            "Count": 1,
-            "Tag": "{BlockEntityTag:{data:[{details:\"art_of_forging\",glyphs:[I;8,1,4,5],intricate:0b,key:\"single/head/halberd_head/halberd_head\",material:1,ribbon:\"444aff\",schematics:[\"tetra:single/head/halberd_head/halberd_head\"]}]}}"
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:gold_coin",
-                "Amount": 5
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
-            "ID": "tetra:scroll_rolled",
-            "Count": 1,
-            "Tag": "{BlockEntityTag:{data:[{details:\"art_of_forging\",glyphs:[I;0,1,9,4],intricate:0b,key:\"sword/key_guard\",material:1,ribbon:\"fae409\",schematics:[\"tetra:sword/key_guard\"]}]}}"
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:gold_coin",
-                "Amount": 5
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
-            "ID": "tetra:scroll_rolled",
-            "Count": 1,
-            "Tag": "{BlockEntityTag:{data:[{details:\"art_of_forging\",glyphs:[I;9,3,6,2],intricate:0b,key:\"single/head/mace_head/mace_head\",material:1,ribbon:\"560060\",schematics:[\"tetra:single/head/mace_head/mace_head\"]}]}}"
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:gold_coin",
-                "Amount": 5
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
-            "ID": "tetra:scroll_rolled",
-            "Count": 1,
-            "Tag": "{BlockEntityTag:{data:[{details:\"art_of_forging\",glyphs:[I;8,1,9,5],intricate:0b,key:\"bow/stave/dreadnought_stave\",material:1,ribbon:\"f3b31f\",schematics:[\"tetra:bow/stave/dreadnought_stave\",\"tetra:bow/stave/dreadnought_cross_stave\"]}]}}"
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:gold_coin",
-                "Amount": 5
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
-            "ID": "tetra:scroll_rolled",
-            "Count": 1,
-            "Tag": "{BlockEntityTag:{data:[{details:\"art_of_forging\",glyphs:[I;3,5,6,9],intricate:0b,key:\"sword/tonal_blade\",material:1,ribbon:\"daf7a6\",schematics:[\"tetra:sword/tonal_blade\"]}]}}"
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:gold_coin",
-                "Amount": 5
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
             "ID": "createdelight:otherworld_note",
             "Count": 1
           },
@@ -3621,7 +3531,7 @@
         {
           "TradeType": "PURCHASE",
           "SellItem": {
-            "ID": "createmetallurgy:raw_wolframite",
+            "ID": "createmetallurgy:raw_tungsten",
             "Count": 64
           },
           "Rules": [
@@ -3645,7 +3555,7 @@
         {
           "TradeType": "PURCHASE",
           "SellItem": {
-            "ID": "createmetallurgy:crushed_raw_wolframite",
+            "ID": "createmetallurgy:crushed_raw_tungsten",
             "Count": 64
           },
           "Rules": [
@@ -3669,7 +3579,7 @@
         {
           "TradeType": "PURCHASE",
           "SellItem": {
-            "ID": "createmetallurgy:dirty_wolframite_dust",
+            "ID": "createmetallurgy:dirty_tungsten_dust",
             "Count": 64
           },
           "Rules": [
@@ -3693,7 +3603,7 @@
         {
           "TradeType": "PURCHASE",
           "SellItem": {
-            "ID": "createmetallurgy:wolframite_dust",
+            "ID": "createmetallurgy:tungsten_dust",
             "Count": 64
           },
           "Rules": [
