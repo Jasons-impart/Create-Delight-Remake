@@ -42,9 +42,23 @@ $script:SyncLockStream = $null
 $script:CrashAssistantBaselineChanged = $false
 
 function Reset-CrashAssistantModlist {
-    if ($Side -ne "server") {
-        & (Join-Path $PSScriptRoot "reset-crash-assistant-modlist.ps1") -DryRun:$DryRun
+    if ($Side -eq "server") { return }
+    $baseline = Join-Path $RepoRoot "config/modpack_defaults/config/crash_assistant/modlist.json"
+    $runtime = Join-Path $RepoRoot "config/crash_assistant/modlist.json"
+
+    # Crash Assistant copies defaults only when the runtime file is absent.
+    # Never remove other runtime settings or the user's warning preferences.
+    if (-not (Test-Path -LiteralPath $baseline -PathType Leaf) -or
+        -not (Test-Path -LiteralPath $runtime -PathType Leaf)) {
+        return
     }
+    $null = Get-Content -LiteralPath $baseline -Raw | ConvertFrom-Json
+    if ($DryRun) {
+        Write-Host "[sync] Would reset Crash Assistant runtime modlist from managed defaults on next launch."
+        return
+    }
+    Remove-Item -LiteralPath $runtime
+    Write-Host "[sync] Reset Crash Assistant runtime modlist; managed defaults will be loaded on next launch."
 }
 
 function Write-Status {
