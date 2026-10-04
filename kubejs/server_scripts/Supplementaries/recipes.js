@@ -11,7 +11,7 @@ ServerEvents.recipes(e => {
     let iner_1 = "minecraft:glass_bottle"
     e.recipes.create.sequenced_assembly('supplementaries:antique_ink', 'minecraft:glass_bottle', 
         [
-            e.recipes.create.filling(iner_1, [iner_1, Fluid.of("create_enchantment_industry:ink", 1000)]),
+            e.recipes.create.filling(iner_1, [iner_1, Fluid.of("create_dragons_plus:black_dye", 1000)]),
             e.recipes.create.deploying(iner_1, [iner_1, "#minecraft:planks"]),
         ]
     )
