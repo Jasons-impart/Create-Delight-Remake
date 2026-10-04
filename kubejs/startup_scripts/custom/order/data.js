@@ -33,8 +33,9 @@ const CD_ORDER_DATA_DIR = "kubejs/data/createdelightcore/createdelightcore_order
 
 function cdOrderDataReadJson(name) {
     try {
+        // JsonIO.read 返回 Java Map/List，Rhino 直接用对象/数组语义访问
         let json = JsonIO.read(CD_ORDER_DATA_DIR + name)
-        return json == null ? null : JSON.parse(`${json}`)
+        return json == null ? null : cdOrderDataToJs(json)
     } catch (error) {
         return null
     }
