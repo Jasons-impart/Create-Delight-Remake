@@ -14,7 +14,7 @@ class ResetTests(unittest.TestCase):
         self.root = pathlib.Path(self.temp.name)
         scripts = self.root / "scripts"
         scripts.mkdir()
-        for name in ("reset-crash-assistant-modlist.ps1", "sync-packwiz-assets.ps1"):
+        for name in ("sync-packwiz-assets.ps1",):
             shutil.copyfile(pathlib.Path(__file__).parent / name, scripts / name)
         self.baseline = self.root / "config/modpack_defaults/config/crash_assistant/modlist.json"
         self.runtime = self.root / "config/crash_assistant/modlist.json"
@@ -42,18 +42,21 @@ class ResetTests(unittest.TestCase):
         return old
 
     def test_reset_preserves_defaults_and_preferences_and_is_repeatable(self):
+        old = self.baseline_change()
+        expected = self.baseline.read_text()
         for _ in range(2):
-            self.run_script("reset-crash-assistant-modlist.ps1")
+            self.run_script("sync-packwiz-assets.ps1", "-IfGitChanged", "-OldRev", old)
         self.assertFalse(self.runtime.exists())
-        self.assertEqual(self.baseline.read_text(), '{}')
+        self.assertEqual(self.baseline.read_text(), expected)
         self.assertEqual(self.settings.read_text(), "user preferences")
 
     def test_missing_or_invalid_default_preserves_runtime(self):
+        old = self.baseline_change()
         self.baseline.unlink()
-        self.run_script("reset-crash-assistant-modlist.ps1")
+        self.run_script("sync-packwiz-assets.ps1", "-IfGitChanged", "-OldRev", old)
         self.assertTrue(self.runtime.exists())
         self.baseline.write_text("invalid json")
-        result = self.run_script("reset-crash-assistant-modlist.ps1", check=False)
+        result = self.run_script("sync-packwiz-assets.ps1", "-IfGitChanged", "-OldRev", old, check=False)
         self.assertNotEqual(result.returncode, 0)
         self.assertTrue(self.runtime.exists())
 
