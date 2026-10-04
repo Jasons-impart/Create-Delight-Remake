@@ -68,6 +68,12 @@
   ```powershell
   pwsh -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-git-hooks.ps1
   ```
+- Windows 更新单个 Packwiz 资产时，通过 PowerShell 的 `-ExecutionPolicy Bypass` 参数避免未签名脚本被执行策略拦截（将 `<metadata-name>` 替换为对应 `.pw.toml` 的名称，不含扩展名）：
+  ```powershell
+  powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\update-packwiz-target.ps1 -Slug "<metadata-name>" -DryRun
+  powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\update-packwiz-target.ps1 -Slug "<metadata-name>"
+  ```
+  已安装 PowerShell 7 时，可将 `powershell` 替换为 `pwsh`。该参数仅对本次进程生效，不修改系统或用户执行策略；组织组策略强制执行签名时仍受组策略限制。
 - 如果 `java -version` 不是 Java 17，但 `JAVA_HOME` 指向 Java 17，可继续；同步脚本会优先读取 `JAVA_HOME`。
 - 如果 `java -version` 和 `JAVA_HOME` 都不是 Java 17，修改 `variables.txt` 的 `JAVA=` 为本机 Java 17 的完整路径。
 - 配置 Minecraft MCP：阅读 [AI 工具集成指南](https://github.com/langyo/minecraft-mod-mcp/blob/master/docs/guides/zhs/AI-TOOLS.md)，使用 `npx -y minecraft-mod-mcp` 作为 stdio 桥接器连接 AI 工具；不要把游戏 HTTP 端口或 `/api/events` 直接配置成 MCP/SSE 地址。
