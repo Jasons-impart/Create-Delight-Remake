@@ -398,7 +398,7 @@ ServerEvents.recipes(e => {
     {
         let iner = "bakeries:cut_cake_base"
         create.sequenced_assembly('cosmopolitan:ink_roll', iner, [
-            create.filling(iner, [iner, Fluid.of("create_enchantment_industry:ink", 250)]),
+            create.filling(iner, [iner, Fluid.of("create_dragons_plus:black_dye", 250)]),
             create.deploying(iner, [iner, "minecraft:glow_ink_sac"]),
             create.pressing(iner, iner),
         ])
