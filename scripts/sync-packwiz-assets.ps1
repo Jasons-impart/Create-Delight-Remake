@@ -39,6 +39,13 @@ $ServeProcess = $null
 $script:SyncOldCommit = $null
 $script:SyncNewCommit = $null
 $script:SyncLockStream = $null
+$script:CrashAssistantBaselineChanged = $false
+
+function Reset-CrashAssistantModlist {
+    if ($Side -ne "server") {
+        & (Join-Path $PSScriptRoot "reset-crash-assistant-modlist.ps1") -DryRun:$DryRun
+    }
+}
 
 function Write-Status {
     param([string]$Message)
@@ -88,12 +95,14 @@ function Test-PackwizGitChanges {
         return $false
     }
 
-    $changedPaths = @(& git -C $RepoRoot diff --name-only $oldCommit $newCommit -- mods resourcepacks shaderpacks tacz packwiz-files 2>$null)
+    $baselinePath = "config/modpack_defaults/config/crash_assistant/modlist.json"
+    $changedPaths = @(& git -C $RepoRoot diff --name-only $oldCommit $newCommit -- mods resourcepacks shaderpacks tacz packwiz-files $baselinePath 2>$null)
     if ($LASTEXITCODE -ne 0) {
         Write-Warning "[$Name] Could not diff $oldCommit..$newCommit; skipping Packwiz sync."
         return $false
     }
 
+    $script:CrashAssistantBaselineChanged = $changedPaths -contains $baselinePath
     $packwizChanges = @(
         $changedPaths |
             Where-Object {
@@ -125,6 +134,9 @@ if ($IfGitChanged) {
 }
 
 if (-not $ShouldSync) {
+    if ($script:CrashAssistantBaselineChanged) {
+        Reset-CrashAssistantModlist
+    }
     exit 0
 }
 
@@ -254,6 +266,7 @@ if ($null -ne $script:ProxyConfig) {
 }
 
 if ($DryRun) {
+    Reset-CrashAssistantModlist
     Write-Host "[$HookName] Dry run enabled; Packwiz runtime sync was not executed."
     exit 0
 }
@@ -456,6 +469,7 @@ try {
     Enter-SyncLock
     if ($IfGitChanged -and -not $Force -and (Test-SyncStateCompleted -StateKey $syncStateKey)) {
         Write-Host "[$HookName] Packwiz sync already completed for this revision; skipping duplicate run."
+        Reset-CrashAssistantModlist
         return
     }
 
@@ -583,6 +597,7 @@ try {
     }
 
     Write-Status "Sync finished successfully."
+    Reset-CrashAssistantModlist
     Write-SyncState -StateKey $syncStateKey
 }
 finally {
