@@ -40,6 +40,8 @@ if ($LASTEXITCODE -eq 1) {
 
 The sync script records the last successful revision in the ignored `.cache/packwiz-sync/sync-state.json`. This makes the hook and the explicit workflow call idempotent: the second call for the same revision, side, metadata roots, and sync-script version exits without downloading again. Use `-Force` when repairing a known local runtime mismatch. For slow overseas downloads, set `PACKWIZ_PROXY=http://127.0.0.1:7890`; the hooks inherit this environment variable.
 
+客户端同步成功（含命中同步缓存）后，共享脚本会删除 `config/crash_assistant/modlist.json`；Crash Assistant 只在运行时文件缺失时复制受管默认表，因此下次启动才能应用当前分支基线。仅默认 `modlist.json` 变化时也会清理，不触发资源下载；同步失败、`-DryRun` 和服务端同步不删除。只处理这一个文件，保留其他配置和“不再提示”记录；默认表缺失时不清理，损坏时报告错误。需要单独修复旧运行时表时可运行 `scripts/reset-crash-assistant-modlist.ps1`，支持 `-DryRun`。关闭游戏后操作，下次重新启动验证。
+
 The installer is idempotent: `-IfUnset` exits when all four shims already exist and are managed, while a full install only rewrites a shim when its generated content differs. The post-update hook installation only runs when the installer or tracked hooks changed. This makes newly added hooks available immediately, while ordinary repository updates do not rewrite local hook shims.
 
 3. If `CDC-mod-src` changed or `git status` reports the submodule modified after update, run:
