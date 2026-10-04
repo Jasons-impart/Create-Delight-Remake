@@ -1154,11 +1154,6 @@
     "name": "Kotlin for Forge",
     "version": "4.12.0-all"
   },
-  "Krypton FNP-forge-1.20.1-0.2.28.2-1.20.1.jar": {
-    "modId": "krypton fnp-forge",
-    "name": "Krypton Reno",
-    "version": "1.20.1-0.2.28.2-1.20.1"
-  },
   "kubejs-create-forge-2001.3.0-build.8.jar": {
     "modId": "kubejs-create-forge",
     "name": "KubeJS Create",
