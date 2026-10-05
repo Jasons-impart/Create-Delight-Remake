@@ -20,6 +20,7 @@ function Get-RelativePath([string]$Path) {
 }
 
 function Get-HotaiModule([string]$InternalName) {
+    if ($InternalName -like "io/github/jasonsimpart/createdelightcore/*") { return "Create Delight Core" }
     if ($InternalName -like "com/simibubi/create/*") { return "Create" }
     if ($InternalName -like "com/forsteri/createliquidfuel/*") { return "Create Liquid Fuel" }
     if ($InternalName -like "com/mrh0/createaddition/*") { return "Create Addition" }
