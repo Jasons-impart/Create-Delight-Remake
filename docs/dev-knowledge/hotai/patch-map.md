@@ -34,6 +34,7 @@
 | Better Compatibility Checker 状态 ping mixin | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | 将匿名内部类捕获的 `ServerData` 改为反射查找，并兼容混淆/反混淆方法名；注入点改到响应处理尾部，降低字段名变化造成的 mixin 失败。 |
 | IAF Dragon Fix 地下冰龙穴避海 | `com/iafdragonfix/structure/DragonDenPiece.badiff` | 地下冰龙穴确定中心后检查中心及周围 16 格的 3×3 群系采样；任一点命中 `#createdelight:blocks_ice_dragon_caves` 就跳过生成，避免木卫二龙穴切入地下海，同时保留木卫二陆地区域和火星的地下冰龙穴。补丁必须由 HotAI 将 `.class` 转存为其 `MemoryDiff` 序列化格式，不得使用 `BadiffCli diff` 生成不兼容的 `BadiffFileDiff`。 |
 | Quality Food 方块掉落品质 | `de/cadentem/quality_food/mixin/BlockMixin.badiff` | 只在存在 `DropData` 且方块通过 `Utils.isValidBlock` 时应用方块品质，移除无上下文时对掉落物套品质的 fallback。 |
+| CDC × Quality Food 甜浆果收获防崩溃（release-v050x） | `io/github/jasonsimpart/createdelightcore/mixin/quality_food/QualityFoodMixin.badiff` | 仅在 `isRelevantCropMixin` 收到空方块状态时返回 false，避免甜浆果右键/机械手收获触发 NPE；不移植 CDC #148 的自动化品质与玩家上下文改动。适用于当前 CDC 2.2.16j；升级 CDC 后须复核或移除。 |
 
 ## MMT 模型与属性兼容
 
