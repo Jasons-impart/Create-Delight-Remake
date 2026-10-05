@@ -787,7 +787,7 @@
     "createdelight.tip.enter_alexscaves_dimension": "Alex洞穴中，磁力洞穴在月球，剧毒洞穴在金星，渊海陷窟在木卫二，异寂空谷在月背异常区；其余洞穴为独立维度，进入方法请参见任务。",
     "createdelight.tip.fasten_letios_compost": "将忘魂肥料放在灵魂沙峡谷会加速其忘却速度。",
     "createdelight.tip.faucet": "水龙头搭配水源方块能够提供取之不尽的水。这在搭建锅炉时会很有用!",
-    "createdelight.tip.forged_ruin_collect": "你需要使用精准采集的锤子才能将锻造仪器的东西带走。",
+    "createdelight.tip.forged_ruin_collect": "你需要使用精准采集的锤子才能将锻造遗迹的东西带走。",
     "createdelight.tip.forged_ruin_container": "锻造遗迹中的锻造容器的存储可以翻至多三页, 不要把物品遗漏了。",
     "createdelight.tip.forged_ruin_preparation": "前往锻造遗迹收集资源时, 最好准备一把精准采集锤子和一把羊角头工具(当然你也可以将其整合到一把锤子上)",
     "createdelight.tip.foundry_basin_output": "熔铸盆拥有与工作盆类似的自动输出功能, 但你需要在输出的面使用扳手右击才能使其开口。",
