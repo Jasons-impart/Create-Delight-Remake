@@ -24,6 +24,12 @@ func runServe(args []string) error {
 	if !filepath.IsAbs(data) {
 		data = filepath.Join(filepath.Dir(configPath), data)
 	}
+	version := tomlKey(configPath, "official", "version")
+	if summary, err := reclaimStorage(data, version, true); err != nil {
+		fmt.Fprintln(os.Stderr, "存储回收失败: "+err.Error())
+	} else if summary != "" {
+		fmt.Println(summary)
+	}
 	setLive(cfg, configPath, data)
 	root := &store{data: data, overlay: loadOverlay(filepath.Join(data, "manifests", "private-index.json"))}
 	mux := http.NewServeMux()

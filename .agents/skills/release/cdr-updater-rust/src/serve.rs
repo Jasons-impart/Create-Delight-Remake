@@ -89,6 +89,13 @@ impl Config {
 }
 
 pub async fn listen(addr: String, data: PathBuf, config: PathBuf) -> io::Result<()> {
+    let version = config_field(&config, "version");
+    let tag = if version.is_empty() { config_field(&config, "tag") } else { version };
+    match build::reclaim_storage(&data, &tag, true) {
+        Ok(report) if !report.is_empty() => println!("{}", report.summary()),
+        Err(error) => eprintln!("存储回收失败: {error}"),
+        _ => {}
+    }
     let settings = Config::read(&config);
     let overlay = load_overlay(&data.join("manifests").join("private-index.json"));
     let app = App {

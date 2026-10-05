@@ -582,6 +582,30 @@ final class Tests {
             check("不完整包对应解压目录被删除", !Files.exists(cache.resolve("client-raw")));
             check("清理计数大于 0", cleaned >= 2);
 
+            String liveHash = Fs.sha256(official.resolve("mods/create-1.0.jar"));
+            Path liveObject = config.objectsDir.resolve(liveHash.substring(0, 2)).resolve(liveHash);
+            String orphanHash = "a".repeat(64);
+            Path orphanObject = config.objectsDir.resolve(orphanHash.substring(0, 2)).resolve(orphanHash);
+            Files.createDirectories(orphanObject.getParent());
+            Files.write(orphanObject, new byte[]{7, 7, 7});
+            Path oldVersion = config.dataDir.resolve("cache").resolve("v-old-resource");
+            Files.createDirectories(oldVersion.resolve("packwiz"));
+            Files.write(oldVersion.resolve("Client-v-old-resource.zip"), new byte[]{1});
+            Path currentCache = config.dataDir.resolve("cache").resolve(config.officialVersion);
+            Files.createDirectories(currentCache.resolve("packwiz"));
+            write(currentCache.resolve("packwiz/oldpack.zip"), "old-resource");
+            Files.write(currentCache.resolve("Client-keep.zip"), new byte[]{9, 9});
+            Files.createDirectories(currentCache.resolve("client-raw"));
+            write(currentCache.resolve("client-raw/keep.txt"), "extract");
+            String reclaimed = Pack.reclaimStorage(config, line -> {}, false);
+            check("回收会删除孤儿对象", !Files.exists(orphanObject));
+            check("回收会删除旧版本缓存", !Files.exists(oldVersion));
+            check("回收会删除 packwiz 资源缓存", !Files.exists(currentCache.resolve("packwiz")));
+            check("回收保留当前官方 zip", Files.exists(currentCache.resolve("Client-keep.zip")));
+            check("Java 回收保留解压目录以便增量更新", Files.exists(currentCache.resolve("client-raw/keep.txt")));
+            check("回收保留清单仍引用的对象", Files.exists(liveObject));
+            check("回收日志非空", reclaimed.contains("对象库"));
+
             Path configFile = tmp.resolve("config.toml");
             Files.writeString(configFile, """
                     [server]
