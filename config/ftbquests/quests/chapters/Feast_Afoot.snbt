@@ -274,7 +274,7 @@
 				type: "item"
 			}]
 			shape: "square"
-			subtitle: "本包的&e加湿器&r消耗水增加&91级湿度\\n本包的&e除湿机&r消耗应力降低&91级湿度"
+			subtitle: "本包的&e加湿器&r消耗水增加&91级湿度&r\\n本包的&e除湿机&r消耗应力降低&91级湿度"
 			tasks: [
 				{
 					id: "28DF13DE7B5E6C83"
@@ -2169,6 +2169,19 @@
 			title: "烹饪指南"
 			x: 10.5d
 			y: 2.0d
+		}
+		{
+			dependencies: ["4DF2E3798B1260C8"]
+			id: "47A5C2F4D50FFBB4"
+			shape: "square"
+			subtitle: "可&b自由调节&r一定范围内的湿度等级"
+			tasks: [{
+				id: "18A8AC61C64FE7DC"
+				item: "createdelightcore:smart_humidity_regulator"
+				type: "item"
+			}]
+			x: -5.5d
+			y: -9.0d
 		}
 	]
 	title: "&5盛宴准备时！"
