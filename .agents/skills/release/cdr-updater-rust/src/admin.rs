@@ -1,8 +1,8 @@
-use std::io::Write;
 use std::net::SocketAddr;
 use std::path::{Path, PathBuf};
 use std::sync::{Arc, Mutex};
-use std::time::Instant;
+use std::sync::atomic::{AtomicU32, Ordering};
+use std::time::{Duration, Instant};
 
 use axum::body::Body;
 use axum::extract::{ConnectInfo, FromRequest, Multipart, State};
@@ -83,7 +83,7 @@ pub async fn page(State(app): State<App>, request: Request<Body>) -> Response {
         .into_response()
 }
 
-struct Inner {
+pub(crate) struct Inner {
     listen: String,
     port: String,
     busy: bool,
@@ -120,10 +120,14 @@ impl Admin {
         })
     }
 
+    pub(crate) fn lock(&self) -> std::sync::MutexGuard<'_, Inner> {
+        self.inner.lock().unwrap_or_else(|error| error.into_inner())
+    }
+
     pub fn note(&self, line: impl Into<String>) {
         let line = line.into();
         println!("{line}");
-        let mut inner = self.inner.lock().expect("admin");
+        let mut inner = self.lock();
         inner.logs.push(line);
         let extra = inner.logs.len().saturating_sub(200);
         if extra > 0 {
@@ -132,7 +136,7 @@ impl Admin {
     }
 
     pub fn progress_begin(&self, label: impl Into<String>, total: i64) {
-        let mut inner = self.inner.lock().expect("admin");
+        let mut inner = self.lock();
         inner.progress_active = true;
         inner.progress_label = label.into();
         inner.progress_done = 0;
@@ -145,7 +149,7 @@ impl Admin {
     }
 
     pub fn progress_file(&self, index: i64, count: i64, title: &str, file: &str, total: i64) {
-        let mut inner = self.inner.lock().expect("admin");
+        let mut inner = self.lock();
         if !inner.progress_active {
             inner.progress_at = Some(Instant::now());
             inner.progress_at_bytes = 0;
@@ -160,7 +164,7 @@ impl Admin {
     }
 
     pub fn progress_set(&self, done: i64) {
-        let mut inner = self.inner.lock().expect("admin");
+        let mut inner = self.lock();
         if !inner.progress_active {
             return;
         }
@@ -178,7 +182,7 @@ impl Admin {
     }
 
     pub fn progress_end(&self) {
-        let mut inner = self.inner.lock().expect("admin");
+        let mut inner = self.lock();
         inner.progress_active = false;
         inner.progress_label.clear();
         inner.progress_done = 0;
@@ -191,7 +195,7 @@ impl Admin {
     }
 
     fn progress_snapshot(&self) -> Value {
-        let inner = self.inner.lock().expect("admin");
+        let inner = self.lock();
         if !inner.progress_active {
             return idle_progress();
         }
@@ -276,9 +280,18 @@ pub async fn api(State(app): State<App>, request: Request<Body>) -> Response {
     }
 }
 
+static LOGIN_FAILS: AtomicU32 = AtomicU32::new(0);
+static LOGIN_BLOCK_UNTIL: Mutex<Option<Instant>> = Mutex::new(None);
+
 async fn login(app: &App, request: Request<Body>, loopback: bool) -> Response {
     if request.method() != axum::http::Method::POST {
         return admin_error(StatusCode::METHOD_NOT_ALLOWED, "方法不允许");
+    }
+    {
+        let until = LOGIN_BLOCK_UNTIL.lock().unwrap_or_else(|error| error.into_inner());
+        if until.is_some_and(|when| Instant::now() < when) {
+            return admin_error(StatusCode::TOO_MANY_REQUESTS, "登录尝试过多，请稍候");
+        }
     }
     let bytes = axum::body::to_bytes(request.into_body(), 1 << 20).await.unwrap_or_default();
     let token = serde_json::from_slice::<Value>(&bytes)
@@ -288,11 +301,18 @@ async fn login(app: &App, request: Request<Body>, loopback: bool) -> Response {
     let expected = cfg_field(&app.config, "admin_token");
     if !expected.is_empty() {
         if !constant_eq(token.as_bytes(), expected.as_bytes()) {
+            let fails = LOGIN_FAILS.fetch_add(1, Ordering::Relaxed) + 1;
+            if fails >= 5 {
+                let wait = Duration::from_secs(2u64.saturating_mul(fails as u64 / 5).max(2));
+                *LOGIN_BLOCK_UNTIL.lock().unwrap_or_else(|error| error.into_inner()) = Some(Instant::now() + wait);
+            }
             return admin_error(StatusCode::UNAUTHORIZED, "网页令牌不正确");
         }
     } else if !loopback {
         return admin_error(StatusCode::UNAUTHORIZED, "请先登录管理网页");
     }
+    LOGIN_FAILS.store(0, Ordering::Relaxed);
+    *LOGIN_BLOCK_UNTIL.lock().unwrap_or_else(|error| error.into_inner()) = None;
     let cookie_value = if token.is_empty() { "local".to_string() } else { token };
     json_status(StatusCode::OK, json!({"ok": true}), Some(set_cookie(&cookie_value)))
 }
@@ -309,6 +329,7 @@ fn allowed(app: &App, request: &Request<Body>) -> bool {
     let header = request
         .headers()
         .get("x-cdr-admin-token")
+        .or_else(|| request.headers().get("x-lnsync-admin-token"))
         .and_then(|value| value.to_str().ok())
         .unwrap_or("")
         .trim()
@@ -326,8 +347,11 @@ fn state(app: &App) -> Value {
         version = cfg_field(&app.config, "version");
     }
     let progress = app.admin.progress_snapshot();
-    let inner = app.admin.inner.lock().expect("admin");
-    let mut host = inner.listen.clone();
+    let (listen, port, busy, logs) = {
+        let inner = app.admin.lock();
+        (inner.listen.clone(), inner.port.clone(), inner.busy, inner.logs.clone())
+    };
+    let mut host = listen.clone();
     if host == "0.0.0.0" || host == "::" {
         host = "127.0.0.1".into();
     }
@@ -337,18 +361,17 @@ fn state(app: &App) -> Value {
     json!({
         "official_version": version,
         "github_repo": cfg_field(&app.config, "github_repo"),
-        "listen": inner.listen,
-        "port": inner.port,
+        "listen": listen,
+        "port": port,
         "public_url": cfg_field(&app.config, "public_url"),
-        // Never echo raw tokens — XSS / proxy / log leakage risk.
         "access_token": "",
         "server_access_token": "",
         "token_enabled": !cfg_field(&app.config, "admin_token").is_empty(),
         "sync_token_enabled": !cfg_field(&app.config, "access_token").is_empty(),
         "server_sync_token_enabled": !cfg_field(&app.config, "server_access_token").is_empty(),
-        "busy": inner.busy,
+        "busy": busy,
         "progress": progress,
-        "admin_url": format!("http://{host}:{}/admin/ifgfsgfbijuzoxzq", inner.port),
+        "admin_url": format!("http://{host}:{port}/admin/ifgfsgfbijuzoxzq"),
         "client_fingerprint": meta.get("client_fingerprint").cloned().unwrap_or(Value::Null),
         "server_fingerprint": meta.get("server_fingerprint").cloned().unwrap_or(Value::Null),
         "servers": load_servers(&app.data),
@@ -356,7 +379,7 @@ fn state(app: &App) -> Value {
         "private_folders": private_folders(&root),
         "official_files": official_files,
         "official_categories": official_categories,
-        "logs": inner.logs,
+        "logs": logs,
     })
 }
 
@@ -411,7 +434,7 @@ async fn version(app: &App, request: Request<Body>) -> Result<Value, (StatusCode
     struct BodyTag { tag: Option<String> }
     let bytes = axum::body::to_bytes(request.into_body(), 1 << 20).await.unwrap_or_default();
     let tag = serde_json::from_slice::<BodyTag>(&bytes).ok().and_then(|body| body.tag).unwrap_or_default();
-    let tag = tag.trim().to_string();
+    let tag = super::build::safe_release_tag(tag.trim()).map_err(|error| (StatusCode::CONFLICT, error))?;
     if tag.is_empty() {
         return Err((StatusCode::CONFLICT, "版本不能为空".into()));
     }
@@ -424,7 +447,6 @@ async fn version(app: &App, request: Request<Body>) -> Result<Value, (StatusCode
 async fn rebuild(app: &App) -> Result<Value, (StatusCode, String)> {
     app.admin.note("正在重新构建仓库");
     run_build(app).await?;
-    app.admin.note("仓库已重新构建");
     Ok(json!({"ok": true}))
 }
 
@@ -443,7 +465,7 @@ impl Drop for BusyGuard {
 
 async fn run_build(app: &App) -> Result<(), (StatusCode, String)> {
     {
-        let mut inner = app.admin.inner.lock().expect("admin");
+        let mut inner = app.admin.lock();
         if inner.busy {
             return Err((StatusCode::CONFLICT, "正在处理上一项操作，请稍候".into()));
         }
@@ -451,21 +473,27 @@ async fn run_build(app: &App) -> Result<(), (StatusCode, String)> {
     }
     let config = app.config.clone();
     let admin = Arc::clone(&app.admin);
-    // Detach clear from the HTTP request lifetime: if the browser / nginx cancels
-    // mid-build, axum drops this future; keeping BusyGuard on the detached task
-    // prevents「处理中」from sticking after logs already said done.
-    let job = tokio::spawn(async move {
+    let worker = Arc::clone(&admin);
+    // Own busy on a real OS thread. If the browser/nginx cancels the HTTP call,
+    // axum drops the handler future; awaiting spawn_blocking there left busy=true
+    // forever, so the bar and every button stayed locked.
+    if let Err(error) = std::thread::Builder::new().name("cdr-build".into()).spawn(move || {
+        let admin = worker;
         let _busy_guard = BusyGuard {
             admin: Arc::clone(&admin),
         };
-        tokio::task::spawn_blocking(move || java_build(&config, &admin)).await
-    });
-    let result = job
-        .await
-        .map_err(|error| (StatusCode::CONFLICT, error.to_string()))?
-        .map_err(|error| (StatusCode::CONFLICT, error.to_string()))?
-        .map_err(|error| (StatusCode::CONFLICT, error))?;
-    Ok(result)
+        match java_build(&config, &admin) {
+            Ok(()) => admin.note("仓库已重新构建"),
+            Err(error) => admin.note(format!("构建失败: {error}")),
+        }
+    }) {
+        admin.progress_end();
+        if let Ok(mut inner) = admin.inner.lock() {
+            inner.busy = false;
+        }
+        return Err((StatusCode::CONFLICT, error.to_string()));
+    }
+    Ok(())
 }
 
 fn java_build(config: &Path, admin: &Admin) -> Result<(), String> {
@@ -509,12 +537,14 @@ async fn connection(app: &App, request: Request<Body>) -> Result<Value, (StatusC
             return Err((StatusCode::CONFLICT, "对外开放前请先设置访问令牌".into()));
         }
     }
-    set_field(&app.config, "listen", &listen).map_err(|error| (StatusCode::CONFLICT, error))?;
-    set_field(&app.config, "port", &port.to_string()).map_err(|error| (StatusCode::CONFLICT, error))?;
-    set_field(&app.config, "public_url", &url).map_err(|error| (StatusCode::CONFLICT, error))?;
-    set_field(&app.config, "access_token", &token).map_err(|error| (StatusCode::CONFLICT, error))?;
+    set_fields(&app.config, &[
+        ("listen", &listen),
+        ("port", &port.to_string()),
+        ("public_url", &url),
+        ("access_token", &token),
+    ]).map_err(|error| (StatusCode::CONFLICT, error))?;
     {
-        let mut inner = app.admin.inner.lock().expect("admin");
+        let mut inner = app.admin.lock();
         inner.listen = listen.clone();
         inner.port = port.to_string();
     }
@@ -523,7 +553,7 @@ async fn connection(app: &App, request: Request<Body>) -> Result<Value, (StatusC
 }
 
 async fn detect_wan(app: &App) -> Result<Value, (StatusCode, String)> {
-    let port = app.admin.inner.lock().expect("admin").port.clone();
+    let port = app.admin.lock().port.clone();
     let public_ip = tokio::task::spawn_blocking(|| {
         http_get("https://api.ipify.org").or_else(|_| http_get("https://ifconfig.me/ip")).unwrap_or_default()
     })
@@ -556,14 +586,24 @@ async fn open_wan(app: &App) -> Result<Value, (StatusCode, String)> {
     if url.is_empty() {
         return Err((StatusCode::CONFLICT, "没有检测到公网地址".into()));
     }
-    let port = app.admin.inner.lock().expect("admin").port.clone();
-    set_field(&app.config, "listen", "0.0.0.0").map_err(|error| (StatusCode::CONFLICT, error))?;
-    set_field(&app.config, "public_url", &url).map_err(|error| (StatusCode::CONFLICT, error))?;
-    app.admin.inner.lock().expect("admin").listen = "0.0.0.0".into();
+    let port = app.admin.lock().port.clone();
+    set_fields(&app.config, &[
+        ("listen", "0.0.0.0"),
+        ("public_url", &url),
+    ]).map_err(|error| (StatusCode::CONFLICT, error))?;
+    app.admin.lock().listen = "0.0.0.0".into();
     Ok(json!({"ok": true, "listen": "0.0.0.0", "public_url": url, "port": port}))
 }
 
+fn ensure_idle(app: &App) -> Result<(), (StatusCode, String)> {
+    if app.admin.lock().busy {
+        return Err((StatusCode::CONFLICT, "正在处理上一项操作，请稍候".into()));
+    }
+    Ok(())
+}
+
 async fn add_private(app: &App, request: Request<Body>) -> Result<Value, (StatusCode, String)> {
+    ensure_idle(app)?;
     let mut multipart = Multipart::from_request(request, app)
         .await
         .map_err(|error| (StatusCode::CONFLICT, error.to_string()))?;
@@ -601,6 +641,7 @@ async fn add_private(app: &App, request: Request<Body>) -> Result<Value, (Status
 }
 
 async fn remove_private(app: &App, request: Request<Body>) -> Result<Value, (StatusCode, String)> {
+    ensure_idle(app)?;
     let rel = json_path(request).await?;
     let target = private_file(app, &rel)?;
     std::fs::remove_file(&target).map_err(|_| (StatusCode::CONFLICT, format!("找不到私货: {rel}")))?;
@@ -749,7 +790,7 @@ fn side_label(side: &str) -> &'static str {
 
 async fn save_official_adjust(app: &App, request: Request<Body>) -> Result<Value, (StatusCode, String)> {
     {
-        let inner = app.admin.inner.lock().expect("admin");
+        let inner = app.admin.lock();
         if inner.busy {
             return Err((StatusCode::CONFLICT, "正在处理上一项操作，请稍候".into()));
         }
@@ -830,10 +871,12 @@ fn load_official_side_map(data: &Path) -> Vec<(String, String)> {
     let mut out = Vec::new();
     let map = fs_json(&data.join("manifests").join("official-side-map.json"));
     if let Some(obj) = map.as_object() {
-        for (k, v) in obj {
-            out.push((k.replace('\\', "/"), v.as_str().unwrap_or("both").to_string()));
+        if !obj.is_empty() {
+            for (k, v) in obj {
+                out.push((k.replace('\\', "/"), v.as_str().unwrap_or("both").to_string()));
+            }
+            return out;
         }
-        return out;
     }
     for side in ["client", "server"] {
         let root = data.join("repos").join(side);
@@ -982,41 +1025,71 @@ fn posix_rel(path: &str) -> Result<String, String> {
 }
 
 fn cfg_field(config: &Path, key: &str) -> String {
-    let Ok(text) = std::fs::read_to_string(config) else { return String::new() };
-    for line in text.lines() {
-        let line = line.trim();
-        if line.starts_with(key) && line[key.len()..].trim_start().starts_with('=') {
-            return crate::serve::toml_value(line).unwrap_or_default();
-        }
+    crate::serve::config_field(config, key)
+}
+
+fn config_value_ok(key: &str, value: &str) -> Result<(), String> {
+    if value.as_bytes().iter().any(|byte| matches!(byte, b'\n' | b'\r' | 0)) {
+        return Err("配置值不能包含换行".into());
     }
-    String::new()
+    if key != "port" && value.contains('"') {
+        return Err("配置值不能包含引号".into());
+    }
+    match key {
+        "version" | "tag" => {
+            super::build::safe_release_tag(value)?;
+        }
+        "github_api" | "api" => {
+            super::build::safe_github_api(value)?;
+        }
+        _ => {}
+    }
+    Ok(())
 }
 
 fn set_field(config: &Path, key: &str, value: &str) -> Result<(), String> {
+    set_fields(config, &[(key, value)])
+}
+
+fn set_fields(config: &Path, pairs: &[(&str, &str)]) -> Result<(), String> {
+    for (key, value) in pairs {
+        config_value_ok(key, value)?;
+    }
     let text = std::fs::read_to_string(config).unwrap_or_default();
     let mut lines: Vec<String> = text.lines().map(|line| line.to_string()).collect();
-    let rendered = if key == "port" {
-        format!("{key} = {value}")
-    } else {
-        format!("{key} = \"{}\"", value.replace('"', ""))
-    };
-    let mut found = false;
-    for line in &mut lines {
-        let trim = line.trim();
-        if trim.starts_with(key) && trim[key.len()..].trim_start().starts_with('=') {
-            *line = rendered.clone();
-            found = true;
-            break;
+    for (key, value) in pairs {
+        let rendered = if *key == "port" {
+            format!("{key} = {value}")
+        } else {
+            format!("{key} = \"{value}\"")
+        };
+        let mut found = false;
+        for line in &mut lines {
+            let trim = line.trim();
+            if trim.starts_with(key) && trim[key.len()..].trim_start().starts_with('=') {
+                *line = rendered.clone();
+                found = true;
+                break;
+            }
+        }
+        if !found {
+            lines.push(rendered);
         }
     }
-    if !found {
-        lines.push(rendered);
+    let mut body = lines.join("\n");
+    if !body.ends_with('\n') && !body.is_empty() {
+        body.push('\n');
     }
-    let mut file = std::fs::OpenOptions::new().create(true).write(true).truncate(true).open(config).map_err(|error| error.to_string())?;
-    file.write_all(lines.join("\n").as_bytes()).map_err(|error| error.to_string())?;
-    if !text.ends_with('\n') && !lines.is_empty() {
-        file.write_all(b"\n").map_err(|error| error.to_string())?;
+    let tmp = config.with_extension("toml.tmp");
+    std::fs::write(&tmp, body.as_bytes()).map_err(|error| error.to_string())?;
+    if config.exists() {
+        let _ = std::fs::remove_file(config);
     }
+    std::fs::rename(&tmp, config).map_err(|error| {
+        let _ = std::fs::remove_file(&tmp);
+        error.to_string()
+    })?;
+    crate::serve::invalidate_config_cache();
     Ok(())
 }
 
@@ -1089,4 +1162,28 @@ fn json_status(status: StatusCode, body: Value, cookie: Option<String>) -> Respo
 
 fn admin_error(status: StatusCode, detail: &str) -> Response {
     json_status(status, json!({"detail": detail}), None)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::time::{SystemTime, UNIX_EPOCH};
+
+    #[test]
+    fn set_field_rejects_newline_and_writes_atomically() {
+        let n = SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_nanos();
+        let dir = std::env::temp_dir().join(format!("cdr-set-field-{}-{n}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&dir);
+        std::fs::create_dir_all(&dir).unwrap();
+        let config = dir.join("config.toml");
+        std::fs::write(&config, "version = \"v1\"\n").unwrap();
+        assert!(set_field(&config, "public_url", "http://x\naccess_token = \"\"\n").is_err());
+        assert!(std::fs::read_to_string(&config).unwrap().contains("version = \"v1\""));
+        set_field(&config, "version", "v0.5.0.13-test").unwrap();
+        let text = std::fs::read_to_string(&config).unwrap();
+        assert!(text.contains("v0.5.0.13-test"));
+        assert!(!text.contains("access_token"));
+        assert!(set_field(&config, "version", "../..").is_err());
+        let _ = std::fs::remove_dir_all(&dir);
+    }
 }
