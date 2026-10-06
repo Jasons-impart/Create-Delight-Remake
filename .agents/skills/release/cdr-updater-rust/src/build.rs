@@ -7,12 +7,12 @@ use sha2::{Digest, Sha256};
 use zip::ZipArchive;
 
 pub fn build_repos(config: &Path, admin: &super::admin::Admin) -> Result<(), String> {
-    let version = field(config, "version");
+    let version = safe_release_tag(&field(config, "version"))?;
     if version.is_empty() {
         return Err("official.version 未配置，例如 v0.5.0.13-test".into());
     }
-    let repo = nonempty(field(config, "github_repo"), "Jasons-impart/Create-Delight-Remake");
-    let api = nonempty(field(config, "github_api"), "https://api.github.com");
+    let repo = safe_github_repo(&nonempty(field(config, "github_repo"), "Jasons-impart/Create-Delight-Remake"))?;
+    let api = safe_github_api(&nonempty(field(config, "github_api"), "https://api.github.com"))?;
     let base = config.parent().unwrap_or(Path::new("."));
     let data = {
         let raw = field(config, "data_dir");
@@ -84,12 +84,41 @@ fn download_asset(admin: &super::admin::Admin, asset: &serde_json::Value, dest: 
     let name = asset.get("name").and_then(|value| value.as_str()).unwrap_or("asset.zip");
     let url = asset.get("browser_download_url").and_then(|value| value.as_str()).ok_or("附件没有下载地址")?;
     let size = asset.get("size").and_then(|value| value.as_u64()).unwrap_or(0);
+    let digest = asset_sha256(asset);
     if dest.is_file() && fs::metadata(dest).map(|meta| meta.len() == size && size > 0).unwrap_or(false) {
+        verify_asset(dest, name, size, digest.as_deref())?;
         admin.note(format!("沿用已下载的 {name}"));
         return Ok(());
     }
     admin.note(format!("下载 {name}"));
-    stream_download(admin, url, dest, name, size as i64, "", 0, 1)
+    stream_download(admin, url, dest, name, size as i64, "", 0, 1)?;
+    verify_asset(dest, name, size, digest.as_deref())
+}
+
+fn asset_sha256(asset: &serde_json::Value) -> Option<String> {
+    let digest = asset.get("digest").and_then(|value| value.as_str())?;
+    let hex = digest.split_once(':').map(|(_, rest)| rest).unwrap_or(digest).trim();
+    if is_object_hash(hex) {
+        Some(hex.to_ascii_lowercase())
+    } else {
+        None
+    }
+}
+
+fn verify_asset(path: &Path, name: &str, size: u64, digest: Option<&str>) -> Result<(), String> {
+    let actual = fs::metadata(path).map(|meta| meta.len()).unwrap_or(0);
+    if size > 0 && actual != size {
+        let _ = fs::remove_file(path);
+        return Err(format!("{name} 大小与 GitHub 声明不一致"));
+    }
+    if let Some(expected) = digest {
+        let got = file_digest::<Sha256>(path).unwrap_or_default();
+        if !got.eq_ignore_ascii_case(expected) {
+            let _ = fs::remove_file(path);
+            return Err(format!("{name} 哈希与 GitHub digest 不一致"));
+        }
+    }
+    Ok(())
 }
 
 fn extract_zip(admin: &super::admin::Admin, zip_path: &Path, dest: &Path, label: &str) -> Result<(), String> {
@@ -224,17 +253,20 @@ fn pull_listed(admin: &super::admin::Admin, config: &Path, client_root: &Path, s
         } else {
             job.rel.rsplit_once('/').map(|(dir, _)| dir).filter(|dir| !dir.is_empty()).unwrap_or_else(|| folder_for(&filename))
         };
-        let rel = format!("{folder}/{filename}");
+        let Some(rel) = safe_listed_rel(folder, &filename) else {
+            admin.note(format!("跳过非法补拉路径 {folder}/{filename}"));
+            continue;
+        };
         let dest = client_dir.join(&rel);
         if dest.is_file() && hash_matches(&dest, &job.hash_format, &job.hash) {
             continue;
         }
         let mut urls = Vec::new();
-        if job.url.starts_with("http") && !job.url.contains("www.curseforge.com") {
+        if job.url.starts_with("https://") && !job.url.contains("www.curseforge.com") {
             urls.push(job.url.clone());
         }
         if let Some((_, download)) = known {
-            if download.starts_with("http") {
+            if download.starts_with("https://") {
                 urls.push(download.clone());
             }
         }
@@ -242,7 +274,7 @@ fn pull_listed(admin: &super::admin::Admin, config: &Path, client_root: &Path, s
             urls.push(format!("https://api.curseforge.com/v1/mods/{}/files/{}/download", job.project, job.file));
         }
         if job.file > 0 && !filename.starts_with("cf-") {
-            let encoded = filename.replace(' ', "%20");
+            let encoded = encode_cdn_name(&filename);
             for host in ["edge.forgecdn.net", "mediafilez.forgecdn.net", "media.forgecdn.net"] {
                 let major = job.file / 1000;
                 let minor = job.file % 1000;
@@ -275,14 +307,6 @@ fn pull_listed(admin: &super::admin::Admin, config: &Path, client_root: &Path, s
         let index = offset as i64 + 1;
         admin.progress_file(index, count, "补拉缺失文件", rel, -1);
         let cached = download_cache.join(rel.replace('/', "__"));
-        let legacy = download_cache.join(Path::new(rel).file_name().unwrap_or_default());
-        // Older builds cached by bare filename; reuse those before re-downloading.
-        if !usable_download(&cached, hash_format, hash) && usable_download(&legacy, hash_format, hash) {
-            if let Some(parent) = cached.parent() {
-                let _ = fs::create_dir_all(parent);
-            }
-            let _ = copy_file(&legacy, &cached);
-        }
         if !usable_download(&cached, hash_format, hash) {
             let mut ok = false;
             let mut last_error = String::from("未知错误");
@@ -322,14 +346,10 @@ fn pull_listed(admin: &super::admin::Admin, config: &Path, client_root: &Path, s
 
 fn collect_manifest(root: &Path, jobs: &mut Vec<Listed>) {
     // CurseForge client zips keep manifest.json next to overrides/, while pack_root()
-    // points at overrides/ for game files — same lookup as the Java Packwiz helper.
+    // points at overrides/ for game files.
     let path = if root.join("manifest.json").is_file() {
         root.join("manifest.json")
-    } else if root
-        .parent()
-        .map(|parent| parent.join("manifest.json").is_file())
-        .unwrap_or(false)
-    {
+    } else if root.parent().map(|parent| parent.join("manifest.json").is_file()).unwrap_or(false) {
         root.parent().unwrap().join("manifest.json")
     } else {
         return;
@@ -435,7 +455,74 @@ fn folder_for(name: &str) -> &'static str {
     else { "mods" }
 }
 
-fn curse_key(_config: &Path) -> String {
+fn safe_listed_rel(folder: &str, filename: &str) -> Option<String> {
+    let folder = folder.replace('\\', "/");
+    if !matches!(folder.as_str(), "mods" | "resourcepacks" | "shaderpacks" | "tacz") {
+        return None;
+    }
+    let filename = filename.replace('\\', "/");
+    let filename = filename.rsplit('/').next().unwrap_or(&filename);
+    if filename.is_empty() || filename.contains("..") || filename.contains('\0') || filename.contains(':') {
+        return None;
+    }
+    Some(format!("{folder}/{filename}"))
+}
+
+pub(crate) fn safe_release_tag(value: &str) -> Result<String, String> {
+    let value = value.trim();
+    if value.is_empty() {
+        return Ok(String::new());
+    }
+    if value.len() > 128 {
+        return Err("版本号过长".into());
+    }
+    if !value.chars().all(|ch| ch.is_ascii_alphanumeric() || matches!(ch, '.' | '-' | '_')) {
+        return Err("版本号含非法字符".into());
+    }
+    Ok(value.to_string())
+}
+
+fn safe_github_repo(value: &str) -> Result<String, String> {
+    let value = value.trim();
+    let mut parts = value.split('/');
+    let owner = parts.next().unwrap_or("");
+    let repo = parts.next().unwrap_or("");
+    if parts.next().is_some() || owner.is_empty() || repo.is_empty() {
+        return Err("github_repo 必须是 owner/repo".into());
+    }
+    let ok = |part: &str| part.chars().all(|ch| ch.is_ascii_alphanumeric() || matches!(ch, '.' | '-' | '_'));
+    if !ok(owner) || !ok(repo) {
+        return Err("github_repo 含非法字符".into());
+    }
+    Ok(format!("{owner}/{repo}"))
+}
+
+pub(crate) fn safe_github_api(value: &str) -> Result<String, String> {
+    let value = value.trim().trim_end_matches('/');
+    if value.is_empty() {
+        return Ok("https://api.github.com".into());
+    }
+    let lower = value.to_ascii_lowercase();
+    if lower == "https://api.github.com" {
+        return Ok("https://api.github.com".into());
+    }
+    if GITHUB_PROXIES.iter().any(|prefix| lower.starts_with(&prefix.to_ascii_lowercase()) && lower.contains("api.github.com")) {
+        return Ok(value.to_string());
+    }
+    Err("github_api 只允许 https://api.github.com 或已知 GitHub 反代".into())
+}
+
+fn curse_key(config: &Path) -> String {
+    if let Ok(value) = std::env::var("CURSEFORGE_API_KEY") {
+        let value = value.trim().to_string();
+        if !value.is_empty() {
+            return value;
+        }
+    }
+    let from_cfg = field(config, "curseforge_api_key");
+    if !from_cfg.is_empty() {
+        return from_cfg;
+    }
     embedded_curse_key()
 }
 
@@ -528,7 +615,7 @@ fn collect_github_pw(admin: &super::admin::Admin, api: &str, repo: &str, version
         for row in rows {
             let name = row.get("name").and_then(|value| value.as_str()).unwrap_or("");
             let download = row.get("download_url").and_then(|value| value.as_str()).unwrap_or("");
-            if !name.ends_with(".pw.toml") || !download.starts_with("http") { continue; }
+            if !name.ends_with(".pw.toml") || !download.starts_with("https://") { continue; }
             let meta = match http_get(admin, download) {
                 Ok(meta) => meta,
                 Err(error) => {
@@ -536,7 +623,7 @@ fn collect_github_pw(admin: &super::admin::Admin, api: &str, repo: &str, version
                     continue;
                 }
             };
-            let tmp = std::env::temp_dir().join(name);
+            let tmp = std::env::temp_dir().join(format!("cdr-pw-{}-{}-{name}", std::process::id(), chrono_stamp()));
             if fs::write(&tmp, meta).is_ok() {
                 read_pw(&tmp, dir, jobs);
                 let _ = fs::remove_file(&tmp);
@@ -613,7 +700,10 @@ fn usable_file(path: &Path) -> bool {
 }
 
 fn has_pack_manifest(root: &Path) -> bool {
-    root.join("manifest.json").is_file() || root.join("index.toml").is_file() || root.join("mods").join("index.toml").is_file()
+    if root.join("manifest.json").is_file() || root.join("index.toml").is_file() || root.join("mods").join("index.toml").is_file() {
+        return true;
+    }
+    root.parent().is_some_and(|parent| parent.join("manifest.json").is_file())
 }
 
 fn load_private(files: &Path) -> Vec<(String, String, PathBuf)> {
@@ -849,7 +939,33 @@ fn live_object_hashes(data: &Path) -> HashSet<String> {
     for name in ["client.json", "server.json"] {
         add_manifest_hashes(&data.join("manifests").join(name), &mut live);
     }
+    add_pack_hashes(&data.join("packs"), &mut live);
     live
+}
+
+fn add_pack_hashes(packs: &Path, live: &mut HashSet<String>) {
+    let Ok(entries) = fs::read_dir(packs) else {
+        return;
+    };
+    for entry in entries.flatten() {
+        let path = entry.path();
+        let name = entry.file_name();
+        let name = name.to_string_lossy();
+        if !name.ends_with(".json") || name.starts_with("build-") || path.is_dir() {
+            continue;
+        }
+        let Ok(buf) = fs::read(&path) else {
+            continue;
+        };
+        let Ok(doc) = serde_json::from_slice::<serde_json::Value>(&buf) else {
+            continue;
+        };
+        if let Some(sha) = doc.get("sha256").and_then(|value| value.as_str()) {
+            if is_object_hash(sha) {
+                live.insert(sha.to_ascii_lowercase());
+            }
+        }
+    }
 }
 
 fn add_manifest_hashes(path: &Path, live: &mut HashSet<String>) {
@@ -964,8 +1080,7 @@ fn prune_cache_dir(dir: &Path, drop_extracts: bool) -> Result<u64, String> {
     for entry in entries.flatten() {
         let path = entry.path();
         let name = entry.file_name().to_string_lossy().to_string();
-        let drop = name == "packwiz"
-            || name.ends_with(".partial")
+        let drop = name.ends_with(".partial")
             || name.ends_with(".cdrtmp")
             || name.ends_with(".parts")
             || (drop_extracts && (name == "client-raw" || name == "server-raw" || name.ends_with(".complete")));
@@ -1054,7 +1169,7 @@ fn allowed(side: &str, target: &str) -> bool {
 }
 
 fn official_side(rel: &str, in_client: bool, in_server: bool) -> String {
-    // Align with cdr-updater Sides.official: server-only mods etc. use default_side
+    // Align with cdr-updater Sides.official / LnSync: server-only mods etc. use default_side
     // (usually both) so Client zip missing jars can be seeded from Server zip.
     if in_client && !in_server {
         return "client".into();
@@ -1111,6 +1226,7 @@ fn nonempty(value: String, fallback: &str) -> String {
 const GITHUB_PROXIES: &[&str] = &[
     "https://ghfast.top/",
     "https://gh.llkk.cc/",
+    "https://hub.gitmirror.com/",
     "https://github.moeyy.xyz/",
     "https://ghproxy.net/",
     "https://gh-proxy.com/",
@@ -1129,6 +1245,7 @@ fn already_proxied(url: &str) -> bool {
         || lower.contains("gh-proxy.")
         || lower.contains("moeyy.")
         || lower.contains("llkk.")
+        || lower.contains("gitmirror.")
 }
 
 fn proxy_prefix(url: &str) -> Option<&str> {
@@ -1147,15 +1264,9 @@ fn keep_proxied(prefix: &str, location: &str) -> String {
 fn mirror_urls(url: &str) -> Vec<String> {
     let mut urls = Vec::new();
     if is_github(url) && !already_proxied(url) {
-        let mirrors_first = !url.to_ascii_lowercase().contains("api.github.com/");
-        if !mirrors_first {
-            urls.push(url.to_string());
-        }
+        urls.push(url.to_string());
         for prefix in GITHUB_PROXIES {
             urls.push(format!("{prefix}{url}"));
-        }
-        if mirrors_first {
-            urls.push(url.to_string());
         }
     } else {
         urls.push(url.to_string());
@@ -1165,6 +1276,25 @@ fn mirror_urls(url: &str) -> Vec<String> {
 
 fn host_of(url: &str) -> &str {
     url.trim_start_matches("https://").trim_start_matches("http://").split('/').next().unwrap_or(url)
+}
+
+fn encode_cdn_name(name: &str) -> String {
+    let mut out = String::new();
+    for byte in name.as_bytes() {
+        match *byte {
+            b'A'..=b'Z' | b'a'..=b'z' | b'0'..=b'9' | b'-' | b'_' | b'.' | b'~' => out.push(*byte as char),
+            _ => out.push_str(&format!("%{byte:02X}")),
+        }
+    }
+    out
+}
+
+fn is_html(response: &reqwest::blocking::Response) -> bool {
+    response
+        .headers()
+        .get(reqwest::header::CONTENT_TYPE)
+        .and_then(|value| value.to_str().ok())
+        .is_some_and(|value| value.to_ascii_lowercase().contains("text/html"))
 }
 
 fn http_get(admin: &super::admin::Admin, url: &str) -> Result<String, String> {
@@ -1186,7 +1316,11 @@ fn http_get(admin: &super::admin::Admin, url: &str) -> Result<String, String> {
 }
 
 fn stream_download(admin: &super::admin::Admin, url: &str, dest: &Path, label: &str, expected: i64, api_key: &str, index: i64, count: i64) -> Result<(), String> {
-    let urls = rank_urls(admin, mirror_urls(url), api_key);
+    let urls = if is_github(url) {
+        mirror_urls(url)
+    } else {
+        rank_urls(admin, mirror_urls(url), api_key)
+    };
     let mut last = "下载失败".to_string();
     for (attempt, candidate) in urls.iter().enumerate() {
         match stream_once(admin, candidate, dest, label, expected, api_key, index, count) {
@@ -1252,6 +1386,9 @@ fn probe_speed(url: &str, api_key: &str) -> (i64, bool) {
     let Ok(mut response) = http_send_range(url, api_key, Some((0, 262_143))) else {
         return (0, false);
     };
+    if is_html(&response) {
+        return (0, false);
+    }
     if !response.status().is_success() && response.status().as_u16() != 206 {
         return (0, false);
     }
@@ -1265,7 +1402,7 @@ fn probe_speed(url: &str, api_key: &str) -> (i64, bool) {
         }
     }
     let elapsed = start.elapsed().as_nanos().max(1) as i64;
-    if got <= 0 {
+    if got < 1024 {
         return (0, false);
     }
     let bps = got.saturating_mul(1_000_000_000) / elapsed;
@@ -1291,9 +1428,13 @@ fn stream_once(admin: &super::admin::Admin, url: &str, dest: &Path, label: &str,
     if let Some(parent) = dest.parent() {
         fs::create_dir_all(parent).map_err(|error| error.to_string())?;
     }
-    let probe = http_send_range(url, api_key, Some((0, 0)))?;
+    // bytes=0-0 is rejected by some CDNs (416) even after a successful speed probe.
+    let probe = http_send_range(url, api_key, Some((0, 262_143)))?;
     let status = probe.status();
     let total = content_range_total(&probe).or_else(|| probe.content_length().map(|value| value as i64)).unwrap_or(expected);
+    if is_html(&probe) {
+        return Err(format!("{status} HTML"));
+    }
     if status.as_u16() == 206 && total >= 256 * 1024 {
         drop(probe);
         admin.note(format!("多线程下载 {label} · 16 线程 · {}", host_of(url)));
@@ -1309,10 +1450,25 @@ fn stream_once(admin: &super::admin::Admin, url: &str, dest: &Path, label: &str,
                 if !response.status().is_success() {
                     return Err(format!("{}", response.status()));
                 }
+                if is_html(&response) {
+                    return Err("HTML".into());
+                }
                 write_body(admin, response, dest, label, total, index, count, url)
             }
             other => other,
         };
+    }
+    if status.as_u16() == 206 || matches!(status.as_u16(), 400 | 416) {
+        drop(probe);
+        let response = http_send(url, api_key)?;
+        if !response.status().is_success() {
+            return Err(format!("{}", response.status()));
+        }
+        if is_html(&response) {
+            return Err("HTML".into());
+        }
+        let total = response.content_length().map(|value| value as i64).unwrap_or(total);
+        return write_body(admin, response, dest, label, total, index, count, url);
     }
     if !status.is_success() {
         return Err(format!("{status}"));
@@ -1536,4 +1692,152 @@ fn chrono_stamp() -> String {
     use std::time::{SystemTime, UNIX_EPOCH};
     let seconds = SystemTime::now().duration_since(UNIX_EPOCH).map(|value| value.as_secs()).unwrap_or(0);
     seconds.to_string()
+}
+
+#[cfg(test)]
+mod reclaim_tests {
+    use super::*;
+    use std::time::{SystemTime, UNIX_EPOCH};
+
+    fn scratch(name: &str) -> PathBuf {
+        let n = SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_nanos();
+        let dir = std::env::temp_dir().join(format!("{name}-{}-{n}", std::process::id()));
+        let _ = fs::remove_dir_all(&dir);
+        fs::create_dir_all(&dir).unwrap();
+        dir
+    }
+
+    fn hex64(ch: char) -> String {
+        std::iter::repeat(ch).take(64).collect()
+    }
+
+    #[test]
+    fn cdn_name_encodes_spaces_and_parens() {
+        assert_eq!(
+            encode_cdn_name("BC Particle Enhancement (1.20.1) (1.0).zip"),
+            "BC%20Particle%20Enhancement%20%281.20.1%29%20%281.0%29.zip"
+        );
+        assert_eq!(encode_cdn_name("Glimmer-v1.5.2.zip"), "Glimmer-v1.5.2.zip");
+    }
+
+    fn put_object(root: &Path, digest: &str, bytes: &[u8]) {
+        let path = root.join("objects").join(&digest[..2]).join(digest);
+        fs::create_dir_all(path.parent().unwrap()).unwrap();
+        fs::write(path, bytes).unwrap();
+    }
+
+    #[test]
+    fn reclaim_keeps_pack_objects_and_current_packwiz() {
+        let dir = scratch("cdr-reclaim");
+        let live = hex64('b');
+        let orphan = hex64('a');
+        let pack = hex64('d');
+        put_object(&dir, &live, b"keep");
+        put_object(&dir, &orphan, b"drop");
+        put_object(&dir, &pack, b"packzip");
+        fs::create_dir_all(dir.join("manifests")).unwrap();
+        fs::write(
+            dir.join("manifests").join("client.json"),
+            serde_json::json!({"files":[{"path":"mods/keep.jar","sha256": live}]}).to_string(),
+        )
+        .unwrap();
+        fs::write(dir.join("manifests").join("server.json"), "{\"files\":[]}").unwrap();
+        fs::create_dir_all(dir.join("packs")).unwrap();
+        fs::write(
+            dir.join("packs").join("live.json"),
+            serde_json::json!({"sha256": pack}).to_string(),
+        )
+        .unwrap();
+        fs::write(
+            dir.join("packs").join("stale.json"),
+            serde_json::json!({"sha256": "not-a-hash"}).to_string(),
+        )
+        .unwrap();
+        fs::create_dir_all(dir.join("cache").join("v-old").join("packwiz")).unwrap();
+        fs::write(dir.join("cache").join("v-old").join("Client-v-old.zip"), b"old").unwrap();
+        let current = dir.join("cache").join("v-now");
+        fs::create_dir_all(current.join("packwiz")).unwrap();
+        fs::write(current.join("packwiz").join("oldpack.zip"), b"res").unwrap();
+        fs::write(current.join("Client-v-now.zip"), b"keepzip").unwrap();
+        fs::create_dir_all(current.join("client-raw")).unwrap();
+        fs::write(current.join("client-raw").join("keep.txt"), b"extract").unwrap();
+
+        let report = reclaim_storage(&dir, "v-now", true).unwrap();
+        assert!(report.objects >= 1, "should delete orphan object");
+        assert!(!dir.join("objects").join(&orphan[..2]).join(&orphan).is_file());
+        assert!(dir.join("objects").join(&live[..2]).join(&live).is_file());
+        assert!(dir.join("objects").join(&pack[..2]).join(&pack).is_file());
+        assert!(dir.join("packs").join("live.json").is_file());
+        assert!(!dir.join("packs").join("stale.json").exists());
+        assert!(!dir.join("cache").join("v-old").exists());
+        assert!(current.join("packwiz").exists());
+        assert!(current.join("Client-v-now.zip").is_file());
+        assert!(!current.join("client-raw").exists());
+        let _ = fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn collect_manifest_reads_parent_of_overrides() {
+        let dir = scratch("cdr-manifest");
+        let extracted = dir.join("client-raw");
+        let overrides = extracted.join("overrides");
+        fs::create_dir_all(overrides.join("kubejs")).unwrap();
+        fs::write(overrides.join("kubejs").join("keep.txt"), b"x").unwrap();
+        fs::write(
+            extracted.join("manifest.json"),
+            serde_json::json!({
+                "files": [
+                    {"projectID": 908741, "fileID": 5681725, "fileName": "embeddium-0.3.31+mc1.20.1.jar", "required": true},
+                    {"projectID": 581495, "fileID": 6020952, "fileName": "oculus-mc1.20.1-1.8.0.jar", "required": true}
+                ]
+            })
+            .to_string(),
+        )
+        .unwrap();
+        let root = pack_root(&extracted);
+        assert_eq!(root, overrides);
+        let mut jobs = Vec::new();
+        collect_manifest(&root, &mut jobs);
+        assert_eq!(jobs.len(), 2);
+        assert!(jobs.iter().any(|job| job.file == 5681725 && job.rel.contains("embeddium")));
+        assert!(jobs.iter().any(|job| job.file == 6020952 && job.rel.contains("oculus")));
+        let _ = fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn listed_rel_rejects_path_escape() {
+        assert_eq!(safe_listed_rel("mods", "foo.jar").as_deref(), Some("mods/foo.jar"));
+        assert_eq!(safe_listed_rel("mods", "../../../config.toml").as_deref(), Some("mods/config.toml"));
+        assert!(safe_listed_rel("../mods", "foo.jar").is_none());
+        assert!(safe_listed_rel("mods", "..").is_none());
+    }
+
+    #[test]
+    fn github_api_rejects_ssrf_hosts() {
+        assert_eq!(safe_github_api("https://api.github.com").unwrap(), "https://api.github.com");
+        assert!(safe_github_api("http://127.0.0.1:1").is_err());
+        assert!(safe_github_api("https://example.com").is_err());
+        assert!(safe_release_tag("../..").is_err());
+        assert_eq!(safe_release_tag("v0.5.0.13-test").unwrap(), "v0.5.0.13-test");
+    }
+
+    #[test]
+    fn reclaim_keeps_extracts_when_disabled() {
+        let dir = scratch("cdr-reclaim-keep");
+        let live = hex64('c');
+        put_object(&dir, &live, b"keep");
+        fs::create_dir_all(dir.join("manifests")).unwrap();
+        fs::write(
+            dir.join("manifests").join("client.json"),
+            serde_json::json!({"files":[{"path":"a","sha256": live}]}).to_string(),
+        )
+        .unwrap();
+        fs::write(dir.join("manifests").join("server.json"), "{\"files\":[]}").unwrap();
+        let raw = dir.join("cache").join("v-now").join("client-raw");
+        fs::create_dir_all(&raw).unwrap();
+        fs::write(raw.join("keep.txt"), b"x").unwrap();
+        reclaim_storage(&dir, "v-now", false).unwrap();
+        assert!(raw.join("keep.txt").is_file());
+        let _ = fs::remove_dir_all(&dir);
+    }
 }

@@ -3,6 +3,7 @@ mod admin;
 #[path = "build.rs"]
 mod build;
 
+use std::collections::HashMap;
 use std::fs::{self, File};
 use std::io::{self, Read};
 use std::net::SocketAddr;
@@ -12,11 +13,10 @@ use std::sync::Mutex;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 use axum::body::Body;
-use axum::extract::{ConnectInfo, Path as UrlPath, Query, State};
+use axum::extract::{ConnectInfo, DefaultBodyLimit, Path as UrlPath, Query, State};
 use axum::http::{header, HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::{get, post};
-use axum::extract::DefaultBodyLimit;
 use axum::{Json, Router};
 use serde::Deserialize;
 use sha2::{Digest, Sha256};
@@ -39,6 +39,7 @@ const MAX_CONN_RECORDS: usize = 500;
 pub struct App {
     data: PathBuf,
     config: PathBuf,
+    #[allow(dead_code)]
     overlay: std::collections::HashSet<String>,
     admin: std::sync::Arc<admin::Admin>,
 }
@@ -57,6 +58,7 @@ impl Config {
             data_dir: "data".into(),
         };
         let Ok(text) = fs::read_to_string(path) else {
+            eprintln!("配置文件不存在或无法读取: {}，使用默认 listen/port/data", path.display());
             return cfg;
         };
         for line in text.lines() {
@@ -89,9 +91,12 @@ impl Config {
 }
 
 pub async fn listen(addr: String, data: PathBuf, config: PathBuf) -> io::Result<()> {
-    let version = config_field(&config, "version");
-    let tag = if version.is_empty() { config_field(&config, "tag") } else { version };
-    match build::reclaim_storage(&data, &tag, true) {
+    if !config.is_file() {
+        eprintln!("配置文件不存在: {}，拒绝以空配置对外服务", config.display());
+        return Err(io::Error::new(io::ErrorKind::NotFound, "config missing"));
+    }
+    let version = build::safe_release_tag(&config_field(&config, "version")).unwrap_or_default();
+    match build::reclaim_storage(&data, &version, true) {
         Ok(report) if !report.is_empty() => println!("{}", report.summary()),
         Err(error) => eprintln!("存储回收失败: {error}"),
         _ => {}
@@ -112,11 +117,34 @@ pub async fn listen(addr: String, data: PathBuf, config: PathBuf) -> io::Result<
         .route("/admin/ifgfsgfbijuzoxzq", get(admin::page))
         .route("/admin/ifgfsgfbijuzoxzq/", get(admin::page))
         .route("/admin/ifgfsgfbijuzoxzq/api/{*action}", get(admin::api).post(admin::api))
-        // Private uploads can be large jars; axum's default 2MB limit rejects multipart early.
         .layer(DefaultBodyLimit::max(200 * 1024 * 1024))
         .with_state(app);
     let listener = tokio::net::TcpListener::bind(&addr).await?;
-    axum::serve(listener, router.into_make_service_with_connect_info::<std::net::SocketAddr>()).await
+    axum::serve(listener, router.into_make_service_with_connect_info::<std::net::SocketAddr>())
+        .with_graceful_shutdown(shutdown_signal())
+        .await
+}
+
+async fn shutdown_signal() {
+    let ctrl_c = tokio::signal::ctrl_c();
+    #[cfg(unix)]
+    {
+        let mut term = match tokio::signal::unix::signal(tokio::signal::unix::SignalKind::terminate()) {
+            Ok(signal) => signal,
+            Err(_) => {
+                let _ = ctrl_c.await;
+                return;
+            }
+        };
+        tokio::select! {
+            _ = ctrl_c => {},
+            _ = term.recv() => {},
+        }
+    }
+    #[cfg(not(unix))]
+    {
+        let _ = ctrl_c.await;
+    }
 }
 
 fn load_overlay(path: &Path) -> std::collections::HashSet<String> {
@@ -188,12 +216,13 @@ impl App {
         let path = self.data.join("manifests").join(format!("{side}.json"));
         let buf = fs::read(&path).map_err(|_| format!("尚未构建 {side} 清单"))?;
         let mut doc: serde_json::Value = serde_json::from_slice(&buf).map_err(|error| error.to_string())?;
+        let overlay = load_overlay(&self.data.join("manifests").join("private-index.json"));
         if let Some(files) = doc.get_mut("files").and_then(|value| value.as_array_mut()) {
             for file in files {
                 let Some(path) = file.get("path").and_then(|value| value.as_str()) else {
                     continue;
                 };
-                if load_overlay(&self.data.join("manifests").join("private-index.json")).contains(&posix(path)) {
+                if overlay.contains(&posix(path)) {
                     if let Some(object) = file.as_object_mut() {
                         object.insert("overlay".into(), serde_json::Value::Bool(true));
                     }
@@ -396,11 +425,18 @@ async fn pack(
     }
     let (tx, rx) = mpsc::unbounded_channel::<Result<Vec<u8>, std::io::Error>>();
     tokio::task::spawn_blocking(move || {
-        let _guard = PACK_BUILD.lock().unwrap_or_else(|error| error.into_inner());
         let send = |value: serde_json::Value| {
             let mut line = serde_json::to_vec(&value).unwrap_or_default();
             line.push(b'\n');
             let _ = tx.send(Ok(line));
+        };
+        let _guard = match PACK_BUILD.try_lock() {
+            Ok(guard) => guard,
+            Err(std::sync::TryLockError::WouldBlock) => {
+                send(serde_json::json!({"event": "error", "detail": "正在打包，请稍候"}));
+                return;
+            }
+            Err(std::sync::TryLockError::Poisoned(error)) => error.into_inner(),
         };
         match app.ensure_pack(&selected, |done, total| {
             send(serde_json::json!({"event": "progress", "done": done, "total": total}));
@@ -481,6 +517,10 @@ impl App {
                     if let Ok(info) = fs::metadata(&object) {
                         if info.is_file() {
                             migrate_pack_leases(&mut meta);
+                            if meta.leases.len() > 32 {
+                                let drop = meta.leases.len() - 32;
+                                meta.leases.drain(0..drop);
+                            }
                             meta.leases.push(lease.clone());
                             meta.holders = meta.leases.len() as i32;
                             write_pack_meta(&meta_path, &meta)?;
@@ -631,12 +671,19 @@ fn is_sha256(value: &str) -> bool {
 fn presented_player_token(headers: &HeaderMap) -> String {
     let mut provided = header_value(headers, "x-cdr-token");
     if provided.is_empty() {
+        provided = header_value(headers, "x-lnsync-token");
+    }
+    if provided.is_empty() {
         let auth = header_value(headers, "authorization");
         if let Some(rest) = auth.strip_prefix("Bearer ").or_else(|| auth.strip_prefix("bearer ")) {
             provided = rest.trim().to_string();
         }
     }
     provided
+}
+
+fn allow_anonymous(config: &Path) -> bool {
+    matches!(config_field(config, "allow_anonymous").to_ascii_lowercase().as_str(), "true" | "1" | "yes")
 }
 
 fn player_allowed(config: &Path, headers: &HeaderMap, side: Option<&str>) -> bool {
@@ -651,13 +698,13 @@ fn player_allowed(config: &Path, headers: &HeaderMap, side: Option<&str>) -> boo
                 server_token
             };
             if expected.is_empty() {
-                return true;
+                return allow_anonymous(config);
             }
             constant_eq(provided.as_bytes(), expected.as_bytes())
         }
         Some("client") => {
             if client_token.is_empty() {
-                return true;
+                return allow_anonymous(config);
             }
             // When server token is configured, refuse using it for client side.
             if !server_token.is_empty() && constant_eq(provided.as_bytes(), server_token.as_bytes()) {
@@ -666,9 +713,8 @@ fn player_allowed(config: &Path, headers: &HeaderMap, side: Option<&str>) -> boo
             constant_eq(provided.as_bytes(), client_token.as_bytes())
         }
         _ => {
-            // status / file / discard: either configured token is enough
             if client_token.is_empty() && server_token.is_empty() {
-                return true;
+                return allow_anonymous(config);
             }
             (!client_token.is_empty() && constant_eq(provided.as_bytes(), client_token.as_bytes()))
                 || (!server_token.is_empty() && constant_eq(provided.as_bytes(), server_token.as_bytes()))
@@ -696,17 +742,52 @@ fn migrate_pack_leases(meta: &mut PackMeta) {
     meta.holders = 0;
 }
 
-fn config_field(config: &Path, key: &str) -> String {
-    let Ok(text) = fs::read_to_string(config) else {
-        return String::new();
+struct ConfigSnap {
+    path: PathBuf,
+    mtime: Option<SystemTime>,
+    map: HashMap<String, String>,
+}
+
+static CONFIG_SNAP: Mutex<Option<ConfigSnap>> = Mutex::new(None);
+
+pub(crate) fn invalidate_config_cache() {
+    *CONFIG_SNAP.lock().unwrap_or_else(|error| error.into_inner()) = None;
+}
+
+pub(crate) fn config_field(config: &Path, key: &str) -> String {
+    let mtime = fs::metadata(config).ok().and_then(|meta| meta.modified().ok());
+    let mut guard = CONFIG_SNAP.lock().unwrap_or_else(|error| error.into_inner());
+    let refresh = match guard.as_ref() {
+        Some(snap) => snap.path != *config || snap.mtime != mtime,
+        None => true,
     };
-    for line in text.lines() {
-        let line = line.trim();
-        if line.starts_with(key) && line[key.len()..].trim_start().starts_with('=') {
-            return toml_value(line).unwrap_or_default();
+    if refresh {
+        let mut map = HashMap::new();
+        if let Ok(text) = fs::read_to_string(config) {
+            for line in text.lines() {
+                let line = line.trim();
+                if line.is_empty() || line.starts_with('#') {
+                    continue;
+                }
+                let Some((left, _)) = line.split_once('=') else {
+                    continue;
+                };
+                let name = left.trim();
+                if let Some(value) = toml_value(line) {
+                    map.insert(name.to_string(), value);
+                }
+            }
         }
+        *guard = Some(ConfigSnap {
+            path: config.to_path_buf(),
+            mtime,
+            map,
+        });
     }
-    String::new()
+    guard
+        .as_ref()
+        .and_then(|snap| snap.map.get(key).cloned())
+        .unwrap_or_default()
 }
 
 fn constant_eq(left: &[u8], right: &[u8]) -> bool {
@@ -717,7 +798,7 @@ fn constant_eq(left: &[u8], right: &[u8]) -> bool {
 }
 
 fn note_server(data: &Path, headers: &HeaderMap, peer: &SocketAddr, side: &str) {
-    if side != "server" || header_value(headers, "x-cdr-side") != "server" {
+    if side != "server" || header_first(headers, &["x-cdr-side", "x-lnsync-side"]) != "server" {
         return;
     }
     let _guard = CONNECTIONS.lock().unwrap_or_else(|error| error.into_inner());
@@ -731,10 +812,10 @@ fn note_server(data: &Path, headers: &HeaderMap, peer: &SocketAddr, side: &str) 
         return;
     };
     let remote = peer.ip().to_string();
-    let mut id = truncate_chars(&header_value(headers, "x-cdr-instance-id"), MAX_CONN_ID);
-    let hostname = truncate_chars(&header_value(headers, "x-cdr-hostname"), MAX_CONN_HOSTNAME);
+    let mut id = truncate_chars(&header_first(headers, &["x-cdr-instance-id", "x-lnsync-instance-id"]), MAX_CONN_ID);
+    let hostname = truncate_chars(&header_first(headers, &["x-cdr-hostname", "x-lnsync-hostname"]), MAX_CONN_HOSTNAME);
     let instance_path = truncate_chars(
-        &decode_base64(&header_value(headers, "x-cdr-instance-path")),
+        &decode_base64(&header_first(headers, &["x-cdr-instance-path", "x-lnsync-instance-path"])),
         MAX_CONN_PATH,
     );
     if id.is_empty() {
@@ -805,6 +886,16 @@ fn truncate_chars(text: &str, max: usize) -> String {
 
 fn header_value(headers: &HeaderMap, name: &str) -> String {
     headers.get(name).and_then(|value| value.to_str().ok()).unwrap_or("").trim().to_string()
+}
+
+fn header_first(headers: &HeaderMap, names: &[&str]) -> String {
+    for name in names {
+        let value = header_value(headers, name);
+        if !value.is_empty() {
+            return value;
+        }
+    }
+    String::new()
 }
 
 fn decode_base64(text: &str) -> String {
@@ -897,6 +988,7 @@ mod tests {
     use tower::ServiceExt;
 
     fn app_with(dir: &Path) -> Router {
+        let _ = fs::write(dir.join("config.toml"), "allow_anonymous = true\n");
         let app = App {
             data: dir.to_path_buf(),
             config: dir.join("config.toml"),
@@ -1063,6 +1155,28 @@ mod tests {
             .await
             .unwrap();
         assert_eq!(file_ok.status(), StatusCode::OK);
+        let _ = fs::remove_dir_all(&dir);
+    }
+
+    #[tokio::test]
+    async fn anonymous_player_routes_denied_without_flag() {
+        let dir = std::env::temp_dir().join(format!("cdr-rs-anon-{}", std::process::id()));
+        let _ = fs::remove_dir_all(&dir);
+        fs::create_dir_all(dir.join("manifests")).unwrap();
+        fs::write(dir.join("config.toml"), "listen = \"127.0.0.1\"\n").unwrap();
+        fs::write(dir.join("manifests").join("meta.json"), br#"{"official_version":"v1"}"#).unwrap();
+        let app = App {
+            data: dir.clone(),
+            config: dir.join("config.toml"),
+            overlay: std::collections::HashSet::new(),
+            admin: admin::Admin::new("127.0.0.1".into(), "8765".into()),
+        };
+        let router = Router::new().route("/api/status", get(status)).with_state(app);
+        let denied = router
+            .oneshot(Request::get("/api/status").body(Body::empty()).unwrap())
+            .await
+            .unwrap();
+        assert_eq!(denied.status(), StatusCode::UNAUTHORIZED);
         let _ = fs::remove_dir_all(&dir);
     }
 }
