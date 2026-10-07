@@ -1316,7 +1316,7 @@
 			rewards: [
 				{
 					id: "6B5685BF5D599E27"
-					item: "farmersrespite:tea_seeds"
+					item: "youkaishomecoming:tea_seeds"
 					type: "item"
 				}
 				{

@@ -2,6 +2,19 @@
 
 本文件只记录历史坑、根因和修复经验；当前操作流程、内容实现地图和轻量 how-to 分别写入 `.agents/skills/`、`docs/dev-knowledge/content-map.md` 和 `docs/dev-knowledge/how-to-index.md`。
 
+## CDC GameTestServer 的 Gradle 成功不等于测试通过
+
+- **日期**：2026-10-07。
+- **Problem**：Jaden's Nether Expansion 与 Lightman's Currency 在 CDC userdev 专服加载客户端类，服务器启动失败，但 `runGameTestServer` 仍可能返回 0 并显示 `BUILD SUCCESSFUL`。
+- **Fix/Lesson**：独立回归只在本地临时 Gradle init script 中排除这两项运行依赖，保留正式依赖；以游戏日志中的已完成测试数和失败数判断结果，不能只看 Gradle 退出码。
+- **场景前置**：测试基质需满足目标方块的原生存活条件。农夫暇事茶树要求 `BlockTags.DIRT`；强行放在耕地后，收获复位的幼苗会失效并掉茶籽，造成额外掉落的误报。
+
+## Create 风扇烟熏配方接口与计时分属两处
+
+- **日期**：2026-10-07。
+- **Problem**：KubeJS Create `2001.3.0-build.8` / Create `6.0.8` 没有 `create.smoking()`；风扇读取原版烟熏配方，但其计时忽略 `cookingTime`，使用全局 `fanProcessingTime`。仅通过 JS 语法检查或写入配方时间不能保证该路线生效。
+- **Fix/Lesson**：风扇烟熏使用 `minecraft.smoking(...)` 配方接口，耗时沿用 Create 全局设置；原版烟熏炉的 `cookingTime` 不控制风扇耗时。规则与入口见 [内容地图](dev-knowledge/content-map.md)。
+
 ## 多分支 PR 时必须基于各自目标分支创建特性分支
 
 **日期**: 2026-05-18
@@ -751,6 +764,8 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: 注册 brewinandchewin:keg_pouring 等类型时踩过多类坑：可选键排在必填键前导致 Required key must be ahead of optional keys；把产量写进 result 的 8x 前缀而 serializer 只认裸 ID + 独立 count（bakeries:dough_crafting_table）；fluid 有的是裸 ID 字符串、有的是 FluidStack/FluidIngredient；自定义 {count,item|tag} 用 inputItemArray 表达不了；result 还有限制如 count 必须为 1（sandwich_spouting）。
 - **Fix/Lesson**: 1) 必填键全部在前、可选键在后。2) 产量/数量类常为独立字段，不要塞进 Nx 前缀。3) JSON 形态以 mod Serializer 为准（对照样例或 javap）。4) 非标准 ingredient 保持 e.custom 或 dynamicKey+mapOut。5) 约束写进 schema 注释。6) 勿注册 KJS 已内置类型（如 brewinandchewin:fermenting）。7) 调用参数顺序与 simpleKey/complexKey 声明一致。
+
+- **补充（2026-10-07）**: `Fluid.of('minecraft:empty', 0)` 默认被流体 component 的 `checkEmpty()` 拒绝；妖怪归家固体发酵需要此空栈，使用现有 `dynamicKey(components => components.get(type)().key(name).allowEmpty())` 声明流体键，序列化仍为 `{fluid: 'minecraft:empty', amount: 0}`。配方调用链只能使用该 schema 已注册的键：KJS 内置营火支持 `cookingTime` 和 `xp`，没有 `category` builder。
 
 ## JsonIO 生成 datapack 必须在 startup 且避开被过滤的 IO 类
 

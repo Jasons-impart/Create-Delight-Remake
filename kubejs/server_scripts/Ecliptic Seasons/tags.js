@@ -60,7 +60,8 @@ ServerEvents.tags("minecraft:item", e => {
         'alexscaves:fiddlehead'
     )    
     e.add("eclipticseasons:crops/average_humid",
-        "farmersrespite:tea_seeds"
+        "farmersrespite:tea_seeds",
+        "youkaishomecoming:tea_seeds"
     )
     e.add("eclipticseasons:crops/dry_moist",
         "vinery:taiga_grape_seeds_red",
