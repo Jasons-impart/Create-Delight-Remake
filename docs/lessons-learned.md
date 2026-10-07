@@ -817,10 +817,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 ## ExtendedAE 偶发启动 NPE 是配置竞态，与 hotai 无关
 
-**Date**: 2026-09-26
+**Date**: 2026-09-26；2026-10-07 更新
 
-- **Problem**: ExtendedAE 1.20-1.4.18 的 `EAERegistryHandler.initPackageList` 在 `FMLCommonSetupEvent` 直接 forEach `EPPConfig.tapeWhitelist`，而该静态字段由 `ModConfigEvent.onLoad` 填充，存在竞态偶发 NPE。
-- **Fix/Lesson**: 无需改整合包，第二次启动即过。排查启动崩溃时先与当次 hotai/CDC 回归区分；复现频繁可给上游提空值保护。
+- **Problem**: ExtendedAE 1.20-1.4.18 的 `EAERegistryHandler.initPackageList` 在 `FMLCommonSetupEvent` 直接遍历尚未填充的 `EPPConfig.tapeWhitelist`；回归还发现 Forge 已加载配置但 ExtendedAE 加载通知缺失的情况，单纯等待两个事件仍会失败。
+- **Fix/Lesson**: 重启只是临时绕过，不能保证修复。CDC 按原配置加载完成后一次登记，缺失通知时仅从已加载的真实配置调用原加载方法；补丁、验证及版本复核条件见[兼容台账](dev-knowledge/compatibility-patches.md)。排查时与 hotai 和 ExtendedAE-Plus 的独立故障区分。
 
 ## KubeJS 液体燃料桶必须登记 craftingRemainingItem
 
