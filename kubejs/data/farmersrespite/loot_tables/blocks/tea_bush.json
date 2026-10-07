@@ -1,0 +1,234 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+	"name": "seeds",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 2.0,
+                "type": "minecraft:uniform"
+              }
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "youkaishomecoming:tea_seeds"
+        }
+      ],
+       "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "farmersrespite:tea_bush",
+          "properties": {
+            "half": "lower"
+          }
+        }
+      ]
+    },
+{
+	"name": "sticks",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 3.0,
+                "type": "minecraft:uniform"
+              }
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "minecraft:stick"
+        }
+      ],
+       "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "farmersrespite:tea_bush",
+          "properties": {
+            "half": "lower"
+          }
+        }
+      ]
+    },
+{
+	"name": "green leaves",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 3.0,
+                "type": "minecraft:uniform"
+              }
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "youkaishomecoming:tea_leaves"
+        }
+      ],
+       "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "farmersrespite:tea_bush",
+          "properties": {
+            "half": "lower",
+            "age": "0"
+          }
+        }
+      ]
+    },
+{
+	"name": "yellow leaves",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 3.0,
+                "type": "minecraft:uniform"
+              }
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "youkaishomecoming:tea_leaves"
+        }
+      ],
+       "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "farmersrespite:tea_bush",
+          "properties": {
+            "half": "lower",
+            "age": "1"
+          }
+        }
+      ]
+	},
+{
+	"name": "middle leaves",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 2.0,
+                "type": "minecraft:uniform"
+              }
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "youkaishomecoming:tea_leaves"
+        }
+      ],
+       "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "farmersrespite:tea_bush",
+          "properties": {
+            "half": "lower",
+            "age": "2"
+          }
+        }
+      ]
+	},
+{
+	"name": "middle leaves black",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 2.0,
+                "type": "minecraft:uniform"
+              }
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "youkaishomecoming:tea_leaves"
+        }
+      ],
+       "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "farmersrespite:tea_bush",
+          "properties": {
+            "half": "lower",
+            "age": "2"
+          }
+        }
+      ]
+	},
+{
+	"name": "green leaves",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 3.0,
+                "type": "minecraft:uniform"
+              }
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ],
+          "name": "youkaishomecoming:tea_leaves"
+        }
+      ],
+       "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "farmersrespite:tea_bush",
+          "properties": {
+            "half": "lower",
+            "age": "3"
+          }
+        }
+      ]
+	}
+  ]
+}

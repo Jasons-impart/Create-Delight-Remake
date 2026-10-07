@@ -1011,8 +1011,9 @@
 		{
 			dependencies: ["3D7F0A98AE45B0B0"]
 			description: [
-				"         低矮灌木植物，分布于繁花森林、樱花树林、草甸与雪林，可种植于耕地，长成茶树，收获的茶叶能够制作成模组内的茶饮品。"
-				"         生茶叶需要在茶植株没有开花时右键获取，而茶植株开花后右键收获的物品为山茶花。生茶叶可以通过模组内的工艺制成不同种类的茶叶。"
+				"         野生茶树分布于繁花森林、樱花树林、草甸、雪林和沼泽等群系。采集茶籽后，可种植在光照充足的草方块或肥沃土上。茶树尚未开花时右键收获生茶叶，开花时收获山茶花，结籽后收获茶籽。"
+				"         生茶叶在蒸笼中制成绿茶叶，在晾茶架上制成白茶叶。白茶叶在营火上烘成乌龙茶叶，或放入发酵设备制成红茶叶。"
+				"         机械加工时，生茶叶与100 mB水加热搅拌可制成绿茶叶，烘焙可制成白茶叶。白茶叶经风扇熏制得到乌龙茶叶，经机械发酵得到红茶叶。茶叶可用于制作茶饮、奶茶和抹茶。"
 			]
 			icon: "youkaishomecoming:tea_leaves"
 			id: "65C058041032162F"
@@ -1041,20 +1042,13 @@
 				{
 					count: 4L
 					id: "28A830D4E9F706C6"
-					item: {
-						Count: 1
-						id: "itemfilters:tag"
-						tag: {
-							value: "forge:tea_leaves"
-						}
-					}
-					title: "4x 任意茶叶"
+					item: { Count: 4, id: "youkaishomecoming:tea_leaves" }
 					type: "item"
 				}
 				{
 					count: 4L
 					id: "60742EC7CC4360CE"
-					item: { Count: 4, id: "farmersrespite:tea_seeds" }
+					item: { Count: 4, id: "youkaishomecoming:tea_seeds" }
 					type: "item"
 				}
 			]

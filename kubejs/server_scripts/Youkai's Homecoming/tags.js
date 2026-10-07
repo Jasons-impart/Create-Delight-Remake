@@ -1,4 +1,5 @@
 ServerEvents.tags("minecraft:item", e => {
+    e.add("curios:head", "youkaishomecoming:camellia")
     e.removeAllTagsFrom([
         'youkaishomecoming:green_coffee_bean',
         'abnormals_delight:perch_slice',
