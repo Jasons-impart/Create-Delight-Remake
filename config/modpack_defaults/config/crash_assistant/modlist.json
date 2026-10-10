@@ -769,10 +769,10 @@
     "name": "Entity Culling Fabric/Forge",
     "version": "1.10.5"
   },
-  "EuphoriaPatcher-1.9.3-r5.8.1-forge.jar": {
+  "EuphoriaPatcher-1.10.5-r5.9.3-forge.jar": {
     "modId": "euphoriapatcher",
     "name": "Euphoria Patches",
-    "version": "1.9.3-r5.8.1-forge"
+    "version": "1.10.5-r5.9.3-forge"
   },
   "ExplorersCompass-1.20.1-1.4.0-forge.jar": {
     "modId": "explorerscompass",
