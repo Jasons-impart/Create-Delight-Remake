@@ -1,0 +1,69 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "metal": "createdieselgenerators:block/bulk_fermenter/side",
+    "particle": "createdieselgenerators:block/bulk_fermenter/side"
+  },
+  "elements": [
+    {
+      "from": [5, 10, 8.05],
+      "to": [11, 11, 9.05],
+      "faces": {
+        "north": {"uv": [5, 0, 11, 1], "texture": "#metal"},
+        "south": {"uv": [5, 0, 11, 1], "texture": "#metal"},
+        "east": {"uv": [0, 0, 1, 1], "texture": "#metal"},
+        "west": {"uv": [15, 0, 16, 1], "texture": "#metal"},
+        "up": {"uv": [5, 1, 11, 2], "texture": "#metal"},
+        "down": {"uv": [5, 2, 11, 3], "texture": "#metal"}
+      }
+    },
+    {
+      "from": [5, 5, 8.05],
+      "to": [11, 6, 9.05],
+      "faces": {
+        "north": {"uv": [5, 15, 11, 16], "texture": "#metal"},
+        "south": {"uv": [5, 15, 11, 16], "texture": "#metal"},
+        "east": {"uv": [0, 15, 1, 16], "texture": "#metal"},
+        "west": {"uv": [15, 15, 16, 16], "texture": "#metal"},
+        "up": {"uv": [5, 13, 11, 14], "texture": "#metal"},
+        "down": {"uv": [5, 14, 11, 15], "texture": "#metal"}
+      }
+    },
+    {
+      "from": [5, 6, 8.05],
+      "to": [6, 10, 9.05],
+      "faces": {
+        "north": {"uv": [0, 6, 1, 10], "texture": "#metal"},
+        "south": {"uv": [0, 6, 1, 10], "texture": "#metal"},
+        "east": {"uv": [1, 6, 2, 10], "texture": "#metal"},
+        "west": {"uv": [0, 6, 1, 10], "texture": "#metal"},
+        "up": {"uv": [0, 6, 1, 7], "texture": "#metal"},
+        "down": {"uv": [0, 9, 1, 10], "texture": "#metal"}
+      }
+    },
+    {
+      "from": [10, 6, 8.05],
+      "to": [11, 10, 9.05],
+      "faces": {
+        "north": {"uv": [15, 6, 16, 10], "texture": "#metal"},
+        "south": {"uv": [15, 6, 16, 10], "texture": "#metal"},
+        "east": {"uv": [15, 6, 16, 10], "texture": "#metal"},
+        "west": {"uv": [14, 6, 15, 10], "texture": "#metal"},
+        "up": {"uv": [15, 6, 16, 7], "texture": "#metal"},
+        "down": {"uv": [15, 9, 16, 10], "texture": "#metal"}
+      }
+    },
+    {
+      "from": [6, 6, 8.35],
+      "to": [10, 10, 9.05],
+      "faces": {
+        "north": {"uv": [6, 6, 10, 10], "texture": "#metal"},
+        "south": {"uv": [6, 6, 10, 10], "texture": "#metal"},
+        "east": {"uv": [9, 6, 10, 10], "texture": "#metal"},
+        "west": {"uv": [6, 6, 7, 10], "texture": "#metal"},
+        "up": {"uv": [6, 6, 10, 7], "texture": "#metal"},
+        "down": {"uv": [6, 9, 10, 10], "texture": "#metal"}
+      }
+    }
+  ]
+}

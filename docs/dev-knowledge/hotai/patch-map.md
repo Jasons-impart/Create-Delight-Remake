@@ -19,6 +19,7 @@
 
 | 目标领域 | 补丁文件 | 行为变化 |
 |---|---|---|
+| Create: Diesel Generators 大型发酵罐过滤 | `com/jesz/createdieselgenerators/content/bulk_fermenter/BulkFermenter*.badiff`（6 个）与 `io/github/jasonsimpart/createdelightcore/mixin/createdieselgenerators/BulkFermenter*Mixin.badiff`（2 个） | 物品/流体产物过滤由 controller 保存，多方块子块转发操作；单层罐显示顶面槽，多层罐显示底行四侧槽，配套支架与窄表盘。另用 Hotai 将 CDC 既有过滤和渲染注入回调改为空操作，避免两套实现叠加；CDC 源码与 JAR 无改动。模型位于 `kubejs/assets/createdieselgenerators/models/block/bulk_fermenter/filter_holder.json`。首次启动已转存 8 个 badiff，日志覆盖全部目标；第二次启动重放和功能实测待验证，详见明细文档。 |
 | More Mod Tetra 纯白容器效果续期 | `com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer.badiff` | MMT 2.4.15 的妖怪化、半妖怪化、无意识和真隐身统一为普通效果常用的 40 tick 刷新、400 tick 持续，消除原 400/220 tick 组合造成的空档；保留原配置、材料条件和效果自身取消规则。已通过实际 Hotai 转换器离线生成及重放，并已游戏内验证。 |
 | Create 分液池/流体搜索 | `com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour.badiff`、`FluidDrainingBehaviour.badiff`、`compat/jei/category/ItemDrainCategory.badiff` | 抽液搜索增加可覆写的继续搜索钩子，分液池按源方块数量判断无限流体，而不是按访问过的流体方块数量；同时区分源流体和流动流体。JEI 分液展示在复制物品后重新检查 `FLUID_HANDLER_ITEM`，避免 capability 消失导致异常。 |
 | Create 连接纹理缓存 | `com/simibubi/create/foundation/block/connected/CTSpriteShifter.badiff` | 将连接纹理缓存从 `HashMap` 改为 `ConcurrentHashMap`，降低并发注册/资源重载时的竞态风险。 |
