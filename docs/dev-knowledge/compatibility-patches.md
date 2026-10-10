@@ -13,6 +13,7 @@
 条目必须写明受影响的外部模组及版本/API/行为差异，并说明上游变化时的复核或移除条件。按一个明确兼容目标汇总一行，不要求每个配方、配置或 JSON 单独立项。
 
 | 修复 | 类型 | 问题或根因 | 补丁位置 | 验证与跟踪 | 复核/移除条件 | 状态 |
+| Quality Food 存储配方 × 工作盆/动力合成器/振动台/Quark 合成器 | 模组兼容 | Quality Food 2.4.3 工作盆对临时副本写品质但未回填；CDC 工作盆再次随机赋品质；Create 6.0.8、Vintage Improvements 0.3.7.8、Quark 4.0-462 的自动合成/解包路径未调用存储品质继承入口。 | `hotai/` 五个品质补丁；[逐指令说明](hotai/品质存储修复-逐指令说明.md)。 | [白盒断言与 SHA-256](hotai/品质存储修复-白盒测试记录.md)；本地 6G 测试服加载，用户已确认功能正常。 | 对应目标 class、品质 API 或局部变量布局变化时重建并重放；上游原生支持时移除重复实现；测试 CDC 替代实现前撤下本批五个补丁。 | Hotai 已验证 |
 |---|---|---|---|---|---|---|
 | KubeJS Lazy 并发缓存空值 | 上游线程安全缺陷 | KubeJS build.24 自身资源读取中的 get/forget 竞争可能返回 null；整方法加锁又会在任意 factory 回调中引入锁顺序风险。 | `hotai/dev/latvian/mods/kubejs/util/Lazy.badiff` 改用自包含原子快照；源码 diff 与逻辑见 [hotai 补丁明细](hotai/badiff-details.md#kubejs-lazy-并发缓存补丁)。 | 真实 HotAI 往返、隔离加载、缓存/失效语义、200 万轮并发及旧同步方案的 JVM 死锁对照通过；设计来源 [CDC #131](https://github.com/Jasons-impart/Create-Delight-Core/pull/131)。 | 升级 KubeJS 或 HotAI 后复核；以后启用 CDC 同目标补丁时移除这份 HotAI，不叠加。 | 原子版离线验证通过，日志确认加载，用户重启反馈暂未见问题；游戏重载和长期回归待观察 |
 | MMT 纯白容器效果续期断档 | 外部模组缺陷 | MMT 2.4.15 每 400 tick 补充一次仅持续 220 tick 的妖怪化、半妖怪化、无意识和真隐身，造成约 9 秒空档。 | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer.badiff` 统一为普通效果常用的 40 tick 刷新、400 tick 持续，保留原生取消条件；`kubejs/assets/more_mod_tetra/lang/zh_cn.json` 同步覆盖两条过时的饰品效果提示；细节见 [Hotai 明细](hotai/badiff-details.md#more-mod-tetra-纯白容器效果续期)。 | 实际 Hotai 1.0 的 class 转换及序列化 diff 离线重放通过，ASM 全方法校验通过；确认仅修改一个周期及四个时长常量，语言 JSON 解析通过，尚未提交上游 issue。 | MMT 升级时复核目标 class 与提示语言键；上游修正刷新、持续时间及说明后移除相应覆盖。 | 已部署，待重启与游戏内回归 |
