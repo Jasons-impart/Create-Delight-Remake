@@ -19,11 +19,10 @@
 
 | 目标领域 | 补丁文件 | 行为变化 |
 |---|---|---|
-| KubeJS Lazy 并发缓存 | `dev/latvian/mods/kubejs/util/Lazy.badiff` | 在 build.24 的 Lazy 内直接维护原子快照，避免并发清缓存返回 null；factory 不持缓存锁，forget 阻止旧计算回填，不依赖 CDC helper。语义与 [CDC #131](https://github.com/Jasons-impart/Create-Delight-Core/pull/131) 的原子方案一致，详见 [补丁明细](badiff-details.md#kubejs-lazy-并发缓存补丁)。 |
-| More Mod Tetra 纯白容器效果续期 | `com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer.badiff` | MMT 2.4.15 的妖怪化、半妖怪化、无意识和真隐身统一为普通效果常用的 40 tick 刷新、400 tick 持续，消除原 400/220 tick 组合造成的空档；保留原配置、材料条件和效果自身取消规则。已通过实际 Hotai 转换器离线生成及重放，待游戏内回归。 |
+| More Mod Tetra 纯白容器效果续期 | `com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer.badiff` | MMT 2.4.15 的妖怪化、半妖怪化、无意识和真隐身统一为普通效果常用的 40 tick 刷新、400 tick 持续，消除原 400/220 tick 组合造成的空档；保留原配置、材料条件和效果自身取消规则。已通过实际 Hotai 转换器离线生成及重放，并已游戏内验证。 |
 | Create 分液池/流体搜索 | `com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour.badiff`、`FluidDrainingBehaviour.badiff`、`compat/jei/category/ItemDrainCategory.badiff` | 抽液搜索增加可覆写的继续搜索钩子，分液池按源方块数量判断无限流体，而不是按访问过的流体方块数量；同时区分源流体和流动流体。JEI 分液展示在复制物品后重新检查 `FLUID_HANDLER_ITEM`，避免 capability 消失导致异常。 |
 | Create 连接纹理缓存 | `com/simibubi/create/foundation/block/connected/CTSpriteShifter.badiff` | 将连接纹理缓存从 `HashMap` 改为 `ConcurrentHashMap`，降低并发注册/资源重载时的竞态风险。 |
-| Create Liquid Fuel 液体烈焰人燃烧室 | `com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff`、`mixin/MixinBlazeBurnerTileEntity.badiff` | 液体燃料 tick 返回是否已处理并可取消原 tick 后续逻辑；向燃烧室倒入流体时按容量部分抽取、更新容器状态，并在失败路径显式返回 false，避免容器未扣除或溢出。 |
+| Create Liquid Fuel 液体烈焰人燃烧室 | `com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff`、`mixin/MixinBlazeBurnerTileEntity.badiff` | 液体燃料 tick 只在未超过燃烧时间容量且成功消耗燃料后更新热量、返回已处理并取消原 tick 后续逻辑；向燃烧室倒入流体时先模拟抽取与接收，再按实际容量部分执行并同步容器状态，失败路径显式返回 false，避免容器未扣除、混入不相容流体或溢出。 |
 | Create Addition 超导电力线 | `com/mrh0/createaddition/index/CAItems.badiff`、`CABlocks.badiff`、`CABlockEntities.badiff`、`blocks/connector/ConnectorType.badiff`、`energy/WireType.badiff`、`WireConnectResult.badiff`、`IWireNode.badiff`、`energy/network/EnergyNetwork.badiff` | 注册 `superconducting_wire`、`superconducting_spool`、`superconducting_connector`，加入 `SUPERCONDUCTING` 线缆类型和 `Superconducting` 连接器类型；只允许两个超导连接器使用超导线缆互连，禁止超导/普通连接器混接或普通连接器使用超导线；能量网络缓冲上限提升到 `Integer.MAX_VALUE`，使用饱和加法并拒绝非正数推拉。配套资源、配方和掉落位于 `kubejs/assets/createaddition/`、`kubejs/server_scripts/Create Addition/`。 |
 | Create Addition Ponder 清理 | `com/mrh0/createaddition/index/CAPonders.badiff` | 从 `FLUIDS` 标签和 `liquid_blaze_burner` 场景入口移除 `CAItems.STRAW`，保留烈焰人燃烧室本体的场景入口，避免吸管重复展示该 Ponder。 |
 | Create New Age Ponder 清理 | `org/antarcticgardens/cna/content/ponders/CNAPonders.badiff` | 基于当前包路径移除 heating、heater、reactor、wires 场景和 `WIRING`、`HEATING`、`REACTOR` 标签，保留电气、磁力、发电和电机扩展 Ponder；配套结构位于 `kubejs/assets/create_new_age/ponder/`。 |
@@ -34,21 +33,25 @@
 | Better Compatibility Checker 状态 ping mixin | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | 将匿名内部类捕获的 `ServerData` 改为反射查找，并兼容混淆/反混淆方法名；注入点改到响应处理尾部，降低字段名变化造成的 mixin 失败。 |
 | IAF Dragon Fix 地下冰龙穴避海 | `com/iafdragonfix/structure/DragonDenPiece.badiff` | 地下冰龙穴确定中心后检查中心及周围 16 格的 3×3 群系采样；任一点命中 `#createdelight:blocks_ice_dragon_caves` 就跳过生成，避免木卫二龙穴切入地下海，同时保留木卫二陆地区域和火星的地下冰龙穴。补丁必须由 HotAI 将 `.class` 转存为其 `MemoryDiff` 序列化格式，不得使用 `BadiffCli diff` 生成不兼容的 `BadiffFileDiff`。 |
 | Quality Food 方块掉落品质 | `de/cadentem/quality_food/mixin/BlockMixin.badiff` | 只在存在 `DropData` 且方块通过 `Utils.isValidBlock` 时应用方块品质，移除无上下文时对掉落物套品质的 fallback。 |
+| Quality Food 品质保留与空品质序列化 | `de/cadentem/quality_food/capability/LevelData.badiff`、`BlockData.badiff` | 空品质仍不能进 `HashMap` 后在 `serializeNBT` 里 `.ordinal()`。品质被取走时，`LevelData` 的守卫直接返回，不再调用 `remove()`，避免真删品质并打断 `lastRemoved` 转移链。`BlockData` 的 add 守卫改为写入 `Quality.NONE`，不再把条目丢掉。读取空的 `lastRemoved` 仍回退 `NONE`，序列化仍跳过空条目。 |
+| KubeJS 动态数据包空字节 | `dev/latvian/mods/kubejs/script/data/GeneratedData.badiff` | `GeneratedData.get()` 对 `Lazy` 可能返回的 `null` 字节数组直接构造 `ByteArrayInputStream`。补丁在为空时改用空数组，避免数据包重载空指针。 |
+| TACZ 网络缓存空 Map | `com/tacz/guns/resource/CommonAssetsManager.badiff`、`resource/manager/CommonDataManager.badiff` | `apply()` 前 `networkCache` 仍为 `null`，`ImmutableMap.put` 拒绝空值。补丁跳过空缓存，并让 `getNetworkCache()` 在未就绪时返回空 Map。 |
+| TACZ-addon 精致背包空包装 | `com/mafuyu404/taczaddon/compat/SophisticatedBackpacksCompatInner.badiff` | `addBackpackItems` / `getItemsFromBackpackBLock` 在包装器或列表为空时仍继续取物品。补丁在空值时直接返回，避免背包兼容空指针。 |
+| Bakeries 面包刀 × FD 1.3.x 切割结果 | `com/renyigesai/bakeries/item/BreadKnifeItem.badiff` | 面包刀处理掉落物时不再调用 FD 已移除的 `CuttingBoardRecipe.rollResults(RandomSource, int)`，改为本地 `getRollableResults()` + `ChanceResult.rollOutput()`，修复 `NoSuchMethodError` 服务端崩溃。语义对齐上游 master `7c45ac4`。 |
 
-## MMT 模型与属性兼容
+## 待首次启动转存的可审阅 class
 
 | 目标领域 | 当前文件 | 行为变化与状态 |
 |---|---|---|
-| More Mod Tetra × Tetra 6.17 属性精度 | `net/yiran/rebalancing/core/mixins/AttributeHelperMixin.badiff` | 将 `@ModifyVariable` 局部变量名从 `multiplier` 改为 `rounding`，常量从 `1000d` 改为等价步长 `0.001d`；已保存 badiff，运行时状态见生成表。 |
-| More Mod Tetra 弓模型 | `com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow.badiff` | 迁移到 `IModuleModel` 和模型类型注册 API，按资源路径筛选三个拉弓阶段，保留其他模型；方法级差异与恢复依据见 [补丁明细](badiff-details.md#mmt-弓模型接口迁移)。 |
+| More Mod Tetra × Tetra 6.17 属性精度 | `net/yiran/rebalancing/core/mixins/AttributeHelperMixin.class` | 将 MMT `AttributeHelperMixin` 的 `@ModifyVariable` 局部变量名从旧 `multiplier` 改为 Tetra 6.17 的 `rounding`，并将旧“乘 `1000` 后取整”所需常量改为等价步长 `0.001d`。该完整 class 用于人工反编译审阅；尚未启动客户端，HotAI 还未把它转存为 `.badiff`，也未完成第二次启动重放。 |
 
 ## 静态 JAR 外动态创建的超导连接器类
 
-以下 `.badiff` 的目标 class 不在当前 `mods/*.jar` 中；Forge ModLauncher 会提供占位 `ClassNode`，由 `hotai` 应用 diff 后动态创建。已按真实占位结构离线还原全部三个类，具体实现和哈希见 [补丁明细](badiff-details.md#超导连接器三个动态类)；是否实际加载仍以启动日志为准。
+以下 `.badiff` 的目标 class 不在当前 `mods/*.jar` 中；Forge ModLauncher 会提供空 `ClassNode`，由 `hotai` 应用 diff 后动态创建。静态扫描不能还原其完整源码，运行时状态以启动日志为准。
 
 | 补丁文件 | 备注 |
 |---|---|
-| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff`、`SuperconductingConnectorBlockEntity.badiff`、`SuperconductingConnectorBlockEntity$1.badiff` | 方块提供定向形状和注册绑定；方块实体提供 16 节点、128 格线长和六向偏移；`$1` 是 Direction switch 辅助类。迁移时须与超导注册、线缆规则和配套资源一起更新。 |
+| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff`、`SuperconductingConnectorBlockEntity.badiff`、`SuperconductingConnectorBlockEntity$1.badiff` | 配套注册补丁会引用超导连接器类；当前启动日志已确认前两个 class 被 `hotai` 动态创建。匿名内部类 `$1` 可能按需加载，需在实际使用超导连接器时继续核对日志和游戏内注册结果。 |
 
 ## 维护注意
 

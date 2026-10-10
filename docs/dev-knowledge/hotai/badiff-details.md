@@ -6,7 +6,7 @@
 
 `HOTAI_STATUS` 区块由 `scripts/update-hotai-docs.ps1` 维护，区分静态 JAR 命中、启动日志确认的动态创建和未确认项；方法级语义、历史提交依据和迁移建议仍写在人工维护区。
 
-## 既有生效性核查记录
+## 当前生效性核查（2026-07-29）
 
 核查方法：逐个读取当前 `hotai/**/*.badiff`，扫描当前 `mods/*.jar` 中的同名目标 class，并核对 `logs/latest.log` 的 `Patched class:` 记录。Forge ModLauncher 会为不存在原始字节码、但被转换器声明为目标的类创建空 `ClassNode`；`hotai` 可对其应用 `.badiff` 并动态创建完整类，因此静态 JAR 未命中不是失效结论。
 
@@ -15,35 +15,36 @@
 | hotai | `mods/hotai-1.0.jar` 存在 | 补丁加载器存在。 | `hotai` 本体可用。 |
 | Create | `create-1.20.1-6.0.8.jar` | 4/4 可应用：`FluidManipulationBehaviour`、`FluidDrainingBehaviour`、`ItemDrainCategory`、`CTSpriteShifter`。 | 当前可生效。 |
 | Create Liquid Fuel | `createliquidfuel-2.1.1-1.20.1.jar` | 2/2 可应用：`BurnerStomachHandler`、`MixinBlazeBurnerTileEntity`。 | 当前可生效。 |
-| Create Addition | `createaddition-1.20.1-1.3.3.jar` | 9/12 静态命中；另外三个超导连接器类由补丁创建，加载状态见下方生成表。 | `$1` 是 Direction switch 编译器辅助类；离线恢复已确认实现，运行时加载仍需实际触发。 |
+| Create Addition | `createaddition-1.20.1-1.3.3.jar` | 11/14 静态命中；`SuperconductingConnectorBlock` 与 `SuperconductingConnectorBlockEntity` 已在当前启动日志确认由 `hotai` 动态创建；`SuperconductingConnectorBlockEntity$1` 尚未在本次启动日志出现。 | 超导连接器实现类不在上游 JAR 中，而由对应 `.badiff` 创建；匿名内部类可能按需加载，需在实际使用超导连接器时继续核对日志。 |
 | Vintage Improvements | `vintageimprovements-1.20.1-0.3.7.8.jar` | 2/2 目标 class 命中：`VintagePonderScene`、`VintagePonderTag`。 | 当前 JAR 可匹配。 |
 | TACZ | `tacz-1.20.1-1.1.8-hotfix.jar` | 1/1 可应用：`ModCreativeTabs`。 | 已按 1.1.8 重建并完成客户端页签回归。 |
 | TACZ-addon | `taczaddon-1.20.1-1.1.8-hotfix2-for-new-soph.jar` | 1/1 可应用：`ShoulderSurfingCompatInner`。 | 已按 Shoulder Surfing 5.0.7 API 重建，已完成开镜回归。 |
 | Neapolitan | `neapolitan-1.20.1-5.1.0.jar` | 1/1 可应用：`Neapolitan`。 | 当前可生效。 |
 | Better Compatibility Checker | `BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar` | 1/1 可应用：`ServerStatusPingerMixin`。 | 当前可生效。 |
 | IAF Dragon Fix | `iafdragonfix-2.0.0.jar` | `DragonDenPiece.class` 已由 HotAI 转存为运行时 `.badiff`，启动日志记录 `Patched class`。 | 当前 JAR 已完成首次转换启动；配套禁止群系标签由 KubeJS 数据包提供，badiff 第二次启动重放仍待确认。 |
-| Quality Food | `quality_food-1.20.1-2.4.3-all.jar` | 1/1 目标 class 命中：`BlockMixin`。 | 当前 JAR 可匹配。 |
+| Quality Food | `quality_food-1.20.1-2.3.3-all.jar` | 1/1 目标 class 命中：`BlockMixin`。 | 当前 JAR 可匹配。 |
 | Create New Age | `create-new-age-1.2.0+forge-mc1.20.1.jar` | 1/1 可应用：旧 `org/antarcticgardens/newage/CreateNewAgePonders` 补丁已替换为当前路径 `org/antarcticgardens/cna/content/ponders/CNAPonders`。 | 当前可生效；补丁继续实现提交 `e11d47f206c1e9cb28bdf506698c824586f9b00c`（`删除cna中无用的ponder (#649)`）的意图，移除 heating、heater、reactor、wires 场景与对应标签。 |
 
-当前文件数量与静态命中统计以下方生成区块为准；上表保留既有验证记录，不代表本次重新完成了全部游戏内回归。静态未命中不等于补丁失效。
+总计：当前 26 个 `.badiff` 中 23 个静态 JAR 命中，2 个由当前启动日志确认动态创建，1 个尚未在当前启动日志确认。三个静态未命中项均属于 Create Addition 超导连接器实现类，不应仅因 JAR 扫描未命中而删除。Create New Age 旧路径补丁已完成迁移。
 
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 30 个 `.badiff`；静态 JAR 命中 26 个，静态未命中但已由当前启动日志确认动态创建 3 个，尚未由当前启动日志确认 1 个。
+当前扫描到 37 个 `.badiff`；静态 JAR 命中 33 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |
 |---|---|---|---|
-| Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff` | `com/forsteri/createliquidfuel/core/BurnerStomachHandler` | 静态命中 `createliquidfuel-2.2.0-1.20.1.jar` |
-| Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity.badiff` | `com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity` | 静态命中 `createliquidfuel-2.2.0-1.20.1.jar` |
+| Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff` | `com/forsteri/createliquidfuel/core/BurnerStomachHandler` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
+| Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity.badiff` | `com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
 | IAF Dragon Fix | `hotai/com/iafdragonfix/structure/DragonDenPiece.badiff` | `com/iafdragonfix/structure/DragonDenPiece` | 静态命中 `iafdragonfix-2.0.0.jar` |
 | Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow` | 静态命中 `more_mod_tetra-2.4.15-all.jar` |
 | Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer` | 静态命中 `more_mod_tetra-2.4.15-all.jar` |
-| TACZ-addon | `hotai/com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner.badiff` | `com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner` | 静态命中 `taczaddon-1.20.1-1.1.8-hotfix2-for-new-soph.jar` |
+| TACZ-addon | `hotai/com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner.badiff` | `com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner` | 静态命中 `taczaddon.jar` |
+| TACZ-addon | `hotai/com/mafuyu404/taczaddon/compat/SophisticatedBackpacksCompatInner.badiff` | `com/mafuyu404/taczaddon/compat/SophisticatedBackpacksCompatInner` | 静态命中 `taczaddon.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/ConnectorType.badiff` | `com/mrh0/createaddition/blocks/connector/ConnectorType` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
-| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock` | 运行时已确认动态创建（静态 JAR 无此 class） |
-| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity` | 运行时已确认动态创建（静态 JAR 无此 class） |
+| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/IWireNode.badiff` | `com/mrh0/createaddition/energy/IWireNode` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/network/EnergyNetwork.badiff` | `com/mrh0/createaddition/energy/network/EnergyNetwork` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/WireConnectResult.badiff` | `com/mrh0/createaddition/energy/WireConnectResult` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
@@ -54,16 +55,21 @@
 | Create Addition | `hotai/com/mrh0/createaddition/index/CAPonders.badiff` | `com/mrh0/createaddition/index/CAPonders` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Vintage Improvements | `hotai/com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene.badiff` | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene` | 静态命中 `vintageimprovements-1.20.1-0.3.7.8.jar` |
 | Vintage Improvements | `hotai/com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderTag.badiff` | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderTag` | 静态命中 `vintageimprovements-1.20.1-0.3.7.8.jar` |
+| Bakeries | `hotai/com/renyigesai/bakeries/item/BreadKnifeItem.badiff` | `com/renyigesai/bakeries/item/BreadKnifeItem` | 静态命中 `bakeries-1.20.1-forge-1.2.5.jar` |
 | Create | `hotai/com/simibubi/create/compat/jei/category/ItemDrainCategory.badiff` | `com/simibubi/create/compat/jei/category/ItemDrainCategory` | 静态命中 `create-1.20.1-6.0.8.jar` |
 | Create | `hotai/com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour.badiff` | `com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour` | 静态命中 `create-1.20.1-6.0.8.jar` |
 | Create | `hotai/com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour.badiff` | `com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour` | 静态命中 `create-1.20.1-6.0.8.jar` |
 | Create | `hotai/com/simibubi/create/foundation/block/connected/CTSpriteShifter.badiff` | `com/simibubi/create/foundation/block/connected/CTSpriteShifter` | 静态命中 `create-1.20.1-6.0.8.jar` |
 | TACZ | `hotai/com/tacz/guns/init/ModCreativeTabs.badiff` | `com/tacz/guns/init/ModCreativeTabs` | 静态命中 `tacz-1.20.1-1.1.8-hotfix.jar` |
+| TACZ | `hotai/com/tacz/guns/resource/CommonAssetsManager.badiff` | `com/tacz/guns/resource/CommonAssetsManager` | 静态命中 `tacz-1.20.1-1.1.8-hotfix.jar` |
+| TACZ | `hotai/com/tacz/guns/resource/manager/CommonDataManager.badiff` | `com/tacz/guns/resource/manager/CommonDataManager` | 静态命中 `tacz-1.20.1-1.1.8-hotfix.jar` |
 | Neapolitan | `hotai/com/teamabnormals/neapolitan/core/Neapolitan.badiff` | `com/teamabnormals/neapolitan/core/Neapolitan` | 静态命中 `neapolitan-1.20.1-5.1.0.jar` |
+| Quality Food | `hotai/de/cadentem/quality_food/capability/BlockData.badiff` | `de/cadentem/quality_food/capability/BlockData` | 静态命中 `quality_food-1.20.1-2.4.3-all.jar` |
+| Quality Food | `hotai/de/cadentem/quality_food/capability/LevelData.badiff` | `de/cadentem/quality_food/capability/LevelData` | 静态命中 `quality_food-1.20.1-2.4.3-all.jar` |
 | Quality Food | `hotai/de/cadentem/quality_food/mixin/BlockMixin.badiff` | `de/cadentem/quality_food/mixin/BlockMixin` | 静态命中 `quality_food-1.20.1-2.4.3-all.jar` |
-| Unknown | `hotai/dev/latvian/mods/kubejs/util/Lazy.badiff` | `dev/latvian/mods/kubejs/util/Lazy` | 静态命中 `kubejs-forge-2001.6.5-build.24.jar` |
+| KubeJS | `hotai/dev/latvian/mods/kubejs/script/data/GeneratedData.badiff` | `dev/latvian/mods/kubejs/script/data/GeneratedData` | 静态命中 `kubejs-forge-2001.6.5-build.24.jar` |
 | Better Compatibility Checker | `hotai/dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin` | 静态命中 `BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar` |
-| Unknown | `hotai/net/yiran/rebalancing/core/mixins/AttributeHelperMixin.badiff` | `net/yiran/rebalancing/core/mixins/AttributeHelperMixin` | 运行时已确认动态创建（静态 JAR 无此 class） |
+| Unknown | `hotai/net/yiran/rebalancing/core/mixins/AttributeHelperMixin.badiff` | `net/yiran/rebalancing/core/mixins/AttributeHelperMixin` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
 | Create New Age | `hotai/org/antarcticgardens/cna/content/ponders/CNAPonders.badiff` | `org/antarcticgardens/cna/content/ponders/CNAPonders` | 静态命中 `create-new-age-1.2.0+forge-mc1.20.1.jar` |
 <!-- HOTAI_STATUS:END -->
 
@@ -88,7 +94,7 @@ if (livingEntity.level().getGameTime() % 40L == 0L) {
 - 配套 `kubejs/assets/more_mod_tetra/lang/zh_cn.json` 覆盖无意识和真实隐身的 `curios_*.tooltip`，将“每10s给予……11s”的旧说明统一为普通效果的“持续给予……”格式；妖怪化与半妖怪化的上游提示已经使用该格式。
 - 补丁为 705 字节，SHA-256 `f7f62e44aebc7c37e3267842326ca60c2170f9114df8fe65e8fcbb0b4dfff429`；基线由 `ClassReader → ClassNode → ClassWriter(0)` 归一化。
 - 已调用本地 Hotai 1.0 的实际 `BytecodeTransformer` 生成 `MemoryDiff`，再由实际 `DiffTransformer` 离线重放；结果逐字节匹配预期 class，全部方法通过 ASM `BasicVerifier`。撤销一个刷新间隔和四个持续时间常量的改动后，完整 class 与原归一化字节逐字节一致。
-- 当前仅完成离线生成、重放和部署，未启动游戏。重启后需核对 `Patched class: com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer`，并保持足够饥饿值佩戴至少 40 秒，检查效果无空档及摘下后到期；MMT 升级或上游修正该分支时重新生成或移除补丁。
+- 已完成游戏内回归：效果持续无空档，摘下后正常到期。MMT 升级或上游修正该分支时重新生成或移除补丁。
 
 ### Create 流体搜索与 JEI
 
@@ -169,21 +175,31 @@ public static boolean tick(SmartBlockEntity entity) {
         tankFluid.setAmount(0);
         return false;
     }
-    if (remainingBurnTime + fuelTime > 10000) return false;
+    int newBurnTime = remainingBurnTime + fuelTime;
+    if (newBurnTime > BlazeBurnerBlockEntity.MAX_HEAT_CAPACITY) return false;
 
     setHeat(fluidSuperHeats ? SEETHING : FADING);
-    setRemainingBurnTime(remainingBurnTime + fuelTime);
+    setRemainingBurnTime(newBurnTime);
     tankFluid.shrink(mbConsuming);
     return true;
 }
 
 public static void tryUpdateFuel(..., ItemStack stack, ..., CallbackInfoReturnable<Boolean> cir) {
-    IFluidHandlerItem handler = stack.getCapability(FLUID_HANDLER_ITEM).orElse(null);
-    if (handler == null || handler.getTanks() != 1) {
-        cir.setReturnValue(false);
+    SmartFluidTank stomach = getStomach(entity);
+    if (stomach == null) {
+        // 裸 return：无胃袋时交还原版固体燃料逻辑
         return;
     }
-    if (!knownFuel(handler.getFluidInTank(0))) {
+
+    IFluidHandlerItem handler = stack.getCapability(FLUID_HANDLER_ITEM).orElse(null);
+    if (handler == null || handler.getTanks() != 1) {
+        // 裸 return：无流体能力（煤炭、木炭等固体燃料）或非单罐体，还原版行为
+        return;
+    }
+    // 以下为单罐体液体容器的内容校验：失败一律 setReturnValue(false)，不回落原版以免被当固体燃料吞掉
+    FluidStack fluid = handler.getFluidInTank(0);
+    if (fluid.isEmpty() || !knownFuel(fluid)
+            || (!stomach.isEmpty() && !stomach.getFluid().isFluidEqual(fluid))) {
         cir.setReturnValue(false);
         return;
     }
@@ -194,10 +210,31 @@ public static void tryUpdateFuel(..., ItemStack stack, ..., CallbackInfoReturnab
         return;
     }
 
-    FluidStack drained = handler.drain(min(space, fluidAmount), EXECUTE);
-    stomach.fill(drained, EXECUTE);
-    syncContainerState(stack, handler.getContainer());
+    FluidStack available = handler.drain(min(space, fluid.getAmount()), SIMULATE);
+    int accepted = stomach.fill(available, SIMULATE);
+    if (accepted <= 0) {
+        cir.setReturnValue(false);
+        return;
+    }
+
+    if (!simulate) {
+        FluidStack drained = handler.drain(accepted, EXECUTE);
+        if (stomach.fill(drained, EXECUTE) <= 0) {
+            cir.setReturnValue(false);
+            return;
+        }
+        syncContainerState(stack, handler.getContainer());
+    }
     cir.setReturnValue(true);
+}
+
+private static void syncContainerState(ItemStack original, ItemStack container) {
+    if (container == original || container.isEmpty() || original.getItem() != container.getItem())
+        return;
+
+    original.setCount(container.getCount());
+    original.setTag(container.getTag() == null ? null : container.getTag().copy());
+    original.setDamageValue(container.getDamageValue());
 }
 ```
 
@@ -349,16 +386,9 @@ public int pull(int energy, boolean simulate) {
 ```
 
 ```java
-// SuperconductingConnectorBlockEntity.badiff
-// 继承 AbstractConnectorBlockEntity；构造器仅调用 super(type, pos, state)。
-void addBehaviours(List<BlockEntityBehaviour> behaviours) {} // 不调用 super
-int getMaxIn() { return Integer.MAX_VALUE; }
-int getMaxOut() { return Integer.MAX_VALUE; }
-int getNodeCount() { return 16; }
-int getMaxWireLength() { return 128; }
-ConnectorType getConnectorType() { return ConnectorType.Superconducting; }
-// getNodeOffset(int node) 忽略 node，按方块 FACING 返回相应单位方向 * 1/16。
-// Block 与 switch 辅助类的完整恢复要点见下方“超导连接器三个动态类”。
+// SuperconductingConnectorBlock*.badiff
+// 上游 JAR 没有目标 class；ModLauncher 提供空 ClassNode，hotai 据此动态创建。
+// 当前启动日志已确认 Block 与 BlockEntity；$1 需在实际使用时继续验证。
 ```
 
 ### TACZ 创造页签
@@ -441,9 +471,9 @@ return stack;
 // 保留 ELECTRICAL、MAGNETS、ELECTRICITY_GENERATION、MOTOR_EXTENSION。
 ```
 
-## MMT 属性精度补丁
+## 待首次启动转存的 MMT class
 
-当前持久化文件是 `hotai/net/yiran/rebalancing/core/mixins/AttributeHelperMixin.badiff`，已在 `50114091` 随 Tetra 迁移提交，生成状态表已确认运行时动态创建。早期审阅用 `.class` 的“待首次转存”状态已过期；该旧 class 的哈希不能当作当前 `.badiff` 哈希。
+`hotai/net/yiran/rebalancing/core/mixins/AttributeHelperMixin.class` 是供人工反编译审阅的完整 Java 17 class，当前长度 6349 字节，SHA-256 为 `12346144BFA21040CDC8B2DC36DCD24698C579B1E73BF9AA9C6E77FCC4714514`。它不属于上方只扫描 `.badiff` 的 `HOTAI_STATUS` 生成区块；在客户端首次加载前，不得将它记录成已转存或已重放。
 
 等价改动摘要：
 
@@ -451,7 +481,7 @@ return stack;
 - `@ModifyVariable` 的目标局部变量名从 `multiplier` 改为 `rounding`。
 - 原处理器 `multiplier(double)` 的返回常量从 `1000d` 改为 `0.001d`。
 
-MMT 原 class 针对 Tetra 6.9 的局部变量名 `multiplier`，返回 `1000d`，对应“属性值乘以倍率、取整、再除回”的实现。Tetra 6.17 改为“属性值除以步长、取整、再乘回”，局部变量名也改为 `rounding`；因此只改注入变量名会把精度语义反转，必须同时把 `1000d` 换成等价步长 `0.001d`。现有字节码核对记录确认常量与 Mixin 注解；上游升级时仍需复核局部变量和步长含义。
+MMT 原 class 针对 Tetra 6.9 的局部变量名 `multiplier`，返回 `1000d`，对应“属性值乘以倍率、取整、再除回”的实现。Tetra 6.17 改为“属性值除以步长、取整、再乘回”，局部变量名也改为 `rounding`；因此只改注入变量名会把精度语义反转，必须同时把 `1000d` 换成等价步长 `0.001d`。`javap -c -v` 已确认常量和 Mixin 注解，但仍需首次启动观察 `.class → .badiff` 转存，再在第二次启动确认 `MemoryDiff` 重放与 `Patched class: net/yiran/rebalancing/core/mixins/AttributeHelperMixin` 日志。
 
 ## Create 补丁
 
@@ -466,7 +496,7 @@ MMT 原 class 针对 Tetra 6.9 的局部变量名 `multiplier`，返回 `1000d`�
 
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
-| `com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff` | 已还原 | `tick(SmartBlockEntity)` 从 `void` 改为 `boolean`，只有成功消耗液体燃料并增加燃烧时间时返回 true；早退路径全部返回 false。`tryUpdateFuel(...)` 改用 `IFluidHandlerItem`，失败路径显式 `cir.setReturnValue(false)`；检查燃烧室剩余容量，按 `min(space, fluidStack.amount)` 部分抽取容器流体并 `stomach.fill(...)`；新增 `syncContainerState`，把容器扣除后的 count、NBT 和 damage 同步回手持堆叠。 | 修复向液体烈焰人燃烧室倒入流体时可能不扣容器、超容量或错误成功的问题。 |
+| `com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff` | 已还原 | `tick(SmartBlockEntity)` 从 `void` 改为 `boolean`，只有燃烧时间不超过 `MAX_HEAT_CAPACITY` 且成功消耗液体燃料时才更新热量并返回 true；早退路径全部返回 false。`tryUpdateFuel(...)` 改用 `IFluidHandlerItem`，按剩余容量先模拟容器抽取和胃袋接收，再按实际可接收量执行；新增 `syncContainerState`，把容器扣除后的 count、NBT 和 damage 同步回手持堆叠。`stomach == null` 与 `handler == null \|\| getTanks() != 1` 两条早退为裸 `return`（不取消原方法，固体燃料继续走原版）；仅当物品确有单罐体流体 handler 且内容校验失败（流体空、未知燃料、与胃袋不相容、容量满、收不进）时 `cir.setReturnValue(false)`。 | 修复向液体烈焰人燃烧室倒入流体时可能不扣容器、超容量、混入不相容流体或错误成功的问题，并避免容量已满时提前改变热量状态；同时保证无流体能力的普通固体燃料（煤炭、木炭等）仍可正常投入燃烧室（issue #2370 回归修复）。 |
 | `com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity.badiff` | 已还原 | `tick` 注入点从方法尾部改到第二次调用 `BlazeBurnerBlockEntity.updateBlockState()` 前；注入改为 `cancellable=true`；当 `BurnerStomachHandler.tick(this)` 返回 true 时取消原 tick 后续逻辑。 | 液体燃料成功接管燃烧状态时，不再让原版后续逻辑覆盖热量或燃烧时间。 |
 
 ## Create Addition 补丁
@@ -482,75 +512,9 @@ MMT 原 class 针对 Tetra 6.9 的局部变量名 `multiplier`，返回 `1000d`�
 | `com/mrh0/createaddition/energy/IWireNode.badiff` | 已还原 | `connect(...)` 先判断两端是否都是 `ConnectorType.Superconducting`：一端为超导而另一端不是时返回 `INVALID`；两个超导连接器使用非超导线时返回 `REQUIRES_SUPERCONDUCTING`；普通连接器使用超导线时返回 `INVALID`。其余距离、重复连接和大连接器铜线限制保持。 | 超导线缆和超导连接器只能成套使用，禁止超导/普通连接器混接或让普通连接器使用超导线。 |
 | `com/mrh0/createaddition/energy/network/EnergyNetwork.badiff` | 已还原 | `MAX_BUFF` 从 80000 提升到 `Integer.MAX_VALUE`；新增 `saturatedAdd` 防止统计值溢出；`getMaxBuff()` 改用 long 中间值并夹到 int 范围；`push`、`demand`、`pull` 改为饱和/夹取逻辑，且 `push`、`pull` 对非正数请求直接返回 0。 | 支持超导线缆的大吞吐网络，同时降低能量缓存和统计溢出风险，避免负数推拉反向修改缓冲。 |
 | `com/mrh0/createaddition/index/CAPonders.badiff` | 已还原 | `registerTags(...)` 移除 `CAItems.STRAW` 到 `AllCreatePonderTags.FLUIDS` 的映射；`registerScenes(...)` 移除以 `CAItems.STRAW` 为入口的 `liquid_blaze_burner` 场景，保留 `AllBlocks.BLAZE_BURNER` 的同名场景。 | 吸管不再重复展示液体烈焰人燃烧室 Ponder，燃烧室本体仍可查看。 |
-| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | 已离线还原，动态创建 | 继承 `AbstractConnectorBlock`，注册绑定超导方块实体，形状为 `(5,0,5)-(11,7,11)` 并按 `FACING.getOpposite()` 旋转。 | 完整方法清单见下节；配合注册补丁使用。 |
-| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | 已离线还原，动态创建 | 输入/输出上限为 `Integer.MAX_VALUE`，16 个节点、128 格线长，节点偏移为 FACING 单位方向的 1/16，类型为 Superconducting。 | 完整恢复要点见下节；仍需游戏内验证连接和渲染。 |
-| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | 已离线还原，运行时待按需确认 | Java 编译器生成的 `Direction` switch 映射数组，将 DOWN、UP、NORTH、WEST、SOUTH、EAST 映射到 1～6。 | 不是 capability/handler 类；仅服务于外部类的 `getNodeOffset`。 |
-
-### 超导连接器三个动态类
-
-最初来自提交 `c4628c66ca2b59621fb3da159ed61152de9f1755`（#1282），后续 `8445f1850d14453c5334f8e9b7217730394a2717` 随 Create 6.0.8 适配调整了相关补丁；已检索的其他文档和 Git 历史没有保存这三个类的 Java 源码。2026-09-18 使用当前 Hotai 的真实 `DiffTransformer`，以 ModLauncher 10.0.9 的占位类恢复三个 class，并用 `javap -c -p` 核对以下全部方法。依赖接口以 Create Addition `1.20.1-1.3.3` 为参考；不是修改其上游同名类，而是新建三个类。
-
-**方块 `SuperconductingConnectorBlock`：**
-
-- 继承 `AbstractConnectorBlock<SuperconductingConnectorBlockEntity>`；唯一构造器接收 `BlockBehaviour.Properties`，仅调用父构造器。
-- `getBlockEntityClass()` 返回 `SuperconductingConnectorBlockEntity.class`。
-- `getBlockEntityType()` 返回 `CABlockEntities.SUPERCONDUCTING_CONNECTOR.get()`；`newBlockEntity(BlockPos, BlockState)`（运行时名 `m_142194_`）调用同一注册项的 `create(pos, state)`。
-- 静态字段 `CONNECTOR_SHAPE = CAShapes.shape(5, 0, 5, 11, 7, 11).forDirectional()`。
-- `getShape(BlockState, BlockGetter, BlockPos, CollisionContext)`（运行时名 `m_5940_`）返回 `CONNECTOR_SHAPE.get(state.getValue(FACING).getOpposite())`，不是直接按 FACING 取形状。
-
-**方块实体 `SuperconductingConnectorBlockEntity`：**
-
-- 继承 `AbstractConnectorBlockEntity`；构造器接收 `(BlockEntityType<?>, BlockPos, BlockState)` 并原样传给父类。
-- `addBehaviours(List<BlockEntityBehaviour>)` 为空实现，不调用父类。
-- `getMaxIn()`、`getMaxOut()` 都返回 `2147483647`；`getNodeCount()` 返回 `16`；`getMaxWireLength()` 返回 `128`；`getConnectorType()` 返回新增枚举 `ConnectorType.Superconducting`。
-- `OFFSET_HEIGHT` 常量为 `1.0f`（模型单位）；实际六个公开静态 `Vec3` 使用 1/16 方块偏移，依次为 DOWN `(0,-0.0625,0)`、UP `(0,0.0625,0)`、NORTH `(0,0,-0.0625)`、WEST `(-0.0625,0,0)`、SOUTH `(0,0,0.0625)`、EAST `(0.0625,0,0)`。
-- `getNodeOffset(int node)` 不使用 node 参数；按 `getBlockState().getValue(AbstractConnectorBlock.FACING)` 返回同名方向偏移。与方块形状相反，这里不取 `getOpposite()`。switch 的未匹配分支抛 `IncompatibleClassChangeError`。
-
-**编译器辅助类 `SuperconductingConnectorBlockEntity$1`：**
-
-仅含静态 `int[] $SwitchMap$net$minecraft$core$Direction` 和静态初始化器，无 capability 或能量处理逻辑。数组长度取 `Direction.values().length`，按各枚举的 `ordinal()` 写入 DOWN=1、UP=2、NORTH=3、WEST=4、SOUTH=5、EAST=6，每个赋值单独捕获 `NoSuchFieldError`。外部类 `getNodeOffset` 对这个数组进行 switch。重新编译外部类可能改变辅助类名称或消除该类，必须把新外部类与它实际引用的辅助类成套生成，不能混用旧 `$1`。
-
-迁移时复核 `AbstractConnectorBlock` / `AbstractConnectorBlockEntity` 的构造器、节点方法和 FACING API，连同前述 CAItems、CABlocks、CABlockEntities、ConnectorType、WireType、IWireNode、EnergyNetwork 补丁以及 KubeJS 模型/配方/掉落一起适配。恢复后检查六面形状、线缆端点、16 节点、128 格长度及超导/普通线互斥；本次只验证字节码还原，没有新增游戏内回归结论。
-
-## MMT 弓模型接口迁移
-
-`com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow.badiff` 来自 `501140915f5aa239943f781118bd3697cdcc5e14`（#2148）。其他现有文档没有记录它的方法级改动；2026-09-18 对 More Mod Tetra `2.4.15` 的原始 class 和真实 Hotai 输出分别用 CFR 0.152 反编译并比较，确认变化集中在客户端 `getModels`、关联 lambda 和新增静态初始化器。
-
-旧 Tetra API 返回 `module.data.ModuleModel` 并直接读其字符串 `type`；新接口改用 `module.model.IModuleModel`，通过 `getType()` 返回 `ResourceLocation`，因此原来的字符串过滤不能直接保留。
-
-```java
-// getModels(ItemStack itemStack, @Nullable LivingEntity entity)
-// 返回泛型从 ImmutableList<ModuleModel> 改为 ImmutableList<IModuleModel>。
-String drawVariant = getDrawVariant(itemStack, entity);
-return getAllModules(itemStack).stream()
-    .sorted(Comparator.comparing(module -> module.getRenderLayer()))
-    .flatMap(module -> Arrays.stream(module.getModels(itemStack)))
-    .filter(Objects::nonNull)
-    .filter(model -> {
-        ResourceLocation type = model.getType();
-        if (type != null) {
-            String path = type.getPath(); // 运行时名 m_135815_
-            if ("draw_0".equals(path) || "draw_1".equals(path) || "draw_2".equals(path)) {
-                return path.equals(drawVariant);
-            }
-        }
-        return true;
-    })
-    .sorted(Comparator.comparing(IModuleModel::getRenderLayer))
-    .collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableList::copyOf));
-
-// 新增 <clinit>：按以下顺序注册四种模型类型。
-static {
-    ModuleModelRegistry.register("static", GridTextureModelData.class);
-    ModuleModelRegistry.register("draw_0", GridTextureModelData.class);
-    ModuleModelRegistry.register("draw_1", GridTextureModelData.class);
-    ModuleModelRegistry.register("draw_2", GridTextureModelData.class);
-}
-```
-
-恢复时保留 `@OnlyIn(Dist.CLIENT)`；`getModels` 的擦除描述符仍为 `(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/LivingEntity;)Lcom/google/common/collect/ImmutableList;`。旧筛选为 `model.type == drawVariant 或 static`；新筛选只限制三个 draw 路径，null 和所有其他类型都保留，且不比较 namespace。不要误改成仅保留 static，也不要顺带修改伤害、弹药、射速或耐久方法。
-
-升级 Tetra 时复核 `ItemModule#getModels`、`IModuleModel#getType/getRenderLayer`、`ModuleModelRegistry.register` 与 `GridTextureModelData`；若上游已兼容，移除此补丁而不是重复注册。验收需包含未拉弓和各拉弓阶段、非 draw 叠加模型、资源重载及服务端启动；本次证明旧补丁可还原，没有证明未知新版 API 可直接使用。
+| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | 运行时已确认动态创建 | 上游 JAR 不含目标 class；Forge ModLauncher 为声明的转换目标提供空 `ClassNode`，`hotai` 应用 `.badiff` 后创建完整类。当前 `logs/latest.log` 已记录 `Patched class`。 | 这是超导连接器方块的实现补丁；更新 Create Addition 或 `hotai` 后需重新启动验证注册。 |
+| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | 运行时已确认动态创建 | 上游 JAR 不含目标 class；当前 `logs/latest.log` 已记录 `Patched class`，说明 `hotai` 已应用该 `.badiff` 创建方块实体类。 | 为超导连接器提供方块实体实现；仍需游戏内验证注册和渲染。 |
+| `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | 动态创建待按需确认 | 上游 JAR 不含目标匿名内部类；当前启动日志尚无对应 `Patched class`，可能尚未走到加载路径。 | 预期为超导连接器方块实体的匿名 capability / handler 类；在实际使用超导连接器后检查日志。 |
 
 ## TACZ / Kinetic Pixel 补丁
 
@@ -583,13 +547,48 @@ static {
 
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
-| `com/iafdragonfix/structure/DragonDenPiece.badiff` | 首次转换启动已确认 | `generateCave(...)` 仅在龙种为 `ICE_CAVE` 时创建 `#createdelight:blocks_ice_dragon_caves` 群系标签，并在实际地下中心的 X/Z 各偏移 `-16/0/16` 组成的 3×3 点阵读取群系；任一点命中标签就提前返回。配套标签包含 `northstar:europan_subsurface_ocean` 与 `alexscaves:abyssal_chasm`。首次错误补丁由 `BadiffCli diff` 生成 `BadiffFileDiff`，与 HotAI 使用 `DefaultSerialization` 读取的 `MemoryDiff` 格式不兼容，触发 `Not all bytes consumed from byte[]`；现有文件由 HotAI 官方 `.class` 转存流程生成。 | 木卫二地下冰龙穴仍可在冰原和山脊区域生成，但不会以地下海或渊海陷窟为中心、也不会跨入其近邻 16 格范围；火星冰龙穴及所有地表龙巢不受影响。首次转换启动已记录 `Patched class` 并成功进入木卫二；仍需第二次启动确认 badiff 重放，以及在新生成区块验证结构分布。 |
+| `com/iafdragonfix/structure/DragonDenPiece.badiff` | 首次转换启动已确认 | `generateCave(...)` 仅在龙种为 `ICE_CAVE` 时创建 `#createdelight:blocks_ice_dragon_caves` 群系标签，并在实际地下中心的 X/Z 各偏移 `-16/0/16` 组成的 3×3 点阵读取群系；任一点命中标签就提前返回。配套标签包含 `northstar:europan_subsurface_ocean` 与 `alexscaves:abyssal_chasm`。首次错误补丁由 `BadiffCli diff` 生成 `BadiffFileDiff`，与 HotAI 使用 `DefaultSerialization` 读取的 `MemoryDiff` 格式不兼容，触发 `Not all bytes consumed from byte[]`；现有文件由 HotAI 官方 `.class` 转存流程生成。 | 木卫二地下冰龙穴仍可在冰原和山脊区域生成，但不会以地下海或渊海陷窟为中心、也不会跨入其近邻 16 格范围；火星冰龙穴及所有地表龙巢不受影响。首次转换启动已记录 `Patched class` 并成功进入木卫二；已游戏内验证第二次启动 badiff 重放与新生成区块结构分布。 |
 
 ## Quality Food 补丁
 
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
 | `de/cadentem/quality_food/mixin/BlockMixin.badiff` | 已还原 | `quality_food$applyQuality` 移除 `dropData == null` 时对掉落物调用 `QualityUtils.applyQuality(stack, null)` 的 fallback；新增 `Utils.isValidBlock(dropData.state())` 判断，只有存在 `DropData` 且来源方块有效时才按方块状态、品质、玩家和耕地信息应用品质。 | 避免无方块上下文的掉落物被 Quality Food 随机套品质；只让白名单/有效方块掉落继承品质。 |
+| `de/cadentem/quality_food/capability/LevelData.badiff` | 已修正品质丢失；离线回归 `pass=22 fail=0` | 品质被取走时的 `set` 守卫直接 `return`，不再调用 `remove()`，也不覆盖单槽 `lastRemoved`。`serializeNBT` 仍在 `Quality.ordinal()` 前跳过空值。三参数 `get(level, pos, true)` 若从 `lastRemoved` 取到 `null` 仍回退 `Quality.NONE`。 | 第一版守卫里的 `remove()` 会把品质真删掉，并打断多个品质物品合并时的转移链。现补丁只挡住空值写入，已有品质和转移链保留。 |
+| `de/cadentem/quality_food/capability/BlockData.badiff` | 已修正品质丢失；与 `LevelData` 同一轮回归 | `addQualityEntry` 在 `quality == null` 时写入 `Quality.NONE` 后继续入队，不再直接返回。`serializeNBT` 在 `quality()` 为空时仍跳过该条目。 | 第一版直接跳过会丢掉品质信息。现补丁用 `NONE` 兜底，条目还在。屠宰室产物品质不在这两个 badiff 里，由 `kubejs/server_scripts/mbd2/butchery_room.js` 在配方结束时调用 `QualityUtils.applyQuality`。 |
+
+## KubeJS 补丁
+
+| 文件 | 状态 | 具体改动 | 影响 |
+|---|---|---|---|
+| `dev/latvian/mods/kubejs/script/data/GeneratedData.badiff` | 已生成，待游戏内回归 | `GeneratedData.get()` 对 `data.get()` 得到的 `byte[]` 做空值保护：为 `null` 时改用长度为 0 的数组再构造 `ByteArrayInputStream`，随后仍按原逻辑在 `alwaysForget` 时 `forget()`。 | `Lazy` 工厂可返回 `null`，或 `forget()` 后再次读取；原实现会把 `null` 传给 `ByteArrayInputStream` 并在数据包重载时空指针。 |
+
+目标 JAR：`kubejs-forge-2001.6.5-build.24`（整合包当前运行版本）。官方包另有 `Lazy.badiff` 时仍保留本补丁作为 `get()` 的最后防线。
+
+## TACZ 网络缓存补丁
+
+| 文件 | 状态 | 具体改动 | 影响 |
+|---|---|---|---|
+| `com/tacz/guns/resource/CommonAssetsManager.badiff` | 已生成，待游戏内回归 | `getNetworkCache()` 组装 `ImmutableMap` 时，对每个 `INetworkCacheReloadListener.getNetworkCache()` 先判空，空则跳过 `put`。 | `apply()` 完成前 `networkCache` 字段为 `null`；`ImmutableMap.Builder.put` 不允许空值，同步资源时崩溃。 |
+| `com/tacz/guns/resource/manager/CommonDataManager.badiff` | 已生成，待游戏内回归 | `getNetworkCache()` 在字段仍为 `null` 时返回 `Map.of()`，不再把 `null` 交给上层。 | 与 `CommonAssetsManager` 配套，覆盖 `CommonDataManager` / 附件标签 / 配方过滤器等尚未 `apply()` 的监听器。 |
+
+## TACZ-addon 精致背包补丁
+
+| 文件 | 状态 | 具体改动 | 影响 |
+|---|---|---|---|
+| `com/mafuyu404/taczaddon/compat/SophisticatedBackpacksCompatInner.badiff` | 已生成，待游戏内回归 | `addBackpackItems` 在包装器或目标列表为 `null` 时直接返回；`getItemsFromBackpackBLock` 在取出 wrapper 后若为 `null` 则返回已有列表，不再对空包装调用背包物品接口。 | 精致背包未就绪或不在目标方块时，`invokeinterface` 空指针。 |
+
+## Bakeries 补丁
+
+| 文件 | 状态 | 具体改动 | 影响 |
+|---|---|---|---|
+| `com/renyigesai/bakeries/item/BreadKnifeItem.badiff` | 已还原 | 对应 `bakeries-1.20.1-forge-1.2.5.jar` 的 `BreadKnifeItem`。`lambda$processStoredItemUsingTool$3` 中对 `CuttingBoardRecipe.rollResults(RandomSource, int)` 的 `invokevirtual` 改为 `invokestatic BreadKnifeItem.rollResults(CuttingBoardRecipe, RandomSource, int)`；新增 private static `rollResults`，按 master 提交 `7c45ac4`（修复面包刀反射获取不到方法）语义改走 `getRollableResults()` + `ChanceResult.rollOutput(rand, fortune)`，跳过 `ItemStack.m_41619_()`（`isEmpty`）的空产物。 | 回避 Farmer's Delight 1.3.x 已移除的两参数 `rollResults`，修复使用面包刀处理掉落物时服务端 tick 崩溃（`NoSuchMethodError`）。产物判定与旧版 `rollResults` 一致，仅换成稳定 API。 |
+
+- 目标 JAR：`mods/bakeries-1.20.1-forge-1.2.5.jar`（Packwiz `file-id = 7395677`）。
+- 基线按 HotaiTransformer 归一化：`ClassReader → ClassNode → ClassWriter(0)`；`.badiff` 由 Hotai 1.0 的 `MemoryDiffs.diff` + `DefaultSerialization` 生成，反序列化重放与目标 class 逐字节一致。
+- ASM `BasicVerifier` 对补丁后 class 全部 21 个方法通过。
+- 历史依据：崩溃报告 `crash-2026-09-26_12.22.06-server.txt`，调用链 `BreadKnifeItem.processStoredItemUsingTool` → `CuttingBoardRecipe.rollResults(RandomSource, int)`；FD 1.3.2 仅有三参数 `rollResults(RandomSource, int, RecipeWrapper)`。上游 master 已在 `7c45ac4` 去掉版本探测/反射，直接本地滚动。
+- 适用性：与 `bakeries-1.20.1-forge-1.2.5` 强绑定。升级 Bakeries 或 Farmer's Delight 后必须重新扫描目标 class；若上游发布已含 `7c45ac4` 的 1.20.1 构建，优先升级并移除本补丁。
 
 ## Create New Age 补丁
 
@@ -597,54 +596,9 @@ static {
 |---|---|---|---|
 | `org/antarcticgardens/cna/content/ponders/CNAPonders.badiff` | 已还原 | 旧 `org/antarcticgardens/newage/CreateNewAgePonders` 补丁已按当前包和注册 API 重建。补丁移除 `WIRING`、`HEATING`、`REACTOR` 字段及标签注册；移除 `heating`、`heater`、`reactor`、`wires` 场景，涉及热管、热泵、太阳能加热板、斯特林引擎、加热器、核反应堆组件、电气连接器及各类导线；保留 `ELECTRICAL`、`MAGNETS`、`ELECTRICITY_GENERATION`、`MOTOR_EXTENSION`。配套 `energiser.nbt`、`generation.nbt`、`motor.nbt`、`motor_extension.nbt` 已按当前方块 id 和方块实体数据刷新。 | 延续 `e11d47f206c1e9cb28bdf506698c824586f9b00c` 的“删除 CNA 无用 Ponder”意图，并让补丁重新命中当前 Create New Age 版本。 |
 
-## KubeJS Lazy 并发缓存补丁
-
-目标：KubeJS `2001.6.5-build.24` 的 `dev/latvian/mods/kubejs/util/Lazy.java`；运行文件为 `hotai/dev/latvian/mods/kubejs/util/Lazy.badiff`。修复 [#1736](https://github.com/Jasons-impart/Create-Delight-Remake/issues/1736) 涉及的 get/forget 缓存竞态，采用 [CDC #131](https://github.com/Jasons-impart/Create-Delight-Core/pull/131) 的原子快照逻辑，直接放在 Lazy 内，不依赖 CDC。
-
-下面是相对原模组的源码级 diff，省略无关方法并统一格式；用于说明应修改的代码，不要求重新编译后与现有二进制逐字节相同。原 `factory`、`expires`、`value`、`cached` 字段保留，后两个不再使用；字段初始化会在原 `(Supplier, long)` 构造器中执行。
-
-```diff
- import java.util.function.Supplier;
-+import java.util.concurrent.atomic.AtomicReference;
-
- public class Lazy<T> implements Supplier<T> {
-+    private final AtomicReference<Object[]> createdelight$atomicState =
-+        new AtomicReference<>(new Object[0]);
-
-     public T get() {
--        if (expires > 0 && System.currentTimeMillis() > expires) {
--            cached = false;
--        } else if (cached) {
--            return value;
-+        Object[] observed = createdelight$atomicState.get();
-+        if (observed.length != 0 &&
-+            (expires <= 0 || System.currentTimeMillis() <= expires)) {
-+            return (T) observed[0];
-         }
--        value = factory.get();
--        cached = true;
--        return value;
-+        T computed = factory.get();
-+        createdelight$atomicState.compareAndSet(observed, new Object[]{computed});
-+        return computed;
-     }
-
-     public void forget() {
--        value = null;
--        cached = false;
-+        createdelight$atomicState.set(new Object[0]);
-     }
-```
-
-- 空数组表示未缓存，单元素数组保存值（包括合法 null）。get 返回同一快照的值或本次局部计算结果，避免 forget 在检查后清空 value 导致意外 null。
-- factory 在无缓存锁、无内部等待的情况下执行，只尝试一次 CAS。并发未命中允许重复计算，先成功 CAS 的结果进入缓存；不保证只调用一次 factory。绝对过期时间和异常传播规则保持不变。
-- forget 每次发布新的空数组身份，防止失效前的计算回填缓存；旧调用仍可返回自己的计算结果。避免用整方法同步在外部回调中引入锁顺序风险。
-- 验证记录（2026-09-18）：离线缓存/失效语义及 200 万轮并发测试通过，补丁版意外 null 为 0；受控锁顺序测试中旧同步版死锁、原子版完成。这不是游戏死锁复现。随后日志确认原子版加载，用户重启反馈暂未见问题；首次失败点为 Zeta 事件表扩容越界，游戏重载和长期回归仍待观察。
-- 升级 KubeJS 或 HotAI 时按上述 diff 复核并测试；上游修复后评估移除。以后由 CDC 承载同一修复时移除此 `.badiff`，避免叠加。补丁不会恢复已经丢失的物品。
-
 ## 维护建议
 
-- 对“已还原”条目，更新目标模组后应对照记录的源码改动适配，并验证启动及对应功能；`Patched class:` 只证明类经过转换。
+- 对“已还原”条目，更新目标模组后应重新运行 class diff 或至少确认启动日志中仍有对应 `Patched class:`。
 - 修改 `hotai/**/*.badiff` 后运行 `scripts/update-hotai-docs.ps1` 更新 `HOTAI_STATUS` 区块；`scripts/validate-knowledge-base.ps1` 会用 `-Check` 检查该区块是否过期。
 - 对“当前未还原”条目，优先判断目标模组是否已改名、移除或被替换；如果连续版本都没有启动日志命中，可以考虑清理对应 `.badiff`。
 - 超导连接器相关补丁要和 `kubejs/assets/createaddition/`、`kubejs/server_scripts/Create Addition/` 一起验证；只看 `hotai` class patch 不足以证明玩法完整。
