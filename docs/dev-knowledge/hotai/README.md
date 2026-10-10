@@ -1,6 +1,6 @@
 # hotai 补丁文档
 
-本目录是整合包 `hotai/` 二进制补丁的唯一开发知识专题入口。上游加载器项目名为 [Hotai](https://github.com/friendlyhj/Hotai)，本文档中以运行目录和包内资产名 `hotai` 指代整合包侧补丁系统。
+本目录是整合包 `hotai/` 二进制补丁的开发知识专题入口。上游加载器项目名为 [Hotai](https://github.com/friendlyhj/Hotai)，本文档中以运行目录和包内资产名 `hotai` 指代整合包侧补丁系统。
 
 ## 文档分工
 
