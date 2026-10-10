@@ -554,8 +554,8 @@ MMT 原 class 针对 Tetra 6.9 的局部变量名 `multiplier`，返回 `1000d`�
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
 | `de/cadentem/quality_food/mixin/BlockMixin.badiff` | 已还原 | `quality_food$applyQuality` 移除 `dropData == null` 时对掉落物调用 `QualityUtils.applyQuality(stack, null)` 的 fallback；新增 `Utils.isValidBlock(dropData.state())` 判断，只有存在 `DropData` 且来源方块有效时才按方块状态、品质、玩家和耕地信息应用品质。 | 避免无方块上下文的掉落物被 Quality Food 随机套品质；只让白名单/有效方块掉落继承品质。 |
-| `de/cadentem/quality_food/capability/LevelData.badiff` | 已修正品质丢失；离线回归 `pass=22 fail=0` | 品质被取走时的 `set` 守卫直接 `return`，不再调用 `remove()`，也不覆盖单槽 `lastRemoved`。`serializeNBT` 仍在 `Quality.ordinal()` 前跳过空值。三参数 `get(level, pos, true)` 若从 `lastRemoved` 取到 `null` 仍回退 `Quality.NONE`。 | 第一版守卫里的 `remove()` 会把品质真删掉，并打断多个品质物品合并时的转移链。现补丁只挡住空值写入，已有品质和转移链保留。绑定 916288 字节的 `quality_food-1.20.1-2.4.3-all.jar`；911060 字节构建会 `Not all bytes consumed`。 |
-| `de/cadentem/quality_food/capability/BlockData.badiff` | 已修正品质丢失；与 `LevelData` 同一轮回归 | `addQualityEntry` 在 `quality == null` 时写入 `Quality.NONE` 后继续入队，不再直接返回。`serializeNBT` 在 `quality()` 为空时仍跳过该条目。 | 第一版直接跳过会丢掉品质信息。现补丁用 `NONE` 兜底，条目还在。JAR 绑定与 `LevelData` 相同。屠宰室产物品质不在这两个 badiff 里，由 `kubejs/server_scripts/mbd2/butchery_room.js` 在配方结束时调用 `QualityUtils.applyQuality`。 |
+| `de/cadentem/quality_food/capability/LevelData.badiff` | 已修正品质丢失；离线回归 `pass=22 fail=0` | 品质被取走时的 `set` 守卫直接 `return`，不再调用 `remove()`，也不覆盖单槽 `lastRemoved`。`serializeNBT` 仍在 `Quality.ordinal()` 前跳过空值。三参数 `get(level, pos, true)` 若从 `lastRemoved` 取到 `null` 仍回退 `Quality.NONE`。 | 第一版守卫里的 `remove()` 会把品质真删掉，并打断多个品质物品合并时的转移链。现补丁只挡住空值写入，已有品质和转移链保留。 |
+| `de/cadentem/quality_food/capability/BlockData.badiff` | 已修正品质丢失；与 `LevelData` 同一轮回归 | `addQualityEntry` 在 `quality == null` 时写入 `Quality.NONE` 后继续入队，不再直接返回。`serializeNBT` 在 `quality()` 为空时仍跳过该条目。 | 第一版直接跳过会丢掉品质信息。现补丁用 `NONE` 兜底，条目还在。屠宰室产物品质不在这两个 badiff 里，由 `kubejs/server_scripts/mbd2/butchery_room.js` 在配方结束时调用 `QualityUtils.applyQuality`。 |
 
 ## KubeJS 补丁
 
