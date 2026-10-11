@@ -1,0 +1,44 @@
+
+#菜肴方块形态
+[dishes]
+	#测试功能，尚未完善。
+	#设为 true 时，允许玩家潜行右键放置菜肴的方块形态。
+	dish_placement_enabled = false
+
+#世界生成
+[worldgen]
+	#东北小院里的小建筑（灶棚、鸡架、水井、菜窖、柴垛等）是否生成。
+	#设为 false 时只生成院子主体，不生成零件。
+	yard_parts_enabled = true
+	#允许在新生成的村庄农田中，把一部分原版作物替换为本模组作物。
+	#设为 false 时不替换，不影响原版及其他模组的规则。
+	village_farm_crops_enabled = false
+	#村庄农田允许生成的作物，填写播种物品的完整注册 ID。
+	#默认包含全部 15 种农田作物，空列表表示不生成任何本模组农田作物。
+	village_farm_allowed_crops = ["northeast_china_delight:soybean", "northeast_china_delight:corn_seeds", "northeast_china_delight:napa_cabbage_seeds", "northeast_china_delight:cucumber_seeds", "northeast_china_delight:green_onion_seeds", "northeast_china_delight:green_radish_seeds", "northeast_china_delight:eggplant_seeds", "northeast_china_delight:green_beans_seeds", "northeast_china_delight:buckwheat", "northeast_china_delight:red_bean", "northeast_china_delight:peanut", "northeast_china_delight:sweet_potato", "northeast_china_delight:green_pepper_seeds", "northeast_china_delight:red_chili_seeds"]
+	#野生木耳在任意群系橡木上的生成概率，取值 0~1；0 表示不生成。
+	#只影响新生成区块；已生成区块不会回溯。
+	#Range: 0.0 ~ 1.0
+	wild_wood_ear_oak_chance = 0.05
+	#野生木耳在黑森林深色橡木、白桦林 / 原始桦木林白桦上的生成概率，取值 0~1；0 表示不生成。
+	#只影响新生成区块；已生成区块不会回溯。
+	#Range: 0.0 ~ 1.0
+	wild_wood_ear_forest_chance = 0.07
+
+#箱子战利品
+[chest_loot]
+	#允许本模组物品在箱子战利品中生成，包括结构、村庄和东北小院箱子。
+	#设为 false 时保留原版及其他模组的物品，不影响钓鱼、实体或方块掉落。
+	enabled = true
+	#箱子战利品允许生成的本模组物品，填写完整注册 ID。
+	#默认包含全部 69 种现有候选，空列表表示不生成任何本模组箱子物品。
+	allowed_items = ["northeast_china_delight:animal_oil", "northeast_china_delight:blood_sausage", "northeast_china_delight:braised_pork_ribs", "northeast_china_delight:braised_sea_cucumber_scallion", "northeast_china_delight:buckwheat", "northeast_china_delight:buckwheat_sack", "northeast_china_delight:chicken_frame", "northeast_china_delight:chili_oil", "northeast_china_delight:chili_sauce", "northeast_china_delight:cold_noodle_sheet", "northeast_china_delight:cooking_oil", "northeast_china_delight:corn_flour", "northeast_china_delight:corn_seeds", "northeast_china_delight:corn_seeds_sack", "northeast_china_delight:crispy_pork_strips", "northeast_china_delight:cucumber_seeds", "northeast_china_delight:dried_tofu", "northeast_china_delight:eggplant_seeds", "northeast_china_delight:fish_sauce", "northeast_china_delight:ginseng_seeds", "northeast_china_delight:green_beans_seeds", "northeast_china_delight:green_onion_seeds", "northeast_china_delight:green_pepper_seeds", "northeast_china_delight:green_radish_seeds", "northeast_china_delight:grilled_chicken_frame", "northeast_china_delight:grilled_oil_edge", "northeast_china_delight:hairtail", "northeast_china_delight:mung_bean_sheet", "northeast_china_delight:napa_cabbage", "northeast_china_delight:napa_cabbage_seeds", "northeast_china_delight:oil_edge", "northeast_china_delight:old_style_crispy_pork", "northeast_china_delight:oyster", "northeast_china_delight:peanut", "northeast_china_delight:peanut_butter", "northeast_china_delight:pig_blood", "northeast_china_delight:pig_liver", "northeast_china_delight:pork_hock", "northeast_china_delight:pork_intestine", "northeast_china_delight:pork_ribs", "northeast_china_delight:pork_vermicelli_stew_bowl", "northeast_china_delight:red_bean", "northeast_china_delight:red_bean_sack", "northeast_china_delight:red_chili_seeds", "northeast_china_delight:red_sausage", "northeast_china_delight:rice_sausage", "northeast_china_delight:salt", "northeast_china_delight:salted_fish", "northeast_china_delight:salted_fish_flatbread", "northeast_china_delight:sauerkraut_seafood_stew", "northeast_china_delight:sea_cucumber", "northeast_china_delight:shrimp", "northeast_china_delight:shrimp_paste", "northeast_china_delight:smoked_meat_platter", "northeast_china_delight:sour_dough", "northeast_china_delight:soy_paste", "northeast_china_delight:soy_sauce", "northeast_china_delight:soybean", "northeast_china_delight:soybean_sack", "northeast_china_delight:sweet_potato", "northeast_china_delight:vermicelli", "northeast_china_delight:vinegar", "northeast_china_delight:white_vinegar"]
+
+#海洋取水
+[sea_water]
+	#1：在海洋中取水获得海水桶。
+	#2：在海洋中取水，获得带海水标记的普通水桶，功能同海水桶
+	#3：不干预正常取水
+	#Range: 1 ~ 3
+	bucket_mode = 3
+

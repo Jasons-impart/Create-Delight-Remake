@@ -1,5 +1,8 @@
 ServerEvents.recipes((e) => {
   let {farmersdelight} = e.recipes
+  // 猪剥皮产出的肥肉可用于屠夫工艺原有脂肪配方
+  e.shapeless("butchercraft:fat", ["northeast_china_delight:pork_fat"])
+    .id("createdelight:crafting/pork_fat_to_fat")
   // 动物胶水洗生成粘液球
   e.recipes.create.splashing(
     [

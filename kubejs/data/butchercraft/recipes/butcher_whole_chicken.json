@@ -1,0 +1,117 @@
+{
+  "type": "butchercraft:butcher_block",
+  "carcass": {
+    "item": "minecraft:chicken"
+  },
+  "group": "",
+  "jei": [
+    {
+      "item": "butchercraft:chicken_breast"
+    },
+    {
+      "item": "butchercraft:chicken_leg"
+    },
+    {
+      "item": "butchercraft:chicken_thigh"
+    },
+    {
+      "item": "butchercraft:chicken_wing"
+    },
+    {
+      "item": "butchercraft:chicken_scraps"
+    },
+    {
+      "item": "minecraft:bone_meal"
+    },
+    {
+      "item": "northeast_china_delight:chicken_frame"
+    }
+  ],
+  "tools": [
+    {
+      "count": 1,
+      "damage": true,
+      "loot_table": "butchercraft:butcherblock/butcher_chicken",
+      "models": [
+        {
+          "IsBlock": true,
+          "animation": {
+            "location": {
+              "x": {
+                "speed": 1.0
+              }
+            },
+            "rotation": {},
+            "scale": {
+              "x": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              },
+              "y": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              },
+              "z": {
+                "max": 1.0,
+                "min": 1.0,
+                "speed": 1.0
+              }
+            }
+          },
+          "location": "butchercraft:meathook/chicken_gutted"
+        },
+        {
+          "animation": {
+            "location": {
+              "x": {
+                "max": 8.0,
+                "min": -8.0
+              },
+              "y": {
+                "max": 8.0,
+                "min": -8.0
+              },
+              "z": {
+                "max": 8.0,
+                "min": -8.0
+              }
+            },
+            "rotation": {
+              "z": {
+                "loop": true,
+                "max": 45.0,
+                "min": -45.0,
+                "pingpong": true,
+                "speed": 0.05
+              }
+            },
+            "scale": {
+              "x": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              },
+              "y": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              },
+              "z": {
+                "max": 0.5,
+                "min": -0.5,
+                "speed": 1.0
+              }
+            }
+          },
+          "location": "butchercraft:butcher_knife"
+        }
+      ],
+      "tool": {
+        "item": "butchercraft:butcher_knife"
+      },
+      "uses": 12
+    }
+  ]
+}

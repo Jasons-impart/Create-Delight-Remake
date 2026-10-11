@@ -18,7 +18,7 @@
         "item": "butchercraft:leather_scrap"
       },
       {
-        "item": "butchercraft:fat"
+        "item": "northeast_china_delight:pork_fat"
       },
       {
         "item": "butchercraft:heart"
@@ -30,7 +30,7 @@
         "item": "butchercraft:kidney"
       },
       {
-        "item": "butchercraft:liver"
+        "item": "northeast_china_delight:pig_liver"
       },
       {
         "item": "butchercraft:stomach"
@@ -39,7 +39,7 @@
         "item": "butchercraft:lung"
       },
       {
-        "item": "butchercraft:tripe"
+        "item": "northeast_china_delight:pork_intestine"
       },
       {
         "item": "butchercraft:sinew"
@@ -51,7 +51,16 @@
         "item": "butchercraft:pork_scraps"
       },
       {
+        "item": "northeast_china_delight:pork_ribs"
+      },
+      {
         "item": "butchercraft:pork_ribs"
+      },
+      {
+        "item": "northeast_china_delight:pork_hock"
+      },
+      {
+        "item": "northeast_china_delight:oil_edge"
       },
       {
         "item": "butchercraft:pork_roast"

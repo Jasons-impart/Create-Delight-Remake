@@ -235,7 +235,7 @@ ServerEvents.recipes(e => {
         ], 1800)
 
     fermenting(e,[
-        Fluid.of("youkaishomecoming:soy_sauce", 1000)
+        Fluid.of("northeast_china_delight:soy_sauce", 1000)
     ], [
         "youkaishomecoming:soybean",
         "youkaishomecoming:soybean",

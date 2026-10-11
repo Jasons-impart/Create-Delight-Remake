@@ -6,7 +6,7 @@
         { "type": "minecraft:item", "name": "farmersdelight:rice", "weight": 16, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 10, "max": 24 } }] },
         { "type": "minecraft:item", "name": "minecraft:dried_kelp", "weight": 12, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 8, "max": 18 } }] },
         { "type": "minecraft:item", "name": "youkaishomecoming:roe", "weight": 9, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 4, "max": 8 } }] },
-        { "type": "minecraft:item", "name": "youkaishomecoming:soy_sauce_bottle", "weight": 8, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 3 } }] }
+        { "type": "minecraft:item", "name": "northeast_china_delight:soy_sauce", "weight": 8, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 3 } }] }
       ]
     },
     {

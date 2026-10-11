@@ -57,7 +57,7 @@ ServerEvents.recipes(e => {
         let iner = "createdelight:incomplete_hosomaki"
         e.recipes.create.sequenced_assembly(output, "minecraft:dried_kelp", [
                 e.recipes.create.deploying(iner, [iner, ingredient]),
-                e.recipes.create.filling(iner, [iner, Fluid.of("youkaishomecoming:soy_sauce", 250)]),
+                e.recipes.create.filling(iner, [iner, Fluid.of("northeast_china_delight:soy_sauce", 250)]),
                 e.recipes.create.deploying(iner, [iner, "createdelight:empty_riceball"])
             ]
         )
@@ -76,7 +76,7 @@ ServerEvents.recipes(e => {
         ingredients.forEach(ingredient => {
             recipes.push(e.recipes.create.deploying(iner, [iner, ingredient]))
         })
-        recipes.push(e.recipes.create.filling(iner, [iner, Fluid.of("youkaishomecoming:soy_sauce", 250)]))
+        recipes.push(e.recipes.create.filling(iner, [iner, Fluid.of("northeast_china_delight:soy_sauce", 250)]))
         recipes.push(e.recipes.create.deploying(iner, [iner, "createdelight:empty_riceball"]))
         recipes.push(e.recipes.create.deploying(iner, [iner, "createdelight:empty_riceball"]))
         // recipes.push(e.recipes.create.deploying(iner, [iner, base]))
@@ -173,7 +173,7 @@ ServerEvents.recipes(e => {
     {
         let iner = "youkaishomecoming:california_roll"
         e.recipes.create.sequenced_assembly('youkaishomecoming:volcano_roll', iner, [
-            e.recipes.create.filling(iner, [iner, Fluid.of("youkaishomecoming:soy_sauce", 250)]),
+            e.recipes.create.filling(iner, [iner, Fluid.of("northeast_china_delight:soy_sauce", 250)]),
             e.recipes.create.deploying(iner, [iner, '#forge:raw_fishes/tuna']),
             e.recipes.create.deploying(iner, [iner, 'youkaishomecoming:otoro']),
             e.recipes.create.deploying(iner, [iner, '#forge:raw_fishes/tuna']),

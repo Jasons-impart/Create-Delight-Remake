@@ -1307,7 +1307,13 @@
 				}
 				{
 					id: "2A81D7D0AC25D598"
-					item: "youkaishomecoming:soy_sauce_bottle"
+					item: {
+						Count: 1
+						id: "northeast_china_delight:soy_sauce"
+						tag: {
+							Damage: 0
+						}
+					}
 					random_bonus: 1
 					type: "item"
 				}

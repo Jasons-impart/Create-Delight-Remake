@@ -1,0 +1,13 @@
+name = "Northeast China Delight"
+filename = "northeast_china_delight-3.2.0+1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "5249e1abc4d1ed64813748318cf239ab7a989eee"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9310046
+project-id = 1733076
