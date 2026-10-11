@@ -1,8 +1,8 @@
 name = "Create Delight Core"
-filename = "Create-Delight-Core-1.20.1-2.2.16l.jar"
+filename = "Create-Delight-Core-1.20.1-dev.jar"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/Create-Delight-Core-1.20.1-2.2.16l.jar"
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/Create-Delight-Core-1.20.1-dev.jar"
 hash-format = "sha256"
 hash = "9e9ca3683929fa98678449ec5651e4c35c47ce265347b7d79de96fa714ebcdab"
