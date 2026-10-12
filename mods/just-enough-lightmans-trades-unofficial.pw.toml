@@ -1,0 +1,13 @@
+name = "Just Enough Lightman's Trades [Unofficial]"
+filename = "just_enough_lightmans_trades-1.20.1-1.0.2.jar"
+side = "client"
+
+[download]
+hash-format = "sha1"
+hash = "5c9d3349c593519ecb503ed63f1520d321b21c21"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9115781
+project-id = 1736464
