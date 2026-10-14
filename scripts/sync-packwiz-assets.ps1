@@ -3,7 +3,7 @@ param(
     [string[]]$MetadataRoots = @("mods", "resourcepacks", "shaderpacks", "tacz"),
     [ValidateSet("client", "server", "all")]
     [string]$Side = "client",
-    [string]$PackwizUrl = "https://github.com/Jasons-impart/packwiz/releases/latest/download/packwiz.exe",
+    [string]$PackwizUrl,
     [string]$InstallerUrl = "https://github.com/packwiz/packwiz-installer/releases/latest/download/packwiz-installer.jar",
     [string]$PackwizFilesRef = $env:PACKWIZ_FILES_REF,
     [string]$PackwizFilesRawPrefix = $env:PACKWIZ_FILES_RAW_PREFIX,
@@ -20,11 +20,22 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 $ProgressPreference = "SilentlyContinue"
 
+# Windows PowerShell 5.1 has no $IsWindows; treat it as Windows.
+$IsWindowsPlatform = $env:OS -eq "Windows_NT"
+$isWindowsVariable = Get-Variable -Name IsWindows -ErrorAction SilentlyContinue
+if ($null -ne $isWindowsVariable) {
+    $IsWindowsPlatform = [bool]$isWindowsVariable.Value
+}
+$PackwizFileName = if ($IsWindowsPlatform) { "packwiz.exe" } else { "packwiz" }
+if (-not $PackwizUrl) {
+    $PackwizUrl = "https://github.com/Jasons-impart/packwiz/releases/latest/download/$PackwizFileName"
+}
+
 $RepoRoot = Split-Path -Parent $PSScriptRoot
 $WorkRoot = Join-Path $RepoRoot ".cache\packwiz-sync"
 $ToolsRoot = Join-Path $WorkRoot "tools"
 $PackRoot = Join-Path $WorkRoot "pack"
-$PackwizExe = Join-Path $ToolsRoot "packwiz.exe"
+$PackwizExe = Join-Path $ToolsRoot $PackwizFileName
 $InstallerJarPath = Join-Path $ToolsRoot "packwiz-installer.jar"
 $ServeLog = Join-Path $WorkRoot "serve.log"
 $ServeErrLog = Join-Path $WorkRoot "serve.err.log"
@@ -414,6 +425,11 @@ function Resolve-PythonCommand {
         }
     }
 
+    $python3Cmd = Get-Command python3 -ErrorAction SilentlyContinue
+    if ($python3Cmd) {
+        return $python3Cmd.Source
+    }
+
     throw "Python was not found. Install Python so the local static server can run."
 }
 
@@ -507,6 +523,13 @@ try {
     $pythonExe = Resolve-PythonCommand
     Ensure-Tool -Url $PackwizUrl -Destination $PackwizExe
     Ensure-Tool -Url $InstallerUrl -Destination $InstallerJarPath
+    if (-not $IsWindowsPlatform) {
+        # Without the executable bit pwsh hands the file to xdg-open and reports success.
+        chmod +x $PackwizExe
+        if ($LASTEXITCODE -ne 0) {
+            throw "chmod +x $PackwizExe exited with code $LASTEXITCODE."
+        }
+    }
 
     if (Test-Path $PackRoot) {
         Remove-Item $PackRoot -Recurse -Force
@@ -556,6 +579,10 @@ try {
         if ($LASTEXITCODE -ne 0) {
             throw "packwiz refresh exited with code $LASTEXITCODE."
         }
+        $indexPath = Join-Path $PackRoot "index.toml"
+        if (-not (Test-Path -LiteralPath $indexPath) -or -not (Select-String -LiteralPath $indexPath -Pattern '^\[\[files\]\]' -Quiet)) {
+            throw "packwiz refresh produced an empty index ($indexPath)."
+        }
     }
     finally {
         Pop-Location
@@ -569,7 +596,18 @@ try {
         ('"{0}"' -f $PackRoot)
     )
     Write-Status ("Starting local static server on port {0}..." -f $port)
-    $ServeProcess = Start-Process -FilePath $pythonExe -ArgumentList $pythonArgs -WorkingDirectory $PackRoot -WindowStyle Hidden -RedirectStandardOutput $ServeLog -RedirectStandardError $ServeErrLog -PassThru
+    $serveArgs = @{
+        FilePath               = $pythonExe
+        ArgumentList           = $pythonArgs
+        WorkingDirectory       = $PackRoot
+        RedirectStandardOutput = $ServeLog
+        RedirectStandardError  = $ServeErrLog
+        PassThru               = $true
+    }
+    if ($IsWindowsPlatform) {
+        $serveArgs.WindowStyle = "Hidden"
+    }
+    $ServeProcess = Start-Process @serveArgs
 
     $packUrl = "http://127.0.0.1:$port/pack.toml"
     $serverReady = $false
