@@ -117,7 +117,7 @@ Schema.prototype = {
 			} else if (key.length === 3) {
 				let complex = new ComplexKey()
 				key[2](complex)
-				component = complex.build(components)
+				component = complex.build(components).key(key[0])
 			} else {
 				component = key[0](components, global.CDStartupJavaClasses.probejs$$RecipeComponentBuilder)
 			}
