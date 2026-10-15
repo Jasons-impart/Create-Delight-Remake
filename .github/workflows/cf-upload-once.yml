@@ -1,0 +1,40 @@
+name: One-shot CurseForge client upload
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Release tag (e.g. v0.5.0.16)
+        required: true
+        default: v0.5.0.16
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Client zip from GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          VER="${{ inputs.version }}"
+          mkdir -p release-assets
+          gh release download "$VER" -R "${{ github.repository }}" \
+            -p "Client-Create-Delight-Remake-${VER}.zip" \
+            -D release-assets
+          ls -lh release-assets/
+      - name: Upload to CurseForge
+        uses: henkelmax/upload-curseforge-modpack-action@v1.0.0
+        with:
+          api-token: ${{ secrets.CURSEFORGE_TOKEN }}
+          project-id: "1059094"
+          modpack-path: release-assets/Client-Create-Delight-Remake-${{ inputs.version }}.zip
+          display-name: Client-Create-Delight-Remake-${{ inputs.version }}
+          game-version: "1.20.1"
+          release-type: release
+          changelog: |
+            ### v0.5.0.16 已发布
+            - 添加TerrainGraph优化生成
+            - 移除TrueUUID与世界预览
+            - 更新ZSTDNET并修多项问题
+
+            GitHub Release: https://github.com/Jasons-impart/Create-Delight-Remake/releases/tag/v0.5.0.16
+          changelog-format: markdown
