@@ -1,11 +1,8 @@
 name: One-shot CurseForge client upload
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: Release tag (e.g. v0.5.0.16)
-        required: true
-        default: v0.5.0.16
+  push:
+    branches: [chore/cf-upload-v0.5.0.16]
+    paths: [.github/workflows/cf-upload-once.yml]
 jobs:
   upload:
     runs-on: ubuntu-latest
@@ -15,19 +12,21 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          VER="${{ inputs.version }}"
+          VER=v0.5.0.16
           mkdir -p release-assets
           gh release download "$VER" -R "${{ github.repository }}" \
             -p "Client-Create-Delight-Remake-${VER}.zip" \
             -D release-assets
           ls -lh release-assets/
+          test -f "release-assets/Client-Create-Delight-Remake-${VER}.zip"
       - name: Upload to CurseForge
+        id: cf
         uses: henkelmax/upload-curseforge-modpack-action@v1.0.0
         with:
           api-token: ${{ secrets.CURSEFORGE_TOKEN }}
           project-id: "1059094"
-          modpack-path: release-assets/Client-Create-Delight-Remake-${{ inputs.version }}.zip
-          display-name: Client-Create-Delight-Remake-${{ inputs.version }}
+          modpack-path: release-assets/Client-Create-Delight-Remake-v0.5.0.16.zip
+          display-name: Client-Create-Delight-Remake-v0.5.0.16
           game-version: "1.20.1"
           release-type: release
           changelog: |
