@@ -7,7 +7,7 @@ jobs:
   upload:
     runs-on: ubuntu-latest
     steps:
-      - name: Download Client zip + probe APIs + upload
+      - name: Attempt legacy upload with hardcoded gameVersions
         env:
           CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
           GH_TOKEN: ${{ github.token }}
@@ -17,81 +17,32 @@ jobs:
           ZIP="Client-Create-Delight-Remake-${VER}.zip"
           mkdir -p release-assets
           gh release download "$VER" -R "${{ github.repository }}" -p "$ZIP" -D release-assets
-          ls -lh "release-assets/$ZIP"
 
-          echo "=== Core API: project + recent files ==="
-          curl -sS -H "Accept: application/json" -H "x-api-key: ${CURSEFORGE_TOKEN}" \
-            "https://api.curseforge.com/v1/mods/1059094" | python3 -c 'import sys,json;d=json.load(sys.stdin)["data"];print(d["id"],d["slug"],d["name"])'
-          curl -sS -H "Accept: application/json" -H "x-api-key: ${CURSEFORGE_TOKEN}" \
-            "https://api.curseforge.com/v1/mods/1059094/files?pageSize=20" \
-            -o /tmp/cf-files.json
-          python3 - <<'PY'
+          # From existing CF file metadata: gameVersions ["1.20.1","Forge"]
+          # Legacy IDs commonly: 1.20.1=9990, Forge=7498 (verify via failing soft)
+          METADATA=$(python3 - <<'PY'
           import json
-          files=json.load(open("/tmp/cf-files.json")).get("data",[])
-          print("file_count", len(files))
-          for f in files[:15]:
-              print(f.get("id"), f.get("fileName"), f.get("displayName"), f.get("fileDate"))
-              if "0.5.0.16" in (f.get("fileName") or "") or "0.5.0.16" in (f.get("displayName") or ""):
-                  print("ALREADY_HAS_0.5.0.16", f.get("id"), f.get("downloadUrl"))
+          meta={
+            "changelog": "### v0.5.0.16\n- TerrainGraph\n- Remove TrueUUID/World Preview\n- ZSTDNET fixes\n\nGH: https://github.com/Jasons-impart/Create-Delight-Remake/releases/tag/v0.5.0.16",
+            "changelogType": "markdown",
+            "displayName": "Client-Create-Delight-Remake-v0.5.0.16",
+            "gameVersions": [9990, 7498],
+            "releaseType": "release",
+          }
+          print(json.dumps(meta))
           PY
-
-          echo "=== Resolve game version ids (Core API) ==="
-          curl -sS -H "x-api-key: ${CURSEFORGE_TOKEN}" \
-            "https://api.curseforge.com/v1/games/432/versions" -o /tmp/cf-versions.json
-          python3 - <<'PY'
-          import json
-          data=json.load(open("/tmp/cf-versions.json")).get("data",[])
-          # data is list of version types with versions
-          want=[]
-          for group in data:
-              for v in group.get("versions", group if isinstance(group, list) else []):
-                  if not isinstance(v, dict):
-                      continue
-                  name=v.get("name") or ""
-                  if name in ("1.20.1", "Forge", "Forge 1.20.1"):
-                      want.append((name, v.get("id"), v))
-          # flatter structure sometimes
-          if not want:
-              # try alternate: each item has name/slug
-              def walk(o):
-                  if isinstance(o, dict):
-                      n=o.get("name") or o.get("slug") or ""
-                      if n in ("1.20.1","Forge") or n.startswith("1.20.1"):
-                          yield n, o.get("id"), o
-                      for vv in o.values():
-                          yield from walk(vv)
-                  elif isinstance(o, list):
-                      for i in o:
-                          yield from walk(i)
-              want=list(walk(data))[:20]
-          print("matches", want[:20])
-          # Also print type names
-          if data and isinstance(data[0], dict):
-              print("top_keys", data[0].keys())
-              print("sample", json.dumps(data[0])[:400])
-          PY
-
-          echo "=== Legacy versions endpoint ==="
-          for hdr in "X-Api-Token" "x-api-key"; do
-            code=$(curl -sS -o /tmp/leg-ver.json -w "%{http_code}" -H "${hdr}: ${CURSEFORGE_TOKEN}" \
-              "https://minecraft.curseforge.com/api/game/versions" || echo 000)
-            echo "legacy GET versions with ${hdr}: HTTP ${code}"
-            head -c 200 /tmp/leg-ver.json; echo
-          done
-
-          # Pick 1.20.1 + Forge ids from Core API game versions types endpoint
-          curl -sS -H "x-api-key: ${CURSEFORGE_TOKEN}" \
-            "https://api.curseforge.com/v1/games/432/version-types" -o /tmp/cf-vtypes.json
-          python3 - <<'PY'
-          import json,urllib.request,os
-          # Get versions filtered
-          import subprocess
-          token=os.environ["CURSEFORGE_TOKEN"]
-          # Use mods/1059094 already knows gameVersions on a recent file
-          files=json.load(open("/tmp/cf-files.json")).get("data",[])
-          if files:
-              gv=files[0].get("gameVersions") or []
-              gvi=files[0].get("gameVersionIds") or []
-              print("sample_file_gameVersions", gv)
-              print("sample_file_gameVersionIds", gvi)
-          PY
+          )
+          echo "metadata=$METADATA"
+          code=$(curl -sS -o /tmp/cf-up.json -w "%{http_code}" \
+            -H "X-Api-Token: ${CURSEFORGE_TOKEN}" \
+            -F "metadata=${METADATA};type=application/json" \
+            -F "file=@release-assets/${ZIP};type=application/zip" \
+            "https://minecraft.curseforge.com/api/projects/1059094/upload-file" || echo 000)
+          echo "upload HTTP $code"
+          head -c 500 /tmp/cf-up.json; echo
+          if [ "$code" = "200" ]; then
+            python3 -c 'import json;d=json.load(open("/tmp/cf-up.json"));print("FILE_ID",d.get("id"));print("URL",d)'
+            exit 0
+          fi
+          echo "UPLOAD_FAILED token_type_or_api"
+          exit 1
