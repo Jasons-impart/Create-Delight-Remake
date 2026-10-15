@@ -1979,9 +1979,9 @@
     "name": "Remove Stardust Labs Intro Message",
     "version": "unknown"
   },
-  "zstdnet-1.20.1-forge-1.4.8.jar": {
+  "zstdnet-1.20.1-forge-1.5.0.jar": {
     "modId": "zstdnet",
     "name": "ZSTDNET",
-    "version": "1.20.1-forge-1.4.8"
+    "version": "1.20.1-forge-1.5.0"
   }
 }
