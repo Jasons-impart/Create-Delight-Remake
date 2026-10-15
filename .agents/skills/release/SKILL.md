@@ -77,6 +77,7 @@ heartbeat 使用适合主动跟进的短间隔。除合并、完成、失败或�
 - 不直接发布或复制 CDC JAR；CDC 源码与 Packwiz 资产分别遵循 `CDC-mod-src/AGENTS.md` 和 `/packwiz-assets`。
 - 脚本可恢复中断的草稿 Release；已公开的同名 Release 不可重建。
 - 运行脚本前需要 PowerShell 7、Git、GitHub CLI 登录和干净或可安全暂存的工作树。
+- 正式版（非测试版）tag 触发的 `release-assets` job 会在 GitHub Release 资产上传后，尝试将 `Client-*.zip`（CurseForge 元数据包）上传到 CurseForge 项目 [create-delight-remake](https://www.curseforge.com/minecraft/modpacks/create-delight-remake)（id `1059094`）。需仓库或组织 Secret `CURSEFORGE_TOKEN`（与 Create-Delight-Core 同名）；未配置则跳过并打 notice，不使发布失败。测试版不上传 CurseForge。不要用该流程回传已发布版本。
 
 ## 按需参考
 
