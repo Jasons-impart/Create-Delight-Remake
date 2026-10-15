@@ -17,6 +17,7 @@
 | 常驻约束与模块入口 | 根目录或模块内的 `AGENTS.md`。 |
 | 可重复、命令密集或脆弱的流程 | `.agents/skills/` 中对应 skill。 |
 | 已归纳的历史根因与绕路 | [lessons-learned.md](../lessons-learned.md)。 |
+| 官网反馈分诊与回复话术 | [feedback-handling.md](../faq/feedback-handling.md)、[feedback-reply-templates.md](../faq/feedback-reply-templates.md)。 |
 | 当前设计、研究和取舍 | `docs/<专题>/README.md`；单页专题可直接位于 `docs/`。 |
 | 与仓库实现直接相关的技术专题 | `docs/dev-knowledge/<专题>/README.md`。 |
 | 尚未实施的分阶段设计 | `docs/plan/`。 |
@@ -54,4 +55,6 @@
 | `docs/plan/mmt-curios-stage-progression-plan.md` | 内容设计计划 | MMT 模块化饰品的阶段开放、流派调律、重复制作和数值边界设计。 |
 | `docs/plan/workstation-compat-and-machine-fixes-plan.md` | 内容设计计划 | 妖怪归家工作站配方兼容整理、动力砂轮修复/迁移附魔工业机械砂轮、杠杆锤误毁铁砧修复，以及 Supplementaries 肥皂与 Butchercraft 香皂分别保留的决定。 |
 | `docs/tetra-design-reference-2026-06-22.md` | 设计参考 | Tetra/MMT 数值、材料和模块参考。 |
+| [feedback-handling.md](../faq/feedback-handling.md) | 官网客服经验 | 官网问题反馈的状态选择、分诊顺序与主题处置；随人工打样持续更新。 |
+| [feedback-reply-templates.md](../faq/feedback-reply-templates.md) | 官网客服话术 | 短回复模板，与 feedback-handling 配套。 |
 | `docs/announcement.md` | 发布素材 | 稳定版本公告片段，不作为开发知识入口。 |
