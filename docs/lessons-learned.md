@@ -56,6 +56,12 @@ release-v048x ──→ feat/branch-048x ──PR──→ release-v048x  ✅ 1 
 - **根因**：直接调用 `pwsh` 会在只安装 Windows PowerShell 的机器上失败；回退后，PowerShell 5.1 又会把 Git 换行警告转换成 `NativeCommandError`，触发全局 `ErrorActionPreference = Stop`。默认文本编码还可能令中文知识检查失真。
 - **正确做法**：Codex 与 ZCode 共用 `scripts/run-knowledge-hook.py`，优先 PowerShell 7、Windows 回退系统 PowerShell。报告脚本仅在 Git 调用局部允许 stderr 警告，并继续检查退出码；知识文件显式使用 UTF-8，含中文的钩子脚本使用 UTF-8 BOM，避免 PowerShell 5.1 按系统代码页解析脚本。启动器保留实际脚本退出码，不把失败伪装成成功。
 
+## Linux 下 packwiz 同步静默成功与 hook 无法执行
+
+- **日期**：2026-10-14。
+- **Problem**：Linux 上 `sync-packwiz-assets.ps1` 下载的 packwiz 没有可执行位，pwsh 会把它交给 xdg-open，`$LASTEXITCODE` 仍为 0，脚本输出 "Sync finished successfully" 但 index 为空、未下载任何文件；`install-git-hooks.ps1` 的 here-string 继承 `.ps1` 的 CRLF（`.gitattributes` 强制），生成的 `#!/bin/sh\r` hook 报 `cannot exec`。
+- **Fix/Lesson**：非 Windows 下载后 `chmod +x`，并以 `index.toml` 至少含一个 `[[files]]` 作为成功判据，不能只看退出码；写给 sh 的内容在 `.ps1` 中生成时必须显式转 LF。平台判断沿用 `$env:OS`+`$IsWindows` 回退，兼容 PowerShell 5.1。
+
 ## 多行补丁不要经原生命令参数转发
 
 - 本次通过 PowerShell → RTK → 原生命令传递多行补丁时，曾出现执行成功但 Java 字符串双引号丢失；语言键、文本和注册 ID 因而变成非法表达式。
