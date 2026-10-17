@@ -59,6 +59,22 @@
 
 状态：`done`
 
+## Quality Food 存档序列化 NPE（LevelData.serializeNBT）
+
+识别：崩溃堆栈含 `de.cadentem.quality_food.capability.LevelData.serializeNBT`（存档保存时 NPE）。例：`UUWFHY`、`XPP39S`（及同栈如 `BQ33WQ`）。
+
+已在整合包 **v0.5.0.16** 修复（HotAI PR #2458：`LevelData.badiff` / `BlockData.badiff`）。**v0.5.0.15 及更早**出现本堆栈时：
+
+```
+最新版本 v0.5.0.16 已修复 Quality Food 存档保存时空指针崩溃，请升级后复测。临时解决方案可参考 https://pd.qq.com/s/3fzphb0w
+```
+
+状态：`done`
+
+**必附临时方案链接**（教训：`UUWFHY` / `XPP39S`）：本堆栈回复须同时含升级说明与上述临时方案链接，不可只写「请升级」。
+
+若同时确认有自加模组：先套「用户自行增删 / 升级模组」规则（点名多余模组，状态多为 `wont_fix`）；若仍附带本技术说明，在技术段前加「下面的解答不保证正确性」，再写升级 + 临时方案链接。
+
 ## 安装 / 下载失败（网络）
 
 ```
