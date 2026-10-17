@@ -54,8 +54,9 @@
 
 ### Quality Food 存档序列化 NPE（LevelData.serializeNBT）
 
-- **现象**：存档保存 / server tick 崩溃；堆栈含 `quality_food` 的 `LevelData.serializeNBT`（`Quality.ordinal()` 因 `HashMap.get` 为 null）。例：`UUWFHY`、`XPP39S`。
-- **处置**：已修于整合包 **v0.5.0.16**（HotAI PR #2458）。对 **v0.5.0.15 及更早** 同栈反馈：`done`，套用模板「升级到 v0.5.0.16 + 临时方案链接」。**临时方案链接必须附上**（不可只写升级）。链接：<https://pd.qq.com/s/3fzphb0w>。
+- **现象**（内部识别）：存档保存 / server tick 崩溃；堆栈含 `quality_food` 的 `LevelData.serializeNBT`（`Quality.ordinal()` 因 `HashMap.get` 为 null）。例：`UUWFHY`、`XPP39S`。
+- **处置**：已修于整合包 **v0.5.0.16**（HotAI PR #2458）。对 **v0.5.0.15 及更早** 同栈反馈：`done`，套用模板对外句「最新版本已修复这个问题，请升级后复测。临时解决方案可参考 https://pd.qq.com/s/3fzphb0w」。**临时方案链接必须附上**（不可只写升级）。
+- **对外**：勿抛玩家无概念的技术细节（类名/空指针等）；要么先用人话说明再提，要么略过。
 - **叠加改包**：先按自改包规则点名多余模组（多为 `wont_fix`）；若仍附技术说明，技术段前加「下面的解答不保证正确性」，再写升级 + 临时方案。
 - **状态**：官方包同栈 → `done`；改包且只给改包结论 → `wont_fix`。
 
