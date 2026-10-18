@@ -465,7 +465,7 @@ jobs:
           api-token: ${{ secrets.CURSEFORGE_TOKEN }}
           project-id: "1059094"
           modpack-path: release-assets/Client-${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}.zip
-          display-name: Client-${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}
+          display-name: ${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}
           game-version: ${{ env.MC_VERSION }}
           release-type: release
           changelog: |
