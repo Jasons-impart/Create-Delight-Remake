@@ -7,19 +7,58 @@ jobs:
   upload:
     runs-on: ubuntu-latest
     steps:
-      - name: Attempt legacy upload with hardcoded gameVersions
+      - name: Diagnose token + upload v0.5.0.16 Client
         env:
           CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
+          python3 - <<'PY'
+          import os, re
+          raw = os.environ.get("CURSEFORGE_TOKEN") or ""
+          t = raw.strip()
+          print("token_present", bool(raw))
+          print("token_len_raw", len(raw))
+          print("token_len_stripped", len(t))
+          print("has_leading_trailing_ws", raw != t)
+          print("has_internal_newline", "\n" in raw or "\r" in raw)
+          print("starts_with_2a_core_style", t.startswith("$2a$") or t.startswith("$2b$") or t.startswith("$2y$"))
+          print("looks_hex", bool(re.fullmatch(r"[0-9a-fA-F]+", t)) and len(t) >= 32)
+          print("looks_alnum", bool(re.fullmatch(r"[A-Za-z0-9._\\-]+", t)) and len(t) >= 16)
+          print("has_dollar", "$" in t)
+          # never print token
+          PY
+
+          # Probe Core API (x-api-key) and legacy (X-Api-Token) with stripped token
+          TOKEN="$(python3 -c 'import os; print(os.environ["CURSEFORGE_TOKEN"].strip(), end="")')"
+          export CURSEFORGE_TOKEN="$TOKEN"
+
+          echo "=== Core API project (x-api-key) ==="
+          code=$(curl -sS -o /tmp/cf-core.json -w "%{http_code}" \
+            -H "x-api-key: ${CURSEFORGE_TOKEN}" \
+            -H "Accept: application/json" \
+            "https://api.curseforge.com/v1/mods/1059094" || echo 000)
+          echo "core HTTP $code"
+          head -c 200 /tmp/cf-core.json; echo
+
+          echo "=== Legacy game versions (X-Api-Token) ==="
+          code=$(curl -sS -o /tmp/cf-ver.json -w "%{http_code}" \
+            -H "X-Api-Token: ${CURSEFORGE_TOKEN}" \
+            "https://minecraft.curseforge.com/api/game/versions" || echo 000)
+          echo "legacy_versions HTTP $code"
+          head -c 300 /tmp/cf-ver.json; echo
+
+          if [ "$code" != "200" ]; then
+            echo "BLOCKER: legacy API still rejects token (need CurseForge Upload API Token from console.curseforge.com → Settings → API Tokens, not Core API key)."
+            exit 1
+          fi
+
           VER=v0.5.0.16
           ZIP="Client-Create-Delight-Remake-${VER}.zip"
           mkdir -p release-assets
           gh release download "$VER" -R "${{ github.repository }}" -p "$ZIP" -D release-assets
+          ls -la "release-assets/${ZIP}"
 
-          # From existing CF file metadata: gameVersions ["1.20.1","Forge"]
-          # Legacy IDs commonly: 1.20.1=9990, Forge=7498 (verify via failing soft)
           METADATA=$(python3 - <<'PY'
           import json
           meta={
@@ -39,10 +78,10 @@ jobs:
             -F "file=@release-assets/${ZIP};type=application/zip" \
             "https://minecraft.curseforge.com/api/projects/1059094/upload-file" || echo 000)
           echo "upload HTTP $code"
-          head -c 500 /tmp/cf-up.json; echo
+          head -c 800 /tmp/cf-up.json; echo
           if [ "$code" = "200" ]; then
-            python3 -c 'import json;d=json.load(open("/tmp/cf-up.json"));print("FILE_ID",d.get("id"));print("URL",d)'
+            python3 -c 'import json;d=json.load(open("/tmp/cf-up.json"));fid=d.get("id");print("FILE_ID",fid);print("CF_URL https://www.curseforge.com/minecraft/modpacks/create-delight-remake/files/"+str(fid) if fid else "")'
             exit 0
           fi
-          echo "UPLOAD_FAILED token_type_or_api"
+          echo "UPLOAD_FAILED"
           exit 1
