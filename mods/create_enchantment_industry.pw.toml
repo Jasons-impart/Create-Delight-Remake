@@ -1,13 +1,13 @@
 name = "Create: Enchantment Industry"
-filename = "create-enchantment-industry-2.5.4.jar"
+filename = "create-enchantment-industry-2.5.4b.jar"
 side = "both"
 
 [download]
 hash-format = "sha1"
-hash = "6b6129812bbcffc12f1a7d253f0413664576e1b6"
+hash = "87612feace11044eb257e4dedb443ce66b57b4d5"
 mode = "metadata:curseforge"
 
 [update]
 [update.curseforge]
-file-id = 8938849
+file-id = 9104689
 project-id = 688768

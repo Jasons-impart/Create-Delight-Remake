@@ -173,9 +173,9 @@
     },
     {
         "matchItems": [
-            "youkaishomecoming:tea_seeds"
+            "farmersrespite:tea_seeds"
         ],
-        "resultItems": "farmersrespite:tea_seeds"
+        "resultItems": "youkaishomecoming:tea_seeds"
     },
     {
         "matchItems": [

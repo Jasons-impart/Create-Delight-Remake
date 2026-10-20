@@ -3,7 +3,7 @@
     {
       "rolls": 2,
       "entries": [
-        { "type": "minecraft:item", "name": "farmersrespite:tea_seeds", "weight": 16, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 4, "max": 9 } }] },
+        { "type": "minecraft:item", "name": "youkaishomecoming:tea_seeds", "weight": 16, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 4, "max": 9 } }] },
         { "type": "minecraft:item", "name": "farmersrespite:green_tea_leaves", "weight": 14, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 8, "max": 16 } }] },
         { "type": "minecraft:item", "name": "farmersrespite:yellow_tea_leaves", "weight": 12, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 6, "max": 14 } }] },
         { "type": "minecraft:item", "name": "farmersrespite:black_tea_leaves", "weight": 12, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 6, "max": 14 } }] }

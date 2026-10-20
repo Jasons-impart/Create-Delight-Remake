@@ -694,8 +694,13 @@
       return h;
     }
 
+    function apiUrl(path) {
+      const base = location.pathname.replace(/\/+$/, "");
+      return base + "/api/" + String(path || "").replace(/^\//, "");
+    }
+
     async function api(path, opt) {
-      const res = await fetch("/admin/ifgfsgfbijuzoxzq/api/" + path, Object.assign({
+      const res = await fetch(apiUrl(path), Object.assign({
         credentials: "include",
         headers: headers(opt && opt.json ? { "Content-Type": "application/json" } : null)
       }, opt || {}));
@@ -1571,7 +1576,7 @@
           fd.append("file", add.file);
           fd.append("dest", add.path);
           fd.append("side", add.side);
-          const res = await fetch("/admin/ifgfsgfbijuzoxzq/api/private", {
+          const res = await fetch(apiUrl("private"), {
             method: "POST", credentials: "include", headers: headers(), body: fd
           });
           const data = await res.json().catch(() => ({}));

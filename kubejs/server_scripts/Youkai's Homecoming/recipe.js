@@ -41,7 +41,6 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:black_tea_leaves_from_black_tea_bag",
         "youkaishomecoming:mayonnaise_bottle",
         "youkaishomecoming:butter",
-        "youkaishomecoming:green_tea_leaves_from_tea_leaves_drying",
         "vinery:red_grape",
         "vinery:white_grape",
         "vinery:white_grape_bag",
@@ -112,7 +111,6 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:sakura_mochi",
         "youkaishomecoming:seven_colored_yokan"
     ]}, "minecraft:cherry_leaves", "trailandtales_delight:cherry_petal")
-    e.replaceInput({}, "youkaishomecoming:tea_leaves", "#forge:tea_leaves/green")
     e.replaceInput({id: "youkaishomecoming:longevity_noodles"}, "#forge:pasta", 'createdelight:vermicelli')
 
     e.forEachRecipe({type: "youkaishomecoming:drying_rack"}, recipe => {

@@ -28,6 +28,11 @@ ItemEvents.rightClicked("createdelight:unopened_order", e => {
     let draftStack = e.player.getItemInHand(e.hand)
     let otherStack = `${e.hand}` == "MAIN_HAND" ? e.player.offHandItem : e.player.mainHandItem
 
+    // 配对操作只由主手事件处理，避免副手事件再次添加同一份材料。
+    if (`${e.hand}` != "MAIN_HAND"
+        && (otherStack.is("createdelight:order_seal") || otherStack.is("createdelight:order_clause")))
+        return
+
     if (e.player.isShiftKeyDown() && otherStack.empty) {
         if (global.Order.resetDraftDirections(draftStack)) {
             e.player.tell(Text.translate("message.createdelight.order_draft_directions_cleared"))
@@ -72,8 +77,16 @@ ItemEvents.rightClicked("createdelight:order_seal", e => {
     let sealStack = e.player.getItemInHand(e.hand)
     let draftStack = `${e.hand}` == "MAIN_HAND" ? e.player.offHandItem : e.player.mainHandItem
 
-    if (!global.Order.applyDraftSeal(draftStack, sealStack))
+    if (!draftStack.is("createdelight:unopened_order"))
         return
+    if (`${e.hand}` != "MAIN_HAND")
+        return
+
+    if (!global.Order.applyDraftSeal(draftStack, sealStack)) {
+        e.player.tell(Text.translate("message.createdelight.order_draft_material_failed"))
+        e.cancel()
+        return
+    }
 
     if (!e.player.isCreative())
         sealStack.shrink(1)
@@ -86,6 +99,8 @@ ItemEvents.rightClicked("createdelight:order_clause", e => {
     let draftStack = `${e.hand}` == "MAIN_HAND" ? e.player.offHandItem : e.player.mainHandItem
 
     if (!draftStack.is("createdelight:unopened_order"))
+        return
+    if (`${e.hand}` != "MAIN_HAND")
         return
     if (!global.Order.applyDraftClause(draftStack, clauseStack)) {
         e.player.tell(Text.translate("message.createdelight.order_draft_clause_failed"))

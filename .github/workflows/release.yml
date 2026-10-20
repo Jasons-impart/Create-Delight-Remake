@@ -342,8 +342,10 @@ jobs:
     env:
       MODPACK_NAME: ${{ needs.common-steps.outputs.modpack_name }}
       MODPACK_VERSION: ${{ needs.common-steps.outputs.modpack_ver }}
+      MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
       PREVIOUS_VERSION: ${{ needs.patch-tasks.outputs.previous_version }}
       IS_STABLE_RELEASE: ${{ needs.common-steps.outputs.is_stable_release }}
+      CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
       GH_TOKEN: ${{ github.token }}
     steps:
       - name: 创建或确认草稿 Release
@@ -450,3 +452,33 @@ jobs:
               exit 1
             fi
           done
+
+      # 正式版且配置了 CURSEFORGE_TOKEN 时，上传 CurseForge 格式客户端包。
+      # 测试版不上传。未配置 secret 时跳过，不使发布失败。
+      # 项目：https://www.curseforge.com/minecraft/modpacks/create-delight-remake （id 1059094）
+      # 勿用本步骤回传已发布版本；仅随新 tag 的 release-assets job 生效。
+      - name: 上传客户端整合包至 CurseForge
+        id: curseforge_upload
+        if: env.IS_STABLE_RELEASE == 'true' && env.CURSEFORGE_TOKEN != ''
+        uses: henkelmax/upload-curseforge-modpack-action@v1.0.0
+        with:
+          api-token: ${{ secrets.CURSEFORGE_TOKEN }}
+          project-id: "1059094"
+          modpack-path: release-assets/Client-${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}.zip
+          display-name: ${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}
+          game-version: ${{ env.MC_VERSION }}
+          release-type: release
+          changelog: |
+            ${{ env.MODPACK_VERSION }} 正式版客户端整合包（CurseForge 元数据包）。
+            GitHub Release: https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}
+          changelog-format: markdown
+      - name: 跳过 CurseForge 上传（测试版或未配置 token）
+        if: env.IS_STABLE_RELEASE != 'true' || env.CURSEFORGE_TOKEN == ''
+        env:
+          CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
+        run: |
+          if [[ "${IS_STABLE_RELEASE}" != "true" ]]; then
+            echo "测试版不上传 CurseForge，已跳过。"
+          else
+            echo "::notice::未配置 secrets.CURSEFORGE_TOKEN，跳过 CurseForge 上传。请在仓库或组织 Secrets 中添加 CURSEFORGE_TOKEN（与 Create-Delight-Core 同名）。"
+          fi

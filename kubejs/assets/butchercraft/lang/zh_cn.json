@@ -90,7 +90,7 @@
   "butchercraft.advancement.rabbit.name": "敲头",
   "butchercraft.advancement.sausage.desc": "制作香肠",
   "butchercraft.advancement.sausage.name": "来点香肠吧！",
-  "butchercraft.advancement.soap.desc": "制作肥皂",
+  "butchercraft.advancement.soap.desc": "制作香皂",
   "butchercraft.advancement.soap.name": "你臭了，洗个澡吧。",
   "butchercraft.advancement.stink.desc": "获得恶臭效果",
   "butchercraft.advancement.stink.name": "臭气熏天",
@@ -189,7 +189,7 @@
   "item.butchercraft.salt_rabbit_carcass": "盐灰兔",
   "item.butchercraft.sausage_linked": "香肠串",
   "item.butchercraft.sheep_hood": "羊头罩",
-  "item.butchercraft.soap": "肥皂",
+  "item.butchercraft.soap": "香皂",
   "item.butchercraft.splotched_bunny_ears": "斑点兔耳",
   "item.butchercraft.splotched_bunny_tail": "斑点兔尾",
   "item.butchercraft.splotched_rabbit_carcass": "斑点死兔",
@@ -401,5 +401,5 @@
   "entity.minecraft.villager.butchercraft.slaughter_profession": "肉铺老板",
   "entity.minecraft.villager.slaughter": "肉铺老板",
   "itemGroup.butchercraft.items": "屠宰工艺物品",
-  "effect.butchercraft.blood_lust": "血源统领"
+  "effect.butchercraft.blood_lust": "嗜血"
 }

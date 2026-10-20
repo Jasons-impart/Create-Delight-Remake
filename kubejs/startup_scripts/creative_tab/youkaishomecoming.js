@@ -1,6 +1,5 @@
 StartupEvents.modifyCreativeTab("youkaishomecoming:youkais_homecoming", e => {
   e.remove([
-    'youkaishomecoming:tea_leaves',
     'youkaishomecoming:tea_leaf_bag',
     'youkaishomecoming:black_tea',
     'youkaishomecoming:green_tea',

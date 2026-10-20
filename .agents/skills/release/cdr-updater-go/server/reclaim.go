@@ -1,0 +1,197 @@
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+	"os"
+	"path/filepath"
+	"strings"
+)
+
+func reclaimStorage(data, currentVersion string, dropExtracts bool) (string, error) {
+	live := liveObjectHashes(data)
+	cacheItems := dropStalePacks(filepath.Join(data, "packs"), live)
+	objects, objectBytes, err := pruneObjects(filepath.Join(data, "objects"), live)
+	if err != nil {
+		return "", err
+	}
+	cacheCount, err := pruneCache(filepath.Join(data, "cache"), currentVersion, dropExtracts)
+	if err != nil {
+		return "", err
+	}
+	cacheItems += cacheCount
+	if objects == 0 && cacheItems == 0 {
+		return "", nil
+	}
+	return fmt.Sprintf("已回收对象库 %d 个（%s），下载缓存 %d 项", objects, formatSize(int64(objectBytes)), cacheItems), nil
+}
+
+func liveObjectHashes(data string) map[string]struct{} {
+	live := map[string]struct{}{}
+	addManifestHashes(filepath.Join(data, "manifests", "client.json"), live)
+	addManifestHashes(filepath.Join(data, "manifests", "server.json"), live)
+	return live
+}
+
+func addManifestHashes(path string, live map[string]struct{}) {
+	buf, err := os.ReadFile(path)
+	if err != nil {
+		return
+	}
+	var doc struct {
+		Files []struct {
+			SHA256 string `json:"sha256"`
+		} `json:"files"`
+	}
+	if json.Unmarshal(buf, &doc) != nil {
+		return
+	}
+	for _, file := range doc.Files {
+		sha := strings.ToLower(strings.TrimSpace(file.SHA256))
+		if isObjectHash(sha) {
+			live[sha] = struct{}{}
+		}
+	}
+}
+
+func dropStalePacks(packs string, live map[string]struct{}) uint64 {
+	entries, err := os.ReadDir(packs)
+	if err != nil {
+		return 0
+	}
+	var removed uint64
+	for _, entry := range entries {
+		name := entry.Name()
+		path := filepath.Join(packs, name)
+		if strings.HasPrefix(name, "build-") {
+			_ = os.RemoveAll(path)
+			removed++
+			continue
+		}
+		if !strings.HasSuffix(name, ".json") || entry.IsDir() {
+			continue
+		}
+		keep := false
+		if buf, err := os.ReadFile(path); err == nil {
+			var doc struct {
+				SHA256 string `json:"sha256"`
+			}
+			if json.Unmarshal(buf, &doc) == nil {
+				sha := strings.ToLower(strings.TrimSpace(doc.SHA256))
+				_, keep = live[sha]
+			}
+		}
+		if keep {
+			continue
+		}
+		_ = os.Remove(path)
+		removed++
+	}
+	return removed
+}
+
+func pruneObjects(objects string, live map[string]struct{}) (uint64, uint64, error) {
+	info, err := os.Stat(objects)
+	if err != nil || !info.IsDir() || len(live) == 0 {
+		return 0, 0, nil
+	}
+	prefixes, err := os.ReadDir(objects)
+	if err != nil {
+		return 0, 0, err
+	}
+	var removed, bytes uint64
+	for _, prefix := range prefixes {
+		if !prefix.IsDir() {
+			continue
+		}
+		dir := filepath.Join(objects, prefix.Name())
+		files, err := os.ReadDir(dir)
+		if err != nil {
+			continue
+		}
+		for _, file := range files {
+			if file.IsDir() {
+				continue
+			}
+			name := strings.ToLower(file.Name())
+			if !isObjectHash(name) {
+				continue
+			}
+			if _, ok := live[name]; ok {
+				continue
+			}
+			path := filepath.Join(dir, file.Name())
+			if stat, err := os.Stat(path); err == nil {
+				bytes += uint64(stat.Size())
+			}
+			_ = os.Remove(path)
+			removed++
+		}
+		_ = os.Remove(dir)
+	}
+	return removed, bytes, nil
+}
+
+func pruneCache(cache, currentVersion string, dropExtracts bool) (uint64, error) {
+	info, err := os.Stat(cache)
+	if err != nil || !info.IsDir() {
+		return 0, nil
+	}
+	versions, err := os.ReadDir(cache)
+	if err != nil {
+		return 0, err
+	}
+	var removed uint64
+	for _, entry := range versions {
+		if !entry.IsDir() {
+			continue
+		}
+		path := filepath.Join(cache, entry.Name())
+		if currentVersion != "" && entry.Name() != currentVersion {
+			_ = os.RemoveAll(path)
+			removed++
+			continue
+		}
+		n, err := pruneCacheDir(path, dropExtracts)
+		if err != nil {
+			return removed, err
+		}
+		removed += n
+	}
+	return removed, nil
+}
+
+func pruneCacheDir(dir string, dropExtracts bool) (uint64, error) {
+	entries, err := os.ReadDir(dir)
+	if err != nil {
+		return 0, nil
+	}
+	var removed uint64
+	for _, entry := range entries {
+		name := entry.Name()
+		drop := name == "packwiz" ||
+			strings.HasSuffix(name, ".partial") ||
+			strings.HasSuffix(name, ".cdrtmp") ||
+			strings.HasSuffix(name, ".parts") ||
+			(dropExtracts && (name == "client-raw" || name == "server-raw" || strings.HasSuffix(name, ".complete")))
+		if !drop {
+			continue
+		}
+		_ = os.RemoveAll(filepath.Join(dir, name))
+		removed++
+	}
+	return removed, nil
+}
+
+func isObjectHash(value string) bool {
+	if len(value) != 64 {
+		return false
+	}
+	for i := 0; i < len(value); i++ {
+		c := value[i]
+		if !((c >= '0' && c <= '9') || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F')) {
+			return false
+		}
+	}
+	return !strings.ContainsAny(value, "/.\\")
+}

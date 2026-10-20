@@ -1,6 +1,6 @@
 # 工作站配方兼容整理与机器问题修复计划
 
-> 状态：规划中，尚未实施。本文是三项近期工作的统一计划入口，各自落地后按内容写入 `docs/dev-knowledge/content-map.md` 或 `docs/dev-knowledge/compatibility-patches.md`。
+> 状态：第 1–3、5 项规划中；第 4 项取消合并，保留两种物品并区分名称。本文是近期工作的统一计划入口，各自落地后按内容写入 `docs/dev-knowledge/content-map.md` 或 `docs/dev-knowledge/compatibility-patches.md`。
 
 ## 总览
 
@@ -9,7 +9,8 @@
 | 1 | 妖怪归家工作站配方与整合包工作站配方兼容整理 | 内容兼容 | 已有大量零散兼容改动，待系统性盘点与对齐 |
 | 2 | 动力砂轮无法正常运行（修复，或迁移到附魔工业机械砂轮） | Bug 修复 / 功能迁移 | 已知异常，根因未定位；迁移为备选方案 |
 | 3 | 杠杆锤锤烂铁砧 | Bug 修复 | 已知异常，根因未定位 |
-| 4 | Supplementaries 与 Butchercraft 肥皂合并（功能 + 内容） | 内容整合 | 两种肥皂并存，已有部分配方牵线，未做实质合并 |
+| 4 | Supplementaries 肥皂与 Butchercraft 香皂分别保留 | 命名区分 | 已取消合并；保留各自功能、配方和物品 ID |
+| 5 | Farmer’s Spell ’n Spell Book 乐事兼容补全 | 模组兼容 | 静态审查已完成，待补料理属性、作物分类及专项配方适配，并评估三明治、去重与残留配方 |
 
 ---
 
@@ -135,56 +136,41 @@
 
 ---
 
-## 4. Supplementaries 与 Butchercraft 肥皂合并（功能 + 内容）
+## 4. Supplementaries 肥皂与 Butchercraft 香皂分别保留
 
-### 背景
+### 决定
 
-两个模组各有一种“肥皂”，名称相同、用途部分重叠但功能侧重点不同，整合包内并存造成内容重复：
+2026-10-07 取消功能与物品合并，按用途区分中文名称，保留各自交互与现有内容。
 
-| | Supplementaries 肥皂 | Butchercraft 肥皂 |
+| 物品 ID | 中文名称 | 用途 |
 |---|---|---|
-| 物品 ID | `supplementaries:soap` | `butchercraft:soap` |
-| 原生配方 | 水桶 + 4×ash + 猪排 → 6 个 | 猪油 + 骨粉 + 花 → 1 个 |
-| 食用 | 可食用（`SOAP_FOOD`），成就“汰渍洗衣球挑战” | 可食用，食用时 `curePotionEffects` 清除 Butchercraft 可清洗效果 |
-| 世界交互 | 清洗脏玻璃/地图/黑板/活塞/尖刺/药箭等一组 washing 配方；洗掉史莱姆（`ISlimeable`） | 无 |
-| 衍生内容 | `soap_block`（9 合 1 压缩）、`soap_water`、泡泡吹管 | 无衍生方块；是 `SoapableMobEffect` 系（恶臭 `pungent_reek`、脏手、血溅等）的唯一 `getCurativeItems` 清洗物 |
-| 其他引用 | 模组自身 advancements、loot | `kubejs/data/createdelight/loot_tables/orders/dwarven_feast_hall.json` 掉落；成就“你臭了，洗个澡吧。” |
+| `supplementaries:soap` | 肥皂 | 清洁方块、物品和实体，保留吃肥皂彩蛋及肥皂块、肥皂水等衍生内容 |
+| `butchercraft:soap` | 香皂 | 长按右键搓洗，完成后清除 Butchercraft 可清洗效果 |
 
-整合包现有牵线（`kubejs/server_scripts/Butchercraft/bug_fix.js`）：
+两者的右键行为不同：Supplementaries 有食用流程，Butchercraft 使用自定义搓洗动画。分别保留可避免为统一物品增加操作分流和动画兼容。
 
-- 移除 `supplementaries:soap` 原生配方，改为 `createdelight:soap`：水桶 + 4×`supplementaries:ash` + `butchercraft:lard` → 1 个 `supplementaries:soap`（把 Butchercraft 猪油接进 Supplementaries 肥皂）。
-- `butchercraft:soap` 自身配方（猪油 + 骨粉 + 花）仍在，两种肥皂继续并存。
+### 当前实现
 
-### 目标
-
-- 功能合并：一种肥皂同时具备两侧能力——Supplementaries 的清洗/洗史莱姆/洗涤配方/肥皂块等衍生物，以及 Butchercraft 的“食用后清除恶臭等可清洗效果”。
-- 内容合并：玩家只看到一种“肥皂”；合成路径收敛为整合包材料链（猪油/灰烬等）；另一侧物品从 JEI/创造标签/掉落中消失或变为等价替换。
-- 衍生内容保留：`soap_block`、`soap_water`、泡泡等不因合并丢失。
-- 成就与任务文案指向合并后的唯一肥皂，且只描述当前规则。
-
-### 候选方向
-
-| 方案 | 内容 | 取舍 |
-|---|---|---|
-| A. 以 `supplementaries:soap` 为唯一肥皂（推荐） | OEI 把 `butchercraft:soap` 替换为 `supplementaries:soap`；Mixin/事件把 Butchercraft 可清洗效果的 `getCurativeItems` 扩到 Supplementaries 肥皂，并让食用补上 `curePotionEffects`；配方、掉落、成就改指向 | Supplementaries 侧衍生物与洗涤配方无需迁移；需要 CDC/兼容层补食用清洗逻辑 |
-| B. 以 `butchercraft:soap` 为唯一肥皂 | 反向合并洗涤配方与肥皂块 | `soap_block`/washing 配方全部改 ID，成本更高，不推荐 |
-| C. 新造整合包自定义肥皂 | 两模组物品都替换为 `createdelight:soap` | 完全可控但要重做模型/配方/全部引用，仅在 A 被上游限制卡住时考虑 |
-
-### 实施步骤（待展开）
-
-1. 确认合并载体（默认方案 A）：Butchercraft `SoapableMobEffect.getCurativeItems()` 硬编码 `ButchercraftItems.SOAP`，需确认用 Mixin 扩列表是否稳定，以及 Supplementaries 肥皂食用回调能否挂上清除效果。
-2. 统一配方：保留/调整 `createdelight:soap` 为唯一合成入口；移除或改写 `butchercraft:soap` 原生配方；核对产出数量（原生一侧 6 个、一侧 1 个，需定统一产量）。
-3. 内容收敛：OEI replacement（`kubejs/data/oei/replacements/`）合并物品显示与 JEI；隐藏多余的创造标签条目；掉落表（`dwarven_feast_hall` 等）改指唯一肥皂。
-4. 体验收束：两侧成就（吃肥皂、制肥皂/除臭）的触发条件改指合并物品；tooltip/语言文件只保留一份“肥皂”文案。
-5. 回归：食用除恶臭、清洗脏玻璃/地图、洗史莱姆、肥皂块合成与拆解、泡泡吹管、订单掉落五条路径。
-
-### 开放问题
-
-- 合并后产量与配方成本以哪侧为基线（现配方用猪油 + 灰烬，产量 1；Butchercraft 原生产量 1；Supplementaries 原生产量 6）。
-- 食用动画/音效用哪一侧；是否保留“吃肥皂”作为彩蛋成就。
-- Butchercraft 面具防恶臭与肥皂除恶臭的关系是否在合并后仍成立。
+- 名称由 `kubejs/assets/{namespace}/lang/zh_cn.json` 提供；`item.butchercraft.soap` 为“香皂”，`item.supplementaries.soap` 为“肥皂”。
+- 保留 `kubejs/server_scripts/Butchercraft/bug_fix.js` 中水桶 + 4 个灰 + 猪油 → 1 个 Supplementaries 肥皂的整合包配方。
+- 保留 Butchercraft 的猪油 + 骨粉 + 花 → 1 个香皂配方，以及任务、订单掉落和成就各自的物品引用。
 
 ---
+
+## 5. Farmer’s Spell ’n Spell Book 乐事兼容补全
+
+**状态**：规划中，尚未实施；基于 2026-10-11 对 `farmers_spell` 1.0.5 的静态审查，游戏效果待实测。按 [乐事类模组兼容规则](../development.md)推进，实施时复核当前版本资源。
+
+**工作范围与顺序**：
+
+1. 优先补充料理乐事原料属性：神莓、紫晶甜菜、霜皮蛋、紫晶糖、圣灵黄油、食灵奶酪、充能焦糖、猩红豆腐；切制疣猪皮和食灵百味瓶按肉类或调料用途另行设计，不因不可直接食用而排除。
+2. 明确紫晶甜菜及其种子的季节与湿度分类，决定四季可种或指定季节后接入 Ecliptic Seasons；缺少显式分类不等于无法种植。
+3. 核实 `blood_chuanchuan`、`foodgeist_steak_nugget`、`hogskin_stew`、`lava_chicken` 四条可疑残留配方。前三条含空物品或标签 ID，四条输出未找到注册项；现有日志无相关记录，先确认加载行为，再决定清理或补全。
+4. 逐项对齐原生配方与整合包同类基底、食物工作站及 Create 工序，优先检查闪烁十字面包、紫晶糖、红丝绒蛋糕；保留必要的魔法强化条件，机械锯等补充路线按实际需求设计。
+5. 评估三明治专属夹馅外观、厚度和涂抹属性；非可食原料需明确是否适合作为夹馅。仅对适合的流体设计酱料兼容，不将三种酒或源初琼浆自动视为酱料。
+6. 对比圣灵黄油、食灵奶酪、充能焦糖、龙息披萨与现有同类食物的效果及用途，再决定是否去重；保留独特魔法功能，确认重复后再删除配方并处理物品显示。
+
+**已有支持与验证**：五条原生 FD 刀切配方已支持普通刀和 Tetra 刀，可食物品已有基础三明治夹馅能力。苹果挞与神莓派切片的输入、输出正确，仅配方文件名对调，不列为功能修复。落地后检查配方加载日志、料理属性、季节/湿度规则、工作站制作、刀切与三明治效果，并进行游戏实测。
 
 ## 关联文档
 

@@ -151,6 +151,19 @@ func runJavaBuild() error {
 	if runErr != nil {
 		return fmt.Errorf("构建失败: %w", runErr)
 	}
+	version := tomlKey(configPath, "official", "version")
+	data := tomlKey(configPath, "server", "data_dir")
+	if data == "" {
+		data = "data"
+	}
+	if !filepath.IsAbs(data) {
+		data = filepath.Join(filepath.Dir(configPath), data)
+	}
+	if summary, err := reclaimStorage(data, version, true); err != nil {
+		note("存储回收失败: " + err.Error())
+	} else if summary != "" {
+		note(summary)
+	}
 	return nil
 }
 

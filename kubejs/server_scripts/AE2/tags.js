@@ -26,6 +26,7 @@ ServerEvents.tags("block", e => {
   e.add("ae2:growth_acceleratable",
     "farmersrespite:tea_bush",
     "farmersrespite:small_tea_bush",
+    "youkaishomecoming:tea",
     "neapolitan:vanilla_vine",
     "neapolitan:strawberry_bush",
     "neapolitan:small_banana_frond",

@@ -1,5 +1,18 @@
 ServerEvents.recipes(e => {
     const {vintageimprovements, kubejs, create, createmetallurgy} = e.recipes
+    kubejs.shaped("createdelightcore:smart_humidity_regulator", [
+        "ABA",
+        "CDC",
+        "AEA"
+    ], {
+        A: "create:brass_sheet",
+        B: "create_sa:steam_engine",
+        C: "createdelight:steel_sheet",
+        D: "createdelightcore:dryer",
+        E: "createdelightcore:sprinkler"
+    })
+    .id("createdelight:smart_humidity_regulator")
+
 
     kubejs.shaped("createdelight:copper_coil", [
         "ABA",
@@ -198,5 +211,4 @@ ServerEvents.recipes(e => {
         4
     ).id("createdelightcore:structural_configuration_module_refill")
 })
-
 

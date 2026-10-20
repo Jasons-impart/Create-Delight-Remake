@@ -92,6 +92,11 @@ public final class Main {
         if (cleaned == 0) {
             System.out.println("没有发现不完整的下载包");
         }
+        try {
+            Pack.reclaimStorage(runtime.config(), System.out::println, true);
+        } catch (Exception error) {
+            System.err.println("存储回收失败: " + error.getMessage());
+        }
         if (rebuild || !Files.isRegularFile(runtime.config().manifestsDir().resolve("meta.json"))) {
             try {
                 Pack.buildRepos(runtime.config(), System.out::println);
