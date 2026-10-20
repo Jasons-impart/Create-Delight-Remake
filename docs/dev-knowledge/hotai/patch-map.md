@@ -34,6 +34,7 @@
 | Better Compatibility Checker 状态 ping mixin | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | 将匿名内部类捕获的 `ServerData` 改为反射查找，并兼容混淆/反混淆方法名；注入点改到响应处理尾部，降低字段名变化造成的 mixin 失败。 |
 | IAF Dragon Fix 地下冰龙穴避海 | `com/iafdragonfix/structure/DragonDenPiece.badiff` | 地下冰龙穴确定中心后检查中心及周围 16 格的 3×3 群系采样；任一点命中 `#createdelight:blocks_ice_dragon_caves` 就跳过生成，避免木卫二龙穴切入地下海，同时保留木卫二陆地区域和火星的地下冰龙穴。补丁必须由 HotAI 将 `.class` 转存为其 `MemoryDiff` 序列化格式，不得使用 `BadiffCli diff` 生成不兼容的 `BadiffFileDiff`。 |
 | Quality Food 方块掉落品质 | `de/cadentem/quality_food/mixin/BlockMixin.badiff` | 只在存在 `DropData` 且方块通过 `Utils.isValidBlock` 时应用方块品质，移除无上下文时对掉落物套品质的 fallback。 |
+| FluidLogistics 铜工作盆流体品质 | `com/yision/fluidlogistics/content/processing/copperBasin/CopperBasinBlockEntity.badiff` | 铜工作盆覆写了 `acceptOutputs`，有流体时把流体从父类调用里剥掉自己灌进 `outputTank`，导致 Quality Food Fluids 挂在父类方法上的品质注入永远拿到空流体列表并被跳过。补丁在该方法开头主动调用 `BasinRecipeQualityContext.applyToOutputs`，让带品质的 `FluidStack` 写回 `outputFluids`，铜工作盆随后灌罐即为带品质流体。详见 [补丁明细](badiff-details.md#fluidlogistics-铜工作盆补丁)。 |
 
 ## MMT 模型与属性兼容
 
