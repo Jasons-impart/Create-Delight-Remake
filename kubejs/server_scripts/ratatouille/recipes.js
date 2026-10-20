@@ -42,8 +42,9 @@ ServerEvents.recipes(e => {
     ["compost_mass_2to1", "createaddition:biomass", [Ingredient.of("#ratatouille:compostable_items_2to1", 2)]],
     ["compost_mass_4to1", "createaddition:biomass", [Ingredient.of("#ratatouille:compostable_items_4to1", 4)]],
   ].forEach(recipe => {
-    create.mixing(recipe[1], recipe[2])
-      .id(`createdelight:mixing/${recipe[0]}`)
+    // 保持上游的压榨机配方类型：改成 mixing 会与其他工作盆配方相互歧义
+    e.recipes.ratatouille.squeezing(recipe[1], recipe[2])
+      .id(`createdelight:squeezing/${recipe[0]}`)
     e.remove({ id: `ratatouille:squeezing/${recipe[0]}` })
   })
   e.replaceInput({}, "ratatouille:compost_mass", "createaddition:biomass")

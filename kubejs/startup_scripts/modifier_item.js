@@ -208,6 +208,7 @@ ItemEvents.modification(e => {
     maxStackSize_change('ends_delight:chorus_fruit_popsicle', 64)
     maxStackSize_change('youkaishomecoming:milk_popsicle', 64)
     maxStackSize_change('youkaishomecoming:big_popsicle', 64)
+    maxStackSize_change('createaddition:biomass', 64)
     const iceCreamItems = [
         "cosmopolitan:tricolored_ice_cream_sandwich",
         "cosmopolitan:enchanted_fruit_ice_cream",

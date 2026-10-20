@@ -148,11 +148,14 @@ ServerEvents.recipes(e => {
             })
 
 
-    // 生物质混合配方（原为 kubejs/data/createaddition/recipes/mixing/ 下的数据包配方）
+    // 生物质压榨配方（原为 kubejs/data/createaddition/recipes/mixing/ 下的数据包配方）
+    // 使用机械压榨机而非搅拌盆：工作盆配方只要求盆里包含所需原料，单原料的 mixing 配方
+    // 会与其他含同类原料的 basin 配方（茶、软饮、面团、火棉等）相互歧义；
+    // ratatouille:squeezing 是独立的配方池，不存在这类冲突
     // biomass_from("Nx 原料")，ID 后缀取 split(":")[1]
     function biomass_from(ingredient) {
-        e.recipes.create.mixing("createaddition:biomass", [ingredient])
-            .id(`createaddition:mixing/biomass_from_${ingredient.split(":")[1]}`)
+        e.recipes.ratatouille.squeezing("createaddition:biomass", [ingredient])
+            .id(`createaddition:squeezing/biomass_from_${ingredient.split(":")[1]}`)
     }
     biomass_from("2x #forge:crops")
     biomass_from("2x #minecraft:flowers")
