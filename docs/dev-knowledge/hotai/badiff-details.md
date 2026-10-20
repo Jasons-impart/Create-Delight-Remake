@@ -25,14 +25,12 @@
 | Quality Food | `quality_food-1.20.1-2.4.3-all.jar` | 1/1 目标 class 命中：`BlockMixin`。 | 当前 JAR 可匹配。 |
 | Create New Age | `create-new-age-1.2.0+forge-mc1.20.1.jar` | 1/1 可应用：旧 `org/antarcticgardens/newage/CreateNewAgePonders` 补丁已替换为当前路径 `org/antarcticgardens/cna/content/ponders/CNAPonders`。 | 当前可生效；补丁继续实现提交 `e11d47f206c1e9cb28bdf506698c824586f9b00c`（`删除cna中无用的ponder (#649)`）的意图，移除 heating、heater、reactor、wires 场景与对应标签。 |
 
-| FluidLogistics | `fluidlogistics-1.2.7.jar` | 1/1 目标 class 命中：`CopperBasinBlockEntity`。 | 当前 JAR 可匹配。 |
-
 当前文件数量与静态命中统计以下方生成区块为准；上表保留既有验证记录，不代表本次重新完成了全部游戏内回归。静态未命中不等于补丁失效。
 
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 32 个 `.badiff`；静态 JAR 命中 28 个，静态未命中但已由当前启动日志确认动态创建 3 个，尚未由当前启动日志确认 1 个。
+当前扫描到 30 个 `.badiff`；静态 JAR 命中 26 个，静态未命中但已由当前启动日志确认动态创建 3 个，尚未由当前启动日志确认 1 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |
 |---|---|---|---|
@@ -42,7 +40,6 @@
 | Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow` | 静态命中 `more_mod_tetra-2.4.15-all.jar` |
 | Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer` | 静态命中 `more_mod_tetra-2.4.15-all.jar` |
 | TACZ-addon | `hotai/com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner.badiff` | `com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner` | 静态命中 `taczaddon-1.20.1-1.1.8-hotfix2-for-new-soph.jar` |
-| FluidLogistics | `hotai/com/yision/fluidlogistics/content/processing/copperBasin/CopperBasinBlockEntity.badiff` | `com/yision/fluidlogistics/content/processing/copperBasin/CopperBasinBlockEntity` | 静态命中 `fluidlogistics-1.2.7.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/ConnectorType.badiff` | `com/mrh0/createaddition/blocks/connector/ConnectorType` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock` | 运行时已确认动态创建（静态 JAR 无此 class） |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity` | 运行时已确认动态创建（静态 JAR 无此 class） |
@@ -600,15 +597,6 @@ static {
 |---|---|---|---|
 | `org/antarcticgardens/cna/content/ponders/CNAPonders.badiff` | 已还原 | 旧 `org/antarcticgardens/newage/CreateNewAgePonders` 补丁已按当前包和注册 API 重建。补丁移除 `WIRING`、`HEATING`、`REACTOR` 字段及标签注册；移除 `heating`、`heater`、`reactor`、`wires` 场景，涉及热管、热泵、太阳能加热板、斯特林引擎、加热器、核反应堆组件、电气连接器及各类导线；保留 `ELECTRICAL`、`MAGNETS`、`ELECTRICITY_GENERATION`、`MOTOR_EXTENSION`。配套 `energiser.nbt`、`generation.nbt`、`motor.nbt`、`motor_extension.nbt` 已按当前方块 id 和方块实体数据刷新。 | 延续 `e11d47f206c1e9cb28bdf506698c824586f9b00c` 的“删除 CNA 无用 Ponder”意图，并让补丁重新命中当前 Create New Age 版本。 |
 
-## FluidLogistics 铜工作盆补丁
-
-目标：FluidLogistics `1.2.7` 的 `com/yision/fluidlogistics/content/processing/copperBasin/CopperBasinBlockEntity.java`。修复反馈单 MQSM7F：动力搅拌器处理铜工作盆时，产物为流体的配方丢失品质，Create 原版工作盆不受影响。
-
-| 文件 | 状态 | 具体改动 | 影响 |
-|---|---|---|---|
-| `com/yision/fluidlogistics/content/processing/copperBasin/CopperBasinBlockEntity.badiff` | 已还原 | `CopperBasinBlockEntity` 覆写了 `acceptOutputs`：有流体时把流体从 `super.acceptOutputs` 里剥掉（传 `Collections.emptyList()`），改由 `acceptFluidsIntoOutputTank` 自己灌进 `outputTank`。Quality Food Fluids 的 `BasinBlockEntityMixin` 挂在父类 `acceptOutputs` 的 HEAD，因此永远拿到空流体列表，守卫条件 `!hasQualityCapableOutput(空) && !hasQualityFluidSource(consumedFluids)` 成立时直接放行，品质被静默跳过。补丁在该方法开头插入 `BasinRecipeQualityContext.applyToOutputs(this, outputItems, outputFluids, simulate)`，让 QFF 用已算好的 ticket 把带品质的 `FluidStack` 写回 `outputFluids`；`maxStack` 由 4 抬到 5。 | 铜工作盆产出流体的配方（如 cosmopolitan 的冰淇淋系列）恢复品质继承，行为与原版 Create 工作盆一致。`applyToOutputs` 内部有 `context == null` 守卫，从非配方路径（管道插入等）调用时无副作用；注入点在 `outputTank.allowInsertion()` 之前、`Collections.emptyList()` 分支之外，不干扰 try/finally。 |
-
-验证：生成器内 roundtrip 通过；`ApplyBadiff` 打回 class 后 `javap` 确认 `invokestatic applyToOutputs` 位于 `acceptOutputs` offset 4；0.5.0.15 测试服实测产物流体带品质。
 ## KubeJS Lazy 并发缓存补丁
 
 目标：KubeJS `2001.6.5-build.24` 的 `dev/latvian/mods/kubejs/util/Lazy.java`；运行文件为 `hotai/dev/latvian/mods/kubejs/util/Lazy.badiff`。修复 [#1736](https://github.com/Jasons-impart/Create-Delight-Remake/issues/1736) 涉及的 get/forget 缓存竞态，采用 [CDC #131](https://github.com/Jasons-impart/Create-Delight-Core/pull/131) 的原子快照逻辑，直接放在 Lazy 内，不依赖 CDC。
