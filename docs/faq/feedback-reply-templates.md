@@ -60,6 +60,21 @@
 
 状态：`done`
 
+
+## 退出存档卡在「保存世界中」（大型发酵罐，v0.5.0.16）
+
+识别（内部）：退出/保存世界卡住；`latest.log` 停在 `Saving worlds`；栈含 `BulkFermenterFilterSupport` / `BulkFermenterBlockEntity`。例：`MCE3M9`。
+
+已合入 `release-v050x`（PR #2494），**尚未发布到正式版**（勿让玩家升级到当前最新 v0.5.0.16 当修复）。
+
+```
+已知问题，下个版本修复。
+```
+
+状态：`done`
+
+**对外勿写** HotAI、类名、堆栈等内部细节。
+
 ## Quality Food 存档序列化 NPE（LevelData.serializeNBT）
 
 识别（内部）：崩溃堆栈含 `de.cadentem.quality_food.capability.LevelData.serializeNBT`（存档保存时 NPE）。例：`UUWFHY`、`XPP39S`（及同栈如 `BQ33WQ`）。
