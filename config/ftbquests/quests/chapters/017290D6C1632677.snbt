@@ -646,18 +646,24 @@
 			description: ["       利维坦在未接触水时会进入无敌状态，无法受到正常伤害，为此，利维坦将作为最后一个boos出场。为应对此特性，我们需要在水中击败这些生物，祝你好运。（或者说打完其他怪物后潜入水中/放水后攻击利维坦）"]
 			icon: "minecraft:conduit"
 			id: "1866421C1715CDCD"
-			rewards: [{
-				id: "3E79CFE45D802EF0"
-				item: "industrial_platform:industrial_platform"
-				type: "item"
-			}]
+			rewards: [
+				{
+					id: "3E79CFE45D802EF0"
+					item: "industrial_platform:industrial_platform"
+					type: "item"
+				}
+				{
+					id: "1E0ECFFB987491B0"
+					item: "minecraft:water_bucket"
+					type: "item"
+				}
+			]
 			shape: "square"
 			subtitle: "利维坦"
 			tasks: [{
-				amount: 1000L
-				fluid: "minecraft:water"
 				id: "1AF3518531FBC0CF"
-				type: "fluid"
+				item: "minecraft:water_bucket"
+				type: "item"
 			}]
 			title: "海洋的化身"
 			x: -8.0d
