@@ -166,6 +166,9 @@
     "createdelight:cappuccino_fluid",
     "createdelight:macchiato_fluid",
     "createdelight:mocha_fluid",
-    "ratatouille:cocoa_liquor"
+    "ratatouille:cocoa_liquor",
+    "create_confectionery:black_chocolate",
+    "create_confectionery:white_chocolate",
+    "create_confectionery:ruby_chocolate"
   ]
 }
