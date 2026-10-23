@@ -211,7 +211,7 @@ def command_server(args):
         target = patch / relative_path
         if target.is_file() or target.is_symlink():
             target.unlink()
-    for relative_path in ("CDC-mod-src", "docs"):
+    for relative_path in ("CDC-mod-src", "docs", "PCL"):
         shutil.rmtree(patch / relative_path, ignore_errors=True)
     move_packwiz_payloads(patch)
 
