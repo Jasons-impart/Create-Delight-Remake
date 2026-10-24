@@ -92,7 +92,8 @@
   powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\sync-packwiz-assets.ps1 -Proxy $env:PACKWIZ_PROXY
   ```
 - Git 更新后的 hook 与外层同步流程会复用 `.cache/packwiz-sync/sync-state.json`，同一提交不会重复下载；若本地运行时文件损坏，可加 `-Force` 重新同步。
-- 脚本会自动下载 `packwiz.exe` 和 `packwiz-installer.jar` 到 `.cache/packwiz-sync/tools/`，执行 `packwiz refresh`，并按 `mods/`、`resourcepacks/`、`shaderpacks/` 下的 `*.pw.toml` 同步实际文件。
+- 脚本会按平台自动下载 packwiz（Windows 为 `packwiz.exe`，Linux/macOS 为 `packwiz` 并自动 `chmod +x`）和 `packwiz-installer.jar` 到 `.cache/packwiz-sync/tools/`，执行 `packwiz refresh`，并按 `mods/`、`resourcepacks/`、`shaderpacks/` 下的 `*.pw.toml` 同步实际文件。
+- Linux/macOS：需安装 PowerShell 7（`pwsh`），将上文命令中的 `powershell` 换成 `pwsh`、路径分隔符换成 `/`；Python 可用 `python3`。fork 目前只发布 linux-amd64 与 Windows 版 packwiz，macOS/ARM 需通过 `-PackwizUrl` 指定自行构建的二进制。
 - 本地开发环境默认按客户端侧同步，只保留 `side = "both"` 和 `side = "client"` 的 mod；`side = "server"` 的服务端专用 mod 不会下载到客户端实例。
 - 如果需要调试服务端侧文件，可显式运行 `powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\sync-packwiz-assets.ps1 -Side server`。
 - 同步成功后，要求用户按“用户操作步骤”完成 HMCL 图形界面配置。
@@ -124,9 +125,10 @@
 
 ## 常见阻塞
 - `Java 17 was not found`：安装 Java 17，设置 `JAVA_HOME`，或更新 `variables.txt` 的 `JAVA=`。
-- `Python was not found`：安装 Python 3，并确保 `python` 或 `py -3` 可用。
+- `Python was not found`：安装 Python 3，并确保 `python`、`py -3` 或 `python3` 可用。
 - `gh was not found`：可执行 `winget install --id GitHub.cli --exact` 并重新打开 PowerShell 7；这不会阻塞其他环境配置。
 - `gh` 未认证：执行 `gh auth login`，完成 GitHub 登录后再重试需要 GitHub CLI 的操作。
+- `packwiz refresh produced an empty index`：packwiz 未正常运行（常见于非 Windows 下二进制不可执行或架构不符），检查 `.cache/packwiz-sync/tools/packwiz` 后加 `-Force` 重试。
 - 下载 packwiz、installer 或 CurseForge 文件失败：检查 GitHub / CurseForge / CDN 访问，必要时配置代理后重试。
 
 ## 把 repo 变成可启动客户端实例

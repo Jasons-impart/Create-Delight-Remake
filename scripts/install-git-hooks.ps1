@@ -113,6 +113,8 @@ elif [ -f "`$tracked_hook" ]; then
   sh "`$tracked_hook" "`$@"
 fi
 "@
+    # The .ps1 is checked out with CRLF; hooks must be LF or sh fails with "cannot execute".
+    $shim = $shim -replace "`r`n", "`n"
 
     if (Test-Path -LiteralPath $targetHook) {
         $existing = Get-Content -LiteralPath $targetHook -Raw -ErrorAction SilentlyContinue
