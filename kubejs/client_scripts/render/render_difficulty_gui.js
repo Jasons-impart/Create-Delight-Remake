@@ -1,7 +1,33 @@
 let Difficulty = {}
 
+/** 客户端本地配置：关闭左侧包自定义难度竖条。默认显示。改完后执行 /kubejs reload 生效。 */
+const DIFFICULTY_HUD_CONFIG_PATH = "config/createdelight/difficulty_hud.json"
+
 /**
- * 
+ * @returns {boolean}
+ */
+Difficulty.readShowHud = function () {
+    try {
+        let json = JsonIO.read(DIFFICULTY_HUD_CONFIG_PATH)
+        if (json == null) {
+            JsonIO.write(DIFFICULTY_HUD_CONFIG_PATH, JsonIO.of({ show: true }).getAsJsonObject())
+            return true
+        }
+        let show = json.show
+        if (show == null && json.get != null)
+            show = json.get("show")
+        if (show === false || show === 0 || show === "false")
+            return false
+        return true
+    } catch (e) {
+        return true
+    }
+}
+
+Difficulty.showHud = Difficulty.readShowHud()
+
+/**
+ *
  * @param {Internal.LocalPlayer} player
  * @returns {number}
  */
@@ -40,6 +66,9 @@ Difficulty.getPlayerCurrentProcess = function () {
 Difficulty.tierThreshold = [0, 100, 200, 300, 450, 600]
 
 RenderJSEvents.onGuiPreRender(e => {
+    if (!Difficulty.showHud)
+        return
+
     let location = "createdelightcore:textures/gui/difficulty_progress_bar"
     let textureWidth = 8, textureHeight = 32
     let windowWidth = e.window.guiScaledWidth
