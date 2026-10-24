@@ -27,7 +27,7 @@ description: 管理 Create-Delight Remake 整合包的正式版或测试版发�
 
 1. 确认是正式版还是测试版；版本带 `-test` 时必须是测试版。
 2. 正式版提供 1–3 条公告，逗号分隔、每条不超过 20 个中文字符。多个提交时不要采用脚本的“最近一条提交”兜底文案。
-3. 若计划显示可能是子版本首个正式版，在 Prepare 前撰写 `docs/update-summary-{Version}.md`：中文、按主题分组、含 PR 号、一句范围摘要，并以“升级须知”结束。Publish 会以 GitHub Release 状态再次确认，缺少精确文件时会停止。
+3. 若计划显示可能是小版本首个正式版，在 Prepare 前撰写 `docs/update-summary-{Version}.md`：中文、按主题分组、含 PR 号、一句范围摘要，并以“升级须知”结束。Publish 会以 GitHub Release 状态再次确认，缺少精确文件时会停止。
 
 ## 执行流程
 
@@ -81,7 +81,7 @@ heartbeat 使用适合主动跟进的短间隔。除合并、完成、失败或�
 
 ## 按需参考
 
-- 版本号、子版本阶段、分支角色与正式版后 CDC 冻结 / HotAI：读 [branch-and-release.md](../../../docs/dev-knowledge/branch-and-release.md)。「抢先预览」是产品阶段；脚本仍只用正式/测试。已正式发布的 `release-vxxxx` 持续维护期间不要 bump CDC 或合入依赖新 CDC 的 mixin。
+- 版本号、小版本阶段、分支角色与正式版后 CDC 冻结 / HotAI：读 [branch-and-release.md](../../../docs/dev-knowledge/branch-and-release.md)。「抢先预览」是产品阶段；脚本仍只用正式/测试。已正式发布的 `release-vxxxx` 持续维护期间不要 bump CDC 或合入依赖新 CDC 的 mixin。
 - Windows 下的代理、`gh` 认证和大文件传输细节：读 [release-windows-github.md](references/release-windows-github.md)。
 - 仅当用户明确要求“标签与 `modpack.toml` 版本不同”的历史过渡发布时：读 [transitional-test-tags.md](references/transitional-test-tags.md)。
 - 参数和脚本内部步骤以当前实现为准：运行 `Get-Help .\.agents\skills\release\release-prepare.ps1 -Full` 或 `Get-Help .\.agents\skills\release\release-publish.ps1 -Full`。
