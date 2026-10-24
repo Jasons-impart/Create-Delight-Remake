@@ -9,6 +9,7 @@
 | [content-map.md](content-map.md) | 已实现或正在落地的内容改动地图。 |
 | [compatibility-patches.md](compatibility-patches.md) | 兼容、回归和上游适配补丁台账。 |
 | [how-to-index.md](how-to-index.md) | 尚未复杂到需要 skill 的轻量技术做法。 |
+| [branch-and-release.md](branch-and-release.md) | `main` 与 `release-vxxxx` 的角色、正式版后 CDC 冻结与 HotAI 仍可用的约束。 |
 
 ## 关联入口
 

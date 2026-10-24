@@ -51,6 +51,12 @@
 ## 版本发布流程
 - 正式版本和测试版本发布均使用 `.agents/skills/release/` 中的 release skill。
 - 对 AI 助手可直接提出“发布版本”“发布测试版”等请求；人工执行时查看 `.agents/skills/release/SKILL.md` 并运行其中的脚本。
+- **分支与维护策略**（权威说明见 [branch-and-release.md](dev-knowledge/branch-and-release.md)）：
+  - `main`：主要开发分支；可持续合入功能与修复，并可更新 CDC，因此能带入 CDC mixin 修复。
+  - `release-vxxxx`（如 `release-v050x`）：某一正式稳定线的维护分支；命名与 `release-plan.ps1` 的 `release-v$major$minor$patch`x 推导一致。
+  - 版本线接近尾声时从开发切出维护分支；维护分支尽可能不做功能性更新。维护一段时间后打 tag 并发布 **非 prerelease** 的正式 GitHub Release。
+  - **正式版发布后**：非必要禁止功能更新，只做 bug 修复；**CDC 版本冻结**，不能再靠 bump CDC / 新 CDC mixin 合入修复；**仍可**加入 HotAI 形式的修复。
+  - 例：`0.5.0.x`（`release-v050x`）不会再获得依赖 CDC 升级的 mixin 修复；此类修复预期进入版本号大于 `0.5.0` 的下一线（预期 `0.5.1.x`）。
 
 ## 增加客户端/服务端专用 mod
 - 客户端专用 mod 在对应 `mods/*.pw.toml` 中设置 `side = "client"`；服务端专用 mod 设置 `side = "server"`。
