@@ -81,6 +81,7 @@ heartbeat 使用适合主动跟进的短间隔。除合并、完成、失败或�
 
 ## 按需参考
 
+- 版本号、小版本阶段与分支高层角色：读 [branch-and-release.md](../../../docs/dev-knowledge/branch-and-release.md)。「抢先预览」是产品阶段；脚本仍只用正式/测试。
 - Windows 下的代理、`gh` 认证和大文件传输细节：读 [release-windows-github.md](references/release-windows-github.md)。
 - 仅当用户明确要求“标签与 `modpack.toml` 版本不同”的历史过渡发布时：读 [transitional-test-tags.md](references/transitional-test-tags.md)。
 - 参数和脚本内部步骤以当前实现为准：运行 `Get-Help .\.agents\skills\release\release-prepare.ps1 -Full` 或 `Get-Help .\.agents\skills\release\release-publish.ps1 -Full`。
