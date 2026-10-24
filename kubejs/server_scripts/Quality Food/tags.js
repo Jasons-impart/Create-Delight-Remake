@@ -387,5 +387,14 @@ ServerEvents.tags("item", e => {
         'collectorsreap:lime_popsicle', 
         'collectorsreap:urchin',
         'brewinandchewin:unripe_scarlet_cheese_wheel',
+        // 巧克力模具：注液/冷冻中间态需能承载品质，否则流体星级无法传到巧克力棒
+        'ratatouille:chocolate_mold_filled',
+        'ratatouille:chocolate_mold_solid',
+        'createdelightcore:black_chocolate_mold_filled',
+        'createdelightcore:black_chocolate_mold_solid',
+        'createdelightcore:white_chocolate_mold_filled',
+        'createdelightcore:white_chocolate_mold_solid',
+        'createdelightcore:ruby_chocolate_mold_filled',
+        'createdelightcore:ruby_chocolate_mold_solid',
     ])
 })
