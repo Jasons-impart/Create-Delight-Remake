@@ -51,12 +51,12 @@
 ## 版本发布流程
 - 正式版本和测试版本发布均使用 `.agents/skills/release/` 中的 release skill。
 - 对 AI 助手可直接提出“发布版本”“发布测试版”等请求；人工执行时查看 `.agents/skills/release/SKILL.md` 并运行其中的脚本。
-- **分支与维护策略**（权威说明见 [branch-and-release.md](dev-knowledge/branch-and-release.md)）：
-  - `main`：主要开发分支；可持续合入功能与修复，并可更新 CDC，因此能带入 CDC mixin 修复。
-  - `release-vxxxx`（如 `release-v050x`）：某一正式稳定线的维护分支；命名与 `release-plan.ps1` 的 `release-v$major$minor$patch`x 推导一致。
-  - 版本线接近尾声时从开发切出维护分支；维护分支尽可能不做功能性更新。维护一段时间后打 tag 并发布 **非 prerelease** 的正式 GitHub Release。
-  - **正式版发布后**：非必要禁止功能更新，只做 bug 修复；**CDC 版本冻结**，不能再靠 bump CDC / 新 CDC mixin 合入修复；**仍可**加入 HotAI 形式的修复。
-  - 例：`0.5.0.x`（`release-v050x`）不会再获得依赖 CDC 升级的 mixin 修复；此类修复预期进入版本号大于 `0.5.0` 的下一线（预期 `0.5.1.x`）。
+- **版本号与子版本阶段、分支与 CDC 约束**（权威说明见 [branch-and-release.md](dev-knowledge/branch-and-release.md)）：
+  - 版本号：`v0.{主版本}.{子版本}.{更新编号}`（如 `v0.5.0.16`）；按假期前发布**新子版本正式版**的节奏推进（自 `0.4.7.x` 起）。
+  - 子版本阶段：测试版-功能更新 → 抢先预览版-准备发布（此后不再功能更新）→ 正式版 → 正式版-持续维护 → 正式版-停止维护。测试/抢先预览仅 GitHub 且无补丁；持续维护每次有补丁。
+  - 发布脚本只有「正式 / 测试（prerelease）」两类 Release；「抢先预览」是产品阶段，不是单独的 `ReleaseType`。
+  - `main`：主要开发；可 bump CDC。`release-vxxxx`（如 `release-v050x`）：子版本稳定维护分支。
+  - **正式版后（持续维护）**：CDC 冻结，不能靠新 CDC mixin 合入修复；**仍可** HotAI。例：`0.5.0.x` 带不进依赖 CDC 升级的 mixin，预期随下一子版本（如 `0.5.1.x`）出包。
 
 ## 增加客户端/服务端专用 mod
 - 客户端专用 mod 在对应 `mods/*.pw.toml` 中设置 `side = "client"`；服务端专用 mod 设置 `side = "server"`。
