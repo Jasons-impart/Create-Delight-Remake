@@ -86,7 +86,7 @@ CD-master-dev/
 **Version Management**:
 - Version ONLY in `modpack.toml` - CI auto-updates other configs
 - Test builds: `test-*` branches → version appended with `-test-build-{n}`
-- Version scheme `v0.{大版本}.{小版本}.{修订号}`; `release-vxxxx` = stable maintenance for one 小版本 line (e.g. `release-v050x`). Stages and cadence: `docs/dev-knowledge/branch-and-release.md`.
+- Version scheme `v0.{大版本}.{小版本}.{修订号}`; `release-vxxxx` = stable maintenance for one 小版本 line (e.g. `release-v050x`). After a formal non-prerelease Release, CDC is frozen (no bump / no new CDC-mixin-via-jar); HotAI-style fixes still allowed; `main` may keep bumping CDC for the next 小版本 line. Full policy: `docs/dev-knowledge/branch-and-release.md`.
 
 **Mod Management (Packwiz)**:
 - `mods/`, `resourcepacks/`, `shaderpacks/`, and `tacz/` contain `.pw.toml` metadata; downloaded runtime files are not tracked

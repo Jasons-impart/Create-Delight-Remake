@@ -1,8 +1,6 @@
-# 版本号、小版本阶段与分支角色
+# 版本号、小版本阶段与分支维护策略
 
-本文说明齿轮盛宴（Create-Delight-Remake）的**版本号含义**、**小版本产品阶段**，以及 `main` / `release-vxxxx` 的高层角色。发布操作步骤见 `.agents/skills/release/SKILL.md`；人工入口见 [development.md](../development.md#版本发布流程)。
-
-> 本页面向维护分支读者（如 `release-v050x`），只记版本方案与阶段；不展开具体模组补丁出包约束。
+本文说明齿轮盛宴（Create-Delight-Remake）的**版本号含义**、**小版本产品阶段**、`main` / `release-vxxxx` 角色，以及正式版后对 **CDC 版本** 与 **HotAI 式修复** 的一般约束。发布操作步骤见 `.agents/skills/release/SKILL.md`；人工入口见 [development.md](../development.md#版本发布流程)。
 
 ## 版本号含义
 
@@ -40,22 +38,45 @@ release skill / 脚本只有两类 GitHub Release：**正式**（非 prerelease�
 - **正式版** 及之后的 **持续维护** 更新：走「正式 / 非 prerelease」Release。
 - 测试与抢先预览「无更新补丁」与脚本行为一致：测试版 Release 说明写明不提供 Patch，需下完整包。
 
-## 分支角色（高层）
+## 分支角色
 
-| 分支 | 角色 |
-|---|---|
-| `main` | 主要开发分支；持续合入功能与修复 |
-| `release-vxxxx` | 某一小版本正式稳定线的维护分支（如 `release-v050x` 对应 `0.5.0.x`） |
+| 分支 | 角色 | 典型改动 |
+|---|---|---|
+| `main` | 主要开发分支 | 持续合入功能与修复；**可 bump CDC**，因此可带入依赖新 CDC 载荷的 mixin 修复 |
+| `release-vxxxx` | 某一小版本正式稳定线的维护分支 | 尽可能不做功能性更新；正式版发布后以 bug 修复为主 |
 
 命名与 `release-plan.ps1` 一致：未指定 `-TargetBranch` 时推导 `release-v$A$B$C`x；分支存在则用之，否则回退 `main`。历史例：`release-v045x` … `release-v048x`、`release-v050x`。
 
 常见对应（不必钉死唯一分支）：
 
-1. **测试版-功能更新**：主要在 `main` 上快速合入功能。
-2. **抢先预览前后**：常切出或落在 `release-vxxxx`；以抢先预览为分界后不再功能更新。
-3. **正式版 → 正式版-持续维护**：该 `release-vxxxx` 上按上表范围做维护修订；下一小版本正式版发布后，本线进入**停止维护**。
+1. **测试版-功能更新**：主要在 `main` 上快速合入功能；可更新 CDC。
+2. **抢先预览前后**：常切出或落在 `release-vxxxx`；以抢先预览为分界后不再功能更新。CDC 是否已冻结仍以「该小版本是否已有正式（非 prerelease）Release」为准——抢先预览本身仍是测试包，不单独等于 CDC 冻结。
+3. **正式版 → 正式版-持续维护**：见下一节 CDC / HotAI 约束。
+4. **下一小版本正式版发布 → 本线正式版-停止维护**：制作组不再跟该小版本反馈；需要新 CDC mixin 的修复应落在 `main` / 新小版本线。
+
+## 正式版后：CDC 冻结与 HotAI
+
+在某一 `release-vxxxx` 上发布该小版本的**正式（非 prerelease）Release** 之后，进入持续维护时：
+
+- **CDC 版本冻结，不再改动**：不能再通过 bump CDC / 依赖新 CDC jar 的方式合入新的 CDC mixin 修复。
+- **仍可加入 HotAI 形式的修复**（`hotai/` 二进制补丁等，不依赖更换 CDC jar）。
+- KubeJS / 配置等不换 CDC 的修复可以，但仍应避免非必要功能向改动。
+
+与此同时：
+
+- **`main` 可持续 bump CDC**，并合入依赖新 CDC 的 mixin。
+- 此类修复预期随 **下一小版本正式线**（版本号大于当前小版本线，例如当前为 `0.5.0.x` 时下一线大于 `0.5.0`）进入正式包，而不是回灌到已冻结 CDC 的旧 `release-vxxxx` 维护补丁。
+
+| 手段 | `main` / 未冻结 CDC 的开发 | 已正式发布、CDC 已冻结的 `release-vxxxx` |
+|---|---|---|
+| 更新 CDC 并加入/修改 CDC mixin | 可以 | **不可以** |
+| HotAI（`.badiff` 等） | 可以 | **可以** |
+| 不依赖换 CDC jar 的修复 | 可以 | 可以（范围见持续维护） |
+
+判断「CDC 是否已冻结」：该小版本是否已有 **正式（非 prerelease）Release**。脚本亦以 prerelease 标记区分正式/测试，不以 tag 是否带 `-test` 单独推断。
 
 ## 给维护者的短约束
 
+- 在 `release-vxxxx` 上修 bug 前确认是否需要新 CDC；若需要，改走 `main` / 下一小版本，或可行时用 HotAI。
 - 对外描述阶段时用上表产品名称；对内跑发布脚本时只用「正式 / 测试」，不要发明「抢先预览」专用 ReleaseType。
-- 本页是开发与发布策略摘要，不替代玩家 FAQ。
+- 本页是开发与发布策略；不替代玩家 FAQ，也不登记具体模组补丁台账。
