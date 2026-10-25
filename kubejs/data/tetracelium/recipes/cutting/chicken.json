@@ -1,0 +1,31 @@
+{
+  "type": "farmersdelight:cutting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "minecraft:chicken"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "farmersdelight:chicken_cuts"
+    },
+    {
+      "item": "minecraft:bone_meal"
+    },
+    {
+      "count": 1,
+      "item": "northeast_china_delight:chicken_frame"
+    }
+  ],
+  "tool": {
+    "type": "farmersdelight:tool_action",
+    "action": "blade_cut"
+  }
+}

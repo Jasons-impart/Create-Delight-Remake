@@ -152,7 +152,7 @@ ServerEvents.recipes(e => {
     'farmersdelight:kelp_roll',
     "youkaishomecoming:hosomaki",
     [
-      'youkaishomecoming:soy_sauce_bottle',
+      'northeast_china_delight:soy_sauce',
       "minecraft:carrot"
     ]
   ).id("createdelight:kelp_roll")
@@ -160,7 +160,7 @@ ServerEvents.recipes(e => {
     'silentsdelight:sculk_sensor_tendril_roll',
     "youkaishomecoming:hosomaki",
     [
-      'youkaishomecoming:soy_sauce_bottle',
+      'northeast_china_delight:soy_sauce',
       "silentsdelight:sculk_sensor_tendril"
     ]
   ).id("createdelight:sculk_sensor_tendril_roll")
@@ -169,7 +169,7 @@ ServerEvents.recipes(e => {
   youkaishomecoming.cuisine_mixed(
     'oceanic_delight:sea_pickle_roll',
     "youkaishomecoming:futomaki",
-    'youkaishomecoming:soy_sauce_bottle',
+    'northeast_china_delight:soy_sauce',
     [
       '#oceanic_delight:squid_tentacles',
       '#oceanic_delight:squid_tentacles',
@@ -183,7 +183,7 @@ ServerEvents.recipes(e => {
   youkaishomecoming.cuisine_mixed(
     'culturaldelights:midori_roll',
     "youkaishomecoming:futomaki",
-    'youkaishomecoming:soy_sauce_bottle',
+    'northeast_china_delight:soy_sauce',
     [
       'youkaishomecoming:cucumber_slice',
       'youkaishomecoming:cucumber_slice',
@@ -196,7 +196,7 @@ ServerEvents.recipes(e => {
   youkaishomecoming.cuisine_mixed(
     'culturaldelights:chicken_roll',
     "youkaishomecoming:futomaki",
-    'youkaishomecoming:soy_sauce_bottle',
+    'northeast_china_delight:soy_sauce',
     [
       [
         "minecraft:carrot",
@@ -215,7 +215,7 @@ ServerEvents.recipes(e => {
   youkaishomecoming.cuisine_mixed(
     'alexscaves:deep_sea_sushi_roll',
     "youkaishomecoming:futomaki",
-    'youkaishomecoming:soy_sauce_bottle',
+    'northeast_china_delight:soy_sauce',
     [
       'alexscaves:tripodfish',
       'alexscaves:sea_pig',

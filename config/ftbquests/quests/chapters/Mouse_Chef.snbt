@@ -3933,7 +3933,13 @@
 			size: 2.0d
 			tasks: [{
 				id: "2192C80624D7EB91"
-				item: "vintagedelight:vinegar_bottle"
+				item: {
+					Count: 1
+					id: "northeast_china_delight:vinegar"
+					tag: {
+						Damage: 0
+					}
+				}
 				type: "item"
 			}]
 			x: -20.0d

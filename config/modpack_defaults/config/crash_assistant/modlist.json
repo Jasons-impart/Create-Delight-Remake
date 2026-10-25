@@ -409,10 +409,10 @@
     "name": "Create: Enchantment Industry",
     "version": "2.5.4b"
   },
-  "create-integrated-farming-1.4.3.2-1.20.1.jar": {
+  "create-integrated-farming-1.4.3.3a-1.20.1.jar": {
     "modId": "create-integrated-farming",
     "name": "Create Integrated Farming [Unofficial]",
-    "version": "1.4.3.2-1.20.1"
+    "version": "1.4.3.3a-1.20.1"
   },
   "create-new-age-1.2.0+forge-mc1.20.1.jar": {
     "modId": "create-new-age",
@@ -1398,6 +1398,11 @@
     "modId": "nochatreports-forge",
     "name": "No Chat Reports",
     "version": "1.20.1-v2.2.2"
+  },
+  "northeast_china_delight-3.2.0+1.20.1.jar": {
+    "modId": "northeast_china_delight",
+    "name": "Northeast China Delight",
+    "version": "3.2.0+1.20.1"
   },
   "Northstar-0.6.4+1.20.1.jar": {
     "modId": "northstar",

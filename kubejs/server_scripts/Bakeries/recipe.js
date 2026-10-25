@@ -499,7 +499,7 @@ ServerEvents.recipes(e => {
     ], {
         A: "#forge:vegetables/onion",
         B: "#forge:vegetables/tomato",
-        C: "frycooks_delight:canola_oil",
+        C: "northeast_china_delight:cooking_oil",
         D: "ratatouille:salty_dough"
     })
         .id("createdelight:focaccia")
