@@ -185,9 +185,9 @@ ServerEvents.recipes(e => {
     {
         let iner = "youkaishomecoming:roe_california_roll"
         e.recipes.create.sequenced_assembly('youkaishomecoming:rainbow_roll', iner, [
+            e.recipes.create.deploying(iner, [iner, '#forge:raw_fishes/tuna']),
             e.recipes.create.deploying(iner, [iner, '#forge:raw_fishes/salmon']),
             e.recipes.create.deploying(iner, [iner, '#forge:raw_fishes/cod']),
-            e.recipes.create.deploying(iner, [iner, '#forge:raw_fishes/tuna']),
         ])
             .transitionalItem(iner)
             .loops(1)
