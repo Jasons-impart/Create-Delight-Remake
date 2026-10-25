@@ -39,6 +39,7 @@
 | TACZ 网络缓存空 Map | `com/tacz/guns/resource/CommonAssetsManager.badiff`、`resource/manager/CommonDataManager.badiff` | `apply()` 前 `networkCache` 仍为 `null`，`ImmutableMap.put` 拒绝空值。补丁跳过空缓存，并让 `getNetworkCache()` 在未就绪时返回空 Map。 |
 | TACZ-addon 精致背包空包装 | `com/mafuyu404/taczaddon/compat/SophisticatedBackpacksCompatInner.badiff` | `addBackpackItems` / `getItemsFromBackpackBLock` 在包装器或列表为空时仍继续取物品。补丁在空值时直接返回，避免背包兼容空指针。 |
 | Bakeries 面包刀 × FD 1.3.x 切割结果 | `com/renyigesai/bakeries/item/BreadKnifeItem.badiff` | 面包刀处理掉落物时不再调用 FD 已移除的 `CuttingBoardRecipe.rollResults(RandomSource, int)`，改为本地 `getRollableResults()` + `ChanceResult.rollOutput()`，修复 `NoSuchMethodError` 服务端崩溃。语义对齐上游 master `7c45ac4`。 |
+| CDC × Quality Food 甜浆果收获防崩溃（release-v050x） | `io/github/jasonsimpart/createdelightcore/mixin/quality_food/QualityFoodMixin.badiff` | 仅在 `isRelevantCropMixin` 收到空方块状态时返回 false，避免甜浆果右键/机械手收获触发 NPE；不移植 CDC #148 的自动化品质与玩家上下文改动。适用于当前 CDC 2.2.16j；升级 CDC 后须复核或移除。 |
 
 ## 待首次启动转存的可审阅 class
 
