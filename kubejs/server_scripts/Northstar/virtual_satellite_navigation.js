@@ -329,7 +329,8 @@ function ensureSatelliteLandingChunk(level, landing) {
 
 function writeSatelliteWaypoint(atlas, dimension, landing, label) {
     let root = atlas.getOrCreateTag()
-    let content = global.CDServerJavaClasses.$SpaceAtlasContent.fromTag(root)
+    let content = global.CDServerJavaClasses.$SpaceAtlasContent.fromTag(root).asBuilder()
+    let destinations = content.getDestinations()
     // Remove destinations produced by the first prototype, which pointed at the
     // ground block one block below the physical Northstar waypoint.
     let legacyDestination = new global.CDServerJavaClasses.$RocketDestination(
@@ -337,20 +338,20 @@ function writeSatelliteWaypoint(atlas, dimension, landing, label) {
         new global.CDServerJavaClasses.$BlockPos(landing.x, landing.y - 1, landing.z),
         global.CDServerJavaClasses.$Direction.UP
     )
-    content.destinations.remove(legacyDestination)
+    destinations.remove(legacyDestination)
     let destination = new global.CDServerJavaClasses.$RocketDestination(
         new global.CDServerJavaClasses.$ResourceLocation(dimension),
         new global.CDServerJavaClasses.$BlockPos(landing.x, landing.y, landing.z),
         global.CDServerJavaClasses.$Direction.UP
     )
 
-    let exists = content.destinations.containsKey(destination)
+    let exists = destinations.containsKey(destination)
     let maxWaypoints = global.CDServerJavaClasses.$NorthstarConfigs.server().spaceAtlasMaxWaypoints.get()
-    if (!exists && content.destinations.size() >= maxWaypoints)
+    if (!exists && destinations.size() >= maxWaypoints)
         return false
 
-    content.destinations.put(destination, Component.literal(label))
-    content.toTag(root)
+    content.addDestination(destination, Component.literal(label))
+    content.build().toTag(root)
     return true
 }
 

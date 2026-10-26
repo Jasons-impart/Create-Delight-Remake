@@ -5,10 +5,10 @@ const ATLAS_COMMAND_READING_ORIGIN = new global.CDServerJavaClasses.$ResourceLoc
 const ATLAS_COMMAND_READING_DAY = -2147483648
 
 function findCommandUnlockReading(atlasPlanet) {
-    let readings = atlasPlanet.readings.toArray()
+    let readings = atlasPlanet.readings().toArray()
     for (let i = 0; i < readings.length; i++) {
         let reading = readings[i]
-        if (reading.day == ATLAS_COMMAND_READING_DAY && reading.origin.equals(ATLAS_COMMAND_READING_ORIGIN))
+        if (reading.day() == ATLAS_COMMAND_READING_DAY && reading.origin().equals(ATLAS_COMMAND_READING_ORIGIN))
             return reading
     }
     return null
@@ -17,7 +17,7 @@ function findCommandUnlockReading(atlasPlanet) {
 function unlockAllAtlasPlanets(player, atlas) {
     let registry = player.level.registryAccess().registryOrThrow(global.CDServerJavaClasses.$NorthstarRegistries.PLANET)
     let planetIds = registry.keySet().toArray()
-    let content = global.CDServerJavaClasses.$SpaceAtlasContent.fromTag(atlas.getOrCreateTag())
+    let content = global.CDServerJavaClasses.$SpaceAtlasContent.fromTag(atlas.getOrCreateTag()).asBuilder()
     let unlocked = 0
 
     for (let i = 0; i < planetIds.length; i++) {
@@ -30,31 +30,28 @@ function unlockAllAtlasPlanets(player, atlas) {
         if (!Number.isFinite(requiredScience))
             continue
 
-        let atlasPlanet = content.planets.get(planetId)
-        if (atlasPlanet == null) {
-            atlasPlanet = new global.CDServerJavaClasses.$AtlasPlanet(planetId)
-            content.planets.put(planetId, atlasPlanet)
-        }
+        let atlasPlanet = content.getPlanets().get(planetId)
+        let planetBuilder = atlasPlanet == null
+            ? global.CDServerJavaClasses.$AtlasPlanet.builder().planetId(planetId)
+            : atlasPlanet.toBuilder()
+        let wasUnlocked = (atlasPlanet == null ? 0 : atlasPlanet.science()) >= requiredScience
+        let commandReading = atlasPlanet == null ? null : findCommandUnlockReading(atlasPlanet)
+        // Readings are immutable records; replace our entry on the builder.
+        if (commandReading != null)
+            planetBuilder.getReadings().remove(commandReading)
+        planetBuilder.addReading(new global.CDServerJavaClasses.$AtlasReading(
+            ATLAS_COMMAND_READING_ORIGIN,
+            Math.max(0, requiredScience),
+            ATLAS_COMMAND_READING_DAY
+        ))
 
-        let wasUnlocked = atlasPlanet.science >= requiredScience
-        let commandReading = findCommandUnlockReading(atlasPlanet)
-        if (commandReading == null) {
-            commandReading = new global.CDServerJavaClasses.$AtlasReading(
-                ATLAS_COMMAND_READING_ORIGIN,
-                Math.max(0, requiredScience),
-                ATLAS_COMMAND_READING_DAY
-            )
-            atlasPlanet.readings.add(commandReading)
-        } else {
-            commandReading.science = Math.max(0, requiredScience)
-        }
-
-        atlasPlanet.recalculateScience(properties.scienceDecayExp())
-        if (!wasUnlocked && atlasPlanet.science >= requiredScience)
+        atlasPlanet = planetBuilder.calculateScience(properties.scienceDecayExp()).build()
+        content.addPlanet(atlasPlanet)
+        if (!wasUnlocked && atlasPlanet.science() >= requiredScience)
             unlocked++
     }
 
-    content.toTag(atlas.getOrCreateTag())
+    content.build().toTag(atlas.getOrCreateTag())
     player.inventory.setChanged()
     player.containerMenu.broadcastChanges()
     return { total: planetIds.length, unlocked: unlocked }
