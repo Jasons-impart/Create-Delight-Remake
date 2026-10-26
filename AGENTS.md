@@ -82,6 +82,12 @@ CD-master-dev/
 - ❌ Never merge PRs yourself (`gh pr merge`, GitHub web/API merge, or auto-merge). Create PRs and wait for the user to manually merge unless the user explicitly asks you in the current conversation to merge a specific PR.
 - ❌ Never commit on merged feature branches
 - ❌ Never force push to main
+- CDC bump order is fixed: Core PR squash-merged into `1.20.1` → pin `CDC-mod-src` to that merge SHA (not the feature-branch tip) → same Remake commit updates the packwiz jar + `mods/create-delight-core.pw.toml`.
+- ❌ Do not leave a Ready/mergeable Remake PR pointing at an unmerged Create-Delight-Core branch tip; draft pairing is OK only until Core lands, then retarget to post-squash `origin/1.20.1`.
+- After Core squash-merge, re-fetch Core (`ls-remote` / `rev-parse origin/1.20.1`); the pre-merge tip SHA is wrong.
+- Before opening or marking Ready a Remake PR that touches `CDC-mod-src`, the CDC jar, or `create-delight-core.pw.toml`, run `scripts/check-cdc-submodule.sh` (`merge-base --is-ancestor` against Core `1.20.1`).
+- On CDC-frozen `release-vxxxx` (e.g. `release-v050x`), do not bump CDC for mixin fixes; use HotAI / pack-side fixes instead.
+- Full CDC bump procedure: `.agents/skills/cdc-bump/SKILL.md`.
 
 **Version Management**:
 - Version ONLY in `modpack.toml` - CI auto-updates other configs

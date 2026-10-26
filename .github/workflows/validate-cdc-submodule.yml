@@ -1,0 +1,24 @@
+name: Validate CDC submodule
+
+on:
+  pull_request:
+    paths:
+      - 'CDC-mod-src'
+      - 'packwiz-files/mods/Create-Delight-Core-*.jar'
+      - 'mods/create-delight-core.pw.toml'
+      - 'scripts/check-cdc-submodule.sh'
+      - '.github/workflows/validate-cdc-submodule.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Gitlink is in the tree; no need to initialize the submodule checkout.
+          submodules: false
+      - name: Verify CDC-mod-src is on Core 1.20.1 history
+        run: bash scripts/check-cdc-submodule.sh
