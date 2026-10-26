@@ -82,6 +82,7 @@ CD-master-dev/
 - ❌ Never merge PRs yourself (`gh pr merge`, GitHub web/API merge, or auto-merge). Create PRs and wait for the user to manually merge unless the user explicitly asks you in the current conversation to merge a specific PR.
 - ❌ Never commit on merged feature branches
 - ❌ Never force push to main
+- CDC submodule bump: follow `.agents/skills/cdc-bump/SKILL.md` (pin only merged `1.20.1` commits; run `scripts/check-cdc-submodule.sh` before Ready).
 
 **Version Management**:
 - Version ONLY in `modpack.toml` - CI auto-updates other configs

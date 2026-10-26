@@ -1,0 +1,4 @@
+interface:
+  display_name: "CDC Bump"
+  short_description: "Bump CDC submodule after Core merge"
+  default_prompt: "Use $cdc-bump when changing Create Delight Core or updating the CDC-mod-src submodule pointer, jar, or create-delight-core.pw.toml."
