@@ -4,6 +4,7 @@ global.CDClientJavaClasses = {
     $ACParticleRegistry: Java.loadClass("com.github.alexmodguy.alexscaves.client.particle.ACParticleRegistry"),
     $BlockParticleOption: Java.loadClass("net.minecraft.core.particles.BlockParticleOption"),
     $BlockStateProperties: Java.loadClass("net.minecraft.world.level.block.state.properties.BlockStateProperties"),
+    $CDConfig: Java.loadClass("io.github.jasonsimpart.createdelightcore.CDConfig"),
     $CreateSceneBuilder: Java.loadClass("com.simibubi.create.foundation.ponder.CreateSceneBuilder"),
     $FeatureToggle: Java.loadClass("com.hlysine.create_connected.config.FeatureToggle"),
     $FluidFX: Java.loadClass("com.simibubi.create.content.fluids.FluidFX"),
