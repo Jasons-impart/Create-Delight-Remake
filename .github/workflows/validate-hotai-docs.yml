@@ -1,0 +1,26 @@
+name: Validate HotAI docs
+
+on:
+  pull_request:
+    paths:
+      - 'hotai/**'
+      - 'docs/dev-knowledge/hotai/**'
+      - 'scripts/check-hotai-docs.sh'
+      - '.github/workflows/validate-hotai-docs.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Need enough history to diff against the PR base.
+          fetch-depth: 0
+      - name: Require HotAI docs when hotai/ files change
+        env:
+          HOTAI_DOCS_BASE: ${{ github.event.pull_request.base.sha }}
+          HOTAI_DOCS_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: bash scripts/check-hotai-docs.sh
