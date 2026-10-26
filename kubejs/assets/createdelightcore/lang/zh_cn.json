@@ -1,4 +1,6 @@
 {
+  "createdelightcore.config.showDifficultyHud": "显示难度 HUD",
+  "createdelightcore.config.showDifficultyHud.tooltip": "显示屏幕左侧的难度名称和进度条。保存后立即生效，不影响实际难度。",
   "key.categories.createdelightcore": "齿轮盛宴",
   "itemGroup.createdelightcore.coin": "钱币与物品",
   "item.createdelightcore.iron_coin": "§7铁币",

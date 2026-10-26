@@ -30,7 +30,7 @@
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 40 个 `.badiff`；静态 JAR 命中 36 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
+当前扫描到 41 个 `.badiff`；静态 JAR 命中 37 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |
 |---|---|---|---|
@@ -69,6 +69,7 @@
 | Quality Food | `hotai/de/cadentem/quality_food/mixin/create/BasinRecipeMixin.badiff` | `de/cadentem/quality_food/mixin/create/BasinRecipeMixin` | 静态命中 `quality_food-1.20.1-2.4.3-all.jar` |
 | Unknown | `hotai/dev/latvian/mods/kubejs/util/Lazy.badiff` | `dev/latvian/mods/kubejs/util/Lazy` | 静态命中 `kubejs-forge-2001.6.5-build.16.jar` |
 | Better Compatibility Checker | `hotai/dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin` | 静态命中 `BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar` |
+| Create Delight Core | `hotai/io/github/jasonsimpart/createdelightcore/CDConfig.badiff` | `io/github/jasonsimpart/createdelightcore/CDConfig` | 静态命中 `Create-Delight-Core-1.20.1-dev.jar` |
 | Create Delight Core | `hotai/io/github/jasonsimpart/createdelightcore/mixin/create/BasinRecipeMixin.badiff` | `io/github/jasonsimpart/createdelightcore/mixin/create/BasinRecipeMixin` | 静态命中 `Create-Delight-Core-1.20.1-dev.jar` |
 | Create Delight Core | `hotai/io/github/jasonsimpart/createdelightcore/mixin/quality_food/QualityFoodMixin.badiff` | `io/github/jasonsimpart/createdelightcore/mixin/quality_food/QualityFoodMixin` | 静态命中 `Create-Delight-Core-1.20.1-dev.jar` |
 | Unknown | `hotai/net/yiran/rebalancing/core/mixins/AttributeHelperMixin.badiff` | `net/yiran/rebalancing/core/mixins/AttributeHelperMixin` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
@@ -77,6 +78,29 @@
 <!-- HOTAI_STATUS:END -->
 
 ## 代码化改动索引
+
+### CDC 难度 HUD 配置
+
+目标：`io/github/jasonsimpart/createdelightcore/CDConfig.badiff`，绑定 CDC `2.2.16j` 的 `Create-Delight-Core-1.20.1-dev.jar`（SHA-256 `de9e0ddad0b13bc34a9f1a7caaa79256d4403af9af0488e9dcef15e5800d9e36`）；不替换冻结的 CDC JAR，也不改变子模块指针。
+
+在 `CDConfig.<clinit>` 的原有 `BUILDER.build()` 前定义一个布尔项，并增加客户端读取入口，等价逻辑如下：
+
+```java
+private static final ForgeConfigSpec.BooleanValue SHOW_DIFFICULTY_HUD = BUILDER
+    .comment("Show the difficulty HUD on the left side of the screen. Changes take effect immediately.")
+    .translation("createdelightcore.config.showDifficultyHud")
+    .define("showDifficultyHud", true);
+
+public static boolean isDifficultyHudVisible() {
+    return SHOW_DIFFICULTY_HUD.get();
+}
+```
+
+配置位于客户端本地 `config/createdelightcore-common.toml`，Configured 的 Create Delight Core 常规配置页可编辑；它不属于服务端同步配置，不改变实际难度。`kubejs/client_scripts/00_java_classes.js` 在客户端域加载 `CDConfig`，`render/render_difficulty_gui.js` 每次绘制前调用读取入口，不缓存布尔结果；Configured 保存后无需重载脚本或重启即可切换。首次安装 HotAI 补丁仍须完整重启客户端。中文与英文名称、提示位于 `kubejs/assets/createdelightcore/lang/`，旧 `config/createdelight/difficulty_hud.json` 不再读取。
+
+补丁通过实际 Hotai 1.0 `BytecodeTransformer` 生成 `MemoryDiff`，并经实际 `DiffTransformer` 重放逐字节一致；全部方法通过 ASM `BasicVerifier`。移除新增字段、方法和静态初始化指令后，原 class 与归一化输入逐字节一致。隔离 JVM 使用真实 Forge 47.4.16 `ForgeConfigSpec` 验证默认 true、翻译键、不需世界重启、`true → false → true` 即时读取和配置重新加载，同时保留原 COMMON 配置项；客户端绘制回调已用可变开关验证隐藏/显示切换。Configured 界面点击和完整重启后的游戏回归仍待验证。
+
+补丁 SHA-256：`dc7a7e9fb88af87eb3672dfca08f63d4761db2e4fc48d2c8216cd6c787dacaf1`。CDC 升级时必须复核或重建；若新 CDC 已提供同名配置与读取入口，应移除此补丁，避免重复定义。
 
 ### More Mod Tetra 纯白容器效果续期
 

@@ -1,4 +1,6 @@
 {
+  "createdelightcore.config.showDifficultyHud": "Show Difficulty HUD",
+  "createdelightcore.config.showDifficultyHud.tooltip": "Show the difficulty name and progress bar on the left side of the screen. Takes effect immediately after saving and does not change difficulty.",
   "key.categories.createdelightcore": "Create Delight",
   "itemGroup.createdelightcore.coin": "Coins & Items",
   "item.createdelightcore.iron_coin": "§7Iron Coin",
