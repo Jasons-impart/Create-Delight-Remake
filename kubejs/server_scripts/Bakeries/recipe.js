@@ -341,8 +341,8 @@ ServerEvents.recipes(e => {
         let iner = "bakeries:round_bread_dough"
         create.sequenced_assembly('bakeries:pineapple_bun_dough', 'bakeries:round_bread_dough',
             [
-                create.deploying(iner, [iner, 'createdelight:butter']),
-                create.deploying(iner, [iner, "minecraft:sugar"])
+                create.deploying(iner, [iner, "minecraft:sugar"]),
+                create.deploying(iner, [iner, 'createdelight:butter'])
             ]
         )
             .loops(1)
@@ -361,8 +361,8 @@ ServerEvents.recipes(e => {
         let iner = "bakeries:round_bread_dough"
         create.sequenced_assembly('bakeries:brown_sugar_roll_dough', iner,
             [
-                create.deploying(iner, [iner, 'createdelight:butter']),
-                create.deploying(iner, [iner, "bakeries:brown_sugar_cube"])
+                create.deploying(iner, [iner, "bakeries:brown_sugar_cube"]),
+                create.deploying(iner, [iner, 'createdelight:butter'])
             ]
         )
             .loops(1)

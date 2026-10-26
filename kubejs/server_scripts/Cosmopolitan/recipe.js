@@ -158,8 +158,8 @@ ServerEvents.recipes(e => {
         {
             let iner = "minecraft:apple"
             create.sequenced_assembly(Item.of("cosmopolitan:toffee_apple", { berrySyrupFlavor: flavor }), iner, [
-                create.deploying(iner, [iner, "minecraft:stick"]),
-                create.filling(iner, [iner, Fluid.of(syrup, 250)])
+                create.filling(iner, [iner, Fluid.of(syrup, 250)]),
+                create.deploying(iner, [iner, "minecraft:stick"])
             ])
                 .loops(1)
                 .transitionalItem(iner)
@@ -168,8 +168,8 @@ ServerEvents.recipes(e => {
         {
             let iner = "minecraft:golden_apple"
             create.sequenced_assembly(Item.of("cosmopolitan:toffee_golden_apple", { berrySyrupFlavor: flavor }), iner, [
-                create.deploying(iner, [iner, "minecraft:stick"]),
-                create.filling(iner, [iner, Fluid.of(syrup, 250)])
+                create.filling(iner, [iner, Fluid.of(syrup, 250)]),
+                create.deploying(iner, [iner, "minecraft:stick"])
             ])
                 .loops(1)
                 .transitionalItem(iner)
