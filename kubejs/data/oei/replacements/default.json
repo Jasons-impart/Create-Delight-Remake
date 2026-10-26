@@ -21,9 +21,115 @@
         "matchItems": [
             "ratatouille:salt",
             "bakeries:salt",
-            "northstar:salt"
+            "northstar:salt",
+            "northeast_china_delight:salt"
         ],
         "resultItems": "vintagedelight:salt_dust"
+    },
+    {
+        "matchItems": [
+            "vintagedelight:vinegar_bottle"
+        ],
+        "resultItems": "northeast_china_delight:vinegar"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:soy_sauce_bottle"
+        ],
+        "resultItems": "northeast_china_delight:soy_sauce"
+    },
+    {
+        "matchItems": [
+            "vintagedelight:nut_mash_bottle"
+        ],
+        "resultItems": "northeast_china_delight:peanut_butter"
+    },
+    {
+        "matchItems": [
+            "northeast_china_delight:shrimp"
+        ],
+        "resultItems": "crabbersdelight:shrimp"
+    },
+    {
+        "matchItems": [
+            "northeast_china_delight:salted_fish"
+        ],
+        "resultItems": "brewinandchewin:kippers"
+    },
+    {
+        "matchItems": [
+            "vintagedelight:ghost_pepper"
+        ],
+        "resultItems": "northeast_china_delight:red_chili"
+    },
+    {
+        "matchItems": [
+            "vintagedelight:ghost_pepper_seeds"
+        ],
+        "resultItems": "northeast_china_delight:red_chili_seeds"
+    },
+    {
+        "matchItems": [
+            "corn_delight:corn_crate",
+            "northeast_china_delight:corn_crate"
+        ],
+        "resultItems": "culturaldelights:corn_cob_crate"
+    },
+    {
+        "matchItems": [
+            "culturaldelights:cucumber_crate",
+            "youkaishomecoming:cucumber_crate",
+            "northeast_china_delight:cucumber_crate"
+        ],
+        "resultItems": "vintagedelight:cucumber_crate"
+    },
+    {
+        "matchItems": [
+            "northeast_china_delight:eggplant_crate"
+        ],
+        "resultItems": "culturaldelights:eggplant_crate"
+    },
+    {
+        "matchItems": [
+            "vintagedelight:ghost_pepper_crate"
+        ],
+        "resultItems": "northeast_china_delight:red_chili_crate"
+    },
+    {
+        "matchItems": [
+            "dumplings_delight:chinese_cabbage_crate"
+        ],
+        "resultItems": "northeast_china_delight:napa_cabbage_crate"
+    },
+    {
+        "matchItems": [
+            "northeast_china_delight:green_onion_crate"
+        ],
+        "resultItems": "dumplings_delight:greenonion_crate"
+    },
+    {
+        "matchItems": [
+            "northeast_china_delight:corn_seeds_sack"
+        ],
+        "resultItems": "corn_delight:corn_kernel_bag"
+    },
+    {
+        "matchItems": [
+            "northeast_china_delight:soybean_sack"
+        ],
+        "resultItems": "youkaishomecoming:soybean_bag"
+    },
+    {
+        "matchItems": [
+            "northeast_china_delight:red_bean_sack"
+        ],
+        "resultItems": "neapolitan:adzuki_crate"
+    },
+    {
+        "matchItems": [
+            "northeast_china_delight:peanut_sack"
+        ],
+        "resultItems": "vintagedelight:peanut_crate"
     },
     {
         "matchItems": [
@@ -56,7 +162,8 @@
     },
     {
         "matchItems": [
-            "corn_delight:corn_seeds"
+            "corn_delight:corn_seeds",
+            "northeast_china_delight:corn_seeds"
         ],
         "resultItems": "culturaldelights:corn_kernels"
     },
@@ -68,7 +175,8 @@
     },
     {
         "matchItems": [
-            "dumplings_delight:chinese_cabbage"
+            "dumplings_delight:chinese_cabbage",
+            "northeast_china_delight:napa_cabbage"
         ],
         "resultItems": "festival_delicacies:chinese_cabbage"
     },
@@ -104,7 +212,8 @@
     },
     {
         "matchItems": [
-            "dumplings_delight:greenonion"
+            "dumplings_delight:greenonion",
+            "northeast_china_delight:green_onion"
         ],
         "resultItems": "festival_delicacies:greenonion"
     },
@@ -112,7 +221,8 @@
         "matchItems": [
             "neapolitan:adzuki_beans",
             "youkaishomecoming:redbean",
-            "festival_delicacies:red_bean"
+            "festival_delicacies:red_bean",
+            "northeast_china_delight:red_bean"
         ],
         "resultItems": "createdelight:adzuki_beans_seed"
     },
@@ -130,13 +240,16 @@
     },
     {
         "matchItems": [
-            "culturaldelights:cucumber_seeds"
+            "culturaldelights:cucumber_seeds",
+            "northeast_china_delight:cucumber_seeds",
+            "youkaishomecoming:cucumber_seeds"
         ],
         "resultItems": "vintagedelight:cucumber_seeds"
     },
     {
         "matchItems": [
-            "dumplings_delight:chinese_cabbage_seeds"
+            "dumplings_delight:chinese_cabbage_seeds",
+            "northeast_china_delight:napa_cabbage_seeds"
         ],
         "resultItems": "festival_delicacies:chinese_cabbage_seeds"
     },
@@ -161,15 +274,23 @@
     {
         "matchItems": [
             "culturaldelights:cucumber",
-            "youkaishomecoming:cucumber"
+            "youkaishomecoming:cucumber",
+            "northeast_china_delight:cucumber"
         ],
         "resultItems": "vintagedelight:cucumber"
     },
     {
         "matchItems": [
-            "vintagedelight:pickle"
+            "vintagedelight:pickle",
+            "northeast_china_delight:pickled_cucumber"
         ],
         "resultItems": "culturaldelights:pickle"
+    },
+    {
+        "matchItems": [
+            "northeast_china_delight:pickled_cucumber_crate"
+        ],
+        "resultItems": "culturaldelights:pickle_crate"
     },
     {
         "matchItems": [
@@ -179,7 +300,8 @@
     },
     {
         "matchItems": [
-            "youkaishomecoming:coffee_berries"
+            "youkaishomecoming:coffee_berries",
+            "farmersrespite:coffee_berries"
         ],
         "resultItems": "createcafe:coffee_fruit"
     },
@@ -209,15 +331,10 @@
     },
     {
         "matchItems": [
-            "farmersrespite:coffee_beans"
+            "farmersrespite:coffee_beans",
+            "youkaishomecoming:coffee_beans"
         ],
         "resultItems": "createcafe:roasted_coffee_beans"
-    },
-    {
-        "matchItems":[
-            "farmersrespite:coffee_berries"
-        ],
-        "resultItems": "createcafe:coffee_fruit"
     },
     {
         "matchItems": [
@@ -402,12 +519,6 @@
     },
     {
         "matchItems": [
-            "youkaishomecoming:coffee_beans"
-        ],
-        "resultItems": "createcafe:roasted_coffee_beans"
-    },
-    {
-        "matchItems": [
             "youkaishomecoming:wood_basin"
         ],
         "resultItems": "vinery:grapevine_pot"
@@ -432,7 +543,8 @@
     },
     {
         "matchItems": [
-            "festival_delicacies:peanut"
+            "festival_delicacies:peanut",
+            "northeast_china_delight:peanut"
         ],
         "resultItems": "vintagedelight:peanut"
     },
@@ -564,8 +676,56 @@
     },
     {
         "matchItems": [
-            "youkaishomecoming:cucumber_seeds"
+            "northeast_china_delight:corn"
         ],
-        "resultItems": "vintagedelight:cucumber_seeds"
+        "resultItems": "culturaldelights:corn_cob"
+    },
+    {
+        "matchItems": [
+            "northeast_china_delight:soybean"
+        ],
+        "resultItems": "youkaishomecoming:soybean"
+    },
+    {
+        "matchItems": [
+            "northeast_china_delight:green_onion_seeds"
+        ],
+        "resultItems": "festival_delicacies:greenonion_seeds"
+    },
+    {
+        "matchItems": [
+            "northeast_china_delight:eggplant"
+        ],
+        "resultItems": "culturaldelights:eggplant"
+    },
+    {
+        "matchItems": [
+            "northeast_china_delight:eggplant_seeds"
+        ],
+        "resultItems": "culturaldelights:eggplant_seeds"
+    },
+    {
+        "matchItems": [
+            "northeast_china_delight:tofu"
+        ],
+        "resultItems": "youkaishomecoming:tofu"
+    },
+    {
+        "matchItems": [
+            "northeast_china_delight:corn_flour"
+        ],
+        "resultItems": "createdelight:corn_flour"
+    },
+    {
+        "matchItems": [
+            "northeast_china_delight:raw_sausage"
+        ],
+        "resultItems": "ratatouille:raw_sausage"
+    },
+    {
+        "matchItems": [
+            "northeast_china_delight:blood_sausage"
+        ],
+        "resultItems": "butchercraft:blood_sausage"
     }
 ]

@@ -5,7 +5,7 @@ global.CDServerJavaClasses = {
     $AABB: Java.loadClass("net.minecraft.world.phys.AABB"),
     $AdventureConfig: Java.loadClass("dev.shadowsoffire.apotheosis.adventure.AdventureConfig"),
     $ArrayList: Java.loadClass("java.util.ArrayList"),
-    $AtlasPlanet: Java.loadClass("com.lightning.northstar.item.atlas.SpaceAtlasContent$AtlasPlanet"),
+    $AtlasPlanet: Java.loadClass("com.lightning.northstar.item.atlas.SpaceAtlasContent$Planet"),
     $AtlasReading: Java.loadClass("com.lightning.northstar.item.atlas.SpaceAtlasContent$AtlasReading"),
     $AttachmentDataUtils: Java.loadClass("com.tacz.guns.util.AttachmentDataUtils"),
     $BeltBlock: Java.loadClass("com.simibubi.create.content.kinetics.belt.BeltBlock"),

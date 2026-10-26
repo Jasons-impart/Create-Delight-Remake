@@ -82,11 +82,12 @@ CD-master-dev/
 - ❌ Never merge PRs yourself (`gh pr merge`, GitHub web/API merge, or auto-merge). Create PRs and wait for the user to manually merge unless the user explicitly asks you in the current conversation to merge a specific PR.
 - ❌ Never commit on merged feature branches
 - ❌ Never force push to main
+- CDC submodule bump: follow `.agents/skills/cdc-bump/SKILL.md` (pin only merged `1.20.1` commits; run `scripts/check-cdc-submodule.sh` before Ready).
 
 **Version Management**:
 - Version ONLY in `modpack.toml` - CI auto-updates other configs
 - Test builds: `test-*` branches → version appended with `-test-build-{n}`
-- Releases: `release*` branches
+- Releases: `release-vxxxx` stable maintenance branches (e.g. `release-v050x`); after a formal non-prerelease Release, CDC is frozen—new CDC mixin fixes go to `main` / the next version line, HotAI-style fixes may still land on the maintenance branch. Full policy: `docs/dev-knowledge/branch-and-release.md`.
 
 **Mod Management (Packwiz)**:
 - `mods/`, `resourcepacks/`, `shaderpacks/`, and `tacz/` contain `.pw.toml` metadata; downloaded runtime files are not tracked

@@ -27,3 +27,15 @@ new Schema("youkaishomecoming:cuisine_ordered")
     .simpleKey("result", "outputItem")
     .simpleKey("base", "nonBlankString")
     .simpleKey("input", "inputItemArray")
+
+new Schema("youkaishomecoming:unordered_cooking")
+    .simpleKey("result", "outputItem")
+    .simpleKey("input", "inputItemArray")
+    .simpleKey("time", "intNumber")
+
+// id 是锅内汤底标识，和配方自身的资源 ID 分开。
+new Schema("youkaishomecoming:immediate_soup")
+    .simpleKey("id", "nonBlankString")
+    .simpleKey("input", "inputItemArray")
+    .simpleKey("time", "intNumber")
+    .simpleKey("color", "intNumber")

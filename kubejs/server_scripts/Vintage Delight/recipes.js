@@ -9,7 +9,8 @@ ServerEvents.recipes(e => {
         "vintagedelight:fermenting/century_egg_from_fermenting",
         "vintagedelight:fermenting/kimchi_from_fermenting",
         "vintagedelight:stuffed_burrito",
-        "vintagedelight:fermenting/frost_fermenta"
+        "vintagedelight:fermenting/frost_fermenta",
+        "vintagedelight:fermenting/surstromming_from_fermenting"
     ])
     e.replaceOutput({id: "vintagedelight:fermenting/fermented_spider_eye_from_fermenting"}, "vintagedelight:pickle", "minecraft:fermented_spider_eye")
     e.replaceInput({}, 'farmersdelight:raw_pasta', "#forge:pasta")
@@ -219,12 +220,8 @@ ServerEvents.recipes(e => {
         ]
     ).heated().id("createdelight:mixing/nut_milk")
 
-    e.recipes.create.filling("vintagedelight:vinegar_bottle", ["minecraft:glass_bottle", Fluid.of("createdelight:vinegar", 250)])
-    .id("createdelight:filling/compat/vintagedelight/vinegar_bottle")
     e.recipes.create.filling("vintagedelight:vinegar_mason_jar", ["vintagedelight:mason_jar", Fluid.of("createdelight:vinegar", 750)])
     .id("createdelight:filling/compat/vintagedelight/vinegar_jar")
-    e.recipes.create.emptying(["minecraft:glass_bottle", Fluid.of("createdelight:vinegar", 250)], "vintagedelight:vinegar_bottle")
-    .id("createdelight:filling/emptying/vintagedelight/vinegar_bottle")
     e.recipes.create.emptying(["vintagedelight:mason_jar", Fluid.of("createdelight:vinegar", 750)], "vintagedelight:vinegar_mason_jar")
     .id("createdelight:filling/emptying/vintagedelight/vinegar_jar")
 

@@ -209,7 +209,7 @@ jobs:
           python .github/workflows/scripts/update_credits.py --mode real
       - name: 删除服务端产物无关文件
         run: |
-            rm -rf resourcepacks shaderpacks packwiz-files CDC-mod-src .agents .codex .github docs scripts
+            rm -rf resourcepacks shaderpacks packwiz-files CDC-mod-src .agents .codex .github docs scripts PCL
             rm -f ModList0.4a.md README.md TODOlist.md KubeJSStyleGuide.md GettingStarted.md \
                   client_jvm_args.example.txt lessons-learned.md .gitignore .gitmodules \
                   sync-packwiz-assets.bat update-packwiz-meta.bat index.html

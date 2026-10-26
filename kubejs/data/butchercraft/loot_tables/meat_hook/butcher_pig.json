@@ -22,22 +22,14 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "butchercraft:pork_ribs"
+            "name": "northeast_china_delight:pork_ribs"
           }
         ],
         "functions": [
           {
             "add": false,
-            "count": 6.0,
+            "count": 3.0,
             "function": "minecraft:set_count"
-          },
-          {
-            "count": {
-              "type": "minecraft:uniform",
-              "max": 1.0,
-              "min": 0.0
-            },
-            "function": "minecraft:looting_enchant"
           }
         ],
         "rolls": 1.0
@@ -138,6 +130,57 @@
           {
             "add": false,
             "count": 2.0,
+            "function": "minecraft:set_count"
+          }
+        ],
+        "rolls": 1.0
+      },
+      {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "northeast_china_delight:pork_hock"
+          }
+        ],
+        "functions": [
+          {
+            "add": false,
+            "count": 4.0,
+            "function": "minecraft:set_count"
+          }
+        ],
+        "rolls": 1.0
+      },
+      {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "northeast_china_delight:oil_edge"
+          }
+        ],
+        "functions": [
+          {
+            "add": false,
+            "count": 6.0,
+            "function": "minecraft:set_count"
+          }
+        ],
+        "rolls": 1.0
+      },
+      {
+        "bonus_rolls": 0.0,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "butchercraft:pork_ribs"
+          }
+        ],
+        "functions": [
+          {
+            "add": false,
+            "count": 3.0,
             "function": "minecraft:set_count"
           }
         ],
