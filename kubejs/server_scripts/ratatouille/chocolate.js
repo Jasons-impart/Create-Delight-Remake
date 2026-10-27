@@ -24,6 +24,18 @@ function giveOrDrop(player, item) {
     }
 }
 
+/**
+ * 右键脱模：把 Quality Food 星级从 solid 模具拷到巧克力棒（无状态一次性交互）。
+ * 冷冻方块固化品质由 HotAI FrozenBlockEntity.badiff 处理，勿在此加 tick。
+ */
+function copyChocolateQuality(from, to) {
+    let qualityUtils = global.CDServerJavaClasses.$QualityUtils
+    let quality = qualityUtils.getQuality(from)
+    if (quality.level() > 0) {
+        qualityUtils.applyQuality(to, quality)
+    }
+}
+
 Object.entries(solidChocolateMoldDemolding).forEach(([mold, chocolate]) => {
     ItemEvents.rightClicked(mold, e => {
         const {player} = e
@@ -31,10 +43,13 @@ Object.entries(solidChocolateMoldDemolding).forEach(([mold, chocolate]) => {
             return
 
         let handStack = player.getItemInHand(e.hand)
+        let qualitySource = handStack
         let amount = player.isCrouching() ? handStack.count : 1
+        let chocolateStack = Item.of(chocolate, amount)
+        copyChocolateQuality(qualitySource, chocolateStack)
         handStack.shrink(amount)
 
-        giveOrDrop(player, Item.of(chocolate, amount))
+        giveOrDrop(player, chocolateStack)
         giveOrDrop(player, Item.of("ratatouille:chocolate_mold", amount))
         player.swing()
         e.cancel()
