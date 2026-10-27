@@ -676,8 +676,8 @@ if (state == null) {
 
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
-| `org/forsteri/ratatouille/content/squeeze_basin/SqueezeBasinBlockEntity.badiff` | 已生成，待游戏内回归 | `process()`：扣料前采样槽 0（无则槽 1）品质；`acceptOutputs` 前对首个产物 `QualityUtils.applyQuality`。 | CDC SqueezeBasin mixin 注入点在 2.2.16j 失效。 |
-| `org/forsteri/ratatouille/content/frozen_block/FrozenBlockEntity.badiff` | 已生成，待游戏内回归 | `tick()`：CollectingChillness 满、`getResultItem` 换堆叠后、`ItemEntity#setItem` 前对产物 `applyQuality(getQuality(input))`。 | 替代原 KubeJS tick/`persistentData` 方案。 |
-| `com/pyzpre/createbitterballen/block/mechanicalfryer/MechanicalFryerEntity.badiff` | 已生成，待游戏内回归 | 对齐 CDC #149：`applyRecipe` 捕获输入，在 `insertItemStacked` 前套品质。 | 050x 仍注册失效的 DeepFryingRecipeMixin。 |
+| `org/forsteri/ratatouille/content/squeeze_basin/SqueezeBasinBlockEntity.badiff` | 已生成，待游戏内回归 | `process()`：扣料前仅采样槽 0 品质（无槽 1 回退）；`acceptOutputs` 前对首个产物 `QualityUtils.applyQuality`。 | CDC SqueezeBasin mixin 注入点在 2.2.16j 失效。 |
+| `org/forsteri/ratatouille/content/frozen_block/FrozenBlockEntity.badiff` | 已生成，待游戏内回归 | `tick()`：`getResultItem` 后先 `ItemStack.copy()`，再 setCount；`setItem` 前 `applyQuality(getQuality(input))`。 | 替代原 KubeJS tick/`persistentData` 方案；避免共享配方模板串品质。 |
+| `com/pyzpre/createbitterballen/block/mechanicalfryer/MechanicalFryerEntity.badiff` | 已生成，待游戏内回归 | 对齐 CDC fryer mixin：`getStackInSlot(0)` 后、`shrink` 前 `copy()` 快照；`insertItemStacked` 前对产物套品质。 | 050x 仍注册失效的 DeepFryingRecipeMixin；整堆耗尽时仍能继承。 |
 
 目标 JAR：`create_ratatouille-1.20.1-1.3.8.jar`、`create_bic_bit` 当前包内版本。基线按 HotaiTransformer 归一化；FrozenBlockEntity MemoryDiff 往返一致。
