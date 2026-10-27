@@ -25,7 +25,7 @@ ServerEvents.recipes(e => {
         .id("createdelight:mixing/condensed_milk")
     e.recipes.create.mixing(
         Fluid.of("cosmopolitan:condensed_milk", 250),
-        [Fluid.of("minecraft:milk", 250), Fluid.of("createdelightcore:base_syrup", 125)]
+        [Fluid.of("minecraft:milk", 250), Fluid.of("createdelightcore:base_syrup", 50)]
     )
         .heated()
         .id("createdelight:mixing/condensed_milk_from_syrup")
