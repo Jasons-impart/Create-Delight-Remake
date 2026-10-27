@@ -328,6 +328,11 @@ ServerEvents.tags("item", e => {
         'bakeries:country_bread_dough', 
         'ratatouille:cocoa_powder', 
         'ratatouille:cocoa_butter', 
+        // 蛋糕模具：注液品质挂上后，烤炉 BakeDataMixin 才能继承到蛋糕胚
+        'ratatouille:cake_mold_filled',
+        'ratatouille:cake_mold_baked',
+        'createdelight:red_velvet_cake_mold_filled',
+        'createdelight:red_velvet_cake_mold_baked',
         'ratatouille:dried_cocoa_beans', 
         'ratatouille:dried_cocoa_nibs',
         'ratatouille:salty_dough', 
