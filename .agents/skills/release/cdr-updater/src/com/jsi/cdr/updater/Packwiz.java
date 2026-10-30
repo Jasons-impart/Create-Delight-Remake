@@ -362,7 +362,6 @@ final class Packwiz {
 
     private static List<String> candidateUrls(HttpClient http, Asset asset, Consumer<String> log) {
         List<String> urls = new ArrayList<>();
-        addUrl(urls, asset.url);
         java.util.LinkedHashSet<String> names = new java.util.LinkedHashSet<>();
         if (asset.filename != null && !asset.filename.isBlank() && !asset.filename.startsWith("cf-")) {
             names.add(asset.filename);
@@ -383,12 +382,15 @@ final class Packwiz {
         }
         for (String name : names) {
             if (asset.fileId > 0) {
-                for (String host : new String[]{"edge.forgecdn.net", "mediafilez.forgecdn.net", "media.forgecdn.net"}) {
+                for (String host : new String[]{"mediafilez.forgecdn.net", "edge.forgecdn.net", "media.forgecdn.net"}) {
                     addUrl(urls, "https://" + host + "/files/" + (asset.fileId / 1000) + "/" + (asset.fileId % 1000)
                             + "/" + encodePath(name));
                 }
             }
         }
+        // 清单里的 url（GitHub raw）放到最后：带 url 字段的 resourcepack 如果先去撞
+        // raw.githubusercontent.com，慢到超时就直接跳过，轮不到上面的 CurseForge 直连。
+        addUrl(urls, asset.url);
         return urls;
     }
 
