@@ -1047,18 +1047,18 @@ final class Tests {
         check("结束后无进度", !Progress.get().active);
         check("GitHub 会套加速源", Net.downloadUrls("https://github.com/a/b/releases/download/v/f.zip").size() > 1);
         check("GitHub 优先走加速源", Net.downloadUrls("https://github.com/a/b/releases/download/v/f.zip")
-                .get(0).startsWith("https://ghfast.top/"));
+                .get(0).startsWith("https://gh-proxy.com/"));
         check("GitHub 加速源带原地址", Net.downloadUrls("https://github.com/a/b/releases/download/v/f.zip")
                 .get(0).contains("https://github.com/a/b/releases/download/v/f.zip"));
         check("GitHub 直连放最后", "https://github.com/a/b/releases/download/v/f.zip"
                 .equals(Net.downloadUrls("https://github.com/a/b/releases/download/v/f.zip")
                         .get(Net.downloadUrls("https://github.com/a/b/releases/download/v/f.zip").size() - 1)));
         check("CurseForge 不套加速源", Net.downloadUrls("https://edge.forgecdn.net/files/1/2/a.jar").size() == 1);
-        check("已加速不再套一层", Net.downloadUrls("https://ghfast.top/https://github.com/a/b/file.zip").size() == 1);
-        check("重定向仍走加速源", "https://ghfast.top/https://objects.githubusercontent.com/x"
-                .equals(Net.keepProxied("https://ghfast.top/", "https://objects.githubusercontent.com/x")));
+        check("已加速不再套一层", Net.downloadUrls("https://gh-proxy.com/https://github.com/a/b/file.zip").size() == 1);
+        check("重定向仍走加速源", "https://gh-proxy.com/https://objects.githubusercontent.com/x"
+                .equals(Net.keepProxied("https://gh-proxy.com/", "https://objects.githubusercontent.com/x")));
         check("加速地址能还原 GitHub", "https://github.com/a/b/file.zip"
-                .equals(Net.officialGithub("https://ghfast.top/https://github.com/a/b/file.zip")));
+                .equals(Net.officialGithub("https://gh-proxy.com/https://github.com/a/b/file.zip")));
 
         Path tmp = Files.createTempDirectory("cdr-progress");
         HttpServer server = HttpServer.create(new InetSocketAddress("127.0.0.1", 0), 0);
