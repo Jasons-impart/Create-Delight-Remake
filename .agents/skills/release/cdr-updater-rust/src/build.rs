@@ -266,7 +266,16 @@ fn pull_listed(admin: &super::admin::Admin, config: &Path, client_root: &Path, s
             continue;
         }
         let known = info.get(&job.file);
-        let mut filename = if job.filename.is_empty() || job.filename.starts_with("cf-") {
+        // 有 CurseForge 上下文时优先用 API 返回的真实文件名。
+        // 清单里的 filename 是 packwiz 改过名的（把中文+§格式符的真实名改写成
+        // 纯 ASCII 的短名），拿它拼 CDN 直链必然 403/404。
+        let real_name = known
+            .map(|item| item.0.clone())
+            .filter(|name| !name.is_empty() && !name.starts_with("cf-"))
+            .unwrap_or_default();
+        let mut filename = if !real_name.is_empty() {
+            real_name
+        } else if job.filename.is_empty() || job.filename.starts_with("cf-") {
             known.map(|item| item.0.clone()).filter(|name| !name.is_empty()).unwrap_or(job.filename.clone())
         } else {
             job.filename.clone()
@@ -288,25 +297,31 @@ fn pull_listed(admin: &super::admin::Admin, config: &Path, client_root: &Path, s
         if dest.is_file() && hash_matches(&dest, &job.hash_format, &job.hash) {
             continue;
         }
+        // URL 优先级：CurseForge 直连排第一，GitHub raw 放最后。
+        // 之前 job.url 在最前面，带 url 字段的 resourcepack 先撞 raw.githubusercontent.com，
+        // 慢到超时直接 skip，轮不到 CurseForge 直连。
         let mut urls = Vec::new();
+        if job.project > 0 && job.file > 0 {
+            if let Some((_, download)) = known {
+                if download.starts_with("https://") {
+                    urls.push(download.clone());
+                }
+            }
+            urls.push(format!("https://api.curseforge.com/v1/mods/{}/files/{}/download", job.project, job.file));
+            if !filename.starts_with("cf-") {
+                let encoded = encode_cdn_name(&filename);
+                // mediafilez 支持 Range（206）；edge 是 302 跳 mediafilez 且带 Range 直接 404；
+                // media 全域 403。所以 mediafilez 排第一。
+                for host in ["mediafilez.forgecdn.net", "edge.forgecdn.net", "media.forgecdn.net"] {
+                    let major = job.file / 1000;
+                    let minor = job.file % 1000;
+                    urls.push(format!("https://{host}/files/{major}/{minor}/{encoded}"));
+                }
+            }
+        }
+        // 纯 GitHub 文件（无 curseforge id）才走镜像，放最后。
         if job.url.starts_with("https://") && !job.url.contains("www.curseforge.com") {
             urls.push(job.url.clone());
-        }
-        if let Some((_, download)) = known {
-            if download.starts_with("https://") {
-                urls.push(download.clone());
-            }
-        }
-        if job.project > 0 && job.file > 0 {
-            urls.push(format!("https://api.curseforge.com/v1/mods/{}/files/{}/download", job.project, job.file));
-        }
-        if job.file > 0 && !filename.starts_with("cf-") {
-            let encoded = encode_cdn_name(&filename);
-            for host in ["edge.forgecdn.net", "mediafilez.forgecdn.net", "media.forgecdn.net"] {
-                let major = job.file / 1000;
-                let minor = job.file % 1000;
-                urls.push(format!("https://{host}/files/{major}/{minor}/{encoded}"));
-            }
         }
         let mut ordered = Vec::new();
         for url in urls {
