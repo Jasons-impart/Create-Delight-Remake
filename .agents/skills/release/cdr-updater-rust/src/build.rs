@@ -179,6 +179,20 @@ fn ingest(admin: &super::admin::Admin, client_root: &Path, server_root: &Path, c
     let mut names = std::collections::BTreeSet::new();
     names.extend(client_files.keys().cloned());
     names.extend(server_files.keys().cloned());
+    // 不要直接 reset：下载失败的文件（forgecdn 超时 / 作者禁分发）会在重建后彻底消失，
+    // 本地缓存也可能已被清理，等于把原本完好的仓库越修越残。
+    // 改为「挪到 .prev 再重建，最后把重建过程中缺失的文件从 .prev 补回来」。
+    let repos_root = client_dir.parent().unwrap_or_else(|| Path::new("."));
+    let prev_client = repos_root.join(".prev_client");
+    let prev_server = repos_root.join(".prev_server");
+    let _ = fs::remove_dir_all(&prev_client);
+    let _ = fs::remove_dir_all(&prev_server);
+    if client_dir.exists() {
+        let _ = fs::rename(client_dir, &prev_client);
+    }
+    if server_dir.exists() {
+        let _ = fs::rename(server_dir, &prev_server);
+    }
     reset_dir(client_dir)?;
     reset_dir(server_dir)?;
     let mut sides = Vec::new();
@@ -207,6 +221,19 @@ fn ingest(admin: &super::admin::Admin, client_root: &Path, server_root: &Path, c
     if has_pack_manifest(client_root) || has_pack_manifest(server_root) {
         admin.note("官方包里有 packwiz / CurseForge 清单，开始补拉缺失文件");
     }
+    // 把上一版仓库里「这次没能重建出来」的文件搬回来，避免一次下载抖动就把仓库砸掉。
+    let mut recovered = 0_u32;
+    if prev_client.is_dir() {
+        recovered += recover_missing(&prev_client, client_dir);
+    }
+    if prev_server.is_dir() {
+        recovered += recover_missing(&prev_server, server_dir);
+    }
+    if recovered > 0 {
+        admin.note(format!("从上一版仓库补回 {recovered} 个本次未重建的文件"));
+    }
+    let _ = fs::remove_dir_all(&prev_client);
+    let _ = fs::remove_dir_all(&prev_server);
     Ok(sides)
 }
 
@@ -696,7 +723,26 @@ fn usable_file(path: &Path) -> bool {
     let mut header = [0_u8; 64];
     let n = file.read(&mut header).unwrap_or(0);
     let text = String::from_utf8_lossy(&header[..n]).to_ascii_lowercase();
-    !text.contains("<html") && !text.contains("<!doctype")
+    if text.contains("<html") || text.contains("<!doctype") {
+        return false;
+    }
+    // 按扩展名校验魔数。之前只挡了 0 字节，1 字节的下载残留能一路通过，
+    // 被当成成品复制进仓库再下发给客户端，客户端 Forge 启动时直接报
+    // `java.util.zip.ZipException: zip END header not found`。
+    // 注意不能按文件大小判断：合法的空壳 mod（如 QuarkOddities-1.20.1.jar）
+    // 真实大小只有 915 字节。
+    let ext = path
+        .extension()
+        .and_then(|value| value.to_str())
+        .unwrap_or("")
+        .to_ascii_lowercase();
+    match ext.as_str() {
+        "jar" | "zip" => n >= 4 && header[0] == 0x50 && header[1] == 0x4B,
+        "png" => n >= 8 && header[..8] == [0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A],
+        "gz" => n >= 2 && header[0] == 0x1F && header[1] == 0x8B,
+        "exe" => n >= 2 && header[0] == 0x4D && header[1] == 0x5A,
+        _ => true,
+    }
 }
 
 fn has_pack_manifest(root: &Path) -> bool {
@@ -1155,6 +1201,23 @@ fn copy_file(source: &Path, dest: &Path) -> Result<(), String> {
     fs::copy(source, dest).map(|_| ()).map_err(|error| error.to_string())
 }
 
+/// 递归把 `source` 里「`dest` 缺失」的文件补过去，返回补了多少个。
+/// 只补缺失，不覆盖已存在的（新版优先）。
+fn recover_missing(source: &Path, dest: &Path) -> u32 {
+    let mut count = 0_u32;
+    let Ok(entries) = fs::read_dir(source) else { return 0 };
+    for entry in entries.flatten() {
+        let path = entry.path();
+        let target = dest.join(entry.file_name());
+        if path.is_dir() {
+            count += recover_missing(&path, &target);
+        } else if !target.exists() && copy_file(&path, &target).is_ok() {
+            count += 1;
+        }
+    }
+    count
+}
+
 fn reset_dir(path: &Path) -> Result<(), String> {
     let _ = fs::remove_dir_all(path);
     fs::create_dir_all(path).map_err(|error| error.to_string())
@@ -1224,11 +1287,15 @@ fn nonempty(value: String, fallback: &str) -> String {
 }
 
 const GITHUB_PROXIES: &[&str] = &[
-    "https://ghfast.top/",
-    "https://gh.llkk.cc/",
-    "https://hub.gitmirror.com/",
-    "https://github.moeyy.xyz/",
-    "https://ghproxy.net/",
+    // 2026-10-29 从部署机（阿里云 101.200.186.119）实测：
+    //   gh-proxy.com            200 / 1.2s  可用
+    //   ghfast.top              403         作者已关闭加速
+    //   gh.llkk.cc              超时
+    //   hub.gitmirror.com       超时
+    //   github.moeyy.xyz        超时
+    //   ghproxy.net             超时
+    // 失效源留在列表里会让每个文件白等一轮超时（rank_urls 测速也要多花时间），
+    // 只保留有实测依据的。
     "https://gh-proxy.com/",
 ];
 
