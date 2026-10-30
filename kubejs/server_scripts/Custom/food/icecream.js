@@ -5,19 +5,19 @@ ServerEvents.recipes(e => {
         "alexscaves:chocolate_ice_cream",
         "alexscaves:sweetberry_ice_cream"
     ])
-    function make_blaze_cooler_ice_cream(e, ingredient, outputFluidIcecream, icecreamscoop) {
-        e.recipes.fluidlogistics.cooling_mixing(
+    function make_snowman_cooler_ice_cream(e, ingredient, outputFluidIcecream, icecreamscoop) {
+        e.recipes.create.mixing(
             Fluid.of(outputFluidIcecream, 750),
             [
                 ingredient,
                 Fluid.of("cosmopolitan:cream", 500),
                 Fluid.of("createdelightcore:base_syrup", 250)
             ]
-        ).supercooled(false).id(`createdelight:cooling_mixing/${outputFluidIcecream.split(":")[1]}`)
-        e.recipes.fluidlogistics.cooling_mixing(
+        ).heatRequirement("cooled").id(`createdelight:cooling_mixing/${outputFluidIcecream.split(":")[1]}`)
+        e.recipes.create.mixing(
             icecreamscoop,
             Fluid.of(outputFluidIcecream, 250)
-        ).supercooled(true).id(`createdelight:cooling_mixing/${icecreamscoop.split(":")[1]}`)
+        ).heatRequirement("frozen").id(`createdelight:cooling_mixing/${icecreamscoop.split(":")[1]}`)
     }
 
     /**
@@ -33,9 +33,15 @@ ServerEvents.recipes(e => {
      * @param {Internal.ItemStack_} icecreamblock 
      */
     function make_ice_cream(e, ingredient, outputFluidIcecream, outputFluidMilkshake, icecreamscoop, icecream, milkshake, icecreamcone, icecreamblock) {
-        make_blaze_cooler_ice_cream(e, ingredient, outputFluidIcecream, icecreamscoop)
-        e.remove({output: Fluid.of(outputFluidIcecream), type: "create:emptying"})
-        e.remove({output: Fluid.of(outputFluidIcecream), type: "create:mixing"})
+        const originalFluidRecipes = []
+        const fluidRecipeTypes = ["create:emptying", "create:mixing"]
+        fluidRecipeTypes.forEach(type => {
+            e.forEachRecipe({output: Fluid.of(outputFluidIcecream), type: type, not: {mod: "createdelight"}}, recipe => {
+                originalFluidRecipes.push(recipe.getId())
+            })
+        })
+        remove_recipes_id(e, originalFluidRecipes)
+        make_snowman_cooler_ice_cream(e, ingredient, outputFluidIcecream, icecreamscoop)
 
         e.remove({output: icecream, type: "create:filling"})
         e.remove({output: icecream, type: "crafting_shapeless"})

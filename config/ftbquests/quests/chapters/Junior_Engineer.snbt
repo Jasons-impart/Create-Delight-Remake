@@ -2081,6 +2081,19 @@
 			x: 15.5d
 			y: 5.0d
 		}
+		{
+			dependencies: ["61FEE1B1ACE8ABC8"]
+			description: ["[ \"暂时还做不了，需要先\", { \"text\": \"炼出钢\", \"color\": \"aqua\", \"underlined\": \"true\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"3A9275459C333CF8\" } }, \"哦。\" ]"]
+			id: "40CED76D0007BA90"
+			subtitle: "更省空间的蒸汽引擎"
+			tasks: [{
+				id: "292B06771A9BF098"
+				item: "fluidlogistics:oscillating_steam_engine"
+				type: "item"
+			}]
+			x: 6.5d
+			y: 8.5d
+		}
 	]
 	title: "&2初识机械"
 }

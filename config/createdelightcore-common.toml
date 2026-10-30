@@ -1,4 +1,4 @@
-#Whether to enable the drop report
+#Whether to disable the periodic dropped-item report.
 disableDropReport = true
 #Threshold for drop reporting.
 #Range: > 0
@@ -24,4 +24,6 @@ enableAdditiveMulticrit = true
 #Make Iron's Spells Echoing Strikes record the LivingHurtEvent amount captured at event construction.
 #This prevents event-based damage multipliers from being sampled once by the hit and again by the echo.
 echoingStrikesUseOriginalDamage = true
+#Show the difficulty HUD on the left side of the screen. Changes take effect immediately.
+showDifficultyHud = true
 

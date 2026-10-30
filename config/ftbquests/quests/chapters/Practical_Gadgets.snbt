@@ -598,6 +598,44 @@
 			x: 4.0d
 			y: -2.5d
 		}
+		{
+			description: [
+				"木篮/竹篮：详情参见其思索内容"
+				"铜篮：相当于加了8B流体容量的前两者"
+			]
+			id: "71096BEF520D422E"
+			subtitle: "篮子科技，震撼人心"
+			tasks: [{
+				id: "475CE7BE616DDB62"
+				item: {
+					Count: 1
+					id: "itemfilters:or"
+					tag: {
+						RepairCost: 0
+						display: {
+							Name: "{\"text\":\"篮子\"}"
+						}
+						items: [
+							{
+								Count: 1b
+								id: "farmersdelight:bamboo_basket"
+							}
+							{
+								Count: 1b
+								id: "farmersdelight:wooden_basket"
+							}
+							{
+								Count: 1b
+								id: "fluidlogistics:copper_basket"
+							}
+						]
+					}
+				}
+				type: "item"
+			}]
+			x: -3.5d
+			y: -2.5d
+		}
 	]
 	title: "实用小玩意"
 }

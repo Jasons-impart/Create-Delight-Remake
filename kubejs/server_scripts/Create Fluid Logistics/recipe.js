@@ -3,7 +3,9 @@ ServerEvents.recipes(e => {
 
     remove_recipes_type(e, [
         "fluidlogistics:bulk_cooling",
-        "fluidlogistics:inactive_bulk_cooling"
+        "fluidlogistics:inactive_bulk_cooling",
+        "fluidlogistics:cooling_mixing",
+        "fluidlogistics:cooling_compacting"
     ])
 
     remove_recipes_id(e, [
@@ -16,7 +18,9 @@ ServerEvents.recipes(e => {
         "fluidlogistics:multi_fluid_access_port",
         "fluidlogistics:fluid_packager",
         "fluidlogistics:cooling/snow_block_to_powder_snow",
-        "fluidlogistics:cooling/frost_cake"
+        "fluidlogistics:cooling/frost_cake",
+        "fluidlogistics:compat/farmersdelight/copper_basket",
+        "fluidlogistics:oscillating_steam_engine"
     ])
 
     e.replaceInput({id: "fluidlogistics:copper_basin"}, "minecraft:copper_ingot", "create:copper_sheet")
@@ -29,13 +33,6 @@ ServerEvents.recipes(e => {
     e.forEachRecipe({id: "fluidlogistics:fluid_inventory_access_port"}, recipe => {
         recipe.set("result", Item.of("fluidlogistics:fluid_inventory_access_port", 2))
     })
-
-    kubejs.shapeless("fluidlogistics:blaze_cooler", [
-        "create:blaze_burner",
-        "minecraft:snow_block",
-        "minecraft:snow_block",
-        "minecraft:carved_pumpkin"
-    ]).id("createdelight:crafting/blaze_cooler")
 
     kubejs.shaped("fluidlogistics:mechanical_fluid_gun", [
         "AAB",
@@ -89,20 +86,18 @@ ServerEvents.recipes(e => {
         B: "create:schematicannon"
     }).id("createdelight:copper_schematicannon")
 
-    create.mixing(
-        Fluid.of("createdelight:frost_cake_batter", 1000),
-        [
-        Fluid.of("createdelight:cake_batter", 1000),
-        "2x minecraft:snowball"
-        ]
-    )
-    .id("createdelight:mixing/frost_cake_batter")
-
-    create.compacting("4x createdelight:frost_cake_base", [
-        Fluid.of("createdelight:frost_cake_batter", 1000)
+    let basket = Ingredient.of([
+            "farmersdelight:wooden_basket",
+            "farmersdelight:bamboo_basket"
     ])
-    .id("createdelight:compacting/frost_cake_base")
 
-    create.filling("fluidlogistics:frost_cake", ["createdelight:frost_cake_base", Fluid.of("netherexp:ectoplasm", 250)])
-    .id("createdelight:filling/frost_cake")
+    kubejs.shapeless("fluidlogistics:copper_basket", [
+        basket,
+        "create:fluid_tank"
+    ]).id("createdelight:copper_basket")
+
+    kubejs.shapeless("fluidlogistics:oscillating_steam_engine", [
+        "create:steam_engine",
+        "createdieselgenerators:pumpjack_head"
+    ]).id("createdelight:oscillating_steam_engine")
 })
