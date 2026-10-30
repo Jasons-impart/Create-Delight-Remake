@@ -40,11 +40,14 @@ import java.util.function.Consumer;
 import javax.net.ssl.HttpsURLConnection;
 
 final class Net {
+    // 2026-10-30 从部署机（阿里云 101.200.186.119）实测：
+    //   gh-proxy.com        200 / 1.2s  可用
+    //   ghfast.top          403         作者已关闭加速
+    //   gh.llkk.cc          超时
+    //   github.moeyy.xyz    超时
+    //   ghproxy.net         超时
+    // 失效源留在列表里会让每个文件白等一轮超时，只保留有实测依据的。
     private static final String[] GITHUB_PROXIES = {
-            "https://ghfast.top/",
-            "https://gh.llkk.cc/",
-            "https://github.moeyy.xyz/",
-            "https://ghproxy.net/",
             "https://gh-proxy.com/"
     };
     private static final long IDLE_NS = 20_000_000_000L;

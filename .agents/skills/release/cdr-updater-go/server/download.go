@@ -337,6 +337,11 @@ func downloadStream(job fetchJob, log func(string)) error {
 			if info.Size() != job.Size {
 				return fmt.Errorf("下载不完整 %d/%d", info.Size(), job.Size)
 			}
+		} else if err := checkMagic(job.Dest); err != nil {
+			// 大小未知（CurseForge 没给 fileLength）时，至少校验文件头。
+			// 只挡 0 字节是不够的：1 字节的下载残留会被当成成品下发，
+			// 客户端 Forge 启动时报 zip END header not found。
+			return err
 		}
 		log("下载完成 " + job.Label)
 		return nil
@@ -416,4 +421,28 @@ func hashFile(path string) (string, error) {
 		return "", err
 	}
 	return hex.EncodeToString(sum.Sum(nil)), nil
+}
+
+// checkMagic 按扩展名校验文件头魔数，用于「大小未知」时的兜底下限。
+// 注意不能用文件大小判断——合法的空壳 mod 可能只有几百字节。
+func checkMagic(path string) error {
+	file, err := os.Open(path)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+	header := make([]byte, 8)
+	n, _ := io.ReadFull(file, header)
+	ext := strings.ToLower(filepath.Ext(path))
+	switch ext {
+	case ".jar", ".zip":
+		if n < 4 || header[0] != 0x50 || header[1] != 0x4B {
+			return fmt.Errorf("文件头不是 zip: %s", path)
+		}
+	case ".png":
+		if n < 8 || header[0] != 0x89 || header[1] != 0x50 {
+			return fmt.Errorf("文件头不是 png: %s", path)
+		}
+	}
+	return nil
 }
