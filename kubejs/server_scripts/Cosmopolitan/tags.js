@@ -3,7 +3,7 @@ ServerEvents.tags("minecraft:block", e => {
         'ratatouille:frozen_block', 
         'iceandfire:dragonscale_blue', 
         'brewinandchewin:ice_crate',
-        'fluidlogistics:blaze_cooler'
+        'createdelightcore:snowman_cooler'
     ])
 })
 ServerEvents.tags("minecraft:item", e => {

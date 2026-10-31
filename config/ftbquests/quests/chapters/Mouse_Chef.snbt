@@ -331,7 +331,7 @@
 			subtitle: "&b这蛋糕真的能吃吗?"
 			tasks: [{
 				id: "3B5C194DC975371B"
-				item: "fluidlogistics:frost_cake"
+				item: "createdelightcore:frozen_cake"
 				type: "item"
 			}]
 			x: -35.0d

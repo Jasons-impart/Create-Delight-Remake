@@ -341,7 +341,6 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:blaze_cake_batter_bucket',
         'createdelight:frost_cake_batter_bucket',
         'createdelight:experience_cake_batter_bucket',
-        'createdelight:frost_cake_base',
         'createdelight:incomplete_bullet',
     ])
 });

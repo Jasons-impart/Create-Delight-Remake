@@ -2045,10 +2045,10 @@
 		{
 			dependencies: ["467AE0EF8AF5ACAF"]
 			id: "592B86772585084E"
-			subtitle: "哎哟我，给烈焰人冻成⑨了"
+			subtitle: "哎哟我，雪傀儡也来啦"
 			tasks: [{
 				id: "5C0A44F6CD7EACA0"
-				item: "fluidlogistics:blaze_cooler"
+				item: "createdelightcore:snowman_cooler"
 				type: "item"
 			}]
 			x: 0.5d

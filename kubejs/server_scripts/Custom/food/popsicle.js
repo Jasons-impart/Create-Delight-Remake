@@ -171,9 +171,6 @@ doublepopsicle_list.forEach(popsicle => {
         })
     })
 })
-ItemEvents.foodEaten('fluidlogistics:frost_cake', e => {
-    e.entity.setTicksFrozen(e.entity.getTicksFrozen() + 800)
-})
 
     // // 老冰棍
 
