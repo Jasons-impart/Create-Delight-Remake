@@ -1,0 +1,30 @@
+{
+  "type": "northeast_china_delight:pounding",
+  "config": {
+    "input": {
+      "item": "northeast_china_delight:roasted_peanuts"
+    },
+    "tool": [
+      {
+        "item": "northeast_china_delight:wooden_mallet"
+      }
+    ],
+    "pound_times": 3,
+    "stage_model_mode": "overlay",
+    "stage_models": [
+      "northeast_china_delight:block/wooden_mortar_peanut_0",
+      "northeast_china_delight:block/wooden_mortar_peanut_1",
+      "northeast_china_delight:block/wooden_mortar_peanut_2"
+    ],
+    "finished_model": "northeast_china_delight:block/wooden_mortar_peanut_oil",
+    "result": {
+      "item": "northeast_china_delight:cooking_oil",
+      "count": 1
+    },
+    "result_mb": 250,
+    "result_container": {
+      "item": "minecraft:glass_bottle"
+    },
+    "transition": "sequential"
+  }
+}

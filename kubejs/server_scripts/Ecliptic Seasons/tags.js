@@ -7,7 +7,7 @@ ServerEvents.tags("minecraft:item", e => {
         "vintagedelight:cucumber_seeds",
         "festival_delicacies:chinese_cabbage_seeds",
         "festival_delicacies:garlic",
-        "festival_delicacies:greenonion",
+        "festival_delicacies:greenonion_seeds",
         "festival_delicacies:eggplant_seeds",
         "festival_delicacies:fennel_seeds",
         "createdelight:artemisia_argyi_seed",
