@@ -110,6 +110,15 @@ This project includes these third party parts:
     - kubejs/assets/cmpackagecouriers/lang/zh_cn.json
   - 如有任何版权问题，可联系制作组删除
 
+- Create: Connected × Create: Dragons Plus 批量染色兼容修复包
+  - 来源维护者：HaiMFeng
+  - 来源项目：https://github.com/HaiMFeng/create-connected-cdp-coloring-fix
+  - 用途：补充 Create: Connected 1.2.3 染色触媒与 Create: Dragons Plus 1.11.9 批量染色的方块标签兼容。
+  - 对应文件：`kubejs/data/create_dragons_plus/tags/blocks/fan_processing_catalysts/coloring/*.json`（全部 16 种颜色）
+  - 上游路径：`data/create_dragons_plus/tags/blocks/fan_processing_catalysts/coloring/*.json`
+  - 引用方式：通过 KubeJS 数据包目录加载。
+  - 如有任何版权问题，可联系制作组删除
+
 Project License
 
 Copyright (c) 2024 Jasons impart
