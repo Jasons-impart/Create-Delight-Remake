@@ -26,6 +26,7 @@ ServerEvents.tags("item", e => {
         'alexscaves:fiddlehead'
     )
     e.add("eclipticseasons:crops/spring_autumn",
+        "festival_delicacies:greenonion_seeds",
         "frycooks_delight:canola_seeds",
         "vintagedelight:cucumber_seeds",
         "festival_delicacies:eggplant_seeds",
@@ -67,9 +68,6 @@ ServerEvents.tags("item", e => {
         "festival_delicacies:fennel_seeds",
         "youkaishomecoming:mandrake_root"
     )
-
-    e.add("eclipticseasons:crops/summer_autumn_winter",
-        "festival_delicacies:greenonion",)
 
     e.add("eclipticseasons:crops/autumn",
         "vintagedelight:peanut",
