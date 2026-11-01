@@ -718,12 +718,6 @@
     },
     {
         "matchItems": [
-            "northeast_china_delight:raw_sausage"
-        ],
-        "resultItems": "ratatouille:raw_sausage"
-    },
-    {
-        "matchItems": [
             "northeast_china_delight:blood_sausage"
         ],
         "resultItems": "butchercraft:blood_sausage"
