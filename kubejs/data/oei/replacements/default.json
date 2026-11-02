@@ -634,6 +634,12 @@
     },
     {
         "matchItems": [
+            "luncheonmeatsdelight:sliced_toast"
+        ],
+        "resultItems": "bakeries:sliced_toast"
+    },
+    {
+        "matchItems": [
             "youkaishomecoming:can"
         ],
         "resultItems": "luncheonmeatsdelight:can_shell"
