@@ -150,10 +150,6 @@
       "required": false
     },
     {
-      "id": "luncheonmeatsdelight:sliced_toast",
-      "required": false
-    },
-    {
       "id": "fruitsdelight:jelly_bread",
       "required": false
     },
