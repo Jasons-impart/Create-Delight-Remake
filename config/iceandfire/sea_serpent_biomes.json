@@ -2,9 +2,16 @@
   "biomes": [
     [
       {
-        "type": "BIOME_TAG",
+        "type": "REGISTRY_NAME",
         "negate": false,
-        "value": "minecraft:is_deep_ocean"
+        "value": "northstar:europan_subsurface_ocean"
+      }
+    ],
+    [
+      {
+        "type": "REGISTRY_NAME",
+        "negate": false,
+        "value": "alexscaves:abyssal_chasm"
       }
     ]
   ]
