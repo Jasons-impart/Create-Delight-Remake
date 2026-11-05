@@ -2,30 +2,23 @@
   "biomes": [
     [
       {
-        "type": "REGISTRY_NAME",
+        "type": "BIOME_TAG",
         "negate": false,
         "value": "northstar:mercury_biomes"
       }
     ],
     [
       {
-        "type": "REGISTRY_NAME",
+        "type": "BIOME_TAG",
         "negate": false,
-        "value": "byg:crag_gardens"
+        "value": "forge:is_swamp"
       }
     ],
     [
       {
         "type": "REGISTRY_NAME",
         "negate": false,
-        "value": "byg:cypress_swamplands"
-      }
-    ],
-    [
-      {
-        "type": "REGISTRY_NAME",
-        "negate": false,
-        "value": "byg:bayou"
+        "value": "terralith:orchid_swamp"
       }
     ]
   ]

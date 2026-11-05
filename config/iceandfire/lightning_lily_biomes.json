@@ -4,21 +4,28 @@
       {
         "type": "BIOME_TAG",
         "negate": false,
-        "value": "northstar:venus_biomes"
+        "value": "minecraft:is_savanna"
       }
     ],
     [
       {
         "type": "REGISTRY_NAME",
         "negate": false,
-        "value": "byg:baobab_savanna"
+        "value": "terralith:fractured_savanna"
       }
     ],
     [
       {
         "type": "REGISTRY_NAME",
         "negate": false,
-        "value": "byg:araucaria_savanna"
+        "value": "terralith:savanna_badlands"
+      }
+    ],
+    [
+      {
+        "type": "REGISTRY_NAME",
+        "negate": false,
+        "value": "terralith:savanna_slopes"
       }
     ]
   ]
