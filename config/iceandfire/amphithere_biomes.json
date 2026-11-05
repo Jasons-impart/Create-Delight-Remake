@@ -4,35 +4,42 @@
       {
         "type": "BIOME_TAG",
         "negate": false,
-        "value": "northstar:venus_biomes"
+        "value": "minecraft:is_jungle"
       }
     ],
     [
       {
         "type": "REGISTRY_NAME",
         "negate": false,
-        "value": "byg:guiana_shield"
+        "value": "terralith:jungle_mountains"
       }
     ],
     [
       {
         "type": "REGISTRY_NAME",
         "negate": false,
-        "value": "byg:temperate_rainforest"
+        "value": "terralith:rocky_jungle"
       }
     ],
     [
       {
         "type": "REGISTRY_NAME",
         "negate": false,
-        "value": "byg:tropical_rainforest"
+        "value": "terralith:tropical_jungle"
       }
     ],
     [
       {
         "type": "REGISTRY_NAME",
         "negate": false,
-        "value": "byg:jacaranda_forest"
+        "value": "terralith:amethyst_rainforest"
+      }
+    ],
+    [
+      {
+        "type": "REGISTRY_NAME",
+        "negate": false,
+        "value": "terralith:amethyst_canyon"
       }
     ]
   ]
