@@ -6,20 +6,6 @@
         "negate": false,
         "value": "northstar:mars_biomes"
       }
-    ],
-    [
-      {
-        "type": "BIOME_TAG",
-        "negate": false,
-        "value": "northstar:mercury_biomes"
-      }
-    ],
-    [
-      {
-        "type": "REGISTRY_NAME",
-        "negate": false,
-        "value": "byg:firecracker_shrubland"
-      }
     ]
   ]
 }

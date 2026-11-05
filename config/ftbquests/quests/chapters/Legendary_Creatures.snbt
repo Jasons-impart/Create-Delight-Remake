@@ -390,16 +390,17 @@
 			y: 5.0d
 		}
 		{
-			dependencies: ["5246A4941FE396AC"]
+			dependencies: ["244B2CABBB89B269"]
 			id: "71CBDE6F46E867ED"
+			subtitle: "火星沙丘"
 			tasks: [{
 				entity: "iceandfire:deathworm"
 				id: "3564736E44D0BA17"
 				type: "kill"
 				value: 1L
 			}]
-			x: 5.0d
-			y: 1.5d
+			x: -3.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["5246A4941FE396AC"]
