@@ -39,6 +39,8 @@
 | TACZ-addon 精致背包空包装 | `com/mafuyu404/taczaddon/compat/SophisticatedBackpacksCompatInner.badiff` | `addBackpackItems` / `getItemsFromBackpackBLock` 在包装器或列表为空时仍继续取物品。补丁在空值时直接返回，避免背包兼容空指针。 |
 | Bakeries 面包刀 × FD 1.3.x 切割结果 | `com/renyigesai/bakeries/item/BreadKnifeItem.badiff` | 面包刀处理掉落物时不再调用 FD 已移除的 `CuttingBoardRecipe.rollResults(RandomSource, int)`，改为本地 `getRollableResults()` + `ChanceResult.rollOutput()`，修复 `NoSuchMethodError` 服务端崩溃。语义对齐上游 master `7c45ac4`。 |
 
+| ExtendedAE Plus 无线收发器卸载能量提供者 | `com/extendedae_plus/ae/wireless/LabelLink.badiff`、`WirelessSlaveLink.badiff`、`content/wireless/LabeledWirelessTransceiverBlockEntity.badiff` | 标注/普通无线链路在区块卸载或拆除时，`IGridConnection.destroy()` / `IManagedGridNode.destroy()` 若撞上 AE2 `ongoingExtractOperation` 会抛 `Cannot modify energy providers while energy is being extracted`，中断存档。 补丁仅在未受 Throwable 保护的 `destroy()` 调用外包 try/catch，失败后仍清理 ConnectionWrapper / 继续拆除；不改 AE2 EnergyService。 绑定 `extendedae_plus-1.5.5`。 |
+
 ## 待首次启动转存的可审阅 class
 
 | 目标领域 | 当前文件 | 行为变化与状态 |

@@ -30,47 +30,50 @@
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 37 个 `.badiff`；静态 JAR 命中 33 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
+当前扫描到 40 个 `.badiff`；静态 JAR 命中 2 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 38 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |
 |---|---|---|---|
-| Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff` | `com/forsteri/createliquidfuel/core/BurnerStomachHandler` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
-| Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity.badiff` | `com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
-| IAF Dragon Fix | `hotai/com/iafdragonfix/structure/DragonDenPiece.badiff` | `com/iafdragonfix/structure/DragonDenPiece` | 静态命中 `iafdragonfix-2.0.0.jar` |
-| Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow` | 静态命中 `more_mod_tetra-2.4.15-all.jar` |
-| Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer` | 静态命中 `more_mod_tetra-2.4.15-all.jar` |
+| ExtendedAE Plus | `hotai/com/extendedae_plus/ae/wireless/LabelLink.badiff` | `com/extendedae_plus/ae/wireless/LabelLink` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| ExtendedAE Plus | `hotai/com/extendedae_plus/ae/wireless/WirelessSlaveLink.badiff` | `com/extendedae_plus/ae/wireless/WirelessSlaveLink` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| ExtendedAE Plus | `hotai/com/extendedae_plus/content/wireless/LabeledWirelessTransceiverBlockEntity.badiff` | `com/extendedae_plus/content/wireless/LabeledWirelessTransceiverBlockEntity` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff` | `com/forsteri/createliquidfuel/core/BurnerStomachHandler` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity.badiff` | `com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| IAF Dragon Fix | `hotai/com/iafdragonfix/structure/DragonDenPiece.badiff` | `com/iafdragonfix/structure/DragonDenPiece` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
 | TACZ-addon | `hotai/com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner.badiff` | `com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner` | 静态命中 `taczaddon.jar` |
 | TACZ-addon | `hotai/com/mafuyu404/taczaddon/compat/SophisticatedBackpacksCompatInner.badiff` | `com/mafuyu404/taczaddon/compat/SophisticatedBackpacksCompatInner` | 静态命中 `taczaddon.jar` |
-| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/ConnectorType.badiff` | `com/mrh0/createaddition/blocks/connector/ConnectorType` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
+| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/ConnectorType.badiff` | `com/mrh0/createaddition/blocks/connector/ConnectorType` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
-| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
-| Create Addition | `hotai/com/mrh0/createaddition/energy/IWireNode.badiff` | `com/mrh0/createaddition/energy/IWireNode` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
-| Create Addition | `hotai/com/mrh0/createaddition/energy/network/EnergyNetwork.badiff` | `com/mrh0/createaddition/energy/network/EnergyNetwork` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
-| Create Addition | `hotai/com/mrh0/createaddition/energy/WireConnectResult.badiff` | `com/mrh0/createaddition/energy/WireConnectResult` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
-| Create Addition | `hotai/com/mrh0/createaddition/energy/WireType.badiff` | `com/mrh0/createaddition/energy/WireType` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
-| Create Addition | `hotai/com/mrh0/createaddition/index/CABlockEntities.badiff` | `com/mrh0/createaddition/index/CABlockEntities` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
-| Create Addition | `hotai/com/mrh0/createaddition/index/CABlocks.badiff` | `com/mrh0/createaddition/index/CABlocks` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
-| Create Addition | `hotai/com/mrh0/createaddition/index/CAItems.badiff` | `com/mrh0/createaddition/index/CAItems` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
-| Create Addition | `hotai/com/mrh0/createaddition/index/CAPonders.badiff` | `com/mrh0/createaddition/index/CAPonders` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
-| Vintage Improvements | `hotai/com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene.badiff` | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene` | 静态命中 `vintageimprovements-1.20.1-0.3.7.8.jar` |
-| Vintage Improvements | `hotai/com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderTag.badiff` | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderTag` | 静态命中 `vintageimprovements-1.20.1-0.3.7.8.jar` |
-| Bakeries | `hotai/com/renyigesai/bakeries/item/BreadKnifeItem.badiff` | `com/renyigesai/bakeries/item/BreadKnifeItem` | 静态命中 `bakeries-1.20.1-forge-1.2.5.jar` |
-| Create | `hotai/com/simibubi/create/compat/jei/category/ItemDrainCategory.badiff` | `com/simibubi/create/compat/jei/category/ItemDrainCategory` | 静态命中 `create-1.20.1-6.0.8.jar` |
-| Create | `hotai/com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour.badiff` | `com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour` | 静态命中 `create-1.20.1-6.0.8.jar` |
-| Create | `hotai/com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour.badiff` | `com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour` | 静态命中 `create-1.20.1-6.0.8.jar` |
-| Create | `hotai/com/simibubi/create/foundation/block/connected/CTSpriteShifter.badiff` | `com/simibubi/create/foundation/block/connected/CTSpriteShifter` | 静态命中 `create-1.20.1-6.0.8.jar` |
-| TACZ | `hotai/com/tacz/guns/init/ModCreativeTabs.badiff` | `com/tacz/guns/init/ModCreativeTabs` | 静态命中 `tacz-1.20.1-1.1.8-hotfix.jar` |
-| TACZ | `hotai/com/tacz/guns/resource/CommonAssetsManager.badiff` | `com/tacz/guns/resource/CommonAssetsManager` | 静态命中 `tacz-1.20.1-1.1.8-hotfix.jar` |
-| TACZ | `hotai/com/tacz/guns/resource/manager/CommonDataManager.badiff` | `com/tacz/guns/resource/manager/CommonDataManager` | 静态命中 `tacz-1.20.1-1.1.8-hotfix.jar` |
-| Neapolitan | `hotai/com/teamabnormals/neapolitan/core/Neapolitan.badiff` | `com/teamabnormals/neapolitan/core/Neapolitan` | 静态命中 `neapolitan-1.20.1-5.1.0.jar` |
-| Quality Food | `hotai/de/cadentem/quality_food/capability/BlockData.badiff` | `de/cadentem/quality_food/capability/BlockData` | 静态命中 `quality_food-1.20.1-2.4.3-all.jar` |
-| Quality Food | `hotai/de/cadentem/quality_food/capability/LevelData.badiff` | `de/cadentem/quality_food/capability/LevelData` | 静态命中 `quality_food-1.20.1-2.4.3-all.jar` |
-| Quality Food | `hotai/de/cadentem/quality_food/mixin/BlockMixin.badiff` | `de/cadentem/quality_food/mixin/BlockMixin` | 静态命中 `quality_food-1.20.1-2.4.3-all.jar` |
-| KubeJS | `hotai/dev/latvian/mods/kubejs/script/data/GeneratedData.badiff` | `dev/latvian/mods/kubejs/script/data/GeneratedData` | 静态命中 `kubejs-forge-2001.6.5-build.24.jar` |
-| Better Compatibility Checker | `hotai/dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin` | 静态命中 `BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar` |
+| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Create Addition | `hotai/com/mrh0/createaddition/energy/IWireNode.badiff` | `com/mrh0/createaddition/energy/IWireNode` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Create Addition | `hotai/com/mrh0/createaddition/energy/network/EnergyNetwork.badiff` | `com/mrh0/createaddition/energy/network/EnergyNetwork` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Create Addition | `hotai/com/mrh0/createaddition/energy/WireConnectResult.badiff` | `com/mrh0/createaddition/energy/WireConnectResult` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Create Addition | `hotai/com/mrh0/createaddition/energy/WireType.badiff` | `com/mrh0/createaddition/energy/WireType` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Create Addition | `hotai/com/mrh0/createaddition/index/CABlockEntities.badiff` | `com/mrh0/createaddition/index/CABlockEntities` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Create Addition | `hotai/com/mrh0/createaddition/index/CABlocks.badiff` | `com/mrh0/createaddition/index/CABlocks` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Create Addition | `hotai/com/mrh0/createaddition/index/CAItems.badiff` | `com/mrh0/createaddition/index/CAItems` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Create Addition | `hotai/com/mrh0/createaddition/index/CAPonders.badiff` | `com/mrh0/createaddition/index/CAPonders` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Vintage Improvements | `hotai/com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene.badiff` | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Vintage Improvements | `hotai/com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderTag.badiff` | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderTag` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Bakeries | `hotai/com/renyigesai/bakeries/item/BreadKnifeItem.badiff` | `com/renyigesai/bakeries/item/BreadKnifeItem` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Create | `hotai/com/simibubi/create/compat/jei/category/ItemDrainCategory.badiff` | `com/simibubi/create/compat/jei/category/ItemDrainCategory` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Create | `hotai/com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour.badiff` | `com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Create | `hotai/com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour.badiff` | `com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Create | `hotai/com/simibubi/create/foundation/block/connected/CTSpriteShifter.badiff` | `com/simibubi/create/foundation/block/connected/CTSpriteShifter` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| TACZ | `hotai/com/tacz/guns/init/ModCreativeTabs.badiff` | `com/tacz/guns/init/ModCreativeTabs` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| TACZ | `hotai/com/tacz/guns/resource/CommonAssetsManager.badiff` | `com/tacz/guns/resource/CommonAssetsManager` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| TACZ | `hotai/com/tacz/guns/resource/manager/CommonDataManager.badiff` | `com/tacz/guns/resource/manager/CommonDataManager` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Neapolitan | `hotai/com/teamabnormals/neapolitan/core/Neapolitan.badiff` | `com/teamabnormals/neapolitan/core/Neapolitan` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Quality Food | `hotai/de/cadentem/quality_food/capability/BlockData.badiff` | `de/cadentem/quality_food/capability/BlockData` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Quality Food | `hotai/de/cadentem/quality_food/capability/LevelData.badiff` | `de/cadentem/quality_food/capability/LevelData` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Quality Food | `hotai/de/cadentem/quality_food/mixin/BlockMixin.badiff` | `de/cadentem/quality_food/mixin/BlockMixin` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| KubeJS | `hotai/dev/latvian/mods/kubejs/script/data/GeneratedData.badiff` | `dev/latvian/mods/kubejs/script/data/GeneratedData` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Better Compatibility Checker | `hotai/dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
 | Unknown | `hotai/net/yiran/rebalancing/core/mixins/AttributeHelperMixin.badiff` | `net/yiran/rebalancing/core/mixins/AttributeHelperMixin` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
-| Create New Age | `hotai/org/antarcticgardens/cna/content/ponders/CNAPonders.badiff` | `org/antarcticgardens/cna/content/ponders/CNAPonders` | 静态命中 `create-new-age-1.2.0+forge-mc1.20.1.jar` |
+| Create New Age | `hotai/org/antarcticgardens/cna/content/ponders/CNAPonders.badiff` | `org/antarcticgardens/cna/content/ponders/CNAPonders` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
 <!-- HOTAI_STATUS:END -->
 
 ## 代码化改动索引
@@ -595,6 +598,23 @@ MMT 原 class 针对 Tetra 6.9 的局部变量名 `multiplier`，返回 `1000d`�
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
 | `org/antarcticgardens/cna/content/ponders/CNAPonders.badiff` | 已还原 | 旧 `org/antarcticgardens/newage/CreateNewAgePonders` 补丁已按当前包和注册 API 重建。补丁移除 `WIRING`、`HEATING`、`REACTOR` 字段及标签注册；移除 `heating`、`heater`、`reactor`、`wires` 场景，涉及热管、热泵、太阳能加热板、斯特林引擎、加热器、核反应堆组件、电气连接器及各类导线；保留 `ELECTRICAL`、`MAGNETS`、`ELECTRICITY_GENERATION`、`MOTOR_EXTENSION`。配套 `energiser.nbt`、`generation.nbt`、`motor.nbt`、`motor_extension.nbt` 已按当前方块 id 和方块实体数据刷新。 | 延续 `e11d47f206c1e9cb28bdf506698c824586f9b00c` 的“删除 CNA 无用 Ponder”意图，并让补丁重新命中当前 Create New Age 版本。 |
+
+## ExtendedAE Plus 补丁
+
+### 无线收发器卸载 × AE2 能量提取
+
+| 文件 | 状态 | 具体改动 | 影响 |
+|---|---|---|---|
+| `com/extendedae_plus/ae/wireless/LabelLink.badiff` | 已还原 | `destroyConnection` 中未受 Throwable 保护的 `IGridConnection.destroy()` 外包 try/catch；失败后仍执行 wakeDevice 与 `setConnection(null)`。 | 标注无线收发器 `onChunkUnloaded` → `cleanupForRemoval` → `LabelLink.onUnloadOrRemove` 不再因 AE2 `removeProvider` 前置检查中断区块保存。 |
+| `com/extendedae_plus/ae/wireless/WirelessSlaveLink.badiff` | 已还原 | 同款：从机链路 `destroyConnection` 的 `destroy()` 外包 try/catch，随后仍清空 ConnectionWrapper。 | 频率无线收发器拆除/卸载路径同类防护。 |
+| `com/extendedae_plus/content/wireless/LabeledWirelessTransceiverBlockEntity.badiff` | 已还原 | `cleanupForRemoval` 中 `managedNode.destroy()` 外包 try/catch。 | 链路拆除后节点销毁若仍撞上提取中修改，不再向外抛出。 |
+
+- 目标 JAR：`extendedae_plus-1.5.5.jar`（Packwiz CurseForge `file-id = 8379834`）；AE2 `15.4.10`。
+- 根因：AE2 `EnergyService.removeProvider` 在 `ongoingExtractOperation` 时 `Preconditions.checkState` 失败；无线连接销毁触发 grid validate → 移除能量提供者。日志栈指向 `LabeledWirelessTransceiverBlockEntity.onChunkUnloaded`。
+- 基线按 HotaiTransformer 归一化：`ClassReader → ClassNode → ClassWriter(0)`；`.badiff` 由 Hotai 1.0 `MemoryDiffs.diff` + `DefaultSerialization` 生成，反序列化重放逐字节一致。
+- 不覆盖/不重写其他 `hotai/**/*.badiff`；本批仅新增上述三文件。
+- 残余风险：吞掉异常后对端网格可能短暂残留陈旧连接直到下次 validate；停服仍可能因其他模组缓慢。升级 ExtendedAE Plus 后必须重扫目标 class。
+- 适用性：与 `1.5.5` 强绑定；上游若改为延迟销毁或跳过提取中的 removeProvider，可移除本补丁。
 
 ## 维护建议
 
