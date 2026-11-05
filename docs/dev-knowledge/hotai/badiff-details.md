@@ -30,21 +30,22 @@
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 37 个 `.badiff`；静态 JAR 命中 33 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
+当前扫描到 39 个 `.badiff`；静态 JAR 命中 35 个，静态未命中但已由当前启动日志确认动态创建 3 个，尚未由当前启动日志确认 1 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |
 |---|---|---|---|
 | Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff` | `com/forsteri/createliquidfuel/core/BurnerStomachHandler` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
 | Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity.badiff` | `com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
+| Unknown | `hotai/com/github/alexthe666/alexsmobs/entity/EntityWarpedToad.badiff` | `com/github/alexthe666/alexsmobs/entity/EntityWarpedToad` | 静态命中 `alexsmobs-1.22.9.jar` |
 | IAF Dragon Fix | `hotai/com/iafdragonfix/structure/DragonDenPiece.badiff` | `com/iafdragonfix/structure/DragonDenPiece` | 静态命中 `iafdragonfix-2.0.0.jar` |
 | Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow` | 静态命中 `more_mod_tetra-2.4.15-all.jar` |
 | Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer` | 静态命中 `more_mod_tetra-2.4.15-all.jar` |
 | TACZ-addon | `hotai/com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner.badiff` | `com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner` | 静态命中 `taczaddon.jar` |
 | TACZ-addon | `hotai/com/mafuyu404/taczaddon/compat/SophisticatedBackpacksCompatInner.badiff` | `com/mafuyu404/taczaddon/compat/SophisticatedBackpacksCompatInner` | 静态命中 `taczaddon.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/ConnectorType.badiff` | `com/mrh0/createaddition/blocks/connector/ConnectorType` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
-| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock` | 运行时已确认动态创建（静态 JAR 无此 class） |
+| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity` | 运行时已确认动态创建（静态 JAR 无此 class） |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
-| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/IWireNode.badiff` | `com/mrh0/createaddition/energy/IWireNode` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/network/EnergyNetwork.badiff` | `com/mrh0/createaddition/energy/network/EnergyNetwork` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/WireConnectResult.badiff` | `com/mrh0/createaddition/energy/WireConnectResult` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
@@ -67,13 +68,31 @@
 | Quality Food | `hotai/de/cadentem/quality_food/capability/BlockData.badiff` | `de/cadentem/quality_food/capability/BlockData` | 静态命中 `quality_food-1.20.1-2.4.3-all.jar` |
 | Quality Food | `hotai/de/cadentem/quality_food/capability/LevelData.badiff` | `de/cadentem/quality_food/capability/LevelData` | 静态命中 `quality_food-1.20.1-2.4.3-all.jar` |
 | Quality Food | `hotai/de/cadentem/quality_food/mixin/BlockMixin.badiff` | `de/cadentem/quality_food/mixin/BlockMixin` | 静态命中 `quality_food-1.20.1-2.4.3-all.jar` |
-| KubeJS | `hotai/dev/latvian/mods/kubejs/script/data/GeneratedData.badiff` | `dev/latvian/mods/kubejs/script/data/GeneratedData` | 静态命中 `kubejs-forge-2001.6.5-build.24.jar` |
+| KubeJS | `hotai/dev/latvian/mods/kubejs/script/data/GeneratedData.badiff` | `dev/latvian/mods/kubejs/script/data/GeneratedData` | 静态命中 `kubejs-forge-2001.6.5-build.16.jar` |
+| Unknown | `hotai/dev/shadowsoffire/attributeslib/api/ALCombatRules.badiff` | `dev/shadowsoffire/attributeslib/api/ALCombatRules` | 静态命中 `ApothicAttributes-1.20.1-1.3.7.jar` |
 | Better Compatibility Checker | `hotai/dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin` | 静态命中 `BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar` |
-| Unknown | `hotai/net/yiran/rebalancing/core/mixins/AttributeHelperMixin.badiff` | `net/yiran/rebalancing/core/mixins/AttributeHelperMixin` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Unknown | `hotai/net/yiran/rebalancing/core/mixins/AttributeHelperMixin.badiff` | `net/yiran/rebalancing/core/mixins/AttributeHelperMixin` | 运行时已确认动态创建（静态 JAR 无此 class） |
 | Create New Age | `hotai/org/antarcticgardens/cna/content/ponders/CNAPonders.badiff` | `org/antarcticgardens/cna/content/ponders/CNAPonders` | 静态命中 `create-new-age-1.2.0+forge-mc1.20.1.jar` |
 <!-- HOTAI_STATUS:END -->
 
 ## 代码化改动索引
+
+### 非有限伤害兼容补丁
+
+目标：`com/github/alexthe666/alexsmobs/entity/EntityWarpedToad.badiff`（Alex's Mobs 1.22.9）与 `dev/shadowsoffire/attributeslib/api/ALCombatRules.badiff`（Apothic Attributes 1.3.7）。生成器与离线回归见 [scripts/finite-damage-fix](../../../scripts/finite-damage-fix/README.md)。
+
+- 原因：蟾蜍在 `m_8119_()` 对绯红蚊子使用 `Float.MAX_VALUE`；该值经倍率放大可能溢出。Tetrawear 1.0.0 的 `ArmorHoning.onLivingHurt` 调用护甲计算，Apothic 自定义公式在求值前以 `new BigDecimal((double) damage)` 设置变量，遇到非有限伤害抛出 `NumberFormatException: Infinite or NaN`。依据为 `crash-2026-11-05_17.53.03-server.txt` 与当前模组字节码；尚未确定原事件中哪一个中间处理器造成溢出，不能仅靠修改公式解决。
+- 蟾蜍：只替换 `instanceof EntityCrimsonMosquito` 分支内的一处常量，`Float.MAX_VALUE → 1_000_000f`；普通攻击不变。超大生命值的模组化蚊子不保证仍然一击击杀。
+- 减伤：新增 private static synthetic `cdr$finiteDamage(float)`，在 `getAValue(F)F`、`getArmorDamageReduction(FFF)F` 的参数槽 0，以及 `getDamageAfterArmor(LivingEntity, DamageSource, float, float, float)`、`getDamageAfterProtection(LivingEntity, DamageSource, float, float)` 的伤害参数槽 2 调用；有限值原样返回，正无穷变为一百万，NaN 和负无穷变为零。后两个入口也必须处理，避免后续乘法继续使用原无穷大。
+- 验证：原异常复现；210 组有限输入 × 四个结果共 840 次逐位一致比较；三个非有限值在四个入口均符合策略；共 2,976 项检查，首次生成类与实际 Hotai 重放类各执行一轮。ASM BasicVerifier、JVM `-Xverify:all`、真实 Hotai 首次转存、序列化 apply/undo 和第二次重放通过。Minecraft/Forge 边界为替身，尚未验证整套游戏启动和实际战斗。
+- 边界：补丁不全局限制正常有限伤害，不修护甲/韧性非法值、任意自定义公式错误或其他处理器中的异常；不覆盖 AE2 卸载异常及发酵罐保存卡死。上游修正特殊攻击或非有限输入后可复核移除；任一目标模组升级后需重新生成，不能按文件名直接复用。
+
+原模组 SHA-256：
+
+| 模组 | SHA-256 |
+|---|---|
+| `alexsmobs-1.22.9.jar` | `16bc5bcc19db9029c24f951346ec71098e6f5b0afef96e61894a2e9407aad37c` |
+| `ApothicAttributes-1.20.1-1.3.7.jar` | `68487b11c0d4e2f67a85f2b04bf65e99ac15294f2923f4391f83e9542293187a` |
 
 ### More Mod Tetra 纯白容器效果续期
 

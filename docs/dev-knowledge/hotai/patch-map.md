@@ -19,6 +19,7 @@
 
 | 目标领域 | 补丁文件 | 行为变化 |
 |---|---|---|
+| Alex's Mobs × Tetrawear × Apothic Attributes 非有限伤害 | `com/github/alexthe666/alexsmobs/entity/EntityWarpedToad.badiff`、`dev/shadowsoffire/attributeslib/api/ALCombatRules.badiff` | 蟾蜍对绯红蚊子的特殊伤害改为一百万；四个减伤计算入口归一化 Infinity/NaN，所有有限输入不变。实际 Hotai 转存和重放、正常数值回归已通过，整套游戏回归待执行；版本与策略见方法级明细。 |
 | More Mod Tetra 纯白容器效果续期 | `com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer.badiff` | MMT 2.4.15 的妖怪化、半妖怪化、无意识和真隐身统一为普通效果常用的 40 tick 刷新、400 tick 持续，消除原 400/220 tick 组合造成的空档；保留原配置、材料条件和效果自身取消规则。已通过实际 Hotai 转换器离线生成及重放，并已游戏内验证。 |
 | Create 分液池/流体搜索 | `com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour.badiff`、`FluidDrainingBehaviour.badiff`、`compat/jei/category/ItemDrainCategory.badiff` | 抽液搜索增加可覆写的继续搜索钩子，分液池按源方块数量判断无限流体，而不是按访问过的流体方块数量；同时区分源流体和流动流体。JEI 分液展示在复制物品后重新检查 `FLUID_HANDLER_ITEM`，避免 capability 消失导致异常。 |
 | Create 连接纹理缓存 | `com/simibubi/create/foundation/block/connected/CTSpriteShifter.badiff` | 将连接纹理缓存从 `HashMap` 改为 `ConcurrentHashMap`，降低并发注册/资源重载时的竞态风险。 |
