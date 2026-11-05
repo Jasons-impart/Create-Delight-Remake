@@ -30,12 +30,13 @@
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 41 个 `.badiff`；静态 JAR 命中 37 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
+当前扫描到 42 个 `.badiff`；静态 JAR 命中 38 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |
 |---|---|---|---|
 | Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff` | `com/forsteri/createliquidfuel/core/BurnerStomachHandler` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
 | Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity.badiff` | `com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
+| Alex's Mobs | `hotai/com/github/alexthe666/alexsmobs/entity/EntityWarpedToad.badiff` | `com/github/alexthe666/alexsmobs/entity/EntityWarpedToad` | 静态命中 `alexsmobs-1.22.9.jar` |
 | IAF Dragon Fix | `hotai/com/iafdragonfix/structure/DragonDenPiece.badiff` | `com/iafdragonfix/structure/DragonDenPiece` | 静态命中 `iafdragonfix-2.0.0.jar` |
 | Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow` | 静态命中 `more_mod_tetra-2.4.15-all.jar` |
 | Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer` | 静态命中 `more_mod_tetra-2.4.15-all.jar` |
@@ -575,6 +576,23 @@ MMT 原 class 针对 Tetra 6.9 的局部变量名 `multiplier`，返回 `1000d`�
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
 | `com/iafdragonfix/structure/DragonDenPiece.badiff` | 首次转换启动已确认 | `generateCave(...)` 仅在龙种为 `ICE_CAVE` 时创建 `#createdelight:blocks_ice_dragon_caves` 群系标签，并在实际地下中心的 X/Z 各偏移 `-16/0/16` 组成的 3×3 点阵读取群系；任一点命中标签就提前返回。配套标签包含 `northstar:europan_subsurface_ocean` 与 `alexscaves:abyssal_chasm`。首次错误补丁由 `BadiffCli diff` 生成 `BadiffFileDiff`，与 HotAI 使用 `DefaultSerialization` 读取的 `MemoryDiff` 格式不兼容，触发 `Not all bytes consumed from byte[]`；现有文件由 HotAI 官方 `.class` 转存流程生成。 | 木卫二地下冰龙穴仍可在冰原和山脊区域生成，但不会以地下海或渊海陷窟为中心、也不会跨入其近邻 16 格范围；火星冰龙穴及所有地表龙巢不受影响。首次转换启动已记录 `Patched class` 并成功进入木卫二；已游戏内验证第二次启动 badiff 重放与新生成区块结构分布。 |
+
+## Alex's Mobs 补丁
+
+### release-v050x 蟾蜍捕食极值伤害
+
+目标：`com/github/alexthe666/alexsmobs/entity/EntityWarpedToad.badiff`，绑定 Alex's Mobs `1.22.9`（`alexsmobs-1.22.9.jar`）。语义对齐 [CDC #130](https://github.com/Jasons-impart/Create-Delight-Core/pull/130) / [Remake #2319](https://github.com/Jasons-impart/Create-Delight-Remake/pull/2319)：只把 `m_8119_()`（tick）中绯红蚊分支唯一的 `Float.MAX_VALUE` 换成 `10000.0F`，普通攻击与伤害事件流程不变。
+
+`release-v050x` 冻结在 CDC `2.2.16j`，该 JAR 不含 `WarpedToadPredationDamageMixin`；`main` 侧 CDC `2.2.16n` 已带同一 mixin，故本补丁只服务 050x HotAI 回迁，不 bump CDC、不改子模块。
+
+补丁由 `ClassReader → ClassNode → ClassWriter(0)` 归一化基线后，用 HotAI 1.0 的 `MemoryDiffs.diff` + `DefaultSerialization` 生成；反序列化重放后与预期 class 逐字节一致，方法内 `Float.MAX_VALUE` 计数为 0、`10000.0F` 计数为 1。完整重启后需确认 `Patched class: com/github/alexthe666/alexsmobs/entity/EntityWarpedToad`，并用蟾蜍捕食绯红蚊回归（含佩戴 Tetrawear / Apothic Attributes 护甲路径）。
+
+| 校验对象 | SHA-256 |
+|---|---|
+| 原始 JAR class | `56a2529403ebdf81f74744e1fc039200c365298bd078bfa7648096a5636c171a` |
+| Hotai 归一化 before | `56a2529403ebdf81f74744e1fc039200c365298bd078bfa7648096a5636c171a` |
+| 补丁后 class | `1018f7992efb39ca6e118961c40af6ae1bbfe61f60144f3a68b72fa10eda3ff1` |
+| `.badiff` | `a6408c5860424d9f57cc22fbb0d4e30e63e1f9c300837eccf60e4e07b8d38ac7` |
 
 ## Quality Food 补丁
 
