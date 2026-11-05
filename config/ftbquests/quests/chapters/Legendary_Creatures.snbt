@@ -197,6 +197,20 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["2AE0738C43D5A42B"]
+			icon: "minecraft:blue_ice"
+			id: "A7C3E19F4B825D60"
+			size: 1.5d
+			tasks: [{
+				dimension: "northstar:europa"
+				id: "B8D4F20A5C936E71"
+				type: "dimension"
+			}]
+			title: "木卫二"
+			x: -5.0d
+			y: 2.5d
+		}
+		{
 			dependencies: ["6AF0BCF34F1E3853"]
 			id: "36C9F799E0135534"
 			tasks: [{
@@ -297,15 +311,16 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["06E9305FCDABCD28"]
+			dependencies: ["A7C3E19F4B825D60"]
 			id: "33AEA40FA5FE2CE3"
+			subtitle: "木卫二冰下海 / 渊海陷窟"
 			tasks: [{
 				entity: "iceandfire:sea_serpent"
 				id: "7AAEA2F3ABDE5020"
 				type: "kill"
 				value: 1L
 			}]
-			x: -4.5d
+			x: -6.0d
 			y: 2.0d
 		}
 		{
@@ -375,16 +390,17 @@
 			y: 5.0d
 		}
 		{
-			dependencies: ["5246A4941FE396AC"]
+			dependencies: ["244B2CABBB89B269"]
 			id: "71CBDE6F46E867ED"
+			subtitle: "火星沙丘"
 			tasks: [{
 				entity: "iceandfire:deathworm"
 				id: "3564736E44D0BA17"
 				type: "kill"
 				value: 1L
 			}]
-			x: 5.0d
-			y: 1.5d
+			x: -3.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["5246A4941FE396AC"]
@@ -399,16 +415,17 @@
 			y: -2.0d
 		}
 		{
-			dependencies: ["5246A4941FE396AC"]
+			dependencies: ["06E9305FCDABCD28"]
 			id: "77B14A2DDB78829C"
+			subtitle: "主世界丛林"
 			tasks: [{
 				entity: "iceandfire:amphithere"
 				id: "43FF49493AD282D9"
 				type: "kill"
 				value: 1L
 			}]
-			x: 3.5d
-			y: -1.5d
+			x: -1.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["244B2CABBB89B269"]
@@ -465,16 +482,17 @@
 			y: 4.5d
 		}
 		{
-			dependencies: ["06E9305FCDABCD28"]
+			dependencies: ["A7C3E19F4B825D60"]
 			id: "569303FE1B0810A0"
+			subtitle: "木卫二冰下海 / 渊海陷窟"
 			tasks: [{
 				entity: "iceandfire:siren"
 				id: "14F19DCE413F9DE5"
 				type: "kill"
 				value: 1L
 			}]
-			x: -3.5d
-			y: 4.5d
+			x: -5.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["06E9305FCDABCD28"]
@@ -565,8 +583,8 @@
 				item: "iceandfire:amphithere_feather"
 				type: "item"
 			}]
-			x: 4.0d
-			y: -2.5d
+			x: -0.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["77B14A2DDB78829C"]
@@ -577,8 +595,8 @@
 				item: "iceandfire:amphithere_skull"
 				type: "item"
 			}]
-			x: 5.75d
-			y: -4.25d
+			x: 0.75d
+			y: 5.75d
 		}
 		{
 			dependencies: ["2F52C516A27808AB"]
@@ -594,8 +612,8 @@
 				}
 				type: "item"
 			}]
-			x: 5.0d
-			y: -3.5d
+			x: 0.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["6DAF4BB49D52FD8B"]

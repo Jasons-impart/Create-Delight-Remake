@@ -4,28 +4,7 @@
       {
         "type": "BIOME_TAG",
         "negate": false,
-        "value": "northstar:venus_biomes"
-      }
-    ],
-    [
-      {
-        "type": "REGISTRY_NAME",
-        "negate": false,
-        "value": "byg:mojave_desert"
-      }
-    ],
-    [
-      {
-        "type": "REGISTRY_NAME",
-        "negate": false,
-        "value": "byg:atacama_desert"
-      }
-    ],
-    [
-      {
-        "type": "REGISTRY_NAME",
-        "negate": false,
-        "value": "byg:windswept_valley"
+        "value": "northstar:mars_biomes"
       }
     ]
   ]
