@@ -43,6 +43,8 @@
 | Alex's Mobs 蟾蜍捕食极值伤害（release-v050x） | `com/github/alexthe666/alexsmobs/entity/EntityWarpedToad.badiff` | 将 `tick`/`m_8119_()` 中绯红蚊分支唯一的 `Float.MAX_VALUE` 改为 `10000.0F`，语义对齐 CDC #130；不 bump 冻结的 CDC 2.2.16j。细节见 [补丁明细](badiff-details.md#release-v050x-蟾蜍捕食极值伤害)。 |
 | CDC × Quality Food 甜浆果收获防崩溃（release-v050x） | `io/github/jasonsimpart/createdelightcore/mixin/quality_food/QualityFoodMixin.badiff` | 仅在 `isRelevantCropMixin` 收到空方块状态时返回 false，避免甜浆果右键/机械手收获触发 NPE；不移植 CDC #148 的自动化品质与玩家上下文改动。适用于当前 CDC 2.2.16j；升级 CDC 后须复核或移除。 |
 
+| ExtendedAE Plus 无线收发器卸载能量提供者 | `com/extendedae_plus/ae/wireless/LabelLink.badiff`、`WirelessSlaveLink.badiff`、`content/wireless/LabeledWirelessTransceiverBlockEntity.badiff` | 标注/普通无线链路在区块卸载或拆除时，`IGridConnection.destroy()` / `IManagedGridNode.destroy()` 若撞上 AE2 `ongoingExtractOperation` 会抛 `Cannot modify energy providers while energy is being extracted`，中断存档。 补丁仅在未受 Throwable 保护的 `destroy()` 调用外包 try/catch，失败后仍清理 ConnectionWrapper / 继续拆除；不改 AE2 EnergyService。 绑定 `extendedae_plus-1.5.5`。 |
+
 ## 待首次启动转存的可审阅 class
 
 | 目标领域 | 当前文件 | 行为变化与状态 |

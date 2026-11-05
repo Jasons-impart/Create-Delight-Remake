@@ -30,10 +30,13 @@
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 42 个 `.badiff`；静态 JAR 命中 38 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
+当前扫描到 45 个 `.badiff`；静态 JAR 命中 41 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |
 |---|---|---|---|
+| ExtendedAE Plus | `hotai/com/extendedae_plus/ae/wireless/LabelLink.badiff` | `com/extendedae_plus/ae/wireless/LabelLink` | 静态命中 `extendedae_plus-1.5.5.jar` |
+| ExtendedAE Plus | `hotai/com/extendedae_plus/ae/wireless/WirelessSlaveLink.badiff` | `com/extendedae_plus/ae/wireless/WirelessSlaveLink` | 静态命中 `extendedae_plus-1.5.5.jar` |
+| ExtendedAE Plus | `hotai/com/extendedae_plus/content/wireless/LabeledWirelessTransceiverBlockEntity.badiff` | `com/extendedae_plus/content/wireless/LabeledWirelessTransceiverBlockEntity` | 静态命中 `extendedae_plus-1.5.5.jar` |
 | Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff` | `com/forsteri/createliquidfuel/core/BurnerStomachHandler` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
 | Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity.badiff` | `com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
 | Alex's Mobs | `hotai/com/github/alexthe666/alexsmobs/entity/EntityWarpedToad.badiff` | `com/github/alexthe666/alexsmobs/entity/EntityWarpedToad` | 静态命中 `alexsmobs-1.22.9.jar` |
@@ -679,6 +682,23 @@ if (state == null) {
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
 | `org/antarcticgardens/cna/content/ponders/CNAPonders.badiff` | 已还原 | 旧 `org/antarcticgardens/newage/CreateNewAgePonders` 补丁已按当前包和注册 API 重建。补丁移除 `WIRING`、`HEATING`、`REACTOR` 字段及标签注册；移除 `heating`、`heater`、`reactor`、`wires` 场景，涉及热管、热泵、太阳能加热板、斯特林引擎、加热器、核反应堆组件、电气连接器及各类导线；保留 `ELECTRICAL`、`MAGNETS`、`ELECTRICITY_GENERATION`、`MOTOR_EXTENSION`。配套 `energiser.nbt`、`generation.nbt`、`motor.nbt`、`motor_extension.nbt` 已按当前方块 id 和方块实体数据刷新。 | 延续 `e11d47f206c1e9cb28bdf506698c824586f9b00c` 的“删除 CNA 无用 Ponder”意图，并让补丁重新命中当前 Create New Age 版本。 |
+
+## ExtendedAE Plus 补丁
+
+### 无线收发器卸载 × AE2 能量提取
+
+| 文件 | 状态 | 具体改动 | 影响 |
+|---|---|---|---|
+| `com/extendedae_plus/ae/wireless/LabelLink.badiff` | 已还原 | `destroyConnection` 中未受 Throwable 保护的 `IGridConnection.destroy()` 外包 try/catch；失败后仍执行 wakeDevice 与 `setConnection(null)`。 | 标注无线收发器 `onChunkUnloaded` → `cleanupForRemoval` → `LabelLink.onUnloadOrRemove` 不再因 AE2 `removeProvider` 前置检查中断区块保存。 |
+| `com/extendedae_plus/ae/wireless/WirelessSlaveLink.badiff` | 已还原 | 同款：从机链路 `destroyConnection` 的 `destroy()` 外包 try/catch，随后仍清空 ConnectionWrapper。 | 频率无线收发器拆除/卸载路径同类防护。 |
+| `com/extendedae_plus/content/wireless/LabeledWirelessTransceiverBlockEntity.badiff` | 已还原 | `cleanupForRemoval` 中 `managedNode.destroy()` 外包 try/catch。 | 链路拆除后节点销毁若仍撞上提取中修改，不再向外抛出。 |
+
+- 目标 JAR：`extendedae_plus-1.5.5.jar`（Packwiz CurseForge `file-id = 8379834`）；AE2 `15.4.10`。
+- 根因：AE2 `EnergyService.removeProvider` 在 `ongoingExtractOperation` 时 `Preconditions.checkState` 失败；无线连接销毁触发 grid validate → 移除能量提供者。日志栈指向 `LabeledWirelessTransceiverBlockEntity.onChunkUnloaded`。
+- 基线按 HotaiTransformer 归一化：`ClassReader → ClassNode → ClassWriter(0)`；`.badiff` 由 Hotai 1.0 `MemoryDiffs.diff` + `DefaultSerialization` 生成，反序列化重放逐字节一致。
+- 不覆盖/不重写其他 `hotai/**/*.badiff`；本批仅新增上述三文件。
+- 残余风险：吞掉异常后对端网格可能短暂残留陈旧连接直到下次 validate；停服仍可能因其他模组缓慢。升级 ExtendedAE Plus 后必须重扫目标 class。
+- 适用性：与 `1.5.5` 强绑定；上游若改为延迟销毁或跳过提取中的 removeProvider，可移除本补丁。
 
 ## 维护建议
 
