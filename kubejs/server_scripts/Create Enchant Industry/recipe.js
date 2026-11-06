@@ -2,15 +2,6 @@ ServerEvents.recipes(e => {
     remove_recipes_output(e, [
         "create_enchantment_industry:printer"
     ])
-    const { create } = e.recipes
-    create.mixing(Fluid.of("create_enchantment_industry:hyper_experience", 50), [
-        Fluid.of("create_enchantment_industry:experience", 200),
-        Fluid.of("supplementaries:lumisene", 250),
-        "tetra:pristine_lapis"
-    ])
-        .superheated()
-        .id("createdelight:mixing/hyper_experience_2")
-    
     e.recipes.kubejs.shaped(
         "create_enchantment_industry:printer", [
         "ABA",
