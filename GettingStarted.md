@@ -6,6 +6,13 @@
 参考 https://github.com/Jasons-impart/Create-Delight-Remake/blob/main/GettingStarted.md 搭建整合包开发环境
 ```
 
+如果要搭特定维护分支，或本机已有 HMCL，把路径和分支一并写清，例如：
+
+```text
+参考 https://github.com/Jasons-impart/Create-Delight-Remake/blob/main/GettingStarted.md 搭建整合包 release-v050x 分支的开发环境；
+本地仓库放在 E:\minecraft\Client\HMCL\.minecraft\versions，HMCL 已在 E:\minecraft\Client\HMCL（无需再下载 HMCL）。
+```
+
 ## 前置依赖
 - Git，用于克隆仓库和提交变更。
 - GitHub CLI (`gh`)，用于通过命令行读取和操作 GitHub 的 Issue、PR、Release 与 Actions；安装失败不阻塞其他环境配置。
@@ -20,12 +27,18 @@
 - 不要在 Codex 自动审批模式下执行本流程；使用会弹出权限请求、允许用户批准联网和文件写入的模式。
 - 如果 `git clone`、联网下载或写入工作区因沙箱、代理、权限失败，切换到可手动审批权限请求的模式后重试。
 - 如果目标目录已有失败残留，先让用户授权清理该目录，或让用户指定新的空目录。
-- 先浅拷贝仓库；必须使用 `--depth 1`，不要普通 `git clone`：
+- 先浅拷贝仓库；必须使用 `--depth 1`，不要普通 `git clone`。默认拉 `main`；用户指定维护分支（如 `release-v050x`）时加 `-b`，并带上 CDC 子模块：
   ```powershell
-  git clone --depth 1 https://github.com/Jasons-impart/Create-Delight-Remake.git
+  # main（默认）
+  git clone --depth 1 --recurse-submodules --shallow-submodules https://github.com/Jasons-impart/Create-Delight-Remake.git
   cd Create-Delight-Remake
+
+  # 指定分支（示例：release-v050x），实例目录名可自定，例如 CD-050x-dev
+  git clone --depth 1 -b release-v050x --recurse-submodules --shallow-submodules https://github.com/Jasons-impart/Create-Delight-Remake.git CD-050x-dev
+  cd CD-050x-dev
   ```
-- 如果已经普通克隆完成，不要删除重来，继续后续步骤。
+- 用户已给出 HMCL 目录且要求版本隔离实例时，把仓库直接克隆到 `{HMCL}/.minecraft/versions/{实例名}/`，避免稍后整目录搬迁。本机已有同版本 Forge 实例时，可复制其 `{实例名}.json` / `{实例名}.jar` 并改 `id` 字段，省去再走一遍 HMCL 安装向导。
+- 如果已经普通克隆完成，不要删除重来，继续后续步骤；若缺 `CDC-mod-src`，再执行 `git submodule update --init --depth 1`。
 - 默认尝试安装 `gh`；如果安装失败或本机没有 `winget`，记录警告并继续后续配置：
   ```powershell
   if (-not (Get-Command gh -ErrorAction SilentlyContinue)) {
@@ -78,7 +91,7 @@
 - 如果 `java -version` 不是 Java 17，但 `JAVA_HOME` 指向 Java 17，可继续；同步脚本会优先读取 `JAVA_HOME`。
 - 如果 `java -version` 和 `JAVA_HOME` 都不是 Java 17，修改 `variables.txt` 的 `JAVA=` 为本机 Java 17 的完整路径。
 - 配置 Minecraft MCP：阅读 [AI 工具集成指南](https://github.com/langyo/minecraft-mod-mcp/blob/master/docs/guides/zhs/AI-TOOLS.md)，使用 `npx -y minecraft-mod-mcp` 作为 stdio 桥接器连接 AI 工具；不要把游戏 HTTP 端口或 `/api/events` 直接配置成 MCP/SSE 地址。
-- 下载 HMCL 启动器：
+- 下载 HMCL 启动器（用户已提供现成 HMCL 路径、或目标机已有 `HMCL*.exe` / `HMCL.jar` 时跳过，不要再下一份）：
   ```powershell
   Invoke-WebRequest -Uri "https://github.com/HMCL-dev/HMCL/releases/download/v3.13.2/HMCL-3.13.2.jar" -OutFile ".\HMCL.jar"
   ```
@@ -92,6 +105,7 @@
   powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\sync-packwiz-assets.ps1 -Proxy $env:PACKWIZ_PROXY
   ```
 - Git 更新后的 hook 与外层同步流程会复用 `.cache/packwiz-sync/sync-state.json`，同一提交不会重复下载；若本地运行时文件损坏，可加 `-Force` 重新同步。
+- CurseForge CDN 偶发 `timeout` / `packwiz-installer exited with code 1` 时，配置代理后直接再跑一次同步即可（失败不会写成成功状态）；仍缺 jar 再用 `-Force`。
 - 脚本会按平台自动下载 packwiz（Windows 为 `packwiz.exe`，Linux/macOS 为 `packwiz` 并自动 `chmod +x`）和 `packwiz-installer.jar` 到 `.cache/packwiz-sync/tools/`，执行 `packwiz refresh`，并按 `mods/`、`resourcepacks/`、`shaderpacks/` 下的 `*.pw.toml` 同步实际文件。
 - Linux/macOS：需安装 PowerShell 7（`pwsh`），将上文命令中的 `powershell` 换成 `pwsh`、路径分隔符换成 `/`；Python 可用 `python3`。fork 目前只发布 linux-amd64 与 Windows 版 packwiz，macOS/ARM 需通过 `-PackwizUrl` 指定自行构建的二进制。
 - 本地开发环境默认按客户端侧同步，只保留 `side = "both"` 和 `side = "client"` 的 mod；`side = "server"` 的服务端专用 mod 不会下载到客户端实例。
@@ -108,7 +122,7 @@
 - 收到实例目录后，agent 将当前 repo 连同 `.git/` 移动到该实例目录；如果当前 repo 已经在该实例目录中，则直接确认。
 
 ## Agent 收尾检查
-- 根据用户提供的实例名和实例目录，确认 `{实例名}.json`、`{实例名}.jar`、`pack.toml`、`kubejs/`、`config/`、`mods/` 存在。
+- 根据用户提供的实例名和实例目录，确认 `{实例名}.json`、`{实例名}.jar`、`kubejs/`、`config/`、`mods/` 存在；Packwiz 清单在 `main` 上是根目录 `pack.toml`，在 `release-v050x` 等维护分支上是根目录 `modpack.toml`（`pack.toml` / `index.toml` 由同步脚本生成，通常不入库）。
 - 如果当前 repo 不在实例目录，移动前先确认目标目录是 `.minecraft/versions/{实例名}/`，再移动整个 repo 目录并保留 `.git/`。
 - 在实例目录执行：
   ```powershell
@@ -129,7 +143,7 @@
 - `gh was not found`：可执行 `winget install --id GitHub.cli --exact` 并重新打开 PowerShell 7；这不会阻塞其他环境配置。
 - `gh` 未认证：执行 `gh auth login`，完成 GitHub 登录后再重试需要 GitHub CLI 的操作。
 - `packwiz refresh produced an empty index`：packwiz 未正常运行（常见于非 Windows 下二进制不可执行或架构不符），检查 `.cache/packwiz-sync/tools/packwiz` 后加 `-Force` 重试。
-- 下载 packwiz、installer 或 CurseForge 文件失败：检查 GitHub / CurseForge / CDN 访问，必要时配置代理后重试。
+- 下载 packwiz、installer 或 CurseForge 文件失败：检查 GitHub / CurseForge / CDN 访问，必要时配置代理后重试；大批量同步中途超时，直接再执行一次 `scripts/sync-packwiz-assets.ps1`（可带 `-Proxy`）。
 
 ## 把 repo 变成可启动客户端实例
 - 用户在 HMCL 中新建实例，实例名可自定。
@@ -152,8 +166,10 @@
           ├── mods/
           ├── resourcepacks/
           ├── shaderpacks/
-          └── pack.toml
+          ├── pack.toml          # main：入库的 Packwiz 清单
+          └── modpack.toml       # release-v0xxx：入库清单；pack.toml 为生成文件
   ```
+  （同一分支通常只会出现 `pack.toml` 或 `modpack.toml` 之一作为清单源；上表列出两种以便对照。）
 - 如果 agent 需要搬迁仓库，必须移动整个仓库目录或复制包含 `.git/` 的完整目录；不要排除 `.git/`、不要把仓库内容复制到另一个非仓库实例目录。
 - 如果缺少 `{实例名}.json` 或 `{实例名}.jar`，用户回到 HMCL 为该实例重新安装 Minecraft `1.20.1` + Forge `47.4.16`。
 - Agent 执行“Agent 收尾检查”。
