@@ -314,12 +314,12 @@
     "name": "Colorful Hearts",
     "version": "1.20.1-4.3.16"
   },
-  "colorwheel-forge-1.2.1+mc1.20.1.jar": {
+  "colorwheel-forge-1.3.2-mc1.20.1.jar": {
     "modId": "colorwheel-forge",
     "name": "Colorwheel",
     "version": "1.2.1+mc1.20.1"
   },
-  "colorwheel_patcher-forge-1.0.4+mc1.20.1.jar": {
+  "colorwheel_patcher-forge-1.0.5+mc1.20.1.jar": {
     "modId": "colorwheel_patcher-forge",
     "name": "Colorwheel Patcher",
     "version": "1.0.4+mc1.20.1"
