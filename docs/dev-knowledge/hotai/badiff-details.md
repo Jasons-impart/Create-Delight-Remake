@@ -30,7 +30,7 @@
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 49 个 `.badiff`；静态 JAR 命中 45 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
+当前扫描到 50 个 `.badiff`；静态 JAR 命中 46 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |
 |---|---|---|---|
@@ -46,8 +46,8 @@
 | TACZ-addon | `hotai/com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner.badiff` | `com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner` | 静态命中 `taczaddon.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/ConnectorType.badiff` | `com/mrh0/createaddition/blocks/connector/ConnectorType` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
-| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/IWireNode.badiff` | `com/mrh0/createaddition/energy/IWireNode` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/network/EnergyNetwork.badiff` | `com/mrh0/createaddition/energy/network/EnergyNetwork` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/WireConnectResult.badiff` | `com/mrh0/createaddition/energy/WireConnectResult` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
@@ -77,6 +77,7 @@
 | Create Delight Core | `hotai/io/github/jasonsimpart/createdelightcore/CDConfig.badiff` | `io/github/jasonsimpart/createdelightcore/CDConfig` | 静态命中 `Create-Delight-Core-1.20.1-dev.jar` |
 | Create Delight Core | `hotai/io/github/jasonsimpart/createdelightcore/mixin/create/BasinRecipeMixin.badiff` | `io/github/jasonsimpart/createdelightcore/mixin/create/BasinRecipeMixin` | 静态命中 `Create-Delight-Core-1.20.1-dev.jar` |
 | Create Delight Core | `hotai/io/github/jasonsimpart/createdelightcore/mixin/quality_food/QualityFoodMixin.badiff` | `io/github/jasonsimpart/createdelightcore/mixin/quality_food/QualityFoodMixin` | 静态命中 `Create-Delight-Core-1.20.1-dev.jar` |
+| Create Delight Core | `hotai/io/github/jasonsimpart/createdelightcore/mixin/refurbished_furniture/FryingPanBlockEntityMixin.badiff` | `io/github/jasonsimpart/createdelightcore/mixin/refurbished_furniture/FryingPanBlockEntityMixin` | 静态命中 `Create-Delight-Core-1.20.1-dev.jar` |
 | Unknown | `hotai/net/yiran/rebalancing/core/mixins/AttributeHelperMixin.badiff` | `net/yiran/rebalancing/core/mixins/AttributeHelperMixin` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
 | Create New Age | `hotai/org/antarcticgardens/cna/content/ponders/CNAPonders.badiff` | `org/antarcticgardens/cna/content/ponders/CNAPonders` | 静态命中 `create-new-age-1.2.0+forge-mc1.20.1.jar` |
 | Unknown | `hotai/org/forsteri/ratatouille/content/demolder/MechanicalDemolderBlockEntity.badiff` | `org/forsteri/ratatouille/content/demolder/MechanicalDemolderBlockEntity` | 静态命中 `create_ratatouille-1.20.1-1.3.8.jar` |
@@ -719,6 +720,7 @@ if (state == null) {
 | `org/forsteri/ratatouille/content/frozen_block/FrozenBlockEntity.badiff` | 已生成，待游戏内回归 | `tick()`：`getResultItem` 后先 `ItemStack.copy()`，再 setCount；`setItem` 前 `applyQuality(getQuality(input))`。 | 替代原 KubeJS tick/`persistentData` 方案；避免共享配方模板串品质。 |
 | `com/pyzpre/createbitterballen/block/mechanicalfryer/MechanicalFryerEntity.badiff` | 已生成，待游戏内回归 | 对齐 CDC fryer mixin：`getStackInSlot(0)` 后、`shrink` 前 `copy()` 快照；`insertItemStacked` 前对产物套品质。 | 050x 仍注册失效的 DeepFryingRecipeMixin；整堆耗尽时仍能继承。 |
 | `org/forsteri/ratatouille/content/demolder/MechanicalDemolderBlockEntity.badiff` | 已生成，对齐 CDC 2.2.16s | `tryProcessOnBelt`：`RecipeApplier.applyRecipeOn` 存入 `outputs` 后，按传送带输入 `stack` 剥掉产物 `quality_food` 再 `applyQuality`（无效/空输入写成 NONE）。 | QF 的 RecipeApplierMixin 会改共享模板并掷骰；`applyQuality(stack, quality)` 不覆盖已有品质，必须先剥离。 |
+| `io/github/jasonsimpart/createdelightcore/mixin/refurbished_furniture/FryingPanBlockEntityMixin.badiff` | 已生成，对齐 CDC 2.2.16t（Core #165 / #2514） | `storeInput` 的 `@Inject(remap=false)` 内嵌 `@At(INVOKE, ItemStack;shrink(I)V)` 补 `remap=true`（`@Inject` 仍为 false），使 refmap 中 `shrink→m_41774_` 生效、注入真正挂上；`applyQuality` 增加 `stored == null` 时直接返回原 stack 的守卫，否则 `applyQuality(stack, List.of(stored), null)`。 | 050x refmap 已含 shrink 映射，但 `Inject.remap=false` 让内嵌 `@At` 继承 false 而忽略 refmap，storeInput 不注入，`List.of(null)` 在灶台+煎锅 NPE（XMM2BW）。不修改家具 `FryingPanBlockEntity` 本体。 |
 
 
 目标 JAR：`create_ratatouille-1.20.1-1.3.8.jar`、`create_bic_bit` 当前包内版本。基线按 HotaiTransformer 归一化；FrozenBlockEntity MemoryDiff 往返一致。
