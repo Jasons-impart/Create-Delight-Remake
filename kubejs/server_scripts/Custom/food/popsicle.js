@@ -36,9 +36,15 @@ Object.entries(solidPopsicleMoldDemolding).forEach(([mold, popsicle]) => {
 
         let handStack = player.getItemInHand(e.hand)
         let amount = player.isCrouching() ? handStack.count : 1
+        let popsicleStack = Item.of(popsicle, amount)
+        // 无状态单次脱模：扣料前复制品质 CompoundTag，保留 quality 的 INT 类型。
+        let qualityTag = handStack.nbt == null ? null : handStack.nbt.getCompound("quality_food")
+        if (qualityTag != null && qualityTag.getInt("quality") > 0 && qualityTag.getInt("quality") <= 3) {
+            popsicleStack.getOrCreateTag().put("quality_food", qualityTag.copy())
+        }
         handStack.shrink(amount)
 
-        giveOrDropPopsicleDemolding(player, Item.of(popsicle, amount))
+        giveOrDropPopsicleDemolding(player, popsicleStack)
         giveOrDropPopsicleDemolding(player, Item.of("ratatouille:popsicle_mold", amount))
         player.swing()
         e.cancel()
