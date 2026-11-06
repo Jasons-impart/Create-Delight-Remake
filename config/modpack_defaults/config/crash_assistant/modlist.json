@@ -304,15 +304,15 @@
     "name": "Colorful Hearts",
     "version": "1.20.1-4.3.16"
   },
-  "colorwheel-forge-1.2.1+mc1.20.1.jar": {
+  "colorwheel-forge-1.3.2-mc1.20.1.jar": {
     "modId": "colorwheel-forge",
     "name": "Colorwheel",
-    "version": "1.2.1+mc1.20.1"
+    "version": "1.3.2-mc1.20.1"
   },
-  "colorwheel_patcher-forge-1.0.4+mc1.20.1.jar": {
+  "colorwheel_patcher-forge-1.0.5+mc1.20.1.jar": {
     "modId": "colorwheel_patcher-forge",
     "name": "Colorwheel Patcher",
-    "version": "1.0.4+mc1.20.1"
+    "version": "1.0.5+mc1.20.1"
   },
   "comforts-forge-6.4.0+1.20.1.jar": {
     "modId": "comforts-forge",
@@ -769,10 +769,10 @@
     "name": "Entity Culling Fabric/Forge",
     "version": "1.10.5"
   },
-  "EuphoriaPatcher-1.9.3-r5.8.1-forge.jar": {
+  "EuphoriaPatcher-1.10.5-r5.9.3-forge.jar": {
     "modId": "euphoriapatcher",
     "name": "Euphoria Patches",
-    "version": "1.9.3-r5.8.1-forge"
+    "version": "1.10.5-r5.9.3-forge"
   },
   "ExplorersCompass-1.20.1-1.4.0-forge.jar": {
     "modId": "explorerscompass",
