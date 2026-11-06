@@ -5,7 +5,7 @@ description: 管理 Create-Delight Remake 整合包的正式版或测试版发�
 
 # Create-Delight Remake 发布
 
-发布脚本负责 Git 分支、版本写入、标签、CI 等待、说明、公开 Release、公告 PR 和重试；标签 CI 的 `release-assets` job 负责下载同一次运行的 artifact、压缩并上传 Release 资产。agent 只判断发布意图与玩家可读的文案。
+发布脚本负责 Git 分支、版本写入、标签、CI 等待、说明、公开 Release、公告 PR 和重试；推送标签前先用现有生成器写入草稿 Release 正文，确保 CI 能复用同一份更新内容；标签 CI 的 `release-assets` job 负责下载同一次运行的 artifact、压缩并上传 Release 资产。agent 只判断发布意图与玩家可读的文案。
 
 ## 先生成只读计划
 
@@ -77,7 +77,7 @@ heartbeat 使用适合主动跟进的短间隔。除合并、完成、失败或�
 - 不直接发布或复制 CDC JAR；CDC 源码与 Packwiz 资产分别遵循 `CDC-mod-src/AGENTS.md` 和 `/packwiz-assets`。
 - 脚本可恢复中断的草稿 Release；已公开的同名 Release 不可重建。
 - 运行脚本前需要 PowerShell 7、Git、GitHub CLI 登录和干净或可安全暂存的工作树。
-- 正式版（非测试版）tag 触发的 `release-assets` job 会在 GitHub Release 资产上传后，尝试将 `Client-*.zip`（CurseForge 元数据包）上传到 CurseForge 项目 [create-delight-remake](https://www.curseforge.com/minecraft/modpacks/create-delight-remake)（id `1059094`）。需仓库或组织 Secret `CURSEFORGE_TOKEN`（与 Create-Delight-Core 同名）；未配置则跳过并打 notice，不使发布失败。测试版不上传 CurseForge。不要用该流程回传已发布版本。
+- 正式版（非测试版）tag 触发的 `release-assets` job 会在 GitHub Release 资产上传后，尝试将 `Client-*.zip`（CurseForge 元数据包）上传到 CurseForge 项目 [create-delight-remake](https://www.curseforge.com/minecraft/modpacks/create-delight-remake)（id `1059094`）。需仓库或组织 Secret `CURSEFORGE_TOKEN`（与 Create-Delight-Core 同名）；未配置则跳过并打 notice，不使发布失败。Changelog 读取该标签的 GitHub Release 正文并附加 Release 链接，使用 Markdown；正文为空时停止上传，不退回仅链接。测试版不上传 CurseForge。不要用该流程回传已发布版本。
 
 ## 按需参考
 
