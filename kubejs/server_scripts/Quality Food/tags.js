@@ -327,6 +327,12 @@ ServerEvents.tags("item", e => {
         'bakeries:focaccia_dough', 
         'bakeries:country_bread_dough', 
         'ratatouille:cocoa_powder', 
+        // #2497：非食物中间态也须能承载品质；覆盖所有冰棍口味，而非仅玉米。
+        '#forge:popsicle_mold_filled',
+        '#forge:popsicle_mold_solid',
+        'createdelight:raw_pie_crust',
+        'bakeries:egg_tart_shell',
+        'bakeries:raw_egg_tart',
         // 蛋糕模具：注液品质挂上后，烤炉 BakeDataMixin 才能继承到蛋糕胚
         'ratatouille:cake_mold_filled',
         'ratatouille:cake_mold_baked',
