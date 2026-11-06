@@ -30,7 +30,7 @@
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 45 个 `.badiff`；静态 JAR 命中 41 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
+当前扫描到 50 个 `.badiff`；静态 JAR 命中 46 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |
 |---|---|---|---|
@@ -59,6 +59,7 @@
 | Vintage Improvements | `hotai/com/negodya1/vintageimprovements/content/kinetics/vibration/VibratingTableBlockEntity.badiff` | `com/negodya1/vintageimprovements/content/kinetics/vibration/VibratingTableBlockEntity` | 静态命中 `vintageimprovements-1.20.1-0.3.7.8.jar` |
 | Vintage Improvements | `hotai/com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene.badiff` | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene` | 静态命中 `vintageimprovements-1.20.1-0.3.7.8.jar` |
 | Vintage Improvements | `hotai/com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderTag.badiff` | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderTag` | 静态命中 `vintageimprovements-1.20.1-0.3.7.8.jar` |
+| Unknown | `hotai/com/pyzpre/createbitterballen/block/mechanicalfryer/MechanicalFryerEntity.badiff` | `com/pyzpre/createbitterballen/block/mechanicalfryer/MechanicalFryerEntity` | 静态命中 `createbicbit-forge-1.20.1-1.0.2B.jar` |
 | Create | `hotai/com/simibubi/create/compat/jei/category/ItemDrainCategory.badiff` | `com/simibubi/create/compat/jei/category/ItemDrainCategory` | 静态命中 `create-1.20.1-6.0.8.jar` |
 | Create | `hotai/com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour.badiff` | `com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour` | 静态命中 `create-1.20.1-6.0.8.jar` |
 | Create | `hotai/com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour.badiff` | `com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour` | 静态命中 `create-1.20.1-6.0.8.jar` |
@@ -76,8 +77,12 @@
 | Create Delight Core | `hotai/io/github/jasonsimpart/createdelightcore/CDConfig.badiff` | `io/github/jasonsimpart/createdelightcore/CDConfig` | 静态命中 `Create-Delight-Core-1.20.1-dev.jar` |
 | Create Delight Core | `hotai/io/github/jasonsimpart/createdelightcore/mixin/create/BasinRecipeMixin.badiff` | `io/github/jasonsimpart/createdelightcore/mixin/create/BasinRecipeMixin` | 静态命中 `Create-Delight-Core-1.20.1-dev.jar` |
 | Create Delight Core | `hotai/io/github/jasonsimpart/createdelightcore/mixin/quality_food/QualityFoodMixin.badiff` | `io/github/jasonsimpart/createdelightcore/mixin/quality_food/QualityFoodMixin` | 静态命中 `Create-Delight-Core-1.20.1-dev.jar` |
+| Create Delight Core | `hotai/io/github/jasonsimpart/createdelightcore/mixin/refurbished_furniture/FryingPanBlockEntityMixin.badiff` | `io/github/jasonsimpart/createdelightcore/mixin/refurbished_furniture/FryingPanBlockEntityMixin` | 静态命中 `Create-Delight-Core-1.20.1-dev.jar` |
 | Unknown | `hotai/net/yiran/rebalancing/core/mixins/AttributeHelperMixin.badiff` | `net/yiran/rebalancing/core/mixins/AttributeHelperMixin` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
 | Create New Age | `hotai/org/antarcticgardens/cna/content/ponders/CNAPonders.badiff` | `org/antarcticgardens/cna/content/ponders/CNAPonders` | 静态命中 `create-new-age-1.2.0+forge-mc1.20.1.jar` |
+| Unknown | `hotai/org/forsteri/ratatouille/content/demolder/MechanicalDemolderBlockEntity.badiff` | `org/forsteri/ratatouille/content/demolder/MechanicalDemolderBlockEntity` | 静态命中 `create_ratatouille-1.20.1-1.3.8.jar` |
+| Unknown | `hotai/org/forsteri/ratatouille/content/frozen_block/FrozenBlockEntity.badiff` | `org/forsteri/ratatouille/content/frozen_block/FrozenBlockEntity` | 静态命中 `create_ratatouille-1.20.1-1.3.8.jar` |
+| Unknown | `hotai/org/forsteri/ratatouille/content/squeeze_basin/SqueezeBasinBlockEntity.badiff` | `org/forsteri/ratatouille/content/squeeze_basin/SqueezeBasinBlockEntity` | 静态命中 `create_ratatouille-1.20.1-1.3.8.jar` |
 | Unknown | `hotai/org/violetmoon/quark/content/automation/block/be/CrafterBlockEntity.badiff` | `org/violetmoon/quark/content/automation/block/be/CrafterBlockEntity` | 静态命中 `Quark-4.0-462.jar` |
 <!-- HOTAI_STATUS:END -->
 
@@ -706,3 +711,23 @@ if (state == null) {
 - 修改 `hotai/**/*.badiff` 后运行 `scripts/update-hotai-docs.ps1` 更新 `HOTAI_STATUS` 区块；`scripts/validate-knowledge-base.ps1` 会用 `-Check` 检查该区块是否过期。
 - 对“当前未还原”条目，优先判断目标模组是否已改名、移除或被替换；如果连续版本都没有启动日志命中，可以考虑清理对应 `.badiff`。
 - 超导连接器相关补丁要和 `kubejs/assets/createaddition/`、`kubejs/server_scripts/Create Addition/` 一起验证；只看 `hotai` class patch 不足以证明玩法完整。
+
+## Ratatouille / 机械炸锅品质（050x）
+
+| 文件 | 状态 | 具体改动 | 影响 |
+|---|---|---|---|
+| `org/forsteri/ratatouille/content/squeeze_basin/SqueezeBasinBlockEntity.badiff` | 已生成，待游戏内回归 | `process()`：扣料前仅采样槽 0 品质（无槽 1 回退）；`acceptOutputs` 前对首个产物 `QualityUtils.applyQuality`。 | CDC SqueezeBasin mixin 注入点在 2.2.16j 失效。 |
+| `org/forsteri/ratatouille/content/frozen_block/FrozenBlockEntity.badiff` | 已生成，待游戏内回归 | `tick()`：`getResultItem` 后先 `ItemStack.copy()`，再 setCount；`setItem` 前 `applyQuality(getQuality(input))`。 | 替代原 KubeJS tick/`persistentData` 方案；避免共享配方模板串品质。 |
+| `com/pyzpre/createbitterballen/block/mechanicalfryer/MechanicalFryerEntity.badiff` | 已生成，待游戏内回归 | 对齐 CDC fryer mixin：`getStackInSlot(0)` 后、`shrink` 前 `copy()` 快照；`insertItemStacked` 前对产物套品质。 | 050x 仍注册失效的 DeepFryingRecipeMixin；整堆耗尽时仍能继承。 |
+| `org/forsteri/ratatouille/content/demolder/MechanicalDemolderBlockEntity.badiff` | 已生成，对齐 CDC 2.2.16s | `tryProcessOnBelt`：`RecipeApplier.applyRecipeOn` 存入 `outputs` 后，按传送带输入 `stack` 剥掉产物 `quality_food` 再 `applyQuality`（无效/空输入写成 NONE）。 | QF 的 RecipeApplierMixin 会改共享模板并掷骰；`applyQuality(stack, quality)` 不覆盖已有品质，必须先剥离。 |
+| `io/github/jasonsimpart/createdelightcore/mixin/refurbished_furniture/FryingPanBlockEntityMixin.badiff` | 已重建，静态验证通过，待完整重启回归 | 从冻结 CDC 2.2.16j 原始 class 经 ClassNode → ClassWriter(0) 归一化后生成 MemoryDiff；`storeInput` 的 `@At` 直接指向 `ItemStack;m_41774_(I)V`，`remap=false`；`@Inject` 保持 `remap=false` 并增加 `require=1`。保留扣料前 copy、`@Share("input")`、`stored == null` 守卫与 `applyQuality(stack, List.of(stored), null)`。 | 2.2.16j 的该 mixin refmap 只有 setItem 映射、缺 shrink 映射，旧补丁仅改 `@At(remap=true)` 仍零命中，null-guard 导致普通熟片而不崩溃。2.2.16t 则含 shrink 映射，不能只比较 mixin class。仍 patch CDC mixin，不修改家具本体或升级 CDC。 |
+
+
+目标 JAR：`create_ratatouille-1.20.1-1.3.8.jar`、`create_bic_bit` 当前包内版本。基线按 HotaiTransformer 归一化；FrozenBlockEntity MemoryDiff 往返一致。
+
+### 家具煎锅 SRG 修正验证（2026-11-07）
+
+- 基线 CDC 2.2.16j JAR SHA-256：`de9e0ddad0b13bc34a9f1a7caaa79256d4403af9af0488e9dcef15e5800d9e36`；补丁从原始 class 重建，不叠加旧 badiff。
+- 新 badiff SHA-256：`87ed8a4acf06d8a139f376e228415575f43916ffebba9006742780e4091e56da`（612 字节）；MemoryDiff 序列化重放逐字节等于 after.class，ASM 结构与 BasicVerifier 通过。
+- 还原后的 `@Mixin` 仍指向 `com.mrcrayfish.furniture.refurbished.blockentity.FryingPanBlockEntity`；家具 1.0.20 的 `onCompleteCooking` 中精确匹配 `ItemStack.m_41774_(I)V` 一处。`require=1` 防止以后零命中静默跳过品质。
+- 完整退出并重启 050x 后，用整数品质 `{quality_food:{quality:1}}` 的生鲶鱼片验证铁品质熟片，再用无品质生片确认不会继承上次品质；不能用 KubeJS reload 代替客户端重启。当前验证不等于已完成游戏内回归。
