@@ -720,7 +720,14 @@ if (state == null) {
 | `org/forsteri/ratatouille/content/frozen_block/FrozenBlockEntity.badiff` | 已生成，待游戏内回归 | `tick()`：`getResultItem` 后先 `ItemStack.copy()`，再 setCount；`setItem` 前 `applyQuality(getQuality(input))`。 | 替代原 KubeJS tick/`persistentData` 方案；避免共享配方模板串品质。 |
 | `com/pyzpre/createbitterballen/block/mechanicalfryer/MechanicalFryerEntity.badiff` | 已生成，待游戏内回归 | 对齐 CDC fryer mixin：`getStackInSlot(0)` 后、`shrink` 前 `copy()` 快照；`insertItemStacked` 前对产物套品质。 | 050x 仍注册失效的 DeepFryingRecipeMixin；整堆耗尽时仍能继承。 |
 | `org/forsteri/ratatouille/content/demolder/MechanicalDemolderBlockEntity.badiff` | 已生成，对齐 CDC 2.2.16s | `tryProcessOnBelt`：`RecipeApplier.applyRecipeOn` 存入 `outputs` 后，按传送带输入 `stack` 剥掉产物 `quality_food` 再 `applyQuality`（无效/空输入写成 NONE）。 | QF 的 RecipeApplierMixin 会改共享模板并掷骰；`applyQuality(stack, quality)` 不覆盖已有品质，必须先剥离。 |
-| `io/github/jasonsimpart/createdelightcore/mixin/refurbished_furniture/FryingPanBlockEntityMixin.badiff` | 已生成，对齐 CDC 2.2.16t（Core #165 / #2514） | `storeInput` 的 `@Inject(remap=false)` 内嵌 `@At(INVOKE, ItemStack;shrink(I)V)` 补 `remap=true`（`@Inject` 仍为 false），使 refmap 中 `shrink→m_41774_` 生效、注入真正挂上；`applyQuality` 增加 `stored == null` 时直接返回原 stack 的守卫，否则 `applyQuality(stack, List.of(stored), null)`。 | 050x refmap 已含 shrink 映射，但 `Inject.remap=false` 让内嵌 `@At` 继承 false 而忽略 refmap，storeInput 不注入，`List.of(null)` 在灶台+煎锅 NPE（XMM2BW）。不修改家具 `FryingPanBlockEntity` 本体。 |
+| `io/github/jasonsimpart/createdelightcore/mixin/refurbished_furniture/FryingPanBlockEntityMixin.badiff` | 已重建，静态验证通过，待完整重启回归 | 从冻结 CDC 2.2.16j 原始 class 经 ClassNode → ClassWriter(0) 归一化后生成 MemoryDiff；`storeInput` 的 `@At` 直接指向 `ItemStack;m_41774_(I)V`，`remap=false`；`@Inject` 保持 `remap=false` 并增加 `require=1`。保留扣料前 copy、`@Share("input")`、`stored == null` 守卫与 `applyQuality(stack, List.of(stored), null)`。 | 2.2.16j 的该 mixin refmap 只有 setItem 映射、缺 shrink 映射，旧补丁仅改 `@At(remap=true)` 仍零命中，null-guard 导致普通熟片而不崩溃。2.2.16t 则含 shrink 映射，不能只比较 mixin class。仍 patch CDC mixin，不修改家具本体或升级 CDC。 |
 
 
 目标 JAR：`create_ratatouille-1.20.1-1.3.8.jar`、`create_bic_bit` 当前包内版本。基线按 HotaiTransformer 归一化；FrozenBlockEntity MemoryDiff 往返一致。
+
+### 家具煎锅 SRG 修正验证（2026-11-07）
+
+- 基线 CDC 2.2.16j JAR SHA-256：`de9e0ddad0b13bc34a9f1a7caaa79256d4403af9af0488e9dcef15e5800d9e36`；补丁从原始 class 重建，不叠加旧 badiff。
+- 新 badiff SHA-256：`87ed8a4acf06d8a139f376e228415575f43916ffebba9006742780e4091e56da`（612 字节）；MemoryDiff 序列化重放逐字节等于 after.class，ASM 结构与 BasicVerifier 通过。
+- 还原后的 `@Mixin` 仍指向 `com.mrcrayfish.furniture.refurbished.blockentity.FryingPanBlockEntity`；家具 1.0.20 的 `onCompleteCooking` 中精确匹配 `ItemStack.m_41774_(I)V` 一处。`require=1` 防止以后零命中静默跳过品质。
+- 完整退出并重启 050x 后，用整数品质 `{quality_food:{quality:1}}` 的生鲶鱼片验证铁品质熟片，再用无品质生片确认不会继承上次品质；不能用 KubeJS reload 代替客户端重启。当前验证不等于已完成游戏内回归。
