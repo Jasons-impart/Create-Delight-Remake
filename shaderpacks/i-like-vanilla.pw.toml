@@ -3,10 +3,11 @@ filename = "I Like Vanilla v1.5.0b.zip"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/release-v050x/packwiz-files/shaderpacks/I%20Like%20Vanilla%20v1.5.0b.zip"
-hash-format = "sha256"
-hash = "4800352ce10eed9a32d2664f2bc110e8e8526b12ea527defcc726d5922ab9aa6"
+hash-format = "sha1"
+hash = "d681b1555f28b521f1967a8e8ed84f8c281a7aba"
+mode = "metadata:curseforge"
 
-[release.curseforge]
-project-id = 995473
+[update]
+[update.curseforge]
 file-id = 9086115
+project-id = 995473
