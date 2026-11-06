@@ -45,6 +45,8 @@
 
 | ExtendedAE Plus 无线收发器卸载能量提供者 | `com/extendedae_plus/ae/wireless/LabelLink.badiff`、`WirelessSlaveLink.badiff`、`content/wireless/LabeledWirelessTransceiverBlockEntity.badiff` | 标注/普通无线链路在区块卸载或拆除时，`IGridConnection.destroy()` / `IManagedGridNode.destroy()` 若撞上 AE2 `ongoingExtractOperation` 会抛 `Cannot modify energy providers while energy is being extracted`，中断存档。 补丁仅在未受 Throwable 保护的 `destroy()` 调用外包 try/catch，失败后仍清理 ConnectionWrapper / 继续拆除；不改 AE2 EnergyService。 绑定 `extendedae_plus-1.5.5`。 |
 
+| Bakeries 面胚制作台品质（#2497） | `com/renyigesai/bakeries/recipe/DoughCraftingRecipe.badiff` | 直接补丁 1.2.5 配方实际 SRG `m_5874_` 返回值；复制、剥离旧品质、按槽 0 有品质输入调用 QF 集合 API，NONE 保持无星。不更新冻结 CDC；配套全部冰棍模具、生派酥皮及蛋挞中间态白名单。见 [逐文件明细](badiff-details.md#bakeries-面胚制作台品质2497050x)。 |
+
 ## 待首次启动转存的可审阅 class
 
 | 目标领域 | 当前文件 | 行为变化与状态 |
