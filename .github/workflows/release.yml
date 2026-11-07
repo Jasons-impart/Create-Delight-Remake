@@ -457,6 +457,24 @@ jobs:
       # 测试版不上传。未配置 secret 时跳过，不使发布失败。
       # 项目：https://www.curseforge.com/minecraft/modpacks/create-delight-remake （id 1059094）
       # 勿用本步骤回传已发布版本；仅随新 tag 的 release-assets job 生效。
+      - name: 读取 GitHub Release 正文用于 CurseForge Changelog
+        id: curseforge_changelog
+        if: env.IS_STABLE_RELEASE == 'true' && env.CURSEFORGE_TOKEN != ''
+        shell: bash
+        run: |
+          set -euo pipefail
+          release_body=$(gh release view "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --json body --jq .body)
+          if [[ -z "${release_body//[[:space:]]/}" ]]; then
+            echo "GitHub Release body is empty; prepare release notes before pushing the tag" >&2
+            exit 1
+          fi
+          delimiter="changelog_$(openssl rand -hex 16)"
+          {
+            printf 'changelog<<%s\n' "$delimiter"
+            printf '%s\n\n' "$release_body"
+            printf 'GitHub Release: %s/%s/releases/tag/%s\n' "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_REF_NAME"
+            printf '%s\n' "$delimiter"
+          } >> "$GITHUB_OUTPUT"
       - name: 上传客户端整合包至 CurseForge
         id: curseforge_upload
         if: env.IS_STABLE_RELEASE == 'true' && env.CURSEFORGE_TOKEN != ''
@@ -468,9 +486,7 @@ jobs:
           display-name: ${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}
           game-version: ${{ env.MC_VERSION }}
           release-type: release
-          changelog: |
-            ${{ env.MODPACK_VERSION }} 正式版客户端整合包（CurseForge 元数据包）。
-            GitHub Release: https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}
+          changelog: ${{ steps.curseforge_changelog.outputs.changelog }}
           changelog-format: markdown
       - name: 跳过 CurseForge 上传（测试版或未配置 token）
         if: env.IS_STABLE_RELEASE != 'true' || env.CURSEFORGE_TOKEN == ''
