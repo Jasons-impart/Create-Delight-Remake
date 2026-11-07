@@ -11,6 +11,7 @@ param(
     [string]$Version = "",
     [string]$TargetBranch = "",
     [ValidateSet("正式", "测试")][string]$ReleaseType = "",
+    [string]$PreviousVersion = "",
     [switch]$AsJson
 )
 
@@ -19,6 +20,7 @@ $ErrorActionPreference = "Stop"
 
 $RepoRoot = Split-Path -Parent (Split-Path -Parent (Split-Path -Parent $PSScriptRoot))
 $GitHubRepo = "Jasons-impart/Create-Delight-Remake"
+. "$PSScriptRoot/release-notes.ps1"
 $VersionPattern = '^v(\d+)\.(\d+)\.(\d+)\.(\d+)(-test)?$'
 
 function Invoke-GitReadOnly {
@@ -88,28 +90,6 @@ function Get-LatestPublishedReleaseTag {
     return $release.tagName
 }
 
-function Get-LatestReleaseTag {
-    # gh release view without a tag follows GitHub's latest release semantics:
-    # the latest published non-prerelease release.
-    $release = Invoke-GhJson -Arguments @(
-        "release", "view", "--repo", $GitHubRepo, "--json", "tagName,publishedAt,isPrerelease"
-    )
-    if (-not $release.tagName -or $release.isPrerelease) {
-        throw "GitHub latest release is missing or marked as a prerelease"
-    }
-    if ($release.tagName -notmatch $VersionPattern) {
-        throw "GitHub latest release has invalid tag: $($release.tagName)"
-    }
-    return $release.tagName
-}
-
-function Get-PublishedReleases {
-    return @(Invoke-GhJson -Arguments @(
-        "release", "list", "--repo", $GitHubRepo, "--limit", "100",
-        "--exclude-drafts", "--json", "tagName,publishedAt,isPrerelease"
-    ))
-}
-
 function Get-IncrementedVersion {
     param(
         [Parameter(Mandatory = $true)][string]$BaseVersion,
@@ -171,16 +151,16 @@ if (-not $TargetBranch) {
     $TargetBranch = if (Test-BranchExists -Branch $releaseBranch) { $releaseBranch } else { "main" }
 }
 
-$previousVersion = if ($ReleaseType -eq "测试") {
-    Get-LatestPublishedReleaseTag
-} else {
-    Get-LatestReleaseTag
-}
-$matchingStableTags = @(Get-PublishedReleases |
+$history = @(Get-ReleaseHistory -Repository $GitHubRepo)
+$previousVersion = if ($ReleaseType -eq "正式") {
+    Resolve-PreviousFormalTag -Version $Version -Releases $history -PreviousVersion $PreviousVersion
+} elseif ($PreviousVersion) { $PreviousVersion }
+else { Get-LatestPublishedReleaseTag }
+$matchingStableTags = @($history |
     Where-Object {
-        (-not $_.isPrerelease) -and
+        (-not $_.isDraft) -and $_.publishedAt -and (-not $_.isPrerelease) -and
         ($_.tagName -match "^v$([regex]::Escape($subVersion))\.\d+$") -and
-        ($_.tagName -ne $Version)
+        ([version]$_.tagName.Substring(1) -lt [version]($Version -replace '^v|\-test$', ''))
     } |
     Select-Object -ExpandProperty tagName)
 $firstStableCandidate = $ReleaseType -eq "正式" -and @($matchingStableTags).Count -eq 0
