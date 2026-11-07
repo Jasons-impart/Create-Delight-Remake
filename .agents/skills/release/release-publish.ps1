@@ -19,6 +19,10 @@
 .PARAMETER PreviousVersion
     The previous release tag for release notes and patch artifact names (e.g. "v0.4.7.14").
 
+.PARAMETER NotesFile
+    Required agent-written UTF-8 Markdown with player-facing categories/items only.
+    Defaults to docs/release-notes-{Version}.md when present; generated footers remain authoritative.
+
 .PARAMETER ReleaseType
     "正式" for full release, "测试" for prerelease. Default: "正式".
 
@@ -43,6 +47,7 @@ param(
     [Parameter(Mandatory=$true)][string]$TargetBranch,
     [Parameter(Mandatory=$false)][string]$PreviousVersion = "",
     [ValidateSet("正式","测试")][string]$ReleaseType = "正式",
+    [string]$NotesFile = "",
     [string]$Proxy = "",
     [int]$CIPollIntervalSeconds = 30,
     [int]$CITimeoutMinutes = 15,
@@ -51,6 +56,17 @@ param(
 
 $ErrorActionPreference = "Continue"
 $GitHubRepo = "Jasons-impart/Create-Delight-Remake"
+. "$PSScriptRoot/release-notes.ps1"
+# Read before switching branches/stashing, so an operator's local review is preserved.
+if (-not $NotesFile -and (Test-Path -LiteralPath "docs/release-notes-$Version.md")) {
+    $NotesFile = "docs/release-notes-$Version.md"
+}
+if (-not $NotesFile) { throw 'Release agent must write docs/release-notes-{Version}.md or supply -NotesFile before Publish' }
+$curatedContent = ''
+if ($NotesFile) {
+    $curatedContent = Get-Content -LiteralPath $NotesFile -Raw -Encoding utf8 -ErrorAction Stop
+    Assert-CuratedNotes -Content $curatedContent -Repository $GitHubRepo
+}
 
 # --- State for cleanup ---
 $script:OriginalBranch = $null
@@ -90,24 +106,6 @@ function Get-LatestPublishedReleaseTag {
         Fail "No published GitHub release was found"
     }
     return $releases[0].tagName
-}
-
-function Get-LatestReleaseTag {
-    # gh release view without a tag follows GitHub's latest release semantics:
-    # the latest published non-prerelease release.
-    $releaseJson = gh release view --repo $GitHubRepo --json tagName,publishedAt,isPrerelease 2>$null
-    if ($LASTEXITCODE -ne 0 -or -not $releaseJson) {
-        Fail "Cannot query GitHub's latest release"
-    }
-    try {
-        $release = $releaseJson | ConvertFrom-Json -ErrorAction Stop
-    } catch {
-        Fail "GitHub latest release returned invalid JSON"
-    }
-    if (-not $release.tagName -or $release.isPrerelease) {
-        Fail "GitHub latest release is missing or marked as a prerelease"
-    }
-    return $release.tagName
 }
 
 function Test-Prerequisites {
@@ -204,16 +202,17 @@ if (-not (Test-Prerequisites)) {
     exit 1
 }
 
-# Auto-detect PreviousVersion from GitHub release metadata if not provided.
-if (-not $PreviousVersion) {
-    Write-Host "🔍 Auto-detecting PreviousVersion..."
-    if ($ReleaseType -eq "测试") {
+# One authoritative baseline for notes, compare URL, and patch artifact names.
+try {
+    if ($ReleaseType -eq "正式") {
+        $releaseHistory = @(Get-ReleaseHistory -Repository $GitHubRepo)
+        $PreviousVersion = Resolve-PreviousFormalTag -Version $Version `
+            -Releases $releaseHistory -PreviousVersion $PreviousVersion
+    } elseif (-not $PreviousVersion) {
         $PreviousVersion = Get-LatestPublishedReleaseTag
-    } else {
-        $PreviousVersion = Get-LatestReleaseTag
     }
-    Write-Host "   ✅ Auto-detected PreviousVersion: $PreviousVersion"
-}
+    Write-Host "   ✅ PreviousVersion: $PreviousVersion"
+} catch { Fail "Cannot resolve release baseline: $_" }
 
 # Validate PreviousVersion format (now that it may be auto-detected)
 # Allow "-test" suffix so a test release can diff against the previous test tag (used for notes/compare link only; patches are stable-only)
@@ -348,35 +347,15 @@ $isFirstStable = $false
 $summaryFilePath = ""
 
 if ($subVersionPrefix -and $ReleaseType -eq "正式") {
-    # Check if any existing tag with this sub-version prefix is a stable (non-prerelease) release.
-    # Fail closed: if GitHub cannot be queried reliably, do not prepend a broad
-    # sub-version summary to avoid publishing stale notes on later stable releases.
-    $existingTags = git tag -l "$subVersionPrefix*" 2>$null
-    $hasStableRelease = $false
-    $stableCheckHadUnknown = $false
-    foreach ($tag in $existingTags) {
-        if ($tag -eq $Version) { continue }  # Skip the tag we just created
-        $releaseInfo = gh release view $tag --repo $repo --json isPrerelease 2>$null
-        if ($LASTEXITCODE -eq 0 -and $releaseInfo) {
-            $relObj = $releaseInfo | ConvertFrom-Json -ErrorAction SilentlyContinue
-            if ($relObj -and -not $relObj.isPrerelease) {
-                $hasStableRelease = $true
-                Write-Host "   Found existing stable release: $tag"
-                break
-            }
-        } else {
-            $stableCheckHadUnknown = $true
-            Write-Host "   ⚠️ Cannot verify release status for $tag"
-        }
-    }
-    if ($hasStableRelease) {
-        $isFirstStable = $false
-    } elseif ($stableCheckHadUnknown) {
-        Write-Host "   ⚠️ Could not verify all prior $subVersionPrefix releases; skipping first-stable summary"
-    } else {
-        $isFirstStable = $true
-        Write-Host "   🎉 This is the first stable release of $subVersionPrefix"
-    }
+    # Reuse the complete published metadata snapshot; this is NOT baseline selection.
+    $priorFormals = @($releaseHistory | Where-Object {
+        -not $_.isDraft -and -not $_.isPrerelease -and $_.publishedAt -and
+        $_.tagName -match ('^' + [regex]::Escape($subVersionPrefix) + '\.\d+$') -and
+        [version]$_.tagName.Substring(1) -lt [version]$Version.Substring(1)
+    })
+    $isFirstStable = $priorFormals.Count -eq 0
+    if ($isFirstStable) { Write-Host "   🎉 This is the first formal release of $subVersionPrefix" }
+    else { Write-Host "   Summary check: not the first formal release; notes baseline remains $PreviousVersion" }
 }
 
 # --- Prepend update summary if this is the first stable release ---
@@ -392,99 +371,14 @@ if ($isFirstStable) {
     }
 }
 
-# Get commits between versions
-$commits = git log "$PreviousVersion..$Version" --pretty=format:'%s' 2>$null
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "   ⚠️ Cannot get git log, using empty release notes"
-    $commits = @()
-}
-
-# Filter out version bump commits - only filter the specific format used by prepare script
-$commits = $commits | Where-Object { $_ -notmatch '^\[feat\]\s*v\d[\d.]+(?:-test)?\s+(正式版|测试版)版本更新$' }
-
-# Categorize
-$categories = [ordered]@{
-    '[mod]'   = "模组更新"
-    '[feat]'  = "新功能"
-    '[fix]'   = "Bug修复"
-    '[quest]' = "任务相关"
-    '[conf]'  = "配置调整"
-}
-$uncategorized = "其他"
-
-$grouped = @{}
-foreach ($key in $categories.Keys) { $grouped[$key] = @() }
-$grouped[$uncategorized] = @()
-
-foreach ($commit in $commits) {
-    $matched = $false
-    foreach ($prefix in $categories.Keys) {
-        $escaped = [regex]::Escape($prefix)
-        if ($commit -match "^$escaped") {
-            # Strip the [xxx] prefix
-            $msg = $commit -replace "^$escaped\s*", ""
-            $grouped[$prefix] += $msg
-            $matched = $true
-            break
-        }
-    }
-    if (-not $matched) {
-        $grouped[$uncategorized] += $commit
-    }
-}
-
-# Build markdown
-$sb = [System.Text.StringBuilder]::new()
-
-# Prepend update summary if available (before the per-commit notes)
-if ($summaryContent) {
-    [void]$sb.AppendLine($summaryContent.TrimEnd())
-    [void]$sb.AppendLine("")
-    [void]$sb.AppendLine("---")
-    [void]$sb.AppendLine("")
-}
-
-[void]$sb.AppendLine("## 更新内容 (AI自动生成)")
-[void]$sb.AppendLine("")
-
-foreach ($prefix in $categories.Keys) {
-    $items = $grouped[$prefix]
-    if ($items.Count -gt 0) {
-        [void]$sb.AppendLine("**$($categories[$prefix])**")
-        foreach ($item in $items) {
-            [void]$sb.AppendLine("- $item")
-        }
-        [void]$sb.AppendLine("")
-    }
-}
-
-# Uncategorized
-$uncatItems = $grouped[$uncategorized]
-if ($uncatItems.Count -gt 0) {
-    [void]$sb.AppendLine("**$uncategorized**")
-    foreach ($item in $uncatItems) {
-        [void]$sb.AppendLine("- $item")
-    }
-    [void]$sb.AppendLine("")
-}
-
-# For 测试版, add patch note
-if ($ReleaseType -eq "测试") {
-    [void]$sb.AppendLine("**增量更新**: 测试版不提供Patch文件，请下载完整包。")
-    [void]$sb.AppendLine("")
-}
-
-# For 正式版, add incremental update note
-if ($ReleaseType -eq "正式") {
-    [void]$sb.AppendLine("**增量更新**")
-    [void]$sb.AppendLine("从 $PreviousVersion 更新只需下载 ClientPatch 和 ServerPatch 文件。")
-    [void]$sb.AppendLine("")
-}
-
-# Add compare link
-[void]$sb.AppendLine("**详细更新**: https://github.com/$repo/compare/$PreviousVersion...$Version")
-
-$ReleaseNotes = $sb.ToString()
+# Validate the agent-written notes against the exact range before draft creation/tag push.
+try {
+    Assert-ReleaseRange -Version $Version -PreviousVersion $PreviousVersion -RepoRoot (Get-Location).Path
+    $commits = @(Get-ReleaseCommits -PreviousVersion $PreviousVersion -Version $Version -RepoRoot (Get-Location).Path)
+    $ReleaseNotes = New-ReleaseNotes -Version $Version -PreviousVersion $PreviousVersion `
+        -ReleaseType $ReleaseType -Repository $repo -Commits $commits `
+        -CuratedContent $curatedContent -SummaryContent $summaryContent
+} catch { Fail "Cannot prepare player-facing release notes: $_" }
 Write-Host "📝 Release notes generated"
 
 # ============================================================
@@ -498,9 +392,9 @@ if ($ReleaseType -eq "正式") {
     $title = "$Version 测试版"
 }
 
-$notesFile = Join-Path $env:TEMP "opencode\release-notes-$Version.md"
-New-Item -ItemType Directory -Path (Split-Path $notesFile) -Force | Out-Null
-[System.IO.File]::WriteAllText($notesFile, $ReleaseNotes, [System.Text.UTF8Encoding]::new($false))
+$draftNotesFile = Join-Path $env:TEMP "opencode\release-notes-$Version.md"
+New-Item -ItemType Directory -Path (Split-Path $draftNotesFile) -Force | Out-Null
+[System.IO.File]::WriteAllText($draftNotesFile, $ReleaseNotes, [System.Text.UTF8Encoding]::new($false))
 
 # Prepare notes before pushing the tag: CI reuses this body for CurseForge.
 # The tag is still local, so pin new drafts to the exact release commit.
@@ -508,28 +402,28 @@ $releaseViewJson = gh release view $Version --repo $repo --json isDraft 2>$null
 if ($LASTEXITCODE -eq 0 -and $releaseViewJson) {
     $releaseViewForCreate = $releaseViewJson | ConvertFrom-Json -ErrorAction SilentlyContinue
     if ($releaseViewForCreate -and -not $releaseViewForCreate.isDraft) {
-        Remove-Item $notesFile -Force -ErrorAction SilentlyContinue
+        Remove-Item $draftNotesFile -Force -ErrorAction SilentlyContinue
         Fail "Release $Version already exists and is not a draft"
     }
     Write-Host "   Draft release $Version already exists, resuming uploads"
-    gh release edit $Version --repo $repo --title $title --notes-file $notesFile
+    gh release edit $Version --repo $repo --title $title --notes-file $draftNotesFile
     if ($LASTEXITCODE -ne 0) {
-        Remove-Item $notesFile -Force -ErrorAction SilentlyContinue
+        Remove-Item $draftNotesFile -Force -ErrorAction SilentlyContinue
         Fail "Failed to update draft release metadata"
     }
 } else {
     if ($ReleaseType -eq "正式") {
-        gh release create $Version --repo $repo --title $title --notes-file $notesFile --target $commitSha --draft
+        gh release create $Version --repo $repo --title $title --notes-file $draftNotesFile --target $commitSha --draft
     } else {
-        gh release create $Version --repo $repo --title $title --prerelease --notes-file $notesFile --target $commitSha --draft
+        gh release create $Version --repo $repo --title $title --prerelease --notes-file $draftNotesFile --target $commitSha --draft
     }
     if ($LASTEXITCODE -ne 0) {
-        Remove-Item $notesFile -Force -ErrorAction SilentlyContinue
+        Remove-Item $draftNotesFile -Force -ErrorAction SilentlyContinue
         Fail "Failed to create draft GitHub release"
     }
 }
 
-Remove-Item $notesFile -Force -ErrorAction SilentlyContinue
+Remove-Item $draftNotesFile -Force -ErrorAction SilentlyContinue
 Write-Host "✅ Draft release ready: $title"
 
 git push origin $Version

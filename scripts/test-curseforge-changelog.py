@@ -74,15 +74,15 @@ class CurseForgeChangelogTests(unittest.TestCase):
 
     def test_notes_are_prepared_before_tag_push_and_ci_wait(self):
         publish = (ROOT / ".agents/skills/release/release-publish.ps1").read_text(encoding="utf-8")
-        notes = publish.index("$ReleaseNotes = $sb.ToString()")
+        notes = publish.index("$ReleaseNotes = New-ReleaseNotes")
         draft = publish.index("gh release create $Version --repo $repo --title $title --notes-file")
         push = publish.index("git push origin $Version")
         wait = publish.index("# Phase B: Wait for CI")
         self.assertLess(notes, draft)
         self.assertLess(draft, push)
         self.assertLess(push, wait)
-        self.assertEqual(publish.count("$ReleaseNotes = $sb.ToString()"), 1)
-        self.assertIn("--notes-file $notesFile --target $commitSha --draft", publish)
+        self.assertEqual(publish.count("$ReleaseNotes = New-ReleaseNotes"), 1)
+        self.assertIn("--notes-file $draftNotesFile --target $commitSha --draft", publish)
 
 
 if __name__ == "__main__":
