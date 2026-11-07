@@ -30,7 +30,7 @@
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 50 个 `.badiff`；静态 JAR 命中 46 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
+当前扫描到 51 个 `.badiff`；静态 JAR 命中 47 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |
 |---|---|---|---|
@@ -60,6 +60,7 @@
 | Vintage Improvements | `hotai/com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene.badiff` | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene` | 静态命中 `vintageimprovements-1.20.1-0.3.7.8.jar` |
 | Vintage Improvements | `hotai/com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderTag.badiff` | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderTag` | 静态命中 `vintageimprovements-1.20.1-0.3.7.8.jar` |
 | Unknown | `hotai/com/pyzpre/createbitterballen/block/mechanicalfryer/MechanicalFryerEntity.badiff` | `com/pyzpre/createbitterballen/block/mechanicalfryer/MechanicalFryerEntity` | 静态命中 `createbicbit-forge-1.20.1-1.0.2B.jar` |
+| Bakeries | `hotai/com/renyigesai/bakeries/recipe/DoughCraftingRecipe.badiff` | `com/renyigesai/bakeries/recipe/DoughCraftingRecipe` | 静态命中 `bakeries-1.20.1-forge-1.2.5.jar` |
 | Create | `hotai/com/simibubi/create/compat/jei/category/ItemDrainCategory.badiff` | `com/simibubi/create/compat/jei/category/ItemDrainCategory` | 静态命中 `create-1.20.1-6.0.8.jar` |
 | Create | `hotai/com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour.badiff` | `com/simibubi/create/content/fluids/transfer/FluidDrainingBehaviour` | 静态命中 `create-1.20.1-6.0.8.jar` |
 | Create | `hotai/com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour.badiff` | `com/simibubi/create/content/fluids/transfer/FluidManipulationBehaviour` | 静态命中 `create-1.20.1-6.0.8.jar` |
@@ -711,6 +712,17 @@ if (state == null) {
 - 修改 `hotai/**/*.badiff` 后运行 `scripts/update-hotai-docs.ps1` 更新 `HOTAI_STATUS` 区块；`scripts/validate-knowledge-base.ps1` 会用 `-Check` 检查该区块是否过期。
 - 对“当前未还原”条目，优先判断目标模组是否已改名、移除或被替换；如果连续版本都没有启动日志命中，可以考虑清理对应 `.badiff`。
 - 超导连接器相关补丁要和 `kubejs/assets/createaddition/`、`kubejs/server_scripts/Create Addition/` 一起验证；只看 `hotai` class patch 不足以证明玩法完整。
+
+## Bakeries 面胚制作台品质（#2497，050x）
+
+- 目标：`com/renyigesai/bakeries/recipe/DoughCraftingRecipe.badiff`，绑定 `bakeries-1.20.1-forge-1.2.5.jar`，JAR SHA-256 `99ffe366476d3172e055f1976d0e598dc72e7274cf426fed4f256b6e11bf045c`。
+- 冻结 CDC 2.2.16j 没有新的 `DoughCraftingRecipeQualityMixin`，不能假定补丁一个不存在且未注册的 mixin 就会生效。因此直接修补已存在的 Bakeries 配方 class；不改 CDC JAR、子模块、Mixin JSON 或旧品质 HotAI。
+- 从原始 class 经 `ClassReader → ClassNode → ClassWriter(0)` 归一化，生产方法精确匹配 `m_5874_(Container, RegistryAccess): ItemStack` 的唯一 ARETURN，插入静态 helper；不依赖 CDC 的旧 refmap。Container / ItemStack / CompoundTag 调用均使用真实 SRG 名称。
+- 对齐主线 CDC：复制输出，删除旧 `quality_food`（空根标签清空），仅当槽 0 输入有有效正品质时调用 `QualityUtils.applyQuality(output, List.of(input), null)`；NONE 只清标签。集合 API 可掷级，不承诺原星级不变。输入、数量和无关输出 NBT 不变。
+- badiff SHA-256 `65f22ddc08067146a0e648ee57fccee76886b5459d530a1fa369df3db3f0ffcb`；归一化 before `b933766c1db3dbdcc8b2f48d954d94f4d51abf4cdd9e2c5aaf721dffb5642525`；after `bce9829a7c99df8174f508ee38349a67a65bae9f5313d8045884090a346551a2`。
+- 已验证 MemoryDiff 序列化/重放逐字节一致、ASM BasicVerifier 所有方法通过；移除 helper 和唯一调用后与归一化原始 class 逐字节一致。独立 stub 执行实际 after helper 与主线 mixin 的 20 个场景及空结果保护通过；这不等同完整游戏回归。
+- 配套材料白名单覆盖 `#forge:popsicle_mold_filled` / `solid`（全部口味）、生派酥皮、蛋挞壳、生蛋挞。冰棍已有一次性右键处理器在 shrink 前深拷贝品质 CompoundTag，不新增 tick、状态桥或 Java.loadClass。`node scripts/tests/test-quality-2497.cjs` 验证 12 种模具、384 次交互及白名单。
+- 冰棍冷冻/机械脱模仍依赖 #2540 的既有 HotAI；本补丁不重复实现。整包完整重启后仍须测试注模→冷冻→机械/手持脱模、curving/面胚台→烘烤和蛋挞注液→烘烤，尤其有星后无星不串品质。
 
 ## Ratatouille / 机械炸锅品质（050x）
 
