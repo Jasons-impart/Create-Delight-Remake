@@ -281,5 +281,6 @@
   "fluid.createdelight.flawless_cataclysm_genetic_culture": "Flawless Cataclysm Minion Genetic Culture",
   "dimension.createdelight.lunar_farside": "Lunar Farside Anomaly",
   "createdelight.planets.lunar_farside.name": "Lunar Farside Anomaly",
-  "northstar.planet.dimension.farside": " - Deep Lunar Rift"
+  "northstar.planet.dimension.farside": " - Deep Lunar Rift",
+    "tooltip.createdelight.shift_printer": "§7Can copy §bTetra scrolls§7: use a scroll with data as the template; each copy costs §b1 paper§7 and §b250mB of any dye fluid"
 }
