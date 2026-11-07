@@ -30,7 +30,7 @@
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 50 个 `.badiff`；静态 JAR 命中 46 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
+当前扫描到 51 个 `.badiff`；静态 JAR 命中 47 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |
 |---|---|---|---|
@@ -75,6 +75,7 @@
 | Unknown | `hotai/dev/latvian/mods/kubejs/util/Lazy.badiff` | `dev/latvian/mods/kubejs/util/Lazy` | 静态命中 `kubejs-forge-2001.6.5-build.16.jar` |
 | Better Compatibility Checker | `hotai/dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin` | 静态命中 `BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar` |
 | Create Delight Core | `hotai/io/github/jasonsimpart/createdelightcore/CDConfig.badiff` | `io/github/jasonsimpart/createdelightcore/CDConfig` | 静态命中 `Create-Delight-Core-1.20.1-dev.jar` |
+| Create Delight Core | `hotai/io/github/jasonsimpart/createdelightcore/compat/createenchantmentindustry/TetraScrollPrinterCompat$TetraScrollPrintingBehaviour.badiff` | `io/github/jasonsimpart/createdelightcore/compat/createenchantmentindustry/TetraScrollPrinterCompat$TetraScrollPrintingBehaviour` | 静态命中 `Create-Delight-Core-1.20.1-dev.jar` |
 | Create Delight Core | `hotai/io/github/jasonsimpart/createdelightcore/mixin/create/BasinRecipeMixin.badiff` | `io/github/jasonsimpart/createdelightcore/mixin/create/BasinRecipeMixin` | 静态命中 `Create-Delight-Core-1.20.1-dev.jar` |
 | Create Delight Core | `hotai/io/github/jasonsimpart/createdelightcore/mixin/quality_food/QualityFoodMixin.badiff` | `io/github/jasonsimpart/createdelightcore/mixin/quality_food/QualityFoodMixin` | 静态命中 `Create-Delight-Core-1.20.1-dev.jar` |
 | Create Delight Core | `hotai/io/github/jasonsimpart/createdelightcore/mixin/refurbished_furniture/FryingPanBlockEntityMixin.badiff` | `io/github/jasonsimpart/createdelightcore/mixin/refurbished_furniture/FryingPanBlockEntityMixin` | 静态命中 `Create-Delight-Core-1.20.1-dev.jar` |

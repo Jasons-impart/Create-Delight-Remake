@@ -25,6 +25,7 @@ ItemEvents.tooltip(e => {
         "createdelight:big_popsicle_mold_solid",
         "createdelight:corn_popsicle_mold_solid",
         "ratatouille:mechanical_demolder",
+        "create_enchantment_industry:printer",
         "createdieselgenerators:distillation_controller",
         "createmetallurgy:wolframite_ore",
         "alexscaves:pure_darkness",
