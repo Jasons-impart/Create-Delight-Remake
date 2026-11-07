@@ -293,5 +293,6 @@
   "northstar.planet.dimension.farside": " - Deep Lunar Rift",
   "menu.createdelight.quit_hover": "Looking forward to seeing you next time(*╹▽╹*)~",
   "menu.createdelight.single_player_hover": "Enter the world of Create Delight",
-  "menu.createdelight.mutil_player_hover": "Enter a friend's world and play together"
+  "menu.createdelight.mutil_player_hover": "Enter a friend's world and play together",
+    "tooltip.createdelight.shift_printer": "§7Can copy §bTetra scrolls§7: use a scroll with data as the template; each copy costs §b1 paper§7 and §b250mB of any dye fluid"
 }

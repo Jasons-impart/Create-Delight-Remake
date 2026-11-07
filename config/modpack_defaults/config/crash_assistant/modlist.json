@@ -317,12 +317,12 @@
   "colorwheel-forge-1.3.2-mc1.20.1.jar": {
     "modId": "colorwheel-forge",
     "name": "Colorwheel",
-    "version": "1.2.1+mc1.20.1"
+    "version": "1.3.2-mc1.20.1"
   },
   "colorwheel_patcher-forge-1.0.5+mc1.20.1.jar": {
     "modId": "colorwheel_patcher-forge",
     "name": "Colorwheel Patcher",
-    "version": "1.0.4+mc1.20.1"
+    "version": "1.0.5+mc1.20.1"
   },
   "comforts-forge-6.4.0+1.20.1.jar": {
     "modId": "comforts-forge",
@@ -402,7 +402,7 @@
   "Create-Delight-Core-1.20.1-dev.jar": {
     "modId": "createdelightcore",
     "name": "Create Delight Core",
-    "version": "2.2.16t"
+    "version": "2.2.16u"
   },
   "create-enchantment-industry-2.5.4b.jar": {
     "modId": "create-enchantment-industry",

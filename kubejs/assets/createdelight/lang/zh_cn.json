@@ -716,6 +716,7 @@
     "tooltip.createdelight.shift_growth_detector": "§7手持时§b每隔3秒§7, 在玩家周围的作物上方生成§b粒子效果§7, 用于§b指示周围作物的生长状态§7\n生长速度由慢到快, 对应的粒子颜色由§b红色§7逐渐过渡为§b绿色",
     "tooltip.createdelight.shift_unactivated_crystalline_flower": "§7需要激活才能使用",
     "tooltip.createdelight.shift_mechanical_demolder": "§7使用时类似§b辊压机§7, 但是会将模具存储在§b机器内部",
+    "tooltip.createdelight.shift_printer": "§7可用于复印§bTetra 卷轴§7：以带数据的卷轴为模板，每份消耗§b1张纸§7与§b250mB任意染料液体",
     "tooltip.createdelight.shift_distillation_controller": "§b每个§7储罐都需要一个",
     "tooltip.createdelight.shift_wolframite_ore": "§7常见于§b地狱30-36层",
     "tooltip.createdelight.shift_shards_of_malice": "§7源自于§b凋灵骷髅§7的恶意的结晶",
