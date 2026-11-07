@@ -333,6 +333,11 @@ ServerEvents.tags("item", e => {
         'createdelight:raw_pie_crust',
         'bakeries:egg_tart_shell',
         'bakeries:raw_egg_tart',
+        // 蛋糕模具：注液品质挂上后，烤炉 BakeDataMixin 才能继承到蛋糕胚
+        'ratatouille:cake_mold_filled',
+        'ratatouille:cake_mold_baked',
+        'createdelight:red_velvet_cake_mold_filled',
+        'createdelight:red_velvet_cake_mold_baked',
         'ratatouille:cocoa_butter', 
         'ratatouille:dried_cocoa_beans', 
         'ratatouille:dried_cocoa_nibs',
@@ -393,5 +398,14 @@ ServerEvents.tags("item", e => {
         'collectorsreap:lime_popsicle', 
         'collectorsreap:urchin',
         'brewinandchewin:unripe_scarlet_cheese_wheel',
+        // 巧克力模具：注液/冷冻中间态需能承载品质，否则流体星级无法传到巧克力棒
+        'ratatouille:chocolate_mold_filled',
+        'ratatouille:chocolate_mold_solid',
+        'createdelightcore:black_chocolate_mold_filled',
+        'createdelightcore:black_chocolate_mold_solid',
+        'createdelightcore:white_chocolate_mold_filled',
+        'createdelightcore:white_chocolate_mold_solid',
+        'createdelightcore:ruby_chocolate_mold_filled',
+        'createdelightcore:ruby_chocolate_mold_solid',
     ])
 })
