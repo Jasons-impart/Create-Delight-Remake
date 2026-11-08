@@ -11,6 +11,8 @@ global.CDClientJavaClasses = {
     $HoloGui: Java.loadClass("se.mickelus.tetra.items.modular.impl.holo.gui.HoloGui"),
     $ItemEffect: Java.loadClass("se.mickelus.tetra.effect.ItemEffect"),
     $ItemParticleOption: Java.loadClass("net.minecraft.core.particles.ItemParticleOption"),
+    $JEIInternal: Java.loadClass("mezz.jei.common.Internal"),
+    $JEIRecipeTypes: Java.loadClass("mezz.jei.api.constants.RecipeTypes"),
     $Lighting: Java.loadClass("com.mojang.blaze3d.platform.Lighting"),
     $ModularItem: Java.loadClass("se.mickelus.tetra.items.modular.ModularItem"),
     $ParticleTypes: Java.loadClass("net.minecraft.core.particles.ParticleTypes"),
