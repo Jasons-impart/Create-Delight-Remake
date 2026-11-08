@@ -38,6 +38,8 @@ ServerEvents.recipes(e => {
         "northeast_china_delight:cooking/salt_from_sea_water_bucket",
         "northeast_china_delight:mixing/soy_milk",
         "northeast_china_delight:compacting/vegetable_oil",
+        "northeast_china_delight:large_basin_from_iron_ingots",
+        "northeast_china_delight:big_iron_pot",
         // 木臼配方用原生数据包 JSON 重建，保证 result_mb 为严格整数。
         "northeast_china_delight:mixing/chili_oil",
         "northeast_china_delight:filling/vegetable_oil_bottle",
