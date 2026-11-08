@@ -1,0 +1,55 @@
+{
+  "type": "northeast_china_delight:pounding",
+  "config": {
+    "inputs": [
+      {
+        "ingredient": {
+          "item": "northeast_china_delight:roasted_peanuts"
+        },
+        "count": 1,
+        "model": "northeast_china_delight:block/wooden_mortar_peanut_0"
+      },
+      {
+        "ingredient": {
+          "item": "minecraft:honey_bottle"
+        },
+        "count": 1,
+        "liquid": {
+          "fluid": "create:honey",
+          "texture": "northeast_china_delight:block/honey_still"
+        }
+      },
+      {
+        "ingredient": {
+          "item": "bakeries:flour"
+        },
+        "count": 1
+      },
+      {
+        "ingredient": {
+          "item": "vintagedelight:salt_dust"
+        },
+        "count": 1
+      }
+    ],
+    "tool": [
+      {
+        "item": "northeast_china_delight:wooden_mallet"
+      }
+    ],
+    "pound_times": 4,
+    "stage_model_mode": "overlay",
+    "stage_models": [
+      "northeast_china_delight:block/wooden_mortar_peanut_0",
+      "northeast_china_delight:block/wooden_mortar_peanut_cake_1",
+      "northeast_china_delight:block/wooden_mortar_peanut_cake_2",
+      "northeast_china_delight:block/wooden_mortar_peanut_cake_3"
+    ],
+    "finished_model": "northeast_china_delight:block/wooden_mortar_peanut_cake",
+    "result": {
+      "item": "northeast_china_delight:peanut_cake",
+      "count": 2
+    },
+    "transition": "sequential"
+  }
+}

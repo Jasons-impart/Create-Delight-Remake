@@ -32,10 +32,13 @@ ServerEvents.recipes(e => {
     ], "vintagedelight:nut_mash_mason_jar").id("createdelight:emptying/vintagedelight/peanut_butter_jar")
 
     remove_recipes_id(e, [
+        "northeast_china_delight:pounding/peanut_cake",
+        "northeast_china_delight:compacting/peanut_cake",
+        "northeast_china_delight:cooking/salt_from_water_basin",
+        "northeast_china_delight:cooking/salt_from_sea_water_bucket",
         "northeast_china_delight:mixing/soy_milk",
         "northeast_china_delight:compacting/vegetable_oil",
         // 木臼配方用原生数据包 JSON 重建，保证 result_mb 为严格整数。
-        "northeast_china_delight:pounding/peanut_oil",
         "northeast_china_delight:mixing/chili_oil",
         "northeast_china_delight:filling/vegetable_oil_bottle",
         "northeast_china_delight:emptying/vegetable_oil_bottle",
@@ -108,6 +111,13 @@ ServerEvents.recipes(e => {
             recipe.save()
         })
     })
+
+    create.compacting("4x northeast_china_delight:peanut_cake", [
+        "2x northeast_china_delight:roasted_peanuts",
+        Fluid.of("create:honey", 250),
+        "bakeries:flour",
+        "vintagedelight:salt_dust"
+    ]).id("createdelight:compacting/peanut_cake")
 
     // 烤花生原配方为 2 个产 500 mB；熟花生米每份产量为单个烤花生的两倍。
     create.compacting(Fluid.of("createdieselgenerators:plant_oil", 500), "northeast_china_delight:roasted_peanuts")
