@@ -11,8 +11,6 @@
 	EnableInform = true
 	#Include a custom icon in the change notification for better visibility.
 	EnableInformIcon = true
-	#Synchronize the in-game calendar and seasonal data with the server/client local time.
-	EnableLocalInfoAndCalendar = true
 	#Show a tooltip or message if a calendar item cannot be placed in the current location.
 	CalendarItemHint = false
 	#Adjust daylight duration based on the time of year (longer in Summer, shorter in Winter).
@@ -40,9 +38,11 @@
 	#Shifts the calendar day relative to solar terms. Example: 2 means solar day 0 appears as the 3rd day of the month.
 	#Range: -64 ~ 64
 	DayOffset = 2
+	#Displays local seasonal and calendar information based on the agricultural climate zone of the current biome. Different regions may show different seasonal progress.
+	BiomeBasedLocalCalendar = true
 
 [Weather]
-	#Enable localized weather patterns where rain or sun is determined per-biome.
+	#Weather changes in many ways with the solar terms  (seasons) .
 	UseSolarWeather = true
 	#Force initialize weather and snow states when the mod or world is first loaded.
 	ShouldInitWeather = false
@@ -64,6 +64,9 @@
 	#Adjust the overall frequency of thunder.
 	#Range: 0 ~ 1000
 	ThunderChanceMultiplier = 80
+	#Clear and rainy periods alternate, preventing endless rain or perpetual clear skies.
+	#Ignored if UseSolarWeather is disabled.
+	AlternatingWeatherModel = true
 
 #This module governs how seasonal temperature shifts affect the physical world and the player.
 [Temperature]
@@ -89,9 +92,6 @@
 	BoneMealFailureMessage = true
 	#Consume the bone meal item even if the growth attempt fails.
 	BoneMealConsumeOnFailure = true
-	#The horizontal detection radius for the Greenhouse.
-	#Range: 5 ~ 256
-	GreenHouseMaxDiameter = 32
 	#The vertical detection height for the Greenhouse.
 	#Range: 3 ~ 128
 	GreenHouseMaxHeight = 10
@@ -102,10 +102,6 @@
 	#The effective radius of the 'Season Core' block.
 	#Range: 4 ~ 31
 	SeasonCoreRange = 15
-	#Enables more precise shape detection for greenhouse structures.
-	ComplexGreenHouseCheck = true
-	#Use Manhattan distance (square) instead of Euclidean (circle) for greenhouse range.
-	UseBoxDistance = true
 	#[Deprecated] Use default seasonal/humidity values for unregistered crops.
 	RegisterCropDefaultValue = false
 	#Force all plants to follow growth rules, even those without specific mod tags.
@@ -118,8 +114,6 @@
 	#Adjusts the power of the Seasonal Prayer Ritual. Higher values result in lower bonuses.
 	#Range: > 5
 	SeasonalPrayerRitualCropBonusReduction = 500
-	#Apply patch withering code for crop leave blocks if tick failed.
-	CropLeavesPatch = true
 	#Bone meal may fail under unsuitable growing conditions.
 	RestrictBoneMeal = false
 	#The duration required for the Prayer Ritual (relative to one Solar Term).
@@ -132,6 +126,16 @@
 	#The effective radius of the 'Humid Tank' block.
 	#Range: 2.0 ~ 16.0
 	HumidityTankRange = 4.5
+	#Adjusts the greenhouse structure detection mode. Higher accuracy modes check more directions, while top-only mode only requires overhead coverage.
+	#Allowed Values: FULL, BASIC, TOP_ONLY
+	GreenHouseCheckMode = "FULL"
+	#The horizontal detection radius for the Greenhouse.
+	#Range: 5 ~ 256
+	GreenHouseMaxRadius = 32
+	#Use Manhattan distance (square) instead of Euclidean (circle) for greenhouse range.
+	UseSquareGreenHouseRange = true
+	#Apply patch withering code for crop leave blocks if tick failed.
+	ForceCompatCropLeafWithering = true
 
 [Animal]
 	#Limit animal breeding to their natural, compatible seasons.
@@ -198,14 +202,16 @@
 [Resource]
 	#Enable extra built-in snow definitions resourcepack for game.
 	ExtraSnowDefinitions = false
-	#Synchronizes the snowfall schedule for all Overworld biomes.
-	SnowTogether = false
-	#Aligns snowfall schedules based on three broad climate zones (Warm, Temperate, and Cold) instead of per-biome.
-	RegionalSnowTime = true
 	#Enforces original Vanilla temperature and precipitation settings to prevent other mods from creating extreme environmental values.
 	VanillaBiomeClimateSettings = true
 	#When enabled, rivers are no longer treated as ignored climate zones. This reduces performance overhead but may result in less natural weather transitions near riverbanks.
 	IndependentRiverWeather = true
+	#Selects how snowfall schedules are assigned.
+	#UNIFIED: Uses one snowfall schedule for all Overworld biomes.
+	#REGIONAL: Uses climate-region-specific snowfall schedules.
+	#CUSTOM: Does not load built-in snowfall schedule datapacks.
+	#Allowed Values: UNIFIED, REGIONAL, CUSTOM
+	SnowfallTiming = "REGIONAL"
 
 #Snow overlays are visual, atmospheric effects and are distinct from physical snow blocks.
 [Snow]
@@ -232,4 +238,9 @@
 	SnowStepMelt = false
 	#(SnowInWorld) Only force chunk snow overlays sync when the weather is warm enough for snow to melt.
 	ForceChunkUpdateOnlyWhenMelt = false
+
+[Core]
+	#Controls the intensity of seasonal simulation.
+	#Allowed Values: ENVIRONMENT, ECOLOGY, AGRICULTURE, SURVIVAL, CUSTOM
+	SeasonalSimulationLevel = "CUSTOM"
 
