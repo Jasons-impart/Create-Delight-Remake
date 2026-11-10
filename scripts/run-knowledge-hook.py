@@ -1,35 +1,32 @@
 import argparse
-import os
 from pathlib import Path
-import shutil
 import subprocess
 import sys
 
 
+HOOK_SCRIPTS = {
+    "validate-knowledge-base.ps1": "validate-knowledge-base.py",
+    "validate-knowledge-base.py": "validate-knowledge-base.py",
+    "write-knowledge-candidate-report.ps1": "write-knowledge-candidate-report.py",
+    "write-knowledge-candidate-report.py": "write-knowledge-candidate-report.py",
+}
+
+
+def resolve_command(script, root):
+    python_script = HOOK_SCRIPTS[script]
+    return [sys.executable, str(root / "scripts" / python_script)]
+
+
 def main():
-    parser = argparse.ArgumentParser(description="Run a knowledge hook with an available PowerShell.")
+    parser = argparse.ArgumentParser(description="Run a knowledge hook script.")
     parser.add_argument(
         "script",
-        choices=("validate-knowledge-base.ps1", "write-knowledge-candidate-report.ps1"),
+        choices=tuple(HOOK_SCRIPTS),
+        help="Hook script name. Legacy .ps1 names map to the Python implementations.",
     )
     args = parser.parse_args()
-    executable = shutil.which("pwsh")
-    if executable is None and os.name == "nt":
-        executable = shutil.which("powershell")
-    if executable is None:
-        print("Knowledge hook requires PowerShell 7 (pwsh) or Windows PowerShell.", file=sys.stderr)
-        return 1
-
     root = Path(__file__).resolve().parent.parent
-    command = [
-        executable,
-        "-NoLogo",
-        "-NoProfile",
-        "-ExecutionPolicy",
-        "Bypass",
-        "-File",
-        str(root / "scripts" / args.script),
-    ]
+    command = resolve_command(args.script, root)
     result = subprocess.run(command, cwd=root, stdout=sys.stderr)
     if result.returncode == 0:
         print("{}")
