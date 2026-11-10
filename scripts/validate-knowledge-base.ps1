@@ -133,7 +133,7 @@ $requiredPaths = @(
     ".codex/hooks.json",
     "scripts/sync-packwiz-assets.py",
     "scripts/install-git-hooks.py",
-    "scripts/update-packwiz-meta.ps1",
+    "scripts/update-packwiz-meta.py",
     "scripts/update-hotai-docs.ps1",
     "docs/dev-knowledge/hotai/README.md",
     "docs/dev-knowledge/hotai/patch-map.md",

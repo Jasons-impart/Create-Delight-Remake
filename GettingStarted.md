@@ -106,7 +106,7 @@
 - Git 更新后的 hook 与外层同步流程会复用 `.cache/packwiz-sync/sync-state.json`，同一提交不会重复下载；若本地运行时文件损坏，可加 `-Force` 重新同步。
 - CurseForge CDN 偶发 `timeout` / `packwiz-installer exited with code 1` 时，配置代理后直接再跑一次同步即可（失败不会写成成功状态）；仍缺 jar 再用 `-Force`。
 - 脚本会按平台自动下载 packwiz（Windows 为 `packwiz.exe`，Linux/macOS 为 `packwiz` 并自动 `chmod +x`）和 `packwiz-installer.jar` 到 `.cache/packwiz-sync/tools/`，执行 `packwiz refresh`，并按 `mods/`、`resourcepacks/`、`shaderpacks/` 下的 `*.pw.toml` 同步实际文件。
-- Linux/macOS：同步与 hook 安装不再依赖 PowerShell，将上文路径分隔符换成 `/`，Python 可用 `python3`。添加或更新单个 CurseForge 资产的 `scripts/add-packwiz-target.py`、`scripts/update-packwiz-target.py` 以及 TACZ 转换脚本 `scripts/update-tacz-packwiz-meta.py` 已改为 Python，不再依赖 PowerShell。`scripts/update-packwiz-meta.ps1` 目前仍需 PowerShell 7（`pwsh`）。fork 目前只发布 linux-amd64 与 Windows 版 packwiz，macOS/ARM 需通过 `-PackwizUrl` 指定自行构建的二进制。根目录 `sync-packwiz-assets.bat` 仍可用于 Windows 双击同步，会自动查找 `python` / `py -3` / `python3` 并避开 Microsoft Store 占位符。
+- Linux/macOS：同步与 hook 安装不再依赖 PowerShell，将上文路径分隔符换成 `/`，Python 可用 `python3`。添加、更新或对账 Packwiz 资产的 `scripts/add-packwiz-target.py`、`scripts/update-packwiz-target.py`、`scripts/update-tacz-packwiz-meta.py` 和 `scripts/update-packwiz-meta.py` 已改为 Python，不再依赖 PowerShell。根目录 `update-packwiz-meta.bat` 会启动该 Python 脚本。fork 目前只发布 linux-amd64 与 Windows 版 packwiz，macOS/ARM 需通过 `-PackwizUrl` 指定自行构建的二进制。根目录 `sync-packwiz-assets.bat` 仍可用于 Windows 双击同步，会自动查找 `python` / `py -3` / `python3` 并避开 Microsoft Store 占位符。
 - 本地开发环境默认按客户端侧同步，只保留 `side = "both"` 和 `side = "client"` 的 mod；`side = "server"` 的服务端专用 mod 不会下载到客户端实例。
 - 如果需要调试服务端侧文件，可显式运行 `python .\scripts\sync-packwiz-assets.py -Side server`。
 - 同步成功后，要求用户按“用户操作步骤”完成 HMCL 图形界面配置。
