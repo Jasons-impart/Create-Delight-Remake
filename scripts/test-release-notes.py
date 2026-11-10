@@ -2,8 +2,8 @@
 """Offline regression tests for release_notes.py.
 
 No network, gh auth, or real release writes are required for the library tests.
-A few checks still inspect or invoke the remaining release-publish.ps1 so
-Publish continues to validate notes before tagging.
+Publish CLI checks invoke release-publish.py with -WhatIf so notes are validated
+before any tag is created.
 """
 from __future__ import annotations
 
@@ -22,8 +22,7 @@ if str(RELEASE_DIR) not in sys.path:
 import release_notes as rn  # noqa: E402
 
 
-PWSH = Path("/home/box/pwsh/pwsh")
-PUBLISH = RELEASE_DIR / "release-publish.ps1"
+PUBLISH = RELEASE_DIR / "release-publish.py"
 
 
 def release(tag: str, pre: bool = False, draft: bool = False) -> dict:
@@ -208,12 +207,10 @@ class ReleaseNotesTests(unittest.TestCase):
     def test_git_fixture_range_and_input(self):
         with tempfile.TemporaryDirectory(prefix="release-notes-test-") as temp:
             temp_path = Path(temp)
-            if PWSH.is_file() and PUBLISH.is_file():
+            if PUBLISH.is_file():
                 missing = subprocess.run(
                     [
-                        str(PWSH),
-                        "-NoProfile",
-                        "-File",
+                        sys.executable,
                         str(PUBLISH),
                         "-Version",
                         "v9.9.9.1",
@@ -234,9 +231,7 @@ class ReleaseNotesTests(unittest.TestCase):
                 invalid.write_text("# raw titles are not release notes", encoding="utf-8")
                 malformed = subprocess.run(
                     [
-                        str(PWSH),
-                        "-NoProfile",
-                        "-File",
+                        sys.executable,
                         str(PUBLISH),
                         "-Version",
                         "v9.9.9.1",
@@ -357,14 +352,15 @@ class ReleaseNotesTests(unittest.TestCase):
     def test_publish_script_still_validates_before_tags(self):
         publish = PUBLISH.read_text(encoding="utf-8")
         self.assertLess(
-            publish.index("Assert-CuratedNotes -Content $curatedContent"),
-            publish.index("git tag $Version"),
+            publish.index("assert_curated_notes(ctx.curated_content, GITHUB_REPO)"),
+            publish.index('["git", "tag", ctx.version]'),
         )
         self.assertLess(
-            publish.index("$ReleaseNotes = New-ReleaseNotes"),
-            publish.index("git push origin $Version"),
+            publish.index("new_release_notes("),
+            publish.index('["git", "push", "origin", ctx.version]'),
         )
         self.assertIsNone(re_search_none(publish, r"ConvertTo-PlayerNote|\$grouped =|\$categories ="))
+        self.assertNotRegex(publish, r"ConvertTo-PlayerNote")
 
 
 def re_search_none(text: str, pattern: str):

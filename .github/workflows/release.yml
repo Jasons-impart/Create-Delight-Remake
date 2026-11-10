@@ -331,7 +331,7 @@ jobs:
             patch/
 
   # 标签构建直接将同一次运行的 artifact 压缩并上传至草稿 Release。
-  # release-publish.ps1 保留发布说明、公开发布与公告 PR 的控制权。
+  # release-publish.py 保留发布说明、公开发布与公告 PR 的控制权。
   release-assets:
     needs: [common-steps, client-tasks, server-tasks, patch-tasks]
     runs-on: ubuntu-latest
