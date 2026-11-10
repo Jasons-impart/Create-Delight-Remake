@@ -61,11 +61,11 @@ heartbeat 使用适合主动跟进的短间隔。除合并、完成、失败或�
 
 由 heartbeat 检测到 PR 合并后，先预览再正式执行：
 
-```powershell
-.\.agents\skills\release\release-publish.ps1 `
-    -Version '<Version>' `
-    -TargetBranch '<TargetBranch>' `
-    -ReleaseType '<正式|测试>' `
+```bash
+python .agents/skills/release/release-publish.py \
+    -Version '<Version>' \
+    -TargetBranch '<TargetBranch>' \
+    -ReleaseType '<正式|测试>' \
     -WhatIf
 ```
 
@@ -123,7 +123,7 @@ python .agents/skills/release/release-notes-preview.py \
 - 不编辑生成的 `pack.toml` 或 `index.toml`。
 - 不直接发布或复制 CDC JAR；CDC 源码与 Packwiz 资产分别遵循 `CDC-mod-src/AGENTS.md` 和 `/packwiz-assets`。
 - 脚本可恢复中断的草稿 Release；已公开的同名 Release 不可重建。
-- 运行脚本前需要 Git、GitHub CLI 登录和干净或可安全暂存的工作树。`release-plan.py`、`release-prepare.py`、`release-notes-input.py` 与 `release-notes-preview.py` 需要 Python 3.11+（可用 `python` / `py -3` / `python3`）。`release-publish.ps1` 仍需 PowerShell 7，并继续点源 `release-notes.ps1`（该共享库暂予保留，待 Publish 一并移植）。
+- 运行脚本前需要 Git、GitHub CLI 登录和干净或可安全暂存的工作树。发布脚本（`release-plan.py`、`release-prepare.py`、`release-notes-input.py`、`release-notes-preview.py`、`release-publish.py`）需要 Python 3.11+（可用 `python` / `py -3` / `python3`）。
 - 正式版（非测试版）tag 触发的 `release-assets` job 会在 GitHub Release 资产上传后，尝试将 `Client-*.zip`（CurseForge 元数据包）上传到 CurseForge 项目 [create-delight-remake](https://www.curseforge.com/minecraft/modpacks/create-delight-remake)（id `1059094`）。需仓库或组织 Secret `CURSEFORGE_TOKEN`（与 Create-Delight-Core 同名）；未配置则跳过并打 notice，不使发布失败。Changelog 读取该标签的 GitHub Release 正文并附加 Release 链接，使用 Markdown；正文为空时停止上传，不退回仅链接。测试版不上传 CurseForge。不要用该流程回传已发布版本。
 
 ## 按需参考
@@ -131,4 +131,4 @@ python .agents/skills/release/release-notes-preview.py \
 - 版本号、小版本阶段、分支角色与正式版后 CDC 冻结 / HotAI：读 [branch-and-release.md](../../../docs/dev-knowledge/branch-and-release.md)。「抢先预览」是产品阶段；脚本仍只用正式/测试。已正式发布的 `release-vxxxx` 持续维护期间不要 bump CDC 或合入依赖新 CDC 的 mixin。
 - Windows 下的代理、`gh` 认证和大文件传输细节：读 [release-windows-github.md](references/release-windows-github.md)。
 - 仅当用户明确要求“标签与 `modpack.toml` 版本不同”的历史过渡发布时：读 [transitional-test-tags.md](references/transitional-test-tags.md)。
-- 参数和脚本内部步骤以当前实现为准：运行 `python .agents/skills/release/release-prepare.py -h` 或 `Get-Help .\.agents\skills\release\release-publish.ps1 -Full`。
+- 参数和脚本内部步骤以当前实现为准：运行 `python .agents/skills/release/release-prepare.py -h` 或 `python .agents/skills/release/release-publish.py -h`。

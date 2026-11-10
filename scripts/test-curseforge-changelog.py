@@ -73,16 +73,18 @@ class CurseForgeChangelogTests(unittest.TestCase):
         self.assertIn("if: env.IS_STABLE_RELEASE == 'true' && env.CURSEFORGE_TOKEN != ''", STEP)
 
     def test_notes_are_prepared_before_tag_push_and_ci_wait(self):
-        publish = (ROOT / ".agents/skills/release/release-publish.ps1").read_text(encoding="utf-8")
-        notes = publish.index("$ReleaseNotes = New-ReleaseNotes")
-        draft = publish.index("gh release create $Version --repo $repo --title $title --notes-file")
-        push = publish.index("git push origin $Version")
-        wait = publish.index("# Phase B: Wait for CI")
+        publish = (ROOT / ".agents/skills/release/release-publish.py").read_text(encoding="utf-8")
+        notes = publish.index("notes = prepare_player_notes(ctx)")
+        draft = publish.index("create_or_update_draft(ctx, notes, title)")
+        push = publish.index('["git", "push", "origin", ctx.version]')
+        wait = publish.index("wait_for_ci(ctx)")
         self.assertLess(notes, draft)
         self.assertLess(draft, push)
         self.assertLess(push, wait)
-        self.assertEqual(publish.count("$ReleaseNotes = New-ReleaseNotes"), 1)
-        self.assertIn("--notes-file $draftNotesFile --target $commitSha --draft", publish)
+        self.assertEqual(publish.count("new_release_notes("), 1)
+        self.assertIn("--notes-file", publish)
+        self.assertIn("--target", publish)
+        self.assertIn("--draft", publish)
 
 
 if __name__ == "__main__":

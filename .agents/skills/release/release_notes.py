@@ -2,8 +2,7 @@
 """Shared read-only release range and notes helpers.
 
 Python 3.11+ stdlib port of release-notes.ps1. Importing this module has no
-side effects. release-notes.ps1 is kept for release-publish.ps1 until that
-script is ported.
+side effects.
 """
 from __future__ import annotations
 
