@@ -68,8 +68,8 @@
 
 ## 直接克隆仓库后的资源同步
 - 完整开发环境搭建使用根目录 `GettingStarted.md`；该文档面向尚未 clone 仓库的场景，必须保持自包含。
-- 仅同步本地 Packwiz 资产时使用 `.agents/skills/packwiz-assets/SKILL.md`，直接运行 `scripts/sync-packwiz-assets.ps1`。
-- 本地同步默认按客户端侧处理，只下载 `side = "both"` 和 `side = "client"`；需要服务端侧文件时运行 `scripts/sync-packwiz-assets.ps1 -Side server`。
+- 仅同步本地 Packwiz 资产时使用 `.agents/skills/packwiz-assets/SKILL.md`，直接运行 `python scripts/sync-packwiz-assets.py`。
+- 本地同步默认按客户端侧处理，只下载 `side = "both"` 和 `side = "client"`；需要服务端侧文件时运行 `python scripts/sync-packwiz-assets.py -Side server`。
 
 ## 手动更新/加入 mod 后的同步
 - 当前仓库不再追踪 `mods/*.jar`；`mods/` 目录只提交 `*.pw.toml`，本地实际 jar 默认忽略。

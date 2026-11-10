@@ -72,7 +72,7 @@ CD-master-dev/
 
 **Git Workflow**:
 - Branch from `main`: `git checkout main && git pull && git checkout -b feat/xxx`
-- Run `scripts/install-git-hooks.ps1` after clone to install local `.git/hooks` shims that call tracked `scripts/.githooks`; agents should confirm this before Git update workflows.
+- Run `python scripts/install-git-hooks.py` after clone to install local `.git/hooks` shims that call tracked `scripts/.githooks`; agents should confirm this before Git update workflows.
 - 阅读、检索和核对 GitHub 上的 Issue、PR、评论、提交、Release、Actions 等信息必须使用 `gh` CLI，不要通过浏览器读取；只有用户明确要求浏览器操作时才例外。
 - Commit format: `[类型] 描述 (#PR号)` - types: `fix`, `feat`, `mod`, `dev`, `conf`
 - Commit messages must include a body; prefer Markdown-style structure in the body, such as short paragraphs, bullet lists, affected scope, and verification notes.
@@ -96,7 +96,7 @@ CD-master-dev/
 - For add/update/remove/sync/CDC artifact details, use `.agents/skills/packwiz-assets/SKILL.md` because the workflow is procedural and changes together.
 - `scripts/update-packwiz-meta.ps1 -FullReconcile` is category-wide local-asset reconciliation, not the default for one known CurseForge asset; use `scripts/add-packwiz-target.ps1` to add one and `scripts/update-packwiz-target.ps1` to update one.
 - Do not run `scripts/update-packwiz-meta.ps1 -FullReconcile` on short-lived feature branches: it may rewrite `packwiz-files` raw URLs to the current branch. Use it on `main` or a long-lived LTS/release-maintenance branch, or explicitly preserve `main` raw URLs.
-- After any pull/rebase/merge, compare pre-update target commit..new HEAD; if `mods|resourcepacks|shaderpacks|tacz/**/*.pw.toml` or `packwiz-files/**` changed, run `scripts/sync-packwiz-assets.ps1` because runtime payloads are local.
+- After any pull/rebase/merge, compare pre-update target commit..new HEAD; if `mods|resourcepacks|shaderpacks|tacz/**/*.pw.toml` or `packwiz-files/**` changed, run `python scripts/sync-packwiz-assets.py` because runtime payloads are local.
 - `pack.toml`/`index.toml` are generated from `modpack.toml`; don't commit them
 - `CDC-mod-src/` is a git submodule and must stay out of Packwiz artifacts because packages ship pack files, not Java source trees
 - GitHub Pages mod classification data (`docs/mods-data.js`) is expensive to refresh; do not update it during ordinary mod changes unless the user explicitly asks for a manual refresh.

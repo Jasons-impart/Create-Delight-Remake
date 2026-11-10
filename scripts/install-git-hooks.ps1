@@ -1,167 +1,37 @@
-param(
-    [switch]$IfUnset,
-    [switch]$Quiet
-)
-
+# Temporary compatibility shim.
+# Remaining PowerShell callers keep invoking this path until they are ported.
+# All behavior lives in install-git-hooks.py; do not add logic here.
 $ErrorActionPreference = "Stop"
 
-function Write-InstallMessage {
-    param([string]$Message)
-
-    if (-not $Quiet) {
-        Write-Host $Message
-    }
-}
-
-$repoRoot = (& git rev-parse --show-toplevel 2>$null)
-if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($repoRoot)) {
-    throw "Not inside a Git worktree."
-}
-
-$repoRoot = $repoRoot.Trim()
-$hooksPath = Join-Path $repoRoot "scripts/.githooks"
-$hookNames = @("pre-commit", "post-merge", "post-checkout", "post-rewrite")
-$marker = "Create-Delight managed hook shim"
-$gitCommonDir = (& git rev-parse --git-common-dir 2>$null)
-if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($gitCommonDir)) {
-    throw "Could not resolve Git common directory."
-}
-
-if (-not [System.IO.Path]::IsPathRooted($gitCommonDir)) {
-    $gitCommonDir = Join-Path $repoRoot $gitCommonDir
-}
-
-$gitHooksPath = Join-Path $gitCommonDir "hooks"
-
-$currentHooksPath = (& git config --local --get core.hooksPath 2>$null)
-if ($LASTEXITCODE -ne 0) {
-    $currentHooksPath = $null
-}
-
-$currentHooksPath = "$currentHooksPath".Trim()
-if ($currentHooksPath -eq ".githooks") {
-    git config --local --unset core.hooksPath
-    if ($LASTEXITCODE -ne 0) {
-        throw "Failed to migrate core.hooksPath from .githooks to .git/hooks shims."
-    }
-
-    $currentHooksPath = ""
-}
-
-if (-not [string]::IsNullOrWhiteSpace($currentHooksPath)) {
-    Write-InstallMessage "Git hooks already configured: core.hooksPath=$currentHooksPath"
-    Write-InstallMessage "Skipped installing .git/hooks shims because a custom hooksPath would ignore them."
-    exit 0
-}
-
-if (-not (Test-Path -LiteralPath $hooksPath)) {
-    throw "Missing tracked hooks directory: $hooksPath"
-}
-
-if ($IfUnset) {
-    $needsInstall = $false
-    foreach ($hookName in $hookNames) {
-        $targetHook = Join-Path $gitHooksPath $hookName
-        if (-not (Test-Path -LiteralPath $targetHook)) {
-            $needsInstall = $true
-            break
-        }
-
-        $existing = Get-Content -LiteralPath $targetHook -Raw -ErrorAction SilentlyContinue
-        if ($existing -notmatch [regex]::Escape($marker)) {
-            $needsInstall = $true
-            break
+function Resolve-ShimPython {
+    $pythonCmd = Get-Command python -ErrorAction SilentlyContinue
+    if ($pythonCmd -and ($pythonCmd.Source -notmatch '[\\/]WindowsApps[\\/]')) {
+        & $pythonCmd.Source -c "import sys; raise SystemExit(0 if sys.version_info >= (3, 11) else 1)" 2>$null | Out-Null
+        if ($LASTEXITCODE -eq 0) {
+            return $pythonCmd.Source
         }
     }
 
-    if (-not $needsInstall) {
-        exit 0
-    }
-}
-
-New-Item -ItemType Directory -Force -Path $gitHooksPath | Out-Null
-
-function Install-HookShim {
-    param([string]$Name)
-
-    $trackedHook = Join-Path $hooksPath $Name
-    if (-not (Test-Path -LiteralPath $trackedHook)) {
-        throw "Missing tracked hook: $trackedHook"
-    }
-
-    $targetHook = Join-Path $gitHooksPath $Name
-    $localHook = Join-Path $gitHooksPath "$Name.local"
-
-    $shim = @"
-#!/bin/sh
-# $marker. Edit scripts/.githooks/$Name for project behavior.
-hook_dir=`$(dirname "`$0")
-for local_hook in "`$hook_dir/$Name.local" "`$hook_dir/$Name.local."*; do
-  [ -e "`$local_hook" ] || continue
-  if [ -x "`$local_hook" ]; then
-    "`$local_hook" "`$@" || exit `$?
-  elif [ -f "`$local_hook" ]; then
-    sh "`$local_hook" "`$@" || exit `$?
-  fi
-done
-
-repo_root=`$(git rev-parse --show-toplevel 2>/dev/null) || exit 0
-tracked_hook="`$repo_root/scripts/.githooks/$Name"
-if [ -x "`$tracked_hook" ]; then
-  "`$tracked_hook" "`$@"
-elif [ -f "`$tracked_hook" ]; then
-  sh "`$tracked_hook" "`$@"
-fi
-"@
-    # The .ps1 is checked out with CRLF; hooks must be LF or sh fails with "cannot execute".
-    $shim = $shim -replace "`r`n", "`n"
-
-    if (Test-Path -LiteralPath $targetHook) {
-        $existing = Get-Content -LiteralPath $targetHook -Raw -ErrorAction SilentlyContinue
-        if ($existing -eq $shim) {
-            return
-        }
-
-        if ($existing -notmatch [regex]::Escape($marker)) {
-            if (Test-Path -LiteralPath $localHook) {
-                $timestamp = Get-Date -Format "yyyyMMddHHmmss"
-                $backupHook = Join-Path $gitHooksPath "$Name.local.$timestamp"
-                $suffix = 1
-                while (Test-Path -LiteralPath $backupHook) {
-                    $backupHook = Join-Path $gitHooksPath "$Name.local.$timestamp.$suffix"
-                    $suffix++
-                }
-
-                Move-Item -LiteralPath $targetHook -Destination $backupHook
-                Write-InstallMessage "Preserved existing $Name as $(Split-Path $backupHook -Leaf)"
-            }
-            else {
-                Move-Item -LiteralPath $targetHook -Destination $localHook
-                Write-InstallMessage "Preserved existing $Name as $Name.local"
-            }
+    $pythonLauncher = Get-Command py -ErrorAction SilentlyContinue
+    if ($pythonLauncher) {
+        $resolved = & $pythonLauncher.Source -3 -c "import sys; print(sys.executable)" 2>$null
+        if ($LASTEXITCODE -eq 0 -and $resolved) {
+            return ([string]$resolved).Trim()
         }
     }
 
-    $utf8NoBom = [System.Text.UTF8Encoding]::new($false)
-    [System.IO.File]::WriteAllText($targetHook, $shim, $utf8NoBom)
-}
-
-$isWindowsPlatform = $env:OS -eq "Windows_NT"
-$isWindowsVariable = Get-Variable -Name IsWindows -ErrorAction SilentlyContinue
-if ($null -ne $isWindowsVariable) {
-    $isWindowsPlatform = [bool]$isWindowsVariable.Value
-}
-
-foreach ($hookName in $hookNames) {
-    Install-HookShim -Name $hookName
-}
-
-if (-not $isWindowsPlatform) {
-    Get-ChildItem -LiteralPath $gitHooksPath -File | Where-Object { $_.Name -in @("pre-commit", "post-merge", "post-checkout", "post-rewrite") } | ForEach-Object {
-        chmod +x $_.FullName
+    $python3Cmd = Get-Command python3 -ErrorAction SilentlyContinue
+    if ($python3Cmd -and ($python3Cmd.Source -notmatch '[\\/]WindowsApps[\\/]')) {
+        & $python3Cmd.Source -c "import sys; raise SystemExit(0 if sys.version_info >= (3, 11) else 1)" 2>$null | Out-Null
+        if ($LASTEXITCODE -eq 0) {
+            return $python3Cmd.Source
+        }
     }
+
+    throw "Python was not found. Install Python 3.11+ so install-git-hooks.py can run."
 }
 
-Write-InstallMessage "Git hooks installed in .git/hooks"
-Write-InstallMessage "Packwiz assets will sync automatically after relevant merge, rebase, or branch checkout changes."
-exit 0
+$python = Resolve-ShimPython
+$script = Join-Path $PSScriptRoot "install-git-hooks.py"
+& $python $script @args
+exit $LASTEXITCODE

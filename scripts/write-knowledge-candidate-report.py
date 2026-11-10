@@ -147,6 +147,9 @@ def convert_to_target(path: str) -> str:
         return ".agents/skills/knowledge-check/SKILL.md"
     if (
         ps_like(normalized, "scripts/sync-packwiz-assets.ps1")
+        or ps_like(normalized, "scripts/sync-packwiz-assets.py")
+        or ps_like(normalized, "scripts/install-git-hooks.py")
+        or ps_like(normalized, "scripts/install-git-hooks.ps1")
         or ps_like(normalized, "scripts/add-packwiz-target.ps1")
         or ps_like(normalized, "scripts/update-packwiz-meta.ps1")
         or ps_like(normalized, "scripts/update-packwiz-target.ps1")
@@ -200,6 +203,9 @@ def convert_to_reason(path: str) -> str:
         return "Knowledge maintenance automation changed; update knowledge-check skill if the prompt or routing changed."
     if (
         ps_like(normalized, "scripts/sync-packwiz-assets.ps1")
+        or ps_like(normalized, "scripts/sync-packwiz-assets.py")
+        or ps_like(normalized, "scripts/install-git-hooks.py")
+        or ps_like(normalized, "scripts/install-git-hooks.ps1")
         or ps_like(normalized, "scripts/add-packwiz-target.ps1")
         or ps_like(normalized, "scripts/update-packwiz-meta.ps1")
         or ps_like(normalized, "scripts/update-packwiz-target.ps1")
