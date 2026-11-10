@@ -131,7 +131,6 @@ $requiredPaths = @(
     ".agents/skills/packwiz-assets/SKILL.md",
     ".github/workflows/release.yml",
     ".codex/hooks.json",
-    "scripts/sync-packwiz-assets.ps1",
     "scripts/sync-packwiz-assets.py",
     "scripts/install-git-hooks.py",
     "scripts/update-packwiz-meta.ps1",
@@ -139,8 +138,8 @@ $requiredPaths = @(
     "docs/dev-knowledge/hotai/README.md",
     "docs/dev-knowledge/hotai/patch-map.md",
     "docs/dev-knowledge/hotai/badiff-details.md",
-    "scripts/add-packwiz-target.ps1",
-    "scripts/update-packwiz-target.ps1",
+    "scripts/add-packwiz-target.py",
+    "scripts/update-packwiz-target.py",
     "kubejs/data/oei/replacements",
     "modpack.toml"
 )

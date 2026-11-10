@@ -15,7 +15,7 @@ $ErrorActionPreference = "Stop"
 $ProgressPreference = "SilentlyContinue"
 
 if (-not $FullReconcile) {
-    throw "This is a category-wide reconciliation. Re-run with -FullReconcile, or use add-packwiz-target.ps1 / update-packwiz-target.ps1 for one CurseForge asset."
+    throw "This is a category-wide reconciliation. Re-run with -FullReconcile, or use add-packwiz-target.py / update-packwiz-target.py for one CurseForge asset."
 }
 
 $RepoRoot = Split-Path -Parent $PSScriptRoot

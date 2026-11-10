@@ -82,12 +82,11 @@
   ```powershell
   python .\scripts\install-git-hooks.py
   ```
-- Windows 更新单个 Packwiz 资产时，通过 PowerShell 的 `-ExecutionPolicy Bypass` 参数避免未签名脚本被执行策略拦截（将 `<metadata-name>` 替换为对应 `.pw.toml` 的名称，不含扩展名）：
+- 更新单个 Packwiz 资产（将 `<metadata-name>` 替换为对应 `.pw.toml` 的名称，不含扩展名）；先 `-DryRun` 预检，再实际更新：
   ```powershell
-  powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\update-packwiz-target.ps1 -Slug "<metadata-name>" -DryRun
-  powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\update-packwiz-target.ps1 -Slug "<metadata-name>"
+  python .\scripts\update-packwiz-target.py -Slug "<metadata-name>" -DryRun
+  python .\scripts\update-packwiz-target.py -Slug "<metadata-name>"
   ```
-  已安装 PowerShell 7 时，可将 `powershell` 替换为 `pwsh`。该参数仅对本次进程生效，不修改系统或用户执行策略；组织组策略强制执行签名时仍受组策略限制。
 - 如果 `java -version` 不是 Java 17，但 `JAVA_HOME` 指向 Java 17，可继续；同步脚本会优先读取 `JAVA_HOME`。
 - 如果 `java -version` 和 `JAVA_HOME` 都不是 Java 17，修改 `variables.txt` 的 `JAVA=` 为本机 Java 17 的完整路径。
 - 配置 Minecraft MCP：阅读 [AI 工具集成指南](https://github.com/langyo/minecraft-mod-mcp/blob/master/docs/guides/zhs/AI-TOOLS.md)，使用 `npx -y minecraft-mod-mcp` 作为 stdio 桥接器连接 AI 工具；不要把游戏 HTTP 端口或 `/api/events` 直接配置成 MCP/SSE 地址。
@@ -107,7 +106,7 @@
 - Git 更新后的 hook 与外层同步流程会复用 `.cache/packwiz-sync/sync-state.json`，同一提交不会重复下载；若本地运行时文件损坏，可加 `-Force` 重新同步。
 - CurseForge CDN 偶发 `timeout` / `packwiz-installer exited with code 1` 时，配置代理后直接再跑一次同步即可（失败不会写成成功状态）；仍缺 jar 再用 `-Force`。
 - 脚本会按平台自动下载 packwiz（Windows 为 `packwiz.exe`，Linux/macOS 为 `packwiz` 并自动 `chmod +x`）和 `packwiz-installer.jar` 到 `.cache/packwiz-sync/tools/`，执行 `packwiz refresh`，并按 `mods/`、`resourcepacks/`、`shaderpacks/` 下的 `*.pw.toml` 同步实际文件。
-- Linux/macOS：同步与 hook 安装不再依赖 PowerShell，将上文路径分隔符换成 `/`，Python 可用 `python3`。添加或更新单个 CurseForge 资产的 `scripts/add-packwiz-target.ps1`、`scripts/update-packwiz-target.ps1` 和 `scripts/update-packwiz-meta.ps1` 目前仍需 PowerShell 7（`pwsh`）。fork 目前只发布 linux-amd64 与 Windows 版 packwiz，macOS/ARM 需通过 `-PackwizUrl` 指定自行构建的二进制。根目录 `sync-packwiz-assets.bat` 仍可用于 Windows 双击同步，会自动查找 `python` / `py -3` / `python3` 并避开 Microsoft Store 占位符。
+- Linux/macOS：同步与 hook 安装不再依赖 PowerShell，将上文路径分隔符换成 `/`，Python 可用 `python3`。添加或更新单个 CurseForge 资产的 `scripts/add-packwiz-target.py`、`scripts/update-packwiz-target.py` 以及 TACZ 转换脚本 `scripts/update-tacz-packwiz-meta.py` 已改为 Python，不再依赖 PowerShell。`scripts/update-packwiz-meta.ps1` 目前仍需 PowerShell 7（`pwsh`）。fork 目前只发布 linux-amd64 与 Windows 版 packwiz，macOS/ARM 需通过 `-PackwizUrl` 指定自行构建的二进制。根目录 `sync-packwiz-assets.bat` 仍可用于 Windows 双击同步，会自动查找 `python` / `py -3` / `python3` 并避开 Microsoft Store 占位符。
 - 本地开发环境默认按客户端侧同步，只保留 `side = "both"` 和 `side = "client"` 的 mod；`side = "server"` 的服务端专用 mod 不会下载到客户端实例。
 - 如果需要调试服务端侧文件，可显式运行 `python .\scripts\sync-packwiz-assets.py -Side server`。
 - 同步成功后，要求用户按“用户操作步骤”完成 HMCL 图形界面配置。

@@ -92,9 +92,9 @@ CD-master-dev/
 **Mod Management (Packwiz)**:
 - `mods/`, `resourcepacks/`, `shaderpacks/`, and `tacz/` contain `.pw.toml` metadata; downloaded runtime files are not tracked
 - CF-restricted/custom JARs/zip live in `packwiz-files/{mods,resourcepacks,shaderpacks,tacz}/`
-- TACZ gun-pack ZIP payloads must keep `assets/`, `data/`, and pack metadata at the archive root; use `scripts/update-tacz-packwiz-meta.ps1` for conversion
+- TACZ gun-pack ZIP payloads must keep `assets/`, `data/`, and pack metadata at the archive root; use `python scripts/update-tacz-packwiz-meta.py` for conversion
 - For add/update/remove/sync/CDC artifact details, use `.agents/skills/packwiz-assets/SKILL.md` because the workflow is procedural and changes together.
-- `scripts/update-packwiz-meta.ps1 -FullReconcile` is category-wide local-asset reconciliation, not the default for one known CurseForge asset; use `scripts/add-packwiz-target.ps1` to add one and `scripts/update-packwiz-target.ps1` to update one.
+- `scripts/update-packwiz-meta.ps1 -FullReconcile` is category-wide local-asset reconciliation, not the default for one known CurseForge asset; use `python scripts/add-packwiz-target.py` to add one and `python scripts/update-packwiz-target.py` to update one.
 - Do not run `scripts/update-packwiz-meta.ps1 -FullReconcile` on short-lived feature branches: it may rewrite `packwiz-files` raw URLs to the current branch. Use it on `main` or a long-lived LTS/release-maintenance branch, or explicitly preserve `main` raw URLs.
 - After any pull/rebase/merge, compare pre-update target commit..new HEAD; if `mods|resourcepacks|shaderpacks|tacz/**/*.pw.toml` or `packwiz-files/**` changed, run `python scripts/sync-packwiz-assets.py` because runtime payloads are local.
 - `pack.toml`/`index.toml` are generated from `modpack.toml`; don't commit them
