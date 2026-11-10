@@ -12,7 +12,7 @@ v0.{大版本}.{小版本}.{修订号}
 
 示例：`v0.5.0.16` → 大版本 `5`、小版本 `0`、修订号 `16`。同一「小版本线」写作 `0.5.0.x`。
 
-发布脚本（`release-plan.ps1`）按四段 `vA.B.C.D` 解析；其中 `A.B.C`（如 `0.5.0`）对应一条小版本线，并推导维护分支名 `release-v$A$B$C`x（如 `release-v050x`）。
+发布脚本（`release-plan.py`）按四段 `vA.B.C.D` 解析；其中 `A.B.C`（如 `0.5.0`）对应一条小版本线，并推导维护分支名 `release-v$A$B$C`x（如 `release-v050x`）。
 
 ## 更新节奏
 
@@ -45,7 +45,7 @@ release skill / 脚本只有两类 GitHub Release：**正式**（非 prerelease�
 | `main` | 主要开发分支 | 持续合入功能与修复；可 bump CDC，因此可带入依赖新 CDC 载荷的 mixin 修复 |
 | `release-vxxxx` | 某一小版本正式稳定线的维护分支 | 尽可能不做功能性更新；正式版发布后以 bug 修复为主 |
 
-命名与 `release-plan.ps1` 一致：未指定 `-TargetBranch` 时推导 `release-v$A$B$C`x；分支存在则用之，否则回退 `main`。历史例：`release-v045x` … `release-v048x`、`release-v050x`。
+命名与 `release-plan.py` 一致：未指定 `-TargetBranch` 时推导 `release-v$A$B$C`x；分支存在则用之，否则回退 `main`。历史例：`release-v045x` … `release-v048x`、`release-v050x`。
 
 ## 阶段与分支 / CDC 如何对齐
 

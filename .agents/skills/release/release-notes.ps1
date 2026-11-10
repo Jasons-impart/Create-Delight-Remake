@@ -1,4 +1,6 @@
 # Shared read-only release range and notes helpers. Dot-sourcing has no side effects.
+# Kept for release-publish.ps1 until that script is ported. Python consumers use release_notes.py;
+# keep the two implementations aligned.
 function Get-ReleaseHistory {
     param([string]$Repository)
     $json = & gh api --paginate --slurp "repos/$Repository/releases?per_page=100" 2>$null
