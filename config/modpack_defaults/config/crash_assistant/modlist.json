@@ -724,10 +724,10 @@
     "name": "Dynamic Crosshair",
     "version": "9.10+1.20.1-forge"
   },
-  "EclipticSeasons-1.20.1-forge-0.13.8.1-all.jar": {
-    "modId": "eclipticseasons",
+  "Ecliptic-Seasons-1.20.1-forge-0.15.5-all.jar": {
+    "modId": "ecliptic-seasons",
     "name": "Ecliptic Seasons",
-    "version": "1.20.1-forge-0.13.8.1-all"
+    "version": "1.20.1-forge-0.15.5-all"
   },
   "ElysiumAPI-1.20.1-1.1.3.jar": {
     "modId": "elysiumapi",
