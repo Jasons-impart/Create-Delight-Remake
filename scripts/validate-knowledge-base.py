@@ -228,10 +228,9 @@ def validate(root: Path, *, strict_warnings: bool, check_hotai_runtime_status: b
         ".agents/skills/packwiz-assets/SKILL.md",
         ".github/workflows/release.yml",
         ".codex/hooks.json",
-        "scripts/sync-packwiz-assets.ps1",
         "scripts/sync-packwiz-assets.py",
         "scripts/install-git-hooks.py",
-        "scripts/update-packwiz-meta.ps1",
+        "scripts/update-packwiz-meta.py",
         (
             "scripts/update-hotai-docs.py"
             if project_path(root, "scripts/update-hotai-docs.py").is_file()
@@ -240,8 +239,8 @@ def validate(root: Path, *, strict_warnings: bool, check_hotai_runtime_status: b
         "docs/dev-knowledge/hotai/README.md",
         "docs/dev-knowledge/hotai/patch-map.md",
         "docs/dev-knowledge/hotai/badiff-details.md",
-        "scripts/add-packwiz-target.ps1",
-        "scripts/update-packwiz-target.ps1",
+        "scripts/add-packwiz-target.py",
+        "scripts/update-packwiz-target.py",
         "kubejs/data/oei/replacements",
         "modpack.toml",
     ]

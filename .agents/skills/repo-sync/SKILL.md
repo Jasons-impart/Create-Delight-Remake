@@ -29,7 +29,7 @@ git checkout main
 ```powershell
 git pull --ff-only origin main
 git rebase origin/main
-git diff --quiet $oldHead HEAD -- scripts/install-git-hooks.py scripts/install-git-hooks.ps1 scripts/.githooks
+git diff --quiet $oldHead HEAD -- scripts/install-git-hooks.py scripts/.githooks
 if ($LASTEXITCODE -eq 1) {
     python scripts/install-git-hooks.py -Quiet
 }
