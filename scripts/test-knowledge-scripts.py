@@ -25,6 +25,7 @@ class KnowledgeScriptTests(unittest.TestCase):
         self.assertEqual(REPORT.convert_to_target("scripts/add-knowledge-note.py"), ".agents/skills/knowledge-check/SKILL.md")
         self.assertEqual(REPORT.convert_to_target("scripts/validate-knowledge-base.py"), ".agents/skills/knowledge-check/SKILL.md")
         self.assertEqual(REPORT.convert_to_target("scripts/update-hotai-docs.ps1"), "docs/dev-knowledge/hotai/badiff-details.md")
+        self.assertEqual(REPORT.convert_to_target("scripts/update-hotai-docs.py"), "docs/dev-knowledge/hotai/badiff-details.md")
         self.assertEqual(REPORT.convert_to_target("mods/foo.pw.toml"), ".agents/skills/packwiz-assets/SKILL.md")
         self.assertEqual(REPORT.convert_to_target("unknown.bin"), "")
 

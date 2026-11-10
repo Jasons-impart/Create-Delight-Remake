@@ -106,6 +106,31 @@ def test_dev_knowledge_chinese_markdown(root: Path, relative_path: str) -> None:
 
 
 def run_hotai_runtime_check(root: Path) -> None:
+    py_script = project_path(root, "scripts/update-hotai-docs.py")
+    if py_script.is_file():
+        try:
+            completed = subprocess.run(
+                [
+                    sys.executable,
+                    str(py_script),
+                    "--root",
+                    str(root),
+                    "--check",
+                    "--strict-runtime-status",
+                ],
+                cwd=root,
+                check=False,
+            )
+        except OSError as exc:
+            add_failure(str(exc))
+            return
+        if completed.returncode != 0:
+            add_failure(
+                "scripts/update-hotai-docs.py --check --strict-runtime-status "
+                f"exited with {completed.returncode}."
+            )
+        return
+
     hotai_doc_script = project_path(root, "scripts/update-hotai-docs.ps1")
     if not hotai_doc_script.is_file():
         return
@@ -115,8 +140,8 @@ def run_hotai_runtime_check(root: Path) -> None:
         executable = shutil.which("powershell")
     if executable is None:
         add_failure(
-            "HotAI runtime status check requires PowerShell to run "
-            "scripts/update-hotai-docs.ps1 -Check -StrictRuntimeStatus. "
+            "HotAI runtime status check requires Python (scripts/update-hotai-docs.py) "
+            "or PowerShell to run scripts/update-hotai-docs.ps1 -Check -StrictRuntimeStatus. "
             "scripts/check-hotai-docs.sh only verifies that hotai/ changes ship with "
             "docs/dev-knowledge/hotai/ updates in the same commit range; it is not a substitute."
         )
@@ -163,7 +188,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--check-hotai-runtime-status",
         action="store_true",
-        help="Also run scripts/update-hotai-docs.ps1 -Check -StrictRuntimeStatus, matching -CheckHotaiRuntimeStatus.",
+        help="Also run update-hotai-docs.py --check --strict-runtime-status when present, otherwise the PowerShell equivalent, matching -CheckHotaiRuntimeStatus.",
     )
     return parser.parse_args(argv)
 
@@ -205,7 +230,11 @@ def validate(root: Path, *, strict_warnings: bool, check_hotai_runtime_status: b
         ".codex/hooks.json",
         "scripts/sync-packwiz-assets.ps1",
         "scripts/update-packwiz-meta.ps1",
-        "scripts/update-hotai-docs.ps1",
+        (
+            "scripts/update-hotai-docs.py"
+            if project_path(root, "scripts/update-hotai-docs.py").is_file()
+            else "scripts/update-hotai-docs.ps1"
+        ),
         "docs/dev-knowledge/hotai/README.md",
         "docs/dev-knowledge/hotai/patch-map.md",
         "docs/dev-knowledge/hotai/badiff-details.md",

@@ -123,6 +123,7 @@ def convert_to_target(path: str) -> str:
     if (
         ps_like(normalized, "hotai/*")
         or ps_eq(normalized, "scripts/update-hotai-docs.ps1")
+        or ps_eq(normalized, "scripts/update-hotai-docs.py")
         or ps_eq(normalized, "docs/hotai-badiff-details.md")
     ):
         return "docs/dev-knowledge/hotai/badiff-details.md"
@@ -173,7 +174,7 @@ def convert_to_reason(path: str) -> str:
     if ps_eq(normalized, "GettingStarted.md"):
         return "Pre-clone development setup entry changed; keep it self-contained because project skills are unavailable before clone."
     if ps_like(normalized, "hotai/*"):
-        return "hotai patch set changed; run scripts/update-hotai-docs.ps1 and update the manual badiff explanation if behavior changed."
+        return "hotai patch set changed; run python scripts/update-hotai-docs.py and update the manual badiff explanation if behavior changed."
     if (
         ps_like(normalized, "docs/dev-knowledge/hotai/*")
         or ps_like(normalized, "docs/hotai/*")
@@ -182,7 +183,7 @@ def convert_to_reason(path: str) -> str:
         return "hotai development knowledge changed; keep generated status, manual semantics, and domain summary in their assigned files."
     if ps_like(normalized, "docs/dev-knowledge/*"):
         return "Development knowledge index changed; verify entries stay short and point to source files."
-    if ps_eq(normalized, "scripts/update-hotai-docs.ps1"):
+    if ps_eq(normalized, "scripts/update-hotai-docs.ps1") or ps_eq(normalized, "scripts/update-hotai-docs.py"):
         return "hotai documentation automation changed; verify validation still checks generated status."
     if ps_eq(normalized, "docs/development.md"):
         return "Development guide changed; check whether a compact how-to entry should be indexed."
