@@ -72,7 +72,7 @@ CD-master-dev/
 
 **Git Workflow**:
 - Branch from `main`: `git checkout main && git pull && git checkout -b feat/xxx`
-- Run `scripts/install-git-hooks.ps1` after clone to install local `.git/hooks` shims that call tracked `scripts/.githooks`; agents should confirm this before Git update workflows.
+- Run `python scripts/install-git-hooks.py` after clone to install local `.git/hooks` shims that call tracked `scripts/.githooks`; agents should confirm this before Git update workflows.
 - 阅读、检索和核对 GitHub 上的 Issue、PR、评论、提交、Release、Actions 等信息必须使用 `gh` CLI，不要通过浏览器读取；只有用户明确要求浏览器操作时才例外。
 - Commit format: `[类型] 描述 (#PR号)` - types: `fix`, `feat`, `mod`, `dev`, `conf`
 - Commit messages must include a body; prefer Markdown-style structure in the body, such as short paragraphs, bullet lists, affected scope, and verification notes.
@@ -92,11 +92,11 @@ CD-master-dev/
 **Mod Management (Packwiz)**:
 - `mods/`, `resourcepacks/`, `shaderpacks/`, and `tacz/` contain `.pw.toml` metadata; downloaded runtime files are not tracked
 - CF-restricted/custom JARs/zip live in `packwiz-files/{mods,resourcepacks,shaderpacks,tacz}/`
-- TACZ gun-pack ZIP payloads must keep `assets/`, `data/`, and pack metadata at the archive root; use `scripts/update-tacz-packwiz-meta.ps1` for conversion
+- TACZ gun-pack ZIP payloads must keep `assets/`, `data/`, and pack metadata at the archive root; use `python scripts/update-tacz-packwiz-meta.py` for conversion
 - For add/update/remove/sync/CDC artifact details, use `.agents/skills/packwiz-assets/SKILL.md` because the workflow is procedural and changes together.
-- `scripts/update-packwiz-meta.ps1 -FullReconcile` is category-wide local-asset reconciliation, not the default for one known CurseForge asset; use `scripts/add-packwiz-target.ps1` to add one and `scripts/update-packwiz-target.ps1` to update one.
-- Do not run `scripts/update-packwiz-meta.ps1 -FullReconcile` on short-lived feature branches: it may rewrite `packwiz-files` raw URLs to the current branch. Use it on `main` or a long-lived LTS/release-maintenance branch, or explicitly preserve `main` raw URLs.
-- After any pull/rebase/merge, compare pre-update target commit..new HEAD; if `mods|resourcepacks|shaderpacks|tacz/**/*.pw.toml` or `packwiz-files/**` changed, run `scripts/sync-packwiz-assets.ps1` because runtime payloads are local.
+- `python scripts/update-packwiz-meta.py -FullReconcile` is category-wide local-asset reconciliation, not the default for one known CurseForge asset; use `python scripts/add-packwiz-target.py` to add one and `python scripts/update-packwiz-target.py` to update one.
+- Do not run `python scripts/update-packwiz-meta.py -FullReconcile` on short-lived feature branches: it may rewrite `packwiz-files` raw URLs to the current branch. Use it on `main` or a long-lived LTS/release-maintenance branch, or explicitly preserve `main` raw URLs.
+- After any pull/rebase/merge, compare pre-update target commit..new HEAD; if `mods|resourcepacks|shaderpacks|tacz/**/*.pw.toml` or `packwiz-files/**` changed, run `python scripts/sync-packwiz-assets.py` because runtime payloads are local.
 - `pack.toml`/`index.toml` are generated from `modpack.toml`; don't commit them
 - `CDC-mod-src/` is a git submodule and must stay out of Packwiz artifacts because packages ship pack files, not Java source trees
 - GitHub Pages mod classification data (`docs/mods-data.js`) is expensive to refresh; do not update it during ordinary mod changes unless the user explicitly asks for a manual refresh.
@@ -118,4 +118,4 @@ CD-master-dev/
 - Client-only mods → set `side = "client"` in the corresponding `mods/*.pw.toml`
 - Server-only mods → set `side = "server"` in the corresponding `mods/*.pw.toml`
 - Language files validated by `.vscode/probe.lang-schema.json`
-- **任务中发现非显而易见的失败、绕路、根因或约束时，立即用 `scripts/add-knowledge-note.ps1` 记临时 note**；Stop hook 的候选报告只扫描 diff，看不到这些过程信息（细节见 knowledge-check skill）。
+- **任务中发现非显而易见的失败、绕路、根因或约束时，立即用 `python scripts/add-knowledge-note.py --summary "..."` 记临时 note**；Stop hook 的候选报告只扫描 diff，看不到这些过程信息（细节见 knowledge-check skill）。

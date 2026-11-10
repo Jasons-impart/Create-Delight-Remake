@@ -77,8 +77,8 @@ error: HotAI 文件有变更，但同范围未更新 HotAI 文档 / HotAI files 
 Changed under ${HOTAI_CODE_PREFIX} (${BASE_SHA:0:12}...${HEAD_SHA:0:12}):
 $(printf '  - %s\n' "${hotai_code_changes[@]}")
 
-请同步更新文档目录 ${HOTAI_DOCS_PREFIX}（例如 patch-map.md / badiff-details.md，并按需运行 scripts/update-hotai-docs.ps1）。
-Please update files under ${HOTAI_DOCS_PREFIX} in the same PR (e.g. patch-map.md / badiff-details.md; run scripts/update-hotai-docs.ps1 when appropriate).
+请同步更新文档目录 ${HOTAI_DOCS_PREFIX}（例如 patch-map.md / badiff-details.md，并按需运行 python scripts/update-hotai-docs.py）。
+Please update files under ${HOTAI_DOCS_PREFIX} in the same PR (e.g. patch-map.md / badiff-details.md; run python scripts/update-hotai-docs.py when appropriate).
 
 See .agents/skills/hotai/SKILL.md and docs/dev-knowledge/hotai/README.md.
 MSG

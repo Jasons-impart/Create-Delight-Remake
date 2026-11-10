@@ -16,4 +16,4 @@
 - `content-map.md` 只记录玩家可见的 `hotai` 内容改动，并链接到本目录。
 - `compatibility-patches.md` 只在某项补丁属于修复、回归恢复或上游适配时登记；补丁所在目录不决定分类。
 - `how-to-index.md` 只保留 `/hotai` skill 的入口，不复制操作步骤或补丁明细。
-- 变更 `hotai/**/*.badiff` 时遵循 [.agents/skills/hotai/SKILL.md](../../../.agents/skills/hotai/SKILL.md)，并运行 `scripts/update-hotai-docs.ps1`。
+- 变更 `hotai/**/*.badiff` 时遵循 [.agents/skills/hotai/SKILL.md](../../../.agents/skills/hotai/SKILL.md)，并运行 `python scripts/update-hotai-docs.py`。

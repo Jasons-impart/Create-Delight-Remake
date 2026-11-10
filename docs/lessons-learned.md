@@ -54,7 +54,7 @@ release-v048x ──→ feat/branch-048x ──PR──→ release-v048x  ✅ 1 
 - **日期**：2026-10-02。
 - **输出协议**：ZCode 的 Stop 钩子还要求 stdout 是合法 JSON；退出码为 0 但打印普通日志仍会失败。启动器将子进程日志转至 stderr，成功时 stdout 仅输出 `{}`；回归必须同时检查退出码与实际 stdout 的 JSON 解析。
 - **根因**：直接调用 `pwsh` 会在只安装 Windows PowerShell 的机器上失败；回退后，PowerShell 5.1 又会把 Git 换行警告转换成 `NativeCommandError`，触发全局 `ErrorActionPreference = Stop`。默认文本编码还可能令中文知识检查失真。
-- **正确做法**：Codex 与 ZCode 共用 `scripts/run-knowledge-hook.py`，优先 PowerShell 7、Windows 回退系统 PowerShell。报告脚本仅在 Git 调用局部允许 stderr 警告，并继续检查退出码；知识文件显式使用 UTF-8，含中文的钩子脚本使用 UTF-8 BOM，避免 PowerShell 5.1 按系统代码页解析脚本。启动器保留实际脚本退出码，不把失败伪装成成功。
+- **正确做法**：Codex 与 ZCode 共用 `scripts/run-knowledge-hook.py`，直接调用 Python 知识脚本，不再依赖 PowerShell。启动器将子进程日志转到 stderr，成功时 stdout 仅输出 `{}`，并保留实际脚本退出码；知识文件使用 UTF-8 无 BOM。
 
 ## Linux 下 packwiz 同步静默成功与 hook 无法执行
 
@@ -140,7 +140,7 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 ### 正确做法：packwiz-installer + 本地静态服务器
 
-参考 `scripts/sync-packwiz-assets.ps1` 的流程：
+参考 `scripts/sync-packwiz-assets.py` 的流程：
 
 1. 创建临时 pack 目录，复制 `.pw.toml` 元数据 + `packwiz-files/`
 2. 将 `.pw.toml` 中的 GitHub raw URL 替换为 `http://127.0.0.1:{PORT}/packwiz-files/`

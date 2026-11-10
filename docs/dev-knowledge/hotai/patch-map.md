@@ -6,7 +6,7 @@
 
 - 本文只保留 `hotai` 机制、补丁领域概览和维护原则。
 - [badiff-details.md](badiff-details.md) 记录每个 `.badiff` 的代码化改动摘要、历史提交依据和当前适用性。
-- `badiff-details.md` 中的 `HOTAI_STATUS` 区块由 `scripts/update-hotai-docs.ps1` 生成；人工推测和方法级解释写在区块外。
+- `badiff-details.md` 中的 `HOTAI_STATUS` 区块由 `scripts/update-hotai-docs.py` 生成；人工推测和方法级解释写在区块外。
 
 ## 运行机制
 
@@ -56,7 +56,7 @@
 ## 维护注意
 
 - 更新目标模组时，先确认目标是上游静态 class 还是由 `hotai` 动态创建；再看 `logs/latest.log` 是否出现每个目标的 `Patched class:`。
-- 修改 `hotai/**/*.badiff` 后运行 `scripts/update-hotai-docs.ps1`，再运行 `scripts/update-hotai-docs.ps1 -Check` 或 `scripts/validate-knowledge-base.ps1`；校验会阻止生成状态区过期。
+- 修改 `hotai/**/*.badiff` 后运行 `python scripts/update-hotai-docs.py`，再运行 `python scripts/update-hotai-docs.py -Check` 或知识库校验脚本；校验会阻止生成状态区过期。
 - 新增或替换补丁时优先保留 `.badiff`，不要把目标模组完整 class 当作长期源文件；`hotai` 可在加载 `.class` 后自动转存为 `.badiff`。
 - 用户需要先审阅二进制改动时，可短期保留完整 `.class`；必须记录 SHA-256 和待转存状态，不能把静态反汇编当成 HotAI 首次转存或第二次重放已通过。
 - 超导连接器不仅依赖 `hotai` 注册补丁，还依赖 `kubejs/assets/createaddition/` 的模型、贴图、语言和 `kubejs/server_scripts/Create Addition/` 的配方、标签、掉落。
