@@ -1,6 +1,6 @@
 ---
 name: release
-description: 管理 Create-Delight Remake 整合包的正式版或测试版发布。用于用户要求发布版本、创建测试版、更新 modpack.toml 版本、打 tag、创建 GitHub Release 或处理发布产物时；先用 release-plan.ps1 解析版本、目标分支和上一版本，再按 Prepare、人工合并、Publish 流程执行。
+description: 管理 Create-Delight Remake 整合包的正式版或测试版发布。用于用户要求发布版本、创建测试版、更新 modpack.toml 版本、打 tag、创建 GitHub Release 或处理发布产物时；先用 release-plan.py 解析版本、目标分支和上一版本，再按 Prepare、人工合并、Publish 流程执行。
 ---
 
 # Create-Delight Remake 发布
@@ -11,14 +11,14 @@ description: 管理 Create-Delight Remake 整合包的正式版或测试版发�
 
 从仓库根目录运行：
 
-```powershell
-.\.agents\skills\release\release-plan.ps1
+```bash
+python .agents/skills/release/release-plan.py
 ```
 
 传入用户已明确的值覆盖自动推导：
 
-```powershell
-.\.agents\skills\release\release-plan.ps1 -Version 'v0.5.0.6-test' -ReleaseType '测试' -AsJson
+```bash
+python .agents/skills/release/release-plan.py -Version 'v0.5.0.6-test' -ReleaseType '测试' -AsJson
 ```
 
 计划会推导版本、目标分支、上一发布版本和首个正式版候选。上一发布版本按发布类型读取 GitHub Release 元数据：测试版使用最近发布的 Release（包含 prerelease）；正式版分页读取全部 Release，排除草稿和 prerelease，选择同一 `v主.次.子.x` 版本线中数值小于目标版本的最大正式版本，不使用全仓库 `latest`。不要仅根据 tag 是否带 `-test` 推断正式性。同版本线首个正式版没有自动基线，必须向计划和 Publish 显式传入上一正式版 `-PreviousVersion`；已有同线基线时不允许覆盖成更老版本。用户明确指定版本、分支或发布类型时，以用户指定为准。
@@ -33,12 +33,12 @@ description: 管理 Create-Delight Remake 整合包的正式版或测试版发�
 
 ### 1. Prepare
 
-```powershell
-.\.agents\skills\release\release-prepare.ps1 `
-    -Version '<Version>' `
-    -TargetBranch '<TargetBranch>' `
-    -ReleaseType '<正式|测试>' `
-    -Announcement '<正式版公告，可省略>' `
+```bash
+python .agents/skills/release/release-prepare.py \
+    -Version '<Version>' \
+    -TargetBranch '<TargetBranch>' \
+    -ReleaseType '<正式|测试>' \
+    -Announcement '<正式版公告，可省略>' \
     -WhatIf
 ```
 
@@ -46,7 +46,7 @@ description: 管理 Create-Delight Remake 整合包的正式版或测试版发�
 
 ### 2. 人工合并与静默监控
 
-版本 PR 必须仍由用户手动合并；不得自动合并或启用 auto-merge。`release-prepare.ps1` 成功创建 PR 后，立即通过 `automation_update` 在当前对话创建一个 heartbeat 监控，而不是等待用户回来说明已合并。
+版本 PR 必须仍由用户手动合并；不得自动合并或启用 auto-merge。`release-prepare.py` 成功创建 PR 后，立即通过 `automation_update` 在当前对话创建一个 heartbeat 监控，而不是等待用户回来说明已合并。
 
 监控提示必须包含版本、目标分支、发布类型和版本 PR URL，并要求每次运行：
 
@@ -79,10 +79,10 @@ heartbeat 使用适合主动跟进的短间隔。除合并、完成、失败或�
 
 1. 版本 PR 合并后，确认/获取目标分支最新引用和所需 tags。先导出只读证据，**不要为了写说明先推 tag**：
 
-```powershell
-.\.agents\skills\release\release-notes-input.ps1 `
-    -Version '<Version>' `
-    -TargetRef 'origin/<TargetBranch>' `
+```bash
+python .agents/skills/release/release-notes-input.py \
+    -Version '<Version>' \
+    -TargetRef 'origin/<TargetBranch>' \
     -OutputFile 'docs/release-notes-<Version>.input.json'
 ```
 
@@ -92,9 +92,9 @@ heartbeat 使用适合主动跟进的短间隔。除合并、完成、失败或�
 3. 按下方写作 prompt，将最终分类与条目写到 UTF-8 文件 `docs/release-notes-{Version}.md`，或放在显式 `-NotesFile <path>` 指定的文件。文件**只含分类和单行列表项**，不要自行写“更新内容”标题、AI 标记、“增量更新”或“详细更新”；脚本会拼接固定部分。此文件是必需输入：缺失、空白、分类/链接格式错误、内部术语或引用范围外的 PR/提交都会阻止发布。
 4. 对照证据复核每条文案、合并语义重复项，并确认目标分支仍是导出时的 `targetCommit`。若目标分支前进，必须重新导出、补读新变更并更新文案。已有本地 tag 时，可运行完整正文预览：
 
-```powershell
-.\.agents\skills\release\release-notes-preview.ps1 `
-    -Version 'v0.5.0.17' `
+```bash
+python .agents/skills/release/release-notes-preview.py \
+    -Version 'v0.5.0.17' \
     -NotesFile '<agent 撰写并审校的 Markdown>'
 ```
 
@@ -116,14 +116,14 @@ heartbeat 使用适合主动跟进的短间隔。除合并、完成、失败或�
 - 修复制作食物时品质丢失的问题（[#123](https://github.com/Jasons-impart/Create-Delight-Remake/pull/123)）
 ```
 
-输入导出与预览支持 `-ReleaseHistoryFile <JSON>` 离线元数据快照（对象数组，字段 `tagName/isDraft/isPrerelease/publishedAt`）；所有正式版步骤都验证同一基线。离线测试：`pwsh -NoProfile -File scripts/test-release-notes.ps1`。只读预览支持已公开版本，**禁止为了检查历史文案调用 Publish 或重新回传 CurseForge**。独立的首个正式版摘要不由文案文件覆盖。
+输入导出与预览支持 `-ReleaseHistoryFile <JSON>` 离线元数据快照（对象数组，字段 `tagName/isDraft/isPrerelease/publishedAt`）；所有正式版步骤都验证同一基线。离线测试：`python scripts/test-release-notes.py`。只读预览支持已公开版本，**禁止为了检查历史文案调用 Publish 或重新回传 CurseForge**。独立的首个正式版摘要不由文案文件覆盖。
 
 ## 不可违反的约束
 
 - 不编辑生成的 `pack.toml` 或 `index.toml`。
 - 不直接发布或复制 CDC JAR；CDC 源码与 Packwiz 资产分别遵循 `CDC-mod-src/AGENTS.md` 和 `/packwiz-assets`。
 - 脚本可恢复中断的草稿 Release；已公开的同名 Release 不可重建。
-- 运行脚本前需要 PowerShell 7、Git、GitHub CLI 登录和干净或可安全暂存的工作树。
+- 运行脚本前需要 Git、GitHub CLI 登录和干净或可安全暂存的工作树。`release-plan.py`、`release-prepare.py`、`release-notes-input.py` 与 `release-notes-preview.py` 需要 Python 3.11+（可用 `python` / `py -3` / `python3`）。`release-publish.ps1` 仍需 PowerShell 7，并继续点源 `release-notes.ps1`（该共享库暂予保留，待 Publish 一并移植）。
 - 正式版（非测试版）tag 触发的 `release-assets` job 会在 GitHub Release 资产上传后，尝试将 `Client-*.zip`（CurseForge 元数据包）上传到 CurseForge 项目 [create-delight-remake](https://www.curseforge.com/minecraft/modpacks/create-delight-remake)（id `1059094`）。需仓库或组织 Secret `CURSEFORGE_TOKEN`（与 Create-Delight-Core 同名）；未配置则跳过并打 notice，不使发布失败。Changelog 读取该标签的 GitHub Release 正文并附加 Release 链接，使用 Markdown；正文为空时停止上传，不退回仅链接。测试版不上传 CurseForge。不要用该流程回传已发布版本。
 
 ## 按需参考
@@ -131,4 +131,4 @@ heartbeat 使用适合主动跟进的短间隔。除合并、完成、失败或�
 - 版本号、小版本阶段、分支角色与正式版后 CDC 冻结 / HotAI：读 [branch-and-release.md](../../../docs/dev-knowledge/branch-and-release.md)。「抢先预览」是产品阶段；脚本仍只用正式/测试。已正式发布的 `release-vxxxx` 持续维护期间不要 bump CDC 或合入依赖新 CDC 的 mixin。
 - Windows 下的代理、`gh` 认证和大文件传输细节：读 [release-windows-github.md](references/release-windows-github.md)。
 - 仅当用户明确要求“标签与 `modpack.toml` 版本不同”的历史过渡发布时：读 [transitional-test-tags.md](references/transitional-test-tags.md)。
-- 参数和脚本内部步骤以当前实现为准：运行 `Get-Help .\.agents\skills\release\release-prepare.ps1 -Full` 或 `Get-Help .\.agents\skills\release\release-publish.ps1 -Full`。
+- 参数和脚本内部步骤以当前实现为准：运行 `python .agents/skills/release/release-prepare.py -h` 或 `Get-Help .\.agents\skills\release\release-publish.ps1 -Full`。
