@@ -94,7 +94,7 @@ function ConvertTo-Target([string]$Path) {
         }
     }
     if ($normalized -eq "GettingStarted.md") { return "GettingStarted.md" }
-    if ($normalized -like "hotai/*" -or $normalized -eq "scripts/update-hotai-docs.ps1" -or $normalized -eq "docs/hotai-badiff-details.md") { return "docs/dev-knowledge/hotai/badiff-details.md" }
+    if ($normalized -like "hotai/*" -or ($normalized -eq "scripts/update-hotai-docs.ps1" -or $normalized -eq "scripts/update-hotai-docs.py") -or $normalized -eq "docs/hotai-badiff-details.md") { return "docs/dev-knowledge/hotai/badiff-details.md" }
     if ($normalized -eq "docs/hotai-patch-map.md") { return "docs/dev-knowledge/hotai/patch-map.md" }
     if ($normalized -like "docs/hotai/*") {
         $legacyPath = $normalized.Substring("docs/hotai/".Length)
@@ -115,10 +115,10 @@ function ConvertTo-Reason([string]$Path) {
     $normalized = $Path -replace "\\", "/"
     if ($normalized -like ".agents/skills/*") { return "Skill instructions changed; verify trigger wording, workflow scope, and AGENTS duplication." }
     if ($normalized -eq "GettingStarted.md") { return "Pre-clone development setup entry changed; keep it self-contained because project skills are unavailable before clone." }
-    if ($normalized -like "hotai/*") { return "hotai patch set changed; run scripts/update-hotai-docs.ps1 and update the manual badiff explanation if behavior changed." }
+    if ($normalized -like "hotai/*") { return "hotai patch set changed; run python scripts/update-hotai-docs.py and update the manual badiff explanation if behavior changed." }
     if ($normalized -like "docs/dev-knowledge/hotai/*" -or $normalized -like "docs/hotai/*" -or $normalized -like "docs/hotai-*.md") { return "hotai development knowledge changed; keep generated status, manual semantics, and domain summary in their assigned files." }
     if ($normalized -like "docs/dev-knowledge/*") { return "Development knowledge index changed; verify entries stay short and point to source files." }
-    if ($normalized -eq "scripts/update-hotai-docs.ps1") { return "hotai documentation automation changed; verify validation still checks generated status." }
+    if (($normalized -eq "scripts/update-hotai-docs.ps1" -or $normalized -eq "scripts/update-hotai-docs.py")) { return "hotai documentation automation changed; verify validation still checks generated status." }
     if ($normalized -eq "docs/development.md") { return "Development guide changed; check whether a compact how-to entry should be indexed." }
     if ($normalized -like "docs/*design*.md" -or $normalized -like "docs/*plan.md" -or $normalized -like "docs/*strategy.md") { return "Design or plan doc changed; apply dev-knowledge admission rules before updating content-map. Removal alone does not warrant a new entry." }
     if (Test-ModpackBehaviorChangePath $normalized) { return "Path-only candidate: inspect final behavior using dev-knowledge admission rules. Pure removal adds no content-map entry; update an existing stale entry only if needed. Neither ledger may need an update." }

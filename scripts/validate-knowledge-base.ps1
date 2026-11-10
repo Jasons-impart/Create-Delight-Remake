@@ -133,7 +133,7 @@ $requiredPaths = @(
     ".codex/hooks.json",
     "scripts/sync-packwiz-assets.ps1",
     "scripts/update-packwiz-meta.ps1",
-    "scripts/update-hotai-docs.ps1",
+    "scripts/update-hotai-docs.py",
     "docs/dev-knowledge/hotai/README.md",
     "docs/dev-knowledge/hotai/patch-map.md",
     "docs/dev-knowledge/hotai/badiff-details.md",
@@ -158,12 +158,20 @@ if (Test-Path -LiteralPath $devKnowledgeDocsPath) {
     }
 }
 
-$hotaiDocScript = Join-Path $Root "scripts/update-hotai-docs.ps1"
+$hotaiDocScript = Join-Path $Root "scripts/update-hotai-docs.py"
 if ($CheckHotaiRuntimeStatus -and (Test-Path -LiteralPath $hotaiDocScript)) {
-    try {
-        & $hotaiDocScript -Root $Root -Check -StrictRuntimeStatus
-    } catch {
-        Add-Failure $_.Exception.Message
+    $pythonCmd = Get-Command python -ErrorAction SilentlyContinue
+    if (-not $pythonCmd) {
+        $pythonCmd = Get-Command python3 -ErrorAction SilentlyContinue
+    }
+    if (-not $pythonCmd) {
+        Add-Failure "HotAI runtime status check requires Python to run scripts/update-hotai-docs.py --check --strict-runtime-status."
+    }
+    else {
+        & $pythonCmd.Source $hotaiDocScript --root $Root --check --strict-runtime-status
+        if ($LASTEXITCODE -ne 0) {
+            Add-Failure "scripts/update-hotai-docs.py --check --strict-runtime-status exited with $LASTEXITCODE."
+        }
     }
 }
 
