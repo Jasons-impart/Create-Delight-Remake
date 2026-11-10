@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cross-platform port of scripts/validate-knowledge-base.ps1."""
+"""Validate the Create-Delight Remake knowledge base."""
 
 from __future__ import annotations
 
@@ -152,7 +152,7 @@ def run_hotai_runtime_check(root: Path) -> None:
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Validate the Create-Delight Remake knowledge base (Linux/macOS port of validate-knowledge-base.ps1)."
+        description="Validate the Create-Delight Remake knowledge base."
     )
     parser.add_argument("--root", default="", help="Repository root. Defaults to the parent of scripts/.")
     parser.add_argument(

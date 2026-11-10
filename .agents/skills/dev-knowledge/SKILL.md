@@ -11,7 +11,7 @@ description: 开发知识路由、知识库整理、实现记录、代码位置�
 
 ## 任务中随手记录
 
-任务进行中遇到非显而易见的失败、绕路、根因或约束时，不要等任务结束再回忆：立即用 `scripts/add-knowledge-note.ps1` 追加临时 note（写入 `tmp-opencode/knowledge-notes.md`）。Stop hook 的候选报告只扫描 diff，看不到这类过程信息；note 会被报告读入 Process Notes 并路由到 knowledge-check。任务结束落库或否决后，运行 `scripts/resolve-knowledge-candidate.ps1` 清掉临时 note，避免重复出现。
+任务进行中遇到非显而易见的失败、绕路、根因或约束时，不要等任务结束再回忆：立即用 `python scripts/add-knowledge-note.py --summary "..."` 追加临时 note（写入 `tmp-opencode/knowledge-notes.md`）。Stop hook 的候选报告只扫描 diff，看不到这类过程信息；note 会被报告读入 Process Notes 并路由到 knowledge-check。任务结束落库或否决后，运行 `python scripts/resolve-knowledge-candidate.py --status applied` 清掉临时 note，避免重复出现。
 
 ## 存放表
 
@@ -68,11 +68,11 @@ description: 开发知识路由、知识库整理、实现记录、代码位置�
 ## 语言规则
 
 - `docs/dev-knowledge/` 和本 skill 的正文必须以中文为主；mod 名、文件路径、命令、函数名、英文术语可保留英文。
-- 新增条目的叙述性文字必须写中文；Windows 运行 `scripts/validate-knowledge-base.ps1`，Linux/macOS 运行 `python scripts/validate-knowledge-base.py`，二者都会检查 dev-knowledge Markdown 正文中是否存在无中文的英文叙述行。
+- 新增条目的叙述性文字必须写中文；运行 `python scripts/validate-knowledge-base.py` 会检查 dev-knowledge Markdown 正文中是否存在无中文的英文叙述行。
 
 ## 更新流程
 
 1. 搜索 `docs/dev-knowledge/`、`AGENTS.md`、相关模块 `AGENTS.md`、`.agents/skills/` 和 `docs/lessons-learned.md`。
 2. 按存放表选择最小且持久的目标位置。
 3. 一个事实只写在一个地方；需要关联时使用链接，不复制内容。
-4. 修改 AGENTS、skill 或 dev-knowledge 索引后，在 Windows 上运行 `scripts/validate-knowledge-base.ps1`，在 Linux/macOS 上运行 `python scripts/validate-knowledge-base.py`。
+4. 修改 AGENTS、skill 或 dev-knowledge 索引后，运行 `python scripts/validate-knowledge-base.py`。
