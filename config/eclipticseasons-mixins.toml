@@ -1,3 +1,4 @@
+version = 4
 
 [common]
 
@@ -89,6 +90,10 @@
 	[client.entity]
 		MixinClientPanda = true
 
+	[client.gui]
+		MixinAbstractButton = true
+		MixinCycleButtonBuilder = true
+
 	[client.model]
 		MixinModelBakery = true
 		MixinModelManager = true
@@ -124,6 +129,8 @@
 		MixinBlockRenderTask = true
 		MixinChunkSlice = true
 		MixinClonedChunkSection = true
+		Mixin_ColorSource = true
+		Mixin_FoliageColorSource = true
 
 	[compat.oculus]
 		MixinBiomeUniforms = true

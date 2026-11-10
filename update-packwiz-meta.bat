@@ -7,12 +7,49 @@ cd /d "%~dp0" || (
 )
 
 set "REPO_ROOT=%~dp0"
-set "SCRIPT=%REPO_ROOT%scripts\update-packwiz-meta.ps1"
-set "PS_EXE=%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe"
-if not exist "%PS_EXE%" set "PS_EXE=powershell.exe"
+set "SCRIPT=%REPO_ROOT%scripts\update-packwiz-meta.py"
 
+set "PYEXE="
+for /f "delims=" %%I in ('where python 2^>nul') do (
+    echo %%I | find /I "\WindowsApps\" >nul
+    if errorlevel 1 (
+        "%%I" -c "import sys; raise SystemExit(0 if sys.version_info >= (3, 11) else 1)" >nul 2>&1
+        if not errorlevel 1 (
+            set "PYEXE=%%I"
+            goto :have_python
+        )
+    )
+)
+
+where py >nul 2>&1
+if not errorlevel 1 (
+    py -3 -c "import sys; raise SystemExit(0 if sys.version_info >= (3, 11) else 1)" >nul 2>&1
+    if not errorlevel 1 (
+        for /f "delims=" %%I in ('py -3 -c "import sys; print(sys.executable)" 2^>nul') do (
+            set "PYEXE=%%I"
+            goto :have_python
+        )
+    )
+)
+
+for /f "delims=" %%I in ('where python3 2^>nul') do (
+    echo %%I | find /I "\WindowsApps\" >nul
+    if errorlevel 1 (
+        "%%I" -c "import sys; raise SystemExit(0 if sys.version_info >= (3, 11) else 1)" >nul 2>&1
+        if not errorlevel 1 (
+            set "PYEXE=%%I"
+            goto :have_python
+        )
+    )
+)
+
+echo Python was not found. Install Python 3.11+ and ensure python, py -3, or python3 is available.
+pause
+exit /b 1
+
+:have_python
 if not exist "%SCRIPT%" (
-    echo PowerShell script not found: "%SCRIPT%"
+    echo Python script not found: "%SCRIPT%"
     pause
     exit /b 1
 )
@@ -114,7 +151,7 @@ goto :finish
 
 :run_category
 echo --- %~1 ---
-"%PS_EXE%" -NoProfile -ExecutionPolicy Bypass -File "%SCRIPT%" -Category "%~1" -FullReconcile %REMOVAL_ARGS% %REF_ARGS%
+"%PYEXE%" "%SCRIPT%" -Category "%~1" -FullReconcile %REMOVAL_ARGS% %REF_ARGS%
 set "CATEGORY_EXIT_CODE=%ERRORLEVEL%"
 if "%CATEGORY_EXIT_CODE%"=="0" (
     echo Category completed: %~1
@@ -125,7 +162,7 @@ echo.
 exit /b %CATEGORY_EXIT_CODE%
 
 :passthrough
-"%PS_EXE%" -NoProfile -ExecutionPolicy Bypass -File "%SCRIPT%" %*
+"%PYEXE%" "%SCRIPT%" %*
 set "EXIT_CODE=%ERRORLEVEL%"
 goto :finish
 
@@ -149,8 +186,8 @@ exit /b 0
 echo Usage:
 echo   update-packwiz-meta.bat
 echo       Open the interactive menu.
-echo   update-packwiz-meta.bat ^<PowerShell arguments^>
-echo       Pass arguments directly to scripts\update-packwiz-meta.ps1.
+echo   update-packwiz-meta.bat ^<script arguments^>
+echo       Pass arguments directly to scripts\update-packwiz-meta.py.
 echo.
 echo Example:
 echo   update-packwiz-meta.bat -Category mods -FullReconcile

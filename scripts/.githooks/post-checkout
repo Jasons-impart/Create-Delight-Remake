@@ -6,10 +6,41 @@ fi
 repo_root=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0
 cd "$repo_root" || exit 0
 
-if command -v pwsh >/dev/null 2>&1; then
-  pwsh -NoLogo -NoProfile -ExecutionPolicy Bypass -File "$repo_root/scripts/sync-packwiz-assets.ps1" -IfGitChanged -HookName "post-checkout" -OldRev "$1" -NewRev "$2"
-elif command -v powershell.exe >/dev/null 2>&1; then
-  powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File "$repo_root/scripts/sync-packwiz-assets.ps1" -IfGitChanged -HookName "post-checkout" -OldRev "$1" -NewRev "$2"
-else
-  printf >&2 "%s\n" "PowerShell 7 was not found; skipping Packwiz runtime asset sync."
+sync_script="$repo_root/scripts/sync-packwiz-assets.py"
+if [ ! -f "$sync_script" ]; then
+  printf >&2 '%s\n' "Missing $sync_script; cannot sync Packwiz runtime assets."
+  exit 1
 fi
+
+run_sync() {
+  if command -v python >/dev/null 2>&1; then
+    case "$(command -v python)" in
+      *WindowsApps*) ;;
+      *)
+        if python -c "import sys" >/dev/null 2>&1; then
+          python "$sync_script" "$@"
+          return $?
+        fi
+        ;;
+    esac
+  fi
+  if command -v python3 >/dev/null 2>&1; then
+    case "$(command -v python3)" in
+      *WindowsApps*) ;;
+      *)
+        if python3 -c "import sys" >/dev/null 2>&1; then
+          python3 "$sync_script" "$@"
+          return $?
+        fi
+        ;;
+    esac
+  fi
+  if command -v py >/dev/null 2>&1 && py -3 -c "import sys" >/dev/null 2>&1; then
+    py -3 "$sync_script" "$@"
+    return $?
+  fi
+  printf >&2 '%s\n' "Python was not found; cannot sync Packwiz runtime assets."
+  return 1
+}
+
+run_sync -IfGitChanged -HookName "post-checkout" -OldRev "$1" -NewRev "$2"
