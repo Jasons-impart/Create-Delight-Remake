@@ -30,9 +30,9 @@ description: 实现后知识检查、知识库维护、项目经验沉淀。用�
 
 如果存在 `tmp-opencode/knowledge-candidate-report.md`，先读取它再决定；除非当前任务明确要求维护知识库，否则 process note 候选需要用户接受后再落库。
 
-Codex（`.codex/hooks.json`）和 ZCode（`.zcode/config.json` 的 Stop hooks）都会运行 `scripts/validate-knowledge-base.ps1` 校验结构，再由 `scripts/write-knowledge-candidate-report.ps1` 写入 `tmp-opencode/knowledge-candidate-report.md`；该报告只提供建议，不会自动修改知识文件。报告覆盖范围为工作区改动加上自上次报告以来的全部未报告提交；仅当上次报告基线缺失或不再是 HEAD 祖先（如 rebase）时，才回看最近 `-RecentCommits` 个提交（默认 1）。有候选的报告会按时间戳归档到 `tmp-opencode/knowledge-candidate-history/`（保留最近 50 份，空报告不归档）；漏记的知识候选可从归档或 git 提交历史回溯补记。
+Codex（`.codex/hooks.json`）和 ZCode（`.zcode/config.json` 的 Stop hooks）都会通过 `python scripts/run-knowledge-hook.py` 直接运行 `scripts/validate-knowledge-base.py` 和 `scripts/write-knowledge-candidate-report.py`，不再依赖 PowerShell。该报告只提供建议，不会自动修改知识文件。报告覆盖范围为工作区改动加上自上次报告以来的全部未报告提交；仅当上次报告基线缺失或不再是 HEAD 祖先（如 rebase）时，才回看最近 `--recent-commits` 个提交（默认 1）。有候选的报告会按时间戳归档到 `tmp-opencode/knowledge-candidate-history/`（保留最近 50 份，空报告不归档）；漏记的知识候选可从归档或 git 提交历史回溯补记。
 
-diff 扫描只覆盖代码改动，看不到任务过程中发现的信息。因此任务进行中遇到非显而易见的失败、绕路、根因或约束时，立即用 `scripts/add-knowledge-note.ps1` 追加临时 note，不要等任务结束再回忆；候选报告会读取这些 note 并把它路由到这里。
+diff 扫描只覆盖代码改动，看不到任务过程中发现的信息。因此任务进行中遇到非显而易见的失败、绕路、根因或约束时，立即用 `python scripts/add-knowledge-note.py --summary "..."` 追加临时 note，不要等任务结束再回忆；候选报告会读取这些 note 并把它路由到这里。
 
 先按 `dev-knowledge` 的“内容地图条目”判断是否准入，再选落点。候选报告仅按路径提示检查范围，不能代替语义判断，也不要求必须选一个台账；结构校验通过同样不代表内容准入。
 
@@ -60,7 +60,7 @@ diff 扫描只覆盖代码改动，看不到任务过程中发现的信息。因
 - 候选报告列出的两种台账均为待核对位置，可两者都不更新。纯移除且无原条目需维护时输出 `Knowledge: no update needed`；不能改投兼容台账来记录删除历史。
 - 与具体补丁无关、未来会反复遇到的根因或非显而易见的 workaround → `docs/lessons-learned.md`。
 - 新的 KubeJS helper/API 参考 → 内容很短时写入 `kubejs/AGENTS.md` 的 UNIQUE STYLES；否则写入 dev-knowledge how-to 或提升为 skill。
-- `hotai/` 补丁、`docs/dev-knowledge/hotai/` 专题资料或 `scripts/update-hotai-docs.ps1` → 使用 `/hotai` skill；逐文件语义和生成状态写入 `docs/dev-knowledge/hotai/`，玩家体验与兼容修复仍按目的分别登记到对应台账。
+- `hotai/` 补丁、`docs/dev-knowledge/hotai/` 专题资料或 `scripts/update-hotai-docs.py` → 使用 `/hotai` skill；逐文件语义和生成状态写入 `docs/dev-knowledge/hotai/`，玩家体验与兼容修复仍按目的分别登记到对应台账。
 - knowledge-check prompt、候选报告路由或触发时机 → `.agents/skills/knowledge-check/SKILL.md`。
 - dev-knowledge 存放规则 → `.agents/skills/dev-knowledge/SKILL.md`。
 
@@ -92,7 +92,7 @@ diff 扫描只覆盖代码改动，看不到任务过程中发现的信息。因
 
 ### 第 5 步：输出总结
 
-如果应用或拒绝候选报告，决策后运行 `scripts/resolve-knowledge-candidate.ps1 -Status applied|rejected`，避免临时 process note 重复出现。
+如果应用或拒绝候选报告，决策后运行 `python scripts/resolve-knowledge-candidate.py --status applied|rejected`，避免临时 process note 重复出现。
 
 最后输出：
 

@@ -4,7 +4,7 @@
 
 代码块是“等价改动摘要”，不是完整反编译源码。它们用于表达字段、方法、条件和注册项的变化，避免把第三方模组源码整段复制进仓库。
 
-`HOTAI_STATUS` 区块由 `scripts/update-hotai-docs.ps1` 维护，区分静态 JAR 命中、启动日志确认的动态创建和未确认项；方法级语义、历史提交依据和迁移建议仍写在人工维护区。
+`HOTAI_STATUS` 区块由 `scripts/update-hotai-docs.py` 维护，区分静态 JAR 命中、启动日志确认的动态创建和未确认项；方法级语义、历史提交依据和迁移建议仍写在人工维护区。
 
 ## 当前生效性核查（2026-07-29）
 
@@ -28,7 +28,7 @@
 总计：当前 26 个 `.badiff` 中 23 个静态 JAR 命中，2 个由当前启动日志确认动态创建，1 个尚未在当前启动日志确认。三个静态未命中项均属于 Create Addition 超导连接器实现类，不应仅因 JAR 扫描未命中而删除。Create New Age 旧路径补丁已完成迁移。
 
 <!-- HOTAI_STATUS:BEGIN -->
-> 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
+> 本区块由 `scripts/update-hotai-docs.py` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
 当前扫描到 37 个 `.badiff`；静态 JAR 命中 33 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
 
@@ -599,6 +599,6 @@ MMT 原 class 针对 Tetra 6.9 的局部变量名 `multiplier`，返回 `1000d`�
 ## 维护建议
 
 - 对“已还原”条目，更新目标模组后应重新运行 class diff 或至少确认启动日志中仍有对应 `Patched class:`。
-- 修改 `hotai/**/*.badiff` 后运行 `scripts/update-hotai-docs.ps1` 更新 `HOTAI_STATUS` 区块；`scripts/validate-knowledge-base.ps1` 会用 `-Check` 检查该区块是否过期。
+- 修改 `hotai/**/*.badiff` 后运行 `python scripts/update-hotai-docs.py` 更新 `HOTAI_STATUS` 区块；知识库校验在传入 `-CheckHotaiRuntimeStatus` / `--check-hotai-runtime-status` 时会做严格运行时状态检查。
 - 对“当前未还原”条目，优先判断目标模组是否已改名、移除或被替换；如果连续版本都没有启动日志命中，可以考虑清理对应 `.badiff`。
 - 超导连接器相关补丁要和 `kubejs/assets/createaddition/`、`kubejs/server_scripts/Create Addition/` 一起验证；只看 `hotai` class patch 不足以证明玩法完整。
