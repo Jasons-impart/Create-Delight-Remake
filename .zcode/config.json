@@ -10,7 +10,7 @@
               "command": "python",
               "args": [
                 "${CLAUDE_PROJECT_DIR}/scripts/run-knowledge-hook.py",
-                "validate-knowledge-base.ps1"
+                "validate-knowledge-base.py"
               ],
               "timeoutMs": 30000
             },
@@ -19,7 +19,7 @@
               "command": "python",
               "args": [
                 "${CLAUDE_PROJECT_DIR}/scripts/run-knowledge-hook.py",
-                "write-knowledge-candidate-report.ps1"
+                "write-knowledge-candidate-report.py"
               ],
               "timeoutMs": 30000
             }

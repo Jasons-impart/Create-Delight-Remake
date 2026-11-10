@@ -40,6 +40,8 @@ ServerEvents.recipes(e => {
     const { kubejs, create, create_new_age, farmersdelight } = e.recipes
     e.replaceInput({ mod: "cosmopolitan" }, "#forge:crops/wheat", "#forge:flour")
     e.replaceInput({ id: "minecraft:paper" }, "cosmopolitan:bagasse", 'minecraft:bamboo')
+    // 糖蜜瓶与甜菜汤厨锅配方都是 3x #forge:crops/beetroot，容器不同仍会互相抢配方
+    e.replaceInput({ id: "cosmopolitan:farmersdelight/cooking/molasses_bottle_from_beetroot" }, "#forge:crops/beetroot", "some_assembly_required:chopped_beetroot")
     e.replaceOutput({ mod: "cosmopolitan" }, "cosmopolitan:chorus_fruit_popsicle", "ends_delight:chorus_fruit_popsicle"),
     e.remove({ type: "create:sequenced_assembly", output: ['cosmopolitan:classic_ice_cream', 'cosmopolitan:seasonal_ice_cream', 'neapolitan:neapolitan_ice_cream'] })
     e.remove({ output: [

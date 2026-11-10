@@ -100,13 +100,15 @@
 	#Density between wild goose sightings. Higher values result in fewer sightings.
 	#Range: 1 ~ 10000
 	WildGooseSpawnDelay = 10
-	#Emits soft ambient particles when the Season Core or Greenhouse is active.
-	SeasonGreenhouse = true
 	#Density of particles emitted by the Greenhouse effect.
 	#Range: 0 ~ 160
 	SeasonGreenhouseParticleSpawnCount = 30
 	#Breaking snow-covered leaves will release a burst of snow particles.
 	SnowLeafParticles = true
+	#Emits soft ambient particles when the Season Core or Greenhouse is active.
+	GreenHouseParticles = true
+	#Fallen leaves on the ground will gradually shrink instead of disappearing instantly.
+	FallenLeavesGroundFade = true
 
 [Weather]
 	#When enabled, Ecliptic Seasons may adjust rain and snow particle textures when needed.
