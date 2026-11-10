@@ -60,7 +60,7 @@ diff 扫描只覆盖代码改动，看不到任务过程中发现的信息。因
 - 候选报告列出的两种台账均为待核对位置，可两者都不更新。纯移除且无原条目需维护时输出 `Knowledge: no update needed`；不能改投兼容台账来记录删除历史。
 - 与具体补丁无关、未来会反复遇到的根因或非显而易见的 workaround → `docs/lessons-learned.md`。
 - 新的 KubeJS helper/API 参考 → 内容很短时写入 `kubejs/AGENTS.md` 的 UNIQUE STYLES；否则写入 dev-knowledge how-to 或提升为 skill。
-- `hotai/` 补丁、`docs/dev-knowledge/hotai/` 专题资料或 `scripts/update-hotai-docs.ps1` → 使用 `/hotai` skill；逐文件语义和生成状态写入 `docs/dev-knowledge/hotai/`，玩家体验与兼容修复仍按目的分别登记到对应台账。
+- `hotai/` 补丁、`docs/dev-knowledge/hotai/` 专题资料或 `scripts/update-hotai-docs.py` → 使用 `/hotai` skill；逐文件语义和生成状态写入 `docs/dev-knowledge/hotai/`，玩家体验与兼容修复仍按目的分别登记到对应台账。
 - knowledge-check prompt、候选报告路由或触发时机 → `.agents/skills/knowledge-check/SKILL.md`。
 - dev-knowledge 存放规则 → `.agents/skills/dev-knowledge/SKILL.md`。
 
