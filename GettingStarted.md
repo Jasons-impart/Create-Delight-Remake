@@ -17,7 +17,7 @@
 - Git，用于克隆仓库和提交变更。
 - GitHub CLI (`gh`)，用于通过命令行读取和操作 GitHub 的 Issue、PR、Release 与 Actions；安装失败不阻塞其他环境配置。
 - Java 17，游戏、Forge 服务端和 CDC 模组构建都使用 Java 17。
-- Python 3，`scripts/sync-packwiz-assets.ps1` 会用它启动本地静态文件服务。
+- Python 3.11 或更高版本，用于运行 `scripts/sync-packwiz-assets.py`（下载 packwiz 工具、启动本地静态文件服务并同步运行态资源）以及生成 Crash Assistant 基线。
   - Codex/ZCode 的知识 Stop 钩子也由 Python 启动：优先使用 `pwsh`，Windows 未安装 PowerShell 7 时回退到系统 `powershell`，无需为钩子额外安装 PowerShell 7。
 - Node.js 20 或更高版本，用于通过 `npx` 启动 Minecraft MCP 的 stdio 桥接器。
 - 支持 CurseForge 整合包或本地实例导入的启动器，例如 HMCL。
@@ -80,7 +80,7 @@
   ```
 - 安装仓库 Git hooks；脚本会在 `.git/hooks` 写入本地 shim 并保留已有 hook，后续 `pull`、`rebase` 或切换分支涉及 Packwiz 资产变更时，会自动同步本地 `mods/`、`resourcepacks/`、`shaderpacks/`：
   ```powershell
-  pwsh -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-git-hooks.ps1
+  python .\scripts\install-git-hooks.py
   ```
 - Windows 更新单个 Packwiz 资产时，通过 PowerShell 的 `-ExecutionPolicy Bypass` 参数避免未签名脚本被执行策略拦截（将 `<metadata-name>` 替换为对应 `.pw.toml` 的名称，不含扩展名）：
   ```powershell
@@ -97,19 +97,19 @@
   ```
 - 同步本地开发所需的 mod / 资源包 / 光影包：
   ```powershell
-  powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\sync-packwiz-assets.ps1
+  python .\scripts\sync-packwiz-assets.py
   ```
 - 如果 GitHub 或 CurseForge 下载较慢，可指定代理；Git hook 自动同步时使用 `PACKWIZ_PROXY`：
   ```powershell
   $env:PACKWIZ_PROXY = "http://127.0.0.1:7890"
-  powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\sync-packwiz-assets.ps1 -Proxy $env:PACKWIZ_PROXY
+  python .\scripts\sync-packwiz-assets.py -Proxy $env:PACKWIZ_PROXY
   ```
 - Git 更新后的 hook 与外层同步流程会复用 `.cache/packwiz-sync/sync-state.json`，同一提交不会重复下载；若本地运行时文件损坏，可加 `-Force` 重新同步。
 - CurseForge CDN 偶发 `timeout` / `packwiz-installer exited with code 1` 时，配置代理后直接再跑一次同步即可（失败不会写成成功状态）；仍缺 jar 再用 `-Force`。
 - 脚本会按平台自动下载 packwiz（Windows 为 `packwiz.exe`，Linux/macOS 为 `packwiz` 并自动 `chmod +x`）和 `packwiz-installer.jar` 到 `.cache/packwiz-sync/tools/`，执行 `packwiz refresh`，并按 `mods/`、`resourcepacks/`、`shaderpacks/` 下的 `*.pw.toml` 同步实际文件。
-- Linux/macOS：需安装 PowerShell 7（`pwsh`），将上文命令中的 `powershell` 换成 `pwsh`、路径分隔符换成 `/`；Python 可用 `python3`。fork 目前只发布 linux-amd64 与 Windows 版 packwiz，macOS/ARM 需通过 `-PackwizUrl` 指定自行构建的二进制。
+- Linux/macOS：同步与 hook 安装不再依赖 PowerShell，将上文路径分隔符换成 `/`，Python 可用 `python3`。添加或更新单个 CurseForge 资产的 `scripts/add-packwiz-target.ps1`、`scripts/update-packwiz-target.ps1` 和 `scripts/update-packwiz-meta.ps1` 目前仍需 PowerShell 7（`pwsh`）。fork 目前只发布 linux-amd64 与 Windows 版 packwiz，macOS/ARM 需通过 `-PackwizUrl` 指定自行构建的二进制。根目录 `sync-packwiz-assets.bat` 仍可用于 Windows 双击同步，会自动查找 `python` / `py -3` / `python3` 并避开 Microsoft Store 占位符。
 - 本地开发环境默认按客户端侧同步，只保留 `side = "both"` 和 `side = "client"` 的 mod；`side = "server"` 的服务端专用 mod 不会下载到客户端实例。
-- 如果需要调试服务端侧文件，可显式运行 `powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\sync-packwiz-assets.ps1 -Side server`。
+- 如果需要调试服务端侧文件，可显式运行 `python .\scripts\sync-packwiz-assets.py -Side server`。
 - 同步成功后，要求用户按“用户操作步骤”完成 HMCL 图形界面配置。
 - 用户完成 HMCL 实例创建后，agent 继续执行“Agent 收尾检查”。
 
@@ -129,7 +129,7 @@
   if (-not (Test-Path .\hmclversion.cfg)) { Copy-Item .\.hmclversion.cfg .\hmclversion.cfg }
   if (-not (Test-Path .\options.txt)) { Copy-Item .\.options.txt .\options.txt }
   ```
-- 确认 `mods/` 中存在实际 `.jar` 文件；如果只有 `*.pw.toml`，重新运行 `scripts/sync-packwiz-assets.ps1`。
+- 确认 `mods/` 中存在实际 `.jar` 文件；如果只有 `*.pw.toml`，重新运行 `python scripts/sync-packwiz-assets.py`。
 - 检查通过后，告诉用户可以在 HMCL 中启动该实例。
 
 ## 用户操作步骤
@@ -143,7 +143,7 @@
 - `gh was not found`：可执行 `winget install --id GitHub.cli --exact` 并重新打开 PowerShell 7；这不会阻塞其他环境配置。
 - `gh` 未认证：执行 `gh auth login`，完成 GitHub 登录后再重试需要 GitHub CLI 的操作。
 - `packwiz refresh produced an empty index`：packwiz 未正常运行（常见于非 Windows 下二进制不可执行或架构不符），检查 `.cache/packwiz-sync/tools/packwiz` 后加 `-Force` 重试。
-- 下载 packwiz、installer 或 CurseForge 文件失败：检查 GitHub / CurseForge / CDN 访问，必要时配置代理后重试；大批量同步中途超时，直接再执行一次 `scripts/sync-packwiz-assets.ps1`（可带 `-Proxy`）。
+- 下载 packwiz、installer 或 CurseForge 文件失败：检查 GitHub / CurseForge / CDN 访问，必要时配置代理后重试；大批量同步中途超时，直接再执行一次 `python scripts/sync-packwiz-assets.py`（可带 `-Proxy`）。
 
 ## 把 repo 变成可启动客户端实例
 - 用户在 HMCL 中新建实例，实例名可自定。

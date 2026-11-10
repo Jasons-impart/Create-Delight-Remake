@@ -1,5 +1,6 @@
 """Exercise runtime invalidation in disposable Git repositories (no downloads)."""
 import json
+import sys
 import pathlib
 import shutil
 import subprocess
@@ -14,7 +15,7 @@ class ResetTests(unittest.TestCase):
         self.root = pathlib.Path(self.temp.name)
         scripts = self.root / "scripts"
         scripts.mkdir()
-        for name in ("sync-packwiz-assets.ps1",):
+        for name in ("sync-packwiz-assets.py",):
             shutil.copyfile(pathlib.Path(__file__).parent / name, scripts / name)
         self.baseline = self.root / "config/modpack_defaults/config/crash_assistant/modlist.json"
         self.runtime = self.root / "config/crash_assistant/modlist.json"
@@ -25,7 +26,7 @@ class ResetTests(unittest.TestCase):
         self.settings.write_text("user preferences", encoding="utf-8")
 
     def run_script(self, name, *args, check=True):
-        return subprocess.run(["pwsh", "-NoProfile", "-File", str(self.root / "scripts" / name), *args],
+        return subprocess.run([sys.executable, str(self.root / "scripts" / name), *args],
                               cwd=self.root, capture_output=True, text=True, encoding="utf-8", check=check)
 
     def git(self, *args):
@@ -45,7 +46,7 @@ class ResetTests(unittest.TestCase):
         old = self.baseline_change()
         expected = self.baseline.read_text()
         for _ in range(2):
-            self.run_script("sync-packwiz-assets.ps1", "-IfGitChanged", "-OldRev", old)
+            self.run_script("sync-packwiz-assets.py", "-IfGitChanged", "-OldRev", old)
         self.assertFalse(self.runtime.exists())
         self.assertEqual(self.baseline.read_text(), expected)
         self.assertEqual(self.settings.read_text(), "user preferences")
@@ -53,27 +54,27 @@ class ResetTests(unittest.TestCase):
     def test_missing_or_invalid_default_preserves_runtime(self):
         old = self.baseline_change()
         self.baseline.unlink()
-        self.run_script("sync-packwiz-assets.ps1", "-IfGitChanged", "-OldRev", old)
+        self.run_script("sync-packwiz-assets.py", "-IfGitChanged", "-OldRev", old)
         self.assertTrue(self.runtime.exists())
         self.baseline.write_text("invalid json")
-        result = self.run_script("sync-packwiz-assets.ps1", "-IfGitChanged", "-OldRev", old, check=False)
+        result = self.run_script("sync-packwiz-assets.py", "-IfGitChanged", "-OldRev", old, check=False)
         self.assertNotEqual(result.returncode, 0)
         self.assertTrue(self.runtime.exists())
 
     def test_baseline_only_git_change(self):
         old = self.baseline_change()
-        self.run_script("sync-packwiz-assets.ps1", "-IfGitChanged", "-OldRev", old)
+        self.run_script("sync-packwiz-assets.py", "-IfGitChanged", "-OldRev", old)
         self.assertFalse(self.runtime.exists())
 
     def test_dry_run_and_server_preserve_runtime(self):
         old = self.baseline_change()
         for args in (("-DryRun",), ("-Side", "server")):
-            self.run_script("sync-packwiz-assets.ps1", "-IfGitChanged", "-OldRev", old, *args)
+            self.run_script("sync-packwiz-assets.py", "-IfGitChanged", "-OldRev", old, *args)
             self.assertTrue(self.runtime.exists())
 
     def test_unchanged_git_revision_preserves_runtime(self):
         self.baseline_change()
-        self.run_script("sync-packwiz-assets.ps1", "-IfGitChanged", "-OldRev", "HEAD")
+        self.run_script("sync-packwiz-assets.py", "-IfGitChanged", "-OldRev", "HEAD")
         self.assertTrue(self.runtime.exists())
 
     def test_asset_dry_run_preserves_runtime(self):
@@ -83,13 +84,13 @@ class ResetTests(unittest.TestCase):
         (mods / "example.pw.toml").write_text('name = "Example"\nfilename = "example.jar"\n')
         self.git("add", "mods")
         self.git("-c", "user.name=Test", "-c", "user.email=test@example.invalid", "commit", "-qm", "asset")
-        result = self.run_script("sync-packwiz-assets.ps1", "-IfGitChanged", "-OldRev", old, "-DryRun")
+        result = self.run_script("sync-packwiz-assets.py", "-IfGitChanged", "-OldRev", old, "-DryRun")
         self.assertIn("Would reset Crash Assistant", result.stdout)
         self.assertTrue(self.runtime.exists())
 
     def test_failed_sync_preserves_runtime(self):
         # Reject invalid network configuration before any download or cache reset.
-        result = self.run_script("sync-packwiz-assets.ps1", "-Proxy", "not-a-proxy", check=False)
+        result = self.run_script("sync-packwiz-assets.py", "-Proxy", "not-a-proxy", check=False)
         self.assertNotEqual(result.returncode, 0)
         self.assertTrue(self.runtime.exists())
 

@@ -140,7 +140,7 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 ### 正确做法：packwiz-installer + 本地静态服务器
 
-参考 `scripts/sync-packwiz-assets.ps1` 的流程：
+参考 `scripts/sync-packwiz-assets.py` 的流程：
 
 1. 创建临时 pack 目录，复制 `.pw.toml` 元数据 + `packwiz-files/`
 2. 将 `.pw.toml` 中的 GitHub raw URL 替换为 `http://127.0.0.1:{PORT}/packwiz-files/`

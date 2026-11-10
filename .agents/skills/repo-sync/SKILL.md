@@ -12,7 +12,7 @@ Use this workflow for repository update tasks before reporting completion.
 1. Ensure local Git hook shims are installed without rewriting existing shims, confirm status, and record the pre-update commit:
 
 ```powershell
-./scripts/install-git-hooks.ps1 -IfUnset -Quiet
+python scripts/install-git-hooks.py -IfUnset -Quiet
 git status --short --branch
 $oldHead = git rev-parse HEAD
 ```
@@ -29,18 +29,18 @@ git checkout main
 ```powershell
 git pull --ff-only origin main
 git rebase origin/main
-git diff --quiet $oldHead HEAD -- scripts/install-git-hooks.ps1 scripts/.githooks
+git diff --quiet $oldHead HEAD -- scripts/install-git-hooks.py scripts/install-git-hooks.ps1 scripts/.githooks
 if ($LASTEXITCODE -eq 1) {
-    ./scripts/install-git-hooks.ps1 -Quiet
+    python scripts/install-git-hooks.py -Quiet
 }
-./scripts/sync-packwiz-assets.ps1 -IfGitChanged -OldRev $oldHead -NewRev HEAD -HookName repo-sync
+python scripts/sync-packwiz-assets.py -IfGitChanged -OldRev $oldHead -NewRev HEAD -HookName repo-sync
 ```
 
 `-IfGitChanged` checks `mods|resourcepacks|shaderpacks/**/*.pw.toml` and `packwiz-files/**`; it runs the full runtime sync only when needed. Git hooks perform the same check for regular local Git operations, but still run this command here so agent-managed updates have a visible result.
 
 The sync script records the last successful revision in the ignored `.cache/packwiz-sync/sync-state.json`. This makes the hook and the explicit workflow call idempotent: the second call for the same revision, side, metadata roots, and sync-script version exits without downloading again. Use `-Force` when repairing a known local runtime mismatch. For slow overseas downloads, set `PACKWIZ_PROXY=http://127.0.0.1:7890`; the hooks inherit this environment variable.
 
-客户端同步成功（含命中同步缓存）后，共享脚本会删除 `config/crash_assistant/modlist.json`；Crash Assistant 只在运行时文件缺失时复制受管默认表，因此下次启动才能应用当前分支基线。仅默认 `modlist.json` 变化时也会清理，不触发资源下载；同步失败、`-DryRun` 和服务端同步不删除。只处理这一个文件，保留其他配置和“不再提示”记录；默认表缺失时不清理，损坏时报告错误。清理逻辑内置于 `scripts/sync-packwiz-assets.ps1`，无需额外脚本。关闭游戏后操作，下次重新启动验证。
+客户端同步成功（含命中同步缓存）后，共享脚本会删除 `config/crash_assistant/modlist.json`；Crash Assistant 只在运行时文件缺失时复制受管默认表，因此下次启动才能应用当前分支基线。仅默认 `modlist.json` 变化时也会清理，不触发资源下载；同步失败、`-DryRun` 和服务端同步不删除。只处理这一个文件，保留其他配置和“不再提示”记录；默认表缺失时不清理，损坏时报告错误。清理逻辑内置于 `scripts/sync-packwiz-assets.py`，无需额外脚本。关闭游戏后操作，下次重新启动验证。
 
 The installer is idempotent: `-IfUnset` exits when all four shims already exist and are managed, while a full install only rewrites a shim when its generated content differs. The post-update hook installation only runs when the installer or tracked hooks changed. This makes newly added hooks available immediately, while ordinary repository updates do not rewrite local hook shims.
 

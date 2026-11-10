@@ -132,6 +132,8 @@ $requiredPaths = @(
     ".github/workflows/release.yml",
     ".codex/hooks.json",
     "scripts/sync-packwiz-assets.ps1",
+    "scripts/sync-packwiz-assets.py",
+    "scripts/install-git-hooks.py",
     "scripts/update-packwiz-meta.ps1",
     "scripts/update-hotai-docs.ps1",
     "docs/dev-knowledge/hotai/README.md",
