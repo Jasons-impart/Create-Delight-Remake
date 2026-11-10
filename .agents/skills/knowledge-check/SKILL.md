@@ -30,7 +30,7 @@ description: 实现后知识检查、知识库维护、项目经验沉淀。用�
 
 如果存在 `tmp-opencode/knowledge-candidate-report.md`，先读取它再决定；除非当前任务明确要求维护知识库，否则 process note 候选需要用户接受后再落库。
 
-Codex（`.codex/hooks.json`）和 ZCode（`.zcode/config.json` 的 Stop hooks）都会运行 `scripts/validate-knowledge-base.ps1` 校验结构，再由 `scripts/write-knowledge-candidate-report.ps1` 写入 `tmp-opencode/knowledge-candidate-report.md`；该报告只提供建议，不会自动修改知识文件。报告覆盖范围为工作区改动加上自上次报告以来的全部未报告提交；仅当上次报告基线缺失或不再是 HEAD 祖先（如 rebase）时，才回看最近 `-RecentCommits` 个提交（默认 1）。有候选的报告会按时间戳归档到 `tmp-opencode/knowledge-candidate-history/`（保留最近 50 份，空报告不归档）；漏记的知识候选可从归档或 git 提交历史回溯补记。
+Codex（`.codex/hooks.json`）和 ZCode（`.zcode/config.json` 的 Stop hooks）都会通过 `python scripts/run-knowledge-hook.py` 按系统选择校验脚本：Windows 运行 `scripts/validate-knowledge-base.ps1`，Linux/macOS 运行 `python scripts/validate-knowledge-base.py`。随后再尝试运行 `scripts/write-knowledge-candidate-report.ps1` 写入 `tmp-opencode/knowledge-candidate-report.md`；若当前系统没有 PowerShell，该报告步骤会跳过并给出说明，不会让 hook 失败。该报告只提供建议，不会自动修改知识文件。报告覆盖范围为工作区改动加上自上次报告以来的全部未报告提交；仅当上次报告基线缺失或不再是 HEAD 祖先（如 rebase）时，才回看最近 `-RecentCommits` 个提交（默认 1）。有候选的报告会按时间戳归档到 `tmp-opencode/knowledge-candidate-history/`（保留最近 50 份，空报告不归档）；漏记的知识候选可从归档或 git 提交历史回溯补记。
 
 diff 扫描只覆盖代码改动，看不到任务过程中发现的信息。因此任务进行中遇到非显而易见的失败、绕路、根因或约束时，立即用 `scripts/add-knowledge-note.ps1` 追加临时 note，不要等任务结束再回忆；候选报告会读取这些 note 并把它路由到这里。
 

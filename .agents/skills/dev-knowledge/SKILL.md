@@ -68,11 +68,11 @@ description: 开发知识路由、知识库整理、实现记录、代码位置�
 ## 语言规则
 
 - `docs/dev-knowledge/` 和本 skill 的正文必须以中文为主；mod 名、文件路径、命令、函数名、英文术语可保留英文。
-- 新增条目的叙述性文字必须写中文；`scripts/validate-knowledge-base.ps1` 会检查 dev-knowledge Markdown 正文中是否存在无中文的英文叙述行。
+- 新增条目的叙述性文字必须写中文；Windows 运行 `scripts/validate-knowledge-base.ps1`，Linux/macOS 运行 `python scripts/validate-knowledge-base.py`，二者都会检查 dev-knowledge Markdown 正文中是否存在无中文的英文叙述行。
 
 ## 更新流程
 
 1. 搜索 `docs/dev-knowledge/`、`AGENTS.md`、相关模块 `AGENTS.md`、`.agents/skills/` 和 `docs/lessons-learned.md`。
 2. 按存放表选择最小且持久的目标位置。
 3. 一个事实只写在一个地方；需要关联时使用链接，不复制内容。
-4. 修改 AGENTS、skill 或 dev-knowledge 索引后，运行 `scripts/validate-knowledge-base.ps1`。
+4. 修改 AGENTS、skill 或 dev-knowledge 索引后，在 Windows 上运行 `scripts/validate-knowledge-base.ps1`，在 Linux/macOS 上运行 `python scripts/validate-knowledge-base.py`。
