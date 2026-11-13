@@ -157,6 +157,7 @@
 					Icon: "northstar:textures/planet/solar_system/mars_sky.png"
 				}
 			}
+			description: ["寒冰百合会在火星山峰的雪块等冰雪地表上自然生成，也可种植在泥土、沙子以及冰、雪、雪块上。"]
 			id: "1BEE7AD2537F2428"
 			size: 1.5d
 			tasks: [{
@@ -764,7 +765,7 @@
 		}
 		{
 			dependencies: ["1D34EBFF1D60EA85"]
-			description: ["制作龙血所需的对应百合，可以使用剪刀右键百合簇采集。采收后可用骨粉催熟百合簇，再次采收。"]
+			description: ["寒冰百合会在火星山峰的雪块等冰雪地表上自然生成，也可种植在泥土、沙子以及冰、雪、雪块上。制作龙血所需的对应百合，可以使用剪刀右键百合簇采集。采收后可用骨粉催熟百合簇，再次采收。"]
 			id: "0961AD88179B18C4"
 			tasks: [{
 				id: "3FC907D6EA3DAE91"
