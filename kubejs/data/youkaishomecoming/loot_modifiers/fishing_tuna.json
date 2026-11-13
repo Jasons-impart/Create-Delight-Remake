@@ -1,0 +1,18 @@
+{
+  "type": "youkaishomecoming:replace_item",
+  "chance": 0.10000000149011612,
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:gameplay/fishing"
+    },
+    {
+      "condition": "youkaishomecoming:biome_check",
+      "tag": "youkaishomecoming:spawns/tuna"
+    }
+  ],
+  "result": {
+    "Count": 1,
+    "id": "youkaishomecoming:raw_tuna"
+  }
+}

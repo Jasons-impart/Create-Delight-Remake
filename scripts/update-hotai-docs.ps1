@@ -31,6 +31,7 @@ function Get-HotaiModule([string]$InternalName) {
     if ($InternalName -like "com/teamabnormals/neapolitan/*") { return "Neapolitan" }
     if ($InternalName -like "com/iafdragonfix/*") { return "IAF Dragon Fix" }
     if ($InternalName -like "com/github/alexthe666/alexsmobs/*") { return "Alex's Mobs" }
+    if ($InternalName -like "com/github/alexthe666/iceandfire/*") { return "Ice and Fire" }
     if ($InternalName -like "dev/wuffs/bcc/*") { return "Better Compatibility Checker" }
     if ($InternalName -like "de/cadentem/quality_food/*") { return "Quality Food" }
     if ($InternalName -like "org/antarcticgardens/newage/*" -or $InternalName -like "org/antarcticgardens/cna/*") { return "Create New Age" }

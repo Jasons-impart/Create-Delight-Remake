@@ -30,7 +30,7 @@
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 51 个 `.badiff`；静态 JAR 命中 47 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
+当前扫描到 52 个 `.badiff`；静态 JAR 命中 48 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |
 |---|---|---|---|
@@ -40,6 +40,7 @@
 | Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff` | `com/forsteri/createliquidfuel/core/BurnerStomachHandler` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
 | Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity.badiff` | `com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
 | Alex's Mobs | `hotai/com/github/alexthe666/alexsmobs/entity/EntityWarpedToad.badiff` | `com/github/alexthe666/alexsmobs/entity/EntityWarpedToad` | 静态命中 `alexsmobs-1.22.9.jar` |
+| Ice and Fire | `hotai/com/github/alexthe666/iceandfire/block/BlockElementalFlower.badiff` | `com/github/alexthe666/iceandfire/block/BlockElementalFlower` | 静态命中 `iceandfire-2.1.13-1.20.1-beta-5.jar` |
 | IAF Dragon Fix | `hotai/com/iafdragonfix/structure/DragonDenPiece.badiff` | `com/iafdragonfix/structure/DragonDenPiece` | 静态命中 `iafdragonfix-2.0.0.jar` |
 | Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow` | 静态命中 `more_mod_tetra-2.4.15-all.jar` |
 | Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer` | 静态命中 `more_mod_tetra-2.4.15-all.jar` |
@@ -579,6 +580,22 @@ MMT 原 class 针对 Tetra 6.9 的局部变量名 `multiplier`，返回 `1000d`�
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
 | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | 已还原 | 不再 `@Shadow @Final ServerData val$p_105460_`；新增静态 `SERVER_DATA_FIELD`，优先反射字段 `val$p_105460_`，失败时遍历匿名类字段找 `ServerData` 类型；注入方法同时声明反混淆名和混淆名，注入点改为 TAIL，`remap=false`、`require=0`；反射失败时在 Minecraft 线程抛出 Error。 | 降低 Minecraft/Forge 映射字段名变化导致 BCC 服务器列表 ping mixin 失效的概率。 |
+
+## Ice and Fire 补丁
+
+### Ice and Fire 寒冰百合冰雪地表放置
+
+目标：`com/github/alexthe666/iceandfire/block/BlockElementalFlower.badiff`，绑定 Ice and Fire `2.1.13-1.20.1-beta-5`（`iceandfire-2.1.13-1.20.1-beta-5.jar`）。`release-v050x` 冻结在 CDC `2.2.16j`，该修复在 `main` 由 CDC mixin 承担，本补丁只服务维护线，不 bump CDC。
+
+`mayPlaceOn`（SRG `m_6266_`）原本只允许草方块、泥土、砂土、灰化土、耕地或 `#sand`。补丁在该结果为 false 时，仅当 `this == IafBlockRegistry.FROST_LILY.get()` 再检查 `BlockState.m_204336_`（`is(TagKey)`）是否命中 `BlockTags.f_13047_`（`#ice`）、`f_144279_`（`#snow`）或 `f_215834_`（`#snow_layer_can_survive_on`）。原土沙成功路径、火/电百合以及 `canStay`/`updateTick`/`checkFall` 均未改。
+
+补丁由 `ClassReader → ClassNode → ClassWriter(0)` 归一化基线后，用 HotAI 1.0 的 `MemoryDiffs.diff` + `DefaultSerialization` 生成；反序列化重放后与预期 class 逐字节一致。未在缺少 Minecraft 类的环境下跑通 `CheckClassAdapter`/`SimpleVerifier`（缺 `Block`/`BushBlock`），但已用 `javap` 核对 `m_6266_` 指令与注入范围。完整重启后需确认 `Patched class: com/github/alexthe666/iceandfire/block/BlockElementalFlower`，并在火星山峰新区块验证自然生成、在旧区块验证手动种植。
+
+| 校验对象 | SHA-256 |
+|---|---|
+| 原始 JAR class / Hotai 归一化 before | `7cee5e1f7068e3e6865bdd4dfd47a9b87461d64185f73a16551231b152a8e470` |
+| 补丁后 class | `7460dc99aed029da8877254cf4b45a2bc43e14b8bd7c2ac55f73214394a05292` |
+| `.badiff` | `5077cd023ff8bee62a7297c819fc672dbdc4e2f48be4b8ead3067a3588183bea` |
 
 ## IAF Dragon Fix 补丁
 
