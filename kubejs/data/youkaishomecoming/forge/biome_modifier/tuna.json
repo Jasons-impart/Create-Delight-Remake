@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "#youkaishomecoming:spawns/tuna",
+  "spawners": {
+    "type": "youkaishomecoming:tuna",
+    "maxCount": 2,
+    "minCount": 1,
+    "weight": 20
+  }
+}
