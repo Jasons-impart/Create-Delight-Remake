@@ -83,5 +83,41 @@
             "northstar:tungsten_sheet"
         ],
         "resultItems": "createmetallurgy:tungsten_sheet"
+    },
+    {
+        "matchItems": [
+            "steam_letters:bronze_block"
+        ],
+        "resultItems": "createdelightcore:bronze_block"
+    },
+    {
+        "matchItems": [
+            "steam_letters:bronze_ingot"
+        ],
+        "resultItems": "createdelightcore:bronze_ingot"
+    },
+    {
+        "matchItems": [
+            "steam_letters:bronze_plate"
+        ],
+        "resultItems": "vintageimprovements:bronze_sheet"
+    },
+    {
+        "matchItems": [
+            "steam_letters:tin_block"
+        ],
+        "resultItems": "createdelightcore:tin_block"
+    },
+    {
+        "matchItems": [
+            "steam_letters:tin_ingot"
+        ],
+        "resultItems": "createdelightcore:tin_ingot"
+    },
+    {
+        "matchItems": [
+            "steam_letters:tin_nugget"
+        ],
+        "resultItems": "createdelightcore:tin_nugget"
     }
 ]
