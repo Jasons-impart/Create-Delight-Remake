@@ -323,13 +323,6 @@
 				{
 					"type": "gateways:stack",
 					"stack": {
-                        "item": "vinery:mead", 
-                        "count": 4
-                    }
-				},
-				{
-					"type": "gateways:stack",
-					"stack": {
 					    "item":"create_deepfried:glow_berry_honey_glazed_donut", 
                         "count": 1
                     }

@@ -1,18 +1,8 @@
 {
   "pools": [
     {
-      "rolls": 2,
-      "entries": [
-        { "type": "minecraft:item", "name": "vinery:red_grape_seeds", "weight": 12, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 3, "max": 7 } }] },
-        { "type": "minecraft:item", "name": "vinery:white_grape_seeds", "weight": 12, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 3, "max": 7 } }] },
-        { "type": "minecraft:item", "name": "vinery:red_grape", "weight": 12, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 8, "max": 18 } }] },
-        { "type": "minecraft:item", "name": "vinery:white_grape", "weight": 12, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 8, "max": 18 } }] }
-      ]
-    },
-    {
       "rolls": 1,
       "entries": [
-        { "type": "minecraft:item", "name": "vinery:basket", "weight": 8 },
         { "type": "minecraft:item", "name": "createcafe:empty_boba_cup", "weight": 8, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 6, "max": 12 } }] },
         { "type": "minecraft:item", "name": "createcafe:iced_coffee_cup", "weight": 5, "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 3, "max": 6 } }] },
         { "type": "minecraft:item", "name": "create:fluid_tank", "weight": 4 },
@@ -22,7 +12,6 @@
     {
       "rolls": 1,
       "entries": [
-        { "type": "minecraft:item", "name": "vinery:apple_press", "weight": 4 },
         { "type": "minecraft:item", "name": "createdelightcore:dryer", "weight": 3 },
         { "type": "minecraft:item", "name": "eclipticseasons:growth_detector", "weight": 3 },
         { "type": "minecraft:item", "name": "eclipticseasons:seasonal_prayer_scroll", "weight": 1 },

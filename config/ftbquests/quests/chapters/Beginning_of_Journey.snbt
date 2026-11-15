@@ -81,14 +81,6 @@
 			y: 4.0d
 		}
 		{
-			height: 2.0d
-			image: "vinery:item/straw_hat_item"
-			rotation: 0.0d
-			width: 2.0d
-			x: 5.5d
-			y: 4.0d
-		}
-		{
 			click: "#5981A5D70F26A7A5"
 			height: 3.0d
 			hover: ["点击跳转下一章节"]

@@ -15,7 +15,6 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     // 未烤制的派
     'createdelight:raw_pie_crust',
     'createdelight:unbake_chorus_fruit_pie',
-    'createdelight:unbake_apple_pie',
     'createdelight:unbake_sweet_berry_cheesecake',
     'createdelight:unbake_chocolate_pie',
     'createdelight:unbake_rose_hip_pie',

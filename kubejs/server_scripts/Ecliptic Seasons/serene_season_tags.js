@@ -44,14 +44,10 @@ ServerEvents.tags("item", e => {
     )
 
     e.add("eclipticseasons:crops/spring_summer",
-        "vinery:savanna_grape_seeds_red",
-        "vinery:savanna_grape_seeds_white",
         "neapolitan:mint_sprout",
     )
 
     e.add("eclipticseasons:crops/spring",
-        "vinery:jungle_grape_seeds_red",
-        "vinery:jungle_grape_seeds_white",
     )
 
     e.add("eclipticseasons:crops/summer_autumn",
@@ -59,8 +55,6 @@ ServerEvents.tags("item", e => {
         "vintagedelight:ghost_pepper_seeds",
         "culturaldelights:avocado_pit",
         "vintagedelight:gearo_berry",
-        "vinery:red_grape_seeds",
-        "vinery:white_grape_seeds",
         "oceanic_delight:sea_grape",
     )
 
@@ -72,8 +66,6 @@ ServerEvents.tags("item", e => {
     e.add("eclipticseasons:crops/autumn",
         "vintagedelight:peanut",
         "culturaldelights:corn_kernels",
-        "vinery:taiga_grape_seeds_red",
-        "vinery:taiga_grape_seeds_white",
         "neapolitan:banana_frond",
         "trailandtales_delight:lantern_fruit_seeds"
     )

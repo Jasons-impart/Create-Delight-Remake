@@ -195,22 +195,6 @@
 			y: 6.0d
 		}
 		{
-			height: 3.0d
-			image: "vinery:block/apple_leaves_0"
-			rotation: 0.0d
-			width: 3.0d
-			x: 5.0d
-			y: 6.0d
-		}
-		{
-			height: 3.0d
-			image: "vinery:item/apple_tree_sapling"
-			rotation: 0.0d
-			width: 3.0d
-			x: 5.0d
-			y: 6.0d
-		}
-		{
 			height: 2.0d
 			image: "alexscaves:item/tectonic_shard"
 			order: 1
@@ -1305,16 +1289,7 @@
 				}
 			}
 			id: "5E6A8FA25EB811DB"
-			rewards: [{
-				count: 4
-				id: "2B525C3F815EA374"
-				item: {
-					Count: 1
-					id: "vinery:magnetic_wine"
-					tag: { }
-				}
-				type: "item"
-			}]
+			rewards: []
 			shape: "square"
 			subtitle: "不是，磁力怎么这么难学（"
 			tasks: [

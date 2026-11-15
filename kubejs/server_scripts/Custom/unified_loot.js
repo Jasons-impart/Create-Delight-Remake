@@ -330,7 +330,7 @@ const INTEGRATED_VILLAGE_THEMES = {
     },
     "mediterranean_village": {
         suffixes: ["", "_bedroom", "_blacksmith", "_butcher", "_create", "_farmhouse", "_kitchen", "_library", "_shepard", "_treasure"],
-        crops: ["vinery:red_grape_seeds", "vinery:white_grape_seeds", "culturaldelights:avocado_pit"],
+        crops: ["culturaldelights:avocado_pit"],
     },
     "minka_village": {
         suffixes: ["", "_bedroom", "_blacksmith", "_cartographer", "_cleric", "_farmhouse", "_fisherman", "_fletcher", "_kitchen", "_library", "_treasure"],

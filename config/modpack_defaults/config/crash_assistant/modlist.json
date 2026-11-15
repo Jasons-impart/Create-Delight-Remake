@@ -1219,16 +1219,6 @@
     "name": "LDLib",
     "version": "1.20.1-1.0.50"
   },
-  "letsdo-nethervinery-forge-1.2.19.jar": {
-    "modId": "letsdo-nethervinery-forge",
-    "name": "[Let's Do] NetherVinery (unsupported)",
-    "version": "1.2.19"
-  },
-  "letsdo-vinery-forge-1.4.41.jar": {
-    "modId": "letsdo-vinery-forge",
-    "name": "[Let's Do] Vinery",
-    "version": "1.4.41"
-  },
   "lightmanscurrency-1.20.1-2.3.0.5.jar": {
     "modId": "lightmanscurrency",
     "name": "Lightman's Currency",

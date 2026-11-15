@@ -144,13 +144,6 @@
                 {
 					"type": "gateways:stack",
 					"stack": {
-                        "item": "nethervinery:blazewine_pinot", 
-                        "count": 4
-				    }
-                },
-                {
-					"type": "gateways:stack",
-					"stack": {
                         "item": "createdelightcore:fire_lily_cluster", 
                         "count": 4
 				    }
@@ -325,13 +318,6 @@
 				}
 			],
 			"rewards": [
-                {
-					"type": "gateways:stack",
-					"stack": {
-                        "item": "nethervinery:netherite_nectar", 
-                        "count": 4
-				    }
-                },
                 {
 					"type": "gateways:stack",
 					"stack": {

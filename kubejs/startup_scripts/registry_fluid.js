@@ -124,42 +124,6 @@ StartupEvents.registry("fluid", e => {
             .tickDelay(10)
     })
 
-    let vinery_fluid_list = [
-        ["apple_juice", 0xeed4a7],
-        ["mead", 0xeac88a],
-        ["apple_cider", 0x9c6140],
-        ["apple_wine", 0xd6d375],
-        ["mellohi_wine", 0xc3e1b7],
-        ["glowing_wine", 0xfcd263],
-        ["solaris_wine", 0xb68346],
-        ["noir_wine", 0x443672],
-        ["red_wine", 0xdf7f8b],
-        ["strad_wine", 0x173443],
-        ["cherry_wine", 0x7d100f],
-        ["cristel_wine", 0xeb7c7c],
-        ["creepers_crush", 0xc5e755, false],
-        ["kelp_cider", 0x4af6a8],
-        ["lilitu_wine", 0x5c151a],
-        ["jo_special_mixture", 0xbe0e22],
-        ["eiswein", 0x82d7fc],
-        ["aegis_wine", 0xb96f47],
-        ["bolvar_wine", 0xe35e5e],
-        ["chorus_wine", 0xaf1fbf],
-        ["villagers_fright", 0x8f96ae],
-        ["clark_wine", 0x696969],
-        ["magnetic_wine", 0xfc8f72],
-        ["stal_wine", 0xb71818],
-        ["chenet_wine", 0x551625],
-        ["bottle_mojang_noir", 0x7d6d7d],
-        ["jellie_wine", 0xb24571],
-        ["blazewine_pinot", 0xe5272c],
-        ["netherite_nectar", 0x650627],
-        ["ghastly_grenache", 0x16605a],
-        ["lava_fizz", 0xc42200],
-        ["nether_fizz", 0x915a8f]
-    ].forEach(list => {
-        simpleFluid(`createdelight:${list[0]}`, list[1], list[2], false, false)
-    })
     //咖啡流体
     let coffee_fluid = [
         ['espresso', 0x8D5528],

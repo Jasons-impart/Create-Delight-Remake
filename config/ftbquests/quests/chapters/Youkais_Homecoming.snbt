@@ -242,16 +242,6 @@
 			y: -12.5d
 		}
 		{
-			click: "#73223F233DE74941"
-			height: 2.0d
-			hover: ["点击图片跳转到“醉酒”Buff介绍"]
-			image: "vinery:item/wine_box"
-			rotation: 0.0d
-			width: 2.0d
-			x: 18.5d
-			y: -15.5d
-		}
-		{
 			height: 2.0d
 			image: "youkaishomecoming:textures/mob_effect/phantom.png"
 			rotation: 0.0d
@@ -747,60 +737,6 @@
 			y: -15.5d
 		}
 		{
-			height: 1.0d
-			image: "vinery:item/wine_bottle"
-			order: 1
-			rotation: 0.0d
-			width: 1.0d
-			x: 15.5d
-			y: -16.0d
-		}
-		{
-			height: 1.0d
-			image: "vinery:item/wine_bottle"
-			order: 1
-			rotation: 0.0d
-			width: 1.0d
-			x: 16.0d
-			y: -16.0d
-		}
-		{
-			height: 1.0d
-			image: "vinery:item/wine_bottle"
-			order: 1
-			rotation: 0.0d
-			width: 1.0d
-			x: 16.5d
-			y: -16.0d
-		}
-		{
-			height: 1.0d
-			image: "vinery:item/wine_bottle"
-			order: 2
-			rotation: 0.0d
-			width: 1.0d
-			x: 16.5d
-			y: -15.5d
-		}
-		{
-			height: 1.0d
-			image: "vinery:item/wine_bottle"
-			order: 2
-			rotation: 0.0d
-			width: 1.0d
-			x: 15.5d
-			y: -15.5d
-		}
-		{
-			height: 1.0d
-			image: "vinery:item/wine_bottle"
-			order: 2
-			rotation: 0.0d
-			width: 1.0d
-			x: 16.0d
-			y: -15.5d
-		}
-		{
 			height: 2.0d
 			image: "vintageimprovements:block/andesite_frame"
 			rotation: 0.0d
@@ -1062,7 +998,7 @@
 				"         采摘野生葡萄获得，种子可以用于种植葡萄，果实可以制作成本模组食物/饮品。"
 				"         种植时需要在植株上放置绳子，让葡萄藤可以依附于绳子爬到高出生长，并且如果想让植株长得更高大些，需要使用剪刀剪去成熟葡萄藤的部分枝叶，随着生长，这部分葡萄藤将会变为植株的木质茎。成熟的葡萄将会垂挂于藤蔓之上，十分美妙且富有生机。"
 			]
-			icon: "vinery:red_grape"
+			icon: "youkaishomecoming:red_grape"
 			id: "60521CC89812A87E"
 			rewards: [
 				{
@@ -1102,7 +1038,7 @@
 						Count: 1
 						id: "itemfilters:tag"
 						tag: {
-							value: "vinery:grape_seeds"
+							value: "youkaishomecoming:grape_seed"
 						}
 					}
 					title: "4x 任意葡萄种子"
@@ -1334,12 +1270,6 @@
 			description: ["         发酵桶用于酿造酱油和酒。使用方法为：将所需材料右键放入发酵桶（无需按顺序），在潜行状态下空手右键发酵桶可取出所有材料（除了水）。然后空手右键发酵桶盖上盖子，开始发酵。待发酵进度达到100%时发酵完成，可用对应容器（碗、玻璃瓶或竹子）舀出。"]
 			id: "3150B5F44439F2ED"
 			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "4FD24E36F27DBB2A"
-					table_id: 3225681585629777470L
-					type: "choice"
-				}
 				{
 					exclude_from_claim_all: true
 					id: "3EC09EE50B1106FA"

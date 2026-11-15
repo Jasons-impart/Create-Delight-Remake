@@ -26,9 +26,6 @@ ServerEvents.tags("minecraft:item", e => {
         "fruitsdelight:kiwi_sapling",
         "fruitsdelight:cranberry",
         "neapolitan:mint_sprout",
-        "vinery:red_grape_seeds",
-        "vinery:white_grape_seeds",
-        "vinery:dark_cherry_leaves",
         "farmersdelight:onion",
         "farmersdelight:cabbage_seeds",
         "festival_delicacies:garlic_chive_seeds",
@@ -54,7 +51,6 @@ ServerEvents.tags("minecraft:item", e => {
         "fruitsdelight:durian_sapling",
         "neapolitan:banana_frond",
         "oceanic_delight:sea_grape",
-        "vinery:dark_cherry_sapling",
         "createcafe:coffee_beans",
         "miners_delight:cave_carrot",
         'alexscaves:fiddlehead'
@@ -64,12 +60,8 @@ ServerEvents.tags("minecraft:item", e => {
         "youkaishomecoming:tea_seeds"
     )
     e.add("eclipticseasons:crops/dry_moist",
-        "vinery:taiga_grape_seeds_red",
-        "vinery:taiga_grape_seeds_white",
         "neapolitan:vanilla_pods",
         "vintagedelight:ghost_pepper_seeds",
-        "vinery:savanna_grape_seeds_red",
-        "vinery:savanna_grape_seeds_white",
         "createcafe:cassava_seeds",
         "fruitsdelight:hamimelon_seeds",
         "vintagedelight:oat_seeds",
@@ -80,8 +72,6 @@ ServerEvents.tags("minecraft:item", e => {
     e.add("eclipticseasons:crops/dry_humid",
         "fruitsdelight:mango_leaves",
         "fruitsdelight:mango_sapling",
-        "vinery:jungle_grape_seeds_white",
-        "vinery:jungle_grape_seeds_red",
         "youkaishomecoming:mandrake_root"
     )
     e.add("eclipticseasons:crops/arid_average",

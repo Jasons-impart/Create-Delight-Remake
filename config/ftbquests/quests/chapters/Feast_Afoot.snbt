@@ -1112,79 +1112,6 @@
 		}
 		{
 			dependencies: ["3B22EE550A58193D"]
-			id: "3FA939A92409F435"
-			rewards: [{
-				id: "2B38A9A1F1A341D4"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			subtitle: "&4狠狠压榨！"
-			tasks: [{
-				id: "4518850118488366"
-				item: "vinery:apple_press"
-				type: "item"
-			}]
-			x: -6.5d
-			y: 3.5d
-		}
-		{
-			dependencies: ["3B22EE550A58193D"]
-			description: ["至少放入 6 个葡萄才可进行，方式是跳起来在 榨汁盆上踩三次。 踩中时会有独特的音效。"]
-			id: "29FBDE7B850C28C1"
-			rewards: [{
-				id: "06721E9AEB42F5BE"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			subtitle: "&4呃啊, 有股子味"
-			tasks: [{
-				id: "248D00A978C120D5"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "vinery:grapevine_pot"
-					}
-				}
-				title: "任意榨汁盆"
-				type: "item"
-			}]
-			title: "少女脚踩葡萄？"
-			x: -7.0d
-			y: 2.5d
-		}
-		{
-			dependencies: ["7B285A5A3B2FD565"]
-			id: "38C3A965C68F1190"
-			rewards: [{
-				id: "4435A7C22DDB6CAD"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			subtitle: "当然啦，你可以把酒藏到存储磁盘里"
-			tasks: [
-				{
-					id: "5DB819A40A6B8093"
-					item: "vinery:oak_wine_rack_big"
-					type: "item"
-				}
-				{
-					id: "07B7F205AAE6452C"
-					item: "vinery:oak_wine_rack_small"
-					type: "item"
-				}
-				{
-					id: "6397E065B51E030A"
-					item: "vinery:oak_wine_rack_mid"
-					type: "item"
-				}
-			]
-			title: "储藏酒的好东西"
-			x: -9.0d
-			y: 0.5d
-		}
-		{
-			dependencies: ["3B22EE550A58193D"]
 			id: "2C4FAE1A8FDBF50C"
 			subtitle: "&1降低温度"
 			tasks: [{
@@ -1194,90 +1121,6 @@
 			}]
 			x: -6.5d
 			y: 0.5d
-		}
-		{
-			dependencies: ["7B285A5A3B2FD565"]
-			id: "6D48EBB02348DAE4"
-			rewards: [{
-				id: "3F247F6AEE0B7CB5"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			subtitle: "&4生活需要仪式感！！！"
-			tasks: [{
-				id: "033FC7455A419263"
-				item: "vinery:wine_box"
-				type: "item"
-			}]
-			title: "珍藏你的名酒！"
-			x: -10.0d
-			y: 1.5d
-		}
-		{
-			dependencies: ["7B285A5A3B2FD565"]
-			dependency_requirement: "all_started"
-			description: ["身穿酿酒师套装时使用&e骨粉不再消耗&r，而是&4消耗套装耐久&r，篮子可以放入葡萄"]
-			id: "25CB0722D908B25A"
-			rewards: [{
-				id: "1F175CF13EF47DC7"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			subtitle: "至少看起来挺像那么回事的"
-			tasks: [
-				{
-					id: "13B55C51A9025746"
-					item: {
-						Count: 1
-						id: "vinery:straw_hat"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "6A6A9C3326B650C6"
-					item: {
-						Count: 1
-						id: "vinery:winemaker_apron"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "6A093F9578833ED9"
-					item: {
-						Count: 1
-						id: "vinery:winemaker_leggings"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "7E4D7F4169B50B4F"
-					item: {
-						Count: 1
-						id: "vinery:winemaker_boots"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "35CEA6C1AB7B6F23"
-					item: "vinery:basket"
-					type: "item"
-				}
-			]
-			title: "酿酒师"
-			x: -10.0d
-			y: 2.5d
 		}
 		{
 			dependencies: ["7B285A5A3B2FD565"]
@@ -1296,11 +1139,6 @@
 			id: "7B285A5A3B2FD565"
 			shape: "rsquare"
 			tasks: [
-				{
-					id: "492AB1368EDBF086"
-					item: "vinery:wine_bottle"
-					type: "item"
-				}
 				{
 					id: "7ADA4A4AFDAE35B1"
 					item: "brewinandchewin:tankard"

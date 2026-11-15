@@ -16,7 +16,6 @@ ServerEvents.recipes(e => {
         "silentsdelight:sculk_catalyst_pie",
         "create_central_kitchen:crafting/pumpkin_pie",
         "farmersdelight:chocolate_pie",
-        "farmersdelight:apple_pie",
         "farmersrespite:rose_hip_pie",
         "farmersdelight:cooking/pineapple_pie",
         "casualness_delight:crafting_shaped/stargazy_pie",
@@ -53,7 +52,6 @@ ServerEvents.recipes(e => {
     let pie_recipes = [
         ["#forge:chorus_fruits", "createdelight:unbake_chorus_fruit_pie", "ends_delight:chorus_fruit_pie"],
         ["seasonals:pumpkin_puree", "bakeries:cream_pumpkin_pie_dough", "minecraft:pumpkin_pie"],
-        ["vinery:apple_mash", "createdelight:unbake_apple_pie", "farmersdelight:apple_pie"],
         ["farmersrespite:rose_hips", "createdelight:unbake_rose_hip_pie", "farmersrespite:rose_hip_pie"],
         ['collectorsreap:lime_slice','createdelight:unbake_lime_pie', 'collectorsreap:lime_pie'],
         ['alexscaves:pine_nuts', 'createdelight:unbake_pinenut_pie', 'cavedelight:pinenut_pie'],

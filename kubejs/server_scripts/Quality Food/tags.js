@@ -44,7 +44,6 @@ ServerEvents.tags("block", e => {
         "@frycooks_delight",
         "@corn_delight",
         "@youkaishomecoming",
-        "@nethervinery",
         "@dungeonsdelight",
         "@ends_delight",
         "@crabbersdelight"
@@ -60,16 +59,6 @@ ServerEvents.tags("block", e => {
         "neapolitan:banana_frond",
         "neapolitan:large_banana_frond",
         "neapolitan:mint",
-        "vinery:red_grape_bush",
-        "vinery:white_grape_bush",
-        "vinery:savanna_grape_bush_red",
-        "vinery:savanna_grape_bush_white",
-        "vinery:taiga_grape_bush_red",
-        "vinery:taiga_grape_bush_white",
-        "vinery:jungle_grape_bush_red",
-        "vinery:jungle_grape_bush_white",
-        "nethervinery:crimson_grape_bush",
-        "nethervinery:warped_grape_bush",
         "minecraft:cocoa",
         "minecraft:sugar_cane",
         "farmersdelight:budding_tomatoes",
@@ -93,8 +82,6 @@ ServerEvents.tags("block", e => {
         'mynethersdelight:warped_fungus_colony',
         'collectorsreap:portobello_colony',
         'minecraft:sweet_berry_bush',
-        "nethervinery:crimson_grape_bush",
-        "nethervinery:warped_grape_bush",
         "collectorsreap:pomegranate_bush",
         "collectorsreap:lime_bush",
         "culturaldelights:corn",
@@ -153,16 +140,6 @@ ServerEvents.tags("item", e => {
         "neapolitan:vanilla_pods",
         "neapolitan:strawberries",
         "neapolitan:white_strawberries",
-        "vinery:red_grape",
-        "vinery:white_grape",
-        "vinery:savanna_grapes_red",
-        "vinery:savanna_grapes_white",
-        "vinery:taiga_grapes_red",
-        "vinery:taiga_grapes_white",
-        "vinery:jungle_grapes_red",
-        "vinery:jungle_grapes_white",
-        "nethervinery:crimson_grape",
-        "nethervinery:warped_grape",
         "fruitsdelight:bayberry",
         "fruitsdelight:blueberry",
         "fruitsdelight:cranberry",
@@ -243,32 +220,8 @@ ServerEvents.tags("item", e => {
             iceCreamScoops.push(item.id)
         }
     })
-    const vineryQualityFoods = []
-    const vineryQualityFoodIds = [
-        "vinery:mead",
-        "vinery:creepers_crush",
-        "vinery:jo_special_mixture",
-        "vinery:eiswein",
-        "vinery:villagers_fright",
-        "vinery:bottle_mojang_noir"
-    ]
-    const vineryQualityFoodSuffixes = [
-        "_wine",
-        "_grapejuice",
-        "_juice",
-        "_cider",
-        "_fizz",
-        "_nectar",
-        "_grenache",
-        "_pinot"
-    ]
-    Ingredient.of(["@vinery", "@nethervinery"]).stacks.forEach(item => {
-        if (vineryQualityFoodIds.includes(item.id) || vineryQualityFoodSuffixes.some(suffix => item.id.endsWith(suffix))) {
-            vineryQualityFoods.push(item.id)
-        }
-    })
     e.add("quality_food:material_whitelist", iceCreamScoops)
-    e.add("quality_food:material_whitelist", vineryQualityFoods)
+
     e.add("quality_food:material_whitelist", [
         // Butchercraft 屠刀产出的尸体由 Quality Food 根据动物潜能赋予品质
         "butchercraft:chicken_carcass",

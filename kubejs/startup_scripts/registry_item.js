@@ -53,7 +53,6 @@ StartupEvents.registry("item", e => {
     // 注册未烤制的派
     let UnbakedPie = [
         "chorus_fruit_pie",
-        "apple_pie",
         "sweet_berry_cheesecake",
         "chocolate_pie",
         "rose_hip_pie",

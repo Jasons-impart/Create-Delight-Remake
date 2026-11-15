@@ -601,10 +601,6 @@
     "the_bumblezone:carpenter_bee_boots_2": [
       4971,
       0.4779939
-    ],
-    "vinery:winemaker_boots": [
-      0,
-      0.0
     ]
   },
   "LEGS": {
@@ -839,10 +835,6 @@
     "the_bumblezone:honey_bee_leggings_2": [
       4957,
       0.4779939
-    ],
-    "vinery:winemaker_leggings": [
-      0,
-      0.0
     ]
   },
   "CHEST": {
@@ -1117,10 +1109,6 @@
     "the_bumblezone:bumble_bee_chestplate_trans_2": [
       4971,
       0.4779939
-    ],
-    "vinery:winemaker_apron": [
-      0,
-      0.0
     ]
   },
   "HEAD": {
@@ -1439,10 +1427,6 @@
     "the_bumblezone:stingless_bee_helmet_2": [
       4957,
       0.4779939
-    ],
-    "vinery:straw_hat": [
-      0,
-      0.0
     ]
   }
 }

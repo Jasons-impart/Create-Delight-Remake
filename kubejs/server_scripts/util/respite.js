@@ -22,8 +22,8 @@ function brewingAndPouring(event, base, inputs, fluid, output, amount, time, exp
 /**
  * 倾倒：注册 kettle_pouring（流体 → 瓶装物品）和 keg_pouring 灌注配方各一条
  * @param {Internal.RecipesEventJS_} event
- * @param {InputItem_} input 倾倒产出的瓶装物品，如 "vinery:apple_juice"
- * @param {Internal.FluidStackJS_} fluid 倾倒的流体，如 "createdelight:apple_juice"
+ * @param {InputItem_} input 倾倒产出的瓶装物品，如 "farmersdelight:apple_cider"
+ * @param {Internal.FluidStackJS_} fluid 倾倒的流体，如 "farmersrespite:apple_cider"
  * @param {InputItem_} [container] 空容器，默认 "minecraft:glass_bottle"
  * @param {number} [amount] 每次倾倒的流体数量（mB），default 250
  */

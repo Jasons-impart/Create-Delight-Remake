@@ -179,66 +179,6 @@
 			y: -10.0d
 		}
 		{
-			hide_until_deps_complete: true
-			id: "3E63AA1AAFDE43A0"
-			tasks: [{
-				id: "32553D21388CEE0D"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "vinery:white_grape"
-					}
-				}
-				title: "Any #vinery:white_grape"
-				type: "item"
-			}]
-			title: "任意白葡萄"
-			x: -73.5d
-			y: -19.0d
-		}
-		{
-			hide_until_deps_complete: true
-			id: "35CFE29C0207239D"
-			tasks: [{
-				id: "59C16038D45F59AF"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "vinery:red_grape"
-					}
-				}
-				title: "Any #vinery:red_grape"
-				type: "item"
-			}]
-			title: "任意红葡萄"
-			x: -73.5d
-			y: -17.0d
-		}
-		{
-			hide_until_deps_complete: true
-			id: "19860C2F6F52152F"
-			tasks: [{
-				id: "775EAE430021927E"
-				item: "nethervinery:crimson_grape"
-				type: "item"
-			}]
-			x: -73.5d
-			y: -16.0d
-		}
-		{
-			hide_until_deps_complete: true
-			id: "50A3C86BF8510F27"
-			tasks: [{
-				id: "36D52E213D6F90AA"
-				item: "nethervinery:warped_grape"
-				type: "item"
-			}]
-			x: -73.5d
-			y: -20.0d
-		}
-		{
 			description: ["必须种在静止的水下方的泥土/草方块/沃土上，共有四个生长阶段，但只有上方一格处为空气时才能长成第三/四阶段，成熟后两格高，收割第二格掉落稻米穗。"]
 			hide_until_deps_complete: true
 			id: "1D1CBC7F0738036B"
