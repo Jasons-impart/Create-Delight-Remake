@@ -294,5 +294,13 @@
   "menu.createdelight.quit_hover": "Looking forward to seeing you next time(*╹▽╹*)~",
   "menu.createdelight.single_player_hover": "Enter the world of Create Delight",
   "menu.createdelight.mutil_player_hover": "Enter a friend's world and play together",
-    "tooltip.createdelight.shift_printer": "§7Can copy §bTetra scrolls§7: use a scroll with data as the template; each copy costs §b1 paper§7 and §b250mB of any dye fluid"
+    "tooltip.createdelight.shift_printer": "§7Can copy §bTetra scrolls§7: use a scroll with data as the template; each copy costs §b1 paper§7 and §b250mB of any dye fluid",
+  "fluid.createdelight.farmers_spell_butterbeer": "Butterbeer",
+  "fluid.createdelight.farmers_spell_ink_beer": "Ink Beer",
+  "fluid.createdelight.cosmopolitan_cosmopolitan_cocktail": "Cosmopolitan Cocktail",
+  "fluid.createdelight.cosmopolitan_enchanted_cosmopolitan_cocktail": "Enchanted Cosmopolitan Cocktail",
+  "fluid.createdelight.dungeonsdelight_bloody_mary": "Bloody Mary",
+  "fluid.createdelight.dungeonsdelight_liveroot_beer": "Liveroot Beer",
+  "fluid.createdelight.dungeonsdelight_ghastly_spirits": "Ghastly Spirits",
+    "fluid.createdelight.irons_spellbooks_fire_ale": "Fire Ale"
 }

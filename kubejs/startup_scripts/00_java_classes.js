@@ -13,6 +13,7 @@ global.CDStartupJavaClasses = {
     CoinAPI: Java.loadClass("io.github.lightman314.lightmanscurrency.api.money.coins.CoinAPI"),
 
     // Common startup integrations
+    $AlcoholDrinks: Java.loadClass("io.github.jasonsimpart.createdelightcore.compat.alcohol.AlcoholDrinks"),
     $BrassDroneEntity: Java.loadClass("net.mcreator.createstuffadditions.entity.BrassDroneEntity"),
     $CustomPortalBuilder: Java.loadClass("net.kyrptonaught.customportalapi.api.CustomPortalBuilder"),
     $FoodBuilder: Java.loadClass("dev.latvian.mods.kubejs.item.FoodBuilder"),

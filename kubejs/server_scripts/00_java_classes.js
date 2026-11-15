@@ -1,6 +1,7 @@
 // priority: 1200
 
 global.CDServerJavaClasses = {
+    $FlowingFluid: Java.loadClass("net.minecraft.world.level.material.FlowingFluid"),
     $ACEntityRegistry: Java.loadClass("com.github.alexmodguy.alexscaves.server.entity.ACEntityRegistry"),
     $AABB: Java.loadClass("net.minecraft.world.phys.AABB"),
     $AdventureConfig: Java.loadClass("dev.shadowsoffire.apotheosis.adventure.AdventureConfig"),

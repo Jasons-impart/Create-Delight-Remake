@@ -61,6 +61,11 @@ StartupEvents.registry("fluid", e => {
         return ret
     }
 
+    // 清单中带 color 的酒液都是纯流体，不生成方块或桶。
+    global.CDAlcoholDrinks.forEach(drink => {
+        if (drink.color !== undefined) simpleFluid(drink.fluid, drink.color, true, false, false)
+    })
+
     simpleFluid("createdelight:fuel_mixtures", 0X8470FF)
     simpleFluid("createdelight:light_crude_oil", 0X8B7E66)
     simpleFluid("createdelight:ethylene_fluid", 0XE6E6FA)

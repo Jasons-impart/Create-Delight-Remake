@@ -13,6 +13,11 @@ StartupEvents.modifyCreativeTab("youkaishomecoming:food", e => {
     'youkaishomecoming:van_allen_bottle',
     'youkaishomecoming:burgundy_bottle',
     'youkaishomecoming:champagne_bottle',
+    'youkaishomecoming:red_wine',
+    'youkaishomecoming:white_wine',
+    'youkaishomecoming:burgundy',
+    'youkaishomecoming:champagne',
+    'youkaishomecoming:van_allen',
   ])
 })
 

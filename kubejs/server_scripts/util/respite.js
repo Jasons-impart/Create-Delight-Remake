@@ -26,13 +26,22 @@ function brewingAndPouring(event, base, inputs, fluid, output, amount, time, exp
  * @param {Internal.FluidStackJS_} fluid 倾倒的流体，如 "farmersrespite:apple_cider"
  * @param {InputItem_} [container] 空容器，默认 "minecraft:glass_bottle"
  * @param {number} [amount] 每次倾倒的流体数量（mB），default 250
+ * @param {string} [recipePath] 配方路径，默认物品路径；跨模组同名酒可显式区分
+ * @param {boolean} [missingOnly] 仅补缺少的倾倒类型，默认 false
  */
-function pouring(event, input, fluid, container, amount) {
+function pouring(event, input, fluid, container, amount, recipePath, missingOnly) {
     let ingr = Ingredient.of(input)
     let con = container || "minecraft:glass_bottle"
     amount = amount || 250
-    event.recipes.farmersrespite.kettle_pouring(fluid, input, con, amount)
-        .id(`createdelight:pouring/${ingr.getFirst().getId().split(":")[1]}`)
-    event.recipes.brewinandchewin.keg_pouring(fluid, input, amount, true, con, false)
-        .id(`createdelight:keg_pouring/${ingr.getFirst().getId().split(":")[1]}`)
+    recipePath = recipePath || ingr.getFirst().getId().split(":")[1]
+    let hasKettle = false
+    let hasKeg = false
+    if (missingOnly) {
+        event.forEachRecipe({type: "farmersrespite:kettle_pouring", output: input}, () => { hasKettle = true })
+        event.forEachRecipe({type: "brewinandchewin:keg_pouring", output: input}, () => { hasKeg = true })
+    }
+    if (!hasKettle) event.recipes.farmersrespite.kettle_pouring(fluid, input, con, amount)
+        .id(`createdelight:pouring/${recipePath}`)
+    if (!hasKeg) event.recipes.brewinandchewin.keg_pouring(fluid, input, amount, true, con, false)
+        .id(`createdelight:keg_pouring/${recipePath}`)
 }

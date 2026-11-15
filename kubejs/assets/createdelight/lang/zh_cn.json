@@ -1196,5 +1196,13 @@
     "message.createdelight.satellite.waypoint_written": "请求 %s, %s；安全着陆点 %s, %s, %s 已写入星图。卫星剩余能源：%s",
     "menu.createdelight.quit_hover": "期待下次再见捏(*╹▽╹*)",
     "menu.createdelight.single_player_hover": "进入齿轮盛宴的世界",
-    "menu.createdelight.mutil_player_hover": "进入朋友的世界一起玩耍"
+    "menu.createdelight.mutil_player_hover": "进入朋友的世界一起玩耍",
+  "fluid.createdelight.farmers_spell_butterbeer": "黄油啤酒",
+  "fluid.createdelight.farmers_spell_ink_beer": "墨水啤酒",
+  "fluid.createdelight.cosmopolitan_cosmopolitan_cocktail": "四海一家鸡尾酒",
+  "fluid.createdelight.cosmopolitan_enchanted_cosmopolitan_cocktail": "绝酿四海一家鸡尾酒",
+  "fluid.createdelight.dungeonsdelight_bloody_mary": "迷人血玛丽",
+  "fluid.createdelight.dungeonsdelight_liveroot_beer": "活根啤酒",
+  "fluid.createdelight.dungeonsdelight_ghastly_spirits": "恶魂烈酒",
+    "fluid.createdelight.irons_spellbooks_fire_ale": "炽焰啤酒"
 }
