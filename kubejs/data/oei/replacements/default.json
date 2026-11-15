@@ -325,6 +325,18 @@
     },
     {
         "matchItems": [
+            "youkaishomecoming:dark_tea_leaves"
+        ],
+        "resultItems": "farmersrespite:black_tea_leaves"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:yellow_tea_leaves"
+        ],
+        "resultItems": "farmersrespite:yellow_tea_leaves"
+    },
+    {
+        "matchItems": [
             "youkaishomecoming:coffee_powder"
         ],
         "resultItems": "createcafe:coffee_grounds"
@@ -619,18 +631,6 @@
             "crabbersdelight:cooked_crab"
         ],
         "resultItems": "youkaishomecoming:steamed_crab"
-    },
-    {
-        "matchItems": [
-            "youkaishomecoming:yellow_tea_leaves"
-        ],
-        "resultItems": "youkaishomecoming:white_tea_leaves"
-    },
-    {
-        "matchItems": [
-            "youkaishomecoming:yellow_tea_bag"
-        ],
-        "resultItems": "youkaishomecoming:white_tea_bag"
     },
     {
         "matchItems": [

@@ -5,7 +5,6 @@ ServerEvents.recipes(e => {
         .id("createdelight:compacting/ash")
     remove_recipes_output(e, [
         'youkaishomecoming:tofu',
-        'youkaishomecoming:tea_leaf_bag',
         'youkaishomecoming:green_coffee_bean',
         'youkaishomecoming:coffee_beans',
         'youkaishomecoming:ice_cube',
@@ -26,7 +25,6 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:red_velvet_cake_slice",
         "youkaishomecoming:clay_saucer_from_clay_ball_stonecutting",
         "youkaishomecoming:redbean_from_redbean_bag",
-        "youkaishomecoming:tea_leaves_from_tea_leaf_bag",
         "youkaishomecoming:copper_tank_from_copper_block_stonecutting",
         "youkaishomecoming:copper_faucet_from_copper_ingot_stonecutting",
         "youkaishomecoming:cucumber_crate",
@@ -39,6 +37,8 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:oolong_tea_leaves_from_oolong_tea_bag",
         "youkaishomecoming:black_tea_bag",
         "youkaishomecoming:black_tea_leaves_from_black_tea_bag",
+        "youkaishomecoming:dark_tea_bag",
+        "youkaishomecoming:dark_tea_leaves_from_dark_tea_bag",
         "youkaishomecoming:mayonnaise_bottle",
         "youkaishomecoming:butter",
         "youkaishomecoming:coffee_powder",

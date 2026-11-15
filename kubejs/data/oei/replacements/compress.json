@@ -68,6 +68,18 @@
     },
     {
         "matchItems": [
+            "youkaishomecoming:dark_tea_bag"
+        ],
+        "resultItems": "farmersrespite:black_tea_leaves_sack"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:yellow_tea_bag"
+        ],
+        "resultItems": "farmersrespite:yellow_tea_leaves_sack"
+    },
+    {
+        "matchItems": [
             "youkaishomecoming:coffee_bean_bag"
         ],
         "resultItems": "farmersrespite:coffee_beans_sack"
