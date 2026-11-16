@@ -171,7 +171,7 @@
 	#Automatically assigns humidity requirements to crops based on their Serene Seasons seasonal tags.
 	SereneSeasonCropTagBasedHumidity = true
 	#A blacklist of Mod IDs whose crops should NOT receive automatic humidity assignments.
-	#Example: ["fruitsdelight", "neapolitan"]
+	#Example: ["vinery", "meadow"]
 	ModsWithoutSereneSeasonBasedHumidity = []
 	#Show crop growth diagnostics in Jade or TOP.
 	ShowCropGrowthInfoInProbe = true

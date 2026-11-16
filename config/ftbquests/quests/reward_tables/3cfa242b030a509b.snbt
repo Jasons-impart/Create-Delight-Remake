@@ -1,7 +1,7 @@
 {
 	id: "3CFA242B030A509B"
 	loot_size: 1
-	order_index: 30
+	order_index: 25
 	rewards: [
 		{
 			command: "/summon youkaishomecoming:yukari ~ ~ ~"

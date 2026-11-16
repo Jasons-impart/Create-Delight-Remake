@@ -2,7 +2,7 @@
 	icon: "tetra:pristine_amethyst"
 	id: "1CD4E0DD3154FC5C"
 	loot_size: 1
-	order_index: 17
+	order_index: 13
 	rewards: [
 		{ item: "minecraft:diamond" }
 		{ item: "tetra:pristine_diamond" }

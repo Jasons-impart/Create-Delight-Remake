@@ -1269,14 +1269,12 @@
 			dependencies: ["3D7F0A98AE45B0B0"]
 			description: ["         发酵桶用于酿造酱油和酒。使用方法为：将所需材料右键放入发酵桶（无需按顺序），在潜行状态下空手右键发酵桶可取出所有材料（除了水）。然后空手右键发酵桶盖上盖子，开始发酵。待发酵进度达到100%时发酵完成，可用对应容器（碗、玻璃瓶或竹子）舀出。"]
 			id: "3150B5F44439F2ED"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "3EC09EE50B1106FA"
-					table_id: 7284682648027275041L
-					type: "random"
-				}
-			]
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "3EC09EE50B1106FA"
+				table_id: 7284682648027275041L
+				type: "random"
+			}]
 			shape: "square"
 			subtitle: "生物科技！"
 			tasks: [{

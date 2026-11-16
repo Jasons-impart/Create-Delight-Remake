@@ -2,7 +2,7 @@
 	icon: "minecraft:wheat_seeds"
 	id: "341A06B78D03A5E6"
 	loot_size: 1
-	order_index: 13
+	order_index: 9
 	rewards: [
 		{ item: "minecraft:wheat_seeds", weight: 5.0f }
 		{ item: "minecraft:pumpkin_seeds" }

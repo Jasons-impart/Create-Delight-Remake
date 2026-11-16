@@ -150,6 +150,7 @@
 		}
 		{
 			dependencies: ["2AE0738C43D5A42B"]
+			description: ["寒冰百合会在火星山峰的雪块等冰雪地表上自然生成，也可种植在泥土、沙子以及冰、雪、雪块上。"]
 			icon: {
 				Count: 1
 				id: "ftbquests:custom_icon"
@@ -157,7 +158,6 @@
 					Icon: "northstar:textures/planet/solar_system/mars_sky.png"
 				}
 			}
-			description: ["寒冰百合会在火星山峰的雪块等冰雪地表上自然生成，也可种植在泥土、沙子以及冰、雪、雪块上。"]
 			id: "1BEE7AD2537F2428"
 			size: 1.5d
 			tasks: [{

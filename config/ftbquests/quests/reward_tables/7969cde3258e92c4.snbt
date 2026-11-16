@@ -1,7 +1,7 @@
 {
 	id: "7969CDE3258E92C4"
 	loot_size: 1
-	order_index: 31
+	order_index: 26
 	rewards: [
 		{ item: "create:empty_schematic" }
 		{ item: "fluidlogistics:empty_fluid_schematic" }

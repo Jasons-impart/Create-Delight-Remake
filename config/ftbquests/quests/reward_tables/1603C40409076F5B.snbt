@@ -2,7 +2,7 @@
 	icon: "ends_delight:dragon_leg"
 	id: "1603C40409076F5B"
 	loot_size: 1
-	order_index: 7
+	order_index: 6
 	rewards: [
 		{ count: 2, item: "ends_delight:chorus_fruit_wine" }
 		{ count: 5, item: "ends_delight:bubble_tea" }

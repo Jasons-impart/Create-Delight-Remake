@@ -1138,13 +1138,11 @@
 			dependencies: ["3B22EE550A58193D"]
 			id: "7B285A5A3B2FD565"
 			shape: "rsquare"
-			tasks: [
-				{
-					id: "7ADA4A4AFDAE35B1"
-					item: "brewinandchewin:tankard"
-					type: "item"
-				}
-			]
+			tasks: [{
+				id: "7ADA4A4AFDAE35B1"
+				item: "brewinandchewin:tankard"
+				type: "item"
+			}]
 			x: -8.5d
 			y: 2.0d
 		}
