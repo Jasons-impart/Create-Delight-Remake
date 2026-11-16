@@ -108,6 +108,8 @@ func rebuildRepos() (any, error) {
 }
 
 func runJavaBuild() error {
+	packBuild.Lock()
+	defer packBuild.Unlock()
 	opMu.Lock()
 	if opBusy {
 		opMu.Unlock()

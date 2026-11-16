@@ -28,6 +28,26 @@ final class ServerRuntime {
         this.config = config;
     }
 
+    void startCacheMaintenance() {
+        Thread worker = new Thread(() -> {
+            while (!Thread.currentThread().isInterrupted()) {
+                try {
+                    Thread.sleep(60_000);
+                    synchronized (lock) {
+                        long[] removed = Pack.collectTemporary(config);
+                        if (removed[0] > 0) logger().accept("临时缓存回收 " + removed[0] + " 项，" + removed[1] + " 字节");
+                    }
+                } catch (InterruptedException stopped) {
+                    Thread.currentThread().interrupt();
+                } catch (Exception error) {
+                    logger().accept("临时缓存回收跳过: " + error.getMessage());
+                }
+            }
+        }, "cdr-cache-gc");
+        worker.setDaemon(true);
+        worker.start();
+    }
+
     Pack.Config config() {
         return config;
     }

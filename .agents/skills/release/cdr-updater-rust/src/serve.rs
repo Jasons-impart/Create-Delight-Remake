@@ -2,6 +2,8 @@
 mod admin;
 #[path = "build.rs"]
 mod build;
+#[path = "storage.rs"]
+mod storage;
 
 use std::collections::HashMap;
 use std::fs::{self, File};
@@ -109,6 +111,17 @@ pub async fn listen(addr: String, data: PathBuf, config: PathBuf) -> io::Result<
         config,
         overlay,
     };
+    let gc_data = app.data.clone();
+    std::thread::spawn(move || loop {
+        if let Ok(_guard) = PACK_BUILD.try_lock() {
+            match storage::collect(&gc_data, SystemTime::now()) {
+                Ok(bytes) if bytes > 0 => eprintln!("临时包自动回收: {} bytes", bytes),
+                Err(error) => eprintln!("临时包回收跳过: {error}"),
+                _ => {},
+            }
+        }
+        std::thread::sleep(std::time::Duration::from_secs(60));
+    });
     let router = Router::new()
         .route("/api/status", get(status))
         .route("/api/manifest", get(manifest))
@@ -275,6 +288,9 @@ async fn file(State(app): State<App>, UrlPath(digest): UrlPath<String>, headers:
     };
     let async_file = match tokio::fs::File::open(&object).await {
         Ok(mut file) => {
+            if let Ok(touch) = fs::OpenOptions::new().write(true).open(&object) {
+                let _ = touch.set_times(fs::FileTimes::new().set_modified(SystemTime::now()));
+            }
             use tokio::io::{AsyncReadExt, AsyncSeekExt, SeekFrom};
             if file.seek(SeekFrom::Start(start)).await.is_err() {
                 return plain(StatusCode::NOT_FOUND, "文件对象不存在");
@@ -500,6 +516,11 @@ impl App {
     }
 
     fn ensure_pack(&self, files: &[PackItem], mut report: impl FnMut(usize, usize)) -> Result<(String, u64, String), String> {
+        storage::collect(&self.data, SystemTime::now())?;
+        let mut canonical = files.to_vec();
+        canonical.sort_by(|a, b| a.path.cmp(&b.path).then(a.sha256.cmp(&b.sha256)));
+        canonical.dedup_by(|a, b| a.path == b.path && a.sha256 == b.sha256);
+        let files = canonical.as_slice();
         let mut key_hash = Sha256::new();
         for file in files {
             key_hash.update(file.path.as_bytes());
@@ -515,15 +536,12 @@ impl App {
                 if is_sha256(&meta.sha256) {
                     let object = self.data.join("objects").join(&meta.sha256[..2]).join(&meta.sha256);
                     if let Ok(info) = fs::metadata(&object) {
-                        if info.is_file() {
+                        if info.is_file() && info.len() == meta.size {
                             migrate_pack_leases(&mut meta);
-                            if meta.leases.len() > 32 {
-                                let drop = meta.leases.len() - 32;
-                                meta.leases.drain(0..drop);
-                            }
                             meta.leases.push(lease.clone());
                             meta.holders = meta.leases.len() as i32;
                             write_pack_meta(&meta_path, &meta)?;
+                            eprintln!("临时包缓存命中: {} bytes", info.len());
                             report(files.len(), files.len());
                             return Ok((meta.sha256, info.len(), lease));
                         }
@@ -531,12 +549,14 @@ impl App {
                 }
             }
         }
+        storage::admit(&self.data, files)?;
         fs::create_dir_all(self.data.join("packs")).map_err(|error| error.to_string())?;
         let tmp = self.data.join("packs").join(format!("build-{key}.zip"));
         let result = (|| {
             let file = File::create(&tmp).map_err(|error| error.to_string())?;
             let mut writer = zip::ZipWriter::new(file);
             let options = SimpleFileOptions::default()
+                .last_modified_time(zip::DateTime::default())
                 .compression_method(CompressionMethod::Deflated)
                 .compression_level(Some(1));
             let total = files.len();
@@ -555,10 +575,11 @@ impl App {
             let size = fs::metadata(&tmp).map_err(|error| error.to_string())?.len();
             let object = self.data.join("objects").join(&digest[..2]).join(&digest);
             fs::create_dir_all(object.parent().unwrap()).map_err(|error| error.to_string())?;
-            if fs::metadata(&object).is_err() {
+            let created = fs::metadata(&object).is_err();
+            if created {
                 fs::rename(&tmp, &object).map_err(|error| error.to_string())?;
             }
-            write_pack_meta(
+            let saved = write_pack_meta(
                 &meta_path,
                 &PackMeta {
                     sha256: digest.clone(),
@@ -566,7 +587,12 @@ impl App {
                     holders: 1,
                     leases: vec![lease.clone()],
                 },
-            )?;
+            );
+            if let Err(error) = saved {
+                if created { let _ = fs::remove_file(&object); }
+                return Err(error);
+            }
+            eprintln!("临时包新建: {size} bytes");
             Ok((digest, size, lease))
         })();
         let _ = fs::remove_file(&tmp);
@@ -582,72 +608,35 @@ impl App {
         if lease.is_empty() || lease.len() > 128 {
             return Err("无效 lease".into());
         }
-        let mut keep_object = false;
-        for side in ["client", "server"] {
-            let Ok(files) = self.manifest_files(side) else {
-                continue;
-            };
-            if files.iter().any(|file| file.sha256 == sum) {
-                keep_object = true;
-            }
-        }
         let packs = self.data.join("packs");
-        let entries = match fs::read_dir(&packs) {
-            Ok(entries) => entries,
-            Err(error) if error.kind() == io::ErrorKind::NotFound => return Ok(()),
-            Err(error) => return Err(error.to_string()),
-        };
-        let mut holders_left = 0;
-        let mut drop = Vec::new();
+        let entries = fs::read_dir(&packs).map_err(|error| error.to_string())?;
         let mut matched = false;
-        for entry in entries.flatten() {
-            let name = entry.file_name();
-            let name = name.to_string_lossy();
-            if !name.ends_with(".json") || entry.path().is_dir() {
-                continue;
-            }
-            let path = entry.path();
-            let Ok(buf) = fs::read(&path) else {
-                continue;
-            };
-            let Ok(mut meta) = serde_json::from_slice::<PackMeta>(&buf) else {
-                continue;
-            };
-            if meta.sha256 != sum {
-                continue;
-            }
+        for entry in entries {
+            let path = entry.map_err(|error| error.to_string())?.path();
+            if path.extension().is_none_or(|x| x != "json") { continue; }
+            let buf = fs::read(&path).map_err(|error| error.to_string())?;
+            let mut meta: PackMeta = serde_json::from_slice(&buf).map_err(|error| error.to_string())?;
+            if meta.sha256 != sum { continue; }
             migrate_pack_leases(&mut meta);
             let before = meta.leases.len();
             meta.leases.retain(|item| item != lease);
-            if meta.leases.len() == before {
-                holders_left += meta.leases.len();
-                continue;
-            }
+            if meta.leases.len() == before { continue; }
             matched = true;
             meta.holders = meta.leases.len() as i32;
-            if !meta.leases.is_empty() {
-                holders_left += meta.leases.len();
-                write_pack_meta(&path, &meta)?;
-                continue;
-            }
-            drop.push(path);
+            // Completion releases the lease, not the reusable cache entry.
+            // Abandoned leases cannot prevent the two-hour idle collector.
+            write_pack_meta(&path, &meta)?;
         }
-        if !matched {
-            return Err("lease 无效或不匹配".into());
-        }
-        if holders_left == 0 && !keep_object && !drop.is_empty() {
-            let _ = fs::remove_file(self.data.join("objects").join(&sum[..2]).join(&sum));
-        }
-        for path in drop {
-            let _ = fs::remove_file(path);
-        }
+        if !matched { return Err("lease 无效或不匹配".into()); }
         Ok(())
     }
 }
 
 fn write_pack_meta(path: &Path, meta: &PackMeta) -> Result<(), String> {
     let buf = serde_json::to_vec(meta).map_err(|error| error.to_string())?;
-    fs::write(path, buf).map_err(|error| error.to_string())
+    let tmp = path.with_extension("tmp");
+    fs::write(&tmp, buf).map_err(|error| error.to_string())?;
+    fs::rename(&tmp, path).map_err(|error| error.to_string())
 }
 
 fn hash_file(path: &Path) -> Result<String, String> {
@@ -1019,6 +1008,7 @@ mod tests {
             ]
         });
         fs::write(manifest.join("client.json"), serde_json::to_vec(&doc).unwrap()).unwrap();
+        fs::write(manifest.join("server.json"), serde_json::to_vec(&doc).unwrap()).unwrap();
         let router = app_with(&dir);
         let response = router
             .clone()
@@ -1084,7 +1074,7 @@ mod tests {
             .await
             .unwrap();
         assert_eq!(discard.status(), StatusCode::OK);
-        assert!(!packed.exists());
+        assert!(packed.exists());
         assert!(object.exists());
         let ranged = router
             .oneshot(
@@ -1099,6 +1089,39 @@ mod tests {
         let piece = to_bytes(ranged.into_body(), 64).await.unwrap();
         assert_eq!(&piece[..], &payload[..4]);
         let _ = fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn pack_reuses_canonical_selection_after_release() {
+        let dir = std::env::temp_dir().join(format!("cdr-reuse-{}", std::process::id()));
+        let _ = fs::remove_dir_all(&dir);
+        fs::create_dir_all(dir.join("manifests")).unwrap();
+        let sum = hex::encode(Sha256::digest(b"reuse-payload"));
+        let object = dir.join("objects").join(&sum[..2]).join(&sum);
+        fs::create_dir_all(object.parent().unwrap()).unwrap();
+        fs::write(&object, b"reuse-payload").unwrap();
+        let doc = serde_json::json!({"files":[{"path":"a", "sha256":sum}, {"path":"b", "sha256":sum}]});
+        for side in ["client", "server"] {
+            fs::write(dir.join("manifests").join(format!("{side}.json")), serde_json::to_vec(&doc).unwrap()).unwrap();
+        }
+        let app = App {data: dir.clone(), config: dir.join("config.toml"), overlay: Default::default(), admin: admin::Admin::new("127.0.0.1".into(), "8765".into())};
+        let a = PackItem {path:"a".into(), sha256:sum.clone()};
+        let b = PackItem {path:"b".into(), sha256:sum.clone()};
+        let (sha, size, lease) = app.ensure_pack(&[b.clone(), a.clone()], |_,_| {}).unwrap();
+        let packed = dir.join("objects").join(&sha[..2]).join(&sha);
+        let written = fs::metadata(&packed).unwrap().modified().unwrap();
+        app.discard_pack(&sha, &lease).unwrap();
+        assert!(packed.exists());
+        let (again, size2, lease2) = app.ensure_pack(&[a, b], |_,_| {}).unwrap();
+        assert_eq!((sha.clone(), size), (again, size2)); assert_ne!(lease, lease2);
+        assert_eq!(fs::metadata(&packed).unwrap().modified().unwrap(), written);
+        assert_eq!(fs::read_dir(dir.join("packs")).unwrap().count(), 1);
+        // A live second lease does not depend on the first client's completion.
+        assert!(app.discard_pack(&sha, &lease).is_err());
+        assert!(packed.exists());
+        storage::collect(&dir, SystemTime::now() + storage::PACK_TTL + std::time::Duration::from_secs(1)).unwrap();
+        assert!(!packed.exists()); assert!(object.exists());
+        fs::remove_dir_all(&dir).unwrap();
     }
 
     #[tokio::test]

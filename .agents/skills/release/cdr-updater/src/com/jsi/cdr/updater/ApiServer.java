@@ -331,6 +331,9 @@ final class ApiServer {
                 sendError(exchange, 404, "文件对象不存在");
                 return;
             }
+            synchronized (Pack.class) {
+                Files.setLastModifiedTime(object, java.nio.file.attribute.FileTime.fromMillis(System.currentTimeMillis()));
+            }
             long size = Files.size(object);
             exchange.getResponseHeaders().set("Content-Type", "application/octet-stream");
             exchange.getResponseHeaders().set("Accept-Ranges", "bytes");
