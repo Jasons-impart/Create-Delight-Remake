@@ -40,6 +40,9 @@ func TestPackBundlesRequestedFiles(t *testing.T) {
 	if err := os.WriteFile(filepath.Join(manifest, "client.json"), buf, 0o644); err != nil {
 		t.Fatal(err)
 	}
+	if err := os.WriteFile(filepath.Join(manifest, "server.json"), []byte(`{"files":[]}`), 0o644); err != nil {
+		t.Fatal(err)
+	}
 	root := &store{data: dir}
 	req := httptest.NewRequest(http.MethodPost, "/api/pack", bytes.NewReader([]byte(`{"side":"client","paths":["mods/a.jar"]}`)))
 	rec := httptest.NewRecorder()
@@ -107,8 +110,8 @@ func TestPackBundlesRequestedFiles(t *testing.T) {
 	if discarded.Code != http.StatusOK {
 		t.Fatalf("discard %d %s", discarded.Code, discarded.Body.String())
 	}
-	if _, err = os.Stat(object); !os.IsNotExist(err) {
-		t.Fatalf("pack zip still present: %v", err)
+	if _, err = os.Stat(object); err != nil {
+		t.Fatalf("released pack should be reusable: %v", err)
 	}
 	if _, err = os.Stat(filepath.Join(dir, "objects", digest[:2], digest)); err != nil {
 		t.Fatal(err)

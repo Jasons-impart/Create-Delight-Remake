@@ -30,6 +30,28 @@ func runServe(args []string) error {
 	} else if summary != "" {
 		fmt.Println(summary)
 	}
+	stopGC := make(chan struct{})
+	defer close(stopGC)
+	go func() {
+		ticker := time.NewTicker(time.Minute)
+		defer ticker.Stop()
+		for {
+			select {
+			case <-stopGC:
+				return
+			case <-ticker.C:
+				if packBuild.TryLock() {
+					freed, err := collectPacks(data, time.Now())
+					packBuild.Unlock()
+					if err != nil {
+						fmt.Fprintln(os.Stderr, "临时包回收跳过:", err)
+					} else if freed > 0 {
+						fmt.Println("临时包自动回收:", freed)
+					}
+				}
+			}
+		}
+	}()
 	setLive(cfg, configPath, data)
 	root := &store{data: data, overlay: loadOverlay(filepath.Join(data, "manifests", "private-index.json"))}
 	mux := http.NewServeMux()
@@ -261,6 +283,7 @@ func (s *store) file(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "文件对象不存在", http.StatusNotFound)
 		return
 	}
+	_ = os.Chtimes(object, time.Now(), time.Now())
 	w.Header().Set("Content-Type", "application/octet-stream")
 	w.Header().Set("Cache-Control", "public, max-age=31536000, immutable")
 	w.Header().Set("ETag", `"`+digest+`"`)

@@ -443,11 +443,11 @@ final class Pack {
         }
     }
 
-    static Map<String, Manifests.Manifest> buildRepos(Config config, Consumer<String> log) throws Exception {
+    static synchronized Map<String, Manifests.Manifest> buildRepos(Config config, Consumer<String> log) throws Exception {
         return buildRepos(config, log, Set.of());
     }
 
-    static Map<String, Manifests.Manifest> buildRepos(Config config, Consumer<String> log, Set<String> removedOverlay)
+    static synchronized Map<String, Manifests.Manifest> buildRepos(Config config, Consumer<String> log, Set<String> removedOverlay)
             throws Exception {
         try {
             if (canRefresh(config)) {
@@ -1157,15 +1157,13 @@ final class Pack {
         return deleted;
     }
 
-    static String reclaimStorage(Config config, Consumer<String> log) throws Exception {
+    static synchronized String reclaimStorage(Config config, Consumer<String> log) throws Exception {
         return reclaimStorage(config, log, false);
     }
 
-    static String reclaimStorage(Config config, Consumer<String> log, boolean dropExtracts) throws Exception {
-        Set<String> live = liveObjectHashes(config);
-        int cacheItems = dropStalePacks(config.dataDir.resolve("packs"), live);
-        long[] objects = pruneObjects(config.objectsDir, live);
-        cacheItems += pruneCache(config.dataDir.resolve("cache"), config.officialVersion, dropExtracts);
+    static synchronized String reclaimStorage(Config config, Consumer<String> log, boolean dropExtracts) throws Exception {
+        long[] objects = collectTemporary(config);
+        int cacheItems = pruneCache(config.dataDir.resolve("cache"), config.officialVersion, dropExtracts);
         if (objects[0] == 0 && cacheItems == 0) {
             return "";
         }
@@ -1177,93 +1175,8 @@ final class Pack {
         return summary;
     }
 
-    private static Set<String> liveObjectHashes(Config config) {
-        Set<String> live = new LinkedHashSet<>();
-        addManifestHashes(config.manifestsDir().resolve("client.json"), live);
-        addManifestHashes(config.manifestsDir().resolve("server.json"), live);
-        return live;
-    }
-
-    private static int dropStalePacks(Path packs, Set<String> live) throws Exception {
-        if (!Files.isDirectory(packs)) {
-            return 0;
-        }
-        int removed = 0;
-        try (DirectoryStream<Path> entries = Files.newDirectoryStream(packs)) {
-            for (Path path : entries) {
-                String name = path.getFileName().toString();
-                if (name.startsWith("build-")) {
-                    Files.deleteIfExists(path);
-                    removed++;
-                    continue;
-                }
-                if (!name.endsWith(".json") || Files.isDirectory(path)) {
-                    continue;
-                }
-                boolean keep = false;
-                try {
-                    String sha = Json.str(Json.object(Json.parse(Files.readString(path))), "sha256").toLowerCase();
-                    keep = isObjectHash(sha) && live.contains(sha);
-                } catch (Exception ignored) {
-                }
-                if (!keep) {
-                    Files.deleteIfExists(path);
-                    removed++;
-                }
-            }
-        }
-        return removed;
-    }
-
-    private static void addManifestHashes(Path path, Set<String> live) {
-        if (!Files.isRegularFile(path)) {
-            return;
-        }
-        try {
-            Map<String, Object> doc = Json.object(Json.parse(Files.readString(path)));
-            for (Object row : Json.array(doc.get("files"))) {
-                String sha = Json.str(Json.object(row), "sha256").toLowerCase();
-                if (isObjectHash(sha)) {
-                    live.add(sha);
-                }
-            }
-        } catch (Exception ignored) {
-        }
-    }
-
-    private static long[] pruneObjects(Path objects, Set<String> live) throws Exception {
-        if (!Files.isDirectory(objects) || live.isEmpty()) {
-            return new long[]{0, 0};
-        }
-        long removed = 0;
-        long bytes = 0;
-        try (DirectoryStream<Path> prefixes = Files.newDirectoryStream(objects)) {
-            for (Path dir : prefixes) {
-                if (!Files.isDirectory(dir)) {
-                    continue;
-                }
-                try (DirectoryStream<Path> files = Files.newDirectoryStream(dir)) {
-                    for (Path file : files) {
-                        if (!Files.isRegularFile(file)) {
-                            continue;
-                        }
-                        String name = file.getFileName().toString().toLowerCase();
-                        if (isObjectHash(name) && !live.contains(name)) {
-                            bytes += Files.size(file);
-                            Files.deleteIfExists(file);
-                            removed++;
-                        }
-                    }
-                }
-                try (DirectoryStream<Path> left = Files.newDirectoryStream(dir)) {
-                    if (!left.iterator().hasNext()) {
-                        Files.deleteIfExists(dir);
-                    }
-                } catch (Exception ignored) {
-                }
-            }
-        }
-        return new long[]{removed, bytes};
+    static synchronized long[] collectTemporary(Config config) throws Exception {
+        return StorageCache.collect(config, System.currentTimeMillis());
     }
 
     private static int pruneCache(Path cache, String currentVersion, boolean dropExtracts) throws Exception {
@@ -1293,8 +1206,7 @@ final class Pack {
         try (DirectoryStream<Path> entries = Files.newDirectoryStream(dir)) {
             for (Path path : entries) {
                 String name = path.getFileName().toString();
-                boolean drop = "packwiz".equals(name)
-                        || name.endsWith(".partial")
+                boolean drop = name.endsWith(".partial")
                         || name.endsWith(".cdrtmp")
                         || name.endsWith(".parts")
                         || (dropExtracts && ("client-raw".equals(name) || "server-raw".equals(name)

@@ -31,6 +31,7 @@ final class Tests {
         syncTests();
         liveRunningServerSyncTests();
         adminTests();
+        storageCacheTests();
         securityTests();
         adminWebTests();
         progressTests();
@@ -555,6 +556,44 @@ final class Tests {
         }
     }
 
+    private static void storageCacheTests() throws Exception {
+        Path tmp = Files.createTempDirectory("cdr-cache-test");
+        try {
+            Pack.Config config = config(tmp, tmp.resolve("official"), tmp.resolve("private"));
+            long now = System.currentTimeMillis();
+            var old = java.nio.file.attribute.FileTime.fromMillis(now - StorageCache.TTL - 1000);
+            String official = "b".repeat(64), expired = "c".repeat(64), recent = "d".repeat(64);
+            for (String sha : List.of(official, expired, recent)) {
+                Path object = Pack.objectPath(config, sha);
+                write(object, "payload");
+                Files.setLastModifiedTime(object, old);
+                Path meta = config.dataDir.resolve("packs/" + sha + ".json");
+                write(meta, Json.stringify(Json.map("sha256", sha, "holders", 50, "leases", List.of("abandoned"))));
+                Files.setLastModifiedTime(meta, old);
+            }
+            for (String side : List.of("client", "server")) {
+                write(config.manifestsDir().resolve(side + ".json"), Json.stringify(Json.map("files", List.of(Json.map("sha256", official)))));
+            }
+            Files.setLastModifiedTime(Pack.objectPath(config, recent), java.nio.file.attribute.FileTime.fromMillis(now));
+            Path partial = config.dataDir.resolve("packs/build-abandoned.zip");
+            write(partial, "partial"); Files.setLastModifiedTime(partial, old);
+            Path bad = config.dataDir.resolve("packs/bad.json"); write(bad, "{}");
+            boolean rejected = false;
+            try { StorageCache.collect(config, now); } catch (Exception expected) { rejected = true; }
+            check("损坏元数据阻止回收", rejected && Files.exists(Pack.objectPath(config, expired)));
+            Files.delete(bad);
+            StorageCache.collect(config, now);
+            check("过期租约不阻止两小时回收", !Files.exists(Pack.objectPath(config, expired)));
+            check("官方对象永不按临时包过期", Files.exists(Pack.objectPath(config, official)));
+            check("近期续传刷新临时包寿命", Files.exists(Pack.objectPath(config, recent)));
+            check("中断打包临时文件被回收", !Files.exists(partial));
+            Path server = config.manifestsDir().resolve("server.json");
+            write(server, "{}"); rejected = false;
+            try { StorageCache.collect(config, now + StorageCache.TTL); } catch (Exception expected) { rejected = true; }
+            check("损坏清单阻止回收", rejected && Files.exists(Pack.objectPath(config, recent)));
+        } finally { Fs.deleteTree(tmp); }
+    }
+
     private static void adminTests() throws Exception {
         Path tmp = Files.createTempDirectory("cdr-admin-test");
         try {
@@ -588,6 +627,7 @@ final class Tests {
             Path orphanObject = config.objectsDir.resolve(orphanHash.substring(0, 2)).resolve(orphanHash);
             Files.createDirectories(orphanObject.getParent());
             Files.write(orphanObject, new byte[]{7, 7, 7});
+            Files.setLastModifiedTime(orphanObject, java.nio.file.attribute.FileTime.fromMillis(System.currentTimeMillis() - StorageCache.TTL - 1000));
             Path oldVersion = config.dataDir.resolve("cache").resolve("v-old-resource");
             Files.createDirectories(oldVersion.resolve("packwiz"));
             Files.write(oldVersion.resolve("Client-v-old-resource.zip"), new byte[]{1});
@@ -600,7 +640,7 @@ final class Tests {
             String reclaimed = Pack.reclaimStorage(config, line -> {}, false);
             check("回收会删除孤儿对象", !Files.exists(orphanObject));
             check("回收会删除旧版本缓存", !Files.exists(oldVersion));
-            check("回收会删除 packwiz 资源缓存", !Files.exists(currentCache.resolve("packwiz")));
+            check("回收复用当前 packwiz 资源缓存", Files.exists(currentCache.resolve("packwiz")));
             check("回收保留当前官方 zip", Files.exists(currentCache.resolve("Client-keep.zip")));
             check("Java 回收保留解压目录以便增量更新", Files.exists(currentCache.resolve("client-raw/keep.txt")));
             check("回收保留清单仍引用的对象", Files.exists(liveObject));

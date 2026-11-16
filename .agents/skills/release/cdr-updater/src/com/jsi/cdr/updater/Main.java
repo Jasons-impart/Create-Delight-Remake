@@ -105,6 +105,7 @@ public final class Main {
             }
         }
         runtime.http = ApiServer.start(runtime);
+        runtime.startCacheMaintenance();
         Pack.Config started = runtime.config();
         String adminHost = "0.0.0.0".equals(started.listen) || "::".equals(started.listen) ? "127.0.0.1" : started.listen;
         System.out.println("更新服务器已启动 http://" + started.listen + ":" + started.port);

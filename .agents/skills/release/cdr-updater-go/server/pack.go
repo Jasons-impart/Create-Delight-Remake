@@ -11,8 +11,10 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 	"sync"
+	"time"
 )
 
 const packBodyLimit = 8 << 20
@@ -129,6 +131,23 @@ func (s *store) pack(w http.ResponseWriter, r *http.Request) {
 }
 
 func (s *store) ensurePack(files []packItem, report func(done, total int)) (string, int64, string, error) {
+	if _, err := collectPacks(s.data, time.Now()); err != nil {
+		return "", 0, "", err
+	}
+	files = append([]packItem(nil), files...)
+	sort.Slice(files, func(i, j int) bool {
+		if files[i].Path == files[j].Path {
+			return files[i].SHA256 < files[j].SHA256
+		}
+		return files[i].Path < files[j].Path
+	})
+	canonical := files[:0]
+	for _, f := range files {
+		if len(canonical) == 0 || canonical[len(canonical)-1] != f {
+			canonical = append(canonical, f)
+		}
+	}
+	files = canonical
 	keyHash := sha256.New()
 	for _, file := range files {
 		_, _ = io.WriteString(keyHash, file.Path)
@@ -144,9 +163,9 @@ func (s *store) ensurePack(files []packItem, report func(done, total int)) (stri
 	}
 	if buf, err := os.ReadFile(metaPath); err == nil {
 		var meta packMeta
-		if json.Unmarshal(buf, &meta) == nil && len(meta.SHA256) == 64 {
+		if json.Unmarshal(buf, &meta) == nil && isObjectHash(meta.SHA256) {
 			object := filepath.Join(s.data, "objects", meta.SHA256[:2], meta.SHA256)
-			if info, err := os.Stat(object); err == nil && !info.IsDir() {
+			if info, err := os.Stat(object); err == nil && !info.IsDir() && info.Size() == meta.Size {
 				migratePackLeases(&meta)
 				meta.Leases = append(meta.Leases, lease)
 				meta.Holders = len(meta.Leases)
@@ -159,6 +178,9 @@ func (s *store) ensurePack(files []packItem, report func(done, total int)) (stri
 				return meta.SHA256, info.Size(), lease, nil
 			}
 		}
+	}
+	if err := admitPack(s.data, files); err != nil {
+		return "", 0, "", err
 	}
 	if err := os.MkdirAll(filepath.Join(s.data, "packs"), 0o755); err != nil {
 		return "", 0, "", err
@@ -221,12 +243,20 @@ func (s *store) ensurePack(files []packItem, report func(done, total int)) (stri
 	if err = os.MkdirAll(filepath.Dir(object), 0o755); err != nil {
 		return "", 0, "", err
 	}
-	if _, err = os.Stat(object); err != nil {
+	_, statErr := os.Stat(object)
+	created := os.IsNotExist(statErr)
+	if statErr != nil && !created {
+		return "", 0, "", statErr
+	}
+	if created {
 		if err = os.Rename(tmpName, object); err != nil {
 			return "", 0, "", err
 		}
 	}
 	if err = writePackMeta(metaPath, packMeta{SHA256: digest, Size: size, Holders: 1, Leases: []string{lease}}); err != nil {
+		if created {
+			_ = os.Remove(object)
+		}
 		return "", 0, "", err
 	}
 	return digest, size, lease, nil
@@ -244,7 +274,12 @@ func writePackMeta(path string, meta packMeta) error {
 	if err != nil {
 		return err
 	}
-	return os.WriteFile(path, buf, 0o644)
+	tmp := path + ".tmp"
+	defer os.Remove(tmp)
+	if err := os.WriteFile(tmp, buf, 0o644); err != nil {
+		return err
+	}
+	return os.Rename(tmp, path)
 }
 
 func newPackLease() (string, error) {
@@ -277,18 +312,6 @@ func (s *store) discardPack(sum, lease string) error {
 	if lease == "" || len(lease) > 128 {
 		return packError("无效 lease")
 	}
-	keepObject := false
-	for _, side := range []string{"client", "server"} {
-		files, err := s.manifestFiles(side)
-		if err != nil {
-			continue
-		}
-		for _, file := range files {
-			if file.SHA256 == sum {
-				keepObject = true
-			}
-		}
-	}
 	entries, err := os.ReadDir(filepath.Join(s.data, "packs"))
 	if err != nil {
 		if os.IsNotExist(err) {
@@ -296,8 +319,6 @@ func (s *store) discardPack(sum, lease string) error {
 		}
 		return err
 	}
-	holdersLeft := 0
-	var drop []string
 	matched := false
 	for _, entry := range entries {
 		name := entry.Name()
@@ -324,28 +345,16 @@ func (s *store) discardPack(sum, lease string) error {
 		}
 		meta.Leases = filtered
 		if len(meta.Leases) == before {
-			holdersLeft += len(meta.Leases)
 			continue
 		}
 		matched = true
 		meta.Holders = len(meta.Leases)
-		if len(meta.Leases) > 0 {
-			holdersLeft += len(meta.Leases)
-			if err = writePackMeta(path, meta); err != nil {
-				return err
-			}
-			continue
+		if err = writePackMeta(path, meta); err != nil {
+			return err
 		}
-		drop = append(drop, path)
 	}
 	if !matched {
 		return packError("lease 无效或不匹配")
-	}
-	if holdersLeft == 0 && !keepObject && len(drop) > 0 {
-		_ = os.Remove(filepath.Join(s.data, "objects", sum[:2], sum))
-	}
-	for _, path := range drop {
-		_ = os.Remove(path)
 	}
 	return nil
 }
