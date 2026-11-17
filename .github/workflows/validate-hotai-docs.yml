@@ -1,4 +1,4 @@
-name: Validate HotAI docs
+name: Validate Hotai docs
 
 on:
   pull_request:
@@ -19,7 +19,7 @@ jobs:
         with:
           # Need enough history to diff against the PR base.
           fetch-depth: 0
-      - name: Require HotAI docs when hotai/ files change
+      - name: Require Hotai docs when hotai/ files change
         env:
           HOTAI_DOCS_BASE: ${{ github.event.pull_request.base.sha }}
           HOTAI_DOCS_HEAD: ${{ github.event.pull_request.head.sha }}

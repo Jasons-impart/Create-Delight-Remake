@@ -32,8 +32,8 @@
 | Vintage Improvements Ponder | `com/negodya1/vintageimprovements/infrastructure/ponder/VintagePonderScene.badiff`、`VintagePonderTag.badiff` | 从 Ponder 场景和 `KINETIC_APPLIANCES` 标签中移除 `BELT_GRINDER` 条目，避免砂带磨床 Ponder 继续注册。 |
 | Neapolitan 客户端页签编辑 | `com/teamabnormals/neapolitan/core/Neapolitan.badiff` | 客户端初始化时跳过 `NeapolitanBlocks.setupTabEditors()` 和 `NeapolitanItems.setupTabEditors()`，避免 Neapolitan 自行编辑创造页签。 |
 | Better Compatibility Checker 状态 ping mixin | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | 将匿名内部类捕获的 `ServerData` 改为反射查找，并兼容混淆/反混淆方法名；注入点改到响应处理尾部，降低字段名变化造成的 mixin 失败。 |
-| Ice and Fire 寒冰百合冰雪地表放置 | `com/github/alexthe666/iceandfire/block/BlockElementalFlower.badiff` | 仅拓宽寒冰百合的 `mayPlaceOn`（`m_6266_`）：在原土沙/`#sand` 条件失败后，再接受与 `canStay` 相同的 `#ice`/`#snow`/`#snow_layer_can_survive_on`。不改变火/电百合，不改群系或火星地表。由 `ClassReader → ClassNode → ClassWriter(0)` 归一化后经 HotAI `MemoryDiffs` 生成，不能用 `BadiffCli`。详见 [补丁明细](badiff-details.md#ice-and-fire-寒冰百合冰雪地表放置)。 |
-| IAF Dragon Fix 地下冰龙穴避海 | `com/iafdragonfix/structure/DragonDenPiece.badiff` | 地下冰龙穴确定中心后检查中心及周围 16 格的 3×3 群系采样；任一点命中 `#createdelight:blocks_ice_dragon_caves` 就跳过生成，避免木卫二龙穴切入地下海，同时保留木卫二陆地区域和火星的地下冰龙穴。补丁必须由 HotAI 将 `.class` 转存为其 `MemoryDiff` 序列化格式，不得使用 `BadiffCli diff` 生成不兼容的 `BadiffFileDiff`。 |
+| Ice and Fire 寒冰百合冰雪地表放置 | `com/github/alexthe666/iceandfire/block/BlockElementalFlower.badiff` | 仅拓宽寒冰百合的 `mayPlaceOn`（`m_6266_`）：在原土沙/`#sand` 条件失败后，再接受与 `canStay` 相同的 `#ice`/`#snow`/`#snow_layer_can_survive_on`。不改变火/电百合，不改群系或火星地表。由 `ClassReader → ClassNode → ClassWriter(0)` 归一化后经 Hotai `MemoryDiffs` 生成，不能用 `BadiffCli`。详见 [补丁明细](badiff-details.md#ice-and-fire-寒冰百合冰雪地表放置)。 |
+| IAF Dragon Fix 地下冰龙穴避海 | `com/iafdragonfix/structure/DragonDenPiece.badiff` | 地下冰龙穴确定中心后检查中心及周围 16 格的 3×3 群系采样；任一点命中 `#createdelight:blocks_ice_dragon_caves` 就跳过生成，避免木卫二龙穴切入地下海，同时保留木卫二陆地区域和火星的地下冰龙穴。补丁必须由 Hotai 将 `.class` 转存为其 `MemoryDiff` 序列化格式，不得使用 `BadiffCli diff` 生成不兼容的 `BadiffFileDiff`。 |
 | Quality Food 方块掉落品质 | `de/cadentem/quality_food/mixin/BlockMixin.badiff` | 只在存在 `DropData` 且方块通过 `Utils.isValidBlock` 时应用方块品质，移除无上下文时对掉落物套品质的 fallback。 |
 | Quality Food 品质保留与空品质序列化 | `de/cadentem/quality_food/capability/LevelData.badiff`、`BlockData.badiff` | 空品质仍不能进 `HashMap` 后在 `serializeNBT` 里 `.ordinal()`。品质被取走时，`LevelData` 的守卫直接返回，不再调用 `remove()`，避免真删品质并打断 `lastRemoved` 转移链。`BlockData` 的 add 守卫改为写入 `Quality.NONE`，不再把条目丢掉。读取空的 `lastRemoved` 仍回退 `NONE`，序列化仍跳过空条目。 |
 | Ratatouille/炸锅品质继承（050x） | `org/forsteri/ratatouille/content/squeeze_basin/SqueezeBasinBlockEntity.badiff`、`frozen_block/FrozenBlockEntity.badiff`、`demolder/MechanicalDemolderBlockEntity.badiff`、`com/pyzpre/createbitterballen/block/mechanicalfryer/MechanicalFryerEntity.badiff` | 挤压盆扣料前仅采槽 0 品质并写回产物；冷冻方块 getResultItem 先 copy 再 setCount/写品质；机械炸锅扣料前 copy 输入快照再套品质；机械脱模器在 `RecipeApplier.applyRecipeOn` 之后先剥 `quality_food` 再按输入品质写入（避免 QF 掷骰与不覆盖已有品质）。配合 KubeJS material_whitelist。详见 [补丁明细](badiff-details.md#ratatouille--机械炸锅品质-050x)。 |
@@ -52,7 +52,7 @@
 
 | 目标领域 | 当前文件 | 行为变化与状态 |
 |---|---|---|
-| More Mod Tetra × Tetra 6.17 属性精度 | `net/yiran/rebalancing/core/mixins/AttributeHelperMixin.class` | 将 MMT `AttributeHelperMixin` 的 `@ModifyVariable` 局部变量名从旧 `multiplier` 改为 Tetra 6.17 的 `rounding`，并将旧“乘 `1000` 后取整”所需常量改为等价步长 `0.001d`。该完整 class 用于人工反编译审阅；尚未启动客户端，HotAI 还未把它转存为 `.badiff`，也未完成第二次启动重放。 |
+| More Mod Tetra × Tetra 6.17 属性精度 | `net/yiran/rebalancing/core/mixins/AttributeHelperMixin.class` | 将 MMT `AttributeHelperMixin` 的 `@ModifyVariable` 局部变量名从旧 `multiplier` 改为 Tetra 6.17 的 `rounding`，并将旧“乘 `1000` 后取整”所需常量改为等价步长 `0.001d`。该完整 class 用于人工反编译审阅；尚未启动客户端，Hotai 还未把它转存为 `.badiff`，也未完成第二次启动重放。 |
 
 ## 静态 JAR 外动态创建的超导连接器类
 
@@ -67,5 +67,5 @@
 - 更新目标模组时，先确认目标是上游静态 class 还是由 `hotai` 动态创建；再看 `logs/latest.log` 是否出现每个目标的 `Patched class:`。
 - 修改 `hotai/**/*.badiff` 后运行 `scripts/update-hotai-docs.ps1`，再运行 `scripts/update-hotai-docs.ps1 -Check` 或 `scripts/validate-knowledge-base.ps1`；校验会阻止生成状态区过期。
 - 新增或替换补丁时优先保留 `.badiff`，不要把目标模组完整 class 当作长期源文件；`hotai` 可在加载 `.class` 后自动转存为 `.badiff`。
-- 用户需要先审阅二进制改动时，可短期保留完整 `.class`；必须记录 SHA-256 和待转存状态，不能把静态反汇编当成 HotAI 首次转存或第二次重放已通过。
+- 用户需要先审阅二进制改动时，可短期保留完整 `.class`；必须记录 SHA-256 和待转存状态，不能把静态反汇编当成 Hotai 首次转存或第二次重放已通过。
 - 超导连接器不仅依赖 `hotai` 注册补丁，还依赖 `kubejs/assets/createaddition/` 的模型、贴图、语言和 `kubejs/server_scripts/Create Addition/` 的配方、标签、掉落。

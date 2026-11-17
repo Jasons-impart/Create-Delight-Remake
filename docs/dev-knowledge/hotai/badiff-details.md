@@ -21,7 +21,7 @@
 | TACZ-addon | `taczaddon-1.20.1-1.1.8-hotfix2-for-new-soph.jar` | 1/1 可应用：`ShoulderSurfingCompatInner`。 | 已按 Shoulder Surfing 5.0.7 API 重建，已完成开镜回归。 |
 | Neapolitan | `neapolitan-1.20.1-5.1.0.jar` | 1/1 可应用：`Neapolitan`。 | 当前可生效。 |
 | Better Compatibility Checker | `BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar` | 1/1 可应用：`ServerStatusPingerMixin`。 | 当前可生效。 |
-| IAF Dragon Fix | `iafdragonfix-2.0.0.jar` | `DragonDenPiece.class` 已由 HotAI 转存为运行时 `.badiff`，启动日志记录 `Patched class`。 | 当前 JAR 已完成首次转换启动；配套禁止群系标签由 KubeJS 数据包提供，badiff 第二次启动重放仍待确认。 |
+| IAF Dragon Fix | `iafdragonfix-2.0.0.jar` | `DragonDenPiece.class` 已由 Hotai 转存为运行时 `.badiff`，启动日志记录 `Patched class`。 | 当前 JAR 已完成首次转换启动；配套禁止群系标签由 KubeJS 数据包提供，badiff 第二次启动重放仍待确认。 |
 | Quality Food | `quality_food-1.20.1-2.3.3-all.jar` | 1/1 目标 class 命中：`BlockMixin`。 | 当前 JAR 可匹配。 |
 | Create New Age | `create-new-age-1.2.0+forge-mc1.20.1.jar` | 1/1 可应用：旧 `org/antarcticgardens/newage/CreateNewAgePonders` 补丁已替换为当前路径 `org/antarcticgardens/cna/content/ponders/CNAPonders`。 | 当前可生效；补丁继续实现提交 `e11d47f206c1e9cb28bdf506698c824586f9b00c`（`删除cna中无用的ponder (#649)`）的意图，移除 heating、heater、reactor、wires 场景与对应标签。 |
 
@@ -107,7 +107,7 @@ public static boolean isDifficultyHudVisible() {
 }
 ```
 
-配置位于客户端本地 `config/createdelightcore-common.toml`，Configured 的 Create Delight Core 常规配置页可编辑；它不属于服务端同步配置，不改变实际难度。`kubejs/client_scripts/00_java_classes.js` 在客户端域加载 `CDConfig`，`render/render_difficulty_gui.js` 每次绘制前调用读取入口，不缓存布尔结果；Configured 保存后无需重载脚本或重启即可切换。首次安装 HotAI 补丁仍须完整重启客户端。中文与英文名称、提示位于 `kubejs/assets/createdelightcore/lang/`，旧 `config/createdelight/difficulty_hud.json` 不再读取。
+配置位于客户端本地 `config/createdelightcore-common.toml`，Configured 的 Create Delight Core 常规配置页可编辑；它不属于服务端同步配置，不改变实际难度。`kubejs/client_scripts/00_java_classes.js` 在客户端域加载 `CDConfig`，`render/render_difficulty_gui.js` 每次绘制前调用读取入口，不缓存布尔结果；Configured 保存后无需重载脚本或重启即可切换。首次安装 Hotai 补丁仍须完整重启客户端。中文与英文名称、提示位于 `kubejs/assets/createdelightcore/lang/`，旧 `config/createdelight/difficulty_hud.json` 不再读取。
 
 补丁通过实际 Hotai 1.0 `BytecodeTransformer` 生成 `MemoryDiff`，并经实际 `DiffTransformer` 重放逐字节一致；全部方法通过 ASM `BasicVerifier`。移除新增字段、方法和静态初始化指令后，原 class 与归一化输入逐字节一致。隔离 JVM 使用真实 Forge 47.4.16 `ForgeConfigSpec` 验证默认 true、翻译键、不需世界重启、`true → false → true` 即时读取和配置重新加载，同时保留原 COMMON 配置项；客户端绘制回调已用可变开关验证隐藏/显示切换。Configured 界面点击和完整重启后的游戏回归仍待验证。
 
@@ -589,7 +589,7 @@ MMT 原 class 针对 Tetra 6.9 的局部变量名 `multiplier`，返回 `1000d`�
 
 `mayPlaceOn`（SRG `m_6266_`）原本只允许草方块、泥土、砂土、灰化土、耕地或 `#sand`。补丁在该结果为 false 时，仅当 `this == IafBlockRegistry.FROST_LILY.get()` 再检查 `BlockState.m_204336_`（`is(TagKey)`）是否命中 `BlockTags.f_13047_`（`#ice`）、`f_144279_`（`#snow`）或 `f_215834_`（`#snow_layer_can_survive_on`）。原土沙成功路径、火/电百合以及 `canStay`/`updateTick`/`checkFall` 均未改。
 
-补丁由 `ClassReader → ClassNode → ClassWriter(0)` 归一化基线后，用 HotAI 1.0 的 `MemoryDiffs.diff` + `DefaultSerialization` 生成；反序列化重放后与预期 class 逐字节一致。未在缺少 Minecraft 类的环境下跑通 `CheckClassAdapter`/`SimpleVerifier`（缺 `Block`/`BushBlock`），但已用 `javap` 核对 `m_6266_` 指令与注入范围。完整重启后需确认 `Patched class: com/github/alexthe666/iceandfire/block/BlockElementalFlower`，并在火星山峰新区块验证自然生成、在旧区块验证手动种植。
+补丁由 `ClassReader → ClassNode → ClassWriter(0)` 归一化基线后，用 Hotai 1.0 的 `MemoryDiffs.diff` + `DefaultSerialization` 生成；反序列化重放后与预期 class 逐字节一致。未在缺少 Minecraft 类的环境下跑通 `CheckClassAdapter`/`SimpleVerifier`（缺 `Block`/`BushBlock`），但已用 `javap` 核对 `m_6266_` 指令与注入范围。完整重启后需确认 `Patched class: com/github/alexthe666/iceandfire/block/BlockElementalFlower`，并在火星山峰新区块验证自然生成、在旧区块验证手动种植。
 
 | 校验对象 | SHA-256 |
 |---|---|
@@ -601,7 +601,7 @@ MMT 原 class 针对 Tetra 6.9 的局部变量名 `multiplier`，返回 `1000d`�
 
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
-| `com/iafdragonfix/structure/DragonDenPiece.badiff` | 首次转换启动已确认 | `generateCave(...)` 仅在龙种为 `ICE_CAVE` 时创建 `#createdelight:blocks_ice_dragon_caves` 群系标签，并在实际地下中心的 X/Z 各偏移 `-16/0/16` 组成的 3×3 点阵读取群系；任一点命中标签就提前返回。配套标签包含 `northstar:europan_subsurface_ocean` 与 `alexscaves:abyssal_chasm`。首次错误补丁由 `BadiffCli diff` 生成 `BadiffFileDiff`，与 HotAI 使用 `DefaultSerialization` 读取的 `MemoryDiff` 格式不兼容，触发 `Not all bytes consumed from byte[]`；现有文件由 HotAI 官方 `.class` 转存流程生成。 | 木卫二地下冰龙穴仍可在冰原和山脊区域生成，但不会以地下海或渊海陷窟为中心、也不会跨入其近邻 16 格范围；火星冰龙穴及所有地表龙巢不受影响。首次转换启动已记录 `Patched class` 并成功进入木卫二；已游戏内验证第二次启动 badiff 重放与新生成区块结构分布。 |
+| `com/iafdragonfix/structure/DragonDenPiece.badiff` | 首次转换启动已确认 | `generateCave(...)` 仅在龙种为 `ICE_CAVE` 时创建 `#createdelight:blocks_ice_dragon_caves` 群系标签，并在实际地下中心的 X/Z 各偏移 `-16/0/16` 组成的 3×3 点阵读取群系；任一点命中标签就提前返回。配套标签包含 `northstar:europan_subsurface_ocean` 与 `alexscaves:abyssal_chasm`。首次错误补丁由 `BadiffCli diff` 生成 `BadiffFileDiff`，与 Hotai 使用 `DefaultSerialization` 读取的 `MemoryDiff` 格式不兼容，触发 `Not all bytes consumed from byte[]`；现有文件由 Hotai 官方 `.class` 转存流程生成。 | 木卫二地下冰龙穴仍可在冰原和山脊区域生成，但不会以地下海或渊海陷窟为中心、也不会跨入其近邻 16 格范围；火星冰龙穴及所有地表龙巢不受影响。首次转换启动已记录 `Patched class` 并成功进入木卫二；已游戏内验证第二次启动 badiff 重放与新生成区块结构分布。 |
 
 ## Alex's Mobs 补丁
 
@@ -609,9 +609,9 @@ MMT 原 class 针对 Tetra 6.9 的局部变量名 `multiplier`，返回 `1000d`�
 
 目标：`com/github/alexthe666/alexsmobs/entity/EntityWarpedToad.badiff`，绑定 Alex's Mobs `1.22.9`（`alexsmobs-1.22.9.jar`）。语义对齐 [CDC #130](https://github.com/Jasons-impart/Create-Delight-Core/pull/130) / [Remake #2319](https://github.com/Jasons-impart/Create-Delight-Remake/pull/2319)：只把 `m_8119_()`（tick）中绯红蚊分支唯一的 `Float.MAX_VALUE` 换成 `10000.0F`，普通攻击与伤害事件流程不变。
 
-`release-v050x` 冻结在 CDC `2.2.16j`，该 JAR 不含 `WarpedToadPredationDamageMixin`；`main` 侧 CDC `2.2.16n` 已带同一 mixin，故本补丁只服务 050x HotAI 回迁，不 bump CDC、不改子模块。
+`release-v050x` 冻结在 CDC `2.2.16j`，该 JAR 不含 `WarpedToadPredationDamageMixin`；`main` 侧 CDC `2.2.16n` 已带同一 mixin，故本补丁只服务 050x Hotai 回迁，不 bump CDC、不改子模块。
 
-补丁由 `ClassReader → ClassNode → ClassWriter(0)` 归一化基线后，用 HotAI 1.0 的 `MemoryDiffs.diff` + `DefaultSerialization` 生成；反序列化重放后与预期 class 逐字节一致，方法内 `Float.MAX_VALUE` 计数为 0、`10000.0F` 计数为 1。完整重启后需确认 `Patched class: com/github/alexthe666/alexsmobs/entity/EntityWarpedToad`，并用蟾蜍捕食绯红蚊回归（含佩戴 Tetrawear / Apothic Attributes 护甲路径）。
+补丁由 `ClassReader → ClassNode → ClassWriter(0)` 归一化基线后，用 Hotai 1.0 的 `MemoryDiffs.diff` + `DefaultSerialization` 生成；反序列化重放后与预期 class 逐字节一致，方法内 `Float.MAX_VALUE` 计数为 0、`10000.0F` 计数为 1。完整重启后需确认 `Patched class: com/github/alexthe666/alexsmobs/entity/EntityWarpedToad`，并用蟾蜍捕食绯红蚊回归（含佩戴 Tetrawear / Apothic Attributes 护甲路径）。
 
 | 校验对象 | SHA-256 |
 |---|---|
