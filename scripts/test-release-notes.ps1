@@ -58,7 +58,7 @@ Throws { Assert-CuratedNotes ($body + ' [#99](https://github.com/other/repo/pull
 Throws { Assert-CuratedNotes '' owner/repo } 'required'
 Throws { Assert-CuratedNotes '   ' owner/repo } 'required'
 Throws { Assert-CuratedNotes '**其他**' owner/repo } 'Invalid or duplicate'
-Throws { Assert-CuratedNotes "**问题修复**`n- 修复hotai问题" owner/repo } 'internal jargon'
+Throws { Assert-CuratedNotes "**问题修复**`n- 修复Hotai问题" owner/repo } 'internal jargon'
 Throws { Assert-CuratedNotes "**问题修复**`n- fix recipe ([提交](https://github.com/owner/repo/pull/2))" owner/repo } 'Untranslated'
 Throws { Assert-CuratedNotes "**问题修复**`n- 修复配方" owner/repo } 'needs a repository'
 Throws { Assert-CuratedNotes "**问题修复**`n- 修复配方（[#99](https://github.com/owner/repo/pull/99)）" owner/repo $commits } 'outside the release range'

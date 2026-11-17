@@ -103,7 +103,7 @@ heartbeat 使用适合主动跟进的短间隔。除合并、完成、失败或�
 ### 写作 prompt / 必须逐条完成的检查表
 
 - **范围**：只说明上一正式版至本版实际新增的玩家变更；同一基线用于正文、compare 和增量包。不能凭 PR 编号较旧就判断“已发布”。回移植标题的最后一个 `(#号)` 是当前 PR，前面的关联/来源编号不是新增 PR；核对旧版已包含的同一效果，避免重复宣传。
-- **内容**：写玩家看到什么变化、遇到什么问题得到修复，简短中文，一条一个主题。不要写实现迁移、内部类名、分支或补丁落点；不出现 hotai、CDC、OEI、packwiz、mixin 等术语。可以保留玩家认识的模组、光影名。不能把“统一改走某实现”当作收益，不能根据开发者愿望臆造效果。
+- **内容**：写玩家看到什么变化、遇到什么问题得到修复，简短中文，一条一个主题。不要写实现迁移、内部类名、分支或补丁落点；不出现 Hotai、CDC、OEI、packwiz、mixin 等术语。可以保留玩家认识的模组、光影名。不能把“统一改走某实现”当作收益，不能根据开发者愿望臆造效果。
 - **排除维护噪音**：版本 bump、CI、开发文档、发布工具、仅调试日志、仅打包/载荷搬运不面向玩家。`[docs]` 不等于删除：任务书、游戏内提示和翻译仍是玩家内容。打包改动只有确实解决玩家无法启动等结果且证据充分时，才描述玩家结果。
 - **分类**：只使用「新内容与调整」「模组与光影更新」「问题修复」「任务书与文本」，省略空分类。按理解后的实际效果分类：任务书不能因 `[mod]` 被放进模组更新，玩法修复不能丢进“其他”。去掉 `fix:`、`[050x]`、`[docs]` 等提交前缀。
 - **合并/拆分**：同一问题或同一任务指引的多个 PR 合为一条，保留相关 PR 链接；一个提交包含多个独立主题时可拆分。无 PR 时使用该提交的完整 SHA 链接，不编造 PR。链接必须来自本次范围；不要把来源 PR 当作本次 PR。
@@ -128,7 +128,7 @@ heartbeat 使用适合主动跟进的短间隔。除合并、完成、失败或�
 
 ## 按需参考
 
-- 版本号、小版本阶段、分支角色与正式版后 CDC 冻结 / hotai：读 [branch-and-release.md](../../../docs/dev-knowledge/branch-and-release.md)。「抢先预览」是产品阶段；脚本仍只用正式/测试。已正式发布的 `release-vxxxx` 持续维护期间不要 bump CDC 或合入依赖新 CDC 的 mixin。
+- 版本号、小版本阶段、分支角色与正式版后 CDC 冻结 / Hotai：读 [branch-and-release.md](../../../docs/dev-knowledge/branch-and-release.md)。「抢先预览」是产品阶段；脚本仍只用正式/测试。已正式发布的 `release-vxxxx` 持续维护期间不要 bump CDC 或合入依赖新 CDC 的 mixin。
 - Windows 下的代理、`gh` 认证和大文件传输细节：读 [release-windows-github.md](references/release-windows-github.md)。
 - 仅当用户明确要求“标签与 `modpack.toml` 版本不同”的历史过渡发布时：读 [transitional-test-tags.md](references/transitional-test-tags.md)。
 - 参数和脚本内部步骤以当前实现为准：运行 `Get-Help .\.agents\skills\release\release-prepare.ps1 -Full` 或 `Get-Help .\.agents\skills\release\release-publish.ps1 -Full`。
