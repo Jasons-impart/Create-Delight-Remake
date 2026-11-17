@@ -52,6 +52,10 @@
     {
       "id": "brewinandchewin:rice_wine",
       "required": false
+    },
+    {
+      "id": "youkaishomecoming:scarlet_mist",
+      "required": false
     }
   ]
 }

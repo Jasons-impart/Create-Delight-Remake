@@ -2,12 +2,6 @@
 
 本文件只记录历史坑、根因和修复经验；当前操作流程、内容实现地图和轻量 how-to 分别写入 `.agents/skills/`、`docs/dev-knowledge/content-map.md` 和 `docs/dev-knowledge/how-to-index.md`。
 
-## 酒类订单标签必须沿用原分类入口
-
-- **日期**：2026-11-16。
-- **Problem**：统一酒类清单时另建订单标签生成机制，会丢失既有东西方归类；把饮用／装排液的容器字段当成订单要求，也会误改交付规则。
-- **Fix/Lesson**：订单标签适配固定在 `kubejs/server_scripts/Quality Food/tags.js` 按原方式补充；保留 `kubejs/data/createdelight/tags/items/order/{western_wine,eastern_wine}.json` 基础定义及汇总标签，不从酒类清单重造 order 分类。订单按交付酒品标签匹配并扣除成品，不返还空容器；容器只用于饮用和装排液。登记入口见 [技术做法索引](dev-knowledge/how-to-index.md)。
-
 ## CDC GameTestServer 的 Gradle 成功不等于测试通过
 
 - **日期**：2026-10-07。

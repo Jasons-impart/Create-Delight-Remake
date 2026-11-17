@@ -222,39 +222,7 @@ ServerEvents.tags("item", e => {
     })
     e.add("quality_food:material_whitelist", iceCreamScoops)
 
-    // 酒类订单适配集中维护在本文件；保留原 eastern_wine / western_wine 基础标签。
-    // 坑：不要从酒类清单重造 order 分类，否则可能丢失原订单的东西方归类；订单交付不返还容器。
-    e.add("createdelight:order/western_wine", [
-        "brewinandchewin:glittering_grenadine",
-        "brewinandchewin:kombucha",
-        "brewinandchewin:withering_dross",
-        "collectorsreap:deific_blood",
-        "collectorsreap:hermits_sour",
-        "collectorsreap:rose_moon",
-        "collectorsreap:reanimators_garden",
-        "collectorsreap:heavens_cream",
-        "cosmopolitan:wildberry_punch",
-        "cosmopolitan:smoggy_aperol",
-        "cosmopolitan:twilight_chartreuse",
-        "cosmopolitan:root_beer",
-        "cosmopolitan:winter_glogg",
-        "farmers_spell:amethyst_tequila",
-        "farmers_spell:butterbeer",
-        "farmers_spell:catacombs_wine",
-        "farmers_spell:ice_venom_wine",
-        "farmers_spell:ink_beer",
-        "dungeonsdelight:bloody_mary",
-        "dungeonsdelight:liveroot_beer",
-        "dungeonsdelight:ghastly_spirits",
-        "irons_spellbooks:fire_ale"
-    ])
-    e.add("createdelight:order/eastern_wine", [
-        "youkaishomecoming:scarlet_mist"
-    ])
     global.CDRemovedWineItems.forEach(id => {
-        e.remove("createdelight:order/western_wine", id)
-        e.remove("createdelight:order/eastern_wine", id)
-        e.remove("createdelight:order/wine", id)
         e.remove("quality_food:material_whitelist", id)
         e.add("quality_food:blacklist", id)
     })

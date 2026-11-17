@@ -18,6 +18,18 @@ StartupEvents.modifyCreativeTab("youkaishomecoming:food", e => {
     'youkaishomecoming:burgundy',
     'youkaishomecoming:champagne',
     'youkaishomecoming:van_allen',
+    'youkaishomecoming:red_grape',
+    'youkaishomecoming:black_grape',
+    'youkaishomecoming:white_grape',
+    'youkaishomecoming:red_grape_seeds',
+    'youkaishomecoming:black_grape_seeds',
+    'youkaishomecoming:white_grape_seeds',
+    'youkaishomecoming:red_grape_crate',
+    'youkaishomecoming:black_grape_crate',
+    'youkaishomecoming:white_grape_crate',
+    'youkaishomecoming:wild_red_grape',
+    'youkaishomecoming:wild_black_grape',
+    'youkaishomecoming:wild_white_grape',
   ])
 })
 

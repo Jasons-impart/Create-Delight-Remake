@@ -104,6 +104,94 @@
     {
       "id": "cosmopolitan:steeleaf_nectar",
       "required": false
+    },
+    {
+      "id": "brewinandchewin:glittering_grenadine",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:kombucha",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:withering_dross",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:deific_blood",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:hermits_sour",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:rose_moon",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:reanimators_garden",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:heavens_cream",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:wildberry_punch",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:smoggy_aperol",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:twilight_chartreuse",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:root_beer",
+      "required": false
+    },
+    {
+      "id": "cosmopolitan:winter_glogg",
+      "required": false
+    },
+    {
+      "id": "farmers_spell:amethyst_tequila",
+      "required": false
+    },
+    {
+      "id": "farmers_spell:butterbeer",
+      "required": false
+    },
+    {
+      "id": "farmers_spell:catacombs_wine",
+      "required": false
+    },
+    {
+      "id": "farmers_spell:ice_venom_wine",
+      "required": false
+    },
+    {
+      "id": "farmers_spell:ink_beer",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:bloody_mary",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:liveroot_beer",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:ghastly_spirits",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:fire_ale",
+      "required": false
     }
   ]
 }

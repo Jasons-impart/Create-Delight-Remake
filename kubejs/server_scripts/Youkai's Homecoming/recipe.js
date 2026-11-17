@@ -9,6 +9,26 @@ ServerEvents.recipes(e => {
         'youkaishomecoming:coffee_beans',
         'youkaishomecoming:ice_cube',
         "youkaishomecoming:kettle",
+        'youkaishomecoming:red_grape_crate',
+        'youkaishomecoming:black_grape_crate',
+        'youkaishomecoming:white_grape_crate',
+        'youkaishomecoming:red_grape_seeds',
+        'youkaishomecoming:black_grape_seeds',
+        'youkaishomecoming:white_grape_seeds',
+        'youkaishomecoming:red_grape',
+        'youkaishomecoming:black_grape',
+        'youkaishomecoming:white_grape',
+    ])
+    remove_recipes_input(e, [
+        'youkaishomecoming:red_grape_crate',
+        'youkaishomecoming:black_grape_crate',
+        'youkaishomecoming:white_grape_crate',
+        'youkaishomecoming:red_grape_seeds',
+        'youkaishomecoming:black_grape_seeds',
+        'youkaishomecoming:white_grape_seeds',
+        'youkaishomecoming:red_grape',
+        'youkaishomecoming:black_grape',
+        'youkaishomecoming:white_grape',
     ])
     remove_recipes_id(e, [
         'youkaishomecoming:redbean_bag',
@@ -81,7 +101,8 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:crab_meat_using_deployer",
         "youkaishomecoming:yellow_tea_bag",
         "youkaishomecoming:yellow_tea_leaves_from_yellow_tea_bag",
-        "youkaishomecoming:yellow_tea_leaves_from_green_tea_leaves_drying"
+        "youkaishomecoming:yellow_tea_leaves_from_green_tea_leaves_drying",
+
     ])
     remove_recipes_type(e, [
         "youkaishomecoming:moka_pot",

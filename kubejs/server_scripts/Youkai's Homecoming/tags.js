@@ -3,7 +3,19 @@ ServerEvents.tags("minecraft:item", e => {
     e.removeAllTagsFrom([
         'youkaishomecoming:green_coffee_bean',
         'abnormals_delight:perch_slice',
-        'abnormals_delight:pike_slice'
+        'abnormals_delight:pike_slice',
+        'youkaishomecoming:red_grape',
+        'youkaishomecoming:black_grape',
+        'youkaishomecoming:white_grape',
+        'youkaishomecoming:red_grape_seeds',
+        'youkaishomecoming:black_grape_seeds',
+        'youkaishomecoming:white_grape_seeds',
+        'youkaishomecoming:red_grape_crate',
+        'youkaishomecoming:black_grape_crate',
+        'youkaishomecoming:white_grape_crate',
+        'youkaishomecoming:wild_red_grape',
+        'youkaishomecoming:wild_black_grape',
+        'youkaishomecoming:wild_white_grape'
     ])
     e.add('forge:tea_leaves/green', "farmersrespite:green_tea_leaves")
     e.add('forge:tea_leaves/oolong', "farmersrespite:yellow_tea_leaves")
@@ -64,5 +76,14 @@ ServerEvents.tags("minecraft:item", e => {
 ServerEvents.tags("block", e => {
     e.removeAllTagsFrom([
         'youkaishomecoming:coffea',
+        "youkaishomecoming:red_grape",
+        "youkaishomecoming:black_grape",
+        "youkaishomecoming:white_grape",
+        'youkaishomecoming:red_grape_crate',
+        'youkaishomecoming:black_grape_crate',
+        'youkaishomecoming:white_grape_crate',
+        'youkaishomecoming:wild_red_grape',
+        'youkaishomecoming:wild_black_grape',
+        'youkaishomecoming:wild_white_grape',
     ])
 })

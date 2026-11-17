@@ -135,8 +135,8 @@ FluidStack tag:
 
 ```json
 {
-  "fluid": "createdelightcore:red_grapejuice",
-  "source_items": ["vinery:red_grape"],
+  "fluid": "create_central_kitchen:chocolate_milkshake",
+  "source_items": ["neapolitan:chocolate_milkshake"],
   "unit": 250,
   "policy": "primary_input",
   "max_quality": 3
@@ -145,7 +145,6 @@ FluidStack tag:
 
 整合包侧第一批适合接入的流体：
 
-- 葡萄汁：`createdelightcore:*_grapejuice`
 - 冰淇淋液：`cosmopolitan:*_ice_cream`
 - 奶昔：`create_central_kitchen:*_milkshake`、`createdelightcore:*_milkshake`
 - 糖浆、奶油、面糊：`createdelight:*_syrup`、`cosmopolitan:cream`、`createdelight:cake_batter`
@@ -200,7 +199,7 @@ Dimension -> Long2ObjectMap<WorldFluidQuality>
 
 WorldFluidQuality:
 {
-  fluid: "createdelightcore:red_grapejuice",
+  fluid: "example:food_fluid",
   quality: 1-3,
   source: "bucket|pipe|create_hose|debug",
   placedGameTime: long,
@@ -278,8 +277,8 @@ WorldFluidQuality:
 
 ```js
 QualityFoodFluidsEvents.rules(e => {
-  e.qualityFluid("createdelightcore:red_grapejuice")
-    .sourceItem("vinery:red_grape")
+  e.qualityFluid("create_central_kitchen:chocolate_milkshake")
+    .sourceItem("neapolitan:chocolate_milkshake")
     .unit(250)
     .policy("primary_input")
     .maxQuality(3)
@@ -289,9 +288,9 @@ QualityFoodFluidsEvents.rules(e => {
 推荐提供 recipe helper：
 
 ```js
-qualityFoodFluids.retain("createdelight:mixing/red_grapejuice", {
+qualityFoodFluids.retain("createdelight:filling/chocolate_milkshake", {
   policy: "primary_input",
-  primary: "vinery:red_grape"
+  primary: "create_central_kitchen:chocolate_milkshake"
 })
 
 qualityFoodFluids.clear("createdelight:big_centrifugation/separation/chocolate_milkshake")
@@ -303,7 +302,7 @@ qualityFoodFluids.clear("createdelight:big_centrifugation/separation/chocolate_m
 
 第一版目标流程：
 
-1. 玩家通过手动种植和 Quality Food 机制获得带品质葡萄、草莓、香草等食材。
+1. 玩家通过手动种植和 Quality Food 机制获得带品质草莓、香草等食材。
 2. 使用分液池、注液器或搅拌盆把带品质食材转为品质流体。
 3. 品质流体在已验证的 Create 储罐和管道中作为独立批次流转。
 4. 如果流体可放置，玩家可以把品质流体作为源方块短期存放或展示；取回时保留品质。
@@ -389,16 +388,15 @@ QualityFoodFluids/
 
 ### M5：整合包接入
 
-- 先接葡萄汁链路，因为 `kubejs/server_scripts/Lets Do/bug_fix.js` 已经有清晰的葡萄汁 emptying/filling/mixing。
-- 再接冰淇淋和奶昔链路，因为 `kubejs/server_scripts/Custom/food/icecream.js` 已经统一封装 `make_ice_cream`。
-- 最后接面糊、糖浆、奶油等更容易混配的批量食物流体。
+- 先接冰淇淋和奶昔链路，因为 `kubejs/server_scripts/Custom/food/icecream.js` 已经统一封装 `make_ice_cream`。
+- 再接面糊、糖浆、奶油等更容易混配的批量食物流体。
 
 ## 验证清单
 
-- 品质葡萄 emptying 后得到同等级品质葡萄汁。
-- 品质葡萄汁 filling 回瓶装葡萄汁后保留品质。
-- 铁品质葡萄汁和普通葡萄汁不能在普通储罐里无提示合并。
-- 铁品质葡萄汁和金品质葡萄汁不能被普通管道自动混成更大量品质流体。
+- 品质奶昔 emptying 后得到同等级品质奶昔流体。
+- 品质奶昔流体 filling 回瓶装奶昔后保留品质。
+- 铁品质奶昔和普通奶昔不能在普通储罐里无提示合并。
+- 铁品质奶昔和金品质奶昔不能被普通管道自动混成更大量品质流体。
 - 无品质输入参与未声明策略的配方时，输出品质被清除。
 - Quality Food 硬依赖声明正确；缺失时由加载器给出明确依赖错误。
 - 服务端重启后品质流体储罐保存品质。
@@ -429,6 +427,6 @@ QualityFoodFluids/
 4. 未声明传播策略的配方默认清除品质。
 5. 世界流体品质只记录源方块，不记录普通流动方块。
 6. Hose Pulley 和无限源场景先按清除或拒绝品质处理。
-7. 先完成葡萄汁和冰淇淋/奶昔两条链路，再扩展到全部食品流体。
+7. 先完成冰淇淋和奶昔链路，再扩展到全部食品流体。
 
 这条路线能让流体品质成为 Create 食品自动化的真实系统，而不是一个藏在 NBT 里的奖励复制器。
