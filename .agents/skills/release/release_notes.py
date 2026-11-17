@@ -22,7 +22,7 @@ PREVIOUS_VERSION_PATTERN = re.compile(r"^v\d+\.\d+\.\d+\.\d+(?:-test)?$")
 PR_SUFFIX_PATTERN = re.compile(r"\(#(\d+)\)\s*$")
 CJK_PATTERN = re.compile(r"[\u4e00-\u9fff]")
 JARGON_PATTERN = re.compile(
-    r"(?i)(?<![A-Za-z0-9_])(hotai|CDC|OEI|packwiz|mixin)(?![A-Za-z0-9_])"
+    r"(?i)(?<![A-Za-z0-9_])(Hotai|CDC|OEI|packwiz|mixin)(?![A-Za-z0-9_])"
 )
 CATEGORY_HEADING_PATTERN = re.compile(r"^\*\*(.+)\*\*$")
 BULLET_PATTERN = re.compile(r"^-\s+(.+)$")

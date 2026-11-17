@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate or check the hotai_STATUS block in hotai details docs.
+"""Generate or check the HOTAI_STATUS block in hotai details docs.
 
 Python 3.11+ stdlib port of the former update-hotai-docs.ps1 implementation.
 JAR scanning uses zipfile instead of System.IO.Compression.
@@ -15,10 +15,10 @@ from pathlib import Path
 from typing import Iterable, Sequence
 
 
-STATUS_BEGIN = "<!-- hotai_STATUS:BEGIN -->"
-STATUS_END = "<!-- hotai_STATUS:END -->"
+STATUS_BEGIN = "<!-- HOTAI_STATUS:BEGIN -->"
+STATUS_END = "<!-- HOTAI_STATUS:END -->"
 STATUS_BLOCK_PATTERN = re.compile(
-    r"<!-- hotai_STATUS:BEGIN -->.*?<!-- hotai_STATUS:END -->",
+    r"<!-- HOTAI_STATUS:BEGIN -->.*?<!-- HOTAI_STATUS:END -->",
     re.S,
 )
 TABLE_TARGET_PATTERN = re.compile(
@@ -202,7 +202,7 @@ def write_utf8_no_bom(path: Path, content: str) -> None:
 
 
 def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Generate or check the hotai_STATUS documentation block.")
+    parser = argparse.ArgumentParser(description="Generate or check the HOTAI_STATUS documentation block.")
     parser.add_argument("-Root", "--root", dest="root", default="")
     parser.add_argument("-DetailsPath", "--details-path", dest="details_path", default="")
     parser.add_argument("-Check", "--check", dest="check", action="store_true")
