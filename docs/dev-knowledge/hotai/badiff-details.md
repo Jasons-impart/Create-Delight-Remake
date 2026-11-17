@@ -21,7 +21,7 @@
 | TACZ-addon | `taczaddon-1.20.1-1.1.8-hotfix2-for-new-soph.jar` | 1/1 可应用：`ShoulderSurfingCompatInner`。 | 已按 Shoulder Surfing 5.0.7 API 重建，已完成开镜回归。 |
 | Neapolitan | `neapolitan-1.20.1-5.1.0.jar` | 1/1 可应用：`Neapolitan`。 | 当前可生效。 |
 | Better Compatibility Checker | `BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar` | 1/1 可应用：`ServerStatusPingerMixin`。 | 当前可生效。 |
-| IAF Dragon Fix | `iafdragonfix-2.0.0.jar` | `DragonDenPiece.class` 已由 HotAI 转存为运行时 `.badiff`，启动日志记录 `Patched class`。 | 当前 JAR 已完成首次转换启动；配套禁止群系标签由 KubeJS 数据包提供，badiff 第二次启动重放仍待确认。 |
+| IAF Dragon Fix | `iafdragonfix-2.0.0.jar` | `DragonDenPiece.class` 已由 Hotai 转存为运行时 `.badiff`，启动日志记录 `Patched class`。 | 当前 JAR 已完成首次转换启动；配套禁止群系标签由 KubeJS 数据包提供，badiff 第二次启动重放仍待确认。 |
 | Quality Food | `quality_food-1.20.1-2.3.3-all.jar` | 1/1 目标 class 命中：`BlockMixin`。 | 当前 JAR 可匹配。 |
 | Create New Age | `create-new-age-1.2.0+forge-mc1.20.1.jar` | 1/1 可应用：旧 `org/antarcticgardens/newage/CreateNewAgePonders` 补丁已替换为当前路径 `org/antarcticgardens/cna/content/ponders/CNAPonders`。 | 当前可生效；补丁继续实现提交 `e11d47f206c1e9cb28bdf506698c824586f9b00c`（`删除cna中无用的ponder (#649)`）的意图，移除 heating、heater、reactor、wires 场景与对应标签。 |
 
@@ -547,7 +547,7 @@ MMT 原 class 针对 Tetra 6.9 的局部变量名 `multiplier`，返回 `1000d`�
 
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
-| `com/iafdragonfix/structure/DragonDenPiece.badiff` | 首次转换启动已确认 | `generateCave(...)` 仅在龙种为 `ICE_CAVE` 时创建 `#createdelight:blocks_ice_dragon_caves` 群系标签，并在实际地下中心的 X/Z 各偏移 `-16/0/16` 组成的 3×3 点阵读取群系；任一点命中标签就提前返回。配套标签包含 `northstar:europan_subsurface_ocean` 与 `alexscaves:abyssal_chasm`。首次错误补丁由 `BadiffCli diff` 生成 `BadiffFileDiff`，与 HotAI 使用 `DefaultSerialization` 读取的 `MemoryDiff` 格式不兼容，触发 `Not all bytes consumed from byte[]`；现有文件由 HotAI 官方 `.class` 转存流程生成。 | 木卫二地下冰龙穴仍可在冰原和山脊区域生成，但不会以地下海或渊海陷窟为中心、也不会跨入其近邻 16 格范围；火星冰龙穴及所有地表龙巢不受影响。首次转换启动已记录 `Patched class` 并成功进入木卫二；已游戏内验证第二次启动 badiff 重放与新生成区块结构分布。 |
+| `com/iafdragonfix/structure/DragonDenPiece.badiff` | 首次转换启动已确认 | `generateCave(...)` 仅在龙种为 `ICE_CAVE` 时创建 `#createdelight:blocks_ice_dragon_caves` 群系标签，并在实际地下中心的 X/Z 各偏移 `-16/0/16` 组成的 3×3 点阵读取群系；任一点命中标签就提前返回。配套标签包含 `northstar:europan_subsurface_ocean` 与 `alexscaves:abyssal_chasm`。首次错误补丁由 `BadiffCli diff` 生成 `BadiffFileDiff`，与 Hotai 使用 `DefaultSerialization` 读取的 `MemoryDiff` 格式不兼容，触发 `Not all bytes consumed from byte[]`；现有文件由 Hotai 官方 `.class` 转存流程生成。 | 木卫二地下冰龙穴仍可在冰原和山脊区域生成，但不会以地下海或渊海陷窟为中心、也不会跨入其近邻 16 格范围；火星冰龙穴及所有地表龙巢不受影响。首次转换启动已记录 `Patched class` 并成功进入木卫二；已游戏内验证第二次启动 badiff 重放与新生成区块结构分布。 |
 
 ## Quality Food 补丁
 

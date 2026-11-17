@@ -12,7 +12,7 @@ Use this workflow whenever a Remake change depends on Create Delight Core source
 - Order is fixed: **Core PR squash-merged into `1.20.1` → pin Remake `CDC-mod-src` to that merge SHA → same Remake commit updates the packwiz jar + `mods/create-delight-core.pw.toml`** (and Crash Assistant baseline when the jar filename/hash changes).
 - ❌ Do **not** leave a Ready / mergeable Remake PR pointing at an unmerged Core branch tip. Draft Remake PRs may temporarily track a Core tip for local pairing; before Ready or merge, retarget the gitlink to the post-squash commit on `1.20.1`.
 - After Core squash-merge, **re-fetch** Core: `git ls-remote` / `git fetch` / `git rev-parse origin/1.20.1`. Squash changes the SHA; the pre-merge tip is wrong.
-- On `release-v050x` (and other CDC-frozen `release-vxxxx` lines): **do not bump CDC** for mixin fixes. Prefer HotAI / pack-side fixes. See `docs/dev-knowledge/branch-and-release.md`.
+- On `release-v050x` (and other CDC-frozen `release-vxxxx` lines): **do not bump CDC** for mixin fixes. Prefer Hotai / pack-side fixes. See `docs/dev-knowledge/branch-and-release.md`.
 - Before opening or marking Ready a Remake PR that touches the gitlink, jar, or `create-delight-core.pw.toml`, run `scripts/check-cdc-submodule.sh`. It must exit 0 (`git merge-base --is-ancestor <gitlink> origin/1.20.1` on Core).
 
 ## Workflow
@@ -63,12 +63,12 @@ Local pairing against an unmerged Core PR is allowed **only** while the Remake P
 - ❌ Pinning Remake to Core feature-branch tip and opening a Ready PR “to save a round trip”.
 - ❌ Updating only the jar or only the gitlink so source and packaged artifact disagree.
 - ❌ Assuming the Core PR branch tip SHA survives squash-merge.
-- ❌ Bumping CDC on a CDC-frozen `release-vxxxx` line for mixin work (use HotAI / pack-side instead).
+- ❌ Bumping CDC on a CDC-frozen `release-vxxxx` line for mixin work (use Hotai / pack-side instead).
 - ❌ Skipping `scripts/check-cdc-submodule.sh` because “the Core PR is about to merge”.
 
 ## Related
 
 - Packwiz jar / toml details: `.agents/skills/packwiz-assets/SKILL.md`
 - After pull/rebase that moves the gitlink: `.agents/skills/repo-sync/SKILL.md`
-- CDC freeze vs HotAI on release lines: `docs/dev-knowledge/branch-and-release.md`
+- CDC freeze vs Hotai on release lines: `docs/dev-knowledge/branch-and-release.md`
 - Shared check used by agents and CI: `scripts/check-cdc-submodule.sh`

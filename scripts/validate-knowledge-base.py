@@ -140,7 +140,7 @@ def run_hotai_runtime_check(root: Path) -> None:
         executable = shutil.which("powershell")
     if executable is None:
         add_failure(
-            "HotAI runtime status check requires Python (scripts/update-hotai-docs.py) "
+            "Hotai runtime status check requires Python (scripts/update-hotai-docs.py) "
             "or PowerShell to run scripts/update-hotai-docs.ps1 -Check -StrictRuntimeStatus. "
             "scripts/check-hotai-docs.sh only verifies that hotai/ changes ship with "
             "docs/dev-knowledge/hotai/ updates in the same commit range; it is not a substitute."

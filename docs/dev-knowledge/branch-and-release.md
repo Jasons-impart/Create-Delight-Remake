@@ -1,6 +1,6 @@
 # 分支、版本号与正式版维护策略
 
-本文说明齿轮盛宴（Create-Delight-Remake）的**版本号含义**、**小版本产品阶段**，以及 Git 分支（`main` / `release-vxxxx`）与正式版后对 **CDC / CDC mixin**、**HotAI** 的约束。发布操作步骤见 `.agents/skills/release/SKILL.md`；人工入口见 [development.md](../development.md#版本发布流程)。
+本文说明齿轮盛宴（Create-Delight-Remake）的**版本号含义**、**小版本产品阶段**，以及 Git 分支（`main` / `release-vxxxx`）与正式版后对 **CDC / CDC mixin**、**Hotai** 的约束。发布操作步骤见 `.agents/skills/release/SKILL.md`；人工入口见 [development.md](../development.md#版本发布流程)。
 
 ## 版本号含义
 
@@ -60,18 +60,18 @@ release skill / 脚本只有两类 GitHub Release：**正式**（非 prerelease�
 3. **正式版发布之后 → 正式版-持续维护**  
    - 非必要禁止功能更新，只做上表范围内的维护。  
    - **CDC 版本冻结**：不能再 bump CDC / 合入依赖新 CDC 构建的 mixin。  
-   - **仍可**加入 HotAI 形式修复（不依赖换 CDC jar）。  
+   - **仍可**加入 Hotai 形式修复（不依赖换 CDC jar）。  
    - KubeJS / 配置等不换 CDC 的修复可以，但仍避免非必要功能向改动。
 
 4. **下一小版本正式版发布 → 本线正式版-停止维护**  
    制作组不再跟该小版本反馈；需要 CDC mixin 的修复应落在 `main` / 新小版本线，而不是回灌已停止维护、且曾冻结 CDC 的旧 `release-vxxxx`。
 
-## CDC mixin 与 HotAI
+## CDC mixin 与 Hotai
 
 | 手段 | `main` / 未冻结 CDC 的开发 | 已正式发布、处于持续维护且 CDC 已冻结的 `release-vxxxx` |
 |---|---|---|
 | 更新 CDC 并加入/修改 CDC mixin | 可以 | **不可以** |
-| HotAI（`.badiff` 等） | 可以 | **可以** |
+| Hotai（`.badiff` 等） | 可以 | **可以** |
 | 不依赖换 CDC jar 的修复 | 可以 | 可以（范围见持续维护） |
 
 判断「CDC 是否已冻结」：该小版本是否已有 **正式（非 prerelease）Release**。脚本亦以 prerelease 标记区分正式/测试，不以 tag 是否带 `-test` 单独推断。
@@ -81,13 +81,13 @@ release skill / 脚本只有两类 GitHub Release：**正式**（非 prerelease�
 - 当前正式线为 `0.5.0.x`（`release-v050x`），处于**正式版-持续维护**（以仓库 tag / GitHub latest 为准，如 `v0.5.0.16`）。
 - 该线 CDC 固定在 **2.2.16j** 一代；持续维护期间**不会**再 bump CDC，故无法合入「必须换新 CDC jar」的 mixin。
 - `main` 上已有的 CDC mixin（如 ExtendedAE 胶带白名单启动空指针）预期随 **下一小版本正式线**（版本号大于 `0.5.0`，预期 `0.5.1.x`）进入正式包，而不是 `0.5.0.x` 的维护补丁。
-- 维护分支急需等价修复时评估 **HotAI**，不要在 `release-v050x` 上强行升级 CDC。
+- 维护分支急需等价修复时评估 **Hotai**，不要在 `release-v050x` 上强行升级 CDC。
 
 条目见 [compatibility-patches.md](compatibility-patches.md)「ExtendedAE 胶带白名单启动空指针」。
 
 ## 给代理与维护者的短约束
 
 - 知识库默认 PR 合入 **`main`**；勿默认镜像到 `release-v050x`，除非用户要求。
-- 在 `release-vxxxx` 上修 bug 前确认是否需要新 CDC；若需要，改走 `main` / 下一小版本，或可行时用 HotAI。
+- 在 `release-vxxxx` 上修 bug 前确认是否需要新 CDC；若需要，改走 `main` / 下一小版本，或可行时用 Hotai。
 - 玩家侧临时缓解（如改用 Java 17）可写 FAQ / 反馈回复；本页是开发与发布策略，不替代玩家文档。
 - 对外描述阶段时用上表产品名称；对内跑发布脚本时只用「正式 / 测试」，不要发明「抢先预览」专用 ReleaseType。
