@@ -169,7 +169,7 @@ class ReleaseNotesTests(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, "Invalid or duplicate"):
             rn.assert_curated_notes("**其他**", "owner/repo")
         with self.assertRaisesRegex(RuntimeError, "internal jargon"):
-            rn.assert_curated_notes("**问题修复**\n- 修复HotAI问题", "owner/repo")
+            rn.assert_curated_notes("**问题修复**\n- 修复hotai问题", "owner/repo")
         with self.assertRaisesRegex(RuntimeError, "Untranslated"):
             rn.assert_curated_notes(
                 "**问题修复**\n- fix recipe ([提交](https://github.com/owner/repo/pull/2))",

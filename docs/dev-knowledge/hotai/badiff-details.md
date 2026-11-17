@@ -4,7 +4,7 @@
 
 代码块是“等价改动摘要”，不是完整反编译源码。它们用于表达字段、方法、条件和注册项的变化，避免把第三方模组源码整段复制进仓库。
 
-`HOTAI_STATUS` 区块由 `scripts/update-hotai-docs.py` 维护，区分静态 JAR 命中、启动日志确认的动态创建和未确认项；方法级语义、历史提交依据和迁移建议仍写在人工维护区。
+`hotai_STATUS` 区块由 `scripts/update-hotai-docs.py` 维护，区分静态 JAR 命中、启动日志确认的动态创建和未确认项；方法级语义、历史提交依据和迁移建议仍写在人工维护区。
 
 ## 当前生效性核查（2026-07-29）
 
@@ -21,13 +21,13 @@
 | TACZ-addon | `taczaddon-1.20.1-1.1.8-hotfix2-for-new-soph.jar` | 1/1 可应用：`ShoulderSurfingCompatInner`。 | 已按 Shoulder Surfing 5.0.7 API 重建，已完成开镜回归。 |
 | Neapolitan | `neapolitan-1.20.1-5.1.0.jar` | 1/1 可应用：`Neapolitan`。 | 当前可生效。 |
 | Better Compatibility Checker | `BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar` | 1/1 可应用：`ServerStatusPingerMixin`。 | 当前可生效。 |
-| IAF Dragon Fix | `iafdragonfix-2.0.0.jar` | `DragonDenPiece.class` 已由 HotAI 转存为运行时 `.badiff`，启动日志记录 `Patched class`。 | 当前 JAR 已完成首次转换启动；配套禁止群系标签由 KubeJS 数据包提供，badiff 第二次启动重放仍待确认。 |
+| IAF Dragon Fix | `iafdragonfix-2.0.0.jar` | `DragonDenPiece.class` 已由 hotai 转存为运行时 `.badiff`，启动日志记录 `Patched class`。 | 当前 JAR 已完成首次转换启动；配套禁止群系标签由 KubeJS 数据包提供，badiff 第二次启动重放仍待确认。 |
 | Quality Food | `quality_food-1.20.1-2.3.3-all.jar` | 1/1 目标 class 命中：`BlockMixin`。 | 当前 JAR 可匹配。 |
 | Create New Age | `create-new-age-1.2.0+forge-mc1.20.1.jar` | 1/1 可应用：旧 `org/antarcticgardens/newage/CreateNewAgePonders` 补丁已替换为当前路径 `org/antarcticgardens/cna/content/ponders/CNAPonders`。 | 当前可生效；补丁继续实现提交 `e11d47f206c1e9cb28bdf506698c824586f9b00c`（`删除cna中无用的ponder (#649)`）的意图，移除 heating、heater、reactor、wires 场景与对应标签。 |
 
 总计：当前 26 个 `.badiff` 中 23 个静态 JAR 命中，2 个由当前启动日志确认动态创建，1 个尚未在当前启动日志确认。三个静态未命中项均属于 Create Addition 超导连接器实现类，不应仅因 JAR 扫描未命中而删除。Create New Age 旧路径补丁已完成迁移。
 
-<!-- HOTAI_STATUS:BEGIN -->
+<!-- hotai_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.py` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
 当前扫描到 37 个 `.badiff`；静态 JAR 命中 33 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
@@ -71,7 +71,7 @@
 | Better Compatibility Checker | `hotai/dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin` | 静态命中 `BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar` |
 | Unknown | `hotai/net/yiran/rebalancing/core/mixins/AttributeHelperMixin.badiff` | `net/yiran/rebalancing/core/mixins/AttributeHelperMixin` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
 | Create New Age | `hotai/org/antarcticgardens/cna/content/ponders/CNAPonders.badiff` | `org/antarcticgardens/cna/content/ponders/CNAPonders` | 静态命中 `create-new-age-1.2.0+forge-mc1.20.1.jar` |
-<!-- HOTAI_STATUS:END -->
+<!-- hotai_STATUS:END -->
 
 ## 代码化改动索引
 
@@ -473,7 +473,7 @@ return stack;
 
 ## 待首次启动转存的 MMT class
 
-`hotai/net/yiran/rebalancing/core/mixins/AttributeHelperMixin.class` 是供人工反编译审阅的完整 Java 17 class，当前长度 6349 字节，SHA-256 为 `12346144BFA21040CDC8B2DC36DCD24698C579B1E73BF9AA9C6E77FCC4714514`。它不属于上方只扫描 `.badiff` 的 `HOTAI_STATUS` 生成区块；在客户端首次加载前，不得将它记录成已转存或已重放。
+`hotai/net/yiran/rebalancing/core/mixins/AttributeHelperMixin.class` 是供人工反编译审阅的完整 Java 17 class，当前长度 6349 字节，SHA-256 为 `12346144BFA21040CDC8B2DC36DCD24698C579B1E73BF9AA9C6E77FCC4714514`。它不属于上方只扫描 `.badiff` 的 `hotai_STATUS` 生成区块；在客户端首次加载前，不得将它记录成已转存或已重放。
 
 等价改动摘要：
 
@@ -547,7 +547,7 @@ MMT 原 class 针对 Tetra 6.9 的局部变量名 `multiplier`，返回 `1000d`�
 
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
-| `com/iafdragonfix/structure/DragonDenPiece.badiff` | 首次转换启动已确认 | `generateCave(...)` 仅在龙种为 `ICE_CAVE` 时创建 `#createdelight:blocks_ice_dragon_caves` 群系标签，并在实际地下中心的 X/Z 各偏移 `-16/0/16` 组成的 3×3 点阵读取群系；任一点命中标签就提前返回。配套标签包含 `northstar:europan_subsurface_ocean` 与 `alexscaves:abyssal_chasm`。首次错误补丁由 `BadiffCli diff` 生成 `BadiffFileDiff`，与 HotAI 使用 `DefaultSerialization` 读取的 `MemoryDiff` 格式不兼容，触发 `Not all bytes consumed from byte[]`；现有文件由 HotAI 官方 `.class` 转存流程生成。 | 木卫二地下冰龙穴仍可在冰原和山脊区域生成，但不会以地下海或渊海陷窟为中心、也不会跨入其近邻 16 格范围；火星冰龙穴及所有地表龙巢不受影响。首次转换启动已记录 `Patched class` 并成功进入木卫二；已游戏内验证第二次启动 badiff 重放与新生成区块结构分布。 |
+| `com/iafdragonfix/structure/DragonDenPiece.badiff` | 首次转换启动已确认 | `generateCave(...)` 仅在龙种为 `ICE_CAVE` 时创建 `#createdelight:blocks_ice_dragon_caves` 群系标签，并在实际地下中心的 X/Z 各偏移 `-16/0/16` 组成的 3×3 点阵读取群系；任一点命中标签就提前返回。配套标签包含 `northstar:europan_subsurface_ocean` 与 `alexscaves:abyssal_chasm`。首次错误补丁由 `BadiffCli diff` 生成 `BadiffFileDiff`，与 hotai 使用 `DefaultSerialization` 读取的 `MemoryDiff` 格式不兼容，触发 `Not all bytes consumed from byte[]`；现有文件由 hotai 官方 `.class` 转存流程生成。 | 木卫二地下冰龙穴仍可在冰原和山脊区域生成，但不会以地下海或渊海陷窟为中心、也不会跨入其近邻 16 格范围；火星冰龙穴及所有地表龙巢不受影响。首次转换启动已记录 `Patched class` 并成功进入木卫二；已游戏内验证第二次启动 badiff 重放与新生成区块结构分布。 |
 
 ## Quality Food 补丁
 
@@ -599,6 +599,6 @@ MMT 原 class 针对 Tetra 6.9 的局部变量名 `multiplier`，返回 `1000d`�
 ## 维护建议
 
 - 对“已还原”条目，更新目标模组后应重新运行 class diff 或至少确认启动日志中仍有对应 `Patched class:`。
-- 修改 `hotai/**/*.badiff` 后运行 `python scripts/update-hotai-docs.py` 更新 `HOTAI_STATUS` 区块；知识库校验在传入 `-CheckHotaiRuntimeStatus` / `--check-hotai-runtime-status` 时会做严格运行时状态检查。
+- 修改 `hotai/**/*.badiff` 后运行 `python scripts/update-hotai-docs.py` 更新 `hotai_STATUS` 区块；知识库校验在传入 `-CheckHotaiRuntimeStatus` / `--check-hotai-runtime-status` 时会做严格运行时状态检查。
 - 对“当前未还原”条目，优先判断目标模组是否已改名、移除或被替换；如果连续版本都没有启动日志命中，可以考虑清理对应 `.badiff`。
 - 超导连接器相关补丁要和 `kubejs/assets/createaddition/`、`kubejs/server_scripts/Create Addition/` 一起验证；只看 `hotai` class patch 不足以证明玩法完整。
