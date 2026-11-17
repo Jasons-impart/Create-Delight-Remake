@@ -1,0 +1,8 @@
+{
+  "target": "Multiblocked2 1.20.1-1.0.38.a",
+  "jar_sha256": "6197872cfd3ded05d07c51bb4058473ceb9926a12171bf61442773579e8dda30",
+  "original_class_sha256": "5433b3595109dc6ec3fd153355acf20dc26ac4982458c771b323cabe6e386a6e",
+  "files": {
+    "converted/hotai/com/lowdragmc/mbd2/api/recipe/RecipeLogic.badiff": "a0d8ac2c65c9c03316f9092171859b777d2dceee90f86d7a580c633e2c575a4e"
+  }
+}
