@@ -13,7 +13,7 @@ description: 维护、分析、迁移或验证 Create-Delight Remake 的 `hotai/
 |---|---|
 | `docs/dev-knowledge/hotai/README.md` | 专题入口、文档边界及与开发知识的关系。 |
 | `docs/dev-knowledge/hotai/patch-map.md` | 运行机制、按领域归纳的行为变化、跨目录依赖和维护注意。 |
-| `docs/dev-knowledge/hotai/badiff-details.md` | 每个 `.badiff` 的方法级语义、历史依据和适用性；`HOTAI_STATUS` 区块由脚本生成。 |
+| `docs/dev-knowledge/hotai/badiff-details.md` | 每个 `.badiff` 的方法级语义、历史依据和适用性；`hotai_STATUS` 区块由脚本生成。 |
 | `docs/dev-knowledge/content-map.md` | 仅记录玩家可见的内容调整，并链接专题入口。 |
 | `docs/dev-knowledge/compatibility-patches.md` | 仅记录修复、回归恢复或上游适配；不要因文件位于 `hotai/` 而自动归类。 |
 
@@ -23,7 +23,7 @@ description: 维护、分析、迁移或验证 Create-Delight Remake 的 `hotai/
 
 1. 先阅读 `docs/dev-knowledge/hotai/README.md` 和相关的 `patch-map.md` / `badiff-details.md`，确认要改的是专题事实、补丁语义还是操作流程。
 2. 从 `.badiff` 相对路径推导目标 class internal name；例如 `hotai/a/b/C.badiff` 对应 `a/b/C`。
-3. 更新或分析补丁后，运行 `scripts/update-hotai-docs.ps1` 刷新 `HOTAI_STATUS` 区块。不要手改该区块。
+3. 更新或分析补丁后，运行 `scripts/update-hotai-docs.ps1` 刷新 `hotai_STATUS` 区块。不要手改该区块。
 4. 在 `badiff-details.md` 的生成区块外记录目标模组版本，以及原代码上的 diff 或清楚的修改逻辑与实现说明；不要求每项补丁都提供代码 diff。在 `patch-map.md` 只更新领域级摘要与跨目录依赖。不为文档维护增加专用二进制复原器、模板移植器或逐字节重建检查器。
 5. 运行 `scripts/update-hotai-docs.ps1 -Check`，它只校验受版本控制的 `.badiff` 路径与目标 class 映射；需要复核某一参考运行环境的 JAR/日志状态时，运行 `scripts/update-hotai-docs.ps1 -Check -StrictRuntimeStatus`。通用 `scripts/validate-knowledge-base.ps1` 默认不读取本地 JAR 或日志；仅传入 `-CheckHotaiRuntimeStatus` 时才执行严格运行时状态校验。
 

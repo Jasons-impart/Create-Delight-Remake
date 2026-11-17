@@ -124,7 +124,7 @@ function Get-ReleaseNotesInput {
 function Assert-CuratedNotes {
     param([string]$Content, [string]$Repository, [object[]]$Commits = @())
     if (-not $Content -or -not $Content.Trim()) { throw 'Curated release notes are required and must not be empty; the release agent must write -NotesFile first' }
-    if ($Content -match '(?i)(?<![A-Za-z0-9_])(HotAI|CDC|OEI|packwiz|mixin)(?![A-Za-z0-9_])') { throw 'Notes contain internal jargon; rewrite player-facing Chinese' }
+    if ($Content -match '(?i)(?<![A-Za-z0-9_])(hotai|CDC|OEI|packwiz|mixin)(?![A-Za-z0-9_])') { throw 'Notes contain internal jargon; rewrite player-facing Chinese' }
     $categories = @('新内容与调整','模组与光影更新','问题修复','任务书与文本')
     $seen = @()
     $category = ''

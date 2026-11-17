@@ -43,7 +43,7 @@ function Get-HotaiModule([string]$InternalName) {
 
 function Get-GeneratedBlock([array]$Rows, [int]$StaticFoundCount, [int]$RuntimeCreatedCount, [int]$UnverifiedCount) {
     $lines = New-Object System.Collections.Generic.List[string]
-    $lines.Add("<!-- HOTAI_STATUS:BEGIN -->") | Out-Null
+    $lines.Add("<!-- hotai_STATUS:BEGIN -->") | Out-Null
     $lines.Add("> 本区块由 ``scripts/update-hotai-docs.ps1`` 生成。修改 ``hotai/**/*.badiff`` 后运行该脚本；人工解释写在区块外。") | Out-Null
     $lines.Add("") | Out-Null
     $lines.Add("当前扫描到 $($Rows.Count) 个 ``.badiff``；静态 JAR 命中 $StaticFoundCount 个，静态未命中但已由当前启动日志确认动态创建 $RuntimeCreatedCount 个，尚未由当前启动日志确认 $UnverifiedCount 个。") | Out-Null
@@ -60,7 +60,7 @@ function Get-GeneratedBlock([array]$Rows, [int]$StaticFoundCount, [int]$RuntimeC
         }
         $lines.Add("| $($row.Module) | ``$($row.BadiffPath)`` | ``$($row.InternalName)`` | $status |") | Out-Null
     }
-    $lines.Add("<!-- HOTAI_STATUS:END -->") | Out-Null
+    $lines.Add("<!-- hotai_STATUS:END -->") | Out-Null
     return ($lines -join "`n")
 }
 
@@ -150,11 +150,11 @@ $unverifiedCount = @($rows | Where-Object { -not $_.JarName -and -not $_.Runtime
 $generatedBlock = Get-GeneratedBlock -Rows $rows -StaticFoundCount $staticFoundCount -RuntimeCreatedCount $runtimeCreatedCount -UnverifiedCount $unverifiedCount
 
 $detailsText = Get-Content -Raw -LiteralPath $DetailsPath -Encoding UTF8
-$begin = "<!-- HOTAI_STATUS:BEGIN -->"
-$end = "<!-- HOTAI_STATUS:END -->"
+$begin = "<!-- hotai_STATUS:BEGIN -->"
+$end = "<!-- hotai_STATUS:END -->"
 
 if ($detailsText.Contains($begin) -and $detailsText.Contains($end)) {
-    $pattern = "(?s)<!-- HOTAI_STATUS:BEGIN -->.*?<!-- HOTAI_STATUS:END -->"
+    $pattern = "(?s)<!-- hotai_STATUS:BEGIN -->.*?<!-- hotai_STATUS:END -->"
     $updatedText = [regex]::Replace($detailsText, $pattern, [System.Text.RegularExpressions.MatchEvaluator]{ param($m) $generatedBlock }, 1)
 } else {
     $heading = "## 代码化改动索引"
@@ -173,7 +173,7 @@ if ($Check) {
         return
     }
 
-    $statusBlockMatch = [regex]::Match($detailsText, "(?s)<!-- HOTAI_STATUS:BEGIN -->.*?<!-- HOTAI_STATUS:END -->")
+    $statusBlockMatch = [regex]::Match($detailsText, "(?s)<!-- hotai_STATUS:BEGIN -->.*?<!-- hotai_STATUS:END -->")
     if (-not $statusBlockMatch.Success) {
         throw "hotai status block is missing from $DetailsPath. Run scripts/update-hotai-docs.ps1."
     }
