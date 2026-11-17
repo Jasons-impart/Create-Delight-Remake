@@ -19,26 +19,26 @@ def load_module():
     return module
 
 
-hotai = load_module()
+HOTAI = load_module()
 
 
 class HelperTests(unittest.TestCase):
     def test_module_mapping(self):
-        self.assertEqual(hotai.get_hotai_module("com/simibubi/create/content/Foo"), "Create")
-        self.assertEqual(hotai.get_hotai_module("com/mrh0/createaddition/energy/IWireNode"), "Create Addition")
-        self.assertEqual(hotai.get_hotai_module("org/antarcticgardens/cna/content/ponders/CNAPonders"), "Create New Age")
-        self.assertEqual(hotai.get_hotai_module("org/antarcticgardens/newage/Foo"), "Create New Age")
-        self.assertEqual(hotai.get_hotai_module("com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow"), "Unknown")
+        self.assertEqual(HOTAI.get_hotai_module("com/simibubi/create/content/Foo"), "Create")
+        self.assertEqual(HOTAI.get_hotai_module("com/mrh0/createaddition/energy/IWireNode"), "Create Addition")
+        self.assertEqual(HOTAI.get_hotai_module("org/antarcticgardens/cna/content/ponders/CNAPonders"), "Create New Age")
+        self.assertEqual(HOTAI.get_hotai_module("org/antarcticgardens/newage/Foo"), "Create New Age")
+        self.assertEqual(HOTAI.get_hotai_module("com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow"), "Unknown")
 
     def test_generated_block_contains_markers_and_statuses(self):
         rows = [
-            hotai.HotaiRow("Create", "hotai/a.badiff", "a", "a.class", jar_name="create.jar"),
-            hotai.HotaiRow("Create Addition", "hotai/b.badiff", "b", "b.class", runtime_patched=True),
-            hotai.HotaiRow("Unknown", "hotai/c.badiff", "c", "c.class"),
+            HOTAI.HotaiRow("Create", "hotai/a.badiff", "a", "a.class", jar_name="create.jar"),
+            HOTAI.HotaiRow("Create Addition", "hotai/b.badiff", "b", "b.class", runtime_patched=True),
+            HOTAI.HotaiRow("Unknown", "hotai/c.badiff", "c", "c.class"),
         ]
-        block = hotai.build_generated_block(rows, 1, 1, 1)
-        self.assertTrue(block.startswith(hotai.STATUS_BEGIN))
-        self.assertTrue(block.endswith(hotai.STATUS_END))
+        block = HOTAI.build_generated_block(rows, 1, 1, 1)
+        self.assertTrue(block.startswith(HOTAI.STATUS_BEGIN))
+        self.assertTrue(block.endswith(HOTAI.STATUS_END))
         self.assertIn("`scripts/update-hotai-docs.py`", block)
         self.assertIn("当前扫描到 3 个 `.badiff`；静态 JAR 命中 1 个", block)
         self.assertIn("静态命中 `create.jar`", block)
@@ -49,7 +49,7 @@ class HelperTests(unittest.TestCase):
     def test_compare_targets_order(self):
         expected = ["a|A", "b|B", "c|C"]
         documented = ["a|A", "c|C", "d|D"]
-        self.assertEqual(hotai.compare_targets(expected, documented), "b|B, d|D")
+        self.assertEqual(HOTAI.compare_targets(expected, documented), "b|B, d|D")
 
     def test_collect_rows_uses_jar_and_log(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -68,7 +68,7 @@ class HelperTests(unittest.TestCase):
             log = root / "logs/latest.log"
             log.parent.mkdir()
             log.write_text("Patched class: com/mrh0/createaddition/blocks/Missing\n", encoding="utf-8")
-            rows = hotai.collect_rows(root)
+            rows = HOTAI.collect_rows(root)
             by_name = {row.internal_name: row for row in rows}
             self.assertEqual(by_name["com/simibubi/create/content/Foo"].module, "Create")
             self.assertEqual(by_name["com/simibubi/create/content/Foo"].jar_name, "create-test.jar")
@@ -76,11 +76,11 @@ class HelperTests(unittest.TestCase):
             self.assertTrue(by_name["com/mrh0/createaddition/blocks/Missing"].runtime_patched)
 
     def test_parse_args_aliases(self):
-        args = hotai.parse_args(["-Root", "/tmp/repo", "-Check", "-StrictRuntimeStatus"])
+        args = HOTAI.parse_args(["-Root", "/tmp/repo", "-Check", "-StrictRuntimeStatus"])
         self.assertEqual(args.root, "/tmp/repo")
         self.assertTrue(args.check)
         self.assertTrue(args.strict_runtime_status)
-        args = hotai.parse_args(["--root", "/tmp/repo", "--check", "--details-path", "x.md"])
+        args = HOTAI.parse_args(["--root", "/tmp/repo", "--check", "--details-path", "x.md"])
         self.assertTrue(args.check)
         self.assertEqual(args.details_path, "x.md")
 
