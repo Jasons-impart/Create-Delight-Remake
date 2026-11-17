@@ -11,11 +11,11 @@ if [[ -z "${REPO_ROOT}" ]]; then
 fi
 cd "${REPO_ROOT}"
 
-HOTAI_CODE_PREFIX="hotai/"
-HOTAI_DOCS_PREFIX="docs/dev-knowledge/hotai/"
+hotai_CODE_PREFIX="hotai/"
+hotai_DOCS_PREFIX="docs/dev-knowledge/hotai/"
 
-HEAD_REF="${HOTAI_DOCS_HEAD:-HEAD}"
-BASE_REF="${HOTAI_DOCS_BASE:-}"
+HEAD_REF="${hotai_DOCS_HEAD:-HEAD}"
+BASE_REF="${hotai_DOCS_BASE:-}"
 
 if [[ -z "${BASE_REF}" ]]; then
   if [[ -n "${GITHUB_BASE_REF:-}" ]]; then
@@ -24,7 +24,7 @@ if [[ -z "${BASE_REF}" ]]; then
   elif git rev-parse --verify --quiet origin/main >/dev/null; then
     BASE_REF="origin/main"
   else
-    echo "error: set HOTAI_DOCS_BASE to the comparison base SHA/ref" >&2
+    echo "error: set hotai_DOCS_BASE to the comparison base SHA/ref" >&2
     exit 1
   fi
 fi
@@ -50,35 +50,35 @@ hotai_docs_changes=()
 for path in "${CHANGED_FILES[@]:-}"; do
   [[ -z "${path}" ]] && continue
   case "${path}" in
-    "${HOTAI_CODE_PREFIX}"*)
+    "${hotai_CODE_PREFIX}"*)
       hotai_code_changes+=("${path}")
       ;;
-    "${HOTAI_DOCS_PREFIX}"*)
+    "${hotai_DOCS_PREFIX}"*)
       hotai_docs_changes+=("${path}")
       ;;
   esac
 done
 
 if [[ ${#hotai_code_changes[@]} -eq 0 ]]; then
-  echo "OK: no ${HOTAI_CODE_PREFIX} file changes between ${BASE_SHA:0:12}...${HEAD_SHA:0:12}; HotAI docs check skipped."
+  echo "OK: no ${hotai_CODE_PREFIX} file changes between ${BASE_SHA:0:12}...${HEAD_SHA:0:12}; hotai docs check skipped."
   exit 0
 fi
 
 if [[ ${#hotai_docs_changes[@]} -gt 0 ]]; then
-  echo "OK: ${#hotai_code_changes[@]} HotAI file change(s) and ${#hotai_docs_changes[@]} HotAI doc change(s) in ${BASE_SHA:0:12}...${HEAD_SHA:0:12}."
+  echo "OK: ${#hotai_code_changes[@]} hotai file change(s) and ${#hotai_docs_changes[@]} hotai doc change(s) in ${BASE_SHA:0:12}...${HEAD_SHA:0:12}."
   printf '  code: %s\n' "${hotai_code_changes[@]}"
   printf '  docs: %s\n' "${hotai_docs_changes[@]}"
   exit 0
 fi
 
 cat >&2 <<MSG
-error: HotAI 文件有变更，但同范围未更新 HotAI 文档 / HotAI files changed without HotAI docs updates.
+error: hotai 文件有变更，但同范围未更新 hotai 文档 / hotai files changed without hotai docs updates.
 
-Changed under ${HOTAI_CODE_PREFIX} (${BASE_SHA:0:12}...${HEAD_SHA:0:12}):
+Changed under ${hotai_CODE_PREFIX} (${BASE_SHA:0:12}...${HEAD_SHA:0:12}):
 $(printf '  - %s\n' "${hotai_code_changes[@]}")
 
-请同步更新文档目录 ${HOTAI_DOCS_PREFIX}（例如 patch-map.md / badiff-details.md，并按需运行 python scripts/update-hotai-docs.py）。
-Please update files under ${HOTAI_DOCS_PREFIX} in the same PR (e.g. patch-map.md / badiff-details.md; run python scripts/update-hotai-docs.py when appropriate).
+请同步更新文档目录 ${hotai_DOCS_PREFIX}（例如 patch-map.md / badiff-details.md，并按需运行 python scripts/update-hotai-docs.py）。
+Please update files under ${hotai_DOCS_PREFIX} in the same PR (e.g. patch-map.md / badiff-details.md; run python scripts/update-hotai-docs.py when appropriate).
 
 See .agents/skills/hotai/SKILL.md and docs/dev-knowledge/hotai/README.md.
 MSG
