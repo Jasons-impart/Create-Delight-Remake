@@ -26,7 +26,7 @@ function giveOrDrop(player, item) {
 
 /**
  * 右键脱模：把 Quality Food 星级从 solid 模具拷到巧克力棒（无状态一次性交互）。
- * 冷冻方块固化品质由 HotAI FrozenBlockEntity.badiff 处理，勿在此加 tick。
+ * 冷冻方块固化品质由 hotai FrozenBlockEntity.badiff 处理，勿在此加 tick。
  */
 function copyChocolateQuality(from, to) {
     let qualityUtils = global.CDServerJavaClasses.$QualityUtils
