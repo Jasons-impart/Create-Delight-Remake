@@ -1,8 +1,62 @@
+// Compare a Java 17 build string to the patched floor 17.0.21.1.
+// PlatformHelp.javaVersion comes from Runtime.version().toString(), e.g. "17.0.20.1+1".
+function isPatchedJava17Build(javaVersionText) {
+    if (javaVersionText == null) {
+        return false;
+    }
+    var rawVersion = javaVersionText.trim();
+    var plusPos = rawVersion.indexOf("+");
+    var minusPos = rawVersion.indexOf("-");
+    var suffixPos = rawVersion.length();
+    if (plusPos >= 0 && plusPos < suffixPos) {
+        suffixPos = plusPos;
+    }
+    if (minusPos >= 0 && minusPos < suffixPos) {
+        suffixPos = minusPos;
+    }
+    var numericVersion = rawVersion.substring(0, suffixPos);
+    var versionParts = numericVersion.split("\\.");
+    var requiredParts = [17, 0, 21, 1];
+    var partIndex = 0;
+    var partText = "";
+    var partValue = 0;
+    var requiredValue = 0;
+    var partCount = size(versionParts);
+    while (partIndex < 4) {
+        partText = "";
+        partValue = 0;
+        requiredValue = requiredParts[partIndex];
+        if (partIndex < partCount) {
+            partText = versionParts[partIndex];
+        }
+        if (partText != null && partText != "") {
+            if (!partText.matches("^[0-9]+$")) {
+                return false;
+            }
+            partValue = partText * 1;
+        }
+        if (partValue < requiredValue) {
+            return false;
+        }
+        if (partValue > requiredValue) {
+            return true;
+        }
+        partIndex = partIndex + 1;
+    }
+    return true;
+}
+
 var javaMajorVersion = PlatformHelp.getCurrentJdkMajorVersion();
 if (javaMajorVersion != 17) {
     var javaVersionMessage = LanguageProvider.get("custom.cdr_java_version_warning");
     javaVersionMessage = javaVersionMessage.replace("$JAVA_VERSION$", PlatformHelp.javaVersion);
     Startup.addBootWarning(javaVersionMessage)
         .withDontShowAgain("cdr.java_version_warning")
+        .withCustomDontShowAgainCheckboxText(LanguageProvider.get("custom.cdr_dont_show_again_checkbox"));
+} else if (!isPatchedJava17Build(PlatformHelp.javaVersion)) {
+    var javaSecurityMessage = LanguageProvider.get("custom.cdr_java_security_update_warning");
+    javaSecurityMessage = javaSecurityMessage.replace("$JAVA_VERSION$", PlatformHelp.javaVersion);
+    Startup.addBootWarning(javaSecurityMessage)
+        .withDontShowAgain("cdr.java_security_update_warning")
         .withCustomDontShowAgainCheckboxText(LanguageProvider.get("custom.cdr_dont_show_again_checkbox"));
 }
