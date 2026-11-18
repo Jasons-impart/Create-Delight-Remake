@@ -6,7 +6,7 @@ JAVA="C:\\Program Files\\Java\\jdk-17\\bin\\java"
 
 # 配置jvm参数
 #    如果要修改分配的内存，可修改-Xms和-Xmx的值
-JVM_ARGS=-Xms6G -Xmx6G -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:G1NewSizePercent=40 -XX:G1MaxNewSizePercent=50 -XX:MaxTenuringThreshold=15 -XX:SurvivorRatio=6 -XX:InitiatingHeapOccupancyPercent=70 -XX:-G1UseAdaptiveIHOP -XX:G1MixedGCLiveThresholdPercent=60 -XX:G1MixedGCCountTarget=6 -XX:ThreadPriorityPolicy=0 -XX:-UseCriticalJavaThreadPriority
+JVM_ARGS=-Xms6G -Xmx6G -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:G1NewSizePercent=40 -XX:G1MaxNewSizePercent=50 -XX:MaxTenuringThreshold=15 -XX:SurvivorRatio=6 -XX:InitiatingHeapOccupancyPercent=70 -XX:-G1UseAdaptiveIHOP -XX:G1MixedGCLiveThresholdPercent=60 -XX:G1MixedGCCountTarget=6 -XX:ThreadPriorityPolicy=0 -XX:-UseCriticalJavaThreadPriority -XX:MaxGCPauseMillis=200 -XX:G1HeapRegionSize=4m
 
 # 整合包版本和推荐的JAVA版本，请勿修改
 RECOMMENDED_JAVA_VER=17
