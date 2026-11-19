@@ -30,7 +30,7 @@
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.py` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 38 个 `.badiff`；静态 JAR 命中 34 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
+当前扫描到 37 个 `.badiff`；静态 JAR 命中 33 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |
 |---|---|---|---|
@@ -39,7 +39,6 @@
 | IAF Dragon Fix | `hotai/com/iafdragonfix/structure/DragonDenPiece.badiff` | `com/iafdragonfix/structure/DragonDenPiece` | 静态命中 `iafdragonfix-2.0.0.jar` |
 | Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow` | 静态命中 `more_mod_tetra-2.4.15-all.jar` |
 | Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer` | 静态命中 `more_mod_tetra-2.4.15-all.jar` |
-| LDLib | `hotai/com/lowdragmc/lowdraglib/side/item/forge/ItemTransferHelperImpl.badiff` | `com/lowdragmc/lowdraglib/side/item/forge/ItemTransferHelperImpl` | 静态命中 `ldlib-forge-1.20.1-1.0.50.jar` |
 | TACZ-addon | `hotai/com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner.badiff` | `com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner` | 静态命中 `taczaddon.jar` |
 | TACZ-addon | `hotai/com/mafuyu404/taczaddon/compat/SophisticatedBackpacksCompatInner.badiff` | `com/mafuyu404/taczaddon/compat/SophisticatedBackpacksCompatInner` | 静态命中 `taczaddon.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/ConnectorType.badiff` | `com/mrh0/createaddition/blocks/connector/ConnectorType` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
@@ -596,22 +595,6 @@ MMT 原 class 针对 Tetra 6.9 的局部变量名 `multiplier`，返回 `1000d`�
 | 文件 | 状态 | 具体改动 | 影响 |
 |---|---|---|---|
 | `org/antarcticgardens/cna/content/ponders/CNAPonders.badiff` | 已还原 | 旧 `org/antarcticgardens/newage/CreateNewAgePonders` 补丁已按当前包和注册 API 重建。补丁移除 `WIRING`、`HEATING`、`REACTOR` 字段及标签注册；移除 `heating`、`heater`、`reactor`、`wires` 场景，涉及热管、热泵、太阳能加热板、斯特林引擎、加热器、核反应堆组件、电气连接器及各类导线；保留 `ELECTRICAL`、`MAGNETS`、`ELECTRICITY_GENERATION`、`MOTOR_EXTENSION`。配套 `energiser.nbt`、`generation.nbt`、`motor.nbt`、`motor_extension.nbt` 已按当前方块 id 和方块实体数据刷新。 | 延续 `e11d47f206c1e9cb28bdf506698c824586f9b00c` 的“删除 CNA 无用 Ponder”意图，并让补丁重新命中当前 Create New Age 版本。 |
-
-## LDLib 补丁
-
-### 物品传输余量退回（9SSZBK）
-
-| 文件 | 状态 | 具体改动 | 影响 |
-|---|---|---|---|
-| `com/lowdragmc/lowdraglib/side/item/forge/ItemTransferHelperImpl.badiff` | 已生成，待游戏内回归 | 只改 `importToTarget` / `exportToTarget`：真实插入后保存余量，调用新增辅助方法先退回源槽再尝试其余槽；`maxAmount` 改为减去 `extractedCount - leftoverCount`。源容器仍拒收则记日志，并在非客户端把物品丢在源 `BlockPos` 中心。模拟阶段算法不变。 | 合金电炉锻造钢输入总线 AutoIO 经 `handleAutoIO` 拉货时，过滤器使模拟可进 64、实际只能进 8，原先会吞掉余下 56。换原版箱子同样走这条路径，与 AE2 无关。 |
-
-- 目标 JAR：`ldlib-forge-1.20.1-1.0.50.jar`（Packwiz CurseForge `file-id = 7809449`，SHA-1 `9129ee32e9966d757f3f66eed92d98b07264f22e`）。上游 [LDLib-MultiLoader](https://github.com/Low-Drag-MC/LDLib-MultiLoader) 至 `1.0.52.a` 仍未改 `ItemTransferHelperImpl`，不能靠升级 LDLib 修复。
-- 根因：两个方法都按模拟结果真实抽取后，丢掉真实 `insertItem(..., false)` 的返回值。
-- 签名差异：`exportToTarget` 源是 `IItemTransfer`，退回用 `insertItem(srcIndex, leftover, false, true)`；`importToTarget` 源是 `IItemHandler`，退回用 `insertItem(srcIndex, leftover, false)`。
-- 基线按 HotaiTransformer 归一化：`ClassReader → ClassNode → ClassWriter(0)`；`.badiff` 由 Hotai 1.0 `MemoryDiffs.diff` + `DefaultSerialization` 生成，反序列化重放逐字节一致。
-- 白盒：对套补丁后的 class 反汇编，确认其余方法指令语义不变，仅上述两方法与三个合成辅助方法（`returnLeftoverToTransfer` / `returnLeftoverToHandler` / `logAndDropLeftover`）有改动。
-- 不走 CDC mixin（050x 的 CDC 已冻结；本修复也不契入 CDC），不把 KubeJS `setFilter` 当作唯一修复。
-- 适用性：与 LDLib 1.0.50 强绑定；升级 LDLib 后必须重扫该类。上游若在真实插入后把余量退回源容器，可移除本补丁。
 
 ## 维护建议
 
