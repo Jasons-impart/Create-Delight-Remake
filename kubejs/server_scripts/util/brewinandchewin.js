@@ -85,6 +85,12 @@ function frementing_2(event, base, inputs, fluid, output, container, temperature
  * @param { number } [time] 默认9600
  */
 function frementing_3(event, base, inputs, fluid, output, temperature, time, amount, recipeBookTab, experience, conditions) {
+  fermenting_bc_only(event, base, inputs, fluid, output, temperature, time, amount, recipeBookTab, experience, conditions)
+  brewinandchewin_cdg_fermenting(event, base, inputs, fluid, output, time || 9600, amount || 1000, conditions)
+}
+
+/** 与 frementing_3 参数一致，仅登记 B&C 配方，供酒类生产使用。 */
+function fermenting_bc_only(event, base, inputs, fluid, output, temperature, time, amount, recipeBookTab, experience, conditions) {
   temperature = temperature || 3
   amount = amount || 1000
   time = time || 9600
@@ -114,5 +120,4 @@ function frementing_3(event, base, inputs, fluid, output, temperature, time, amo
     frementing_receipe.conditions = conditions
   }
   event.custom(frementing_receipe).id(`createdelight:fermenting/${output.split(":")[1]}_from_${base.split(":")[1]}`)
-  brewinandchewin_cdg_fermenting(event, base, inputs, fluid, output, time, amount, conditions)
 }

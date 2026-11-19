@@ -55,12 +55,12 @@ ServerEvents.recipes(e => {
         Fluid.of("brewinandchewin:flaxen_cheese", 1000)
     ])
     .id("createdelight:filling/create/unripe_flaxen_cheese_wheel")
-    frementing_3(e, "brewinandchewin:egg_grog", [
+    fermenting_bc_only(e, "brewinandchewin:egg_grog", [
         "minecraft:nether_wart",
         "minecraft:turtle_egg",
         "minecraft:fermented_spider_eye"
     ], "brewinandchewin:dread_nog", "brewinandchewin:dread_nog", 1, 2400)
-    frementing_3(e, "minecraft:milk", [
+    fermenting_bc_only(e, "minecraft:milk", [
         "#forge:eggs",
         "#forge:crops/cabbage",
         "minecraft:sugar"
@@ -70,36 +70,36 @@ ServerEvents.recipes(e => {
         "vintagedelight:vinegar_bottle",
         "minecraft:sugar"
     ], "brewinandchewin:flaxen_cheese", "brewinandchewin:flaxen_cheese", 4, 2400, undefined, "meals")
-    frementing_3(e, "minecraft:water", [
+    fermenting_bc_only(e, "minecraft:water", [
         "minecraft:glow_berries",
         "minecraft:glowstone_dust",
         "minecraft:glow_ink_sac"
     ], "brewinandchewin:glittering_grenadine", "brewinandchewin:glittering_grenadine", 2, 4800)
-    frementing_3(e, "farmersrespite:green_tea", [
+    fermenting_bc_only(e, "farmersrespite:green_tea", [
         "#forge:crops/carrot",
         "minecraft:sweet_berries",
         "farmersrespite:black_tea_leaves"
     ], "brewinandchewin:kombucha", "brewinandchewin:kombucha", 3, 4800, undefined, "drinks", 1.0, [
         { type: "forge:mod_loaded", modid: "farmersrespite" }
     ])
-    frementing_3(e, "brewinandchewin:rice_wine", [
+    fermenting_bc_only(e, "brewinandchewin:rice_wine", [
         "minecraft:honey_bottle",
         "farmersdelight:tree_bark",
         "minecraft:lily_of_the_valley",
         "minecraft:sugar"
     ], "brewinandchewin:pale_jane", "brewinandchewin:pale_jane", 4, 2400)
-    frementing_3(e, "brewinandchewin:bloody_mary", [
+    fermenting_bc_only(e, "brewinandchewin:bloody_mary", [
         "minecraft:crimson_fungus",
         "minecraft:nether_wart",
         "minecraft:fermented_spider_eye",
         "minecraft:shroomlight"
     ], "brewinandchewin:red_rum", "brewinandchewin:red_rum", 5, 2400)
-    frementing_3(e, "brewinandchewin:mead", [
+    fermenting_bc_only(e, "brewinandchewin:mead", [
         "minecraft:sweet_berries",
         "minecraft:sugar_cane",
         "minecraft:melon"
     ], "brewinandchewin:saccharine_rum", "brewinandchewin:saccharine_rum", 4, 2400)
-    frementing_3(e, "brewinandchewin:vodka", [
+    fermenting_bc_only(e, "brewinandchewin:vodka", [
         "minecraft:sea_pickle",
         "minecraft:dried_kelp",
         "minecraft:seagrass"
@@ -108,7 +108,7 @@ ServerEvents.recipes(e => {
         "minecraft:crimson_fungus",
         "minecraft:nether_wart"
     ], "brewinandchewin:scarlet_cheese", "brewinandchewin:scarlet_cheese", 5, 4800, undefined, "meals")
-    frementing_3(e, "brewinandchewin:salty_folly", [
+    fermenting_bc_only(e, "brewinandchewin:salty_folly", [
         "minecraft:wither_rose",
         "minecraft:ink_sac",
         "minecraft:nether_wart",
@@ -126,16 +126,16 @@ ServerEvents.recipes(e => {
         "minecraft:dried_kelp",
         "#forge:salt"
     ]).id("createdelight:fermenting/kippers")
-    frementing_3(e, "minecraft:water",
+    fermenting_bc_only(e, "minecraft:water",
         [
             "ratatouille:wheat_kernels",
             "createdelight:dry_yeast"
-        ], 
+        ],
         "brewinandchewin:beer",
         "brewinandchewin:beer",
         3, 4800
     )
-    frementing_3(e, "minecraft:water",
+    fermenting_bc_only(e, "minecraft:water",
         [
             "#forge:crops/potato",
             "ratatouille:wheat_kernels",
@@ -145,7 +145,7 @@ ServerEvents.recipes(e => {
         "brewinandchewin:vodka",
         3, 4800
     )
-    frementing_3(e, "create:honey", 
+    fermenting_bc_only(e, "create:honey",
         [
             "ratatouille:wheat_kernels",
             "minecraft:sweet_berries"
@@ -154,7 +154,7 @@ ServerEvents.recipes(e => {
         "brewinandchewin:mead",
         3, 4800
     )
-    frementing_3(e, "minecraft:water", 
+    fermenting_bc_only(e, "minecraft:water",
         [
             "#forge:crops/rice",
             'createdelight:dry_yeast'
@@ -163,7 +163,7 @@ ServerEvents.recipes(e => {
         'brewinandchewin:rice_wine',
         3, 4800
     )
-    frementing_3(e, "brewinandchewin:beer",
+    fermenting_bc_only(e, "brewinandchewin:beer",
         [
             "#forge:vegetables/beetroot",
             "#forge:vegetables/potato",
@@ -174,18 +174,18 @@ ServerEvents.recipes(e => {
         "brewinandchewin:strongroot_ale",
         3, 2400
     )
-    frementing_3(e, "brewinandchewin:strongroot_ale", 
+    fermenting_bc_only(e, "brewinandchewin:strongroot_ale",
         [
             "minecraft:iron_ingot",
             "minecraft:crimson_fungus",
             "minecraft:nether_wart",
             "ratatouille:wheat_kernels"
-        ], 
+        ],
         "brewinandchewin:steel_toe_stout",
         "brewinandchewin:steel_toe_stout",
         1, 4800
     )
-    frementing_3(e, "brewinandchewin:vodka", 
+    fermenting_bc_only(e, "brewinandchewin:vodka",
         [
             'butchercraft:blood_fluid_bottle'
         ],
@@ -193,7 +193,7 @@ ServerEvents.recipes(e => {
         'brewinandchewin:bloody_mary',
         4, 4800
     )
-    frementing_3(e, "cosmopolitan:birch_sap", 
+    fermenting_bc_only(e, "cosmopolitan:birch_sap",
         [
             "minecraft:hanging_roots",
             "farmersdelight:tree_bark",
@@ -203,6 +203,13 @@ ServerEvents.recipes(e => {
         'cosmopolitan:root_beer',
         3, 9600
     )
+    fermenting_bc_only(e, "brewinandchewin:beer", [
+        "minecraft:blaze_powder",
+        "minecraft:nether_wart",
+        "irons_spellbooks:arcane_essence",
+        "createdelight:dry_yeast"
+    ], "createdelight:irons_spellbooks_fire_ale", "irons_spellbooks:fire_ale", 3, 4800)
+
     farmersdelight.cooking(
         [
             "#forge:cream",
@@ -219,7 +226,7 @@ ServerEvents.recipes(e => {
             "brewinandchewin:scarlet_cheese_wedge",
             "minecraft:nether_wart",
             "#forge:shrimps"
-        ], 
+        ],
         'brewinandchewin:scarlet_pierogi', 1.0, 200
     )
     ratatouille.baking(

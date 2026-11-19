@@ -62,7 +62,7 @@ global.CDAlcoholDrinks = [
     {"item": "dungeonsdelight:bloody_mary", "fluid": "createdelight:dungeonsdelight_bloody_mary", "amount": 250, "container": "minecraft:glass_bottle", "color": 0x782535},
     {"item": "dungeonsdelight:liveroot_beer", "fluid": "createdelight:dungeonsdelight_liveroot_beer", "amount": 250, "container": "minecraft:glass_bottle", "color": 0x774b2a},
     {"item": "dungeonsdelight:ghastly_spirits", "fluid": "createdelight:dungeonsdelight_ghastly_spirits", "amount": 250, "container": "minecraft:glass_bottle", "color": 0x67a8a9},
-    {"item": "irons_spellbooks:fire_ale", "fluid": "createdelight:irons_spellbooks_fire_ale", "amount": 250, "container": "minecraft:glass_bottle", "color": 0x831312,
+    {"item": "irons_spellbooks:fire_ale", "fluid": "createdelight:irons_spellbooks_fire_ale", "amount": 250, "container": "brewinandchewin:tankard", "color": 0x831312,
         "tooltipEffects": [
             {"effect": "minecraft:nausea", "duration": 100, "amplifier": 3},
             {"effect": "minecraft:fire_resistance", "duration": 900, "amplifier": 0},
