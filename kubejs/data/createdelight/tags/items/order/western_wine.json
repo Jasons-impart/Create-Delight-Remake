@@ -6,15 +6,7 @@
       "required": false
     },
     {
-      "id": "farmersrespite:strong_apple_cider",
-      "required": false
-    },
-    {
       "id": "farmersdelight:apple_cider",
-      "required": false
-    },
-    {
-      "id": "farmersrespite:long_apple_cider",
       "required": false
     },
     {

@@ -3,9 +3,7 @@
 // color 只用于本包新增的纯流体；已有原生流体保持原注册。
 global.CDAlcoholDrinks = [
     {"item": "fruitsdelight:bellini_cocktail", "fluid": "fruitsdelight:bellini_cocktail", "amount": 250, "container": "minecraft:glass_bottle"},
-    {"item": "farmersrespite:strong_apple_cider", "fluid": "farmersrespite:strong_apple_cider", "amount": 250, "container": "minecraft:glass_bottle"},
     {"item": "farmersdelight:apple_cider", "fluid": "farmersrespite:apple_cider", "amount": 250, "container": "minecraft:glass_bottle"},
-    {"item": "farmersrespite:long_apple_cider", "fluid": "farmersrespite:long_apple_cider", "amount": 250, "container": "minecraft:glass_bottle"},
     {"item": "ends_delight:chorus_fruit_wine", "fluid": "create_central_kitchen:chorus_fruit_wine", "amount": 250, "container": "minecraft:glass_bottle"},
     {"item": "brewinandchewin:beer", "fluid": "brewinandchewin:beer", "amount": 250, "container": "brewinandchewin:tankard"},
     {"item": "brewinandchewin:bloody_mary", "fluid": "brewinandchewin:bloody_mary", "amount": 250, "container": "brewinandchewin:tankard"},
