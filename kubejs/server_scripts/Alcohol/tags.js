@@ -31,6 +31,5 @@ ServerEvents.tags("fluid", event => {
 })
 
 ServerEvents.tags("item", event => {
-    event.add("createdelight:tavern_yeast", "createdelight:dry_yeast")
     event.add("createdelight:tavern_fermented_drinks", global.CDTavernFermentedDrinks)
 })

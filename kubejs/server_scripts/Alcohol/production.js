@@ -10,23 +10,6 @@ ServerEvents.recipes(event => {
         "dungeonsdelight:monster_cooking/misc/ghastly_spirits"
     ])
 
-    // 原生配方仅追加酵母，保留 ID、基液、原料、载体和 unit_time。
-    event.forEachRecipe({type: "kaleidoscope_tavern:barrel"}, recipe => {
-        let ingredients = recipe.json.get("ingredients")
-        if (!ingredients) {
-            ingredients = JsonIO.of([]).getAsJsonArray()
-            recipe.json.add("ingredients", ingredients)
-        } else ingredients = ingredients.getAsJsonArray()
-        let hasYeast = false
-        ingredients.forEach(ingredient => {
-            if (ingredient.toString().indexOf('"createdelight:dry_yeast"') !== -1) hasYeast = true
-        })
-        if (!hasYeast) {
-            ingredients.add(Ingredient.of("createdelight:dry_yeast").toJson())
-            recipe.save()
-        }
-    })
-
     const barrel = event.recipes.kaleidoscope_tavern.barrel
     barrel("farmersdelight:apple_cider", "minecraft:glass_bottle", [
         "minecraft:apple", "minecraft:apple", "minecraft:sugar", "createdelight:dry_yeast"
