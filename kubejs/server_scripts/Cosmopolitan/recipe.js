@@ -32,6 +32,7 @@ ServerEvents.recipes(e => {
         "cosmopolitan:general/block/iron_frozen_dessert_tub",
         "cosmopolitan:general/smithing/netherite_frozen_dessert_tub_from_copper",
         "cosmopolitan:general/smithing/netherite_frozen_dessert_tub_from_iron",
+        "cosmopolitan:brewinandchewin/fermenting/cream",
     ])
     remove_recipes_type(e, [
         "cosmopolitan:tub_injecting"

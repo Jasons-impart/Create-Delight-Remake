@@ -52,7 +52,7 @@ ServerEvents.recipes(e => {
     ])
     create.filling("brewinandchewin:unripe_flaxen_cheese_wheel", [
         "minecraft:honeycomb",
-        Fluid.of("create_bic_bit:curdled_milk", 1000)
+        Fluid.of("brewinandchewin:flaxen_cheese", 1000)
     ])
     .id("createdelight:filling/create/unripe_flaxen_cheese_wheel")
     frementing_3(e, "brewinandchewin:egg_grog", [
@@ -69,7 +69,7 @@ ServerEvents.recipes(e => {
         "createdelight:dry_yeast",
         "vintagedelight:vinegar_bottle",
         "minecraft:sugar"
-    ], "create_bic_bit:curdled_milk", "create_bic_bit:curdled_milk", 4, 2400, undefined, "meals")
+    ], "brewinandchewin:flaxen_cheese", "brewinandchewin:flaxen_cheese", 4, 2400, undefined, "meals")
     frementing_3(e, "minecraft:water", [
         "minecraft:glow_berries",
         "minecraft:glowstone_dust",
@@ -104,10 +104,9 @@ ServerEvents.recipes(e => {
         "minecraft:dried_kelp",
         "minecraft:seagrass"
     ], "brewinandchewin:salty_folly", "brewinandchewin:salty_folly", 2, 2400)
-    frementing_3(e, "minecraft:milk", [
+    frementing_3(e, "brewinandchewin:flaxen_cheese", [
         "minecraft:crimson_fungus",
-        "minecraft:nether_wart",
-        "minecraft:sugar"
+        "minecraft:nether_wart"
     ], "brewinandchewin:scarlet_cheese", "brewinandchewin:scarlet_cheese", 5, 4800, undefined, "meals")
     frementing_3(e, "brewinandchewin:salty_folly", [
         "minecraft:wither_rose",
@@ -239,11 +238,7 @@ ServerEvents.recipes(e => {
         true, "minecraft:bucket", false
     ).id("brewinandchewin:pouring/honey_bucket")
     e.recipes.brewinandchewin.keg_pouring(
-        "create_bic_bit:curdled_milk", "brewinandchewin:unripe_flaxen_cheese_wheel", 1000,
+        "brewinandchewin:flaxen_cheese", "brewinandchewin:unripe_flaxen_cheese_wheel", 1000,
         false, "minecraft:honeycomb", false
     ).id("brewinandchewin:pouring/unripe_flaxen_cheese_wheel")
-    e.recipes.brewinandchewin.keg_pouring(
-        "create_bic_bit:curdled_milk", "create_bic_bit:curdled_milk_bucket", 1000,
-        true, "minecraft:bucket", false
-    ).id("brewinandchewin:pouring/curdled_milk_bucket")
 })

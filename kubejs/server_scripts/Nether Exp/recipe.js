@@ -24,7 +24,7 @@ ServerEvents.recipes(e => {
     .id("createdelight:wither_bone_block")
     kubejs.shapeless("9x iceandfire:wither_shard", "netherexp:wither_bone_block")
     .id("createdelight:compat/wither_shard")
-    create.mixing(Fluid.of("create_bic_bit:curdled_milk", 1000), ["2x #netherexp:glowspores", Fluid.of("minecraft:milk", 1000)])
+    create.mixing(Fluid.of("brewinandchewin:flaxen_cheese", 1000), ["2x #netherexp:glowspores", Fluid.of("minecraft:milk", 1000)])
     .id("createdelight:compat/curdled_milk")
 
 

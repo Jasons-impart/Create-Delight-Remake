@@ -108,7 +108,7 @@ ServerEvents.recipes(e => {
             FluidIngredients("forge:egg_yolk", 100),
         Fluid.of("createdieselgenerators:plant_oil", 250)
     ]).id("createdelight:mixing/mayonnaise_recipe")
-    create.mixing(Fluid.of("create_bic_bit:curdled_milk", 1000), [
+    create.mixing(Fluid.of("brewinandchewin:flaxen_cheese", 1000), [
         Fluid.of("createdelight:vinegar", 250),
         Fluid.of("minecraft:milk", 1000),
         "createdelight:dry_yeast"
@@ -116,7 +116,7 @@ ServerEvents.recipes(e => {
     .id("createdelight:mixing/curdled_milk")
     create.compacting(
         "vintagedelight:cheese_curds",
-        Fluid.of("create_bic_bit:curdled_milk", 250)
+        Fluid.of("brewinandchewin:flaxen_cheese", 250)
     ).id("createdelight:compacting/cheese_curds")
     threshing(e, "minecraft:sunflower", [
         "2x create_bic_bit:sunflower_seeds",
