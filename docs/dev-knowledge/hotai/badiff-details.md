@@ -30,7 +30,7 @@
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 52 个 `.badiff`；静态 JAR 命中 48 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
+当前扫描到 53 个 `.badiff`；静态 JAR 命中 49 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |
 |---|---|---|---|
@@ -78,6 +78,7 @@
 | Create Delight Core | `hotai/io/github/jasonsimpart/createdelightcore/CDConfig.badiff` | `io/github/jasonsimpart/createdelightcore/CDConfig` | 静态命中 `Create-Delight-Core-1.20.1-dev.jar` |
 | Create Delight Core | `hotai/io/github/jasonsimpart/createdelightcore/compat/createenchantmentindustry/TetraScrollPrinterCompat$TetraScrollPrintingBehaviour.badiff` | `io/github/jasonsimpart/createdelightcore/compat/createenchantmentindustry/TetraScrollPrinterCompat$TetraScrollPrintingBehaviour` | 静态命中 `Create-Delight-Core-1.20.1-dev.jar` |
 | Create Delight Core | `hotai/io/github/jasonsimpart/createdelightcore/mixin/create/BasinRecipeMixin.badiff` | `io/github/jasonsimpart/createdelightcore/mixin/create/BasinRecipeMixin` | 静态命中 `Create-Delight-Core-1.20.1-dev.jar` |
+| Create Delight Core | `hotai/io/github/jasonsimpart/createdelightcore/mixin/Minecraft/OEITagMirrorMixin.badiff` | `io/github/jasonsimpart/createdelightcore/mixin/Minecraft/OEITagMirrorMixin` | 静态命中 `Create-Delight-Core-1.20.1-dev.jar` |
 | Create Delight Core | `hotai/io/github/jasonsimpart/createdelightcore/mixin/quality_food/QualityFoodMixin.badiff` | `io/github/jasonsimpart/createdelightcore/mixin/quality_food/QualityFoodMixin` | 静态命中 `Create-Delight-Core-1.20.1-dev.jar` |
 | Create Delight Core | `hotai/io/github/jasonsimpart/createdelightcore/mixin/refurbished_furniture/FryingPanBlockEntityMixin.badiff` | `io/github/jasonsimpart/createdelightcore/mixin/refurbished_furniture/FryingPanBlockEntityMixin` | 静态命中 `Create-Delight-Core-1.20.1-dev.jar` |
 | Unknown | `hotai/net/yiran/rebalancing/core/mixins/AttributeHelperMixin.badiff` | `net/yiran/rebalancing/core/mixins/AttributeHelperMixin` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
@@ -749,3 +750,16 @@ if (state == null) {
 - 新 badiff SHA-256：`87ed8a4acf06d8a139f376e228415575f43916ffebba9006742780e4091e56da`（612 字节）；MemoryDiff 序列化重放逐字节等于 after.class，ASM 结构与 BasicVerifier 通过。
 - 还原后的 `@Mixin` 仍指向 `com.mrcrayfish.furniture.refurbished.blockentity.FryingPanBlockEntity`；家具 1.0.20 的 `onCompleteCooking` 中精确匹配 `ItemStack.m_41774_(I)V` 一处。`require=1` 防止以后零命中静默跳过品质。
 - 完整退出并重启 050x 后，用整数品质 `{quality_food:{quality:1}}` 的生鲶鱼片验证铁品质熟片，再用无品质生片确认不会继承上次品质；不能用 KubeJS reload 代替客户端重启。当前验证不等于已完成游戏内回归。
+
+
+## CDC OEI 标签镜像空操作（050x）
+
+### CDC OEI 标签镜像空操作（050x）
+
+目标：`io/github/jasonsimpart/createdelightcore/mixin/Minecraft/OEITagMirrorMixin.badiff`，绑定冻结 CDC `2.2.16j` 的 `Create-Delight-Core-1.20.1-dev.jar`（SHA-256 `de9e0ddad0b13bc34a9f1a7caaa79256d4403af9af0488e9dcef15e5800d9e36`）。不替换冻结的 CDC JAR，也不改变子模块指针。2.2.16j 的该 mixin 仍使用 `@Shadow directory`（生产字段为 `f_13449_`），早于 Core [#163](https://github.com/Jasons-impart/Create-Delight-Core/pull/163) 的构造参数捕获修复。
+
+OEI 1.0.10 已通过上游 [OneEnough#15](https://github.com/Tower-of-Sighs/OneEnough/pull/15) 在 `com.mafuyu404.oneenoughitem.mixin.TagLoaderMixin` 中于深层替换后写入真实物品标签（source 为 `oneenoughitem:tag_mirror`）。若继续让 CDC mixin 运行，只会再追加 `createdelightcore:oei_tag_mirror` 重复条目。本补丁在 `createdelightcore$mirrorOeiItemTags` 方法体开头直接 `RETURN`，构造/`@Shadow` 与 `isOeiDeeperReplaceEnabled` / `loadOeiMappings` / `tryMirrorItem` 保持原样，但注入方法不再调用它们，因而不会再写入镜像条目。
+
+- 基线 CDC 2.2.16j JAR SHA-256：`de9e0ddad0b13bc34a9f1a7caaa79256d4403af9af0488e9dcef15e5800d9e36`；补丁从原始 class 经 `ClassReader → ClassNode → ClassWriter(0)` 归一化后生成 MemoryDiff，不叠加旧 badiff。
+- 新 badiff SHA-256：`9422450720abdd924001754e6dbe7623ac2ec5c4b575882de851426bf088548d`（10236 字节）。MemoryDiff 序列化后再次反序列化重放，逐字节等于 after.class；`createdelightcore$mirrorOeiItemTags` 经 ASM `BasicVerifier` 校验，仅含一条 `RETURN`（`maxStack=0`，`maxLocals=3`）；其余方法的 textify 与原始 class 一致。
+- 本补丁必须与 OEI 1.0.10 一并进入 050x。若只套空操作、包内仍是 OEI 1.0.7-hotfix，会失去标签镜像。跟踪 [Remake #2140](https://github.com/Jasons-impart/Create-Delight-Remake/issues/2140)。游戏内复核（鱿鱼、`#minecraft:fishes`、填充鹦鹉螺壳、东北乐事标签）待合并后进行。
