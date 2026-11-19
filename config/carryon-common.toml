@@ -59,7 +59,7 @@
 	#Entities that CAN be picked up (useWhitelistEntities must be true)
 	allowedEntities = ["alexsmobs:*", "minecraft:villager", "minecraft:bee", "minecraft:cat", "minecraft:chicken", "minecraft:cod", "minecraft:cow", "minecraft:dolphin", "minecraft:donkey", "minecraft:fox", "minecraft:frog", "minecraft:glow_squid", "minecraft:goat", "minecraft:horse", "minecraft:llama", "minecraft:mooshroom", "minecraft:mule", "minecraft:ocelot", "minecraft:panda", "minecraft:parrot", "minecraft:pig", "minecraft:rabbit", "minecraft:salmon", "minecraft:sheep", "minecraft:tadpole", "minecraft:trader_llama", "minecraft:tropical_fish", "minecraft:turtle", "minecraft:trader_llama", "minecraft:wandering_trader", "minecraft:wolf", "minecraft:wandering_trader", "minecraft:minecart"]
 	#Blocks that CAN be picked up (useWhitelistBlocks must be true)
-	allowedBlocks = ["minecraft:spawner", "chest*", "barrel*", "crate*", "basket*", "cabinet*", "minecraft:player_head", "minecraft:beehive", "minecraft:bee_nest"]
+	allowedBlocks = ["minecraft:spawner", "chest*", "minecraft:barrel", "alexscaves:metal_barrel", "alexscaves:rusty_barrel", "crate*", "basket*", "cabinet*", "minecraft:player_head", "minecraft:beehive", "minecraft:bee_nest"]
 	#Entities that CAN have other entities stacked on top of them (useWhitelistStacking must be true)
 	allowedStacking = []
 
