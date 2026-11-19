@@ -1434,15 +1434,15 @@
     "name": "Oculus",
     "version": "1.8.0"
   },
-  "OELib-forge-1.20.1-0.2.3.jar": {
+  "oelib-forge-1.20.1-0.3.2.jar": {
     "modId": "oelib-forge",
     "name": "One Enough Lib",
-    "version": "1.20.1-0.2.3"
+    "version": "1.20.1-0.3.2"
   },
-  "OneEnoughItem-1.0.7-hotfix.jar": {
-    "modId": "oneenoughitem",
+  "OneEnoughItem-forge-1.20.1-1.0.10.jar": {
+    "modId": "oneenoughitem-forge",
     "name": "One Enough Item",
-    "version": "1.0.7-hotfix"
+    "version": "1.20.1-1.0.10"
   },
   "OneEnoughValue-1.0.2.jar": {
     "modId": "oneenoughvalue",
