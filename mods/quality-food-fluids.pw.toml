@@ -1,13 +1,8 @@
 name = "Quality Food Fluids"
-filename = "quality_food_fluids-1.20.1-0.1.4.jar"
+filename = "quality_food_fluids-1.20.1-0.1.4-cdr-vinegar-compat1.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "1937d8f520be03162789fbc6a1b2d9261c97af61"
-mode = "metadata:curseforge"
-
-[update]
-[update.curseforge]
-file-id = 8812069
-project-id = 1601403
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/quality_food_fluids-1.20.1-0.1.4-cdr-vinegar-compat1.jar"
+hash-format = "sha256"
+hash = "9d5aa8275a0266ea775e44b77d23a72821a62a619cf452bb23354a6311ba5d21"

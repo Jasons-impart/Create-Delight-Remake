@@ -1,13 +1,8 @@
 name = "Create: FluidLogistics"
-filename = "fluidlogistics-1.3.2-mc1.20.1.jar"
+filename = "fluidlogistics-1.3.2-mc1.20.1-cdr-vinegar-compat1.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "3c92fb246aaed624bc553b91b1f5ba0be39b7988"
-mode = "metadata:curseforge"
-
-[update]
-[update.curseforge]
-file-id = 9340856
-project-id = 1475079
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/fluidlogistics-1.3.2-mc1.20.1-cdr-vinegar-compat1.jar"
+hash-format = "sha256"
+hash = "9a8c8df50d975a5944649f785700cbbdfeb0d4e39902fdae6f71724cc91cca84"
