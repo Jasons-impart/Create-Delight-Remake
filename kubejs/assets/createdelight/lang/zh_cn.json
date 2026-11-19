@@ -1204,5 +1204,13 @@
   "fluid.createdelight.dungeonsdelight_bloody_mary": "迷人血玛丽",
   "fluid.createdelight.dungeonsdelight_liveroot_beer": "活根啤酒",
   "fluid.createdelight.dungeonsdelight_ghastly_spirits": "恶魂烈酒",
-    "fluid.createdelight.irons_spellbooks_fire_ale": "炽焰啤酒"
+    "fluid.createdelight.irons_spellbooks_fire_ale": "炽焰啤酒",
+  "fluid.createdelight.amethyst_tequila_wort": "未发酵的紫晶龙舌兰",
+  "item.createdelight.amethyst_tequila_wort_bucket": "未发酵的紫晶龙舌兰桶",
+  "fluid.createdelight.catacombs_wine_wort": "未发酵的墓穴红酒",
+  "item.createdelight.catacombs_wine_wort_bucket": "未发酵的墓穴红酒桶",
+  "fluid.createdelight.ice_venom_wine_wort": "未发酵的蛛牙冰酒",
+  "item.createdelight.ice_venom_wine_wort_bucket": "未发酵的蛛牙冰酒桶",
+  "fluid.createdelight.ghastly_spirits_wort": "未发酵的恶魂烈酒",
+  "item.createdelight.ghastly_spirits_wort_bucket": "未发酵的恶魂烈酒桶"
 }

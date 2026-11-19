@@ -66,6 +66,9 @@ StartupEvents.registry("fluid", e => {
         if (drink.color !== undefined) simpleFluid(drink.fluid, drink.color, true, false, false)
     })
 
+    // 未发酵酒液保留标准桶，颜色为对应成品酒混入 20% 白色。
+    global.CDAlcoholWorts.forEach(wort => simpleFluid(wort.fluid, wort.color, true, false, true))
+
     simpleFluid("createdelight:fuel_mixtures", 0X8470FF)
     simpleFluid("createdelight:light_crude_oil", 0X8B7E66)
     simpleFluid("createdelight:ethylene_fluid", 0XE6E6FA)
