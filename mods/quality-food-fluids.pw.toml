@@ -1,8 +1,8 @@
 name = "Quality Food Fluids"
-filename = "quality_food_fluids-1.20.1-0.1.4-cdr-vinegar-compat1.jar"
+filename = "quality_food_fluids-1.20.1-0.1.4-cdr-vinegar-compat2.jar"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/quality_food_fluids-1.20.1-0.1.4-cdr-vinegar-compat1.jar"
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/quality_food_fluids-1.20.1-0.1.4-cdr-vinegar-compat2.jar"
 hash-format = "sha256"
-hash = "9d5aa8275a0266ea775e44b77d23a72821a62a619cf452bb23354a6311ba5d21"
+hash = "f31c9a73827a37f53f6378bac04e58f52c5b89c1e450009df16c08bb4772274a"

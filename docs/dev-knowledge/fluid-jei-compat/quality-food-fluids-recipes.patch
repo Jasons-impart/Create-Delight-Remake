@@ -1,0 +1,259 @@
+diff --git a/build.gradle b/build.gradle
+index 11922ce..369050b 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -64,6 +64,7 @@ minecraft {
+ 
+         gameTestServer {
+             property 'forge.enabledGameTestNamespaces', mod_id
++            args '--mixin.config=quality_food_fluids.cgt_recipe_test.mixins.json'
+             mods {
+                 "${mod_id}" {
+                     source sourceSets.gameTest
+diff --git a/src/gameTest/java/io/github/createdelight/qualityfoodfluids/compat/jei/CgtJeiRecipeTests.java b/src/gameTest/java/io/github/createdelight/qualityfoodfluids/compat/jei/CgtJeiRecipeTests.java
+new file mode 100644
+index 0000000..ad4b2d9
+--- /dev/null
++++ b/src/gameTest/java/io/github/createdelight/qualityfoodfluids/compat/jei/CgtJeiRecipeTests.java
+@@ -0,0 +1,99 @@
++package io.github.createdelight.qualityfoodfluids.compat.jei;
++
++import com.simibubi.create.content.fluids.transfer.EmptyingRecipe;
++import com.simibubi.create.content.fluids.transfer.FillingRecipe;
++import io.github.createdelight.qualityfoodfluids.QualityFoodFluids;
++import mezz.jei.api.recipe.RecipeType;
++import mezz.jei.api.registration.IRecipeRegistration;
++import net.minecraft.gametest.framework.GameTest;
++import net.minecraft.gametest.framework.GameTestHelper;
++import net.minecraft.nbt.CompoundTag;
++import net.minecraft.resources.ResourceLocation;
++import net.minecraft.world.item.ItemStack;
++import net.minecraftforge.fluids.FluidStack;
++import net.minecraftforge.fml.ModList;
++import net.minecraftforge.gametest.GameTestHolder;
++import net.minecraftforge.gametest.PrefixGameTestTemplate;
++import net.minecraftforge.registries.ForgeRegistries;
++
++import java.lang.reflect.Proxy;
++import java.util.HashMap;
++import java.util.HashSet;
++import java.util.List;
++import java.util.Map;
++import java.util.Set;
++
++@GameTestHolder(QualityFoodFluids.MODID)
++@PrefixGameTestTemplate(false)
++public final class CgtJeiRecipeTests {
++    @GameTest(template = "empty")
++    public static void actualCgtJeiRecipesUseOnePlainFluidPerDrink(GameTestHelper helper) throws Exception {
++        if (!ModList.get().isLoaded("creategearsandtavern")) {
++            helper.succeed();
++            return;
++        }
++        // The GameTest run adds a test-only common mixin configuration at
++        // startup to exercise the production client injection on the real class.
++        Class<?> cgtRecipes = Class.forName("com.yision.creategearsandtavern.compat.jei.CGTJeiDrinkRecipes");
++        RecipeType<FillingRecipe> fillingType = new RecipeType<>(new ResourceLocation("create", "spout_filling"), FillingRecipe.class);
++        RecipeType<EmptyingRecipe> emptyingType = new RecipeType<>(new ResourceLocation("create", "draining"), EmptyingRecipe.class);
++        Map<RecipeType<?>, List<?>> recipes = new HashMap<>();
++        IRecipeRegistration registration = (IRecipeRegistration) Proxy.newProxyInstance(
++                IRecipeRegistration.class.getClassLoader(), new Class<?>[]{IRecipeRegistration.class}, (proxy, method, args) -> {
++                    if (method.getName().equals("addRecipes")) {
++                        recipes.put((RecipeType<?>) args[0], List.copyOf((List<?>) args[1]));
++                        return null;
++                    }
++                    throw new AssertionError("unexpected JEI registration call " + method.getName());
++                });
++        cgtRecipes.getMethod("registerRecipes", IRecipeRegistration.class, RecipeType.class, RecipeType.class)
++                .invoke(cgtRecipes.getConstructor().newInstance(), registration, fillingType, emptyingType);
++        List<?> fillings = recipes.get(fillingType);
++        List<?> emptyings = recipes.get(emptyingType);
++        long drinks = ForgeRegistries.FLUIDS.getKeys().stream()
++                .filter(id -> id.getNamespace().equals("creategearsandtavern") && !id.getPath().startsWith("flowing_")).count();
++        check(drinks > 0 && fillings.size() == drinks && emptyings.size() == drinks,
++                "CGT still registers multiple brewing recipes per drink: " + fillings.size() + "/" + emptyings.size() + "/" + drinks);
++        Map<ResourceLocation, Integer> amounts = new HashMap<>();
++        for (Object value : fillings) {
++            FillingRecipe recipe = (FillingRecipe) value;
++            List<FluidStack> inputs = recipe.getFluidIngredients().get(0).getMatchingFluidStacks();
++            check(inputs.size() == 1, "filling recipe retained alternative fluid stacks");
++            FluidStack fluid = inputs.get(0);
++            check(!fluid.hasTag() && fluid.getAmount() > 0, "filling fluid retained brewing, quality, or effect NBT");
++            ResourceLocation id = ForgeRegistries.FLUIDS.getKey(fluid.getFluid());
++            check(amounts.put(id, fluid.getAmount()) == null, "duplicate filling fluid " + id);
++        }
++        Set<ResourceLocation> emptied = new HashSet<>();
++        for (Object value : emptyings) {
++            EmptyingRecipe recipe = (EmptyingRecipe) value;
++            check(recipe.getFluidResults().size() == 1, "emptying recipe retained alternative outputs");
++            FluidStack fluid = recipe.getFluidResults().get(0);
++            ResourceLocation id = ForgeRegistries.FLUIDS.getKey(fluid.getFluid());
++            check(emptied.add(id), "duplicate emptying fluid " + id);
++            check(!fluid.hasTag() && amounts.get(id) != null && fluid.getAmount() == amounts.get(id),
++                    "emptying fluid retained NBT or changed bottle volume for " + id);
++        }
++
++        ItemStack aged = new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation("kaleidoscope_tavern", "plum_wine")));
++        check(!aged.isEmpty(), "missing real drink fixture");
++        Class.forName("com.github.ysbbbbbb.kaleidoscopetavern.item.BottleBlockItem")
++                .getMethod("setBrewLevel", ItemStack.class, int.class).invoke(null, aged, 6);
++        CompoundTag before = aged.save(new CompoundTag()).copy();
++        FluidStack real = (FluidStack) Class.forName("com.yision.creategearsandtavern.content.fluids.drink.DrinkFluidConversions")
++                .getMethod("fromItem", ItemStack.class).invoke(null, aged);
++        check(real.hasTag() && real.getTag().getCompound("DrinkVariant").getInt("brew_level") == 6,
++                "JEI compatibility changed the real aged drink conversion");
++        FluidStack plain = CgtJeiFluidEntries.baseRecipeFluid(real);
++        check(!plain.hasTag() && plain.getAmount() == real.getAmount() && real.hasTag(), "display conversion changed real fluid data");
++        check(before.equals(aged.save(new CompoundTag())), "JEI compatibility changed the real bottle");
++        System.out.println("CGT JEI recipes verified: " + drinks + " plain filling + " + drinks + " plain emptying; real brewing NBT preserved");
++        helper.succeed();
++    }
++
++    private static void check(boolean condition, String message) {
++        if (!condition) {
++            throw new AssertionError(message);
++        }
++    }
++}
+diff --git a/src/gameTest/resources/quality_food_fluids.cgt_recipe_test.mixins.json b/src/gameTest/resources/quality_food_fluids.cgt_recipe_test.mixins.json
+new file mode 100644
+index 0000000..c35eda2
+--- /dev/null
++++ b/src/gameTest/resources/quality_food_fluids.cgt_recipe_test.mixins.json
+@@ -0,0 +1,12 @@
++{
++  "required": true,
++  "minVersion": "0.8",
++  "package": "io.github.createdelight.qualityfoodfluids.mixin",
++  "compatibilityLevel": "JAVA_17",
++  "mixins": [
++    "CgtJeiDrinkRecipesMixin"
++  ],
++  "injectors": {
++    "defaultRequire": 1
++  }
++}
+diff --git a/src/main/java/io/github/createdelight/qualityfoodfluids/compat/jei/CgtJeiFluidEntries.java b/src/main/java/io/github/createdelight/qualityfoodfluids/compat/jei/CgtJeiFluidEntries.java
+index 908d97a..48df219 100644
+--- a/src/main/java/io/github/createdelight/qualityfoodfluids/compat/jei/CgtJeiFluidEntries.java
++++ b/src/main/java/io/github/createdelight/qualityfoodfluids/compat/jei/CgtJeiFluidEntries.java
+@@ -2,17 +2,44 @@ package io.github.createdelight.qualityfoodfluids.compat.jei;
+ 
+ import net.minecraft.world.level.material.FlowingFluid;
+ import net.minecraft.world.level.material.Fluid;
++import net.minecraft.world.item.Item;
++import net.minecraft.world.item.ItemStack;
+ import net.minecraftforge.fluids.FluidStack;
+ 
+ import java.util.ArrayList;
+ import java.util.Collection;
+ import java.util.LinkedHashMap;
+ import java.util.Map;
++import java.util.List;
+ 
+ public final class CgtJeiFluidEntries {
+     private CgtJeiFluidEntries() {
+     }
+ 
++    public static List<ItemStack> baseBottleSamples(List<ItemStack> variants) {
++        Map<Item, ItemStack> entries = new LinkedHashMap<>();
++        for (ItemStack stack : variants) {
++            if (!stack.isEmpty()) {
++                // These bottles only feed CGT's synthetic JEI recipes. Avoid
++                // copying brewing levels, stored effects, or quality into them.
++                entries.computeIfAbsent(stack.getItem(), ItemStack::new);
++            }
++        }
++        return new ArrayList<>(entries.values());
++    }
++
++    public static FluidStack baseRecipeFluid(FluidStack stack) {
++        return stack.isEmpty() ? FluidStack.EMPTY : new FluidStack(stack.getFluid(), stack.getAmount());
++    }
++
++    public static FluidStack[] baseRecipeOutputs(FluidStack[] variants) {
++        FluidStack[] outputs = new FluidStack[variants.length];
++        for (int i = 0; i < variants.length; i++) {
++            outputs[i] = baseRecipeFluid(variants[i]);
++        }
++        return outputs;
++    }
++
+     public static Collection<FluidStack> baseEntries(Collection<FluidStack> variants) {
+         Map<Fluid, FluidStack> entries = new LinkedHashMap<>();
+         for (FluidStack stack : variants) {
+diff --git a/src/main/java/io/github/createdelight/qualityfoodfluids/mixin/CgtJeiDrinkRecipesMixin.java b/src/main/java/io/github/createdelight/qualityfoodfluids/mixin/CgtJeiDrinkRecipesMixin.java
+new file mode 100644
+index 0000000..959ea70
+--- /dev/null
++++ b/src/main/java/io/github/createdelight/qualityfoodfluids/mixin/CgtJeiDrinkRecipesMixin.java
+@@ -0,0 +1,43 @@
++package io.github.createdelight.qualityfoodfluids.mixin;
++
++import io.github.createdelight.qualityfoodfluids.compat.jei.CgtJeiFluidEntries;
++import net.minecraft.world.item.ItemStack;
++import net.minecraftforge.fluids.FluidStack;
++import org.spongepowered.asm.mixin.Mixin;
++import org.spongepowered.asm.mixin.Pseudo;
++import org.spongepowered.asm.mixin.injection.At;
++import org.spongepowered.asm.mixin.injection.Inject;
++import org.spongepowered.asm.mixin.injection.ModifyArg;
++import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
++
++import java.util.List;
++
++@Pseudo
++@Mixin(targets = "com.yision.creategearsandtavern.compat.jei.CGTJeiDrinkRecipes", remap = false)
++public abstract class CgtJeiDrinkRecipesMixin {
++    @Inject(method = "samples", at = @At("RETURN"), cancellable = true, remap = false)
++    private static void qualityFoodFluids$baseBottleSamples(int minBrew,
++            CallbackInfoReturnable<List<ItemStack>> cir) {
++        cir.setReturnValue(CgtJeiFluidEntries.baseBottleSamples(cir.getReturnValue()));
++    }
++
++    @ModifyArg(
++            method = "registerRecipes",
++            at = @At(value = "INVOKE", target = "Lcom/simibubi/create/foundation/fluid/FluidIngredient;fromFluidStack(Lnet/minecraftforge/fluids/FluidStack;)Lcom/simibubi/create/foundation/fluid/FluidIngredient;"),
++            index = 0,
++            remap = false
++    )
++    private FluidStack qualityFoodFluids$baseFillingFluid(FluidStack stack) {
++        return CgtJeiFluidEntries.baseRecipeFluid(stack);
++    }
++
++    @ModifyArg(
++            method = "registerRecipes",
++            at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/processing/recipe/ProcessingRecipeBuilder;withFluidOutputs([Lnet/minecraftforge/fluids/FluidStack;)Lcom/simibubi/create/content/processing/recipe/ProcessingRecipeBuilder;"),
++            index = 0,
++            remap = false
++    )
++    private FluidStack[] qualityFoodFluids$baseEmptyingFluids(FluidStack[] stacks) {
++        return CgtJeiFluidEntries.baseRecipeOutputs(stacks);
++    }
++}
+diff --git a/src/main/java/io/github/createdelight/qualityfoodfluids/mixin/QualityFoodFluidsMixinPlugin.java b/src/main/java/io/github/createdelight/qualityfoodfluids/mixin/QualityFoodFluidsMixinPlugin.java
+index c9fd3d8..294481e 100644
+--- a/src/main/java/io/github/createdelight/qualityfoodfluids/mixin/QualityFoodFluidsMixinPlugin.java
++++ b/src/main/java/io/github/createdelight/qualityfoodfluids/mixin/QualityFoodFluidsMixinPlugin.java
+@@ -20,7 +20,8 @@ public class QualityFoodFluidsMixinPlugin implements IMixinConfigPlugin {
+ 
+     @Override
+     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
+-        if (mixinClassName.endsWith("CgtJeiPluginMixin")) {
++        if (mixinClassName.endsWith("CgtJeiPluginMixin")
++                || mixinClassName.endsWith("CgtJeiDrinkRecipesMixin")) {
+             return isLoaded("jei") && isLoaded("creategearsandtavern");
+         }
+ 
+diff --git a/src/main/resources/quality_food_fluids.mixins.json b/src/main/resources/quality_food_fluids.mixins.json
+index 0615aec..a101f91 100644
+--- a/src/main/resources/quality_food_fluids.mixins.json
++++ b/src/main/resources/quality_food_fluids.mixins.json
+@@ -37,6 +37,7 @@
+   ],
+   "client": [
+     "CgtJeiPluginMixin",
++    "CgtJeiDrinkRecipesMixin",
+     "JadeFluidStorageProviderMixin"
+   ],
+   "injectors": {
