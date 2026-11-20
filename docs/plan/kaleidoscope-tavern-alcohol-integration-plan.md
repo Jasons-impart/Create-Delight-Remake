@@ -52,6 +52,14 @@
 
 主要入口：`kubejs/startup_scripts/{01_alcohol_drinks,02_alcohol_production,registry_fluid}.js`、`kubejs/server_scripts/Alcohol/`、`kubejs/server_scripts/Brewin and Chewin/recipe.js`；CDC 行为见[品质机制](../../CDC-mod-src/docs/dev-knowledge/quality-food.md)。
 
+## 龙头与置物台
+
+在 `kaleidoscope_tavern:tap` 正下方放置 `create:depot`，置物台上放当前配方要求的容器，再按原生方式开阀（手动或红石）。一次出酒消耗一个容器，产出一瓶对应酒；森罗原生酒使用原配方瓶器，六款外部酒使用玻璃瓶。
+
+单个容器原位变成成品。堆叠容器保留余瓶，成品进入置物台加工缓冲，可由漏斗等提取；缓冲有物品时暂停后续出酒，取走后再开阀。初酿未完成、容器错误、出酒前容器被换走或缓冲堵塞时不消耗容器和酒。继续使用原生逐瓶出酒入口，保留品质、原效果和末瓶清理。
+
+实现位于 CDC `compat/kaleidoscopetavern/TavernTapDepot` 与 `mixin/kaleidoscopetavern/BarrelTapDepotMixin`；这是本轮明确追加的龙头适配，其他已取消的自动化规划仍不恢复。已补充单瓶、堆叠、错误容器、缓冲提取及阻塞、初酿禁取、品质、保存重进及原生地面容器回归用例；Java 17 构建与 refmap 校验通过，GameTest 仍在读取 Mixin 配置资源时启动失败，用例未执行。手动与红石开阀待游戏内验证，日志位于 `tmp-opencode/tap-depot/`。
+
 ## 后续醉酒规划（未实施）
 
 本轮不调整醉酒规则；下列仍是未来方案，当前规则见[内容地图](../dev-knowledge/content-map.md)。
@@ -60,7 +68,7 @@
 - 镜头与行走偏移共同反向，保留平滑、三秒周期和平方曲线；最大 30°，I～V 稳定峰值为 30°、16.875°、7.5°、1.875°、0°。屏幕特效强度正向控制两者，零时关闭。
 - 保留妖归攻击加成和清醒体系，醉酒不重复套用 QF。普通酒 30 秒，神秘鸡尾酒 180 秒；原无醉酒的森罗固定鸡尾酒保持。
 
-已取消整桶批次改造、自动化、存量转换器、调酒器改造和陈酿时长改造，不作为待办恢复；现有基础批次记录、品质陈酿及铁品质门槛保留。
+已取消整桶批次改造、其他自动化、存量转换器、调酒器改造和陈酿时长改造，不作为待办恢复；现有基础批次记录、品质陈酿及铁品质门槛保留。
 
 ## 验证与交付
 
