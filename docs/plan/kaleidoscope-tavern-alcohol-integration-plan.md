@@ -56,9 +56,9 @@
 
 在 `kaleidoscope_tavern:tap` 正下方放置 `create:depot`，置物台上放当前配方要求的容器，再按原生方式开阀（手动或红石）。一次出酒消耗一个容器，产出一瓶对应酒；森罗原生酒使用原配方瓶器，六款外部酒使用玻璃瓶。
 
-单个容器原位变成成品。堆叠容器保留余瓶，成品进入置物台加工缓冲，可由漏斗等提取；缓冲有物品时暂停后续出酒，取走后再开阀。初酿未完成、容器错误、出酒前容器被换走或缓冲堵塞时不消耗容器和酒。继续使用原生逐瓶出酒入口，保留品质、原效果和末瓶清理。
+单个容器原位变成成品。堆叠容器保留余瓶，成品进入置物台加工缓冲，可由漏斗等提取；已有成品不阻止继续出酒，相同酒、品质及 NBT 的产物可叠加，也可使用空槽。仅当缓冲无法完整容纳下一瓶时暂停，释放一个兼容位置后即可继续，无需清空缓冲。初酿未完成、容器错误、出酒前容器被换走或缓冲堵塞时不消耗容器和酒。继续使用原生逐瓶出酒入口，保留品质、原效果和末瓶清理。
 
-实现位于 CDC `compat/kaleidoscopetavern/TavernTapDepot` 与 `mixin/kaleidoscopetavern/BarrelTapDepotMixin`；这是本轮明确追加的龙头适配，其他已取消的自动化规划仍不恢复。已补充单瓶、堆叠、错误容器、缓冲提取及阻塞、初酿禁取、品质、保存重进及原生地面容器回归用例；Java 17 构建与 refmap 校验通过，GameTest 仍在读取 Mixin 配置资源时启动失败，用例未执行。手动与红石开阀待游戏内验证，日志位于 `tmp-opencode/tap-depot/`。
+实现位于 CDC `compat/kaleidoscopetavern/TavernTapDepot` 与 `mixin/kaleidoscopetavern/BarrelTapDepotMixin`；这是本轮明确追加的龙头适配，其他已取消的自动化规划仍不恢复。已补充单瓶、堆叠、错误容器、缓冲提取及阻塞、初酿禁取、品质、保存重进及原生地面容器回归用例；Java 17 构建与 refmap 校验通过，GameTest 仍在读取 Mixin 配置资源时启动失败，用例未执行。手动与红石开阀待游戏内验证，首轮日志位于 `tmp-opencode/tap-depot/`，连续缓冲修订日志位于 `tmp-opencode/tap-depot-buffer/`。
 
 ## 后续醉酒规划（未实施）
 
