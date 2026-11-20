@@ -9,7 +9,6 @@ global.CDAlcoholWorts = [
 global.CDTavernFermentedDrinks = [
     "farmersdelight:apple_cider",
     "ends_delight:chorus_fruit_wine",
-    "dungeonsdelight:liveroot_beer",
     "farmers_spell:amethyst_tequila",
     "farmers_spell:catacombs_wine",
     "farmers_spell:ice_venom_wine",

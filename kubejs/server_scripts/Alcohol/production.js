@@ -6,7 +6,6 @@ ServerEvents.recipes(event => {
         "farmersrespite:brewing/apple_cider_from_water",
         "ends_delight:food/chorus_fruit_wine",
         "createdelight:mixing/chorus_fruit_wine",
-        "dungeonsdelight:integration/twilightforest/cooking/drinks/liveroot_beer",
         "dungeonsdelight:monster_cooking/misc/ghastly_spirits"
     ])
 
@@ -21,12 +20,6 @@ ServerEvents.recipes(event => {
     barrel("ends_delight:chorus_fruit_wine", "minecraft:glass_bottle", [
         chorus, chorus, "minecraft:sugar", "createdelight:dry_yeast"
     ], "minecraft:water", 3200).id("createdelight:tavern_barrel/chorus_fruit_wine")
-
-    const liveroot = barrel("dungeonsdelight:liveroot_beer", "minecraft:glass_bottle", [
-        "twilightforest:liveroot", "twilightforest:torchberries", "minecraft:sugar", "createdelight:dry_yeast"
-    ], "minecraft:milk", 3200).id("createdelight:tavern_barrel/liveroot_beer")
-    liveroot.json.add("conditions", JsonIO.of([{type: "forge:mod_loaded", modid: "twilightforest"}]).getAsJsonArray())
-    liveroot.save()
 
     const magicDrinks = ["amethyst_tequila", "catacombs_wine", "ice_venom_wine"]
     magicDrinks.forEach(drink => {
