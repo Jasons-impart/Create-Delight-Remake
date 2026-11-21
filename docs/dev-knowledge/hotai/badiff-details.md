@@ -30,7 +30,7 @@
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.ps1` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 52 个 `.badiff`；静态 JAR 命中 48 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
+当前扫描到 53 个 `.badiff`；静态 JAR 命中 49 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |
 |---|---|---|---|
@@ -39,6 +39,7 @@
 | ExtendedAE Plus | `hotai/com/extendedae_plus/content/wireless/LabeledWirelessTransceiverBlockEntity.badiff` | `com/extendedae_plus/content/wireless/LabeledWirelessTransceiverBlockEntity` | 静态命中 `extendedae_plus-1.5.5.jar` |
 | Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff` | `com/forsteri/createliquidfuel/core/BurnerStomachHandler` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
 | Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity.badiff` | `com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
+| Alex's Mobs | `hotai/com/github/alexthe666/alexsmobs/entity/EntityBaldEagle.badiff` | `com/github/alexthe666/alexsmobs/entity/EntityBaldEagle` | 静态命中 `alexsmobs-1.22.9.jar` |
 | Alex's Mobs | `hotai/com/github/alexthe666/alexsmobs/entity/EntityWarpedToad.badiff` | `com/github/alexthe666/alexsmobs/entity/EntityWarpedToad` | 静态命中 `alexsmobs-1.22.9.jar` |
 | Ice and Fire | `hotai/com/github/alexthe666/iceandfire/block/BlockElementalFlower.badiff` | `com/github/alexthe666/iceandfire/block/BlockElementalFlower` | 静态命中 `iceandfire-2.1.13-1.20.1-beta-5.jar` |
 | IAF Dragon Fix | `hotai/com/iafdragonfix/structure/DragonDenPiece.badiff` | `com/iafdragonfix/structure/DragonDenPiece` | 静态命中 `iafdragonfix-2.0.0.jar` |
@@ -604,6 +605,18 @@ MMT 原 class 针对 Tetra 6.9 的局部变量名 `multiplier`，返回 `1000d`�
 | `com/iafdragonfix/structure/DragonDenPiece.badiff` | 首次转换启动已确认 | `generateCave(...)` 仅在龙种为 `ICE_CAVE` 时创建 `#createdelight:blocks_ice_dragon_caves` 群系标签，并在实际地下中心的 X/Z 各偏移 `-16/0/16` 组成的 3×3 点阵读取群系；任一点命中标签就提前返回。配套标签包含 `northstar:europan_subsurface_ocean` 与 `alexscaves:abyssal_chasm`。首次错误补丁由 `BadiffCli diff` 生成 `BadiffFileDiff`，与 Hotai 使用 `DefaultSerialization` 读取的 `MemoryDiff` 格式不兼容，触发 `Not all bytes consumed from byte[]`；现有文件由 Hotai 官方 `.class` 转存流程生成。 | 木卫二地下冰龙穴仍可在冰原和山脊区域生成，但不会以地下海或渊海陷窟为中心、也不会跨入其近邻 16 格范围；火星冰龙穴及所有地表龙巢不受影响。首次转换启动已记录 `Patched class` 并成功进入木卫二；已游戏内验证第二次启动 badiff 重放与新生成区块结构分布。 |
 
 ## Alex's Mobs 补丁
+
+### release-v050x 白头海雕猎鹰飞行强加载
+
+目标：`com/github/alexthe666/alexsmobs/entity/EntityBaldEagle.badiff`，绑定 Alex's Mobs `1.22.9`（`alexsmobs-1.22.9.jar`，CurseForge file 5698791）。`release-v050x` 冻结在 CDC `2.2.16j`，该修复在 `main` 由 CDC mixin 承担（[CDC #175](https://github.com/Jasons-impart/Create-Delight-Core/pull/175)），本补丁只服务维护线，不 bump CDC。
+
+原 `loadChunkOnServer` 对鹰周围 3×3 区块调用 `ServerLevel.setChunkForced(..., true)`（SRG `m_8602_`），没有任何 `false`；`chunkLoadCooldown` 只声明未使用。这与 `/forceload` 共用持久化集合，玩家操控猎鹰飞行时沿途区块会泄漏进存档。野生长大后游荡不会走这条路径。
+
+补丁改写 `loadChunkOnServer`，改为对当前 3×3 调用 `ServerChunkCache.addRegionTicket` / `removeRegionTicket`（SRG `m_8387_` / `m_8438_`），票类型名为 `createdelight:bald_eagle`，参数为该鹰 UUID，寿命 40 tick（长于客户端约每 10 tick 的刷新）。在 `m_8119_()` 末尾于 `lastPlayerControlTime == 0` 时释放，并在真正调用 `TamableAnimal.m_142687_`（`super.remove`）之前释放。鹰在受控期间拒绝 `remove` 的原逻辑不变。不会调用 `setChunkForced(false)`，以免误清玩家 `/forceload`；已经泄漏的存档强加载也不会自动清理。
+
+对照整合包内 Create 6.0.8：火车并不使用 `setChunkForced` 或区域票，而是维护抽象轨道图，只在已有实体 tick 的区块里生成车厢。猎鹰飞行仍需要把镜头周围的区块真正加载进来，因此采用原版非持久区域票。
+
+补丁由 `ClassReader → ClassNode → ClassWriter(0)` 归一化基线后，用 Hotai 1.0 的 `MemoryDiffs.diff` + `DefaultSerialization` 生成；反序列化重放后与预期 class 逐字节一致，并用 ASM `BasicVerifier` 校验全部方法；`loadChunkOnServer` 中 `m_8602_` 计数为 0。完整重启后需确认 `Patched class: com/github/alexthe666/alexsmobs/entity/EntityBaldEagle`，并用猎鹰兜帽飞行回归。050x 升到含 CDC #175 的载荷后应移除本补丁，避免与 mixin 叠加。
 
 ### release-v050x 蟾蜍捕食极值伤害
 
