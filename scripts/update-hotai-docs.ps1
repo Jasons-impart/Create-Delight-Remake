@@ -38,6 +38,7 @@ function Get-HotaiModule([string]$InternalName) {
     if ($InternalName -like "com/renyigesai/bakeries/*") { return "Bakeries" }
     if ($InternalName -like "com/extendedae_plus/*") { return "ExtendedAE Plus" }
     if ($InternalName -like "com/yision/fluidlogistics/*") { return "FluidLogistics" }
+    if ($InternalName -like "com/lowdragmc/lowdraglib/*") { return "LDLib" }
     return "Unknown"
 }
 
