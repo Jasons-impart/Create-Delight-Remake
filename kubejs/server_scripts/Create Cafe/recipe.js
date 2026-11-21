@@ -38,6 +38,27 @@ ServerEvents.recipes(e => {
         "createcafe:filling/coffee/iced_coffee_filling",
         "createdelight:milling/coffee_beans"
     ])
+    const milkTeaFlavors = [
+        "aloe", "apple", "apricot", "avocado", "banana", "barberry",
+        "blackberry", "blood", "blueberry", "cherry", "citron", "coconut",
+        "dragonfruit", "durian", "fig", "gooseberry", "grape", "grapefruit",
+        "guava", "jackfruit", "kiwi", "lavender", "lemon", "lime", "lychee",
+        "mana", "mandarin", "mango", "orange", "oreo", "papaya", "passionfruit",
+        "peach", "persimmon", "pineapple", "plum", "pomegranate", "pomelo",
+        "pumpkin", "raspberry", "redlove", "starfruit", "strawberry", "sweetberry",
+        "tamarind", "vanilla", "watermelon", "yucca"
+    ]
+    const milkTeaItemNames = {
+        blood: "blood_orange",
+        mana: "mana_berry"
+    }
+    // 逆转原生灌装，保留杯中的珍珠，并交由 QFF 传递奶茶品质。
+    milkTeaFlavors.forEach(flavor => {
+        create.emptying(
+            ["createcafe:boba_cup", Fluid.of(`createcafe:${flavor}_tea`, 250)],
+            `createcafe:${milkTeaItemNames[flavor] || flavor}_milk_tea`
+        ).id(`createdelight:emptying/${flavor}_milk_tea`)
+    })
     create.mixing(Fluid.of("createdelightcore:base_syrup", 50), "minecraft:sugar").heated().id("createdelight:mixing/sugar_melting")
     vintageimprovements.vacuumizing("minecraft:sugar", Fluid.of("createdelightcore:base_syrup", 50)).id("createdelight:vacuumizing/melted_sugar_vacuumizing")
     create.compacting("createdelightcore:base_syrup", Fluid.of("createdelightcore:base_syrup", 1000)).id("createdelight:compacting/base_syrup")

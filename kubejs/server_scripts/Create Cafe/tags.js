@@ -118,6 +118,8 @@ ServerEvents.tags("minecraft:item", e => {
 })
 
 ServerEvents.tags("minecraft:fluid", e => {
+    // 奶茶的源流体与流动流体均参与 QFF 品质传递。
+    e.add("quality_food_fluids:quality_fluids", /^createcafe:.*_tea$/)
     e.add("forge:syrup", [
         'createdelightcore:base_syrup',
         'createdelightcore:strawberry_syrup',
