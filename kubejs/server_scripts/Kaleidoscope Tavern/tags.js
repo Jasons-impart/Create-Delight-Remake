@@ -59,7 +59,7 @@ ServerEvents.tags("item", e => {
 })
 ServerEvents.tags("fluid", e => {
   // 原料果汁的桶、管道及放置回收共用 QFF 品质。
-  e.add("quality_food_fluids:quality_fluids", [
+  const juiceFluids = [
     "kaleidoscope_tavern:grape_juice",
     "kaleidoscope_tavern:flowing_grape_juice",
     "kaleidoscope_tavern:ice_grape_juice",
@@ -72,21 +72,9 @@ ServerEvents.tags("fluid", e => {
     "kaleidoscope_tavern:flowing_sweet_berries_juice",
     "kaleidoscope_tavern:glow_berries_juice",
     "kaleidoscope_tavern:flowing_glow_berries_juice",
-  ])
-  e.add("quality_food_fluids:world_quality_fluids", [
-    "kaleidoscope_tavern:grape_juice",
-    "kaleidoscope_tavern:flowing_grape_juice",
-    "kaleidoscope_tavern:ice_grape_juice",
-    "kaleidoscope_tavern:flowing_ice_grape_juice",
-    "kaleidoscope_tavern:gold_grape_juice",
-    "kaleidoscope_tavern:flowing_gold_grape_juice",
-    "kaleidoscope_tavern:green_grape_juice",
-    "kaleidoscope_tavern:flowing_green_grape_juice",
-    "kaleidoscope_tavern:sweet_berries_juice",
-    "kaleidoscope_tavern:flowing_sweet_berries_juice",
-    "kaleidoscope_tavern:glow_berries_juice",
-    "kaleidoscope_tavern:flowing_glow_berries_juice",
-  ])
+  ]
+  e.add("quality_food_fluids:quality_fluids", juiceFluids)
+  e.add("quality_food_fluids:world_quality_fluids", juiceFluids)
   // CGT 为基酒、醋与鸡尾酒注册的虚拟酒液；未安装 CGT 时正则不会匹配条目。
   e.add("quality_food_fluids:quality_fluids", /^creategearsandtavern:(flowing_)?(vinegar|signature_cocktail|mystery_cocktail|white_lady|emerald|brass_heart|godfather|grasshopper|screwdriver|mojito|allium_garden|depth_charge|nether_special|bloody_mary|sculk_special|brandy|carignan|champagne|glowflower_brew|honey_wine|ice_wine|luminous_bride|madame_shexiang|miners_star|mother_snow|plum_wine|polaris_sweet_white|red_queen|riesling_dry_white|rum|sakura_wine|sauvignon_blanc_dry_white|sherry|sunset_glow|sweet_berry_wine|vodka|whiskey|wine)$/)
 })

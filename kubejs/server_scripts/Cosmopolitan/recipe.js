@@ -327,8 +327,6 @@ ServerEvents.recipes(e => {
             "farmersdelight:tree_bark"
         ]
     ).heated().id("createdelight:mixing/winter_glogg")
-    create.filling("cosmopolitan:winter_glogg", [Fluid.of("createdelight:winter_glogg", 250), "minecraft:glass_bottle"]).id("createdelight:filling/winter_glogg")
-    create.emptying([Fluid.of("createdelight:winter_glogg", 250), "minecraft:glass_bottle"], 'cosmopolitan:winter_glogg').id("createdelight:emptying/winter_glogg")
     {
         let iner = 'cosmopolitan:arbutus_berries'
         create.sequenced_assembly("cosmopolitan:enchanted_golden_arbutus_berries", 'cosmopolitan:arbutus_berries', [

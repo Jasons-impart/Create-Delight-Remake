@@ -5,7 +5,6 @@ ServerEvents.recipes(event => {
         "farmersdelight:cooking/apple_cider",
         "farmersrespite:brewing/apple_cider_from_water",
         "ends_delight:food/chorus_fruit_wine",
-        "createdelight:mixing/chorus_fruit_wine",
         "dungeonsdelight:monster_cooking/misc/ghastly_spirits"
     ])
 

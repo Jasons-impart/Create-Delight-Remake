@@ -1,26 +1,27 @@
 // priority: -1000
-// 在原生配方与各模组替换脚本之后补缺，保留已有容量/容器及配方。
+// 在各模组处理原生配方之后补充酒类装排液。
 ServerEvents.recipes(event => {
     global.CDAlcoholDrinks.forEach(drink => {
         if (!Item.exists(drink.item)) return
-        alcohol_bottling(event, drink.item, drink.fluid, drink.amount, drink.container)
+        alcohol_bottling(event, drink)
     })
 })
 
 /** 补充单款酒缺少的 Create 装排液与 FR/B&C 倒酒配方，配方路径保留物品命名空间。 */
-function alcohol_bottling(event, item, fluid, amount, container) {
+function alcohol_bottling(event, drink) {
+    const item = drink.item
+    const itemPath = item.replace(":", "/")
     let hasFilling = false
     let hasEmptying = false
-    let path = "alcohol/" + item.replace(":", "/")
     event.forEachRecipe({type: "create:filling", output: item}, () => { hasFilling = true })
     event.forEachRecipe({type: "create:emptying", input: item}, () => { hasEmptying = true })
     if (!hasFilling) {
-        event.recipes.create.filling(item, [container, Fluid.of(fluid, amount)])
-            .id("createdelight:alcohol/filling/" + item.replace(":", "/"))
+        event.recipes.create.filling(item, [drink.container, Fluid.of(drink.fluid, drink.amount)])
+            .id(drink.fillingId || "createdelight:alcohol/filling/" + itemPath)
     }
     if (!hasEmptying) {
-        event.recipes.create.emptying([container, Fluid.of(fluid, amount)], item)
-            .id("createdelight:alcohol/emptying/" + item.replace(":", "/"))
+        event.recipes.create.emptying([drink.container, Fluid.of(drink.fluid, drink.amount)], item)
+            .id(drink.emptyingId || "createdelight:alcohol/emptying/" + itemPath)
     }
-    pouring(event, item, fluid, container, amount, path, true)
+    pouring(event, item, drink.fluid, drink.container, drink.amount, "alcohol/" + itemPath, true)
 }

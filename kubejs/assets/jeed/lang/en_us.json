@@ -1,0 +1,14 @@
+{
+  "effect.kaleidoscope_tavern.slightly_tipsy.description": "Your view sways gently from side to side.",
+  "effect.kaleidoscope_tavern.high_heels.description": "Step up an additional half block per effect level.",
+  "effect.kaleidoscope_tavern.grass_stealth.description": "Sneak in grass, bushes, or mature crops to make nearby mobs lose you as their target. This gradually drains hunger.",
+  "effect.kaleidoscope_tavern.vision.description": "Makes nearby creatures glow so you can see their outlines through blocks. Range increases with effect level, up to 18 blocks.",
+  "effect.kaleidoscope_tavern.bloody_mary.description": "When you kill a creature, heal for one third of its maximum health, rounded down.",
+  "effect.kaleidoscope_tavern.ardent_heat.description": "Sprinting breaks basic stone in your path, drains hunger, and wears down armor. You take damage if you wear no armor. Gain 30 seconds of Fire Resistance when the effect expires naturally or your hunger runs out.",
+  "effect.kaleidoscope_tavern.long_reach.description": "Each level adds 3 blocks to your block and entity interaction range.",
+  "effect.kaleidoscope_tavern.tomb_raider.description": "Attacking disarmable mobs such as zombies, skeletons, or piglins has a 30% chance to make them drop their main-hand item. Dropped damageable items have 1 durability left.",
+  "effect.kaleidoscope_tavern.xp_drain.description": "Draws in experience orbs within 8 blocks and lets you collect them faster.",
+  "effect.kaleidoscope_tavern.upside_down.description": "Names non-player creatures within 16 blocks Grumm, turning them upside down.",
+  "effect.kaleidoscope_tavern.zenith.description": "Teleports you to the surface directly above you and grants 30 seconds of Fire Resistance. Works only below the surface.",
+  "effect.kaleidoscope_tavern.shriek_attack.description": "Fires a sound wave up to 32 blocks in the direction you are looking, damaging and knocking back creatures it hits. Deals damage equal to 120% of your current health."
+}

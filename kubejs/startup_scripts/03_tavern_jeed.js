@@ -1,5 +1,6 @@
-ServerEvents.recipes(event => {
+StartupEvents.postInit(() => {
     if (!Platform.isLoaded("jeed") || !Item.exists("kaleidoscope_tavern:wine")) return
+    if (!global.CDStartupJavaClasses.$TavernJeedRecipes) return
 
     // 对齐 CDC TavernQuality.effects：瓶酒和醋固定取原生第三档，杯装鸡尾酒取第一档。
     // QF 负责等级和时长；来源按实际可获得的效果登记，不混入原生其他品质档。
@@ -43,16 +44,7 @@ ServerEvents.recipes(event => {
         "white_lady": ["kaleidoscope_tavern:high_heels"],
         "wine": ["kaleidoscope_tavern:slightly_tipsy", "minecraft:regeneration"],
     }
-    const providers = {}
-    Object.keys(drinkEffects).forEach(drink => {
-        drinkEffects[drink].forEach(effect => {
-            if (!providers[effect]) providers[effect] = []
-            providers[effect].push("kaleidoscope_tavern:" + drink)
-        })
-    })
-
-    // 特调继承可调制基酒和药水的效果；杯装鸡尾酒不会被 collectFromStorage 当作基酒。
-    // 只登记可能继承的效果，不能用 all 把没有来源的模组效果也列入。
+    // 特调可继承这些基酒的效果。
     const bottleDrinks = [
         "brandy", "carignan", "champagne", "glowflower_brew", "honey_wine", "ice_wine",
         "luminous_bride", "madame_shexiang", "miners_star", "mother_snow", "plum_wine",
@@ -60,31 +52,11 @@ ServerEvents.recipes(event => {
         "sauvignon_blanc_dry_white", "sherry", "sunset_glow", "sweet_berry_wine",
         "vodka", "whiskey", "wine"
     ]
-    const signatureEffects = {}
-    bottleDrinks.forEach(drink => {
-        drinkEffects[drink].forEach(effect => signatureEffects[effect] = true)
-    })
-    global.CDServerJavaClasses.$ForgeRegistries.POTIONS.getValues().forEach(potion => {
-        potion.getEffects().forEach(instance => {
-            const effect = global.CDServerJavaClasses.$ForgeRegistries.MOB_EFFECTS
-                .getKey(instance.getEffect()).toString()
-            signatureEffects[effect] = true
+    Object.keys(drinkEffects).forEach(drink => {
+        const signatureBase = bottleDrinks.includes(drink)
+        drinkEffects[drink].forEach(effect => {
+            global.CDStartupJavaClasses.$TavernJeedRecipes
+                .registerDrinkEffect("kaleidoscope_tavern:" + drink, effect, signatureBase)
         })
     })
-    Object.keys(signatureEffects).forEach(effect => {
-        if (!providers[effect]) providers[effect] = []
-        providers[effect].push("kaleidoscope_tavern:signature_cocktail")
-    })
-
-    Object.keys(providers).forEach(effect => {
-        jeed_effect_provider(event, effect, {providers: providers[effect]})
-            .id("createdelight:jeed/kaleidoscope_tavern/" + effect.replace(":", "/"))
-    })
-
-    jeed_effect_provider(event, "minecraft:glowing", {
-        effect_providers: ["kaleidoscope_tavern:vision"]
-    }).id("createdelight:jeed/kaleidoscope_tavern/secondary/glowing")
-    jeed_effect_provider(event, "minecraft:fire_resistance", {
-        effect_providers: ["kaleidoscope_tavern:ardent_heat", "kaleidoscope_tavern:zenith"]
-    }).id("createdelight:jeed/kaleidoscope_tavern/secondary/fire_resistance")
 })

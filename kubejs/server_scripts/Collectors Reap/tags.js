@@ -18,3 +18,6 @@ ServerEvents.tags("minecraft:block", e => {
         "collectorsreap:lucuma_ice_cream_block"
     )
 })
+ServerEvents.tags("minecraft:fluid", e => {
+    e.add("quality_food_fluids:quality_fluids", "collectorsreap:cream_cheese")
+})

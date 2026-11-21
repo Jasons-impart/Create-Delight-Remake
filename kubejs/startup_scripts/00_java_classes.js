@@ -29,6 +29,7 @@ global.CDStartupJavaClasses = {
     $PackageItem: Java.loadClass("com.simibubi.create.content.logistics.box.PackageItem"),
     $QualityConfig: Java.loadClass("de.cadentem.quality_food.config.QualityConfig"),
     $QualityUtils: Java.loadClass("de.cadentem.quality_food.util.QualityUtils"),
+    $TavernJeedRecipes: Java.tryLoadClass("io.github.jasonsimpart.createdelightcore.compat.kaleidoscopetavern.TavernJeedRecipes"),
 
     // Minecraft / Forge / CDC
     ForgeRegistries: Java.loadClass("net.minecraftforge.registries.ForgeRegistries"),
