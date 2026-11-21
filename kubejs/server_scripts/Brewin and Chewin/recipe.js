@@ -208,7 +208,7 @@ ServerEvents.recipes(e => {
         "minecraft:nether_wart",
         "irons_spellbooks:arcane_essence",
         "createdelight:dry_yeast"
-    ], "createdelight:irons_spellbooks_fire_ale", "irons_spellbooks:fire_ale", 3, 4800)
+    ], "createdelight:irons_spellbooks_fire_ale", "irons_spellbooks:fire_ale", 5, 4800)
 
     farmersdelight.cooking(
         [
