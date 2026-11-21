@@ -1,0 +1,11 @@
+PASS com/teamtea/eclipticseasons/common/core/snow/WeatherStatusKeeper: ASM verification; unchanged unrelated class content; actual Hotai conversion/apply/undo/replay
+PASS com/loliball/appliedcreate/p2p/StressP2PTunnelPart: ASM verification; unchanged unrelated class content; actual Hotai conversion/apply/undo/replay
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+PASS original real scheduler bytecode reproduces 10000 stop-phase self-requeues at frozen tick
+PASS original actual weather method reproduces rejected shared-RNG access
+PASS original actual target method bytecode in minimal hosts; game APIs are substitutes; assertions=10013
+PASS fixed real scheduler bytecode: normal/deferred callbacks once; pending and new tasks stop; 10000 pending tasks drain without requeue
+PASS fixed real weather method: 400000 calls on 8 threads use no shared world RNG; record updates/cache invalidation retained; bound-20 throttle smoke count=2507
+PASS fixed actual target method bytecode in minimal hosts; game APIs are substitutes; assertions=36

@@ -30,21 +30,24 @@
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.py` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 37 个 `.badiff`；静态 JAR 命中 33 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
+当前扫描到 41 个 `.badiff`；静态 JAR 命中 37 个，静态未命中但已由当前启动日志确认动态创建 3 个，尚未由当前启动日志确认 1 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |
 |---|---|---|---|
+| Unknown | `hotai/com/buuz135/functionalstorage/world/EnderSavedData.badiff` | `com/buuz135/functionalstorage/world/EnderSavedData` | 静态命中 `functionalstorage-1.20.1-1.2.14.jar` |
 | Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff` | `com/forsteri/createliquidfuel/core/BurnerStomachHandler` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
 | Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity.badiff` | `com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
 | IAF Dragon Fix | `hotai/com/iafdragonfix/structure/DragonDenPiece.badiff` | `com/iafdragonfix/structure/DragonDenPiece` | 静态命中 `iafdragonfix-2.0.0.jar` |
 | Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow` | 静态命中 `more_mod_tetra-2.4.15-all.jar` |
 | Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer` | 静态命中 `more_mod_tetra-2.4.15-all.jar` |
+| Unknown | `hotai/com/loliball/appliedcreate/p2p/StressP2PTunnelPart.badiff` | `com/loliball/appliedcreate/p2p/StressP2PTunnelPart` | 静态命中 `appliedcreate-1.20.1-1.1.6.jar` |
+| Unknown | `hotai/com/lowdragmc/mbd2/api/recipe/RecipeLogic.badiff` | `com/lowdragmc/mbd2/api/recipe/RecipeLogic` | 静态命中 `multiblocked2-1.20.1-1.0.38.a.jar` |
 | TACZ-addon | `hotai/com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner.badiff` | `com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner` | 静态命中 `taczaddon.jar` |
 | TACZ-addon | `hotai/com/mafuyu404/taczaddon/compat/SophisticatedBackpacksCompatInner.badiff` | `com/mafuyu404/taczaddon/compat/SophisticatedBackpacksCompatInner` | 静态命中 `taczaddon.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/ConnectorType.badiff` | `com/mrh0/createaddition/blocks/connector/ConnectorType` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
-| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock` | 运行时已确认动态创建（静态 JAR 无此 class） |
+| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity` | 运行时已确认动态创建（静态 JAR 无此 class） |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
-| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/IWireNode.badiff` | `com/mrh0/createaddition/energy/IWireNode` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/network/EnergyNetwork.badiff` | `com/mrh0/createaddition/energy/network/EnergyNetwork` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/WireConnectResult.badiff` | `com/mrh0/createaddition/energy/WireConnectResult` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
@@ -64,12 +67,13 @@
 | TACZ | `hotai/com/tacz/guns/resource/CommonAssetsManager.badiff` | `com/tacz/guns/resource/CommonAssetsManager` | 静态命中 `tacz-1.20.1-1.1.8-hotfix.jar` |
 | TACZ | `hotai/com/tacz/guns/resource/manager/CommonDataManager.badiff` | `com/tacz/guns/resource/manager/CommonDataManager` | 静态命中 `tacz-1.20.1-1.1.8-hotfix.jar` |
 | Neapolitan | `hotai/com/teamabnormals/neapolitan/core/Neapolitan.badiff` | `com/teamabnormals/neapolitan/core/Neapolitan` | 静态命中 `neapolitan-1.20.1-5.1.0.jar` |
+| Unknown | `hotai/com/teamtea/eclipticseasons/common/core/snow/WeatherStatusKeeper.badiff` | `com/teamtea/eclipticseasons/common/core/snow/WeatherStatusKeeper` | 静态命中 `Ecliptic-Seasons-1.20.1-forge-0.15.5-all.jar` |
 | Quality Food | `hotai/de/cadentem/quality_food/capability/BlockData.badiff` | `de/cadentem/quality_food/capability/BlockData` | 静态命中 `quality_food-1.20.1-2.4.3-all.jar` |
 | Quality Food | `hotai/de/cadentem/quality_food/capability/LevelData.badiff` | `de/cadentem/quality_food/capability/LevelData` | 静态命中 `quality_food-1.20.1-2.4.3-all.jar` |
 | Quality Food | `hotai/de/cadentem/quality_food/mixin/BlockMixin.badiff` | `de/cadentem/quality_food/mixin/BlockMixin` | 静态命中 `quality_food-1.20.1-2.4.3-all.jar` |
-| KubeJS | `hotai/dev/latvian/mods/kubejs/script/data/GeneratedData.badiff` | `dev/latvian/mods/kubejs/script/data/GeneratedData` | 静态命中 `kubejs-forge-2001.6.5-build.24.jar` |
+| KubeJS | `hotai/dev/latvian/mods/kubejs/script/data/GeneratedData.badiff` | `dev/latvian/mods/kubejs/script/data/GeneratedData` | 静态命中 `kubejs-forge-2001.6.5-build.16.jar` |
 | Better Compatibility Checker | `hotai/dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin` | 静态命中 `BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar` |
-| Unknown | `hotai/net/yiran/rebalancing/core/mixins/AttributeHelperMixin.badiff` | `net/yiran/rebalancing/core/mixins/AttributeHelperMixin` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Unknown | `hotai/net/yiran/rebalancing/core/mixins/AttributeHelperMixin.badiff` | `net/yiran/rebalancing/core/mixins/AttributeHelperMixin` | 运行时已确认动态创建（静态 JAR 无此 class） |
 | Create New Age | `hotai/org/antarcticgardens/cna/content/ponders/CNAPonders.badiff` | `org/antarcticgardens/cna/content/ponders/CNAPonders` | 静态命中 `create-new-age-1.2.0+forge-mc1.20.1.jar` |
 <!-- HOTAI_STATUS:END -->
 
@@ -602,3 +606,18 @@ MMT 原 class 针对 Tetra 6.9 的局部变量名 `multiplier`，返回 `1000d`�
 - 修改 `hotai/**/*.badiff` 后运行 `python scripts/update-hotai-docs.py` 更新 `HOTAI_STATUS` 区块；知识库校验在传入 `-CheckHotaiRuntimeStatus` / `--check-hotai-runtime-status` 时会做严格运行时状态检查。
 - 对“当前未还原”条目，优先判断目标模组是否已改名、移除或被替换；如果连续版本都没有启动日志命中，可以考虑清理对应 `.badiff`。
 - 超导连接器相关补丁要和 `kubejs/assets/createaddition/`、`kubejs/server_scripts/Create Addition/` 一起验证；只看 `hotai` class patch 不足以证明玩法完整。
+
+## 服务器崩溃兼容补丁
+
+生成状态区参考 2026-11-17 专服 JAR 与日志；main 的节气 JAR 另换为元数据对应 0.15.5 离线扫描，不能作为完整 main 运行证明。
+
+生成器、回归与版本/摘要证据见 [server-stability-fixes](../../../scripts/server-stability-fixes/README.md)。四项补丁均经真实 Hotai 首次转存、MemoryDiff apply/undo、DiffTransformer 重放及 JVM/ASM 校验；测试中的游戏 API 为替身，不能替代完整游戏场景回归。
+
+| 补丁（相对 `hotai/`） | 目标版本 | 修改方法与语义 | 验证与边界 |
+|---|---|---|---|
+| `com/buuz135/functionalstorage/world/EnderSavedData.badiff` | Functional Storage 1.2.14 | `getInstance(LevelAccessor)` 保留 ServerLevel 跨维度主世界 SavedData；用 Forge dist 和通用 Level 标志识别真实客户端，移除 ClientLevel 类型引用；虚拟 Level 每次返回独立临时管理器，非 Level/null 返回 null。蓝图导出会清空抽屉暂存库存，因此不能把虚拟世界接到真实频率或直接返回 null。 | #2614；原类专服错误复现；完整修复类 1,015 次断言，200 次虚拟导出隔离、真实持久化/重载与客户端缓存通过。原蓝图游戏内操作待回归。 |
+| `com/lowdragmc/mbd2/api/recipe/RecipeLogic.badiff` | Multiblocked2 1.0.38.a | `handleFuelRecipe()` 中 `modifyFuelRecipe` 返回 null 表示取消，新增空值分支跳过候选；全取消返回 false，不扣燃料，保留后续有效候选及已有燃烧流程。 | #2616；原真实方法复现 NPE，修复后 30,201 次断言；包括 10,000 个取消 tick、条件/IO/替换配方/时长。两条指令以外的标准化字节码不变。 |
+| `com/loliball/appliedcreate/p2p/StressP2PTunnelPart.badiff` | Applied Create 1.1.6 | `scheduleForNextTick` 和其排队 lambda 入口在 `isStopped() || !isRunning()` 时返回，防止停服 tick 冻结后回调持续自我入队；同时拦截新任务与已排队任务。不能只检查 isRunning，崩溃退出时 stopped 可能已置位而 running 仍为 true；不能使用普通保存标志。 | #2617；原方法 10,000 次轮询仍剩一个任务；修复后 10,000 个停服任务全部清空，无回调/再入队；正常和延迟回调仍一次。服务器正常停服与第二次启动通过，未主动制造生产服崩溃，也不保证其他停服来源均修复。 |
+| `com/teamtea/eclipticseasons/common/core/snow/WeatherStatusKeeper.badiff` | Ecliptic Seasons 0.15.5 | 只将 `updateBiomeWhenEndTick` 的 `serverLevel.getRandom().nextInt(20)` 替换为 `ThreadLocalRandom.current().nextInt(20)`；保留 1/20 节流、积雪/降雨记录与缓存失效。世界随机序列和具体抽样结果会改变；不禁用节气、物理积雪或作物湿度。 | #2619；8 线程 400,000 次调用不访问世界 RNG；记录变化、缺失天气和缓存行为检查通过。0.13.8.1 与 0.15.5 分别读取实际 JAR 生成并重放，目标 class 摘要相同，差分因此相同；其他 JAR 升级仍必须重新验证。未定位另一个共享 RNG 调用者，不代表全部异步世界访问已修复。 |
+
+运行参考：2026-11-16 专服已加载四类补丁、保存世界，并于 21:44 正常停服、21:46 再启动。本节记录的线下验证及服务器参考不等于完整 main 整包回归。目标模组升级或对应方法上游修复后，对照生成清单复核并移除/重建补丁；不覆盖叠加其他转换器后未经验证的新字节码。

@@ -1,0 +1,6 @@
+PASS: only ALOAD 2 / IFNULL continue inserted; all other normalized bytecode unchanged; ASM BasicVerifier; actual Hotai conversion, serialized apply/undo and replay
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+PASS: real original handleFuelRecipe bytecode reproduces NPE when modification is canceled; no fuel consumed before failure
+PASS: replayed real handleFuelRecipe bytecode; cancellation consumes nothing, next valid candidate works, existing fuel/no-fuel paths unchanged, condition/IO/replacement/duration cases and 10000 canceled ticks; 30201 assertions

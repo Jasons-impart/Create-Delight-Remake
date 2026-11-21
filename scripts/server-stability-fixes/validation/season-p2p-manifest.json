@@ -1,0 +1,21 @@
+{
+  "patch_id": "season-p2p-20261116",
+  "targets": [
+    {
+      "jar": "Ecliptic-Seasons-1.20.1-forge-0.15.5-all.jar",
+      "jar_sha256": "7eded9d964f2450087e6f92ff4f8cff7092ec4eed7e47b1870ef115a46aee93a",
+      "class": "com/teamtea/eclipticseasons/common/core/snow/WeatherStatusKeeper",
+      "original_class_sha256": "b803fdd1ec1ce7553a5284637b9ea204c957e15a675f753720578a8daab1125c"
+    },
+    {
+      "jar": "appliedcreate-1.20.1-1.1.6.jar",
+      "jar_sha256": "56a7658aca2488807adbc7eb8f45377cf0377650bf0f77f5de46b12721ee54ac",
+      "class": "com/loliball/appliedcreate/p2p/StressP2PTunnelPart",
+      "original_class_sha256": "eb73a80803764459f4bf45b692ebdbe7fb177e645da50fb1bcf84cd1ed192ab8"
+    }
+  ],
+  "files": {
+    "hotai/com/loliball/appliedcreate/p2p/StressP2PTunnelPart.badiff": "83630ff40bfbe0ca7b6b591a70967f2e18c76a3f33e6190dbba174806b7ea8ad",
+    "hotai/com/teamtea/eclipticseasons/common/core/snow/WeatherStatusKeeper.badiff": "1439caeb92c53bcd1df9d37ffac63a9242e08e44d8d02085b2843c7ce9d0df30"
+  }
+}
