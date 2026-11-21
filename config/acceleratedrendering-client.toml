@@ -158,7 +158,7 @@
 	#- DISABLED: Disable accelerated text rendering.
 	#- ENABLED: Enable accelerated text rendering.
 	#Allowed Values: DISABLED, ENABLED
-	feature_status = "ENABLED"
+	feature_status = "DISABLED"
 	#- VANILLA: Text will not be rendered into the accelerated pipeline unless mods explicitly enable it temporarily when rendering their own text.
 	#- ACCELERATED: All text will be rendered in the accelerated pipeline unless mods explicitly disable it temporarily when rendering their own text.
 	#Allowed Values: VANILLA, ACCELERATED
