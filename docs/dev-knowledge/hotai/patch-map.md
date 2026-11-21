@@ -62,6 +62,10 @@
 |---|---|
 | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff`、`SuperconductingConnectorBlockEntity.badiff`、`SuperconductingConnectorBlockEntity$1.badiff` | 配套注册补丁会引用超导连接器类；当前启动日志已确认前两个 class 被 `hotai` 动态创建。匿名内部类 `$1` 可能按需加载，需在实际使用超导连接器时继续核对日志和游戏内注册结果。 |
 
+## 服务器崩溃防护
+
+Functional Storage 虚拟世界库存隔离（#2614）、MBD2 取消燃料候选（#2616）、Applied Create 停服任务截止（#2617）及节气共享 RNG 隔离（#2619）由四个版本绑定的差分承载。方法语义、版本、验证边界与生成入口统一见 [服务器崩溃兼容补丁](badiff-details.md#服务器崩溃兼容补丁)，不以禁用机器、节气或物理积雪规避问题。供应器 #2615 单独修源码，不在此叠加 AE2 列表替换。
+
 ## 维护注意
 
 - 更新目标模组时，先确认目标是上游静态 class 还是由 `hotai` 动态创建；再看 `logs/latest.log` 是否出现每个目标的 `Patched class:`。

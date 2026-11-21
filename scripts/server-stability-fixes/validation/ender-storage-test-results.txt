@@ -1,0 +1,5 @@
+PASS: ASM BasicVerifier; client class reference removed; actual Hotai conversion, MemoryDiff apply/undo and replay
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+PASS: original dedicated-server crash reproduced; virtual inventories isolated across 200 exports; persistent cross-dimension lookup, save/load and real client cache preserved; no client-only class loaded; 1015 assertions

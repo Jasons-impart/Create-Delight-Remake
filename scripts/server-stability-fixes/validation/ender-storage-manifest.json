@@ -1,0 +1,8 @@
+{
+  "target": "Functional Storage 1.20.1-1.2.14",
+  "jar_sha256": "b627f558ae16352ca4988834c5397d10b9de8541188ff0d99121fff0f5ecf5f7",
+  "original_class_sha256": "3262085932988b248f9425e01860771363035138203329c3f14f6eac09b83763",
+  "files": {
+    "converted/hotai/com/buuz135/functionalstorage/world/EnderSavedData.badiff": "52eb8355d64fb3d37161acbee4f9746105d43266e5986f759fdd5f79b0de448c"
+  }
+}
