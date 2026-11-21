@@ -14,6 +14,15 @@ JEIEvents.removeRecipes(e => {
         hiddenDrainingRecipes.push(`createdelight:emptying/northeast_china_delight/cooking_oil_bottle/damage_${usedMb}`)
     }
     e.remove("create:draining", hiddenDrainingRecipes)
+    if (Platform.isLoaded("steam_letters")) {
+        const hiddenOilFuels = []
+        for (let usedMb = 1; usedMb <= 250; usedMb++) {
+            hiddenOilFuels.push(`createdelight:steam_letters/solid_fuel/cooking_oil_bottle/damage_${usedMb}`)
+            hiddenOilFuels.push(`createdelight:steam_letters/solid_fuel/animal_oil_bottle/damage_${usedMb}`)
+            hiddenOilFuels.push(`createdelight:steam_letters/solid_fuel/chili_oil_bottle/damage_${usedMb}`)
+        }
+        e.remove("steam_letters:solid_fuel", hiddenOilFuels)
+    }
 
     // JEI 在所有 onRuntimeAvailable 回调完成后才保存全局 runtime。
     northeastSaltInfoPending = true

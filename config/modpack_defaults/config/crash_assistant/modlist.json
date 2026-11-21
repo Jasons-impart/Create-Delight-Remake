@@ -1714,10 +1714,10 @@
     "name": "SQLite JDBC (Fabric/Forge)",
     "version": "3.36.0.3+20211227-all"
   },
-  "Steam-Letters-2.1.1-1.20.1-forge.jar": {
+  "Steam-Letters-2.1.2-1.20.1-forge.jar": {
     "modId": "steam-letters",
     "name": "Create: Letter's in Steam",
-    "version": "2.1.1-1.20.1-forge"
+    "version": "2.1.2-1.20.1-forge"
   },
   "Steam_Rails-1.7.2+forge-mc1.20.1.jar": {
     "modId": "steam_rails",
