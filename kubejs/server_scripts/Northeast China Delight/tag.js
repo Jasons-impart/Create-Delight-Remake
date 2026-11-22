@@ -1,4 +1,11 @@
 ServerEvents.tags("item", e => {
+    e.add("createdelight:tavern_fermented_drinks", global.CDVinegar.item)
+    e.add("quality_food:material_whitelist", [
+        global.CDVinegar.item,
+        "northeast_china_delight:soy_residue",
+        "#forge:seeds/corn",
+        "#forge:crops/buckwheat"
+    ])
     e.add("c:hidden_from_recipe_viewers", "northeast_china_delight:sea_water_bucket")
     e.remove("createdelight:order/sauce", "youkaishomecoming:soy_sauce_bottle")
     e.add("createdelight:order/sauce", "northeast_china_delight:soy_sauce")

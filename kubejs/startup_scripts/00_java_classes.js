@@ -30,6 +30,7 @@ global.CDStartupJavaClasses = {
     $QualityConfig: Java.loadClass("de.cadentem.quality_food.config.QualityConfig"),
     $QualityUtils: Java.loadClass("de.cadentem.quality_food.util.QualityUtils"),
     $TavernJeedRecipes: Java.tryLoadClass("io.github.jasonsimpart.createdelightcore.compat.kaleidoscopetavern.TavernJeedRecipes"),
+    $TavernBarrelRecipes: Java.tryLoadClass("io.github.jasonsimpart.createdelightcore.compat.kaleidoscopetavern.TavernBarrelRecipes"),
 
     // Minecraft / Forge / CDC
     ForgeRegistries: Java.loadClass("net.minecraftforge.registries.ForgeRegistries"),
@@ -42,6 +43,16 @@ global.CDStartupJavaClasses = {
     sophisticatedBackpacks$$RegistryInfo: Java.loadClass("dev.latvian.mods.kubejs.registry.RegistryInfo"),
     sophisticatedBackpacks$$ShapedRecipeSchema: Java.loadClass("dev.latvian.mods.kubejs.recipe.schema.minecraft.ShapedRecipeSchema")
 }
+
+// A missing optional class can fail inside client-side Java loading hooks.
+try {
+    global.CDStartupJavaClasses.$ItemFluidContainers = Java.loadClass(
+        "io.github.jasonsimpart.createdelightcore.compat.alcohol.ItemFluidContainers"
+    )
+} catch (error) {
+    console.warn("Fixed alcohol bottle fluids require a Create Delight Core build with ItemFluidContainers.")
+}
+
 global.CDLightmansCurrencyApi = {
     CoinValue: global.CDStartupJavaClasses.CoinValue,
     MoneyAPI: global.CDStartupJavaClasses.MoneyAPI,

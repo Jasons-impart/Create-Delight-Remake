@@ -210,19 +210,6 @@ ServerEvents.recipes(e => {
     cutting(e, "youkaishomecoming:red_velvet_cake", "7x youkaishomecoming:red_velvet_cake_slice")
 
     e.recipes.youkaishomecoming.simple_fermentation(
-        ["#forge:mushrooms"],
-        Fluid.of("youkaishomecoming:mio", 1000),
-        Fluid.of("createdelight:vinegar", 1000),
-        [
-            "vintagedelight:organic_mash",
-            "vintagedelight:organic_mash",
-            "vintagedelight:organic_mash",
-            "vintagedelight:organic_mash"
-        ],
-        2400
-    ).id("createdelight:vinegar")
-
-    e.recipes.youkaishomecoming.simple_fermentation(
         ["#forge:mushrooms", "#forge:flour", "minecraft:sugar"],
         Fluid.of("minecraft:water", 250),
         Fluid.of("createdelight:yeast", 250),

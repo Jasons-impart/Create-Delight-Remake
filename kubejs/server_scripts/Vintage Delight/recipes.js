@@ -4,6 +4,8 @@ ServerEvents.recipes(e => {
         "culturaldelights:cutting/cut_cucumber",
         "vintagedelight:stuffed_burrito",
         "vintagedelight:fermenting/pickle_from_fermenting",
+        "vintagedelight:fermenting/vinegar_from_jam_bottles",
+        "vintagedelight:fermenting/vinegar_from_jam",
         "vintagedelight:salt_bucket_to_salt",
         "vintagedelight:salt_from_smelting",
         "vintagedelight:fermenting/century_egg_from_fermenting",

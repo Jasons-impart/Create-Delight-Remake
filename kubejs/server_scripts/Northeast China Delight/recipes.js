@@ -45,7 +45,7 @@ ServerEvents.recipes(e => {
         "northeast_china_delight:filling/vegetable_oil_bottle",
         "northeast_china_delight:emptying/vegetable_oil_bottle",
         "northeast_china_delight:milling/peanut_butter",
-        // 使用调料瓶原生流体接口分液；醋与植物油另有合并流体的 KubeJS 配方。
+        // 调料瓶通过原生流体能力分液，醋瓶能力读取统一流体注册。
         "northeast_china_delight:emptying/peanut_butter_bottle",
         "northeast_china_delight:emptying/chili_oil_bottle",
         "northeast_china_delight:emptying/soy_sauce_bottle",
@@ -174,34 +174,33 @@ ServerEvents.recipes(e => {
         soySauce, "minecraft:red_mushroom", "minecraft:brown_mushroom", "#forge:mushrooms"
     ], 200).id("createdelight:unordered_cooking/signature_mushroom_stew")
 
-    // 3.1.1 支持按流体 ID 指定大缸产物；保留原酿醋条件、产量和盛取物品。
-    e.forEachRecipe({id: "northeast_china_delight:vat/vinegar"}, recipe => {
+    const vinegar = global.CDVinegar
+    e.forEachRecipe({id: vinegar.vat.id}, recipe => {
         const config = recipe.json.getAsJsonObject("config")
+        config.add("seconds", JsonIO.parseRaw(String(vinegar.vat.seconds)))
+        const slots = config.getAsJsonArray("slots")
+        const yeast = slots.get(0).deepCopy()
+        yeast.getAsJsonObject("ingredient").addProperty("item", "createdelight:dry_yeast")
+        yeast.getAsJsonObject("bounds").add("count", JsonIO.parseRaw(String(vinegar.vat.yeastCount)))
+        slots["add(com.google.gson.JsonElement)"](yeast)
         const liquid = config.getAsJsonObject("liquid")
-        liquid.addProperty("product", "createdelight:vinegar")
-        liquid.addProperty("serving_container", "minecraft:glass_bottle")
-        liquid.addProperty("serving_item", "northeast_china_delight:vinegar")
+        liquid.add("water_min", JsonIO.parseRaw(String(vinegar.vat.waterLayers)))
+        liquid.add("water_max", JsonIO.parseRaw(String(vinegar.vat.waterLayers)))
+        liquid.addProperty("product", vinegar.fluid)
+        liquid.addProperty("serving_container", vinegar.container)
+        liquid.addProperty("serving_item", vinegar.item)
         recipe.save()
     })
 
-    create.filling("northeast_china_delight:vinegar", [
-        "minecraft:glass_bottle",
-        Fluid.of("createdelight:vinegar", 250)
-    ]).id("createdelight:filling/northeast_china_delight/vinegar_bottle")
+    create.filling(vinegar.item, [vinegar.container, Fluid.of(vinegar.fluid, vinegar.amount)])
+        .id("createdelight:filling/northeast_china_delight/vinegar_bottle")
 
-    // 3.1.1 的 Damage 表示已消耗毫升数。显式配方优先于瓶流体能力，
-    // 逐值匹配按剩余量输出统一后的流体，避免回退到原生瓶流体能力。
-    const seasoningBottles = [
-        ["vinegar", "createdelight:vinegar"],
-        ["cooking_oil", "createdieselgenerators:plant_oil"]
-    ]
-    seasoningBottles.forEach(bottle => {
-        for (let usedMb = 0; usedMb < 250; usedMb++) {
-            create.emptying([
-                "minecraft:glass_bottle",
-                Fluid.of(bottle[1], 250 - usedMb)
-            ], Item.of(`northeast_china_delight:${bottle[0]}`, {Damage: usedMb}).weakNBT())
-            .id(`createdelight:emptying/northeast_china_delight/${bottle[0]}_bottle/damage_${usedMb}`)
-        }
-    })
+    // 植物油瓶的原生能力仍输出东北乐事植物油，按剩余量保留指定流体的分液配方。
+    for (let usedMb = 0; usedMb < 250; usedMb++) {
+        create.emptying([
+            "minecraft:glass_bottle",
+            Fluid.of("createdieselgenerators:plant_oil", 250 - usedMb)
+        ], Item.of("northeast_china_delight:cooking_oil", {Damage: usedMb}).weakNBT())
+            .id("createdelight:emptying/northeast_china_delight/cooking_oil_bottle/damage_" + usedMb)
+    }
 })

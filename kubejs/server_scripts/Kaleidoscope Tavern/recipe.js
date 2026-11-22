@@ -2,6 +2,13 @@
 // 原生酒桶配方逐条覆盖原 ID，保留基液、原料、空瓶和工时；酵母作为普通原料。
 ServerEvents.recipes(event => {
     const barrel = event.recipes.kaleidoscope_tavern.barrel
+    if (global.CDStartupJavaClasses.$TavernBarrelRecipes) {
+        barrel(Item.of(global.CDVinegar.item, global.CDVinegar.barrel.servings),
+            global.CDVinegar.container,
+            global.CDVinegar.barrel.ingredients.map(input => Ingredient.of(input.ingredient)),
+            "minecraft:water", global.CDVinegar.barrel.unitTime
+        ).id(global.CDVinegar.barrel.id)
+    }
 
     barrel("kaleidoscope_tavern:brandy", "kaleidoscope_tavern:empty_bottle", [
         "minecraft:apple", "createdelight:dry_yeast"

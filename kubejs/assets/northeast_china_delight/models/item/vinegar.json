@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "particle": "kaleidoscope_tavern:item/vinegar",
+    "layer0": "createdelight:item/transparent",
+    "layer1": "kaleidoscope_tavern:item/vinegar"
+  }
+}

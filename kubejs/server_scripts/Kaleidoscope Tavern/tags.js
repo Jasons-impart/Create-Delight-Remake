@@ -1,4 +1,5 @@
 ServerEvents.tags("item", e => {
+  e.add("c:hidden_from_recipe_viewers", "kaleidoscope_tavern:vinegar")
   // 瓶酒和果汁桶不是食物，需要材料白名单才能承载并传递 QF 品质。
   e.add("quality_food:material_whitelist", [
     "kaleidoscope_tavern:white_lady",
@@ -58,6 +59,7 @@ ServerEvents.tags("item", e => {
   ])
 })
 ServerEvents.tags("fluid", e => {
+  e.add("c:hidden_from_recipe_viewers", /^creategearsandtavern:(flowing_)?vinegar$/)
   // 原料果汁的桶、管道及放置回收共用 QFF 品质。
   const juiceFluids = [
     "kaleidoscope_tavern:grape_juice",
