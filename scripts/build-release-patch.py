@@ -115,7 +115,7 @@ def write_overlay(output, modpack_name, modpack_version, version_file_relative_d
     version_file.write_text(
         "|||\n"
         f"{modpack_name} {modpack_version} (patch)\n"
-        "MIT License Copyright (c) 2025 JSI Production Team\n"
+        "[Custom (NC / ARR) © 2025](https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/refs/heads/main/LICENSE) [JSI Production Team](https://github.com/Jasons-impart)\n"
         "|||\n",
         encoding="utf-8",
         newline="\n",
