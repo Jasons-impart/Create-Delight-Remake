@@ -1,0 +1,16 @@
+{
+  "knowledge-check": {
+    "Stop": [
+      {
+        "type": "command",
+        "command": "python ../scripts/run-knowledge-hook.py validate-knowledge-base.py",
+        "timeout": 30
+      },
+      {
+        "type": "command",
+        "command": "python ../scripts/run-knowledge-hook.py write-knowledge-candidate-report.py",
+        "timeout": 30
+      }
+    ]
+  }
+}
