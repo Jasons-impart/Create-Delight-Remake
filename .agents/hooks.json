@@ -1,0 +1,16 @@
+{
+  "knowledge-check": {
+    "Stop": [
+      {
+        "type": "command",
+        "command": "pwsh -NoLogo -NoProfile -ExecutionPolicy Bypass -Command \"$ErrorActionPreference = 'Stop'; & (Join-Path (git rev-parse --show-toplevel) 'scripts/validate-knowledge-base.ps1') 6>&1 | Out-Null; '{}'\"",
+        "timeout": 30
+      },
+      {
+        "type": "command",
+        "command": "pwsh -NoLogo -NoProfile -ExecutionPolicy Bypass -Command \"$ErrorActionPreference = 'Stop'; & (Join-Path (git rev-parse --show-toplevel) 'scripts/write-knowledge-candidate-report.ps1') 6>&1 | Out-Null; '{}'\"",
+        "timeout": 30
+      }
+    ]
+  }
+}
