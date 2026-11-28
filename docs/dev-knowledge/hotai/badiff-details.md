@@ -30,21 +30,22 @@
 <!-- HOTAI_STATUS:BEGIN -->
 > 本区块由 `scripts/update-hotai-docs.py` 生成。修改 `hotai/**/*.badiff` 后运行该脚本；人工解释写在区块外。
 
-当前扫描到 37 个 `.badiff`；静态 JAR 命中 33 个，静态未命中但已由当前启动日志确认动态创建 0 个，尚未由当前启动日志确认 4 个。
+当前扫描到 39 个 `.badiff`；静态 JAR 命中 35 个，静态未命中但已由当前启动日志确认动态创建 3 个，尚未由当前启动日志确认 1 个。
 
 | 模组/领域 | 补丁文件 | 目标 class | 静态 JAR / 运行时状态 |
 |---|---|---|---|
-| Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff` | `com/forsteri/createliquidfuel/core/BurnerStomachHandler` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
-| Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity.badiff` | `com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity` | 静态命中 `createliquidfuel-2.1.1-1.20.1.jar` |
+| Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/core/BurnerStomachHandler.badiff` | `com/forsteri/createliquidfuel/core/BurnerStomachHandler` | 静态命中 `createliquidfuel-2.2.0-1.20.1.jar` |
+| Create Liquid Fuel | `hotai/com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity.badiff` | `com/forsteri/createliquidfuel/mixin/MixinBlazeBurnerTileEntity` | 静态命中 `createliquidfuel-2.2.0-1.20.1.jar` |
+| Northeast China Delight | `hotai/com/gunmu/northeast_china_delight/item/SeasoningBottleFluidHandler.badiff` | `com/gunmu/northeast_china_delight/item/SeasoningBottleFluidHandler` | 静态命中 `northeast_china_delight-4.1.0-1.20.1.jar` |
 | IAF Dragon Fix | `hotai/com/iafdragonfix/structure/DragonDenPiece.badiff` | `com/iafdragonfix/structure/DragonDenPiece` | 静态命中 `iafdragonfix-2.0.0.jar` |
 | Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularMMTBow` | 静态命中 `more_mod_tetra-2.4.15-all.jar` |
 | Unknown | `hotai/com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer.badiff` | `com/inolia_zaicek/more_mod_tetra/Modular/ModularWhiteContainer` | 静态命中 `more_mod_tetra-2.4.15-all.jar` |
 | TACZ-addon | `hotai/com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner.badiff` | `com/mafuyu404/taczaddon/compat/ShoulderSurfingCompatInner` | 静态命中 `taczaddon.jar` |
 | TACZ-addon | `hotai/com/mafuyu404/taczaddon/compat/SophisticatedBackpacksCompatInner.badiff` | `com/mafuyu404/taczaddon/compat/SophisticatedBackpacksCompatInner` | 静态命中 `taczaddon.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/ConnectorType.badiff` | `com/mrh0/createaddition/blocks/connector/ConnectorType` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
-| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlock` | 运行时已确认动态创建（静态 JAR 无此 class） |
+| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity` | 运行时已确认动态创建（静态 JAR 无此 class） |
 | Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity$1` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
-| Create Addition | `hotai/com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity.badiff` | `com/mrh0/createaddition/blocks/connector/SuperconductingConnectorBlockEntity` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/IWireNode.badiff` | `com/mrh0/createaddition/energy/IWireNode` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/network/EnergyNetwork.badiff` | `com/mrh0/createaddition/energy/network/EnergyNetwork` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
 | Create Addition | `hotai/com/mrh0/createaddition/energy/WireConnectResult.badiff` | `com/mrh0/createaddition/energy/WireConnectResult` | 静态命中 `createaddition-1.20.1-1.3.3.jar` |
@@ -67,13 +68,100 @@
 | Quality Food | `hotai/de/cadentem/quality_food/capability/BlockData.badiff` | `de/cadentem/quality_food/capability/BlockData` | 静态命中 `quality_food-1.20.1-2.4.3-all.jar` |
 | Quality Food | `hotai/de/cadentem/quality_food/capability/LevelData.badiff` | `de/cadentem/quality_food/capability/LevelData` | 静态命中 `quality_food-1.20.1-2.4.3-all.jar` |
 | Quality Food | `hotai/de/cadentem/quality_food/mixin/BlockMixin.badiff` | `de/cadentem/quality_food/mixin/BlockMixin` | 静态命中 `quality_food-1.20.1-2.4.3-all.jar` |
-| KubeJS | `hotai/dev/latvian/mods/kubejs/script/data/GeneratedData.badiff` | `dev/latvian/mods/kubejs/script/data/GeneratedData` | 静态命中 `kubejs-forge-2001.6.5-build.24.jar` |
+| KubeJS | `hotai/dev/latvian/mods/kubejs/script/data/GeneratedData.badiff` | `dev/latvian/mods/kubejs/script/data/GeneratedData` | 静态命中 `kubejs-forge-2001.6.5-build.16.jar` |
 | Better Compatibility Checker | `hotai/dev/wuffs/bcc/mixins/ServerStatusPingerMixin.badiff` | `dev/wuffs/bcc/mixins/ServerStatusPingerMixin` | 静态命中 `BetterCompatibilityChecker-3.0.1-build.58+mc1.20.jar` |
-| Unknown | `hotai/net/yiran/rebalancing/core/mixins/AttributeHelperMixin.badiff` | `net/yiran/rebalancing/core/mixins/AttributeHelperMixin` | 静态 JAR 无此 class；当前启动日志未确认（可能按需加载） |
+| Youkai's Homecoming | `hotai/dev/xkmc/youkaishomecoming/content/item/fluid/SlipFluidWrapper.badiff` | `dev/xkmc/youkaishomecoming/content/item/fluid/SlipFluidWrapper` | 静态命中 `youkaishomecoming-2.7.0.jar` |
+| Unknown | `hotai/net/yiran/rebalancing/core/mixins/AttributeHelperMixin.badiff` | `net/yiran/rebalancing/core/mixins/AttributeHelperMixin` | 运行时已确认动态创建（静态 JAR 无此 class） |
 | Create New Age | `hotai/org/antarcticgardens/cna/content/ponders/CNAPonders.badiff` | `org/antarcticgardens/cna/content/ponders/CNAPonders` | 静态命中 `create-new-age-1.2.0+forge-mc1.20.1.jar` |
 <!-- HOTAI_STATUS:END -->
 
 ## 代码化改动索引
+
+### 调料瓶流体统一
+
+以下是补丁重放后的 Java 等价代码，Minecraft 成员使用可读映射名。`cdr$original*` 是补丁重命名后的上游方法，方法体沿用原版。
+
+#### 东北乐事植物油瓶和醋瓶
+
+目标是东北乐事 4.1.0 的 `SeasoningBottleFluidHandler.badiff`。`fluidOf(Item)` 的醋和植物油分支各在返回前接入一次注册表查询。
+
+```java
+// fluidOf(Item) 中改动的两个分支
+if (item == ModItems.VINEGAR.get()) {
+    return cdr$mappedFluid(ModFluids.vinegarSource(), "createdelight", "vinegar");
+}
+if (item == ModItems.COOKING_OIL.get()) {
+    return cdr$mappedFluid(ModFluids.vegetableOilSource(), "createdieselgenerators", "plant_oil");
+}
+
+private static Fluid cdr$mappedFluid(Fluid fallback, String namespace, String path) {
+    Fluid fluid = ForgeRegistries.FLUIDS.getValue(new ResourceLocation(namespace, path));
+    return fluid == null || fluid == Fluids.EMPTY ? fallback : fluid;
+}
+
+private static FluidStack cdr$withQuality(ItemStack input, FluidStack fluid) {
+    if (!fluid.isEmpty() && ModList.get().isLoaded("quality_food_fluids") &&
+            (input.is(ModItems.COOKING_OIL.get()) || input.is(ModItems.VINEGAR.get()))) {
+        return QualityFoodFluidsApi.withQuality(fluid, QualityUtils.getQuality(input));
+    }
+    return fluid;
+}
+
+public FluidStack getFluidInTank(int tank) {
+    return cdr$withQuality(stack, cdr$originalGetFluidInTank(tank));
+}
+
+public FluidStack drain(int amount, FluidAction action) {
+    ItemStack input = stack;
+    return cdr$withQuality(input, cdr$originalDrain(amount, action));
+}
+```
+
+原生处理器继续用 `SeasoningBottleItem.remainingMb(stack)` 计算 `250 - Damage`，更新剩余量并在排空时返还玻璃瓶。`drain` 提前保存输入栈，因为原生排空操作会把处理器持有的栈替换为玻璃瓶，而流体品质取自原来的调料瓶。
+
+#### 妖怪归家大酱油瓶
+
+目标是妖怪归家 2.7.0 的 `SlipFluidWrapper.badiff`。原生方法内部仍按妖怪归家的酱油处理大瓶和残瓶。流体能力在读出时转换输出，在灌装和按指定流体排液时转换输入。
+
+```java
+private static FluidStack cdr$swapSoySauce(FluidStack stack, String from, String to) {
+    if (stack.isEmpty() || !new ResourceLocation(from, "soy_sauce")
+            .equals(ForgeRegistries.FLUIDS.getKey(stack.getFluid()))) {
+        return stack;
+    }
+    Fluid fluid = ForgeRegistries.FLUIDS.getValue(new ResourceLocation(to, "soy_sauce"));
+    if (fluid == null || fluid == Fluids.EMPTY) return stack;
+    return new FluidStack(fluid, stack.getAmount(), stack.hasTag() ? stack.getTag().copy() : null);
+}
+
+private static FluidStack cdr$toNativeSoySauce(FluidStack stack) {
+    return cdr$swapSoySauce(stack, "northeast_china_delight", "youkaishomecoming");
+}
+
+private static FluidStack cdr$toUnifiedSoySauce(FluidStack stack) {
+    return cdr$swapSoySauce(stack, "youkaishomecoming", "northeast_china_delight");
+}
+
+public FluidStack getFluidInTank(int tank) {
+    return cdr$toUnifiedSoySauce(cdr$originalGetFluidInTank(tank));
+}
+
+public FluidStack drain(int amount, FluidAction action) {
+    return cdr$toUnifiedSoySauce(cdr$originalDrain(amount, action));
+}
+
+public FluidStack drain(FluidStack resource, FluidAction action) {
+    return cdr$originalDrain(cdr$toNativeSoySauce(resource), action);
+}
+
+public int fill(FluidStack resource, FluidAction action) {
+    return cdr$originalFill(cdr$toNativeSoySauce(resource), action);
+}
+```
+
+原生 `drain(FluidStack, FluidAction)` 匹配流体后会调用 `drain(int, FluidAction)`，因此两个排液入口都会返回东北乐事酱油。转换时保留毫升数并复制流体标签。
+
+两个补丁由 Hotai 1.0 的实际转换器生成，离线重放产物逐字节一致，均通过 ASM `BasicVerifier` 和 JVM 字节码校验。实际游戏内灌排待验证。
 
 ### More Mod Tetra 纯白容器效果续期
 

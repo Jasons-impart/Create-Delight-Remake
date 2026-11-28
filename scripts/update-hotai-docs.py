@@ -43,6 +43,8 @@ MODULE_PREFIXES: tuple[tuple[tuple[str, ...], str], ...] = (
     (("de/cadentem/quality_food/",), "Quality Food"),
     (("org/antarcticgardens/newage/", "org/antarcticgardens/cna/"), "Create New Age"),
     (("com/renyigesai/bakeries/",), "Bakeries"),
+    (("com/gunmu/northeast_china_delight/",), "Northeast China Delight"),
+    (("dev/xkmc/youkaishomecoming/",), "Youkai's Homecoming"),
 )
 
 
