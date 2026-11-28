@@ -45,7 +45,7 @@ ServerEvents.recipes(e => {
         "northeast_china_delight:filling/vegetable_oil_bottle",
         "northeast_china_delight:emptying/vegetable_oil_bottle",
         "northeast_china_delight:milling/peanut_butter",
-        // 使用调料瓶原生流体接口分液；醋与植物油另有合并流体的 KubeJS 配方。
+        // 调料瓶由物品流体能力按剩余量分液，醋和植物油的流体由 Hotai 统一。
         "northeast_china_delight:emptying/peanut_butter_bottle",
         "northeast_china_delight:emptying/chili_oil_bottle",
         "northeast_china_delight:emptying/soy_sauce_bottle",
@@ -188,20 +188,4 @@ ServerEvents.recipes(e => {
         "minecraft:glass_bottle",
         Fluid.of("createdelight:vinegar", 250)
     ]).id("createdelight:filling/northeast_china_delight/vinegar_bottle")
-
-    // 3.1.1 的 Damage 表示已消耗毫升数。显式配方优先于瓶流体能力，
-    // 逐值匹配按剩余量输出统一后的流体，避免回退到原生瓶流体能力。
-    const seasoningBottles = [
-        ["vinegar", "createdelight:vinegar"],
-        ["cooking_oil", "createdieselgenerators:plant_oil"]
-    ]
-    seasoningBottles.forEach(bottle => {
-        for (let usedMb = 0; usedMb < 250; usedMb++) {
-            create.emptying([
-                "minecraft:glass_bottle",
-                Fluid.of(bottle[1], 250 - usedMb)
-            ], Item.of(`northeast_china_delight:${bottle[0]}`, {Damage: usedMb}).weakNBT())
-            .id(`createdelight:emptying/northeast_china_delight/${bottle[0]}_bottle/damage_${usedMb}`)
-        }
-    })
 })

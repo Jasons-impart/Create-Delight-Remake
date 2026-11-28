@@ -1,13 +1,13 @@
 name = "Create: Letter's in Steam"
-filename = "Steam-Letters-2.1.2-1.20.1-forge.jar"
+filename = "Steam-Letters-2.1.4-1.20.1-forge.jar"
 side = "both"
 
 [download]
 hash-format = "sha1"
-hash = "9e725530d93a867aa5dea59def05695181f18d44"
+hash = "2700b22271492de72b4291f0292f1ca5513bbe5b"
 mode = "metadata:curseforge"
 
 [update]
 [update.curseforge]
-file-id = 9716706
+file-id = 9825618
 project-id = 1650746
